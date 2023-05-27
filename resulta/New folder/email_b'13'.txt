@@ -1,0 +1,668 @@
+Received: from 127.0.0.1
+ by atlas-production.v2-mail-prod1-gq1.omega.yahoo.com pod-id atlas--production-gq1-59c849fdbb-xxhrj.gq1.yahoo.com with HTTP; Fri, 26 May 2023 20:21:02 +0000
+Return-Path: <delivery_20230526202101.647114aced92fb0001faae25@bounce.proflowers.com>
+X-Originating-Ip: [192.64.237.150]
+Received-SPF: pass (domain of bounce.proflowers.com designates 192.64.237.150 as permitted sender)
+Authentication-Results: atlas-production.v2-mail-prod1-gq1.omega.yahoo.com;
+ dkim=pass header.i=@proflowers.com header.s=sailthru;
+ spf=pass smtp.mailfrom=bounce.proflowers.com;
+ dmarc=pass(p=REJECT) header.from=eml.proflowers.com;
+X-Apparently-To: achrafelabouye@yahoo.com; Fri, 26 May 2023 20:21:02 +0000
+X-YMailAVSC: 7WrDhNk3bBvrv1t5VOFGqu1TICml9khTLdDwq4hz7rGgDmY
+ BIYyj2nVJDL7axdONrfpjEseEOJwJS559GBT9aMOHQxX9lVhN2Z_PFSJvEC6
+ cR_Dfa5tIFUpl_67QEK7Q31CwgZWyGzilk2In6NlVrzDXJxaliqfcr1xV0gh
+ Z8eKygj_aLj367xC7.wvcrxmcjkT_rfhryM47FoctsQiR3V1uQH5TNGZ06HD
+ 1lSJpEvol8pMvmR9IEmzO0wR169WVN.nIKOXq4_B7fqdQXVY9b3heYH70lz.
+ rXCtlbvVMjaq.OiVLrqj8aZcb5dLJH5tap1F1LvjeNIVypLBytwHYm5FpVaX
+ N5pePr3xXokpJBbeH79qDc4aLBIMhlQc7jA9BOr_UjraSLiS2G8y2kVwfBhw
+ u3xN5asihelOQp3zJFy.EI.9kQ8U7J3sBl29Xgz7XQyWxii7_DsC2evZrTEO
+ seBX4gY.CcHTiOMUB6Ch.YMkxFXW1hPvFnDPU0HVa9psjmUVP11EnMDQKL0w
+ GmU3qz2e0o_GcgWAJaD2qLZbc6.T40M8hMBKEFxwgv2qVb6apuyorr3KTMnp
+ QR6BJfxgkJ8usxYW_l0eNeFRFxyU.t4S_7ORsCK0hmz3Se3lbKHvoafogD3L
+ _Dbpy_ZZYx1YxXVLqlm3q2DGqBzWmb5HlD6nnnb.j3Pcyy1C9r_wFA1aemjC
+ xwGlSLQfy2meem5ngE8cr4tdN4UY40cwjRQmgPIkm_SHANWy9F2sWK8iPEpZ
+ whaQvn3_jO2x8g71XZ4yEX0Q0l.rfeOOxGKPRckNboCOKXPMoqW72ZNYYC7K
+ JzwKo3hkhZK1VVxFoleXC4tzgbHOtQ2ZrN81sHaNhoacoZf.zajTBPeW6gWN
+ IiwOaWt5pFXTjlkLIdmVZCy8uihRRHQUEBi81BCg3_XpLbpVEerVrMU.sSaI
+ UZKFhK52Z6VrokOJhX1k07cNLXcvKBAUQzkuvUtk_IwT8mVw9ZE7ZKyGXMWp
+ PFJ54dRzKxBdaMHjNgib7k1KbS_KUGDxHMMFoRlZj4WJQWxm9R.rGtcgWRoL
+ NOn5obxm1VCIgil3QS7CxrOVANMROhY1dKlKVNC3G5eckGHm2u_mETtDhD.B
+ kmvHoXvxjBE0x8YWvCr2lZ157U4L.l78i9mkaABXG5yvkn.sDGaPksrq_Yak
+ uPOfv90YfzzUi1vSeyK4fNOnjFXVK9OHJsSvStFPPOaT9c3QxgdsbMaKnO51
+ eEhnS9oM25.cmDucgt16V3ILR.IHtB06L1R9LTeCCdm77MIjjvpdnIr_3L6c
+ oD0dVq9HeAhCP_bxbTCSDNgMG37PZn9DNG7ipfR8TTWwVhwmMhvFINSUwAW6
+ wjb9a_TEITIVlMnQ2Y59m8UlZNelLTyjfuiapMQBbM_y3UuAWoG483PsX7p4
+ 0Ok.9tp8k0CK27LBUy8YHXsvV5NsKeAWeyzPwISM3uB4iJSsRbsLiZX9u387
+ e2g._h.DTQgkGrEz9hn9G1lLhOp_LiJjsXoWZAYdUYDRsSdlnUbewH6Q-
+X-YMailISG: wP7aQ4UWLDsDJMij0Ax56EF.Kdi1MDdLuFDBqF.wzRqK.d9w
+ Cu0JJzinKxEx79xNS2CnxbNUZAxK6f5hTLrYT.3mosfv7muwHqOvP60CH7iY
+ 1QsVHyv2T1K9.uf9.gOaeOWMnSzMbhK1D_xhEOw1p4fsyWaQnIYMh.Lf2nWG
+ 0omoLcvqJkJEC2FrtafpDWAlz2aVopZ3CXHDPGNFmFL9AR6dOs0aNtTkLuPm
+ 1YnfnjcYcf5DXnfj_D3NPtaZitELZHVc1DOvfDRaSGpVDENJ3CbYYdSJlLPQ
+ GBBAtmlLuC.1cFuFyXVhoue4Y0BajjRo_AR1.FosIfhT2OCLVr.CftbwtmyI
+ q8rZw.AxlZnSX8Pr8WHOPHhBzfHGLMdUf0kbT3oABvFtIaOKtyioQ9rwHzGv
+ 8ZGyDbIjLqav42ayroQTHkzXvapvICDLtOe3aa_PxA9di.1o_jUfN59WZWWr
+ 6WjePtlMIdP0dsUyc_EnagpK030A.oeaYVGUUAZtDVvScZGCKQbsTnFvS20m
+ V5JYkX8whu1lnLdvDg6XSqkc9DvS5_A7Jn2NqzF0Ll2K6LNu6CpXhGbUdjeZ
+ XiG7D2Sl66xw1L1LLnPhVTDtXUOtZV4Xce8DQHE7PMr7R3QnAcaxkcGEgrS9
+ qyhgdd90vDbD2LyGVYzoPOFL58PcFfxJxrnj_BWImPCQeI1mKyJ1W38M0MrI
+ bzR0CNl0y8EBWjV6sp2gwxQPHWUSF6dUncWzzjDeVSkz2gWmfcuQVJBdEeS4
+ PuNUiRHYALYK.C2t7zi2TYWZg.ulq1Rh8SC_Hjl6cIsTmjBFBrxwir8jF5lC
+ CMNo3h8.THi5c8NTxl_ZdF6FfTrvj3h29mHrf913g8cWPsN3PV6DexpOb487
+ YJx3t6nagewtHZsUPo9iq3tTq6zS5OZ_AgvrIBFjdflyUu4CdA0SvCtnNmgm
+ W01CIZbCtS6MDwKlumoatt9tClJv2z2sJvlsnkDhldyAfCPGjI91wQRK15ah
+ PiPfBVWwp2qjaNHwRJRawz3JGIglu_DgG38d02EW_XMQay71b42culu9YZrE
+ RqABkY0Lo6aHXQJtjyV0CBd2fAm_WqS9C3H46MrQVv8z4ovnmz2y0xfyHhtU
+ hb8Qp90qrOzbA4mmYVwnKxLL.bs6I5Jxpjeq7Jd2fjC0UyE2u8GdD9HtfOHf
+ NKUchn0LdK8S7AC4Cgyg68FHdIg9YaYlgfc5rmfe5EzZREVepAdio2QBlhT8
+ 2EE-
+Received: from 192.64.237.150 (EHLO pmta237-150.sailthru.com)
+ by 10.253.31.91 with SMTPs
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256);
+ Fri, 26 May 2023 20:21:02 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed; s=sailthru; d=proflowers.com;
+ h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:List-Unsubscribe;
+ i=proflowers@eml.proflowers.com;
+ bh=kHnAxTHv4Z2azovvCLNt0iJ91DO4EPgnDlkBul2wVjY=;
+ b=E4Atrq/WE02avZD8XZ8vIrHopnIYpo+5hb13ohIZh4mTqgUKJ9DzqdglHXOawXBrBdaLw1QDTu8A
+   Qu/R9P1hzcktF+NVeNWvcKTfVmMiP24elQD9oyBEZ9Q7Z9dB2zTO7iJuql0sV1Hg1EQcv1upwmmS
+   9MlYUWWRg974CV6sEmU=
+Received: from njmta-90.sailthru.com (173.228.155.90) by pmta237-150.sailthru.com id he4aaq30o1s7 for <achrafelabouye@yahoo.com>; Fri, 26 May 2023 15:21:01 -0500 (envelope-from <delivery_20230526202101.647114aced92fb0001faae25@bounce.proflowers.com>)
+Received: from nj1-ownfuchsia.flt (172.18.20.27) by njmta-90.sailthru.com id he4aaq1qqbsn for <achrafelabouye@yahoo.com>; Fri, 26 May 2023 16:21:01 -0400 (envelope-from <delivery_20230526202101.647114aced92fb0001faae25@bounce.proflowers.com>)
+Date: Fri, 26 May 2023 20:21:01 +0000 (UTC)
+From: Proflowers <proflowers@eml.proflowers.com>
+To: achrafelabouye@yahoo.com
+Message-ID: <20230526202101.647114aced92fb0001faae25@sailthru.com>
+Subject: welcome to the fun side of flowers!
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_7444818_45879126.1685132461358"
+x-job: 8519-transactional-20230526
+X-Feedback-ID: 8519:transactional:sailthru
+X-TM-ID: 20230526202101.647114aced92fb0001faae25
+X-Sail-Id: 8519.48392433.48392433
+X-Info: Message sent by sailthru.com customer ProFlowers
+X-Info: We do not permit unsolicited commercial email
+X-Info: Please report abuse by forwarding complete headers to
+X-Info: abuse@sailthru.com
+X-Mailer: sailthru.com
+X-JMailer: nj1-ownfuchsia.flt
+X-Unsubscribe-Web: https://link.proflowers.com/oc/6471125ce6c838d82b0456bc647114aced92fb0001faae25/25b838ca
+List-Unsubscribe: <https://link.proflowers.com/oc/6471125ce6c838d82b0456bc647114aced92fb0001faae25/25b838ca>, <mailto:unsubscribe_20230526202101.647114aced92fb0001faae25@mx.sailthru.com>
+Content-Length: 39658
+
+------=_Part_7444818_45879126.1685132461358
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html><html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"u=
+rn:schemas-microsoft-com:office:office" lang=3D"en"><head><title></title><m=
+eta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><met=
+a name=3D"viewport" content=3D"width=3Ddevice-width,initial-scale=3D1"><!--=
+[if mso]><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInc=
+h><o:AllowPNG/></o:OfficeDocumentSettings></xml><![endif]--><!--[if !mso]><=
+!--><link href=3D"https://fonts.googleapis.com/css?family=3DMontserrat"=20
+rel=3D"stylesheet" type=3D"text/css"><link href=3D"https://fonts.googleapis=
+.com/css?family=3DWork+Sans" rel=3D"stylesheet" type=3D"text/css"><link hre=
+f=3D"https://storage.googleapis.com/gcp-ftd-fonts-core/2021/hostedcsspf.css=
+" rel=3D"stylesheet" type=3D"text/css"><!--<![endif]--><style>
+*{box-sizing:border-box}body{margin:0;padding:0}a[x-apple-data-detectors]{c=
+olor:inherit!important;text-decoration:inherit!important}#MessageViewBody a=
+{color:inherit;text-decoration:none}p{line-height:inherit}.desktop_hide,.de=
+sktop_hide table{mso-hide:all;display:none;max-height:0;overflow:hidden}@me=
+dia (max-width:620px){.image_block img.big,.row-content{width:100%!importan=
+t}.mobile_hide,.row .side{display:none}.stack .column{width:100%;display:bl=
+ock}.mobile_hide{min-height:0;max-height:0;max-width:0;overflow:hidden;font=
+-size:0}.desktop_hide,.desktop_hide table{display:table!important;max-heigh=
+t:none!important}}
+</style></head><body style=3D"background-color:#fff;margin:0;padding:0;-web=
+kit-text-size-adjust:none;text-size-adjust:none"><div style=3D"display: non=
+e; max-height: 0px; overflow: hidden;">Take 20% off your next purchase.</di=
+v><div style=3D"display:none"><a href=3D"https://link.proflowers.com/click/=
+647114aced92fb0001faae25/aHR0cDovL3Byb2Zsb3dlcnMuY29tP3ByaWQ9RU1QRjIwUCZyZW=
+Y9UEZQRkFRMjNNYXkyNk5PUFdMQ00xJnZlcj1OT1BXRUxDTTEmbXNnPTY0NzExNGFjZWQ5MmZiM=
+DAwMWZhYWUyNSZzaWQ9NjQ3MTEyNWNlNmM4MzhkODJiMDQ1NmJjJnV0bV9tZWRpdW09ZW1haWxf=
+YmVoYXZpb3JhbCZjaWQ9cGZlbXBlcmtzMjBw/6471125ce6c838d82b0456bcBf187bc5b"><im=
+g src=3D"https://link.proflowers.com/img/6471125ce6c838d82b0456bc647114aced=
+92fb0001faae25/d313ff68.gif" alt=3D"" border=3D"0" /></a></div><table class=
+=3D"nl-container" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0=
+;background-color:#fff"><tbody><tr><td><table class=3D"row row-1" align=3D"=
+center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><=
+tr><td><table=20
+class=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-ta=
+ble-rspace:0;color:#000;width:600px" width=3D"600"><tbody><tr><td class=3D"=
+column column-1" width=3D"100%" style=3D"mso-table-lspace:0;mso-table-rspac=
+e:0;font-weight:400;text-align:left;vertical-align:top;padding-top:5px;padd=
+ing-bottom:5px;border-top:0;border-right:0;border-bottom:0;border-left:0"><=
+table class=3D"html_block block-1" width=3D"100%" border=3D"0"=20
+cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-tabl=
+e-lspace:0;mso-table-rspace:0"><tr><td class=3D"pad"><div style=3D"font-fam=
+ily:Arial,Helvetica Neue,Helvetica,sans-serif;text-align:center" align=3D"c=
+enter"><div style=3D"display: none; max-height: 0px; overflow: hidden;"><pr=
+e>=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=
+=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=
+=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0</pre></div>
+</div></td></tr></table><table class=3D"html_block block-2" width=3D"100%" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" styl=
+e=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td class=3D"pad"><div=20
+style=3D"font-family:Arial,Helvetica Neue,Helvetica,sans-serif;text-align:c=
+enter" align=3D"center"><div style=3D"display: none; max-height: 0px; overf=
+low: hidden;">=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=
+=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0</d=
+iv>
+<link rel=3D"stylesheet" type=3D"text/css" href=3D"https://storage.googleap=
+is.com/gcp-ftd-fonts-core/2021/hostedcsspf.css"/>
+<style>
+.OldschoolGrotesk-Light {
+font-family: OldschoolGrotesk-Light;
+}
+.OldschoolGrotesk-Light-Headline {
+font-family: OldschoolGrotesk-Light,Helvetica;
+}
+.OldschoolGrotesk-Light-Head-Footer{
+font-family: OldschoolGrotesk-Light,Helvetica;
+}
+.MaisonNeue-Book {
+font-family: MaisonNeue-Book;
+}
+.OldschoolGrotesk-Light-body {
+font-family: OldschoolGrotesk-Light,Helvetica;
+}
+.nib_pro_italic_light_head{
+font-family: 'nib pro italic light','Droid Serif Italic';
+}
+</style></div></td></tr></table></td></tr></tbody></table></td></tr></tbody=
+></table><table class=3D"row row-2" align=3D"center" width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"m=
+so-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table class=3D"row-co=
+ntent stack" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;color:#000;width:600px" widt=
+h=3D"600"><tbody><tr><td class=3D"column column-1" width=3D"100%" style=3D"=
+mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;verti=
+cal-align:top;padding-top:5px;padding-bottom:5px;border-top:0;border-right:=
+0;border-bottom:0;border-left:0"><table class=3D"image_block block-1" width=
+=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presenta=
+tion" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td class=3D"pad"=
+=20
+style=3D"width:100%;padding-right:0;padding-left:0"><div class=3D"alignment=
+" align=3D"center" style=3D"line-height:10px"><a href=3D"https://link.profl=
+owers.com/click/647114aced92fb0001faae25/aHR0cHM6Ly93d3cucHJvZmxvd2Vycy5jb2=
+0vP3ByaWQ9RU1QRjIwUCZyZWY9UEZQRkFRMjNNYXkyNk5PUFdMQ00xJnZlcj1OT1BXRUxDTTEmb=
+XNnPTY0NzExNGFjZWQ5MmZiMDAwMWZhYWUyNSZzaWQ9NjQ3MTEyNWNlNmM4MzhkODJiMDQ1NmJj=
+JnV0bV9tZWRpdW09ZW1haWxfYmVoYXZpb3JhbCZjaWQ9cGZlbXBlcmtzMjBw/6471125ce6c838=
+d82b0456bcBc45b935d" target=3D"_blank" style=3D"outline:none" tabindex=3D"-=
+1"><img class=3D"big" src=3D"https://media.sailthru.com/composer/images/sai=
+lthru-prod-6kn/Template/PF_Logo_Header.png" style=3D"display:block;height:a=
+uto;border:0;width:600px;max-width:100%" width=3D"600" alt=3D"proflowers - =
+the fun side of flowers"=20
+title=3D"proflowers - the fun side of flowers"></a></div></td></tr></table>=
+</td></tr></tbody></table></td></tr></tbody></table><table class=3D"row row=
+-3 mobile_hide" align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso=
+-table-rspace:0"><tbody><tr><td><table class=3D"row-content stack" align=3D=
+"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentat=
+ion" style=3D"mso-table-lspace:0;mso-table-rspace:0;color:#000;width:600px"=
+=20
+width=3D"600"><tbody><tr><td class=3D"column column-1" width=3D"16.66666666=
+6666668%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;te=
+xt-align:left;vertical-align:top;border-top:0;border-right:0;border-bottom:=
+0;border-left:0"><table class=3D"text_block block-2" width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"m=
+so-table-lspace:0;mso-table-rspace:0;word-break:break-word"><tr><td class=
+=3D"pad" style=3D"padding-bottom:15px;padding-left:10px;padding-top:15px"><=
+div=20
+style=3D"font-family:sans-serif"><div class style=3D"font-size:14px;font-fa=
+mily:OldschoolGrotesk-Light,Helvetica,san-serif;mso-line-height-alt:16.8px;=
+color:#000;line-height:1.2"><p style=3D"margin:0;font-size:14px;text-align:=
+center;mso-line-height-alt:16.8px"><a href=3D"https://link.proflowers.com/c=
+lick/647114aced92fb0001faae25/aHR0cHM6Ly93d3cucHJvZmxvd2Vycy5jb20vc2VuZC1mb=
+G93ZXJzLWJzbD9wcmlkPUVNUEYyMFAmcmVmPVBGUEZBUTIzTWF5MjZOT1BXTENNMSZ2ZXI9Tk9Q=
+V0VMQ00xJm1zZz02NDcxMTRhY2VkOTJmYjAwMDFmYWFlMjUmc2lkPTY0NzExMjVjZTZjODM4ZDg=
+yYjA0NTZiYyZ1dG1fbWVkaXVtPWVtYWlsX2JlaGF2aW9yYWwmY2lkPXBmZW1wZXJrczIwcA/647=
+1125ce6c838d82b0456bcB839c1f02" target=3D"_blank" style=3D"text-decoration:=
+ none; color: #000000;" rel=3D"noopener">Best Sellers</a></p></div></div></=
+td></tr></table></td><td class=3D"column column-2"=20
+width=3D"16.666666666666668%" style=3D"mso-table-lspace:0;mso-table-rspace:=
+0;font-weight:400;text-align:left;vertical-align:top;border-top:0;border-ri=
+ght:0;border-bottom:0;border-left:0"><table class=3D"text_block block-2" wi=
+dth=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-wo=
+rd"><tr><td class=3D"pad" style=3D"padding-bottom:15px;padding-top:15px"><d=
+iv style=3D"font-family:sans-serif"><div class=20
+style=3D"font-size:14px;font-family:OldschoolGrotesk-Light,Helvetica,san-se=
+rif;mso-line-height-alt:16.8px;color:#000;line-height:1.2"><p style=3D"marg=
+in:0;font-size:14px;text-align:right;mso-line-height-alt:16.8px"><a href=3D=
+"https://link.proflowers.com/click/647114aced92fb0001faae25/aHR0cHM6Ly93d3c=
+ucHJvZmxvd2Vycy5jb20vYmlydGhkYXktZmxvd2Vycy1iaXI_cHJpZD1FTVBGMjBQJnJlZj1QRl=
+BGQVEyM01heTI2Tk9QV0xDTTEmdmVyPU5PUFdFTENNMSZtc2c9NjQ3MTE0YWNlZDkyZmIwMDAxZ=
+mFhZTI1JnNpZD02NDcxMTI1Y2U2YzgzOGQ4MmIwNDU2YmMmdXRtX21lZGl1bT1lbWFpbF9iZWhh=
+dmlvcmFsJmNpZD1wZmVtcGVya3MyMHA/6471125ce6c838d82b0456bcB46d79e90" target=
+=3D"_blank" style=3D"text-decoration: none; color: #000000;" rel=3D"noopene=
+r">Birthday</a></p></div></div></td></tr></table></td><td class=3D"column c=
+olumn-3" width=3D"25%"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:l=
+eft;vertical-align:top;border-top:0;border-right:0;border-bottom:0;border-l=
+eft:0"><table class=3D"text_block block-2" width=3D"100%" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-ls=
+pace:0;mso-table-rspace:0;word-break:break-word"><tr><td class=3D"pad" styl=
+e=3D"padding-bottom:15px;padding-top:15px"><div style=3D"font-family:sans-s=
+erif"><div class=20
+style=3D"font-size:14px;font-family:OldschoolGrotesk-Light,Helvetica,san-se=
+rif;mso-line-height-alt:16.8px;color:#000;line-height:1.2"><p style=3D"marg=
+in:0;font-size:14px;text-align:right;mso-line-height-alt:16.8px"><a href=3D=
+"https://link.proflowers.com/click/647114aced92fb0001faae25/aHR0cHM6Ly93d3c=
+ucHJvZmxvd2Vycy5jb20vdW5kZXItNTAtcmNhP3ByaWQ9RU1QRjIwUCZyZWY9UEZQRkFRMjNNYX=
+kyNk5PUFdMQ00xJnZlcj1OT1BXRUxDTTEmbXNnPTY0NzExNGFjZWQ5MmZiMDAwMWZhYWUyNSZza=
+WQ9NjQ3MTEyNWNlNmM4MzhkODJiMDQ1NmJjJnV0bV9tZWRpdW09ZW1haWxfYmVoYXZpb3JhbCZj=
+aWQ9cGZlbXBlcmtzMjBw/6471125ce6c838d82b0456bcB4719fcc8" target=3D"_blank" s=
+tyle=3D"text-decoration: none; color: #000000;" rel=3D"noopener">Gifts Unde=
+r $50</a></p></div></div></td></tr></table></td><td class=3D"column column-=
+4" width=3D"16.666666666666668%"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:l=
+eft;vertical-align:top;border-top:0;border-right:0;border-bottom:0;border-l=
+eft:0"><table class=3D"text_block block-2" width=3D"100%" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-ls=
+pace:0;mso-table-rspace:0;word-break:break-word"><tr><td class=3D"pad" styl=
+e=3D"padding-bottom:15px;padding-left:10px;padding-top:15px"><div style=3D"=
+font-family:sans-serif"><div class=20
+style=3D"font-size:14px;font-family:OldschoolGrotesk-Light,Helvetica,san-se=
+rif;mso-line-height-alt:16.8px;color:#000;line-height:1.2"><p style=3D"marg=
+in:0;font-size:14px;text-align:center;mso-line-height-alt:16.8px"><a href=
+=3D"https://link.proflowers.com/click/647114aced92fb0001faae25/aHR0cHM6Ly93=
+d3cucHJvZmxvd2Vycy5jb20vbmV3LXBsYW50cy1ibnA_cHJpZD1FTVBGMjBQJnJlZj1QRlBGQVE=
+yM01heTI2Tk9QV0xDTTEmdmVyPU5PUFdFTENNMSZtc2c9NjQ3MTE0YWNlZDkyZmIwMDAxZmFhZT=
+I1JnNpZD02NDcxMTI1Y2U2YzgzOGQ4MmIwNDU2YmMmdXRtX21lZGl1bT1lbWFpbF9iZWhhdmlvc=
+mFsJmNpZD1wZmVtcGVya3MyMHA/6471125ce6c838d82b0456bcBd61b2c11" target=3D"_bl=
+ank" style=3D"text-decoration: none; color: #000000;" rel=3D"noopener">Plan=
+ts</a></p></div></div></td></tr></table></td><td class=3D"column column-5" =
+width=3D"25%"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:l=
+eft;vertical-align:top;border-top:0;border-right:0;border-bottom:0;border-l=
+eft:0"><table class=3D"text_block block-2" width=3D"100%" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-ls=
+pace:0;mso-table-rspace:0;word-break:break-word"><tr><td class=3D"pad" styl=
+e=3D"padding-bottom:15px;padding-right:10px;padding-top:15px"><div style=3D=
+"font-family:sans-serif"><div class=20
+style=3D"font-size:14px;font-family:OldschoolGrotesk-Light,Helvetica,san-se=
+rif;mso-line-height-alt:16.8px;color:#000;line-height:1.2"><p style=3D"marg=
+in:0;font-size:14px;text-align:center;mso-line-height-alt:16.8px"><a href=
+=3D"https://link.proflowers.com/click/647114aced92fb0001faae25/aHR0cHM6Ly93=
+d3cucHJvZmxvd2Vycy5jb20vanVzdC1iZWNhdXNlLWdpZnRzLWpiZT9wcmlkPUVNUEYyMFAmcmV=
+mPVBGUEZBUTIzTWF5MjZOT1BXTENNMSZ2ZXI9Tk9QV0VMQ00xJm1zZz02NDcxMTRhY2VkOTJmYj=
+AwMDFmYWFlMjUmc2lkPTY0NzExMjVjZTZjODM4ZDgyYjA0NTZiYyZ1dG1fbWVkaXVtPWVtYWlsX=
+2JlaGF2aW9yYWwmY2lkPXBmZW1wZXJrczIwcA/6471125ce6c838d82b0456bcB0146aef9" ta=
+rget=3D"_blank" style=3D"text-decoration: none; color: #000000;" rel=3D"noo=
+pener">Just Because</a></p></div></div></td></tr></table></td></tr></tbody>=
+</table></td></tr></tbody></table><table class=3D"row row-4" align=3D"cente=
+r"=20
+width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><=
+table class=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0;color:#000;width:600px" width=3D"600"><tbody><tr><td cla=
+ss=3D"column column-1" width=3D"100%"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:l=
+eft;vertical-align:top;padding-top:0;padding-bottom:5px;border-top:0;border=
+-right:0;border-bottom:0;border-left:0"><table class=3D"divider_block block=
+-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D=
+"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td clas=
+s=3D"pad"><div class=3D"alignment" align=3D"center"><table border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td class=3D"divider_in=
+ner" style=3D"font-size:1px;line-height:1px;border-top:5px solid #000"><spa=
+n>&#8202;</span></td></tr></table></div></td></tr></table></td></tr></tbody=
+></table></td></tr></tbody></table><table class=3D"row row-5" align=3D"cent=
+er" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D=
+"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><=
+td><table class=3D"row-content stack" align=3D"center" border=3D"0"=20
+cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-tabl=
+e-lspace:0;mso-table-rspace:0;color:#000;width:600px" width=3D"600"><tbody>=
+<tr><td class=3D"column column-1" width=3D"100%" style=3D"mso-table-lspace:=
+0;mso-table-rspace:0;font-weight:400;text-align:left;vertical-align:top;pad=
+ding-top:0;padding-bottom:0;border-top:0;border-right:0;border-bottom:0;bor=
+der-left:0"><table class=3D"image_block block-1" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td class=3D"pad" style=
+=3D"width:100%;padding-right:0;padding-left:0"><div class=3D"alignment" ali=
+gn=3D"center" style=3D"line-height:10px"><a href=3D"https://link.proflowers=
+.com/click/647114aced92fb0001faae25/aHR0cHM6Ly93d3cucHJvZmxvd2Vycy5jb20_cHJ=
+pZD1FTVBGMjBQJnJlZj1QRlBGQVEyM01heTI2Tk9QV0xDTTEmdmVyPU5PUFdFTENNMSZtc2c9Nj=
+Q3MTE0YWNlZDkyZmIwMDAxZmFhZTI1JnNpZD02NDcxMTI1Y2U2YzgzOGQ4MmIwNDU2YmMmdXRtX=
+21lZGl1bT1lbWFpbF9iZWhhdmlvcmFsJmNpZD1wZmVtcGVya3MyMHA/6471125ce6c838d82b04=
+56bcBec48fd66" target=3D"_blank" style=3D"outline:none" tabindex=3D"-1"><im=
+g class=3D"big" src=3D"https://media.sailthru.com/composer/images/sailthru-=
+prod-6kn/Behavioral/PF_Rebrand_WELCOME%201%20%E2%80%93hero.png"=20
+style=3D"display:block;height:auto;border:0;width:600px;max-width:100%" wid=
+th=3D"600" alt=3D"welcome to the fun side of flowers - Where beauty &amp; f=
+reshness meet. We're here to fill your world with stunning blooms, curated =
+gifts &amp; so much more. Let's Shop" title=3D"welcome to the fun side of f=
+lowers - Where beauty &amp; freshness meet. We're here to fill your world w=
+ith stunning blooms, curated gifts &amp; so much more. Let's Shop"></a></di=
+v></td></tr></table><table class=3D"divider_block block-2"=20
+width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td class=3D=
+"pad"><div class=3D"alignment" align=3D"center"><table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%" style=3D"=
+mso-table-lspace:0;mso-table-rspace:0"><tr><td class=3D"divider_inner" styl=
+e=3D"font-size:1px;line-height:1px;border-top:1px solid #bbb"><span>&#8202;=
+</span></td></tr></table></div></td></tr></table><table class=3D"image_bloc=
+k block-3"=20
+width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td class=3D=
+"pad" style=3D"width:100%;padding-right:0;padding-left:0"><div class=3D"ali=
+gnment" align=3D"center" style=3D"line-height:10px"><a href=3D"https://link=
+.proflowers.com/click/647114aced92fb0001faae25/aHR0cHM6Ly93d3cucHJvZmxvd2Vy=
+cy5jb20vc2VuZC1mbG93ZXJzLWJzbD9wcmlkPUVNUEYyMFAmcmVmPVBGUEZBUTIzTWF5MjZOT1B=
+XTENNMSZ2ZXI9Tk9QV0VMQ00xJm1zZz02NDcxMTRhY2VkOTJmYjAwMDFmYWFlMjUmc2lkPTY0Nz=
+ExMjVjZTZjODM4ZDgyYjA0NTZiYyZ1dG1fbWVkaXVtPWVtYWlsX2JlaGF2aW9yYWwmY2lkPXBmZ=
+W1wZXJrczIwcA/6471125ce6c838d82b0456bcC839c1f02" target=3D"_blank" style=3D=
+"outline:none" tabindex=3D"-1"><img class=3D"big"=20
+src=3D"https://media.sailthru.com/composer/images/sailthru-prod-6kn/Behavio=
+ral/PF_Rebrand_WELCOME%201%20%E2%80%93promo.png" style=3D"display:block;hei=
+ght:auto;border:0;width:600px;max-width:100%" width=3D"600" alt=3D"just for=
+ you - 20% off - Get started with a sweet deal on your next order. Save 20%=
+ Now" title=3D"just for you - 20% off - Get started with a sweet deal on yo=
+ur next order. Save 20% Now"></a></div></td></tr></table></td></tr></tbody>=
+</table></td></tr></tbody></table><table=20
+class=3D"row row-6 desktop_hide" align=3D"center" width=3D"100%" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-t=
+able-lspace:0;mso-table-rspace:0;mso-hide:all;display:none;max-height:0;ove=
+rflow:hidden"><tbody><tr><td><table class=3D"row-content" align=3D"center" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" styl=
+e=3D"mso-table-lspace:0;mso-table-rspace:0;mso-hide:all;display:none;max-he=
+ight:0;overflow:hidden;background-color:#c1e39e;color:#000;width:600px"=20
+width=3D"600"><tbody><tr><td class=3D"column column-1" width=3D"50%" style=
+=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;v=
+ertical-align:top;border-top:0;border-right:0;border-bottom:0;border-left:0=
+"><table class=3D"text_block block-2" width=3D"100%" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:=
+0;mso-table-rspace:0;word-break:break-word;mso-hide:all;display:none;max-he=
+ight:0;overflow:hidden"><tr><td class=3D"pad"=20
+style=3D"padding-bottom:15px;padding-left:10px;padding-top:15px"><div style=
+=3D"font-family:sans-serif"><div class style=3D"font-size:14px;font-family:=
+OldschoolGrotesk-Light,Helvetica,san-serif;mso-line-height-alt:16.8px;color=
+:#000;line-height:1.2"><p style=3D"margin:0;font-size:14px;text-align:cente=
+r;mso-line-height-alt:16.8px">
+<span style=3D"font-size:12px;"><a href=3D"https://link.proflowers.com/clic=
+k/647114aced92fb0001faae25/aHR0cHM6Ly93d3cucHJvZmxvd2Vycy5jb20vc2VuZC1mbG93=
+ZXJzLWJzbD9wcmlkPUVNUEYyMFAmcmVmPVBGUEZBUTIzTWF5MjZOT1BXTENNMSZ2ZXI9Tk9QV0V=
+MQ00xJm1zZz02NDcxMTRhY2VkOTJmYjAwMDFmYWFlMjUmc2lkPTY0NzExMjVjZTZjODM4ZDgyYj=
+A0NTZiYyZ1dG1fbWVkaXVtPWVtYWlsX2JlaGF2aW9yYWwmY2lkPXBmZW1wZXJrczIwcA/647112=
+5ce6c838d82b0456bcD839c1f02" target=3D"_blank" style=3D"text-decoration: no=
+ne; color: #000000;" rel=3D"noopener">Best Sellers</a></span></p></div></di=
+v></td></tr></table></td><td class=3D"column column-2" width=3D"50%" style=
+=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;v=
+ertical-align:top;border-top:0;border-right:0;border-bottom:0;border-left:0=
+"><table class=3D"text_block block-2" width=3D"100%" border=3D"0"=20
+cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-tabl=
+e-lspace:0;mso-table-rspace:0;word-break:break-word;mso-hide:all;display:no=
+ne;max-height:0;overflow:hidden"><tr><td class=3D"pad" style=3D"padding-bot=
+tom:15px;padding-top:15px"><div style=3D"font-family:sans-serif"><div class=
+ style=3D"font-size:14px;font-family:OldschoolGrotesk-Light,Helvetica,san-s=
+erif;mso-line-height-alt:16.8px;color:#000;line-height:1.2"><p style=3D"mar=
+gin:0;font-size:14px;text-align:center;mso-line-height-alt:16.8px">
+<span style=3D"font-size:12px;"><a href=3D"https://link.proflowers.com/clic=
+k/647114aced92fb0001faae25/aHR0cHM6Ly93d3cucHJvZmxvd2Vycy5jb20vYmlydGhkYXkt=
+Zmxvd2Vycy1iaXI_cHJpZD1FTVBGMjBQJnJlZj1QRlBGQVEyM01heTI2Tk9QV0xDTTEmdmVyPU5=
+PUFdFTENNMSZtc2c9NjQ3MTE0YWNlZDkyZmIwMDAxZmFhZTI1JnNpZD02NDcxMTI1Y2U2YzgzOG=
+Q4MmIwNDU2YmMmdXRtX21lZGl1bT1lbWFpbF9iZWhhdmlvcmFsJmNpZD1wZmVtcGVya3MyMHA/6=
+471125ce6c838d82b0456bcC46d79e90" target=3D"_blank" style=3D"text-decoratio=
+n: none; color: #000000;" rel=3D"noopener">Birthday</a></span></p></div></d=
+iv></td></tr></table></td></tr></tbody></table></td></tr></tbody></table><t=
+able class=3D"row row-7 desktop_hide" align=3D"center" width=3D"100%" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;mso-hide:all;display:none;ma=
+x-height:0;overflow:hidden"><tbody><tr><td><table class=3D"row-content" ali=
+gn=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pres=
+entation" style=3D"mso-table-lspace:0;mso-table-rspace:0;mso-hide:all;displ=
+ay:none;max-height:0;overflow:hidden;background-color:#c1e39e;color:#000;wi=
+dth:600px" width=3D"600"><tbody><tr><td class=3D"column column-1" width=3D"=
+50%"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:l=
+eft;vertical-align:top;border-top:0;border-right:0;border-bottom:0;border-l=
+eft:0"><table class=3D"text_block block-2" width=3D"100%" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-ls=
+pace:0;mso-table-rspace:0;word-break:break-word;mso-hide:all;display:none;m=
+ax-height:0;overflow:hidden"><tr><td class=3D"pad" style=3D"padding-bottom:=
+15px;padding-top:15px"><div style=3D"font-family:sans-serif"><div class=20
+style=3D"font-size:14px;font-family:OldschoolGrotesk-Light,Helvetica,san-se=
+rif;mso-line-height-alt:16.8px;color:#000;line-height:1.2"><p style=3D"marg=
+in:0;font-size:14px;text-align:center;mso-line-height-alt:16.8px"><span sty=
+le=3D"font-size:12px;"><a href=3D"https://link.proflowers.com/click/647114a=
+ced92fb0001faae25/aHR0cHM6Ly93d3cucHJvZmxvd2Vycy5jb20vdW5kZXItNTAtcmNhP3Bya=
+WQ9RU1QRjIwUCZyZWY9UEZQRkFRMjNNYXkyNk5PUFdMQ00xJnZlcj1OT1BXRUxDTTEmbXNnPTY0=
+NzExNGFjZWQ5MmZiMDAwMWZhYWUyNSZzaWQ9NjQ3MTEyNWNlNmM4MzhkODJiMDQ1NmJjJnV0bV9=
+tZWRpdW09ZW1haWxfYmVoYXZpb3JhbCZjaWQ9cGZlbXBlcmtzMjBw/6471125ce6c838d82b045=
+6bcC4719fcc8" target=3D"_blank" style=3D"text-decoration: none; color: #000=
+000;" rel=3D"noopener">Gifts Under $50</a></span></p></div></div></td></tr>=
+</table></td><td class=3D"column column-2" width=3D"50%"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:l=
+eft;vertical-align:top;border-top:0;border-right:0;border-bottom:0;border-l=
+eft:0"><table class=3D"text_block block-2" width=3D"100%" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-ls=
+pace:0;mso-table-rspace:0;word-break:break-word;mso-hide:all;display:none;m=
+ax-height:0;overflow:hidden"><tr><td class=3D"pad" style=3D"padding-bottom:=
+15px;padding-right:10px;padding-top:15px"><div=20
+style=3D"font-family:sans-serif"><div class style=3D"font-size:14px;font-fa=
+mily:OldschoolGrotesk-Light,Helvetica,san-serif;mso-line-height-alt:16.8px;=
+color:#000;line-height:1.2"><p style=3D"margin:0;font-size:14px;text-align:=
+center;mso-line-height-alt:16.8px"><span style=3D"font-size:12px;"><a href=
+=3D"https://link.proflowers.com/click/647114aced92fb0001faae25/aHR0cHM6Ly93=
+d3cucHJvZmxvd2Vycy5jb20vanVzdC1iZWNhdXNlLWdpZnRzLWpiZT9wcmlkPUVNUEYyMFAmcmV=
+mPVBGUEZBUTIzTWF5MjZOT1BXTENNMSZ2ZXI9Tk9QV0VMQ00xJm1zZz02NDcxMTRhY2VkOTJmYj=
+AwMDFmYWFlMjUmc2lkPTY0NzExMjVjZTZjODM4ZDgyYjA0NTZiYyZ1dG1fbWVkaXVtPWVtYWlsX=
+2JlaGF2aW9yYWwmY2lkPXBmZW1wZXJrczIwcA/6471125ce6c838d82b0456bcC0146aef9" ta=
+rget=3D"_blank" style=3D"text-decoration: none; color: #000000;" rel=3D"noo=
+pener">Just Because</a></span></p></div></div></td></tr></table></td></tr><=
+/tbody>
+</table></td></tr></tbody></table><table class=3D"row row-8" align=3D"cente=
+r" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"=
+presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><t=
+d><table class=3D"row-content stack" align=3D"center" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace=
+:0;mso-table-rspace:0;background-color:#c1e39e;color:#000;width:600px" widt=
+h=3D"600"><tbody><tr><td class=3D"column column-1" width=3D"100%"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:l=
+eft;vertical-align:top;padding-top:30px;padding-bottom:30px;border-top:0;bo=
+rder-right:0;border-bottom:0;border-left:0"><table class=3D"html_block bloc=
+k-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td c=
+lass=3D"pad"><div style=3D"font-family:Arial,Helvetica Neue,Helvetica,sans-=
+serif;text-align:center" align=3D"center"><table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" align=3D"center">
+<tr>
+<td>
+<a href=3D"https://link.proflowers.com/click/647114aced92fb0001faae25/aHR0c=
+HM6Ly93d3cuZmFjZWJvb2suY29tL1Byb0Zsb3dlcnM_cHJpZD1FTVBGMjBQJnJlZj1QRlBGQVEy=
+M01heTI2Tk9QV0xDTTEmdmVyPU5PUFdFTENNMSZtc2c9NjQ3MTE0YWNlZDkyZmIwMDAxZmFhZTI=
+1JnNpZD02NDcxMTI1Y2U2YzgzOGQ4MmIwNDU2YmMmdXRtX21lZGl1bT1lbWFpbF9iZWhhdmlvcm=
+FsJmNpZD1wZmVtcGVya3MyMHA/6471125ce6c838d82b0456bcBe5099f42" style=3D"text-=
+decoration: none;color:#153D4D;"><img src=3D"https://media.sailthru.com/com=
+poser/images/sailthru-prod-6kn/Template/PF_Footer_FB.png" alt=3D"facebook" =
+/></a>
+</td>
+<td>
+<a href=3D"https://link.proflowers.com/click/647114aced92fb0001faae25/aHR0c=
+HM6Ly93d3cuaW5zdGFncmFtLmNvbS9wcm9mbG93ZXJzP3ByaWQ9RU1QRjIwUCZyZWY9UEZQRkFR=
+MjNNYXkyNk5PUFdMQ00xJnZlcj1OT1BXRUxDTTEmbXNnPTY0NzExNGFjZWQ5MmZiMDAwMWZhYWU=
+yNSZzaWQ9NjQ3MTEyNWNlNmM4MzhkODJiMDQ1NmJjJnV0bV9tZWRpdW09ZW1haWxfYmVoYXZpb3=
+JhbCZjaWQ9cGZlbXBlcmtzMjBw/6471125ce6c838d82b0456bcB7486345b" style=3D"text=
+-decoration: none;color:#153D4D;"><img src=3D"https://media.sailthru.com/co=
+mposer/images/sailthru-prod-6kn/Template/PF_Footer_IG.png" alt=3D"instagram=
+" /></a>
+</td>
+<td>
+<a href=3D"https://link.proflowers.com/click/647114aced92fb0001faae25/aHR0c=
+HM6Ly90d2l0dGVyLmNvbS9wcm9mbG93ZXJzP3ByaWQ9RU1QRjIwUCZyZWY9UEZQRkFRMjNNYXky=
+Nk5PUFdMQ00xJnZlcj1OT1BXRUxDTTEmbXNnPTY0NzExNGFjZWQ5MmZiMDAwMWZhYWUyNSZzaWQ=
+9NjQ3MTEyNWNlNmM4MzhkODJiMDQ1NmJjJnV0bV9tZWRpdW09ZW1haWxfYmVoYXZpb3JhbCZjaW=
+Q9cGZlbXBlcmtzMjBw/6471125ce6c838d82b0456bcB6cbd124e" style=3D"text-decorat=
+ion: none;color:#153D4D;"><img src=3D"https://media.sailthru.com/composer/i=
+mages/sailthru-prod-6kn/Template/PF_Footer_Twitter.png" alt=3D"twitter" /><=
+/a>
+</td>
+<td>
+<a href=3D"https://link.proflowers.com/click/647114aced92fb0001faae25/aHR0c=
+HM6Ly93d3cueW91dHViZS5jb20vcHJvZmxvd2Vycz9wcmlkPUVNUEYyMFAmcmVmPVBGUEZBUTIz=
+TWF5MjZOT1BXTENNMSZ2ZXI9Tk9QV0VMQ00xJm1zZz02NDcxMTRhY2VkOTJmYjAwMDFmYWFlMjU=
+mc2lkPTY0NzExMjVjZTZjODM4ZDgyYjA0NTZiYyZ1dG1fbWVkaXVtPWVtYWlsX2JlaGF2aW9yYW=
+wmY2lkPXBmZW1wZXJrczIwcA/6471125ce6c838d82b0456bcBe8fdd25f" style=3D"text-d=
+ecoration: none;color:#153D4D;"><img src=3D"https://media.sailthru.com/comp=
+oser/images/sailthru-prod-6kn/Template/PF_Footer_YT.png" alt=3D"youtube" />=
+</a>
+</td>
+<td>
+<a href=3D"https://link.proflowers.com/click/647114aced92fb0001faae25/aHR0c=
+HM6Ly93d3cucGludGVyZXN0LmNvbS9wcm9mbG93ZXJzP3ByaWQ9RU1QRjIwUCZyZWY9UEZQRkFR=
+MjNNYXkyNk5PUFdMQ00xJnZlcj1OT1BXRUxDTTEmbXNnPTY0NzExNGFjZWQ5MmZiMDAwMWZhYWU=
+yNSZzaWQ9NjQ3MTEyNWNlNmM4MzhkODJiMDQ1NmJjJnV0bV9tZWRpdW09ZW1haWxfYmVoYXZpb3=
+JhbCZjaWQ9cGZlbXBlcmtzMjBw/6471125ce6c838d82b0456bcB4397df0b" style=3D"text=
+-decoration: none;color:#153D4D;"><img src=3D"https://media.sailthru.com/co=
+mposer/images/sailthru-prod-6kn/Template/PF_Footer_Pinterest.png" alt=3D"pi=
+ntrest" /></a>
+</td>
+</tr>
+</table></div></td>
+</tr></table></td></tr></tbody></table></td></tr></tbody></table><table cla=
+ss=3D"row row-9" align=3D"center" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0"><tbody><tr><td><table class=3D"row-content stack" align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" style=3D"mso-table-lspace:0;mso-table-rspace:0;background-color:#c1=
+e39e;color:#000;width:600px" width=3D"600"><tbody><tr><td class=3D"column c=
+olumn-1"=20
+width=3D"33.333333333333336%" style=3D"mso-table-lspace:0;mso-table-rspace:=
+0;font-weight:400;text-align:left;vertical-align:top;border-top:0;border-ri=
+ght:0;border-bottom:0;border-left:0"><table class=3D"text_block block-2" wi=
+dth=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-wo=
+rd"><tr><td class=3D"pad" style=3D"padding-bottom:15px;padding-left:25px;pa=
+dding-right:25px;padding-top:20px"><div style=3D"font-family:sans-serif">
+<div class style=3D"font-size:12px;font-family:OldschoolGrotesk-Light,Helve=
+tica,san-serif;mso-line-height-alt:14.399999999999999px;color:#000;line-hei=
+ght:1.2"><p style=3D"margin:0;text-align:center;mso-line-height-alt:14.3999=
+99999999999px"><a href=3D"https://link.proflowers.com/click/647114aced92fb0=
+001faae25/aHR0cDovL3d3dy5mdGRjb21wYW5pZXMuY29tL3ByaXZhY3k_cHJpZD1FTVBGMjBQJ=
+nJlZj1QRlBGQVEyM01heTI2Tk9QV0xDTTEmdmVyPU5PUFdFTENNMSZtc2c9NjQ3MTE0YWNlZDky=
+ZmIwMDAxZmFhZTI1JnNpZD02NDcxMTI1Y2U2YzgzOGQ4MmIwNDU2YmMmdXRtX21lZGl1bT1lbWF=
+pbF9iZWhhdmlvcmFsJmNpZD1wZmVtcGVya3MyMHA/6471125ce6c838d82b0456bcBd8a54759"=
+ target=3D"_blank" style=3D"text-decoration: none; color: #000000;" rel=3D"=
+noopener"><span style=3D"font-size:14px;">Privacy Policy</span></a></p></di=
+v></div></td></tr></table></td><td class=3D"column column-2"=20
+width=3D"33.333333333333336%" style=3D"mso-table-lspace:0;mso-table-rspace:=
+0;font-weight:400;text-align:left;vertical-align:top;border-top:0;border-ri=
+ght:0;border-bottom:0;border-left:0"><table class=3D"text_block block-2" wi=
+dth=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-wo=
+rd"><tr><td class=3D"pad" style=3D"padding-bottom:15px;padding-left:25px;pa=
+dding-right:25px;padding-top:20px"><div style=3D"font-family:sans-serif">
+<div class style=3D"font-size:12px;font-family:OldschoolGrotesk-Light,Helve=
+tica,san-serif;mso-line-height-alt:14.399999999999999px;color:#000;line-hei=
+ght:1.2"><p style=3D"margin:0;text-align:center;mso-line-height-alt:14.3999=
+99999999999px"><a href=3D"https://link.proflowers.com/click/647114aced92fb0=
+001faae25/aHR0cDovL3d3dy5mdGRjb21wYW5pZXMuY29tL3Rlcm1zP3ByaWQ9RU1QRjIwUCZyZ=
+WY9UEZQRkFRMjNNYXkyNk5PUFdMQ00xJnZlcj1OT1BXRUxDTTEmbXNnPTY0NzExNGFjZWQ5MmZi=
+MDAwMWZhYWUyNSZzaWQ9NjQ3MTEyNWNlNmM4MzhkODJiMDQ1NmJjJnV0bV9tZWRpdW09ZW1haWx=
+fYmVoYXZpb3JhbCZjaWQ9cGZlbXBlcmtzMjBw/6471125ce6c838d82b0456bcB875945cc" ta=
+rget=3D"_blank" style=3D"text-decoration: none; color: #000000;" rel=3D"noo=
+pener"><span style=3D"font-size:14px;">Terms & Conditions</span></a></p></d=
+iv></div></td></tr></table></td><td=20
+class=3D"column column-3" width=3D"33.333333333333336%" style=3D"mso-table-=
+lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;vertical-align:=
+top;border-top:0;border-right:0;border-bottom:0;border-left:0"><table class=
+=3D"text_block block-2" width=3D"100%" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rs=
+pace:0;word-break:break-word"><tr><td class=3D"pad" style=3D"padding-bottom=
+:15px;padding-left:25px;padding-right:25px;padding-top:20px"><div=20
+style=3D"font-family:sans-serif"><div class style=3D"font-size:12px;font-fa=
+mily:OldschoolGrotesk-Light,Helvetica,san-serif;mso-line-height-alt:14.3999=
+99999999999px;color:#000;line-height:1.2"><p style=3D"margin:0;text-align:c=
+enter;mso-line-height-alt:14.399999999999999px"><span style=3D"font-size:14=
+px;"><a href=3D"https://link.proflowers.com/oc/6471125ce6c838d82b0456bc6471=
+14aced92fb0001faae25/25b838ca" target=3D"_blank" style=3D"text-decoration: =
+none; color: #000000;" rel=3D"noopener">Unsubscribe&nbsp;</a></span></p></d=
+iv></div>
+</td></tr></table></td></tr></tbody></table></td></tr></tbody></table><tabl=
+e class=3D"row row-10" align=3D"center" width=3D"100%" border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspac=
+e:0;mso-table-rspace:0"><tbody><tr><td><table class=3D"row-content stack" a=
+lign=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pr=
+esentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;background-color=
+:#c1e39e;color:#000;width:600px" width=3D"600"><tbody><tr><td=20
+class=3D"column column-1" width=3D"100%" style=3D"mso-table-lspace:0;mso-ta=
+ble-rspace:0;font-weight:400;text-align:left;vertical-align:top;padding-top=
+:5px;padding-bottom:5px;border-top:0;border-right:0;border-bottom:0;border-=
+left:0"><table class=3D"divider_block block-1" width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-tabl=
+e-lspace:0;mso-table-rspace:0"><tr><td class=3D"pad" style=3D"padding-botto=
+m:10px;padding-left:10px;padding-right:10px;padding-top:30px"><div=20
+class=3D"alignment" align=3D"center"><table border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" role=3D"presentation" width=3D"75%" style=3D"mso-table-ls=
+pace:0;mso-table-rspace:0"><tr><td class=3D"divider_inner" style=3D"font-si=
+ze:1px;line-height:1px;border-top:2px solid #000"><span>&#8202;</span></td>=
+</tr></table></div></td></tr></table></td></tr></tbody></table></td></tr></=
+tbody></table><table class=3D"row row-11" align=3D"center" width=3D"100%" b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table class=
+=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-r=
+space:0;background-color:#c1e39e;color:#000;width:600px" width=3D"600"><tbo=
+dy><tr><td class=3D"column column-1" width=3D"100%"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:l=
+eft;vertical-align:top;padding-top:5px;padding-bottom:5px;border-top:0;bord=
+er-right:0;border-bottom:0;border-left:0"><table class=3D"text_block block-=
+1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"=
+presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:bre=
+ak-word"><tr><td class=3D"pad" style=3D"padding-bottom:10px;padding-left:25=
+px;padding-right:25px"><div style=3D"font-family:sans-serif"><div class=20
+style=3D"font-size:12px;font-family:OldschoolGrotesk-Light,Helvetica,san-se=
+rif;mso-line-height-alt:14.399999999999999px;color:#000;line-height:1.2"><p=
+ style=3D"margin:0;text-align:center;mso-line-height-alt:14.399999999999999=
+px">&nbsp;</p><p style=3D"margin:0;text-align:center;mso-line-height-alt:14=
+.399999999999999px">
+*Exceptions apply. Offer expires at 11:59pm CST on 05/27/2023, or while sup=
+plies last. Quantities may be limited.&nbsp; All discounts shown.&nbsp; Dis=
+counts are not available on (i) product customizations including vases or p=
+roduct add-ons, (ii) Proflowers loyalty program fees, (iii) gift card purch=
+ases, (iv) any applicable service, delivery or shipping fees, care and hand=
+ling fees, and taxes, and (v) special collections. Discounts cannot be comb=
+ined with any other offer or promotion.&nbsp; Offer may be subject to chang=
+e without notice.&nbsp; See <a href=3D"https://link.proflowers.com/click/64=
+7114aced92fb0001faae25/aHR0cDovL3d3dy5wcm9mbG93ZXJzLmNvbS8_cHJpZD1FTVBGMjBQ=
+JnJlZj1QRlBGQVEyM01heTI2Tk9QV0xDTTEmdmVyPU5PUFdFTENNMSZtc2c9NjQ3MTE0YWNlZDk=
+yZmIwMDAxZmFhZTI1JnNpZD02NDcxMTI1Y2U2YzgzOGQ4MmIwNDU2YmMmdXRtX21lZGl1bT1lbW=
+FpbF9iZWhhdmlvcmFsJmNpZD1wZmVtcGVya3MyMHA/6471125ce6c838d82b0456bcB2adaa2d2=
+" title=3D"http://www.proflowers.com" style=3D"text-decoration: underline; =
+color: #000000;">http://www.proflowers.com</a> for additional details. This=
+ email was sent to: achrafelabouye@yahoo.com. Please do not reply to this m=
+ail.
+</p><p style=3D"margin:0;text-align:center;mso-line-height-alt:14.399999999=
+999999px"><br>For Customer Service assistance and FAQs, <a title=3D"Custome=
+r Service" href=3D"https://link.proflowers.com/click/647114aced92fb0001faae=
+25/aHR0cHM6Ly93d3cucHJvZmxvd2Vycy5jb20vY3VzdG9tZXItc2VydmljZT9wcmlkPUVNUEYy=
+MFAmcmVmPVBGUEZBUTIzTWF5MjZOT1BXTENNMSZ2ZXI9Tk9QV0VMQ00xJm1zZz02NDcxMTRhY2V=
+kOTJmYjAwMDFmYWFlMjUmc2lkPTY0NzExMjVjZTZjODM4ZDgyYjA0NTZiYyZ1dG1fbWVkaXVtPW=
+VtYWlsX2JlaGF2aW9yYWwmY2lkPXBmZW1wZXJrczIwcA/6471125ce6c838d82b0456bcBfd9a6=
+80f" target=3D"_blank" rel=3D"noopener" style=3D"color: #000000;">click her=
+e</a>.</p><p style=3D"margin:0;text-align:center;mso-line-height-alt:14.399=
+999999999999px"><br>=C2=A92023 FTD, LLC, 3113 Woodcreek Drive Downers Grove=
+, Illinois, 60515</p><p=20
+style=3D"margin:0;text-align:center;mso-line-height-alt:14.399999999999999p=
+x">&nbsp;</p><p style=3D"margin:0;text-align:center;mso-line-height-alt:14.=
+399999999999999px"><a href=3D"https://link.proflowers.com/view/6471125ce6c8=
+38d82b0456bc647114aced92fb0001faae25/92cfa728" target=3D"_blank" rel=3D"noo=
+pener" style=3D"color: #000000;"></a>&nbsp;&nbsp;<a href=3D"https://link.pr=
+oflowers.com/view/6471125ce6c838d82b0456bc647114aced92fb0001faae25/92cfa728=
+" target=3D"_blank" rel=3D"noopener" style=3D"color: #000000;">View in brow=
+ser</a>&nbsp;&nbsp;=C2=A0&nbsp;&nbsp;</p><p style=3D"margin:0;text-align:ce=
+nter;mso-line-height-alt:14.399999999999999px">&nbsp;</p><p style=3D"margin=
+:0;text-align:center;mso-line-height-alt:14.399999999999999px">&nbsp;</p></=
+div></div></td></tr></table>
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></tab=
+le><!-- End --></body></html>
+------=_Part_7444818_45879126.1685132461358--
+

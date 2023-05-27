@@ -54,8 +54,10 @@ for email_id in email_ids:
     sanitized_from_name = re.sub(r'[<>:"/\\|?*]', '', from_name)[:40].replace(' ', '_')
 
     # Create a new filename using the sanitized "From" name
-    file_name = f"{sanitized_from_name}.txt"
-
+    if email_provider=="1":
+        file_name = f"resulta/hotmail/{sanitized_from_name}.txt"
+    elif email_provider=="2":
+        file_name = f"resulta/yahoo/{sanitized_from_name}.txt"
     # Perform any necessary processing or saving to a text file
     with open(file_name, "w") as file:
         file.write(raw_email.decode("utf-8").replace("\r\n", "\n"))

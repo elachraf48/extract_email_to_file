@@ -4,8 +4,8 @@ from email.header import decode_header
 import os
 import re
 
-# User input for email provider (Hotmail or Yahoo)
-email_provider = input("Enter the number of email provider Hotmail (1) or Yahoo (2) : ")
+# User input for email provider (Hotmail, Yahoo, or Gmail)
+email_provider = input("Enter the number of email provider: Hotmail (1), Yahoo (2), or Gmail (3): ")
 
 if email_provider.lower() == "1":
     # Connect to the IMAP server (Hotmail)
@@ -18,14 +18,21 @@ elif email_provider.lower() == "2":
     imap_server = imaplib.IMAP4_SSL("imap.mail.yahoo.com")
     username = "achrafelabouye@yahoo.com"
     password = "wtwdebznrypcudga"
+
+elif email_provider.lower() == "3":
+    # Connect to the IMAP server (Gmail)
+    imap_server = imaplib.IMAP4_SSL("imap.gmail.com")
+    username = ""
+    password = ""
+
 else:
     print("Invalid email provider. Please try again.")
     exit()
 
 # User input for email credentials
-if username =="":
+if username == "":
     username = input("Enter your email address: ")
-if password=="":
+if password == "":
     password = input("Enter your password: ")
 
 # Login to the email account
@@ -54,10 +61,16 @@ for email_id in email_ids:
     sanitized_from_name = re.sub(r'[<>:"/\\|?*]', '', from_name)[:40].replace(' ', '_')
 
     # Create a new filename using the sanitized "From" name
-    if email_provider=="1":
+    if email_provider == "1":
         file_name = f"resulta/hotmail/{sanitized_from_name}.txt"
-    elif email_provider=="2":
+    elif email_provider == "2":
         file_name = f"resulta/yahoo/{sanitized_from_name}.txt"
+    elif email_provider == "3":
+        file_name = f"resulta/gmail/{sanitized_from_name}.txt"
+    else:
+        print("Invalid email provider. Please try again.")
+        exit()
+
     # Perform any necessary processing or saving to a text file
     with open(file_name, "w") as file:
         file.write(raw_email.decode("utf-8").replace("\r\n", "\n"))

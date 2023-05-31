@@ -1,0 +1,124 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:9f5b:0:b0:2da:43c2:96f2 with SMTP id l27csp237787imf;
+        Sat, 27 May 2023 08:30:02 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ5xNyKumdk9SPF3b/YdbYRAy/kHsMIfa/InRktaR6/T99aQPNyP4/Kdflq5ouw/qU9Ka2s5
+X-Received: by 2002:a1c:7c1a:0:b0:3f6:c8c:7048 with SMTP id x26-20020a1c7c1a000000b003f60c8c7048mr4391249wmc.20.1685201402701;
+        Sat, 27 May 2023 08:30:02 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685201402; cv=none;
+        d=google.com; s=arc-20160816;
+        b=COSn1yt2PXKPfzRXJSJjWhktagTj3liSJhOKv0MOuy3telcM6UWkmq1WXNmAD/IF/J
+         AQpX8v6a+c2/jA+tNsRfsNuN70BmyMVqjSmUbhOKxNgt2tFF/d5PN5nzQNILJ5DnY6PK
+         i+R9i64uNUyVK7E/kTb52B0HlcQGrQmWYoBLHiU6UhYI2X7ZBedBEJwNXmrI1PrAm75i
+         PbARXLPgqH8Km2z6C9aKVijrgJFDrqB89kNcZiR3eJGIZ1EdJMESszqvqYKOBqHmR0J7
+         39gYik/CL6+iB1nQWGFKUNIBrFTQSOIlQ9eTcdDF6SIFPVuCYOPnN4gJNmEWBKNEUClb
+         PUhA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=reply-to:to:from:mime-version:date:message-id:sender:subject
+         :dkim-signature;
+        bh=1w02q0qyRCJecJqeACuHSc88n24b1Z9Um8QnxEku958=;
+        b=ntCPuz7GHYV+jeTNro6L3CPUiufEggrl84PcLfdjdAXP/8EXLhvXrzb7FB/F1Dlscn
+         kF1WYoS2JkL5xBnH+8ExnyA/fdd+dY0jZzcM0Fl4TGZ1NEB79Ja7FAb6UCBL5aLcAjnq
+         5gnY2lllqV3D5tEqdwk2U1oVB3GGsmkNDBVfwkgVZMfWJ9DP/J3+ceWBeJSmiMmLOy1R
+         pt+yQ/JKrVhs++RAUT1TMYDxAnvtcGo4amJOpPhTtC/ZhQerH/BBt+zlk3el5nCaOBGm
+         TTdxro2Q66SwglmWQxTNcDTOv0DTXhlY1eTUTzpdsgvGVuwKry5PvqtVd1PpkHheCtOf
+         +dlg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@dgroups.org header.s=default.private header.b=lmJ+Tycx;
+       spf=pass (google.com: domain of 57ddeb9afca311eda75ddb983be4cbff00000000000000000000000000000000@dgroups.org designates 163.172.160.226 as permitted sender) smtp.mailfrom=57ddeb9afca311eda75ddb983be4cbff00000000000000000000000000000000@dgroups.org;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=dgroups.org
+Return-Path: <57ddeb9afca311eda75ddb983be4cbff00000000000000000000000000000000@dgroups.org>
+Received: from tx02.influent.cc (tx06.influent.cc. [163.172.160.226])
+        by mx.google.com with ESMTPS id y19-20020a05600c365300b003f60e143d31si3722302wmq.81.2023.05.27.08.30.02
+        for <ouchendans62@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 27 May 2023 08:30:02 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 57ddeb9afca311eda75ddb983be4cbff00000000000000000000000000000000@dgroups.org designates 163.172.160.226 as permitted sender) client-ip=163.172.160.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@dgroups.org header.s=default.private header.b=lmJ+Tycx;
+       spf=pass (google.com: domain of 57ddeb9afca311eda75ddb983be4cbff00000000000000000000000000000000@dgroups.org designates 163.172.160.226 as permitted sender) smtp.mailfrom=57ddeb9afca311eda75ddb983be4cbff00000000000000000000000000000000@dgroups.org;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=dgroups.org
+Received: from tx06.influent.cc (localhost [127.0.0.1])
+	by tx02.influent.cc (Postfix) with ESMTP id 3015D62DF4
+	for <ouchendans62@gmail.com>; Sat, 27 May 2023 15:30:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dgroups.org;
+	s=default.private; t=1685201401;
+	h=from:from:sender:sender:reply-to:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type; bh=1w02q0qyRCJecJqeACuHSc88n24b1Z9Um8QnxEku958=;
+	b=lmJ+Tycxzh819n7roFkqaDNY/mtDaa+ljcWs6BnptZKFMtmxfdEjg8IwibY67K5x4J1/Fj
+	RsErfSGx978jG3g1zgkpaUFJjj4G0Xj8GkEel2T5LFJqyTNhnnTkUlzLJ6Nv/8E7rOQVFt
+	cm+U7BCbezNpjUU0KCO3zG3On0pIeco=
+Subject: [pmarc] Please confirm your request
+Sender: Leaders-Dalits Media Watch <PMARC-admin@dgroups.org>
+Message-Id: <57ddeb9afca311eda75ddb983be4cbffen1685201400.147077@dgroups.org>
+Date: Sat, 27 May 2023 15:05:00 +0000
+MIME-Version: 1.0
+From: Leaders-Dalits Media Watch <PMARC-admin@dgroups.org>
+To: quia <ouchendans62@gmail.com>
+Reply-To: Leaders-Dalits Media Watch <PMARC-admin@dgroups.org>
+Content-Type: multipart/alternative; boundary="=-A2Y1f9kLwRBZibWABX6LFQ=="
+
+--=-A2Y1f9kLwRBZibWABX6LFQ==
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hello,
+
+
+thank you for your request to join the community 'Dalits Media Watch.'
+
+Please click on the link below to confirm your request:
+
+https://dgroups.org/_/xf3wx9mwwjh8vw1
+
+It will take less than 11 seconds of your time to confirm the request.
+
+Once you confirm the request, community administrators will be notified. You=
+ will receive a membership confirmation email. If you need to contact commun=
+ity administrators, simply reply to this message.
+
+
+
+Have a great day,
+your Dgroups
+
+--=-A2Y1f9kLwRBZibWABX6LFQ==
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<html><head></head>
+
+<body style=3D"font-family: sans-serif;padding:3em;">
+    <!-- cc-remove -->
+    <div style=3D"max-width: 800px; margin: auto;">
+        <p style=3D"margin-bottom: 2em;">Hello,</p>
+
+
+        <p>Thank you for your request to join the community 'Dalits Media Wa=
+tch.'</p>
+
+        <p>Please click on the link below to confirm your request:</p>
+
+        <p><a href=3D"https://dgroups.org/_/xf3wx9mwwjh8vw1">https://dgroups=
+.org/_/xf3wx9mwwjh8vw1</a></p>
+
+        <p>It will take less than 11 seconds of your time to confirm the req=
+uest. Please note if you don't confirm your request within 2 days, your appl=
+ication will expire and you will need to re-apply for membership.</p>
+
+        <p>Once you confirm the request, community administrators will be no=
+tified. You will receive a membership confirmation email. If you need to con=
+tact community administrators, simply reply to this message.</p>
+
+
+
+        <p>Have a great day,<br>
+            Your Dgroups</p>
+
+        <img src=3D"https://dgroups.org/__e/tp/57ddeb9afca311eda75ddb983be4c=
+bff/footer.gif" height=3D"1px" alt=3D"Footer">
+    </div>
+    <!-- /cc-remove -->
+
+</body></html>
+--=-A2Y1f9kLwRBZibWABX6LFQ==--

@@ -1,0 +1,611 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp420532ims;
+        Tue, 30 May 2023 03:58:31 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ4mAJwP9Du3GSo1tUNb8dwBgQsuaNWSugm4f26Q/Pb0+FttDGBR7pnNaqjCqxVF8jM+zMub
+X-Received: by 2002:a05:6830:14d5:b0:6b0:c711:8dd1 with SMTP id t21-20020a05683014d500b006b0c7118dd1mr980041otq.14.1685444311279;
+        Tue, 30 May 2023 03:58:31 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685444311; cv=none;
+        d=google.com; s=arc-20160816;
+        b=OAKsCG4101yBfV4T3WhmaQpLj0DU8ezA+ZM53FUS4Sf2WNZF8PyOs5fIfMebdqfqTU
+         TBoWf4tID4ec5HcyuLBeB4t3CeqvHF0y8JULo/GRoGaerqClQeJDWRLnRtysd8XYLOHS
+         J+YjqSalKz5WwDXyqbsybDJ1FK3WqhIeDx0b24Aioy3bg2mLj/fa+jsQ4YnKyQBGf4Kh
+         QhTHIVfE2HQ3xBeJMqk1f8+Jw9X6ACeYO4lYfJJyvbR/sT5jEG/fTDTqJixfdPbAiMgx
+         TeJpWmxQPogJGud5UKNyXkhaMKg9vRCkQpeTJ45dNlyl8c7VKLMrl9YJREZFdAOIDULU
+         a0Sg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:list-id:reply-to:mime-version
+         :list-unsubscribe-post:list-unsubscribe:date:subject:to:from
+         :dkim-signature;
+        bh=cNSHO7xIJnJGhHslU7t9rvJyHs5oKEdgDJshHZVliv0=;
+        b=qF0/nPnV77iuXLO9Gd3rZhwAUpmMwq6PwOxuhMjNc4jjtkAKFDroQckweaBR2M9VXG
+         km3PpcAx383Aks8+2YFG2ed4TN2oeV+kRagQZHqF4zlbw4JCE29fgpkT5nb9sGfGonI1
+         6iwEoPk4i+4Lg+uG3QkUbme/+nrg/XzDx2e1h6GK7vrBxd8UbNM7BmxnssAvEPawAwG5
+         IKNL3E1rX8SGXTCyVNU2/9sghJiJClM9DdvQ4iTfIpOy5C6DSd9RMcDCgxAMvXJLGYki
+         GJWdWjsSwzNcu3vf5Sav887XP0mf90kdHUi1K5qE2bzE9zFLjw72GDGDDL3WklaoHw2e
+         Qk+A==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.politico.com header.s=200608 header.b="Ll+OGm/i";
+       spf=pass (google.com: domain of bounce-630315_html-1405096349-9801367-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) smtp.mailfrom=bounce-630315_HTML-1405096349-9801367-1376319-0@bounce.politicoemail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.politico.com
+Return-Path: <bounce-630315_HTML-1405096349-9801367-1376319-0@bounce.politicoemail.com>
+Received: from mta.politicoemail.com (mta.politicoemail.com. [68.232.198.10])
+        by mx.google.com with ESMTPS id bm8-20020a056830374800b006b0ec49c2a8si2310532otb.168.2023.05.30.03.58.30
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 30 May 2023 03:58:31 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-630315_html-1405096349-9801367-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) client-ip=68.232.198.10;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.politico.com header.s=200608 header.b="Ll+OGm/i";
+       spf=pass (google.com: domain of bounce-630315_html-1405096349-9801367-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) smtp.mailfrom=bounce-630315_HTML-1405096349-9801367-1376319-0@bounce.politicoemail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.politico.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=200608; d=email.politico.com;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Reply-To:List-ID:X-CSA-Complaints:Message-ID:Content-Type;
+ i=newjerseyplaybook@email.politico.com;
+ bh=cNSHO7xIJnJGhHslU7t9rvJyHs5oKEdgDJshHZVliv0=;
+ b=Ll+OGm/ifaPyITwssTpvue9DEo/KSKMISHUW12fr0Pi5glfoWgN5JUzHG3RJebTCJXalkWJjpUF6
+   4xaqGpo4nM3OFnpWnspz2vzmH+OwFTKrwLVQHJlh4UrhWgded5pokcwvLpvxdIE3iFbHTwYQ0dPi
+   7usNMRIVvt18on/dkoc=
+Received: by mta.politicoemail.com id henbde2fmd4i for <ouchendans62@gmail.com>; Tue, 30 May 2023 10:57:14 +0000 (envelope-from <bounce-630315_HTML-1405096349-9801367-1376319-0@bounce.politicoemail.com>)
+From: "POLITICO New Jersey Playbook" <newjerseyplaybook@email.politico.com>
+To: <ouchendans62@gmail.com>
+Subject: How should state government use AI?
+Date: Tue, 30 May 2023 04:57:13 -0600
+List-Unsubscribe: <https://click.politicoemail.com/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiIxMzc2MzE5IiwicyI6IjE0MDUwOTYzNDkiLCJsaWQiOiI2MzAzMTUiLCJqIjoiOTgwMTM2NyIsImpiIjoiMCIsImQiOiI0MDEyNiJ9.ZJQMPYioZ0phZ-Rk7jNi4VLaWMzEpoF_x1wqScfd_mk>, <mailto:leave-fcb91273756705781a4c342838-fdf61574756104747317747c-fe8d1d787565077b72-fe9115737262077c7c-ffcf14@leave.politicoemail.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+Reply-To: "POLITICO, LLC" <reply-fe8d1d787565077b72-630315_HTML-1405096349-1376319-0@politicoemail.com>
+List-ID: <1376319.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+X-SFMC-Stack: 4
+x-job: 1376319_9801367
+Message-ID: <ccf063ac-079f-4404-8303-9ef30744faaf@las1s04mta1096.xt.local>
+Feedback-ID: 1376319:9801367:68.232.198.10:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="Y1r1jKdhxkQx=_?:"
+
+This is a multi-part message in MIME format.
+
+--Y1r1jKdhxkQx=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Presented by Taft Communications: Matt Friedman's must-read briefing on the Garden State's important news of the day May 30, 2023 View in browser  
+By Daniel Han
+
+Presented by Taft Communications
+
+Good Tuesday morning!
+
+Artificial intelligence can write political op-eds and make Gov. Phil Murphy diss tracks. But how should it be used by the state government?
+
+A bill introduced last week by state Sen. Troy Singleton (D-Burlington) caught my eye. It would create an Artificial Intelligence Officer — who would be a subject matter expert on the issue — tasked with regulating the use of artificial intelligence and automated systems in state government. The bill doesn’t directly create rules around artificial intelligence use in state government, but deputizes the new officer to do so. A newly created Artificial Intelligence Advisory Board would advise state agencies on artificial intelligence use and provide feedback on the officer’s proposed regulations.
+
+“I don't think it's in our best interest for me as a state legislator to try to overprescribe what that public policy [around artificial intelligence] looks like,” Singleton said in an interview. “We should set up a mechanism to allow individuals with deep experience in this area to utilize that experience to frame out what that public policy should look like.”
+
+Artificial intelligence is already used in state government to various extents. Groups like the ACLU of New Jersey have warned about algorithmic bias in Medicaid and law enforcement tools. Recent advancements in artificial intelligence (ahem, ChatGPT) have policymakers at the federal level trying to figure out how to regulate it as well.
+
+Should we expect this proposal to get expedited in the fast-paced environment of budget season? Maybe not.
+
+“I think there's time for us to have a deeper discussion around it,” Singleton said. “This is not one issue that should be rushed, to be honest with you.”
+
+TIPS? FEEDBACK? Email me at Dhan@politico.com
+
+HAPPY BIRTHDAY — Former BPU President Jeanne Fox, Rutgers Eagleton Institute’s Sue Nemeth. (Miss yesterday: Somerset County Sheriff Darrin Russo.)
+
+WHERE’S MURPHY? — No public schedule.
+
+     
+A message from Taft Communications:
+
+At Atlantic Shores, we’re more than a renewable energy company. We’re a team of purpose-driven professionals who are committed to providing a cleaner and healthier future for generations to come. Our organization is guided by four core values that our team lives and breathes each day: to be safe, a good neighbor, a good steward of the environment and to lead with science. Learn more.
+     WHAT TRENTON MADE
+
+
+ — “Poll finds NJ residents sharply divided on corporate taxes, aid to school districts,” by Gothamist’s Louis Hochman: “New Jerseyans are sharply divided on whether corporations should keep paying a tax surcharge that’s been in effect since 2018, and whether the state fairly doles out money to school districts, the Rutgers-Eagleton Institute of Politics finds in a new poll. Both are key issues in Gov. Phil Murphy’s proposed budget for the coming fiscal year. But more than half of respondents, or 53%, said they hadn’t heard anything at all about the budget. Another 23% said they’d heard very little.”
+
+R.I.P. — “History making Monmouth County judge Lisa Thornton dead at 59. First Black woman assignment judge,” by The Asbury Park Press’ Olivia Liu: “Monmouth County Superior Court Judge Lisa Thornton has died at 59. The county government announced her passing Saturday. The history making judge was the first Black woman who became an assignment judge in the state’s modern court system. … She worked as a special deputy commissioner in the state Department of Banking and Insurance before becoming a senior associate counsel in Gov. Corzine’s office and the chief of staff in the state’s Office of the Attorney General.”
+
+— “Five ways of looking at the LD26 GOP primary,” by New Jersey Globe’s Joey Fox: “At first glance, New Jersey’s 26th legislative district, a staunchly Republican district based in Morris County, is not the most obvious place for a highly competitive GOP primary. … [But] by all accounts, the race is close. Both slates are campaigning hard. Even though they’ve been outspent, the challengers are still putting some serious money into the race. Internal polling shows a toss-up.”
+
+BANNING BOOK BANS — State Sens. Andrew Zwicker (D-Middlesex) and Teresa Ruiz (D-Essex) went on CNN to talk about their push to essentially ban book bans in New Jersey. Under legislation proposed by the two lawmakers, libraries that ban books would see state funding cuts.
+
+     
+A message from Taft Communications:
+
+
+    
+— NJ Spotlight News: “NJ takes another step in work-from-home tax fight”
+
+— The Asbury Park Press: “Murphy wants $100M in pandemic aid spent on Jersey Shore boardwalks. Who gets first dibs?”
+
+— NJ Spotlight News: “Lawmakers back higher Medicaid rate for adult day care”
+
+— NJ Advance Media: “This N.J. truck driver was a GOP sensation 2 years ago. Now his ex-running mate wants to unseat him.”
+
+— Cartoon break: “Won’t somebody think of the corporations!?”
+
+— Moran: “Murphy’s temper tantrum, and the makings of a budget deal”
+
+  
+DON’T MISS POLITICO’S HEALTH CARE SUMMIT: The Covid-19 pandemic helped spur innovation in health care, from the wide adoption of telemedicine, health apps and online pharmacies to mRNA vaccines. But what will the next health care innovations look like? Join POLITICO on Wednesday June 7 for our Health Care Summit to explore how tech and innovation are transforming care and the challenges ahead for access and delivery in the United States. REGISTER NOW.
+     Biden Time
+
+
+ DOJ: HALAL BUSINESS DOES NOT APPEAR KOSHER — “Did Sen. Robert Menendez and Wife Get Car, DC Apartment, Other ‘Gifts' From NJ Business?” by NBC 4 New York’s Jonathan Dienst, Courtney Copenhagen and Tom Winter: “The Department of Justice is investigating whether expensive gifts were allegedly given to New Jersey Sen. Robert Menendez and his wife, including a Mercedes-Benz, a luxury D.C. apartment, money and jewelry, sources familiar with the matter said. According to sources, investigators want to know if the gifts — which would be valued in the tens of thousands of dollars — came from the owner or associates of an Edgewater business that won a controversial exclusive contract to perform
+ Halal meat certification with the Egyptian government — even though United States Department of Agriculture officials complained that the New Jersey firm had no previous experience in this field.”
+
+— The Record: “NJ Jewish leaders welcome Biden's new antisemitism strategy. But some want more action”
+
+— NJ Advance Media: “An old, small bridge that’s a big problem for N.J. town got $800K toward its replacement”
+
+— Guadagno: “I run a food pantry. Congress cannot limit SNAP benefits”
+
+     
+A message from Taft Communications:
+
+At Atlantic Shores Offshore Wind, we’re more than a renewable energy company. We’re a team of purpose-driven professionals committed to providing a cleaner and healthier future for generations to come.
+
+
+ We’re guided by four core values that our team lives and breathes each day:
+
+
+ · Be safe — If we can’t do our jobs safely, we can’t do them well. We prioritize the safety of our teams on the job, as well as the safety of our communities.
+
+ · Be a good neighbor — We interact and engage with the communities we serve to understand their point of view and bring their perspectives to the work we do.
+
+ · Be a good steward of the environment — We make sure our energy solutions are in harmony with the environment and nature around us.
+
+ · Lead with science — Data speaks the truth. Using science to inform our decisions makes us more environmentally and socially responsible.
+
+
+ Learn more.
+     LOCAL
+PATERSON — “Schools are at 'a crisis point.' Can NJ weed tax, federal money save Paterson students?” by The Record’s Ashley Balcerzak: “Children learn in temporary trailers because schools are short on classroom space. Teachers say they suffer stronger asthma symptoms when inside their school buildings. Waste water drips down into a teacher’s closet through a black-stained ceiling. Children hold performances, eat their lunch and take gym class in the same room — a space ill-suited for any of those roles. Those are just a few of the myriad problems that plague Paterson students and teachers in a district where 17 active school buildings are more than a century old, and more than 1,700
+ students lack adequate classroom space. … Advocates say the only way to seriously tackle the problem is to establish a yearly dedicated funding stream, whether through untapped state sources or from the federal government — which has not provided much school infrastructure funding in the past. … New Jersey has some distinctive sources of funding that could potentially be earmarked for school projects. “We do have this new economic frontier in legalized cannabis. … Is that generating enough?” said [Senate Majority Leader Teresa Ruiz]. “Should we consider earmarking that funding for facilities? There has to be a long-term discussion about some type of recurring revenue, not that cannabis
+ taxes will be the sole funder, but maybe coupled with some creative financing, some public-private partnerships, and some bonding,’ Ruiz said. ‘Perhaps the answer falls somewhere in that space.’”
+
+REMATCH WITH SCHUNDLER? — “Stack, others want McGreevey to run for Jersey City mayor” by The New Jersey Globe’s David Wildstein: “Several friends and supporters of former Gov. James E. McGreevey, including Brian P. Stack, are urging him to run for mayor of Jersey City in 2025, creating a possible opportunity for the indomitable campaigner to resurrect a political career that ended nearly nineteen years ago with his resignation as governor, the New Jersey Globe has confirmed.”
+
+— “Roselle mayor wants judge to freeze campaign account of primary foe until he files ELEC reports,” by The New Jersey Globe’s David Wildstein: “Roselle Mayor Donald Shaw wants a Superior Court judge to freeze the campaign account of his Democratic primary opponent, Jamel Holley, for not filing campaign finance reports detailing his donors or expenditures with the Election Law Enforcement Commission. And Shaw wants a judge to stop shadowy perennial candidate Lisa McCormick or her controversial life partner, James Devine, as well as their 'alter ego,' CMD Media, from participating in the campaign until the courts can determine how Holley’s off-the-line mayoral bid is being funded and who is
+ being paid.”
+
+— The Hudson County View: “Scutari and Stack team up to bolster Union County Dems ahead of primary races”
+
+— The Asbury Park Press: “Ocean County could see first legal marijuana dispensary”
+
+— MyCentralJersey.com: “'Deceived and betrayed': Flemington councilman facing drug charges ignores calls to resign”
+
+— NJ Spotlight News: “Legal battle over beach replenishment in North Wildwood”
+
+— The Star-Ledger Editorial Board: “Liberty State Park: The good guys finally won”
+
+  
+GET READY FOR GLOBAL TECH DAY: Join POLITICO Live as we launch our first Global Tech Day alongside London Tech Week on Thursday, June 15. Register now for continuing updates and to be a part of this momentous and program-packed day! From the blockchain, to AI, and autonomous vehicles, technology is changing how power is exercised around the world, so who will write the rules? REGISTER HERE.
+     EVERYTHING ELSE
+
+
+ KIDS THESE DAYS — “More businesses require teens to be chaperoned by adults, curbing their independence,” by The Associated Press’ Anna D’Innocenzio:  “Starting April 18, Garden State Plaza in Paramus, New Jersey — the second largest mall in the state — is requiring anyone under 18 years old to be accompanied by a chaperone at least 21 or older on Fridays and Saturdays after 5 p.m. The move, according to the mall, follows ‘an increase in disruptive behavior by a small minority of younger visitors.’ That included a reported brawl in the food court last year and a fight in March that brought swarms of policemen to the center but ended up being a smaller altercation than initially reported. …
+ Experts say Garden State Plaza joins a growing number of shopping centers, amusement parks and even a few restaurants that have implemented similar policies in the last few months ahead of the summer season. And they all cite increased incidents of bad behavior among teens as the reason, some of it inspired by social media like TikTok.”
+
+— Bloomberg: “The Jersey Shore — Yes, That Jersey Shore — Is Now a Luxury Destination”
+
+— The New York Times: “Taylor Swift’s Eras Tour Touches Down in New Jersey”
+
+— R.I.P: “Tom Osler, celebrated Rowan math professor, national champion distance runner, author, and mentor, has died at 82”
+
+— NJ Spotlight News: “NJ sees rise in antibiotic-resistant infections”
+
+  
+Follow us on Twitter
+
+Matt Friedman @mattfriedmannj
+  
+Subscribe to the POLITICO Playbook family
+
+Playbook  |  Playbook PM  |  California Playbook  |  Florida Playbook  |  Illinois Playbook  |  Massachusetts Playbook  |  New Jersey Playbook  |  New York Playbook  |  Ottawa Playbook  |  Brussels Playbook  |  London Playbook
+
+View all our political and policy newsletters
+
+Follow us
+  
+To change your alert settings, please log in at https://go.politicoemail.com/?qs=c46a687df5540219bd75c8daf58265d8fd59b8546f2e8178d674a6dbc4266057dd44434c740b9d16d29a07ced11d1d1f735b1ae48028c6a4  https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a201df3a7484f2e5fea750cc48957ac4e726e17add78faa71da710034b59694546a040b439081713fac00251c048c388c0
+
+This email was sent to ouchendans62@gmail.com by: POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+
+ Please click here and follow the steps to unsubscribe.
+  
+
+--Y1r1jKdhxkQx=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<html><body><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml><![endif]-->
+</head><!-- Everything above this line is "new" to the template. We'll have to experiment a bit to see if it causes troubles. --><!-- preview text --><div style="display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">    Presented by Taft Communications: Matt Friedman's must-read briefing on the Garden State's important news of the day</div><table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" style="padding:5px 0 15px 0;margin:0;text-align:center" role="presentation">    <tbody>    <tr>        <td><!-- Note: This is left blank to aid in centering across email clients --></td>        
+<td align="center" width="540">            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:540px;table-layout:fixed;" role="presentation">                <tbody>                <!-- top date and utility link -->                <tr>    <td align="center">        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="padding-bottom:15px;" role="presentation">            <tbody>            <tr>                <td width="50%" style="text-align:left;font-size:11px;font-family:Helvetica,sans-serif;color:#B1B4BD;margin:0;">May 30, 2023</td>                
+<td width="50%" style="text-align:right;font-size:11px;font-family:Helvetica,sans-serif;color:#B1B4BD;margin:0;"><a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219b32b2ad065b8691f8e03108a0b25e09547e8f7a2144e614358a6bf1da7eece6b028fe47290c94a9b501cdb1b1dd80464" target="_blank" style="color:#007BC7;text-decoration:none;">View in browser</a
+></td>            </tr>            </tbody>        </table>    </td></tr>                <!-- divider line -->                <tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                <!-- logo and byline -->                <tr>    <td align="center" style="text-align:center;padding:0 20px 15px 20px;margin:0">                                    <img src="https://static.politico.com/81/32/ee4200e846e1b129e56190acb73a/politico-nj-playbook.jpg" title="New Jersey Playbook" alt="New Jersey Playbook" border="0" width="500" style="width:100%;max-width:500px;">                        </td></tr><tr>    
+<td align="center" style="padding:0 20px 10px 20px;">        <p style="text-align:center;font-family:Helvetica,sans-serif;font-size:11px;letter-spacing:2px;color:#B1B4BD;text-transform:uppercase;margin:0;">            By  <a
+ href="mailto:" target="_blank" style="color:#000000;text-decoration:none;font-weight:bold;">Daniel Han</a
+>        </p>    </td></tr>                <!-- sponsor logo -->                            <tr>            <td style="padding-bottom:15px;" align="center"><p style="font-family:Helvetica,sans-serif;font-size:12px;color:#6E7381;margin:0;padding-right:10px;">Presented by Taft Communications</p></td>        </tr>                    <!-- body -->                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Good Tuesday morning!</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Artificial intelligence </strong
+>can write <a
+ href="https://go.politicoemail.com/?qs=c46a687df55402196505c2b7e15153633c20f33fc39ea1b19e6402c4d7a46567fcdc6a61b4ca3b046ff1d7f2fc6583cabfd9ebf9c72d9b12" target="_blank"><u>political op-eds</u></a
+> and make Gov. Phil Murphy <a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219d471e9ab51951a97d476fd1f09cefae147c93400cde7d354c3520211cf7c743d613f2e785b0ef0f5b3420e128860271b" target="_blank"><u>diss tracks</u></a
+>. But how should it be used by the state government?</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">A </strong
+><a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219d34376161ee024d09723063382a9f125de7245bfe33644be2c8d0a6da4da4804571e5cc44ea22f71dc853e2d414dc4c3" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>bill introduced last week</u></strong
+><u> by state Sen. Troy Singleton (D-Burlington)</u></a
+> caught my eye. It would create an Artificial Intelligence Officer &#8212; who would be a subject matter expert on the issue &#8212; tasked with regulating the use of artificial intelligence and automated systems in state government. The bill doesn&#8217;t directly create rules around artificial intelligence use in state government, but deputizes the new officer to do so. A newly created Artificial Intelligence Advisory Board would advise state agencies on artificial intelligence use and provide feedback on the officer&#8217;s proposed regulations.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;I don't think</strong
+> it's in our best interest for me as a state legislator to try to overprescribe what that public policy [around artificial intelligence] looks like,&#8221; Singleton said in an interview. &#8220;We should set up a mechanism to allow individuals with deep experience in this area to utilize that experience to frame out what that public policy should look like.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Artificial intelligence</strong
+> is already used in state government to various extents. Groups like the <a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219a4c285c6961ca9983bdefadd50431fc3a5287943d28150ef015e06d7fc11ea73d548e999cd5ceb800f4c499f64bd30ce" target="_blank"><u>ACLU of New Jersey</u></a
+> have warned about algorithmic bias in Medicaid and law enforcement tools. Recent advancements in artificial intelligence (ahem, ChatGPT) have <a
+ href="https://go.politicoemail.com/?qs=c46a687df554021954009cee19c6deb4540b4860810221453b639eba66724b4e91cdaff2131832b743ea2682f6a1fc00bc267c8181aee1d7" target="_blank"><u>policymakers at the federal level</u></a
+> trying to figure out how to regulate it as well.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Should we expect</strong
+> this proposal to get expedited in the fast-paced environment of budget season? Maybe not.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;I think</strong
+> there's time for us to have a deeper discussion around it,&#8221; Singleton said. &#8220;This is not one issue that should be rushed, to be honest with you.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">TIPS? FEEDBACK? </strong
+>Email me at Dhan@politico.com</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">HAPPY BIRTHDAY &#8212; </strong
+>Former BPU President<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> Jeanne Fox, </strong
+>Rutgers Eagleton Institute&#8217;s<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> Sue Nemeth. (Miss yesterday: </strong
+>Somerset County Sheriff<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> Darrin Russo.)</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">WHERE&#8217;S MURPHY? &#8212; </strong
+>No public schedule.<br></p></td>                    </tr>                                    <tr>                            </tr><tr>    <td height="15" style="height:15px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>    <tr>    <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#ffffff;">                                            <p style="font-family:Helvetica,sans-serif;font-size:12px;margin-top:0;margin-bottom:10px;color:#000000;">A message from Taft Communications:</p>                                                <p style="margin-top:0;margin-bottom:20px;line-height:24px;color:#000000;">At <a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219e518bbe37e0ce14abdc8fc1ff2f655e86890906ea870587c22d67027cd588d84e2fe7f223a5ac78667534ff0e98efac0" target="_blank" style="text-decoration:underline;color:#007bc7;">Atlantic Shores</a
+>, we&#8217;re more than a renewable energy company. We&#8217;re a team of purpose-driven professionals who are committed to providing a cleaner and healthier future for generations to come. Our organization is guided by four core values that our team lives and breathes each day: to be safe, a good neighbor, a good steward of the environment and to lead with science. <a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219f00f85b1fe0a43d3a2338a69ef238f63121db8ce37bca51763223df8b4c06d03e84de209f5a71b48e1121d7670623e74" target="_blank" style="text-decoration:underline;color:#007bc7;">Learn more.</a
+></p>                                            </td></tr>    <tr>        <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;">    <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">        <tbody>        <tr>            
+<td width="32" valign="middle" style="vertical-align:top;font-size:0;text-align:right;padding-top:10px;"><img src="https://s3.amazonaws.com/origin-static.politico.com/hosted/icon-red-circle%402x.png" title="" alt="" width="12" style="max-width:12px;margin-top:1px;"></td>            <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:10px;margin:0;" valign="middle">WHAT TRENTON MADE</td>        </tr>        </tbody>    </table></td>                    </tr>                                    <tr>                        
+<td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><br><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=c46a687df554021958118a3aaa6680fab0c6e9c9cb61ae1f9fa42e01a179b97513a67e8f19df23976989320aefa45779b6a6b04cbcc6ccfc" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>Poll finds NJ residents sharply divided on corporate taxes, aid to school districts</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by Gothamist&#8217;s Louis Hochman: </strong
+>&#8220;New Jerseyans are sharply divided on whether corporations should keep paying a tax surcharge that&#8217;s been in effect since 2018, and whether the state fairly doles out money to school districts, the Rutgers-Eagleton Institute of Politics finds in a new poll. Both are key issues in Gov. Phil Murphy&#8217;s proposed budget for the coming fiscal year. But more than half of respondents, or 53%, said they hadn&#8217;t heard anything at all about the budget. Another 23% said they&#8217;d heard very little.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">R.I.P. &#8212; </strong
+>&#8220;<a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219a3535603eaea706d49f9026f7dc7be5377b07d30899daff9378175a4d715547e4dc86407a23070a7aa516708f0027b4d" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>History making Monmouth County judge Lisa Thornton dead at 59. First Black woman assignment judge</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by The Asbury Park Press&#8217; Olivia Liu</strong
+>: &#8220;Monmouth County Superior Court Judge Lisa Thornton has died at 59. The county government announced her passing Saturday. The history making judge was the first Black woman who became an assignment judge in the state&#8217;s modern court system. &#8230; She worked as a special deputy commissioner in the state Department of Banking and Insurance before becoming a senior associate counsel in Gov. Corzine&#8217;s office and the chief of staff in the state&#8217;s Office of the Attorney General.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; </strong
+>&#8220;<a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219ffa5a903a2572b99a3fb062a91610be0284fc62d780217e9dfca0ce3169ab0cac8634549dcab254951d97a9d134f21c1" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>Five ways of looking at the LD26 GOP primary</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by New Jersey Globe&#8217;s Joey Fox: </strong
+>&#8220;At first glance, New Jersey&#8217;s 26th legislative district, a staunchly Republican district based in Morris County, is not the most obvious place for a highly competitive GOP primary. &#8230; [But] by all accounts, the race is close. Both slates are campaigning hard. Even though they&#8217;ve been outspent, the challengers are still putting some serious money into the race. Internal polling shows a toss-up.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">BANNING BOOK BANS &#8212; </strong
+>State Sens. Andrew Zwicker (D-Middlesex) and Teresa Ruiz (D-Essex) <a
+ href="https://go.politicoemail.com/?qs=c46a687df554021910eef031fa143dc6c6c59adb786fdb974196d6972ec5b013f177c368523e2ae8aaf1a9c991cb17b9183f9d0a57fd8b3e" target="_blank"><u>went on CNN to talk about their push to essentially ban book bans</u></a
+> in New Jersey. Under legislation proposed by the two lawmakers, libraries that ban books would see <a
+ href="https://go.politicoemail.com/?qs=c46a687df554021912eb11a0e8c0237c8b0765499da986a174d0127a566186cce8c28d6333687beeb74159f46ce0c2f6074ae8606ced8c44" target="_blank"><u>state funding cuts</u></a
+>.<br></p></td>                    </tr>                                    <tr>                            </tr><tr>    <td height="15" style="height:15px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>    <tr>    <td style="padding:0 20px 0 20px;text-align:center;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#ffffff;">                                            <p style="font-family:Helvetica,sans-serif;font-size:12px;margin-top:0;margin-bottom:10px;color:#000000;">A message from Taft Communications:</p>                                                        <p style="margin-top:0;margin-bottom:15px;line-height:15px;">                                            <a
+ href="https://go.politicoemail.com/?qs=c46a687df55402195987126b2c25576459bce82c11241afbadd39bc3efb40399fcef2991290e0e80018e72992da80cfb6166815f45878fa2" target="_blank"><img src="https://www.politico.com/dims4/default/333f398/2147483647/resize/1000x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2F70%2F8f%2F52005ac04db885fd21361abb9534%2Fasow-ad1v2-3-500x500-2.gif" title="Advertisement Image" alt="Advertisement Image" border="0" width="500" style="width:100%;max-width:500px;"></a
+>                                        <img src="https://ad.doubleclick.net/ddm/ad/N7384.146504POLITICO0/B29942395.367929388;sz=1x1;ord=[timestamp]" border="0" a>                </p>                                                                                    </td></tr>    <tr>        <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; NJ Spotlight News: &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=c46a687df55402192be832d0be38156673fff82c4cdaa01f652534217b24b12252935cf018e08723b6dda0d36b6ec0d0518be9d12c1891ce" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>NJ takes another step in work-from-home tax fight</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8221;</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; The Asbury Park Press: &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=c46a687df554021954b0df815626ec8cbff6363d0b63cacdaed8f774748d8f1a6ecc094f745ac2e0916e2f3a39de762b3b98153ab964106c" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>Murphy wants $100M in pandemic aid spent on Jersey Shore boardwalks. Who gets first dibs?</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8221;</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; NJ Spotlight News: &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=c46a687df55402191bdd56313bfe3778d5a8e68c32f26d074ea6ca873bc9d3f8f90fd368d96b3f4666a97230a6d9c6ecf82b1c3ff4572245" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>Lawmakers back higher Medicaid rate for adult day care</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8221;</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; NJ Advance Media: &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219560ae8371cd78379ca5e94e0170145b1c575aaf90d9c5ba81e16071cb8bea340ad3437b644cde3badb0ebdd6b0c4eb2b" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>This N.J. truck driver was a GOP sensation 2 years ago. Now his ex-running mate wants to unseat him.</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8221;</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; Cartoon break: &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=c46a687df554021952f018f941a4d25d7ae31d264186801b81e6c018c31bf17a6e094d9a425a1d0721310c0e1e141628077e53c20da73004" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>Won&#8217;t somebody think of the corporations!?</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8221;</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; Moran: &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=c46a687df55402196826f445df1fb5fc9cd2df6e145cf5bb8c8ff38a50a8aa7afc41024d1d54ca9c191e5fc10dbfbc177d9475157395be69" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>Murphy&#8217;s temper tantrum, and the makings of a budget deal</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8221;</strong
+><br></p></td>                    </tr>                                    <tr>                        </tr><tr>    <td height="10" style="height:10px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                    <p style="margin-top:0;margin-bottom:20px;line-height:24px;margin-bottom:20px;color:#000000;">                <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DON&#8217;T MISS POLITICO&#8217;S HEALTH CARE SUMMIT</strong
+>: The Covid-19 pandemic helped spur innovation in health care, from the wide adoption of telemedicine, health apps and online pharmacies to mRNA vaccines. But what will the next health care innovations look like? Join POLITICO on Wednesday June 7 for our Health Care Summit to explore how tech and innovation are transforming care and the challenges ahead for access and delivery in the United States. <a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219db51db75167f7977aca7b8e7f16973f645d7df3a193c7f7a05171b7a2d2e60278ac2a4a5efb1a60b9c17560e711ae2f6" style="text-decoration:underline;color:#007BC7;">REGISTER NOW</a
+>.            </p>            </td></tr><tr>    <td height="10" style="height:10px; font-size:0; border-bottom:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td height="15" style="height:15px; font-size:0;">&nbsp;</td></tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;">    
+<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">        <tbody>        <tr>            <td width="32" valign="middle" style="vertical-align:top;font-size:0;text-align:right;padding-top:10px;"><img src="https://s3.amazonaws.com/origin-static.politico.com/hosted/icon-red-circle%402x.png" title="" alt="" width="12" style="max-width:12px;margin-top:1px;"></td>            <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:10px;margin:0;" valign="middle">Biden Time
+</td>        </tr>        </tbody>    </table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><br><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DOJ: HALAL BUSINESS DOES NOT APPEAR KOSHER &#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=c46a687df55402193498be2bfc06930236e984ffd4552f8a89ab5f1fdd3e9281fe060ae223b6a702ff474f11c6cfa3602bcae1b5b79c0a9a" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>Did Sen. Robert Menendez and Wife Get Car, DC Apartment, Other &#8216;Gifts' From NJ Business?</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8221; by NBC 4 New York&#8217;s Jonathan Dienst</strong
+>, <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Courtney Copenhagen</strong
+> and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Tom Winter</strong
+>: &#8220;The Department of Justice is investigating whether expensive gifts were allegedly given to New Jersey Sen. Robert Menendez and his wife, including a Mercedes-Benz, a luxury D.C. apartment, money and jewelry, sources familiar with the matter said. According to sources, investigators want to know if the gifts &#8212; which would be valued in the tens of thousands of dollars &#8212; came from the owner or associates of an Edgewater business that won a controversial exclusive contract to perform Halal meat certification with the Egyptian government &#8212; even though United States Department of Agriculture officials complained that the New Jersey firm had no previous experience in
+ this field.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; The Record: &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219a830a72d7ee09b44bfc752fee64be639a5d7dbe0963bd97f9166b2595015abfbfe025fa327a7a2c4d9435c2d653a27d6" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>NJ Jewish leaders welcome Biden's new antisemitism strategy. But some want more action</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8221;</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; NJ Advance Media: &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=c46a687df55402198d1771d4a0f817cac0fdcf7326b804a7b4f525457f3e8ff7bf98dd187c33bc598bb03a99e5cb3ee3359a7fc82dd7fb9e" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>An old, small bridge that&#8217;s a big problem for N.J. town got $800K toward its replacement</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8221;</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; Guadagno: &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=c46a687df554021972e2c05d34815372b869d88f2b53179580bf08f81ae8a8313580153dd891874b6ca831bb122308df0d6c5bd8b82e8366" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>I run a food pantry. Congress cannot limit SNAP benefits</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8221;</strong
+><br></p></td>                    </tr>                                    <tr>                            </tr><tr>    <td height="15" style="height:15px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>    <tr>    <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#ffffff;">                                            <p style="font-family:Helvetica,sans-serif;font-size:12px;margin-top:0;margin-bottom:10px;color:#000000;">A message from Taft Communications:</p>                                                <p style="margin-top:0;margin-bottom:20px;line-height:24px;color:#000000;">At <a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219dc65d6b881b948d3a0c92fa3b94779080228ff4bfd3e0bc55a3e4fcdd1f24d3805fc9b7f09f9c3886460e2bcc70c3e61" target="_blank" style="text-decoration:underline;color:#007bc7;">Atlantic Shores Offshore Wind</a
+>, we&#8217;re more than a renewable energy company. We&#8217;re a team of purpose-driven professionals committed to providing a cleaner and healthier future for generations to come.<br><br>We&#8217;re guided by four core values that our team lives and breathes each day:<br><br>&#183; Be safe &#8212; If we can&#8217;t do our jobs safely, we can&#8217;t do them well. We prioritize the safety of our teams on the job, as well as the safety of our communities.<br>&#183; Be a good neighbor &#8212; We interact and engage with the communities we serve to understand their point of view and bring their perspectives to the work we do.
+<br>&#183; Be a good steward of the environment &#8212; We make sure our energy solutions are in harmony with the environment and nature around us.<br>&#183; Lead with science &#8212; Data speaks the truth. Using science to inform our decisions makes us more environmentally and socially responsible.<br><br><a
+ href="https://go.politicoemail.com/?qs=c46a687df55402193fbdac4d73a8dea6007bd93cb415ebb44db20b0ea248ebc5f731d06a0c5351372377dfe74faf7cb139958d49e05cf325" target="_blank" style="text-decoration:underline;color:#007bc7;">Learn more.</a
+></p>                                            </td></tr>    <tr>        <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;">    <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">        <tbody>        <tr>            
+<td width="32" valign="middle" style="vertical-align:top;font-size:0;text-align:right;padding-top:10px;"><img src="https://s3.amazonaws.com/origin-static.politico.com/hosted/icon-red-circle%402x.png" title="" alt="" width="12" style="max-width:12px;margin-top:1px;"></td>            <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:10px;margin:0;" valign="middle">LOCAL</td>        </tr>        </tbody>    </table></td>                    </tr>                                    <tr>                        
+<td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">PATERSON &#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219c6a79e2fbfd62355d36ace8ee9deae3863f1c469ecfcd4f701b5efcb075ed63c85d96a6d76b94f33803ceeade9b1eeef" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>Schools are at 'a crisis point.' Can NJ weed tax, federal money save Paterson students?</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8221; by The Record&#8217;s Ashley Balcerzak: </strong
+>&#8220;Children learn in temporary trailers because schools are short on classroom space. Teachers say they suffer stronger asthma symptoms when inside their school buildings. Waste water drips down into a teacher&#8217;s closet through a black-stained ceiling. Children hold performances, eat their lunch and take gym class in the same room &#8212; a space ill-suited for any of those roles. Those are just a few of the myriad problems that plague Paterson students and teachers in a district where 17 active school buildings are more than a century old, and more than 1,700 students lack adequate classroom space. &#8230; Advocates say the only way to seriously tackle the problem is to establish
+ a yearly dedicated funding stream, whether through untapped state sources or from the federal government &#8212; which has not provided much school infrastructure funding in the past. &#8230; New Jersey has some distinctive sources of funding that could potentially be earmarked for school projects. &#8220;We do have this new economic frontier in legalized cannabis. &#8230; Is that generating enough?&#8221; said [Senate Majority Leader Teresa Ruiz]. &#8220;Should we consider earmarking that funding for facilities? There has to be a long-term discussion about some type of recurring revenue, not that cannabis taxes will be the sole funder, but maybe coupled with some creative financing, some
+ public-private partnerships, and some bonding,&#8217; Ruiz said. &#8216;Perhaps the answer falls somewhere in that space.&#8217;&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">REMATCH WITH SCHUNDLER? &#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219dc530e6a4b67253e2c3b095c26988797ea49f3945bac17bac47e9c3145991298a33263591c41dd22cca6bf7e53fd1335" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>Stack, others want McGreevey to run for Jersey City mayor</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8221; by The New Jersey Globe&#8217;s David Wildstein: </strong
+>&#8220;Several friends and supporters of former Gov. James E. McGreevey, including Brian P. Stack, are urging him to run for mayor of Jersey City in 2025, creating a possible opportunity for the indomitable campaigner to resurrect a political career that ended nearly nineteen years ago with his resignation as governor, the New Jersey Globe has confirmed.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219371a5011fe6263a03c61114137f98482b556e26bc9e08dcd646e39ccfdbe9261f7507e44e925c97f86e2ac1ca52e020f" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>Roselle mayor wants judge to freeze campaign account of primary foe until he files ELEC reports</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by The New Jersey Globe&#8217;s David Wildstein: </strong
+>&#8220;Roselle Mayor Donald Shaw wants a Superior Court judge to freeze the campaign account of his Democratic primary opponent, Jamel Holley, for not filing campaign finance reports detailing his donors or expenditures with the Election Law Enforcement Commission. And Shaw wants a judge to stop shadowy perennial candidate Lisa McCormick or her controversial life partner, James Devine, as well as their 'alter ego,' CMD Media, from participating in the campaign until the courts can determine how Holley&#8217;s off-the-line mayoral bid is being funded and who is being paid.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; The Hudson County View: &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=c46a687df55402194855ae832948ffba7a9c6afc10244a40a3ef7dfdbc128149952c34f11cb9158d06e7bdef1e6f0a04d010671d03803d33" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>Scutari and Stack team up to bolster Union County Dems ahead of primary races</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8221;</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; The Asbury Park Press: &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=c46a687df554021998dafb32c02ee620c117072a7367e8b1dffbc55e78a3fe63396ab73b919335f05b65f01ab00dfc8aa1150047d707d7b1" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>Ocean County could see first legal marijuana dispensary</u></strong
+></a
+>&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; MyCentralJersey.com: &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=c46a687df554021909d16df6ae290437b3374fff4e4c5b411c682885903e815f889017e4c731c4cd0ee3e85a1623a676ad5ceaf04e60972e" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>'Deceived and betrayed': Flemington councilman facing drug charges ignores calls to resign</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8221;</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; NJ Spotlight News: &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=c46a687df554021995d09264ad2fbc960f1829cee9722bcc901af15aba8e4f13c4ca990240a5a2d1be6d9d2cfa141ea4ff4f170375440a3e" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>Legal battle over beach replenishment in North Wildwood</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8221;</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; The Star-Ledger Editorial Board: &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219cd6611c6dd8468edda3ae1c07c59bd89d54bcecf01cd3e5d87b1b94c58545ea772fc174325021aacc44fb739c27ee64b" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>Liberty State Park: The good guys finally won</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8221;</strong
+><br></p></td>                    </tr>                                    <tr>                        </tr><tr>    <td height="10" style="height:10px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                    <p style="margin-top:0;margin-bottom:20px;line-height:24px;margin-bottom:20px;color:#000000;">                <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">GET READY FOR GLOBAL TECH DAY: </strong
+>Join POLITICO Live as we launch our first Global Tech Day alongside London Tech Week on Thursday, June 15. Register now for continuing updates and to be a part of this momentous and program-packed day! From the blockchain, to AI, and autonomous vehicles, technology is changing how power is exercised around the world, so who will write the rules? <a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219703748be23fd5dbdca1f272a4d286f73149f89f17205c6fc69fc81978e9969652c853b3ef63666c47c697249fa0028f5" target="_blank" style="text-decoration:underline;color:#007BC7;">REGISTER HERE</a
+>.            </p>            </td></tr><tr>    <td height="10" style="height:10px; font-size:0; border-bottom:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td height="15" style="height:15px; font-size:0;">&nbsp;</td></tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;">    
+<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">        <tbody>        <tr>            <td width="32" valign="middle" style="vertical-align:top;font-size:0;text-align:right;padding-top:10px;"><img src="https://s3.amazonaws.com/origin-static.politico.com/hosted/icon-red-circle%402x.png" title="" alt="" width="12" style="max-width:12px;margin-top:1px;"></td>            
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:10px;margin:0;" valign="middle">EVERYTHING ELSE</td>        </tr>        </tbody>    </table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><br><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">KIDS THESE DAYS &#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219a13450abde7ce134b17bb43472d2f209f3a7add7ebe724b93527250153409dd716c43590d13e4be0c222f1e66c321b31" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>More businesses require teens to be chaperoned by adults, curbing their independence</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by The Associated Press&#8217; Anna D&#8217;Innocenzio: &nbsp;</strong
+>&#8220;Starting April 18, Garden State Plaza in Paramus, New Jersey &#8212; the second largest mall in the state &#8212; is requiring anyone under 18 years old to be accompanied by a chaperone at least 21 or older on Fridays and Saturdays after 5 p.m. The move, according to the mall, follows &#8216;an increase in disruptive behavior by a small minority of younger visitors.&#8217; That included a reported brawl in the food court last year and a fight in March that brought swarms of policemen to the center but ended up being a smaller altercation than initially reported. &#8230; Experts say Garden State Plaza joins a growing number of shopping centers, amusement parks and even a few
+ restaurants that have implemented similar policies in the last few months ahead of the summer season. And they all cite increased incidents of bad behavior among teens as the reason, some of it inspired by social media like TikTok.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; Bloomberg: </strong
+>&#8220;<a
+ href="https://go.politicoemail.com/?qs=c46a687df55402190bd06a312c3f01e18ec5598f661bd91c964e21d97929bd190d4e1e349e07fbfe221e858a8907760b314bc7d7a19e5687" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>The Jersey Shore &#8212; Yes, That Jersey Shore &#8212; Is Now a Luxury Destination</u></strong
+></a
+>&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; The New York Times: &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219c471ea588d6a12befd505636d897dfb152467ba9523a4f6a70492b276c244da425ecc1e865a84e707d4eb6944acce7e8" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>Taylor Swift&#8217;s Eras Tour Touches Down in New Jersey</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8221;</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; R.I.P: </strong
+>&#8220;<a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219176c537b34f1b1737fcfb058f958afd395c7e9a78854209404b20e5290d3845a3ba7aaeec48a8ec5dec68b98241ac3be" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>Tom Osler, celebrated Rowan math professor, national champion distance runner, author, and mentor, has died at 82</u></strong
+></a
+>&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; NJ Spotlight News: </strong
+>&#8220;<a
+ href="https://go.politicoemail.com/?qs=c46a687df554021972e173ad8650b35012d2ef957638e0777834ad7343dde88b1338f8b7d907308fd925372b084f70e387d891c446f6c70b" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>NJ sees rise in antibiotic-resistant infections</u></strong
+></a
+>&#8221;<br></p></td>                    </tr>                                <!-- End Ad Copy -->                <tr>                                    </tr>                <!-- Post Body Content -->                <tr>                                    </tr>                <tr>                    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>                </tr>                <!-- Twitter Handles -->                                    <tr>    <td style="color:#000000;padding:0px 20px 20px 20px;text-align:left;">        <p style="font-family:Helvetica,sans-serif;font-size:20px;color:#000000;margin-top:0;margin-bottom:15px;"><strong
+>Follow us on Twitter</strong
+></p>        <table cellpadding="0" cellspacing="0" border="0" role="presentation">            <tbody>            <tr>                <td width="52" valign="middle" style="text-align:left;padding-right:10px;"><img src="https://static.politico.com/hosted/icon-twitter-circle-blue%402x.png" title="" alt="" width="50" style="max-width:50px;"></td>                <td valign="middle" style="text-align:left;font-family:Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#000000;">                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Matt Friedman <a
+ href="https://go.politicoemail.com/?qs=c46a687df554021996e85e42d53ced9d6c41cb642004e8b297c4e64d7e7f03237e6ce62ac19af477f20afd372cc9b123ff4459e6da8f629f" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@mattfriedmannj</a
+></p>                                    </td>            </tr>            </tbody>        </table>    </td></tr><tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                                <!-- Family of Playbook -->                                    <tr>    <td style="color:#000000;padding:0px 20px 0px 20px;text-align:left;">            <p style="font-family:Helvetica,sans-serif;font-size:20px;color:#000000;margin-top:0;margin-bottom:15px;"><strong
+>Subscribe to the POLITICO Playbook family</strong
+></p>            <p style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:24px;">                                    <a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219ea65d05b5f97458e36168da7c52a4b7427cd269f494e31bfc340fe7e069d50182d69bcb5c9209bf9a2267a054cd2e913" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=c46a687df554021957a7f6b968b926458726ceca962e6363ba08c0f0dda039d0e3ba288350d58dc8006f4cbf83145cf7f21650561d746a43" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Playbook PM</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=c46a687df55402197ee4305ef935645d9681ff6d20998f1458a6d3f0be8acee8d27944a6ca369de677d4dcc07ac86c28d6e1b9b3eb06774c" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">California Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219875c121180324c585f505668acaf53ef614314cb303a62ed39af1999068479d6f57c0d88d0235d6ff70691ac834ba53b" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Florida Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=c46a687df55402197ad65caa35377ac741941c20cacebc4a06a44a8b0348718118f4522d7a97e1615afe2a31484ba27aa83cebde9d4c0049" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Illinois Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=c46a687df55402199b366400a5d9738dd8a1a0afae1804730d0982c7e06b6199ae4a6d3eb0b02186e817d39c6135b07235cbc06d04d620eb" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Massachusetts Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=c46a687df55402190127b71707a07e62ccfac62fa6aa4e50cc6b921283d580cab259c4c9bb18ea4a1a408ce314548e9eda9ed7bbaffaf141" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">New Jersey Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=c46a687df55402190354f47c53a3f326eca0c75a7c662fade03acb34b75f6c114fe203b7a4819f33ad880017a4d1cede7f9354fc75d7b9d1" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">New York Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219e62de74be3efdd958c83b59d9975fa5033a4d1e445628002487f770786390549430169482c132a840335636de935359c" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Ottawa Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219b6f20c6d63ae11f2b57dd1cea7ddb81414803fd9b5f4d4c4cc3095b61b0016e6e9914bd0cf85d676fc8f642b686a14df" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Brussels Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=c46a687df55402194cf8f4871e7e72bd5f82545245fc8e0bfd9ba41e0f815fa32dfa72f62fff618a481225162242c5456e5151c2fbbd39bf" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">London Playbook</a
+>                                                </p>            <p style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:24px;"><a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219fb1cb3d0f8ba781e9fa09dea9a29a54b5e777bf3a1b4fbb8826ba309218ed2c40997388ba8fdbbfb1571a631b3572491" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">View all our political and policy newsletters</a
+></p>    </td></tr>                                <!-- Follow us -->                <tr>    <td style="color:#000000;padding:0px 20px 20px 20px;text-align:left;">        <p style="font-family:Helvetica,sans-serif;font-size:12px;color:#000000;margin-bottom:10px;line-height:14px;text-transform:uppercase;font-weight:bold;letter-spacing:2px;">Follow us</p>        <table cellpadding="0" cellspacing="0" border="0" role="presentation">            <tbody>            <tr>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219f659ea71083720042f41b74b0b01aca69080d33a9d57f75a2574fd0bb81b1ba3a4251591bf5d337cb9e09f877c8ed4b6" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-facebook-gray%402x.png" title="Follow us on Facebook" alt="Follow us on Facebook" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219f7afc50fa2f83d0eeecb34e24bd165e38f0bdf327073a73a7ceab0a9ed9a94ec320f3f7ea9cc45a11c96e324f532b5f5" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-twitter-gray%402x.png" title="Follow us on Twitter" alt="Follow us on Twitter" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=c46a687df55402199e75e12c28fa3eaac7578cf9879780189088f884cc7c323fa87e651cadf3d83db52baf501b4e6b034749216d9de9f783" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-instagram-gray%402x.png" title="Follow us on Instagram" alt="Follow us on Instagram" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=c46a687df55402192abf7fcfa7eb4dd0dd0a2348a18355eeb84f3a6da775913311a92d59a13aa25851a6afbbe05c1f8acda2f9a4efd715fd" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-applePodcast-gray%402x.png" title="Listen on Apple Podcast" alt="Listen on Apple Podcast" width="24" border="0" style="max-width:24px;"></a
+></td>            </tr>            </tbody>        </table>    </td></tr><tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                </tbody>            </table>        </td>        <td><!-- Note: This is left blank to aid in centering across email clients --></td>    </tr>    </tbody></table><!-- Everything below this line is "new" to the template. We'll have to experiment a bit to see if it causes troubles. --><!-- howler#email.footers/core-newsletter.footer.html -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff"
+       style="padding:5px 0 15px 0;margin:0;text-align:center" role="presentation">
+    <tbody>
+    <tr>
+        <td><!-- Note: This is left blank to aid in centering across email clients --></td>
+        <td align="center" width="540">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:540px" role="presentation">
+                <tbody>
+                <tr>
+                    <td align="center" style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;">
+                        <p style="margin-bottom:15px;line-height:24px;">To change your alert settings, please log in at
+                            <a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219bd75c8daf58265d8fd59b8546f2e8178d674a6dbc4266057dd44434c740b9d16d29a07ced11d1d1f735b1ae48028c6a4" target="_blank" style="color:#007BC7;text-decoration:none;">https://www.politico.com/_login?base=https%3A%2F%2Fwww.politico.com/settings</a
+>
+                            <!--Commenting out the following line because it causes an undesired line to be displayed on outlook (some versions) and we couldn't find the use case of it-->
+                            <!-- <span style="display:none;"><a
+ href="https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a201df3a7484f2e5fea750cc48957ac4e7334ed1a3b8f0648c">https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a201df3a7484f2e5fea750cc48957ac4e7334ed1a3b8f0648c</a
+></span> -->
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="padding-bottom:15px;"><img
+                            src="https://static.politico.com/hosted/icon-politico-logo.png"
+                            class="CToWUd"></td>
+                </tr>
+                <tr>
+                    <td align="center"><p
+                            style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:20px;">
+                        This email was sent to ouchendans62@gmail.com by: POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+                        <p style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:24px;">
+                            
+
+                            Please click <a
+ href="https://go.politicoemail.com/?qs=c46a687df5540219fb8750f651f319c988b6bea6f90f24aaaf17987602d3a20a0a238a054440f860e72e5d591c7791196f9c465f5db0efc3" target="_blank" style="color:#007BC7;text-decoration:none;">here</a
+> and follow the steps to unsubscribe.
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td><!-- Note: This is left blank to aid in centering across email clients --></td>
+    </tr>
+    </tbody>
+</table>
+<img src="https://click.politicoemail.com/open.aspx?ffcb10-fe8d1d787565077b72-fde813797160037e70157973-fe9115737262077c7c-fecd127375670578-fdf61574756104747317747c-ffcf14&d=40126&bmt=0" width="1" height="1" alt="">
+</body></html><p email-meta style="display: none;opacity:0;">source=GoggleDocument, article=00000188-6a21-d5ba-a7fe-feff1be20000</p>
+
+--Y1r1jKdhxkQx=_?:--
+

@@ -1,0 +1,2713 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:9f5b:0:b0:2da:43c2:96f2 with SMTP id l27csp209757imf;
+        Sat, 27 May 2023 07:08:22 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ5bsaopFb8PGpcOCWY3dbyeZOOJv9X9IREdhqL1MHquiAsPKea7SpLlbsDhIKkkNLj5M6t3
+X-Received: by 2002:a81:8497:0:b0:565:eae8:793b with SMTP id u145-20020a818497000000b00565eae8793bmr107519ywf.25.1685196502221;
+        Sat, 27 May 2023 07:08:22 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685196502; cv=none;
+        d=google.com; s=arc-20160816;
+        b=wvnRGLW6gREmgYTCfMPZSJJFSSxwj0PtaGsIawjWIOZqjpht2TluBKCS3QT0Qq85se
+         t+N+nQCPlD2T5eybwsjCuzrsHzXAH/2olXeYfHG1ppd5+BSV8fuIAXh4EDRfnINPeDGh
+         Ut7QwCmjSLOl9PYJXDJ53+Bl8qEGgmFN+6LIUbjYHzvmU2CY3eOhhmq3t6pbMiX2LkOj
+         4EAIPyWpXZMhzbri1dukfAvGvzL6XBOD9O7Me4nMOJFblo/3NCKZCRVfd/1smNObEtby
+         28+PX4FhN0HCLiCu/xXEoUm8/zki5DxnQj+MqvLCXgiiZoALnzugvX3I31iQ6kJl4lxu
+         Uh2g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:list-unsubscribe-post:list-unsubscribe:list-id
+         :feedback-id:message-id:date:to:reply-to:from:subject:dkim-signature
+         :dkim-signature;
+        bh=w6k/C+Gh7XB1baxoZM/qSvgx4ONu9vIt8lAatAA1TXE=;
+        b=yg3duhxi2BBM0wXTo5nkZu0AOqfoMAA5dRflgtSTdOHnqcK3/thdEYGKVUiS76VnPr
+         f6ToFwnKLi/+Ctq2SWFa8HsOhfHsfTADmbj/H3LpmPG7I930kKHhvPGV7nu63HxjmoNM
+         ZbgQpGBeZMnwk1JAuqvBOt4sB//SkWNghmPe0fwaZbEN6Yq6dWzR7LWGK733YWWuWHds
+         24eU/hLmST78pbIubCESbj02mnYRlMUJS3sH03Kfx9Nlh368iwgmtNff592Z6bnl7Rm9
+         bklX8UcQZv76cokl+lW8ruTmApCrILhOLRfl71CxDY98s1hqLLxTXv8rjg/07ihYILI/
+         fIiA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@automations.mcsv.net header.s=k2 header.b=QLdJpD14;
+       dkim=pass header.i=@atlasobscura.com header.s=k1 header.b=QCfIN9Ve;
+       spf=pass (google.com: domain of bounce-mc.us1_106187.270421.557045-42cfb0c56a@mail47.suw11.mcdlv.net designates 198.2.190.47 as permitted sender) smtp.mailfrom=bounce-mc.us1_106187.270421.557045-42cfb0c56a@mail47.suw11.mcdlv.net;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=atlasobscura.com
+Return-Path: <bounce-mc.us1_106187.270421.557045-42cfb0c56a@mail47.suw11.mcdlv.net>
+Received: from mail47.suw11.mcdlv.net (mail47.suw11.mcdlv.net. [198.2.190.47])
+        by mx.google.com with ESMTPS id h65-20020a0df744000000b00561baac5887si5903851ywf.341.2023.05.27.07.08.22
+        for <ouchendans62@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 27 May 2023 07:08:22 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-mc.us1_106187.270421.557045-42cfb0c56a@mail47.suw11.mcdlv.net designates 198.2.190.47 as permitted sender) client-ip=198.2.190.47;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@automations.mcsv.net header.s=k2 header.b=QLdJpD14;
+       dkim=pass header.i=@atlasobscura.com header.s=k1 header.b=QCfIN9Ve;
+       spf=pass (google.com: domain of bounce-mc.us1_106187.270421.557045-42cfb0c56a@mail47.suw11.mcdlv.net designates 198.2.190.47 as permitted sender) smtp.mailfrom=bounce-mc.us1_106187.270421.557045-42cfb0c56a@mail47.suw11.mcdlv.net;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=atlasobscura.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=automations.mcsv.net; s=k2; t=1685196501; x=1685282901;
+	bh=w6k/C+Gh7XB1baxoZM/qSvgx4ONu9vIt8lAatAA1TXE=;
+	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
+	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
+	 MIME-Version:CC:Date:Subject:From;
+	b=QLdJpD14oGgLYbJCzBtdKz05+Bt0hy0I78fKHFzqb0+PRyN3PBA6VuXul6Dkq/PpB
+	 v0yETrhN10xfw70xQds388bkBYohY5VGXn6RAK4qqVwMjbRsE83wjX1AjVmW+TUIfG
+	 rV9JA4PTx5v7Rr9V+w5c4Wciiq9WHjAs3HbMkaDOeuebFNAIiQMNLondl/k4kYX8GC
+	 JLoJuvWLSS42QU0934t/h8uSVSCa/4VaLyLdbRUjuKxxMeDxXATTXjpvba+oWzwI91
+	 u/kPUIrpECqRDoLMCHg3D4X/hNd+zbQ8aBvsO/W5DARkyBNED5yme2iopJoN7vtUrG
+	 8Ou7f+/qeURKw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=atlasobscura.com;
+	s=k1; t=1685196501; x=1685457001; i=info@atlasobscura.com;
+	bh=w6k/C+Gh7XB1baxoZM/qSvgx4ONu9vIt8lAatAA1TXE=;
+	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
+	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
+	 MIME-Version:CC:Date:Subject:From;
+	b=QCfIN9VeZ4m6ALaUGzUZhM7RkIFnF0nc14g1dfrGJ8Gqb5b2/Ivis+tPiFsHM2n0A
+	 g5lWSd4yHwu4wzvDNS6PIolH90RDukz9Zt49GqwlOB4pcH5Yp5xBFhhMzX+N2l2o7d
+	 XotkzdtBfFBBbx9u1V3WUGYREhiu3k0TRFpDKHxA=
+Received: from localhost (localhost [127.0.0.1])
+	by mail47.suw11.mcdlv.net (Mailchimp) with ESMTP id 4QT3Y16n0Gz70NWbp
+	for <ouchendans62@gmail.com>; Sat, 27 May 2023 14:08:21 +0000 (GMT)
+Subject: =?utf-8?Q?Welcome=20to=20Atlas=20Obscura=21?=
+From: =?utf-8?Q?Atlas=20Obscura?= <info@atlasobscura.com>
+Reply-To: =?utf-8?Q?Atlas=20Obscura?= <info@atlasobscura.com>
+To: <ouchendans62@gmail.com>
+Date: Sat, 27 May 2023 14:08:21 +0000
+Message-ID: <399fc0402f1b154b67965632e.42cfb0c56a.20230527140814.b3b9848ad6.8c497eb8@mail47.suw11.mcdlv.net>
+X-Mailer: Mailchimp Mailer - **CIDb3b9848ad642cfb0c56a**
+X-Campaign: mailchimp399fc0402f1b154b67965632e.b3b9848ad6
+X-campaignid: mailchimp399fc0402f1b154b67965632e.b3b9848ad6
+X-Report-Abuse: Please report abuse for this campaign here: https://mailchimp.com/contact/abuse/?u=399fc0402f1b154b67965632e&id=b3b9848ad6&e=42cfb0c56a
+X-MC-User: 399fc0402f1b154b67965632e
+Feedback-ID: 106187:106187.270421:us1:mc
+List-ID: 399fc0402f1b154b67965632emc list <399fc0402f1b154b67965632e.100761.list-id.mcsv.net>
+X-Accounttype: pr
+List-Unsubscribe: <https://atlasobscura.us1.list-manage.com/unsubscribe?u=399fc0402f1b154b67965632e&id=f36db9c480&e=42cfb0c56a&c=b3b9848ad6>, <mailto:unsubscribe-mc.us1_399fc0402f1b154b67965632e.b3b9848ad6-42cfb0c56a@unsubscribe.mailchimpapp.net?subject=unsubscribe>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Content-Type: multipart/alternative; boundary="_----------=_MCPart_1160775554"
+MIME-Version: 1.0
+
+This is a multi-part message in MIME format
+
+--_----------=_MCPart_1160775554
+Content-Type: text/plain; charset="utf-8"; format="fixed"
+Content-Transfer-Encoding: quoted-printable
+
+------------------------------------------------------------
+https://us1.campaign-archive.com/?e=3D42cfb0c56a&u=3D399fc0402f1b154b6796563=
+2e&id=3Db3b9848ad6
+https://www.atlasobscura.com?utm_source=3DAtlas+Obscura+Daily+Newsletter&u=
+tm_campaign=3Db3b9848ad6-EMAIL_CAMPAIGN_2023_02_20_07_06&utm_medium=3Demai=
+l&utm_term=3D0_f36db9c480-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848a=
+d6&mc_eid=3DUNIQID
+May 26=2C 2023
+http://atlasobscura.com?utm_source=3DAtlas+Obscura+Daily+Newsletter&utm_ca=
+mpaign=3Db3b9848ad6-EMAIL_CAMPAIGN_2023_02_20_07_06&utm_medium=3Demail&utm=
+_term=3D0_f36db9c480-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc=
+_eid=3DUNIQID
+Welcome to our Daily Newsletter! (https://www.atlasobscura.com/?utm_source=
+=3DAtlas+Obscura+Daily+Newsletter&utm_campaign=3Db3b9848ad6-EMAIL_CAMPAIGN=
+_2023_02_20_07_06&utm_medium=3Demail&utm_term=3D0_f36db9c480-b3b9848ad6-%5=
+BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=3DUNIQID)
+Hello=2C and thank you for signing up for Atlas Obscura=E2=80=99s Daily Ne=
+wsletter! We=E2=80=99re so excited to welcome you and talk to you about th=
+e hidden wonders around the world. Here=E2=80=99s what you can expect in y=
+our inbox every Monday to Friday. Every morning=2C you=E2=80=99ll get a ne=
+wsletter rounding up our most important stories=2C covering everything fro=
+m unique spots for chocolate lovers to forgotten Viking towns. Also highli=
+ghted: Some of the best Atlas Obscura Trips and Courses we have available!=
+ That=E2=80=99s it! Ready to start exploring? Scroll down to see the kinds=
+ of hidden wonders that await you. See you tomorrow=2C and stay curious. (=
+https://www.atlasobscura.com/?utm_source=3DAtlas+Obscura+Daily+Newsletter&=
+utm_campaign=3Db3b9848ad6-EMAIL_CAMPAIGN_2023_02_20_07_06&utm_medium=3Dema=
+il&utm_term=3D0_f36db9c480-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848=
+ad6&mc_eid=3DUNIQID)
+Learn More =E2=86=92 (https://www.atlasobscura.com/?utm_source=3DAtlas+Obs=
+cura+Daily+Newsletter&utm_campaign=3Db3b9848ad6-EMAIL_CAMPAIGN_2023_02_20_=
+07_06&utm_medium=3Demail&utm_term=3D0_f36db9c480-b3b9848ad6-%5BLIST_EMAIL_=
+ID%5D&mc_cid=3Db3b9848ad6&mc_eid=3DUNIQID)
+https://www.atlasobscura.com/articles/cezanne-hidden-portrait?utm_source=
+=3DAtlas+Obscura+Daily+Newsletter&utm_campaign=3Db3b9848ad6-EMAIL_CAMPAIGN=
+_2023_02_20_07_06&utm_medium=3Demail&utm_term=3D0_f36db9c480-b3b9848ad6-%5=
+BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=3DUNIQID
+Unusual Stories (https://www.atlasobscura.com/articles/cezanne-hidden-port=
+rait?utm_source=3DAtlas+Obscura+Daily+Newsletter&utm_campaign=3Db3b9848ad6=
+-EMAIL_CAMPAIGN_2023_02_20_07_06&utm_medium=3Demail&utm_term=3D0_f36db9c48=
+0-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=3DUNIQID)
+A Hidden=2C Mysterious Portrait (https://www.atlasobscura.com/articles/cez=
+anne-hidden-portrait?utm_source=3DAtlas+Obscura+Daily+Newsletter&utm_campa=
+ign=3Db3b9848ad6-EMAIL_CAMPAIGN_2023_02_20_07_06&utm_medium=3Demail&utm_te=
+rm=3D0_f36db9c480-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_ei=
+d=3DUNIQID)
+Last spring=2C the Cincinnati Art Museum held a special exhibition showcas=
+ing works by five 19th-century French artists who used the still life genr=
+e to experiment with new painting techniques. One of those artists was fam=
+ed Post-Impressionist Paul C=C3=A9zanne=2C and the exhibition included Sti=
+ll Life With Bread and Eggs=2C one of his earliest masterpieces. A conserv=
+ator decided to bring it down to the lab for some cleaning=2C which itself=
+ isn=E2=80=99t unusual. Finding a hidden painting underneath the paint=2C=
+ however=2C is extremely unusual. (https://www.atlasobscura.com/articles/c=
+ezanne-hidden-portrait?utm_source=3DAtlas+Obscura+Daily+Newsletter&utm_cam=
+paign=3Db3b9848ad6-EMAIL_CAMPAIGN_2023_02_20_07_06&utm_medium=3Demail&utm_=
+term=3D0_f36db9c480-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_=
+eid=3DUNIQID)
+Read more =E2=86=92 (https://www.atlasobscura.com/articles/cezanne-hidden-=
+portrait?utm_source=3DAtlas+Obscura+Daily+Newsletter&utm_campaign=3Db3b984=
+8ad6-EMAIL_CAMPAIGN_2023_02_20_07_06&utm_medium=3Demail&utm_term=3D0_f36db=
+9c480-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=3DUNIQID)
+https://www.atlasobscura.com/places/erotic-erosion-recumbent-effigy-victor=
+-noir?utm_source=3DAtlas+Obscura+Daily+Newsletter&utm_campaign=3Db3b9848ad=
+6-EMAIL_CAMPAIGN_2023_02_20_07_06&utm_medium=3Demail&utm_term=3D0_f36db9c4=
+80-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=3DUNIQID
+Unique Places (https://www.atlasobscura.com/places/erotic-erosion-recumben=
+t-effigy-victor-noir?utm_source=3DAtlas+Obscura+Daily+Newsletter&utm_campa=
+ign=3Db3b9848ad6-EMAIL_CAMPAIGN_2023_02_20_07_06&utm_medium=3Demail&utm_te=
+rm=3D0_f36db9c480-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_ei=
+d=3DUNIQID)
+The Recumbent Effigy of Victor Noir (https://www.atlasobscura.com/places/e=
+rotic-erosion-recumbent-effigy-victor-noir?utm_source=3DAtlas+Obscura+Dail=
+y+Newsletter&utm_campaign=3Db3b9848ad6-EMAIL_CAMPAIGN_2023_02_20_07_06&utm=
+_medium=3Demail&utm_term=3D0_f36db9c480-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_=
+cid=3Db3b9848ad6&mc_eid=3DUNIQID)
+19th-century political journalist Victor Noir was shot in a duel by Prince=
+ Pierre Bonaparte in 1870=2C making him a symbol of imperial injustice and=
+ a martyr for the Republic. After the downfall of the Second Empire=2C a b=
+ronze effigy was commissioned to the sculptor Jules Dalou in praise of his=
+ memory. The effigy is very realistic. Perhaps too realistic=2C given that=
+ a certain detail of Noir=E2=80=99s anatomy would soon get more attention=
+ than the sober realism of the memorial bronze. (https://www.atlasobscura.=
+com/places/erotic-erosion-recumbent-effigy-victor-noir?utm_source=3DAtlas+=
+Obscura+Daily+Newsletter&utm_campaign=3Db3b9848ad6-EMAIL_CAMPAIGN_2023_02_=
+20_07_06&utm_medium=3Demail&utm_term=3D0_f36db9c480-b3b9848ad6-%5BLIST_EMA=
+IL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=3DUNIQID)
+Read more =E2=86=92 (https://www.atlasobscura.com/places/erotic-erosion-re=
+cumbent-effigy-victor-noir?utm_source=3DAtlas+Obscura+Daily+Newsletter&utm=
+_campaign=3Db3b9848ad6-EMAIL_CAMPAIGN_2023_02_20_07_06&utm_medium=3Demail&=
+utm_term=3D0_f36db9c480-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6=
+&mc_eid=3DUNIQID)
+https://www.atlasobscura.com/lists/good-gargoyles-and-grotesques?utm_sourc=
+e=3DAtlas+Obscura+Daily+Newsletter&utm_campaign=3Db3b9848ad6-EMAIL_CAMPAIG=
+N_2023_02_20_07_06&utm_medium=3Demail&utm_term=3D0_f36db9c480-b3b9848ad6-%=
+5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=3DUNIQID
+FASCINATING LISTS (https://www.atlasobscura.com/lists/good-gargoyles-and-g=
+rotesques?utm_source=3DAtlas+Obscura+Daily+Newsletter&utm_campaign=3Db3b98=
+48ad6-EMAIL_CAMPAIGN_2023_02_20_07_06&utm_medium=3Demail&utm_term=3D0_f36d=
+b9c480-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=3DUNIQID)
+8 Gargoyles and Grotesques (https://www.atlasobscura.com/lists/good-gargoy=
+les-and-grotesques?utm_source=3DAtlas+Obscura+Daily+Newsletter&utm_campaig=
+n=3Db3b9848ad6-EMAIL_CAMPAIGN_2023_02_20_07_06&utm_medium=3Demail&utm_term=
+=3D0_f36db9c480-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=
+=3DUNIQID)
+=E2=80=9CGargoyles=E2=80=9D have been used as far back as ancient Egypt=2C=
+ Greece=2C and Rome=2C as decorative water spouts designed to shift rainfa=
+ll away from buildings and fancifully down to ground. It was in medieval E=
+urope that they picked up the name (from the French gargouille=2C or =E2=
+=80=9Cwaterspout=E2=80=9D) and began to resemble the ones we=E2=80=99re fa=
+miliar with today=2C many of which are actually cosmetic =E2=80=9Cgrotesqu=
+es.=E2=80=9D From the dark lord Vader to a bat-like vampiric rabbit=2C her=
+e are eight unusual gargoyles and grotesques around the world. (https://ww=
+w.atlasobscura.com/lists/good-gargoyles-and-grotesques?utm_source=3DAtlas+=
+Obscura+Daily+Newsletter&utm_campaign=3Db3b9848ad6-EMAIL_CAMPAIGN_2023_02_=
+20_07_06&utm_medium=3Demail&utm_term=3D0_f36db9c480-b3b9848ad6-%5BLIST_EMA=
+IL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=3DUNIQID)
+Read more =E2=86=92 (https://www.atlasobscura.com/lists/good-gargoyles-and=
+-grotesques?utm_source=3DAtlas+Obscura+Daily+Newsletter&utm_campaign=3Db3b=
+9848ad6-EMAIL_CAMPAIGN_2023_02_20_07_06&utm_medium=3Demail&utm_term=3D0_f3=
+6db9c480-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=3DUNIQI=
+D)
+https://www.atlasobscura.com/articles/podcast-the-san-juan-island-pig-war?=
+utm_source=3DAtlas+Obscura+Daily+Newsletter&utm_campaign=3Db3b9848ad6-EMAI=
+L_CAMPAIGN_2023_02_20_07_06&utm_medium=3Demail&utm_term=3D0_f36db9c480-b3b=
+9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=3DUNIQID
+The Atlas Obscura Podcast (https://www.atlasobscura.com/articles/podcast-t=
+he-san-juan-island-pig-war?utm_source=3DAtlas+Obscura+Daily+Newsletter&utm=
+_campaign=3Db3b9848ad6-EMAIL_CAMPAIGN_2023_02_20_07_06&utm_medium=3Demail&=
+utm_term=3D0_f36db9c480-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6=
+&mc_eid=3DUNIQID)
+The San Juan Island Pig War (https://www.atlasobscura.com/articles/podcast=
+-the-san-juan-island-pig-war?utm_source=3DAtlas+Obscura+Daily+Newsletter&u=
+tm_campaign=3Db3b9848ad6-EMAIL_CAMPAIGN_2023_02_20_07_06&utm_medium=3Demai=
+l&utm_term=3D0_f36db9c480-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848a=
+d6&mc_eid=3DUNIQID)
+Have you heard our podcast yet? In case the answer is no=2C here=E2=80=99s=
+ a great one to start with. In this episode=2C we visit an island off the=
+ coast of Northwestern Washington where the killing of a British pig almos=
+t started a war between two of the world=E2=80=99s greatest military power=
+s. (https://www.atlasobscura.com/articles/podcast-the-san-juan-island-pig-=
+war?utm_source=3DAtlas+Obscura+Daily+Newsletter&utm_campaign=3Db3b9848ad6-=
+EMAIL_CAMPAIGN_2023_02_20_07_06&utm_medium=3Demail&utm_term=3D0_f36db9c480=
+-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=3DUNIQID)
+LISTEN ON OUR SITE (https://www.atlasobscura.com/articles/podcast-the-san-=
+juan-island-pig-war?utm_source=3DAtlas+Obscura+Daily+Newsletter&utm_campai=
+gn=3Db3b9848ad6-EMAIL_CAMPAIGN_2023_02_20_07_06&utm_medium=3Demail&utm_ter=
+m=3D0_f36db9c480-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=
+=3DUNIQID ) =E2=86=92 (https://www.atlasobscura.com/articles/podcast-the-s=
+an-juan-island-pig-war?utm_source=3DAtlas+Obscura+Daily+Newsletter&utm_cam=
+paign=3Db3b9848ad6-EMAIL_CAMPAIGN_2023_02_20_07_06&utm_medium=3Demail&utm_=
+term=3D0_f36db9c480-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_=
+eid=3DUNIQID)
+
+LISTEN ON APPLE PODCASTS (https://podcasts.apple.com/us/podcast/the-atlas-=
+obscura-podcast/id1555769970?utm_source=3DAtlas+Obscura+Daily+Newsletter&u=
+tm_campaign=3Db3b9848ad6-EMAIL_CAMPAIGN_2023_02_20_07_06&utm_medium=3Demai=
+l&utm_term=3D0_f36db9c480-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848a=
+d6&mc_eid=3DUNIQID ) =E2=86=92 (https://www.atlasobscura.com/articles/podc=
+ast-the-san-juan-island-pig-war?utm_source=3DAtlas+Obscura+Daily+Newslette=
+r&utm_campaign=3Db3b9848ad6-EMAIL_CAMPAIGN_2023_02_20_07_06&utm_medium=3De=
+mail&utm_term=3D0_f36db9c480-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b98=
+48ad6&mc_eid=3DUNIQID)
+(https://www.atlasobscura.com/articles/podcast-the-san-juan-island-pig-war=
+?utm_source=3DAtlas+Obscura+Daily+Newsletter&utm_campaign=3Db3b9848ad6-EMA=
+IL_CAMPAIGN_2023_02_20_07_06&utm_medium=3Demail&utm_term=3D0_f36db9c480-b3=
+b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=3DUNIQID)
+LISTEN ON SPOTIFY (https://open.spotify.com/show/0s0c4Z99PwbW8efTmHckyT?ut=
+m_source=3DAtlas+Obscura+Daily+Newsletter&utm_campaign=3Db3b9848ad6-EMAIL_=
+CAMPAIGN_2023_02_20_07_06&utm_medium=3Demail&utm_term=3D0_f36db9c480-b3b98=
+48ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=3DUNIQID ) =E2=86=92=
+ (https://www.atlasobscura.com/articles/podcast-the-san-juan-island-pig-wa=
+r?utm_source=3DAtlas+Obscura+Daily+Newsletter&utm_campaign=3Db3b9848ad6-EM=
+AIL_CAMPAIGN_2023_02_20_07_06&utm_medium=3Demail&utm_term=3D0_f36db9c480-b=
+3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=3DUNIQID)
+(https://www.atlasobscura.com/articles/podcast-the-san-juan-island-pig-war=
+?utm_source=3DAtlas+Obscura+Daily+Newsletter&utm_campaign=3Db3b9848ad6-EMA=
+IL_CAMPAIGN_2023_02_20_07_06&utm_medium=3Demail&utm_term=3D0_f36db9c480-b3=
+b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=3DUNIQID)
+LISTEN ON STITCHER (https://www.stitcher.com/show/the-atlas-obscura-podcas=
+t?utm_source=3DAtlas+Obscura+Daily+Newsletter&utm_campaign=3Db3b9848ad6-EM=
+AIL_CAMPAIGN_2023_02_20_07_06&utm_medium=3Demail&utm_term=3D0_f36db9c480-b=
+3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=3DUNIQID) =E2=86=
+=92 (https://www.atlasobscura.com/articles/podcast-the-san-juan-island-pig=
+-war?utm_source=3DAtlas+Obscura+Daily+Newsletter&utm_campaign=3Db3b9848ad6=
+-EMAIL_CAMPAIGN_2023_02_20_07_06&utm_medium=3Demail&utm_term=3D0_f36db9c48=
+0-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=3DUNIQID)
+https://www.atlasobscura.com/membership?utm_source=3DAtlas+Obscura+Daily+N=
+ewsletter&utm_campaign=3Db3b9848ad6-EMAIL_CAMPAIGN_2023_02_20_07_06&utm_me=
+dium=3Demail&utm_term=3D0_f36db9c480-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=
+=3Db3b9848ad6&mc_eid=3DUNIQID
+Join The Community (https://www.atlasobscura.com/membership?utm_source=3DA=
+tlas+Obscura+Daily+Newsletter&utm_campaign=3Db3b9848ad6-EMAIL_CAMPAIGN_202=
+3_02_20_07_06&utm_medium=3Demail&utm_term=3D0_f36db9c480-b3b9848ad6-%5BLIS=
+T_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=3DUNIQID)
+Become a Member Today (https://www.atlasobscura.com/membership?utm_source=
+=3DAtlas+Obscura+Daily+Newsletter&utm_campaign=3Db3b9848ad6-EMAIL_CAMPAIGN=
+_2023_02_20_07_06&utm_medium=3Demail&utm_term=3D0_f36db9c480-b3b9848ad6-%5=
+BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=3DUNIQID)
+Want to take the next step? By joining our membership program=2C you=E2=80=
+=99ll not only become a champion of discovery=E2=80=94you=E2=80=99ll also=
+ meet other like-minded explorers along the way. Our members enjoy insider=
+ access to our members-only experiences and events=2C which includes speci=
+al behind-the-scenes tours=2C curious seminars and lectures=2C and more. Y=
+ou=E2=80=99ll also get $100 credit towards your next Atlas Obscura Trip=2C=
+ alongside other perks. Sign up today! (https://www.atlasobscura.com/membe=
+rship?utm_source=3DAtlas+Obscura+Daily+Newsletter&utm_campaign=3Db3b9848ad=
+6-EMAIL_CAMPAIGN_2023_02_20_07_06&utm_medium=3Demail&utm_term=3D0_f36db9c4=
+80-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=3DUNIQID)
+Learn more =E2=86=92 (https://www.atlasobscura.com/membership?utm_source=
+=3DAtlas+Obscura+Daily+Newsletter&utm_campaign=3Db3b9848ad6-EMAIL_CAMPAIGN=
+_2023_02_20_07_06&utm_medium=3Demail&utm_term=3D0_f36db9c480-b3b9848ad6-%5=
+BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=3DUNIQID)
+https://www.atlasobscura.com/places/new?utm_source=3DAtlas+Obscura+Daily+N=
+ewsletter&utm_campaign=3Db3b9848ad6-EMAIL_CAMPAIGN_2023_02_20_07_06&utm_me=
+dium=3Demail&utm_term=3D0_f36db9c480-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=
+=3Db3b9848ad6&mc_eid=3DUNIQID https://www.atlasobscura.com/newsletters?utm=
+_source=3DAtlas+Obscura+Daily+Newsletter&utm_campaign=3Db3b9848ad6-EMAIL_C=
+AMPAIGN_2023_02_20_07_06&utm_medium=3Demail&utm_term=3D0_f36db9c480-b3b984=
+8ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=3DUNIQID
+https://www.atlasobscura.com/?utm_source=3DAtlas+Obscura+Daily+Newsletter&=
+utm_campaign=3Db3b9848ad6-EMAIL_CAMPAIGN_2023_02_20_07_06&utm_medium=3Dema=
+il&utm_term=3D0_f36db9c480-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848=
+ad6&mc_eid=3DUNIQID
+https://www.facebook.com/atlasobscura/?utm_source=3DAtlas+Obscura+Daily+Ne=
+wsletter&utm_campaign=3Db3b9848ad6-EMAIL_CAMPAIGN_2023_02_20_07_06&utm_med=
+ium=3Demail&utm_term=3D0_f36db9c480-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=
+=3Db3b9848ad6&mc_eid=3DUNIQID https://twitter.com/atlasobscura?utm_source=
+=3DAtlas+Obscura+Daily+Newsletter&utm_campaign=3Db3b9848ad6-EMAIL_CAMPAIGN=
+_2023_02_20_07_06&utm_medium=3Demail&utm_term=3D0_f36db9c480-b3b9848ad6-%5=
+BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=3DUNIQID https://www.instagra=
+m.com/atlasobscura/?utm_source=3DAtlas+Obscura+Daily+Newsletter&utm_campai=
+gn=3Db3b9848ad6-EMAIL_CAMPAIGN_2023_02_20_07_06&utm_medium=3Demail&utm_ter=
+m=3D0_f36db9c480-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=
+=3DUNIQID https://www.youtube.com/user/atlasobscura?sub_confirmation=3D1&u=
+tm_source=3DAtlas+Obscura+Daily+Newsletter&utm_campaign=3Db3b9848ad6-EMAIL=
+_CAMPAIGN_2023_02_20_07_06&utm_medium=3Demail&utm_term=3D0_f36db9c480-b3b9=
+848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=3DUNIQID
+Visit AtlasObscura.com (https://www.atlasobscura.com/?utm_source=3DAtlas+O=
+bscura+Daily+Newsletter&utm_campaign=3Db3b9848ad6-EMAIL_CAMPAIGN_2023_02_2=
+0_07_06&utm_medium=3Demail&utm_term=3D0_f36db9c480-b3b9848ad6-%5BLIST_EMAI=
+L_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=3DUNIQID) =C2=B7 View in Browser (https=
+://us1.campaign-archive.com/?e=3D42cfb0c56a&u=3D399fc0402f1b154b67965632e&id=
+=3Db3b9848ad6) =C2=B7 Unsubscribe (https://atlasobscura.us1.list-manage.co=
+m/unsubscribe?u=3D399fc0402f1b154b67965632e&id=3Df36db9c480&e=3D42cfb0c56a&c=
+=3Db3b9848ad6) =C2=B7 See All Newsletters (https://www.atlasobscura.com/ne=
+wsletters?utm_source=3DAtlas+Obscura+Daily+Newsletter&utm_campaign=3Db3b98=
+48ad6-EMAIL_CAMPAIGN_2023_02_20_07_06&utm_medium=3Demail&utm_term=3D0_f36d=
+b9c480-b3b9848ad6-%5BLIST_EMAIL_ID%5D&mc_cid=3Db3b9848ad6&mc_eid=3DUNIQID)
+61 Greenpoint Ave #622=2C Brooklyn=2C NY 11222
+--_----------=_MCPart_1160775554
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www=
+=2Ew3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv=3D"content-type" content=3D"text/html; charset=3DUTF-=
+8">
+    <meta property=3D"og:title" content=3D"Welcome to Atlas Obscura!">
+    <title>Welcome to Atlas Obscura!</title>
+
+  <style type=3D"text/css">
+=09=09a{
+=09=09=09text-decoration:none;
+=09=09}
+=09=09a:hover{
+=09=09=09text-decoration:none;
+=09=09}
+=09=09body{
+=09=09=09background:#f5f4f3;
+=09=09=09width:100% !important;
+=09=09}
+=09=09body{
+=09=09=09-webkit-text-size-adjust:none;
+=09=09}
+=09=09body{
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09}
+=09=09img{
+=09=09=09border:none;
+=09=09=09font-size:14px;
+=09=09=09font-weight:bold;
+=09=09=09height:auto;
+=09=09=09line-height:100%;
+=09=09=09outline:none;
+=09=09=09text-decoration:none;
+=09=09=09text-transform:capitalize;
+=09=09}
+=09=09#backgroundTable{
+=09=09=09height:100% !important;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09=09width:100% !important;
+=09=09}
+=09=09#templateContainer{
+=09=09=09border:none;
+=09=09}
+=09=09.blurb{
+=09=09=09color:#f5f4f3;
+=09=09=09font-size:11px;
+=09=09}
+=09=09.title{
+=09=09=09margin-top:24px;
+=09=09}
+=09=09h1=2C.h1{
+=09=09=09color:#382c14;
+=09=09=09display:block;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-size:42px;
+=09=09=09font-weight:bold;
+=09=09=09line-height:1em;
+=09=09=09margin-top:-4px;
+=09=09=09text-align:center;
+=09=09=09letter-spacing:.02em;
+=09=09}
+=09=09h2=2C.h2{
+=09=09=09color:#382c14;
+=09=09=09display:block;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-weight:bold;
+=09=09=09line-height:1em;
+=09=09=09font-size:39px;
+=09=09=09letter-spacing:.02em;
+=09=09=09text-align:center;
+=09=09}
+=09=09h3=2C.h3{
+=09=09=09color:#382c14 !important;
+=09=09=09display:block;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-weight:bold;
+=09=09=09font-size:32px;
+=09=09=09line-height:1em;
+=09=09}
+=09=09h4=2C.h4{
+=09=09=09color:#382c14;
+=09=09=09display:block;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-weight:bold;
+=09=09=09line-height:30px;
+=09=09=09margin-bottom:2px;
+=09=09=09text-align:center;
+=09=09=09font-size:24px;
+=09=09=09letter-spacing:-.01em;
+=09=09}
+=09=09h5=2C.h5{
+=09=09=09color:#333;
+=09=09=09display:block;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-size:17px;
+=09=09=09font-weight:bold;
+=09=09=09line-height:100%;
+=09=09=09margin-bottom:26px;
+=09=09=09margin-top:12px;
+=09=09=09text-align:center;
+=09=09}
+=09=09p=2C.p=2C.pAlt{
+=09=09=09color:#333;
+=09=09=09display:block;
+=09=09=09font-family:TimesNewRoman=2CTimes New Roman=2CTimes=2CBaskerville=
+=2CGeorgia=2Cserif;
+=09=09=09font-size:19px;
+=09=09=09line-height:24px;
+=09=09=09margin-top:24px;
+=09=09=09padding-left:2px;
+=09=09=09padding-right:2px;
+=09=09=09text-align:left;
+=09=09}
+=09=09.preheaderContent div{
+=09=09=09color:#808080;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-size:11px;
+=09=09=09margin-bottom:30px;
+=09=09=09text-align:center;
+=09=09=09padding:13px 0 7px;
+=09=09}
+=09=09.icon{
+=09=09=09margin-bottom:16px;
+=09=09=09margin-top:6px;
+=09=09}
+=09=09.footer-headline{
+=09=09=09margin-bottom:36px;
+=09=09=09margin-top:8px;
+=09=09}
+=09=09.social-icon{
+=09=09=09margin-right:10px;
+=09=09}
+=09=09.center{
+=09=09=09display:block;
+=09=09=09text-align:center;
+=09=09}
+=09=09#footer{
+=09=09=09color:#cfb592 !important;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-size:16px;
+=09=09=09line-height:140%;
+=09=09=09text-decoration:none !important;
+=09=09=09margin-bottom:24px;
+=09=09=09margin-top:12px;
+=09=09}
+=09=09#footer a{
+=09=09=09color:#cfb592;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09#footer img{
+=09=09=09margin-bottom:24px;
+=09=09=09margin-top:24px;
+=09=09}
+=09=09.preheaderContent div a:link=2C.preheaderContent div a:visited{
+=09=09=09color:#336699;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateHeader{
+=09=09=09border-bottom:0;
+=09=09}
+=09=09.bodyContent{
+=09=09=09background-color:#fff;
+=09=09}
+=09=09.spacer{
+=09=09=09background:#f5f4f3;
+=09=09=09height:10px;
+=09=09=09width:100%;
+=09=09}
+=09=09.lrg-spacer{
+=09=09=09background:#f5f4f3;
+=09=09=09height:20px;
+=09=09=09width:100%;
+=09=09}
+=09=09.std-spacer{
+=09=09=09background:#f5f4f3;
+=09=09=09height:1px;
+=09=09=09width:100%;
+=09=09}
+=09=09h1 a=2C.h1 a=2Ch2 a=2C.h2 a=2Ch3 a=2C.h3 a=2Ch4 a=2C.h4 a=2Ch5 a=2C.=
+h5 a{
+=09=09=09color:#382c14;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09p a=2C.p a{
+=09=09=09color:#333;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09h6 a=2C.h6 a{
+=09=09=09color:#53b19f;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-size:14px;
+=09=09=09font-weight:bold;
+=09=09=09letter-spacing:.04em;
+=09=09=09text-decoration:none;
+=09=09=09text-transform:uppercase;
+=09=09}
+=09=09.sponsorship p strong=2C.sponsorship .p strong{
+=09=09=09color:#bd804a;
+=09=09}
+=09=09.sponsorhip h2=2C.sponsorship .h2{
+=09=09=09margin-top:8px;
+=09=09}
+=09=09.sponsorhip h5=2C.sponsorship .h5{
+=09=09=09color:#bd804a;
+=09=09=09font-size:14px;
+=09=09=09letter-spacing:.04em;
+=09=09=09margin-bottom:0;
+=09=09=09margin-top:35px;
+=09=09=09text-transform:uppercase;
+=09=09}
+=09=09.item-supertitle=2C.item-supertitle a=2C.item-body-link a=2C.item-bo=
+dy-link{
+=09=09=09font-size:15px;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-weight:600;
+=09=09=09line-height:1em;
+=09=09=09letter-spacing:.12em;
+=09=09=09text-transform:uppercase;
+=09=09=09color:inherit;
+=09=09}
+=09=09.event-date=2C.city-title=2C.city-title a=2C.event-body-link=2C.even=
+t-body-link a=2C.event-subtitle-cta=2C.event-subtitle-cta a{
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09color:#d84875;
+=09=09=09font-weight:600;
+=09=09=09line-height:1em;
+=09=09=09letter-spacing:.12em;
+=09=09=09text-transform:uppercase;
+=09=09}
+=09=09.event-date a{
+=09=09=09color:#d84875;
+=09=09}
+=09=09.event-body-link{
+=09=09=09font-size:15px;
+=09=09}
+=09=09.event-body-link:hover=2C.event-body-link:focus=2C.event-body-link a=
+:hover=2C.event-body-link a:focus{
+=09=09=09text-decoration:none;
+=09=09=09color:#000;
+=09=09}
+=09=09.item-body-link:hover=2C.item-body-link:focus=2C.item-body-link a:ho=
+ver=2C.item-body-link a:focus{
+=09=09=09text-decoration:none !important;
+=09=09=09color:#000 !important;
+=09=09}
+=09=09.item:hover=2C.item:focus{
+=09=09=09cursor:pointer;
+=09=09}
+=09=09.item:hover .event-body-link=2C.item:focus .event-body-link{
+=09=09=09text-decoration:none !important;
+=09=09=09color:#000 !important;
+=09=09}
+=09=09.event-date=2C.item-supertitle{
+=09=09=09margin-bottom:6px;
+=09=09=09font-size:15px;
+=09=09}
+=09=09.city-title{
+=09=09=09font-size:17px;
+=09=09}
+=09=09.event-body-link=2C.item-body-link{
+=09=09=09margin-top:20px;
+=09=09=09display:inline-block;
+=09=09}
+=09=09.event-header=2C.card-header{
+=09=09=09text-align:center;
+=09=09=09padding:0 10px;
+=09=09=09margin-bottom:-4px;
+=09=09}
+=09=09.event-button{
+=09=09=09width:100%;
+=09=09=09min-width:100%;
+=09=09=09background:#50416d;
+=09=09=09color:#fff;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-size:15px;
+=09=09=09font-weight:600;
+=09=09=09line-height:1em;
+=09=09=09letter-spacing:.12em;
+=09=09=09text-transform:uppercase;
+=09=09=09display:block;
+=09=09=09padding:16px 0;
+=09=09=09text-align:center;
+=09=09=09margin:0 auto;
+=09=09}
+=09=09.event-button:hover=2C.event-button:focus{
+=09=09=09background:#403457;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09.can-hide{
+=09=09=09padding:32px 32px 0;
+=09=09}
+=09=09.item-image{
+=09=09=09margin-bottom:32px;
+=09=09}
+=09=09.letterhead-spacer{
+=09=09=09background:#f5f4f3;
+=09=09=09height:18px;
+=09=09=09width:100%;
+=09=09}
+=09=09.guillemet{
+=09=09=09vertical-align:text-top;
+=09=09}
+=09=09.item-supertitle.place=2C.item-supertitle.place a{
+=09=09=09color:#53b19f;
+=09=09}
+=09=09.item-body-link.place=2C.item-body-link.place a{
+=09=09=09color:#1b624f;
+=09=09}
+=09=09.item-supertitle.promo=2C.item-supertitle.promo a=2C.item-body-link.=
+promo=2C.item-body-link.promo a{
+=09=09=09color:#bd804a;
+=09=09}
+=09=09.event-lists{
+=09=09=09margin-top:24px;
+=09=09=09padding:0 2px;
+=09=09}
+=09=09.event-body-list{
+=09=09=09margin-bottom:19px;
+=09=09}
+=09=09.event-list-item{
+=09=09=09color:#333;
+=09=09=09display:block;
+=09=09=09font-family:"Times New Roman"=2CSerif;
+=09=09=09font-size:19px;
+=09=09=09line-height:24px;
+=09=09=09text-align:left;
+=09=09=09margin-bottom:5px;
+=09=09}
+=09=09.event-list-item a{
+=09=09=09color:#000;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09.float-right{
+=09=09=09float:right;
+=09=09}
+=09=09.img-wrapping-link{
+=09=09=09line-height:0;
+=09=09=09display:block;
+=09=09=09background:transparent;
+=09=09}
+=09=09.ad-wrap{
+=09=09=09background:#f5f4f3;
+=09=09=09padding-top:20px;
+=09=09=09padding-bottom:15px;
+=09=09}
+=09=09.ad-notice{
+=09=09=09text-align:center;
+=09=09=09font-family:"helvetica"=2C"arial"=2Csans-serif;
+=09=09=09font-size:9px;
+=09=09=09text-transform:uppercase;
+=09=09=09opacity:.6;
+=09=09=09margin-bottom:3px;
+=09=09=09letter-spacing:.04em;
+=09=09}
+=09=09.center-aligned{
+=09=09=09text-align:center;
+=09=09}
+=09=09.event-subtitle-cta{
+=09=09=09margin-top:10px;
+=09=09=09font-size:15px;
+=09=09}
+=09=09a{
+=09=09=09text-decoration:none;
+=09=09}
+=09=09a:hover{
+=09=09=09text-decoration:none;
+=09=09}
+=09=09body{
+=09=09=09background:#f5f4f3;
+=09=09=09width:100% !important;
+=09=09}
+=09=09body{
+=09=09=09-webkit-text-size-adjust:none;
+=09=09}
+=09=09body{
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09}
+=09=09img{
+=09=09=09border:none;
+=09=09=09font-size:14px;
+=09=09=09font-weight:bold;
+=09=09=09height:auto;
+=09=09=09line-height:100%;
+=09=09=09outline:none;
+=09=09=09text-decoration:none;
+=09=09=09text-transform:capitalize;
+=09=09}
+=09=09#backgroundTable{
+=09=09=09height:100% !important;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09=09width:100% !important;
+=09=09}
+=09=09#templateContainer{
+=09=09=09border:none;
+=09=09}
+=09=09.blurb{
+=09=09=09color:#f5f4f3;
+=09=09=09font-size:11px;
+=09=09}
+=09=09.title{
+=09=09=09margin-top:24px;
+=09=09}
+=09=09h1=2C.h1{
+=09=09=09color:#382c14;
+=09=09=09display:block;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-size:42px;
+=09=09=09font-weight:bold;
+=09=09=09line-height:1em;
+=09=09=09margin-top:-4px;
+=09=09=09text-align:center;
+=09=09=09letter-spacing:.02em;
+=09=09}
+=09=09h2=2C.h2{
+=09=09=09color:#382c14;
+=09=09=09display:block;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-weight:bold;
+=09=09=09line-height:1em;
+=09=09=09font-size:39px;
+=09=09=09letter-spacing:.02em;
+=09=09=09text-align:center;
+=09=09}
+=09=09h3=2C.h3{
+=09=09=09color:#382c14 !important;
+=09=09=09display:block;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-weight:bold;
+=09=09=09font-size:32px;
+=09=09=09line-height:1em;
+=09=09}
+=09=09h4=2C.h4{
+=09=09=09color:#382c14;
+=09=09=09display:block;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-weight:bold;
+=09=09=09line-height:30px;
+=09=09=09margin-bottom:2px;
+=09=09=09text-align:center;
+=09=09=09font-size:24px;
+=09=09=09letter-spacing:-.01em;
+=09=09}
+=09=09h5=2C.h5{
+=09=09=09color:#333;
+=09=09=09display:block;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-size:17px;
+=09=09=09font-weight:bold;
+=09=09=09line-height:100%;
+=09=09=09margin-bottom:26px;
+=09=09=09margin-top:12px;
+=09=09=09text-align:center;
+=09=09}
+=09=09p=2C.p=2C.pAlt{
+=09=09=09color:#333;
+=09=09=09display:block;
+=09=09=09font-family:TimesNewRoman=2CTimes New Roman=2CTimes=2CBaskerville=
+=2CGeorgia=2Cserif;
+=09=09=09font-size:19px;
+=09=09=09line-height:24px;
+=09=09=09margin-top:24px;
+=09=09=09padding-left:2px;
+=09=09=09padding-right:2px;
+=09=09=09text-align:left;
+=09=09}
+=09=09.preheaderContent div{
+=09=09=09color:#808080;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-size:11px;
+=09=09=09margin-bottom:30px;
+=09=09=09text-align:center;
+=09=09=09padding:13px 0 7px;
+=09=09}
+=09=09.icon{
+=09=09=09margin-bottom:16px;
+=09=09=09margin-top:6px;
+=09=09}
+=09=09.footer-headline{
+=09=09=09margin-bottom:36px;
+=09=09=09margin-top:8px;
+=09=09}
+=09=09.social-icon{
+=09=09=09margin-right:10px;
+=09=09}
+=09=09.center{
+=09=09=09display:block;
+=09=09=09text-align:center;
+=09=09}
+=09=09#footer{
+=09=09=09color:#cfb592 !important;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-size:16px;
+=09=09=09line-height:140%;
+=09=09=09text-decoration:none !important;
+=09=09=09margin-bottom:24px;
+=09=09=09margin-top:12px;
+=09=09}
+=09=09#footer a{
+=09=09=09color:#cfb592;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09#footer img{
+=09=09=09margin-bottom:24px;
+=09=09=09margin-top:24px;
+=09=09}
+=09=09.preheaderContent div a:link=2C.preheaderContent div a:visited{
+=09=09=09color:#336699;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateHeader{
+=09=09=09border-bottom:0;
+=09=09}
+=09=09.bodyContent{
+=09=09=09background-color:#fff;
+=09=09}
+=09=09.spacer{
+=09=09=09background:#f5f4f3;
+=09=09=09height:10px;
+=09=09=09width:100%;
+=09=09}
+=09=09.lrg-spacer{
+=09=09=09background:#f5f4f3;
+=09=09=09height:20px;
+=09=09=09width:100%;
+=09=09}
+=09=09.std-spacer{
+=09=09=09background:#f5f4f3;
+=09=09=09height:1px;
+=09=09=09width:100%;
+=09=09}
+=09=09h1 a=2C.h1 a=2Ch2 a=2C.h2 a=2Ch3 a=2C.h3 a=2Ch4 a=2C.h4 a=2Ch5 a=2C.=
+h5 a{
+=09=09=09color:#382c14;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09p a=2C.p a{
+=09=09=09color:#333;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09h6 a=2C.h6 a{
+=09=09=09color:#53b19f;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-size:14px;
+=09=09=09font-weight:bold;
+=09=09=09letter-spacing:.04em;
+=09=09=09text-decoration:none;
+=09=09=09text-transform:uppercase;
+=09=09}
+=09=09.sponsorship p strong=2C.sponsorship .p strong{
+=09=09=09color:#bd804a;
+=09=09}
+=09=09.sponsorhip h2=2C.sponsorship .h2{
+=09=09=09margin-top:8px;
+=09=09}
+=09=09.sponsorhip h5=2C.sponsorship .h5{
+=09=09=09color:#bd804a;
+=09=09=09font-size:14px;
+=09=09=09letter-spacing:.04em;
+=09=09=09margin-bottom:0;
+=09=09=09margin-top:35px;
+=09=09=09text-transform:uppercase;
+=09=09}
+=09=09.item-supertitle=2C.item-supertitle a=2C.item-body-link a=2C.item-bo=
+dy-link{
+=09=09=09font-size:15px;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-weight:600;
+=09=09=09line-height:1em;
+=09=09=09letter-spacing:.12em;
+=09=09=09text-transform:uppercase;
+=09=09=09color:inherit;
+=09=09}
+=09=09.event-date=2C.city-title=2C.city-title a=2C.event-body-link=2C.even=
+t-body-link a=2C.event-subtitle-cta=2C.event-subtitle-cta a{
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09color:#d84875;
+=09=09=09font-weight:600;
+=09=09=09line-height:1em;
+=09=09=09letter-spacing:.12em;
+=09=09=09text-transform:uppercase;
+=09=09}
+=09=09.event-date a{
+=09=09=09color:#d84875;
+=09=09}
+=09=09.event-body-link{
+=09=09=09font-size:15px;
+=09=09}
+=09=09.event-body-link:hover=2C.event-body-link:focus=2C.event-body-link a=
+:hover=2C.event-body-link a:focus{
+=09=09=09text-decoration:none;
+=09=09=09color:#000;
+=09=09}
+=09=09.item-body-link:hover=2C.item-body-link:focus=2C.item-body-link a:ho=
+ver=2C.item-body-link a:focus{
+=09=09=09text-decoration:none !important;
+=09=09=09color:#000 !important;
+=09=09}
+=09=09.item:hover=2C.item:focus{
+=09=09=09cursor:pointer;
+=09=09}
+=09=09.item:hover .event-body-link=2C.item:focus .event-body-link{
+=09=09=09text-decoration:none !important;
+=09=09=09color:#000 !important;
+=09=09}
+=09=09.event-date=2C.item-supertitle{
+=09=09=09margin-bottom:6px;
+=09=09=09font-size:15px;
+=09=09}
+=09=09.city-title{
+=09=09=09font-size:17px;
+=09=09}
+=09=09.event-body-link=2C.item-body-link{
+=09=09=09margin-top:20px;
+=09=09=09display:inline-block;
+=09=09}
+=09=09.event-header=2C.card-header{
+=09=09=09text-align:center;
+=09=09=09padding:0 10px;
+=09=09=09margin-bottom:-4px;
+=09=09}
+=09=09.event-button{
+=09=09=09width:100%;
+=09=09=09min-width:100%;
+=09=09=09background:#50416d;
+=09=09=09color:#fff;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-size:15px;
+=09=09=09font-weight:600;
+=09=09=09line-height:1em;
+=09=09=09letter-spacing:.12em;
+=09=09=09text-transform:uppercase;
+=09=09=09display:block;
+=09=09=09padding:16px 0;
+=09=09=09text-align:center;
+=09=09=09margin:0 auto;
+=09=09}
+=09=09.event-button:hover=2C.event-button:focus{
+=09=09=09background:#403457;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09.can-hide{
+=09=09=09padding:32px 32px 0;
+=09=09}
+=09=09.item-image{
+=09=09=09margin-bottom:32px;
+=09=09}
+=09=09.letterhead-spacer{
+=09=09=09background:#f5f4f3;
+=09=09=09height:18px;
+=09=09=09width:100%;
+=09=09}
+=09=09.guillemet{
+=09=09=09vertical-align:text-top;
+=09=09}
+=09=09.item-supertitle.place=2C.item-supertitle.place a{
+=09=09=09color:#53b19f;
+=09=09}
+=09=09.item-body-link.place=2C.item-body-link.place a{
+=09=09=09color:#1b624f;
+=09=09}
+=09=09.item-supertitle.promo=2C.item-supertitle.promo a=2C.item-body-link.=
+promo=2C.item-body-link.promo a{
+=09=09=09color:#bd804a;
+=09=09}
+=09=09.event-lists{
+=09=09=09margin-top:24px;
+=09=09=09padding:0 2px;
+=09=09}
+=09=09.event-body-list{
+=09=09=09margin-bottom:19px;
+=09=09}
+=09=09.event-list-item{
+=09=09=09color:#333;
+=09=09=09display:block;
+=09=09=09font-family:"Times New Roman"=2CSerif;
+=09=09=09font-size:19px;
+=09=09=09line-height:24px;
+=09=09=09text-align:left;
+=09=09=09margin-bottom:5px;
+=09=09}
+=09=09.event-list-item a{
+=09=09=09color:#000;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09.float-right{
+=09=09=09float:right;
+=09=09}
+=09=09.img-wrapping-link{
+=09=09=09line-height:0;
+=09=09=09display:block;
+=09=09=09background:transparent;
+=09=09}
+=09=09.ad-wrap{
+=09=09=09background:#f5f4f3;
+=09=09=09padding-top:20px;
+=09=09=09padding-bottom:15px;
+=09=09}
+=09=09.ad-notice{
+=09=09=09text-align:center;
+=09=09=09font-family:"helvetica"=2C"arial"=2Csans-serif;
+=09=09=09font-size:9px;
+=09=09=09text-transform:uppercase;
+=09=09=09opacity:.6;
+=09=09=09margin-bottom:3px;
+=09=09=09letter-spacing:.04em;
+=09=09}
+=09=09.center-aligned{
+=09=09=09text-align:center;
+=09=09}
+=09=09.event-subtitle-cta{
+=09=09=09margin-top:10px;
+=09=09=09font-size:15px;
+=09=09}
+=09=09.spacer{
+=09=09=09height:12px;
+=09=09}
+=09=09.lrg-spacer{
+=09=09=09height:24px;
+=09=09}
+=09=09.newsletter-title{
+=09=09=09text-align:left;
+=09=09=09margin:0;
+=09=09}
+=09=09.newsletter-date{
+=09=09=09font-size:16px;
+=09=09=09line-height:0;
+=09=09=09color:#333;
+=09=09=09display:inline-table;
+=09=09=09white-space:nowrap;
+=09=09=09font-family:TimesNewRoman=2CTimes New Roman=2CTimes=2CBaskerville=
+=2CGeorgia=2Cserif;
+=09=09}
+=09=09.article-card-body strong{
+=09=09=09color:#009bbf;
+=09=09=09font-weight:bold;
+=09=09}
+=09=09.article-card-body .item-supertitle{
+=09=09=09display:none !important;
+=09=09}
+=09=09.article-card-body .p{
+=09=09=09margin-bottom:0;
+=09=09}
+=09=09.user-photo-card .p{
+=09=09=09margin-bottom:0;
+=09=09}
+=09=09.user-photo-card .p a{
+=09=09=09color:#53b19f;
+=09=09=09font-weight:bold;
+=09=09}
+=09=09.user-photo-card .p a:hover=2C.user-photo-card .p a:focus{
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09.user-photo-card .card-header strong{
+=09=09=09text-decoration:underline;
+=09=09=09color:initial;
+=09=09}
+=09=09.place-card-body strong=2C.item-body-link.place=2C.item-body-link.pl=
+ace a{
+=09=09=09color:#53b19f;
+=09=09}
+=09=09.content-swap-card-body .item-body-link=2C.content-swap-card-body .i=
+tem-body-link a=2C.content-swap-card-body .item-supertitle=2C.content-swap=
+-card-body .item-supertitle a{
+=09=09=09color:#d36a55;
+=09=09}
+=09=09.sponsor-card-body .item-body-link=2C.sponsor-card-body .item-body-l=
+ink a=2C.sponsor-card-body .item-supertitle=2C.sponsor-card-body .item-sup=
+ertitle a{
+=09=09=09color:#ccb48d;
+=09=09}
+=09=09.item-supertitle.place=2C.item-supertitle.place a{
+=09=09=09color:#1b624f;
+=09=09}
+=09=09.food-card-body strong=2C.item-supertitle.food=2C.item-supertitle.fo=
+od a=2C.item-body-link.food{
+=09=09=09color:#f3cb00;
+=09=09}
+=09=09.themeweek-img-wrap{
+=09=09=09padding:32px 32px 0;
+=09=09}
+=09=09.themeweek-img{
+=09=09=09max-width:60%;
+=09=09=09max-height:50px;
+=09=09}
+=09=09.item-body-link{
+=09=09=09margin-top:0;
+=09=09}
+=09=09.linked-card:hover strong{
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09.linked-card:hover{
+=09=09=09cursor:pointer !important;
+=09=09}
+=09=09.sponsor-title=2C.sponsor-title a{
+=09=09=09font-size:15px;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Century Gothic'=2C'=
+CenturyGothic'=2C'Arial'=2Csans-serif=2C'normal'=2C'Droid Sans'=2C'Roboto'=
+;
+=09=09=09font-weight:600;
+=09=09=09line-height:1em;
+=09=09=09letter-spacing:.12em;
+=09=09=09text-transform:uppercase;
+=09=09=09color:#ccb48d;
+=09=09}
+=09=09.sponsor-title a:hover=2C.sponsor-title a:focus{
+=09=09=09color:#ccb48d;
+=09=09}
+=09=09.with-top-hr{
+=09=09=09padding:12px;
+=09=09=09border-top:1px solid #ccc;
+=09=09}
+=09=09.forum-card-bg{
+=09=09=09background-color:#EFE8DC;
+=09=09=09padding:98px 30px 24px;
+=09=09}
+=09=09.forum-card-icon-wrap{
+=09=09=09max-height:40px;
+=09=09=09padding-left:30px;
+=09=09}
+=09=09.forum-quote=2C.forum-quote a{
+=09=09=09text-decoration:none;
+=09=09=09color:#382C14;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Century Gothic'=2C'=
+CenturyGothic'=2C'Arial'=2Csans-serif=2C'normal'=2C'Droid Sans'=2C'Roboto'=
+;
+=09=09=09font-size:24px;
+=09=09=09font-weight:700;
+=09=09=09line-height:30px;
+=09=09=09margin-bottom:14px;
+=09=09}
+=09=09.forum-attribution=2C.forum-attribution a{
+=09=09=09text-decoration:none;
+=09=09=09color:#858585;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Century Gothic'=2C'=
+CenturyGothic'=2C'Arial'=2Csans-serif=2C'normal'=2C'Droid Sans'=2C'Roboto'=
+;
+=09=09=09font-size:20px;
+=09=09=09font-weight:400;
+=09=09=09letter-spacing:1px;
+=09=09=09line-height:16px;
+=09=09}
+=09=09.forum-body-link{
+=09=09=09margin-top:38px;
+=09=09}
+=09=09.forum-content-padded{
+=09=09=09padding-left:10px;
+=09=09=09padding-right:10px;
+=09=09}
+=09=09.quote-em-dash{
+=09=09=09padding-right:4px;
+=09=09}
+=09=09a{
+=09=09=09text-decoration:none;
+=09=09}
+=09=09a:hover{
+=09=09=09text-decoration:none;
+=09=09}
+=09=09body{
+=09=09=09background:#f5f4f3;
+=09=09=09width:100% !important;
+=09=09}
+=09=09body{
+=09=09=09-webkit-text-size-adjust:none;
+=09=09}
+=09=09body{
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09}
+=09=09img{
+=09=09=09border:none;
+=09=09=09font-size:14px;
+=09=09=09font-weight:bold;
+=09=09=09height:auto;
+=09=09=09line-height:100%;
+=09=09=09outline:none;
+=09=09=09text-decoration:none;
+=09=09=09text-transform:capitalize;
+=09=09}
+=09=09#backgroundTable{
+=09=09=09height:100% !important;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09=09width:100% !important;
+=09=09}
+=09=09#templateContainer{
+=09=09=09border:none;
+=09=09}
+=09=09.blurb{
+=09=09=09color:#f5f4f3;
+=09=09=09font-size:11px;
+=09=09}
+=09=09.title{
+=09=09=09margin-top:24px;
+=09=09}
+=09=09h1=2C.h1{
+=09=09=09color:#382c14;
+=09=09=09display:block;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-size:42px;
+=09=09=09font-weight:bold;
+=09=09=09line-height:1em;
+=09=09=09margin-top:-4px;
+=09=09=09text-align:center;
+=09=09=09letter-spacing:.02em;
+=09=09}
+=09=09h2=2C.h2{
+=09=09=09color:#382c14;
+=09=09=09display:block;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-weight:bold;
+=09=09=09line-height:1em;
+=09=09=09font-size:39px;
+=09=09=09letter-spacing:.02em;
+=09=09=09text-align:center;
+=09=09}
+=09=09h3=2C.h3{
+=09=09=09color:#382c14 !important;
+=09=09=09display:block;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-weight:bold;
+=09=09=09font-size:32px;
+=09=09=09line-height:1em;
+=09=09}
+=09=09h4=2C.h4{
+=09=09=09color:#382c14;
+=09=09=09display:block;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-weight:bold;
+=09=09=09line-height:30px;
+=09=09=09margin-bottom:2px;
+=09=09=09text-align:center;
+=09=09=09font-size:24px;
+=09=09=09letter-spacing:-.01em;
+=09=09}
+=09=09h5=2C.h5{
+=09=09=09color:#333;
+=09=09=09display:block;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-size:17px;
+=09=09=09font-weight:bold;
+=09=09=09line-height:100%;
+=09=09=09margin-bottom:26px;
+=09=09=09margin-top:12px;
+=09=09=09text-align:center;
+=09=09}
+=09=09p=2C.p=2C.pAlt{
+=09=09=09color:#333;
+=09=09=09display:block;
+=09=09=09font-family:TimesNewRoman=2CTimes New Roman=2CTimes=2CBaskerville=
+=2CGeorgia=2Cserif;
+=09=09=09font-size:19px;
+=09=09=09line-height:24px;
+=09=09=09margin-top:24px;
+=09=09=09padding-left:2px;
+=09=09=09padding-right:2px;
+=09=09=09text-align:left;
+=09=09}
+=09=09.preheaderContent div{
+=09=09=09color:#808080;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-size:11px;
+=09=09=09margin-bottom:30px;
+=09=09=09text-align:center;
+=09=09=09padding:13px 0 7px;
+=09=09}
+=09=09.icon{
+=09=09=09margin-bottom:16px;
+=09=09=09margin-top:6px;
+=09=09}
+=09=09.footer-headline{
+=09=09=09margin-bottom:36px;
+=09=09=09margin-top:8px;
+=09=09}
+=09=09.social-icon{
+=09=09=09margin-right:10px;
+=09=09}
+=09=09.center{
+=09=09=09display:block;
+=09=09=09text-align:center;
+=09=09}
+=09=09#footer{
+=09=09=09color:#cfb592 !important;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-size:16px;
+=09=09=09line-height:140%;
+=09=09=09text-decoration:none !important;
+=09=09=09margin-bottom:24px;
+=09=09=09margin-top:12px;
+=09=09}
+=09=09#footer a{
+=09=09=09color:#cfb592;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09#footer img{
+=09=09=09margin-bottom:24px;
+=09=09=09margin-top:24px;
+=09=09}
+=09=09.preheaderContent div a:link=2C.preheaderContent div a:visited{
+=09=09=09color:#336699;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateHeader{
+=09=09=09border-bottom:0;
+=09=09}
+=09=09.bodyContent{
+=09=09=09background-color:#fff;
+=09=09}
+=09=09.spacer{
+=09=09=09background:#f5f4f3;
+=09=09=09height:10px;
+=09=09=09width:100%;
+=09=09}
+=09=09.lrg-spacer{
+=09=09=09background:#f5f4f3;
+=09=09=09height:20px;
+=09=09=09width:100%;
+=09=09}
+=09=09.std-spacer{
+=09=09=09background:#f5f4f3;
+=09=09=09height:1px;
+=09=09=09width:100%;
+=09=09}
+=09=09h1 a=2C.h1 a=2Ch2 a=2C.h2 a=2Ch3 a=2C.h3 a=2Ch4 a=2C.h4 a=2Ch5 a=2C.=
+h5 a{
+=09=09=09color:#382c14;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09p a=2C.p a{
+=09=09=09color:#333;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09h6 a=2C.h6 a{
+=09=09=09color:#53b19f;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-size:14px;
+=09=09=09font-weight:bold;
+=09=09=09letter-spacing:.04em;
+=09=09=09text-decoration:none;
+=09=09=09text-transform:uppercase;
+=09=09}
+=09=09.sponsorship p strong=2C.sponsorship .p strong{
+=09=09=09color:#bd804a;
+=09=09}
+=09=09.sponsorhip h2=2C.sponsorship .h2{
+=09=09=09margin-top:8px;
+=09=09}
+=09=09.sponsorhip h5=2C.sponsorship .h5{
+=09=09=09color:#bd804a;
+=09=09=09font-size:14px;
+=09=09=09letter-spacing:.04em;
+=09=09=09margin-bottom:0;
+=09=09=09margin-top:35px;
+=09=09=09text-transform:uppercase;
+=09=09}
+=09=09.item-supertitle=2C.item-supertitle a=2C.item-body-link a=2C.item-bo=
+dy-link{
+=09=09=09font-size:15px;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-weight:600;
+=09=09=09line-height:1em;
+=09=09=09letter-spacing:.12em;
+=09=09=09text-transform:uppercase;
+=09=09=09color:inherit;
+=09=09}
+=09=09.event-date=2C.city-title=2C.city-title a=2C.event-body-link=2C.even=
+t-body-link a=2C.event-subtitle-cta=2C.event-subtitle-cta a{
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09color:#d84875;
+=09=09=09font-weight:600;
+=09=09=09line-height:1em;
+=09=09=09letter-spacing:.12em;
+=09=09=09text-transform:uppercase;
+=09=09}
+=09=09.event-date a{
+=09=09=09color:#d84875;
+=09=09}
+=09=09.event-body-link{
+=09=09=09font-size:15px;
+=09=09}
+=09=09.event-body-link:hover=2C.event-body-link:focus=2C.event-body-link a=
+:hover=2C.event-body-link a:focus{
+=09=09=09text-decoration:none;
+=09=09=09color:#000;
+=09=09}
+=09=09.item-body-link:hover=2C.item-body-link:focus=2C.item-body-link a:ho=
+ver=2C.item-body-link a:focus{
+=09=09=09text-decoration:none !important;
+=09=09=09color:#000 !important;
+=09=09}
+=09=09.item:hover=2C.item:focus{
+=09=09=09cursor:pointer;
+=09=09}
+=09=09.item:hover .event-body-link=2C.item:focus .event-body-link{
+=09=09=09text-decoration:none !important;
+=09=09=09color:#000 !important;
+=09=09}
+=09=09.event-date=2C.item-supertitle{
+=09=09=09margin-bottom:6px;
+=09=09=09font-size:15px;
+=09=09}
+=09=09.city-title{
+=09=09=09font-size:17px;
+=09=09}
+=09=09.event-body-link=2C.item-body-link{
+=09=09=09margin-top:20px;
+=09=09=09display:inline-block;
+=09=09}
+=09=09.event-header=2C.card-header{
+=09=09=09text-align:center;
+=09=09=09padding:0 10px;
+=09=09=09margin-bottom:-4px;
+=09=09}
+=09=09.event-button{
+=09=09=09width:100%;
+=09=09=09min-width:100%;
+=09=09=09background:#50416d;
+=09=09=09color:#fff;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09=09font-size:15px;
+=09=09=09font-weight:600;
+=09=09=09line-height:1em;
+=09=09=09letter-spacing:.12em;
+=09=09=09text-transform:uppercase;
+=09=09=09display:block;
+=09=09=09padding:16px 0;
+=09=09=09text-align:center;
+=09=09=09margin:0 auto;
+=09=09}
+=09=09.event-button:hover=2C.event-button:focus{
+=09=09=09background:#403457;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09.can-hide{
+=09=09=09padding:32px 32px 0;
+=09=09}
+=09=09.item-image{
+=09=09=09margin-bottom:32px;
+=09=09}
+=09=09.letterhead-spacer{
+=09=09=09background:#f5f4f3;
+=09=09=09height:18px;
+=09=09=09width:100%;
+=09=09}
+=09=09.guillemet{
+=09=09=09vertical-align:text-top;
+=09=09}
+=09=09.item-supertitle.place=2C.item-supertitle.place a{
+=09=09=09color:#53b19f;
+=09=09}
+=09=09.item-body-link.place=2C.item-body-link.place a{
+=09=09=09color:#1b624f;
+=09=09}
+=09=09.item-supertitle.promo=2C.item-supertitle.promo a=2C.item-body-link.=
+promo=2C.item-body-link.promo a{
+=09=09=09color:#bd804a;
+=09=09}
+=09=09.event-lists{
+=09=09=09margin-top:24px;
+=09=09=09padding:0 2px;
+=09=09}
+=09=09.event-body-list{
+=09=09=09margin-bottom:19px;
+=09=09}
+=09=09.event-list-item{
+=09=09=09color:#333;
+=09=09=09display:block;
+=09=09=09font-family:"Times New Roman"=2CSerif;
+=09=09=09font-size:19px;
+=09=09=09line-height:24px;
+=09=09=09text-align:left;
+=09=09=09margin-bottom:5px;
+=09=09}
+=09=09.event-list-item a{
+=09=09=09color:#000;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09.float-right{
+=09=09=09float:right;
+=09=09}
+=09=09.img-wrapping-link{
+=09=09=09line-height:0;
+=09=09=09display:block;
+=09=09=09background:transparent;
+=09=09}
+=09=09.ad-wrap{
+=09=09=09background:#f5f4f3;
+=09=09=09padding-top:20px;
+=09=09=09padding-bottom:15px;
+=09=09}
+=09=09.ad-notice{
+=09=09=09text-align:center;
+=09=09=09font-family:"helvetica"=2C"arial"=2Csans-serif;
+=09=09=09font-size:9px;
+=09=09=09text-transform:uppercase;
+=09=09=09opacity:.6;
+=09=09=09margin-bottom:3px;
+=09=09=09letter-spacing:.04em;
+=09=09}
+=09=09.center-aligned{
+=09=09=09text-align:center;
+=09=09}
+=09=09.event-subtitle-cta{
+=09=09=09margin-top:10px;
+=09=09=09font-size:15px;
+=09=09}
+=09=09.spacer{
+=09=09=09height:12px;
+=09=09}
+=09=09.lrg-spacer{
+=09=09=09height:24px;
+=09=09}
+=09=09.newsletter-title{
+=09=09=09text-align:left;
+=09=09=09margin:0;
+=09=09}
+=09=09.newsletter-date{
+=09=09=09font-size:16px;
+=09=09=09line-height:0;
+=09=09=09color:#333;
+=09=09=09display:inline-table;
+=09=09=09white-space:nowrap;
+=09=09=09font-family:TimesNewRoman=2CTimes New Roman=2CTimes=2CBaskerville=
+=2CGeorgia=2Cserif;
+=09=09}
+=09=09.article-card-body strong{
+=09=09=09color:#009bbf;
+=09=09=09font-weight:bold;
+=09=09}
+=09=09.article-card-body .item-supertitle{
+=09=09=09display:none !important;
+=09=09}
+=09=09.article-card-body .p{
+=09=09=09margin-bottom:0;
+=09=09}
+=09=09.user-photo-card .p{
+=09=09=09margin-bottom:0;
+=09=09}
+=09=09.user-photo-card .p a{
+=09=09=09color:#53b19f;
+=09=09=09font-weight:bold;
+=09=09}
+=09=09.user-photo-card .p a:hover=2C.user-photo-card .p a:focus{
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09.user-photo-card .card-header strong{
+=09=09=09text-decoration:underline;
+=09=09=09color:initial;
+=09=09}
+=09=09.place-card-body strong=2C.item-body-link.place=2C.item-body-link.pl=
+ace a{
+=09=09=09color:#53b19f;
+=09=09}
+=09=09.content-swap-card-body .item-body-link=2C.content-swap-card-body .i=
+tem-body-link a=2C.content-swap-card-body .item-supertitle=2C.content-swap=
+-card-body .item-supertitle a{
+=09=09=09color:#d36a55;
+=09=09}
+=09=09.sponsor-card-body .item-body-link=2C.sponsor-card-body .item-body-l=
+ink a=2C.sponsor-card-body .item-supertitle=2C.sponsor-card-body .item-sup=
+ertitle a{
+=09=09=09color:#ccb48d;
+=09=09}
+=09=09.item-supertitle.place=2C.item-supertitle.place a{
+=09=09=09color:#1b624f;
+=09=09}
+=09=09.food-card-body strong=2C.item-supertitle.food=2C.item-supertitle.fo=
+od a=2C.item-body-link.food{
+=09=09=09color:#f3cb00;
+=09=09}
+=09=09.themeweek-img-wrap{
+=09=09=09padding:32px 32px 0;
+=09=09}
+=09=09.themeweek-img{
+=09=09=09max-width:60%;
+=09=09=09max-height:50px;
+=09=09}
+=09=09.item-body-link{
+=09=09=09margin-top:0;
+=09=09}
+=09=09.linked-card:hover strong{
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09.linked-card:hover{
+=09=09=09cursor:pointer !important;
+=09=09}
+=09=09.sponsor-title=2C.sponsor-title a{
+=09=09=09font-size:15px;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Century Gothic'=2C'=
+CenturyGothic'=2C'Arial'=2Csans-serif=2C'normal'=2C'Droid Sans'=2C'Roboto'=
+;
+=09=09=09font-weight:600;
+=09=09=09line-height:1em;
+=09=09=09letter-spacing:.12em;
+=09=09=09text-transform:uppercase;
+=09=09=09color:#ccb48d;
+=09=09}
+=09=09.sponsor-title a:hover=2C.sponsor-title a:focus{
+=09=09=09color:#ccb48d;
+=09=09}
+=09=09.with-top-hr{
+=09=09=09padding:12px;
+=09=09=09border-top:1px solid #ccc;
+=09=09}
+=09=09.forum-card-bg{
+=09=09=09background-color:#EFE8DC;
+=09=09=09padding:98px 30px 24px;
+=09=09}
+=09=09.forum-card-icon-wrap{
+=09=09=09max-height:40px;
+=09=09=09padding-left:30px;
+=09=09}
+=09=09.forum-quote=2C.forum-quote a{
+=09=09=09text-decoration:none;
+=09=09=09color:#382C14;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Century Gothic'=2C'=
+CenturyGothic'=2C'Arial'=2Csans-serif=2C'normal'=2C'Droid Sans'=2C'Roboto'=
+;
+=09=09=09font-size:24px;
+=09=09=09font-weight:700;
+=09=09=09line-height:30px;
+=09=09=09margin-bottom:14px;
+=09=09}
+=09=09.forum-attribution=2C.forum-attribution a{
+=09=09=09text-decoration:none;
+=09=09=09color:#858585;
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Century Gothic'=2C'=
+CenturyGothic'=2C'Arial'=2Csans-serif=2C'normal'=2C'Droid Sans'=2C'Roboto'=
+;
+=09=09=09font-size:20px;
+=09=09=09font-weight:400;
+=09=09=09letter-spacing:1px;
+=09=09=09line-height:16px;
+=09=09}
+=09=09.forum-body-link{
+=09=09=09margin-top:38px;
+=09=09}
+=09=09.forum-content-padded{
+=09=09=09padding-left:10px;
+=09=09=09padding-right:10px;
+=09=09}
+=09=09.quote-em-dash{
+=09=09=09padding-right:4px;
+=09=09}
+=09=09.simplified-template .card-header{
+=09=09=09padding:0;
+=09=09}
+=09=09.simplified-template .p{
+=09=09=09margin-top:20px;
+=09=09=09line-height:28px;
+=09=09=09letter-spacing:.19px;
+=09=09}
+=09=09.simplified-template .item-image{
+=09=09=09margin-bottom:25px;
+=09=09}
+=09=09.left-aligned{
+=09=09=09text-align:left !important;
+=09=09}
+=09=09.right-aligned{
+=09=09=09text-align:right !important;
+=09=09}
+=09=09.sans{
+=09=09=09font-family:"Helvetica Neue"=2C"Helvetica"=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;
+=09=09}
+=09=09.serif{
+=09=09=09font-family:TimesNewRoman=2CTimes New Roman=2CTimes=2CBaskerville=
+=2CGeorgia=2Cserif !important;
+=09=09}
+=09=09.simplified-template .simplified-color=2C.simplified-template .simpl=
+ified-color a=2C.simplified-template .simplified-color a:hover=2C.simplifi=
+ed-template .simplified-color a:focus{
+=09=09=09color:#bd8049;
+=09=09}
+=09=09.simplified-template .item-body-link{
+=09=09=09margin-top:20px;
+=09=09}
+=09=09.footer-outlink img{
+=09=09=09height:95px;
+=09=09=09max-height:95px;
+=09=09=09width:auto;
+=09=09=09display:inline-block;
+=09=09=09margin:0 0 10px;
+=09=09}
+=09=09#newsletters-link.footer-outlink{
+=09=09=09text-align:right;
+=09=09}
+=09=09#newsletters-link.footer-outlink img{
+=09=09=09height:93px;
+=09=09}
+=09=09.footer-outlink{
+=09=09=09width:45%;
+=09=09=09max-width:172px;
+=09=09=09padding-right:50px;
+=09=09}
+=09=09.nondecorated{
+=09=09=09text-decoration:none !important;
+=09=09}
+=09=09#newsletters-link{
+=09=09=09padding-right:0;
+=09=09}
+=09=09.outlink-row{
+=09=09=09text-align:left;
+=09=09=09padding-top:10px;
+=09=09}
+=09=09.tagline-sprite{
+=09=09=09display:inline-block;
+=09=09=09height:35px;
+=09=09=09max-height:35px;
+=09=09}
+=09=09.tagline-row{
+=09=09=09text-align:left;
+=09=09=09margin-bottom:29px;
+=09=09=09margin-top:10px;
+=09=09}
+=09=09.top-border-item{
+=09=09=09border-top:1px solid #e7e7e7;
+=09=09=09padding-top:32px;
+=09=09}
+=09=09.social-row{
+=09=09=09margin-bottom:10px;
+=09=09}
+=09=09.footer-address{
+=09=09=09color:#666666;
+=09=09=09font-size:11px;
+=09=09=09letter-spacing:.27px;
+=09=09=09line-height:19px;
+=09=09}
+=09=09.footer-address a{
+=09=09=09text-decoration:none !important;
+=09=09}
+=09=09#footer-inline-links{
+=09=09=09color:#bd8049;
+=09=09}
+=09=09#footer-inline-links a{
+=09=09=09color:#bd8049;
+=09=09=09font-size:11px;
+=09=09=09letter-spacing:.78px;
+=09=09=09line-height:15px;
+=09=09=09text-decoration:underline;
+=09=09=09font-weight:normal;
+=09=09=09text-align:center;
+=09=09}
+=09=09#footer-inline-links{
+=09=09=09margin:13px 0 10px;
+=09=09}
+=09=09.inline-pipe{
+=09=09=09vertical-align:baseline;
+=09=09=09font-size:11px;
+=09=09=09margin:0 1px;
+=09=09}
+=09=09#footer-inline-links.top-border-item{
+=09=09=09padding-top:14px;
+=09=09}
+=09=09#footer-inline-links a=2C#footer-inline-links a:hover=2C#footer-inli=
+ne-links a:focus{
+=09=09=09color:#bd8049 !important;
+=09=09}
+=09=09.social-row a{
+=09=09=09display:inline-block;
+=09=09=09margin-right:20px;
+=09=09}
+=09=09.social-sprite{
+=09=09=09height:20px;
+=09=09=09width:auto;
+=09=09}
+=09=09.sponsored-subhead{
+=09=09=09letter-spacing:.27px;
+=09=09=09width:100%;
+=09=09}
+=09=09.header-date{
+=09=09=09white-space:nowrap;
+=09=09=09min-width:130px;
+=09=09=09line-height:13px;
+=09=09=09padding-top:13px;
+=09=09}
+=09=09.header-date=2C.sponsored-subhead{
+=09=09=09font-size:13px;
+=09=09=09color:#333;
+=09=09}
+=09=09.sponsored-subhead{
+=09=09=09margin-bottom:20px;
+=09=09=09white-space:nowrap;
+=09=09}
+=09=09.sponsored-subhead .sans{
+=09=09=09margin:13px 10px 13px 0;
+=09=09=09display:inline-block;
+=09=09=09line-height:26px;
+=09=09=09vertical-align:middle;
+=09=09=09color:#382c14;
+=09=09}
+=09=09.sponsored-subhead a{
+=09=09=09text-decoration:none;
+=09=09=09color:#382c14 !important;
+=09=09}
+=09=09#sponsored-img{
+=09=09=09min-height:20px;
+=09=09=09width:auto;
+=09=09=09max-height:26px;
+=09=09=09display:inline-block;
+=09=09=09vertical-align:middle;
+=09=09}
+=09=09.left-padded{
+=09=09=09padding-left:30px;
+=09=09}
+=09=09.right-padded{
+=09=09=09padding-right:30px;
+=09=09}
+=09=09.content-width{
+=09=09=09width:100%;
+=09=09=09min-width:415px;
+=09=09}
+=09=09.sm-spacer{
+=09=09=09height:7px;
+=09=09}
+=09=09.lede-card-body{
+=09=09=09padding:0 5px 5px;
+=09=09}
+</style><!--[if !mso]><!--><link href=3D"https://fonts.googleapis.com/css=
+?family=3DRoboto:400=2C400i=2C700=2C700i" rel=3D"stylesheet"><!--<![endif=
+]--></head>
+  <body leftmargin=3D"0" marginwidth=3D"0" topmargin=3D"0" marginheight=3D=
+"0" offset=3D"0" style=3D"background: #f5f4f3;-webkit-text-size-adjust: no=
+ne;margin: 0;padding: 0;width: 100% !important;">
+    <center>
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"5" width=3D"485=
+" id=3D"backgroundTable" class=3D"simplified-template" style=3D"height: 10=
+0%;margin: 0;padding: 0;width: 100% !important;">
+        <tbody>
+          <tr>
+            <td align=3D"center" valign=3D"top">
+              <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" widt=
+h=3D"475" id=3D"templatePreheader">
+                <tbody>
+                  <tr>
+                    <td valign=3D"top" class=3D"preheaderContent">
+                      <div style=3D"color: #808080;font-size: 11px;margin-=
+bottom: 30px;text-align: center;padding: 13px 0 7px;font-family: &quot;Hel=
+vetica Neue&quot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=2C'normal=
+'=2C'Droid Sans'=2C'Roboto' !important;">
+                        <span class=3D"blurb" style=3D"color: #f5f4f3;font=
+-size: 11px;">We're so excited to have you here!</span>
+                        <br>
+                        Email not displaying correctly? <a href=3D"https:/=
+/us1.campaign-archive.com/?e=3D42cfb0c56a&u=3D399fc0402f1b154b67965632e&id=
+=3Db3b9848ad6" target=3D"_blank" style=3D"text-decoration: underline;color=
+: #336699;font-weight: normal;">View in your browser</a>.
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" widt=
+h=3D"475" id=3D"templateContainer" style=3D"border: none;">
+                <!-- campaign content start -->
+                <tbody>
+                  <tr>
+                    <td align=3D"center" valign=3D"top">
+                      <table border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" width=3D"475" align=3D"center">
+                        <tbody>
+                          <tr>
+                            <td valign=3D"top">
+                              <a id=3D"masthead-link" class=3D"nondecorate=
+d" href=3D"https://atlasobscura.us1.list-manage.com/track/click?u=3D399fc0=
+402f1b154b67965632e&id=3D6a7122723e&e=3D42cfb0c56a" target=3D"_blank" sty=
+le=3D"text-decoration: none !important;">
+                                <img class=3D"mcnImage header-logo" src=3D=
+"https://gallery.mailchimp.com/399fc0402f1b154b67965632e/images/73ed94ee-f=
+881-4ea1-8e1f-44f98483021c.png" width=3D"203" alt=3D"73ed94ee-f881-4ea1-8e=
+1f-44f98483021c.png" style=3D"border: none;font-size: 14px;font-weight: bo=
+ld;height: auto;line-height: 100%;outline: none;text-decoration: none;text=
+-transform: capitalize;"></a>
+                              </td>
+                              <td valign=3D"top">
+                                <div class=3D"header-date sans right-align=
+ed" style=3D"white-space: nowrap;min-width: 130px;line-height: 13px;paddin=
+g-top: 13px;font-size: 13px;color: #333;text-align: right !important;font-=
+family: &quot;Helvetica Neue&quot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csan=
+s-serif=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;">May 26=2C 2023</=
+div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign=3D"bottom" width=3D"100%">
+                                <div style=3D"height:12px;"></div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align=3D"center" width=3D"100%">
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align=3D"center" valign=3D"top">
+                        <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"475" id=3D"templateBody">
+                          <tbody>
+                            <tr>
+                              <td valign=3D"top" class=3D"bodyContent" sty=
+le=3D"background-color: #fff;">
+                                <!-- Start Hero and Intro -->
+                                <table border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" width=3D"100%">
+                                  <tbody>
+                                    <tr>
+                                      <td valign=3D"top" class=3D"linked-c=
+ard">
+                                        <a href=3D"https://atlasobscura.us=
+1.list-manage.com/track/click?u=3D399fc0402f1b154b67965632e&id=3D765d9be4e=
+9&e=3D42cfb0c56a" target=3D"_blank" style=3D"text-decoration: none;"><img=
+ src=3D"https://mcusercontent.com/399fc0402f1b154b67965632e/images/8904af1=
+e-1264-a9c4-2b59-f0eca8fc1931.jpeg" alt=3D"" border=3D"0" style=3D"margin:=
+ 0;padding: 0;max-width: 475px;max-height: 268px;border: none;font-size: 1=
+4px;font-weight: bold;height: auto;line-height: 100%;outline: none;text-de=
+coration: none;text-transform: capitalize;" width=3D"475"></a>
+                                        <br>
+                                        <table border=3D"0" cellpadding=3D=
+"25" cellspacing=3D"0" width=3D"100%">
+                                          <tbody>
+                                            <tr>
+                                              <td valign=3D"top">
+                                                <div class=3D"card-body le=
+de-card-body" style=3D"padding: 0 5px 5px;">
+                                                  <div><div class=3D"card-=
+header left-aligned" style=3D"text-align: left !important;padding: 0;margi=
+n-bottom: -4px;">
+<div class=3D"h3" style=3D"display: block;font-weight: bold;font-size: 32p=
+x;line-height: 1em;color: #382c14 !important;font-family: &quot;Helvetica=
+ Neue&quot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'D=
+roid Sans'=2C'Roboto' !important;"><a href=3D"https://atlasobscura.us1.lis=
+t-manage.com/track/click?u=3D399fc0402f1b154b67965632e&id=3Dc1c8f1df58&e=
+=3D42cfb0c56a" target=3D"_blank" style=3D"text-decoration: none;color: #3=
+82c14;">Welcome to our Daily Newsletter! </a></div>
+</div>
+
+<div class=3D"p serif" style=3D"color: #333;display: block;font-family: Ti=
+mesNewRoman=2CTimes New Roman=2CTimes=2CBaskerville=2CGeorgia=2Cserif !imp=
+ortant;font-size: 19px;line-height: 28px;margin-top: 20px;padding-left: 2p=
+x;padding-right: 2px;text-align: left;letter-spacing: .19px;"><a href=3D"h=
+ttps://atlasobscura.us1.list-manage.com/track/click?u=3D399fc0402f1b154b67=
+965632e&id=3Dc0840e4d20&e=3D42cfb0c56a" style=3D"text-decoration: none;co=
+lor: #333;">Hello=2C and thank you for signing up for Atlas Obscura&rsquo;=
+s Daily Newsletter! We&rsquo;re so excited to welcome you and talk to you=
+ about the hidden wonders around the world.<br>
+<br>
+Here&rsquo;s what you can expect in your inbox every Monday to Friday. Eve=
+ry morning=2C you&rsquo;ll get a newsletter rounding up our most important=
+ stories=2C covering everything from unique spots for chocolate lovers to=
+ forgotten Viking towns. Also highlighted: Some of the best Atlas Obscura=
+ Trips and Courses we have available!<br>
+<br>
+That&rsquo;s it! Ready to start exploring? Scroll down to see the kinds of=
+ hidden wonders that await you. See you tomorrow=2C and stay curious. </a>=
+</div>
+
+<div class=3D"item-body-link simplified-color" style=3D"font-size: 15px;fo=
+nt-weight: 600;line-height: 1em;letter-spacing: .12em;text-transform: uppe=
+rcase;color: #bd8049;margin-top: 20px;display: inline-block;font-family: &=
+quot;Helvetica Neue&quot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;"><a href=3D"https://atla=
+sobscura.us1.list-manage.com/track/click?u=3D399fc0402f1b154b67965632e&id=
+=3Deeb9f91ecc&e=3D42cfb0c56a" style=3D"text-decoration: none;font-size: 1=
+5px;font-weight: 600;line-height: 1em;letter-spacing: .12em;text-transform=
+: uppercase;color: #bd8049;font-family: &quot;Helvetica Neue&quot;=2C&quot=
+;Helvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'Droid Sans'=2C'Robot=
+o' !important;">Learn More <span class=3D"guillemet" style=3D"vertical-ali=
+gn: text-top;">&rarr;</span></a></div>
+</div>
+                                              </div>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              <div class=3D"lrg-spacer" style=3D"backgroun=
+d: #f5f4f3;height: 24px;width: 100%;"></div>
+                              <!-- End Hero and Intro -->
+                              <!-- Start Simplified Repeatable Module  -->
+                              <div mc:repeatable=3D"repeat_1" mc:variant=
+=3D"Variable Content" mc:repeatindex=3D"0">
+                                <div class=3D"std-spacer" style=3D"backgro=
+und: #f5f4f3;height: 1px;width: 100%;"></div>
+                                <table border=3D"0" cellpadding=3D"30" cel=
+lspacing=3D"0" width=3D"100%">
+                                  <tbody>
+                                    <tr>
+                                      <td valign=3D"top" class=3D"linked-c=
+ard">
+                                        <a href=3D"https://atlasobscura.us=
+1.list-manage.com/track/click?u=3D399fc0402f1b154b67965632e&id=3De0c60f433=
+8&e=3D42cfb0c56a" target=3D"_blank" style=3D"text-decoration: none;"><img=
+ src=3D"https://mcusercontent.com/399fc0402f1b154b67965632e/images/2a12500=
+e-d086-1be2-0193-ce87303f6731.jpeg" alt=3D"" border=3D"0" style=3D"margin:=
+ 0;padding: 0;max-width: 411px;max-height: 232px;border: none;font-size: 1=
+4px;font-weight: bold;height: auto;line-height: 100%;outline: none;text-de=
+coration: none;text-transform: capitalize;margin-bottom: 25px;" width=3D"4=
+11" class=3D"item-image"></a>
+                                        <br>
+                                        <div class=3D"card-body">
+                                          <div><div class=3D"card-header l=
+eft-aligned" style=3D"text-align: left !important;padding: 0;margin-bottom=
+: -4px;">
+<div class=3D"item-supertitle simplified-color" style=3D"font-size: 15px;f=
+ont-weight: 600;line-height: 1em;letter-spacing: .12em;text-transform: upp=
+ercase;color: #bd8049;margin-bottom: 6px;font-family: &quot;Helvetica Neue=
+&quot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'Droid=
+ Sans'=2C'Roboto' !important;"><a href=3D"https://atlasobscura.us1.list-ma=
+nage.com/track/click?u=3D399fc0402f1b154b67965632e&id=3D0d2a27a5f7&e=3D42cfb0c56a" target=3D"_blank" style=3D"text-decoration: none;font-size: 15px=
+;font-weight: 600;line-height: 1em;letter-spacing: .12em;text-transform: u=
+ppercase;color: #bd8049;font-family: &quot;Helvetica Neue&quot;=2C&quot;He=
+lvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'Droid Sans'=2C'Roboto'=
+ !important;">Unusual Stories</a></div>
+
+<div class=3D"h3" style=3D"display: block;font-weight: bold;font-size: 32p=
+x;line-height: 1em;color: #382c14 !important;font-family: &quot;Helvetica=
+ Neue&quot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'D=
+roid Sans'=2C'Roboto' !important;"><a href=3D"https://atlasobscura.us1.lis=
+t-manage.com/track/click?u=3D399fc0402f1b154b67965632e&id=3Da162d8e7e0&e=
+=3D42cfb0c56a" style=3D"text-decoration: none;color: #382c14;">A Hidden=
+=2C Mysterious Portrait</a></div>
+</div>
+
+<div class=3D"p serif" style=3D"color: #333;display: block;font-family: Ti=
+mesNewRoman=2CTimes New Roman=2CTimes=2CBaskerville=2CGeorgia=2Cserif !imp=
+ortant;font-size: 19px;line-height: 28px;margin-top: 20px;padding-left: 2p=
+x;padding-right: 2px;text-align: left;letter-spacing: .19px;"><a href=3D"h=
+ttps://atlasobscura.us1.list-manage.com/track/click?u=3D399fc0402f1b154b67=
+965632e&id=3D9e36015991&e=3D42cfb0c56a" style=3D"text-decoration: none;co=
+lor: #333;">Last spring=2C the Cincinnati Art Museum held a special exhibi=
+tion showcasing works by five 19th-century French artists who used the sti=
+ll life genre to experiment with new painting techniques. One of those art=
+ists was famed Post-Impressionist Paul C&eacute;zanne=2C and the exhibitio=
+n included <em>Still Life With Bread and Eggs</em>=2C one of his earliest=
+ masterpieces. A conservator decided to bring it down to the lab for some=
+ cleaning=2C which itself isn&rsquo;t unusual. Finding a hidden painting u=
+nderneath the paint=2C however=2C is <em>extremely</em> unusual. </a></div=
+>
+
+<div class=3D"item-body-link simplified-color" style=3D"font-size: 15px;fo=
+nt-weight: 600;line-height: 1em;letter-spacing: .12em;text-transform: uppe=
+rcase;color: #bd8049;margin-top: 20px;display: inline-block;font-family: &=
+quot;Helvetica Neue&quot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;"><a href=3D"https://atla=
+sobscura.us1.list-manage.com/track/click?u=3D399fc0402f1b154b67965632e&id=
+=3Deb8452a05f&e=3D42cfb0c56a" style=3D"text-decoration: none;font-size: 1=
+5px;font-weight: 600;line-height: 1em;letter-spacing: .12em;text-transform=
+: uppercase;color: #bd8049;font-family: &quot;Helvetica Neue&quot;=2C&quot=
+;Helvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'Droid Sans'=2C'Robot=
+o' !important;">Read more <span class=3D"guillemet" style=3D"vertical-alig=
+n: text-top;">&rarr;</span></a></div>
+</div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div><div mc:repeatable=3D"repeat_1" mc:varia=
+nt=3D"Variable Content" mc:repeatindex=3D"1">
+                                <div class=3D"std-spacer" style=3D"backgro=
+und: #f5f4f3;height: 1px;width: 100%;"></div>
+                                <table border=3D"0" cellpadding=3D"30" cel=
+lspacing=3D"0" width=3D"100%">
+                                  <tbody>
+                                    <tr>
+                                      <td valign=3D"top" class=3D"linked-c=
+ard">
+                                        <a href=3D"https://atlasobscura.us=
+1.list-manage.com/track/click?u=3D399fc0402f1b154b67965632e&id=3D56cd5db71=
+4&e=3D42cfb0c56a" target=3D"_blank" style=3D"text-decoration: none;"><img=
+ src=3D"https://mcusercontent.com/399fc0402f1b154b67965632e/images/42e1901=
+c-eb43-f082-94ed-01a72939bdb5.jpeg" alt=3D"" border=3D"0" style=3D"margin:=
+ 0;padding: 0;max-width: 411px;max-height: 232px;border: none;font-size: 1=
+4px;font-weight: bold;height: auto;line-height: 100%;outline: none;text-de=
+coration: none;text-transform: capitalize;margin-bottom: 25px;" width=3D"4=
+11" class=3D"item-image"></a>
+                                        <br>
+                                        <div class=3D"card-body">
+                                          <div><div class=3D"card-header l=
+eft-aligned" style=3D"text-align: left !important;padding: 0;margin-bottom=
+: -4px;">
+<div class=3D"item-supertitle simplified-color" style=3D"font-size: 15px;f=
+ont-weight: 600;line-height: 1em;letter-spacing: .12em;text-transform: upp=
+ercase;color: #bd8049;margin-bottom: 6px;font-family: &quot;Helvetica Neue=
+&quot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'Droid=
+ Sans'=2C'Roboto' !important;"><a href=3D"https://atlasobscura.us1.list-ma=
+nage.com/track/click?u=3D399fc0402f1b154b67965632e&id=3De6750752f7&e=3D42cfb0c56a" target=3D"_blank" style=3D"text-decoration: none;font-size: 15px=
+;font-weight: 600;line-height: 1em;letter-spacing: .12em;text-transform: u=
+ppercase;color: #bd8049;font-family: &quot;Helvetica Neue&quot;=2C&quot;He=
+lvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'Droid Sans'=2C'Roboto'=
+ !important;">Unique Places</a></div>
+
+<div class=3D"h3" style=3D"display: block;font-weight: bold;font-size: 32p=
+x;line-height: 1em;color: #382c14 !important;font-family: &quot;Helvetica=
+ Neue&quot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'D=
+roid Sans'=2C'Roboto' !important;"><a href=3D"https://atlasobscura.us1.lis=
+t-manage.com/track/click?u=3D399fc0402f1b154b67965632e&id=3D1272de21e9&e=
+=3D42cfb0c56a" style=3D"text-decoration: none;color: #382c14;">The Recumb=
+ent Effigy of Victor Noir</a></div>
+</div>
+
+<div class=3D"p serif" style=3D"color: #333;display: block;font-family: Ti=
+mesNewRoman=2CTimes New Roman=2CTimes=2CBaskerville=2CGeorgia=2Cserif !imp=
+ortant;font-size: 19px;line-height: 28px;margin-top: 20px;padding-left: 2p=
+x;padding-right: 2px;text-align: left;letter-spacing: .19px;"><a href=3D"h=
+ttps://atlasobscura.us1.list-manage.com/track/click?u=3D399fc0402f1b154b67=
+965632e&id=3Dd143c0de05&e=3D42cfb0c56a" style=3D"text-decoration: none;co=
+lor: #333;">19th-century political journalist Victor Noir was shot in a du=
+el by Prince Pierre Bonaparte in 1870=2C making him a symbol of imperial i=
+njustice and a martyr for the Republic. After the downfall of the Second E=
+mpire=2C a bronze effigy was commissioned to the sculptor Jules Dalou in p=
+raise of his memory. The effigy is very realistic. Perhaps too realistic=
+=2C given that a certain detail of Noir&rsquo;s anatomy would soon get mor=
+e attention than the sober realism of the memorial bronze. </a></div>
+
+<div class=3D"item-body-link simplified-color" style=3D"font-size: 15px;fo=
+nt-weight: 600;line-height: 1em;letter-spacing: .12em;text-transform: uppe=
+rcase;color: #bd8049;margin-top: 20px;display: inline-block;font-family: &=
+quot;Helvetica Neue&quot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;"><a href=3D"https://atla=
+sobscura.us1.list-manage.com/track/click?u=3D399fc0402f1b154b67965632e&id=
+=3Dfa6f58a64c&e=3D42cfb0c56a" style=3D"text-decoration: none;font-size: 1=
+5px;font-weight: 600;line-height: 1em;letter-spacing: .12em;text-transform=
+: uppercase;color: #bd8049;font-family: &quot;Helvetica Neue&quot;=2C&quot=
+;Helvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'Droid Sans'=2C'Robot=
+o' !important;">Read more <span class=3D"guillemet" style=3D"vertical-alig=
+n: text-top;">&rarr;</span></a></div>
+</div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div><div mc:repeatable=3D"repeat_1" mc:varia=
+nt=3D"Variable Content" mc:repeatindex=3D"2">
+                                <div class=3D"std-spacer" style=3D"backgro=
+und: #f5f4f3;height: 1px;width: 100%;"></div>
+                                <table border=3D"0" cellpadding=3D"30" cel=
+lspacing=3D"0" width=3D"100%">
+                                  <tbody>
+                                    <tr>
+                                      <td valign=3D"top" class=3D"linked-c=
+ard">
+                                        <a href=3D"https://atlasobscura.us=
+1.list-manage.com/track/click?u=3D399fc0402f1b154b67965632e&id=3D8df1c0ec1=
+a&e=3D42cfb0c56a" target=3D"_blank" style=3D"text-decoration: none;"><img=
+ src=3D"https://mcusercontent.com/399fc0402f1b154b67965632e/images/23a4a8e=
+0-873c-70d8-309e-7159e2d358c0.jpeg" alt=3D"" border=3D"0" style=3D"margin:=
+ 0;padding: 0;max-width: 411px;max-height: 232px;border: none;font-size: 1=
+4px;font-weight: bold;height: auto;line-height: 100%;outline: none;text-de=
+coration: none;text-transform: capitalize;margin-bottom: 25px;" width=3D"4=
+11" class=3D"item-image"></a>
+                                        <br>
+                                        <div class=3D"card-body">
+                                          <div><div class=3D"card-header l=
+eft-aligned" style=3D"text-align: left !important;padding: 0;margin-bottom=
+: -4px;">
+<div class=3D"item-supertitle simplified-color" style=3D"font-size: 15px;f=
+ont-weight: 600;line-height: 1em;letter-spacing: .12em;text-transform: upp=
+ercase;color: #bd8049;margin-bottom: 6px;font-family: &quot;Helvetica Neue=
+&quot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'Droid=
+ Sans'=2C'Roboto' !important;"><a href=3D"https://atlasobscura.us1.list-ma=
+nage.com/track/click?u=3D399fc0402f1b154b67965632e&id=3D3fa8d8d627&e=3D42cfb0c56a" target=3D"_blank" style=3D"text-decoration: none;font-size: 15px=
+;font-weight: 600;line-height: 1em;letter-spacing: .12em;text-transform: u=
+ppercase;color: #bd8049;font-family: &quot;Helvetica Neue&quot;=2C&quot;He=
+lvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'Droid Sans'=2C'Roboto'=
+ !important;">FASCINATING LISTS</a></div>
+
+<div class=3D"h3" style=3D"display: block;font-weight: bold;font-size: 32p=
+x;line-height: 1em;color: #382c14 !important;font-family: &quot;Helvetica=
+ Neue&quot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'D=
+roid Sans'=2C'Roboto' !important;"><a href=3D"https://atlasobscura.us1.lis=
+t-manage.com/track/click?u=3D399fc0402f1b154b67965632e&id=3D9eea7166a7&e=
+=3D42cfb0c56a" style=3D"text-decoration: none;color: #382c14;">8 Gargoyle=
+s and Grotesques</a></div>
+</div>
+
+<div class=3D"p serif" style=3D"color: #333;display: block;font-family: Ti=
+mesNewRoman=2CTimes New Roman=2CTimes=2CBaskerville=2CGeorgia=2Cserif !imp=
+ortant;font-size: 19px;line-height: 28px;margin-top: 20px;padding-left: 2p=
+x;padding-right: 2px;text-align: left;letter-spacing: .19px;"><a href=3D"h=
+ttps://atlasobscura.us1.list-manage.com/track/click?u=3D399fc0402f1b154b67=
+965632e&id=3D56ac9d820e&e=3D42cfb0c56a" style=3D"text-decoration: none;co=
+lor: #333;">&ldquo;Gargoyles&rdquo; have been used as far back as ancient=
+ Egypt=2C Greece=2C and Rome=2C as decorative water spouts designed to shi=
+ft rainfall away from buildings and fancifully down to ground. It was in m=
+edieval Europe that they picked up the name (from the French <em>gargouill=
+e</em>=2C or &ldquo;waterspout&rdquo;) and began to resemble the ones we&r=
+squo;re familiar with today=2C many of which are actually cosmetic &ldquo;=
+grotesques.&rdquo; From the dark lord Vader to a bat-like vampiric rabbit=
+=2C here are eight unusual gargoyles and grotesques around the world.</a><=
+/div>
+
+<div class=3D"item-body-link simplified-color" style=3D"font-size: 15px;fo=
+nt-weight: 600;line-height: 1em;letter-spacing: .12em;text-transform: uppe=
+rcase;color: #bd8049;margin-top: 20px;display: inline-block;font-family: &=
+quot;Helvetica Neue&quot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;"><a href=3D"https://atla=
+sobscura.us1.list-manage.com/track/click?u=3D399fc0402f1b154b67965632e&id=
+=3D74d9a3bf2f&e=3D42cfb0c56a" style=3D"text-decoration: none;font-size: 1=
+5px;font-weight: 600;line-height: 1em;letter-spacing: .12em;text-transform=
+: uppercase;color: #bd8049;font-family: &quot;Helvetica Neue&quot;=2C&quot=
+;Helvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'Droid Sans'=2C'Robot=
+o' !important;">Read more <span class=3D"guillemet" style=3D"vertical-alig=
+n: text-top;">&rarr;</span></a></div>
+</div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div><div mc:repeatable=3D"repeat_1" mc:varia=
+nt=3D"Variable Content" mc:repeatindex=3D"3">
+                                <div class=3D"std-spacer" style=3D"backgro=
+und: #f5f4f3;height: 1px;width: 100%;"></div>
+                                <table border=3D"0" cellpadding=3D"30" cel=
+lspacing=3D"0" width=3D"100%">
+                                  <tbody>
+                                    <tr>
+                                      <td valign=3D"top" class=3D"linked-c=
+ard">
+                                        <a href=3D"https://atlasobscura.us=
+1.list-manage.com/track/click?u=3D399fc0402f1b154b67965632e&id=3Ddcad7f9fe=
+2&e=3D42cfb0c56a" target=3D"_blank" style=3D"text-decoration: none;"><img=
+ src=3D"https://mcusercontent.com/399fc0402f1b154b67965632e/images/820ade6=
+0-8e4d-8c17-9e8b-2d30dbfeabd3.jpeg" alt=3D"" border=3D"0" style=3D"margin:=
+ 0;padding: 0;max-width: 411px;max-height: 232px;border: none;font-size: 1=
+4px;font-weight: bold;height: auto;line-height: 100%;outline: none;text-de=
+coration: none;text-transform: capitalize;margin-bottom: 25px;" width=3D"4=
+11" class=3D"item-image"></a>
+                                        <br>
+                                        <div class=3D"card-body">
+                                          <div><div class=3D"card-header l=
+eft-aligned" style=3D"text-align: left !important;padding: 0;margin-bottom=
+: -4px;">
+<div class=3D"item-supertitle simplified-color" style=3D"font-size: 15px;f=
+ont-weight: 600;line-height: 1em;letter-spacing: .12em;text-transform: upp=
+ercase;color: #bd8049;margin-bottom: 6px;font-family: &quot;Helvetica Neue=
+&quot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'Droid=
+ Sans'=2C'Roboto' !important;"><a href=3D"https://atlasobscura.us1.list-ma=
+nage.com/track/click?u=3D399fc0402f1b154b67965632e&id=3D3031ee6762&e=3D42cfb0c56a" target=3D"_blank" style=3D"text-decoration: none;font-size: 15px=
+;font-weight: 600;line-height: 1em;letter-spacing: .12em;text-transform: u=
+ppercase;color: #bd8049;font-family: &quot;Helvetica Neue&quot;=2C&quot;He=
+lvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'Droid Sans'=2C'Roboto'=
+ !important;">The Atlas Obscura Podcast</a></div>
+
+<div class=3D"h3" style=3D"display: block;font-weight: bold;font-size: 32p=
+x;line-height: 1em;color: #382c14 !important;font-family: &quot;Helvetica=
+ Neue&quot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'D=
+roid Sans'=2C'Roboto' !important;"><a href=3D"https://atlasobscura.us1.lis=
+t-manage.com/track/click?u=3D399fc0402f1b154b67965632e&id=3D471c5572f3&e=
+=3D42cfb0c56a" style=3D"text-decoration: none;color: #382c14;">The San Ju=
+an Island Pig War</a></div>
+</div>
+
+<div class=3D"p serif" style=3D"color: #333;display: block;font-family: Ti=
+mesNewRoman=2CTimes New Roman=2CTimes=2CBaskerville=2CGeorgia=2Cserif !imp=
+ortant;font-size: 19px;line-height: 28px;margin-top: 20px;padding-left: 2p=
+x;padding-right: 2px;text-align: left;letter-spacing: .19px;"><a href=3D"h=
+ttps://atlasobscura.us1.list-manage.com/track/click?u=3D399fc0402f1b154b67=
+965632e&id=3D7a29d41517&e=3D42cfb0c56a" style=3D"text-decoration: none;co=
+lor: #333;">Have you heard our podcast yet? In case the answer is no=2C he=
+re&rsquo;s a great one to start with. In this episode=2C we visit an islan=
+d off the coast of Northwestern Washington where the killing of a British=
+ pig almost started a war between two of the world&rsquo;s greatest milita=
+ry powers.</a></div>
+
+<div class=3D"item-body-link simplified-color" style=3D"font-size: 15px;fo=
+nt-weight: 600;line-height: 1em;letter-spacing: .12em;text-transform: uppe=
+rcase;color: #bd8049;margin-top: 20px;display: inline-block;font-family: &=
+quot;Helvetica Neue&quot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;"><a href=3D"https://atla=
+sobscura.us1.list-manage.com/track/click?u=3D399fc0402f1b154b67965632e&id=
+=3D847e5b0d61&e=3D42cfb0c56a" target=3D"_blank" style=3D"text-decoration:=
+ none;font-size: 15px;font-weight: 600;line-height: 1em;letter-spacing: .1=
+2em;text-transform: uppercase;color: #bd8049;font-family: &quot;Helvetica=
+ Neue&quot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'D=
+roid Sans'=2C'Roboto' !important;">LISTEN ON OUR SITE </a><a href=3D"https=
+://atlasobscura.us1.list-manage.com/track/click?u=3D399fc0402f1b154b679656=
+32e&id=3D45491c43c5&e=3D42cfb0c56a" style=3D"text-decoration: none;font-s=
+ize: 15px;font-weight: 600;line-height: 1em;letter-spacing: .12em;text-tra=
+nsform: uppercase;color: #bd8049;font-family: &quot;Helvetica Neue&quot;=
+=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'Droid Sans'=
+=2C'Roboto' !important;"><span>&rarr;</span></a></div>
+&nbsp;
+
+<div class=3D"item-body-link simplified-color" style=3D"font-size: 15px;fo=
+nt-weight: 600;line-height: 1em;letter-spacing: .12em;text-transform: uppe=
+rcase;color: #bd8049;margin-top: 20px;display: inline-block;font-family: &=
+quot;Helvetica Neue&quot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;"><a href=3D"https://atla=
+sobscura.us1.list-manage.com/track/click?u=3D399fc0402f1b154b67965632e&id=
+=3D6ecde7fa05&e=3D42cfb0c56a" target=3D"_blank" style=3D"text-decoration:=
+ none;font-size: 15px;font-weight: 600;line-height: 1em;letter-spacing: .1=
+2em;text-transform: uppercase;color: #bd8049;font-family: &quot;Helvetica=
+ Neue&quot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'D=
+roid Sans'=2C'Roboto' !important;">LISTEN ON APPLE PODCASTS </a><a href=3D=
+"https://atlasobscura.us1.list-manage.com/track/click?u=3D399fc0402f1b154b=
+67965632e&id=3D3b07090f52&e=3D42cfb0c56a" style=3D"text-decoration: none;=
+font-size: 15px;font-weight: 600;line-height: 1em;letter-spacing: .12em;te=
+xt-transform: uppercase;color: #bd8049;font-family: &quot;Helvetica Neue&q=
+uot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'Droid Sa=
+ns'=2C'Roboto' !important;"><span>&rarr;</span></a></div>
+<a href=3D"https://atlasobscura.us1.list-manage.com/track/click?u=3D399fc0=
+402f1b154b67965632e&id=3Db31ba3a7c6&e=3D42cfb0c56a" style=3D"text-decorat=
+ion: none;">&nbsp;</a>
+
+<div class=3D"item-body-link simplified-color" style=3D"font-size: 15px;fo=
+nt-weight: 600;line-height: 1em;letter-spacing: .12em;text-transform: uppe=
+rcase;color: #bd8049;margin-top: 20px;display: inline-block;font-family: &=
+quot;Helvetica Neue&quot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;"><a href=3D"https://atla=
+sobscura.us1.list-manage.com/track/click?u=3D399fc0402f1b154b67965632e&id=
+=3Deb22939906&e=3D42cfb0c56a" target=3D"_blank" style=3D"text-decoration:=
+ none;font-size: 15px;font-weight: 600;line-height: 1em;letter-spacing: .1=
+2em;text-transform: uppercase;color: #bd8049;font-family: &quot;Helvetica=
+ Neue&quot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'D=
+roid Sans'=2C'Roboto' !important;">LISTEN ON SPOTIFY </a><a href=3D"https:=
+//atlasobscura.us1.list-manage.com/track/click?u=3D399fc0402f1b154b6796563=
+2e&id=3Dd329914cef&e=3D42cfb0c56a" style=3D"text-decoration: none;font-si=
+ze: 15px;font-weight: 600;line-height: 1em;letter-spacing: .12em;text-tran=
+sform: uppercase;color: #bd8049;font-family: &quot;Helvetica Neue&quot;=2C=
+&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'Droid Sans'=2C'=
+Roboto' !important;"><span>&rarr;</span></a></div>
+<a href=3D"https://atlasobscura.us1.list-manage.com/track/click?u=3D399fc0=
+402f1b154b67965632e&id=3D1b4d2cdc74&e=3D42cfb0c56a" style=3D"text-decorat=
+ion: none;"> &nbsp;</a>
+
+<div class=3D"item-body-link simplified-color" style=3D"font-size: 15px;fo=
+nt-weight: 600;line-height: 1em;letter-spacing: .12em;text-transform: uppe=
+rcase;color: #bd8049;margin-top: 20px;display: inline-block;font-family: &=
+quot;Helvetica Neue&quot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;"><a href=3D"https://atla=
+sobscura.us1.list-manage.com/track/click?u=3D399fc0402f1b154b67965632e&id=
+=3Dc5e9e864ca&e=3D42cfb0c56a" target=3D"_blank" style=3D"text-decoration:=
+ none;font-size: 15px;font-weight: 600;line-height: 1em;letter-spacing: .1=
+2em;text-transform: uppercase;color: #bd8049;font-family: &quot;Helvetica=
+ Neue&quot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'D=
+roid Sans'=2C'Roboto' !important;">LISTEN ON STITCHER </a><a href=3D"https=
+://atlasobscura.us1.list-manage.com/track/click?u=3D399fc0402f1b154b679656=
+32e&id=3Dd3755ec24c&e=3D42cfb0c56a" style=3D"text-decoration: none;font-s=
+ize: 15px;font-weight: 600;line-height: 1em;letter-spacing: .12em;text-tra=
+nsform: uppercase;color: #bd8049;font-family: &quot;Helvetica Neue&quot;=
+=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'Droid Sans'=
+=2C'Roboto' !important;"><span>&rarr;</span></a></div>
+</div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div><div mc:repeatable=3D"repeat_1" mc:varia=
+nt=3D"Variable Content" mc:repeatindex=3D"4">
+                                <div class=3D"std-spacer" style=3D"backgro=
+und: #f5f4f3;height: 1px;width: 100%;"></div>
+                                <table border=3D"0" cellpadding=3D"30" cel=
+lspacing=3D"0" width=3D"100%">
+                                  <tbody>
+                                    <tr>
+                                      <td valign=3D"top" class=3D"linked-c=
+ard">
+                                        <a href=3D"https://atlasobscura.us=
+1.list-manage.com/track/click?u=3D399fc0402f1b154b67965632e&id=3Dba8b1f1dc=
+a&e=3D42cfb0c56a" target=3D"_blank" style=3D"text-decoration: none;"><img=
+ src=3D"https://mcusercontent.com/399fc0402f1b154b67965632e/images/40f432c=
+0-0217-c54a-53d2-841fc14e3d4b.png" alt=3D"" border=3D"0" style=3D"margin:=
+ 0;padding: 0;max-width: 411px;max-height: 232px;border: none;font-size: 1=
+4px;font-weight: bold;height: auto;line-height: 100%;outline: none;text-de=
+coration: none;text-transform: capitalize;margin-bottom: 25px;" width=3D"4=
+11" class=3D"item-image"></a>
+                                        <br>
+                                        <div class=3D"card-body">
+                                          <div><div class=3D"card-header l=
+eft-aligned" style=3D"text-align: left !important;padding: 0;margin-bottom=
+: -4px;">
+<div class=3D"item-supertitle simplified-color" style=3D"font-size: 15px;f=
+ont-weight: 600;line-height: 1em;letter-spacing: .12em;text-transform: upp=
+ercase;color: #bd8049;margin-bottom: 6px;font-family: &quot;Helvetica Neue=
+&quot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'Droid=
+ Sans'=2C'Roboto' !important;"><a href=3D"https://atlasobscura.us1.list-ma=
+nage.com/track/click?u=3D399fc0402f1b154b67965632e&id=3D3acdfa6119&e=3D42cfb0c56a" target=3D"_blank" style=3D"text-decoration: none;font-size: 15px=
+;font-weight: 600;line-height: 1em;letter-spacing: .12em;text-transform: u=
+ppercase;color: #bd8049;font-family: &quot;Helvetica Neue&quot;=2C&quot;He=
+lvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'Droid Sans'=2C'Roboto'=
+ !important;">Join The Community</a></div>
+
+<div class=3D"h3" style=3D"display: block;font-weight: bold;font-size: 32p=
+x;line-height: 1em;color: #382c14 !important;font-family: &quot;Helvetica=
+ Neue&quot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'D=
+roid Sans'=2C'Roboto' !important;"><a href=3D"https://atlasobscura.us1.lis=
+t-manage.com/track/click?u=3D399fc0402f1b154b67965632e&id=3Dd940b3ef9b&e=
+=3D42cfb0c56a" style=3D"text-decoration: none;color: #382c14;">Become a M=
+ember Today</a></div>
+</div>
+
+<div class=3D"p serif" style=3D"color: #333;display: block;font-family: Ti=
+mesNewRoman=2CTimes New Roman=2CTimes=2CBaskerville=2CGeorgia=2Cserif !imp=
+ortant;font-size: 19px;line-height: 28px;margin-top: 20px;padding-left: 2p=
+x;padding-right: 2px;text-align: left;letter-spacing: .19px;"><a href=3D"h=
+ttps://atlasobscura.us1.list-manage.com/track/click?u=3D399fc0402f1b154b67=
+965632e&id=3Ded018e1cac&e=3D42cfb0c56a" style=3D"text-decoration: none;co=
+lor: #333;">Want to take the next step? By joining our membership program=
+=2C you&rsquo;ll not only become a champion of discovery&mdash;you&rsquo;l=
+l also meet other like-minded explorers along the way. Our members enjoy i=
+nsider access to our members-only experiences and events=2C which includes=
+ special behind-the-scenes tours=2C curious seminars and lectures=2C and m=
+ore. You&rsquo;ll also get $100 credit towards your next Atlas Obscura Tri=
+p=2C alongside other perks. Sign up today!</a></div>
+
+<div class=3D"item-body-link simplified-color" style=3D"font-size: 15px;fo=
+nt-weight: 600;line-height: 1em;letter-spacing: .12em;text-transform: uppe=
+rcase;color: #bd8049;margin-top: 20px;display: inline-block;font-family: &=
+quot;Helvetica Neue&quot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;"><a href=3D"https://atla=
+sobscura.us1.list-manage.com/track/click?u=3D399fc0402f1b154b67965632e&id=
+=3D38b51ccf50&e=3D42cfb0c56a" style=3D"text-decoration: none;font-size: 1=
+5px;font-weight: 600;line-height: 1em;letter-spacing: .12em;text-transform=
+: uppercase;color: #bd8049;font-family: &quot;Helvetica Neue&quot;=2C&quot=
+;Helvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'Droid Sans'=2C'Robot=
+o' !important;">Learn more <span class=3D"guillemet" style=3D"vertical-ali=
+gn: text-top;">&rarr;</span></a></div>
+</div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <!-- End Simplified Repeatable Module  -->
+                            <!-- Start Forum Module  -->
+
+                            <!-- End Forum Module  -->
+                            <div class=3D"lrg-spacer" style=3D"background:=
+ #f5f4f3;height: 24px;width: 100%;"></div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- START Footer content -->
+                    <table width=3D"475" border=3D"0" cellpadding=3D"30" c=
+ellspacing=3D"0" bgcolor=3D"#ffffff">
+                      <tbody>
+                        <tr>
+                          <td align=3D"left" valign=3D"bottom">
+                            <div class=3D"outlink-row content-width" style=
+=3D"text-align: left;padding-top: 10px;width: 100%;min-width: 415px;">
+                              <a id=3D"place-link" class=3D"footer-outlink=
+ nondecorated" href=3D"https://atlasobscura.us1.list-manage.com/track/clic=
+k?u=3D399fc0402f1b154b67965632e&id=3Dea6217c3da&e=3D42cfb0c56a" style=3D"=
+text-decoration: none !important;width: 45%;max-width: 172px;padding-right=
+: 50px;">
+                                <img alt=3D"Add a place to the Atlas" src=
+=3D"https://gallery.mailchimp.com/399fc0402f1b154b67965632e/images/50efbd9=
+2-2529-4df5-8eeb-95cd9eeb21f7.png" style=3D"border: none;font-size: 14px;f=
+ont-weight: bold;height: 95px;line-height: 100%;outline: none;text-decorat=
+ion: none;text-transform: capitalize;max-height: 95px;width: auto;display:=
+ inline-block;margin: 0 0 10px;"></a>
+                                <a id=3D"newsletters-link" class=3D"footer=
+-outlink nondecorated" href=3D"https://atlasobscura.us1.list-manage.com/tr=
+ack/click?u=3D399fc0402f1b154b67965632e&id=3D36acf603ac&e=3D42cfb0c56a" s=
+tyle=3D"text-decoration: none !important;width: 45%;max-width: 172px;paddi=
+ng-right: 0;text-align: right;">
+                                  <img alt=3D"Subscribe to our other newsl=
+etters" src=3D"https://gallery.mailchimp.com/399fc0402f1b154b67965632e/ima=
+ges/172a232c-2b2f-4442-9eba-06d7d7a046a9.png" style=3D"border: none;font-s=
+ize: 14px;font-weight: bold;height: 93px;line-height: 100%;outline: none;t=
+ext-decoration: none;text-transform: capitalize;max-height: 95px;width: au=
+to;display: inline-block;margin: 0 0 10px;"></a>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <table width=3D"475" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" bgcolor=3D"#f5f4f3">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <div class=3D"std-spacer" style=3D"backgro=
+und: #f5f4f3;height: 1px;width: 100%;"></div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <table width=3D"475" border=3D"0" cellpadding=3D"3=
+0" cellspacing=3D"0" bgcolor=3D"#ffffff">
+                          <tbody>
+                            <tr>
+                              <td align=3D"left" valign=3D"bottom" class=
+=3D"limit-to-template-max-width">
+                                <div class=3D"tagline-row" style=3D"text-a=
+lign: left;margin-bottom: 29px;margin-top: 10px;">
+                                  <a id=3D"tagline-link" class=3D"nondecor=
+ated" href=3D"https://atlasobscura.us1.list-manage.com/track/click?u=3D399=
+fc0402f1b154b67965632e&id=3D7e25dc94d1&e=3D42cfb0c56a" style=3D"text-deco=
+ration: none !important;">
+                                    <img id=3D"full-tagline" alt=3D"The de=
+finitive guide to the world's hidden wonders." src=3D"https://gallery.mail=
+chimp.com/399fc0402f1b154b67965632e/images/255522d9-e507-48a7-a653-df54f57=
+3e6f4.png" width=3D"310" style=3D"border: none;font-size: 14px;font-weight=
+: bold;height: auto;line-height: 100%;outline: none;text-decoration: none;=
+text-transform: capitalize;"></a>
+                                  </div>
+                                  <div class=3D"social-row left-margined"=
+ style=3D"margin-bottom: 10px;">
+                                    <a class=3D"nondecorated" href=3D"http=
+s://atlasobscura.us1.list-manage.com/track/click?u=3D399fc0402f1b154b67965=
+632e&id=3D88c6a3d46f&e=3D42cfb0c56a" style=3D"text-decoration: none !impo=
+rtant;display: inline-block;margin-right: 20px;">
+                                      <img id=3D"facebook" class=3D"social=
+-sprite" alt=3D"Facebook" src=3D"https://gallery.mailchimp.com/399fc0402f1=
+b154b67965632e/images/4e43ce8b-f7ac-419d-9de3-ce96b3fa8fd5.png" height=3D"=
+20" style=3D"border: none;font-size: 14px;font-weight: bold;height: 20px;l=
+ine-height: 100%;outline: none;text-decoration: none;text-transform: capit=
+alize;width: auto;"></a>
+                                      <a class=3D"nondecorated" href=3D"ht=
+tps://atlasobscura.us1.list-manage.com/track/click?u=3D399fc0402f1b154b679=
+65632e&id=3Df20b4ef2c8&e=3D42cfb0c56a" style=3D"text-decoration: none !im=
+portant;display: inline-block;margin-right: 20px;">
+                                        <img id=3D"twitter" class=3D"socia=
+l-sprite" alt=3D"Twitter" src=3D"https://gallery.mailchimp.com/399fc0402f1=
+b154b67965632e/images/8ae31b5b-a5ab-447d-9e54-03bf7562db3d.png" height=3D"=
+20" style=3D"border: none;font-size: 14px;font-weight: bold;height: 20px;l=
+ine-height: 100%;outline: none;text-decoration: none;text-transform: capit=
+alize;width: auto;"></a>
+                                        <a class=3D"nondecorated" href=3D"=
+https://atlasobscura.us1.list-manage.com/track/click?u=3D399fc0402f1b154b6=
+7965632e&id=3De89d91ec90&e=3D42cfb0c56a" style=3D"text-decoration: none !=
+important;display: inline-block;margin-right: 20px;">
+                                          <img id=3D"instagram" class=3D"s=
+ocial-sprite" alt=3D"Instagram" src=3D"https://gallery.mailchimp.com/399fc=
+0402f1b154b67965632e/images/79689903-ead9-474a-b88b-be40be01b52d.png" heig=
+ht=3D"20" style=3D"border: none;font-size: 14px;font-weight: bold;height:=
+ 20px;line-height: 100%;outline: none;text-decoration: none;text-transform=
+: capitalize;width: auto;"></a>
+                                          <a class=3D"nondecorated" href=
+=3D"https://atlasobscura.us1.list-manage.com/track/click?u=3D399fc0402f1b1=
+54b67965632e&id=3D98d31aef25&e=3D42cfb0c56a" style=3D"text-decoration: no=
+ne !important;display: inline-block;margin-right: 20px;">
+                                            <img id=3D"youtube" class=3D"s=
+ocial-sprite" alt=3D"Instagram" src=3D"https://gallery.mailchimp.com/399fc=
+0402f1b154b67965632e/images/da028dab-1730-4a2c-b3a8-311d8d701b58.png" heig=
+ht=3D"20" style=3D"border: none;font-size: 14px;font-weight: bold;height:=
+ 20px;line-height: 100%;outline: none;text-decoration: none;text-transform=
+: capitalize;width: auto;"></a>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                  <table width=3D"475">
+                                    <tbody>
+                                      <tr>
+                                        <td align=3D"center" valign=3D"bot=
+tom">
+                                          <div id=3D"footer-inline-links"=
+ style=3D"color: #bd8049;margin: 13px 0 10px;">
+                                            <a class=3D"sans" href=3D"http=
+s://atlasobscura.us1.list-manage.com/track/click?u=3D399fc0402f1b154b67965=
+632e&id=3D5ced54986d&e=3D42cfb0c56a" style=3D"text-decoration: underline;=
+color: #bd8049 !important;font-size: 11px;letter-spacing: .78px;line-heigh=
+t: 15px;font-weight: normal;text-align: center;font-family: &quot;Helvetic=
+a Neue&quot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'=
+Droid Sans'=2C'Roboto' !important;">Visit AtlasObscura.com</a> <span class=
+=3D"inline-pipe" style=3D"vertical-align: baseline;font-size: 11px;margin:=
+ 0 1px;">=C2=B7</span> <a class=3D"sans" href=3D"https://us1.campaign-arch=
+ive.com/?e=3D42cfb0c56a&u=3D399fc0402f1b154b67965632e&id=3Db3b9848ad6" style=
+=3D"text-decoration: underline;color: #bd8049 !important;font-size: 11px;l=
+etter-spacing: .78px;line-height: 15px;font-weight: normal;text-align: cen=
+ter;font-family: &quot;Helvetica Neue&quot;=2C&quot;Helvetica&quot;=2C'Ari=
+al'=2Csans-serif=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;">View in=
+ Browser</a> <span class=3D"inline-pipe" style=3D"vertical-align: baseline=
+;font-size: 11px;margin: 0 1px;">=C2=B7</span> <a class=3D"sans" href=3D"h=
+ttps://atlasobscura.us1.list-manage.com/unsubscribe?u=3D399fc0402f1b154b67=
+965632e&id=3Df36db9c480&e=3D42cfb0c56a&c=3Db3b9848ad6" style=3D"text-decorat=
+ion: underline;color: #bd8049 !important;font-size: 11px;letter-spacing: .=
+78px;line-height: 15px;font-weight: normal;text-align: center;font-family:=
+ &quot;Helvetica Neue&quot;=2C&quot;Helvetica&quot;=2C'Arial'=2Csans-serif=
+=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;">Unsubscribe</a> <span c=
+lass=3D"inline-pipe" style=3D"vertical-align: baseline;font-size: 11px;mar=
+gin: 0 1px;">=C2=B7</span> <a class=3D"sans" href=3D"https://atlasobscura.=
+us1.list-manage.com/track/click?u=3D399fc0402f1b154b67965632e&id=3D1c226e5=
+908&e=3D42cfb0c56a" style=3D"text-decoration: underline;color: #bd8049 !i=
+mportant;font-size: 11px;letter-spacing: .78px;line-height: 15px;font-weig=
+ht: normal;text-align: center;font-family: &quot;Helvetica Neue&quot;=2C&q=
+uot;Helvetica&quot;=2C'Arial'=2Csans-serif=2C'normal'=2C'Droid Sans'=2C'Ro=
+boto' !important;">See All Newsletters</a>
+                                          </div>
+                                          <div class=3D"footer-address san=
+s" style=3D"color: #666666;font-size: 11px;letter-spacing: .27px;line-heig=
+ht: 19px;font-family: &quot;Helvetica Neue&quot;=2C&quot;Helvetica&quot;=
+=2C'Arial'=2Csans-serif=2C'normal'=2C'Droid Sans'=2C'Roboto' !important;">=
+61 Greenpoint Ave #622=2C Brooklyn=2C NY 11222</div>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td align=3D"center" valign=3D"top=
+">
+                                          <div class=3D"lrg-spacer" style=
+=3D"background: #f5f4f3;height: 24px;width: 100%;"></div>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                  <!-- END Footer content -->
+                                </td>
+                              </tr>
+                              <!-- campaign content end -->
+                            </tbody>
+                          </table>
+                          <!-- MC content end -->
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </center>
+              <img src=3D"https://atlasobscura.us1.list-manage.com/track/o=
+pen.php?u=3D399fc0402f1b154b67965632e&id=3Db3b9848ad6&e=3D42cfb0c56a" hei=
+ght=3D"1" width=3D"1" alt=3D""></body>
+</html>
+--_----------=_MCPart_1160775554--

@@ -1,0 +1,1539 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:9f5b:0:b0:2da:43c2:96f2 with SMTP id l27csp220184imf;
+        Sat, 27 May 2023 07:36:05 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ5SwQlKBiG7Fo0l9rN9tEiKEy1rOmDzYAkmNfVHJj74DA9laFZf/qsQ1FF27j5kAX99dF7k
+X-Received: by 2002:a05:600c:ad7:b0:3f6:cfc7:8bc7 with SMTP id c23-20020a05600c0ad700b003f6cfc78bc7mr4332629wmr.17.1685198165184;
+        Sat, 27 May 2023 07:36:05 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685198165; cv=none;
+        d=google.com; s=arc-20160816;
+        b=E2Lqouffvzb5CeGknhvBNZvE0Wbf3WvCJ8VaLCBRJC3ebHysy3rNll3buDPzawM3MQ
+         sSARbpgoXSOZSn60/VfAgZCQ7zf54LDONjwwESygg5b/kX03pjPeKb9QWiYX4enwoqbk
+         56kp4alfqIasrvQArSPQvTNxZv5JkMfTnjAXOGjbuTxBmvywteAzNlpIX9NarzMmkyW8
+         tef/53wyN5ggYzAn8YzmwprKrdWQN/aY6gtk9rYMvw2aaA91B/fmzQtfXjDmg8mx+lMu
+         GFkAkK//LlNSVb/xa4mnVLnqiLtnpRnfK1JZlk+C2P8bFCN9Qz2FvXb9fHh+DDrMpTGz
+         Vwww==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=message-id:mime-version:reply-to:to:date:subject:from
+         :dkim-signature;
+        bh=nhJSgv1IStkZuQi5K+YDaDS7nXaiqbyNCKPk25SF5RA=;
+        b=IqHBOLAMoZPurG+G9+gHkdAsW8NOHLWL9lbv5rCa6McJF7tjpepep38GUMvQehARyx
+         N0NslHSo1KYcfsrq1pVHtJ+FYInP2uMZblcGzl07vz8dYeQrQ+iQ5ZN4qQaTBk/KQ/aH
+         8jRYwdRAC/JDJGNYN+cl4tIy/A51l+xX2IBQOPb/x+FTPuTufFbRLJ2axFlLlzoXnn+X
+         W9CVpaxEf4Erq67Vchx0PtqUVZAfj5lJ39gF0LgDSGmclDS26Bc29D5M3/R++FTZqicN
+         yiQH5XE0M4gYLIIzWCrJ+Fzc8VxAiFI/FR6r66O7fIuHmSJ9Y4fJjXCqWxLmWU8pIYwe
+         Targ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@boutique.marni.com header.s=otb header.b="A/1LeVaT";
+       spf=pass (google.com: domain of bounce@boutique.marni.com designates 172.82.232.146 as permitted sender) smtp.mailfrom=bounce@boutique.marni.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=boutique.marni.com
+Return-Path: <bounce@boutique.marni.com>
+Received: from r146.boutique.jilsander.com (r146.boutique.jilsander.com. [172.82.232.146])
+        by mx.google.com with ESMTPS id z21-20020a7bc7d5000000b003f4272db687si5078666wmk.86.2023.05.27.07.36.04
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 27 May 2023 07:36:05 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce@boutique.marni.com designates 172.82.232.146 as permitted sender) client-ip=172.82.232.146;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@boutique.marni.com header.s=otb header.b="A/1LeVaT";
+       spf=pass (google.com: domain of bounce@boutique.marni.com designates 172.82.232.146 as permitted sender) smtp.mailfrom=bounce@boutique.marni.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=boutique.marni.com
+Return-Path: <bounce@boutique.marni.com>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=boutique.marni.com;
+	s=otb; t=1685198164;
+	bh=nhJSgv1IStkZuQi5K+YDaDS7nXaiqbyNCKPk25SF5RA=;
+	h=From:Subject:Date:To:MIME-Version:Message-ID:Content-Type;
+	b=A/1LeVaTkwsVRuvK1cRkA8sqzrYt2dp5li67H1a7bH1kMTSU5dGItGzXPOzKzXVPy
+	 aFRG4MjBBP4LjFU0xY6yTc4i9dApox8Th9kZ8IhQETNz9JTEHeb8H5y1fZ2CgkBtsM
+	 dHPD1DRD/Z9ujNaBriArB1WzTe/FkwlInaMHEomrwOEmuwxSrMJzekgkCZjef7dqsT
+	 sFMYNin0fEjP1VMLoMzTIU8RtImmThe4Ly+4rGnn70kJc8uRatgkdjXwcHOhwUxUxs
+	 d3P5xbJtYt9J+lNxCJd3t13+dKbWyYGuLeAnAKrcJJNMcPR7gjXJcuAYgKtwKGq+5v
+	 Uw3XTlb6vwTlg==
+X-MSFBL: G/E111hlrXHWp4RX+KRREOINPbXgPDXQXB/IKgcuGW8=|eyJyY3B0X21ldGEiOns
+	gImluIjogIm90Yl9ydF9wcm9kMiIsICJyIjogIm91Y2hlbmRhbnM2MkBnbWFpbC5
+	jb20iLCAibSI6ICI1NjM5NzE3OSIsICJkIjogIjEzOTc0MzI5OSIsICJpIjogIiI
+	gfSwiZyI6ImRlZmF1bHRfYWViNjhhNDktYmZjYy00YjM1LTllMzktOTA5ZWVkNzk
+	5YmE1IiwiciI6Im91Y2hlbmRhbnM2MkBnbWFpbC5jb20iLCJiIjoiYXdzX290Yl9
+	wcm9kMl9kZWZhdWx0X21vbWVudHVtMDdfbXRhMDAxXzE3Mi44Mi4yMzIuMTQ2In0
+	=
+Received: from [10.38.143.3] ([10.38.143.3:40582] helo=r147.boutique.jilsander.com)
+	by momentum07.lon7.cpt.adobe.net (envelope-from <bounce@boutique.marni.com>)
+	(ecelerity 4.2.31.59853 r(Core:4.2.31.1)) with ESMTP
+	id DF/BB-58857-45512746; Sat, 27 May 2023 15:36:04 +0100
+From: "MARNI" <marni@boutique.marni.com>
+Subject: THANK YOU FOR SIGNING UP FOR THE NEWSLETTER
+Date: Sat, 27 May 2023 15:36:01 +0100
+To: <ouchendans62@gmail.com>
+Reply-To: "MARNI" <transactional_reply@marni.com>
+MIME-Version: 1.0
+X-mailer: nlserver, Build 6.7.0
+Message-ID: <NM6035C8D7B08545043otb_rt_prod2@boutique.marni.com>
+Content-Type: multipart/alternative;
+	charset="windows-1252";
+	boundary="----=_NextPart_049_EA293CC2.EA293CC2"
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_049_EA293CC2.EA293CC2
+Content-Type: text/plain;
+	charset="windows-1252"
+Content-Transfer-Encoding: 8bit
+
+If you cannot see the content of this email             
+              click here               http://t.communication.diesel.com/r/?id=t35c8d7b,8545043,37e1253&p1=%40aY94xgJobJSg%2Bac1yUAncmGTJ1Bx19yq%2BqFRjYxqdiU%3D 
+                                                                 
+
+           
+                                                               
+
+               
+                                                             
+                 
+
+                                                                           
+               
+
+                                                      
+
+                                                                             
+
+                                                                        
+                          
+
+                                                                 
+
+                                            
+
+           
+                                                               
+
+               
+                                                             
+                 
+
+                                                                           
+               
+
+                                                      
+
+                                                                             
+        We look forward to sending you updates in advance about all the new developments, exclusives and new additions to the Marni collection.
+      
+                                                                
+                                          
+And if you want to make shopping online even easier, we recommend creating a personal profile via the
+        My Account  http://t.communication.diesel.com/r/?id=t35c8d7b,8545043,37e1254&p1=Marni%20Welcome%20Fast%20en_IL  section.  
+
+Once registered, you can:
+                                                                 
+
+                                            
+
+           
+                                                               
+
+               
+                                                             
+                 
+
+                                                                          
+                 
+
+                                                                           
+               
+
+                                                                             
+
+                                                                        
+                          
+
+                                                                
+                                          
+SAVE YOUR FAVOURITE PRODUCTS
+                                                                 
+
+           
+                                   
+               
+
+                                                                             
+
+                                                                        
+                          
+
+                                                                
+                                          
+COMPLETE PURCHASES QUICKER 
+                                                                 
+
+           
+                                   
+               
+
+                                                                             
+
+                                                                        
+                          
+
+                                                                
+                                          
+TRACK YOUR ORDERS AND RETURNS
+                                                                 
+
+           
+                                                               
+
+               
+                                                                  
+
+               
+                                                             
+                 
+
+                                                                          
+                 
+
+                                                                           
+               
+
+                                                                             
+          CREATE YOUR ACCOUNT 
+          http://t.communication.diesel.com/r/?id=t35c8d7b,8545043,37e1255&p1=Marni%20Welcome%20Fast%20en_IL 
+                                                                 
+
+           
+                                                               
+
+               
+                                     
+                 
+
+                                                                           
+               
+
+                                                                             
+
+      
+
+                                                                             
+      
+
+           
+                                                               
+
+               
+                                     
+                 
+
+                                                                           
+                                
+               
+
+                                                                             
+            WOMEN
+            http://t.communication.diesel.com/r/?id=t35c8d7b,8545043,37e1256&p1=Marni%20Welcome%20Fast%20en_IL 
+                                                                 
+
+           
+                                           
+               
+
+                                                                             
+            MEN
+            http://t.communication.diesel.com/r/?id=t35c8d7b,8545043,37e1257&p1=Marni%20Welcome%20Fast%20en_IL 
+                                                                 
+
+           
+                                           
+               
+
+                                                                             
+            KIDS
+            http://t.communication.diesel.com/r/?id=t35c8d7b,8545043,37e1258&p1=Marni%20Welcome%20Fast%20en_IL 
+                                                                 
+
+           
+                          
+                                                               
+
+               
+                                                                  
+
+               
+                                                             
+                 
+
+                                                                           
+                                
+               
+
+                                                                             
+SHIPPING AND DELIVERY  http://t.communication.diesel.com/r/?id=t35c8d7b,8545043,37e1259&p1=Marni%20Welcome%20Fast%20en_IL 
+                                                                 
+
+           
+                                           
+               
+
+                                                                             
+FAQs  http://t.communication.diesel.com/r/?id=t35c8d7b,8545043,37e125a&p1=Marni%20Welcome%20Fast%20en_IL 
+                                                                 
+
+           
+                                           
+               
+
+                                                                             
+RETURN AND EXCHANGES  http://t.communication.diesel.com/r/?id=t35c8d7b,8545043,37e125b&p1=Marni%20Welcome%20Fast%20en_IL 
+                                                                 
+
+           
+                          
+                                                               
+
+               
+                                     
+                 
+
+                                                                           
+               
+
+                                                                             
+
+      
+
+                                                                             
+      
+
+           
+                                                               
+
+               
+                                     
+                 
+
+                                                                           
+                                
+               
+
+                                                                             
+Legal section  http://t.communication.diesel.com/r/?id=t35c8d7b,8545043,37e125c&p1=Marni%20Welcome%20Fast%20en_IL 
+                                                                 
+
+           
+                                           
+               
+
+                                                                             
+Privacy policy  http://t.communication.diesel.com/r/?id=t35c8d7b,8545043,37e125d&p1=Marni%20Welcome%20Fast%20en_IL 
+                                                                 
+
+           
+                          
+                                                               
+
+               
+                                     
+                 
+
+                                                                           
+               
+
+                                                                             
+If you cannot see the content of this email                click here
+        http://t.communication.diesel.com/r/?id=t35c8d7b,8545043,37e125e&p1=%40aY94xgJobJSg%2Bac1yUAncmGTJ1Bx19yq%2BqFRjYxqdiU%3D 
+
+------=_NextPart_049_EA293CC2.EA293CC2
+Content-Type: text/html;
+	charset="windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+    <html lang=3D"it" xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn=
+:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:off=
+ice">
+      <head>
+        <title>
+      THANK YOU FOR SIGNING UP FOR THE NEWSLETTER
+        </title>
+        <!--[if !mso]><!-->
+        <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+        <!--<![endif]-->
+        <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DU=
+TF-8">
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-sc=
+ale=3D1">
+        <style type=3D"text/css">
+          #outlook a { padding:0; }
+          body { margin:0;padding:0;-webkit-text-size-adjust:100%;-ms-text-=
+size-adjust:100%; }
+          table, td { border-collapse:collapse;mso-table-lspace:0pt;mso-tab=
+le-rspace:0pt; }
+          img { border:0;height:auto;line-height:100%; outline:none;text-de=
+coration:none;-ms-interpolation-mode:bicubic; }
+          p { display:block;margin:13px 0; }
+        </style>
+        <!--[if mso]>
+        <noscript>
+        <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG/>
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+        </xml>
+        </noscript>
+        <![endif]-->
+        <!--[if lte mso 11]>
+        <style type=3D"text/css">
+          .mj-outlook-group-fix { width:100% !important; }
+        </style>
+        <![endif]-->
+        
+        
+    <style type=3D"text/css">
+      @media only screen and (min-width:480px) {
+        .mj-column-per-100 { width:100% !important; max-width: 100%; }
+=2Emj-column-per-33-333333333333336 { width:33.333333333333336% !important;=
+ max-width: 33.333333333333336%; }
+=2Emj-column-per-50 { width:50% !important; max-width: 50%; }
+      }
+    </style>
+    <style media=3D"screen and (min-width:480px)">
+      .moz-text-html .mj-column-per-100 { width:100% !important; max-width:=
+ 100%; }
+=2Emoz-text-html .mj-column-per-33-333333333333336 { width:33.3333333333333=
+36% !important; max-width: 33.333333333333336%; }
+=2Emoz-text-html .mj-column-per-50 { width:50% !important; max-width: 50%; =
+}
+    </style>
+    <style type=3D"text/css">
+[owa] .mj-column-per-100 { width:100% !important; max-width: 100%; }
+[owa] .mj-column-per-33-333333333333336 { width:33.333333333333336% !import=
+ant; max-width: 33.333333333333336%; }
+[owa] .mj-column-per-50 { width:50% !important; max-width: 50%; }
+</style>
+  
+        <style type=3D"text/css">
+        
+        
+
+    @media only screen and (max-width:480px) {
+      table.mj-full-width-mobile { width: 100% !important; }
+      td.mj-full-width-mobile { width: auto !important; }
+    }
+  
+        </style>
+        <style type=3D"text/css">@media screen and (max-width: 479px) {
+    div[class=3Dshow-for-mobile] {
+      display: block !important;
+      max-height: none !important;
+    }
+
+    .show-for-mobile {
+      display: inline-block !important;
+    }
+
+    div[class=3Dshow-for-mobile] {
+      display: block !important;
+      max-height: none !important;
+    }
+
+    .show-for-mobile {
+      display: inline-block !important;
+    }
+
+    .reco__caption--first-row-mobile {
+      padding-bottom: 23px !important;
+    }
+
+    .hide-for-mobile,
+    * [aria-labelledby=3D'hide-for-mobile'] {
+      display: none !important;
+      max-height: 0px !important;
+      overflow: hidden !important;
+    }
+
+    .show-for-desktop {
+      display: none !important;
+      max-height: 0px !important;
+      overflow: hidden !important;
+    }
+  }
+
+  @media only screen and (min-width: 480px) {
+
+    .hide-for-mobile,
+    * [aria-labelledby=3D'hide-for-mobile'] {
+      display: block !important;
+      max-height: inherit !important;
+      overflow: visible !important;
+    }
+
+    .show-for-desktop {
+      display: inline-block !important;
+    }
+
+    .hide-for-desktop {
+      display: none !important;
+      mso-hide: none !important;
+    }
+
+    .link:active,
+    .link:visited {
+      color: inherit !important;
+    }
+
+    .show-for-mobile,
+    * [aria-labelledby=3D'show-for-mobile'] {
+      display: none !important;
+    }
+
+    .show-for-desktop {
+      display: inline-block !important;
+    }
+
+    .hide-for-desktop {
+      display: none !important;
+      mso-hide: none !important;
+    }
+  }</style>
+        
+      </head>
+      <body style=3D"word-spacing:normal;">
+        
+        
+      <div style>
+        <!-- WELCOME - START --><!-- PRE-HEADER - START -->
+      
+      <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px=
+;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-h=
+eight-rule:exactly;"><![endif]-->
+    
+      
+      <div style=3D"margin:0px auto;max-width:600px;">
+        
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"width:100%;">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;padding:12px 32px 15=
+px 32px;text-align:center;">
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-a=
+lign:top;width:536px;" ><![endif]-->
+            
+      <div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-s=
+ize:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:t=
+op;width:100%;">
+        
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"vertical-align:top;" width=3D"100%">
+        <tbody>
+          
+              <tr>
+                <td align=3D"center" style=3D"font-size:0px;padding:0px;wor=
+d-break:break-word;">
+                  
+      <div style=3D"font-family:Arial, sans-serif;font-size:12px;letter-spa=
+cing:0.2px;line-height:16px;text-align:center;color:#666666;">If you cannot=
+ see the content of this email
+            <a href=3D"http://t.communication.diesel.com/r/=3Fid=3Dh35c8d7b=
+,8545043,37e1247&p1=3D%40aY94xgJobJSg%2Bac1yUAncmGTJ1Bx19yq%2BqFRjYxqdiU%3D=
+" style=3D"text-decoration:underline;color:#666666;">              click he=
+re
+            </a></div>
+    
+                </td>
+              </tr>
+            
+        </tbody>
+      </table>
+    
+      </div>
+    
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    
+      
+      <!--[if mso | IE]></td></tr></table><![endif]-->
+    
+    <!-- PRE-HEADER - END --><!-- HEADER - START -->
+      
+      <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px=
+;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-h=
+eight-rule:exactly;"><![endif]-->
+    
+      
+      <div style=3D"margin:0px auto;max-width:600px;">
+        
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"width:100%;">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;padding:0;text-align=
+:center;">
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-a=
+lign:top;width:600px;" ><![endif]-->
+            
+      <div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-s=
+ize:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:t=
+op;width:100%;">
+        
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" width=3D"100%">
+        <tbody>
+          <tr>
+            <td style=3D"vertical-align:top;padding:17px 0;">
+              
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style width=3D"100%">
+        <tbody>
+          
+              <tr>
+                <td align=3D"center" style=3D"font-size:0px;padding:0;word-=
+break:break-word;">
+                  
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"border-collapse:collapse;border-spacing:0px;">
+        <tbody>
+          <tr>
+            <td style=3D"width:190px;">
+              
+      <img alt=3D"Marni" height=3D"auto" src=3D"https://marni-img.s3.amazon=
+aws.com/capp_images/MARNI_LOGO_RED_200C.png" style=3D"border:0;display:bloc=
+k;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;"=
+ width=3D"190">
+    
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+                </td>
+              </tr>
+            
+        </tbody>
+      </table>
+    
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+      </div>
+    
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    
+      
+      <!--[if mso | IE]></td></tr></table><![endif]-->
+    
+    <!-- HEADER - END --><!-- TEXT (NO CTA) - START -->
+      
+      <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px=
+;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-h=
+eight-rule:exactly;"><![endif]-->
+    
+      
+      <div style=3D"margin:0px auto;max-width:600px;">
+        
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"width:100%;">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;padding:0;text-align=
+:center;">
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-a=
+lign:top;width:600px;" ><![endif]-->
+            
+      <div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-s=
+ize:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:t=
+op;width:100%;">
+        
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" width=3D"100%">
+        <tbody>
+          <tr>
+            <td style=3D"vertical-align:top;padding:24px;">
+              
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style width=3D"100%">
+        <tbody>
+          
+              <tr>
+                <td align=3D"left" style=3D"font-size:0px;padding:0;padding=
+-top:16px;word-break:break-word;">
+                  
+      <div style=3D"font-family:Arial, sans-serif;font-size:12px;letter-spa=
+cing:0.2px;line-height:20px;text-align:left;color:#000000;">        We look=
+ forward to sending you updates in advance about all the new developments, =
+exclusives and new additions to the Marni collection.
+      </div>
+    
+                </td>
+              </tr>
+            
+              <tr>
+                <td align=3D"left" class=3D"text-dark-grey" style=3D"color:=
+ #666; font-size: 0px; padding: 0; padding-top: 16px; padding-right: 40px; =
+word-break: break-word;">
+                  
+      <div style=3D"font-family:Arial, sans-serif;font-size:12px;letter-spa=
+cing:0.2px;line-height:20px;text-align:left;color:#666666;">And if you want=
+ to make shopping online even easier, we recommend creating a personal prof=
+ile via the
+        <a href=3D"http://t.communication.diesel.com/r/=3Fid=3Dh35c8d7b,854=
+5043,37e1248&p1=3DMarni%20Welcome%20Fast%20en_IL" style=3D"text-decoration:=
+ underline; color: #666666;" class=3D"link">My Account</a> section.  
+<br />
+<br />Once registered, you can:
+
+</div>
+    
+                </td>
+              </tr>
+            
+        </tbody>
+      </table>
+    
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+      </div>
+    
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    
+      
+      <!--[if mso | IE]></td></tr></table><![endif]-->
+    
+    <!-- TEXT (NO CTA) - END --><!-- SERVIZIO - START -->
+      
+      <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px=
+;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-h=
+eight-rule:exactly;"><![endif]-->
+    
+      
+      <div style=3D"margin:0px auto;max-width:600px;">
+        
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"width:100%;">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;padding:25px 0px;tex=
+t-align:center;">
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" width=3D"600px" ><t=
+able align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" clas=
+s=3D"" role=3D"presentation" style=3D"width:600px;" width=3D"600" ><tr><td =
+style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![en=
+dif]-->
+    
+      
+      <div style=3D"margin:0px auto;max-width:600px;">
+        
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"width:100%;">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;padding:0px;text-ali=
+gn:center;">
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-a=
+lign:top;width:200px;" ><![endif]-->
+            
+      <div class=3D"mj-column-per-33-333333333333336 mj-outlook-group-fix" =
+style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;v=
+ertical-align:top;width:100%;">
+        
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"vertical-align:top;" width=3D"100%">
+        <tbody>
+          
+              <tr>
+                <td align=3D"center" style=3D"font-size:0px;padding:24px 0p=
+x 16px 0px;word-break:break-word;">
+                  
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"border-collapse:collapse;border-spacing:0px;">
+        <tbody>
+          <tr>
+            <td style=3D"width:40px;">
+              
+      <img alt=3D"Heart icon" height=3D"auto" src=3D"https://marni-img.s3.a=
+mazonaws.com/transactional_messages/icons/wishlist/wishlist-2x.png" style=
+=3D"border:0;display:block;outline:none;text-decoration:none;height:auto;wi=
+dth:100%;font-size:13px;" width=3D"40">
+    
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+                </td>
+              </tr>
+            
+              <tr>
+                <td align=3D"center" style=3D"font-size:0px;padding:0px 16p=
+x;word-break:break-word;">
+                  
+      <div style=3D"font-family:Arial, sans-serif;font-size:12px;font-weigh=
+t:600;letter-spacing:0.2px;line-height:20px;text-align:center;color:#000000=
+;">SAVE YOUR FAVOURITE PRODUCTS</div>
+    
+                </td>
+              </tr>
+            
+        </tbody>
+      </table>
+    
+      </div>
+    
+          <!--[if mso | IE]></td><td class=3D"" style=3D"vertical-align:top=
+;width:200px;" ><![endif]-->
+            
+      <div class=3D"mj-column-per-33-333333333333336 mj-outlook-group-fix" =
+style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;v=
+ertical-align:top;width:100%;">
+        
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"vertical-align:top;" width=3D"100%">
+        <tbody>
+          
+              <tr>
+                <td align=3D"center" style=3D"font-size:0px;padding:24px 0p=
+x 16px 0px;word-break:break-word;">
+                  
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"border-collapse:collapse;border-spacing:0px;">
+        <tbody>
+          <tr>
+            <td style=3D"width:40px;">
+              
+      <img alt=3D"Hanger Icon" height=3D"auto" src=3D"https://marni-img.s3.=
+amazonaws.com/transactional_messages/icons/click_collect/click-collect-2x.p=
+ng" style=3D"border:0;display:block;outline:none;text-decoration:none;heigh=
+t:auto;width:100%;font-size:13px;" width=3D"40">
+    
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+                </td>
+              </tr>
+            
+              <tr>
+                <td align=3D"center" style=3D"font-size:0px;padding:0px 16p=
+x;word-break:break-word;">
+                  
+      <div style=3D"font-family:Arial, sans-serif;font-size:12px;font-weigh=
+t:600;letter-spacing:0.2px;line-height:20px;text-align:center;color:#000000=
+;">COMPLETE PURCHASES QUICKER </div>
+    
+                </td>
+              </tr>
+            
+        </tbody>
+      </table>
+    
+      </div>
+    
+          <!--[if mso | IE]></td><td class=3D"" style=3D"vertical-align:top=
+;width:200px;" ><![endif]-->
+            
+      <div class=3D"mj-column-per-33-333333333333336 mj-outlook-group-fix" =
+style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;v=
+ertical-align:top;width:100%;">
+        
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"vertical-align:top;" width=3D"100%">
+        <tbody>
+          
+              <tr>
+                <td align=3D"center" style=3D"font-size:0px;padding:24px 0p=
+x 16px 0px;word-break:break-word;">
+                  
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"border-collapse:collapse;border-spacing:0px;">
+        <tbody>
+          <tr>
+            <td style=3D"width:40px;">
+              
+      <img alt=3D"Truck icon" height=3D"auto" src=3D"https://marni-img.s3.a=
+mazonaws.com/transactional_messages/icons/shipping/shipping-2x.png" style=
+=3D"border:0;display:block;outline:none;text-decoration:none;height:auto;wi=
+dth:100%;font-size:13px;" width=3D"40">
+    
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+                </td>
+              </tr>
+            
+              <tr>
+                <td align=3D"center" style=3D"font-size:0px;padding:0px 16p=
+x;word-break:break-word;">
+                  
+      <div style=3D"font-family:Arial, sans-serif;font-size:12px;font-weigh=
+t:600;letter-spacing:0.2px;line-height:20px;text-align:center;color:#000000=
+;">TRACK YOUR ORDERS AND RETURNS</div>
+    
+                </td>
+              </tr>
+            
+        </tbody>
+      </table>
+    
+      </div>
+    
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    
+      
+      <!--[if mso | IE]></td></tr></table></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    
+      
+      <!--[if mso | IE]></td></tr></table><![endif]-->
+    
+    <!-- SERVIZIO - END --><!-- HELP - START -->
+      
+      <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px=
+;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-h=
+eight-rule:exactly;"><![endif]-->
+    
+      
+      <div style=3D"margin:0px auto;max-width:600px;">
+        
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"width:100%;">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;padding:15px 0px;tex=
+t-align:center;">
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" width=3D"600px" ><t=
+able align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" clas=
+s=3D"" role=3D"presentation" style=3D"width:600px;" width=3D"600" ><tr><td =
+style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![en=
+dif]-->
+    
+      
+      <div style=3D"margin:0px auto;max-width:600px;">
+        
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"width:100%;">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;padding:0px;text-ali=
+gn:center;">
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-a=
+lign:top;width:600px;" ><![endif]-->
+            
+      <div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-s=
+ize:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:t=
+op;width:100%;">
+        
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"vertical-align:top;" width=3D"100%">
+        <tbody>
+          
+              <tr>
+                <td align=3D"center" style=3D"font-size:0px;padding:0px;wor=
+d-break:break-word;">
+                  
+      <div style=3D"font-family:Arial, sans-serif;font-size:12px;letter-spa=
+cing:0.2px;line-height:20px;text-align:center;text-decoration:underline;col=
+or:#000000;"><a href=3D"http://t.communication.diesel.com/r/=3Fid=3Dh35c8d7=
+b,8545043,37e1249&p1=3DMarni%20Welcome%20Fast%20en_IL" style=3D"color:#0000=
+00;text-decoration:underline;">          CREATE YOUR ACCOUNT 
+        </a></div>
+    
+                </td>
+              </tr>
+            
+        </tbody>
+      </table>
+    
+      </div>
+    
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    
+      
+      <!--[if mso | IE]></td></tr></table></td></tr><tr><td class=3D"" widt=
+h=3D"600px" ><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px;" width=3D=
+"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:=
+exactly;"><![endif]-->
+    
+      
+      <div style=3D"margin:0px auto;max-width:600px;">
+        
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"width:100%;">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;padding:16px 0px;tex=
+t-align:center;">
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-a=
+lign:top;width:600px;" ><![endif]-->
+            
+      <div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-s=
+ize:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:t=
+op;width:100%;">
+        
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"vertical-align:top;" width=3D"100%">
+        <tbody>
+          
+              <tr>
+                <td align=3D"center" style=3D"font-size:0px;padding:0px;wor=
+d-break:break-word;">
+                  
+      <p style=3D"border-top:solid 1px #eeedeb;font-size:1px;margin:0px aut=
+o;width:100%;">
+      </p>
+      
+      <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" style=3D"border-top:solid 1px #eeedeb;font-size:1px;m=
+argin:0px auto;width:600px;" role=3D"presentation" width=3D"600px" ><tr><td=
+ style=3D"height:0;line-height:0;"> &nbsp;
+</td></tr></table><![endif]-->
+    
+    
+                </td>
+              </tr>
+            
+        </tbody>
+      </table>
+    
+      </div>
+    
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    
+      
+      <!--[if mso | IE]></td></tr></table></td></tr><tr><td class=3D"" widt=
+h=3D"600px" ><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px;" width=3D=
+"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:=
+exactly;"><![endif]-->
+    
+      
+      <div style=3D"margin:0px auto;max-width:600px;">
+        
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"width:100%;">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;padding:0px;text-ali=
+gn:center;">
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"width:600p=
+x;" ><![endif]-->
+            
+      <div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-s=
+ize:0;line-height:0;text-align:left;display:inline-block;width:100%;directi=
+on:ltr;">
+        <!--[if mso | IE]><table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" ><tr><td style=3D"vertical-align:top;width:200=
+px;" ><![endif]-->
+                
+      <div class=3D"mj-column-per-33-333333333333336 mj-outlook-group-fix" =
+style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;v=
+ertical-align:top;width:33%;">
+        
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"vertical-align:top;" width=3D"100%">
+        <tbody>
+          
+              <tr>
+                <td align=3D"center" style=3D"font-size:0px;padding:0px;wor=
+d-break:break-word;">
+                  
+      <div style=3D"font-family:Arial, sans-serif;font-size:12px;letter-spa=
+cing:0.2px;line-height:20px;text-align:center;text-decoration:underline;col=
+or:#000000;"><a href=3D"http://t.communication.diesel.com/r/=3Fid=3Dh35c8d7=
+b,8545043,37e124a&p1=3DMarni%20Welcome%20Fast%20en_IL" style=3D"color:#0000=
+00;text-decoration:underline;">            WOMEN
+          </a></div>
+    
+                </td>
+              </tr>
+            
+        </tbody>
+      </table>
+    
+      </div>
+    
+              <!--[if mso | IE]></td><td style=3D"vertical-align:top;width:=
+200px;" ><![endif]-->
+                
+      <div class=3D"mj-column-per-33-333333333333336 mj-outlook-group-fix" =
+style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;v=
+ertical-align:top;width:33%;">
+        
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"vertical-align:top;" width=3D"100%">
+        <tbody>
+          
+              <tr>
+                <td align=3D"center" style=3D"font-size:0px;padding:0px;wor=
+d-break:break-word;">
+                  
+      <div style=3D"font-family:Arial, sans-serif;font-size:12px;letter-spa=
+cing:0.2px;line-height:20px;text-align:center;text-decoration:underline;col=
+or:#000000;"><a href=3D"http://t.communication.diesel.com/r/=3Fid=3Dh35c8d7=
+b,8545043,37e124b&p1=3DMarni%20Welcome%20Fast%20en_IL" style=3D"color:#0000=
+00;text-decoration:underline;">            MEN
+          </a></div>
+    
+                </td>
+              </tr>
+            
+        </tbody>
+      </table>
+    
+      </div>
+    
+              <!--[if mso | IE]></td><td style=3D"vertical-align:top;width:=
+200px;" ><![endif]-->
+                
+      <div class=3D"mj-column-per-33-333333333333336 mj-outlook-group-fix" =
+style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;v=
+ertical-align:top;width:33%;">
+        
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"vertical-align:top;" width=3D"100%">
+        <tbody>
+          
+              <tr>
+                <td align=3D"center" style=3D"font-size:0px;padding:0px;wor=
+d-break:break-word;">
+                  
+      <div style=3D"font-family:Arial, sans-serif;font-size:12px;letter-spa=
+cing:0.2px;line-height:20px;text-align:center;text-decoration:underline;col=
+or:#000000;"><a href=3D"http://t.communication.diesel.com/r/=3Fid=3Dh35c8d7=
+b,8545043,37e124c&p1=3DMarni%20Welcome%20Fast%20en_IL" style=3D"color:#0000=
+00;text-decoration:underline;">            KIDS
+          </a></div>
+    
+                </td>
+              </tr>
+            
+        </tbody>
+      </table>
+    
+      </div>
+    
+              <!--[if mso | IE]></td></tr></table><![endif]-->
+      </div>
+    
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    
+      
+      <!--[if mso | IE]></td></tr></table></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    
+      
+      <!--[if mso | IE]></td></tr></table><![endif]-->
+    
+    <!-- HELP - END --><!-- FOOTER - START -->
+      
+      <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px=
+;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-h=
+eight-rule:exactly;"><![endif]-->
+    
+      
+      <div style=3D"margin:0px auto;max-width:600px;">
+        
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"width:100%;">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;padding:16px 0px 0px=
+;text-align:center;">
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"width:600p=
+x;" ><![endif]-->
+            
+      <div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-s=
+ize:0;line-height:0;text-align:left;display:inline-block;width:100%;directi=
+on:ltr;">
+        <!--[if mso | IE]><table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" ><tr><td style=3D"vertical-align:middle;width:=
+200px;" ><![endif]-->
+                
+      <div class=3D"mj-column-per-33-333333333333336 mj-outlook-group-fix" =
+style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;v=
+ertical-align:middle;width:33%;">
+        
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"vertical-align:middle;" width=3D"100%">
+        <tbody>
+          
+              <tr>
+                <td align=3D"center" style=3D"font-size:0px;padding:0px;pad=
+ding-right:16px;word-break:break-word;">
+                  
+      <div style=3D"font-family:Arial, sans-serif;font-size:12px;font-weigh=
+t:600;letter-spacing:0.2px;line-height:12px;text-align:center;color:#000000=
+;"><a href=3D"http://t.communication.diesel.com/r/=3Fid=3Dh35c8d7b,8545043,=
+37e124d&p1=3DMarni%20Welcome%20Fast%20en_IL" style=3D"text-decoration:none;=
+color:#000000;">SHIPPING AND DELIVERY</a></div>
+    
+                </td>
+              </tr>
+            
+        </tbody>
+      </table>
+    
+      </div>
+    
+              <!--[if mso | IE]></td><td style=3D"vertical-align:middle;wid=
+th:200px;" ><![endif]-->
+                
+      <div class=3D"mj-column-per-33-333333333333336 mj-outlook-group-fix" =
+style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;v=
+ertical-align:middle;width:33%;">
+        
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"vertical-align:middle;" width=3D"100%">
+        <tbody>
+          
+              <tr>
+                <td align=3D"center" style=3D"font-size:0px;padding:0px 16p=
+x;word-break:break-word;">
+                  
+      <div style=3D"font-family:Arial, sans-serif;font-size:12px;font-weigh=
+t:600;letter-spacing:0.2px;line-height:12px;text-align:center;color:#000000=
+;"><a href=3D"http://t.communication.diesel.com/r/=3Fid=3Dh35c8d7b,8545043,=
+37e124e&p1=3DMarni%20Welcome%20Fast%20en_IL" style=3D"text-decoration:none;=
+color:#000000;">FAQs</a></div>
+    
+                </td>
+              </tr>
+            
+        </tbody>
+      </table>
+    
+      </div>
+    
+              <!--[if mso | IE]></td><td style=3D"vertical-align:middle;wid=
+th:200px;" ><![endif]-->
+                
+      <div class=3D"mj-column-per-33-333333333333336 mj-outlook-group-fix" =
+style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;v=
+ertical-align:middle;width:33%;">
+        
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"vertical-align:middle;" width=3D"100%">
+        <tbody>
+          
+              <tr>
+                <td align=3D"center" style=3D"font-size:0px;padding:0px;pad=
+ding-left:16px;word-break:break-word;">
+                  
+      <div style=3D"font-family:Arial, sans-serif;font-size:12px;font-weigh=
+t:600;letter-spacing:0.2px;line-height:12px;text-align:center;color:#000000=
+;"><a href=3D"http://t.communication.diesel.com/r/=3Fid=3Dh35c8d7b,8545043,=
+37e124f&p1=3DMarni%20Welcome%20Fast%20en_IL" style=3D"text-decoration:none;=
+color:#000000;">RETURN AND EXCHANGES</a></div>
+    
+                </td>
+              </tr>
+            
+        </tbody>
+      </table>
+    
+      </div>
+    
+              <!--[if mso | IE]></td></tr></table><![endif]-->
+      </div>
+    
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    
+      
+      <!--[if mso | IE]></td></tr></table><table align=3D"center" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" st=
+yle=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-s=
+ize:0px;mso-line-height-rule:exactly;"><![endif]-->
+    
+      
+      <div style=3D"margin:0px auto;max-width:600px;">
+        
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"width:100%;">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;padding:16px 0px;tex=
+t-align:center;">
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-a=
+lign:top;width:600px;" ><![endif]-->
+            
+      <div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-s=
+ize:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:t=
+op;width:100%;">
+        
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"vertical-align:top;" width=3D"100%">
+        <tbody>
+          
+              <tr>
+                <td align=3D"center" style=3D"font-size:0px;padding:0px;wor=
+d-break:break-word;">
+                  
+      <p style=3D"border-top:solid 1px #eeedeb;font-size:1px;margin:0px aut=
+o;width:100%;">
+      </p>
+      
+      <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" style=3D"border-top:solid 1px #eeedeb;font-size:1px;m=
+argin:0px auto;width:600px;" role=3D"presentation" width=3D"600px" ><tr><td=
+ style=3D"height:0;line-height:0;"> &nbsp;
+</td></tr></table><![endif]-->
+    
+    
+                </td>
+              </tr>
+            
+        </tbody>
+      </table>
+    
+      </div>
+    
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    
+      
+      <!--[if mso | IE]></td></tr></table><table align=3D"center" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" st=
+yle=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-s=
+ize:0px;mso-line-height-rule:exactly;"><![endif]-->
+    
+      
+      <div style=3D"margin:0px auto;max-width:600px;">
+        
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"width:100%;">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;padding:0px;text-ali=
+gn:center;">
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"width:600p=
+x;" ><![endif]-->
+            
+      <div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-s=
+ize:0;line-height:0;text-align:left;display:inline-block;width:100%;directi=
+on:ltr;">
+        <!--[if mso | IE]><table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" ><tr><td style=3D"vertical-align:top;width:300=
+px;" ><![endif]-->
+                
+      <div class=3D"mj-column-per-50 mj-outlook-group-fix" style=3D"font-si=
+ze:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:to=
+p;width:50%;">
+        
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"vertical-align:top;" width=3D"100%">
+        <tbody>
+          
+              <tr>
+                <td align=3D"right" style=3D"font-size:0px;padding:0px;padd=
+ing-right:16px;word-break:break-word;">
+                  
+      <div style=3D"font-family:Arial, sans-serif;font-size:12px;font-weigh=
+t:600;letter-spacing:0.2px;line-height:12px;text-align:right;color:#000000;=
+"><a href=3D"http://t.communication.diesel.com/r/=3Fid=3Dh35c8d7b,8545043,3=
+7e1250&p1=3DMarni%20Welcome%20Fast%20en_IL" style=3D"text-decoration:underl=
+ine;color:#000000;">Legal section</a></div>
+    
+                </td>
+              </tr>
+            
+        </tbody>
+      </table>
+    
+      </div>
+    
+              <!--[if mso | IE]></td><td style=3D"vertical-align:top;width:=
+300px;" ><![endif]-->
+                
+      <div class=3D"mj-column-per-50 mj-outlook-group-fix" style=3D"font-si=
+ze:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:to=
+p;width:50%;">
+        
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"vertical-align:top;" width=3D"100%">
+        <tbody>
+          
+              <tr>
+                <td align=3D"left" style=3D"font-size:0px;padding:0px;paddi=
+ng-left:16px;word-break:break-word;">
+                  
+      <div style=3D"font-family:Arial, sans-serif;font-size:12px;font-weigh=
+t:600;letter-spacing:0.2px;line-height:12px;text-align:left;color:#000000;"=
+><a href=3D"http://t.communication.diesel.com/r/=3Fid=3Dh35c8d7b,8545043,37=
+e1251&p1=3DMarni%20Welcome%20Fast%20en_IL" style=3D"text-decoration:underli=
+ne;color:#000000;">Privacy policy</a></div>
+    
+                </td>
+              </tr>
+            
+        </tbody>
+      </table>
+    
+      </div>
+    
+              <!--[if mso | IE]></td></tr></table><![endif]-->
+      </div>
+    
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    
+      
+      <!--[if mso | IE]></td></tr></table><table align=3D"center" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" st=
+yle=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-s=
+ize:0px;mso-line-height-rule:exactly;"><![endif]-->
+    
+      
+      <div style=3D"margin:0px auto;max-width:600px;">
+        
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"width:100%;">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;padding:16px 0px 24p=
+x;text-align:center;">
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-a=
+lign:top;width:600px;" ><![endif]-->
+            
+      <div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-s=
+ize:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:t=
+op;width:100%;">
+        
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"vertical-align:top;" width=3D"100%">
+        <tbody>
+          
+              <tr>
+                <td align=3D"center" style=3D"font-size:0px;padding:0px;wor=
+d-break:break-word;">
+                  
+      <div style=3D"font-family:Arial, sans-serif;font-size:12px;letter-spa=
+cing:0.2px;line-height:20px;text-align:center;color:#666666;">If you cannot=
+ see the content of this email
+      <a href=3D"http://t.communication.diesel.com/r/=3Fid=3Dh35c8d7b,85450=
+43,37e1252&p1=3D%40aY94xgJobJSg%2Bac1yUAncmGTJ1Bx19yq%2BqFRjYxqdiU%3D" styl=
+e=3D"text-decoration:underline;color:#666666;">        click here
+      </a></div>
+    
+                </td>
+              </tr>
+            
+        </tbody>
+      </table>
+    
+      </div>
+    
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    
+      
+      <!--[if mso | IE]></td></tr></table><![endif]-->
+    
+    <!-- FOOTER - END --><!-- WELCOME - END -->
+      </div>
+    
+      <img height=3D'0' width=3D'0' alt=3D'' src=3D'http://t.communication.=
+diesel.com/r/=3Fid=3Dh35c8d7b,8545043,1'/></body>
+    </html>
+
+------=_NextPart_049_EA293CC2.EA293CC2--
+

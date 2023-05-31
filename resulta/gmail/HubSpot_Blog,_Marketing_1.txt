@@ -1,0 +1,2545 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp112868ims;
+        Mon, 29 May 2023 06:20:23 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ4lhh+PrSPb45Es7W1DtKoV58kNZoADsudr8lcixnUV624R34NS83ELTiIMqxZjSIYCUkzr
+X-Received: by 2002:a05:6214:2245:b0:56f:52ba:cce6 with SMTP id c5-20020a056214224500b0056f52bacce6mr14428432qvc.19.1685366423158;
+        Mon, 29 May 2023 06:20:23 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685366423; cv=none;
+        d=google.com; s=arc-20160816;
+        b=WmOy+1gWzpf33UXYbO8usXxT902x/nXfPE6XQ/BuZ96/622a2Ie+q5MQgnQyD4xOMF
+         qmnx1zenpyMVe81jW2kL1MtIsERXGlph95/0bS0guHhSuV/edBTHl8sRvOnqTuEyb+Ej
+         iZW2IU0ek6xh1c+LcTa711BYkksvjWM8Z+z7otwovSlQpQJj1ijcVLXr/D94FsQuc3Xf
+         0PBsoCd+inhDar10r49FAHP0EoYB6UE1p0pmI+4dGr9zo4dWIUTjJaLgUUlJtUkLXuO+
+         T0rH5oQwXJG/uJ0ZNnZ2xLZ+biL3xHekKCHhTV6MIHPyLSAonhItUvY3x/fBBXniNEn+
+         SyaQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:precedence:form-sub:mime-version:subject:message-id:to
+         :reply-to:from:date:list-unsubscribe:dkim-signature:dkim-signature;
+        bh=cFa9jQ5VwFIa9wr+LpJ5GfHvit+noaL72H3qsa20Xts=;
+        b=lGddfUls4nYxUSHSe8fyDm8TfUa75zcmuJQ4DnZVx6R5aKb16sNNlK+gs1oBTyqnCe
+         WFAtXBtWsOWJqmBhHUF9hYdgIU21dbp/tPo+gTy9u/s5KAw4+cAuIQEqweVHT6b2vgxH
+         MjVx0s3MWlS55gkROIouUYqcHU+aSr/WjLL1MblwdxS3nSxWbyGFyXpOYUGK65i93oH7
+         CkNMdqJr16ls7SiHVoyyzCwN43gJyGtHzCJg5olt/j7/MHMkSrjOT9VmwZ7fDNMO1vjL
+         D+IliuDYSOGiy23wKXZAGyR1D1by11sESHV+KIz7kB/M783AZeh4AGu0t4uR0CqjhMXG
+         Otmw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@bf1.hubspot.com header.s=hs2 header.b=ALKbQwaM;
+       dkim=pass header.i=@hubspot.com header.s=hs1 header.b=K3Fkglha;
+       spf=pass (google.com: domain of 1axb2d21884jcj6oj0357rdx4bpobiif0l7jwi-ouchendans62=gmail.com@bf1.hubspot.com designates 158.247.24.219 as permitted sender) smtp.mailfrom="1axb2d21884jcj6oj0357rdx4bpobiif0l7jwi-ouchendans62=gmail.com@bf1.hubspot.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=hubspot.com
+Return-Path: <1axb2d21884jcj6oj0357rdx4bpobiif0l7jwi-ouchendans62=gmail.com@bf1.hubspot.com>
+Received: from bid47xp.bf1.hubspot.com (bid47xp.bf1.hubspot.com. [158.247.24.219])
+        by mx.google.com with ESMTPS id g2-20020a0562140ac200b006257d8becf6si4312037qvi.420.2023.05.29.06.20.23
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 29 May 2023 06:20:23 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 1axb2d21884jcj6oj0357rdx4bpobiif0l7jwi-ouchendans62=gmail.com@bf1.hubspot.com designates 158.247.24.219 as permitted sender) client-ip=158.247.24.219;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@bf1.hubspot.com header.s=hs2 header.b=ALKbQwaM;
+       dkim=pass header.i=@hubspot.com header.s=hs1 header.b=K3Fkglha;
+       spf=pass (google.com: domain of 1axb2d21884jcj6oj0357rdx4bpobiif0l7jwi-ouchendans62=gmail.com@bf1.hubspot.com designates 158.247.24.219 as permitted sender) smtp.mailfrom="1axb2d21884jcj6oj0357rdx4bpobiif0l7jwi-ouchendans62=gmail.com@bf1.hubspot.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=hubspot.com
+Received: by 172.16.115.3 with SMTP id awbamkyhwedctig95t9jihe22156fk8di127v;
+        Mon, 29 May 2023 13:20:11 GMT
+DKIM-Signature: v=1; s=hs2; d=bf1.hubspot.com; 
+        i=@bf1.hubspot.com; 
+        h=sender:from:from:reply-to:to:to:cc:cc:subject:subject:list-unsubscribe:form-sub:feedback-id; 
+        a=rsa-sha256; c=relaxed/relaxed; 
+        bh=cFa9jQ5VwFIa9wr+LpJ5GfHvit+noaL72H3qsa20Xts=; 
+        b=ALKbQwaMruo/CqG46TmKoC8XFd2WDcnFZfEf4f7eZChEtIf308SQ6YwzBvGo3L
+         3bjnOqARhbBMcP32Ey5mTs5LeuYn4pimWKXC/qANmCnov6lZ0+uiuCxhNt4MF8k
+         0XHlMNghT3E0CVPEhbqS8hn5fzY5amPJPLmI49E5xfhc4GAzqmViAHqf7gti4Cg
+         CWJpiHScrBMF8Cg8IqagsJ7D13NFV4z+7d9frR5Pe/A5iKLoidtDhCHqIY7TVYf
+         2/MzJkwPMn8vTU4kIi9Md7m+plAbPsFs7HuQXHQQJTFV1+/yHqB4max7zkAJ6gd
+         Pd8gKukuhrCQ1aokBd57r+tyGaPg==; q=dns/txt; t=1685366411; 
+        x=1685539211;
+DKIM-Signature: v=1; s=hs1; d=hubspot.com; i=@hubspot.com; 
+        h=sender:from:from:reply-to:to:to:cc:cc:subject:subject:list-unsubscribe:form-sub:feedback-id; 
+        a=rsa-sha256; c=relaxed/relaxed; 
+        bh=cFa9jQ5VwFIa9wr+LpJ5GfHvit+noaL72H3qsa20Xts=; 
+        b=K3Fkglha9D/ufRw7yy6pi6dxsxTMGuSqrOGsoKLLHwSBle5k+1anbysIi1rkuM
+         JWojB+Pt91Ibe/ueca+BCOH16tmif3ecgizW1KwzJ86ha24vyEJ0hdiQ5Ec6p+F
+         6cixVYvriY3QjJat/QpLxOUz3g4zLVP5i45jP31v8fTFKKeCPj2BYc7GuTFKM9a
+         iwd5YIpd13RXZOWrhap2sB60JZERcBfYwTQAIE8j1BevDzINgeb62jZhv26vvW2
+         jBnHFQErS1sCAYPCkX10KZeRi5Gm+TpgqoMmIOnqT+vFC9dj47gKyOPe5+kwXu1
+         o0I3sOu5UkXw4mQBa5axDK0oclMg==; q=dns/txt; t=1685366411; 
+        x=1685539211;
+Return-Path: <1axb2d21884jcj6oj0357rdx4bpobiif0l7jwi-ouchendans62=gmail.com@bf1.hubspot.com>
+X-HS-Cid: 1axfugmqf73jgt56n45xmedwxd2nbh5wkcy9fm
+List-Unsubscribe: <mailto:1axdgv1pdshlgej7aioi5mp7pl103cyzbde59u-ouchendans62=gmail.com@bf1.hubspot.com?subject=unsubscribe>
+Date: Mon, 29 May 2023 09:20:11 -0400
+From: "HubSpot Blog, Marketing" <blog@hubspot.com>
+Reply-To: blog@hubspot.com
+To: ouchendans62@gmail.com
+Message-ID: <1685366385112.34c0cc04-cb2a-4239-bbc4-f44ba05df571@bf1.hubspot.com>
+Subject: What Businesses Get Wrong About Content Marketing in 2023 [Expert
+ Tips]
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_489803_18005640.1685366410132"
+Form-Sub: v=1; ip=none
+Precedence: bulk
+X-Report-Abuse-To: abuse@hubspot.com (see
+ https://policy.hubspot.com/abuse-complaints)
+Feedback-ID: aebr:aiek5g67:aidf:HubSpot
+
+------=_Part_489803_18005640.1685366410132
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Marketing Blog Newsletter (https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-0=
+4/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7Wbry33pkwQV1-WJV7CgJgTW1vQzgM9cpDQ=
+zW94lL972j_nCHW8YTd9823F8GYW4c2SyJ1PJzy1W2bD8dH357lNdW9gcQkg5rKHmDW7Bmx112t=
+lj_8W2ktSrM1Z54-QW6KxSVM4PgD1mW4xQ6th15lHBTW5sgxJ22mkflxW6TWFD04b_1N9W7SQd8=
+l8hlyRjN2tWYyDGmJMQN1jmpnh1pWMRW8926zV5vb6sNW3sgfmL9cdg_FW7X6dKZ1r10pHW7m19=
+G-7XqR0JW2NwKgp7Y8ykV36PG1 )
+
+May 29, 2023
+
+Check out the latest and greatest from the HubSpot Marketing Blog.
+
+What Businesses Get Wrong About Content Marketing in 2023 [Expert Tips]=20
+By Zach Basner
+Learn the four mistakes to avoid when scaling your content marketing so you=
+ can grow your content while keeping up with the evolving standards for qua=
+lity.
+Read more
+(https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/MVN3Jb9sM3WW25XhM02NcKZ3=
+W46ZLVZ4_7shLN7WbryG3pkxpV1-WJV7CgVfkN2YbkGnjHlHPW40dfFK2F_HQMW4GMfGd88ZHs3=
+N54PjfhJkpKKW85TN0w8p1XQLW8qpHxQ2B_x5TW35j7404z8g6nW1NPFb36W6mFYW96ksPq2WXV=
+cmW7MPPMF3W-RntVjrC6M2zzcBnW3qc2kG4RJsxdW7GBpdn2M7ZbSW4c8hpp3dyXnzVJvQ3R1CK=
+56NW6kPd7X3GbtTTW171w2T4t5RWpW7Z-wfX2x-vtcVfsZFn21Yvf_W5zJsx_3bxv4PN2DCwCY-=
+ZMx1W1hF25_1M4f5nW3VgnDg5WF0rJW5NFQt-9lBC1P3hVq1 )
+
+The Top Types of AI-Generated Content in Marketing [New Data, Examples & Ti=
+ps]=20
+By Tristen Taylor
+Content creation is much easier with AI. Explore the top types of AI-genera=
+ted content in marketing from new data, and see how you can benefit from it=
+.
+Read more
+(https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/MVN3Jb9sM3WW25XhM02NcKZ3=
+W46ZLVZ4_7shLN7WbryZ3pkxJV1-WJV7CgFZrW8Znd-N7hGlSYN98QKRqsFxpyW7xF4jr6Vg5pK=
+W5c30LW1pml0GW6TSz657B_smqW9hGdVj7g5p9sW5WjtvG6l7g3fW15Zq6J7djbFCW2B8M7Q4g0=
+9hqW3PdFKb3zCGRkW4k94ns703j_vW74vrCJ2xFS6lW5b8hJc16MDQyW3JXv6X5NDB6tW8-VCp3=
+5NlHQRW1mFB6J1w6RK6N6v7lgqlxpfVW5rs-GD378SC4VzjVB56KK0fpW4PH9M383df7xW93qbB=
+76hCJqwW2w6fXN2jzYlLW5dbFkb5ZzRPNVsGPjm3VCsPhW78dvSZ55k0f8W4Zf9Y68kL8r23qb1=
+1 )
+
+The Future of Social Media [Research]: What Marketers Need to Know=20
+By Erica Santiago
+Wondering what the future of social media could look like? Here are our pre=
+dictions based on research, surveys, and data.
+Read more
+(https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/MVN3Jb9sM3WW25XhM02NcKZ3=
+W46ZLVZ4_7shLN7WbryG3pkxpV1-WJV7CgF58W5MQpJX5SQnSZF40NdRzbK-wW2t-Wny2GPBThW=
+7Mlm653PzW8_W5CdR9S3c4lGrN1Xb_pRwCv7LW6jcb-D1Mw4ZXW8vSM_8932MZXVgwn7w7-zfTK=
+W2r7B2D5PHVb6W10ykvK319sFnW6jLYLT46vn5GN21ClcJ-263nW4Jgc2Q8hwZ71W4fhNzR3RnK=
+lRW5-HTBp7wJg_xN2tsk_MYtvVvVy9hXw63LvSrW1skS2n6YS52-W18pHKC5Psxv6W7QGKhp2Tc=
+7t-W1L6Xx08jJt1FW3CS19Z4PwxFyW3zrfpl5qp1vB33KQ1 )
+
+What's a Marketing Audit? [+ How To Do One]=20
+By Erin Rodrigue
+No marketing plan is perfect, but a marketing audit can help you move in th=
+e right direction. Learn more about marketing audits and how to conduct one=
+ today.
+Read more
+(https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/MVN3Jb9sM3WW25XhM02NcKZ3=
+W46ZLVZ4_7shLN7Wbrym3pkx5V1-WJV7CgCtyW8K6MwD8HXDDKW3Wpg2-4xdXHrW2vxbxn2S1_9=
+9W3z946C3vfbNRW3SBfv336PBCtVmRwpL8ltC4sN2y3w2Jg8s-fVxHcwy2bq-PGN1K4xYqwS0dG=
+N77JmwYLZ8_fW3kZrdc4fL3kfN7Qwh-6W4GRzW3MnGJD5Fsc-3W3vRqD47FhpYYW55tV1T8QVxm=
+zW29DYQC9h1PngW7g_plR7LVVSWW4ffJ6D5ZhTy-W3_flHn55b8jvW6587Fw46F_z1W1hM_0Q27=
+Q8srW69Vr_W8K8x6D37CC1 )
+
+Explore more resources
+
+Are You a Category Innovator or Disruptor? w/ Super Coffee, Br=C3=BCmachen,=
+ Copper Cow Coffee [Podcast]   =20
+Never mind the shakes, here's our most caffeinated episode yet! We=E2=80=99=
+re bringing you a perfect blend of beans for all your needs.
+Listen now (https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/MVN3Jb9sM3WW2=
+5XhM02NcKZ3W46ZLVZ4_7shLN7Wbrym3pkx5V1-WJV7CgGVYW50DXrC5WyxQwW7BfzWc7mdlQMW=
+4PrnqX2TtwnwW2WD_5p6-0YGxW6ntv909dkk2GW10-kZ17Gb0n9W3my4NC6TT-94W2ZqfWG9h86=
+f_W5bMY9G4zNXDwW8yGHxr1XQbbyN97MNx96fG66W7k0zfk4LGm5GW3CbNds9hRGzLW62gwtG7Y=
+0tNXW5nclYV7rMrPDW4QVyMB2kdDF7W8CZtB44xR3nFW6RlkVD6kw9rDW7_6vqY5yxdHBW79VG0=
+d8xZ__-W5K-SLN36MmRtW27Wp6g7sm9pt3jcS1 )
+
+Steph Smith: Jobs of the Future, Fractional Real Estate, Mouth Tape, and Mo=
+re [Podcast]=20
+Episode 459: Shaan Puri (@ShaanVP) and Sam Parr (@TheSamParr) talk with a16=
+z podcast host and author, Steph Smith (@stephsmithio) about trends in busi=
+ness, her new list - jobs of the future and so much more.
+Listen now (https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/MVN3Jb9sM3WW2=
+5XhM02NcKZ3W46ZLVZ4_7shLN7Wbrym3pkx5V1-WJV7CgCQLW3zrQk12hjzYJW7svSf66x7TB0W=
+6BZrGx4ySVKLW1m_t0d2qYRDZW7R-5Lb2lY6tLW4S9fG-5NF0VnN9c9qR2-qgjBW2gW8yP7tQ8C=
+jW43VhbP78K2jrVH59ps44JMXDW9lQYpw83-mmJW6Gn9pb3qTgdxW5rSBKY5g_PSlW1l3wyb7DK=
+Lv8VJ3rwR1Sh3JDW3M0pzf3Q4hXdW8brfP054_dDYW6kZ2wk1w7KlbMxz3DRdsy__W2K5TQj1k0=
+6nzW2WCbb-1lwZsyW6DPNyC1yfn5f3nM31 )
+
+Useful Links
+
+HubSpot Blogs (https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/MVN3Jb9sM3=
+WW25XhM02NcKZ3W46ZLVZ4_7shLN7Wbry33pkwQV1-WJV7Cg-yMVXwQv24dg_VQW4PfNlQ693Sx=
+RW1tvQDk6d0Z1rW7VQs335R8V3bW39b0wk3qYTRQW287x1c5fcQY3N2v7fQxYBXh3W28SZ8P8jK=
+pslW3x0mVH2lPgtKW7lml63136G6jW13Lq8b2cbMxTW88DGLr85KzfPW4-5RVB5HmTSxW422Z9d=
+6mdzXpVr-gQG1nk82DW8fXh7w8CjSyxW6P8GM88rrgFRW2_SR9J3MbqQ7W6B_zGk6F9mhDW2qfr=
+t31YPh0h361H1 )
+
+The Hustle Newsletter (https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/MV=
+N3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7Wbry33pkwQV1-WJV7CgB1RN5nfnwLpz4xsW3Bp=
+hTD68pNnwW7Pqpys3tQjKKW9c51d01KDy9xW3N30mt513595W54y6pl7JDV6dW3pXvQv7y9KqBW=
+5Jpsb53mhnvkW2xbr-m2X2SJpVM3cRL1m3HFQW5KpkJZ28VHB0W1sNBJh2cZWJBW7TR4Qn8LTpK=
+8W38x7039d6-MzVQCnMl6-8bpBW3TbXz05Jld-pVcq-t93nMlM7W1jYK_t4DZBBCW16FzlY8t0Y=
+fZW1nVD7X6x_zY1388Y1 )
+
+HubSpot YouTube Channel (https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/=
+MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7Wbrym3pkx5V1-WJV7CgCNQW6WMNxb5V8vWLW=
+7BbWQ88NyGXKW6zTj_f1ZTjdhW2BtYht3Zvv05VWp38-3ptFSnN6pJHqjp1bD0W8Z36Gl80Qj-d=
+W3jbrzg3ShZjqW96vw_L2fsWNLW2Gp32D1Rvpx_N8J9v9h8hFr8W6R_jNq7dfQY4W8XCK_S15FX=
+PnW6-qKcH5_ML0WW9b0PLZ2SW4xCVM1pnJ79h-s9W60xsKS4dDSJzW9hGjRr8fnv9qVgCxjq5Pn=
+dk-W4q8VXC7rbpCBW2HQx953xll3GW8yf_rz16NLTs3mNX1 )
+
+HubSpot Marketing Blog (https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/M=
+VN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7Wbry33pkwQV1-WJV7CgM2FVV1mxZ4LGCPmW3F=
+xVH41qmbWDW7pR6YM4WV1YlW33NqBh8TrLB3W1xpv9m69XSVFW4mKS5h1D94S0W3Hx9S66y57f3=
+W6Hd9Ms6xCtdQW3w9M-z53D20CW32zZpY3v-_skW8937Cz2pwxkGW47TnGs1YDl-tW6Jr2sz1Rl=
+PtjW8m-BGg5GhkmZW7JcK3M5Pjl6VVM3SWW1RlsPPW5R0z7094GXDBW5tBCZj6S5lv_W7J6_2X3=
+PFY37W6r1lDk2cyhNK382L1 )
+
+The Hustle Blog (https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/MVN3Jb9s=
+M3WW25XhM02NcKZ3W46ZLVZ4_7shLN7Wbrym3pkx5V1-WJV7Cg-cvW279C3X8DMgvbW1cCxdC2c=
+MDfVW5_Fp043n_d4FW8B15Yb7hp8v-W7zLdDJ9jm7kjN1F19y6T1ctvW2ZtkXt4K4xtcW6H8-Ln=
+957SSyW5Td38d2qKSb9W3FPr5l3VSPcjW6lS0D668cLmGW64fTdn5d4Zy3W1Q8Q205-BffLW5Y1=
+FHl8-yG0xW3-G14H3LgWWYW82fFSw3NLVSLW35Nz4P3xQzkDW1zCrZs5mv4X8W8dvhLT6yk4ylW=
+1lV-5B6mjsHGW2Rjl2p39XVn6W7Gq3_b4bcHJR3qp_1 )
+
+HubSpot Podcast Network (https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/=
+MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7Wbrym3pkx5V1-WJV7CgC8lW8L9TTH1mBlz9W=
+1qKw9w199bMMW5FSX2m4k8CZRW4nxPJX5DNl1dW2V-RPt3KkH6DN2_-4J8DksF7W67Y-n53c0n6=
+PW2BJNs48VLR_WV2yqbf3_gV4kN63WdR5tmSM7W3_YVqq7132NLW5Js0Gh6f35BtW4qQp1g2HKT=
+B-W43xkP87QqhTxW77G_By2hrv45W4tnstJ2J9kSsVNvTms5YwJlfW79-HBk5Rj3vzW4jc6KV8W=
+GwQ0W8YFHbb2gHGyFW65xwxK92twrMVhFztK3k0gXC33g01 )
+
+Facebook (https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/MVN3Jb9sM3WW25X=
+hM02NcKZ3W46ZLVZ4_7shLN7Wbry33pkwQV1-WJV7CgW9fW8Z-VTZ1wmPN5VMtyZx84Zl07W8d4=
+VJ_6FfmWkW9lkGJX4yPW9BW4KwvgN50pDwnMzgVhmsvCnsW9hpzdh3Nl-3hW6HWVSf33NXlZN77=
+3W2X5YPppW6ZzW4g3r0bJbW57VVLw6Ntq_jW2_tM9F2T1h6RW7X41KQ1dB3wTVqW5JM5tMWy3W6=
+2y6Yg7x_RhzW5_t_rX2l62GnW2Ghm_Y3l830hW59rVPW3TsS6DVj6N6S6pj17PW6mWJHm711_7b=
+35HY1 )
+
+LinkedIn (https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/MVN3Jb9sM3WW25X=
+hM02NcKZ3W46ZLVZ4_7shLN7Wbrym3pkx5V1-WJV7CgNCsW9gKmD72DplvKW67KZQR2r1HWtTZ5=
+fs4kfsXrW25t_n72B9PbLW91Sn173CNnYxW2yYpCz2HCb-lW5mm3BS5QzMFqW1s3P3_46RM2jW8=
+0ZBvg3k-gkdW8G3vNT9dsHSWW1hkWpT3fRzdRW5NGkf_3r8g3XV5tSg884cqB7W5hpS9J5Y77jB=
+W8Jwp8b8Htd2HW5283lp4LTz25W5VLyfv5wmdb_W6sBn4H2dWSfjW5k20kW6N0zH9N2GLSXqQDn=
+93W1Lj8ty4k565DW4DgpL352cv0Q34Gt1 )
+
+Twitter (https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/MVN3Jb9sM3WW25Xh=
+M02NcKZ3W46ZLVZ4_7shLN7Wbry33pkwQV1-WJV7CgPGkVXY7_F3SrGH_W8l7FqX6_c5LxW52Nf=
+fx2skDjGW6C2ykp5cld0hW4RgFBN1c78JJN5h6_MNYVYFTW59Ml0v3yR95lVfFkPY1lwR8PW6HJ=
+8G74hxKSHW15jKMz1mwJv4N3ZybVDPgk-QW6LNd9496c7JbVPRhL21PTy7sW5GJ0Rg40T1F3W1j=
+H7N43CZVvfW16hWMg7Kvk7LW7fDTCW2Q67TSW6m4C5N7mdN0ZW5pQcPK4HD7QFW5qSFGY8_QYy-=
+3n2h1 )
+
+Instagram (https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/MVN3Jb9sM3WW25=
+XhM02NcKZ3W46ZLVZ4_7shLN7Wbrym3pkx5V1-WJV7CgCjFW1KjZxK3yRd4jN5zc4mhn6TXRW24=
+c_qP6LVSt3W43n-zk7-wb6ZW6dWGTc1KRV_qW4Bgfsg5Sx0x_W2fjjN41mnmbLW8Zd8pt2KrYg1=
+W7_WK1C2-0MsVW6fFH2K57JMWsW1T1mk515-JSdW9byK0j44_7qlW1fv-BD3_1y9yW8Nb8y62Px=
+xtYW1Z632l6cR9lfW5Cq5dQ76r0kyW2S0HW28kxRLlW6gZ1M61yZq25W7qVDwP3nngXDW3YL1Sl=
+1k8gzsW8zdXSD7JSns0W6mzNVz7CS4LX3k3h1 )
+
+YouTube (https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/MVN3Jb9sM3WW25Xh=
+M02NcKZ3W46ZLVZ4_7shLN7Wbrym3pkx5V1-WJV7CgG2XN48R3cJGc0LYW5DShb45KLBkPW7nFj=
+7S5H6l2WW2HD_t02-GrdzW6PRjtK7CPSJ-N3G3rsRtc7XJW6qbwm456tdxcVfNK937YgdF0W7d4=
+LJ171fS_PW1pWJQW84H06SW2VSVfJ59BksQW168ScQ7XQJKRW39vghC8YqmKXW4RnQD84bR-j2W=
+2pwCK83wXf53W1S3NzL8wVqQHW5kXjsj8Ss1t_W4jyn2n2XdthlW2Nd4FG6ML6xdW64-8rG8LJc=
+G8W31KC-Q752-QwW5WdG-d26l2KX39K81 )
+
+Update language (https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/MVN3Jb9s=
+M3WW25XhM02NcKZ3W46ZLVZ4_7shLN7Wbrym3pkx5V1-WJV7CgMfKW6w5NMv60y8Q6W63_cvP8K=
+l6xSW72Y1D929ShLJV5RkPz3R89kNW2ghp5d8PKwB5N1yNyF1Ws3tNW7k7snM17SMHGF7MNjBTB=
+-pcW6L6BZ65YkytKVHXH2W2xwY9ZW2jYqSG5GqZZsW7gFQqG4PxzgcN3YtrKqKwfmzW5L0Zl195=
+D12kW36_PVW4d3mKCW1wkN_F7Dcw1RW3CxzCw2-flv_W7dX32B4g0_zxW2mcfJH1cZDkdW8vJ08=
+f2k6-pTW89ybN658TF8RW4WmHhZ6_PRL731bX1 ) | Actualiza el idioma (https://8-0=
+4.na1.hubspotlinks.com/Ctc/41+113/8-04/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7sh=
+LN7Wbrym3pkx5V1-WJV7CgWLFW10Dzp76yk7GlW37jJ_p57c-0QW781VhR1Ln6HVMnHvRdqsZsZ=
+W7Kdf__2Q-krlV1SRND4nWSjPW2LwYk-3fBx3pW11TygC86rlk3W4KXBN_3YY5NWN5WmZL3bTG9=
+NW59rQ4K1QvTCgW57hJfk8xYq3LW1ZpxK38b0Fb-W5jfCjS938F2zW6LrfR74GwM78N7f1fYy8n=
+lj4W63gHgM3rGzX4W140Y3X4dPDsKW8h30tH2D3clQN98NdTqqQj_3W4Fbhr586XRC7W2lHW4N3=
+3HtYP385C1 ) | Changer la langue (https://8-04.na1.hubspotlinks.com/Ctc/41+=
+113/8-04/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7Wbrym3pkx5V1-WJV7CgMwXW4Qw5=
+Kp83JKPMW8Bgnk13Yqy2lN8gywL1TyGPJW26w4Gh2HNMgrVfvf6R8vqsySW1t4Pjq5LHk6XN57s=
+H5DwMmkZVSNW7r5BdDNfVvVnxc8m65btF4-wnfkfwrlMBYxl6Xyqq0N4xXwzlxx9rgW5Nl3Nl6-=
+zG5WW6ZRHwk8GW_KcW7wF7BH34Vs6nW6748Hx8TrFfnW180v921vQ3t7W4NSgkT7hPSw8W7bl5r=
+G6r1RsFW5lKJZk2tGkG0W3xVtCX1HF08lVvb2PL94l59J3gLL1 ) |
+
+Sprache =C3=A4ndern (https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/MVN3=
+Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7Wbrym3pkx5V1-WJV7CgNxcW1cT8cT7YlkBdVsDDT=
+06_rLpWW85-xJH3TtMWLW1nnpKH7WtxnBW3JptsK1VMVTpW8N00r72Cb3bTW2RzRsB1wLkX_W82=
+qCdb3BXqMyW8x5pQ16zGd2GW6ZqW7g4zkVvbW2N11Yt27fDYRW88pPqk8jsJG8W7kqytL6XTv8J=
+W1GVSRl4sSWP0W1Wn8B62ln0WRW19HxtY50Sd-VW5bN8jw1Q4NLbV1d4Wy4nvt9-N87rJbxJDw4=
+kW6hT9GY93fxXJN5wN-2C8TdlvW40fmn87dLQk_3hw_1 ) | Atualize idioma (https://8=
+-04.na1.hubspotlinks.com/Ctc/41+113/8-04/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7=
+shLN7Wbrym3pkx5V1-WJV7CgGwgN7tX0NQhmqCZW6QN7Z44s9ks6W4M077F3JV7Q5W1Hp-M16fZ=
+PZrW4p3fv43N2f61VRKQ6H7ftbyHN1CkfJb4trfZW9kscy92Dr6w2W3r_6s55GwhjJV3X27H1jF=
+qmgW2Mpkhj3yk7T9W6rk2ry1RXNwRW5QBvs91YJfqzW3S0w1J5xGpTsW5vRg3q8fcgrJN89MwWX=
+f2wpMW4m9PMS5zhQNyW6-vL2r8t4GpxW70n20J1DPzyyW3htBbF8yTt8kN4_VjblTHmMKW2Rvkv=
+v6Dlb2p3lXF1 ) | =E5=8F=97=E4=BF=A1=E8=A8=80=E8=AA=9E=E3=82=92=E6=9B=B4=E6=
+=96=B0=E3=81=99=E3=82=8B (https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04=
+/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7Wbrym3pkx5V1-WJV7CgWytW6LC8ll1Nqz0N=
+W2MjKf52RfsK5W6jdYDT8Xc6CzV35Dcc1C_-JrW3QWQR52W_sGpW1-2SMv40ZkgXV-67lb23JSp=
+QW1h9Mps1B7b-vW1KhPg63fg3sFW1V8MhD8fgN5SW6t6Sln6Rv5D3W5jFDH52b0h7TW1Qm2kP7t=
+3cHrVMv2g48_fJdrW6DTC1Y7hw6g0W5my8j28Gg52qW30BqMD1-MGJKW4gB_9v3PfcyXW1YMPZq=
+92Nr--W2F65rM2cmGxyW1sxJrj7Kff1TW6Ppnpr67nqC_31rZ1 )
+
+HubSpot, 2 Canal Park, , Cambridge, MA 02141, USA, 888-482-7768
+
+Unsubscribe (https://hs-53.s.hubspotemail.net/hs/manage-preferences/unsubsc=
+ribe-all?languagePreference=3Den&d=3DMnch9QGJ9hBW3F7y5H3H3b4cW1-YqzQ3_R592N=
+1JxwY5Xjc5xN1fk4d_kG327W4NYGR98hmjDFW6P2hJB7tw1f6W1WPMCG68YH3hMGKd_P20N85W5=
+Z5GQC1ThY79N2md7WbN9H2l4_9sv1&v=3D3 )
+
+Manage preferences (https://hs-53.s.hubspotemail.net/hs/manage-preferences/=
+unsubscribe?languagePreference=3Den&d=3DMnch9QGJ9hBW3F7y5H3H3b4cW1-YqzQ3_R5=
+92N1JxwY5Xjc5xN1fk4d_kG327W4NYGR98hmjDFW6P2hJB7tw1f6W1WPMCG68YH3hMGKd_P20N8=
+5W5Z5GQC1ThY79N2md7WbN9H2l4_9sv1&v=3D3 )
+------=_Part_489803_18005640.1685366410132
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www=
+.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"http://www.w3=
+.org/1999/xhtml" xmlns:o=3D"urn:schemas-microsoft-com:office:office" xmlns:=
+v=3D"urn:schemas-microsoft-com:vml" lang=3D"en"><head>
+    <title>What Businesses Get Wrong About Content Marketing in 2023 [Exper=
+t Tips]</title>
+    <meta property=3D"og:title" content=3D"What Businesses Get Wrong About =
+Content Marketing in 2023 [Expert Tips]">
+    <meta name=3D"twitter:title" content=3D"What Businesses Get Wrong About=
+ Content Marketing in 2023 [Expert Tips]">
+   =20
+   =20
+   =20
+<meta name=3D"x-apple-disable-message-reformatting">
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0">
+    <!--[if gte mso 9]>
+  <xml>
+      <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+  </xml>
+ =20
+  <style>
+    ul > li {
+      text-indent: -1em;
+    }
+  </style>
+<![endif]-->
+<!--[if mso]>
+<style type=3D"text/css">
+ body, td {font-family: Arial, Helvetica, sans-serif;}=20
+ .hse-body-wrapper-table {background-color: #FFFFFF}
+</style>
+<![endif]-->
+   =20
+     =20
+   =20
+  <meta name=3D"generator" content=3D"HubSpot"><meta property=3D"og:url" co=
+ntent=3D"https://www.hubspot.com/-temporary-slug-8be9096d-1089-4855-af6c-5a=
+ddcc0bcae8"><meta name=3D"robots" content=3D"noindex,follow"><!--[if !((mso=
+)|(IE))]><!-- --><style type=3D"text/css">.moz-text-html .hse-column-contai=
+ner{max-width:600px !important;width:600px !important}
+.moz-text-html .hse-column{display:table-cell;vertical-align:top}.moz-text-=
+html .hse-section .hse-size-4{max-width:200px !important;width:200px !impor=
+tant}
+.moz-text-html .hse-section .hse-size-6{max-width:300px !important;width:30=
+0px !important}
+.moz-text-html .hse-section .hse-size-8{max-width:400px !important;width:40=
+0px !important}
+.moz-text-html .hse-section .hse-size-12{max-width:600px !important;width:6=
+00px !important}
+[owa] .hse-column-container{max-width:600px !important;width:600px !importa=
+nt}[owa] .hse-column{display:table-cell;vertical-align:top}
+[owa] .hse-section .hse-size-4{max-width:200px !important;width:200px !impo=
+rtant}
+[owa] .hse-section .hse-size-6{max-width:300px !important;width:300px !impo=
+rtant}
+[owa] .hse-section .hse-size-8{max-width:400px !important;width:400px !impo=
+rtant}
+[owa] .hse-section .hse-size-12{max-width:600px !important;width:600px !imp=
+ortant}
+@media only screen and (min-width:640px){.hse-column-container{max-width:60=
+0px !important;width:600px !important}
+.hse-column{display:table-cell;vertical-align:top}.hse-section .hse-size-4{=
+max-width:200px !important;width:200px !important}
+.hse-section .hse-size-6{max-width:300px !important;width:300px !important}=
+.hse-section .hse-size-8{max-width:400px !important;width:400px !important}
+.hse-section .hse-size-12{max-width:600px !important;width:600px !important=
+}}@media only screen and (max-width:639px){img.stretch-on-mobile,.hs_rss_em=
+ail_entries_table img,.hs-stretch-cta .hs-cta-img{height:auto !important;wi=
+dth:100% !important}
+.display_block_on_small_screens{display:block}.hs_padded{padding-left:20px =
+!important;padding-right:20px !important}
+}@media screen and (max-width:639px){.social-network-cell{display:inline-bl=
+ock}}</style><!--<![endif]--><style type=3D"text/css">body[data-outlook-cyc=
+le] img.stretch-on-mobile,body[data-outlook-cycle] .hs_rss_email_entries_ta=
+ble img{height:auto !important;width:100% !important}
+body[data-outlook-cycle] .hs_padded{padding-left:20px !important;padding-ri=
+ght:20px !important}
+a[x-apple-data-detectors]{color:inherit !important;text-decoration:none !im=
+portant;font-size:inherit !important;font-family:inherit !important;font-we=
+ight:inherit !important;line-height:inherit !important}
+#outlook a{padding:0}.yshortcuts a{border-bottom:none !important}a{text-dec=
+oration:underline}
+.ExternalClass{width:100%}.ExternalClass,.ExternalClass p,.ExternalClass td=
+,.ExternalClass div,.ExternalClass span,.ExternalClass font{line-height:100=
+%}
+p{margin:0}body{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-we=
+bkit-font-smoothing:antialiased;moz-osx-font-smoothing:grayscale}</style></=
+head>
+  <body bgcolor=3D"#FFFFFF" style=3D"margin:0 !important; padding:0 !import=
+ant; font-family:Arial, sans-serif; font-size:15px; color:#23496d; word-bre=
+ak:break-word">
+   =20
+<div id=3D"preview_text" style=3D"display:none;font-size:1px;color:#FFFFFF;=
+line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">Le=
+arn the four mistakes to avoid when scaling your content marketing so you c=
+an grow your content while keeping up with evolving standards.</div>
+   =20
+<!--[if gte mso 9]>
+<v:background xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"t">
+ =20
+    <v:fill type=3D"tile" size=3D"100%,100%"  color=3D"#ffffff"/>
+ =20
+</v:background>
+<![endif]-->
+    <div class=3D"hse-body-background" style=3D"background-color:#ffffff" b=
+gcolor=3D"#ffffff">
+      <table role=3D"presentation" class=3D"hse-body-wrapper-table" cellpad=
+ding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !important; border-c=
+ollapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; margin:0; pad=
+ding:0; width:100% !important; min-width:320px !important; height:100% !imp=
+ortant" width=3D"100%" height=3D"100%">
+        <tbody><tr>
+          <td class=3D"hse-body-wrapper-td" valign=3D"top" style=3D"border-=
+collapse:collapse; mso-line-height-rule:exactly; font-family:Arial, sans-se=
+rif; font-size:15px; color:#23496d; word-break:break-word">
+            <div id=3D"hs_cos_wrapper_main" class=3D"hs_cos_wrapper hs_cos_=
+wrapper_widget hs_cos_wrapper_type_dnd_area" style=3D"color: inherit; font-=
+size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget" d=
+ata-hs-cos-type=3D"dnd_area">  <div id=3D"section-0" class=3D"hse-section h=
+se-section-first" style=3D"padding-left:10px; padding-right:10px; padding-t=
+op:20px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0; background-color:#ffffff" bgcolor=3D"#ffffff">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:600px">
+<![endif]-->
+<div id=3D"column-0-0" class=3D"hse-column hse-size-12">
+  <div id=3D"hs_cos_wrapper_module-0-0-0" class=3D"hs_cos_wrapper hs_cos_wr=
+apper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; font-size=
+: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget" data-=
+hs-cos-type=3D"module"><div style=3D"display: none; max-height: 0px; overfl=
+ow: hidden;">
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nb=
+sp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nb=
+sp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nb=
+sp;&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=
+=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=
+=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;
+</div></div>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"section-1" class=3D"hse-section" style=3D"padding-left:10px; p=
+adding-right:10px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0; background-color:#ffffff" bgcolor=3D"#ffffff">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:600px">
+<![endif]-->
+<div id=3D"column-1-0" class=3D"hse-column hse-size-12">
+  <div id=3D"hs_cos_wrapper_module-1-0-0" class=3D"hs_cos_wrapper hs_cos_wr=
+apper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; font-size=
+: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget" data-=
+hs-cos-type=3D"module">
+=09
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !important; bord=
+er-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt">
+    <tbody>
+        <tr>
+            <td align=3D"left" valign=3D"top" style=3D"border-collapse:coll=
+apse; mso-line-height-rule:exactly; font-family:Arial, sans-serif; color:#2=
+3496d; word-break:break-word; text-align:left; padding:0px; font-size:0px">
+               =20
+                    <a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+113=
+/8-04/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7Wbry33q8t3V1-WJV7CgJNvVTnh-r3V=
+1436W1DBsVG7s0jNGW9jl5Cr5rgfkdW5XY6sH8xRbzfW2F-QLM5cWhfSW5c5mnZ7n498ZW1FQ9J=
+R94g51vW2mbnDq1jvh_JW3Br97_3bvYZ-W4RnJPH6Sn7PSW2hgQJJ6xxbC-W5vBcLV90Rv4cVBX=
+ZHX31xN92W6GkYJt4GvLkQW33PTrx1b3BBfW6dcB7-3n1gK3W7HT0QB3w361gW88DTWn44vX4KW=
+2W27-x2f4RqhW5Y96hS111Y_v3dKB1" target=3D"_blank" style=3D"color:#00a4bd; m=
+so-line-height-rule:exactly" data-hs-link-id=3D"0">
+               =20
+                <img alt=3D"Marketing Blog Newsletter" src=3D"https://www.h=
+ubspot.com/hs-fs/hubfs/2022%20Blog%20Newsletters/Marketing%20Blog%20Newslet=
+ter.png?width=3D1200&amp;upscale=3Dtrue&amp;name=3DMarketing%20Blog%20Newsl=
+etter.png" style=3D"outline:none; text-decoration:none; -ms-interpolation-m=
+ode:bicubic; border:none; max-width:100%; font-size:16px" width=3D"600" ali=
+gn=3D"middle" class=3D"stretch-on-mobile" srcset=3D"https://www.hubspot.com=
+/hs-fs/hubfs/2022%20Blog%20Newsletters/Marketing%20Blog%20Newsletter.png?up=
+scale=3Dtrue&amp;width=3D1200&amp;upscale=3Dtrue&amp;name=3DMarketing%20Blo=
+g%20Newsletter.png 600w, https://www.hubspot.com/hs-fs/hubfs/2022%20Blog%20=
+Newsletters/Marketing%20Blog%20Newsletter.png?upscale=3Dtrue&amp;width=3D24=
+00&amp;upscale=3Dtrue&amp;name=3DMarketing%20Blog%20Newsletter.png 1200w" s=
+izes=3D"(max-width: 600px) 100vw, 600px">
+               =20
+                    </a>
+               =20
+            </td>
+        </tr>
+    </tbody>
+</table></div>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"section-2" class=3D"hse-section" style=3D"padding-left:10px; p=
+adding-right:10px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0; background-color:#ffffff" bgcolor=3D"#ffffff">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:600px">
+<![endif]-->
+<div id=3D"column-2-0" class=3D"hse-column hse-size-12">
+  <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-=
+table-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" =
+style=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-famil=
+y:Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word; =
+padding:5px 35px"><div id=3D"hs_cos_wrapper_module-2-0-0" class=3D"hs_cos_w=
+rapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: in=
+herit; font-size: inherit; line-height: inherit;" data-hs-cos-general-type=
+=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs_cos_wrapper_module-2-=
+0-0_" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_ric=
+h_text" style=3D"color: inherit; font-size: inherit; line-height: inherit;"=
+ data-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"rich_text"><p styl=
+e=3D"mso-line-height-rule:exactly; font-weight:normal; font-size:16px; line=
+-height:175%"><span style=3D"color: #213343; font-family: 'Avenir Medium', =
+sans-serif;">May 29, 2023</span></p></div></div></td></tr></tbody></table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word; pa=
+dding:10px 35px 20px"><div id=3D"hs_cos_wrapper_module-2-0-2" class=3D"hs_c=
+os_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color=
+: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-general-t=
+ype=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs_cos_wrapper_module=
+-2-0-2_" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_=
+rich_text" style=3D"color: inherit; font-size: inherit; line-height: inheri=
+t;" data-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"rich_text"><h2 =
+style=3D"margin:0; mso-line-height-rule:exactly; font-weight:normal; font-s=
+ize:20px; line-height:150%"><span style=3D"color: #213343; font-family: Ave=
+nir, sans-serif;">Check out the latest and greatest from the HubSpot Market=
+ing Blog.</span></h2></div></div></td></tr></tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"section-3" class=3D"hse-section" style=3D"padding-left:10px; p=
+adding-right:10px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0; background-color:#ffffff" bgcolor=3D"#ffffff">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:600px">
+<![endif]-->
+<div id=3D"column-3-0" class=3D"hse-column hse-size-12">
+  <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-=
+table-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td style=3D"border-coll=
+apse:collapse; mso-line-height-rule:exactly; font-family:Arial, sans-serif;=
+ font-size:15px; color:#23496d; word-break:break-word; padding:30px 0px"><d=
+iv id=3D"hs_cos_wrapper_module-3-0-0" class=3D"hs_cos_wrapper hs_cos_wrappe=
+r_widget hs_cos_wrapper_type_module" style=3D"color: inherit; font-size: in=
+herit; line-height: inherit;" data-hs-cos-general-type=3D"widget" data-hs-c=
+os-type=3D"module">
+<!--[if gte mso 9]>
+<div style=3D"line-height: 0; font-size: 0px">
+  <v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" stroke=3D=
+"false" style=3D"width:600px; height:2pt;" fillcolor=3D"none">
+    <v:fill type=3D"tile"/>
+    <v:textbox inset=3D"0,0,0,0">
+      <div>
+<![endif]-->
+<table role=3D"presentation" width=3D"100%" align=3D"center" border=3D"0" s=
+tyle=3D"position:relative; top:-1px; min-width:20px; width:100%; max-width:=
+100%; border-spacing:0; mso-table-lspace:0pt; mso-table-rspace:0pt; border-=
+collapse:collapse; font-size:1px">
+  <tbody><tr>
+   =20
+   =20
+   =20
+    <td width=3D"100%" valign=3D"middle" style=3D"border-collapse:collapse;=
+ mso-line-height-rule:exactly; font-family:Arial, sans-serif; font-size:15p=
+x; color:#23496d; word-break:break-word; line-height:0; border:transparent;=
+ border-bottom:1px solid #FF5C35; mso-border-bottom-alt:2pt solid #FF5C35; =
+border-bottom-width:1px"><!--[if mso 16]>&nbsp;<![endif]--></td>
+   =20
+   =20
+  </tr>
+</tbody></table>
+<!--[if gte mso 9]></div></v:textbox></v:rect></div><![endif]--></div></td>=
+</tr></tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"module_1667586948900" class=3D"hse-section" style=3D"padding-l=
+eft:10px; padding-right:10px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0; background-color:#ffffff" bgcolor=3D"#ffffff">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:600px">
+<![endif]-->
+<div id=3D"module_1667586948900_0" class=3D"hse-column hse-size-12">
+  <div id=3D"hs_cos_wrapper_module_16675869488522" class=3D"hs_cos_wrapper =
+hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; =
+font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widg=
+et" data-hs-cos-type=3D"module">
+=09
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !important; bord=
+er-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt">
+    <tbody>
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"border-collapse:co=
+llapse; mso-line-height-rule:exactly; font-family:Arial, sans-serif; color:=
+#23496d; word-break:break-word; text-align:center; padding:10px 35px; font-=
+size:0px">
+               =20
+                    <a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+113=
+/8-04/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7WbryG3q8tGV1-WJV7CgVl6W5jgWD57=
+86gr9W40V5_Z6FqhGjW91CyhJ92JJWtW7MCH8M5DqtzmW6QLjW83Y9rBxW85fp8v1zzFYSW6yLm=
+9t3Ct0wkW7lBKbw6HNrdmW5SxcTy5SmL_wW2CGnhw72HHsjW2dfY6d394xf5W3BRjwL41D0t7W7=
+hZX_M4Gd59sV4mQ9k2xj0KNW88rT3s5V9r-9W6-SKw54w6K9VW70B4Rc6xMld2N7zh1DfDgq_rW=
+33hZhd48v6_zN96-xwLk6x9DW3qMwm31c56H3W6lJkdc5FVQN6W1g79zH4fldyhW6Nmbdb1Xz6d=
+R2FT1" target=3D"_blank" style=3D"color:#00a4bd; mso-line-height-rule:exact=
+ly" data-hs-link-id=3D"0">
+               =20
+                <img alt=3D"half-hearted content marketing 600 x 300" src=
+=3D"https://www.hubspot.com/hs-fs/hubfs/half-hearted%20content%20marketing%=
+20600%20x%20300.jpg?width=3D1060&amp;upscale=3Dtrue&amp;name=3Dhalf-hearted=
+%20content%20marketing%20600%20x%20300.jpg" style=3D"outline:none; text-dec=
+oration:none; -ms-interpolation-mode:bicubic; border:none; max-width:100%; =
+font-size:16px" width=3D"530" align=3D"middle" class=3D"stretch-on-mobile" =
+srcset=3D"https://www.hubspot.com/hs-fs/hubfs/half-hearted%20content%20mark=
+eting%20600%20x%20300.jpg?upscale=3Dtrue&amp;width=3D1060&amp;upscale=3Dtru=
+e&amp;name=3Dhalf-hearted%20content%20marketing%20600%20x%20300.jpg 530w, h=
+ttps://www.hubspot.com/hs-fs/hubfs/half-hearted%20content%20marketing%20600=
+%20x%20300.jpg?upscale=3Dtrue&amp;width=3D2120&amp;upscale=3Dtrue&amp;name=
+=3Dhalf-hearted%20content%20marketing%20600%20x%20300.jpg 1060w" sizes=3D"(=
+max-width: 530px) 100vw, 530px">
+               =20
+                    </a>
+               =20
+            </td>
+        </tr>
+    </tbody>
+</table></div>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word; pa=
+dding:20px 35px"><div id=3D"hs_cos_wrapper_module_16675869488523" class=3D"=
+hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"c=
+olor: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-gener=
+al-type=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs_cos_wrapper_mo=
+dule_16675869488523_" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_=
+wrapper_type_rich_text" style=3D"color: inherit; font-size: inherit; line-h=
+eight: inherit;" data-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"ri=
+ch_text"><h2 style=3D"margin:0; mso-line-height-rule:exactly; font-size:20p=
+x; line-height:150%"><a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+11=
+3/8-04/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7WbryG3q8tGV1-WJV7CgD_DW4XsyTW=
+2bc__vW7-2K0Z4R5QLpW6Qn_lF1vsJ2BW6sQwnB4vSS9mW2n5GLs2ctFpMVqzfh84QXR_zW44Cj=
+X82q7TNCW21pbjn8GVTpzW21NkLJ4pJtlpW2nqJJc1WgyjfN6YtWY5HP1wqW1pkvC372QRK1W7q=
+zDZQ6jq3lDW6xygHt1NzVZ7Vb-JzW68v2gDW8Q20lq9khH3nW9gQd4f6hKzP6W2JgSxJ2ZCHzVW=
+63sXPs6GfXqyW4n40x0406T8yW4951ry4HpN_fN38_JFFCZ3RkW26Pjtq2y6BQcW6nn0f7675qC=
+G35501" style=3D"mso-line-height-rule:exactly; color:#00a4bd; font-weight:b=
+old; text-decoration:none" rel=3D"noopener" data-hs-link-id=3D"1" target=3D=
+"_blank"><span style=3D"font-family: Avenir Next, sans-serif; color: #21334=
+3;">What Businesses Get Wrong About Content Marketing in 2023 [Expert Tips]=
+</span></a></h2>
+<p style=3D"mso-line-height-rule:exactly; line-height:100%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:100%"><span style=3D"=
+font-family: Avenir Medium, sans-serif; color: #213343; font-weight: normal=
+;">By Zach Basner</span></p></div></div></td></tr></tbody></table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word; pa=
+dding:10px 35px"><div id=3D"hs_cos_wrapper_module_16675869488524" class=3D"=
+hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"c=
+olor: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-gener=
+al-type=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs_cos_wrapper_mo=
+dule_16675869488524_" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_=
+wrapper_type_rich_text" style=3D"color: inherit; font-size: inherit; line-h=
+eight: inherit;" data-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"ri=
+ch_text"><h2 style=3D"margin:0; mso-line-height-rule:exactly; font-weight:n=
+ormal; font-size:20px; line-height:150%"><span style=3D"font-family: Avenir=
+, sans-serif; color: #213343;">Learn the four mistakes to avoid when scalin=
+g your content marketing so you can grow your content while keeping up with=
+ the evolving standards for quality.</span></h2></div></div></td></tr></tbo=
+dy></table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word; pa=
+dding:10px 20px 20px"><div id=3D"hs_cos_wrapper_module_16675869488525" clas=
+s=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=
+=3D"color: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-=
+general-type=3D"widget" data-hs-cos-type=3D"module">
+ =20
+  <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+role=3D"presentation" style=3D"border-spacing:0 !important; mso-table-lspac=
+e:0pt; mso-table-rspace:0pt; border-collapse:separate!important">
+    <tbody><tr>
+        <!--[if mso]>
+      <td align=3D"center" valign=3D"middle" bgcolor=3D"#ff7a59" role=3D"pr=
+esentation"  valign=3D"middle" style=3D"border-radius:8px;cursor:auto;backg=
+round-color:#ff7a59;padding:12px 18px;">
+    <![endif]-->
+    <!--[if !mso]><!-- -->
+      <td align=3D"center" valign=3D"middle" bgcolor=3D"#ff7a59" role=3D"pr=
+esentation" style=3D"border-collapse:collapse; mso-line-height-rule:exactly=
+; font-family:Arial, sans-serif; font-size:15px; color:#23496d; word-break:=
+break-word; border-radius:8px; cursor:auto; background-color:#ff7a59">
+   <!--<![endif]-->
+        <a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/MVN3Jb=
+9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7WbryG3q8tGV1-WJV7CgV0VW5mHP8K8-cZRQW4dnrVj=
+3BxH6NN9fvZYm_lhbdW5yJJsn7N3Fn0W2Fg4GH8zpYmBW3cMkL42T0McTV9R-DD3zdhCgW6m7Y2=
+63qVYCwN2pB1f3xQcmHF7j0SLzv-Q8N1mwNX8Zv8k7W8j_CLm2h1m5JW3hx-BC8yhMdWN19vHxt=
+8CpWyW3lRY577h9c17N1Z63hHLzhVkW2J-FMm7Y_141W8QfxHy8kfYGMW6tqPT24hbvG4W8Mc2Q=
+Y613q7cW7j4mvw66-mGzW4qrZyJ5Zs1mTW2-xJth9c-JjrN7x1K1SGxLGp33X51" target=3D"=
+_blank" style=3D"color:#00a4bd; mso-line-height-rule:exactly; font-size:14p=
+x; font-family:Arial, sans-serif; Margin:0; text-transform:none; text-decor=
+ation:none; padding:12px 18px; display:block" data-hs-link-id=3D"2">
+          <strong style=3D"color:#ffffff;font-weight:bold;text-decoration:n=
+one;font-style:normal;">Read more</strong>
+        </a>
+      </td>
+    </tr>
+  </tbody></table>
+</div></td></tr></tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"module_1681945151781" class=3D"hse-section" style=3D"padding-l=
+eft:10px; padding-right:10px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0; background-color:#ffffff" bgcolor=3D"#ffffff">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:600px">
+<![endif]-->
+<div id=3D"module_1681945151781_0" class=3D"hse-column hse-size-12">
+  <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-=
+table-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td style=3D"border-coll=
+apse:collapse; mso-line-height-rule:exactly; font-family:Arial, sans-serif;=
+ font-size:15px; color:#23496d; word-break:break-word; padding:30px 0px"><d=
+iv id=3D"hs_cos_wrapper_module_16819451517365" class=3D"hs_cos_wrapper hs_c=
+os_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; font=
+-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget" =
+data-hs-cos-type=3D"module">
+<!--[if gte mso 9]>
+<div style=3D"line-height: 0; font-size: 0px">
+  <v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" stroke=3D=
+"false" style=3D"width:600px; height:2pt;" fillcolor=3D"none">
+    <v:fill type=3D"tile"/>
+    <v:textbox inset=3D"0,0,0,0">
+      <div>
+<![endif]-->
+<table role=3D"presentation" width=3D"100%" align=3D"center" border=3D"0" s=
+tyle=3D"position:relative; top:-1px; min-width:20px; width:100%; max-width:=
+100%; border-spacing:0; mso-table-lspace:0pt; mso-table-rspace:0pt; border-=
+collapse:collapse; font-size:1px">
+  <tbody><tr>
+   =20
+   =20
+   =20
+    <td width=3D"100%" valign=3D"middle" style=3D"border-collapse:collapse;=
+ mso-line-height-rule:exactly; font-family:Arial, sans-serif; font-size:15p=
+x; color:#23496d; word-break:break-word; line-height:0; border:transparent;=
+ border-bottom:1px solid #FF5C35; mso-border-bottom-alt:2pt solid #FF5C35; =
+border-bottom-width:1px"><!--[if mso 16]>&nbsp;<![endif]--></td>
+   =20
+   =20
+  </tr>
+</tbody></table>
+<!--[if gte mso 9]></div></v:textbox></v:rect></div><![endif]--></div></td>=
+</tr></tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"module_1667600785238" class=3D"hse-section" style=3D"padding-l=
+eft:10px; padding-right:10px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0; background-color:#ffffff" bgcolor=3D"#ffffff">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:600px">
+<![endif]-->
+<div id=3D"module_1667600785238_0" class=3D"hse-column hse-size-12">
+  <div id=3D"hs_cos_wrapper_module_166760078519020" class=3D"hs_cos_wrapper=
+ hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit;=
+ font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"wid=
+get" data-hs-cos-type=3D"module">
+=09
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !important; bord=
+er-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt">
+    <tbody>
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"border-collapse:co=
+llapse; mso-line-height-rule:exactly; font-family:Arial, sans-serif; color:=
+#23496d; word-break:break-word; text-align:center; padding:10px 35px; font-=
+size:0px">
+               =20
+                    <a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+113=
+/8-04/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7WbryZ3q8tZV1-WJV7CgHZlW4bhPsB1=
+My9MpW8XwmmQ30p683W3smkqS3zfx7jW7HR22n35zb8yW7t8Vq256FKVnW1v09_L265Nh8W90H2=
+qm1NLFMjW6CnX1S8DMhxsW3W0ZT620hJ2sW2H47dr8XRG7mW8gP_313DB8hfN8F8Mvx7RcKFW8_=
+57982zszGcW93Tqk66Kq0svW77RCm627TY7bN3JTb5nQ7m6YW73zQhZ2KrPstW7Yglr-5xPVSdN=
+45v-_3w0DwbW11q8Y27GKNJ6W8VWnD24BLHf0W58d73573-mnwW4fcXd-4sj3tdW4ChjFw7QmCc=
+JW3SJscr4RH_MmW4q0Mzj2yBmLW337v1" target=3D"_blank" style=3D"color:#00a4bd;=
+ mso-line-height-rule:exactly" data-hs-link-id=3D"0">
+               =20
+                <img alt=3D"top types of ai generated content in marketing"=
+ src=3D"https://www.hubspot.com/hs-fs/hubfs/top%20types%20of%20ai%20generat=
+ed%20content%20in%20marketing.jpg?width=3D1060&amp;upscale=3Dtrue&amp;name=
+=3Dtop%20types%20of%20ai%20generated%20content%20in%20marketing.jpg" style=
+=3D"outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; bor=
+der:none; max-width:100%; font-size:16px" width=3D"530" align=3D"middle" cl=
+ass=3D"stretch-on-mobile" srcset=3D"https://www.hubspot.com/hs-fs/hubfs/top=
+%20types%20of%20ai%20generated%20content%20in%20marketing.jpg?upscale=3Dtru=
+e&amp;width=3D1060&amp;upscale=3Dtrue&amp;name=3Dtop%20types%20of%20ai%20ge=
+nerated%20content%20in%20marketing.jpg 530w, https://www.hubspot.com/hs-fs/=
+hubfs/top%20types%20of%20ai%20generated%20content%20in%20marketing.jpg?upsc=
+ale=3Dtrue&amp;width=3D2120&amp;upscale=3Dtrue&amp;name=3Dtop%20types%20of%=
+20ai%20generated%20content%20in%20marketing.jpg 1060w" sizes=3D"(max-width:=
+ 530px) 100vw, 530px">
+               =20
+                    </a>
+               =20
+            </td>
+        </tr>
+    </tbody>
+</table></div>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word; pa=
+dding:20px 35px"><div id=3D"hs_cos_wrapper_module_166760078519021" class=3D=
+"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"=
+color: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-gene=
+ral-type=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs_cos_wrapper_m=
+odule_166760078519021_" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_co=
+s_wrapper_type_rich_text" style=3D"color: inherit; font-size: inherit; line=
+-height: inherit;" data-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"=
+rich_text"><h2 style=3D"margin:0; mso-line-height-rule:exactly; font-size:2=
+0px; line-height:150%"><a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+=
+113/8-04/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7WbryZ3q8tZV1-WJV7CgT1zW6YtF=
+r-2dJXhLW5FTq4T426FJKW20lnLN3QqK3_W3MJYVj7lT-mJW6QK4ph7fGwgHW2BNTyr2TxG0PW4=
+yzYjj5JQsq1W1CVK_Z432mPfW36lRkM1BmxcNW15t1YS1S9Rx9W9d8dht2xrpDyW4H836y7mvPM=
+hM4nJ5Q3kN7YW2qtQDH7C2sHKN4wmhJkKMG5DVcFJ5l5qkH7yW9d4CyT5nW_NVW8YlTpV8H0QJb=
+W7qB2ML4txykmW7xMHl58xQS1dW6Mc1W-74mlLlW7J0Xrm830LZSW7GH-qQ3qfGppW3DvdwP15y=
+C5pW55Jc2j8bZPKtVzWrwX2N1JTW3py51" style=3D"mso-line-height-rule:exactly; c=
+olor:#00a4bd; font-weight:bold; text-decoration:none" rel=3D"noopener" data=
+-hs-link-id=3D"1" target=3D"_blank"><span style=3D"font-family: Avenir Next=
+, sans-serif; color: #213343;">The Top Types of AI-Generated Content in Mar=
+keting [New Data, Examples &amp; Tips]</span></a></h2>
+<p style=3D"mso-line-height-rule:exactly; line-height:100%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:100%"><span style=3D"=
+font-family: Avenir Medium, sans-serif; color: #213343; font-weight: normal=
+;">By Tristen Taylor</span></p></div></div></td></tr></tbody></table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word; pa=
+dding:10px 35px"><div id=3D"hs_cos_wrapper_module_166760078519022" class=3D=
+"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"=
+color: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-gene=
+ral-type=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs_cos_wrapper_m=
+odule_166760078519022_" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_co=
+s_wrapper_type_rich_text" style=3D"color: inherit; font-size: inherit; line=
+-height: inherit;" data-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"=
+rich_text"><h2 style=3D"margin:0; mso-line-height-rule:exactly; font-weight=
+:normal; font-size:20px; line-height:150%"><span style=3D"font-family: Aven=
+ir, sans-serif; color: #213343;">Content creation is much easier with AI. E=
+xplore the top types of AI-generated content in marketing from new data, an=
+d see how you can benefit from it.<br></span></h2></div></div></td></tr></t=
+body></table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word; pa=
+dding:10px 20px 20px"><div id=3D"hs_cos_wrapper_module_166760078519023" cla=
+ss=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" styl=
+e=3D"color: inherit; font-size: inherit; line-height: inherit;" data-hs-cos=
+-general-type=3D"widget" data-hs-cos-type=3D"module">
+ =20
+  <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+role=3D"presentation" style=3D"border-spacing:0 !important; mso-table-lspac=
+e:0pt; mso-table-rspace:0pt; border-collapse:separate!important">
+    <tbody><tr>
+        <!--[if mso]>
+      <td align=3D"center" valign=3D"middle" bgcolor=3D"#ff7a59" role=3D"pr=
+esentation"  valign=3D"middle" style=3D"border-radius:8px;cursor:auto;backg=
+round-color:#ff7a59;padding:12px 18px;">
+    <![endif]-->
+    <!--[if !mso]><!-- -->
+      <td align=3D"center" valign=3D"middle" bgcolor=3D"#ff7a59" role=3D"pr=
+esentation" style=3D"border-collapse:collapse; mso-line-height-rule:exactly=
+; font-family:Arial, sans-serif; font-size:15px; color:#23496d; word-break:=
+break-word; border-radius:8px; cursor:auto; background-color:#ff7a59">
+   <!--<![endif]-->
+        <a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/MVN3Jb=
+9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7WbryZ3q8tZV1-WJV7CgD7rW2b_pS68w7Rx9W81v6-f=
+7D0jZ9W3V_lmV9gyjdXW88pz1n5qR2YpVWtRwc7634MxW2ymcPg7HLJMLW2pQR-K9f6ZV2W2qgQ=
+Cy59f76ZW5P7SLQ4fhmhMW9d54jn8lXJBPW8p4rqV6RQ2KCW5KCTl742VmlDW3NVFtD8_y5TPW5=
+hnhtP1slwXQW6d0k7h8_4Ln4W1BwG6C87Q_D3VKvkH22Mj9BGW7BNKV14Z9DJfW4JRDS55hrJN4=
+W8p1Hyj69SNVnW150PkQ8TPyxzN7vhbg6r9n3yW6MScV23tM47gW1lZZBN1rgqh6W88zRtB5kst=
+LVW3l_shB8nw_lv3l9n1" target=3D"_blank" style=3D"color:#00a4bd; mso-line-he=
+ight-rule:exactly; font-size:14px; font-family:Arial, sans-serif; Margin:0;=
+ text-transform:none; text-decoration:none; padding:12px 18px; display:bloc=
+k" data-hs-link-id=3D"2">
+          <strong style=3D"color:#ffffff;font-weight:bold;text-decoration:n=
+one;font-style:normal;">Read more</strong>
+        </a>
+      </td>
+    </tr>
+  </tbody></table>
+</div></td></tr></tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"module_1683341890842" class=3D"hse-section" style=3D"padding-l=
+eft:10px; padding-right:10px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0; background-color:#ffffff" bgcolor=3D"#ffffff">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:600px">
+<![endif]-->
+<div id=3D"module_1683341890842_0" class=3D"hse-column hse-size-12">
+  <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-=
+table-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td style=3D"border-coll=
+apse:collapse; mso-line-height-rule:exactly; font-family:Arial, sans-serif;=
+ font-size:15px; color:#23496d; word-break:break-word; padding:30px 0px"><d=
+iv id=3D"hs_cos_wrapper_module_16833418907945" class=3D"hs_cos_wrapper hs_c=
+os_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; font=
+-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget" =
+data-hs-cos-type=3D"module">
+<!--[if gte mso 9]>
+<div style=3D"line-height: 0; font-size: 0px">
+  <v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" stroke=3D=
+"false" style=3D"width:600px; height:2pt;" fillcolor=3D"none">
+    <v:fill type=3D"tile"/>
+    <v:textbox inset=3D"0,0,0,0">
+      <div>
+<![endif]-->
+<table role=3D"presentation" width=3D"100%" align=3D"center" border=3D"0" s=
+tyle=3D"position:relative; top:-1px; min-width:20px; width:100%; max-width:=
+100%; border-spacing:0; mso-table-lspace:0pt; mso-table-rspace:0pt; border-=
+collapse:collapse; font-size:1px">
+  <tbody><tr>
+   =20
+   =20
+   =20
+    <td width=3D"100%" valign=3D"middle" style=3D"border-collapse:collapse;=
+ mso-line-height-rule:exactly; font-family:Arial, sans-serif; font-size:15p=
+x; color:#23496d; word-break:break-word; line-height:0; border:transparent;=
+ border-bottom:1px solid #FF5C35; mso-border-bottom-alt:2pt solid #FF5C35; =
+border-bottom-width:1px"><!--[if mso 16]>&nbsp;<![endif]--></td>
+   =20
+   =20
+  </tr>
+</tbody></table>
+<!--[if gte mso 9]></div></v:textbox></v:rect></div><![endif]--></div></td>=
+</tr></tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"module_1681945147537" class=3D"hse-section" style=3D"padding-l=
+eft:10px; padding-right:10px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0; background-color:#ffffff" bgcolor=3D"#ffffff">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:600px">
+<![endif]-->
+<div id=3D"module_1681945147537_0" class=3D"hse-column hse-size-12">
+  <div id=3D"hs_cos_wrapper_module_16819451474871" class=3D"hs_cos_wrapper =
+hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; =
+font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widg=
+et" data-hs-cos-type=3D"module">
+=09
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !important; bord=
+er-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt">
+    <tbody>
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"border-collapse:co=
+llapse; mso-line-height-rule:exactly; font-family:Arial, sans-serif; color:=
+#23496d; word-break:break-word; text-align:center; padding:10px 35px; font-=
+size:0px">
+               =20
+                    <a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+113=
+/8-04/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7WbryG3q8tGV1-WJV7CgDhjW529N7L5=
+21Rm1W6YXh3s2TM9nyVtcpdh5sLxpwW86hdwF822sZ1VgDzzD8RcNXPVvmwgz6JcN4xN7ngBvGZ=
+4xQRW3cCLYH7wydYPW7cLKX3249y6nW3TpWYm9hH9ysW41dXx58PWwlVW9kSF997sTRzVV1Qldh=
+69F_wZW6hmvRM5BVRX6N76Kwq3JQSPFW94DkrM50_bg5W2fDb-64zz2BMW7NsNfv3YNzmYW5ds_=
+yK8cmm2WW8tWGbN4zlfvxW7Wqx6V4dhh_kW1d62Q35ty5g0W8NT4Fg2mM8tWV-q-bf8JSZQ_39M=
+n1" target=3D"_blank" style=3D"color:#00a4bd; mso-line-height-rule:exactly"=
+ data-hs-link-id=3D"0">
+               =20
+                <img alt=3D"Future of social media email" src=3D"https://ww=
+w.hubspot.com/hs-fs/hubfs/Future%20of%20social%20media%20email.jpg?width=3D=
+1060&amp;upscale=3Dtrue&amp;name=3DFuture%20of%20social%20media%20email.jpg=
+" style=3D"outline:none; text-decoration:none; -ms-interpolation-mode:bicub=
+ic; border:none; max-width:100%; font-size:16px" width=3D"530" align=3D"mid=
+dle" class=3D"stretch-on-mobile" srcset=3D"https://www.hubspot.com/hs-fs/hu=
+bfs/Future%20of%20social%20media%20email.jpg?upscale=3Dtrue&amp;width=3D106=
+0&amp;upscale=3Dtrue&amp;name=3DFuture%20of%20social%20media%20email.jpg 53=
+0w, https://www.hubspot.com/hs-fs/hubfs/Future%20of%20social%20media%20emai=
+l.jpg?upscale=3Dtrue&amp;width=3D2120&amp;upscale=3Dtrue&amp;name=3DFuture%=
+20of%20social%20media%20email.jpg 1060w" sizes=3D"(max-width: 530px) 100vw,=
+ 530px">
+               =20
+                    </a>
+               =20
+            </td>
+        </tr>
+    </tbody>
+</table></div>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word; pa=
+dding:20px 35px"><div id=3D"hs_cos_wrapper_module_16819451474872" class=3D"=
+hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"c=
+olor: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-gener=
+al-type=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs_cos_wrapper_mo=
+dule_16819451474872_" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_=
+wrapper_type_rich_text" style=3D"color: inherit; font-size: inherit; line-h=
+eight: inherit;" data-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"ri=
+ch_text"><h2 style=3D"margin:0; mso-line-height-rule:exactly; font-size:20p=
+x; line-height:150%"><a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+11=
+3/8-04/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7WbryG3q8tGV1-WJV7CgMlfW3C_Psk=
+7-hG0rW5v_BYn21V8W0W6HPXYN6SNgq8W2zS_535CcnvvW2dNZwg3Xlfw7W8f9Hm76d_BkBW6NX=
+ZW55DVr_9W91w-gM2vnfNbW1qRqgn3xl3VWW33YbY22NbVrxW2WDXCG4sck2XW67lRSt4674ppW=
+28Mh9S4-QbW3W5yxwPw2gRBSJW3KbH9j3bFLbbW75dwkw5r89phW67brs55glLtQW3pCsyY5hZY=
+NsW20y2k45GCRg8W1zP3CM91R6PmW5lJQ5515zBrQW2x5t642wMC06W20qTTL4rv1V3W4CdLws3=
+hTSRy35Cb1" style=3D"mso-line-height-rule:exactly; color:#00a4bd; font-weig=
+ht:bold; text-decoration:none" rel=3D"noopener" data-hs-link-id=3D"1" targe=
+t=3D"_blank"><span style=3D"font-family: Avenir Next, sans-serif; color: #2=
+13343;">The Future of Social Media [Research]: What Marketers Need to Know<=
+/span></a></h2>
+<p style=3D"mso-line-height-rule:exactly; line-height:100%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:100%"><span style=3D"=
+font-family: Avenir Medium, sans-serif; color: #213343; font-weight: normal=
+;">By Erica Santiago</span></p></div></div></td></tr></tbody></table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word; pa=
+dding:10px 35px"><div id=3D"hs_cos_wrapper_module_16819451474873" class=3D"=
+hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"c=
+olor: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-gener=
+al-type=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs_cos_wrapper_mo=
+dule_16819451474873_" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_=
+wrapper_type_rich_text" style=3D"color: inherit; font-size: inherit; line-h=
+eight: inherit;" data-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"ri=
+ch_text"><h2 style=3D"margin:0; mso-line-height-rule:exactly; font-weight:n=
+ormal; font-size:20px; line-height:150%"><span style=3D"font-family: Avenir=
+, sans-serif; color: #213343;">Wondering what the future of social media co=
+uld look like? Here are our predictions based on research, surveys, and dat=
+a.</span></h2></div></div></td></tr></tbody></table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word; pa=
+dding:10px 20px 20px"><div id=3D"hs_cos_wrapper_module_16819451474874" clas=
+s=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=
+=3D"color: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-=
+general-type=3D"widget" data-hs-cos-type=3D"module">
+ =20
+  <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+role=3D"presentation" style=3D"border-spacing:0 !important; mso-table-lspac=
+e:0pt; mso-table-rspace:0pt; border-collapse:separate!important">
+    <tbody><tr>
+        <!--[if mso]>
+      <td align=3D"center" valign=3D"middle" bgcolor=3D"#ff7a59" role=3D"pr=
+esentation"  valign=3D"middle" style=3D"border-radius:8px;cursor:auto;backg=
+round-color:#ff7a59;padding:12px 18px;">
+    <![endif]-->
+    <!--[if !mso]><!-- -->
+      <td align=3D"center" valign=3D"middle" bgcolor=3D"#ff7a59" role=3D"pr=
+esentation" style=3D"border-collapse:collapse; mso-line-height-rule:exactly=
+; font-family:Arial, sans-serif; font-size:15px; color:#23496d; word-break:=
+break-word; border-radius:8px; cursor:auto; background-color:#ff7a59">
+   <!--<![endif]-->
+        <a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/MVN3Jb=
+9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7WbryG3q8tGV1-WJV7CgP7NW3_ncJg7L6ywsW67ZB-3=
+2W4-5SW6FSFq88pYnhwW9kj-vz2SVFR6Vh_mKT20B6_QW4Qwz3-72SwHrW3rybDd2_P9rjW1CKS=
+S11mZPjlW34__n24pB1VZW2MHSK55vJGZYW3ynwYt3n16PSVKW0fy4LrRVFW3htdBB3HK6B-W54=
+nBLV9jCn5nW2KsyCq6RqKPPW3CcGHK6c4Sm6W23g80r59l8K-W9fw3zc7YXn4RW4h3ZgY7M5ndl=
+W2wfQ9K3l8tR6W6QG6Lq7JCHtgW6fs7Kb7PyQGqN4c4JZztL5kGW5RPdNq2Jf1tX3p871" targ=
+et=3D"_blank" style=3D"color:#00a4bd; mso-line-height-rule:exactly; font-si=
+ze:14px; font-family:Arial, sans-serif; Margin:0; text-transform:none; text=
+-decoration:none; padding:12px 18px; display:block" data-hs-link-id=3D"2">
+          <strong style=3D"color:#ffffff;font-weight:bold;text-decoration:n=
+one;font-style:normal;">Read more</strong>
+        </a>
+      </td>
+    </tr>
+  </tbody></table>
+</div></td></tr></tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"module_1666633773242" class=3D"hse-section" style=3D"padding-l=
+eft:10px; padding-right:10px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0; background-color:#ffffff" bgcolor=3D"#ffffff">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:600px">
+<![endif]-->
+<div id=3D"module_1666633773242_0" class=3D"hse-column hse-size-12">
+  <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-=
+table-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td style=3D"border-coll=
+apse:collapse; mso-line-height-rule:exactly; font-family:Arial, sans-serif;=
+ font-size:15px; color:#23496d; word-break:break-word; padding:30px 0px"><d=
+iv id=3D"hs_cos_wrapper_module_16666337732034" class=3D"hs_cos_wrapper hs_c=
+os_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; font=
+-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget" =
+data-hs-cos-type=3D"module">
+<!--[if gte mso 9]>
+<div style=3D"line-height: 0; font-size: 0px">
+  <v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" stroke=3D=
+"false" style=3D"width:600px; height:2pt;" fillcolor=3D"none">
+    <v:fill type=3D"tile"/>
+    <v:textbox inset=3D"0,0,0,0">
+      <div>
+<![endif]-->
+<table role=3D"presentation" width=3D"100%" align=3D"center" border=3D"0" s=
+tyle=3D"position:relative; top:-1px; min-width:20px; width:100%; max-width:=
+100%; border-spacing:0; mso-table-lspace:0pt; mso-table-rspace:0pt; border-=
+collapse:collapse; font-size:1px">
+  <tbody><tr>
+   =20
+   =20
+   =20
+    <td width=3D"100%" valign=3D"middle" style=3D"border-collapse:collapse;=
+ mso-line-height-rule:exactly; font-family:Arial, sans-serif; font-size:15p=
+x; color:#23496d; word-break:break-word; line-height:0; border:transparent;=
+ border-bottom:1px solid #FF5C35; mso-border-bottom-alt:2pt solid #FF5C35; =
+border-bottom-width:1px"><!--[if mso 16]>&nbsp;<![endif]--></td>
+   =20
+   =20
+  </tr>
+</tbody></table>
+<!--[if gte mso 9]></div></v:textbox></v:rect></div><![endif]--></div></td>=
+</tr></tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"module_1683341885550" class=3D"hse-section" style=3D"padding-l=
+eft:10px; padding-right:10px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0; background-color:#ffffff" bgcolor=3D"#ffffff">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:600px">
+<![endif]-->
+<div id=3D"module_1683341885550_0" class=3D"hse-column hse-size-12">
+  <div id=3D"hs_cos_wrapper_module_16833418854871" class=3D"hs_cos_wrapper =
+hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; =
+font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widg=
+et" data-hs-cos-type=3D"module">
+=09
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !important; bord=
+er-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt">
+    <tbody>
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"border-collapse:co=
+llapse; mso-line-height-rule:exactly; font-family:Arial, sans-serif; color:=
+#23496d; word-break:break-word; text-align:center; padding:10px 35px; font-=
+size:0px">
+               =20
+                    <a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+113=
+/8-04/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7WbryG3q8tGV1-WJV7CgWL7W5W_x9R5=
+jycNSW8mtn2S4CLkD8W61skqT19ST3CW5NNqNm5c8dXCW36Z-jB871vqjN6NlpZ7-cbkfW8w494=
+3150shkW6fJBW72cj9tHW6009H66kJFn6W6tg8s_2rDwBnW2G_w6j75cq6MW7RpGbP8hB6XDW2B=
+zGQn3F_rNJM8ZPTf64rDfW21z9Lh2D0VqpW2BJYJ-3KpQfSW7mFmgg4wgMnWW7Lpszl9lHl-NN4=
+7KTGmyt9kGVQb7Jy4G831xW53VtZq7zM5KBN7Ggyxl8rthjW1G_HwY34PWbfVmQVZx1r5_fd35W=
+-1" target=3D"_blank" style=3D"color:#00a4bd; mso-line-height-rule:exactly"=
+ data-hs-link-id=3D"0">
+               =20
+                <img alt=3D"Marketing Audit 600" src=3D"https://www.hubspot=
+.com/hs-fs/hubfs/Marketing%20Audit%20600.png?width=3D1060&amp;upscale=3Dtru=
+e&amp;name=3DMarketing%20Audit%20600.png" style=3D"outline:none; text-decor=
+ation:none; -ms-interpolation-mode:bicubic; border:none; max-width:100%; fo=
+nt-size:16px" width=3D"530" align=3D"middle" class=3D"stretch-on-mobile" sr=
+cset=3D"https://www.hubspot.com/hs-fs/hubfs/Marketing%20Audit%20600.png?ups=
+cale=3Dtrue&amp;width=3D1060&amp;upscale=3Dtrue&amp;name=3DMarketing%20Audi=
+t%20600.png 530w, https://www.hubspot.com/hs-fs/hubfs/Marketing%20Audit%206=
+00.png?upscale=3Dtrue&amp;width=3D2120&amp;upscale=3Dtrue&amp;name=3DMarket=
+ing%20Audit%20600.png 1060w" sizes=3D"(max-width: 530px) 100vw, 530px">
+               =20
+                    </a>
+               =20
+            </td>
+        </tr>
+    </tbody>
+</table></div>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word; pa=
+dding:20px 35px"><div id=3D"hs_cos_wrapper_module_16833418854872" class=3D"=
+hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"c=
+olor: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-gener=
+al-type=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs_cos_wrapper_mo=
+dule_16833418854872_" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_=
+wrapper_type_rich_text" style=3D"color: inherit; font-size: inherit; line-h=
+eight: inherit;" data-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"ri=
+ch_text"><h2 style=3D"margin:0; mso-line-height-rule:exactly; font-size:20p=
+x; line-height:150%"><a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+11=
+3/8-04/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7WbryG3q8tGV1-WJV7CgT0LVQGKQL2=
+Tc7XvV-Vk6q32Tgh-W5PbXkn8lmRfLW2-Bsx659B92yW17XmZ26PX7-jW2gGlkK2LhzfdN6vh6-=
+SSLZVBW51_RyH5khYlTW1RNQlW7m87WpW1Dz4Nr4Jx9mHN4gZn6llr2X6W1Tp45b2dDdcMW9lJ4=
+SX8ZPMQGW1r5qLK3NVPJrW1YDnxp8PqgJtW50whXz7tBC0HW5VqYDq8hdkxbVQ2g859gGZq0W6R=
+L8wy2yPp3yVYCVRG7_klCPW3lllDG6WfF-WVQHF_150VvzfW94TGY66GjKKSW3FQbdw86p-X236=
+_Y1" style=3D"mso-line-height-rule:exactly; color:#00a4bd; font-weight:bold=
+; text-decoration:none" rel=3D"noopener" data-hs-link-id=3D"1" target=3D"_b=
+lank"><span style=3D"font-family: Avenir Next, sans-serif; color: #213343;"=
+>What's a Marketing Audit? [+ How To Do One]</span></a></h2>
+<p style=3D"mso-line-height-rule:exactly; line-height:100%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:100%"><span style=3D"=
+font-family: Avenir Medium, sans-serif; color: #213343; font-weight: normal=
+;">By Erin Rodrigue</span></p></div></div></td></tr></tbody></table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word; pa=
+dding:10px 35px"><div id=3D"hs_cos_wrapper_module_16833418854873" class=3D"=
+hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"c=
+olor: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-gener=
+al-type=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs_cos_wrapper_mo=
+dule_16833418854873_" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_=
+wrapper_type_rich_text" style=3D"color: inherit; font-size: inherit; line-h=
+eight: inherit;" data-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"ri=
+ch_text"><h2 style=3D"margin:0; mso-line-height-rule:exactly; font-weight:n=
+ormal; font-size:20px; line-height:150%"><span style=3D"font-family: Avenir=
+, sans-serif; color: #213343;">No marketing plan is perfect, but a marketin=
+g audit can help you move in the right direction. Learn more about marketin=
+g audits and how to conduct one today.</span></h2></div></div></td></tr></t=
+body></table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word; pa=
+dding:10px 20px 20px"><div id=3D"hs_cos_wrapper_module_16833418854874" clas=
+s=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=
+=3D"color: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-=
+general-type=3D"widget" data-hs-cos-type=3D"module">
+ =20
+  <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+role=3D"presentation" style=3D"border-spacing:0 !important; mso-table-lspac=
+e:0pt; mso-table-rspace:0pt; border-collapse:separate!important">
+    <tbody><tr>
+        <!--[if mso]>
+      <td align=3D"center" valign=3D"middle" bgcolor=3D"#ff7a59" role=3D"pr=
+esentation"  valign=3D"middle" style=3D"border-radius:8px;cursor:auto;backg=
+round-color:#ff7a59;padding:12px 18px;">
+    <![endif]-->
+    <!--[if !mso]><!-- -->
+      <td align=3D"center" valign=3D"middle" bgcolor=3D"#ff7a59" role=3D"pr=
+esentation" style=3D"border-collapse:collapse; mso-line-height-rule:exactly=
+; font-family:Arial, sans-serif; font-size:15px; color:#23496d; word-break:=
+break-word; border-radius:8px; cursor:auto; background-color:#ff7a59">
+   <!--<![endif]-->
+        <a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/MVN3Jb=
+9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7WbryG3q8tGV1-WJV7CgzJCVRpvYG6y25JgVWdn_t3h=
+h_slW4y3rrH2Lsl28N3_yKkfYB06ZW87DHsZ1vT-h4W3fyhq56JJ-4PW1-JLmz4j7jbJW80tDxY=
+7V2cXpW7Vx_tv4p3yWRTD1cb8zzRK7VrWW5F6RTWpyN4_XVSG1TQZBW2sLcxy6jdLZ9W3Q09nT4=
+WwXvQW1HCvrv5ydlwkW4q6b6D50SccxW6fhYq11zxSVlW38KNZ76BcS-XN3R3syTXQ3TWW5QnXM=
+Q49kSjlW2nf6vC20RsvSW41nMY77QS1WGVGSD1t7TbKmgN3Qgp9SpC_DL3jTy1" target=3D"_=
+blank" style=3D"color:#00a4bd; mso-line-height-rule:exactly; font-size:14px=
+; font-family:Arial, sans-serif; Margin:0; text-transform:none; text-decora=
+tion:none; padding:12px 18px; display:block" data-hs-link-id=3D"2">
+          <strong style=3D"color:#ffffff;font-weight:bold;text-decoration:n=
+one;font-style:normal;">Read more</strong>
+        </a>
+      </td>
+    </tr>
+  </tbody></table>
+</div></td></tr></tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"section-6" class=3D"hse-section" style=3D"padding-left:10px; p=
+adding-right:10px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0; background-color:#ffffff" bgcolor=3D"#ffffff">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:600px">
+<![endif]-->
+<div id=3D"column-6-0" class=3D"hse-column hse-size-12">
+  <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-=
+table-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" =
+style=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-famil=
+y:Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word; =
+padding:35px"><div id=3D"hs_cos_wrapper_module-6-0-0" class=3D"hs_cos_wrapp=
+er hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inheri=
+t; font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"w=
+idget" data-hs-cos-type=3D"module"><div id=3D"hs_cos_wrapper_module-6-0-0_"=
+ class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_tex=
+t" style=3D"color: inherit; font-size: inherit; line-height: inherit;" data=
+-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"rich_text"><h1 style=3D=
+"margin:0; mso-line-height-rule:exactly; font-weight:bold; font-size:32px; =
+line-height:125%; text-align:center" align=3D"center"><span style=3D"font-f=
+amily: 'Avenir Next', sans-serif; color: #213343;">Explore more resources</=
+span></h1></div></div></td></tr></tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"module_1683918733389" class=3D"hse-section" style=3D"padding-l=
+eft:10px; padding-right:10px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0; background-color:#eaf0f6; padding-bottom:5px; p=
+adding-top:5px" bgcolor=3D"#eaf0f6">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#eaf0f6">
+      <tr style=3D"background-color:#eaf0f6;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:200px;padding-bottom:5px; padding-top:5=
+px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"200" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:200px">
+<![endif]-->
+<div id=3D"module_1683918733389_0" class=3D"hse-column hse-size-4">
+  <div id=3D"hs_cos_wrapper_module_16839187331781" class=3D"hs_cos_wrapper =
+hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; =
+font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widg=
+et" data-hs-cos-type=3D"module">
+=09
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !important; bord=
+er-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt">
+    <tbody>
+        <tr>
+            <td align=3D"left" valign=3D"top" style=3D"border-collapse:coll=
+apse; mso-line-height-rule:exactly; font-family:Arial, sans-serif; color:#2=
+3496d; word-break:break-word; text-align:left; padding:35px 35px 0px; font-=
+size:0px">
+               =20
+                    <a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+113=
+/8-04/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7WbryG3q8tGV1-WJV7CgJvjW7t1ks57=
+J7JRmW1mHT9q5f9_-KW5YgvtW21h9QVVkK37M4WDykHW1rRqGM4pwcXTW3gKjCX49M3g8W921Tg=
+N2bw9qvN5C6nDqyTmm1W18-YRC76sk-4VQfzt55w8D8ZW7C6bN03Q47n1W5tBpQ61P2VnWW8cg8=
+t-6QtyjNW4THjrv3jFHmtW7nHg1z7yJrdrW9cMGJ79kHDbjW3XS2TD7mDvtyW8SFp6f8mT9PFW9=
+dNZrZ3VYdc3W78b3Nf78RPLhW8LWGYH3L-2s-W8_Qt1S21tynMW2KkP1G9hVd4qW38J0CH85FJh=
+C3gLL1" target=3D"_blank" style=3D"color:#00a4bd; mso-line-height-rule:exac=
+tly" data-hs-link-id=3D"0">
+               =20
+                <img alt=3D"Another Bite" src=3D"https://www.hubspot.com/hs=
+-fs/hubfs/Another%20Bite.png?width=3D260&amp;upscale=3Dtrue&amp;name=3DAnot=
+her%20Bite.png" style=3D"outline:none; text-decoration:none; -ms-interpolat=
+ion-mode:bicubic; border:none; max-width:100%; font-size:16px" width=3D"130=
+" align=3D"middle" class=3D"stretch-on-mobile" srcset=3D"https://www.hubspo=
+t.com/hs-fs/hubfs/Another%20Bite.png?upscale=3Dtrue&amp;width=3D260&amp;ups=
+cale=3Dtrue&amp;name=3DAnother%20Bite.png 130w, https://www.hubspot.com/hs-=
+fs/hubfs/Another%20Bite.png?upscale=3Dtrue&amp;width=3D520&amp;upscale=3Dtr=
+ue&amp;name=3DAnother%20Bite.png 260w" sizes=3D"(max-width: 130px) 100vw, 1=
+30px">
+               =20
+                    </a>
+               =20
+            </td>
+        </tr>
+    </tbody>
+</table></div>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+<!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:400px;padding-bottom:5px; padding-top:5=
+px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"400" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:400px">
+<![endif]-->
+<div id=3D"module_1683918733389_1" class=3D"hse-column hse-size-8">
+  <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-=
+table-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" =
+style=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-famil=
+y:Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word; =
+padding:35px"><div id=3D"hs_cos_wrapper_module_16839187331792" class=3D"hs_=
+cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"colo=
+r: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-general-=
+type=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs_cos_wrapper_modul=
+e_16839187331792_" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wra=
+pper_type_rich_text" style=3D"color: inherit; font-size: inherit; line-heig=
+ht: inherit;" data-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"rich_=
+text"><h2 style=3D"margin:0; mso-line-height-rule:exactly; font-size:18px; =
+line-height:150%"><a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+113/8=
+-04/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7WbryG3q8tGV1-WJV7CgC48W8Vcxxr3Qg=
+4PxW2vz9M64t6kLjW43wl558sZG2kW73WSg02z6P5wW5_xqkx350WR9W42wKRX3VFxzbW8pMtPR=
+3bCS8_W308v8Q5K5H21W623tHM14NgppW8BTCwW8cjjnKW1F-NWH2YhKL0W24B56B4g1YkRW7H-=
+cGM3b0XYfW4-y4718mLbvVW68SC233cxzw2W291s5-7WZ3YdW71QN446gFlsmW8dZY0m551RnMW=
+8RDSGM4P4cgKW7QD1_R54DWCvW5yNM2h2xMbyhW5Gn_y271LtqQW1RJ4bx6gm5H8W8tvR5B6FXR=
+fL2Kt1" style=3D"mso-line-height-rule:exactly; color:#00a4bd; font-weight:b=
+old; text-decoration:none" rel=3D"noopener" data-hs-link-id=3D"1" target=3D=
+"_blank"><span style=3D"font-family: Avenir Next, sans-serif; color: #21334=
+3;">Are You a Category Innovator or Disruptor? w/ Super Coffee, Br=C3=BCmac=
+hen, Copper Cow Coffee [Podcast]&nbsp; &nbsp;</span></a><a href=3D"https://=
+8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_=
+7shLN7Wbry33q8t3V1-WJV7CgD_BVbdc463BtTqZVfSCjh6VC28zW1xPBl18GPxgnW6LyRmD5m-=
+dVmW5Q-Xy61GMBHkV8pBzg6V7FPCW7Gc1rf3Tr1wtW4Hd2X975vSL2W76M84G1CVCVbW4d2GDd6=
+JMsq0W489YP699R9R-W23KCTf82m9wMW3gcx-p7nQSzGW4dWcV92GhykpN3nXp1_H2_8NW7zDVq=
+76RpJ4hW4Nwzkr3D96zrN4grxpQs0nm_W8TBLK31XKcpRW3fRkF43knmWg3kLY1" style=3D"m=
+so-line-height-rule:exactly; color:#00a4bd; font-weight:bold; text-decorati=
+on:none" rel=3D"noopener" data-hs-link-id=3D"0" target=3D"_blank"><span sty=
+le=3D"font-family: Avenir Next, sans-serif; color: #213343;">&nbsp;</span><=
+/a></h2>
+<p style=3D"mso-line-height-rule:exactly; line-height:100%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:100%"><span style=3D"=
+font-family: Avenir Medium, sans-serif; color: #213343; font-weight: normal=
+;">Never mind the shakes, here's our most caffeinated episode yet! We=E2=80=
+=99re bringing you a perfect blend of beans for all your needs.&nbsp;</span=
+></p>
+<p style=3D"mso-line-height-rule:exactly; font-size:10px; line-height:200%"=
+>&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:200%"><a href=3D"http=
+s://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/MVN3Jb9sM3WW25XhM02NcKZ3W46ZL=
+VZ4_7shLN7WbryG3q8tGV1-WJV7CgDV4W2hvQgY2rGmCbW1DTnf84Q9c1nW2rK0W472jCZNN4M3=
+wlgYdMH6W3YhD5M5kYsCSW8YglQS8bb3rYW5MnVVN4TyC-bW6kvrYD4JByRTW5C7Gt71J0cc6W1=
+vydzf6K_C0dW9k4Ltk5X78g-W4M_bMP6PmQ0JW8GlRkm2gl9k8W6HV8JX5RPqlqW7XmPYw3hYl5=
+7W7Jj3Cm1VKFRNW6XDdQw87bpfMW15LHCc5kW_YzW7LWgpz8YRZHTW32LVm33-45JqW8bHHZH1Y=
+QS0jW68KXMd9027bzW5y1DR68qXZLyN5L-tFMSXB0_3cMC1" style=3D"mso-line-height-r=
+ule:exactly; color:#ff7a59; font-family:Avenir Next Demi Bold, sans-serif; =
+font-size:14px; text-decoration:none; border-bottom:2px solid; display:inli=
+ne-table; font-weight:bold" rel=3D"noopener" data-hs-link-id=3D"2" target=
+=3D"_blank">Listen now</a></p></div></div></td></tr></tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"module_1685222620271" class=3D"hse-section" style=3D"padding-l=
+eft:10px; padding-right:10px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0; background-color:#fef4ea; padding-bottom:5px; p=
+adding-top:5px" bgcolor=3D"#fef4ea">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#fef4ea">
+      <tr style=3D"background-color:#fef4ea;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:200px;padding-bottom:5px; padding-top:5=
+px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"200" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:200px">
+<![endif]-->
+<div id=3D"module_1685222620271_0" class=3D"hse-column hse-size-4">
+  <div id=3D"hs_cos_wrapper_module_16852226202241" class=3D"hs_cos_wrapper =
+hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; =
+font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widg=
+et" data-hs-cos-type=3D"module">
+=09
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !important; bord=
+er-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt">
+    <tbody>
+        <tr>
+            <td align=3D"left" valign=3D"top" style=3D"border-collapse:coll=
+apse; mso-line-height-rule:exactly; font-family:Arial, sans-serif; color:#2=
+3496d; word-break:break-word; text-align:left; padding:35px 35px 0px; font-=
+size:0px">
+               =20
+                    <a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+113=
+/8-04/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7WbryG3q8tGV1-WJV7CgH1kVxWcCS82=
+pKfJW15b0b51B5JR5VkL-KL4sw8J5W1_jMSS6psL2VW4wZvjY3RY1ZmW8QN80w6ylbb6W88P7KW=
+58K1bkW18VpS87RGJ5DW7h1l6D7_hj3YW5wqJ-D7Xt-jRW4WpFDF7vy2gDW4nYdcS1Tl6TmW69s=
+XLn7svbgtW4StyFS947Q7qN2MK-CStXbLtN4jH4vpML2x8W6KbJ-L4JjZ9TW7lCFms3WR_LpW6h=
+Xkvv11MPlXW7f7qV83zb4bYW4SNYZf7StNv3W563wkh75xQs3W8g0rbJ7BpljCW37W3Nj92WQ29=
+372-1" target=3D"_blank" style=3D"color:#00a4bd; mso-line-height-rule:exact=
+ly" data-hs-link-id=3D"0">
+               =20
+                <img alt=3D"my-first-million-cover" src=3D"https://www.hubs=
+pot.com/hs-fs/hubfs/my-first-million-cover.jpg?width=3D260&amp;upscale=3Dtr=
+ue&amp;name=3Dmy-first-million-cover.jpg" style=3D"outline:none; text-decor=
+ation:none; -ms-interpolation-mode:bicubic; border:none; max-width:100%; fo=
+nt-size:16px" width=3D"130" align=3D"middle" class=3D"stretch-on-mobile" sr=
+cset=3D"https://www.hubspot.com/hs-fs/hubfs/my-first-million-cover.jpg?upsc=
+ale=3Dtrue&amp;width=3D260&amp;upscale=3Dtrue&amp;name=3Dmy-first-million-c=
+over.jpg 130w, https://www.hubspot.com/hs-fs/hubfs/my-first-million-cover.j=
+pg?upscale=3Dtrue&amp;width=3D520&amp;upscale=3Dtrue&amp;name=3Dmy-first-mi=
+llion-cover.jpg 260w" sizes=3D"(max-width: 130px) 100vw, 130px">
+               =20
+                    </a>
+               =20
+            </td>
+        </tr>
+    </tbody>
+</table></div>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+<!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:400px;padding-bottom:5px; padding-top:5=
+px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"400" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:400px">
+<![endif]-->
+<div id=3D"module_1685222620271_1" class=3D"hse-column hse-size-8">
+  <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-=
+table-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" =
+style=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-famil=
+y:Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word; =
+padding:35px"><div id=3D"hs_cos_wrapper_module_16852226202242" class=3D"hs_=
+cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"colo=
+r: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-general-=
+type=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs_cos_wrapper_modul=
+e_16852226202242_" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wra=
+pper_type_rich_text" style=3D"color: inherit; font-size: inherit; line-heig=
+ht: inherit;" data-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"rich_=
+text"><h2 style=3D"margin:0; mso-line-height-rule:exactly; font-size:18px; =
+line-height:150%"><a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+113/8=
+-04/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7WbryG3q8tGV1-WJV7CgH9CW5ssVjV4cq=
+7V9N4M0Y6d3gYdjVYN4XD2mqR8WW4zVRrJ3XVpDbW9jTP4v5rmpRVW4pvnG63HzNZBN6gGlG5DB=
+j4wN74s9nzds4sGW3Bh3DK8ZQ-5hW6LGX-K2F2jhdW5X9Gds13m8qMW26-4-S2d5px8W2ljDGM8=
+dXM-lW5y8zwf7gHQN6W5HcJVx98G6LFW4HDnvm7SqcV1N2vfHgzd886WVZGTWZ6Wt8JjW31cn63=
+5CtBgPW6rZ4Nz19wcCXW5McRHb2lmwbPW5NR0CZ5NPcr3N35swb51zZjXW3mpcB-1f4rjy3lYR1=
+" style=3D"mso-line-height-rule:exactly; color:#00a4bd; font-weight:bold; t=
+ext-decoration:none" rel=3D"noopener" data-hs-link-id=3D"1" target=3D"_blan=
+k"><span style=3D"font-family: Avenir Next, sans-serif; color: #213343;">St=
+eph Smith: Jobs of the Future, Fractional Real Estate, Mouth Tape, and More=
+ [Podcast]</span></a></h2>
+<p style=3D"mso-line-height-rule:exactly; line-height:100%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:100%"><span style=3D"=
+font-family: Avenir Medium, sans-serif; color: #213343; font-weight: normal=
+;">Episode 459: Shaan Puri (@ShaanVP) and Sam Parr (@TheSamParr) talk with =
+a16z podcast host and author, Steph Smith (@stephsmithio) about trends in b=
+usiness, her new list - jobs of the future and so much more. &nbsp; &nbsp;<=
+/span></p>
+<p style=3D"mso-line-height-rule:exactly; font-size:10px; line-height:200%"=
+>&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:200%"><a href=3D"http=
+s://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/MVN3Jb9sM3WW25XhM02NcKZ3W46ZL=
+VZ4_7shLN7WbryG3q8tGV1-WJV7CgG9MW57zBh37yK4WWW1ZyBnv4S54CgW6BpG247Jrp_yW6CW=
+SbW702xZ4W7H_0fQ9dd4C_W6dwCc35fZl8ZV_J5921-TJ12W5w1gL_3JyrHNW57Sc842R6CgBW4=
+wMVX54RWxFvW6WngfM8FB-_MMDhT_NLsWt6W8bc6-N4NnCdxW3PLx_q6Ss8dYW7XrXp14jYY8xW=
+2nc0lm62H7pDW4qY5zn6gYNmVW2jh6Sh3ZcQnYW8b4bHQ71sqKfVzQCrz8NTG8QVsD81q5DTbsF=
+W5vQZ_M6p0hbxVRNGR92p3nv3W4z4Qt24LHb5B35-j1" style=3D"mso-line-height-rule:=
+exactly; color:#ff7a59; font-family:Avenir Next Demi Bold, sans-serif; font=
+-size:14px; text-decoration:none; border-bottom:2px solid; display:inline-t=
+able; font-weight:bold" rel=3D"noopener" data-hs-link-id=3D"2" target=3D"_b=
+lank">Listen now</a></p></div></div></td></tr></tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"section-11" class=3D"hse-section" style=3D"padding-left:10px; =
+padding-right:10px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0; background-color:#f6f9fc" bgcolor=3D"#f6f9fc">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#f6f9fc">
+      <tr style=3D"background-color:#f6f9fc;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:600px">
+<![endif]-->
+<div id=3D"column-11-0" class=3D"hse-column hse-size-12">
+  <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-=
+table-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" =
+style=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-famil=
+y:Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word; =
+padding:20px 35px 10px"><div id=3D"hs_cos_wrapper_module-11-0-0" class=3D"h=
+s_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"co=
+lor: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-genera=
+l-type=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs_cos_wrapper_mod=
+ule-11-0-0_" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_t=
+ype_rich_text" style=3D"color: inherit; font-size: inherit; line-height: in=
+herit;" data-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"rich_text">=
+<h2 style=3D"margin:0; mso-line-height-rule:exactly; line-height:175%; font=
+-size:22px"><span style=3D"font-family: 'Avenir Next', sans-serif; color: #=
+213343;">Useful Links</span></h2></div></div></td></tr></tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"section-12" class=3D"hse-section" style=3D"padding-left:10px; =
+padding-right:10px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0; background-color:#f6f9fc; padding-bottom:20px" =
+bgcolor=3D"#f6f9fc">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#f6f9fc">
+      <tr style=3D"background-color:#f6f9fc;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:300px;padding-bottom:20px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"300" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:300px">
+<![endif]-->
+<div id=3D"column-12-0" class=3D"hse-column hse-size-6">
+  <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-=
+table-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" =
+style=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-famil=
+y:Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word; =
+padding:10px 35px"><div id=3D"hs_cos_wrapper_module-12-0-0" class=3D"hs_cos=
+_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: =
+inherit; font-size: inherit; line-height: inherit;" data-hs-cos-general-typ=
+e=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs_cos_wrapper_module-1=
+2-0-0_" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_r=
+ich_text" style=3D"color: inherit; font-size: inherit; line-height: inherit=
+;" data-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"rich_text"><p st=
+yle=3D"mso-line-height-rule:exactly; line-height:200%"><span style=3D"color=
+: #213343;"><a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/MV=
+N3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7Wbry33q8t3V1-WJV7CgMclW4f42T43pJKzxV6l=
+7jX5qfq1jVGh-2J3H96xMW8z2chK8ydcR0V_txgj83TT6yW8ZPP2j87ZKXvW8qF5Qk5fWLnrW4y=
+pZ7F4h43q0W7tpXFC4rBL-sW5Y3kpT5HgqVDW7jRBP78_YtVBVztg9l8Xczd5W1-9LSM7ldH64W=
+78qdMD6z1L2GW69_dFj9bVJ2tW3FTbj36Xpj3SN1Pfb05GfqX4W5169Fz3GmJSFW8R0lHc9k5h7=
+qVjKt0-1LLyS03b391" target=3D"_blank" style=3D"mso-line-height-rule:exactly=
+; color:#213343; font-family:'Avenir Next Demi Bold', sans-serif; font-size=
+:14px; text-decoration:none; border-bottom:2px solid; display:inline-table;=
+ font-weight:bold" rel=3D"noopener" data-hs-link-id=3D"0">HubSpot Blogs</a>=
+</span></p>
+<p style=3D"mso-line-height-rule:exactly; font-size:10px; line-height:200%"=
+><span style=3D"color: #213343;">&nbsp;</span></p>
+<p style=3D"mso-line-height-rule:exactly; line-height:200%"><span style=3D"=
+color: #213343;"><a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-=
+04/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7Wbry33q8t3V1-WJV7CgRf9W1GZHzs7BC2=
+r1W12BHwk1wbw6CV6hZ6s5DXHDZVC5CgL4KZ_b3W6PbMHN1-ydcWMb-_yNVml_gN97fqG6HJGP-=
+N8C1h0Bv_G9ZW5FgNHk7lM-HvN8YM1hY1hC3fN9819MVgW1QYW3pJD6W8xWS8SW2_Wgz13xrQ03=
+W1WC0HR201978W8945-Y5q8KgYW4nfc4v3ZM4QmW3P9Gl94YrQwxN2_SgLPW8Q_JN22w8KYg_8c=
+qW2Bbs8H6rNF0b2zz1" target=3D"_blank" style=3D"mso-line-height-rule:exactly=
+; color:#213343; font-family:'Avenir Next Demi Bold', sans-serif; font-size=
+:14px; text-decoration:none; border-bottom:2px solid; display:inline-table;=
+ font-weight:bold" rel=3D"noopener" data-hs-link-id=3D"0">The Hustle Newsle=
+tter</a></span></p>
+<p style=3D"mso-line-height-rule:exactly; font-size:10px; line-height:200%"=
+><span style=3D"color: #213343;">&nbsp;</span></p>
+<p style=3D"mso-line-height-rule:exactly; line-height:200%"><span style=3D"=
+color: #213343;"><a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-=
+04/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7Wbrym3q8tmV1-WJV7CgGZLW3QNy0w7T6G=
+wcW4mldfH3_37sDW1qJHtP5jrWBrW23yrS185ZVHCW95qywL1hzhm_N3dhyZtWZbFsW21cx8k7Q=
+_pWHW1Q8Z305Ybl3tW2QCl5125xZttN1b2xxLy-MsqW2z73QJ36JLn6VSGM903djtNDW93LTGd4=
+fLd3cN1ZBHmD55N15N8DWn_0KnF_bW271jTf2d5zTYW4c3kVq8byD7-W78FCg65RYFYWW7sQynR=
+1prlZ3W6j5jxW4G-2GnW2WvKNC304JYnW5JCrp62WmTCV3kPd1" target=3D"_blank" style=
+=3D"mso-line-height-rule:exactly; color:#213343; font-family:'Avenir Next D=
+emi Bold', sans-serif; font-size:14px; text-decoration:none; border-bottom:=
+2px solid; display:inline-table; font-weight:bold" rel=3D"noopener" data-hs=
+-link-id=3D"0">HubSpot YouTube Channel</a></span></p></div></div></td></tr>=
+</tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+<!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:300px;padding-bottom:20px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"300" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:300px">
+<![endif]-->
+<div id=3D"column-12-1" class=3D"hse-column hse-size-6">
+  <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-=
+table-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" =
+style=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-famil=
+y:Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word; =
+padding:10px 35px"><div id=3D"hs_cos_wrapper_module-12-1-0" class=3D"hs_cos=
+_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: =
+inherit; font-size: inherit; line-height: inherit;" data-hs-cos-general-typ=
+e=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs_cos_wrapper_module-1=
+2-1-0_" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_r=
+ich_text" style=3D"color: inherit; font-size: inherit; line-height: inherit=
+;" data-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"rich_text"><p st=
+yle=3D"mso-line-height-rule:exactly; line-height:200%"><span style=3D"color=
+: #213343;"><a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/MV=
+N3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7Wbrym3q8tmV1-WJV7CgWvxW81Zy3P4lVNcdW60=
+KZ9v60pCxKVNdjfY4rrl9FW8vfDw23kffbHVCMjtQ488BF-W89SK7Q5lq_wMW4TX_j32rXSCtW8=
+4M0fC92YtTbW81w_tp5K9j_PW8H9gsV539nSfW4m2cnb2BXFYdW81ZQfx58vNQKW7P0ckY76Vgv=
+wW2nHw2n53Vz2MW3DBY0x74qCKdW5GzL7b2kLQg0N1btBzLx0Rt_W1NTyVT3wrlSRW5BG8Q96tV=
+mycW7pFgj617xvp8W1FxHYq7BvNBhN8hgkwxbmzfm328P1" target=3D"_blank" style=3D"=
+mso-line-height-rule:exactly; color:#213343; font-family:'Avenir Next Demi =
+Bold', sans-serif; font-size:14px; text-decoration:none; border-bottom:2px =
+solid; display:inline-table; font-weight:bold" rel=3D"noopener" data-hs-lin=
+k-id=3D"0">HubSpot Marketing Blog</a></span></p>
+<p style=3D"mso-line-height-rule:exactly; font-size:10px; line-height:200%"=
+><span style=3D"color: #213343;">&nbsp;</span></p>
+<p style=3D"mso-line-height-rule:exactly; line-height:200%"><span style=3D"=
+color: #213343;"><a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-=
+04/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7Wbrym3q8tmV1-WJV7CgMJzW1r4fhL8XxM=
+65W3Hj53028x0pfW6L0Jr06wNS3_W3fwwjB1z57hyW1q_xTr7TvYcpW7hnpNW869__WW2Mgx-47=
+J4YbmN42pM53tTsZ1W4jFFrF7DCxkqW6KhMVs2JXDZcW2T3Qxx2MbCzwW1DFxCp6wZvQ1VZCCsn=
+222z-hW66zKJS2d2GhzW8qbWMY1CpB2QW2n2HgY5cZZXmW6RSfg34vQrWqVPKgBH3v6j2XW7vYd=
+K79fnMbZW6N5QQ325M9GGW8LZgNM1BYr_KVzy86x7Y1jdr31hX1" target=3D"_blank" styl=
+e=3D"mso-line-height-rule:exactly; color:#213343; font-family:'Avenir Next =
+Demi Bold', sans-serif; font-size:14px; text-decoration:none; border-bottom=
+:2px solid; display:inline-table; font-weight:bold" rel=3D"noopener" data-h=
+s-link-id=3D"0">The Hustle Blog</a></span></p>
+<p style=3D"mso-line-height-rule:exactly; font-size:10px; line-height:200%"=
+><span style=3D"color: #213343;">&nbsp;</span></p>
+<p style=3D"mso-line-height-rule:exactly; line-height:200%"><span style=3D"=
+color: #213343;"><a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-=
+04/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7Wbrym3q8tmV1-WJV7CgN0yW1qR8Dg4f6Y=
+42W4t55VZ6slDMxW4SdH871l56f0W6gZtRF3zrR6qW21QmMk8H4MNyW4_CPl47MBCDGVPd-S12g=
+SjLVW5lkcxh2wgbMzW4ytyJ523wkPMW57LNHk8y3R4MW4DcC2b3QDb7GW8zwYgT8qcL_GN5Dkmj=
+RRyHpYW3_SpZB6zyYtBW2LFJXG2nn4sKVpGj_6792lMcW3_tWKx1Cb34QVl-3SP3NXDTWW8hV_M=
+L6XYmDjV3FmRw41cRYGW3K0B2v2ZJ5qJW7zB2Fj15gcY837X61" target=3D"_blank" style=
+=3D"mso-line-height-rule:exactly; color:#213343; font-family:'Avenir Next D=
+emi Bold', sans-serif; font-size:14px; text-decoration:none; border-bottom:=
+2px solid; display:inline-table; font-weight:bold" rel=3D"noopener" data-hs=
+-link-id=3D"0">HubSpot Podcast Network</a></span></p></div></div></td></tr>=
+</tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"section-13" class=3D"hse-section hse-section-last" style=3D"pa=
+dding-left:10px; padding-right:10px; padding-bottom:20px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0; background-color:#ff5c35" bgcolor=3D"#ff5c35">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ff5c35">
+      <tr style=3D"background-color:#ff5c35;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:600px">
+<![endif]-->
+<div id=3D"column-13-0" class=3D"hse-column hse-size-12">
+  <div id=3D"hs_cos_wrapper_module-13-0-0" class=3D"hs_cos_wrapper hs_cos_w=
+rapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; font-siz=
+e: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget" data=
+-hs-cos-type=3D"module">
+=09
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !important; bord=
+er-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt">
+    <tbody>
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"border-collapse:co=
+llapse; mso-line-height-rule:exactly; font-family:Arial, sans-serif; color:=
+#23496d; word-break:break-word; text-align:center; padding:20px 20px 0px; f=
+ont-size:0px">
+               =20
+                <img alt=3D"MV_HubSpot-logo-white" src=3D"https://www.hubsp=
+ot.com/hs-fs/hubfs/MV_HubSpot-logo-white.png?width=3D200&amp;upscale=3Dtrue=
+&amp;name=3DMV_HubSpot-logo-white.png" style=3D"outline:none; text-decorati=
+on:none; -ms-interpolation-mode:bicubic; max-width:100%; font-size:16px" wi=
+dth=3D"100" align=3D"middle" srcset=3D"https://www.hubspot.com/hs-fs/hubfs/=
+MV_HubSpot-logo-white.png?upscale=3Dtrue&amp;width=3D200&amp;upscale=3Dtrue=
+&amp;name=3DMV_HubSpot-logo-white.png 100w, https://www.hubspot.com/hs-fs/h=
+ubfs/MV_HubSpot-logo-white.png?upscale=3Dtrue&amp;width=3D400&amp;upscale=
+=3Dtrue&amp;name=3DMV_HubSpot-logo-white.png 200w" sizes=3D"(max-width: 100=
+px) 100vw, 100px">
+               =20
+            </td>
+        </tr>
+    </tbody>
+</table></div>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word; pa=
+dding:0px 20px 10px"><div id=3D"hs_cos_wrapper_module-13-0-1" class=3D"hs_c=
+os_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color=
+: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-general-t=
+ype=3D"widget" data-hs-cos-type=3D"module">
+<table role=3D"presentation" align=3D"center" style=3D"border-spacing:0 !im=
+portant; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0=
+pt; width:auto; text-align:center" class=3D"hs_cos_wrapper_type_social_modu=
+le" width=3D"auto">
+  <tbody>
+    <tr align=3D"center">
+     =20
+     =20
+       =20
+     =20
+      <td class=3D"social-network-cell" style=3D"border-collapse:collapse; =
+mso-line-height-rule:exactly; font-family:Arial, sans-serif; font-size:15px=
+; color:#23496d; word-break:break-word">
+        <table role=3D"presentation" align=3D"center" style=3D"border-spaci=
+ng:0 !important; border-collapse:collapse; mso-table-lspace:0pt; mso-table-=
+rspace:0pt; width:auto; text-align:center" class=3D"hs_cos_wrapper_type_soc=
+ial_module_single" width=3D"auto">
+          <tbody>
+            <tr align=3D"center">
+             =20
+              <td class=3D"display_block_on_small_screens" style=3D"border-=
+collapse:collapse; mso-line-height-rule:exactly; font-family:Arial, sans-se=
+rif; font-size:15px; color:#23496d; word-break:break-word; padding:8px 5px;=
+ line-height:1; vertical-align:middle" valign=3D"middle">
+                <a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-0=
+4/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7Wbry33q8t3V1-WJV7CgMKzW6LtSnM63kr0=
+nW6Xc-j59bqn4FW2-m1Cp5VTxsgW8-XSYv5Yz0RFW3lKF2v1j1KpbW4lJdst99tMYXW7zXx0N89=
+BBBTVnf8Kv5kwgT9W3jl-vf92RthKW6XMnMh2h0lBtW3tS2r02vq9BKW19f2KG8nqb66W1bLn5c=
+8T1cVMW1FfwYR6C1pzFW1qHf807602m8W1Cx4-080nNVmW8Hw37x1WT_y5W4dHLGt3LQThqW5F1=
+NfB2hmQkhW9l8TSl56x_Fc3hXq1" style=3D"color:#00a4bd; mso-line-height-rule:e=
+xactly; text-decoration:none !important" data-hs-link-id=3D"0" target=3D"_b=
+lank">
+                 =20
+                 =20
+                  <img src=3D"https://hs-53.f.hubspotemail.net/hs/hsstatic/=
+TemplateAssets/static-1.114/img/hs_default_template_images/modules/Follow+M=
+e+-+Email/facebook_original_white.png" alt=3D"Facebook" height=3D"25" style=
+=3D"outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; bor=
+der:none; width:auto!important; height:25px!important; vertical-align:middl=
+e" valign=3D"middle" width=3D"auto">
+                 =20
+                </a>
+              </td>
+             =20
+             =20
+            </tr>
+          </tbody>
+        </table>
+      </td>
+     =20
+     =20
+       =20
+     =20
+      <td class=3D"social-network-cell" style=3D"border-collapse:collapse; =
+mso-line-height-rule:exactly; font-family:Arial, sans-serif; font-size:15px=
+; color:#23496d; word-break:break-word">
+        <table role=3D"presentation" align=3D"center" style=3D"border-spaci=
+ng:0 !important; border-collapse:collapse; mso-table-lspace:0pt; mso-table-=
+rspace:0pt; width:auto; text-align:center" class=3D"hs_cos_wrapper_type_soc=
+ial_module_single" width=3D"auto">
+          <tbody>
+            <tr align=3D"center">
+             =20
+              <td class=3D"display_block_on_small_screens" style=3D"border-=
+collapse:collapse; mso-line-height-rule:exactly; font-family:Arial, sans-se=
+rif; font-size:15px; color:#23496d; word-break:break-word; padding:8px 5px;=
+ line-height:1; vertical-align:middle" valign=3D"middle">
+                <a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-0=
+4/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7Wbrym3q8tmV1-WJV7CgQf_W1L-hRq35Npg=
+-MB-5jJcxYf9W9k4npY5BBJG0VWNY4716sKllVycwBk84qmcfW1WTzGY73rc6LW3K3p-d4FLw_W=
+M90WVHgWX1kW7ccNcK7xJBkTW5gvfdW3k8_rsN18qGJMVnPWlW2wYVgj6Q12jZW7ZqdYb4S9vVZ=
+W6CkpvT4C47jjW8gn2hJ6jVWRWW9gptsF6z5cs2W25qVKj67DVVNW1g6LSg3tZsBCW2Xsppb906=
+82sW89z8Zd6SwDkhW5yxVm46HVqygW7SDXdm5Hp6bl3jwx1" style=3D"color:#00a4bd; ms=
+o-line-height-rule:exactly; text-decoration:none !important" data-hs-link-i=
+d=3D"0" target=3D"_blank">
+                 =20
+                 =20
+                  <img src=3D"https://hs-53.f.hubspotemail.net/hs/hsstatic/=
+TemplateAssets/static-1.114/img/hs_default_template_images/modules/Follow+M=
+e+-+Email/linkedin_original_white.png" alt=3D"LinkedIn" height=3D"25" style=
+=3D"outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; bor=
+der:none; width:auto!important; height:25px!important; vertical-align:middl=
+e" valign=3D"middle" width=3D"auto">
+                 =20
+                </a>
+              </td>
+             =20
+             =20
+            </tr>
+          </tbody>
+        </table>
+      </td>
+     =20
+     =20
+       =20
+     =20
+      <td class=3D"social-network-cell" style=3D"border-collapse:collapse; =
+mso-line-height-rule:exactly; font-family:Arial, sans-serif; font-size:15px=
+; color:#23496d; word-break:break-word">
+        <table role=3D"presentation" align=3D"center" style=3D"border-spaci=
+ng:0 !important; border-collapse:collapse; mso-table-lspace:0pt; mso-table-=
+rspace:0pt; width:auto; text-align:center" class=3D"hs_cos_wrapper_type_soc=
+ial_module_single" width=3D"auto">
+          <tbody>
+            <tr align=3D"center">
+             =20
+              <td class=3D"display_block_on_small_screens" style=3D"border-=
+collapse:collapse; mso-line-height-rule:exactly; font-family:Arial, sans-se=
+rif; font-size:15px; color:#23496d; word-break:break-word; padding:8px 5px;=
+ line-height:1; vertical-align:middle" valign=3D"middle">
+                <a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-0=
+4/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7Wbry33q8t3V1-WJV7CgJ7SW7FnyQ67Kh7D=
+6W5JbzGk1-WWSXW3Pbw354_C-fDW6mlZwf3qgTWfW7dCv8v8_KfXtW80B_qV2twBL9W2NxVYd3r=
+l0K3VCkmkm5c80SZW5Dm1JV4LkDqWW1nG9Nk68WlcgVj1jfs6mPDj0N6XWlpgLtkLmW4DZ1z63p=
+35-QW7B4kZg3f9WtkW5MkCNd5XXpPyW3Dzb8t1rkCGnW7WFDwp91BlWlW2mSFwy892mhYW9gNG1=
+63S9-jrVw4Shf8h451231Wd1" style=3D"color:#00a4bd; mso-line-height-rule:exac=
+tly; text-decoration:none !important" data-hs-link-id=3D"0" target=3D"_blan=
+k">
+                 =20
+                 =20
+                  <img src=3D"https://hs-53.f.hubspotemail.net/hs/hsstatic/=
+TemplateAssets/static-1.114/img/hs_default_template_images/modules/Follow+M=
+e+-+Email/twitter_original_white.png" alt=3D"Twitter" height=3D"25" style=
+=3D"outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; bor=
+der:none; width:auto!important; height:25px!important; vertical-align:middl=
+e" valign=3D"middle" width=3D"auto">
+                 =20
+                </a>
+              </td>
+             =20
+             =20
+            </tr>
+          </tbody>
+        </table>
+      </td>
+     =20
+     =20
+       =20
+     =20
+      <td class=3D"social-network-cell" style=3D"border-collapse:collapse; =
+mso-line-height-rule:exactly; font-family:Arial, sans-serif; font-size:15px=
+; color:#23496d; word-break:break-word">
+        <table role=3D"presentation" align=3D"center" style=3D"border-spaci=
+ng:0 !important; border-collapse:collapse; mso-table-lspace:0pt; mso-table-=
+rspace:0pt; width:auto; text-align:center" class=3D"hs_cos_wrapper_type_soc=
+ial_module_single" width=3D"auto">
+          <tbody>
+            <tr align=3D"center">
+             =20
+              <td class=3D"display_block_on_small_screens" style=3D"border-=
+collapse:collapse; mso-line-height-rule:exactly; font-family:Arial, sans-se=
+rif; font-size:15px; color:#23496d; word-break:break-word; padding:8px 5px;=
+ line-height:1; vertical-align:middle" valign=3D"middle">
+                <a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-0=
+4/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7Wbrym3q8tmV1-WJV7CgPHQW7XPxKR4qQmX=
+cVgYW_67x5VN2W84N8qf2KWBRDVdXmNR6gFHgZW6grd0x6bqyb0W3CQbx722yRwlW55T3218gf2=
+ypW5h7Jmk4Z0XrqW6Zfcvk8qdG4sVXcRM85Xy871N4BDhZksWD5yW4v0cxl5QfW9GN4q5cKdVyZ=
+N3W3rxmPr3cYH5QN5k4QGJSCgvQW23MB9C8bGwwQW2wfZ6F4Q96gwW2PsRqj2j5CjpN2kK7Cm5h=
+RynW5PCFRb44v54cW8TqVzH8QqR6GW9090Mh1CRgNL38nF1" style=3D"color:#00a4bd; ms=
+o-line-height-rule:exactly; text-decoration:none !important" data-hs-link-i=
+d=3D"0" target=3D"_blank">
+                 =20
+                 =20
+                  <img src=3D"https://hs-53.f.hubspotemail.net/hs/hsstatic/=
+TemplateAssets/static-1.114/img/hs_default_template_images/modules/Follow+M=
+e+-+Email/instagram_original_white.png" alt=3D"Instagram" height=3D"25" sty=
+le=3D"outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; b=
+order:none; width:auto!important; height:25px!important; vertical-align:mid=
+dle" valign=3D"middle" width=3D"auto">
+                 =20
+                </a>
+              </td>
+             =20
+             =20
+            </tr>
+          </tbody>
+        </table>
+      </td>
+     =20
+     =20
+       =20
+     =20
+      <td class=3D"social-network-cell" style=3D"border-collapse:collapse; =
+mso-line-height-rule:exactly; font-family:Arial, sans-serif; font-size:15px=
+; color:#23496d; word-break:break-word">
+        <table role=3D"presentation" align=3D"center" style=3D"border-spaci=
+ng:0 !important; border-collapse:collapse; mso-table-lspace:0pt; mso-table-=
+rspace:0pt; width:auto; text-align:center" class=3D"hs_cos_wrapper_type_soc=
+ial_module_single" width=3D"auto">
+          <tbody>
+            <tr align=3D"center">
+             =20
+              <td class=3D"display_block_on_small_screens" style=3D"border-=
+collapse:collapse; mso-line-height-rule:exactly; font-family:Arial, sans-se=
+rif; font-size:15px; color:#23496d; word-break:break-word; padding:8px 5px;=
+ line-height:1; vertical-align:middle" valign=3D"middle">
+                <a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-0=
+4/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7Wbrym3q8tmV1-WJV7CgzL3W1Y_fk51M16m=
+pVwr3vw9fKsMBN5wyL_PLzKwVW3hNBYj6V-79vVy0sx27ymNCwW7N42C222Sh1ZW8LnsxD5Zb4m=
+PW4XKlgb6Ypq2RW4qbs205s47tTW8rhn6D2cdh6DM5CFD7qmmy1W7N_l-m8mdm9sW76YJGJ8sNv=
+c9W6lbZYX5MykqpW12KXKS4-L3Q0W17t9Bz31-kydW9dtkT89g2H5BW91n6WN58_7k8VDsY6h5f=
+7N6MW6nZWQH728MpBW7sJd0B1mN1g3W8kdC2Z2sxK2W37KG1" style=3D"color:#00a4bd; m=
+so-line-height-rule:exactly; text-decoration:none !important" data-hs-link-=
+id=3D"0" target=3D"_blank">
+                 =20
+                 =20
+                  <img src=3D"https://hs-53.f.hubspotemail.net/hs/hsstatic/=
+TemplateAssets/static-1.114/img/hs_default_template_images/modules/Follow+M=
+e+-+Email/youtube_original_white.png" alt=3D"YouTube" height=3D"25" style=
+=3D"outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; bor=
+der:none; width:auto!important; height:25px!important; vertical-align:middl=
+e" valign=3D"middle" width=3D"auto">
+                 =20
+                </a>
+              </td>
+             =20
+             =20
+            </tr>
+          </tbody>
+        </table>
+      </td>
+     =20
+    </tr>
+  </tbody>
+</table>
+</div></td></tr></tbody></table>
+<div id=3D"hs_cos_wrapper_module-13-0-2" class=3D"hs_cos_wrapper hs_cos_wra=
+pper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; font-size:=
+ inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget" data-h=
+s-cos-type=3D"module"><div id=3D"hs_cos_wrapper_module-13-0-2_" class=3D"hs=
+_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style=3D"=
+color: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-gene=
+ral-type=3D"widget" data-hs-cos-type=3D"rich_text"><p style=3D"mso-line-hei=
+ght-rule:exactly; font-family:Geneva, Verdana, Arial, Helvetica, sans-serif=
+; text-align:center; font-size:12px; line-height:125%; display:block" align=
+=3D"center"><span style=3D"color: #ffffff;"><span style=3D"font-family: Hel=
+vetica, Arial, sans-serif;"><a href=3D"https://8-04.na1.hubspotlinks.com/Ct=
+c/41+113/8-04/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7Wbrym3q8tmV1-WJV7CgNTY=
+W47nhjh28svVXW43KnGq61v-LDN5nT0prwr941W442rpZ6QHtN-W5j1WQM8l_7sLW62v8Y68NX3=
+-CW1TXbmH2ffjYlW9b2-c96yHd5qW5sQndf3G4F3zW71qdGB7wysygN6XYV1QMhjTJW7KN5mW1d=
+8GfwW4t3y3117_djQW8RCRcS6HZWfJW4YPskG1qz7DQW7hmh-y6_xg1qW67bwJ02p-_SRW7jg3M=
+X7QwZwsVPbTbG1RzmJJW16kQW07RQks1W6P6XyK4YR5XJW8QH1Cc6y6rGB3nQq1" style=3D"m=
+so-line-height-rule:exactly; text-decoration:underline; color:#ffffff" rel=
+=3D" noopener" data-hs-link-id=3D"0" target=3D"_blank">Update language</a> =
+| <a href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/MVN3Jb9sM3WW=
+25XhM02NcKZ3W46ZLVZ4_7shLN7Wbrym3q8tmV1-WJV7CgVGKN7RbRyP_c0yYW3VZckt6nfl5YV=
+90k0J9ck4n_V5nxnK3D_twlW5Lt1vK7H38DYW5Gf-RQ5z8nxSW2BDPR47KQwVfW54ZH5F4PQ-jv=
+W5FVl6544vxpgW430-3j2yZkV8W3Pc3Jt6sw2FzW1lLkYz96TGJ8W37_0BH6G_NZwW4b70mK2Xy=
+1P1W39cZmW1XyDG7W3VGk2s5Vw35VVrwKkf8-sPjwW3VHkjY8N3FzFW3MJSWd72RdZ6Vf02mP5q=
+1_jRW5nj3Wk6JX_5rW3SynDG3k5Hkh3l261" style=3D"mso-line-height-rule:exactly;=
+ text-decoration:underline; color:#ffffff" rel=3D" noopener" data-hs-link-i=
+d=3D"0" target=3D"_blank">Actualiza el idioma</a> | <a  href=3D"https://8-0=
+4.na1.hubspotlinks.com/Ctc/41+113/8-04/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7sh=
+LN7Wbrym3q8tmV1-WJV7CgPg3W12K3g68WGR52W6kyl5266nGq9W8y-rGw2zQnl4W7rZ9bZ7Jg_=
+rsW5Pzj-M42p1N8W7NZ_zj1jsdN2W3W-bwk2zXbsfW311Jjz4hM11cW43Vvbh1jxfHnW4ZtN_q2=
+5qBtJV3PB-c7gBknfW91gLGK8DqdNpW8Ddt9g7K-5rTW8BR5Dp7whlzvW47_tD65lhFsJN6dDSH=
+rRQxNQW7SQ0X31Q96_GW7hMlmx5G-YYWN6_tMxHlq2wjW3CMVwn2nv5vhN4Rx2khSzPh_W2lfjh=
+443tMhQ3hhL1" style=3D"mso-line-height-rule:exactly; text-decoration:underl=
+ine; color:#ffffff" rel=3D" noopener" data-hs-link-id=3D"0" target=3D"_blan=
+k">Changer la langue</a> |</span></span></p>
+<p style=3D"mso-line-height-rule:exactly; font-family:Geneva, Verdana, Aria=
+l, Helvetica, sans-serif; text-align:center; font-size:12px; line-height:12=
+5%; display:block" align=3D"center"><span style=3D"color: #ffffff;"> <span =
+style=3D"font-family: Helvetica, Arial, sans-serif;"><a href=3D"https://8-0=
+4.na1.hubspotlinks.com/Ctc/41+113/8-04/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7sh=
+LN7Wbrym3q8tmV1-WJV7CgBd5W5bCjKM8Kh8wKW7yyHnh48ptrKW62jdjj5DMGRgW3F25l-7hhG=
+xjVfcVnG1gn1cJW84xM3d1_xTX9W6q9r446cJzqGN7YB6Kk2lnWkW8JjFsx283jK8W4jvZmH7kT=
+Td_W4BWw9Q5XKRZnVBnHgQ652hJQW8L7Y0585S1NFW3tB76-7JxgnzW6rmRMg1PrxcgW195SHn4=
+-g5J_W4L8NBY4vY4HrN7C6-1Hx71jcW5pNBH64LTt1VV78l4p69SYRjW59905c1Nmwg6N7kXFKX=
+-_L7439hn1" style=3D"mso-line-height-rule:exactly; text-decoration:underlin=
+e; color:#ffffff" rel=3D" noopener" data-hs-link-id=3D"0" target=3D"_blank"=
+>Sprache =C3=A4ndern</a> | <a href=3D"https://8-04.na1.hubspotlinks.com/Ctc=
+/41+113/8-04/MVN3Jb9sM3WW25XhM02NcKZ3W46ZLVZ4_7shLN7Wbrym3q8tmV1-WJV7CgV2LW=
+8VH0tC8yFtSwN6_XQ6RFY2NMW7wdszc1bk8DdW5q10YV9f-X-QN2pjd2mhFWg-W2bWnKh5M_pyV=
+W28ff6K1mW_HxW6JVdLw1HzSLWW3lKTgQ6-hl-zW9lxR-L5XWC1FN5dZ6xgg7BxMW84V67b8w80=
+8WW20ch1x5fzyJVW26ZX6T5W_QnGW4xF3kG4qFV6XN3lkxHTxhnt8W1JMlzD1MMb-FW1qDyJB10=
+436kW3QKDtV4TMy3jVnZ47x3kfHdxW1Lr5zg4Tn4kZW4Yrfk_2Ls9Mj3dWL1" style=3D"mso-=
+line-height-rule:exactly; text-decoration:underline; color:#ffffff" rel=3D"=
+ noopener" data-hs-link-id=3D"0" target=3D"_blank">Atualize idioma</a> | <a=
+ href=3D"https://8-04.na1.hubspotlinks.com/Ctc/41+113/8-04/MVN3Jb9sM3WW25Xh=
+M02NcKZ3W46ZLVZ4_7shLN7Wbrym3q8tmV1-WJV7CgZ7wW8-8bk04fn4SqVzXRlt3Cc13XW7NKZ=
+ZJ8tfD3HW7DmRSl8gW43gW8CThGt6VxKPbVTsLJZ7MG3yMW5M4zkl3rDNjdN7TVqP2KLrX6VVW1=
+jl3VJkbQN3YgbplxfVy4W2qW2B_8RZJMSW7SRgPr51QhTNN7ZwVpDB7M8nW9cxz5F2H9JSLVypL=
+b44yk5LZW7FKt-236x6SzW3fJXkl7nrhHMW63fG2z2-22WhW8Pv4mt3vP4rLW6ZdHmJ7bSrHrW5=
+RBpqt2MWc5XW69yQs18M3ynQ36cf1" style=3D"mso-line-height-rule:exactly; text-=
+decoration:underline; color:#ffffff" rel=3D" noopener" data-hs-link-id=3D"0=
+" target=3D"_blank">=E5=8F=97=E4=BF=A1=E8=A8=80=E8=AA=9E=E3=82=92=E6=9B=B4=
+=E6=96=B0=E3=81=99=E3=82=8B</a></span></span></p></div></div>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word; pa=
+dding:10px 20px 20px"><div id=3D"hs_cos_wrapper_module-13-0-3" class=3D"hs_=
+cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"colo=
+r: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-general-=
+type=3D"widget" data-hs-cos-type=3D"module">
+ =20
+ =20
+ =20
+ =20
+ =20
+ =20
+ =20
+<table role=3D"presentation" class=3D"hse-footer hse-secondary" width=3D"10=
+0%" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !importan=
+t; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; fo=
+nt-family:Arial, sans-serif; font-size:12px; line-height:135%; color:#23496=
+d; margin-bottom:0; padding:0">
+    <tbody>
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"border-collapse:co=
+llapse; mso-line-height-rule:exactly; font-family:Arial, sans-serif; font-s=
+ize:15px; color:#23496d; word-break:break-word; text-align:center; margin-b=
+ottom:0; line-height:135%; padding:10px 20px">
+               =20
+                <p style=3D"mso-line-height-rule:exactly; font-family:Helve=
+tica,Arial,sans-serif; font-size:12px; font-weight:normal; text-decoration:=
+none; font-style:normal; color:#FFFFFF; direction:lrt" dir=3D"lrt">
+                  HubSpot, 2 Canal Park, Cambridge, MA 02141, USA, 888-482-=
+7768
+                </p>
+                <p style=3D"mso-line-height-rule:exactly">
+                 =20
+                  <a data-unsubscribe=3D"true" href=3D"https://hs-53.s.hubs=
+potemail.net/hs/manage-preferences/unsubscribe-all?languagePreference=3Den&=
+amp;d=3DMnch9QGJ9hBW3F7y5H3H3b4cW1-YqzQ3_R592N1JxwY5Xjc5xN1fk4d_kG327W4NYGR=
+98hmjDFW6P2hJB7tw1f6W1WPMCG68YH3hMGKd_P20N85W5Z5GQC1ThY79N2md7WbN9H2l4_9sv1=
+&amp;v=3D3&amp;utm_campaign=3DMarketing%20Blog%20-%20Daily%20Emails&amp;utm=
+_source=3Dhs_email&amp;utm_medium=3Demail&amp;utm_content=3D260116161" styl=
+e=3D"mso-line-height-rule:exactly; font-family:Helvetica,Arial,sans-serif; =
+font-size:12px; color:#FFFFFF; font-weight:normal; text-decoration:underlin=
+e; font-style:normal" data-hs-link-id=3D"0" target=3D"_blank">Unsubscribe</=
+a>
+                 =20
+                  <a data-unsubscribe=3D"true" href=3D"https://hs-53.s.hubs=
+potemail.net/hs/manage-preferences/unsubscribe?languagePreference=3Den&amp;=
+d=3DMnch9QGJ9hBW3F7y5H3H3b4cW1-YqzQ3_R592N1JxwY5Xjc5xN1fk4d_kG327W4NYGR98hm=
+jDFW6P2hJB7tw1f6W1WPMCG68YH3hMGKd_P20N85W5Z5GQC1ThY79N2md7WbN9H2l4_9sv1&amp=
+;v=3D3&amp;utm_campaign=3DMarketing%20Blog%20-%20Daily%20Emails&amp;utm_sou=
+rce=3Dhs_email&amp;utm_medium=3Demail&amp;utm_content=3D260116161" style=3D=
+"mso-line-height-rule:exactly; font-family:Helvetica,Arial,sans-serif; font=
+-size:12px; color:#FFFFFF; font-weight:normal; text-decoration:underline; f=
+ont-style:normal" data-hs-link-id=3D"0" target=3D"_blank">Manage preference=
+s</a>
+                 =20
+                </p>
+               =20
+            </td>
+        </tr>
+    </tbody>
+</table></div></td></tr></tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+</div>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+ =20
+<img src=3D"https://8-04.na1.hubspotlinks.com/Cto/41+113/8-04/MVN3Jb9sM3WW2=
+5XhM02NcKZ3W46ZLVZ4_7shLW7Wbrjr8fYpnn0" alt=3D"" width=3D"1" height=3D"1" b=
+order=3D"0" style=3D"display:none!important;min-height:1px!important;width:=
+1px!important;border-width:0!important;margin-top:0!important;margin-bottom=
+:0!important;margin-right:0!important;margin-left:0!important;padding-top:0=
+!important;padding-bottom:0!important;padding-right:0!important;padding-lef=
+t:0!important"></body></html>
+------=_Part_489803_18005640.1685366410132--
+

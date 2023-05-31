@@ -1,0 +1,448 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp492350ims;
+        Tue, 30 May 2023 07:19:58 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ7yP35g1UIKC6mI0YzFG0qA8jYwqRgh9wUVt5NoCyjuK7t5ohBw1vhGjfnWiL0coPSk3P7H
+X-Received: by 2002:a05:6808:308c:b0:398:a09:3cb with SMTP id bl12-20020a056808308c00b003980a0903cbmr1470992oib.36.1685456398420;
+        Tue, 30 May 2023 07:19:58 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685456398; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ZSixLcsYCh7MDYGs2wn3d8pxdJL3sNKQTAOSfIK/70GnV+Wiwu8T6njmkg1g7SdxuF
+         C2L5kbcDwqWfgqIM5aROPDeelUUQ2lqHtZdMmPpaMufu3FKMzypm5XQ6mShik9WS9F1V
+         388LtlSsJcwG3mRJeZbmXh2kba9pfJZVLEBbw21aQkCJoOwagvncCvyoi6HoewCEYJ/p
+         ZrDsKmSVW8u06V1n5KtwgpYHJndWpxP5bjTwNbWNzzAePBctB59M0xmWkzshP7wXKjBl
+         PXucDtPHuBU9RVpM4dGMa9e+1uYd4SttyPPluinkPl7klrK4Zqr88wgjs1jkmq/A3z82
+         sNcQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:list-id:reply-to:mime-version
+         :list-unsubscribe-post:list-unsubscribe:date:subject:to:from
+         :dkim-signature;
+        bh=WuRNfLh1wpAgzhbiLqI1JIoJuuh9VzLFd4d2kYVVCq8=;
+        b=svSd6jKtdqwKrCaD6KwePRE7OZRSPg0VgmbCc7mXzB7qRUfZcxVmxNXT0lyB+f7V7K
+         9JeeaS8SyieOO3s55qT7vidv+YYfuicfUka4vPS6eErC1hy0XVRSilrF0ooNHXNRtX2a
+         XTfuGM3s5wEC1vOB181rX6cNeyqR//jKBWddqE+b86hEvOPScKTAKCrS4rhmB4MgxnT0
+         /WtmqMcJfdB50ndvSVk4bgfQB5z8Qiy0Q+vxpg8q3/PE+Anc+JKoNAhweBa25QEea3x/
+         VkEb7XDu62h0zvsXvwQCAaB20qgwTZ8AOPUh7HmhDFgPXYSmKsBNTfK8maB35JvhC+cz
+         jiwA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.politico.com header.s=200608 header.b=MFYKzREM;
+       spf=pass (google.com: domain of bounce-630303_html-1405096349-9801509-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) smtp.mailfrom=bounce-630303_HTML-1405096349-9801509-1376319-0@bounce.politicoemail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.politico.com
+Return-Path: <bounce-630303_HTML-1405096349-9801509-1376319-0@bounce.politicoemail.com>
+Received: from mta.politicoemail.com (mta.politicoemail.com. [68.232.198.10])
+        by mx.google.com with ESMTPS id x131-20020acae089000000b00397fa7a7d80si6873053oig.251.2023.05.30.07.19.58
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 30 May 2023 07:19:58 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-630303_html-1405096349-9801509-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) client-ip=68.232.198.10;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.politico.com header.s=200608 header.b=MFYKzREM;
+       spf=pass (google.com: domain of bounce-630303_html-1405096349-9801509-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) smtp.mailfrom=bounce-630303_HTML-1405096349-9801509-1376319-0@bounce.politicoemail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.politico.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=200608; d=email.politico.com;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Reply-To:List-ID:X-CSA-Complaints:Message-ID:Content-Type;
+ i=weeklyeducation@email.politico.com;
+ bh=WuRNfLh1wpAgzhbiLqI1JIoJuuh9VzLFd4d2kYVVCq8=;
+ b=MFYKzREMS3eBmEF+7Z+RAm0a8MRfVxBNQ5vQ8XHARtFLdNr0AX4QIrxRMulSlX+JStu2DXYyi8W3
+   NK0brcaM0O1jXx2W0S0Fd2BVVasBk8IxJpN8IxeFmmclNV4jNy1jHC88lboTZao9NMl1pRgj8Ic+
+   4Cf+sweusXhkEwP2z48=
+Received: by mta.politicoemail.com id heo30s2fmd4a for <ouchendans62@gmail.com>; Tue, 30 May 2023 14:05:53 +0000 (envelope-from <bounce-630303_HTML-1405096349-9801509-1376319-0@bounce.politicoemail.com>)
+From: "POLITICO's Weekly Education" <weeklyeducation@email.politico.com>
+To: <ouchendans62@gmail.com>
+Subject: =?UTF-8?B?V2hhdCB0byBrbm93IHRvIGFib3V0IHRoZSBHT1DigJlzIHRvcCAy?=
+ =?UTF-8?B?MDI0IGNvbnRlbmRlcnM=?=
+Date: Tue, 30 May 2023 08:05:52 -0600
+List-Unsubscribe: <https://click.politicoemail.com/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiIxMzc2MzE5IiwicyI6IjE0MDUwOTYzNDkiLCJsaWQiOiI2MzAzMDMiLCJqIjoiOTgwMTUwOSIsImpiIjoiMCIsImQiOiI0MDEyOSJ9.IODQ_jyrCVYh_yKjHWyyYljUimQVGiFn0bkrMXNT5i4>, <mailto:leave-fcbc12737567047e1a4c342838-fdf61574756104747317747c-fe8f1d787565017d7c-fe9115737262077c7c-ffcf14@leave.politicoemail.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+Reply-To: "POLITICO, LLC" <reply-fe8f1d787565017d7c-630303_HTML-1405096349-1376319-0@politicoemail.com>
+List-ID: <1376319.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+X-SFMC-Stack: 4
+x-job: 1376319_9801509
+Message-ID: <94ac6f39-faf2-4fbb-b1b5-154e27dc2132@las1s04mta1096.xt.local>
+Feedback-ID: 1376319:9801509:68.232.198.10:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="9M1kUjvbwEmb=_?:"
+
+This is a multi-part message in MIME format.
+
+--9M1kUjvbwEmb=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Delivered every Monday by 10 a.m., Weekly Education examines the latest news in education politics and policy.  May 30, 2023 View in browser  
+By Bianca Quilantan
+
+START YOUR ENGINES — The GOP primary contest is well underway, with several candidates in the field. Here’s your roundup of where they stand in the polls and what they’re prioritizing when it comes to education policy.
+
+
+
+
+Former President Donald Trump | Alex Brandon/AP Photo
+
+DONALD TRUMP (53.9 percent): The former president is at the top of the pack of GOP primary contenders, and he plans to continue leaning into education culture war issues. Trump has vowed to cut federal funding for schools or programs “pushing Critical Race Theory or gender ideology.” He would also direct his administration to open civil rights investigations into school districts that have engaged in “race-based discrimination,” particularly against Asian American students. Additionally, Trump wants to create a credentialing body to “certify teachers who embrace patriotic values,” adopt a Parental Bill of Rights and implement elections for school principals.
+
+— On his campaign website, the former president touted his push to expand school choice and his signing into law permanent funding for historically Black colleges. He also promised to withhold federal funding for “academic programs engaged in censorship” and uphold “the Constitutional right to pray in public schools.”
+
+
+
+
+Gov. Ron DeSantis (center) and other elected, state, and local officials pose with a group of education-related bills after DeSantis signed them into law on Tuesday, May 9, 2023. | Rebecca Blackwell/AP Photo
+
+RON DeSANTIS (20.4 percent): The Florida governor is the only candidate in striking distance of Trump in early GOP primary polls. DeSantis, who has developed his political brand as the “education governor,” has several legislative wins during his two terms to tout on the campaign trail. He has codified a “Parents’ Bill of Rights,” expanded school choice, allowed for armed teachers, rolled back higher education diversity programs and worked to reshape higher education in the state. Both Trump and DeSantis have taken aim at college accreditors, the higher education watchdogs.
+
+— “The federal government approves the accreditors for universities. … There's a reason why universities are invested with things like DEI,” DeSantis said last week. “As president, I'll make sure we're approving accreditors that are going to do the opposite. That are gonna say, ‘You know what, we're going to accredit you if you are a colorblind university, if you're not trying to divide people on the basis of race. So there are different tools at your disposal.’”
+
+— On his campaign website, DeSantis hasn’t yet uploaded his education platform (but he does have shirts and mugs that say “DeSantis Breaks Systems,” including “woke indoctrination”).
+
+
+
+
+Former Vice President Mike Pence | Alex Brandon/AP Photo
+
+MIKE PENCE (5.3 percent) : The former vice president has yet to formally enter the race, though he is expected to participate in a CNN town hall on June 7. He has said he will make a decision on whether to enter the race before the end of June. During his time as Indiana governor, Pence supported increasing funding for preschools and school choice programs.
+
+More recently, Pence and his conservative advocacy group Advancing American Freedom have been calling to eliminate the Education Department.
+
+
+
+
+Former South Carolina Gov. Nikki Haley | Spencer Platt/Getty Images
+
+NIKKI HALEY (4.3 percent): The former South Carolina governor has taken a jab at DeSantis on the campaign trail, saying that his “Parents’ Bill of Rights” that restricted lessons on gender issues in the classroom didn’t go far enough. (Florida lawmakers have since enhanced the bill this session.) "When I was in school you didn't have sex ed until 7th grade,” Haley said. “And even then, your parents had to sign whether you could take the class. That’s a decision for parents to make.”
+
+— While she was governor, Haley signed a bill that redistributed state education funding to school districts with the highest poverty levels, and created a pot of cash for full-time or part-time reading coaches in schools. South Carolina also became the second state to drop the Common Core education standards under her leadership.
+
+— VIVEK RAMASWAMY, TIM SCOTT and ASA HUTCHINSON: These candidates are polling at below 5 percent, with Ramaswamy at 3.8 percent, Scott at 1.6 percent and Hutchinson at less than 1 percent as of Monday.
+
+IT’S TUESDAY, MAY 30. WELCOME TO WEEKLY EDUCATION. What are we missing? Send story ideas or let’s grab coffee. Reach me at bquilantan@politico.com. Send tips to my colleagues Mackenzie Wilkes at mwilkes@politico.com, Juan Perez Jr. at jperez@politico.com and Michael Stratford at mstratford@politico.com. And follow us on Twitter: @Morning_Edu and @POLITICOPro.
+
+  
+GET READY FOR GLOBAL TECH DAY: Join POLITICO Live as we launch our first Global Tech Day alongside London Tech Week on Thursday, June 15. Register now for continuing updates and to be a part of this momentous and program-packed day! From the blockchain, to AI, and autonomous vehicles, technology is changing how power is exercised around the world, so who will write the rules? REGISTER HERE.
+    
+Want to receive this newsletter every weekday? Subscribe to POLITICO Pro. You’ll also receive daily policy news and other intelligence you need to act on the day’s biggest stories.
+
+ In Congress
+DEBT DEAL REQUIRES REPAYMENT — President Joe Biden and House Speaker Kevin McCarthy's deal to raise the nation’s debt limit includes a provision to force the administration to resume collecting federal student loan payments and interest at the end of the summer, our Michael Stratford reports. The House is expected to vote on the deal as early as Wednesday.
+
+— The agreement would terminate the ongoing pause on monthly payments and interest after Aug. 30, but would not affect Biden’s student debt cancellation plan. The plan, which provides up to $20,000 of loan forgiveness per borrower, remains in limbo.
+
+—The Education secretary would be barred from using “any authority to implement an extension” of the ongoing repayment pause. But the bill does not specify how or when precisely the Education Department must resume collecting payments, shielding the administration’s plans to offer borrowers some type of grace period or extra flexibility with payments as it restarts repayment.
+
+— “Despite Republicans’ efforts to end targeted student debt relief and move up our planned end to the payment pause, we will ensure a smooth return to repayment process,” Education Secretary Miguel Cardona said on Twitter on Sunday.
+
+1,800+ LAW ENFORCEMENT OFFICIALS PRESS FOR PRE-K FUNDING — Fight Crime: Invest in Kids, an organization that represents more than 5,000 police chiefs, sheriffs and prosecutors, urged lawmakers to prioritize funding for early care and education programs and juvenile justice programs. More than 1,820 law enforcement officials signed on to the letter sent today.
+
+— “Meaningfully improving public safety requires investments in evidence-based programs that support young people and prevent them from becoming involved in crime,” the officials wrote, adding that students who attend high-quality pre-K programs are more likely to graduate from high school and “avoid crime or incarceration.”
+
+“A federal preschool investment would return an estimated $3-$4 for every $1 spent in reduced criminal justice expenses due in part to early learning’s impact on curbing juvenile crime,” the officials wrote.
+
+— Other programs they want boosts for include 21st Century Community Learning Centers, Juvenile Justice and Delinquency Act Title II and Title V grants, Juvenile Mentoring, and Student Support and Academic Enrichment grants. “As juvenile crime peaks in the hours immediately after school, 21st CCLCs provide children a safe environment that reinforces the skills they learn during the school day and are shown to improve graduation rates,” according to the letter.
+
+ Higher Education
+XI SEEKS EDUCATION BOOST — Chinese President Xi Jinping on Monday called on top officials to build a “high-quality” education system with more global influence, The Business Times reported. Xi’s push includes upgrading the country’s universities, seeking more international students and enhancing scientific courses to meet the nation’s strategic needs, according to state television.
+
+ MOVERS AND SHAKERS
+— The Washingtonian’s influential people list is out. The education section includes the American Enterprise Institute’s John Bailey, Max Eden and Frederick Hess; the NALEO Educational Fund’s Mario Beovides; Education Design Lab’s Kathleen deLaski; the Education Trust’s Denise Forte; Howard University President Wayne Frederick; Lodestone DC’s Lindsay Fryer; the American Council on Education’s Terry Hartle; the Progressive Policy Institute’s Richard Kahlenberg; Penn Hill Group’s Vic Klatt; the Century Foundation’s Stefan Lallinger; the United Negro College Fund’s Lodriguez Murray; Higher Learning Advocates’ Julie Peller; the National Education Association’s Becky Pringle; the National
+ Alliance for Public Charter Schools’ Nina Rees; the Brookings Institution’s Richard V. Reeves; Common App’s Jenny Rickard; CenterPoint Education Solutions’ Laura Slover; Achieving the Dream’s Karen A. Stout; Whiteboard Advisors’ Ben Wallerstein; the American Federation of Teachers’ Randi Weingarten; and Weiss Associates’ Joanne Weiss.
+
+  
+DON’T MISS POLITICO’S HEALTH CARE SUMMIT: The Covid-19 pandemic helped spur innovation in health care, from the wide adoption of telemedicine, health apps and online pharmacies to mRNA vaccines. But what will the next health care innovations look like? Join POLITICO on Wednesday June 7 for our Health Care Summit to explore how tech and innovation are transforming care and the challenges ahead for access and delivery in the United States. REGISTER NOW.
+     Syllabus
+— Elite high school’s admissions plan may face Supreme Court test: The New York Times
+
+— Descendants asking US Supreme Court to rename Brown v. Board of Education for SC case: The Post & Courier
+
+— Lawmakers approve school safety bill that would require an armed person at every Texas campus: The Texas Tribune
+
+— More high-school grads forgo college in hot labor market: The Wall Street Journal
+
+— Why Seattle schools are more segregated today than the 1980s: The Seattle Times
+  
+Follow us on Twitter
+
+Delece Smith-Barrow @DeleceWrites
+
+Michael Stratford @mstratford
+
+Bianca Quilantan @biancaquilan
+
+Juan Perez Jr. @PerezJr
+
+Mackenzie Wilkes @macwilkes
+  
+Follow us
+  
+To change your alert settings, please log in at https://go.politicoemail.com/?qs=3724958e7cecf9effa89995df3c68d22d51b6664b39f247e2d3ec1ac5093221bb32276fb810e3155d53867f35301f79fe04ebc5755e212fd  https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a25a2bc025f4dc2d6c1c239e57003b46d7187cc16a8acdd9a7ebe7973ae04d8fb808429d1b3a65989964cff3ec66b7c988
+
+This email was sent to ouchendans62@gmail.com by: POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+
+ Please click here and follow the steps to unsubscribe.
+  
+
+--9M1kUjvbwEmb=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<html><body><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml><![endif]-->
+</head><!-- Everything above this line is "new" to the template. We'll have to experiment a bit to see if it causes troubles. --><!-- preview text --><div style="display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">    Delivered every Monday by 10 a.m., Weekly Education examines the latest news in education politics and policy. </div><table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" style="padding:5px 0 15px 0;margin:0;text-align:center" role="presentation">    <tbody>    <tr>        <td><!-- Note: This is left blank to aid in centering across email clients --></td>        
+<td align="center" width="540">            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:540px;table-layout:fixed;" role="presentation">                <tbody>                <!-- top date and utility link -->                <tr>    <td align="center">        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="padding-bottom:15px;" role="presentation">            <tbody>            <tr>                <td width="50%" style="text-align:left;font-size:11px;font-family:Helvetica,sans-serif;color:#B1B4BD;margin:0;">May 30, 2023</td>                
+<td width="50%" style="text-align:right;font-size:11px;font-family:Helvetica,sans-serif;color:#B1B4BD;margin:0;"><a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9ef1fc63c46b5c8b64e4d048cf56b46b35fd690f48ccca0fd7a0c3f1d4cd01546a5d157fedd502314c24411f4e8e1247184" target="_blank" style="color:#007BC7;text-decoration:none;">View in browser</a
+></td>            </tr>            </tbody>        </table>    </td></tr>                <!-- divider line -->                <tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                <!-- logo and byline -->                <tr>    <td align="center" style="text-align:center;padding:0 20px 15px 20px;margin:0">                                    <img src="https://static.politico.com/3d/58/6dd36e2d46348a0810bfb353cedc/politico-weekly-education.png" title="2020_NewsletterLogo_Free_MorningEducation" alt="POLITICO's Weekly Education newsletter logo" border="0" width="500" style="width:100%;max-width:500px;">                        
+</td></tr><tr>    <td align="center" style="padding:0 20px 10px 20px;">        <p style="text-align:center;font-family:Helvetica,sans-serif;font-size:11px;letter-spacing:2px;color:#B1B4BD;text-transform:uppercase;margin:0;">            By  <a
+ href="mailto:bquilantan@politico.com" target="_blank" style="color:#000000;text-decoration:none;font-weight:bold;">Bianca Quilantan</a
+>        </p>    </td></tr>                <!-- sponsor logo -->                                    <!-- body -->                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">START YOUR ENGINES &#8212;</strong
+></span> The GOP primary contest is well underway, with several candidates in the field. Here&#8217;s your roundup of <a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9ef62be979859462a99eaf0e53adb165de8cac9d7f47b22ae9ea812178cca2a6eb2ec470fe3203253df661200338db5fcf5" target="_blank">where they stand in the polls</a
+> and what they&#8217;re prioritizing when it comes to education policy.<br></p></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p align="center" style="margin:0 0 20px 0;">
+<img src="https://www.politico.com/dims4/default/461a981/2147483647/resize/1000x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2F33%2Ff8%2Faa791a764ca6a6fd5d30fe4e449a%2Ftrump-25084.jpg" title="230526-Donald-Trump-AP" alt="Former President Donald Trump smiles at fans in the crowd, during the first round of the LIV Golf Tournament at Trump National Golf Club, Friday, May 26, 2023, in Sterling, Va." width="500" style="width:100%;max-width:500px;"></p><p style="font-family:Helvetica,sans-serif;font-size:12px;color:#6E7381;margin-bottom:24px;">Former President Donald Trump  |  Alex Brandon/AP Photo</p></td>                    </tr>                                    
+<tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DONALD TRUMP (53.9 percent): </strong
+></span>The former president is at the top of the pack of GOP primary contenders, and he plans to continue <a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9efce23238cf1e738ca0941584a774a24923cf0d585c67fb1314845b17fb7ab151393d2d6c4a0faa77fd7429792bf4676de" target="_blank">leaning into education culture war issues</a
+>. Trump has vowed to cut federal funding for schools or programs &#8220;pushing Critical Race Theory or gender ideology.&#8221; He would also direct his administration to open civil rights investigations into school districts that have engaged in &#8220;race-based discrimination,&#8221; particularly against Asian American students. Additionally, Trump wants to create a credentialing body to &#8220;certify teachers who embrace patriotic values,&#8221; adopt a Parental Bill of Rights and implement elections for school principals.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; On his campaign website, the former president touted his push to expand school choice</strong
+> and his signing into law permanent funding for historically Black colleges. He also promised to withhold federal funding for &#8220;academic programs engaged in censorship&#8221; and uphold &#8220;the Constitutional right to pray in public schools.&#8221;<br></p></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p align="center" style="margin:0 0 20px 0;">
+<img src="https://www.politico.com/dims4/default/aa478e8/2147483647/resize/1000x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2F57%2F2c%2Fb02a5fa348e2afc6d45a126a2339%2Fdesantis-education-61981.jpg" title="20230509-desantis-education-AP" alt="Florida Gov. Ron DeSantis and other elected, state, and local officials pose with a group of education-related bills." width="500" style="width:100%;max-width:500px;"></p>
+<p style="font-family:Helvetica,sans-serif;font-size:12px;color:#6E7381;margin-bottom:24px;">Gov. Ron DeSantis (center) and other elected, state, and local officials pose with a group of education-related bills after DeSantis signed them into law on Tuesday, May 9, 2023.  |  Rebecca Blackwell/AP Photo</p></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">RON DeSANTIS (20.4 percent):</strong
+> </span>The Florida governor is the only candidate in striking distance of Trump in early GOP primary polls. DeSantis, who has developed his political brand as the &#8220;education governor,&#8221; has <a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9ef87f9b06a2ad0dd6a35763fa6006057cc09bbc7551d104621c1820e7e581cf8d3f8bb0c18b5315aef132e1f0d7628d6e2" target="_blank">several legislative wins</a
+> during his two terms to tout on the campaign trail. He has codified a &#8220;Parents&#8217; Bill of Rights,&#8221; expanded school choice, allowed for armed teachers, rolled back higher education diversity programs and worked to reshape higher education in the state. Both Trump and DeSantis have taken aim at college accreditors, the higher education watchdogs.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;The federal government approves the accreditors for universities. &#8230; There's a reason why universities are invested with things like DEI,&#8221; DeSantis said last week. </strong
+>&#8220;As president, I'll make sure we're approving accreditors that are going to do the opposite. That are gonna say, &#8216;You know what, we're going to accredit you if you are a colorblind university, if you're not trying to divide people on the basis of race. So there are different tools at your disposal.&#8217;&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; On his campaign website, DeSantis hasn&#8217;t yet uploaded his education platform</strong
+> (but he does have shirts and mugs that say &#8220;DeSantis Breaks Systems,&#8221; including &#8220;woke indoctrination&#8221;).<br></p></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p align="center" style="margin:0 0 20px 0;">
+<img src="https://www.politico.com/dims4/default/3d734ca/2147483647/resize/1000x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2Fc9%2Fbd%2Fc2c337444254af9e7e82c6e427f8%2Felection-2024-pence-09771.jpg" title="20240426-Mike-Pence-AP" alt="Former Vice President Mike Pence stands and waves with a Federalist Society backdrop behind him. " width="500" style="width:100%;max-width:500px;"></p><p style="font-family:Helvetica,sans-serif;font-size:12px;color:#6E7381;margin-bottom:24px;">Former Vice President Mike Pence  |  Alex Brandon/AP Photo </p></td>                    </tr>                                    <tr>                        
+<td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MIKE PENCE (5.3 percent) :</strong
+></span> The former vice president has yet to formally enter the race, though he is expected to participate in a CNN town hall on June 7. He has said he will make a decision on whether to enter the race before the end of June. During his time as Indiana governor, Pence supported increasing funding for preschools and school choice programs.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">More recently, Pence and his conservative advocacy group <a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9efc60ce8bad2223bc4a158df60d34d968d3c5d224161a1ccfa06373803cd72fde2278f19ee285965135c919d340fdb0d9f" target="_blank">Advancing American Freedom</a
+> have been calling to <a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9efd0f5e9be7bd8ac8124c4b0881b3acaf333cfb2b891a9b0790a0f6ca2b179bb1b7e49146ef023192f4e27da8227e24287" target="_blank">eliminate the Education Department</a
+>.<br></p></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p align="center" style="margin:0 0 20px 0;"><img src="https://www.politico.com/dims4/default/3c674a4/2147483647/resize/1000x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2Fe6%2Fa3%2F940236164ccc8afc8d932a4fd7e6%2Fhttps-delivery-gettyimages.com%2Fdownloads%2F1485559480" title="230525-NikkiHaley-Getty" alt="Nikki Haley holds hands with an event attendee as others clap behind her. " width="500" style="width:100%;max-width:500px;"></p>
+<p style="font-family:Helvetica,sans-serif;font-size:12px;color:#6E7381;margin-bottom:24px;">Former South Carolina Gov. Nikki Haley  |  Spencer Platt/Getty Images</p></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">NIKKI HALEY (4.3 percent):</strong
+> </span>The former South Carolina governor has taken a jab at DeSantis on the campaign trail, saying that his &#8220;Parents&#8217; Bill of Rights&#8221; that restricted lessons on gender issues in the classroom didn&#8217;t go far enough. (Florida lawmakers have since enhanced the bill this session.) "When I was in school you didn't have sex ed until 7th grade,&#8221; <a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9ef46a9245e777968b6ee8c60e61bfa372a2f4d09096667c0738302c7ee9365301c16ec54173b38882016559d2b79cf4bad" target="_blank">Haley said</a
+>. &#8220;And even then, your parents had to sign whether you could take the class. That&#8217;s a decision for parents to make.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; While she was governor, Haley </strong
+><a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9ef4a6a652bfcd2987c4d89ace35b551f8a083de83d57d5c21fb54bdfddae28ab280ec39f30827503729a3845a13dbe6e03" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">signed a bill</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> that redistributed state education funding</strong
+> to school districts with the highest poverty levels, and created a pot of cash for full-time or part-time reading coaches in schools. South Carolina also became the second state to drop the Common Core education standards under her leadership.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; VIVEK RAMASWAMY, TIM SCOTT and ASA HUTCHINSON: </strong
+></span>These candidates are polling at below 5 percent, with Ramaswamy at 3.8 percent, Scott at 1.6 percent and Hutchinson at less than 1 percent <a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9ef62be979859462a99eaf0e53adb165de8cac9d7f47b22ae9ea812178cca2a6eb2ec470fe3203253df661200338db5fcf5" target="_blank">as of Monday</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">IT&#8217;S TUESDAY, MAY 30. WELCOME TO WEEKLY EDUCATION.</strong
+></span><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> What are we missing? Send story ideas or let&#8217;s grab coffee. </strong
+>Reach me at bquilantan@politico.com. Send tips to my colleagues Mackenzie Wilkes at <a
+ href="mailto:mwilkes@politico.com" target="_blank">mwilkes@politico.com</a
+>, Juan Perez Jr. at <a
+ href="mailto:jperez@politico.com" target="_blank">jperez@politico.com</a
+> and Michael Stratford at <a
+ href="mailto:mstratford@politico.com" target="_blank">mstratford@politico.com</a
+>. And follow us on Twitter: <a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9ef044650ea188b7b9b9bd6d1e31db8fc910525fbb884846e096078134d8700232454e5c801e17ac104cb44c563d9d527b5" target="_blank">@Morning_Edu</a
+> and <a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9efd4fa7f904e75681f648526e969bbd8f4cde75ee6caa01a86933701c737ba7f04a045594a2fd983cb8c53fb6311820539" target="_blank">@POLITICOPro</a
+>.<br></p></td>                    </tr>                                    <tr>                        </tr><tr>    <td height="10" style="height:10px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                    <p style="margin-top:0;margin-bottom:20px;line-height:24px;margin-bottom:20px;color:#000000;">                <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">GET READY FOR GLOBAL TECH DAY: </strong
+>Join POLITICO Live as we launch our first Global Tech Day alongside London Tech Week on Thursday, June 15. Register now for continuing updates and to be a part of this momentous and program-packed day! From the blockchain, to AI, and autonomous vehicles, technology is changing how power is exercised around the world, so who will write the rules? <a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9ef8311fed6a8d435f17ae13cc043e7abaf2811298d641500464b734fe5e7f5062c86a800125f8ed8890cd0572e8b2a8253" target="_blank" style="text-decoration:underline;color:#007BC7;">REGISTER HERE</a
+>.            </p>            </td></tr><tr>    <td height="10" style="height:10px; font-size:0; border-bottom:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td height="15" style="height:15px; font-size:0;">&nbsp;</td></tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><i
+>Want to receive this newsletter every weekday? </i
+><a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9efa90939598ac69dde656d437309400d90315b13fcedde90faaf95e3242b9d6a896458aa962ccd5cfbc1b2dd7a5c2355ce" target="_blank"><i
+>Subscribe to POLITICO Pro</i
+></a
+><i
+>. You&#8217;ll also receive daily policy news and other intelligence you need to act on the day&#8217;s biggest stories.</i
+><br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">In Congress</td>    </tr>    </tbody></table></td>                    
+</tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DEBT DEAL REQUIRES REPAYMENT &#8212;</strong
+></span> President Joe Biden and House Speaker <a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9ef6d0a20e48f609a5cde0b25aecd7db24ca3aef357ccb6ab3e78830021ae45d5d53675b7965cf9125dfa8ee6545c60de4c" target="_blank">Kevin McCarthy's deal to raise the nation&#8217;s debt limit includes a provision</a
+> to force the administration to resume collecting federal student loan payments and interest at the end of the summer, <a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9ef0f9e2afa3321fd6c2209d00a6b33dce828514e2434198cc6e60d6f8babe91737d295c499816a339a0176cd5f796f51d9" target="_blank" data-debug-source-uuid="00000188-6537-d998-ab8f-f77fb5fc0001" data-debug-source-site="POLITICO Pro">our Michael Stratford reports.</a
+> The House is expected to vote on the deal as early as Wednesday.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; </strong
+><a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9efb56c7a360b0d8f403fb2c8a027a1dbf4b8aa7d6d20c4bd74fe65e01b5c846c857101ac3e5d6c793d20795d7d0b1d5a44" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">The agreement would terminate</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> the ongoing pause on monthly payments and interest after Aug. 30,</strong
+> but would not affect Biden&#8217;s student debt cancellation plan. The plan, which provides up to $20,000 of loan forgiveness per borrower, remains in limbo.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212;The Education secretary would be barred from using &#8220;any authority to implement an extension&#8221;</strong
+> of the ongoing repayment pause. But the bill does not specify how or when precisely the Education Department must resume collecting payments, shielding the administration&#8217;s plans to offer borrowers some type of grace period or extra flexibility with payments as it restarts repayment.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;Despite Republicans&#8217; efforts to end targeted student debt relief </strong
+>and move up our planned end to the payment pause, we will ensure a smooth return to repayment process,&#8221; Education Secretary Miguel Cardona <a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9ef76c3e8ec498fd12a6ca10da0f41e4d2041eac0cfa4f33fe8c0d7d090dfd47762d87865731841ddbda9044c376978a9ee" target="_blank">said on Twitter</a
+> on Sunday.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">1,800+ LAW ENFORCEMENT OFFICIALS PRESS FOR PRE-K FUNDING &#8212; </strong
+></span>Fight Crime: Invest in Kids, an organization that represents more than 5,000 police chiefs, sheriffs and prosecutors, urged lawmakers to prioritize funding for early care and education programs and juvenile justice programs. More than 1,820 law enforcement officials signed on to the letter sent today.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;Meaningfully improving public safety requires investments in evidence-based programs that support young people</strong
+> and prevent them from becoming involved in crime,&#8221; the officials wrote, adding that students who attend high-quality pre-K programs are more likely to graduate from high school and &#8220;avoid crime or incarceration.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;A federal preschool investment would return an estimated $3-$4 for every $1 spent in reduced criminal justice expenses due in part to early learning&#8217;s impact on curbing juvenile crime,&#8221; the officials wrote.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; Other programs they want boosts for include 21st Century Community Learning Centers, Juvenile Justice and Delinquency Act Title II and Title V grants</strong
+>, Juvenile Mentoring, and Student Support and Academic Enrichment grants. &#8220;As juvenile crime peaks in the hours immediately after school, 21st CCLCs provide children a safe environment that reinforces the skills they learn during the school day and are shown to improve graduation rates,&#8221; according to the letter.<br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    
+<tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">Higher Education</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">XI SEEKS EDUCATION BOOST &#8212;</strong
+></span> Chinese President Xi Jinping on Monday called on top officials to build a &#8220;high-quality&#8221; education system with more global influence, <a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9ef5551073271a4d2bd9fe836f6603698ac4e514f054a862f2edb6512a408211a0da9da82d09d1ef89e1efd579e244087dd" target="_blank">The Business Times reported.</a
+> Xi&#8217;s push includes upgrading the country&#8217;s universities, seeking more international students and enhancing scientific courses to meet the nation&#8217;s strategic needs, according to state television.<br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">MOVERS AND SHAKERS</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; The Washingtonian&#8217;s influential people list is out. The education section includes </strong
+>the American Enterprise Institute&#8217;s <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">John Bailey</strong
+>, <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Max Eden and Frederick Hess</strong
+>; the NALEO Educational Fund&#8217;s <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Mario Beovides</strong
+>; Education Design Lab&#8217;s <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Kathleen deLaski</strong
+>; the Education Trust&#8217;s <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Denise Forte</strong
+>; Howard University President <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Wayne Frederick</strong
+>; Lodestone DC&#8217;s <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Lindsay Fryer</strong
+>; the American Council on Education&#8217;s<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> Terry Hartle</strong
+>; the Progressive Policy Institute&#8217;s <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Richard Kahlenberg</strong
+>; Penn Hill Group&#8217;s<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> Vic Klatt</strong
+>; the Century Foundation&#8217;s<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> Stefan Lallinger</strong
+>; the United Negro College Fund&#8217;s <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Lodriguez Murray</strong
+>; Higher Learning Advocates&#8217; <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Julie Peller</strong
+>; the National Education Association&#8217;s <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Becky Pringle</strong
+>; the National Alliance for Public Charter Schools&#8217; <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Nina Rees</strong
+>; the Brookings Institution&#8217;s <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Richard V. Reeves</strong
+>; Common App&#8217;s <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Jenny Rickard</strong
+>; CenterPoint Education Solutions&#8217;<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> Laura Slover</strong
+>; Achieving the Dream&#8217;s<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> Karen A. Stout</strong
+>; Whiteboard Advisors&#8217; <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Ben Wallerstein</strong
+>; the American Federation of Teachers&#8217;<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> Randi Weingarten</strong
+>; and Weiss Associates&#8217; <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Joanne Weiss.</strong
+><br></p></td>                    </tr>                                    <tr>                        </tr><tr>    <td height="10" style="height:10px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                    <p style="margin-top:0;margin-bottom:20px;line-height:24px;margin-bottom:20px;color:#000000;">                <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DON&#8217;T MISS POLITICO&#8217;S HEALTH CARE SUMMIT</strong
+>: The Covid-19 pandemic helped spur innovation in health care, from the wide adoption of telemedicine, health apps and online pharmacies to mRNA vaccines. But what will the next health care innovations look like? Join POLITICO on Wednesday June 7 for our Health Care Summit to explore how tech and innovation are transforming care and the challenges ahead for access and delivery in the United States. <a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9ef60a6b663bfa6ea8cbe328bc0c60758f8edabfc22348fddd0a5b2e6ef9b6e6143ceeea96d856a2f7ae3145c0e86d351d2" style="text-decoration:underline;color:#007BC7;">REGISTER NOW</a
+>.            </p>            </td></tr><tr>    <td height="10" style="height:10px; font-size:0; border-bottom:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td height="15" style="height:15px; font-size:0;">&nbsp;</td></tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">Syllabus</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;">
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8212; Elite high school&#8217;s admissions plan may face Supreme Court test: <a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9ef57fe18f8d85d0db2cbf7fc2a9a32188fb55ef73b047cd0490cb5e420b8f46b86c284082b806ae3c025b682606bd47cd1" target="_blank">The New York Times</a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8212; Descendants asking US Supreme Court to rename Brown v. Board of Education for SC case: <a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9ef3e3b444d2bdeaa713ae2aef78a40f1f52e9905285ead15d1ab4052f607a923656295d490bf3f19cccf8c6f351d696bde" target="_blank">The Post &amp; Courier</a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8212; Lawmakers approve school safety bill that would require an armed person at every Texas campus: <a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9efbb61757e1af8d8508f4cf38b65b02ccc3243641883de850485ffbaf75d140e0be81e48e34dc4d620878cffaf8a96e9fb" target="_blank">The Texas Tribune</a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8212; More high-school grads forgo college in hot labor market: <a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9ef6dfb6a9689780ba4bc82e4cd5ce9453514d4eec19f103041116d2354e9dd993da9e640dfaba1b71222dbeaf2eaf4ed74" target="_blank">The Wall Street Journal</a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8212; Why Seattle schools are more segregated today than the 1980s: <a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9ef74c1498dd723ca9f505c6e6bca5423b9ad5b5b70a531d704e8a1748c2521aa4f1c70db424f18a33c5a4130040d7bfc2d" target="_blank">The Seattle Times</a
+></p></td>                    </tr>                                <!-- End Ad Copy -->                <tr>                                    </tr>                <!-- Post Body Content -->                <tr>                                    </tr>                <tr>                    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>                </tr>                <!-- Twitter Handles -->                                    <tr>    <td style="color:#000000;padding:0px 20px 20px 20px;text-align:left;">        <p style="font-family:Helvetica,sans-serif;font-size:20px;color:#000000;margin-top:0;margin-bottom:15px;"><strong
+>Follow us on Twitter</strong
+></p>        <table cellpadding="0" cellspacing="0" border="0" role="presentation">            <tbody>            <tr>                <td width="52" valign="middle" style="text-align:left;padding-right:10px;"><img src="https://static.politico.com/hosted/icon-twitter-circle-blue%402x.png" title="" alt="" width="50" style="max-width:50px;"></td>                <td valign="middle" style="text-align:left;font-family:Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#000000;">                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Delece Smith-Barrow <a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9ef1431bc489b3c09e57a0aad1c8e8071a816a1ea2da24620df13f680c825a7c43bf0f95a0958ee8c11b5fd82bf3d3e47ff" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@DeleceWrites</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Michael Stratford <a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9ef8f12f3e90b3ad64d6c3116d2336f3f26877341c55b83be2a46971932d212e76c74d4ea3032b4771a951b5ffb76de4c54" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@mstratford</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Bianca Quilantan <a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9ef3c696ace279518de51d713617f4dba73e48ca5486954ce60b3c2481fe65a6a8d3fcff5219439ef3bf2dfc8cc78ebda0c" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@biancaquilan</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Juan Perez Jr. <a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9efc23d7d54f65c6e50dcd07b1f816ef05293328bf23480ca474c4a41b103185e6ace9d4edecbcd4070f67b9278506ebb1f" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@PerezJr</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Mackenzie Wilkes <a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9ef0024fee8d61b7a184b0a3f7aaefc91d381fee0f484df3bcf8acd7bbc936b70bdb7fda91d9f00ccddcfe5ef18c4bfa797" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@macwilkes</a
+></p>                                    </td>            </tr>            </tbody>        </table>    </td></tr><tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                                <!-- Family of Playbook -->                                <!-- Follow us -->                <tr>    <td style="color:#000000;padding:0px 20px 20px 20px;text-align:left;">        <p style="font-family:Helvetica,sans-serif;font-size:12px;color:#000000;margin-bottom:10px;line-height:14px;text-transform:uppercase;font-weight:bold;letter-spacing:2px;">Follow us</p>        
+<table cellpadding="0" cellspacing="0" border="0" role="presentation">            <tbody>            <tr>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9eff269474205ad31407efcf4f96511b731d8aaea28f901546e0e61918106970c17079f57eaab6d0dce8d88ecee0a31d4f6" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-facebook-gray%402x.png" title="Follow us on Facebook" alt="Follow us on Facebook" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9ef3e4519e6417f5faaa70f74682ee721bf210fbbaa15af0b43a8820bd9ce24d4c06e3d65b875a4724cb6eb6d0111c5cd6a" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-twitter-gray%402x.png" title="Follow us on Twitter" alt="Follow us on Twitter" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9ef1f5e3aeb54f8b2a4f99af2d1b3afb32b7c9a6b886fbf76e76ae106be49ba72708bd9815592a8684e11c9a380a53e0d1d" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-instagram-gray%402x.png" title="Follow us on Instagram" alt="Follow us on Instagram" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9ef171f9d6251bcf4242a1298767f96b60af7066d2a4cea08a94e31480c93b15b233310bdf519cd807d19cf26ea81a410f3" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-applePodcast-gray%402x.png" title="Listen on Apple Podcast" alt="Listen on Apple Podcast" width="24" border="0" style="max-width:24px;"></a
+></td>            </tr>            </tbody>        </table>    </td></tr><tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                </tbody>            </table>        </td>        <td><!-- Note: This is left blank to aid in centering across email clients --></td>    </tr>    </tbody></table><!-- Everything below this line is "new" to the template. We'll have to experiment a bit to see if it causes troubles. --><!-- howler#email.footers/core-newsletter.footer.html -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff"
+       style="padding:5px 0 15px 0;margin:0;text-align:center" role="presentation">
+    <tbody>
+    <tr>
+        <td><!-- Note: This is left blank to aid in centering across email clients --></td>
+        <td align="center" width="540">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:540px" role="presentation">
+                <tbody>
+                <tr>
+                    <td align="center" style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;">
+                        <p style="margin-bottom:15px;line-height:24px;">To change your alert settings, please log in at
+                            <a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9effa89995df3c68d22d51b6664b39f247e2d3ec1ac5093221bb32276fb810e3155d53867f35301f79fe04ebc5755e212fd" target="_blank" style="color:#007BC7;text-decoration:none;">https://www.politico.com/_login?base=https%3A%2F%2Fwww.politico.com/settings</a
+>
+                            <!--Commenting out the following line because it causes an undesired line to be displayed on outlook (some versions) and we couldn't find the use case of it-->
+                            <!-- <span style="display:none;"><a
+ href="https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a25a2bc025f4dc2d6c1c239e57003b46d7e46a6a005c62d7a9">https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a25a2bc025f4dc2d6c1c239e57003b46d7e46a6a005c62d7a9</a
+></span> -->
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="padding-bottom:15px;"><img
+                            src="https://static.politico.com/hosted/icon-politico-logo.png"
+                            class="CToWUd"></td>
+                </tr>
+                <tr>
+                    <td align="center"><p
+                            style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:20px;">
+                        This email was sent to ouchendans62@gmail.com by: POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+                        <p style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:24px;">
+                            
+
+                            Please click <a
+ href="https://go.politicoemail.com/?qs=3724958e7cecf9efbc0075b78b4ddef44ce620c6a4ba261ad9fb9f12c8ef1320aff2a3978960134b3f4257123397348b90951f18d8a1fbe6" target="_blank" style="color:#007BC7;text-decoration:none;">here</a
+> and follow the steps to unsubscribe.
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td><!-- Note: This is left blank to aid in centering across email clients --></td>
+    </tr>
+    </tbody>
+</table>
+<img src="https://click.politicoemail.com/open.aspx?ffcb10-fe8f1d787565017d7c-fde413797160037e701d7771-fe9115737262077c7c-fed012737567047e-fdf61574756104747317747c-ffcf14&d=40129&bmt=0" width="1" height="1" alt="">
+</body></html><p email-meta style="display: none;opacity:0;">source=GoggleDocument, article=00000188-6cb1-d5ba-a7fe-feffc15f000d</p>
+
+--9M1kUjvbwEmb=_?:--
+

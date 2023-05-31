@@ -1,0 +1,474 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp492843ims;
+        Tue, 30 May 2023 07:21:28 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ55Uk6xdGSgoc1g5/R+VlpqLwHckkMcE4oLKdTzsvFQDdMow8/vKcqwTb+NOCuHVMJUawhR
+X-Received: by 2002:a05:6808:3d9:b0:398:29bb:dd49 with SMTP id o25-20020a05680803d900b0039829bbdd49mr1240186oie.34.1685456488431;
+        Tue, 30 May 2023 07:21:28 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685456488; cv=none;
+        d=google.com; s=arc-20160816;
+        b=PPhd6cpELwlZAme515FdiRzwqzY4OU4IRv0dboTJ0fpS2VU1krvzjCTeR7GoUSg1+j
+         awtsZlT5kNPeE9TdwsGFItow+tffkzEC3sTVJVI4Rv7ZxVa1tpQ1m3u3MRLqKI5/Hj9d
+         myvnb1e8e+TGSgNM2678MXO5bxN7b8Bea2CETCne/BKaS9krsHWp4ryfIXSeF7FqOkV3
+         cgn40B8jJ8PqQaj91Tj42BXjZ1Wu6C1SJI893N0BxAxR9R2ekyPB1am17jNstJETknaN
+         3ZjePYFYuiNT6Z10iLUo4KGZUuVYi4y01wqE2lcAl2jkCQ3OFcLrY2+ntHoNh89DZ47D
+         1yhg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:list-id:reply-to:mime-version
+         :list-unsubscribe-post:list-unsubscribe:date:subject:to:from
+         :dkim-signature;
+        bh=h1/LV60jRm5LBmvZVVNvZ3NImNcBZYPgNqqvTtjo4Uc=;
+        b=LPHfjelhWZvj6K5Bngswl1vnnJ1igR01MQ7rM/jhr0qtVdHhJr1vyYg+0pgFbioKWT
+         CrPYL1tULK4WE0TiWphYCJ28hQYYH1CIjvY8rgcsSM/QL7+dqPsb/95pjIEEH18DTn8D
+         s8XQQWGLWeye8F7UfJHLDugitIRIuqu3nODhrNPHjKOj8onMM398N5J1Sc2yqQGTsqlq
+         pkUFDaDrOyj64t8U++XIJxcPD1iihJpyXBm7YTEpKg7eftQhZZNQKlKrvCyCnahg0qdr
+         Gp2H7UIMsDB6kJReQ6j2zdpexlVbbm2w7C6ujfgarkUBrJuWmec/pMptqSYfAAQZwj+m
+         gS3w==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.politico.com header.s=200608 header.b=g+lajcV1;
+       spf=pass (google.com: domain of bounce-630316_html-1405096349-9801508-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) smtp.mailfrom=bounce-630316_HTML-1405096349-9801508-1376319-0@bounce.politicoemail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.politico.com
+Return-Path: <bounce-630316_HTML-1405096349-9801508-1376319-0@bounce.politicoemail.com>
+Received: from mta.politicoemail.com (mta.politicoemail.com. [68.232.198.10])
+        by mx.google.com with ESMTPS id k8-20020acaba08000000b00397f91633dasi6592393oif.65.2023.05.30.07.21.28
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 30 May 2023 07:21:28 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-630316_html-1405096349-9801508-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) client-ip=68.232.198.10;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.politico.com header.s=200608 header.b=g+lajcV1;
+       spf=pass (google.com: domain of bounce-630316_html-1405096349-9801508-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) smtp.mailfrom=bounce-630316_HTML-1405096349-9801508-1376319-0@bounce.politicoemail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.politico.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=200608; d=email.politico.com;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Reply-To:List-ID:X-CSA-Complaints:Message-ID:Content-Type;
+ i=weeklyscore@email.politico.com;
+ bh=h1/LV60jRm5LBmvZVVNvZ3NImNcBZYPgNqqvTtjo4Uc=;
+ b=g+lajcV1yZBpLYLGPIzwskfMM864XaDY3tSfsJlsCRr4ZyFscrrAjeuPNMV85bMfBCo1+6nzp2bL
+   mbR+BDNpv4TXPiZuFfnpG+X+/GNuKLv4xMC4xCjRXt4gEq40eNwVi+FjcDC4xO0jky91L8pUlmeB
+   Y+ZLBgw04QHrQ1RUe8U=
+Received: by mta.politicoemail.com id heo36g2fmd40 for <ouchendans62@gmail.com>; Tue, 30 May 2023 14:06:01 +0000 (envelope-from <bounce-630316_HTML-1405096349-9801508-1376319-0@bounce.politicoemail.com>)
+From: "POLITICO's Weekly Score" <weeklyscore@email.politico.com>
+To: <ouchendans62@gmail.com>
+Subject: Trump's legal calendar crashes into the primary calendar
+Date: Tue, 30 May 2023 08:06:01 -0600
+List-Unsubscribe: <https://click.politicoemail.com/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiIxMzc2MzE5IiwicyI6IjE0MDUwOTYzNDkiLCJsaWQiOiI2MzAzMTYiLCJqIjoiOTgwMTUwOCIsImpiIjoiMCIsImQiOiI0MDEyNiJ9.cR1aycNXphpiBD2JwUJMCmMs5_jmGm9alw6pknhC21k>, <mailto:leave-fcb812737567057b1a4c342838-fdf61574756104747317747c-fe901d787565017d7d-fe9115737262077c7c-ffcf14@leave.politicoemail.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+Reply-To: "POLITICO, LLC" <reply-fe901d787565017d7d-630316_HTML-1405096349-1376319-0@politicoemail.com>
+List-ID: <1376319.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+X-SFMC-Stack: 4
+x-job: 1376319_9801508
+Message-ID: <4e62fd88-b6e1-4b9a-a752-18f1adfcd409@las1s04mta1096.xt.local>
+Feedback-ID: 1376319:9801508:68.232.198.10:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="TIdsnzbDDZVl=_?:"
+
+This is a multi-part message in MIME format.
+
+--TIdsnzbDDZVl=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Delivered every Monday by 10 a.m., Weekly Score is your guide to the year-round campaign cycle. May 30, 2023 View in browser  
+By Madison Fernandez
+ TOP LINE
+There are some significant new moments being added to the primary schedule of 2024: former President Donald Trump’s court dates.
+
+Officials are setting key dates for cases surrounding Trump — an unprecedented event for a former president to be undergoing while also actively campaigning for his old job.
+
+Last week, New York State Supreme Court Justice Juan Merchan, the judge presiding over Trump’s criminal case involving hush money payments to a porn star, set a trial date of March 25, 2024 — less than three weeks after Super Tuesday and smack dab in the intensity of the primary season.
+
+Trump posted on Truth Social: “It’s called ELECTION INTERFERENCE, and nothing like this has ever happened in our Country before!!!” he wrote.
+
+Trump has seen a swelling of support and fundraising in and around moments of legal peril. But actual court dates could complicate matters for him: diverting his attention from the campaign and taking him off the trail at key junctures.
+
+Much of the presidential nominating calendar has not yet been solidified, but a number of other high-profile states could have their primaries in proximity to Trump’s trial. Arizona, a swing state that President Joe Biden narrowly won in the 2020 general election, and Florida, Trump’s home state, are expected to have their primaries on March 19, just a few days before the trial. Wisconsin, another swing state that Biden won in 2020, is expected to hold its presidential primary on April 2, around a week after the trial.
+
+And that's just the hush money case. In another one of Trump’s legal cases, Atlanta-area District Attorney Fani Willis last month said she’ll announce between July 11 and Sept. 1 if Trump and his allies will be charged in relation to the investigation into their efforts to overturn the 2020 presidential election. Right in the middle of that time frame? The first RNC debate. A specific date hasn’t been announced yet, but the RNC already said it will take place in Milwaukee this August.
+
+It also could be a prime opportunity for Trump’s opponents to raise the matter on the stage — if any of them dare to cross his loyal fanbase. But don't hold your breath. When Trump was indicted earlier this year, his opponents largely rallied behind him.
+
+Looking a bit further into the future, Dane County Judge Frank Remington recently set a trial for the Wisconsin Republicans being sued for posing as members of the Electoral College following Trump’s loss to Biden. That’s set to start Sept. 3, 2024 — just two months before Election Day.
+
+So far, Trump has used legal action against him to raise money. Amid Trump’s indictment earlier this year, his campaign capitalized on it as a way to fire up his base. Even after a federal jury this month found Trump liable for sexually abusing and defaming writer E. Jean Carroll, he used the trial (which he did not attend) as a talking point at a CNN town hall. The audience loved it, responding with laughter and cheers. Carroll has since filed to seek $10 million more from the former president after those comments.
+
+It’s to be seen how these legal cases will play into the campaign — and how much voters care — as the GOP field shifts over the next year and a half.
+
+Happy Tuesday! Hope you had a nice long weekend. Reach me at mfernandez@politico.com and @madfernandez616.
+
+Days until the Virginia primary: 21
+
+Days until the Mississippi primary: 70
+
+Days until the Louisiana primary: 137
+
+Days until the 2023 election: 161
+
+Days until the 2024 election: 525
+
+  
+GET READY FOR GLOBAL TECH DAY: Join POLITICO Live as we launch our first Global Tech Day alongside London Tech Week on Thursday, June 15. Register now for continuing updates and to be a part of this momentous and program-packed day! From the blockchain, to AI, and autonomous vehicles, technology is changing how power is exercised around the world, so who will write the rules? REGISTER HERE.
+    
+Want to receive this newsletter every weekday? Subscribe to POLITICO Pro. You’ll also receive daily policy news and other intelligence you need to act on the day’s biggest stories.
+
+ Presidential Big Board
+ON OFFENSE — Biden and the DNC are “preparing to launch broadsides against a slew of current and potential GOP contenders, driven by the fear that their job may be tougher if Trump’s name is not at the top of the Republican ticket,” POLITICO’s Jonathan Lemire writes. “While not all Republicans can be directly tied to some of Trump’s record, or his role in inspiring the Jan. 6 riot, Biden aides still believe they can be lashed to the former president. DNC staffers have begun branding all Republican hopefuls as enablers of MAGA policies, making their support of Trump a throughline.”
+
+… Democrats might be hoping for a Trump victory in the GOP primary, but Republican Party insiders looking to move on from Trump “increasingly fear that Teflon Don is back,” my colleagues write. “The intraparty dynamics now at play — and Trump’s own alchemical grip on the base — suggest a primary where a constellation of Republicans once again risk splitting the non-Trump vote in early nominating states.”
+
+THE 2024 ANGLE — Biden’s debt ceiling agreement with Speaker Kevin McCarthy would, in part, suspend the debt ceiling until January 2025. As our Jennifer Haberkorn, Holly Otterbein and Adam Cancryn note: “The deal allows Biden to clear the 2024 general election and not have to worry about another round of debt ceiling brinkmanship until after it.”
+
+CASH DASH — Trump may have small-dollar donors on lock. But as a growing field of GOP presidential candidates sets out to build small-dollar donor bases, they have an opportunity to rewrite the online fundraising playbook. Our Jessica Piper takes a look at how the likes of Florida Gov. Ron DeSantis, Sen. Tim Scott (R-S.C.) and former South Carolina Gov. Nikki Haley are looking to “dethrone small-dollar Don.”
+
+… On the opposite end of the spectrum: “Wall Street Dreads Biden-Trump Rematch,” by The Wall Street Journal’s Cara Lombardo.
+
+EYES ON IOWA — Sen. Joni Ernst (R-Iowa) is stepping into a central role as her state “becomes ground zero for a fight to define the GOP’s future,” POLITICO’s Burgess Everett writes. Colleagues see the host of Roast and Ride, which brings together several top-tier GOP presidential hopefuls, “on a steady climb in the party, possibly to heights never reached by a Republican woman in congressional leadership, and she’s regularly mentioned as a potential vice presidential pick.”
+
+FOR YOUR CALENDAR — Republican North Dakota Gov. Doug Burgum, who’s mulling a presidential bid, is set to make a “major announcement” on June 7, WSJ’s John McCormick reports.
+
+… Republican New Hampshire Gov. Chris Sununu is deciding if he’ll join the race “in the next week or two,” he told Jake Tapper on CNN’s “State of the Union” over the weekend.
+
+ CAMPAIGN INTEL
+MARYLAND MADNESS — Democrat April McClain-Delaney “has been taking pitches from campaign vendors in anticipation of her own potential bid” in MD-06, which is being vacated by Democratic Rep. David Trone as he runs for Senate, per Inside Elections’ Jacob Rubashkin. McClain-Delaney is an official at the National Telecommunications and Information Administration and is married to former Democratic Rep. John Delaney, who preceded Trone in MD-06. Maryland Matters’ Josh Kurtz earlier this month listed her, state Del. Lesley J. Lopez, former Frederick County Executive Jan Gardner and state Sen. Brian J. Feldman as potential Democratic contenders to succeed Trone.
+
+YOU GET A CAR … BUT NOT A BID — Oprah Winfrey is “not considering” the California Senate seat, her spokesperson told the Los Angeles Times’ Laura J. Nelson. Her name has been brought up as a possible replacement for Democratic Sen. Dianne Feinstein, should her seat become vacant. Democratic Gov. Gavin Newsom has promised he would appoint a Black woman to an open Senate seat.
+
+… RELATED: “Black women look to break a streak of disappointment in the Senate,” by POLITICO’s Ally Mutnick.
+
+IMPEACHMENT CORNER — More than 120 members of the Texas House voted to impeach Republican Texas Attorney General Ken Paxton over the weekend on 20 articles of impeachment. Paxton is suspended from office for now — First Assistant Attorney General Brent Webster is stepping in — and his fate lies in the state Senate, where he’ll face a trial. “His indictment will likely be an issue for GOP House members running for reelection in 2024,” writes The Dallas Morning News’ Gromer Jeffers Jr. “The attorney general is already appealing to voters who supported him to show their displeasure with the House.”
+
+Trump weighed in on the impeachment, referring to it as “election interference.” Paxton is a longtime ally of Trump’s and attempted to overturn the results of the 2020 presidential election with an unsuccessful U.S. Supreme Court challenge. “Virtually all of the information in the articles was public BEFORE Election Day, and the voters chose to re-elect Ken Paxton by a large margin,” Sen. Ted Cruz (R-Texas), who’s up for reelection next year, wrote on Twitter.
+
+2024 WATCH — Republican Tayler Rahm filed to run for MN-02, a competitive district currently held by Democratic Rep. Angie Craig. Rahm is a lawyer.
+
+… Democratic Tennessee state Rep. Gloria Johnson is “seriously” considering running for Senate against Republican Sen. Marsha Blackburn next year, per the Chattanooga Times Free Press’ Andy Sher. She’s a member of the “Tennessee Three,” who, unlike the other two state House members, failed to be expelled earlier this year.
+
+FAR OUT — Detroit Mayor Mike Duggan “demurred” when asked if he’s considering running in 2026 to succeed Democratic Michigan Gov. Gretchen Whitmer, per The Detroit News. “First decision is what I do about re-election,” Duggan, whose term is up in 2026, said. “I’ll make that decision in the next year, and then I’ll worry about other decisions after that.”
+
+ON THE ROAD — Republicans in Wisconsin are grappling with how abortion halted their progress in the swing state, and Democrats are planning for a resurgence. POLITICO’s David Siders visited the Badger State in his latest installment in the Road Trip series.
+
+ AS SEEN ON TV
+PRESIDENTIAL — Tim Scott is pitching himself as “the candidate the far left fears the most.” “I will be the president who destroys the liberal lie that America is an evil country,” he says in a spot running in Iowa.
+
+MD SENATE — Trone is continuing to blanket the airwaves in the race for Senate. His latest spot discusses his nephew, who died following a battle with substance use disorder. Trone has close to $2 million booked on advertisements so far and is the only candidate on air, per AdImpact.
+
+  
+DON’T MISS POLITICO’S HEALTH CARE SUMMIT: The Covid-19 pandemic helped spur innovation in health care, from the wide adoption of telemedicine, health apps and online pharmacies to mRNA vaccines. But what will the next health care innovations look like? Join POLITICO on Wednesday June 7 for our Health Care Summit to explore how tech and innovation are transforming care and the challenges ahead for access and delivery in the United States. REGISTER NOW.
+     POLL POSITION
+— There’s been a string of polling in recent days for next year’s California Senate race. POLITICO’s Steve Shepard breaks down what a Democrat-on-Democrat general election could look like, thanks to the Golden State’s system of all candidates running in the same primary and the top two advancing, regardless of party affiliation.
+
+ STAFFING UP 
+— Phil Cox, a veteran GOP adviser, is stepping down from his volunteer role at Never Back Down, the super PAC boosting DeSantis’ presidential bid, per our Alex Isenstadt. He’s still a DeSantis supporter, people close to Cox tell Alex.
+
+CODA — QUOTE OF THE DAY: “I haven’t spoken about love so much because when I do, I’m often mocked and derided.” (Democratic presidential candidate Marianne Williamson in a 40-minute interview with POLITICO)
+  
+Follow us on Twitter
+
+Steven Shepard @politico_steve
+
+Zach Montellaro @zachmontellaro
+
+Ally Mutnick @allymutnick
+
+Madison Fernandez @madfernandez616
+  
+Follow us
+  
+To change your alert settings, please log in at https://go.politicoemail.com/?qs=01510e388578c20ba026b67a2f9349e650347b2f2a9d659c9984afa80f6f8bceeb2eef00de85d446bd0910b71efb62dcff6ae104fc44cee4  https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a25a2bc025f4dc2d6ccdea621b427f42490f1266d1e0523fac52afa7fd4a05cb071abc78b49f8858c28d1fac9cac38d584
+
+This email was sent to ouchendans62@gmail.com by: POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+
+ Please click here and follow the steps to unsubscribe.
+  
+
+--TIdsnzbDDZVl=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<html><body><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml><![endif]-->
+</head><!-- Everything above this line is "new" to the template. We'll have to experiment a bit to see if it causes troubles. --><!-- preview text --><div style="display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">    Delivered every Monday by 10 a.m., Weekly Score is your guide to the year-round campaign cycle.</div><table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" style="padding:5px 0 15px 0;margin:0;text-align:center" role="presentation">    <tbody>    <tr>        <td><!-- Note: This is left blank to aid in centering across email clients --></td>        <td align="center" width="540">            
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:540px;table-layout:fixed;" role="presentation">                <tbody>                <!-- top date and utility link -->                <tr>    <td align="center">        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="padding-bottom:15px;" role="presentation">            <tbody>            <tr>                <td width="50%" style="text-align:left;font-size:11px;font-family:Helvetica,sans-serif;color:#B1B4BD;margin:0;">May 30, 2023</td>                <td width="50%" style="text-align:right;font-size:11px;font-family:Helvetica,sans-serif;color:#B1B4BD;margin:0;"><a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20bd3468f59f6dcb5e6ab0564aa279ab47e9e5bde0edee0a5ba6f2e2b3460ff8b872a89d353613834601e40fc96d909a2d" target="_blank" style="color:#007BC7;text-decoration:none;">View in browser</a
+></td>            </tr>            </tbody>        </table>    </td></tr>                <!-- divider line -->                <tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                <!-- logo and byline -->                <tr>    <td align="center" style="text-align:center;padding:0 20px 15px 20px;margin:0">                                    <img src="https://static.politico.com/82/77/39e534024e739ae9d9c9aa13fec3/politico-weekly-score.png" title="2020_NewsletterLogo_Free_WeeklyScore" alt="POLITICO's Weekly Score newsletter logo" border="0" width="500" style="width:100%;max-width:500px;">                        </td></tr>
+<tr>    <td align="center" style="padding:0 20px 10px 20px;">        <p style="text-align:center;font-family:Helvetica,sans-serif;font-size:11px;letter-spacing:2px;color:#B1B4BD;text-transform:uppercase;margin:0;">            By  <a
+ href="mailto:mfernandez@politico.com" target="_blank" style="color:#000000;text-decoration:none;font-weight:bold;">Madison Fernandez</a
+>        </p>    </td></tr>                <!-- sponsor logo -->                                    <!-- body -->                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">TOP LINE</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">There are some significant new moments being added to the primary schedule of 2024: </strong
+>former President Donald Trump&#8217;s court dates.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Officials are setting key dates for cases surrounding Trump &#8212; an unprecedented event for a former president to be undergoing while also actively campaigning for his old job.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Last week, New York State Supreme Court Justice Juan Merchan, the judge presiding over Trump&#8217;s criminal case involving hush money payments to a porn star, <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20bcb289ab4336bb7bbcb06ef542bcccbf64c50fc52941a377616166c5b1eda92c346993c166f87735ef7d072182b00b1f" target="_blank">set a trial date</a
+> of March 25, 2024 &#8212; less than three weeks after Super Tuesday and smack dab in the intensity of the primary season.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d2033e7f1624b37f4ed3a6b25372bebc20f34ce76a0644ecceb422944f29bb2e79fa30ae08b1f4690b94b7de7279a5d6400" target="_blank">Trump posted on Truth Social</a
+>: &#8220;It&#8217;s called ELECTION INTERFERENCE, and nothing like this has ever happened in our Country before!!!&#8221; he wrote.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Trump has seen a swelling of support and fundraising in and around moments of legal peril. But actual court dates could complicate matters for him: diverting his attention from the campaign and taking him off the trail at key junctures.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">Much of the presidential nominating calendar has not yet been solidified, but a number of other high-profile states could have their primaries in proximity to Trump&#8217;s trial. Arizona, a swing state that President Joe Biden narrowly won in the 2020 general election, and Florida, Trump&#8217;s home state, are <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20bbb4019dbd70cd1995876ddcb4fea163fff7422730fed67231b85f42326eb318e929fcef0047a05cb22c3bcdcd62aacb" target="_blank">expected to have their primaries</a
+> on March 19, just a few days before the trial. Wisconsin, another swing state that Biden won in 2020, is expected to hold its presidential primary on April 2, around a week after the trial.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">And that's just the hush money case.</strong
+> In another one of Trump&#8217;s legal cases, Atlanta-area District Attorney Fani Willis last month <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d2027f74e609c6fc4f45b8420a95c953484228fe06c0e4759d82913a5d53fa18f873c2547df760f01f6635f231f6044f8f4" target="_blank">said she&#8217;ll announce</a
+> between July 11 and Sept. 1 if Trump and his allies will be charged in relation to the investigation into their efforts to overturn the 2020 presidential election. Right in the middle of that time frame? <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d201de89a146438abc027ef149c9a23ec37cb88ed28625209fd3d34c493e69956437e273df9a1f893d69ce4b43ead5ee7bf" target="_blank">The first RNC debate</a
+>. A specific date hasn&#8217;t been announced yet, but the RNC already said it will take place in Milwaukee this August.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">It also could be a prime opportunity for Trump&#8217;s opponents to raise the matter on the stage &#8212; if any of them dare to cross his loyal fanbase. But don't hold your breath. When Trump was indicted earlier this year, his opponents largely rallied behind him.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Looking a bit further into the future, Dane County Judge Frank Remington recently <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d200c61695474f463e513ae804ce48a5b49115252bbbf89f6c8cf54a8657375b5c1a2ced9a5c191b90ca5204c794a28e7eb" target="_blank">set a trial</a
+> for the Wisconsin Republicans being sued for posing as members of the Electoral College following Trump&#8217;s loss to Biden. That&#8217;s set to start Sept. 3, 2024 &#8212; just two months before Election Day.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">So far, Trump has used legal action against him to raise money.</strong
+> Amid Trump&#8217;s indictment earlier this year, his campaign <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d2061fdec70c4a51f8e37de369280dd97a44e8d311e0708537fa13701b45af959ecf8dd9b5f85af2c6c444f8faa97fbeee8" target="_blank">capitalized on it</a
+> as a way to fire up his base. Even after a federal jury this month <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20d303fca2732a6f60a492bfc10523d8e1ec3d6c6941ecec444b99dda20b6522ba9d4c571490dbc656377a906b14754480" target="_blank">found Trump liable</a
+> for sexually abusing and defaming writer E. Jean Carroll, he used the trial (which he did not attend) as <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20d15dc154ae1b8e48b6bf22b8a1e1c51a6b620feff205176b446a9a2a7c1d2b0cc3f10b072581559268e4ecf07892f0b1" target="_blank">a talking point at a CNN town hall</a
+>. The audience loved it, responding with laughter and cheers. Carroll has since <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20d518faf1d88860fd60bb4fbe4a35418dafae20c7247f17d1a032c17bbec77b5343b4267115ff6d250ec8bacb879e0d10" target="_blank">filed to seek $10 million more</a
+> from the former president after those comments.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">It&#8217;s to be seen how these legal cases will play into the campaign &#8212; and <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d201ae72a8569892c88ee44458c6d3f10261cbd116d41e720f45495ad78dff2d83c64f01552c4fadfccebdbc42c95c88cb5" target="_blank">how much voters care</a
+> &#8212; as the GOP field shifts over the next year and a half.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Happy Tuesday! </strong
+>Hope you had a nice long weekend. Reach me at <a
+ href="mailto:mfernandez@politico.com" target="_blank">mfernandez@politico.com</a
+> and <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d201d2a26ebea64b23a03a1d4704ed517b6f2f5e5640bc11b2fa7d4de5bce8ad68015f6e54b8f2ad2922139fb250abe3986" target="_blank">@madfernandez616</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Days until the Virginia primary: </strong
+>21</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Days until the Mississippi primary: </strong
+>70</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Days until the Louisiana primary: </strong
+>137</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Days until the 2023 election: </strong
+>161</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Days until the 2024 election: </strong
+>525<br></p></td>                    </tr>                                    <tr>                        </tr><tr>    <td height="10" style="height:10px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                    <p style="margin-top:0;margin-bottom:20px;line-height:24px;margin-bottom:20px;color:#000000;">                <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">GET READY FOR GLOBAL TECH DAY: </strong
+>Join POLITICO Live as we launch our first Global Tech Day alongside London Tech Week on Thursday, June 15. Register now for continuing updates and to be a part of this momentous and program-packed day! From the blockchain, to AI, and autonomous vehicles, technology is changing how power is exercised around the world, so who will write the rules? <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20c263698bc1d182953815e46ca23bbd6f7c6205c7c047cde1bdbfce1a39692cf50e2266548af25c28fee7076b09eb2904" target="_blank" style="text-decoration:underline;color:#007BC7;">REGISTER HERE</a
+>.            </p>            </td></tr><tr>    <td height="10" style="height:10px; font-size:0; border-bottom:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td height="15" style="height:15px; font-size:0;">&nbsp;</td></tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><i
+>Want to receive this newsletter every weekday? </i
+><a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d207a37a636c5e5dc96b53dbd469a003eca7b765d2405a6b26378bc64180bdf919a8b66d8ed2b4c2b96c106ef01cc7d82dc" target="_blank"><i
+>Subscribe to POLITICO Pro</i
+></a
+><i
+>. You&#8217;ll also receive daily policy news and other intelligence you need to act on the day&#8217;s biggest stories.</i
+><br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">Presidential Big Board</td>    </tr>    </tbody></table></td>                    
+</tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">ON OFFENSE &#8212; Biden and the DNC are &#8220;preparing to launch broadsides against a slew of current and potential GOP contenders,</strong
+> driven by the fear that their job may be tougher if Trump&#8217;s name is not at the top of the Republican ticket,&#8221; <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20c6b36f603fd6333e4a5d99220fc7e5da072077fa989acd9362655936674a7cc294afcadfdcc82d83ea9059676ccaba26" target="_blank">POLITICO&#8217;s Jonathan Lemire writes</a
+>. &#8220;While not all Republicans can be directly tied to some of Trump&#8217;s record, or his role in inspiring the Jan. 6 riot, Biden aides still believe they can be lashed to the former president. DNC staffers have begun branding all Republican hopefuls as enablers of MAGA policies, making their support of Trump a throughline.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8230; Democrats might be hoping for a Trump victory in the GOP primary, </strong
+>but Republican Party insiders looking to move on from Trump &#8220;increasingly fear that Teflon Don is back,&#8221; <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20aea9c5a3fd786effdc1cb0bd7d0f5396db6fbd7b2f779364e91dc2be4d55304a8ca2f928d7eb2c3dcb635510dd36d533" target="_blank">my colleagues write</a
+>. &#8220;The intraparty dynamics now at play &#8212; and Trump&#8217;s own alchemical grip on the base &#8212; suggest a primary where a constellation of Republicans once again risk splitting the non-Trump vote in early nominating states.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">THE 2024 ANGLE &#8212; Biden&#8217;s debt ceiling agreement with Speaker </strong
+><a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20c390741e22b1dcb9ec33ee37bce225bf73da3540b8a049f955910614e534e412965de1bde01b2acfef95e4fb9e721964" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Kevin McCarthy</strong
+></a
+> would, in part, suspend the debt ceiling until January 2025. <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d207d191c55f82f8aeabad878618e5a02983ed5c94672245377c568e34d925818c95bdc508351d6ae173370fda3d715bdff" target="_blank" data-debug-source-uuid="00000188-658c-d998-ab8f-f7dd178a0000" data-debug-source-site="POLITICO Pro">As our Jennifer Haberkorn, Holly Otterbein and Adam Cancryn note</a
+>: &#8220;The deal allows Biden to clear the 2024 general election and not have to worry about another round of debt ceiling brinkmanship until after it.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">CASH DASH &#8212; Trump may have small-dollar donors on lock. </strong
+>But as a growing field of GOP presidential candidates sets out to build small-dollar donor bases, they have an opportunity to rewrite the online fundraising playbook. <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20fa73e289eb4ba20f836f6a4c55a6b9e9aeff2ed2009a670a5d0a45a323364851eec19b8ed43c3977facb7769c7d361d8" target="_blank">Our Jessica Piper takes a look at</a
+> how the likes of Florida Gov. Ron DeSantis, Sen. <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20fc28b41aeabbdc91b125c8d08d1bc8b685bcdf8c85406ae008f570b80936e4476d051f5df41effb623268d3ee9d63205" target="_blank">Tim Scott</a
+> (R-S.C.) and former South Carolina Gov. Nikki Haley are looking to &#8220;dethrone small-dollar Don.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8230; On the opposite end of the spectrum: </strong
+>&#8220;Wall Street Dreads Biden-Trump Rematch,&#8221; <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d201c661afcb4bcea2558a83050ddc0326fe5df7f2652cd1e439758373187fe4adb914facfc0b1b4514f6654e14c7eecefa" target="_blank">by The Wall Street Journal&#8217;s Cara Lombardo</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">EYES ON IOWA &#8212; Sen. </strong
+><a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20c3106bbe7fb441c0fa72b8a706845b134f12e5ecd52dd2bafe798246a30959cf308b42767aae8a849bbaa3052e06f6d4" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Joni Ernst</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> (R-Iowa) is stepping into a central role as her state &#8220;becomes ground zero for a fight to define the GOP&#8217;s future,&#8221; </strong
+><a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d209d149899af075492215b8f713614a1105042800a7cff4f90a5fad34b2c4b96bc9f3dd2394f47ebc3c1fc054dc67c5795" target="_blank">POLITICO&#8217;s Burgess Everett writes</a
+>. Colleagues see the host of Roast and Ride, which brings together several top-tier GOP presidential hopefuls, &#8220;on a steady climb in the party, possibly to heights never reached by a Republican woman in congressional leadership, and she&#8217;s regularly mentioned as a potential vice presidential pick.&#8221; </p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">FOR YOUR CALENDAR &#8212; Republican North Dakota Gov. Doug Burgum, </strong
+>who&#8217;s mulling a presidential bid, is set to make a &#8220;major announcement&#8221; on June 7, <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d2064219ea9184efcb573bf67e28a2a559add18d3655946f97784cbe520e9062f5964ad4e198f48186a7b4868be0b66a063" target="_blank">WSJ&#8217;s John McCormick reports</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8230; Republican New Hampshire Gov. Chris Sununu </strong
+>is deciding if he&#8217;ll join the race &#8220;in the next week or two,&#8221; <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d2075832f0219075da1f73049faec246819eee0587c60ca0e623129796fda29a52282cc1cddff4f2c367cddb58ef8b60912" target="_blank">he told Jake Tapper</a
+> on CNN&#8217;s &#8220;State of the Union&#8221; over the weekend.<br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">CAMPAIGN INTEL</td>    
+</tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MARYLAND MADNESS &#8212; Democrat April McClain-Delaney &#8220;has been taking pitches from campaign vendors</strong
+> in anticipation of her own potential bid&#8221; in MD-06, which is being vacated by Democratic Rep. <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20162f6c912ddda44cbd5505f14cf69637f588b9fba00b4d9f1c5fa95f43464d6b66d97f21bebb1669bfe9cba13e281509" target="_blank">David Trone</a
+> as he runs for Senate, <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d203748758ef0844eac83139f096a7586058a943ebca90a8d1979e382db4abedaea9ab859e503217106335d2fa74b03e657" target="_blank">per Inside Elections&#8217; Jacob Rubashkin</a
+>. McClain-Delaney is an official at the National Telecommunications and Information Administration and is married to former Democratic Rep. John Delaney, who preceded Trone in MD-06. <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d2012df4855a9c3f5805433760a1ae212abfaec66ff49cbb4c7cdb64358e752fa5e14def29cdda4d438a9d92187201c5972" target="_blank">Maryland Matters&#8217; Josh Kurtz</a
+> earlier this month listed her, state Del. Lesley J. Lopez, former Frederick County Executive Jan Gardner and state Sen. Brian J. Feldman as potential Democratic contenders to succeed Trone.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">YOU GET A CAR &#8230; BUT NOT A BID &#8212; Oprah Winfrey is &#8220;not considering&#8221; the California Senate seat,</strong
+> her spokesperson <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d2066611d325f45fbc56e5df5c062d0a31b3ff42d5e1ced6520e05306f21085ff6b03b0a34d7f3565e16411220fa59bc680" target="_blank">told the Los Angeles Times&#8217; Laura J. Nelson</a
+>. Her name has been brought up as a possible replacement for Democratic Sen. <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20e7c36fecbf0636ed6461cdcdda79537a6c9866d346443f767ee53bd7b8a20e50c0832e69cae136f8461eb8f98662ce4a" target="_blank">Dianne Feinstein</a
+>, should her seat become vacant. Democratic Gov. Gavin Newsom has <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20c524b677c92dd147d5906721bb7ff20841b7e1816beae83cef7e1129e3aa6ce3bc217afb34fd70039cd498e017b6b821" target="_blank">promised he would appoint a Black woman</a
+> to an open Senate seat.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8230; RELATED: &#8220;Black women look to break a streak of disappointment in the Senate,&#8221; </strong
+><a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d200e591a031c3fb08e1c7be1cc84d9bda5794473ea2251d370a233d1c2c2e9d79a1fc5c8abb320bf6ce68f32d4a11d99b0" target="_blank">by POLITICO&#8217;s Ally Mutnick</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">IMPEACHMENT CORNER &#8212; More than 120 members of the Texas House </strong
+><a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d205a3b598e999270d808da40a2ba402ed34584e08927e0380b6eac453fad56b238097031e8a6d16583ca1eb22f74b3c173" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">voted to impeach</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> Republican Texas Attorney General Ken Paxton </strong
+>over the weekend on <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d209922c6d819fa0ef162e740ecf710416c74dcd2d04e2f805270ad767f14b45855cb385abf53aeaf9e34efc6e9cb8a81f7" target="_blank">20 articles of impeachment</a
+>. Paxton is suspended from office for now &#8212; First Assistant Attorney General Brent Webster is stepping in &#8212; and his fate lies in the state Senate, where he&#8217;ll face a trial. &#8220;His indictment will likely be an issue for GOP House members running for reelection in 2024,&#8221; <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20379a4a7f562a40e4f2deac97e194402460065c2606ffdc8ae297d6c700c37388239493d297560eba127668335c6f4aaf" target="_blank">writes The Dallas Morning News&#8217; Gromer Jeffers Jr.</a
+> &#8220;The attorney general is already appealing to voters who supported him to show their displeasure with the House.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Trump weighed in on the impeachment, referring to it as &#8220;<a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20ccd871e64c4f50e47d604cb6291bc7642aa215ab12dec7d19d432ed49803b789108d67958a3adcd753b49dc89c345ab9" target="_blank">election interference</a
+>.&#8221; Paxton is a longtime ally of Trump&#8217;s and attempted to overturn the results of the 2020 presidential election with an unsuccessful U.S. Supreme Court challenge. &#8220;Virtually all of the information in the articles was public BEFORE Election Day, and the voters chose to re-elect Ken Paxton by a large margin,&#8221; Sen. <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20ae4311377fc0a7967e0a3326202e95d826e79c77c06335e8424ab7514d1df1fba6a1f15afda3602df491e92514858e42" target="_blank">Ted Cruz</a
+> (R-Texas), who&#8217;s up for reelection next year, <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20a185376a5b1fd921e59956fb2b5bb2c29e3f7b42cd41b883adb3c973d60c01a7997297bd9cb59cb6aaab9a0697c34ccb" target="_blank">wrote on Twitter</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">2024 WATCH &#8212; Republican Tayler Rahm </strong
+><a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d2053f614e2f7108c2247ce062cd8c93dc9a56d4703e5b5ee1251554c2764e6feac35b9a75c6bc45a9203a88229257e25fd" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">filed to run for MN-02</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">, </strong
+>a competitive district currently held by Democratic Rep. <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d207a92a9c6c6abe7b29f41c455e09f124dcddcfe2319aa89cebec869454da316082f4dde97018893905c21de74cb5639bc" target="_blank">Angie Craig</a
+>. Rahm is a lawyer.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8230; Democratic Tennessee state Rep. Gloria Johnson</strong
+> is &#8220;seriously&#8221; considering running for Senate against Republican Sen. <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d2097bc5eedc1c088776e1eb150a20c0fadbbc78299658274f05940cf2939bcfd23e6034fd4480256509626b9e29699d24b" target="_blank">Marsha Blackburn</a
+> next year, <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20bc4c0726d607aaa178effdef7ac257d8b2f06f0b4ac8bc7dab2f748d3d124fbddf3fe76b172d43027f1005e242c0fc35" target="_blank">per the Chattanooga Times Free Press&#8217; Andy Sher</a
+>. She&#8217;s a member of the &#8220;Tennessee Three,&#8221; who, unlike the other two state House members, <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20d96bd0cc80e6330c6bcd8037f5a717d05b5b667056074a4ce1d49e493aa719b40920b746c8c96c5e8a251f846c265024" target="_blank">failed to be expelled earlier this year</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">FAR OUT &#8212; Detroit Mayor Mike Duggan &#8220;demurred&#8221; </strong
+>when asked if he&#8217;s considering running in 2026 to succeed Democratic Michigan Gov. Gretchen Whitmer, <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d205ba05af4f3bcd2499b3c5d78c377b1c0e3721b103ea6f61037109271d7d6d59214901c105f89a940fd191df142fcdd19" target="_blank">per The Detroit News</a
+>. &#8220;First decision is what I do about re-election,&#8221; Duggan, whose term is up in 2026, said. &#8220;I&#8217;ll make that decision in the next year, and then I&#8217;ll worry about other decisions after that.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">ON THE ROAD &#8212; Republicans in Wisconsin are grappling with how abortion halted their progress in the swing state, </strong
+>and Democrats are planning for a resurgence. <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20c6b30d42ca10b0f9defddd0bf82e35fea4c0fb143f22b0335419362e949fc40a85a76f51a2b0370378e2f4d2a7d062b2" target="_blank">POLITICO&#8217;s David Siders</a
+> visited the Badger State in his latest installment in the Road Trip series.<br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">AS SEEN ON TV
+</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">PRESIDENTIAL &#8212; Tim Scott is pitching himself as &#8220;the candidate the far left fears the most.&#8221; </strong
+>&#8220;I will be the president who destroys the liberal lie that America is an evil country,&#8221; <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20f46a4589a1ce725f9757974b0acd5c7dc9120c435e3fccde114a37f33ee43be0fc18a925deb5bb6d7d7494f1cef7c3ca" target="_blank">he says in a spot running in Iowa</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MD SENATE &#8212; Trone is continuing to blanket the airwaves </strong
+>in the race for Senate. His <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20cd7f9bdf213ec3aeaef52e080247f87366005ace2aa7843346183c10ee422694e3d05ee8ede8d7f13e798ccd9be09f7c" target="_blank">latest spot discusses his nephew</a
+>, who died following a battle with substance use disorder. Trone has close to $2 million booked on advertisements so far and is the only candidate on air, per AdImpact.<br></p></td>                    </tr>                                    <tr>                        </tr><tr>    <td height="10" style="height:10px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                    <p style="margin-top:0;margin-bottom:20px;line-height:24px;margin-bottom:20px;color:#000000;">                <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DON&#8217;T MISS POLITICO&#8217;S HEALTH CARE SUMMIT</strong
+>: The Covid-19 pandemic helped spur innovation in health care, from the wide adoption of telemedicine, health apps and online pharmacies to mRNA vaccines. But what will the next health care innovations look like? Join POLITICO on Wednesday June 7 for our Health Care Summit to explore how tech and innovation are transforming care and the challenges ahead for access and delivery in the United States. <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20d272ba6d1f9ff2c855fab02da2e38120a7690ee4c94c36e0942174b864e2138c63e4c36761309f07625e242526a07e47" style="text-decoration:underline;color:#007BC7;">REGISTER NOW</a
+>.            </p>            </td></tr><tr>    <td height="10" style="height:10px; font-size:0; border-bottom:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td height="15" style="height:15px; font-size:0;">&nbsp;</td></tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">POLL POSITION</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;">
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; There&#8217;s been a string of polling </strong
+>in recent days for next year&#8217;s California Senate race. <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20969e6e682a45d663bd252196a232687dd40ed1825bb1ea37d59b17516569a1b7a20b151ca4761b308b2a9ad26fe73dbf" target="_blank">POLITICO&#8217;s Steve Shepard breaks down</a
+> what a Democrat-on-Democrat general election could look like, thanks to the Golden State&#8217;s system of all candidates running in the same primary and the top two advancing, regardless of party affiliation.<br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">STAFFING UP </td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; Phil Cox, </strong
+>a veteran GOP adviser, is stepping down from his volunteer role at Never Back Down, the super PAC boosting DeSantis&#8217; presidential bid, <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d209887711459705c67608225e6606c8b7e7da7e3b851377b013696230efca45c17cdaf42624ebd52e5284e83e7d9224161" target="_blank">per our Alex Isenstadt</a
+>. He&#8217;s still a DeSantis supporter, people close to Cox tell Alex.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">CODA &#8212; QUOTE OF THE DAY:</strong
+> &#8220;I haven&#8217;t spoken about love so much because when I do, I&#8217;m often mocked and derided.&#8221; (Democratic presidential candidate Marianne Williamson in a <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20c5cecdd2281e5a0f9f43e70d0b5b7499e8788495a72f9d4956ac44a5aaf770b0e1b1282e79e24dd56cc096f3aff83fb4" target="_blank">40-minute interview with POLITICO</a
+>)</p></td>                    </tr>                                <!-- End Ad Copy -->                <tr>                                    </tr>                <!-- Post Body Content -->                <tr>                                    </tr>                <tr>                    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>                </tr>                <!-- Twitter Handles -->                                    <tr>    <td style="color:#000000;padding:0px 20px 20px 20px;text-align:left;">        <p style="font-family:Helvetica,sans-serif;font-size:20px;color:#000000;margin-top:0;margin-bottom:15px;"><strong
+>Follow us on Twitter</strong
+></p>        <table cellpadding="0" cellspacing="0" border="0" role="presentation">            <tbody>            <tr>                <td width="52" valign="middle" style="text-align:left;padding-right:10px;"><img src="https://static.politico.com/hosted/icon-twitter-circle-blue%402x.png" title="" alt="" width="50" style="max-width:50px;"></td>                <td valign="middle" style="text-align:left;font-family:Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#000000;">                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Steven Shepard <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20e124092ea51d69871af6830bf4f316bbe5bbf35d2807ec12185981e0d9cce0241f7bec60ddec35355413095cb70179d7" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@politico_steve</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Zach Montellaro <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d20fad1ebecbda8f8ae891d128afedcda57ab0664497db632334d922daa02ee3584f63cdb8d8713131f6c362453d158d4ba" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@zachmontellaro</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Ally Mutnick <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d2045a9ca0593d9a5b825539d7c78f8e4db3e8f128f2053dd8e87a17c36bfcccd7668fc315b0c77e0650b9b49f64497b5af" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@allymutnick</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Madison Fernandez <a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d203790bf5163bf9a318d3f5923532560f531a09eb28f44962197fbf54b3944b34777068295aed71ca80153249b7a1cf44c" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@madfernandez616</a
+></p>                                    </td>            </tr>            </tbody>        </table>    </td></tr><tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                                <!-- Family of Playbook -->                                <!-- Follow us -->                <tr>    <td style="color:#000000;padding:0px 20px 20px 20px;text-align:left;">        <p style="font-family:Helvetica,sans-serif;font-size:12px;color:#000000;margin-bottom:10px;line-height:14px;text-transform:uppercase;font-weight:bold;letter-spacing:2px;">Follow us</p>        
+<table cellpadding="0" cellspacing="0" border="0" role="presentation">            <tbody>            <tr>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d208deee90312d04e97677bbe240bf6f373e3e8dabe0577f0dfbfd800b2be219ecc04197fb2b18161da11541f94b1a4b396" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-facebook-gray%402x.png" title="Follow us on Facebook" alt="Follow us on Facebook" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=1791ce3e91f81d208fb45b8deaad348f92ed3f9bc22df0e1d3abf14670bcff7502821e09a4ec6152d98f2f5244a575f11d607a3c0ea55764" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-twitter-gray%402x.png" title="Follow us on Twitter" alt="Follow us on Twitter" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=01510e388578c20b246a4c7dda726f08363863bfa80f369b215891416348e047b0d1e817b6391370c065626b5e4f93f0c05198600a947e5f" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-instagram-gray%402x.png" title="Follow us on Instagram" alt="Follow us on Instagram" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=01510e388578c20b8343108be8df564640300d565e593f676e22021988ed33ed956654f16d6f3d117cfffad5fd02568b2c07ec8190a3d65a" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-applePodcast-gray%402x.png" title="Listen on Apple Podcast" alt="Listen on Apple Podcast" width="24" border="0" style="max-width:24px;"></a
+></td>            </tr>            </tbody>        </table>    </td></tr><tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                </tbody>            </table>        </td>        <td><!-- Note: This is left blank to aid in centering across email clients --></td>    </tr>    </tbody></table><!-- Everything below this line is "new" to the template. We'll have to experiment a bit to see if it causes troubles. --><!-- howler#email.footers/core-newsletter.footer.html -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff"
+       style="padding:5px 0 15px 0;margin:0;text-align:center" role="presentation">
+    <tbody>
+    <tr>
+        <td><!-- Note: This is left blank to aid in centering across email clients --></td>
+        <td align="center" width="540">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:540px" role="presentation">
+                <tbody>
+                <tr>
+                    <td align="center" style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;">
+                        <p style="margin-bottom:15px;line-height:24px;">To change your alert settings, please log in at
+                            <a
+ href="https://go.politicoemail.com/?qs=01510e388578c20ba026b67a2f9349e650347b2f2a9d659c9984afa80f6f8bceeb2eef00de85d446bd0910b71efb62dcff6ae104fc44cee4" target="_blank" style="color:#007BC7;text-decoration:none;">https://www.politico.com/_login?base=https%3A%2F%2Fwww.politico.com/settings</a
+>
+                            <!--Commenting out the following line because it causes an undesired line to be displayed on outlook (some versions) and we couldn't find the use case of it-->
+                            <!-- <span style="display:none;"><a
+ href="https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a25a2bc025f4dc2d6ccdea621b427f424912dabf010aca1f78">https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a25a2bc025f4dc2d6ccdea621b427f424912dabf010aca1f78</a
+></span> -->
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="padding-bottom:15px;"><img
+                            src="https://static.politico.com/hosted/icon-politico-logo.png"
+                            class="CToWUd"></td>
+                </tr>
+                <tr>
+                    <td align="center"><p
+                            style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:20px;">
+                        This email was sent to ouchendans62@gmail.com by: POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+                        <p style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:24px;">
+                            
+
+                            Please click <a
+ href="https://go.politicoemail.com/?qs=01510e388578c20bd6aa7d482ccaa100970e9854e99f293d4eb0bfeb1931875cf4ca00bd9654ebba934ee7ea76f4bf4974e00147ba829b78" target="_blank" style="color:#007BC7;text-decoration:none;">here</a
+> and follow the steps to unsubscribe.
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td><!-- Note: This is left blank to aid in centering across email clients --></td>
+    </tr>
+    </tbody>
+</table>
+<img src="https://click.politicoemail.com/open.aspx?ffcb10-fe901d787565017d7d-fdf213797160037e73157176-fe9115737262077c7c-fecc12737567057b-fdf61574756104747317747c-ffcf14&d=40126&bmt=0" width="1" height="1" alt="">
+</body></html><p email-meta style="display: none;opacity:0;">source=GoggleDocument, article=00000188-6caf-d191-afc8-6effb1f30000</p>
+
+--TIdsnzbDDZVl=_?:--
+

@@ -1,0 +1,461 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:9f5b:0:b0:2da:43c2:96f2 with SMTP id l27csp269768imf;
+        Sat, 27 May 2023 10:24:25 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ73LE4lybcWsSATs4NWydME0MfAkz8WXrde1bxrfL9UwwIaW9/DjmIfNU70nlT9XuecKqZa
+X-Received: by 2002:a05:622a:110a:b0:3ef:57f8:8433 with SMTP id e10-20020a05622a110a00b003ef57f88433mr2771243qty.4.1685208265548;
+        Sat, 27 May 2023 10:24:25 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685208265; cv=none;
+        d=google.com; s=arc-20160816;
+        b=YL3OuuWHjF3ZVGi4xyAkkjdB5di9wmaN+4P6m9RQyEdcG1DW1ap0Dj/PTJoTvk4Zzt
+         ZwURo3jhs661C4v/W+/cgx076EI9el8+Itp+vd8mvfV/mFWEgpMdAUQzlL0KNmz8zKP1
+         Z0dcXw9vwAh4+u5rOtOm8HkX8+3Wp5YS4OX9pPk+x82OUbyWaS6WxNWJYigKH2ADfHCM
+         si597kKg+xKvpJ50TpTq1kUB04ydM6tcQWyUSdu16BHWwAM39TuSXLp6tIh2NRdczTxt
+         JI0HKHGw/mQRaX5+8FldeoBOt0tG30IoMkCz+48fkQwv2o7ChWCVq84IltKNvVDnEuIu
+         z93w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:subject:date:message-id:to:from:feedback-id
+         :dkim-signature:dkim-signature;
+        bh=mjdouJlv4pqbLDTbVpZVQt9PB0OBtCeaJKJINU1KT2M=;
+        b=PO9Yc6T4txQnPLWKYJ/of6OttV03PuYbtIzszPrYUlcrT8uyvocO+73HoMN9od3oUJ
+         bkwyF3SF4XFtwAHWoOHUZDejrCq7XamjQJZZuSmQKi3T79CTNNZz3M8NI866wTS4zVNx
+         JIDegA5P4WrfXyiQ5zGBZRGJ/JyyWee02Aa/ZYShdQZ27ERDL4Q8NLX0aX/+71vaAD+/
+         ugimzUq02mGA3R2B1Ohgu097plr/dHLHS1xKoLJlTgs6MrVRnCY2/+lqbI+s4AOSzlIc
+         nJn7NeAyAlE4uDvYQe0PMsmYj4YRHfJgbOE/B7Vr1OmzvAdz/3fcyJNM9ejDIPFPVX70
+         Sn9g==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@campaign-preferences.com header.s=cmp-pref header.b="ctB/kxyv";
+       dkim=pass header.i=@squarespace-mail.com header.s=squarespace header.b=nUzVG1d6;
+       spf=pass (google.com: domain of 4917.82.111b8000151151c.bffa668debab281f410752a06990a69e@events.campaign-preferences.com designates 142.0.180.193 as permitted sender) smtp.mailfrom=4917.82.111b8000151151c.bffa668debab281f410752a06990a69e@events.campaign-preferences.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=campaign-preferences.com
+Return-Path: <4917.82.111b8000151151c.bffa668debab281f410752a06990a69e@events.campaign-preferences.com>
+Received: from s1-b4c1.socketlabs.email-od.com (s1-b4c1.socketlabs.email-od.com. [142.0.180.193])
+        by mx.google.com with ESMTPS id o18-20020a05622a139200b003f542924cb9si2574990qtk.378.2023.05.27.10.24.25
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 27 May 2023 10:24:25 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 4917.82.111b8000151151c.bffa668debab281f410752a06990a69e@events.campaign-preferences.com designates 142.0.180.193 as permitted sender) client-ip=142.0.180.193;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@campaign-preferences.com header.s=cmp-pref header.b="ctB/kxyv";
+       dkim=pass header.i=@squarespace-mail.com header.s=squarespace header.b=nUzVG1d6;
+       spf=pass (google.com: domain of 4917.82.111b8000151151c.bffa668debab281f410752a06990a69e@events.campaign-preferences.com designates 142.0.180.193 as permitted sender) smtp.mailfrom=4917.82.111b8000151151c.bffa668debab281f410752a06990a69e@events.campaign-preferences.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=campaign-preferences.com
+DKIM-Signature: v=1; a=rsa-sha256; d=campaign-preferences.com;s=cmp-pref;
+	c=relaxed/relaxed; q=dns/txt; t=1685208266; x=1687800266;
+	h=content-type:mime-version:subject:date:message-id:to:from:feedback-id:x-thread-info:subject:to:from:cc:reply-to;
+	bh=mjdouJlv4pqbLDTbVpZVQt9PB0OBtCeaJKJINU1KT2M=;
+	b=ctB/kxyvhxJf+X3D8zd59K6G1eXBDHXx5JCLRjQ755yINNqOJHiGbnTct7tFSK6KF7Io/+hGfaIyC5mrKTkQcJEqaay3LowZSOF5Q/mE9KusHNR98n9TXo08k0aLmRGFJpRZzPINv3NNOj0R6njQJpKK13t+RSe3wgt3IXoTHEWNY0ITHfwfSwWwXWt03EyqEmT2Z2AbeYGrhVYe3/QDfIudEXVI+j/mcHHIRtcrqfc4BTBAz0jTPWYHpeiGQ+sc/S36te9H6Om/7CnpRxOPcqbEH0yX74SyTrQnzVwSWWIwthq51nMvu6cdgYTK62bG102/BssNdu5ymKGIXklgBA==
+DKIM-Signature: v=1; a=rsa-sha256; d=squarespace-mail.com;i=@squarespace-mail.com;s=squarespace;
+	c=relaxed/relaxed; q=dns/txt; t=1685208266; x=1687800266;
+	h=content-type:mime-version:subject:date:message-id:to:from:feedback-id:x-thread-info:subject:to:from:cc:reply-to;
+	bh=mjdouJlv4pqbLDTbVpZVQt9PB0OBtCeaJKJINU1KT2M=;
+	b=nUzVG1d66JefGFNn+LjVxfwWHmVG0fsqi33roGPq4GZhuHRH2U70D/eM4V5zFb3oQTfcMnx3DpYI+c697oijdjCNVHmzqNkkv4o60F9MElJmlctzRqB3O63ZuXzmpNvao51EdM+KQDnTSi1o4BVQleR9sGguHTLJFQFq9ypCDPuhWqJzRCUhzr09CT2g4muPGz59NmOjD6GFGgEYlUaZK5uYhmMnYMaMvMJp2bLACYhwmpVSVMSYQMmYcr29hmobiHcD6zFGvrk2yNT/X+fzI8NiCcS7vGy0S6mwYcq46v7cxfJUMcK0dW2nepWW+VsDxjyFJSzLrC0IiLvfLJIgmQ==
+X-Thread-Info: NDkxNy4xZS4xMTFiODAwMDE1MTE1MWMuNjQ3MjNjYzVkZmI0ZmYzN2M2MGQ3ZTU0LS02MGQyZDQ3OWQyYjdiNzUxMzZlYTA5MGMudCtvcHQtaW4ub3VjaGVuZGFuczYyPWdtYWlsLmNvbQ==
+Feedback-ID: 18711:18711.t+opt-in:squarespace
+Received: from r2.h.in.socketlabs.com (r2.h.in.socketlabs.com [142.0.180.12]) by mxh3.email-od.com
+	with ESMTP(version=Tls12 cipher=Aes256 bits=256); Sat, 27 May 2023 13:24:24 -0400
+Received: from 8.36.86.61 by r2.h.in.socketlabs.com
+	via HTTP; Sat, 27 May 2023 17:24:23 UTC
+X-Website-Id: 60d2d479d2b7b75136ea090c
+From: "BOMBTRACK" <no-reply@campaign-preferences.com>
+To: ouchendans62@gmail.com
+Message-ID: <faea43553d374e8eb4d1ab4b307c0e86@campaign-preferences.com>
+Date: Sat, 27 May 2023 13:24:23 -0400
+Subject: Confirm your subscription to BOMBTRACK
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----87603CE05B8943BF8912BC17EF3C061D"
+
+------87603CE05B8943BF8912BC17EF3C061D
+Content-type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+BOMBTRACK <https://www=2Ebombtrack=2Ecom?ss_source=3Dsscampaigns&ss_cam=
+paign_id=3Dopt-in&ss_campaign_name=3DConfirm+your+subscription+to+BOMBT=
+RACK&ss_campaign_sent_date=3D2023-05-27T17%3A24%3A21Z> Please confirm y=
+our subscription=2E Before we send you any email, we need you to confir=
+m your subscription=2E CONFIRM SUBSCRIPTION  <https://www=2Ebombtrack=2E=
+com/api/newsletters/confirm-subscribe?token=3DCFKGNv0lkGyZsAUBqE8JI8dug=
+868chABWYcJ_6IFopoo0xesTGLmLciKzI31IIcohWgD6-HKM_r3KowYz_C7eGW_jq2wrMMS=
+vbIJbnsrhx6lwZXpRiUw4vQ8bUxb6ukMOFX_E1kOVdo7C0NdtKr9LamFWJCX76bNlhzunLp=
+xX9gc6DNmFe3Zdi7nnvH4Tnbgu0yDeZt566w7YH-urZbKXgrvW8T_vqzLeQP84TWN_RCXbL=
+N74UMTW1NfoeK0REa4rprnUWvL8H96isnFM8xVxHjXpFn6OXHptWWtuKQpZ7l1ZdllNVW61=
+l8NUXUCgbuOKeh34N2mLBI3n8FFaMqw8vM-hKm1eWyzVXELWsIo6AlHo9fAIlcs_eOn5bnH=
+9QgXFsHNkPTTqepgqhDv&ss_source=3Dsscampaigns&ss_campaign_id=3Dopt-in&ss=
+_campaign_name=3DConfirm+your+subscription+to+BOMBTRACK&ss_campaign_sen=
+t_date=3D2023-05-27T17%3A24%3A21Z> If you didn=E2=80=99t subscribe to t=
+his list, ignore this email=2E We won=E2=80=99t subscribe you unless yo=
+u tap or click the button above=2E
+------87603CE05B8943BF8912BC17EF3C061D
+Content-type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html xmlns=3D"http://www=2Ew3=2Eorg/1999/xhtml" xmlns:v=3D"urn:schemas=
+-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office"=
+ lang=3D"en-US" xml:lang=3D"en-US">
+ <head>=20
+  <title data-ignore-plain-text>Confirm your subscription to BOMBTRACK<=
+/title>=20
+  <meta http-equiv=3D"content-type" content=3D"text/html; charset=3Dutf=
+-8">=20
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scal=
+e=3D1, maximum-scale=3D1">=20
+  <meta name=3D"format-detection" content=3D"address=3Dno">=20
+  <!--[if (gte mso 9)|(IE)]>
+    <style type=3D"text/css" media=3D"screen">
+      li {
+        text-indent: -1em;
+      }
+    </style>
+    <![endif]-->=20
+  <style type=3D"text/css" media=3D"all">
+      body,
+=2Esection-text-area,
+=2Esection-text-area-wrapper,
+=2Esection-text-cell {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
+}
+body {
+    width: 100% !important;
+    min-width: 100% !important;
+    -ms-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    mso-line-height-rule: exactly;
+}
+p {
+    margin-block: 0;
+}
+@media only screen and (max-width:  593px ) {
+    table#newsletter-table {
+        border: 0 !important;
+    }
+    table#newsletter-email {
+        width: 100% !important;
+    }
+    img=2Esection-scaleable-image,
+    img=2Esection-empty-img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    =2Ebg-none {
+        background: none !important;
+    }
+    =2Ehauto {
+        height: auto !important;
+    }
+    =2Eshow-desktop-only {
+        display: none !important;
+    }
+    =2Eshow-mobile-only {
+        display: block !important;
+        float: none !important;
+        line-height: auto !important;
+        max-height: inherit !important;
+        max-width: inherit !important;
+        margin-top: 0px !important;
+        overflow: visible !important;
+        visibility: inherit !important;
+        width: auto !important;
+    }
+    =2Estack-cell-wrap {
+        display: block !important;
+    }
+    =2Estack-cell-up {
+        display: table-header-group !important;
+    }
+    =2Estack-cell-down {
+        display: table-footer-group !important;
+    }
+    =2Emw100p {
+        max-width: 100% !important;
+    }
+    =2Esection-horizontal-padding,
+    =2Epadding-mobile-both {
+        padding-left: 22px !important;
+        padding-right: 22px !important;
+    }
+    =2Epadding-mobile-left {
+        padding-left: 22px !important;
+    }
+    =2Epadding-mobile-right {
+        padding-right: 22px !important;
+    }
+    =2Etext-left {
+        text-align: left !important;
+    }
+    =2Etext-right {
+        text-align: right !important;
+    }
+    =2Ew100p {
+        width: 100% !important;
+    }
+}
+=2Ebutton-style-solid:hover,
+=2Ebutton-style-rounded:hover {
+    opacity: =2E8 !important;
+}
+a:hover {
+    text-decoration: none !important;
+}
+span=2Email-merge-preview {
+    border-bottom: 2px dotted currentColor;
+    display: inline-block;
+    line-height: 1em !important;
+    margin-bottom: =2E125em !important;
+}
+table#newsletter-section-body =2Elinked-site-title-link {
+    color: #0074c2 !important;
+}
+#header-header-section-split-left-0 =2Ebrand-name =2Elinked-site-title-=
+link {
+    color: #313131;
+    text-decoration: none;
+}
+#static-link-button-static-link-button-section-2 =2Ebutton-style-outlin=
+e:hover {
+    background-color: #313131 !important;
+    border: 1px solid #313131 !important;
+}
+#static-link-button-static-link-button-section-2 =2Ebutton-style-outlin=
+e:hover =2Ebutton-section-label {
+    color: #fff !important;
+}
+
+    </style>=20
+  <!--[if mso]>
+    <noscript>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG/>
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+    </noscript>
+    <![endif]-->=20
+  <!--[if (mso)|(mso 16)]>
+      <style type=3D"text/css">
+        a {text-decoration: none;}
+      </style>
+    <![endif]-->=20
+ </head>=20
+ <body style=3D"padding:0;margin:0;text-align:center;background-color:#=
+ebebeb;">=20
+  <table role=3D"article" aria-label=3D"Confirm your subscription to BO=
+MBTRACK" lang=3D"en-US" cellpadding=3D"0" cellspacing=3D"0" border=3D"0=
+" align=3D"center" id=3D"newsletter-table" style=3D"font-size:16px;font=
+-weight:normal;width:100%;padding:0px;background-color:#ebebeb;border-t=
+op:44px solid #ebebeb;border-bottom:44px solid #ebebeb;margin:0 auto;te=
+xt-align:center;table-layout:fixed;">=20
+   <tbody>
+    <tr>=20
+     <td align=3D"center" valign=3D"top" bgcolor=3D"#EBEBEB" id=3D"news=
+letter-cell" style=3D"font-size:1em;">=20
+      <div data-ignore-plain-text class=3D"newsletter-preview-text" sty=
+le=3D"color:transparent;display:none !important;height:0;max-height:0;m=
+ax-width:0;opacity:0;overflow:hidden;mso-hide:all;visibility:hidden;wid=
+th:0;">
+        BOMBTRACK Please confirm your subscription=2E Before we send yo=
+u any email, we need you to confirm your subscription=2E CONFIRM SUBSCR=
+IPTION If you didn=E2=80=99t subscribe to this list, ignore this email=2E=
+ We won=20
+      </div>=20
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"=
+594" bgcolor=3D"#FFFFFF" id=3D"newsletter-email">=20
+       <tbody>
+        <tr>=20
+         <td align=3D"center" valign=3D"top" id=3D"newsletter-email-wra=
+pper" class=3D"book-sans">=20
+          <table role=3D"presentation" width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0" id=3D"newsletter-section-header">=20
+           <tbody>
+            <tr>=20
+             <td align=3D"center" valign=3D"middle" id=3D"newsletter-se=
+ction-header-cell">=20
+              <div id=3D"header-header-section-split-left-0">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D=
+"0" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"hea=
+der-section header-section-split section-content" style=3D"background-c=
+olor:transparent;">=20
+                <tbody>
+                 <tr>=20
+                  <td class=3D"section-content-cell padding-mobile-both=
+" style=3D"padding-top:55px;padding-right:44px;padding-bottom:33px;padd=
+ing-left:44px;">=20
+                   <table role=3D"presentation" width=3D"100%" cellpadd=
+ing=3D"0" cellspacing=3D"0" border=3D"0">=20
+                    <tbody>
+                     <tr>=20
+                      <td align=3D"left" valign=3D"middle" width=3D"50%=
+" class=3D"section-text-area"> <p class=3D"brand-name" style=3D"margin:=
+0 0 1=2E25em 0;font-weight:normal;margin-top:0;margin-bottom:0;font-fam=
+ily:'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', 'Helve=
+tica Neue', Helvetica, Arial, sans-serif;color:#313131;font-size:16px;l=
+ine-height:1em;mso-line-height-alt:16px;white-space:pre-wrap;margin-lef=
+t:0px;"><a href=3D"https://engage=2Esquarespace-mail=2Ecom/r?m=3D64723c=
+c5dfb4ff37c60d7e54&amp;u=3Dhttps%3A%2F%2Fwww=2Ebombtrack=2Ecom%3Fss_sou=
+rce%3Dsscampaigns%26ss_campaign_id%3Dopt-in%26ss_campaign_name%3DConfir=
+m%2Byour%2Bsubscription%2Bto%2BBOMBTRACK%26ss_campaign_sent_date%3D2023=
+-05-27T17%253A24%253A21Z&amp;w=3D60d2d479d2b7b75136ea090c&amp;c=3Dt_opt=
+-in&amp;l=3Den-US&amp;s=3D4hhuS8lAC-af5oTnHlE0wV-N0HA%3D" target=3D"" c=
+lass=3D"linked-site-title-link">BOMBTRACK</a></p> </td>=20
+                      <td align=3D"right" valign=3D"middle" width=3D"50=
+%" class=3D"section-text-area"> </td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div> </td>=20
+            </tr>=20
+           </tbody>
+          </table>=20
+          <table role=3D"presentation" width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0" id=3D"newsletter-section-body">=20
+           <tbody>
+            <tr>=20
+             <td align=3D"center" valign=3D"top" width=3D"100%" id=3D"n=
+ewsletter-section-body-cell">=20
+              <div id=3D"text-text-section-0">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D=
+"0" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"tex=
+t-section section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td valign=3D"top" class=3D"section-text-area section=
+-content-cell padding-mobile-both" style=3D"padding-top:11px;padding-ri=
+ght:44px;padding-bottom:11px;padding-left:44px;color:#313131;background=
+-color:transparent;"> <h4 style=3D"color:inherit;margin:1=2E414em 0 =2E=
+5em;font-weight:400;line-height:1=2E25em;font-size:1=2E2em;mso-line-hei=
+ght-alt:1=2E2em;margin-top:0;margin-bottom:0;font-family:'DejaVu Sans C=
+ondensed', 'Liberation Sans', 'Nimbus Sans L', 'Helvetica Neue', Helvet=
+ica, Arial, sans-serif;letter-spacing:=2E02em;"><strong>Please confirm =
+your subscription=2E</strong></h4> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"text-text-section-1">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D=
+"0" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"tex=
+t-section section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td valign=3D"top" class=3D"section-text-area section=
+-content-cell padding-mobile-both" style=3D"padding-top:11px;padding-ri=
+ght:44px;padding-bottom:11px;padding-left:44px;color:#313131;background=
+-color:transparent;"> <p class=3D"" style=3D"color:inherit;font-size:1e=
+m;line-height:1=2E618em;margin:0 0 1=2E25em 0;font-weight:normal;margin=
+-top:0;margin-bottom:0;font-family:'DejaVu Sans Condensed', 'Liberation=
+ Sans', 'Nimbus Sans L', 'Helvetica Neue', Helvetica, Arial, sans-serif=
+;">Before we send you any email, we need you to confirm your subscripti=
+on=2E</p> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"static-link-button-static-link-button-section-=
+2">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D=
+"0" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"but=
+ton-section section-content" style=3D"width:100%;background-color:trans=
+parent;">=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"left" valign=3D"middle" class=3D"section=
+-content-cell section-text-area padding-mobile-both" style=3D"padding-t=
+op:22px;padding-right:44px;padding-bottom:22px;padding-left:44px;"> <a =
+href=3D"https://engage=2Esquarespace-mail=2Ecom/r?m=3D64723cc5dfb4ff37c=
+60d7e54&amp;u=3Dhttps%3A%2F%2Fwww=2Ebombtrack=2Ecom%2Fapi%2Fnewsletters=
+%2Fconfirm-subscribe%3Ftoken%3DCFKGNv0lkGyZsAUBqE8JI8dug868chABWYcJ_6IF=
+opoo0xesTGLmLciKzI31IIcohWgD6-HKM_r3KowYz_C7eGW_jq2wrMMSvbIJbnsrhx6lwZX=
+pRiUw4vQ8bUxb6ukMOFX_E1kOVdo7C0NdtKr9LamFWJCX76bNlhzunLpxX9gc6DNmFe3Zdi=
+7nnvH4Tnbgu0yDeZt566w7YH-urZbKXgrvW8T_vqzLeQP84TWN_RCXbLN74UMTW1NfoeK0R=
+Ea4rprnUWvL8H96isnFM8xVxHjXpFn6OXHptWWtuKQpZ7l1ZdllNVW61l8NUXUCgbuOKeh3=
+4N2mLBI3n8FFaMqw8vM-hKm1eWyzVXELWsIo6AlHo9fAIlcs_eOn5bnH9QgXFsHNkPTTqep=
+gqhDv%26ss_source%3Dsscampaigns%26ss_campaign_id%3Dopt-in%26ss_campaign=
+_name%3DConfirm%2Byour%2Bsubscription%2Bto%2BBOMBTRACK%26ss_campaign_se=
+nt_date%3D2023-05-27T17%253A24%253A21Z&amp;w=3D60d2d479d2b7b75136ea090c=
+&amp;c=3Dt_opt-in&amp;l=3Den-US&amp;s=3DPLJgOhZI4bSgL4JQ1x4kvMeVIkw%3D"=
+ class=3D"button-section-box button-style-solid" style=3D"color:#0074c2=
+ !important;display:inline-block;line-height:11px;margin:0;mso-padding-=
+alt:0;text-align:center;text-decoration:none;transition:=2E15s;width:au=
+to;background-color:#313131;border:0;padding:17px 0;"><i class=3D"butto=
+n-section-mso" style=3D"letter-spacing:29=2E92px;mso-font-width:-100%;m=
+so-text-raise:26=2E950000000000003px;">&nbsp;</i><span class=3D"button-=
+section-label" style=3D"font-weight:inherit;line-height:inherit;margin:=
+0;font-family:'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans =
+L', 'Helvetica Neue', Helvetica, Arial, sans-serif;color:#fff;display:i=
+nline-block;font-size:11px;min-width:1px;mso-text-raise:15=2E95px;"><sp=
+an data-letter-spacing=3D"3" style=3D"font-size:inherit;font-weight:inh=
+erit;line-height:inherit;margin:0;letter-spacing:0=2E2em;">CONFIRM SUBS=
+CRIPTION</span></span><i class=3D"button-section-mso" style=3D"letter-s=
+pacing:29=2E92px;mso-font-width:-100%;mso-text-raise:26=2E9500000000000=
+03px;">&nbsp;</i></a> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"text-text-section-3">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D=
+"0" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"tex=
+t-section section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td valign=3D"top" class=3D"section-text-area section=
+-content-cell padding-mobile-both" style=3D"padding-top:11px;padding-ri=
+ght:44px;padding-bottom:11px;padding-left:44px;color:#a1a1a1;background=
+-color:transparent;"> <p class=3D"" style=3D"color:inherit;font-size:1e=
+m;line-height:1=2E618em;margin:0 0 1=2E25em 0;font-weight:normal;margin=
+-top:0;margin-bottom:0;font-family:'DejaVu Sans Condensed', 'Liberation=
+ Sans', 'Nimbus Sans L', 'Helvetica Neue', Helvetica, Arial, sans-serif=
+;">If you didn=E2=80=99t subscribe to this list, ignore this email=2E W=
+e won=E2=80=99t subscribe you unless you tap or click the button above=2E=
+</p> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"spacer-spacer-section-4">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D=
+"0" cellspacing=3D"0" border=3D"0" bgcolor=3D"#FFFFFF" class=3D"spacer-=
+section section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" height=3D"55" style=3D"height:55px;"> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div> </td>=20
+            </tr>=20
+           </tbody>
+          </table>=20
+          <table role=3D"presentation" width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0" id=3D"newsletter-section-footer">=20
+           <tbody>
+            <tr>=20
+             <td align=3D"center" valign=3D"top" id=3D"newsletter-secti=
+on-footer-cell">=20
+              <div id=3D"blank-blank-section-0">=20
+              </div> </td>=20
+            </tr>=20
+           </tbody>
+          </table> </td>=20
+        </tr>=20
+       </tbody>
+      </table> </td>=20
+    </tr>=20
+   </tbody>
+  </table> =20
+  <img src=3D"https://engage=2Esquarespace-mail=2Ecom/v2/a=2Egif?m=3D64=
+723cc5dfb4ff37c60d7e54&amp;w=3D60d2d479d2b7b75136ea090c&amp;c=3Dt_opt-i=
+n&amp;s=3DcnueBNNDYKDUwHxZpwfFY9qjF98%3D" alt=3D"" width=3D"0" height=3D=
+"0">
+ </body>
+</html>
+------87603CE05B8943BF8912BC17EF3C061D--
+

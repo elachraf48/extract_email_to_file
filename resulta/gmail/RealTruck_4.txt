@@ -1,0 +1,499 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp493199ims;
+        Tue, 30 May 2023 07:22:28 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ7Vi9DYxENFBIHb6FsqIppmshXNCqFWARNn8Hsc/aBsUn0CQE/XOyBHltp9I3vwe4Xt5PQS
+X-Received: by 2002:a17:903:48c:b0:1ac:a6b0:1c87 with SMTP id jj12-20020a170903048c00b001aca6b01c87mr2560377plb.48.1685456547917;
+        Tue, 30 May 2023 07:22:27 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685456547; cv=none;
+        d=google.com; s=arc-20160816;
+        b=m+oHhl5qVJ0XvoP/NjNtdG96O4lLnVxrzrwn9c9/Zh2BtdOpzR1jCtZIVaaVYPzEpC
+         H4/WOoSwqOSXcy7m/70K5COnEu8CJe5qDC0AvM3uan9skRDi9xcVOtJspCiwS9KGEWot
+         D8pRQV+7eETMmzN7aXnHsLChdl4MCx1Pgi6MllqWgeD7c7cltlqQc65tm8Q81DhNcpsn
+         WD1nf+l2xiUC5IBupOELU/lcc2TbwzQNMuXFRoH366BkgE/KXSrhlLmWeDeWNWp2VdLm
+         WAwPWi5zmbvIORyy/TqK0/g2k0R/vU/bfTOB82n7xtGn5UlIhWlFernvKodWvVRDQYqX
+         c/Ew==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-id:list-unsubscribe:feedback-id:from:subject:reply-to
+         :mime-version:date:message-id:to:dkim-signature;
+        bh=lmbmPKarR6vM22bhVCxsBly3ei76HBuwUBhtAQOaX0c=;
+        b=G3EK2uTOt1ponWPvFK1VFuU88W6n2DQYSm+59V2lX95Bllj05/Yr3kzAENJsn9M1OI
+         YZpvGrRqMtVtIBkoTWDg57EV50IpUf2IqyKvHLt8fefFaF39YmFPt/v4P8C16ujodDVk
+         pfnemSgw/E4cN9FfAw8mq05jHe0PsfXS95XWf5k7uYd19rIivfEbzPcwKt3QV/8tWmro
+         BwXOpSOli+MXLygfXIE4YyFbXkhedQ46/IEClAV/SUOKi7JAdwudU3m14Gbr2jkx4kKl
+         iJnWhv+dbwKcfSy2wEoNsBYDoeQBjpjRlNgVwDnnZqfTFqVg23kIzGdQVCQEe+C3MZ+l
+         Xa8w==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@e.realtruck.com header.s=scph1218 header.b=HIbFo0+w;
+       spf=pass (google.com: domain of msprvs1=19514s3chhytg=bounces-247938@spmailtechnol.com designates 147.253.212.71 as permitted sender) smtp.mailfrom="msprvs1=19514S3ChHyTG=bounces-247938@spmailtechnol.com";
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=realtruck.com
+Return-Path: <msprvs1=19514S3ChHyTG=bounces-247938@spmailtechnol.com>
+Received: from mta-212-71.sparkpostmail.com (mta-212-71.sparkpostmail.com. [147.253.212.71])
+        by mx.google.com with ESMTPS id z3-20020a170903018300b001b03a1a3169si230882plg.257.2023.05.30.07.22.27
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 30 May 2023 07:22:27 -0700 (PDT)
+Received-SPF: pass (google.com: domain of msprvs1=19514s3chhytg=bounces-247938@spmailtechnol.com designates 147.253.212.71 as permitted sender) client-ip=147.253.212.71;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@e.realtruck.com header.s=scph1218 header.b=HIbFo0+w;
+       spf=pass (google.com: domain of msprvs1=19514s3chhytg=bounces-247938@spmailtechnol.com designates 147.253.212.71 as permitted sender) smtp.mailfrom="msprvs1=19514S3ChHyTG=bounces-247938@spmailtechnol.com";
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=realtruck.com
+X-MSFBL: KKIzT97wdzqOFiPm9GSYCqGE2dOoBpgpptvoI6NCQ3A=|eyJtZXNzYWdlX2lkIjo
+	iNjQ2ZmEzMDY3NjY0YTI2NjJjNjgiLCJyIjoib3VjaGVuZGFuczYyQGdtYWlsLmN
+	vbSIsInRlbmFudF9pZCI6InNwYyIsInN1YmFjY291bnRfaWQiOiIwIiwiY3VzdG9
+	tZXJfaWQiOiIyNDc5MzgifQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=e.realtruck.com;
+	s=scph1218; t=1685456547; i=@e.realtruck.com;
+	bh=lmbmPKarR6vM22bhVCxsBly3ei76HBuwUBhtAQOaX0c=;
+	h=To:Message-ID:Date:Content-Type:Subject:From:List-Unsubscribe:
+	 From:To:Cc:Subject;
+	b=HIbFo0+wdEzCankQTa9R39c336qw6zU3vmxSiU6k92odKavOQqoy1YUbdP56FtbZI
+	 denPLqk3Ifcn3iCXP05gHNNSs7h0O5/oe4nHecdbtKSwiWAB1KHNEZhuvWdqLujywu
+	 IJ7aMvl/5uIIRIlBDb9pBtkZKJhTClm/bw2/eiyE=
+To: ouchendans62@gmail.com
+Message-ID: <C2.86.06743.3A606746@ga.mta1vrest.cc.prd.sparkpost>
+Date: Tue, 30 May 2023 14:22:27 +0000
+Content-Type: multipart/alternative; boundary="_----L3/vVEdJnCmmyWbiqrPgEg===_32/86-06743-3A606746"
+MIME-Version: 1.0
+Reply-To: realtruck@e.realtruck.com
+Subject: Go from stock --> custom
+X-Campaign-ID: 6299144
+From: "RealTruck" <realtruck@e.realtruck.com>
+X-Message-ID: 05f8732a87134cb4a8962fdbef78abe2
+X-Feedback-ID: 8457041:6299144:15736:iterable
+Feedback-ID: 8457041:6299144:15736:iterable
+List-Unsubscribe: <mailto:unsubscribe@unsub.spmta.com?subject=unsubscribe:lsOalxJz2UuwFDsFLmA3W_q5fvxuU2FE3FnVeQTo2Rk~|eyAicmNwdF90byI6ICJvdWNoZW5kYW5zNjJAZ21haWwuY29tIiwgInRlbmFudF9pZCI6ICJzcGMiLCAiY3VzdG9tZXJfaWQiOiAiMjQ3OTM4IiwgInN1YmFjY291bnRfaWQiOiAiMCIsICJtZXNzYWdlX2lkIjogIjY0NmZhMzA2NzY2NGEyNjYyYzY4IiB9>
+List-Id: <spc.247938.0.sparkpostmail.com>
+
+--_----L3/vVEdJnCmmyWbiqrPgEg===_32/86-06743-3A606746
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="UTF-8"
+
+Adding your vehicle info =3D easier shopping =0A=0Aadd realtruck@e.realtruc=
+k.com to your contacts / View online =0A<http://links.realtruck.com/e/evib=
+=3F_t=3Dc08ceafcb1aa4503b82ebde1eed2962c&_m=3D05f8732a87134cb4a8962fdbef78a=
+be2&_e=3DZ1TfehxbyareJRoQxPaMdHksrdr85UQh_S71pAlIxSD2lWFKBBfPr3t2SKTB8QCQ>=
+=0A =0A<https://realtruck.com/=3Futm_source=3Donboarding&utm_medium=3Demail=
+&utm_campaign=3Dob_4_noMM&utm_term=3Dheader-logo>=0A=0A=0AProducts =0A<http=
+s://realtruck.com/new-products/=3Futm_source=3Donboarding&utm_medium=3Demai=
+l&utm_campaign=3Dob_4_noMM&utm_term=3Dheadernav-products>=0ADeals =0A<https=
+://realtruck.com/specials/=3Futm_source=3Donboarding&utm_medium=3Demail&utm=
+_campaign=3Dob_4_noMM&utm_term=3Dheadernav-specials>=0ABlog =0A<https://rea=
+ltruck.com/blog/=3Futm_source=3Donboarding&utm_medium=3Demail&utm_campaign=
+=3Dob_4_noMM&utm_term=3Dheadernav-blog>=0A=0A=0A =0A<https://realtruck.com/=
+=3Fmod=3Dfitment&utm_source=3Donboarding&utm_medium=3Demail&utm_campaign=3D=
+ob_4_noMM&utm_term=3Dhero-top>=0A =0A<https://realtruck.com/=3Fmod=3Dfitmen=
+t&utm_source=3Donboarding&utm_medium=3Demail&utm_campaign=3Dob_4_noMM&utm_t=
+erm=3Dhero-top>=0A=0A=0A=0A Products & Content =0Afor Your Truck, not Someo=
+ne Elses'. =0A Be confident that the parts you're ordering for your truck. =
+Plus - get =0Arelevant content, for your make and model, delivered to your =
+inbox. =0A=0A=0A Enter Truck Info  =0A<https://realtruck.com/=3Fmod=3Dfitme=
+nt&utm_source=3Donboarding&utm_medium=3Demail&utm_campaign=3Dob_4_noMM&utm_=
+term=3Dbody-CTA>=0A=0A=0A=0A=0A =0A<https://realtruck.com/=3Futm_source=3Do=
+nboarding&utm_medium=3Demail&utm_campaign=3Dob_4_noMM&utm_term=3D1>=0A=0A =
+=0A<https://realtruck.com/=3Futm_source=3Donboarding&utm_medium=3Demail&utm=
+_campaign=3Dob_4_noMM&utm_term=3D2>=0A=0A =0A<https://realtruck.com/=3Futm_=
+source=3Donboarding&utm_medium=3Demail&utm_campaign=3Dob_4_noMM&utm_term=3D=
+3>=0A=0A=0A =0A<https://realtruck.com/=3Futm_source=3Donboarding&utm_medium=
+=3Demail&utm_campaign=3Dob_4_noMM&utm_term=3Dfooterlogo>=0A=0A <https://www=
+.facebook.com/RealTruck>  <https://www.instagram.com/realtruck/>  =0A<http=
+s://www.youtube.com/channel/UCZbCV6NzYZTVgKCqwQ36Drg>  =0A<https://www.tikt=
+ok.com/@realtruck> =0A(866) 518-0593 <tel:866-518-0593> =0A=C2=A9 2023 Real=
+Truck.com =0A<https://realtruck.com/=3Futm_source=3Donboarding&utm_medium=
+=3Demail&utm_campaign=3Dob_4_noMM&utm_term=3Dfooterlink>=0A All Rights Rese=
+rved | Unsubscribe =0A<http://links.realtruck.com/e/encryptedUnsubscribe=3F=
+_r=3Dc08ceafcb1aa4503b82ebde1eed2962c&_s=3D05f8732a87134cb4a8962fdbef78abe2=
+&_t=3DZ1TfehxbyareJRoQxPaMdHksrdr85UQh_S71pAlIxSC79XolUdOgYvnYIQ5d1e5kWn2Op=
+fjVVfZf0u7dKj5n339K4qO9K0Ii0d_A-DKUs-wks5PT2M4PGyjwOtkJN_Q9>=0A |Terms of U=
+se =0A<https://realtruck.com/terms-and-conditions/=3Futm_source=3Donboardin=
+g&utm_medium=3Demail&utm_campaign=3Dob_4_noMM&utm_term=3Dtermsbottom>=0A |P=
+rivacy Policy =0A<https://realtruck.com/privacy-policy/=3Futm_source=3Donbo=
+arding&utm_medium=3Demail&utm_campaign=3Dob_4_noMM&utm_term=3Dprivacypolicy=
+bottom>=0A=0ARealTruck.com | 4414 SW College Road, Suite 1410 | Ocala, FL 3=
+4474 | United =0AStates
+--_----L3/vVEdJnCmmyWbiqrPgEg===_32/86-06743-3A606746
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+
+<body>=0D=0A<div style=3D"color:transparent;visibility:hidden;opacity:0;fon=
+t-size:0px;border:0;max-height:1px;width:1px;margin:0px;padding:0px;border-=
+width:0px!important;display:none!important;line-height:0px!important;"><img=
+ border=3D"0" width=3D"1" height=3D"1" src=3D"http://track.realtruck.com/q/=
+hX138JJmEAOMorGvUwhsxA~~/AAPIggA~/RgRmWIujPVcDc3BjQgpkb6MGdmSiZixoUhZvdWNoZ=
+W5kYW5zNjJAZ21haWwuY29tWAQAAAAA" alt=3D""/></div>=0D=0A<span style=3D"color=
+:transparent;visibility:hidden;display:none;opacity:0;height:0;width:0;font=
+-size:0;">Adding your vehicle info =3D easier shopping</span><img src=3D"ht=
+tp://links.realtruck.com/e/eo=3F_t=3Dc08ceafcb1aa4503b82ebde1eed2962c&amp;_=
+m=3D05f8732a87134cb4a8962fdbef78abe2&amp;_e=3DZ1TfehxbyareJRoQxPaMdHksrdr85=
+UQh_S71pAlIxSC79XolUdOgYvnYIQ5d1e5kWn2OpfjVVfZf0u7dKj5n32GB6w0g-MtTxKKPlJ3E=
+gxqYtoh4XrPL46O9kkPk7_t6iYJRMcn27iLCvdoosUdzRA%3D%3D" style=3D"border:0;wid=
+th:1px;height:1px;border-width:0px!important;display:none!important;line-he=
+ight:0!important;" width=3D"1" height=3D"1"/> <!DOCTYPE html> <html xmlns=
+=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microsoft-com:vml"=
+ xmlns:o=3D"urn:schemas-microsoft-com:office:office"> <head> <meta charset=
+=3D"utf-8"> <meta name=3D"viewport" content=3D"width=3Ddevice-width, initia=
+l-scale=3D1"> <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"/> =
+<meta name=3D"x-apple-disable-message-reformatting"> <style type=3D"text/cs=
+s">@import url('https://fonts.googleapis.com/css=3Ffamily=3DRoboto:200,400,=
+700,900&display=3Dswap');@import url('https://fonts.googleapis.com/css2=3Ff=
+amily=3DAlfa+Slab+One&display=3Dswap');body{font-family:'Roboto',Arial,Helv=
+etica,Verdana,sans-serif;margin:0;background:0;color:#000;height:100%!impor=
+tant;margin:0!important;padding:0!important;width:100%!important}body,table=
+,td,a{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}table,td{mso-=
+table-lspace:0;mso-table-rspace:0}img{-ms-interpolation-mode:bicubic}img{bo=
+rder:0;height:auto;line-height:100%;outline:0;text-decoration:none}table{bo=
+rder-collapse:collapse!important}a[x-apple-data-detectors]{color:inherit!im=
+portant;text-decoration:none!important;font-size:inherit!important;font-fam=
+ily:inherit!important;font-weight:inherit!important;line-height:inherit!imp=
+ortant}.navlink:hover,.navlink:hover a{background:#ffc50a!important;color:#=
+4d4d4f!important}div[style*=3D"margin: 16px 0;"]{margin:0!important}</style=
+> <style type=3D"text/css">@media screen and (max-width:649px){.wrapper{wid=
+th:100%!important;max-width:100%!important}.responsive-table{width:100%!imp=
+ortant;clear:both!important}.half-width{width:47%!important;max-width:47%!i=
+mportant}.half-width-seamless{width:50%!important;max-width:50%!important}.=
+forty{width:40%!important;max-width:40%!important}.thirty{width:30%!importa=
+nt;max-width:30%!important}.twentyfive{width:25%!important;max-width:25%!im=
+portant}.twenty{width:20%!important;max-width:20%!important}.ten{width:10%!=
+important;max-width:10%!important}.mobile-hide{display:none!important}.mobi=
+le-display{display:block!important}.img-max{max-width:100%!important;width:=
+100%!important;height:auto!important;max-height:none!important}.logo{width:=
+100%!important;height:auto!important}.logo img,.logo div{display:block!impo=
+rtant;margin:0 auto 20px!important;width:90%!important;max-width:420px!impo=
+rtant}.padding{padding:20px 0 0 0!important}.padding-both{padding:20px 0 20=
+px 0!important}.no-padding{padding:0!important}.padding-ninety{padding:0 20=
+px 0 20px!important}.padding-twenty{padding:0 20% 0 20%!important}.padding-=
+small{padding:0 5px 0 5px!important}.padding-top{padding-top:40px!important=
+}.mobile-button-container{margin:20px auto 40px;width:100%!important;max-wi=
+dth:300px!important}.mobile-button{padding:15px 0!important;font-size:16px!=
+important;display:block!important}.bgScale{background-size:100vw!important}=
+.bigtext{font-size:40px!important}.midtext{font-size:28px!important}.mediu=
+mtext{font-size:15px!important}.smalltext{font-size:12px!important}.centerT=
+ext{text-align:center!important}.radius{border-radius:0!important}.half-wid=
+th.wrapper{padding:0 0 20px 0}.heightFix{height:auto!important;min-height:3=
+0px!important}u+.body .lhgmf{font-size:25px!important;margin-top:-16px!impo=
+rtant;line-height:0!important}u+.body .headerText{padding:20px 0 0!importan=
+t}}</style> <!-- OUTLOOK SPECIFIC STYLES --> <!--[if gte mso 9]><style type=
+=3D"text/css">*,body,table,td{font-family:Arial,Helvetica,sans-serif!import=
+ant}.mso-heightfix{padding-top:20px!important}.mso-buttonfix{margin-left:20=
+px}.mso-buttonfix .mobile-button-container{width:170px!important}.responsiv=
+e-table{padding:0 0 0 0!important}</style> <xml><o:OfficeDocumentSettings><=
+o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings=
+></xml><![endif]--> <!-- EVEREST/VALIDITY CAMPAIGN ID TRACKER --> <!-- rpca=
+mpaign: THIECOM_6299144 --> </head> <body class=3D"body" style=3D"margin: 0=
+ !important; padding: 0 !important;"> <!-- HEADER --> <table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"> <tr> <t=
+d align=3D"center" style=3D"padding: 0px 0px 0px 0px;"> <table bgcolor=3D"2=
+a2a2a" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"700px" sty=
+le=3D"max-width: 700px;" class=3D"wrapper"> <tr> <td align=3D"center" valig=
+n=3D"top" style=3D"padding: 5px 0px 0px 0px;"> <div style=3D"font-size: 12p=
+x; color: #999999;">add realtruck@e.realtruck.com to your contacts&nbsp;&nb=
+sp;&nbsp;/&nbsp;&nbsp;&nbsp;<a style=3D"color: #1c7ec6;" href=3D"http://lin=
+ks.realtruck.com/e/evib=3F_t=3Dc08ceafcb1aa4503b82ebde1eed2962c&_m=3D05f873=
+2a87134cb4a8962fdbef78abe2&_e=3DZ1TfehxbyareJRoQxPaMdHksrdr85UQh_S71pAlIxSD=
+2lWFKBBfPr3t2SKTB8QCQ" target=3D"_blank">View online</a></div> <!-- EVEREST=
+ / VALIDITY TRACKING PIXEL --> <img src=3D"https://pixel.app.returnpath.net=
+/pixel.gif=3Fr=3D93bccf3165d81daf1c374c3c3baf375bb4e2e6cf" width=3D"1" heig=
+ht=3D"1"/> <!--[if gte mso 9]><table align=3D"center" border=3D"0" cellspac=
+ing=3D"0" cellpadding=3D"0" width=3D"700"><tr><td align=3D"center" valign=
+=3D"top" width=3D"700"><![endif]--> <table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" width=3D"100%" style=3D"max-width: 700px;" class=3D"wrappe=
+r"> <tr> <td align=3D"center" valign=3D"top" class=3D"padding-ninety" style=
+=3D"padding: 10px 0px 10px 0px"> <a href=3D"http://links.realtruck.com/u/cl=
+ick=3F_t=3Dc08ceafcb1aa4503b82ebde1eed2962c&_m=3D05f8732a87134cb4a8962fdbef=
+78abe2&_e=3Dyg7R65mNGgQX2PSfY4FEjWOyS2YsQlMidq8ouQu54Ek0frzQcLkdLjVV9iFOmq5=
+IHhiN1tas7Q_UTaIK2c7Lhgy7fB17cpq8rfMCDXB1DQ1EHFoKnOfAGjAhrAEcgxdOhI3ANm2Phi=
+_xmF-r7yg-FcM4yvBrr332fnXDCy1E7ish6FiE0xFOUiKRsATcRIA4h3EnXfg7YzIzKHVcrHz4P=
+RguX17Z_m6FXKhHbg05cbZcf_SgV_hUvsBs8GTKFJJZu2MkmGcJeHHEoQlQFxbnjuJyh_vthrpl=
+9Q21ENa_fjz4G9ncV5hy1gqKSAa8AYWj" target=3D"_blank"> <img alt=3D"RealTruck.=
+com" src=3D"https://a.storyblok.com/f/148322/964x90/92ee904f96/were-realtru=
+ck-people-light.png" alt=3D"We're RealTruck People" class=3D"img-max paddin=
+g-both" width=3D"500" style=3D"display: block; color: #ffffff; font-size: 1=
+6px;" border=3D"0"> </a> </td> </tr> </table> </td> </tr> </table> <table b=
+gcolor=3D"2a2a2a" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"700px" style=3D"max-width: 700px;" class=3D"wrapper"> <tr> <td align=3D"ce=
+nter" valign=3D"top" style=3D"padding: 0px 10px 0px 10px; max-width: 680px;=
+ text-transform: uppercase; font-weight: 700; border-bottom: 6px solid #ffc=
+50a;"> <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%"> <tr> <td width=3D"33%" align=3D"center" style=3D"padding: 15px 5px =
+10px 0px;"> <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" wid=
+th=3D"100%"> <tr> <td align=3D"center" class=3D"navlink" bgcolor=3D"#666666=
+" style=3D"padding: 15px 0px 10px 0px;"> <a href=3D"http://links.realtruck.=
+com/u/click=3F_t=3Dc08ceafcb1aa4503b82ebde1eed2962c&_m=3D05f8732a87134cb4a8=
+962fdbef78abe2&_e=3Dyg7R65mNGgQX2PSfY4FEjU5OWkaHXqfxvCBV9pQHc6pgcjrFSOKAnEw=
+91X-o_B16XDynGqJdqfJ_NBKxVEDlbfa2Y8HS2P_TTaN6ZnCbP3mMriOnLuooIUbAzXHbDwtOTH=
+1lRim8uK6rdJDdZ80T-S_X5LWwfuRgxBsmspls1djxwsUK_lhyxO7idr1fXNvTxB5b43gYHcIc1=
+3_-O-BWW-jJjnf1w7Z05zmm2epsKzA3oLUUD7YyFJzcrdBFpBKdzg09FqtHng4ZZisSdp9ucoGz=
+SrWEwHi2o-MI0Tj1Ioum3q_557x-OWEp48l_0lsv3eDGmMW5YNlKlxioVndRzw%3D%3D" style=
+=3D"text-decoration: none; color: #dedbd9;" target=3D"_blank">Products</a> =
+</td> </tr> </table> </td> <td width=3D"33%" align=3D"center" style=3D"padd=
+ing: 15px 5px 10px 5px;"> <table align=3D"center" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"100%"> <tr> <td align=3D"center" class=3D"navlink" bgco=
+lor=3D"#666666" style=3D"padding: 15px 5px 10px 0px;"> <a href=3D"http://li=
+nks.realtruck.com/u/click=3F_t=3Dc08ceafcb1aa4503b82ebde1eed2962c&_m=3D05f8=
+732a87134cb4a8962fdbef78abe2&_e=3Dyg7R65mNGgQX2PSfY4FEjeYJemjlyzDA4VAtp6Ydn=
+sdIYl-UwfzvXP7UIr2dZi6jSjD1WsKhvzTsVo5yUM3V2LpL26iFn73cB42B2VWBhrE_UuDXgJAA=
+SG-Nv3r0JZMYduufLIYUR9B6WgwPtD2Ko3ctfmzcohgLD61gV7L5SMxQZTm-x_gKwRFWNuWgb9E=
+_HD4qA0NnJpexGW_4zHyAQzsQNSDN_90frD3oa8Rg-YnvpkkC23RGZw6ImnZb6PgtdIzmg3WSwC=
+Juy0I90aQi5-RJhjENgee5HQswehE1e6n7u0BwqLReMyi_o9dsIjpy72jWwK_7oijC561hMlqVF=
+Q%3D%3D" style=3D"text-decoration: none; color: #dedbd9;" target=3D"_blank"=
+>Deals</a> </td> </tr> </table> </td> <td width=3D"33%" align=3D"center" st=
+yle=3D"padding: 15px 0px 10px 5px;"> <table align=3D"center" cellpadding=3D=
+"0" cellspacing=3D"0" width=3D"100%"> <tr> <td align=3D"center" class=3D"na=
+vlink" bgcolor=3D"#666666" style=3D"padding: 15px 0px 10px 0px;"> <a href=
+=3D"http://links.realtruck.com/u/click=3F_t=3Dc08ceafcb1aa4503b82ebde1eed29=
+62c&_m=3D05f8732a87134cb4a8962fdbef78abe2&_e=3Dyg7R65mNGgQX2PSfY4FEje97b7Zp=
+AIMU-V20r1PwIm7uFMTM5CVzQ0dnNKi9jCilK9JZE5-DTDTcZzHRS2TfP2foPW1P1CcKY4cC5-X=
+ompfbkTgRCBw4hZkDBJoepvBATA5Bjro-E4IpjzpLryBuX27WXdD5lzh3_5b6cOlGHT75EdSUgQ=
+yfUwXN9eZCkMLnEW8KBlsuoVoNq2xmnPpJb2TfxTJbD1OGlF_BToa3qO3TkcsMwuzbNsqlZM8KM=
+e5f-KD2KVATv3iO3M3X4sh-i3NmVwLBjnlC6Eh85NPY1YfAETHowoqWAI_fmsQtV5kq" style=
+=3D"text-decoration: none; color: #dedbd9;" target=3D"_blank">Blog</a> </td=
+> </tr> </table> </td> </tr> </table> </td> </tr> </table> <!--[if gte mso =
+9]></td></tr></table><![endif]--> </td> </tr> </table> <!-- END HEADER --> =
+<!-- HERO IMAGE --> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ width=3D"100%"> <tr> <td bgcolor=3D"#ffffff" align=3D"center" style=3D"pad=
+ding: 0px 0px 0px 0px;"> <!--[if gte mso 9]><table align=3D"center" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"700"><tr><td align=3D"c=
+enter" valign=3D"top" width=3D"700"><![endif]--> <table border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"max-width: 700px;" cl=
+ass=3D"responsive-table"> <tr> <td> <table width=3D"100%" border=3D"0" cell=
+spacing=3D"0" cellpadding=3D"0"> <tr> <td class=3D"no-padding" align=3D"cen=
+ter"> <!--[if !mso]><!--><a href=3D"http://links.realtruck.com/u/click=3F_t=
+=3Dc08ceafcb1aa4503b82ebde1eed2962c&_m=3D05f8732a87134cb4a8962fdbef78abe2&_=
+e=3Dyg7R65mNGgQX2PSfY4FEjRTn-alXdXHXy03-qYjNIQJEYVNEjDw9ItEQ2R3Xq49qk66YSbs=
+HOFk-GQ-aQpepAxo3UCiRu_2I3J0DY38IZDtaFa1zMfg-vluuIE27UsXNaT3-1TT569H8e6ffWi=
+lrgPGEbY8CBY9nBUg7-3_tpKTE9TKNoCN7CVvvGFyjz2upzhpsYhey6Xkj0Lg0r_x4GFMtglw4D=
+fUr2cyjcxGdcgTN8q8VifMhnSAXqaSPV6PgxbkvkY5gv_pNuL85RFeT7IHT9S9GSAHaWbtGTVP3=
+hjl9Mf6vfObw3_a669h2uTyq" target=3D"_blank"><img src=3D"https://a.storyblok=
+.com/f/148322/700x800/5d6e4d008c/ob5_hero-mobile.png" width=3D"700" border=
+=3D"0" alt=3D"" style=3D"display: none;" class=3D"mobile-display img-max"><=
+/a><!--<![endif]--> <a href=3D"http://links.realtruck.com/u/click=3F_t=3Dc0=
+8ceafcb1aa4503b82ebde1eed2962c&_m=3D05f8732a87134cb4a8962fdbef78abe2&_e=3Dy=
+g7R65mNGgQX2PSfY4FEjRTn-alXdXHXy03-qYjNIQJEYVNEjDw9ItEQ2R3Xq49qk66YSbsHOFk-=
+GQ-aQpepAxo3UCiRu_2I3J0DY38IZDtaFa1zMfg-vluuIE27UsXNaT3-1TT569H8e6ffWilrgPG=
+EbY8CBY9nBUg7-3_tpKRxrDUAwBmaNo-2f__wWNm0CcyBpTNsUaYIvPdyXdyxAtKz7fGT3kPo3O=
+p33yNzeSk2gF3YXgG8HyXFsicbeKTn10Eqh8bRQ85S4VQ0J7-ZiA32B56D78RU95nOU1GDjmiM-=
+rm8dr1UT3l2VO0p3HUg" target=3D"_blank"><img src=3D"https://a.storyblok.com/=
+f/148322/1400x1480/bb8b1d3aaf/ob5_hero-desktop.png" width=3D"700" border=3D=
+"0" alt=3D"" style=3D"display: block;" class=3D"mobile-hide img-max"></a> <=
+/td> </tr> </table> </td> </tr> </table> <!--[if gte mso 9]></td></tr></tab=
+le><![endif]--> </td> </tr> </table> <!-- END HERO IMAGE --> <!-- FULL WIDT=
+H BACKGROUND IMAGE CTA --> <table border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" width=3D"100%"> <tr> <td bgcolor=3D"#ffffff" align=3D"center" style=
+=3D"padding: 0px 0px 0px 0px;"> <!--[if gte mso 9]><table align=3D"center" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"700"><tr><td alig=
+n=3D"center" valign=3D"middle" width=3D"700"><![endif]--> <table border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"max-width: 7=
+00px;" class=3D"responsive-table"> <tr> <td valign=3D"middle" width=3D"700"=
+ align=3D"center" valign=3D"middle" style=3D"padding: 0px 0px 0px 0px; back=
+ground-color: #000000; background-image: url('https://a.storyblok.com/f/148=
+322/700x700/0b3d9d6e5b/topography-transparent.png'); background-repeat: no-=
+repeat; background-position: center; background-size: cover;" background=3D=
+"https://a.storyblok.com/f/148322/700x700/0b3d9d6e5b/topography-transparent=
+.png"> <!--[if gte mso 9]><v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml=
+" fill=3D"true" stroke=3D"false" style=3D"width: 700px;"><v:fill color=3D"#=
+000000" type=3D"tile" src=3D"https://a.storyblok.com/f/148322/700x700/0b3d9=
+d6e5b/topography-transparent.png"/><v:textbox style=3D"mso-fit-shape-to-tex=
+t:true" inset=3D"0,0,0,0"><![endif]--> <table width=3D"100%" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0"> <tr> <td style=3D"padding: 20px 10% 0px=
+ 10%;"> <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0"> <tr> <td align=3D"center" style=3D"text-transform: uppercase; font-fam=
+ily: 'Alfa Slab One', 'Roboto', Arial, Helvetica, sans-serif; padding: 20px=
+ 0px 10px 0px; font-size: 42px; color: #ffc50a;" class=3D"no-padding paddin=
+g-top midtext"> Products &amp; Content </td> </tr> <tr> <td align=3D"center=
+" style=3D"text-transform: uppercase; font-family: 'Alfa Slab One', 'Roboto=
+', Arial, Helvetica, sans-serif; padding: 0px 0px 10px 0px; font-size: 32px=
+; color: #ffffff;" class=3D"no-padding logo"> <div>for Your Truck, not Some=
+one Elses&#x27;.</div> </td> </tr> <tr> <td align=3D"center" style=3D"font-=
+family: 'Roboto', Arial, Helvetica, sans-serif; padding: 0px 0px 20px 0px; =
+font-size: 24px; color: #ffffff;" class=3D""> Be confident that the parts y=
+ou&#x27;re ordering for your truck. Plus - get relevant content, for your m=
+ake and model, delivered to your inbox. </td> </tr> </table> </td> </tr> <t=
+r> <td align=3D"center"> <!-- BULLETPROOF BUTTON --> <table width=3D"100%" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0"> <tr> <td align=3D"center"=
+ class=3D"no-padding" style=3D"padding: 0px 0px 40px 0px;"> <table border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"mobile-button-container=
+"> <tr> <td align=3D"center" bgcolor=3D"#ffc50a" style=3D"min-width: 300px;=
+ text-transform: uppercase;"> <a href=3D"http://links.realtruck.com/u/click=
+=3F_t=3Dc08ceafcb1aa4503b82ebde1eed2962c&_m=3D05f8732a87134cb4a8962fdbef78a=
+be2&_e=3Dyg7R65mNGgQX2PSfY4FEjRTn-alXdXHXy03-qYjNIQJEYVNEjDw9ItEQ2R3Xq49qk6=
+6YSbsHOFk-GQ-aQpepAxo3UCiRu_2I3J0DY38IZDtaFa1zMfg-vluuIE27UsXNaT3-1TT569H8e=
+6ffWilrgAhwEhBK5DjrbhIRYVbAfvOG2qQw9RM9SMYvfWV6WCrK0NAD0yeErS2RBzYXZRKnUiN4=
+s6oHB-xmC09asLVrQPOb6IVmjPmJzKt3RRw6W6T-cNRYkIenmLGMIuygyExyzAP7mdBDJkVRDdP=
+8Up2fpHh_O3CB1LLQsBE78vcl8tKm" target=3D"_blank" style=3D"font-size: 20px; =
+color: #000000; text-decoration: none; font-family: 'Alfa Slab One', 'Robot=
+o', Arial, Helvetica, sans-serif; padding: 15px 30px; border: 1px solid #ff=
+c50a; display: inline-block;" class=3D"mobile-button mediumtext"> <!--[if g=
+te mso 9]><i style=3D"letter-spacing: 15px; mso-font-width: -100%;">&nbsp;<=
+/i><![endif]--> Enter Truck Info <!--[if mso]><i style=3D"letter-spacing: 1=
+5px; mso-font-width: -100%;">&nbsp;</i><![endif]--> </a> </td> </tr> </tabl=
+e> </td> </tr> </table> <!-- END BULLETPROOF BUTTON --> </td> </tr> </table=
+> <!--[if gte mso 9]></v:textbox></v:rect><![endif]--> </td> </tr> </table>=
+ <!--[if gte mso 9]></td></tr></table><![endif]--> </td> </tr> </table> <!-=
+- END FULL WIDTH BACKGROUND IMAGE CTA --> <!-- THREE COLUMN --> <table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"> <tr> <td align=
+=3D"center" style=3D"padding: 0px 0px 20px 0px;"> <!--[if gte mso 9]><table=
+ align=3D"center" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D=
+"700"><tr><td align=3D"center" valign=3D"top" width=3D"700"><![endif]--> <t=
+able border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=
+=3D"max-width: 700px;" class=3D"responsive-table"> <tr> <td align=3D"center=
+" height=3D"100%" valign=3D"top" width=3D"100%"> <!--[if gte mso 9]><table =
+align=3D"center" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"=
+700"><tr><td align=3D"center" valign=3D"top" width=3D"700"><![endif]--> <ta=
+ble align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"max-width:700px;"> <tr> <td align=3D"center" valign=3D"t=
+op" style=3D"font-size:0;" class=3D"no-padding"> <!--[if gte mso 9]><table =
+align=3D"center" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"=
+700"><tr><td align=3D"center" valign=3D"top" width=3D"216"><![endif]--> <di=
+v style=3D"display:inline-block; max-width:33%; vertical-align:top; width:1=
+00%;" class=3D"wrapper"> <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%" style=3D"max-width:216px;" class=3D"wrapper"> <tr> <t=
+d align=3D"center" valign=3D"top" class=3D"padding-ninety logo"> <table cel=
+lpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"> <tr> <td alig=
+n=3D"center" valign=3D"middle"><a href=3D"http://links.realtruck.com/u/clic=
+k=3F_t=3Dc08ceafcb1aa4503b82ebde1eed2962c&_m=3D05f8732a87134cb4a8962fdbef78=
+abe2&_e=3Dyg7R65mNGgQX2PSfY4FEjWOyS2YsQlMidq8ouQu54Ek0frzQcLkdLjVV9iFOmq5IH=
+hiN1tas7Q_UTaIK2c7Lhgy7fB17cpq8rfMCDXB1DQ1EHFoKnOfAGjAhrAEcgxdOol9p8EjZy-3c=
+K4fn_aZHRZKos915ZCsvO-KJCFfrfbI3Hfhqpb83yIYiGM0GValkAzBm32rKfmBfXqFD54UXpOk=
+5j7X8u8k7K8bHPwrE-99zyTDSQA_RxULCocSf3OAiwS6YaYrqlJtfUqYF81XUxiih5RB1mgbCu4=
+XHv66Lgro%3D" target=3D"_blank"><img src=3D"https://a.storyblok.com/f/14832=
+2/466x584/b5a67a76d1/ob5_step1.png" width=3D"210" style=3D"display: block; =
+color: #666666; font-size: 13px; width: 210px;" alt=3D"1" border=3D"0" clas=
+s=3D"img-max"></a></td> </tr> </table> </td> </tr> </table> </div> <!--[if =
+gte mso 9]></td><td width=3D"20" style=3D"font-size: 1px;">&nbsp;</td><td a=
+lign=3D"center" valign=3D"top" width=3D"216"><![endif]--> <div style=3D"dis=
+play:inline-block; max-width:33%; vertical-align:top; width:100%;" class=3D=
+"wrapper"> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"max-width:216px;" class=3D"wrapper"> <tr> <td align=3D"cent=
+er" valign=3D"top" class=3D"padding-ninety logo"> <table cellpadding=3D"0" =
+cellspacing=3D"0" border=3D"0" width=3D"100%"> <tr> <td align=3D"center" va=
+lign=3D"middle"><a href=3D"http://links.realtruck.com/u/click=3F_t=3Dc08cea=
+fcb1aa4503b82ebde1eed2962c&_m=3D05f8732a87134cb4a8962fdbef78abe2&_e=3Dyg7R6=
+5mNGgQX2PSfY4FEjWOyS2YsQlMidq8ouQu54Ek0frzQcLkdLjVV9iFOmq5IHhiN1tas7Q_UTaIK=
+2c7Lhgy7fB17cpq8rfMCDXB1DQ1EHFoKnOfAGjAhrAEcgxdOVc2deSjoeASaB3Q0Sx6k7mCL0Zb=
+J_ExMUbjY6ACtirQUmWg-5vWCPpYvoe0nM6ToFCB7-8qk2oaMN8WA6fWMJfumIbSd9kq4uZvPLf=
+u4DK65gM8F6ZAl4YNmt2im3az2wAWftrSh9ilgn9Nl3kMglAoDlcgIdYlYIRbz0oV0-fE%3D" t=
+arget=3D"_blank"><img src=3D"https://a.storyblok.com/f/148322/466x584/795ed=
+2b235/ob5_step2.png" width=3D"210" style=3D"display: block; color: #666666;=
+ font-size: 13px; width: 210px;" alt=3D"2" border=3D"0" class=3D"img-max"><=
+/a></td> </tr> </table> </td> </tr> </table> </div> <!--[if gte mso 9]></td=
+><td width=3D"20" style=3D"font-size: 1px;">&nbsp;</td><td align=3D"center"=
+ valign=3D"top" width=3D"216"><![endif]--> <div style=3D"display:inline-blo=
+ck; max-width:33%; vertical-align:top; width:100%;" class=3D"wrapper"> <tab=
+le border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D=
+"max-width:216px;" class=3D"wrapper"> <tr> <td align=3D"center" valign=3D"t=
+op" class=3D"padding-ninety logo"> <table cellpadding=3D"0" cellspacing=3D"=
+0" border=3D"0" width=3D"100%"> <tr> <td align=3D"center" valign=3D"middle"=
+><a href=3D"http://links.realtruck.com/u/click=3F_t=3Dc08ceafcb1aa4503b82eb=
+de1eed2962c&_m=3D05f8732a87134cb4a8962fdbef78abe2&_e=3Dyg7R65mNGgQX2PSfY4FE=
+jWOyS2YsQlMidq8ouQu54Ek0frzQcLkdLjVV9iFOmq5IHhiN1tas7Q_UTaIK2c7Lhgy7fB17cpq=
+8rfMCDXB1DQ1EHFoKnOfAGjAhrAEcgxdOwORazHYDeXQmUIjxzPJp8IJjlbUO2g1f1lnjjWRZ_R=
+2gEaL6jCt_k0tK-1_P85zIhEZPt0c8wxu0ulgY4MciILBoShGVXE7qvZHnuwmvU28ECyQx8NrzX=
+tPFJc-t6tOJ8G5XTGzpNqg7Yeb0Lkzu-jOUaR3K8fKNQREQJ4oSSvc%3D" target=3D"_blank=
+"><img src=3D"https://a.storyblok.com/f/148322/466x584/73c2e90e3b/ob5_step3=
+.png" width=3D"210" style=3D"display: block; color: #666666; font-size: 13=
+px; width: 210px;" alt=3D"3" border=3D"0" class=3D"img-max"></a></td> </tr>=
+ </table> </td> </tr> </table> </div> <!--[if gte mso 9]></td></tr></table>=
+<![endif]--> </td> </tr> </table> <!--[if gte mso 9]></td></tr></table><![e=
+ndif]--> </td> </tr> </table> <!--[if gte mso 9]></td></tr></table><![endif=
+]--> </td> </tr> </table> <!-- END THREE COLUMN --> <!-- FOOTER --> <table =
+align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"=
+700" class=3D"responsive-table"> <tr> <td align=3D"center" valign=3D"top" b=
+ackground=3D"https://a.storyblok.com/f/148322/1000x400/8a64626ea9/footer-te=
+xture-1920x400-transparent.png" height=3D"400" width=3D"700" style=3D"paddi=
+ng: 0px 0px 0px 0px; border-bottom: 10px solid #ffc50a; height: 400px; back=
+ground-repeat: no-repeat;" class=3D"wrapper"> <!--[if gte mso 9]><v:rect xm=
+lns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" stroke=3D"false" styl=
+e=3D"width: 700px; height: 400px;"><v:fill type=3D"tile" src=3D"https://a.s=
+toryblok.com/f/148322/1000x400/8a64626ea9/footer-texture-1920x400-transpare=
+nt.png" color=3D"#ffffff"/><v:textbox style=3D"mso-fit-shape-to-text:true" =
+inset=3D"0,0,0,0"><table align=3D"center" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0" width=3D"700px"><tr><td align=3D"center" valign=3D"top" wid=
+th=3D"700px"><![endif]--> <table width=3D"700" border=3D"0" cellspacing=3D"=
+0" cellpadding=3D"0" align=3D"center" style=3D"max-width: 700px; margin: 0 =
+auto;" class=3D"wrapper"> <tr> <td class=3D"padding" align=3D"center" style=
+=3D"padding: 20px 0px 65px 0px; font-size: 12px; line-height: 18px; color:#=
+666666;"> <p style=3D"text-align: center;"><a href=3D"http://links.realtruc=
+k.com/u/click=3F_t=3Dc08ceafcb1aa4503b82ebde1eed2962c&_m=3D05f8732a87134cb4=
+a8962fdbef78abe2&_e=3Dyg7R65mNGgQX2PSfY4FEjWOyS2YsQlMidq8ouQu54Ek0frzQcLkdL=
+jVV9iFOmq5IHhiN1tas7Q_UTaIK2c7Lhgy7fB17cpq8rfMCDXB1DQ1EHFoKnOfAGjAhrAEcgxdO=
+4C1Nv2p4LmqLd80t3zLMAcahev4yat6Rh-gx4rDNj2Azft5asLncbZ31tVQLNE1SGohZarqSC3B=
+3AABz6odPMNo_wSbtxBURwvczxHWimXTvMSCDFTrLpNhnVEqrt3FvV1c4T2IE3UzQfzWAonkINW=
+zGfZeEo3se0XYrvjLk_O1Ft_qzH_MjS6kH6E8mH0pn" style=3D"text-decoration: none;=
+ color: #767676;" target=3D"_blank"><img src=3D"https://a.storyblok.com/f/1=
+48322/252x38/db45360814/realtruck-logo-dark-252x38.png" alt=3D"RealTruck.co=
+m" width=3D"252" height=3D"38" border=3D"0" style=3D"display: inline;" clas=
+s=3D"center"></a></p> <br/> <a href=3D"http://links.realtruck.com/u/click=
+=3F_t=3Dc08ceafcb1aa4503b82ebde1eed2962c&_m=3D05f8732a87134cb4a8962fdbef78a=
+be2&_e=3Dyg7R65mNGgQX2PSfY4FEjfokhsM3usYD8Ji70unILn1NP3qquS_DSINj4_xyde8s7K=
+qRXn87eyy82aNRKh1I7NNYlvA8Gu9hU7eeklPj-DnkoYoKO62mZbYmxwHZ7a-PHITZNMNO_8kXr=
+fJahPcO5sDIklJb7aiet48NNwqIy0mLZ002zLEg75shnT_eYrpwq8XF4V95z_v17CEs4wDHeg%3=
+D%3D" border=3D"0" style=3D"text-decoration: none;"><img class=3D"social" s=
+rc=3D"https://a.storyblok.com/f/148322/30x30/3fedf0dd03/facebook.png" width=
+=3D"25" height=3D"25" alt=3D"facebook" border=3D"0" style=3D"display: inlin=
+e;" class=3D"center"></a>&nbsp;&nbsp; <a href=3D"http://links.realtruck.com=
+/u/click=3F_t=3Dc08ceafcb1aa4503b82ebde1eed2962c&_m=3D05f8732a87134cb4a8962=
+fdbef78abe2&_e=3Dyg7R65mNGgQX2PSfY4FEjVV4dUeUBLaXGpiB1PYNfB9yfHFf1QVaaGO1Hk=
+8LzM3JDprPOfBNdf5ItWFfFO1eSWRcctm32XLQmUpSglSnwMwLQNXf3txcjXMRplkD56cpmGrTM=
+s310nwfR7-HLS4T5jJDpOBX1fLlkzd1SHXxYhpKz4o4uZ5IrbuVuuE5VJx8aNskm8KGG2ywALk3=
+Vyf3mT-MkqKjHbBbTejYa39M2WY%3D" border=3D"0" style=3D"text-decoration: none=
+;"><img class=3D"social" src=3D"https://a.storyblok.com/f/148322/30x30/51db=
+589867/instagram.png" width=3D"25" height=3D"25" alt=3D"instagram" border=
+=3D"0" style=3D"display: inline;" class=3D"center"></a>&nbsp;&nbsp; <a href=
+=3D"http://links.realtruck.com/u/click=3F_t=3Dc08ceafcb1aa4503b82ebde1eed29=
+62c&_m=3D05f8732a87134cb4a8962fdbef78abe2&_e=3Dyg7R65mNGgQX2PSfY4FEjVpcwHDV=
+kVCcbKI07yXLw4r0ZcqgDvwH2Q7WqIUXFGQYL2rxkTB5y6gceTb-UAOd0gD26v0Rhr_fRUBp5kl=
+1qAQgCJUSkMzOqvJXOpSXqnoDpfeHybYxYrt0PqhD7kREn_VbYg2pmMoSJk0WoHOvWCZfI3EzJA=
+I7LIq6eQdXGGPTBfIZCxDy8BopR3x0OoGy8zvsTkrlgcEM6wyQK--valJ5hm9Sh1ZCUR5aZWRHK=
+y4E" border=3D"0" style=3D"text-decoration: none;"><img class=3D"social" sr=
+c=3D"https://a.storyblok.com/f/148322/30x30/59e795e07c/youtube.png" width=
+=3D"25" height=3D"25" alt=3D"youtube" border=3D"0" style=3D"display: inline=
+;" class=3D"center"></a>&nbsp; <a href=3D"http://links.realtruck.com/u/clic=
+k=3F_t=3Dc08ceafcb1aa4503b82ebde1eed2962c&_m=3D05f8732a87134cb4a8962fdbef78=
+abe2&_e=3Dyg7R65mNGgQX2PSfY4FEjeY9hbJaQFPxFt4vy75FBAZGPGdtuZzRYou5TL0lGxJHu=
+ndpPTZZ_4EgQ_uQa2uMuDbUBJAOcGbXHJ7vTBiNDG_waY9h4j6kceQK1xCfepGPBr6GPYCewu79=
+3KcFoOM-xhmFLmtw_5ocvfb548TfzYWsfPReUUriPq2K_tGmN6CcoiUeKXFriQnGR8TQ-hgsEQ%=
+3D%3D" border=3D"0" style=3D"text-decoration: none;"><img class=3D"social" =
+src=3D"https://a.storyblok.com/f/148322/30x30/facd44d845/tiktok.png" width=
+=3D"25" height=3D"25" alt=3D"TikTok" border=3D"0" style=3D"display: inline;=
+" class=3D"center"></a>&nbsp; <br/> <div style=3D"height: 35px; margin: 30p=
+x 0px 30px 0px;"> <a href=3D"tel:866-518-0593" alt=3D"866-518-0593" style=
+=3D"text-decoration: none; color: #555555; font-size: 26px; font-weight: bo=
+ld;"><img border=3D"0" src=3D"https://a.storyblok.com/f/148322/21x35/f03a1e=
+4d79/mobile-phone.png" alt=3D"Call Us" style=3D"display: inline!important;"=
+> &nbsp;<span style=3D"display: inline-block; height: 35px; vertical-align:=
+ top; padding: 3px 0px 0px 7px;">(866) 518-0593</span></a> </div> <p><b>&co=
+py; 2023 <a href=3D"http://links.realtruck.com/u/click=3F_t=3Dc08ceafcb1aa4=
+503b82ebde1eed2962c&_m=3D05f8732a87134cb4a8962fdbef78abe2&_e=3Dyg7R65mNGgQX=
+2PSfY4FEjWOyS2YsQlMidq8ouQu54Ek0frzQcLkdLjVV9iFOmq5IHhiN1tas7Q_UTaIK2c7Lhgy=
+7fB17cpq8rfMCDXB1DQ1EHFoKnOfAGjAhrAEcgxdOBrTyT7wQb5DAyU5TKj_fN3Bfr_X7hF6OMA=
+ObeZlMwI96gmr3b_mjZwVKAakt5-zhAYQMwccPKe9V74mX4dRSG5Cby70rVBWUyWk-bdOt3JzVX=
+yCeTlKBbRya_b59KmFe3E2-W3YrP3P6LA7goBLW7MhLSx87xESskhbcgK-TNm_WIbLXv67Cqh0-=
+i3Oy9ykO" style=3D"text-decoration: none; color: #767676;" target=3D"_blank=
+">RealTruck.com</a></b><br/> All Rights Reserved | <a href=3D"http://links.=
+realtruck.com/e/encryptedUnsubscribe=3F_r=3Dc08ceafcb1aa4503b82ebde1eed2962=
+c&_s=3D05f8732a87134cb4a8962fdbef78abe2&_t=3DZ1TfehxbyareJRoQxPaMdHksrdr85U=
+Qh_S71pAlIxSC79XolUdOgYvnYIQ5d1e5kWn2OpfjVVfZf0u7dKj5n339K4qO9K0Ii0d_A-DKUs=
+-wks5PT2M4PGyjwOtkJN_Q9" style=3D"text-decoration: none; color: #767676;" t=
+arget=3D"_blank">Unsubscribe</a> | <a href=3D"http://links.realtruck.com/u/=
+click=3F_t=3Dc08ceafcb1aa4503b82ebde1eed2962c&_m=3D05f8732a87134cb4a8962fdb=
+ef78abe2&_e=3Dyg7R65mNGgQX2PSfY4FEjbA0RSshGqRs6gps_CMkZpY0Tg-sOnBlPXSHUSUcd=
+rLusJNGmT_6_yqB5UQMn5C5qbPXX-jhl7gXpt2DEr2PvatIPtMzE4AKLc6Yu-dC3MWxzD8mR717=
+kDPcRUQX8D5uR5fc1XLytQZBmmJhaeFFfySDpXV46zmX0R9hQJMEVPoLpcwfBgvYEEHYjkpnMAt=
+qTPMScPusgpLVgtx8IMB59RHDM7ERYZ64UgECYg4RS51le4U2lhIy_PtsA5NG-wVv8OmvpTCgVQ=
+Hi5AHewi6IzagcRGgJUFYUQGDNIxTConFzioxChRU31QILByr6NfyXMQ%3D%3D" style=3D"te=
+xt-decoration: none; color: #767676;" target=3D"_blank">Terms of Use</a> | =
+<a href=3D"http://links.realtruck.com/u/click=3F_t=3Dc08ceafcb1aa4503b82ebd=
+e1eed2962c&_m=3D05f8732a87134cb4a8962fdbef78abe2&_e=3Dyg7R65mNGgQX2PSfY4FEj=
+QPe1mEEb9GHwsb7_Mi_95Gi2pfKbkTyS6BQhLeU15Hfm7IFtVR-X7i96QkUyK-YTg9iMJvZC_hf=
+DloK_E7mqmgaCNma-_hhjXJnOhJ1oxIIQUiNj_gInqbIMYXzzG41NqSBE-PAddwN1tkX5mhDhgK=
+m08srN35XybUD-MmBa3O2s7oiiYiC1MMsaVOLjgO40O6UQsrgrz4bc9hcbf9qahnRBUtPnj2vJI=
+kPrTSBp4C185BCQ_97imuKKAN8pVBQ_kqKooxkrzzfS8WtjZJOm8HO827D5l5cH0wsg1-K2FYf2=
+yZ0kunbEutAtWeE6RDgZg%3D%3D" style=3D"text-decoration: none; color: #767676=
+;" target=3D"_blank">Privacy Policy</a></p> <p>RealTruck.com | 4414 SW Coll=
+ege Road, Suite 1410 | Ocala, FL 34474 | United States</p> </td> </tr> </ta=
+ble> <!--[if gte mso 9]></v:textbox></v:rect></td></tr></table><![endif]-->=
+ </td> </tr> </table> <!-- END FOOTER --> </body> </html> =0D=0A<img border=
+=3D"0" width=3D"1" height=3D"1" alt=3D"" src=3D"http://track.realtruck.com/=
+q/Qc9nhjuJujjzHGEMCnyO-w~~/AAPIggA~/RgRmWIujPlcDc3BjQgpkb6MGdmSiZixoUhZvdWN=
+oZW5kYW5zNjJAZ21haWwuY29tWAQAAAAA">=0D=0A</body>
+--_----L3/vVEdJnCmmyWbiqrPgEg===_32/86-06743-3A606746--
+

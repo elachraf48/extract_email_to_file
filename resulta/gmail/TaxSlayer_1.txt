@@ -1,0 +1,620 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:9f5b:0:b0:2da:43c2:96f2 with SMTP id l27csp207962imf;
+        Sat, 27 May 2023 07:04:03 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ5ZhcLTbgdGLXNuiPd1BKf/CtWZgK8Oq+jus6vZLt4RSIbckym1sH7ZwsBohBnP8jLMLU0j
+X-Received: by 2002:a05:6102:2459:b0:439:316a:e1eb with SMTP id g25-20020a056102245900b00439316ae1ebmr1689808vss.32.1685196242880;
+        Sat, 27 May 2023 07:04:02 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685196242; cv=none;
+        d=google.com; s=arc-20160816;
+        b=istCmvikfGiZLdE1zzWnq3wtg8gU/7eZWZ0tgUdhODthqbRqQ+0oEMCS8Y+VwiCpvu
+         2O1Lji+B8qqlgtxxSEAvEPz3lDG1MHufnE/sv8Uwb16XcAzR9+mfYmg0oQhD0BeZM7zu
+         6NyjPW4O3QuxjXvd1QzRZCRjEsRTpgG1zrSlBon5r3DUkgIaCOHKJ4JOGxxQjEFv9Mhn
+         1vcaKpF54j6DKfh2MoFJanro7jiPS7GW2phIyXEU0WkLQItewrAqU0HweAmynqiw1+XQ
+         7B723M5XBZzNHsTO4IyFAn/PbOBDa9MhdbOo9O2uHetQduaS7JYp/Dbla/2Iz4Kk0zIy
+         L0zg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:mime-version:subject:message-id:to:reply-to:from
+         :date:dkim-signature:dkim-signature;
+        bh=CEBhzxME5phuuw++Kr3Lj+dL4FWL3fzBSeyqYVWJUbk=;
+        b=Fo8C5W1KI/RKcRFj8LkXmWzTfDo3HfeZxN6opFhRnPH9jjOccyu246OQm5+YwngLsM
+         de2lWYYYGPRpXhr3gxcXpFx/S6j7kmhyD04DbRYe8NGAwULDqzEHEtThR8JeKTP4DpIS
+         exvji8UKXl3rP1K+cKhhFTk/fIxJ6NZC9xC1xvpLzuZmj0NkI1iEWRqy7ufdVkzSuvjL
+         VnwJl5hY+3dKjM7ZyIiTxvZacxnKRFAFvIXCSx9mDFsml8qEFTI470qlCI+/cXpgbgcr
+         oWlHZQWYANx0DRCfLlZ/TUHX3yGvbT1tUEQViuUNW4d5MBRMrIc4rjDIoY3ng56oKI8q
+         S8ZA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@t.taxslayer.com header.s=m1 header.b=LFyoBW3b;
+       dkim=pass header.i=@mktdns.com header.s=m1 header.b=IIe75rGn;
+       spf=pass (google.com: domain of 840-oom-866.0.25911.0.0.6771.9.34738984-1@m.taxslayer.com designates 199.15.212.173 as permitted sender) smtp.mailfrom=840-OOM-866.0.25911.0.0.6771.9.34738984-1@m.taxslayer.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=taxslayer.com
+Return-Path: <840-OOM-866.0.25911.0.0.6771.9.34738984-1@m.taxslayer.com>
+Received: from t.taxslayer.com (t.taxslayer.com. [199.15.212.173])
+        by mx.google.com with ESMTPS id y11-20020a67d20b000000b00434f2a0cc02si612415vsi.665.2023.05.27.07.04.02
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 27 May 2023 07:04:02 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 840-oom-866.0.25911.0.0.6771.9.34738984-1@m.taxslayer.com designates 199.15.212.173 as permitted sender) client-ip=199.15.212.173;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@t.taxslayer.com header.s=m1 header.b=LFyoBW3b;
+       dkim=pass header.i=@mktdns.com header.s=m1 header.b=IIe75rGn;
+       spf=pass (google.com: domain of 840-oom-866.0.25911.0.0.6771.9.34738984-1@m.taxslayer.com designates 199.15.212.173 as permitted sender) smtp.mailfrom=840-OOM-866.0.25911.0.0.6771.9.34738984-1@m.taxslayer.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=taxslayer.com
+X-MSFBL: AFIMFv/nF2IF207JD7ENqHmEILqdKIiQPT3Gj1TsGwI=|eyJyIjoib3VjaGVuZGF
+	uczYyQGdtYWlsLmNvbSIsImIiOiJkdnAtMTk5LTE1LTIxMi0xNzMiLCJnIjoiYmc
+	tYWJkLTIwNiIsInUiOiI4NDAtT09NLTg2NjowOjI0MzU6NDEwODowOjY3NzE6OTo
+	yNTkxMTozNDczODk4NC0xIn0=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1685196242;
+	s=m1; d=t.taxslayer.com; i=@t.taxslayer.com;
+	h=Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=CEBhzxME5phuuw++Kr3Lj+dL4FWL3fzBSeyqYVWJUbk=;
+	b=LFyoBW3bWPu+CZ25QEnjDDiT89smZ6ljO24LibcHxC9K15SAxua1ha1xTNCm0QmK
+	P1mzHRbqMcKWEFHs8OnBixHCHV/EJmjc0j9Ov0v0OMfE/svMUJ2FiNL04r2rg0DPxjS
+	hLs0kO/AGavbCIMle+AaUyeRiML50B10yLTzacvM=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1685196242;
+	s=m1; d=mktdns.com; i=@mktdns.com;
+	h=Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=CEBhzxME5phuuw++Kr3Lj+dL4FWL3fzBSeyqYVWJUbk=;
+	b=IIe75rGnkzk6mtKAaGHVcKjNjobzumdrCLyKgcpm8goXa0N4web7IN7GV/p/foPC
+	ZIqHVO3WpmK/bPar+VvZ+FuiJkrX+5n1JWcKLcQEb9mF9UstsMWbpsPnG7hkQ36dPuh
+	vqJ0BscqrDW4lk44/+M3+h6FzM8zshF49pPAtxB0=
+Date: Sat, 27 May 2023 09:04:02 -0500 (CDT)
+From: TaxSlayer <news@t.taxslayer.com>
+Reply-To: support@taxslayer.com
+To: ouchendans62@gmail.com
+Message-ID: <841970602.13405975.1685196242186@abmktmail-trigger1h.marketo.org>
+Subject: Your subscription to TaxSlayer emails
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_13405974_221956575.1685196242171"
+X-Binding: bg-abd-206
+X-MarketoID: 840-OOM-866:0:2435:4108:0:6771:9:25911:34738984-1
+X-Mailfrom: 840-OOM-866.0.25911.0.0.6771.9.34738984-1@m.taxslayer.com
+List-Unsubscribe: <mailto:HFMXCTBYGBTES3KDJRUXMVSZPBCXOMTNJRMWUMSUJFHDSZTKJJFXK5ZRJNVWWS3LGAZFKPI=.25911.6771.9@unsub-ab.mktomail.com>
+X-MktArchive: false
+X-MSYS-API: {"options":{"open_tracking":false,"click_tracking":false}}
+X-MktMailDKIM: true
+
+------=_Part_13405974_221956575.1685196242171
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+
+<!--unsubscribe-->
+
+------=_Part_13405974_221956575.1685196242171
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www=
+.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:a=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+<head>=20
+<!--[if gte mso 9]><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPer=
+Inch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml>
+<![endif]-->=20
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8" />=
+=20
+<meta name=3D"viewport" content=3D"width=3Ddevice-width" />=20
+<!--[if !mso]>
+<!-->=20
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" />=20
+<!--<![endif]-->=20
+<title></title>=20
+<!--[if !mso]>
+<!-->=20
+<link href=3D"https://fonts.googleapis.com/css?family=3DRoboto" rel=3D"styl=
+esheet" type=3D"text/css" />=20
+<!--<![endif]-->=20
+<style type=3D"text/css"> =09=09body { =09=09=09margin: 0; =09=09=09padding=
+: 0; =09=09}  =09=09table, =09=09td, =09=09tr { =09=09=09vertical-align: to=
+p; =09=09=09border-collapse: collapse; =09=09}  =09=09* { =09=09=09line-hei=
+ght: inherit; =09=09}  =09=09a[x-apple-data-detectors=3Dtrue] { =09=09=09co=
+lor: inherit !important; =09=09=09text-decoration: none !important; =09=09}=
+  =09=09.ie-browser table { =09=09=09table-layout: fixed; =09=09}  =09=09[o=
+wa] .img-container div, =09=09[owa] .img-container button { =09=09=09displa=
+y: block !important; =09=09}  =09=09[owa] .fullwidth button { =09=09=09widt=
+h: 100% !important; =09=09}  =09=09[owa] .block-grid .col { =09=09=09displa=
+y: table-cell; =09=09=09float: none !important; =09=09=09vertical-align: to=
+p; =09=09}  =09=09.ie-browser .block-grid, =09=09.ie-browser .num12, =09=09=
+[owa] .num12, =09=09[owa] .block-grid { =09=09=09width: 600px !important; =
+=09=09}  =09=09.ie-browser .mixed-two-up .num4, =09=09[owa] .mixed-two-up .=
+num4 { =09=09=09width: 200px !important; =09=09}  =09=09.ie-browser .mixed-=
+two-up .num8, =09=09[owa] .mixed-two-up .num8 { =09=09=09width: 400px !impo=
+rtant; =09=09}  =09=09.ie-browser .block-grid.two-up .col, =09=09[owa] .blo=
+ck-grid.two-up .col { =09=09=09width: 300px !important; =09=09}  =09=09.ie-=
+browser .block-grid.three-up .col, =09=09[owa] .block-grid.three-up .col { =
+=09=09=09width: 300px !important; =09=09}  =09=09.ie-browser .block-grid.fo=
+ur-up .col [owa] .block-grid.four-up .col { =09=09=09width: 150px !importan=
+t; =09=09}  =09=09.ie-browser .block-grid.five-up .col [owa] .block-grid.fi=
+ve-up .col { =09=09=09width: 120px !important; =09=09}  =09=09.ie-browser .=
+block-grid.six-up .col, =09=09[owa] .block-grid.six-up .col { =09=09=09widt=
+h: 100px !important; =09=09}  =09=09.ie-browser .block-grid.seven-up .col, =
+=09=09[owa] .block-grid.seven-up .col { =09=09=09width: 85px !important; =
+=09=09}  =09=09.ie-browser .block-grid.eight-up .col, =09=09[owa] .block-gr=
+id.eight-up .col { =09=09=09width: 75px !important; =09=09}  =09=09.ie-brow=
+ser .block-grid.nine-up .col, =09=09[owa] .block-grid.nine-up .col { =09=09=
+=09width: 66px !important; =09=09}  =09=09.ie-browser .block-grid.ten-up .c=
+ol, =09=09[owa] .block-grid.ten-up .col { =09=09=09width: 60px !important; =
+=09=09}  =09=09.ie-browser .block-grid.eleven-up .col, =09=09[owa] .block-g=
+rid.eleven-up .col { =09=09=09width: 54px !important; =09=09}  =09=09.ie-br=
+owser .block-grid.twelve-up .col, =09=09[owa] .block-grid.twelve-up .col { =
+=09=09=09width: 50px !important; =09=09} =09</style>=20
+<style type=3D"text/css" id=3D"media-query"> =09=09@media only screen and (=
+min-width: 620px) { =09=09=09.block-grid { =09=09=09=09width: 600px !import=
+ant; =09=09=09}  =09=09=09.block-grid .col { =09=09=09=09vertical-align: to=
+p; =09=09=09}  =09=09=09.block-grid .col.num12 { =09=09=09=09width: 600px !=
+important; =09=09=09}  =09=09=09.block-grid.mixed-two-up .col.num3 { =09=09=
+=09=09width: 150px !important; =09=09=09}  =09=09=09.block-grid.mixed-two-u=
+p .col.num4 { =09=09=09=09width: 200px !important; =09=09=09}  =09=09=09.bl=
+ock-grid.mixed-two-up .col.num8 { =09=09=09=09width: 400px !important; =09=
+=09=09}  =09=09=09.block-grid.mixed-two-up .col.num9 { =09=09=09=09width: 4=
+50px !important; =09=09=09}  =09=09=09.block-grid.two-up .col { =09=09=09=
+=09width: 300px !important; =09=09=09}  =09=09=09.block-grid.three-up .col =
+{ =09=09=09=09width: 200px !important; =09=09=09}  =09=09=09.block-grid.fou=
+r-up .col { =09=09=09=09width: 150px !important; =09=09=09}  =09=09=09.bloc=
+k-grid.five-up .col { =09=09=09=09width: 120px !important; =09=09=09}  =09=
+=09=09.block-grid.six-up .col { =09=09=09=09width: 100px !important; =09=09=
+=09}  =09=09=09.block-grid.seven-up .col { =09=09=09=09width: 85px !importa=
+nt; =09=09=09}  =09=09=09.block-grid.eight-up .col { =09=09=09=09width: 75p=
+x !important; =09=09=09}  =09=09=09.block-grid.nine-up .col { =09=09=09=09w=
+idth: 66px !important; =09=09=09}  =09=09=09.block-grid.ten-up .col { =09=
+=09=09=09width: 60px !important; =09=09=09}  =09=09=09.block-grid.eleven-up=
+ .col { =09=09=09=09width: 54px !important; =09=09=09}  =09=09=09.block-gri=
+d.twelve-up .col { =09=09=09=09width: 50px !important; =09=09=09} =09=09}  =
+=09=09@media (max-width: 620px) {  =09=09=09.block-grid, =09=09=09.col { =
+=09=09=09=09min-width: 320px !important; =09=09=09=09max-width: 100% !impor=
+tant; =09=09=09=09display: block !important; =09=09=09}  =09=09=09.block-gr=
+id { =09=09=09=09width: 100% !important; =09=09=09}  =09=09=09.col { =09=09=
+=09=09width: 100% !important; =09=09=09}  =09=09=09.col>div { =09=09=09=09m=
+argin: 0 auto; =09=09=09}  =09=09=09img.fullwidth, =09=09=09img.fullwidthOn=
+Mobile { =09=09=09=09max-width: 100% !important; =09=09=09}  =09=09=09.no-s=
+tack .col { =09=09=09=09min-width: 0 !important; =09=09=09=09display: table=
+-cell !important; =09=09=09}  =09=09=09.no-stack.two-up .col { =09=09=09=09=
+width: 50% !important; =09=09=09}  =09=09=09.no-stack.mixed-two-up .col.num=
+4 { =09=09=09=09width: 33% !important; =09=09=09}  =09=09=09.no-stack.mixed=
+-two-up .col.num8 { =09=09=09=09width: 66% !important; =09=09=09}  =09=09=
+=09.no-stack.three-up .col.num4 { =09=09=09=09width: 33% !important; =09=09=
+=09}  =09=09=09.no-stack.four-up .col.num3 { =09=09=09=09width: 25% !import=
+ant; =09=09=09}  =09=09=09.mobile_hide { =09=09=09=09min-height: 0px; =09=
+=09=09=09max-height: 0px; =09=09=09=09max-width: 0px; =09=09=09=09display: =
+none; =09=09=09=09overflow: hidden; =09=09=09=09font-size: 0px; =09=09=09} =
+=09=09} =09</style>=20
+</head>=20
+<body class=3D"clean-body" style=3D"margin: 0; padding: 0; -webkit-text-siz=
+e-adjust: 100%; background-color: #FFFFFF;"><style type=3D"text/css">div#em=
+ailPreHeader{ display: none !important; }</style><div id=3D"emailPreHeader"=
+ style=3D"mso-hide:all; visibility:hidden; opacity:0; color:transparent; ms=
+o-line-height-rule:exactly; line-height:0; font-size:0px; overflow:hidden; =
+border-width:0; display:none !important;">We are proud to offer all active =
+duty military service members a federal return filed with our Classic Editi=
+on at no cost.</div>=20
+<!--[if !mso 9]>
+<!-->=20
+<div id=3D"emailPreHeader" style=3D"mso-hide:all; visibility:hidden; opacit=
+y:0; color:transparent; mso-line-height-rule:exactly; line-height:0; font-s=
+ize:0px; overflow:hidden; border-width:0; display:none !important;">=20
+</div>=20
+<!--<![endif]-->=20
+<style type=3D"text/css" id=3D"media-query-bodytag"> @media (max-width: 620=
+px) {   .block-grid {     min-width: 320px!important;     max-width: 100%!i=
+mportant;     width: 100%!important;     display: block!important;   }   .c=
+ol {     min-width: 320px!important;     max-width: 100%!important;     wid=
+th: 100%!important;     display: block!important;   }   .col > div {     ma=
+rgin: 0 auto;   }   img.fullwidth {     max-width: 100%!important;     heig=
+ht: auto!important;   }   img.fullwidthOnMobile {     max-width: 100%!impor=
+tant;     height: auto!important;   }   .no-stack .col {     min-width: 0!i=
+mportant;     display: table-cell!important;   }   .no-stack.two-up .col { =
+    width: 50%!important;   }   .no-stack.mixed-two-up .col.num4 {     widt=
+h: 33%!important;   }   .no-stack.mixed-two-up .col.num8 {     width: 66%!i=
+mportant;   }   .no-stack.three-up .col.num4 {     width: 33%!important   }=
+   .no-stack.four-up .col.num3 {     width: 25%!important   } } </style>=20
+<!--[if IE]>
+<div class=3D"ie-browser">
+<![endif]-->=20
+<table class=3D"nl-container" style=3D"table-layout: fixed; vertical-align:=
+ top; min-width: 320px; Margin: 0 auto; border-spacing: 0; border-collapse:=
+ collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: =
+#FFFFFF; width: 100%;" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" b=
+gcolor=3D"#FFFFFF" valign=3D"top">=20
+<tbody>=20
+<tr style=3D"vertical-align: top;" valign=3D"top">=20
+<td style=3D"word-break: break-word; vertical-align: top; border-collapse: =
+collapse;" valign=3D"top">=20
+<!--[if (mso)|(IE)]>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr>
+<td align=3D"center" style=3D"background-color:#FFFFFF">
+<![endif]-->=20
+<div style=3D"background-color:#E7E5E5;">=20
+<div class=3D"mktEditable" id=3D"knak-block-0">
+<div class=3D"block-grid" style=3D"margin: 0 auto; min-width: 320px; max-wi=
+dth: 600px; overflow-wrap: break-word; word-wrap: break-word; word-break: b=
+reak-word; background-color: transparent;">=20
+<div style=3D"border-collapse: collapse; display: table; width: 100%; backg=
+round-color: transparent;">=20
+<!--[if (mso)|(IE)]>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D"background-color:#E7E5E5;">
+<tr>
+<td align=3D"center">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:600p=
+x">
+<tr class=3D"layout-full-width" style=3D"background-color:transparent">
+<![endif]-->=20
+<!--[if (mso)|(IE)]>
+<td align=3D"center" width=3D"600" style=3D"background-color:transparent;wi=
+dth:600px; border-top: 0px dotted transparent; border-left: 0px dotted tran=
+sparent; border-bottom: 0px dotted transparent; border-right: 0px dotted tr=
+ansparent;" valign=3D"top">
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr>
+<td style=3D"padding-right: 0px; padding-left: 0px; padding-top:5px; paddin=
+g-bottom:5px;">
+<![endif]-->=20
+<div class=3D"col num12" style=3D"min-width: 320px; max-width: 600px; displ=
+ay: table-cell; vertical-align: top;">=20
+<div style=3D"width: 100% !important;">=20
+<!--[if (!mso)&(!IE)]>
+<!-->=20
+<div style=3D"border: 0px dotted transparent; padding: 5px 0px 5px 0px;">=
+=20
+<!--<![endif]-->=20
+<div class=3D"img-container left fixedwidth" align=3D"left" style=3D"paddin=
+g-right: 15px; padding-left: 15px;">=20
+<!--[if mso]>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr style=3D"line-height:0px">
+<td style=3D"padding-right: 15px;padding-left: 15px;" align=3D"left">
+<![endif]-->=20
+<div style=3D"font-size: 1px; line-height: 15px;">
+ &nbsp;=20
+</div>=20
+<a href=3D
+"http://go.taxslayer.com/ODQwLU9PTS04NjYAAAGL_H6s9f4dvcQWFwZ-NGdVrzj8eDJX1z=
+_bSdpupxkrp2tFyoTb4dQSZKuX11-K-hoVH6g4vCI=3D" target=3D"_blank"
+> <img class=3D"left fixedwidth" align=3D"left" border=3D"0" src=3D"https:/=
+/knak-uploads.s3.amazonaws.com/images/5b800db2a9f70/TAXS.REG.2c.primary.rgb=
+.png" alt=3D"TaxSlayer" title=3D"TaxSlayer" style=3D"outline: none; text-de=
+coration: none; -ms-interpolation-mode: bicubic; clear: both; height: auto;=
+ float: none; border: none; width: 100%; max-width: 210px; display: block;"=
+ width=3D"210" constrain=3D"true" imagepreview=3D"false" /></a>=20
+<div style=3D"font-size: 1px; line-height: 10px;">
+ &nbsp;=20
+</div>=20
+<!--[if mso]>
+</td>
+</tr>
+</table>
+<![endif]-->=20
+</div>=20
+<!--[if (!mso)&(!IE)]>
+<!-->=20
+</div>=20
+<!--<![endif]-->=20
+</div>=20
+</div>=20
+<!--[if (mso)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->=20
+<!--[if (mso)|(IE)]>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<![endif]-->=20
+</div>=20
+</div>
+</div>=20
+</div>=20
+<div style=3D"background-color:#E7E5E5;">=20
+<div class=3D"mktEditable" id=3D"knak-block-1">
+<div class=3D"block-grid" style=3D"margin: 0 auto; min-width: 320px; max-wi=
+dth: 600px; overflow-wrap: break-word; word-wrap: break-word; word-break: b=
+reak-word; background-color: #ffffff;">=20
+<div style=3D"border-collapse: collapse; display: table; width: 100%; backg=
+round-color: #ffffff;">
+<!--[if (mso)|(IE)]>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D"background-color:#E7E5E5;">
+<tr>
+<td align=3D"center">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:600p=
+x">
+<tr class=3D"layout-full-width" style=3D"background-color:#FFFFFF">
+<![endif]-->=20
+<!--[if (mso)|(IE)]>
+<td align=3D"center" width=3D"600" style=3D"background-color:#FFFFFF;width:=
+600px; border-top: 0px solid transparent; border-left: 0px solid transparen=
+t; border-bottom: 0px solid transparent; border-right: 0px solid transparen=
+t;" valign=3D"top">
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr>
+<td style=3D"padding-right: 0px; padding-left: 0px; padding-top:10px; paddi=
+ng-bottom:15px;">
+<![endif]-->=20
+<div class=3D"col num12" style=3D"min-width: 320px; max-width: 600px; displ=
+ay: table-cell; vertical-align: top;">=20
+<div style=3D"width: 100% !important;">
+<!--[if (!mso)&(!IE)]>
+<!-->=20
+<div style=3D"border: 0px solid transparent; padding: 10px 0px 15px 0px;">
+<!--<![endif]-->=20
+<!--[if mso]>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr>
+<td style=3D"padding-right: 35px; padding-left: 35px; padding-top: 10px; pa=
+dding-bottom: 10px; font-family: Tahoma, Verdana, sans-serif">
+<![endif]-->=20
+<div style=3D"color: #555555; font-family: 'Roboto', Tahoma, Verdana, Segoe=
+, sans-serif; line-height: 150%; padding: 10px 35px 10px 35px;">=20
+<p style=3D"font-size: 12px; line-height: 18px; margin: 0;"><span style=3D"=
+font-size: 15px; line-height: 22px;">&nbsp;</span></p>=20
+<p style=3D"font-size: 12px; line-height: 18px; margin: 0;"><span style=3D"=
+font-size: 15px; line-height: 22px;">Hello and Welcome to TaxSlayer!</span>=
+</p>=20
+<p style=3D"font-size: 12px; line-height: 18px; margin: 0;"><span style=3D"=
+font-size: 15px; line-height: 22px;"></span><br /></p>=20
+<p style=3D"font-size: 12px; line-height: 18px; margin: 0;"><span style=3D"=
+font-size: 15px; line-height: 22px;">Your email address, ouchendans62@gmail=
+.com, has successfully been added to our database. </span></p>=20
+<p style=3D"font-size: 12px; line-height: 18px; margin: 0;"><span style=3D"=
+font-size: 15px; line-height: 22px;"></span><br /></p>=20
+<p style=3D"font-size: 12px; line-height: 18px; margin: 0;"><span style=3D"=
+font-size: 15px; line-height: 22px;">You'll start receiving emails from us =
+very soon. In the meantime, you may be interested in reading some&nbsp;of o=
+ur most&nbsp;popular articles on our blog:</span></p>=20
+<ul>=20
+<li><span style=3D"font-size: 15px; line-height: 22px;"><a href=3D
+"http://go.taxslayer.com/ODQwLU9PTS04NjYAAAGL_H6s9munJEAoRwAGLdSTM7KuOsZSVI=
+C5fUt5gkB64lqc3-LeMP_mi5eztUXGYAwGKIZzLps=3D" target=3D"_blank" style=3D"te=
+xt-decoration: none;"
+>Tax Prep Checklist: Everything You Need to File Your Taxes</a></span></li>=
+=20
+<li><span style=3D"font-size: 15px; line-height: 22px;"><a href=3D
+"http://go.taxslayer.com/ODQwLU9PTS04NjYAAAGL_H6s9jgQFLQUwHIoM_GerPaDnN0VFk=
+TU0VmPiHZbJTEeEOXyQwSguqoHy03n0ELbUeTRJ4c=3D" target=3D"_blank" style=3D"te=
+xt-decoration: none;"
+>6 First-Time Homeowner Tax Breaks</a></span></li>=20
+<li><span style=3D"font-size: 15px; line-height: 22px;"><a href=3D
+"http://go.taxslayer.com/ODQwLU9PTS04NjYAAAGL_H6s9c07b-y4rFdHjZrlwGPIuAANOe=
+xZwszS6U4MeO3YLQIlC9F1IHkUTuL0OrcAKzQGRhQ=3D" target=3D"_blank" style=3D"te=
+xt-decoration: none;"
+>Teachers: Can You Deduct Your Out-of-Pocket Classroom Expenses?</a></span>=
+</li>=20
+</ul>=20
+<p style=3D"font-size: 12px; line-height: 18px; margin: 0;"><span style=3D"=
+font-size: 15px; line-height: 22px;">If you did not sign up to receive emai=
+ls from us, you can unsubscribe by clicking the link in the bottom of this =
+email.</span></p>=20
+</div>=20
+<!--[if mso]>
+</td>
+</tr>
+</table>
+<![endif]-->=20
+<!--[if (!mso)&(!IE)]>
+<!-->
+</div>=20
+<!--<![endif]-->
+</div>=20
+</div>=20
+<!--[if (mso)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->=20
+<!--[if (mso)|(IE)]>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<![endif]-->
+</div>=20
+</div>
+</div>=20
+</div>=20
+<div style=3D"background-color:#E7E5E5;">=20
+</div>=20
+<div style=3D"background-color:#E7E5E5;">=20
+<div class=3D"mktEditable" id=3D"knak-block-3">
+<div class=3D"block-grid" style=3D"margin: 0 auto; min-width: 320px; max-wi=
+dth: 600px; overflow-wrap: break-word; word-wrap: break-word; word-break: b=
+reak-word; background-color: #555555;">=20
+<div style=3D"border-collapse: collapse; display: table; width: 100%; backg=
+round-color: #555555;">=20
+<!--[if (mso)|(IE)]>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D"background-color:#E7E5E5;">
+<tr>
+<td align=3D"center">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:600p=
+x">
+<tr class=3D"layout-full-width" style=3D"background-color:#555555">
+<![endif]-->=20
+<!--[if (mso)|(IE)]>
+<td align=3D"center" width=3D"600" style=3D"background-color:#555555;width:=
+600px; border-top: 0px solid transparent; border-left: 0px solid transparen=
+t; border-bottom: 0px solid transparent; border-right: 0px solid transparen=
+t;" valign=3D"top">
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr>
+<td style=3D"padding-right: 0px; padding-left: 0px; padding-top:5px; paddin=
+g-bottom:5px;">
+<![endif]-->=20
+<div class=3D"col num12" style=3D"min-width: 320px; max-width: 600px; displ=
+ay: table-cell; vertical-align: top;">=20
+<div style=3D"width: 100% !important;">=20
+<!--[if (!mso)&(!IE)]>
+<!-->=20
+<div style=3D"border: 0px solid transparent; padding: 5px 0px 5px 0px;">=20
+<!--<![endif]-->=20
+<div class=3D"img-container center fixedwidth" align=3D"center" style=3D"pa=
+dding-right: 0px; padding-left: 0px;">=20
+<!--[if mso]>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr style=3D"line-height:0px">
+<td style=3D"padding-right: 0px;padding-left: 0px;" align=3D"center">
+<![endif]-->=20
+<div style=3D"font-size: 1px; line-height: 5px;">
+ &nbsp;=20
+</div>=20
+<img class=3D"center fixedwidth" align=3D"center" border=3D"0" src=3D"https=
+://knak-uploads.s3.amazonaws.com/images/5b800db2a9f70/TAXS.REG.2c.reversed.=
+cmyk-01.png" alt=3D"TaxSlayer" title=3D"TaxSlayer" style=3D"outline: none; =
+text-decoration: none; -ms-interpolation-mode: bicubic; clear: both; height=
+: auto; float: none; border: none; width: 100%; max-width: 150px; display: =
+block;" width=3D"150" constrain=3D"true" imagepreview=3D"false" />=20
+<!--[if mso]>
+</td>
+</tr>
+</table>
+<![endif]-->=20
+</div>=20
+<!--[if (!mso)&(!IE)]>
+<!-->=20
+</div>=20
+<!--<![endif]-->=20
+</div>=20
+</div>=20
+<!--[if (mso)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->=20
+<!--[if (mso)|(IE)]>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<![endif]-->=20
+</div>=20
+</div>
+</div>=20
+</div>=20
+<div style=3D"background-color:#E7E5E5;">=20
+<div class=3D"mktEditable" id=3D"knak-block-4">
+<div class=3D"block-grid" style=3D"margin: 0 auto; min-width: 320px; max-wi=
+dth: 600px; overflow-wrap: break-word; word-wrap: break-word; word-break: b=
+reak-word; background-color: #555555;">=20
+<div style=3D"border-collapse: collapse; display: table; width: 100%; backg=
+round-color: #555555;">=20
+<!--[if (mso)|(IE)]>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D"background-color:#E7E5E5;">
+<tr>
+<td align=3D"center">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:600p=
+x">
+<tr class=3D"layout-full-width" style=3D"background-color:#555555">
+<![endif]-->=20
+<!--[if (mso)|(IE)]>
+<td align=3D"center" width=3D"600" style=3D"background-color:#555555;width:=
+600px; border-top: 0px dotted transparent; border-left: 0px dotted transpar=
+ent; border-bottom: 0px dotted transparent; border-right: 0px dotted transp=
+arent;" valign=3D"top">
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr>
+<td style=3D"padding-right: 0px; padding-left: 0px; padding-top:5px; paddin=
+g-bottom:5px;">
+<![endif]-->=20
+<div class=3D"col num12" style=3D"min-width: 320px; max-width: 600px; displ=
+ay: table-cell; vertical-align: top;">=20
+<div style=3D"width: 100% !important;">=20
+<!--[if (!mso)&(!IE)]>
+<!-->=20
+<div style=3D"border: 0px dotted transparent; padding: 5px 0px 5px 0px;">=
+=20
+<!--<![endif]-->=20
+<!--[if mso]>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr>
+<td style=3D"padding-right: 10px; padding-left: 10px; padding-top: 10px; pa=
+dding-bottom: 10px; font-family: Arial, sans-serif">
+<![endif]-->=20
+<div style=3D"color: #ffffff; font-family: Arial, sans-serif; line-height: =
+120%; padding: 10px;">=20
+<div style=3D"font-size: 12px; line-height: 14px; color: #ffffff; font-fami=
+ly: Arial, sans-serif;">=20
+<p style=3D"font-size: 10px; line-height: 12px; text-align: center; margin:=
+ 0;">This email is being sent to&nbsp;ouchendans62@gmail.com and is being s=
+ent from TaxSlayer.<br /><br /><span style=3D"color: #ffffff; font-size: 10=
+px; line-height: 12px;"><a style=3D"text-decoration: underline; color: #fff=
+fff;" href=3D
+"http://go.taxslayer.com/ODQwLU9PTS04NjYAAAGL_H6s9eORIxvD6nu6eojIQ994D_gmia=
+OENPrtQLW_ZtBcVybVPyjwDoT0ccV56RvxRt3qKzU=3D" target=3D"_blank" rel=3D"noop=
+ener"
+>Unsubscribe</a>&nbsp;</span></p>=20
+<p style=3D"font-size: 12px; line-height: 14px; text-align: center; margin:=
+ 0;">&nbsp;</p>=20
+<p style=3D"font-size: 12px; line-height: 14px; text-align: center; margin:=
+ 0;"><span style=3D"color: #ffffff; font-size: 10px; line-height: 12px;"><a=
+ style=3D"text-decoration: underline; color: #ffffff;" href=3D
+"http://go.taxslayer.com/ODQwLU9PTS04NjYAAAGL_H6s9uqNenAPeaE3Gf12Ctzqv0y4Q-=
+TBGFDm6u5WxsfzfvPVP4qfP5yTKecXviWB_OO3SKQ=3D" target=3D"_blank" rel=3D"noop=
+ener"
+>Privacy Policy</a><br /><br />TaxSlayer, LLC<br />945 Broad St | Augusta, =
+GA 30901<br />=C2=A9 2019 TaxSlayer, LLC<br />All Rights Reserved.<br /></s=
+pan></p>=20
+</div>=20
+</div>=20
+<!--[if mso]>
+</td>
+</tr>
+</table>
+<![endif]-->=20
+<!--[if (!mso)&(!IE)]>
+<!-->=20
+</div>=20
+<!--<![endif]-->=20
+</div>=20
+</div>=20
+<!--[if (mso)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->=20
+<!--[if (mso)|(IE)]>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<![endif]-->=20
+</div>=20
+</div>
+</div>=20
+</div>=20
+<!--[if (mso)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]--> </td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+<!--[if (IE)]>
+</div>
+<![endif]--> =20
+<a href=3D
+"http://go.taxslayer.com/ODQwLU9PTS04NjYAAAGL_H6s9Q7toh4UQMozfXyapzdn9bAccW=
+z5OMIY84t0pcMr0qE4pI4aLp661ONQZ2dVM6rJQK8=3D"
+></a>
+<img src=3D"http://go.taxslayer.com/trk?t=3D1&mid=3DODQwLU9PTS04NjY6MDoyNDM=
+1OjQxMDg6MDo2NzcxOjk6MjU5MTE6MzQ3Mzg5ODQtMTpudWxs" width=3D"1" height=3D"1"=
+ style=3D"display:none !important;" alt=3D"" />
+
+<!--unsubscribe-->
+</body>
+</html>
+------=_Part_13405974_221956575.1685196242171--

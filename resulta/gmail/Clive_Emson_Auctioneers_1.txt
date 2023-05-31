@@ -1,0 +1,307 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:9f5b:0:b0:2da:43c2:96f2 with SMTP id l27csp269863imf;
+        Sat, 27 May 2023 10:24:51 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ5AnzzTZ8tW2NkHZUUZp/sjLg15/Cl6N9Oxlxxh+G9sI8/7Xbs2e4w7Fvfw9qIINGwfwZkN
+X-Received: by 2002:a25:d703:0:b0:bad:8c6:c915 with SMTP id o3-20020a25d703000000b00bad08c6c915mr3637175ybg.20.1685208290767;
+        Sat, 27 May 2023 10:24:50 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685208290; cv=none;
+        d=google.com; s=arc-20160816;
+        b=peSiO33TYfe1WL+PNRj3g1yJnWzRinl7j8HCbUlvc23XMYOJRl+PylzRBs5C2evCgA
+         kN8w6OVWiqfoZwV3qXYclDUch99UgGjH2aKqIztvKuLV8Ju/TQK3yOqFVU7scqybRRcR
+         iHb33PIxi7II9SNYLt3TLjEijshCAmm1VhmsGMSDmFNg8tJ9P+yVNvjxVk83HrdCLX2V
+         GoPMriKPULulYpgsuruDjzFsL6SOcUqAJdF0Jl9UvPBqxTjCud15eD5LRsOPpsHi85B4
+         OXu9uP37FzTd7qgadP2nV8mb7n5HT4juEhpk9/F82AikQN6UYw3mHQWQV9A6/FlmT5n8
+         g/1Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:form-sub:subject:message-id:date:to:reply-to:from
+         :dkim-signature:dkim-signature;
+        bh=noy4Mz1mt/YhBeXQ11aR0cW264XuiHo6NeurpKcTDqQ=;
+        b=eHdHmo+oSiDsPjvsIAuROIcYO60byJlSgYXGW41iXAEiwK2USVImqrvqhv/HmAEjgo
+         HNxS9Vl5b9MAG0WAE5I69AQ50gk2/R7zrng/ImDyhqEDotsbFj8MgxaNvvzTm5gg9gV5
+         RrSVRoLmcJwsO/lAlm2IQiCDE2ARHzyn1wNjzfeJ9EE1pe7YaOhld5pDYwCag3wjEqV8
+         UE5zdgRPrzF7QLTZxL5h7U+cs1Toj9O+wPjVayJBNyIxSu3opZ1BkRoA7zsbdchMaKpQ
+         Uh6Zy72+Ax97ZZYVm+paBrmr7f9I+Dj5j6wYGxx74ZD1m2qPLK6UDhQtrl3FvpIEtNDD
+         fuVA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.mctxapp.net header.s=k2 header.b=RpZzndt2;
+       dkim=pass header.i=@mailchimpapp.net header.s=k2 header.b=iGWvMiCh;
+       spf=pass (google.com: domain of bounce-mcsys.us11_45470641.4f7abb249e.na-ouchendans62=gmail.com@mail8.mcsignup.com designates 198.2.140.12 as permitted sender) smtp.mailfrom="bounce-mcsys.us11_45470641.4f7abb249e.NA-ouchendans62=gmail.com@mail8.mcsignup.com"
+Return-Path: <bounce-mcsys.us11_45470641.4f7abb249e.NA-ouchendans62=gmail.com@mail8.mcsignup.com>
+Received: from mail8.mcsignup.com (mail8.mcsignup.com. [198.2.140.12])
+        by mx.google.com with ESMTPS id s3-20020a258303000000b00b9a1d70844fsi5720432ybk.593.2023.05.27.10.24.50
+        for <ouchendans62@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 27 May 2023 10:24:50 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-mcsys.us11_45470641.4f7abb249e.na-ouchendans62=gmail.com@mail8.mcsignup.com designates 198.2.140.12 as permitted sender) client-ip=198.2.140.12;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.mctxapp.net header.s=k2 header.b=RpZzndt2;
+       dkim=pass header.i=@mailchimpapp.net header.s=k2 header.b=iGWvMiCh;
+       spf=pass (google.com: domain of bounce-mcsys.us11_45470641.4f7abb249e.na-ouchendans62=gmail.com@mail8.mcsignup.com designates 198.2.140.12 as permitted sender) smtp.mailfrom="bounce-mcsys.us11_45470641.4f7abb249e.NA-ouchendans62=gmail.com@mail8.mcsignup.com"
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.mctxapp.net;
+	s=k2; t=1685208290; x=1685294690;
+	bh=noy4Mz1mt/YhBeXQ11aR0cW264XuiHo6NeurpKcTDqQ=;
+	h=From:Reply-To:To:Date:Message-ID:X-MC-User:Subject:MIME-Version:
+	 Content-Type:CC:Date:Subject:From;
+	b=RpZzndt29AZUheuCa+TEM/2U0JCpO2BIJSKsfv8rTUKFk/Y2BzRxbyOye2fuG3XRv
+	 LIPOMrR4akspiUbbcHTBdNRNuDJN3geSVi1RzqzyZUhoG2iy1r3MmqJxaO7AAyMwkw
+	 QC1mXsSrhGd9dJQP2YDSdj9XaYYiLfhiM/mkwwJr/wUq0rmb7+FqKy6r7gmAf8WoFh
+	 vNXTm9RuMT/SHHeYy5RbFt4gTu3ldToDxDnMZwr0h80Cg9svJBRyIfckNMbDB0/vQK
+	 jhRTLozZWaYqVnxRpbCXs5HzENQkfT3eEft05Y7+8v6pKZBUfqkz9F3Zcs/j0oUlnG
+	 oVdb/Rz+YlJ2Q==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailchimpapp.net;
+	s=k2; t=1685208290; x=1685468790;
+	i=digital=3Dcliveemson.co.uk@mailchimpapp.net;
+	bh=noy4Mz1mt/YhBeXQ11aR0cW264XuiHo6NeurpKcTDqQ=;
+	h=From:Reply-To:To:Date:Message-ID:X-MC-User:Subject:Form-Sub:
+	 MIME-Version:Content-Type:CC:Date:Subject:From;
+	b=iGWvMiChXVk0BBtIbmQoDUu5Z3lNBdhCyAhcpOFLHGmROYynrZcasFMB2yD+hYsQA
+	 8LMHCnk9aFS9TasYGh9/OFZp/QT0dFfPpr6VSU8ImT3uPYK2LYiDRzbzmzhDkgo0Nl
+	 1WVPnSg1q4cbF4XmgFBRza1urfeMhA3Cs0jqZShSjAo7h3QBPe6/1/sN0ZVgVVX8yr
+	 yW8LarYkOXF4haZB0zZt+B8Rh59V7IXzBXx9qF9yKb97G8wqpGukVhZLifvBVhAQ+2
+	 2mJFmMgum+poN0IWjeg8bQsZDBwCjLa7Jav6AO57pD+mr0QppnlbAb00XbXy3wKYTv
+	 umwHU7E7vCT6A==
+Received: from 127.0.0.1 (localhost [127.0.0.1])
+	by mail8.mcsignup.com (Mailchimp) with ESMTP id 4QT7vk4nKgz3smSW0
+	for <ouchendans62@gmail.com>; Sat, 27 May 2023 17:24:50 +0000 (GMT)
+From: =?utf-8?Q?Clive=20Emson=20Auctioneers?= <digital@cliveemson.co.uk>
+Reply-To: =?utf-8?Q?Clive=20Emson=20Auctioneers?= <digital@cliveemson.co.uk>
+To:  <ouchendans62@gmail.com>
+Date: Sat, 27 May 2023 17:24:50 +0000
+Message-ID: <edf4e5edcad785d9b3946c093e202f64d96.20230527172450@mail8.mcsignup.com>
+X-Mailer: Mailchimp Mailer - **CID4f7abb249ee202f64d96**
+X-Campaign: mailchimpedf4e5edcad785d9b3946c093.4f7abb249e
+X-campaignid: mailchimpedf4e5edcad785d9b3946c093.4f7abb249e
+X-Report-Abuse: Please report abuse for this campaign here: https://mailchimp.com/contact/abuse/?u=edf4e5edcad785d9b3946c093&id=4f7abb249e&e=e202f64d96
+X-MC-User: edf4e5edcad785d9b3946c093
+X-Feedback-ID: 45470641:45470641.4f7abb249e:us11:mc
+X-Auto-Response-Suppress: OOF, AutoReply
+X-Accounttype: pd
+Subject: Clive Emson Auction News: Please Confirm Subscription
+Form-Sub: v=1;ip4=197.147.8.26
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="_----------=_MCPart_897407708"
+
+
+--_----------=_MCPart_897407708
+Content-Type: text/plain; charset="utf-8"; format="fixed"
+Content-Transfer-Encoding: quoted-printable
+
+** Please Confirm Subscription=0A---------------------------------------=
+---------------------=0AYes=2C subscribe me to this list. (https://us11.=
+mailchimp.com/mctx/clicks?url=3Dhttps%3A%2F%2Fcliveemson.us11.list-manag=
+e.com%2Fsubscribe%2Fconfirm%3Fu%3Dedf4e5edcad785d9b3946c093%26id%3D0585c=
+09316%26e%3D114e7038ec&xid=3D4f7abb249e&uid=3D45470641&pool=3Dcontact_fa=
+cing&subject=3DClive+Emson+Auction+News%3A+Please+Confirm+Subscription&v=
+=3D1&h=3D5e64653741294d41e069b9882dc55b710a75d0f3eadfcbc8502fd5181b7e1a1=
+0)=0A=0AIf you received this email by mistake=2C simply delete it. You w=
+on't be subscribed if you don't click the confirmation link above.=0A=0A=
+For questions about this list=2C please contact:=0Adigital@cliveemson.co=
+.uk (mailto:digital@cliveemson.co.uk)
+--_----------=_MCPart_897407708
+Content-Type: text/html; charset="utf-8"; format="fixed"
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>=0A<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=
+=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:=
+office:office" dir=3D"ltr">=0A    <head>=0A        <!--[if gte mso 15]>=
+=0A        <xml>=0A            <o:OfficeDocumentSettings>=0A           =
+     <o:AllowPNG/>=0A                <o:PixelsPerInch>96</o:PixelsPerInc=
+h>=0A            </o:OfficeDocumentSettings>=0A        </xml>=0A       =
+ <![endif]-->=0A        <title>Clive Emson Auction News</title>=0A     =
+   <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">=0A        <meta http-equiv=3D"x-ua-compatible" content=3D"IE=3Dedge=
+">=0A        <meta name=3D"viewport" content=3D"width=3Ddevice-width=2C=
+ initial-scale=3D1">=0A        <meta name=3D"description" content=3D"Cli=
+ve Emson Auction News Email Forms">=0A        <meta name=3D"keywords" co=
+ntent=3D"Clive Emson Auction News">=0A        =0A    <style type=3D"text=
+/css">=0A=09=09body{=0A=09=09=09font:14px/20px 'Helvetica'=2C Arial=2C s=
+ans-serif;=0A=09=09=09margin:0;=0A=09=09=09padding:75px 0 0 0;=0A=09=09=
+=09text-align:center;=0A=09=09=09-webkit-text-size-adjust:none;=0A=09=09=
+}=0A=09=09p{=0A=09=09=09padding:0 0 10px 0;=0A=09=09}=0A=09=09h1 img{=0A=
+=09=09=09max-width:100%;=0A=09=09=09height:auto !important;=0A=09=09=09v=
+ertical-align:bottom;=0A=09=09}=0A=09=09h2{=0A=09=09=09font-size:22px;=
+=0A=09=09=09line-height:28px;=0A=09=09=09margin:0 0 12px 0;=0A=09=09}=0A=
+=09=09h3{=0A=09=09=09margin:0 0 12px 0;=0A=09=09}=0A=09=09.headerBar{=0A=
+=09=09=09background:none;=0A=09=09=09padding:0;=0A=09=09=09border:none;=
+=0A=09=09}=0A=09=09.wrapper{=0A=09=09=09width:600px;=0A=09=09=09margin:0=
+ auto 10px auto;=0A=09=09=09text-align:left;=0A=09=09}=0A=09=09input.for=
+mEmailButton{=0A=09=09=09border:none !important;=0A=09=09}=0A=09=09.form=
+EmailButton{=0A=09=09=09display:inline-block;=0A=09=09=09font-weight:500=
+;=0A=09=09=09font-size:16px;=0A=09=09=09line-height:42px;=0A=09=09=09fon=
+t-family:'Helvetica'=2C Arial=2C sans-serif;=0A=09=09=09width:auto;=0A=
+=09=09=09white-space:nowrap;=0A=09=09=09height:42px;=0A=09=09=09margin:1=
+2px 5px 12px 0;=0A=09=09=09padding:0 22px;=0A=09=09=09text-decoration:no=
+ne;=0A=09=09=09text-align:center;=0A=09=09=09cursor:pointer;=0A=09=09=09=
+border:0;=0A=09=09=09border-radius:3px;=0A=09=09=09vertical-align:top;=
+=0A=09=09}=0A=09=09.formEmailButton span{=0A=09=09=09display:inline;=0A=
+=09=09=09font-family:'Helvetica'=2C Arial=2C sans-serif;=0A=09=09=09text=
+-decoration:none;=0A=09=09=09font-weight:500;=0A=09=09=09font-style:norm=
+al;=0A=09=09=09font-size:16px;=0A=09=09=09line-height:42px;=0A=09=09=09c=
+ursor:pointer;=0A=09=09=09border:none;=0A=09=09}=0A=09=09.rounded6{=0A=
+=09=09=09border-radius:6px;=0A=09=09}=0A=09=09.poweredWrapper{=0A=09=09=
+=09padding:20px 0;=0A=09=09=09width:560px;=0A=09=09=09margin:0 auto;=0A=
+=09=09}=0A=09=09.poweredBy{=0A=09=09=09display:block;=0A=09=09}=0A=09=09=
+span.or{=0A=09=09=09display:inline-block;=0A=09=09=09height:32px;=0A=09=
+=09=09line-height:32px;=0A=09=09=09padding:0 5px;=0A=09=09=09margin:5px=
+ 5px 0 0;=0A=09=09}=0A=09=09.clear{=0A=09=09=09clear:both;=0A=09=09}=0A=
+=09=09.profile-list{=0A=09=09=09display:block;=0A=09=09=09margin:15px 20=
+px;=0A=09=09=09padding:0;=0A=09=09=09list-style:none;=0A=09=09=09border-=
+top:1px solid #eee;=0A=09=09}=0A=09=09.profile-list li{=0A=09=09=09displ=
+ay:block;=0A=09=09=09margin:0;=0A=09=09=09padding:5px 0;=0A=09=09=09bord=
+er-bottom:1px solid #eee;=0A=09=09}=0A=09=09html[dir=3Drtl] .wrapper=2Ch=
+tml[dir=3Drtl] .container=2Chtml[dir=3Drtl] label{=0A=09=09=09text-align=
+:right !important;=0A=09=09}=0A=09=09html[dir=3Drtl] ul.interestgroup_fi=
+eld label{=0A=09=09=09padding:0;=0A=09=09}=0A=09=09html[dir=3Drtl] ul.in=
+terestgroup_field input{=0A=09=09=09margin-left:5px;=0A=09=09}=0A=09=09h=
+tml[dir=3Drtl] .hidden-from-view{=0A=09=09=09right:-5000px;=0A=09=09=09l=
+eft:auto;=0A=09=09}=0A=09=09body=2C#bodyTable{=0A=09=09=09background-col=
+or:#eeeeee;=0A=09=09}=0A=09=09h1{=0A=09=09=09font-size:28px;=0A=09=09=09=
+line-height:110%;=0A=09=09=09margin-bottom:30px;=0A=09=09=09margin-top:0=
+;=0A=09=09=09padding:0;=0A=09=09}=0A=09=09#templateContainer{=0A=09=09=
+=09background-color:none;=0A=09=09}=0A=09=09#templateBody{=0A=09=09=09ba=
+ckground-color:#ffffff;=0A=09=09}=0A=09=09.bodyContent{=0A=09=09=09line-=
+height:150%;=0A=09=09=09font-family:Helvetica;=0A=09=09=09font-size:14px=
+;=0A=09=09=09color:#333333;=0A=09=09=09padding:20px;=0A=09=09}=0A=09=09a=
+:link=2Ca:active=2Ca:visited=2Ca{=0A=09=09=09color:#336699;=0A=09=09}=0A=
+=09=09.formEmailButton:link=2C.formEmailButton:active=2C.formEmailButton=
+:visited=2C.formEmailButton=2C.formEmailButton span{=0A=09=09=09backgrou=
+nd-color:#5d5d5d !important;=0A=09=09=09color:#ffffff !important;=0A=09=
+=09}=0A=09=09.formEmailButton:hover{=0A=09=09=09background-color:#444444=
+ !important;=0A=09=09=09color:#ffffff !important;=0A=09=09}=0A=09=09labe=
+l{=0A=09=09=09line-height:150%;=0A=09=09=09font-family:Helvetica;=0A=09=
+=09=09font-size:16px;=0A=09=09=09color:#5d5d5d;=0A=09=09}=0A=09=09.field=
+-group input=2Cselect=2Ctextarea=2C.dijitInputField{=0A=09=09=09font-fam=
+ily:Helvetica;=0A=09=09=09color:#5d5d5d !important;=0A=09=09}=0A=09=09.a=
+sterisk{=0A=09=09=09color:#cc6600;=0A=09=09=09font-size:20px;=0A=09=09}=
+=0A=09=09label .asterisk{=0A=09=09=09visibility:hidden;=0A=09=09}=0A=09=
+=09.indicates-required{=0A=09=09=09display:none;=0A=09=09}=0A=09=09.fiel=
+d-help{=0A=09=09=09color:#777;=0A=09=09}=0A=09=09.error=2C.errorText{=0A=
+=09=09=09color:#e85c41;=0A=09=09=09font-weight:bold;=0A=09=09}=0A=09@med=
+ia (max-width: 620px){=0A=09=09body{=0A=09=09=09width:100%;=0A=09=09=09-=
+webkit-font-smoothing:antialiased;=0A=09=09=09padding:10px 0 0 0 !import=
+ant;=0A=09=09=09min-width:300px !important;=0A=09=09}=0A=0A}=09@media (m=
+ax-width: 620px){=0A=09=09.wrapper=2C.poweredWrapper{=0A=09=09=09width:a=
+uto !important;=0A=09=09=09max-width:600px !important;=0A=09=09=09paddin=
+g:0 10px;=0A=09=09}=0A=0A}=09@media (max-width: 620px){=0A=09=09#templat=
+eContainer=2C#templateBody=2C#templateContainer table{=0A=09=09=09width:=
+100% !important;=0A=09=09=09-moz-box-sizing:border-box;=0A=09=09=09-webk=
+it-box-sizing:border-box;=0A=09=09=09box-sizing:border-box;=0A=09=09}=0A=
+=0A}=09@media (max-width: 620px){=0A=09=09.addressfield span{=0A=09=09=
+=09width:auto;=0A=09=09=09float:none;=0A=09=09=09padding-right:0;=0A=09=
+=09}=0A=0A}=09@media (max-width: 620px){=0A=09=09.captcha{=0A=09=09=09wi=
+dth:auto;=0A=09=09=09float:none;=0A=09=09}=0A=0A}=09=09.gdpr-mergeRow{=
+=0A=09=09=09margin:10px 0;=0A=09=09=09color:#4a4a4a;=0A=09=09=09font-fam=
+ily:Helvetica;=0A=09=09}=0A=09=09.gdpr-content{=0A=09=09=09margin:0 -20p=
+x 0 -20px;=0A=09=09=09padding:20px;=0A=09=09=09background:rgba(255=2C 25=
+5=2C 255=2C 0.8);=0A=09=09}=0A=09=09#gdpr-label{=0A=09=09=09margin-top:0=
+;=0A=09=09}=0A=09=09#gdpr-description{=0A=09=09=09margin-top:6px;=0A=09=
+=09=09margin-bottom:0;=0A=09=09=09padding-bottom:11px;=0A=09=09}=0A=09=
+=09.gdpr-content p{=0A=09=09=09color:#4a4a4a;=0A=09=09=09font-size:13px;=
+=0A=09=09=09line-height:1.5;=0A=09=09}=0A=09=09.gdpr-content .checkbox-g=
+roup label{=0A=09=09=09font-weight:normal;=0A=09=09=09font-size:13px;=0A=
+=09=09}=0A=09=09#gdpr-legal{=0A=09=09=09padding-top:20px;=0A=09=09=09mar=
+gin:0;=0A=09=09}=0A=09=09.gdpr-footer{=0A=09=09=09margin:0 -20px 0 -20px=
+;=0A=09=09=09padding:20px;=0A=09=09=09background:rgba(255=2C 255=2C 255=
+=2C 0.9);=0A=09=09=09overflow:auto;=0A=09=09=09color:#6d6d6d;=0A=09=09}=
+=0A=09=09.gdpr-footer p{=0A=09=09=09font-size:10px;=0A=09=09=09line-heig=
+ht:1.5;=0A=09=09=09margin-bottom:0;=0A=09=09}=0A=09=09.gdpr-footer a{=0A=
+=09=09=09color:#206578;=0A=09=09}=0A=09=09.gdpr-footer img{=0A=09=09=09w=
+idth:65px;=0A=09=09=09float:left;=0A=09=09=09margin-right:15px;=0A=09=09=
+}=0A</style></head>=0A    <body leftmargin=3D"0" marginwidth=3D"0" topma=
+rgin=3D"0" marginheight=3D"0" offset=3D"0" style=3D"font: 14px/20px 'Hel=
+vetica'=2C Arial=2C sans-serif;margin: 0;padding: 75px 0 0 0;text-align:=
+ center;-webkit-text-size-adjust: none;background-color: #eeeeee;">=0A =
+   =09<center>=0A        =09<table border=3D"0" cellpadding=3D"20" cells=
+pacing=3D"0" height=3D"100%" width=3D"100%" id=3D"bodyTable" style=3D"ba=
+ckground-color: #eeeeee;">=0A            =09<tr>=0A                =09<t=
+d align=3D"center" valign=3D"top">=0A                    =09<!-- // BEGI=
+N CONTAINER -->=0A                        <!--[if gte mso 9]>=0A       =
+                 <table align=3D"center" border=3D"0" cellspacing=3D"0"=
+ cellpadding=3D"0" width=3D"600" style=3D"width:600px;">=0A            =
+            <tr>=0A                        <td align=3D"center" valign=
+=3D"top" width=3D"600" style=3D"width:600px;">=0A                      =
+  <![endif]-->=0A                        <table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"max-width: 600px;border=
+-radius: 6px;background-color: none;" id=3D"templateContainer" class=3D"=
+rounded6">=0A                        =09<tr>=0A                        =
+    =09<td align=3D"center" valign=3D"top">=0A                         =
+       =09<!-- // BEGIN HEADER -->=0A                                  =
+  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ style=3D"max-width:600px">=0A                                    =09<tr=
+>=0A                                        =09<td>=0A                 =
+                           =09<h1 style=3D"font-size: 28px;line-height:=
+ 110%;margin-bottom: 30px;margin-top: 0;padding: 0;">Clive Emson Auction=
+ News</h1>=0A                                            </td>=0A      =
+                                  </tr>=0A                             =
+       </table>=0A                                =09<!-- END HEADER \\=
+ -->=0A                                </td>=0A                        =
+    </tr>=0A                        =09<tr>=0A                         =
+   =09<td align=3D"center" valign=3D"top">=0A                          =
+      =09<!-- // BEGIN BODY -->=0A                                =09<ta=
+ble border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" styl=
+e=3D"max-width: 600px;border-radius: 6px;background-color: #ffffff;" id=
+=3D"templateBody" class=3D"rounded6">=0A                               =
+     =09<tr>=0A                                            =0A         =
+                                   <td align=3D"left" valign=3D"top" cla=
+ss=3D"bodyContent" style=3D"line-height: 150%;font-family: Helvetica;fon=
+t-size: 14px;color: #333333;padding: 20px;">=0A                        =
+                        =0A                                            =
+    <h2 style=3D"font-size: 22px;line-height: 28px;margin: 0 0 12px 0;">=
+Please Confirm Subscription=0A</h2>=0A<a class=3D"formEmailButton" href=
+=3D"https://us11.mailchimp.com/mctx/clicks?url=3Dhttps%3A%2F%2Fcliveemso=
+n.us11.list-manage.com%2Fsubscribe%2Fconfirm%3Fu%3Dedf4e5edcad785d9b3946=
+c093%26id%3D0585c09316%26e%3D114e7038ec&xid=3D4f7abb249e&uid=3D45470641&=
+pool=3Dcontact_facing&subject=3DClive+Emson+Auction+News%3A+Please+Confi=
+rm+Subscription&v=3D1&h=3D5e64653741294d41e069b9882dc55b710a75d0f3eadfcb=
+c8502fd5181b7e1a10" style=3D"color: #ffffff !important;display: inline-b=
+lock;font-weight: 500;font-size: 16px;line-height: 42px;font-family: 'He=
+lvetica'=2C Arial=2C sans-serif;width: auto;white-space: nowrap;height:=
+ 42px;margin: 12px 5px 12px 0;padding: 0 22px;text-decoration: none;text=
+-align: center;cursor: pointer;border: 0;border-radius: 3px;vertical-ali=
+gn: top;background-color: #5d5d5d !important;"><span style=3D"display: i=
+nline;font-family: 'Helvetica'=2C Arial=2C sans-serif;text-decoration: n=
+one;font-weight: 500;font-style: normal;font-size: 16px;line-height: 42p=
+x;cursor: pointer;border: none;background-color: #5d5d5d !important;colo=
+r: #ffffff !important;">Yes=2C subscribe me to this list.</span></a>=0A<=
+br>=0A<div><p style=3D"padding: 0 0 10px 0;">If you received this email=
+ by mistake=2C simply delete it. You won't be subscribed if you don't cl=
+ick the confirmation link above.</p>=0A<p style=3D"padding: 0 0 10px 0;"=
+>For questions about this list=2C please contact:=0A<br><a href=3D"mailt=
+o:digital@cliveemson.co.uk" style=3D"color: #336699;">digital@cliveemson=
+.co.uk</a></p>=0A</div>=0A=0A=0A<span itemscope=3D"" itemtype=3D"http://=
+schema.org/EmailMessage">=0A  <span itemprop=3D"description" content=3D"=
+We need to confirm your email address."></span>=0A  <span itemprop=3D"ac=
+tion" itemscope=3D"" itemtype=3D"http://schema.org/ConfirmAction">=0A  =
+  <meta itemprop=3D"name" content=3D"Confirm Subscription">=0A    <span=
+ itemprop=3D"handler" itemscope=3D"" itemtype=3D"http://schema.org/HttpA=
+ctionHandler">=0A      <meta itemprop=3D"url" content=3D"https://cliveem=
+son.us11.list-manage.com/subscribe/smartmail-confirm?u=3Dedf4e5edcad785d=
+9b3946c093&id=3D0585c09316&e=3D114e7038ec&inline=3Dtrue">=0A      <link=
+ itemprop=3D"method" href=3D"http://schema.org/HttpRequestMethod/POST">=
+=0A    </span>=0A  </span>=0A</span>=0A=0A=0A                          =
+                  </td>=0A                                           =
+ =0A                                        </tr>=0A                   =
+                 </table>=0A                                    <!-- END=
+ BODY \\ -->=0A                                </td>=0A                =
+            </tr>=0A                        =09<tr>=0A                 =
+           =09<td align=3D"center" valign=3D"top">=0A                  =
+              =09<!-- // BEGIN FOOTER -->=0A                           =
+     =09<table border=3D"0" cellpadding=3D"20" cellspacing=3D"0" width=
+=3D"100%" style=3D"max-width:600px">=0A                                =
+    =09<tr>=0A                                        =09<td align=3D"ce=
+nter" valign=3D"top">=0A                                               =
+ =0A                                            </td>=0A               =
+                         </tr>=0A                                    </t=
+able>=0A                                    <!-- END FOOTER \\ -->=0A  =
+                              </td>=0A                            </tr>=
+=0A                        </table>=0A                        <!--[if gt=
+e mso 9]>=0A                        </td>=0A                        </tr=
+>=0A                        </table>=0A                        <![endif]=
+-->=0A                        <!-- END CONTAINER \\ -->=0A             =
+       </td>=0A                </tr>=0A            </table>=0A        </=
+center>=0A    <img src=3D"https://us11.mailchimp.com/mctx/opens?xid=3D4f=
+7abb249e&uid=3D45470641&pool=3Dcontact_facing&subject=3DClive+Emson+Auct=
+ion+News%3A+Please+Confirm+Subscription" height=3D"1" width=3D"1" alt=3D=
+""></body>=0A</html>
+--_----------=_MCPart_897407708--
+

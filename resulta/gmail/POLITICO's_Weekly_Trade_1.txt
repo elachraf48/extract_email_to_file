@@ -1,0 +1,382 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp488610ims;
+        Tue, 30 May 2023 07:11:43 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ5tOcNxFkbWq6uh7lMeHGiMxXIUHEYRK4sJDQLlxzW4UDY2u0DpHnJbnuvY56I/kITxAPQX
+X-Received: by 2002:a05:6870:1fd1:b0:19e:ad7a:bafd with SMTP id gp17-20020a0568701fd100b0019ead7abafdmr1438466oac.20.1685455903155;
+        Tue, 30 May 2023 07:11:43 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685455903; cv=none;
+        d=google.com; s=arc-20160816;
+        b=JAp9oO+TcG38+YQYjvhLq4hmAkHinUsquZWMuXUaHzQG3UipUmOw3Nvg1SUKxLsgmv
+         r5JZMdtvgAcrjfxgggbDALa6tV+HIkDDZvWsoNP0q1rF5/D1yyrz48eVOx4n60vdpc8L
+         OtSTDvQsMcz8KmeRc3JK1Z/u6TZXarToV7EB2vSy8DdD2p5rCD2xue2z/p8u5BoZvvkw
+         jQHAZ/Ax94stWeJRiflmLQtDcxucd0unEcwr/sppAiVSMAvcsl0hW7LnqmJFrVIol0nG
+         1oyF33amQ6nKBSKaUwFCJlDUkkNZiYl7mLcBYcPpbneswWb3H6K/iBvvB9qsA9cUPxQm
+         GYGg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:list-id:reply-to:mime-version
+         :list-unsubscribe-post:list-unsubscribe:date:subject:to:from
+         :dkim-signature;
+        bh=o96H6UjIxbWNtsdeXWtcE634tjIjmKTk15nBnWcOUbY=;
+        b=Y9wSjHYSXtEg16YEknY1VafImMzjUB19bl2JrEF3bFRaF+Cglg+6d8sUiL9XIZ+Enx
+         WlG+SBRq8/5E6QYinpROVeKBkuoDblX7ljv/TLnTp+WOAjPRy44wsnpDNm0gHtZrPOlX
+         Ykbszsp22NintIV6X/flgzWNvStl0xht05F7G3k4eiDxEn6wmErsUEjmzB6xWRBm5Dbn
+         1gEVtKQ5zy067RWWFBeZfUfl3Hnu/+16P/rkZwMxIhSgMb880M29l6IcDB2a9M92PkwV
+         qFa6dbUJMxTnteE4w3s14gN1jlGnr4FOUVny0VGxlQbFjQ3yJ/ajKW4olh0OSCI13F69
+         jZhw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.politico.com header.s=200608 header.b=m+C0YOwx;
+       spf=pass (google.com: domain of bounce-630323_html-1405096349-9801512-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) smtp.mailfrom=bounce-630323_HTML-1405096349-9801512-1376319-0@bounce.politicoemail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.politico.com
+Return-Path: <bounce-630323_HTML-1405096349-9801512-1376319-0@bounce.politicoemail.com>
+Received: from mta.politicoemail.com (mta.politicoemail.com. [68.232.198.10])
+        by mx.google.com with ESMTPS id db13-20020a0568306b0d00b006b0ea7712dfsi3749755otb.231.2023.05.30.07.11.42
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 30 May 2023 07:11:43 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-630323_html-1405096349-9801512-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) client-ip=68.232.198.10;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.politico.com header.s=200608 header.b=m+C0YOwx;
+       spf=pass (google.com: domain of bounce-630323_html-1405096349-9801512-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) smtp.mailfrom=bounce-630323_HTML-1405096349-9801512-1376319-0@bounce.politicoemail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.politico.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=200608; d=email.politico.com;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Reply-To:List-ID:X-CSA-Complaints:Message-ID:Content-Type;
+ i=weeklytrade@email.politico.com;
+ bh=o96H6UjIxbWNtsdeXWtcE634tjIjmKTk15nBnWcOUbY=;
+ b=m+C0YOwxvqDQeXz7Cj7q0oXYhvpjCEtnDBDFaHPKJLfkR3S0L2oracpCtoJ5PnASPa69fWvjaUN2
+   wZxMqz3XNl+xPx5sjzjXumx9xZpfjlce4zXFEwJTzlWVl73Cl959k7960QT5w7c6SZvaqWXIE2QU
+   up51DycGb7FWICW2jvY=
+Received: by mta.politicoemail.com id heo21u2fmd48 for <ouchendans62@gmail.com>; Tue, 30 May 2023 14:05:53 +0000 (envelope-from <bounce-630323_HTML-1405096349-9801512-1376319-0@bounce.politicoemail.com>)
+From: "POLITICO's Weekly Trade" <weeklytrade@email.politico.com>
+To: <ouchendans62@gmail.com>
+Subject: =?UTF-8?B?QmlkZW7igJlzIEluZG8tUGFjaWZpYyB0cmFkZSBmcmFtZXdvcmsg?=
+ =?UTF-8?B?c3RhcnRzIHRha2luZyBzaGFwZQ==?=
+Date: Tue, 30 May 2023 08:05:52 -0600
+List-Unsubscribe: <https://click.politicoemail.com/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiIxMzc2MzE5IiwicyI6IjE0MDUwOTYzNDkiLCJsaWQiOiI2MzAzMjMiLCJqIjoiOTgwMTUxMiIsImpiIjoiMCIsImQiOiI0MDEyOCJ9.O6tsOZSxB0ZlxdFKPqZCUOXeJYcaRVlozDObxELdEqw>, <mailto:leave-fcba12737567067e1a4c342838-fdf61574756104747317747c-fe951d787565017c77-fe9115737262077c7c-ffcf14@leave.politicoemail.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+Reply-To: "POLITICO, LLC" <reply-fe951d787565017c77-630323_HTML-1405096349-1376319-0@politicoemail.com>
+List-ID: <1376319.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+X-SFMC-Stack: 4
+x-job: 1376319_9801512
+Message-ID: <db17e78b-bdf6-4b51-b8e0-7ab67350af7a@las1s04mta952.xt.local>
+Feedback-ID: 1376319:9801512:68.232.198.10:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="LoE6Qlgic6MS=_?:"
+
+This is a multi-part message in MIME format.
+
+--LoE6Qlgic6MS=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Presented by Sayari: Delivered every Monday by 10 a.m., Weekly Trade examines the latest news in global trade politics and policy.  May 30, 2023 View in browser  
+By Steven Overly
+
+Presented by
+
+With help from Doug Palmer and Mark Scott
+
+ QUICK FIX 
+— The Biden administration’s signature economic initiative in Asia has produced its first tangible agreement, but the announcement made clear that much about the new pact on supply chains is still to be determined.
+
+— The Swedish seaside town of Luleå is the site of major trade-related meetings this week as American and European officials plan to outline new areas of alignment on artificial intelligence, digital regulation and clean energy.
+
+It’s Tuesday, May 30. Welcome to Morning Trade.
+
+Send us your trade news: gbade@politico.com, dpalmer@politico.com and soverly@politico.com. You can also follow us on Twitter: @gavinbade, @tradereporter and @stevenoverly.
+
+     
+A message from Sayari:
+
+Politico readers are invited to the Embassy of Sweden in Washington, D.C. for a one-day event focused on real-world import and export challenges and their implications on economic security, featuring panelists from CBP, Treasury, USFIA, FTI Consulting, and more. Additionally learn practical techniques for identifying real-world trade risk from Sayari analysts. This event is invite-only and seats are limited. If you’re interested in attending, view the agenda and register here.
+     Driving the day
+ONE DOWN, THREE TO GO: There have been a plethora of questions about President Joe Biden’s Indo-Pacific Economic Framework since U.S. officials first floated the idea in 2021 and then formally announced it last year. Skeptics of the non-traditional trade pact have wondered what exactly would be included, whether commitments would be enforceable, and whether the 13 other nations engaged in the negotiations would have incentive to sign on.
+
+The administration started offering its most concrete answers yet over the weekend when Commerce Secretary Gina Raimondo announced negotiators had reached an agreement on one of the framework’s four pillars that aims to prevent disruptions to critical supply chains.
+
+The text of the deal won’t be made public until after a legal review and, even then, it must still clear each country’s domestic approval process. (We’re still waiting for clarity from the Commerce Department on what that means in the U.S.)
+
+But based on the details Raimondo shared with reporters, the main thrust of the agreement will be the creation of three new bodies focused on supply chains — a council to enact joint policy actions, a network to communicate in a crisis and an advisory board to address labor shortages and workers’ rights.
+
+As Wendy Cutler, vice president at the Asia Society Policy Institute, put it, the announcement itself is “largely process oriented.”
+
+“In essence, the IPEF members have established a framework within a framework to address supply chain concerns, with much of the substantive work yet to be discussed and agreed upon,” Cutler said. “Curiously, the new bodies are ‘contemplated,’ and apparently not yet agreed upon, suggesting that there were some last-minute hitches in even setting up this structure.”
+
+Also outstanding: The remaining three pillars of the IPEF are still under negotiation and administration officials only said over the weekend that progress was being made. Those segments of the agreement, which delve into fair trade, clean energy, and anti-corruption and taxes, contain some of the thornier topics on which countries are more likely to disagree.
+
+Negotiators raced until the last minute to reach the “substantial conclusion” of the supply chain pillar ahead of a gathering of IPEF trade ministers in Detroit on Saturday. Now the Biden administration is hoping that will generate momentum to finish the other parts of the agreement before November.
+
+“The IPEF is our commitment to the people,” U.S. Trade Representative Katherine Tai told reporters. “We have an incredible opportunity for us to demonstrate what we can do to address daily challenges and to seize tomorrow's opportunities. We’re excited about continuing our discussions in the months ahead.”
+
+Not so excited: But the domestic critics of the initiative are growing more vocal as the months tick away. Progressive groups that have long been opposed to more traditional free trade agreements are raising concern about provisions related to digital trade, labor rights and environmental protections. Outside the Detroit hotel where trade leaders met, one lonely protest truck funded by Demand Progress cautioned Tai and Raimondo against using IPEF to help Big Tech companies.
+
+But industry groups that favor unfettered free trade are anxious as well. A coalition of more than 30 business and agriculture groups sent a strongly worded letter to Tai and Raimondo on Friday criticizing the talks for reportedly excluding issues like technical barriers to trade, sector-specific regulations, and sanitary and phytosanitary standards.
+
+“We are growing increasingly concerned that the content and direction of the administration’s proposals for the talks risk not only failing to deliver meaningful strategic and commercial outcomes but also endangering U.S. trade and economic interests in the Indo-Pacific region and beyond,” the letter states.
+
+For their part, Raimondo and Tai were unfazed by the criticism. Raimondo said Saturday that she had not read the letter but the arguments were “flatly wrong” and “reflects the misunderstanding of what the IPEF is and what it isn't.” Tai added that the articles of IPEF were always going to be different from what’s been done in the past. “The way that we are positioning ourselves is to do right by the entire U.S. economy. That means we're scoping a much wider lens in terms of who we are representing and advocating for in the U.S. economy,” she said.
+
+  
+GET READY FOR GLOBAL TECH DAY: Join POLITICO Live as we launch our first Global Tech Day alongside London Tech Week on Thursday, June 15. Register now for continuing updates and to be a part of this momentous and program-packed day! From the blockchain, to AI, and autonomous vehicles, technology is changing how power is exercised around the world, so who will write the rules? REGISTER HERE.
+    
+Want to receive this newsletter every weekday? Subscribe to POLITICO Pro. You’ll also receive daily policy news and other intelligence you need to act on the day’s biggest stories.
+
+China weighs in: Beijing has roundly opposed IPEF and the supply chain announcement didn’t shift its position.
+
+“The industrial and supply chains are shaped and developed by the laws of market dynamics and the choices of businesses,” Foreign Ministry spokesperson Mao Ning said Monday. “Disrupting the function of the market, politicizing normal trade activities and setting barriers to hinder industrial cooperation such as semiconductor cooperation is the biggest risk to supply chain stability.”
+
+NOW, IT’S OFF TO SCANDINAVIA: U.S. trade officials turn their attention to the other side of the world this week, and POLITICO’s Mark Scott reports the people of Luleå, Sweden, don’t know what hit them. The small industrial town on the edge of the Arctic Circle will serve as the host for a two-day summit of the U.S.-EU Trade and Tech Council, the two-year-old effort to revamp the relationship between Brussels and Washington following the Trump era.
+
+Raimondo, Tai and Secretary of State Antony Blinken are flying over from the U.S. to join EU trade chief Valdis Dombrovskis and competition czar Margrethe Vestager. Swedish Prime Minister Ulf Kristersson will also take part.
+
+As Mark arrived in Luleå on Monday, the taxi driver remarked how half the town had been cordoned off, more than 40 new police cars had mysteriously arrived overnight and his beloved town was now “full of Yankees.” Asking locals about whether they knew what was going on this week drew mixed results. Some had heard American VIPs were coming to town, others had gleaned the Swedish prime minister was arriving. (Not surprisingly, no one knew of the U.S.-EU Trade and Tech Council.)
+
+     
+A message from Sayari:
+
+
+    
+What to expect: You don’t have to wait for the official communiqué on Wednesday. Expect announcements related to artificial intelligence, sustainable trade, and electric vehicles and telecommunications standards. There are wins for Washington (with Brussels agreeing to adopt some of its AI tools), and for the European Union (with the United States backing some of its new rules targeting online platforms.)
+
+But EU and U.S. officials talk down so-called “moonshot” announcements from the event. The fact there’s no agreement on what to do about China has dampened expectations. So, too, is the failure to reach a deal on so-called critical raw materials, though both sides say an announcement on that — allowing European automakers and suppliers to access subsidies via the U.S. Inflation Reduction Act — is not far away.
+
+Beyond the topline news: Expect photo opportunities alongside electric charge points for trucks and so-called “green steel,” or efforts to decarbonize the industry, which is a pet project of the Swedish government that currently holds the rotating presidency of the European Council.
+
+That’s actually why everyone has descended on Luleå, a small town of just under 80,000, which offers a different backdrop from past gatherings in Pittsburgh, Paris and Washington. Industrial representatives are planning a series of press conferences to express their frustration with these biannual tech and trade tests — and Mark will be on the ground listening.
+
+WYDEN PRESSES ITA ON SURVEILLANCE EXPORT PROMOTION: Senate Finance Chair Ron Wyden (D-Ore.) wants the International Trade Administration to answer questions about its promotion of “dangerous surveillance and policing technology” in foreign markets, including some that have authoritarian regimes, and to explain what steps it is taking to prevent such technology sales from harming human rights.
+
+ITA, which is the Commerce Department’s export promotion agency, admitted last year it had promoted the sale of surveillance technology, but declined to identify the specific products or where they had been promoted, Wyden’s office said.
+
+The agency more recently issued a new policy to restrict the promotion of surveillance products, but has refused to share that policy without a formal letter, Wyden’s office added.
+
+“Given the Administration’s stated interest in limiting the human rights abuses made possible by these technologies, ITA must be transparent about its past and current promotion of these technologies abroad,” Wyden said in a letter to Raimondo that requests a copy of the new policy and poses a number of questions for the agency to answer.
+
+  
+DON’T MISS POLITICO’S HEALTH CARE SUMMIT: The Covid-19 pandemic helped spur innovation in health care, from the wide adoption of telemedicine, health apps and online pharmacies to mRNA vaccines. But what will the next health care innovations look like? Join POLITICO on Wednesday June 7 for our Health Care Summit to explore how tech and innovation are transforming care and the challenges ahead for access and delivery in the United States. REGISTER NOW.
+     International Overnight
+— The U.S. will consider imposing sanctions and other economic penalties on Uganda after the country passed a law criminalizing homosexuality, per Reuters.
+
+— Australia is entering its “golden age of mineral exploration” thanks to the Inflation Reduction Act, Bloomberg reports.
+
+— Deputy U.S. Trade Representative Sarah Bianchi tells Reuters that the review of Chinese tariffs will not depend on a “breakthrough” between the two countries.
+
+     
+A message from Sayari:
+
+Politico readers, join us for a day-long symposium at the Embassy of Sweden in Washington, D.C. exploring how the fundamentals of global trade are likely to change. Panels featuring representatives from government and industry will delve into the import compliance, export controls, and regulatory guidance transforming industries. Sayari analysts will also lead interactive masterclasses featuring practical techniques trade compliance officers can begin applying in their investigations right away. This event is invite-only for Politico readers and seats are limited. If you’re interested in attending, view the agenda and register here.
+      
+Follow us on Twitter
+
+John Yearwood @john_yearwood
+
+Doug Palmer @tradereporter
+
+Gavin Bade @GavinBade
+
+Steven Overly @StevenOverly
+  
+Follow us
+  
+To change your alert settings, please log in at https://go.politicoemail.com/?qs=7d09b54a9b78dfc8f75e5b741342df34d9faa7f0049b22afccbe02825dae97dae634416c88879f2e937bcd9d660248a1784d3818a78cd3ce  https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a25a2bc025f4dc2d6ce3006d355c1e85d9401d74bd0ebc2628ff0ab8c7c402c5df549d17d3c7f0c581acac91b1e6b3f380
+
+This email was sent to ouchendans62@gmail.com by: POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+
+ Please click here and follow the steps to unsubscribe.
+  
+
+--LoE6Qlgic6MS=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<html><body><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml><![endif]-->
+</head><!-- Everything above this line is "new" to the template. We'll have to experiment a bit to see if it causes troubles. --><!-- preview text --><div style="display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">    Presented by Sayari: Delivered every Monday by 10 a.m., Weekly Trade examines the latest news in global trade politics and policy. </div><table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" style="padding:5px 0 15px 0;margin:0;text-align:center" role="presentation">    <tbody>    <tr>        <td><!-- Note: This is left blank to aid in centering across email clients --></td>        
+<td align="center" width="540">            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:540px;table-layout:fixed;" role="presentation">                <tbody>                <!-- top date and utility link -->                <tr>    <td align="center">        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="padding-bottom:15px;" role="presentation">            <tbody>            <tr>                <td width="50%" style="text-align:left;font-size:11px;font-family:Helvetica,sans-serif;color:#B1B4BD;margin:0;">May 30, 2023</td>                
+<td width="50%" style="text-align:right;font-size:11px;font-family:Helvetica,sans-serif;color:#B1B4BD;margin:0;"><a
+ href="https://go.politicoemail.com/?qs=7d09b54a9b78dfc8015c8a42bf3d5617b9045f82befcbdc1f7c966e9420f1b8e3fb0997fb7cef7cd3e347ec6a3d73b07e0e187faadd1b5f3" target="_blank" style="color:#007BC7;text-decoration:none;">View in browser</a
+></td>            </tr>            </tbody>        </table>    </td></tr>                <!-- divider line -->                <tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                <!-- logo and byline -->                <tr>    <td align="center" style="text-align:center;padding:0 20px 15px 20px;margin:0">                                    <img src="https://static.politico.com/5a/fe/799e4fb14948ad9e53cda1efd53e/politico-weekly-trade.png" title="2020_NewsletterLogo_Free_WeeklyTrade" alt="POLITICO's Weekly Trade newsletter logo" border="0" width="500" style="width:100%;max-width:500px;">                        </td></tr>
+<tr>    <td align="center" style="padding:0 20px 10px 20px;">        <p style="text-align:center;font-family:Helvetica,sans-serif;font-size:11px;letter-spacing:2px;color:#B1B4BD;text-transform:uppercase;margin:0;">            By  <a
+ href="mailto:soverly@politico.com" target="_blank" style="color:#000000;text-decoration:none;font-weight:bold;">Steven Overly</a
+>        </p>    </td></tr>                <!-- sponsor logo -->                    <tr>        <td style="padding-bottom:15px; min-width:100%; width:100%;">            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#FFFFFF; min-width:100%;" role="presentation">                <tbody>                                        <tr>                        <td align="center" style="min-width:100%; width: 100%;">                            <table cellspacing="0" cellpadding="0" border="0">                                <tbody><tr>                                    <td width="50%" valign="middle" style="text-align:right;padding-right:6px;">
+<p style="font-family:Helvetica,sans-serif;font-size:12px;color:#6E7381;margin:0;">Presented by</p></td>                                    <td width="50%" valign="middle" style="text-align:left;">                                        <div style="width:100%;max-width:95px;">                                                                                            
+<img width="95" src="https://www.politico.com/dims4/default/35dd3e8/2147483647/resize/190x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2F64%2Fa1%2F0980946e4f3eb3efc3cc4e7be972%2Fsayari-logo-blk.png" alt="Sayari" border="0" style="width:95px;max-width:100%;">                                                                                    </div>                                    </td>                                </tr>                            </tbody></table>                        </td>                    </tr>                                    </tbody>            </table>        </td>    </tr>                <!-- body -->                                    
+<tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><i
+>With help from Doug Palmer and Mark Scott</i
+><br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">QUICK FIX </td>    </tr>    </tbody></table></td>                    
+</tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;">&#8212; The Biden administration&#8217;s signature economic initiative in Asia has produced its first tangible agreement,</span> but the announcement made clear that much about the new pact on supply chains is still to be determined.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">
+<span style="color:#b70000;font-weight:bold;font-family:sans-serif;">&#8212; The Swedish seaside town of Lule&#229; is the site of major trade-related meetings this week</span> as American and European officials plan to outline new areas of alignment on artificial intelligence, digital regulation and clean energy.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">It&#8217;s Tuesday, May 30.&nbsp;Welcome to Morning Trade.</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Send us your trade news: <a
+ href="mailto:gbade@politico.com" target="_blank">gbade@politico.com</a
+>, <a
+ href="mailto:dpalmer@politico.com" target="_blank">dpalmer@politico.com</a
+> and <a
+ href="mailto:soverly@politico.com" target="_blank">soverly@politico.com</a
+>. You can also follow us on Twitter: <a
+ href="https://go.politicoemail.com/?qs=7d09b54a9b78dfc8e92e31add9562beae0c35d3453aa446ba1bfc2ea0458d94729d541496fd71c27d449d4023e3d0a97db7e3d55c8ea233c" target="_blank">@gavinbade</a
+>, <a
+ href="https://go.politicoemail.com/?qs=7d09b54a9b78dfc835c7410965d1488996b1ede819f2d7445017f328e35b4c0265a99266efabb913a8e5862a0a6c35e661cde11b28e951d3" target="_blank">@tradereporter</a
+> and <a
+ href="https://go.politicoemail.com/?qs=7d09b54a9b78dfc88f2d3cfed03cb22fe5ded2ab80d283cbf6231ec25d4a2b0d65bdd37b5a87e9281e828771b529d4484dbe52868141c69f" target="_blank">@stevenoverly</a
+>.<br></p></td>                    </tr>                                    <tr>                            </tr><tr>    <td height="15" style="height:15px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>    <tr>    <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                            <p style="font-family:Helvetica,sans-serif;font-size:12px;margin-top:0;margin-bottom:10px;color:#000000;">A message from Sayari:</p>                                                <p style="margin-top:0;margin-bottom:20px;line-height:24px;color:#000000;">Politico readers are invited to the Embassy of Sweden in Washington, D.C. for a <a
+ href="https://go.politicoemail.com/?qs=b040c2e90506a24bd4e3eb52dbd204b9bf06613d2e602bc9de5dfc2f84a5488357f58b27c01fe539b10b9ffb69c693b83d5daddabf4e4472" target="_blank" style="text-decoration:underline;color:#007bc7;">one-day event</a
+> focused on real-world import and export challenges and their implications on economic security, featuring panelists from CBP, Treasury, USFIA, FTI Consulting, and more. Additionally learn practical techniques for identifying real-world trade risk from Sayari analysts. This event is invite-only and seats are limited. If you&#8217;re interested in attending, <a
+ href="https://go.politicoemail.com/?qs=b040c2e90506a24bd0635e7f3cfc50dee465e0d73c6698b3e0e0d23b4be56ac0d7731e01417c24fe7654003e4a82c5207b2fddeef4ad17bc" target="_blank" style="text-decoration:underline;color:#007bc7;">view the agenda and register here.</a
+></p>                                            </td></tr>    <tr>        <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">Driving the day</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">ONE DOWN, THREE TO GO: </strong
+>There have been a plethora of questions about President Joe Biden&#8217;s Indo-Pacific Economic Framework since U.S. officials first floated the idea in 2021 and then formally announced it last year. Skeptics of the non-traditional trade pact have wondered what exactly would be included, whether commitments would be enforceable, and whether the 13 other nations engaged in the negotiations would have incentive to sign on.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">The administration started offering its most concrete answers yet over the weekend when Commerce Secretary Gina Raimondo announced negotiators had reached an agreement on one of the framework&#8217;s four pillars that <a
+ href="https://go.politicoemail.com/?qs=7d09b54a9b78dfc81cb203f2ce6402ef6d16dd90f1a366d553f6dc81095cbd25c93d7e2a3d4354cf6389dd13fe3a08c690bc0808c4f01822" target="_blank">aims to prevent disruptions to critical supply chains</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The text of the deal won&#8217;t be made public until after a legal review and, even then, it must still clear each country&#8217;s domestic approval process. (We&#8217;re still waiting for clarity from the Commerce Department on what that means in the U.S.)</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">But based on the details Raimondo shared with reporters, the main thrust of the agreement will be the creation of three new bodies focused on supply chains &#8212; a council to enact joint policy actions, a network to communicate in a crisis and an advisory board to address labor shortages and workers&#8217; rights.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">As Wendy Cutler, vice president at the Asia Society Policy Institute, put it, the announcement itself is &#8220;largely process oriented.&#8221;</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;In essence, the IPEF members have established a framework within a framework to address supply chain concerns, with much of the substantive work yet to be discussed and agreed upon,&#8221; Cutler said. &#8220;Curiously, the new bodies are &#8216;contemplated,&#8217; and apparently not yet agreed upon, suggesting that there were some last-minute hitches in even setting up this structure.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Also outstanding: </strong
+>The remaining three pillars of the IPEF are still under negotiation and administration officials only said over the weekend that progress was being made. Those segments of the agreement, which delve into fair trade, clean energy, and anti-corruption and taxes, contain some of the thornier topics on which countries are more likely to disagree.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">Negotiators raced until the last minute to reach the &#8220;substantial conclusion&#8221; of the supply chain pillar ahead of a gathering of IPEF trade ministers in Detroit on Saturday. Now the Biden administration is hoping that will generate momentum to finish the other parts of the agreement before November.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;The IPEF is our commitment to the people,&#8221; U.S. Trade Representative Katherine Tai told reporters. &#8220;We have an incredible opportunity for us to demonstrate what we can do to address daily challenges and to seize tomorrow's opportunities. We&#8217;re excited about continuing our discussions in the months ahead.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Not so excited:</strong
+> But the domestic critics of the initiative are growing more vocal as the months tick away. Progressive groups that have long been opposed to more traditional free trade agreements are raising concern about provisions related to digital trade, labor rights and environmental protections. Outside the Detroit hotel where trade leaders met, <a
+ href="https://go.politicoemail.com/?qs=7d09b54a9b78dfc87dc3cf69644fa5e90074b21c4c50a550f54f4c7ddcb9971ff3a0f5aaa4a0a8894657af8c23788bb003ec5e105cf5d6ca" target="_blank">one lonely protest truck funded by Demand Progress</a
+> cautioned Tai and Raimondo against using IPEF to help Big Tech companies.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">But industry groups that favor unfettered free trade are anxious as well. A coalition of more than 30 business and agriculture groups sent a strongly worded letter to Tai and Raimondo on Friday criticizing the talks for reportedly excluding issues like technical barriers to trade, sector-specific regulations, and sanitary and phytosanitary standards.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;We are growing increasingly concerned that the content and direction of the administration&#8217;s proposals for the talks risk not only failing to deliver meaningful strategic and commercial outcomes but also endangering U.S. trade and economic interests in the Indo-Pacific region and beyond,&#8221; the letter states.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">For their part, Raimondo and Tai were unfazed by the criticism. Raimondo said Saturday that she had not read the letter but the arguments were &#8220;flatly wrong&#8221; and &#8220;reflects the misunderstanding of what the IPEF is and what it isn't.&#8221; Tai added that the articles of IPEF were always going to be different from what&#8217;s been done in the past. &#8220;The way that we are positioning ourselves is to do right by the entire U.S. economy. That means we're scoping a much wider lens in terms of who we are representing and advocating for in the U.S. economy,&#8221; she said.<br></p></td>                    
+</tr>                                    <tr>                        </tr><tr>    <td height="10" style="height:10px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                    <p style="margin-top:0;margin-bottom:20px;line-height:24px;margin-bottom:20px;color:#000000;">                <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">GET READY FOR GLOBAL TECH DAY: </strong
+>Join POLITICO Live as we launch our first Global Tech Day alongside London Tech Week on Thursday, June 15. Register now for continuing updates and to be a part of this momentous and program-packed day! From the blockchain, to AI, and autonomous vehicles, technology is changing how power is exercised around the world, so who will write the rules? <a
+ href="https://go.politicoemail.com/?qs=7d09b54a9b78dfc8bc3f7c419d47324d41523a5f90c88bc5bced9719e371ba202d576ba04fe09afc75d25dbc59c3a2cd7a82b164b8a1e93c" target="_blank" style="text-decoration:underline;color:#007BC7;">REGISTER HERE</a
+>.            </p>            </td></tr><tr>    <td height="10" style="height:10px; font-size:0; border-bottom:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td height="15" style="height:15px; font-size:0;">&nbsp;</td></tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><i
+>Want to receive this newsletter every weekday? </i
+><a
+ href="https://go.politicoemail.com/?qs=7d09b54a9b78dfc82d225dc8526a96486cc5fb9a33b5de412f526fa8dfe721e76c35e673b4658a4f23d3e3bed3a014004568dd6faa2d51c7" target="_blank"><i
+><u>Subscribe to POLITICO Pro</u></i
+></a
+><i
+>. You&#8217;ll also receive daily policy news and other intelligence you need to act on the day&#8217;s biggest stories.</i
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">China weighs in:</strong
+> Beijing has roundly opposed IPEF and the supply chain announcement didn&#8217;t shift its position.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;The industrial and supply chains are shaped and developed by the laws of market dynamics and the choices of businesses,&#8221; Foreign Ministry spokesperson Mao Ning said Monday. &#8220;Disrupting the function of the market, politicizing normal trade activities and setting barriers to hinder industrial cooperation such as semiconductor cooperation is the biggest risk to supply chain stability.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">NOW, IT&#8217;S OFF TO SCANDINAVIA:</strong
+> U.S. trade officials turn their attention to the other side of the world this week, and POLITICO&#8217;s Mark Scott reports the people of Lule&#229;, Sweden, don&#8217;t know what hit them. The small industrial town on the edge of the Arctic Circle will serve as the host for a two-day summit of the U.S.-EU Trade and Tech Council, the two-year-old effort to revamp the relationship between Brussels and Washington following the Trump era.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">Raimondo, Tai and Secretary of State Antony Blinken are flying over from the U.S. to join EU trade chief Valdis Dombrovskis and competition czar Margrethe Vestager. Swedish Prime Minister Ulf Kristersson will also take part.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">As Mark arrived in Lule&#229; on Monday, the taxi driver remarked how half the town had been cordoned off, more than 40 new police cars had mysteriously arrived overnight and his beloved town was now &#8220;full of Yankees.&#8221; Asking locals about whether they knew what was going on this week drew mixed results. Some had heard American VIPs were coming to town, others had gleaned the Swedish prime minister was arriving. (Not surprisingly, no one knew of the U.S.-EU Trade and Tech Council.)<br></p></td>                    </tr>                                    <tr>                            </tr><tr>    
+<td height="15" style="height:15px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>    <tr>    <td style="padding:0 20px 0 20px;text-align:center;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                            <p style="font-family:Helvetica,sans-serif;font-size:12px;margin-top:0;margin-bottom:10px;color:#000000;">A message from Sayari:</p>                                                        <p style="margin-top:0;margin-bottom:15px;line-height:15px;">                                            <a
+ href="https://go.politicoemail.com/?qs=b040c2e90506a24b24de2111dafa8743aa82d1f14e9c666fb21cc50e4b584ac45ab068fab8bd61da9412591bba607683022d4591b5b8c28f" target="_blank"><img src="https://www.politico.com/dims4/default/35c1e5d/2147483647/resize/1000x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2F58%2F22%2F8da975b343ecb21bb215bf25afc5%2Fsymposium-banner-ads-500x500.png" title="Advertisement Image" alt="Advertisement Image" border="0" width="500" style="width:100%;max-width:500px;"></a
+>                                        <img src="https://ad.doubleclick.net/ddm/ad/N7384.146504POLITICO0/B29993552.367785824;sz=1x1;ord=[timestamp]" border="0" a>                </p>                                                                                    </td></tr>    <tr>        <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">What to expect:</strong
+> You don&#8217;t have to wait for the official communiqu&#233; on Wednesday. Expect announcements related to artificial intelligence, sustainable trade, and electric vehicles and telecommunications standards. There are wins for Washington (with Brussels agreeing to adopt some of its AI tools), and for the European Union (with the United States backing some of its new rules targeting online platforms.)</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">But EU and U.S. officials talk down so-called &#8220;moonshot&#8221; announcements from the event. The fact there&#8217;s <a
+ href="https://go.politicoemail.com/?qs=7d09b54a9b78dfc8b85dedb561cfd6b0405e83b7030352759619a43267a38dd7d1c42c51faf1b1741427498eb0a8e1be2b31f8b11087600c" target="_blank">no agreement on what to do about China</a
+> has dampened expectations. So, too, is the failure to reach a deal on so-called critical raw materials, though both sides say an announcement on that &#8212; allowing European automakers and suppliers to access subsidies via the U.S. Inflation Reduction Act &#8212; is not far away.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Beyond the topline news: </strong
+>Expect photo opportunities alongside electric charge points for trucks and so-called &#8220;green steel,&#8221; or efforts to decarbonize the industry, which is a pet project of the Swedish government that currently holds the rotating presidency of the European Council.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">That&#8217;s actually why everyone has descended on Lule&#229;, a small town of just under 80,000, which offers a different backdrop from past gatherings in Pittsburgh, Paris and Washington. Industrial representatives are planning a series of press conferences to express their frustration with these biannual tech and trade tests &#8212; and Mark will be on the ground listening.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">WYDEN PRESSES ITA ON SURVEILLANCE EXPORT PROMOTION:</strong
+> Senate Finance Chair <a
+ href="https://go.politicoemail.com/?qs=7d09b54a9b78dfc806829d910cdb6e988458315d566e1b8935144daa1975b601a23b5640184c0ae77d7a176cd05a247943421f5ecdb6bac6" target="_blank">Ron Wyden</a
+> (D-Ore.) <a
+ href="https://go.politicoemail.com/?qs=7d09b54a9b78dfc888efb5742750660373d7d578a5cb7830278fcc152b3d79788148b53470ae312a657b6f902824a808ce1c63dbad972a34" target="_blank">wants the International Trade Administration</a
+> to answer questions about its promotion of &#8220;dangerous surveillance and policing technology&#8221; in foreign markets, including some that have authoritarian regimes, and to explain what steps it is taking to prevent such technology sales from harming human rights.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">ITA, which is the Commerce Department&#8217;s export promotion agency, admitted last year it had promoted the sale of surveillance technology, but declined to identify the specific products or where they had been promoted, Wyden&#8217;s office said.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">The agency more recently issued a new policy to restrict the promotion of surveillance products, but has refused to share that policy without a formal letter, Wyden&#8217;s office added.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;Given the Administration&#8217;s stated interest in limiting the human rights abuses made possible by these technologies, ITA must be transparent about its past and current promotion of these technologies abroad,&#8221; <a
+ href="https://go.politicoemail.com/?qs=7d09b54a9b78dfc8498ad5bb84054362c25d06e8514731b1eb2c184e822fe2300a2929f63c595bcc55a17e8c15bf40374327d1bd9e28c6a5" target="_blank">Wyden said in a letter to Raimondo that requests a copy of the new policy</a
+> and poses a number of questions for the agency to answer.<br></p></td>                    </tr>                                    <tr>                        </tr><tr>    <td height="10" style="height:10px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                    <p style="margin-top:0;margin-bottom:20px;line-height:24px;margin-bottom:20px;color:#000000;">                <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DON&#8217;T MISS POLITICO&#8217;S HEALTH CARE SUMMIT</strong
+>: The Covid-19 pandemic helped spur innovation in health care, from the wide adoption of telemedicine, health apps and online pharmacies to mRNA vaccines. But what will the next health care innovations look like? Join POLITICO on Wednesday June 7 for our Health Care Summit to explore how tech and innovation are transforming care and the challenges ahead for access and delivery in the United States. <a
+ href="https://go.politicoemail.com/?qs=7d09b54a9b78dfc87b35d78fbdc4a886fa2bbf7832ca500a08772df271581ad70db5d2919bc742479baec8b35e465b12130ac6e57d9cb44d" style="text-decoration:underline;color:#007BC7;">REGISTER NOW</a
+>.            </p>            </td></tr><tr>    <td height="10" style="height:10px; font-size:0; border-bottom:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td height="15" style="height:15px; font-size:0;">&nbsp;</td></tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">International Overnight</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;">
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8212; The U.S. will consider imposing sanctions and other economic penalties on Uganda <a
+ href="https://go.politicoemail.com/?qs=7d09b54a9b78dfc838a260ba0473c8a6e577795f814ca774a3694b4292f9f53f2eb6d8a9f6b08171c427533167b23c3c6bfd97923ad7e031" target="_blank">after the country passed a law criminalizing homosexuality</a
+>, per Reuters.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8212; Australia is <a
+ href="https://go.politicoemail.com/?qs=7d09b54a9b78dfc821f3bb3d822889947ae614d591aff1f3c84e9ae24408c02f373e98f5c7b2f3f8059721abc74b72bf432120e6acc72931" target="_blank">entering its &#8220;golden age of mineral exploration&#8221;</a
+> thanks to the Inflation Reduction Act, Bloomberg reports.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8212; Deputy U.S. Trade Representative Sarah Bianchi tells Reuters that the review of Chinese tariffs <a
+ href="https://go.politicoemail.com/?qs=7d09b54a9b78dfc8f8d0fed9b7d688fa6cd460120acfc91ccf0b3e93eec3bd0dd1a730c91d3b96dcf681df43bc07356e3c5a219022dec2da" target="_blank">will not depend on a &#8220;breakthrough&#8221; between the two countries</a
+>.<br></p></td>                    </tr>                                    <tr>                            </tr><tr>    <td height="15" style="height:15px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>    <tr>    <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                            <p style="font-family:Helvetica,sans-serif;font-size:12px;margin-top:0;margin-bottom:10px;color:#000000;">A message from Sayari:</p>                                                <p style="margin-top:0;margin-bottom:20px;line-height:24px;color:#000000;">Politico readers, join us for a <a
+ href="https://go.politicoemail.com/?qs=b040c2e90506a24b1288ffc07ec0ca3648e93c0ca7bff8f1b8a68050683585e629e580d276750baf0f9d1e3aed36a0528d8fd3d6ea6eab76" target="_blank" style="text-decoration:underline;color:#007BC7;">day-long symposium at the Embassy of Sweden</a
+> in Washington, D.C. exploring how the fundamentals of global trade are likely to change. Panels featuring representatives from government and industry will delve into the import compliance, export controls, and regulatory guidance transforming industries. Sayari analysts will also lead interactive masterclasses featuring practical techniques trade compliance officers can begin applying in their investigations right away. This event is invite-only for Politico readers and seats are limited. If you&#8217;re interested in attending, <a
+ href="https://go.politicoemail.com/?qs=b040c2e90506a24bd12b4cbddb27ce91814b7f8048f6da3a585a91ae7d21a0979fb026023014fafadb724d7faa99d4a12147aa487274d4a4" target="_blank" style="text-decoration:underline;color:#007BC7;">view the agenda and register here.</a
+></p>                                            </td></tr>    <tr>        <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                <!-- End Ad Copy -->                <tr>                                    </tr>                <!-- Post Body Content -->                <tr>                                    </tr>                <tr>                    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;
+</td>                </tr>                <!-- Twitter Handles -->                                    <tr>    <td style="color:#000000;padding:0px 20px 20px 20px;text-align:left;">        <p style="font-family:Helvetica,sans-serif;font-size:20px;color:#000000;margin-top:0;margin-bottom:15px;"><strong
+>Follow us on Twitter</strong
+></p>        <table cellpadding="0" cellspacing="0" border="0" role="presentation">            <tbody>            <tr>                <td width="52" valign="middle" style="text-align:left;padding-right:10px;"><img src="https://static.politico.com/hosted/icon-twitter-circle-blue%402x.png" title="" alt="" width="50" style="max-width:50px;"></td>                <td valign="middle" style="text-align:left;font-family:Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#000000;">                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">John Yearwood <a
+ href="https://go.politicoemail.com/?qs=7d09b54a9b78dfc81062f42da8f48d74d923dbe2e2bc8eafbb62807594181711d1fb20b226f580f5c5f8c6b681c45701afba1c6f55b9150b" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@john_yearwood</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Doug Palmer <a
+ href="https://go.politicoemail.com/?qs=7d09b54a9b78dfc835c7410965d1488996b1ede819f2d7445017f328e35b4c0265a99266efabb913a8e5862a0a6c35e661cde11b28e951d3" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@tradereporter</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Gavin Bade <a
+ href="https://go.politicoemail.com/?qs=7d09b54a9b78dfc8e92e31add9562beae0c35d3453aa446ba1bfc2ea0458d94729d541496fd71c27d449d4023e3d0a97db7e3d55c8ea233c" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@GavinBade</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Steven Overly <a
+ href="https://go.politicoemail.com/?qs=7d09b54a9b78dfc88f2d3cfed03cb22fe5ded2ab80d283cbf6231ec25d4a2b0d65bdd37b5a87e9281e828771b529d4484dbe52868141c69f" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@StevenOverly</a
+></p>                                    </td>            </tr>            </tbody>        </table>    </td></tr><tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                                <!-- Family of Playbook -->                                <!-- Follow us -->                <tr>    <td style="color:#000000;padding:0px 20px 20px 20px;text-align:left;">        <p style="font-family:Helvetica,sans-serif;font-size:12px;color:#000000;margin-bottom:10px;line-height:14px;text-transform:uppercase;font-weight:bold;letter-spacing:2px;">Follow us</p>        
+<table cellpadding="0" cellspacing="0" border="0" role="presentation">            <tbody>            <tr>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=7d09b54a9b78dfc8aeb3322c5a14b1fef8647a0a896601605d000027c380810c6db28cc591173b9650d8771aebbce71fc16fd49dafd8a2f2" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-facebook-gray%402x.png" title="Follow us on Facebook" alt="Follow us on Facebook" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=7d09b54a9b78dfc85218624582c98a4f5818e98ceb77b38a178cd5330cfaf3e399ecb888eba67f7cda20b0fa2c40c9e21a6d7d31881882c8" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-twitter-gray%402x.png" title="Follow us on Twitter" alt="Follow us on Twitter" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=7d09b54a9b78dfc8b870d63200f34de3ecd30cc67e5e32ba454a040b99e1e711ed3548fd0c5cc5bdbfaf35e22524df397b3c3463f576c131" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-instagram-gray%402x.png" title="Follow us on Instagram" alt="Follow us on Instagram" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=7d09b54a9b78dfc8fa5b855e9c0f94372f7c8a927832fdf4b5ee87c0a703b1837ffa77f5bb2760d205e88c4c4ddb4f44793ba0b5399cb810" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-applePodcast-gray%402x.png" title="Listen on Apple Podcast" alt="Listen on Apple Podcast" width="24" border="0" style="max-width:24px;"></a
+></td>            </tr>            </tbody>        </table>    </td></tr><tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                </tbody>            </table>        </td>        <td><!-- Note: This is left blank to aid in centering across email clients --></td>    </tr>    </tbody></table><!-- Everything below this line is "new" to the template. We'll have to experiment a bit to see if it causes troubles. --><!-- howler#email.footers/core-newsletter.footer.html -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff"
+       style="padding:5px 0 15px 0;margin:0;text-align:center" role="presentation">
+    <tbody>
+    <tr>
+        <td><!-- Note: This is left blank to aid in centering across email clients --></td>
+        <td align="center" width="540">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:540px" role="presentation">
+                <tbody>
+                <tr>
+                    <td align="center" style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;">
+                        <p style="margin-bottom:15px;line-height:24px;">To change your alert settings, please log in at
+                            <a
+ href="https://go.politicoemail.com/?qs=7d09b54a9b78dfc8f75e5b741342df34d9faa7f0049b22afccbe02825dae97dae634416c88879f2e937bcd9d660248a1784d3818a78cd3ce" target="_blank" style="color:#007BC7;text-decoration:none;">https://www.politico.com/_login?base=https%3A%2F%2Fwww.politico.com/settings</a
+>
+                            <!--Commenting out the following line because it causes an undesired line to be displayed on outlook (some versions) and we couldn't find the use case of it-->
+                            <!-- <span style="display:none;"><a
+ href="https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a25a2bc025f4dc2d6ce3006d355c1e85d92142aaa8a7370c31">https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a25a2bc025f4dc2d6ce3006d355c1e85d92142aaa8a7370c31</a
+></span> -->
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="padding-bottom:15px;"><img
+                            src="https://static.politico.com/hosted/icon-politico-logo.png"
+                            class="CToWUd"></td>
+                </tr>
+                <tr>
+                    <td align="center"><p
+                            style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:20px;">
+                        This email was sent to ouchendans62@gmail.com by: POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+                        <p style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:24px;">
+                            
+
+                            Please click <a
+ href="https://go.politicoemail.com/?qs=7d09b54a9b78dfc8b711a9ead1e1f40943ce309c75e5fd041e1ce026db640bce8d5341d9fd98388c87124fe08e5a9dde3ae2f452f324d25a" target="_blank" style="color:#007BC7;text-decoration:none;">here</a
+> and follow the steps to unsubscribe.
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td><!-- Note: This is left blank to aid in centering across email clients --></td>
+    </tr>
+    </tbody>
+</table>
+<img src="https://click.politicoemail.com/open.aspx?ffcb10-fe951d787565017c77-fde613797160037e7315777c-fe9115737262077c7c-fece12737567067e-fdf61574756104747317747c-ffcf14&d=40128&bmt=0" width="1" height="1" alt="">
+</body></html><p email-meta style="display: none;opacity:0;">source=GoggleDocument, article=00000188-6cb5-d998-ab8f-fefd0e030007</p>
+
+--LoE6Qlgic6MS=_?:--
+

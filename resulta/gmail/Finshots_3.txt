@@ -1,0 +1,560 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp338245ims;
+        Mon, 29 May 2023 21:51:36 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ5h1rtRqfPL88yhX1p5L1Xk/ujruwjlSUVVoaoK36CYTUdEgOXkqxiMbEH2klyfuxtSpfH4
+X-Received: by 2002:a05:6214:c4b:b0:625:aa49:ea00 with SMTP id r11-20020a0562140c4b00b00625aa49ea00mr8527809qvj.29.1685422296022;
+        Mon, 29 May 2023 21:51:36 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685422296; cv=none;
+        d=google.com; s=arc-20160816;
+        b=cvZjMrf13W8V58vjZgRFgzLtUZvqgUdC8+5ya+8AlWG0guNY9nmnrx59aLcHw75YW6
+         Kvw9sUv+M9b0IZkXK3ahHkq9b9D8mnUVhqbu1jByU9weNOyM7V/10/75wwyV+pjXRzxk
+         Qv26jarGM6t0q+Lm5Z4RjCkzavIWYSbOTvEqGMHSNv2YDpDArpvll1Z7itgoDJ/+1MuJ
+         MreWJMzRDEQNZaW13EdtEHtSCJgTDBckgvafZ5c30wo/KGR1G6dxZxN9nnX2prRxXFmf
+         lrUelL7Ev0A6kFAkkwFfoqVVVpVDqZTz840j2u8HxQLean/+zl4h8qUhK6sJXGo96Txc
+         m3vg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:date:to:from:subject:mime-version
+         :dkim-signature:dkim-signature;
+        bh=tJKgb+fXDVD1hCf+VSwxX7moxULYS5KXINedeODDs1M=;
+        b=wyoBhg6LMmU9z4HlpO9jVjxt4RdLp9oOJ2Im+tkxEFenqdGGGlkR9a81vpXcpDqCga
+         Ri0CR/xBpe+SeLmpv/y1NkN9oXw/8GDTuqQehQuPFfVM+CPL5dimT0DRS06mLxWt2KiZ
+         4S7QyvdR+mHtq23BF+1SsAqhcUggI/OyRiMPxHi5TvoT1CmuqH5LA5M08LJEVTFybZzE
+         rrVdBBhyg1luUe0SURGFswngyNkD/aivuysUFNNHPY23O6HStoobAfM0XRJHuWDqFMtj
+         90LNBqxTpu9KFMMEu1owcdV7o0dup1kCEA84prg9/DJnw+p1hG2pM9RkXgTQIyQ9GZpk
+         mNZg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@finshots.in header.s=lgathoxm23wr275ega6lju2bgmuxkolm header.b=c7Orjsx4;
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=NkE0y5Z5;
+       spf=pass (google.com: domain of 010001886aff4363-b3081c8d-854e-4bcd-b887-eaa86de644a6-000000@mailer.finshots.in designates 54.240.10.179 as permitted sender) smtp.mailfrom=010001886aff4363-b3081c8d-854e-4bcd-b887-eaa86de644a6-000000@mailer.finshots.in
+Return-Path: <010001886aff4363-b3081c8d-854e-4bcd-b887-eaa86de644a6-000000@mailer.finshots.in>
+Received: from a10-179.smtp-out.amazonses.com (a10-179.smtp-out.amazonses.com. [54.240.10.179])
+        by mx.google.com with ESMTPS id gw9-20020a0562140f0900b0062558658712si1554160qvb.246.2023.05.29.21.51.34
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 29 May 2023 21:51:36 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 010001886aff4363-b3081c8d-854e-4bcd-b887-eaa86de644a6-000000@mailer.finshots.in designates 54.240.10.179 as permitted sender) client-ip=54.240.10.179;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@finshots.in header.s=lgathoxm23wr275ega6lju2bgmuxkolm header.b=c7Orjsx4;
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=NkE0y5Z5;
+       spf=pass (google.com: domain of 010001886aff4363-b3081c8d-854e-4bcd-b887-eaa86de644a6-000000@mailer.finshots.in designates 54.240.10.179 as permitted sender) smtp.mailfrom=010001886aff4363-b3081c8d-854e-4bcd-b887-eaa86de644a6-000000@mailer.finshots.in
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=lgathoxm23wr275ega6lju2bgmuxkolm; d=finshots.in; t=1685422294;
+	h=Content-Type:MIME-Version:Subject:From:To:Date:Message-ID;
+	bh=KdonacX6G8NJ/g4zgH392LXx8WFOjYxe4UDqZAEMLBo=;
+	b=c7Orjsx4VcFRL2SA2PZkohBMoGKLulK0tBO5uBLHlts+4Qw3vh6lrIVyJwAoBPVh
+	18FndQwcbEWPOqaiNZfXZGc5/BVxQKY3+o97Y82RMoUE7fassKsLjQY48teX2XFqbu4
+	o24coBkxZ4d59YogH06LVb/SjmStyecxVALYw/9A=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=224i4yxa5dv7c2xz3womw6peuasteono; d=amazonses.com; t=1685422294;
+	h=Content-Type:MIME-Version:Subject:From:To:Date:Message-ID:Feedback-ID;
+	bh=KdonacX6G8NJ/g4zgH392LXx8WFOjYxe4UDqZAEMLBo=;
+	b=NkE0y5Z5ynfWvqVup/pLX9dQMTHcsgU4W2MhHngkPVB3/9qpnhTRleut95JYxF7x
+	2sRWvwcSzhgfDNs2T8NlgEr5eiv29JRk0vrBLLoyS3gW1eAFE4UEMCMhv5pLUffDYLQ
+	N7COGVJWXacS1H+D88e33ItuQAU7QDZzITCzTfjE=
+Content-Type: multipart/alternative;
+ boundary="===============1345647689440360825=="
+MIME-Version: 1.0
+Subject: Your EV could be hurting the world. And your pocket.
+From: Finshots <morning@finshots.in>
+To: ouchendans62@gmail.com
+Date: Tue, 30 May 2023 04:51:33 +0000
+Message-ID: <010001886aff4363-b3081c8d-854e-4bcd-b887-eaa86de644a6-000000@email.amazonses.com>
+Feedback-ID: 1.us-east-1.2fA5CXFMGJjDByfGW7IMy8xAwSNY1JghnllAR5c/lro=:AmazonSES
+X-SES-Outgoing: 2023.05.30-54.240.10.179
+
+--===============1345647689440360825==
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+
+In today’s Finshots, we try to answer the question on everyone’s mind — are
+electric vehicles the answer to saving the planet?
+
+
+--------------------------------------------------------------------------------
+
+The Story
+There are only a couple of reasons why you might buy an electric vehicle.
+
+ 1. Environment! You see ads about ‘zero emissions’ and you want to play your
+    part in keeping the world clean and green. You don’t want to burn fossil
+    fuels just to get from Point A to B.
+ 2. Long-term cost! You think you can justify the high cost of an EV because
+    you’ll spend less money on fuel over its lifetime. And you see the
+    government doling out subsidies so you know it’s the future. You don’t want
+    to be stuck trying to sell a diesel car in 10 years when the world has moved
+    on.
+
+Now carmakers in India know
+[https://auto.economictimes.indiatimes.com/news/industry/as-evs-gain-traction-automakers-trim-ice-models/96783451] 
+that most people are thinking along these lines nowadays. So they’re cutting
+back on the number of petrol and diesel-powered models or what’s known as the
+internal combustion engine (ICE). In 2018, they sold 168 such models. But that
+has now fallen to just 136. On the other hand, they’ve stepped up the EV game.
+The EV models have jumped from just 3 to 18 during this same period.
+
+But what if we told you that there’s a small problem with EVs in their current
+state?
+
+They aren’t the best. Not for the environment. Not for your pocket.
+
+If you’re shocked, then we suggest that you take it up with the folks at the 
+Indian Institute of Technology, Kanpur
+[https://www.iitk.ac.in/erl/Downloads/LCA%20and%20TCO%20Analyses%20of%20BEVs,%20HEVs,%20and%20ICEVs.pdf]
+. Because their researchers crunched the numbers, ran a lot of permutations and
+combinations and finally said, “Guess what? The future should be hybrid. Not
+electric!”
+
+Yup, it seems like cars that have an electric battery but also come fitted with
+an internal combustion engine (ICE) that uses fossil fuels are simply better.
+For the environment and for your pocket. At least from an Indian context.
+
+And what did they find you ask?
+
+So they ran some simulations assuming that the cars have a life of 10 years. And
+that they run for 20,000 km a year. They then calculated the emissions through
+the entire life cycle or what’s known as cradle-to-grave — which means right
+from production to maintenance and then recycling.
+
+And the numbers speak for themselves.
+
+The EV emits 187 grams of carbon dioxide per kilometre of use (gCO eq./km). The
+hybrid is at 167 gCO eq./km. The regular petrol car emits 244 gCO eq./km.
+
+And if you’re wondering which cars were used in this analysis, it’s the petrol
+and electric variants of the Tata Nexon and the Maruti Suzuki’s hybrid Grand
+Vitara.
+
+And if you’re wondering why EVs aren’t coming out trumps, remember, emissions
+aren’t just about what comes out of the tailpipes alone. In that case, EVs don’t
+emit anything and they’re a clear winner. But think how the massive batteries
+that power these cars are produced. They require a lot of nickel, cobalt, and
+lithium. And mining and refining them emit a lot of greenhouse gases. So
+producing an EV can actually be quite counterproductive at the moment.
+
+That means if you decide to change your EV after driving it for say 30,000 km,
+you might have just bought a regular petrol car instead.
+
+Another big factor over the lifetime is the electricity needed for charging EVs.
+In India, we’re still quite heavily reliant on thermal power for our needs — 80%
+of it comes from burning coal. So each time you juice up your EV, you burn a
+little bit more coal giving way to increased CO2 emissions.
+
+Hybrids [https://afdc.energy.gov/vehicles/how-do-hybrid-electric-cars-work] like
+the Grand Vitara on the other hand use a much smaller battery. That means it
+needs fewer scarce metals. And in the end, the emissions from mining and
+processing also drop. And it doesn’t even need to be plugged into a power source
+to charge because the battery is also charged whenever the car’s brakes are
+applied. And by using a combination of the electric battery and the regular
+engine, it can help boost the mileage
+[https://www.technologyreview.com/2022/12/22/1065830/why-evs-wont-replace-hybrid-cars-anytime-soon/]
+.
+
+Not to forget that India has increasingly been adding ethanol
+[https://finshots.in/archive/indias-ethanol-project/] (derived from sugarcane)
+into its fuel. And as per the paper, this blended fuel succeeds in bringing down
+the emissions by quite a bit too.
+
+So yeah, hybrids simply seem to be better for the environment right now.
+
+Oh, and the cost aspect?
+
+Now there are quite a few things to consider here — the initial price of the
+car, the annual maintenance charges, the fuel or electricity cost for running
+it…you get the drift. But there are two scenarios to consider.
+
+In the first case, we have to deal with the subsidies that the government has
+been doling out for EVs. Naturally, this is an added boost just to make the
+pricing more palatable. So once you consider this and the non-existent fuel
+costs, you’d think that over a 10-year period running 20,000 km a year, the EV
+would win, right?
+
+Not quite. It seems that the Total Cost of Ownership (TCO) per km is around ₹13
+for both an electric and a petrol-powered vehicle. Whereas it’s ₹14 for the
+hybrid version.
+
+But what if the government chooses to give hybrids a similar incentive after
+seeing the impact on emissions?
+
+Well, then the hybrid emerges as the clear winner. Its TCO falls to just ₹11 per
+km.
+
+That’s quite something, isn’t it?
+
+Anyway, bear in mind that no analysis is going to be perfect.
+
+We might suddenly unearth those rare metals and be able to mine them more
+efficiently. We might see a complete overhaul of our energy mix and we might
+generate more electricity using wind or solar. All this might cut costs
+drastically. On the other hand, the price of petrol might shoot up significantly
+and these calculations may not pan out exactly as the researchers envisioned.
+
+But at least as of now, the research paper suggests that hybrids are the winner
+in the battle to cut emissions. And if you convince people of the lower
+ownership costs, it could accelerate its demand too.
+
+So will this paper shake up the established order?
+
+We don’t know. But it’ll be quite interesting to see what happens because
+currently hybrid vehicles are treated as the stepchild of the automotive
+industry. Just look at how we’re taxing hybrid vehicles. EVs are taxed at 5%
+whereas large hybrids attract 43% GST. That alone could dissuade people from
+buying these vehicles. And maybe that’s why only 4%
+[https://www.business-standard.com/podcast/automobile/are-hybrid-cars-a-better-solution-for-india-than-evs-122082600093_1.html] 
+of all cars sold in India in FY22 were hybrids.
+
+But the voices in support of hybrids are growing. India’s top carmaker Maruti
+Suzuki said last year that if we want people to ditch ICEs and cut back
+emissions, we need to give them affordable hybrid alternatives first. And now we
+have one of the top engineering schools in India pitching for hybrids too.
+
+So will the government listen? Well, we will just have to wait and watch.
+
+Until then…
+
+Don't forget to share this article on WhatsApp
+[https://api.whatsapp.com/send?text=An%20explainer%20on%20why%20hybrid%20vehicles%20may%20be%20a%20better%20alternative%20when%20compared%20to%20electric%20vehicles%20https://bit.ly/3IKyNgW]
+, LinkedIn
+[https://www.linkedin.com/shareArticle?mini=true&url=https://finshots.in/archive/your-ev-could-be-hurting-the-world-and-your-pocket] 
+and Twitter
+[https://twitter.com/intent/tweet?url=https://bit.ly/43B7MER&via=finshots&text=An%20explainer%20on%20why%20hybrid%20vehicles%20may%20be%20a%20better%20alternative%20when%20compared%20to%20electric%20vehicles]
+
+Also, we are doing something slightly different with the Ditto Insurance Plug
+today. Instead of just asking you to book a call, we will be attaching this
+guide
+[https://joinditto.in/life-insurance/articles/term-insurance-101/?utm_source=Finshots+&utm_medium=Newsletter+&utm_campaign=29-05-2023&utm_term=CA_T&utm_content=Term_101] 
+to understand Term Insurance. Think of it as a Term Insurance 101
+[https://joinditto.in/life-insurance/articles/term-insurance-101/?utm_source=Finshots+&utm_medium=Newsletter+&utm_campaign=29-05-2023&utm_term=CA_T&utm_content=Term_101]
+. If you've never understood what the fuss is with this product, then we are
+sure this explainer
+[https://joinditto.in/life-insurance/articles/term-insurance-101/?utm_source=Finshots+&utm_medium=Newsletter+&utm_campaign=29-05-2023&utm_term=CA_T&utm_content=Term_101] 
+will set the record straight.
+--===============1345647689440360825==
+Content-Type: text/html; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang=3D"en" dir=3D"ltr">
+    <head>
+        <meta charset=3D"utf-8">
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-sc=
+ale=3D1,user-scalable=3D1.0, minimum-scale=3D1.0, maximum-scale=3D1.0">
+        <title></title>
+        <style type=3D"text/css">
+@media (min-width: 850px) {
+    .articleContainer {
+        width: 850px;
+        padding: 0
+        }
+    }
+@media (max-width: 1040px) {
+    .articleText img, .articleText video {
+        width: 100%
+        }
+    figure {
+        margin: 0
+        }
+    }
+@media (max-width: 500px) {
+    .articleText h1 {
+        font-size: 2.8rem
+        }
+    }
+@media (max-width: 500px) {
+    .articleText h2 {
+        font-size: 1.5rem
+        }
+    }
+@media (max-width: 500px) {
+    .articleText h3 {
+        font-size: 24px
+        }
+    }
+@media (max-width: 500px) {
+    .articleText h4 {
+        font-size: 2.2rem
+        }
+    }
+@media (min-width: 1180px) {
+    .articleText h5 {
+        max-width: 1060px;
+        width: 100vw
+        }
+    }
+@media (max-width: 500px) {
+    .articleText h5 {
+        padding: 0 0 0.5em;
+        font-size: 2.2rem
+        }
+    }
+@media (max-width: 500px) {
+    .articleText h6 {
+        font-size: 2rem
+        }
+    }</style>
+    </head>
+    <body style=3D'box-sizing:border-box; font-family:"DIN Pro", "DIN Web",=
+ sans-serif'>
+        <div>
+            <div class=3D"articleContainer" style=3D"margin:auto; max-width=
+:700px; padding:0 16px">
+                <div align=3D"center" style=3D"width:100%;">
+          <a href=3D"https://rn619dmj.r.us-east-1.awstrack.me/L0/https:%2F%=
+2Ffinshots.in%3Futm_source=3DemailHeader%26utm_medium=3Dmailshots/1/0100018=
+86aff4363-b3081c8d-854e-4bcd-b887-eaa86de644a6-000000/VLbJtXvtOBxs0-XjsjwFb=
+_5dbqA=3D323"><img src=3D"https://d3jlwjv6gmyigl.cloudfront.net/assets/two/=
+images/logo-2d6831bc63e1ecb76091541e2f20069a.png" style=3D"max-width:150px;=
+" alt=3D"Finshots"></a>
+         =20
+=09=09  <h4 class=3D"articleTitle" style=3D"font-size:24px; font-weight:900=
+; line-height:28px; margin-bottom:20px; margin-top:20px; width:100%" width=
+=3D"100%">Your EV could be hurting the world. And your pocket.</h4>
+            <img src=3D"https://cdn.finshots.app/images/2023/05/design-71-e=
+v2.jpg" alt=3D"Your EV could be hurting the world. And your pocket. | Finsh=
+ots Daily Newsletter" style=3D"width:90%;">
+        </div>
+
+        <div class=3D"articleText" style=3D"font-size:16px; line-height:1.4=
+; margin-bottom:25px; margin-top:25px; width:100%" width=3D"100%">
+=09=09=09<p><em>In today=E2=80=99s Finshots, we try to answer the question =
+on everyone=E2=80=99s mind=E2=80=8A=E2=80=94=E2=80=8Aare electric vehicles =
+the answer to saving the planet?</em></p><!--kg-card-begin: hr--><hr style=
+=3D"border:0; border-top:1px solid #e3e9ed; display:block; height:1px; padd=
+ing:0; position:relative; width:100%; margin:20px 0" height=3D"1" width=3D"=
+100%"><!--kg-card-end: hr--><h3 id=3D"the-story" style=3D"font-size:26px; f=
+ont-weight:700; margin:0.5em 0 0.2em">The Story</h3><p>There are only a cou=
+ple of reasons why you might buy an electric vehicle.</p><ol><li style=3D"m=
+argin-top:0">Environment! You see ads about =E2=80=98zero emissions=E2=80=
+=99 and you want to play your part in keeping the world clean and green. Yo=
+u don=E2=80=99t want to burn fossil fuels just to get from Point A to B.</l=
+i><li>Long-term cost! You think you can justify the high cost of an EV beca=
+use you=E2=80=99ll spend less money on fuel over its lifetime. And you see =
+the government doling out subsidies so you know it=E2=80=99s the future. Yo=
+u don=E2=80=99t want to be stuck trying to sell a diesel car in 10 years wh=
+en the world has moved on.</li></ol><p>Now <a href=3D"https://rn619dmj.r.us=
+-east-1.awstrack.me/L0/https:%2F%2Fauto.economictimes.indiatimes.com%2Fnews=
+%2Findustry%2Fas-evs-gain-traction-automakers-trim-ice-models%2F96783451/1/=
+010001886aff4363-b3081c8d-854e-4bcd-b887-eaa86de644a6-000000/9hAg9GZY-yyfjJ=
+4dWO0bnQivg_Y=3D323" rel=3D"noopener" style=3D"-webkit-text-decoration:none=
+; color:#299FF2; font-weight:500; text-decoration:none">carmakers in India =
+know</a> that most people are thinking along these lines nowadays. So they=
+=E2=80=99re cutting back on the number of petrol and diesel-powered models =
+or what=E2=80=99s known as the internal combustion engine (ICE). In 2018, t=
+hey sold 168 such models. But that has now fallen to just 136. On the other=
+ hand, they=E2=80=99ve stepped up the EV game. The EV models have jumped fr=
+om just 3 to 18 during this same period.</p><p>But what if we told you that=
+ there=E2=80=99s a small problem with EVs in their current state?</p><p>The=
+y aren=E2=80=99t the best. Not for the environment. Not for your pocket.</p=
+><p>If you=E2=80=99re shocked, then we suggest that you take it up with the=
+ folks at the <a href=3D"https://rn619dmj.r.us-east-1.awstrack.me/L0/https:=
+%2F%2Fwww.iitk.ac.in%2Ferl%2FDownloads%2FLCA%2520and%2520TCO%2520Analyses%2=
+520of%2520BEVs,%2520HEVs,%2520and%2520ICEVs.pdf/1/010001886aff4363-b3081c8d=
+-854e-4bcd-b887-eaa86de644a6-000000/vIAeqthf-kDr1Q22Kia1RE4RfUs=3D323" rel=
+=3D"noopener" style=3D"-webkit-text-decoration:none; color:#299FF2; font-we=
+ight:500; text-decoration:none">Indian Institute of Technology, Kanpur</a>.=
+ Because their researchers crunched the numbers, ran a lot of permutations =
+and combinations and finally said, =E2=80=9CGuess what? The future should b=
+e hybrid. Not electric!=E2=80=9D</p><p>Yup, it seems like cars that have an=
+ electric battery but also come fitted with an internal combustion engine (=
+ICE) that uses fossil fuels are simply better. For the environment and for =
+your pocket. At least from an Indian context.</p><p>And what did they find =
+you ask?</p><p>So they ran some simulations assuming that the cars have a l=
+ife of 10 years. And that they run for 20,000 km a year. They then calculat=
+ed the emissions through the entire life cycle or what=E2=80=99s known as c=
+radle-to-grave=E2=80=8A=E2=80=94=E2=80=8Awhich means right from production =
+to maintenance and then recycling.</p><p>And the numbers speak for themselv=
+es.</p><p>The EV emits 187 grams of carbon dioxide per kilometre of use (gC=
+O eq./km). The hybrid is at 167 gCO eq./km. The regular petrol car emits 24=
+4 gCO eq./km.</p><p>And if you=E2=80=99re wondering which cars were used in=
+ this analysis, it=E2=80=99s the petrol and electric variants of the Tata N=
+exon and the Maruti Suzuki=E2=80=99s hybrid Grand Vitara.</p><p>And if you=
+=E2=80=99re wondering why EVs aren=E2=80=99t coming out trumps, remember, e=
+missions aren=E2=80=99t just about what comes out of the tailpipes alone. I=
+n that case, EVs don=E2=80=99t emit anything and they=E2=80=99re a clear wi=
+nner. But think how the massive batteries that power these cars are produce=
+d. They require a lot of nickel, cobalt, and lithium. And mining and refini=
+ng them emit a lot of greenhouse gases. So producing an EV can actually be =
+quite counterproductive at the moment.</p><p>That means if you decide to ch=
+ange your EV after driving it for say 30,000 km, you might have just bought=
+ a regular petrol car instead.</p><p>Another big factor over the lifetime i=
+s the electricity needed for charging EVs. In India, we=E2=80=99re still qu=
+ite heavily reliant on thermal power for our needs=E2=80=8A=E2=80=94=E2=80=
+=8A80% of it comes from burning coal. So each time you juice up your EV, yo=
+u burn a little bit more coal giving way to increased CO2 emissions.</p><p>=
+<a href=3D"https://rn619dmj.r.us-east-1.awstrack.me/L0/https:%2F%2Fafdc.ene=
+rgy.gov%2Fvehicles%2Fhow-do-hybrid-electric-cars-work/1/010001886aff4363-b3=
+081c8d-854e-4bcd-b887-eaa86de644a6-000000/4ijemaCVNN9G7LR-PbN8n5myQ8Q=3D323=
+" rel=3D"noopener" style=3D"-webkit-text-decoration:none; color:#299FF2; fo=
+nt-weight:500; text-decoration:none">Hybrids</a> like the Grand Vitara on t=
+he other hand use a much smaller battery. That means it needs fewer scarce =
+metals. And in the end, the emissions from mining and processing also drop.=
+ And it doesn=E2=80=99t even need to be plugged into a power source to char=
+ge because the battery is also charged whenever the car=E2=80=99s brakes ar=
+e applied. And by using a combination of the electric battery and the regul=
+ar engine, it can help <a href=3D"https://rn619dmj.r.us-east-1.awstrack.me/=
+L0/https:%2F%2Fwww.technologyreview.com%2F2022%2F12%2F22%2F1065830%2Fwhy-ev=
+s-wont-replace-hybrid-cars-anytime-soon%2F/1/010001886aff4363-b3081c8d-854e=
+-4bcd-b887-eaa86de644a6-000000/9JwDqc_J5yTwFv5kwEQJbGFP1B0=3D323" rel=3D"no=
+opener" style=3D"-webkit-text-decoration:none; color:#299FF2; font-weight:5=
+00; text-decoration:none">boost the mileage</a>.</p><p>Not to forget that I=
+ndia has increasingly been <a href=3D"https://rn619dmj.r.us-east-1.awstrack=
+.me/L0/https:%2F%2Ffinshots.in%2Farchive%2Findias-ethanol-project%2F/1/0100=
+01886aff4363-b3081c8d-854e-4bcd-b887-eaa86de644a6-000000/TwYug_8fdQFYv0emUA=
+L46U6EyI4=3D323" rel=3D"noopener" style=3D"-webkit-text-decoration:none; co=
+lor:#299FF2; font-weight:500; text-decoration:none">adding ethanol</a> (der=
+ived from sugarcane) into its fuel. And as per the paper, this blended fuel=
+ succeeds in bringing down the emissions by quite a bit too.</p><p>So yeah,=
+ hybrids simply seem to be better for the environment right now.</p><p>Oh, =
+and the cost aspect?</p><p>Now there are quite a few things to consider her=
+e=E2=80=8A=E2=80=94=E2=80=8Athe initial price of the car, the annual mainte=
+nance charges, the fuel or electricity cost for running it=E2=80=A6you get =
+the drift. But there are two scenarios to consider.</p><p>In the first case=
+, we have to deal with the subsidies that the government has been doling ou=
+t for EVs. Naturally, this is an added boost just to make the pricing more =
+palatable. So once you consider this and the non-existent fuel costs, you=
+=E2=80=99d think that over a 10-year period running 20,000 km a year, the E=
+V would win, right?</p><p>Not quite. It seems that the Total Cost of Owners=
+hip (TCO) per km is around =E2=82=B913 for both an electric and a petrol-po=
+wered vehicle. Whereas it=E2=80=99s =E2=82=B914 for the hybrid version.</p>=
+<p>But what if the government chooses to give hybrids a similar incentive a=
+fter seeing the impact on emissions?</p><p>Well, then the hybrid emerges as=
+ the clear winner. Its TCO falls to just =E2=82=B911 per km.</p><p>That=E2=
+=80=99s quite something, isn=E2=80=99t it?</p><p>Anyway, bear in mind that =
+no analysis is going to be perfect.</p><p>We might suddenly unearth those r=
+are metals and be able to mine them more efficiently. We might see a comple=
+te overhaul of our energy mix and we might generate more electricity using =
+wind or solar. All this might cut costs drastically. On the other hand, the=
+ price of petrol might shoot up significantly and these calculations may no=
+t pan out exactly as the researchers envisioned.</p><p>But at least as of n=
+ow, the research paper suggests that hybrids are the winner in the battle t=
+o cut emissions. And if you convince people of the lower ownership costs, i=
+t could accelerate its demand too.</p><p>So will this paper shake up the es=
+tablished order?</p><p>We don=E2=80=99t know. But it=E2=80=99ll be quite in=
+teresting to see what happens because currently hybrid vehicles are treated=
+ as the stepchild of the automotive industry. Just look at how we=E2=80=99r=
+e taxing hybrid vehicles. EVs are taxed at 5% whereas large hybrids attract=
+ 43% GST. That alone could dissuade people from buying these vehicles. And =
+maybe that=E2=80=99s why<a href=3D"https://rn619dmj.r.us-east-1.awstrack.me=
+/L0/https:%2F%2Fwww.business-standard.com%2Fpodcast%2Fautomobile%2Fare-hybr=
+id-cars-a-better-solution-for-india-than-evs-122082600093_1.html/1/01000188=
+6aff4363-b3081c8d-854e-4bcd-b887-eaa86de644a6-000000/5p3Pd0ZUhuqCXCP9m8tfC5=
+e8h4k=3D323" rel=3D"noopener" style=3D"-webkit-text-decoration:none; color:=
+#299FF2; font-weight:500; text-decoration:none"> only 4%</a> of all cars so=
+ld in India in FY22 were hybrids.</p><p>But the voices in support of hybrid=
+s are growing. India=E2=80=99s top carmaker Maruti Suzuki said last year th=
+at if we want people to ditch ICEs and cut back emissions, we need to give =
+them affordable hybrid alternatives first. And now we have one of the top e=
+ngineering schools in India pitching for hybrids too.</p><p>So will the gov=
+ernment listen? Well, we will just have to wait and watch.</p><p>Until then=
+=E2=80=A6</p><p><em>Don't forget to share this article on <a href=3D"https:=
+//rn619dmj.r.us-east-1.awstrack.me/L0/https:%2F%2Fapi.whatsapp.com%2Fsend%3=
+Ftext=3DAn%2520explainer%2520on%2520why%2520hybrid%2520vehicles%2520may%252=
+0be%2520a%2520better%2520alternative%2520when%2520compared%2520to%2520elect=
+ric%2520vehicles%2520https:%2F%2Fbit.ly%2F3IKyNgW/1/010001886aff4363-b3081c=
+8d-854e-4bcd-b887-eaa86de644a6-000000/ofGCgDrME7FaIYWZS8ALzgJwZtM=3D323" st=
+yle=3D"-webkit-text-decoration:none; color:#299FF2; font-weight:500; text-d=
+ecoration:none">WhatsApp</a>, <a href=3D"https://rn619dmj.r.us-east-1.awstr=
+ack.me/L0/https:%2F%2Fwww.linkedin.com%2FshareArticle%3Fmini=3Dtrue%26url=
+=3Dhttps:%2F%2Ffinshots.in%2Farchive%2Fyour-ev-could-be-hurting-the-world-a=
+nd-your-pocket/1/010001886aff4363-b3081c8d-854e-4bcd-b887-eaa86de644a6-0000=
+00/hwxF5y4DOtcZMf3JlK0xE4y7Aro=3D323" style=3D"-webkit-text-decoration:none=
+; color:#299FF2; font-weight:500; text-decoration:none">LinkedIn</a> and <a=
+ href=3D"https://rn619dmj.r.us-east-1.awstrack.me/L0/https:%2F%2Ftwitter.co=
+m%2Fintent%2Ftweet%3Furl=3Dhttps:%2F%2Fbit.ly%2F43B7MER%26via=3Dfinshots%26=
+text=3DAn%2520explainer%2520on%2520why%2520hybrid%2520vehicles%2520may%2520=
+be%2520a%2520better%2520alternative%2520when%2520compared%2520to%2520electr=
+ic%2520vehicles/1/010001886aff4363-b3081c8d-854e-4bcd-b887-eaa86de644a6-000=
+000/YqKuenSmoVcT-mw9iPagKCoF1oA=3D323" style=3D"-webkit-text-decoration:non=
+e; color:#299FF2; font-weight:500; text-decoration:none">Twitter</a></em></=
+p><p><em>Also, we are doing something slightly different with the Ditto Ins=
+urance Plug today. Instead of just asking you to book a call, we will be at=
+taching <a href=3D"https://rn619dmj.r.us-east-1.awstrack.me/L0/https:%2F%2F=
+joinditto.in%2Flife-insurance%2Farticles%2Fterm-insurance-101%2F%3Futm_sour=
+ce=3DFinshots%2B%26utm_medium=3DNewsletter%2B%26utm_campaign=3D29-05-2023%2=
+6utm_term=3DCA_T%26utm_content=3DTerm_101/1/010001886aff4363-b3081c8d-854e-=
+4bcd-b887-eaa86de644a6-000000/iNZjqCoQHzc4fcRWNpZOpQQVrQw=3D323" style=3D"-=
+webkit-text-decoration:none; color:#299FF2; font-weight:500; text-decoratio=
+n:none">this guide</a> to understand Term Insurance. Think of it as a <a hr=
+ef=3D"https://rn619dmj.r.us-east-1.awstrack.me/L0/https:%2F%2Fjoinditto.in%=
+2Flife-insurance%2Farticles%2Fterm-insurance-101%2F%3Futm_source=3DFinshots=
+%2B%26utm_medium=3DNewsletter%2B%26utm_campaign=3D29-05-2023%26utm_term=3DC=
+A_T%26utm_content=3DTerm_101/2/010001886aff4363-b3081c8d-854e-4bcd-b887-eaa=
+86de644a6-000000/LQ_WYT4UN6yHtpHwRTh-5d9FuJo=3D323" style=3D"-webkit-text-d=
+ecoration:none; color:#299FF2; font-weight:500; text-decoration:none">Term =
+Insurance 101</a>. If you've never understood what the fuss is with this pr=
+oduct, then we are sure <a href=3D"https://rn619dmj.r.us-east-1.awstrack.me=
+/L0/https:%2F%2Fjoinditto.in%2Flife-insurance%2Farticles%2Fterm-insurance-1=
+01%2F%3Futm_source=3DFinshots%2B%26utm_medium=3DNewsletter%2B%26utm_campaig=
+n=3D29-05-2023%26utm_term=3DCA_T%26utm_content=3DTerm_101/3/010001886aff436=
+3-b3081c8d-854e-4bcd-b887-eaa86de644a6-000000/6N_UgUgBXoazG8n3jS1TgRMCR8w=
+=3D323" style=3D"-webkit-text-decoration:none; color:#299FF2; font-weight:5=
+00; text-decoration:none">this explainer</a> will set the record straight. =
+</em></p>
+        </div>=20
+
+                <br><br><br>
+                <hr style=3D"border:0; border-top:1px solid #e3e9ed; displa=
+y:block; height:1px; padding:0; position:relative; width:100%" height=3D"1"=
+ width=3D"100%">
+             =20
+             <footer>
+                <div class=3D"container" style=3D"font-family: Helvetica, A=
+rial, sans-serif; font-size: 13px; line-height: 1; text-align: left; color:=
+ #283444;">
+                    <div style=3D"margin:15px;">
+                        <br>
+                        <p class=3D"terms" style=3D"color:#283444; font-fam=
+ily:Helvetica, Arial, sans-serif; font-size:13px; line-height:18px; margin:=
+0 0 14px 0">Have a good day =E2=9D=A4=EF=B8=8F</p>
+                        <p class=3D"terms" style=3D"color:#283444; font-fam=
+ily:Helvetica, Arial, sans-serif; font-size:13px; line-height:18px; margin:=
+0 0 14px 0"><strong>Visit <a href=3D"https://rn619dmj.r.us-east-1.awstrack.=
+me/L0/https:%2F%2Fbit.ly%2F3hyMWR2/1/010001886aff4363-b3081c8d-854e-4bcd-b8=
+87-eaa86de644a6-000000/gqSUFS3UecKGkkYsmNlpGz0e2aI=3D323" style=3D"text-dec=
+oration: underline; color: #299FF2;">Ditto</a></strong> (a product by Finsh=
+ots) where we help you select the best health/life insurance </p>
+<p class=3D"terms" style=3D"color:#283444; font-family:Helvetica, Arial, sa=
+ns-serif; font-size:13px; line-height:18px; margin:0 0 14px 0">Subscribe to=
+ our new <strong><a href=3D"http://rn619dmj.r.us-east-1.awstrack.me/L0/http=
+:%2F%2Fbit.ly%2F3K9H5jt/1/010001886aff4363-b3081c8d-854e-4bcd-b887-eaa86de6=
+44a6-000000/4IMSFXOdRmS_zY9vx4wT61fbmnk=3D323" style=3D"text-decoration: un=
+derline; color: #299FF2;">YouTube channel</a></strong> for in-depth financi=
+al explainers </p>
+<p class=3D"terms" style=3D"color:#283444; font-family:Helvetica, Arial, sa=
+ns-serif; font-size:13px; line-height:18px; margin:0 0 14px 0">You can chan=
+ge <a style=3D"color:#299FF2;" href=3D"https://rn619dmj.r.us-east-1.awstrac=
+k.me/L0/https:%2F%2Fsend.finshots.in%2Fapi%2Fpreferences%2Ff237b7b8-8f98-43=
+da-bf58-654e1c42e590%2F0021b6d6-111c-4987-9dbf-575f98fd62d4%2F/1/010001886a=
+ff4363-b3081c8d-854e-4bcd-b887-eaa86de644a6-000000/ru3P-MzX2LSr9nVbFgu1Ide0=
+wsI=3D323" target=3D"_blank"><strong>your preferences</strong></a> here.</p=
+>
+                        <p class=3D"terms" style=3D"color:#283444; font-fam=
+ily:Helvetica, Arial, sans-serif; font-size:13px; line-height:18px; margin:=
+0 0 14px 0">No longer interested? You can <a style=3D"color:#299FF2;" href=
+=3D"https://rn619dmj.r.us-east-1.awstrack.me/L0/https:%2F%2Fsend.finshots.i=
+n%2Fapi%2Funsubscribe%2Ff237b7b8-8f98-43da-bf58-654e1c42e590%2F0021b6d6-111=
+c-4987-9dbf-575f98fd62d4%2Fbad27cf3-9168-4ae0-b4d2-7a2cc1b686bb%2F/1/010001=
+886aff4363-b3081c8d-854e-4bcd-b887-eaa86de644a6-000000/7LBrbWplaaJDEzwkknz9=
+yQQ32-w=3D323" target=3D"_blank"><strong>unsubscribe</strong></a> here.</p>
+                        <p class=3D"terms" style=3D"color:#283444; font-fam=
+ily:Helvetica, Arial, sans-serif; font-size:13px; line-height:18px; margin:=
+0 0 14px 0">You are receiving this email because you have subscribed via ou=
+r website</p>
+                        <p class=3D"terms" style=3D"color:#283444; font-fam=
+ily:Helvetica, Arial, sans-serif; font-size:13px; line-height:18px; margin:=
+0 0 14px 0"><strong>Our mailing address:</strong> Finception, Ideapad, CIIE=
+, IIM Ahmedabad, Ahmedabad 380015, India</p>
+                    </div>
+                </div>
+            </footer>
+            </div>
+        </div>
+        <br>
+    <img alt=3D"" src=3D"https://rn619dmj.r.us-east-1.awstrack.me/I0/010001=
+886aff4363-b3081c8d-854e-4bcd-b887-eaa86de644a6-000000/viUrAOq-C4nCilqhJ3od=
+YI1BlOY=3D323" style=3D"display: none; width: 1px; height: 1px;">
+</body>
+</html>
+--===============1345647689440360825==--

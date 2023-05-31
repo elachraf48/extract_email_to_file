@@ -1,0 +1,392 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp492512ims;
+        Tue, 30 May 2023 07:20:32 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ6YXnE5w/TtwDj5Zr0teRhO7TKMaXfzox2PukLX5yHrL6ytbZfQqgGU15fEOQS4hbhyihsI
+X-Received: by 2002:a05:6830:408d:b0:6af:7129:5a4e with SMTP id x13-20020a056830408d00b006af71295a4emr4924172ott.18.1685456431932;
+        Tue, 30 May 2023 07:20:31 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685456431; cv=none;
+        d=google.com; s=arc-20160816;
+        b=JHgt15a7Eq6t8fl3GKhmZ49nokQmhlifLM61tfVVayoxZAI1cu8dKxVXYpW+zSE9iV
+         fJ9BrS0rK29nhn+0cTU4dTcG1tZE8VpXRuyP72pG6hLKqp5FdOUad1W+XfakX3KjAsMs
+         fVTyRR4uRFRax/drpiIJEeB27quMk/CTaTj7OnzSKnhJTEFzLEj4LoxYJgYG4pY3II8n
+         qyCxeQDfO40tWD1FPOek2RxI2cx6NkCL9pfIiiHh7eFi36LZKvOhGJ6jF5lGyhd9783q
+         dSDNYcU6FHhIpWRou+vJDFuNrB0g1vheNMPm3+knezEkw2l9lMtzR/OPJ63D0vDMxlYS
+         YsxA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:list-id:reply-to:mime-version
+         :list-unsubscribe-post:list-unsubscribe:date:subject:to:from
+         :dkim-signature;
+        bh=q3JWAM6lSqE5FhWB2ECH/prFs6iQoWgEX0hHtxnTCvo=;
+        b=KW2ExThb55rtXdh4kUDIfAApXtrVvgaDGYEgJHFNwSZUAjDAwud226b00MJ/vyjLXx
+         hotRR+A9NYz/qV6xrx5WOPje01l0OPP35cAHIyPLVp+pn6Hh4VVHcrGmkrd9+R96T/F7
+         kKsLepSl4TgE4OQruHzFA0Icvj3H+GlMejRLKYajx/xRExeTgN0+uY02Pc751+xHECc1
+         rMYI+bfTnvWpnL/h+HXx6igv/YQwQ8aC+LQbNRT4tE4LHx6JuNs6R1I7JNhc7W4IiKyy
+         OEmj44UrsT4FNTgNDhDeQhkzTnJ/6AErZbbmucaMpnY/b6D4EKkWhqxGZvhcCGopUJHW
+         3ziQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.politico.com header.s=200608 header.b=rMH600mA;
+       spf=pass (google.com: domain of bounce-630304_html-1405096349-9801507-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) smtp.mailfrom=bounce-630304_HTML-1405096349-9801507-1376319-0@bounce.politicoemail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.politico.com
+Return-Path: <bounce-630304_HTML-1405096349-9801507-1376319-0@bounce.politicoemail.com>
+Received: from mta.politicoemail.com (mta.politicoemail.com. [68.232.198.10])
+        by mx.google.com with ESMTPS id cp27-20020a056830661b00b006af909297e5si7843808otb.305.2023.05.30.07.20.31
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 30 May 2023 07:20:31 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-630304_html-1405096349-9801507-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) client-ip=68.232.198.10;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.politico.com header.s=200608 header.b=rMH600mA;
+       spf=pass (google.com: domain of bounce-630304_html-1405096349-9801507-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) smtp.mailfrom=bounce-630304_HTML-1405096349-9801507-1376319-0@bounce.politicoemail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.politico.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=200608; d=email.politico.com;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Reply-To:List-ID:X-CSA-Complaints:Message-ID:Content-Type;
+ i=weeklycybersecurity@email.politico.com;
+ bh=q3JWAM6lSqE5FhWB2ECH/prFs6iQoWgEX0hHtxnTCvo=;
+ b=rMH600mAxSL8N2lP6wKPTfyfRRq1361TtFRVXobyd6BsZ7znKsPnL0OIpsMJA28911L0wm4XgYM6
+   PP3l4pjZvwnQzmD2g0Xvu9VmJvCKsu5MFdpgVX7UjBtYAowPs/N+Sd1OjjHWjeYSE/GBQK9/yAnr
+   JUMMWxAvfthz0Z9IZUE=
+Received: by mta.politicoemail.com id heo32u2fmd4a for <ouchendans62@gmail.com>; Tue, 30 May 2023 14:05:55 +0000 (envelope-from <bounce-630304_HTML-1405096349-9801507-1376319-0@bounce.politicoemail.com>)
+From: "POLITICO's Weekly Cybersecurity" <weeklycybersecurity@email.politico.com>
+To: <ouchendans62@gmail.com>
+Subject: State joins 702 fray
+Date: Tue, 30 May 2023 08:05:55 -0600
+List-Unsubscribe: <https://click.politicoemail.com/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiIxMzc2MzE5IiwicyI6IjE0MDUwOTYzNDkiLCJsaWQiOiI2MzAzMDQiLCJqIjoiOTgwMTUwNyIsImpiIjoiMCIsImQiOiI0MDEyOSJ9.i16hoYTfaAWqOBRKGR3aAMdErKpVGHF0uZzzyUIC6p8>, <mailto:leave-fcbb1273756704791a4c342838-fdf61574756104747317747c-fe911d787565017d72-fe9115737262077c7c-ffcf14@leave.politicoemail.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+Reply-To: "POLITICO, LLC" <reply-fe911d787565017d72-630304_HTML-1405096349-1376319-0@politicoemail.com>
+List-ID: <1376319.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+X-SFMC-Stack: 4
+x-job: 1376319_9801507
+Message-ID: <5b48035f-9387-41a8-92da-015df6716d60@las1s04mta1096.xt.local>
+Feedback-ID: 1376319:9801507:68.232.198.10:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="EdcR9ShwLndS=_?:"
+
+This is a multi-part message in MIME format.
+
+--EdcR9ShwLndS=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Delivered every Monday by 10 a.m., Weekly Cybersecurity examines the latest news in cybersecurity policy and politics. May 30, 2023 View in browser  
+By John Sakellariadis
+
+— With help from Lara Seligman and Maggie Miller
+
+ Driving the Day
+— The State Department’s top intelligence official is set to deliver a rare speech in defense of a controversial foreign spying law. It’s meant to sell lawmakers on the soon-to-expire program — but it could expose how much work the White House has left to do in Congress.
+
+HAPPY TUESDAY, and welcome to Morning Cybersecurity! I won’t spoil “Succession” for you, but I will say this: I never anticipated that my CFIUS knowledge would enhance my pop-culture acumen. Thank you, TikTok!
+
+Got tips, feedback or other commentary? Send them to John at jsakellariadis@politico.com. You can also follow @POLITICOPro and @MorningCybersec on Twitter. Full team contact info is below.
+
+  
+GET READY FOR GLOBAL TECH DAY: Join POLITICO Live as we launch our first Global Tech Day alongside London Tech Week on Thursday, June 15. Register now for continuing updates and to be a part of this momentous and program-packed day! From the blockchain, to AI, and autonomous vehicles, technology is changing how power is exercised around the world, so who will write the rules? REGISTER HERE.
+    
+Want to receive this newsletter every weekday? Subscribe to POLITICO Pro. You’ll also receive daily policy news and other intelligence you need to act on the day’s biggest stories.
+
+ Today's Agenda
+NATO’s four-day International Conference on Cyber Conflict, CyCon, kicks off with a Workshop Day in Tallinn, Estonia, at NATO’s Cooperative Cyber Defence Centre of Excellence. 2 a.m.
+
+Brett Holmgren, the State Department’s assistant secretary for intelligence and research, will deliver remarks at a Center for Strategic and International Studies event on the importance of Section 702 to U.S. diplomacy and foreign policy. 2 p.m.
+
+ Surveillance
+CALLING IN A RINGER — On the heels of embarrassing new reports documenting how FBI officials improperly searched a foreign intelligence repository for information on Americans, the Biden administration surely recognizes that its odds of convincing Congress to re-up the spy program that gathered that data absent major reform are increasingly slim.
+
+Maybe that’s why it’s decided to call in some local experts in negotiation.
+
+The State Department's assistant secretary for intelligence and research, Brett Holmgren, will deliver a speech this afternoon at the Center for Strategic and International Studies about how the law — Section 702 of the Foreign Intelligence Surveillance Act — strengthens U.S. diplomacy and foreign policy.
+
+At a minimum, Holmgren’s appearance is a sign that the debate over the foreign spying program is intensifying ahead of its year-end sunset. The State Department does not have direct access to data collected under Section 702, and it played little public role in the two prior efforts to renew it.
+
+But it could also offer a hint at how much distance there remains between the White House and Congress, where lawmakers are clamoring for stronger safeguards to ensure Americans’ data is not swept up or sifted through via the program.
+
+Where Holmgren can land some punches — The Biden administration is trying to make the case that the law — which allows the government to access the digital communications of foreign nationals stored with U.S. tech giants — is as indispensable as ever, even though the threat it is often associated with, terrorism, has dissipated in recent years.
+
+One possibility is that Holmgren, who acts as the principal intelligence adviser to the secretary of state, will make news by disclosing some powerful vignettes about how the law has aided Antony Blinken and other U.S. diplomats across the globe.
+
+A spokesperson for State did not respond to a request for comment about the content of Holmgren’s speech. But in its bid to renew the program, the administration has already disclosed that the law helps thwart a wider range of threats than previously acknowledged, from cybercrime and fentanyl trafficking to international terrorism and IP theft.
+
+Why he might not — It's not clear what Holmgren can say that will sway Congress’ mind about the need for reform, given that lawmakers' most significant concerns relate to the FBI's ability to sift through the database for information on Americans without first acquiring a warrant.
+
+While the administration has argued that many of those searches are used to protect, not investigate, U.S. persons and that recently disclosed FBI privacy violations preceded the implementation of internal compliance tweaks, a vocal cohort of lawmakers are adamant about the need for new bureau safeguards.
+
+“Democrats and Republicans don’t see eye to eye on many issues, however there is growing bipartisan consensus that we need to enact reforms to Section 702 and FISA as a whole,” Rep. Zoe Lofgren (D-Calif.) told MC in a statement. Lofgren cited a warrant requirement for the FBI as one of two “minimum” reforms she wants to see before renewal.
+
+“Pretending that Congress has to accept ongoing violations of Americans’ privacy as a condition of protecting our national security is a false choice,” Keith Chu, chief communications adviser for Sen. Ron Wyden (D-Ore.), told MC. Wyden, a longtime privacy advocate, has spearheaded prior bills to introduce a warrant requirement for searches of Americans’ info within 702 databases.
+
+One thing to watch — The extent to which Holmgren addresses — or dances around — the possibilities of reform.
+
+Thus far, the administration has drawn a fuzzy line in the sand, expressing openness to new privacy safeguards so long as they don’t undermine the effectiveness of the program.
+
+Is warrant requirement for domestic law enforcement a deal-breaker? And if so, is the administration willing to pony up other privacy protections — or will it just keep insisting all is good and well in the land of 702?
+
+ At the Agencies
+TWO HATS: The National Security Agency and U.S. Cyber Command will continue to be led by the same four-star general for the foreseeable future, under a “dual-hat” arrangement that experts and insiders have debated since CyberCom was established in 2010, Lara Seligman and Maggie Miller report.
+
+That’s according to a letter Defense Secretary Lloyd Austin, Director of National Intelligence Avril Haines and Joint Chiefs Chair Gen. Mark Milley sent to lawmakers, which was described to POLITICO by three people. The leaders' assessment is that it is in “the best interest of the nation” to have one person oversee both organizations, and that the downsides of separating them vastly outweigh any upsides, the sources said the letter states.
+
+The move is in line with a report on the issue drafted late last year by a small group led by retired Gen. Joseph Dunford, the former chairman of the Joint Chiefs of Staff. The report, which was submitted to Austin and Haines, came out strongly in favor of maintaining the dual-hat arrangement.
+
+The news comes to light as the person who currently holds both positions, Gen. Paul Nakasone, is slated to retire later this year. President Joe Biden named his replacement, deputy Cybercom chief Lt. Gen. Timothy Haugh, this week, as POLITICO first reported.
+
+ The International Scene
+CYCON CONFERENCE — Approximately 600 government officials, security professionals and policy advocates from across NATO are descending on Tallinn, Estonia, this week to answer an important question: How many ideas about cybersecurity are turning out to be absolute hogwash?
+
+Here’s a few things to watch over the next four days of the International Conference on Cyber Conflict, or CyCon, where alliance officials are investigating how prior “assumptions, conclusions, and forecasts” about digital conflict are holding up in light of the war in Ukraine, the rise of ransomware and the emergence of super scary chatbots.
+
+Partner up — A common thread running through the conference is what more alliance members can do to help one another prevent and respond to cyberattacks.
+
+Cyber commanders from all participating members will attend a mix of closed- and open-door sessions, including a public panel on Wednesday. The next day, Juhan Lepassaar, the executive director of ENISA, the EU’s cybersecurity agency, will speak on joint capacity building.
+
+Finally, on Friday, deputy U.S. assistant secretary of defense for cyber policy, Mieke Eoyang, will headline a panel on how the military should help those who aren’t in uniform, and vice versa.
+
+And lawyer up — A major theme of the conference is also the novel legal issues posed by border-straddling cyberattacks.
+
+On Wednesday, U.S. and Norwegian officials headline a panel on the legality of cyberattacks against private sector space infrastructure. And on Thursday, Kurt Sanger, former deputy general counsel of U.S. Cyber Command, will lead a panel on whether foreigners contributing to Ukraine’s cyber defense might ever become lawful targets of Russian aggression.
+
+On the front lines — Throughout the week, all eyes will, of course, be on Ukraine. And not just because it’s on the verge of launching a much-anticipated counterattack.
+
+On Friday, Illia Vitiuk, head of the Department of Cyber and Information Security within Ukraine’s Security Service, will deliver a keynote on the first year of the war.
+
+ Tweet of the Weekend
+Hoping MC readers had a nice Memorial Day:
+
+
+
+ Quick Bytes
+— Following U.S. blacklisting, Israeli spyware maker NSO Group has a new owner. (The Wall Street Journal)
+
+— Germany’s spy chief warns of anti-government extremism fueled by Russia and other authoritarian states. (AP News)
+
+— Sen. Ron Wyden wants the International Trade Administration to open up about whether it’s helping U.S. firms sell surveillance tools abroad. (Mother Jones)
+
+— Israeli spyware maker Paragon has found a recipe to avoid NSO Group’s fate: cozy up to the U.S. (Financial Times)
+
+Chat soon. 
+
+Stay in touch with the whole team: John Sakellariadis (jsakellariadis@politico.com); Maggie Miller (mmiller@politico.com); and Heidi Vogt (hvogt@politico.com).
+
+  
+DON’T MISS POLITICO’S HEALTH CARE SUMMIT: The Covid-19 pandemic helped spur innovation in health care, from the wide adoption of telemedicine, health apps and online pharmacies to mRNA vaccines. But what will the next health care innovations look like? Join POLITICO on Wednesday June 7 for our Health Care Summit to explore how tech and innovation are transforming care and the challenges ahead for access and delivery in the United States. REGISTER NOW.
+      
+Follow us on Twitter
+
+Heidi Vogt @HeidiVogt
+
+Maggie Miller @magmill95
+
+John Sakellariadis @johnnysaks130
+  
+Follow us
+  
+To change your alert settings, please log in at https://go.politicoemail.com/?qs=28627891d9f7eb1442a4166f79c986e4c0aa073f7bf372e31eb5f6dba506b056f93253ad6d4064396c895a5d0b6a57cf9dddae23f35ce8d7  https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a25a2bc025f4dc2d6c797dae14b9e0857014850be480652a26fcd6c088dcb4b37efe81d1c10f0e9985b783451bdc4bd936
+
+This email was sent to ouchendans62@gmail.com by: POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+
+ Please click here and follow the steps to unsubscribe.
+  
+
+--EdcR9ShwLndS=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<html><body><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml><![endif]-->
+</head><!-- Everything above this line is "new" to the template. We'll have to experiment a bit to see if it causes troubles. --><!-- preview text --><div style="display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">    Delivered every Monday by 10 a.m., Weekly Cybersecurity examines the latest news in cybersecurity policy and politics.</div><table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" style="padding:5px 0 15px 0;margin:0;text-align:center" role="presentation">    <tbody>    <tr>        <td><!-- Note: This is left blank to aid in centering across email clients --></td>        
+<td align="center" width="540">            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:540px;table-layout:fixed;" role="presentation">                <tbody>                <!-- top date and utility link -->                <tr>    <td align="center">        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="padding-bottom:15px;" role="presentation">            <tbody>            <tr>                <td width="50%" style="text-align:left;font-size:11px;font-family:Helvetica,sans-serif;color:#B1B4BD;margin:0;">May 30, 2023</td>                
+<td width="50%" style="text-align:right;font-size:11px;font-family:Helvetica,sans-serif;color:#B1B4BD;margin:0;"><a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb14a1f6ad585e595d3c65bc2a11eec52fa6c6833deee5b27e620fa17f828936144b999f6a7b4480036dd72a33790a9f93fc" target="_blank" style="color:#007BC7;text-decoration:none;">View in browser</a
+></td>            </tr>            </tbody>        </table>    </td></tr>                <!-- divider line -->                <tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                <!-- logo and byline -->                <tr>    <td align="center" style="text-align:center;padding:0 20px 15px 20px;margin:0">                                    
+<img src="https://static.politico.com/5b/25/2b8454b54ec8a9412ef02542fc6a/politico-weekly-cybersecurity.png" title="2020_NewsletterLogo_Free_WeeklyCybersecurity" alt="POLITICO's Weekly Cybersecurity newsletter logo" border="0" width="500" style="width:100%;max-width:500px;">                        </td></tr><tr>    <td align="center" style="padding:0 20px 10px 20px;">        <p style="text-align:center;font-family:Helvetica,sans-serif;font-size:11px;letter-spacing:2px;color:#B1B4BD;text-transform:uppercase;margin:0;">            By  <a
+ href="mailto:jsakellariadis@politico.com" target="_blank" style="color:#000000;text-decoration:none;font-weight:bold;">John Sakellariadis</a
+>        </p>    </td></tr>                <!-- sponsor logo -->                                    <!-- body -->                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; </strong
+><i
+>With help from Lara Seligman and Maggie Miller</i
+><br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">Driving the Day</td>    </tr>    </tbody></table></td>                    
+</tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;">&#8212; <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">The State Department&#8217;s top intelligence official is set to deliver a rare speech in defense of a controversial foreign spying law.</strong
+></span> It&#8217;s meant to sell lawmakers on the soon-to-expire program &#8212; but it could expose how much work the White House has left to do in Congress.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">HAPPY TUESDAY, and welcome to Morning Cybersecurity! </strong
+>I won&#8217;t spoil &#8220;Succession&#8221; for you, but I will say this: I never anticipated that my CFIUS knowledge would enhance my pop-culture acumen. Thank you, TikTok!</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Got tips, feedback or other commentary? Send them to John at <a
+ href="mailto:jsakellariadis@politico.com" target="_blank">jsakellariadis@politico.com</a
+>. You can also follow <a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb140ede9eb0fb85a5580e01f88536ec312bc9a783168a8f607d6bc69a90276ad75f63fe7c6ec3425436319d21e4dae3e23c" target="_blank">@POLITICOPro</a
+> and <a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb14e1a113bc51fbc37105d048e796c04f220f9aa8515b47fa4c08ad0025b0e381bdd663bfbddf6bec73f3c2baa0b4902755" target="_blank">@MorningCybersec</a
+> on Twitter. Full team contact info is below.<br></p></td>                    </tr>                                    <tr>                        </tr><tr>    <td height="10" style="height:10px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                    <p style="margin-top:0;margin-bottom:20px;line-height:24px;margin-bottom:20px;color:#000000;">                <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">GET READY FOR GLOBAL TECH DAY: </strong
+>Join POLITICO Live as we launch our first Global Tech Day alongside London Tech Week on Thursday, June 15. Register now for continuing updates and to be a part of this momentous and program-packed day! From the blockchain, to AI, and autonomous vehicles, technology is changing how power is exercised around the world, so who will write the rules? <a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb1483f1559c3e5bf1a5f9b0aecfda6aa528074124e979760ad6096f3246f85380c94b5cdb796f28c28c360d01201f81cd41" target="_blank" style="text-decoration:underline;color:#007BC7;">REGISTER HERE</a
+>.            </p>            </td></tr><tr>    <td height="10" style="height:10px; font-size:0; border-bottom:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td height="15" style="height:15px; font-size:0;">&nbsp;</td></tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><i
+>Want to receive this newsletter every weekday? Subscribe to </i
+><a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb14cd9c223f75b631b255a005039d1842a3423153caa3e06ebf81becb21dad9bf189b5f34b1194012a75c5f3c245e84b510" target="_blank"><i
+>POLITICO Pro</i
+></a
+><i
+>. You&#8217;ll also receive daily policy news and other intelligence you need to act on the day&#8217;s biggest stories.</i
+><br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">Today's Agenda</td>    </tr>    </tbody></table></td>                    
+</tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;">NATO&#8217;s four-day <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">International Conference on Cyber Conflict</strong
+>, <a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb14004f38e70941fbea8d08f26fa7ab626705db3f26264fe8bb12c3bde0c562eceee2ae32c4ca6ffb216a66efbd5fd5b87c" target="_blank">CyCon, kicks off</a
+> with a Workshop Day in Tallinn, Estonia, at NATO&#8217;s Cooperative Cyber Defence Centre of Excellence. 2 a.m.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Brett Holmgren</strong
+>, the State Department&#8217;s assistant secretary for intelligence and research, <a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb1417237c4f20e2feb8221d9802ed31049259d4d4cee04f78e0a7765368ac24dd28b60610ca5137b1f80886f7d0f4ffa506" target="_blank">will deliver remarks</a
+> at a Center for Strategic and International Studies event on the importance of Section 702 to U.S. diplomacy and foreign policy. 2 p.m.<br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">Surveillance</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">CALLING IN A RINGER &#8212;</strong
+> On the heels of <a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb1405720a1b122106bef997d9bf2c2e6e604a7a236509a80ff4a47312eab273468dd0bf5df6aaaebce6cf1da41a4af9bd6e" target="_blank" data-debug-source-uuid="00000188-3535-d191-afc8-3f7d75020001" data-debug-source-site="POLITICO Pro">embarrassing new reports</a
+> documenting how FBI officials improperly searched a foreign intelligence repository for information on Americans, the Biden administration surely recognizes that its odds of convincing Congress to re-up the spy program that gathered that data absent major reform are increasingly slim.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Maybe that&#8217;s why it&#8217;s decided to call in some local experts in negotiation.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">The State Department's assistant secretary for intelligence and research, Brett Holmgren, will deliver a speech this afternoon at the Center for Strategic and International Studies about how the law &#8212; Section 702 of the Foreign Intelligence Surveillance Act &#8212; strengthens U.S. diplomacy and foreign policy.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">At a minimum, Holmgren&#8217;s appearance is a sign that the debate over the foreign spying program is intensifying ahead of its year-end sunset. The State Department does not have direct access to data collected under Section 702, and it played little public role in the two prior efforts to renew it.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">But it could also offer a hint at how much distance there remains between the White House and Congress, where lawmakers are clamoring for stronger safeguards to ensure Americans&#8217; data is not swept up or sifted through via the program.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Where Holmgren can land some punches &#8212; </strong
+>The Biden administration is trying to make the case that the law &#8212; which allows the government to access the digital communications of foreign nationals stored with U.S. tech giants &#8212; is as indispensable as ever, even though the threat it is often associated with, terrorism, has dissipated in recent years.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">One possibility is that Holmgren, who acts as the principal intelligence adviser to the secretary of state, will make news by disclosing some powerful vignettes about how the law has aided Antony Blinken and other U.S. diplomats across the globe.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">A spokesperson for State did not respond to a request for comment about the content of Holmgren&#8217;s speech. But in its bid to renew the program, the administration has already disclosed that the law helps thwart a wider range of threats than previously acknowledged, <a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb14ba8bfb305856893b4ed5d28c04562174bc2375ddba34194ffbb6576f0821ac9959a0f72633d42ae1393029e381195e9c" target="_blank">from cybercrime</a
+> and <a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb1441c1265ecdf1d79f953c5c39b0b2a9e1d36a5b2f943569f627182b81374e140cab75f7f646f3709faddb7f96c283f6a1" target="_blank">fentanyl trafficking</a
+> to international terrorism and IP theft.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Why he might not &#8212; </strong
+>It's not clear what Holmgren can say that will sway Congress&#8217; mind about the need for reform, given that lawmakers' most significant concerns relate to the FBI's ability to sift through the database for information on Americans without first acquiring a warrant.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">While the administration has argued that many of those searches are used to protect, not investigate, U.S. persons and that recently disclosed FBI privacy violations preceded the <a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb14f5b09dc699a0b4ed52f384a6a2bf9d314fe1326b205e48cac29c6fbc1fa79f764d543a4417caa9aaeefe17573b9a2c2d" target="_blank">implementation of internal compliance tweaks</a
+>, a vocal cohort of lawmakers are adamant about the need for new bureau safeguards.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;Democrats and Republicans don&#8217;t see eye to eye on many issues, however there is growing bipartisan consensus that we need to enact reforms to Section 702 and FISA as a whole,&#8221; Rep. <a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb14f68b3965b063455deca95f9abd671fa4b1cb5b7b3dffc22cbe215111eac3723c4d594bd4e3357746d0c71eef8cd6bb04" target="_blank">Zoe Lofgren</a
+> (D-Calif.) told MC in a statement. Lofgren cited a warrant requirement for the FBI as one of two &#8220;minimum&#8221; reforms she wants to see before renewal.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;Pretending that Congress has to accept ongoing violations of Americans&#8217; privacy as a condition of protecting our national security is a false choice,&#8221; Keith Chu, chief communications adviser for Sen. <a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb1408d6c63c2cc931da014f19d6b95f267b08b6d940b9b9959125cd608239994e2003934bafd715cd37037092a5d5374ca7" target="_blank">Ron Wyden</a
+> (D-Ore.), told MC. Wyden, a longtime privacy advocate, <a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb14a863e5c02887ca0996fb383b7495210b33b32215e89ece4321c7449f006331b714fa0786869cd15006b2e3a9fad461de" target="_blank">has spearheaded prior bills</a
+> to introduce a warrant requirement for searches of Americans&#8217; info within 702 databases.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">One thing to watch &#8212; </strong
+>The extent to which Holmgren addresses &#8212; or dances around &#8212; the possibilities of reform.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Thus far, the administration has drawn a fuzzy line in the sand, expressing openness to new privacy safeguards so long as they don&#8217;t undermine the effectiveness of the program.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Is warrant requirement for domestic law enforcement a deal-breaker? And if so, is the administration willing to pony up other privacy protections &#8212; or will it just keep insisting all is good and well in the land of 702?<br></p></td>                    
+</tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">At the Agencies</td>    </tr>    </tbody></table></td>                    </tr>                                    
+<tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">TWO HATS: </strong
+>The National Security Agency and U.S. Cyber Command will continue to be led by the same four-star general for the foreseeable future, under a &#8220;dual-hat&#8221; arrangement that experts and insiders have debated since CyberCom was established in 2010, Lara Seligman and Maggie Miller report.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">That&#8217;s according to a letter Defense Secretary Lloyd Austin, Director of National Intelligence Avril Haines and Joint Chiefs Chair Gen. Mark Milley sent to lawmakers, which was described to POLITICO by three people. The leaders' assessment is that it is in &#8220;the best interest of the nation&#8221; to have one person oversee both organizations, and that the downsides of separating them vastly outweigh any upsides, the sources said the letter states.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">The move is in line with a report on the issue drafted late last year by a small group led by retired Gen. Joseph Dunford, the former chairman of the Joint Chiefs of Staff. The report, which was submitted to Austin and Haines, came out strongly in favor of maintaining the dual-hat arrangement.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The news comes to light as the person who currently holds both positions, Gen. Paul Nakasone, is slated to retire later this year. President Joe Biden <a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb14d0f22ed772efe4201d41886e24d4f29a6f6264ca33661f6ddf322798b7cbd720078a4878719a5ada0c1f1feadf0e4f5b" target="_blank">named his replacement</a
+>, deputy Cybercom chief Lt. Gen. Timothy Haugh, this week, as POLITICO first reported.<br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">The International Scene</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">CYCON CONFERENCE &#8212; </strong
+>Approximately 600 government officials, security professionals and policy advocates from across NATO are descending on Tallinn, Estonia, this week to answer an important question: How many ideas about cybersecurity are turning out to be absolute hogwash?</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Here&#8217;s a few things to watch over the next four days of the International Conference on Cyber Conflict, or CyCon, where alliance officials are investigating how prior &#8220;assumptions, conclusions, and forecasts&#8221; about digital conflict are holding up in light of the war in Ukraine, the rise of ransomware and the emergence of super scary chatbots.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Partner up &#8212; </strong
+>A common thread running through the conference is what more alliance members can do to help one another prevent and respond to cyberattacks.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Cyber commanders from all participating members will attend a mix of closed- and open-door sessions, including a public panel on Wednesday. The next day, Juhan Lepassaar, the executive director of ENISA, the EU&#8217;s cybersecurity agency, will speak on joint capacity building.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">Finally, on Friday, deputy U.S. assistant secretary of defense for cyber policy, Mieke Eoyang, will headline a panel on how the military should help those who aren&#8217;t in uniform, and vice versa.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">And lawyer up &#8212; </strong
+>A major theme of the conference is also the novel legal issues posed by border-straddling cyberattacks.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">On Wednesday, U.S. and Norwegian officials headline a panel on the legality of cyberattacks against private sector space infrastructure. And on Thursday, Kurt Sanger, former deputy general counsel of U.S. Cyber Command, will lead a panel on whether foreigners contributing to Ukraine&#8217;s cyber defense might ever become lawful targets of Russian aggression.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">On the front lines &#8212; </strong
+>Throughout the week, all eyes will, of course, be on Ukraine. And not just because it&#8217;s on the verge of launching a much-anticipated counterattack.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">On Friday, Illia Vitiuk, head of the Department of Cyber and Information Security within Ukraine&#8217;s Security Service, will deliver a keynote on the first year of the war.<br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">Tweet of the Weekend</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;">
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">Hoping MC readers had a nice Memorial Day:<br></p></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p align="center" style="margin:0 0 20px 0;"><a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb14292006a1b67328181b6cc3c2c2de636181541cd5b9a830cfca574b4b55727f0538ac70cdd17c81edfbdfa9cbfda309f0" target="_blank"><img src="https://www.politico.com/dims4/default/0d0627c/2147483647/resize/1000x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2F14%2F11%2F326d66ec490aa7b2455033c23031%2Fscreenshot-2023-05-29-at-8-56-50-pm.png" title="@NSA-CSDirector" alt="@NSA-CSDirector" width="500" style="width:100%;max-width:500px;"></a
+></p></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">Quick Bytes</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8212; Following U.S. blacklisting, Israeli spyware maker <a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb145780529268832797c9980e1f5ffc50a455f1ca9276837358c4ecb1797a01d5613be04e75b6f7152af618ff6cbd00f6ab" target="_blank">NSO Group has a new owner</a
+>. (The Wall Street Journal)</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8212; Germany&#8217;s spy chief <a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb141b5d227c3c8315d42dc875f8b616ab19bf76825d867a76961caedcd5b643976005f67b6d9a2f0ebd99c09e7d1bdcd532" target="_blank">warns of anti-government extremism</a
+> fueled by Russia and other authoritarian states. (AP News)</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8212; Sen. Ron Wyden <a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb1454814609f48939a70f8a3a25143186f9c8497855e7cb7581dbcb0a98f73bc7162291785fbb64ac971fd4cea6afedef73" target="_blank">wants the International Trade Administration to open up</a
+> about whether it&#8217;s helping U.S. firms sell surveillance tools abroad. (Mother Jones)</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8212; Israeli spyware maker Paragon has found a recipe to avoid NSO Group&#8217;s fate: <a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb1495e42629d89d0f7523392d1707da0386886d6cdee2d5f03a3a036f6f8ba908a4bca42800e7dc356a7f55d3e31a9d975c" target="_blank">cozy up to the U.S.</a
+> (Financial Times)</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Chat soon.&nbsp;</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Stay in touch with the whole team: John Sakellariadis (<a
+ href="mailto:jsakellariadis@politico.com" target="_blank">jsakellariadis@politico.com</a
+>); Maggie Miller (<a
+ href="mailto:mmiller@politico.com" target="_blank">mmiller@politico.com</a
+>); and Heidi Vogt (<a
+ href="mailto:hvogt@politico.com" target="_blank">hvogt@politico.com</a
+>).<br></p></td>                    </tr>                                    <tr>                        </tr><tr>    <td height="10" style="height:10px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                    <p style="margin-top:0;margin-bottom:20px;line-height:24px;margin-bottom:20px;color:#000000;">                <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DON&#8217;T MISS POLITICO&#8217;S HEALTH CARE SUMMIT</strong
+>: The Covid-19 pandemic helped spur innovation in health care, from the wide adoption of telemedicine, health apps and online pharmacies to mRNA vaccines. But what will the next health care innovations look like? Join POLITICO on Wednesday June 7 for our Health Care Summit to explore how tech and innovation are transforming care and the challenges ahead for access and delivery in the United States. <a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb14c30faae2cad6b69ac216ffdc62fb0de83352bb469ed521dfcf7a7eade2a89b93b897d48fdd3b45d9e121b775d058a891" style="text-decoration:underline;color:#007BC7;">REGISTER NOW</a
+>.            </p>            </td></tr><tr>    <td height="10" style="height:10px; font-size:0; border-bottom:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td height="15" style="height:15px; font-size:0;">&nbsp;</td></tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                <!-- End Ad Copy -->                <tr>                                    </tr>                <!-- Post Body Content -->                <tr>                                    </tr>                <tr>                    
+<td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>                </tr>                <!-- Twitter Handles -->                                    <tr>    <td style="color:#000000;padding:0px 20px 20px 20px;text-align:left;">        <p style="font-family:Helvetica,sans-serif;font-size:20px;color:#000000;margin-top:0;margin-bottom:15px;"><strong
+>Follow us on Twitter</strong
+></p>        <table cellpadding="0" cellspacing="0" border="0" role="presentation">            <tbody>            <tr>                <td width="52" valign="middle" style="text-align:left;padding-right:10px;"><img src="https://static.politico.com/hosted/icon-twitter-circle-blue%402x.png" title="" alt="" width="50" style="max-width:50px;"></td>                <td valign="middle" style="text-align:left;font-family:Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#000000;">                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Heidi Vogt <a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb14836bc0581709b2fdfdc4ac7c79e5233e4bb53ea8a4e82a1ea9f8c0e6ddbbe03377666090ca6a4efa290f844384016eda" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@HeidiVogt</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Maggie Miller <a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb14a839208935b9c8b159102476ef9a921223891a9d7a70ebb8228074ec99f05abe4e2b2aa78afe915a800486464fdbd738" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@magmill95</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">John Sakellariadis <a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb149051328d54ada30d8342c0a7e1ef0c6acec240996a9e3fb1d018f8f53226ab13da91edb04cdb8d3ad6b776de84308443" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@johnnysaks130</a
+></p>                                    </td>            </tr>            </tbody>        </table>    </td></tr><tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                                <!-- Family of Playbook -->                                <!-- Follow us -->                <tr>    <td style="color:#000000;padding:0px 20px 20px 20px;text-align:left;">        <p style="font-family:Helvetica,sans-serif;font-size:12px;color:#000000;margin-bottom:10px;line-height:14px;text-transform:uppercase;font-weight:bold;letter-spacing:2px;">Follow us</p>        
+<table cellpadding="0" cellspacing="0" border="0" role="presentation">            <tbody>            <tr>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb142229eeb2d4afe1a3ce180dae4a96fb04b69c30b5085bb0f35e47bceff06d59dad5bada65b609701c3dc04a0045a4d1d2" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-facebook-gray%402x.png" title="Follow us on Facebook" alt="Follow us on Facebook" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb14061ff2837f3344c76efceb96d03c8257982db245b4ba53fec08c52107a8df012842be0881f89572bfa9aa52f18fe07f0" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-twitter-gray%402x.png" title="Follow us on Twitter" alt="Follow us on Twitter" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb148fa411d4ee8ee85f2352bf88b01a78999d72505eb2ab257f94417d5c91b0b56bc2c4e1f1b5458a5e6b71cf861a894717" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-instagram-gray%402x.png" title="Follow us on Instagram" alt="Follow us on Instagram" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb147b8aa6b2a6a3c45515851ace92e6c030387ea253aefcc42124cbcd19030e98b56c81f1d8baec0f9c1255ac9a48753411" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-applePodcast-gray%402x.png" title="Listen on Apple Podcast" alt="Listen on Apple Podcast" width="24" border="0" style="max-width:24px;"></a
+></td>            </tr>            </tbody>        </table>    </td></tr><tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                </tbody>            </table>        </td>        <td><!-- Note: This is left blank to aid in centering across email clients --></td>    </tr>    </tbody></table><!-- Everything below this line is "new" to the template. We'll have to experiment a bit to see if it causes troubles. --><!-- howler#email.footers/core-newsletter.footer.html -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff"
+       style="padding:5px 0 15px 0;margin:0;text-align:center" role="presentation">
+    <tbody>
+    <tr>
+        <td><!-- Note: This is left blank to aid in centering across email clients --></td>
+        <td align="center" width="540">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:540px" role="presentation">
+                <tbody>
+                <tr>
+                    <td align="center" style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;">
+                        <p style="margin-bottom:15px;line-height:24px;">To change your alert settings, please log in at
+                            <a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb1442a4166f79c986e4c0aa073f7bf372e31eb5f6dba506b056f93253ad6d4064396c895a5d0b6a57cf9dddae23f35ce8d7" target="_blank" style="color:#007BC7;text-decoration:none;">https://www.politico.com/_login?base=https%3A%2F%2Fwww.politico.com/settings</a
+>
+                            <!--Commenting out the following line because it causes an undesired line to be displayed on outlook (some versions) and we couldn't find the use case of it-->
+                            <!-- <span style="display:none;"><a
+ href="https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a25a2bc025f4dc2d6c797dae14b9e08570b1ab4387e16cbaae">https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a25a2bc025f4dc2d6c797dae14b9e08570b1ab4387e16cbaae</a
+></span> -->
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="padding-bottom:15px;"><img
+                            src="https://static.politico.com/hosted/icon-politico-logo.png"
+                            class="CToWUd"></td>
+                </tr>
+                <tr>
+                    <td align="center"><p
+                            style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:20px;">
+                        This email was sent to ouchendans62@gmail.com by: POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+                        <p style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:24px;">
+                            
+
+                            Please click <a
+ href="https://go.politicoemail.com/?qs=28627891d9f7eb14d9f4d3aebf54a12945c472ad2b8be80716655c45d243f74247b03649b309b0c948aef7231e4dd1711ffdcb4f56f6b41b" target="_blank" style="color:#007BC7;text-decoration:none;">here</a
+> and follow the steps to unsubscribe.
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td><!-- Note: This is left blank to aid in centering across email clients --></td>
+    </tr>
+    </tbody>
+</table>
+<img src="https://click.politicoemail.com/open.aspx?ffcb10-fe911d787565017d72-fde913797160037e701d7376-fe9115737262077c7c-fecf127375670479-fdf61574756104747317747c-ffcf14&d=40129&bmt=0" width="1" height="1" alt="">
+</body></html><p email-meta style="display: none;opacity:0;">source=GoggleDocument, article=00000188-6cac-d191-afc8-6efc73af0000</p>
+
+--EdcR9ShwLndS=_?:--
+

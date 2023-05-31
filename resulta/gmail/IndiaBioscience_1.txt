@@ -1,0 +1,106 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:9f5b:0:b0:2da:43c2:96f2 with SMTP id l27csp203378imf;
+        Sat, 27 May 2023 06:49:20 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ7DPsSFxy3qOGoWeThfbSu/hLAqY7z5mPzKQYbJ2bg8rjLq+mYqOI4/y+WJfYKRdCduIFc2
+X-Received: by 2002:a05:6214:1247:b0:623:6d96:c8ca with SMTP id r7-20020a056214124700b006236d96c8camr5148461qvv.33.1685195359995;
+        Sat, 27 May 2023 06:49:19 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685195359; cv=none;
+        d=google.com; s=arc-20160816;
+        b=EV2lHzijacOMwZ8c45Z5rgZ0zgTem1T6JbnEBBkTFK/XE52P8iA66HWEAZIWOrR9RN
+         EWSbmGQJ0MLhJ+XJgreAESdXOnTzmVC5/IotGmcOgj4a3GcfERquYTwqj9JzfrVrlbf6
+         daEcXykIH+79n5VvGsQ347IFcoWOdtfd44XNYEt8nBkM/uk86309VfQ6H7bTSRcGGDt9
+         LSHCyfzXsSIcVHj7htwVzwxOEqL8mHRlllNYAvtYW3IrZVcQwu08mfe8Xz7BxrBIi0d+
+         9XN8lVoV7wGUMP0HAfk5YzRkvH3UgaBn709OtlGKEgmSspZRYc2zRGHL2BZdf+ruQsVT
+         kBaQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:content-transfer-encoding:mime-version:message-id
+         :subject:reply-to:from:to:date:dkim-signature:dkim-signature;
+        bh=irpLqzMqOZwuTGukn6fIFXU+N5hinxqpUiUeIOoKxJU=;
+        b=Av9hdRJvqggCqSrCyvFUcWmUFjF+Utto+iC6zeXAI6a8nSUQmhDdfJBjeyePAoL2zl
+         OTKTzUWwgWAh6AGr2mk/DSCCknIkvSkDdRO1DMSqh06dudLVaUIMdbg3yIW/9F6VoDph
+         UL2rQJe9upfxLiYyxQgEma7oGDJj0X/abvPoPSZtEizgzoGrZstwizsPKhTvM8ULT5Ii
+         +yZnppbQM2oQLALQp4N/4PKWs5MUfgW2//buAKyZHmCUn8q4G/c3YRjfAszIc2tm0F1i
+         340dBhBBknBIToLiGcid98omK1YuxoPAU7uvjkvJsV5N3MPj/8lj5u/A7ZAoXGhoCMg9
+         je+A==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@indiabioscience.org header.s=j3hf3flrudrv5hh253llyguwmcar26o5 header.b=lNBEdfcd;
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=kTT+CSqs;
+       spf=pass (google.com: domain of 010001885d788469-1c2ecda3-b450-4969-b387-036ac28867ee-000000@amazonses.com designates 54.240.8.97 as permitted sender) smtp.mailfrom=010001885d788469-1c2ecda3-b450-4969-b387-036ac28867ee-000000@amazonses.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=indiabioscience.org
+Return-Path: <010001885d788469-1c2ecda3-b450-4969-b387-036ac28867ee-000000@amazonses.com>
+Received: from a8-97.smtp-out.amazonses.com (a8-97.smtp-out.amazonses.com. [54.240.8.97])
+        by mx.google.com with ESMTPS id jq15-20020ad45fcf000000b006215293def4si1527833qvb.252.2023.05.27.06.49.19
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 27 May 2023 06:49:19 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 010001885d788469-1c2ecda3-b450-4969-b387-036ac28867ee-000000@amazonses.com designates 54.240.8.97 as permitted sender) client-ip=54.240.8.97;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@indiabioscience.org header.s=j3hf3flrudrv5hh253llyguwmcar26o5 header.b=lNBEdfcd;
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=kTT+CSqs;
+       spf=pass (google.com: domain of 010001885d788469-1c2ecda3-b450-4969-b387-036ac28867ee-000000@amazonses.com designates 54.240.8.97 as permitted sender) smtp.mailfrom=010001885d788469-1c2ecda3-b450-4969-b387-036ac28867ee-000000@amazonses.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=indiabioscience.org
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=j3hf3flrudrv5hh253llyguwmcar26o5; d=indiabioscience.org;
+	t=1685195359;
+	h=Date:To:From:Reply-To:Subject:Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding;
+	bh=8/06zIEPeblsUr69Yz4S3L8efKk8RlibZ/Ni4E+TUr4=;
+	b=lNBEdfcdnckompMSRvRat9fnNL9PzaXee3+W/QJ7l0vaa3PZMoCPPfTCU4bH+eHG
+	mB36J8tNIg5ov09fTvdIhxkHdCn8+nKBM0dCvxBoR6xmcgXUakFB8ZN2U8A6HB8kU2r
+	5nlBztkft5nuplZs0gpT2ttPX/JCoSRpxsTM29I8=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=224i4yxa5dv7c2xz3womw6peuasteono; d=amazonses.com; t=1685195359;
+	h=Date:To:From:Reply-To:Subject:Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding:Feedback-ID;
+	bh=8/06zIEPeblsUr69Yz4S3L8efKk8RlibZ/Ni4E+TUr4=;
+	b=kTT+CSqszL2xP6StfTzKj3C465lb+ukeKdnDy5/JNnsztXCyfGCdYRxuI8SfMx5P
+	n9VehLADJTfAYfxJHoC08Ib2q8pHTbZzROabnIUqVa1+t8vLgoVIrHHsOvW7c9zdYMe
+	mdG2jz1tBu87HOFeJ5nUELOnoYwEUY6EPlRjLlFY=
+Date: Sat, 27 May 2023 13:49:19 +0000
+To: ouchendans62@gmail.com
+From: IndiaBioscience <notifications@indiabioscience.org>
+Reply-To: IndiaBioscience <hello@indiabioscience.org>
+Subject: Please confirm your subscription to IndiaBioscience
+Message-ID: <010001885d788469-1c2ecda3-b450-4969-b387-036ac28867ee-000000@email.amazonses.com>
+X-Mailer: Sendy (https://sendy.co)
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="b1_3392d7c307c7b8e58f8a7a576e78adce"
+Content-Transfer-Encoding: 8bit
+Feedback-ID: 1.us-east-1.gOddz51SkqgjVtg3PRTt42wQDimpmqA+YMpnIgbugV0=:AmazonSES
+X-SES-Outgoing: 2023.05.27-54.240.8.97
+
+This is a multi-part message in MIME format.
+
+--b1_3392d7c307c7b8e58f8a7a576e78adce
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Thank you for signing up for the monthly IndiaBioscience newsletter! We are happy to bring you the latest news and features related to life science research in India, in addition to job, grant, and event listings.
+
+Please confirm your subscription by clicking on the https://sendy.indiabioscience.org/confirm?e=rP08922Pi3Q2763rqAKUvRGYuw&l=dJMeg892XmM7c9elOl8vlfIg. 
+
+Stay engaged to enable change!
+
+-Team IndiaBioscience
+
+
+--b1_3392d7c307c7b8e58f8a7a576e78adce
+Content-Type: text/html; charset=us-ascii
+
+<html>
+<head>
+	<title></title>
+</head>
+<body data-gr-ext-installed="" data-new-gr-c-s-check-loaded="14.995.0" data-new-gr-c-s-loaded="14.995.0">
+<p>Thank you for signing up for the monthly IndiaBioscience newsletter! We are happy to bring you the latest news and features related to life science research in India, in addition to job, grant, and event listings.</p>
+
+<p>Please confirm your subscription by clicking on the https://sendy.indiabioscience.org/confirm?e=rP08922Pi3Q2763rqAKUvRGYuw&l=dJMeg892XmM7c9elOl8vlfIg.&nbsp;</p>
+
+<p>Stay engaged to enable change!</p>
+
+<p>-Team IndiaBioscience</p>
+</body>
+</html>
+
+
+
+--b1_3392d7c307c7b8e58f8a7a576e78adce--

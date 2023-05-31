@@ -1,0 +1,1823 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp126137ims;
+        Mon, 29 May 2023 07:03:29 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ5LJUJw2rrKR5RXDekWZbIJqn0q9LkJj3ncdPmACO7W7VtkEv2cvX4m/85R3ZP374nzIRqO
+X-Received: by 2002:a81:4f89:0:b0:561:8418:6932 with SMTP id d131-20020a814f89000000b0056184186932mr11565110ywb.47.1685369009580;
+        Mon, 29 May 2023 07:03:29 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685369009; cv=none;
+        d=google.com; s=arc-20160816;
+        b=EEowbm5sf0zujpcjjbljnJh78HaUy0Ov9DSXY4JVqbQ9ZLRvdO7qjGsjCj4b9HFVJg
+         AE31wxjmLBOnMwBHIZq6Fd5X9lmIn02tpyEYYyZA4+uJksIGD2CgdziXBHHZrBVjH2sy
+         2EOTK7ptIYNAe1GsHfa1Lv2SKARFuouFXGN0jBZb/g1kfGm1uMBqHoOayH/MolTIdhso
+         aqXxIRZdaMdAInJTWHwmJT/gUDRhLOb+b+DqJDCJ8in6YOPNGDuFq3J10P1arFPTUMVl
+         25qFY5L1ERq6smqTc+44qydaq+oVox4AqniqRNby+eHWO8/Tq0TGJwrmXzX069faMAgl
+         95eQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:list-unsubscribe-post:list-unsubscribe:list-id
+         :feedback-id:message-id:date:to:reply-to:from:subject:dkim-signature
+         :dkim-signature;
+        bh=MPvZhOe6XYjvxvgyCBem1jac9zeUUg5RyyuVGhEtouA=;
+        b=E5O9HtfCnxab8rYlXBSmIHSag5dx/XyODRLKViA5bn+qWdl4LUNSIV+aekDX+eX6lV
+         jlNA5007Y8fu55ujk/1Hzns+t/Vc181safcIBU7Cdpo0kR07otLGI/tOsTanFSwSLC3n
+         pQC/tcaoOut6ZUYhnx2R/Tfp6m0dZHz0TZMyV98AL0YbpSMxeMgIf7V3nhBqYyHhSUvm
+         v8AVvKqsFROPTUNocTMCWZulmPbh/QkIJ0UO2VjND9DrxMq0kXrIyu21kGqBUU1P0xys
+         pgZ6bGKxLA7uXYmxLRkE6ufME9oTu3zUZaGDa47j0kxLtqb62Qdvq5rllW+dVvf27tOt
+         6jbw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.mcsv.net header.s=k1 header.b=fz5ArpMT;
+       dkim=pass header.i=@mailchimpapp.net header.s=k2 header.b=uD43OG+W;
+       spf=pass (google.com: domain of bounce-mc.us10_40482761.228740-a30fdd12e9@mail174.suw101.mcdlv.net designates 198.2.184.174 as permitted sender) smtp.mailfrom=bounce-mc.us10_40482761.228740-a30fdd12e9@mail174.suw101.mcdlv.net
+Return-Path: <bounce-mc.us10_40482761.228740-a30fdd12e9@mail174.suw101.mcdlv.net>
+Received: from mail174.suw101.mcdlv.net (mail174.suw101.mcdlv.net. [198.2.184.174])
+        by mx.google.com with ESMTPS id m20-20020a81d254000000b00561b7a65acesi9625173ywl.388.2023.05.29.07.03.29
+        for <ouchendans62@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 29 May 2023 07:03:29 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-mc.us10_40482761.228740-a30fdd12e9@mail174.suw101.mcdlv.net designates 198.2.184.174 as permitted sender) client-ip=198.2.184.174;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.mcsv.net header.s=k1 header.b=fz5ArpMT;
+       dkim=pass header.i=@mailchimpapp.net header.s=k2 header.b=uD43OG+W;
+       spf=pass (google.com: domain of bounce-mc.us10_40482761.228740-a30fdd12e9@mail174.suw101.mcdlv.net designates 198.2.184.174 as permitted sender) smtp.mailfrom=bounce-mc.us10_40482761.228740-a30fdd12e9@mail174.suw101.mcdlv.net
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.mcsv.net;
+	s=k1; t=1685368961; x=1685455361;
+	bh=MPvZhOe6XYjvxvgyCBem1jac9zeUUg5RyyuVGhEtouA=;
+	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
+	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
+	 MIME-Version:CC:Date:Subject:From;
+	b=fz5ArpMT/e/TlJAzv+drrAszeb1Ngq/BSrExSRy7n5U3VgoTixorB54MR75Lhekrx
+	 MWqPQy/8sLavw50nCK3QappNozGpoHOrIfHe356/S2DKS++zjhLKMSpzuFstrQMOoc
+	 yrQ0vp/u0sMqu1FsQ5TmrdRJRZ3SqY/1/uhmmZ3AOKzT3WziiX6bqdk4mtDupaJxuk
+	 A7RlnU9oOiY/MRfS0MVrPV03F2XhXx02LLFnGVKdVp1neySqhtLHWP3DIn3PrsOgte
+	 OCliTLhHV1ESTCu7DM8wQNfXh7Z8SHasLUPNEn4ek4WJDSmzIDRLiYtrMKuuupyRix
+	 wYxRlwFiajLIg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailchimpapp.net;
+	s=k2; t=1685368961; x=1685629461;
+	i=press=3Dthemedialine.org@mailchimpapp.net;
+	bh=MPvZhOe6XYjvxvgyCBem1jac9zeUUg5RyyuVGhEtouA=;
+	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
+	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
+	 MIME-Version:CC:Date:Subject:From;
+	b=uD43OG+W8ZF7wochieEC0PabaO98jq8Scii5CoEM7mGGk1hfCs5/suSGGyVYixSQp
+	 vdMkJAdk46+Fek+EiVAJKZYD9g2xqlStQ8ts/Ld950zfx06X1EtMCb0G1tCE2DQoYP
+	 Oz9mnBaMOwuUxXI7pFBxuRlf1xVVVRyiQG3mRUCT5GTauEJyNaOGd/viYF6+7VYIdl
+	 vmahMSaQjolI38N2+HdZo5aDadKGhkiTHQGJk0ruINxLge5vf8CBWW/2cCSeVJpMue
+	 TKCsMxiAcQLwuLi+BVpjfTXxhpcIlbXojoutN6PM/0og1a1UNi3JyUYfqWPPiHHCXt
+	 4hlyuiVn4iVIg==
+Received: from localhost (localhost [127.0.0.1])
+	by mail174.suw101.mcdlv.net (Mailchimp) with ESMTP id 4QVHKY1CgDzpc17
+	for <ouchendans62@gmail.com>; Mon, 29 May 2023 14:02:41 +0000 (GMT)
+Subject: =?utf-8?Q?Today=27s=20Mideast=20News=20From=20The=20Media=20Line=20for=2005=2F29=2F2023?=
+From: =?utf-8?Q?The=20Media=20Line?= <press@themedialine.org>
+Reply-To: =?utf-8?Q?The=20Media=20Line?= <press@themedialine.org>
+To: =?utf-8?Q?=20?= <ouchendans62@gmail.com>
+Date: Mon, 29 May 2023 14:02:30 +0000
+Message-ID: <5e18a2459fda424c7b5bf874d.a30fdd12e9.20230529140216.ce0426a2c7.be82bdbf@mail174.suw101.mcdlv.net>
+X-Mailer: Mailchimp Mailer - **CIDce0426a2c7a30fdd12e9**
+X-Campaign: mailchimp5e18a2459fda424c7b5bf874d.ce0426a2c7
+X-campaignid: mailchimp5e18a2459fda424c7b5bf874d.ce0426a2c7
+X-Report-Abuse: Please report abuse for this campaign here: https://mailchimp.com/contact/abuse/?u=5e18a2459fda424c7b5bf874d&id=ce0426a2c7&e=a30fdd12e9
+X-MC-User: 5e18a2459fda424c7b5bf874d
+Feedback-ID: 40482761:40482761.228740:us10:mc
+List-ID: 5e18a2459fda424c7b5bf874dmc list <5e18a2459fda424c7b5bf874d.100733.list-id.mcsv.net>
+X-Accounttype: pr
+List-Unsubscribe: <https://themedialine.us10.list-manage.com/unsubscribe?u=5e18a2459fda424c7b5bf874d&id=ffb4435b8d&e=a30fdd12e9&c=ce0426a2c7>, <mailto:unsubscribe-mc.us10_5e18a2459fda424c7b5bf874d.ce0426a2c7-a30fdd12e9@unsubscribe.mailchimpapp.net?subject=unsubscribe>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Content-Type: multipart/alternative; boundary="_----------=_MCPart_1886603577"
+MIME-Version: 1.0
+
+This is a multi-part message in MIME format
+
+--_----------=_MCPart_1886603577
+Content-Type: text/plain; charset="utf-8"; format="fixed"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+The Media Line Mideast Daily News
+View this email in your browser (https://us10.campaign-archive.com/?e=3Da30fdd12e9&u=3D5e18a2459fda424c7b5bf874d&id=3Dce0426a2c7)
+
+May 29=2C 2023
+
+Mideast Daily News
+By Michael Friedson
+
+
+** Please make your gift today as we have a most generous matching 2:1 gra=
+nt.
+------------------------------------------------------------
+Donate Now - Your support matched 2:1! (https://themedialine.org/donate/)
+It looks like you have a lot of content. To preview your campaign=2C send=
+ a test email (https://mailchimp.com/help/preview-and-test-your-email-camp=
+aign/#send+a+test+email) .
+Donate
+Help us maintain the popular MIDEAST DAILY NEWS blast as free service with=
+ your generous tax deductible contribution.
+Donate (https://themedialine.org/donate/)
+
+Copyright =C2=A9 2023 The Media Line Ltd.=2C All rights reserved.
+This email is the mideast daily news from The Media Line. We sent you this=
+ email because you signed up for delivery of this newsletter.  If you no l=
+onger wish to receive these emails=2C please click "Reply All" to this ema=
+il with subject as "Unsubscribe".
+
+The Medialine Ltd.
+1325 Avenue of the Americas=2C 28th floor
+New York=2C N.Y. 10019
+Facebook (https://www.facebook.com/TheMediaLine) Twitter (https://twitter.=
+com/themedialine) Linkedin (https://www.linkedin.com/in/themedialine/) You=
+tube (https://www.youtube.com/user/themedialine) RSS (https://feedly.com/i=
+/subscription/feed/http://feeds.feedburner.com/themedialine/UEjK)
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+** Unsubscribe (https://themedialine.us10.list-manage.com/unsubscribe?u=3D=
+5e18a2459fda424c7b5bf874d&id=3Dffb4435b8d&e=3Da30fdd12e9&c=3Dce0426a2c7)
+** Update subscription (https://themedialine.us10.list-manage.com/profile?=
+u=3D5e18a2459fda424c7b5bf874d&id=3Dffb4435b8d&e=3Da30fdd12e9&c=3Dce0426a2c7)
+** Add new subscriber (http://www.themedialine.org/registration/)
+This email is the mideast daily news from The Media Line. We sent you this=
+ email because you signed up for delivery of this newsletter.  If you no l=
+onger wish to receive these emails=2C please click "Reply All" to this ema=
+il with subject as "Unsubscribe".
+--_----------=_MCPart_1886603577
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.or=
+g/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+    <head>
+        <!-- NAME: 1 COLUMN -->
+        <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3D=
+UTF-8">
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width=2C initial=
+-scale=3D1.0">
+        <title>Today's Mideast News From The Media Line for 05/29/2023</ti=
+tle>
+
+    <style type=3D"text/css">
+=09=09body=2C#bodyTable=2C#bodyCell{
+=09=09=09height:100% !important;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09=09width:100% !important;
+=09=09}
+=09=09table{
+=09=09=09border-collapse:collapse;
+=09=09}
+=09=09img=2Ca img{
+=09=09=09border:0;
+=09=09=09outline:none;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09h1=2Ch2=2Ch3=2Ch4=2Ch5=2Ch6{
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09}
+=09=09p{
+=09=09=09margin:1em 0;
+=09=09=09padding:0;
+=09=09}
+=09=09a{
+=09=09=09word-wrap:break-word;
+=09=09}
+=09=09.mcnPreviewText{
+=09=09=09display:none !important;
+=09=09}
+=09=09.ReadMsgBody{
+=09=09=09width:100%;
+=09=09}
+=09=09.ExternalClass{
+=09=09=09width:100%;
+=09=09}
+=09=09.ExternalClass=2C.ExternalClass p=2C.ExternalClass span=2C.ExternalC=
+lass font=2C.ExternalClass td=2C.ExternalClass div{
+=09=09=09line-height:100%;
+=09=09}
+=09=09table=2Ctd{
+=09=09=09mso-table-lspace:0pt;
+=09=09=09mso-table-rspace:0pt;
+=09=09}
+=09=09#outlook a{
+=09=09=09padding:0;
+=09=09}
+=09=09img{
+=09=09=09-ms-interpolation-mode:bicubic;
+=09=09}
+=09=09body=2Ctable=2Ctd=2Cp=2Ca=2Cli=2Cblockquote{
+=09=09=09-ms-text-size-adjust:100%;
+=09=09=09-webkit-text-size-adjust:100%;
+=09=09}
+=09=09#templatePreheader=2C#templateHeader=2C#templateBody=2C#templateFoot=
+er{
+=09=09=09min-width:100%;
+=09=09}
+=09=09#bodyCell{
+=09=09=09padding:20px;
+=09=09}
+=09=09.mcnImage=2C.mcnRetinaImage{
+=09=09=09vertical-align:bottom;
+=09=09}
+=09=09.mcnTextContent img{
+=09=09=09height:auto !important;
+=09=09}
+=09=09body=2C#bodyTable{
+=09=09=09background-color:#ffffff;
+=09=09}
+=09=09#bodyCell{
+=09=09=09border-top:0;
+=09=09}
+=09=09#templateContainer{
+=09=09=09border:0;
+=09=09}
+=09=09h1{
+=09=09=09color:#606060 !important;
+=09=09=09display:block;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:40px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:125%;
+=09=09=09letter-spacing:-1px;
+=09=09=09margin:0;
+=09=09=09text-align:left;
+=09=09}
+=09=09h2{
+=09=09=09color:#404040 !important;
+=09=09=09display:block;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:26px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:125%;
+=09=09=09letter-spacing:-.75px;
+=09=09=09margin:0;
+=09=09=09text-align:left;
+=09=09}
+=09=09h3{
+=09=09=09color:#606060 !important;
+=09=09=09display:block;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:18px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:125%;
+=09=09=09letter-spacing:-.5px;
+=09=09=09margin:0;
+=09=09=09text-align:left;
+=09=09}
+=09=09h4{
+=09=09=09color:#808080 !important;
+=09=09=09display:block;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:16px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:125%;
+=09=09=09letter-spacing:normal;
+=09=09=09margin:0;
+=09=09=09text-align:left;
+=09=09}
+=09=09#templatePreheader{
+=09=09=09background-color:#FFFFFF;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09}
+=09=09.preheaderContainer .mcnTextContent=2C.preheaderContainer .mcnTextCo=
+ntent p{
+=09=09=09color:#606060;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:11px;
+=09=09=09line-height:125%;
+=09=09=09text-align:left;
+=09=09}
+=09=09.preheaderContainer .mcnTextContent a{
+=09=09=09color:#606060;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateHeader{
+=09=09=09background-color:#FFFFFF;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09}
+=09=09.headerContainer .mcnTextContent=2C.headerContainer .mcnTextContent=
+ p{
+=09=09=09color:#606060;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:15px;
+=09=09=09line-height:150%;
+=09=09=09text-align:left;
+=09=09}
+=09=09.headerContainer .mcnTextContent a{
+=09=09=09color:#0000ff;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateBody{
+=09=09=09background-color:#FFFFFF;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09}
+=09=09.bodyContainer .mcnTextContent=2C.bodyContainer .mcnTextContent p{
+=09=09=09color:#606060;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:15px;
+=09=09=09line-height:150%;
+=09=09=09text-align:justify;
+=09=09}
+=09=09.bodyContainer .mcnTextContent a{
+=09=09=09color:#0000ff;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09#templateFooter{
+=09=09=09background-color:#FFFFFF;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09}
+=09=09.footerContainer .mcnTextContent=2C.footerContainer .mcnTextContent=
+ p{
+=09=09=09color:#606060;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:11px;
+=09=09=09line-height:125%;
+=09=09=09text-align:left;
+=09=09}
+=09=09.footerContainer .mcnTextContent a{
+=09=09=09color:#0000cd;
+=09=09=09font-weight:bold;
+=09=09=09text-decoration:underline;
+=09=09}
+=09@media only screen and (max-width: 480px){
+=09=09body=2Ctable=2Ctd=2Cp=2Ca=2Cli=2Cblockquote{
+=09=09=09-webkit-text-size-adjust:none !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09body{
+=09=09=09width:100% !important;
+=09=09=09min-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnRetinaImage{
+=09=09=09max-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09td[id=3DbodyCell]{
+=09=09=09padding:10px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09table[class=3DmcnTextContentContainer]{
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnBoxedTextContentContainer{
+=09=09=09max-width:100% !important;
+=09=09=09min-width:100% !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09table[class=3Dmcpreview-image-uploader]{
+=09=09=09width:100% !important;
+=09=09=09display:none !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09img[class=3DmcnImage]{
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09table[class=3DmcnImageGroupContentContainer]{
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09td[class=3DmcnImageGroupContent]{
+=09=09=09padding:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09td[class=3DmcnImageGroupBlockInner]{
+=09=09=09padding-bottom:0 !important;
+=09=09=09padding-top:0 !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09tbody[class=3DmcnImageGroupBlockOuter]{
+=09=09=09padding-bottom:9px !important;
+=09=09=09padding-top:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09table[class=3DmcnCaptionTopContent]=2Ctable[class=3DmcnCaptionBott=
+omContent]{
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09table[class=3DmcnCaptionLeftTextContentContainer]=2Ctable[class=3D=
+mcnCaptionRightTextContentContainer]=2Ctable[class=3DmcnCaptionLeftImageC=
+ontentContainer]=2Ctable[class=3DmcnCaptionRightImageContentContainer]=2C=
+table[class=3DmcnImageCardLeftTextContentContainer]=2Ctable[class=3DmcnI=
+mageCardRightTextContentContainer]=2C.mcnImageCardLeftImageContentContaine=
+r=2C.mcnImageCardRightImageContentContainer{
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09td[class=3DmcnImageCardLeftImageContent]=2Ctd[class=3DmcnImageCard=
+RightImageContent]{
+=09=09=09padding-right:18px !important;
+=09=09=09padding-left:18px !important;
+=09=09=09padding-bottom:0 !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09td[class=3DmcnImageCardBottomImageContent]{
+=09=09=09padding-bottom:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09td[class=3DmcnImageCardTopImageContent]{
+=09=09=09padding-top:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09td[class=3DmcnImageCardLeftImageContent]=2Ctd[class=3DmcnImageCard=
+RightImageContent]{
+=09=09=09padding-right:18px !important;
+=09=09=09padding-left:18px !important;
+=09=09=09padding-bottom:0 !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09td[class=3DmcnImageCardBottomImageContent]{
+=09=09=09padding-bottom:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09td[class=3DmcnImageCardTopImageContent]{
+=09=09=09padding-top:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09table[class=3DmcnCaptionLeftContentOuter] td[class=3DmcnTextConten=
+t]=2Ctable[class=3DmcnCaptionRightContentOuter] td[class=3DmcnTextConten=
+t]{
+=09=09=09padding-top:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09td[class=3DmcnCaptionBlockInner] table[class=3DmcnCaptionTopConten=
+t]:last-child td[class=3DmcnTextContent]=2C.mcnImageCardTopImageContent=
+=2C.mcnCaptionBottomContent:last-child .mcnCaptionBottomImageContent{
+=09=09=09padding-top:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09td[class=3DmcnBoxedTextContentColumn]{
+=09=09=09padding-left:18px !important;
+=09=09=09padding-right:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09td[class=3DmcnTextContent]{
+=09=09=09padding-right:18px !important;
+=09=09=09padding-left:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09table[id=3DtemplateContainer]=2Ctable[id=3DtemplatePreheader]=2Cta=
+ble[id=3DtemplateHeader]=2Ctable[id=3DtemplateBody]=2Ctable[id=3Dtempla=
+teFooter]{
+=09=09=09max-width:600px !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h1{
+=09=09=09font-size:24px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h2{
+=09=09=09font-size:20px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h3{
+=09=09=09font-size:18px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h4{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09table[class=3DmcnBoxedTextContentContainer] td[class=3DmcnTextCont=
+ent]=2Ctd[class=3DmcnBoxedTextContentContainer] td[class=3DmcnTextConten=
+t] p{
+=09=09=09font-size:18px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09table[id=3DtemplatePreheader]{
+=09=09=09display:block !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09td[class=3DpreheaderContainer] td[class=3DmcnTextContent]=2Ctd[cl=
+ass=3DpreheaderContainer] td[class=3DmcnTextContent] p{
+=09=09=09font-size:14px !important;
+=09=09=09line-height:115% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09td[class=3DheaderContainer] td[class=3DmcnTextContent]=2Ctd[class=
+=3DheaderContainer] td[class=3DmcnTextContent] p{
+=09=09=09font-size:18px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09td[class=3DbodyContainer] td[class=3DmcnTextContent]=2Ctd[class=
+=3DbodyContainer] td[class=3DmcnTextContent] p{
+=09=09=09font-size:18px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09td[class=3DfooterContainer] td[class=3DmcnTextContent]=2Ctd[class=
+=3DfooterContainer] td[class=3DmcnTextContent] p{
+=09=09=09font-size:14px !important;
+=09=09=09line-height:115% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09td[class=3DfooterContainer] a[class=3DutilityLink]{
+=09=09=09display:block !important;
+=09=09}
+
+}</style></head>
+    <body leftmargin=3D"0" marginwidth=3D"0" topmargin=3D"0" marginheight=
+=3D"0" offset=3D"0" style=3D"margin: 0;padding: 0;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;background-color: #ffffff;height: 100% !=
+important;width: 100% !important;">
+        <!--
+-->
+        <center>
+            <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" height=3D"100%" width=3D"100%" id=3D"bodyTable" style=3D"border=
+-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-s=
+ize-adjust: 100%;-webkit-text-size-adjust: 100%;margin: 0;padding: 0;backg=
+round-color: #ffffff;height: 100% !important;width: 100% !important;">
+                <tr>
+                    <td align=3D"center" valign=3D"top" id=3D"bodyCell" st=
+yle=3D"mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;margin: 0;padding: 20px;border-top: 0;h=
+eight: 100% !important;width: 100% !important;">
+                        <!-- BEGIN TEMPLATE // -->
+                        <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"600" id=3D"templateContainer" style=3D"border-collapse: co=
+llapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;border: 0;">
+                            <tr>
+                                <td align=3D"center" valign=3D"top" style=
+=3D"mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%=
+;-webkit-text-size-adjust: 100%;">
+                                    <!-- BEGIN PREHEADER // -->
+                                    <table border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" width=3D"600" id=3D"templatePreheader" style=3D"border-=
+collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-si=
+ze-adjust: 100%;-webkit-text-size-adjust: 100%;min-width: 100%;background-=
+color: #FFFFFF;border-top: 0;border-bottom: 0;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"pr=
+eheaderContainer" style=3D"padding-top: 9px;mso-table-lspace: 0pt;mso-tabl=
+e-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">=
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" cla=
+ss=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: collapse;mso=
+-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjus=
+t: 100%;-webkit-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"390" style=3D"width:390px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 390px;border-collapse: collapse;mso-table=
+-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text=
+-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContentContainer">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-left: 18px;padding-bottom: 9px;padding-right: 1=
+8px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%=
+;-webkit-text-size-adjust: 100%;color: #606060;font-family: Helvetica;font=
+-size: 11px;line-height: 125%;text-align: left;">
+
+                            <span style=3D"color:#999999">The Media Line M=
+ideast Daily News</span>
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"210" style=3D"width:210px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 210px;border-collapse: collapse;mso-table=
+-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text=
+-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContentContainer">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-left: 18px;padding-bottom: 9px;padding-right: 1=
+8px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%=
+;-webkit-text-size-adjust: 100%;color: #606060;font-family: Helvetica;font=
+-size: 11px;line-height: 125%;text-align: left;">
+
+                            <div style=3D"text-align: right;"><a href=3D"h=
+ttps://us10.campaign-archive.com/?e=3Da30fdd12e9&u=3D5e18a2459fda424c7b5bf87=
+4d&id=3Dce0426a2c7" style=3D"color: #007aff;word-wrap: break-word;-ms-text=
+-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal;text=
+-decoration: underline;" target=3D"_blank"><span>View this email in your b=
+rowser</span></a></div>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </table>
+                                    <!-- // END PREHEADER -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" style=
+=3D"mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%=
+;-webkit-text-size-adjust: 100%;">
+                                    <!-- BEGIN HEADER // -->
+                                    <table border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" width=3D"600" id=3D"templateHeader" style=3D"border-col=
+lapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;min-width: 100%;background-col=
+or: #FFFFFF;border-top: 0;border-bottom: 0;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"he=
+aderContainer" style=3D"mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-te=
+xt-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><table border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mcnDividerBlo=
+ck" style=3D"min-width: 100%;border-collapse: collapse;mso-table-lspace: 0=
+pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adju=
+st: 100%;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adju=
+st: 100%;-webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-t=
+op: 2px none #EAEAEA;border-collapse: collapse;mso-table-lspace: 0pt;mso-t=
+able-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%=
+;">
+                    <tbody><tr>
+                        <td style=3D"mso-table-lspace: 0pt;mso-table-rspac=
+e: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnCaptionBlock" style=3D"border-collapse: collapse;mso-tabl=
+e-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;">
+    <tbody class=3D"mcnCaptionBlockOuter">
+        <tr>
+            <td class=3D"mcnCaptionBlockInner" valign=3D"top" style=3D"pad=
+ding: 9px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust=
+: 100%;-webkit-text-size-adjust: 100%;">
+
+
+
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"mcnCaptio=
+nRightContentOuter" width=3D"100%" style=3D"border-collapse: collapse;mso-=
+table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+    <tbody><tr>
+        <td valign=3D"top" class=3D"mcnCaptionRightContentInner" style=3D"=
+padding: 0 9px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-a=
+djust: 100%;-webkit-text-size-adjust: 100%;">
+            <table align=3D"left" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" class=3D"mcnCaptionRightImageContentContainer" width=3D"264" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td class=3D"mcnCaptionRightImageContent" align=3D"lef=
+t" valign=3D"top" style=3D"mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms=
+-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+
+                        <img alt=3D"" src=3D"https://mcusercontent.com/5e1=
+8a2459fda424c7b5bf874d/images/fd9b16ed-8159-4d00-95b2-ad38675809ab.png" wi=
+dth=3D"264" style=3D"max-width: 520px;border-radius: 0%;border: 0;outline:=
+ none;text-decoration: none;-ms-interpolation-mode: bicubic;vertical-align=
+: bottom;" class=3D"mcnImage">
+
+
+
+                    </td>
+                </tr>
+            </tbody></table>
+            <table class=3D"mcnCaptionRightTextContentContainer" align=3D"=
+right" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"264" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td valign=3D"top" class=3D"mcnTextContent" style=3D"t=
+ext-align: left;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;color: #606060;font-family: He=
+lvetica;font-size: 15px;line-height: 150%;">
+                        <div style=3D"font-weight:bold;padding-top: 25px;=
+ text-align: right;">May 29=2C 2023</div>
+
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+
+
+
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adju=
+st: 100%;-webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-t=
+op: 2px none #EAEAEA;border-collapse: collapse;mso-table-lspace: 0pt;mso-t=
+able-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%=
+;">
+                    <tbody><tr>
+                        <td style=3D"mso-table-lspace: 0pt;mso-table-rspac=
+e: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnCodeBlock" style=3D"border-collapse: collapse;mso-table-l=
+space: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-s=
+ize-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"mso-ta=
+ble-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-t=
+ext-size-adjust: 100%;">
+                <div class=3D"mcnTextContent" style=3D"background: url('ht=
+tps://themedialine.org/wp-content/themes/news/add-assets/img/newsletters-a=
+ssets/group-2.jpg');background-size: cover;background-position: center;bac=
+kground-repeat: no-repeat;padding: 127px 24px 24px 24px;color: #606060;fon=
+t-family: Helvetica;font-size: 15px;line-height: 150%;text-align: left;">
+<div style=3D"font-size: 26px; font-weight: bold; font-style: normal; font=
+-stretch: normal; line-height: 1.21; letter-spacing: 0.4px; color: #ffffff=
+;">Mideast Daily News</div>
+<div style=3D"color: #ffffff;margin-top: 6px;">By Michael Friedson</div>
+</div>
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adju=
+st: 100%;-webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-t=
+op: 2px none #EAEAEA;border-collapse: collapse;mso-table-lspace: 0pt;mso-t=
+able-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%=
+;">
+                    <tbody><tr>
+                        <td style=3D"mso-table-lspace: 0pt;mso-table-rspac=
+e: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: coll=
+apse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjus=
+t: 100%;-webkit-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%=
+;-webkit-text-size-adjust: 100%;color: #606060;font-family: Helvetica;font=
+-size: 15px;line-height: 150%;text-align: left;">
+
+                            <h2 style=3D"text-align: left;margin: 0;paddin=
+g: 0;display: block;font-family: Helvetica;font-size: 26px;font-style: nor=
+mal;font-weight: bold;line-height: 125%;letter-spacing: -.75px;color: #404=
+040 !important;"><span style=3D"font-size:20px"><span style=3D"color:#0066=
+ff; line-height:100%">Please make your gift today as we have a most genero=
+us matching 2:1 grant.</span></span></h2>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnButtonBlock" style=3D"min-width: 100%;border-collapse: co=
+llapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnButtonBlockOuter">
+        <tr>
+            <td style=3D"padding-top: 0;padding-right: 18px;padding-bottom=
+: 18px;padding-left: 18px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-=
+text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign=3D"top" ali=
+gn=3D"left" class=3D"mcnButtonBlockInner">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"mcnButtonContentContainer" style=3D"border-collapse: separate !impo=
+rtant;border-radius: 4px;background-color: #0085FA;mso-table-lspace: 0pt;m=
+so-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust:=
+ 100%;">
+                    <tbody>
+                        <tr>
+                            <td align=3D"center" valign=3D"middle" class=
+=3D"mcnButtonContent" style=3D"font-family: Arial;font-size: 16px;padding:=
+ 18px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;">
+                                <a class=3D"mcnButton " title=3D"Donate No=
+w - Your support matched 2:1!" href=3D"https://themedialine.us10.list-mana=
+ge.com/track/click?u=3D5e18a2459fda424c7b5bf874d&id=3D3dd1c1488c&e=3Da30fdd12e9" target=3D"_blank" style=3D"font-weight: bold;letter-spacing: norma=
+l;line-height: 100%;text-align: center;text-decoration: none;color: #FFFFF=
+F;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjus=
+t: 100%;">Donate Now - Your support matched 2:1!</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 32px 18px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size=
+-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-t=
+op: 4px solid #000000;border-collapse: collapse;mso-table-lspace: 0pt;mso-=
+table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;">
+                    <tbody><tr>
+                        <td style=3D"mso-table-lspace: 0pt;mso-table-rspac=
+e: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </table>
+                                    <!-- // END HEADER -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" style=
+=3D"mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%=
+;-webkit-text-size-adjust: 100%;">
+                                    <!-- BEGIN BODY // -->
+                                    <table border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" width=3D"600" id=3D"templateBody" style=3D"border-colla=
+pse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-ad=
+just: 100%;-webkit-text-size-adjust: 100%;min-width: 100%;background-color=
+: #FFFFFF;border-top: 0;border-bottom: 0;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"bo=
+dyContainer" style=3D"mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text=
+-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><table border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mcnTextBlock" st=
+yle=3D"min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso=
+-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 10=
+0%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjus=
+t: 100%;-webkit-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%=
+;-webkit-text-size-adjust: 100%;color: #606060;font-family: Helvetica;font=
+-size: 15px;line-height: 150%;text-align: justify;">
+
+                            <div style=3D"direction: ltr;">
+<div style=3D"direction: ltr;">&nbsp;</div>
+
+<div style=3D"margin-bottom: 12px;"><a href=3D"https://themedialine.us10.l=
+ist-manage.com/track/click?u=3D5e18a2459fda424c7b5bf874d&id=3D5de62d4198&e=
+=3Da30fdd12e9" style=3D"color: #000;font-size: 20px;font-weight: bold;fon=
+t-style: normal;font-stretch: normal;line-height: 1.25;letter-spacing: 0.4=
+px;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adju=
+st: 100%;text-decoration: none;" target=3D"_blank">Erdogan Secures Preside=
+ncy Until 2028 Amid Rising Challenges in Turkey </a></div>
+
+<div style=3D"direction: ltr;"><a href=3D"https://themedialine.us10.list-m=
+anage.com/track/click?u=3D5e18a2459fda424c7b5bf874d&id=3D81a7e35a8a&e=3Da30fdd12e9" target=3D"_blank" style=3D"word-wrap: break-word;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;color: #0000ff;font-weight: no=
+rmal;text-decoration: none;"><img class=3D"mc-rss-item-img" src=3D"https:/=
+/themedialine.org/wp-content/uploads/2023/05/erdogan-2215259-e168536124627=
+3-564x317.jpg" height=3D"317" width=3D"564" style=3D"height: 317;width: 56=
+4;border: 0;outline: none;text-decoration: none;-ms-interpolation-mode: bi=
+cubic;"></a></div>
+
+<div style=3D"direction: ltr;">Recep Tayyip Erdo=C4=9Fan=2C Turkey=E2=80=
+=99s president=2C secured his position [=E2=80=A6]
+
+The post Erdogan Secures Presidency Until 2028 Amid Rising Challenges in T=
+urkey (https://themedialine.org/mideast-daily-news/erdogan-secures-preside=
+ncy-until-2028-amid-rising-challenges-in-turkey/) appeared first on The Me=
+dia Line (https://themedialine.org) .</div>
+
+<div style=3D"direction: ltr; margin-top: 16px; margin-bottom: 24px;"><a h=
+ref=3D"https://themedialine.us10.list-manage.com/track/click?u=3D5e18a2459=
+fda424c7b5bf874d&id=3D4656106481&e=3Da30fdd12e9" style=3D"font-size: 17px=
+;font-weight: bold;font-style: normal;font-stretch: normal;line-height: 1.=
+29;letter-spacing: -0.4px;color: #007aff;word-wrap: break-word;-ms-text-si=
+ze-adjust: 100%;-webkit-text-size-adjust: 100%;text-decoration: none;" tar=
+get=3D"_blank">READ MORE</a></div>
+
+<div style=3D"direction: ltr;">
+<div style=3D"direction: ltr;">&nbsp;</div>
+
+<div style=3D"margin-bottom: 12px;"><a href=3D"https://themedialine.us10.l=
+ist-manage.com/track/click?u=3D5e18a2459fda424c7b5bf874d&id=3D28e465ef5c&e=
+=3Da30fdd12e9" style=3D"color: #000;font-size: 20px;font-weight: bold;fon=
+t-style: normal;font-stretch: normal;line-height: 1.25;letter-spacing: 0.4=
+px;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adju=
+st: 100%;text-decoration: none;" target=3D"_blank">Egyptian Parliament Pas=
+ses Tax Hikes on Luxury Goods=2C Entertainment To Shore Up Public Finances=
+ </a></div>
+
+<div style=3D"direction: ltr;"><a href=3D"https://themedialine.us10.list-m=
+anage.com/track/click?u=3D5e18a2459fda424c7b5bf874d&id=3D8e65ecf256&e=3Da30fdd12e9" target=3D"_blank" style=3D"word-wrap: break-word;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;color: #0000ff;font-weight: no=
+rmal;text-decoration: none;"><img class=3D"mc-rss-item-img" src=3D"https:/=
+/themedialine.org/wp-content/uploads/2023/05/8329003515_05df61830b_o-564x3=
+17.jpg" height=3D"317" width=3D"564" style=3D"height: 317;width: 564;borde=
+r: 0;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"=
+></a></div>
+
+<div style=3D"direction: ltr;">In an effort to bolster its strained financ=
+es=2C [=E2=80=A6]
+
+The post Egyptian Parliament Passes Tax Hikes on Luxury Goods=2C Entertain=
+ment To Shore Up Public Finances (https://themedialine.org/mideast-daily-n=
+ews/egyptian-parliament-passes-tax-hikes-on-luxury-goods-entertainment-to-=
+shore-up-public-finances/) appeared first on The Media Line (https://theme=
+dialine.org) .</div>
+
+<div style=3D"direction: ltr; margin-top: 16px; margin-bottom: 24px;"><a h=
+ref=3D"https://themedialine.us10.list-manage.com/track/click?u=3D5e18a2459=
+fda424c7b5bf874d&id=3D53e6ab58b4&e=3Da30fdd12e9" style=3D"font-size: 17px=
+;font-weight: bold;font-style: normal;font-stretch: normal;line-height: 1.=
+29;letter-spacing: -0.4px;color: #007aff;word-wrap: break-word;-ms-text-si=
+ze-adjust: 100%;-webkit-text-size-adjust: 100%;text-decoration: none;" tar=
+get=3D"_blank">READ MORE</a></div>
+
+<div style=3D"direction: ltr;">
+<div style=3D"direction: ltr;">&nbsp;</div>
+
+<div style=3D"margin-bottom: 12px;"><a href=3D"https://themedialine.us10.l=
+ist-manage.com/track/click?u=3D5e18a2459fda424c7b5bf874d&id=3De784f33fb8&e=
+=3Da30fdd12e9" style=3D"color: #000;font-size: 20px;font-weight: bold;fon=
+t-style: normal;font-stretch: normal;line-height: 1.25;letter-spacing: 0.4=
+px;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adju=
+st: 100%;text-decoration: none;" target=3D"_blank">Hackers Deface Iranian=
+ Presidency Websites With Exiled Opposition Leaders </a></div>
+
+<div style=3D"direction: ltr;"><a href=3D"https://themedialine.us10.list-m=
+anage.com/track/click?u=3D5e18a2459fda424c7b5bf874d&id=3D3cd4f66a95&e=3Da30fdd12e9" target=3D"_blank" style=3D"word-wrap: break-word;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;color: #0000ff;font-weight: no=
+rmal;text-decoration: none;"><img class=3D"mc-rss-item-img" src=3D"https:/=
+/themedialine.org/wp-content/uploads/2023/05/image-7-564x317.jpg" height=
+=3D"317" width=3D"564" style=3D"height: 317;width: 564;border: 0;outline:=
+ none;text-decoration: none;-ms-interpolation-mode: bicubic;"></a></div>
+
+<div style=3D"direction: ltr;">Websites linked to Iran=E2=80=99s presidenc=
+y were defaced Monday [=E2=80=A6]
+
+The post Hackers Deface Iranian Presidency Websites With Exiled Opposition=
+ Leaders (https://themedialine.org/mideast-daily-news/hackers-deface-irani=
+an-presidency-websites-with-exiled-opposition-leaders/) appeared first on=
+ The Media Line (https://themedialine.org) .</div>
+
+<div style=3D"direction: ltr; margin-top: 16px; margin-bottom: 24px;"><a h=
+ref=3D"https://themedialine.us10.list-manage.com/track/click?u=3D5e18a2459=
+fda424c7b5bf874d&id=3D12c5585f8a&e=3Da30fdd12e9" style=3D"font-size: 17px=
+;font-weight: bold;font-style: normal;font-stretch: normal;line-height: 1.=
+29;letter-spacing: -0.4px;color: #007aff;word-wrap: break-word;-ms-text-si=
+ze-adjust: 100%;-webkit-text-size-adjust: 100%;text-decoration: none;" tar=
+get=3D"_blank">READ MORE</a></div>
+
+<div style=3D"direction: ltr;">
+<div style=3D"direction: ltr;">&nbsp;</div>
+
+<div style=3D"margin-bottom: 12px;"><a href=3D"https://themedialine.us10.l=
+ist-manage.com/track/click?u=3D5e18a2459fda424c7b5bf874d&id=3De89e880d91&e=
+=3Da30fdd12e9" style=3D"color: #000;font-size: 20px;font-weight: bold;fon=
+t-style: normal;font-stretch: normal;line-height: 1.25;letter-spacing: 0.4=
+px;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adju=
+st: 100%;text-decoration: none;" target=3D"_blank">Cetacean Sensation: Stu=
+dy Finds Endangered Marine Mammals in Israeli Waters </a></div>
+
+<div style=3D"direction: ltr;"><a href=3D"https://themedialine.us10.list-m=
+anage.com/track/click?u=3D5e18a2459fda424c7b5bf874d&id=3D3e5b767a2b&e=3Da30fdd12e9" target=3D"_blank" style=3D"word-wrap: break-word;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;color: #0000ff;font-weight: no=
+rmal;text-decoration: none;"><img class=3D"mc-rss-item-img" src=3D"https:/=
+/themedialine.org/wp-content/uploads/2023/05/Mother_and_baby_sperm_whale-5=
+64x317.jpg" height=3D"317" width=3D"564" style=3D"height: 317;width: 564;b=
+order: 0;outline: none;text-decoration: none;-ms-interpolation-mode: bicub=
+ic;"></a></div>
+
+<div style=3D"direction: ltr;">Researchers from Greenpeace=2C the Universi=
+ty of Haifa=2C and [=E2=80=A6]
+
+The post Cetacean Sensation: Study Finds Endangered Marine Mammals in Isra=
+eli Waters (https://themedialine.org/mideast-daily-news/cetacean-sensation=
+-study-finds-endangered-marine-mammals-in-israeli-waters/) appeared first=
+ on The Media Line (https://themedialine.org) .</div>
+
+<div style=3D"direction: ltr; margin-top: 16px; margin-bottom: 24px;"><a h=
+ref=3D"https://themedialine.us10.list-manage.com/track/click?u=3D5e18a2459=
+fda424c7b5bf874d&id=3D3402c4b1a9&e=3Da30fdd12e9" style=3D"font-size: 17px=
+;font-weight: bold;font-style: normal;font-stretch: normal;line-height: 1.=
+29;letter-spacing: -0.4px;color: #007aff;word-wrap: break-word;-ms-text-si=
+ze-adjust: 100%;-webkit-text-size-adjust: 100%;text-decoration: none;" tar=
+get=3D"_blank">READ MORE</a></div>
+
+<div style=3D"direction: ltr;"></div>
+
+<div style=3D"direction: ltr;"></div>
+</div>
+
+                        </div></div></div></td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 12px 18px 48px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text=
+-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-t=
+op: 4px solid #000000;border-collapse: collapse;mso-table-lspace: 0pt;mso-=
+table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;">
+                    <tbody><tr>
+                        <td style=3D"mso-table-lspace: 0pt;mso-table-rspac=
+e: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnCodeBlock" style=3D"border-collapse: collapse;mso-table-l=
+space: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-s=
+ize-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"mso-ta=
+ble-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-t=
+ext-size-adjust: 100%;">
+                <div class=3D"mcnTextContent" style=3D"color: #606060;font=
+-family: Helvetica;font-size: 15px;line-height: 150%;text-align: justify;"=
+>
+<div style=3D"background-image: url('https://themedialine.org/wp-content/t=
+hemes/news/add-assets/img/newsletters-assets/bg-03.jpg');background-positi=
+on: center left; background-size: cover; background-repeat: no-repeat; pad=
+ding: 24px;">
+<div style=3D"  font-size: 28px;font-weight: bold; font-style: normal;font=
+-stretch: normal;line-height: 1.21;letter-spacing: 0.4px;color: #007aff; t=
+ext-align: right; margin-top: 48px;">Donate</div>
+<div style=3D"text-align: right; width: 70%; float: right;  font-size: 17p=
+x;font-weight: normal;font-style: normal; font-stretch: normal;line-height=
+: 1.29;letter-spacing: -0.4px; color: #007aff; margin-top: 12px;">
+Help us maintain the popular
+MIDEAST DAILY NEWS blast as free service with your generous tax deductible=
+ contribution.
+</div>
+<div style=3D"clear:both;float:none;"></div>
+<a href=3D"https://themedialine.us10.list-manage.com/track/click?u=3D5e18a=
+2459fda424c7b5bf874d&id=3Db93afd88c8&e=3Da30fdd12e9" target=3D"_blank" st=
+yle=3D"float: right;display: block;padding: 14px 40px;border-radius: 8px;b=
+ackground: #007aff;color: #ffffff;font-size: 17px;font-weight: normal;font=
+-style: normal;font-stretch: normal;line-height: 1.29;letter-spacing: -0.4=
+px;text-align: center;margin-top: 72px;word-wrap: break-word;-ms-text-size=
+-adjust: 100%;-webkit-text-size-adjust: 100%;text-decoration: none;">Donat=
+e</a>
+<div style=3D"clear:both;float:none;"></div>
+</div>
+</div>
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 48px 18px 18px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text=
+-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-t=
+op: 2px solid #B2B2B2;border-collapse: collapse;mso-table-lspace: 0pt;mso-=
+table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;">
+                    <tbody><tr>
+                        <td style=3D"mso-table-lspace: 0pt;mso-table-rspac=
+e: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"border-collapse: collapse;mso-table-l=
+space: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-s=
+ize-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"mso-ta=
+ble-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-t=
+ext-size-adjust: 100%;">
+
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" width=3D"600" class=3D"mcnTextContentContainer" style=3D"bord=
+er-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text=
+-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 9px;padding-right: 18px;padding-bottom: 9px;padding-left:=
+ 18px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;color: #606060;font-family: Helvetica;fo=
+nt-size: 15px;line-height: 150%;text-align: justify;">
+
+
+                        </td>
+                    </tr>
+                </tbody></table>
+
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnCaptionBlock" style=3D"border-collapse: collapse;mso-tabl=
+e-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;">
+    <tbody class=3D"mcnCaptionBlockOuter">
+        <tr>
+            <td class=3D"mcnCaptionBlockInner" valign=3D"top" style=3D"pad=
+ding: 9px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust=
+: 100%;-webkit-text-size-adjust: 100%;">
+
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"mcnCaptio=
+nLeftContentOuter" width=3D"100%" style=3D"border-collapse: collapse;mso-t=
+able-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-=
+text-size-adjust: 100%;">
+    <tbody><tr>
+        <td valign=3D"top" class=3D"mcnCaptionLeftContentInner" style=3D"p=
+adding: 0 9px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-ad=
+just: 100%;-webkit-text-size-adjust: 100%;">
+            <table align=3D"right" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" class=3D"mcnCaptionLeftImageContentContainer" width=3D"132" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td class=3D"mcnCaptionLeftImageContent" align=3D"cent=
+er" valign=3D"top" style=3D"mso-table-lspace: 0pt;mso-table-rspace: 0pt;-m=
+s-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+                        <img alt=3D"" src=3D"https://gallery.mailchimp.com=
+/5e18a2459fda424c7b5bf874d/images/59a870d3-9a7e-4aaa-8884-ef4cf7ba4be1.png=
+" width=3D"96" style=3D"max-width: 96px;border: 0;outline: none;text-decor=
+ation: none;-ms-interpolation-mode: bicubic;vertical-align: bottom;" class=
+=3D"mcnImage">
+
+
+                    </td>
+                </tr>
+            </tbody></table>
+            <table class=3D"mcnCaptionLeftTextContentContainer" align=3D"l=
+eft" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"396" style=
+=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;=
+-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td valign=3D"top" class=3D"mcnTextContent" style=3D"m=
+so-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-web=
+kit-text-size-adjust: 100%;color: #606060;font-family: Helvetica;font-size=
+: 15px;line-height: 150%;text-align: justify;">
+                        <div style=3D"font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.38;
+  letter-spacing: -0.1px;
+  color:#b2b2b2;padding-top: 12px;
+  text-align: left;">Copyright =C2=A9 2023 The Media Line Ltd.=2C All righ=
+ts reserved.<br>
+This email is the mideast daily news from The Media Line. We sent you this=
+ email because you signed up for delivery of this newsletter.&nbsp; If you=
+ no longer wish to receive these emails=2C please click "Reply All" to thi=
+s email with subject as "Unsubscribe".</div>
+
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+
+
+
+
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px 18px 36px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text=
+-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-t=
+op: 2px none #EAEAEA;border-collapse: collapse;mso-table-lspace: 0pt;mso-t=
+able-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%=
+;">
+                    <tbody><tr>
+                        <td style=3D"mso-table-lspace: 0pt;mso-table-rspac=
+e: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnCodeBlock" style=3D"border-collapse: collapse;mso-table-l=
+space: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-s=
+ize-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"mso-ta=
+ble-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-t=
+ext-size-adjust: 100%;">
+                <div class=3D"mcnTextContent" style=3D"color: #606060;font=
+-family: Helvetica;font-size: 15px;line-height: 150%;text-align: justify;"=
+>
+<div>
+<table style=3D"border: none;width: 100%;border-collapse: collapse;mso-tab=
+le-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-te=
+xt-size-adjust: 100%;" border=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+<tbody><tr>
+<td style=3D"width: 16.666%;background: #007aff;height: 4px;line-height: 0=
+;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-w=
+ebkit-text-size-adjust: 100%;">&nbsp;
+</td>
+<td style=3D"width: 16.666%;background: #0cc5c0;height: 4px;line-height: 0=
+;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-w=
+ebkit-text-size-adjust: 100%;">&nbsp;
+</td>
+<td style=3D"width: 16.666%;background: #8a42b8;height: 4px;line-height: 0=
+;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-w=
+ebkit-text-size-adjust: 100%;">&nbsp;
+</td>
+<td style=3D"width: 16.666%;background: #fbf126;height: 4px;line-height: 0=
+;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-w=
+ebkit-text-size-adjust: 100%;">&nbsp;
+</td>
+<td style=3D"width: 16.666%;background: #ff4a00;height: 4px;line-height: 0=
+;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-w=
+ebkit-text-size-adjust: 100%;">&nbsp;
+</td>
+<td style=3D"width: 16.666%;background: #4cd964;height: 4px;line-height: 0=
+;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-w=
+ebkit-text-size-adjust: 100%;">&nbsp;
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 24px 18px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size=
+-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-t=
+op: 2px none #EAEAEA;border-collapse: collapse;mso-table-lspace: 0pt;mso-t=
+able-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%=
+;">
+                    <tbody><tr>
+                        <td style=3D"mso-table-lspace: 0pt;mso-table-rspac=
+e: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: coll=
+apse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjus=
+t: 100%;-webkit-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"300" style=3D"width:300px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 300px;border-collapse: collapse;mso-table=
+-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text=
+-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContentContainer">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-left: 18px;padding-bottom: 9px;padding-right: 1=
+8px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%=
+;-webkit-text-size-adjust: 100%;color: #606060;font-family: Helvetica;font=
+-size: 15px;line-height: 150%;text-align: justify;">
+
+                            <div style=3D"font-size: 17px;font-weight: bol=
+d;font-style: normal;font-stretch: normal;line-height: 1.29;letter-spacing=
+: -0.4px;text-align: left;color: #000000; margin-top: 3px">The Medialine L=
+td.</div>
+
+<div style=3D"margin-top: 12px; color: #b2b2b2; font-size: 13px;font-weigh=
+t: normal;font-style: normal;font-stretch: normal;line-height: 1.38;letter=
+-spacing: -0.1px;">1325 Avenue of the Americas=2C 28th floor<br>
+New York=2C N.Y. 10019</div>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"300" style=3D"width:300px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 300px;border-collapse: collapse;mso-table=
+-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text=
+-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContentContainer">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-left: 18px;padding-bottom: 9px;padding-right: 1=
+8px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%=
+;-webkit-text-size-adjust: 100%;color: #606060;font-family: Helvetica;font=
+-size: 15px;line-height: 150%;text-align: justify;">
+
+                            <div>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"float: ri=
+ght;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;=
+-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+=09<tbody>
+=09=09<tr>
+=09=09=09<td style=3D"mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text=
+-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a alt=3D"Facebook" hr=
+ef=3D"https://themedialine.us10.list-manage.com/track/click?u=3D5e18a2459f=
+da424c7b5bf874d&id=3D4e3fb29412&e=3Da30fdd12e9" style=3D"padding: 0 2px;w=
+ord-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust:=
+ 100%;color: #0000ff;font-weight: normal;text-decoration: none;" target=3D=
+"_blank"><img height=3D"24px" src=3D"https://themedialine.org/wp-content/t=
+hemes/news/add-assets/img/newsletters-assets/icon-64x64-fb-01.png" width=
+=3D"24px" style=3D"border: 0;outline: none;text-decoration: none;-ms-inter=
+polation-mode: bicubic;height: auto !important;"> </a></td>
+=09=09=09<td style=3D"mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text=
+-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a alt=3D"Twitter" hre=
+f=3D"https://themedialine.us10.list-manage.com/track/click?u=3D5e18a2459fd=
+a424c7b5bf874d&id=3D4eb6e47e41&e=3Da30fdd12e9" style=3D"padding: 0 2px;wo=
+rd-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 1=
+00%;color: #0000ff;font-weight: normal;text-decoration: none;" target=3D"_=
+blank"><img height=3D"24px" src=3D"https://themedialine.org/wp-content/the=
+mes/news/add-assets/img/newsletters-assets/icon-64x64-twitter-01.png" widt=
+h=3D"24px" style=3D"border: 0;outline: none;text-decoration: none;-ms-inte=
+rpolation-mode: bicubic;height: auto !important;"> </a></td>
+=09=09=09<td style=3D"mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text=
+-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a alt=3D"Linkedin" hr=
+ef=3D"https://themedialine.us10.list-manage.com/track/click?u=3D5e18a2459f=
+da424c7b5bf874d&id=3Deba08ab385&e=3Da30fdd12e9" style=3D"padding: 0 2px;w=
+ord-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust:=
+ 100%;color: #0000ff;font-weight: normal;text-decoration: none;" target=3D=
+"_blank"><img height=3D"26px" src=3D"https://themedialine.org/wp-content/t=
+hemes/news/add-assets/img/newsletters-assets/icon-64x64-linkedin-01.png" w=
+idth=3D"26px" style=3D"border: 0;outline: none;text-decoration: none;-ms-i=
+nterpolation-mode: bicubic;height: auto !important;"> </a></td>
+=09=09=09<td style=3D"mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text=
+-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a alt=3D"Youtube" hre=
+f=3D"https://themedialine.us10.list-manage.com/track/click?u=3D5e18a2459fd=
+a424c7b5bf874d&id=3Dc0eef9ffd8&e=3Da30fdd12e9" style=3D"padding: 0 2px;wo=
+rd-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 1=
+00%;color: #0000ff;font-weight: normal;text-decoration: none;" target=3D"_=
+blank"><img height=3D"26px" src=3D"https://themedialine.org/wp-content/the=
+mes/news/add-assets/img/newsletters-assets/icon-64x64-youtube-01.png" widt=
+h=3D"26px" style=3D"border: 0;outline: none;text-decoration: none;-ms-inte=
+rpolation-mode: bicubic;height: auto !important;"> </a></td>
+=09=09=09<td style=3D"mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text=
+-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a alt=3D"RSS" href=3D=
+"https://themedialine.us10.list-manage.com/track/click?u=3D5e18a2459fda424=
+c7b5bf874d&id=3Dac5f56f5a5&e=3Da30fdd12e9" style=3D"padding: 0 2px;word-w=
+rap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+color: #0000ff;font-weight: normal;text-decoration: none;" target=3D"_blan=
+k"><img height=3D"26px" src=3D"https://themedialine.org/wp-content/themes/=
+news/add-assets/img/newsletters-assets/icon-64x64-rss-01.png" width=3D"26p=
+x" style=3D"border: 0;outline: none;text-decoration: none;-ms-interpolatio=
+n-mode: bicubic;height: auto !important;"> </a></td>
+=09=09</tr>
+=09</tbody>
+</table>
+</div>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"border-collapse: collapse;mso-table-l=
+space: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-s=
+ize-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"mso-ta=
+ble-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-t=
+ext-size-adjust: 100%;">
+
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" width=3D"600" class=3D"mcnTextContentContainer" style=3D"bord=
+er-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text=
+-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 9px;padding-right: 18px;padding-bottom: 9px;padding-left:=
+ 18px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;color: #606060;font-family: Helvetica;fo=
+nt-size: 15px;line-height: 150%;text-align: justify;">
+
+
+                        </td>
+                    </tr>
+                </tbody></table>
+
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </table>
+                                    <!-- // END BODY -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" style=
+=3D"mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%=
+;-webkit-text-size-adjust: 100%;">
+                                    <!-- BEGIN FOOTER // -->
+                                    <table border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" width=3D"600" id=3D"templateFooter" style=3D"border-col=
+lapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;min-width: 100%;background-col=
+or: #FFFFFF;border-top: 0;border-bottom: 0;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"fo=
+oterContainer" style=3D"padding-bottom: 9px;mso-table-lspace: 0pt;mso-tabl=
+e-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">=
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" cla=
+ss=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: collapse;mso=
+-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjus=
+t: 100%;-webkit-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%=
+;-webkit-text-size-adjust: 100%;color: #606060;font-family: Helvetica;font=
+-size: 11px;line-height: 125%;text-align: left;">
+
+                            <div style=3D"text-align: lrft;"><a class=3D"u=
+tilityLink" href=3D"https://themedialine.us10.list-manage.com/unsubscribe?=
+u=3D5e18a2459fda424c7b5bf874d&id=3Dffb4435b8d&e=3Da30fdd12e9&c=3Dce0426a2c7"=
+ style=3D"font-size: 13px;font-weight: normal;font-style: normal;font-stre=
+tch: normal;line-height: 1.38;letter-spacing: -0.1px;color: #007aff;margin=
+-right: 12px;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text=
+-size-adjust: 100%;text-decoration: underline;">Unsubscribe</a> <a class=
+=3D"utilityLink" href=3D"https://themedialine.us10.list-manage.com/profile=
+?u=3D5e18a2459fda424c7b5bf874d&id=3Dffb4435b8d&e=3Da30fdd12e9&c=3Dce0426a2c7=
+" style=3D"font-size: 13px;font-weight: normal;font-style: normal;font-str=
+etch: normal;line-height: 1.38;letter-spacing: -0.1px;color: #007aff;margi=
+n-right: 12px;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;text-decoration: underline;">Update subscription</a> <=
+a href=3D"https://themedialine.us10.list-manage.com/track/click?u=3D5e18a2=
+459fda424c7b5bf874d&id=3D62feb7fa40&e=3Da30fdd12e9" style=3D"font-size: 1=
+3px;font-weight: normal;font-style: normal;font-stretch: normal;line-heigh=
+t: 1.38;letter-spacing: -0.1px;color: #007aff;word-wrap: break-word;-ms-te=
+xt-size-adjust: 100%;-webkit-text-size-adjust: 100%;text-decoration: under=
+line;" target=3D"_blank">Add new subscriber</a></div>
+<br>
+This email is the mideast daily news from The Media Line. We sent you this=
+ email because you signed up for delivery of this newsletter.&nbsp; If you=
+ no longer wish to receive these emails=2C please click "Reply All" to thi=
+s email with subject as "Unsubscribe".&nbsp;
+<div style=3D"text-align: center;">&nbsp;</div>
+<br>
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </table>
+                                    <!-- // END FOOTER -->
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- // END TEMPLATE -->
+                    </td>
+                </tr>
+            </table>
+        </center>
+    <img src=3D"https://themedialine.us10.list-manage.com/track/open.php?u=
+=3D5e18a2459fda424c7b5bf874d&id=3Dce0426a2c7&e=3Da30fdd12e9" height=3D"1"=
+ width=3D"1" alt=3D""></body>
+</html>
+--_----------=_MCPart_1886603577--

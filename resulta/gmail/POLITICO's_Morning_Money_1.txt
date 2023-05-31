@@ -1,0 +1,372 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp439476ims;
+        Tue, 30 May 2023 05:03:57 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ4elsnywxB+nRmNzFAMY8Smf9YYhjpQUFh84usF4CusNnEtq+PF8Greqxk1F/z7PNNgng+w
+X-Received: by 2002:a05:6808:618:b0:398:34e0:b58f with SMTP id y24-20020a056808061800b0039834e0b58fmr1008473oih.16.1685448237280;
+        Tue, 30 May 2023 05:03:57 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685448237; cv=none;
+        d=google.com; s=arc-20160816;
+        b=xCY069uJ8u2uTuD7d94U4j4CKx25j08tLZOnwCGBsY9D59LhBv/fdKMx+jMOEqkQ9j
+         6O0S8UBgCEn78qaWnpmMgDzSLybnrchq0f4vN62tN07DF+mKS5R3cwPuYBGGMKBuVUgi
+         IBCneUuK1KvOhtqgSQL/0+NVOYqQB6CM+4K+6qLZsSXwdovcgTGkGvXMmkAO39SQewro
+         rDEFR/xCIkxcK4AmA/PJ1YMLZTePTQm+X+Hixsf/do3+SR2I9UjOzy6Qeez2lUMFdn8P
+         9C8YonyOVFbhkKv55Z1Zp1JNgLpHX/MHKni6URx6cpoTnqdi0GA4bYbj7aJRPAFm4RCH
+         7yRQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:list-id:reply-to:mime-version
+         :list-unsubscribe-post:list-unsubscribe:date:subject:to:from
+         :dkim-signature;
+        bh=kV22oNHnNdV/XuOf9va+wXJZFJ2D3JRtvFmsmbtBKWo=;
+        b=Qvx2gzsGHk+f+VDFbny1JNIpDQwIE4DwFqdgC2qKbqm1vb6l9O0ISRF1GJAjc9u0UR
+         j74w2tHEQOD/jAZfuHTKsk6ly8iFFQn0hzl/qNuZbvJFVsykkwen729ifNy5mDFXWvN8
+         HpnHjIuuKOuqHQUO57IU+78bRc6Py3oULkEDy77/D6mwYy/44rvziLeG6j4VXHhRN0uw
+         63i5yu5COZjLrAQEbqndqIaCjArQUGiWsZW83hFXDsf35u8p1FTZ1VsFMYYeBfpBgfDY
+         Z+ES3US8S1imJTVTp1+Y4W81lOTXB4V85Yeb6W0wbBXND0/aDychw+fr1/e9QEojpVeq
+         PFNg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.politico.com header.s=200608 header.b="Zu/k61ed";
+       spf=pass (google.com: domain of bounce-630314_html-1405096349-9801403-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) smtp.mailfrom=bounce-630314_HTML-1405096349-9801403-1376319-0@bounce.politicoemail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.politico.com
+Return-Path: <bounce-630314_HTML-1405096349-9801403-1376319-0@bounce.politicoemail.com>
+Received: from mta.politicoemail.com (mta.politicoemail.com. [68.232.198.10])
+        by mx.google.com with ESMTPS id s6-20020a05680810c600b003893de9d57asi7623144ois.187.2023.05.30.05.03.56
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 30 May 2023 05:03:57 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-630314_html-1405096349-9801403-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) client-ip=68.232.198.10;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.politico.com header.s=200608 header.b="Zu/k61ed";
+       spf=pass (google.com: domain of bounce-630314_html-1405096349-9801403-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) smtp.mailfrom=bounce-630314_HTML-1405096349-9801403-1376319-0@bounce.politicoemail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.politico.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=200608; d=email.politico.com;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Reply-To:List-ID:X-CSA-Complaints:Message-ID:Content-Type;
+ i=morningmoney@email.politico.com;
+ bh=kV22oNHnNdV/XuOf9va+wXJZFJ2D3JRtvFmsmbtBKWo=;
+ b=Zu/k61edbm4SgOkLFRv4xn4yb2jNno20JyKQINyxxy/krDGsW8ZvNwgH1LEKNMDIcuZoG37UF6CI
+   eoY6ZUjtqZewMgmeumNzEOTxmrd+KV5oDO3xQMYFSD/+c5yYX1eWR892ytmuIe4nwvLp69qyTSYK
+   jTpMip+MlHfmeDhTeFc=
+Received: by mta.politicoemail.com id henj2q2fmd4h for <ouchendans62@gmail.com>; Tue, 30 May 2023 12:02:30 +0000 (envelope-from <bounce-630314_HTML-1405096349-9801403-1376319-0@bounce.politicoemail.com>)
+From: "POLITICO's Morning Money" <morningmoney@email.politico.com>
+To: <ouchendans62@gmail.com>
+Subject: How spending cuts will hit the U.S. economy
+Date: Tue, 30 May 2023 06:02:30 -0600
+List-Unsubscribe: <https://click.politicoemail.com/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiIxMzc2MzE5IiwicyI6IjE0MDUwOTYzNDkiLCJsaWQiOiI2MzAzMTQiLCJqIjoiOTgwMTQwMyIsImpiIjoiMCIsImQiOiI0MDEyNyJ9.8M-6nAj63v-emVURa41dygkjWoqLrq8VO8SSyMDS1D0>, <mailto:leave-fcba1273756705791a4c342838-fdf61574756104747317747c-fe961d787565007d76-fe9115737262077c7c-ffcf14@leave.politicoemail.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+Reply-To: "POLITICO, LLC" <reply-fe961d787565007d76-630314_HTML-1405096349-1376319-0@politicoemail.com>
+List-ID: <1376319.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+X-SFMC-Stack: 4
+x-job: 1376319_9801403
+Message-ID: <22df9a7d-8b4b-4b6e-b6fc-a10736467ac3@las1s04mta952.xt.local>
+Feedback-ID: 1376319:9801403:68.232.198.10:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="wrv1KiOVMREs=_?:"
+
+This is a multi-part message in MIME format.
+
+--wrv1KiOVMREs=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Delivered daily by 8 a.m., Morning Money examines the latest news in finance politics and policy.  May 30, 2023 View in browser  
+By Sam Sutton
+
+Editor’s note: Morning Money is a free version of POLITICO Pro Financial Services morning newsletter, which is delivered to our subscribers each morning at 5:15 a.m. The POLITICO Pro platform combines the news you need with tools you can use to take action on the day’s biggest stories. Act on the news with POLITICO Pro.
+
+The economy is still at risk of a recession. The budget cuts included in President Joe Biden and House Speaker Kevin McCarthy’s deal to raise the debt ceiling aren’t deep enough to push it over the edge.
+
+Republicans insisted for months that any deal to raise the debt limit must come with sharp reductions in government spending. The U.S. economy needed a strong dose of fiscal discipline to reverse the inflation that’s been a hallmark of Biden’s economy for more than a year, they argued.
+
+But there was no appetite from either party to address big ticket items like Social Security, Medicare or defense spending. And once it became clear that the White House would largely block any raid on funds appropriated through Biden’s landmark legislative accomplishments — the Inflation Reduction Act and CHIPS — it assured that the macroeconomic impact of any deal would be negligible.
+
+Brian Riedl, a senior fellow at the Manhattan Institute and former chief economist to retired Ohio Republican Sen. Rob Portman, on Sunday said the headline caps on regular, non-emergency discretionary spending have so many “caveats and asterisks [that] may render these figures mostly meaningless.” (That underscores why the deal has raised the hackles of many policymakers on the GOP’s right flank — including Florida Gov. Ron DeSantis.)
+
+The cuts amount to “a rounding error” of GDP, Riedl told MM.
+
+Moody’s Chief Economist Mark Zandi, whose warnings of potential damage to the economy from the GOP’s proposed cuts were trumpeted by the White House last month, said the deal’s macro effects would be muted.
+
+“It’s not nearly as draconian as the Limit, Save, Grow Act,” Zandi said in an interview. The limits on discretionary spending could cost the economy about 120,000 jobs — raising the unemployment rate by about a tenth of a percentage point — and reduce gross domestic product by less than one-fifth of 1 percent, he said.
+
+That’s a far cry from the millions of job losses and sharp economic contraction the White House claimed would be imminent if the GOP got everything it wanted. While Biden and McCarthy’s deal will put weight on a vulnerable economy, it’s not going to create enough drag to push it into a recession, Zandi said.
+
+“The timing is inopportune given how fragile the economy is, and how high recession risks are, but I don’t think this is what does the economy in,” he said.
+
+To be sure, the economy is still in danger. Ratings services could downgrade Treasury securities even if Biden signs a debt limit deal in time. That will make borrowing costs more expensive and could send markets reeling. Funds could flow out of banks once Treasury issues new debt, potentially creating even more havoc for a sector that withstood turmoil this spring.
+
+One more thing: Even if the macroeconomic impact is de minimis, the cutbacks to federal safety nets — including new work requirements in two government assistance programs — will be felt in a recession.
+
+“The concern from the Democratic side – in terms of how these cuts line up with a possibly forthcoming recession — is more about the human impact of the cuts and less about the economic impact of the cuts,” Tobin Marcus, a senior U.S. policy and politics strategist at Evercore ISI who previously served as an adviser to Biden, told MM.
+
+The political consequences of the human impact are likely to be nil, however. These are not safety nets for banks and businesses. The constituencies they serve “tend not to be the most enfranchised voters,” Marcus said. They do not have “larger ability to make their voices heard.”
+
+Even in a recession, “I don’t know that that’s really going to bubble up into a political headwind for Democrats,” he added.
+
+IT’S TUESDAY — We hope you had a wonderful Memorial Day. Send tips, gossip and suggestions to Sam at ssutton@politico.com and Zach at zwarmbrodt@politico.com.
+
+  
+GET READY FOR GLOBAL TECH DAY: Join POLITICO Live as we launch our first Global Tech Day alongside London Tech Week on Thursday, June 15. Register now for continuing updates and to be a part of this momentous and program-packed day! From the blockchain, to AI, and autonomous vehicles, technology is changing how power is exercised around the world, so who will write the rules? REGISTER HERE.
+     Driving the Week
+TODAY … Richmond Fed President Tom Barkin speaks at a National Association of Business Economics webinar at 1 p.m. … Former Treasury Secretary Lawrence Summers will deliver a keynote at the Peterson Institute for International Economics and the International Monetary Fund at 7 p.m. …
+
+WEDNESDAY … Fed Gov. Michelle Bowman and Boston Fed President Susan Collins speak at a Boston Fed event at 8:50 a.m. … Senate Banking holds a hearing on China’s economy at 10 a.m. … April job openings data will be released at 10 a.m. … Heather Boushey, member of the White House Council of Economic Advisers, speaks at the Peterson/IMF conference at 1 p.m. … Fed Gov. Philip Jefferson delivers remarks at 1:30 p.m. … Fed Beige Book will be released at 2 p.m. …
+
+THURSDAY … The FDIC holds an advisory meeting on community banking at 9 a.m. … Philadelphia Fed President Patrick Harker speaks on an NABE webinar at 1 p.m. …
+
+FRIDAY … The May jobs report will be out at 8:30 a.m.
+
+Must read — Victoria Guida has a deep dive on how major wage gains for low-income workers over the last several years have created an unusual political dilemma for Biden. “Fearful of alienating middle-income voters struggling against inflation, will Democrats portray the economy as a work-in-progress, still recovering from the shock of the pandemic? Or will President Joe Biden stress the gains for low-income workers as counteracting the long-running narrative of winner-take-all benefits for the wealthy?”
+
+ DEBT LIMIT FIGHT
+They still need to pass a bill — That’s easier said than done. McCarthy on Sunday said that “over 95 percent” of the Republican conference is “overwhelmingly excited about what they see,” per our Caitlin Emma. But on Monday, Rep. Chip Roy (R-Texas), a Freedom Caucus leader, fired a warning shot on Twitter signaling the speaker could face trouble on the House Rules Committee. Meanwhile, Biden officials worked through the weekend to calm progressive frustration over new work requirements in two government assistance programs, Jennifer Haberkorn, Holly Otterbein and Adam Cancryn wrote.
+
+So, even though stock futures bounced over the weekend on news of the deal, there’s still risk of default that may not be priced into markets. “It’s the worst type of risk,” Joseph Brusuelas, chief economist at consulting firm RSM US, told your host on Monday. It’s “unsystematic risk that one can’t properly quantify. It’s Wall Street’s Achilles heel.”
+
+That means prioritization, theoretically, is still on the table — Treasury Secretary Janet Yellen on Friday informed lawmakers that the department would make Social Security, veteran and Medicare payments on June 1-2 — all-but depleting Treasury’s coffers and ensuring June 5 would be the hard deadline to raise the debt limit. Democrats like Reps. Pramila Jayapal (Wash.) and Brad Sherman (Calif.) told Eleanor Mueller last week that uncertainty over whether the government would meet its obligations to Social Security recipients, in particular, had put real pressure on the process.
+
+Now that those payments will be made, the department could end up confronting excruciating and complicated decisions about where tax revenue would be sent. Making Social Security and debt payments on time alone would mean 40 percent cuts to almost everything else, Wendy Edelberg, director of The Hamilton Project at the Brookings Institution and a former chief economist at the Congressional Budget Office, told Victoria.
+
+George Madison, who served as Treasury general counsel during the bruising debt ceiling fight in 2011, agreed, pointing out that roughly 70 percent of government spending is Social Security, Medicare, Medicaid and interest on the debt, leaving basically no room for payments on anything else if you prioritize those.
+
+ In the markets
+Default is still a possibility, and markets are preparing for the worst — As IMF Managing Director Kristalina Georgieva pointed out on Friday, Treasury markets are “the anchor of stability for the global financial system. You pull the anchor, the world economy — the ship on which we all travel — is in choppy and even worse, uncharted waters.”
+
+Treasury and Fed officials, along with the Securities Industry and Financial Markets Association and BNY Mellon — the clearing bank for Treasury settlement and a key player in cash markets — have spent years preparing for what happens should things come unmoored.
+
+The most likely event, at least for now, is that Treasury would provide advance notice if coupons or principal payments need to be delayed, according to two sources who’ve spoken with Treasury and Fed officials. The department would also extend the maturity of those securities, which would keep them transferable through the Fed’s payment system, thereby allowing them to be traded and transferred normally.
+
+SIFMA outlined those scenarios in a recent report. Still, yields on Treasury securities that expire around the ‘X-Date’ have been spiking for months, a sign that investors are demanding a meaningful risk premium as the U.S. stares at a possible default.
+
+“Most agreements will have language that you can’t use defaulted securities as collateral,” said David Sekera, the chief U.S. market strategist for Morningstar Research Services. “In that case, I would hope that most parties, you know, would realize that even if there were some sort of short-term default, that people will still look at US Treasuries as being money good.”
+
+And if you need a reminder of the consequences — Our Katy O’Donnell: “A U.S. debt default could derail an already fragile housing market if Republicans and the White House fail to reach a deal to raise the debt ceiling.”
+
+  
+DON’T MISS POLITICO’S HEALTH CARE SUMMIT: The Covid-19 pandemic helped spur innovation in health care, from the wide adoption of telemedicine, health apps and online pharmacies to mRNA vaccines. But what will the next health care innovations look like? Join POLITICO on Wednesday June 7 for our Health Care Summit to explore how tech and innovation are transforming care and the challenges ahead for access and delivery in the United States. REGISTER NOW.
+      
+Follow us on Twitter
+
+Mark McQuillian @mcqdc
+
+Ben White @morningmoneyben
+
+Victoria Guida @vtg2
+
+Katy O'Donnell @katyodonnell_
+
+Zachary Warmbrodt @Zachary
+
+Sam Sutton @samjsutton
+  
+Follow us
+  
+To change your alert settings, please log in at https://go.politicoemail.com/?qs=f9f67bc846cd11acd9be19088a196c5e663c429f84637336c6a29fe4ab2bc177b5ee53bb2f19beba35cd80479480be533813fab58e766eca  https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a24f63aa9806faee90cf4982271d8937a9a0b861f98568ce596860e302b3649e4ccb019bf9cd4703fbf887cd69178a9ec5
+
+This email was sent to ouchendans62@gmail.com by: POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+
+ Please click here and follow the steps to unsubscribe.
+  
+
+--wrv1KiOVMREs=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<html><body><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml><![endif]-->
+</head><!-- Everything above this line is "new" to the template. We'll have to experiment a bit to see if it causes troubles. --><!-- preview text --><div style="display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">    Delivered daily by 8 a.m., Morning Money examines the latest news in finance politics and policy. </div><table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" style="padding:5px 0 15px 0;margin:0;text-align:center" role="presentation">    <tbody>    <tr>        <td><!-- Note: This is left blank to aid in centering across email clients --></td>        
+<td align="center" width="540">            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:540px;table-layout:fixed;" role="presentation">                <tbody>                <!-- top date and utility link -->                <tr>    <td align="center">        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="padding-bottom:15px;" role="presentation">            <tbody>            <tr>                <td width="50%" style="text-align:left;font-size:11px;font-family:Helvetica,sans-serif;color:#B1B4BD;margin:0;">May 30, 2023</td>                
+<td width="50%" style="text-align:right;font-size:11px;font-family:Helvetica,sans-serif;color:#B1B4BD;margin:0;"><a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11ac4e3fd17f1e05e10db607bcbe5250924fd2d926820606a79cbe97c223abb6317f65e64be026c8f7b9bfa6dcb280b8dcb3" target="_blank" style="color:#007BC7;text-decoration:none;">View in browser</a
+></td>            </tr>            </tbody>        </table>    </td></tr>                <!-- divider line -->                <tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                <!-- logo and byline -->                <tr>    <td align="center" style="text-align:center;padding:0 20px 15px 20px;margin:0">                                    <img src="https://static.politico.com/58/27/1ce9310a4780a41787a8c8e062f4/politico-morning-money.jpg" title="POLITICO Morning Money logo" alt="POLITICO Morning Money" border="0" width="500" style="width:100%;max-width:500px;">                        </td></tr><tr>    
+<td align="center" style="padding:0 20px 10px 20px;">        <p style="text-align:center;font-family:Helvetica,sans-serif;font-size:11px;letter-spacing:2px;color:#B1B4BD;text-transform:uppercase;margin:0;">            By  <a
+ href="mailto:ssutton@politico.com" target="_blank" style="color:#000000;text-decoration:none;font-weight:bold;">Sam Sutton</a
+>        </p>    </td></tr>                <!-- sponsor logo -->                                    <!-- body -->                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>Editor&#8217;s note: </i
+></strong
+><i
+>Morning Money is a free version of POLITICO Pro Financial Services morning newsletter, which is delivered to our subscribers each morning at 5:15 a.m. The POLITICO Pro platform combines the news you need with tools you can use to take action on the day&#8217;s biggest stories. </i
+><a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11ac6bc381e3909da7f6c489dade2bfae9a59746ab90418dd14d024c3cc2236fb63a55e496bd51c74d63c1ab16559e25d657" target="_blank"><i
+>Act on the news with POLITICO Pro</i
+></a
+><i
+>.</i
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The economy is still at risk of a recession. The budget cuts included in President Joe Biden and House Speaker <span>Kevin McCarthy</span>&#8217;s <a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11ac94653be33dccb65ee6658da2147e81f3473389585db12f23c28bf80d08af957e734867084f9d6068ef4fc50e7d330f23" target="_blank">deal to raise the debt ceiling</a
+> aren&#8217;t deep enough to push it over the edge.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Republicans insisted for months that any deal to raise the debt limit must come with sharp reductions in government spending. The U.S. economy needed a strong dose of fiscal discipline to reverse the inflation that&#8217;s been a hallmark of Biden&#8217;s economy for more than a year, they argued.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">But there was no appetite from either party to address big ticket items like Social Security, Medicare or defense spending. And once it became clear that the White House would largely block any raid on funds appropriated through Biden&#8217;s landmark legislative accomplishments &#8212; the Inflation Reduction Act and CHIPS &#8212; it assured that the macroeconomic impact of any deal would be negligible.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Brian Riedl</strong
+>, a senior fellow at the Manhattan Institute and former chief economist to retired Ohio Republican Sen. Rob Portman, on Sunday said the headline caps on regular, non-emergency discretionary spending have so many &#8220;<a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11ac9fd6b7fc36ecac28c4d4aaf1e32e2995ea7633fa22bfaef54f37d61b61be40002675a35b89852abed8772b912c744fa9" target="_blank">caveats and asterisks [that] may render these figures mostly meaningless</a
+>.&#8221; (That underscores why the deal <a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11ac87fd02d66f8f60550f199cf389a2f6d4b3ca08e8bcc9ab19ee2b53da8df0bc94a5a5f390bdfb3f1e78da67a7955e525d" target="_blank">has raised the hackles</a
+> of many policymakers on the GOP&#8217;s right flank &#8212; including Florida Gov.<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> Ron DeSantis</strong
+>.)</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The cuts amount to &#8220;a rounding error&#8221; of GDP, Riedl told MM.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Moody&#8217;s Chief Economist <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Mark Zandi</strong
+>, whose warnings of potential <a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11ac36f4b0346244c15bd51a3293f9bb0cfe34d957e1e64ca4f88cac8e6e8a61de86b576de6da0173db8f25b4d5ad49d8465" target="_blank">damage to the economy from the GOP&#8217;s proposed cuts</a
+> were trumpeted by the White House last month, said the deal&#8217;s macro effects would be muted.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;It&#8217;s not nearly as draconian as the Limit, Save, Grow Act,&#8221; Zandi said in an interview. The limits on discretionary spending could cost the economy about 120,000 jobs &#8212; raising the unemployment rate by about a tenth of a percentage point &#8212; and reduce gross domestic product by less than one-fifth of 1 percent, he said.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">That&#8217;s a far cry from the millions of job losses and sharp economic contraction the White House claimed would be imminent if the GOP got everything it wanted. While Biden and McCarthy&#8217;s deal will put weight on a vulnerable economy, it&#8217;s not going to create enough drag to push it into a recession, Zandi said.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;The timing is inopportune given how fragile the economy is, and how high recession risks are, but I don&#8217;t think this is what does the economy in,&#8221; he said.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">To be sure, the economy is still in danger. Ratings services could downgrade Treasury securities even if Biden signs a debt limit deal in time. That will make borrowing costs more expensive and could send markets reeling. Funds could flow out of banks once Treasury issues new debt, potentially creating even more havoc for a sector that withstood turmoil this spring.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">One more thing: </strong
+>Even if the macroeconomic impact is de minimis, the cutbacks to federal safety nets &#8212; including new work requirements in two government assistance programs &#8212; will be felt in a recession.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;The concern from the Democratic side &#8211; in terms of how these cuts line up with a possibly forthcoming recession &#8212; is more about the human impact of the cuts and less about the economic impact of the cuts,&#8221; <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Tobin Marcus</strong
+>, a senior U.S. policy and politics strategist at Evercore ISI who previously served as an adviser to Biden, told MM.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The political consequences of the human impact are likely to be nil, however. These are not safety nets for banks and businesses. The constituencies they serve &#8220;tend not to be the most enfranchised voters,&#8221; Marcus said. They do not have &#8220;larger ability to make their voices heard.&#8221;</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">Even in a recession, &#8220;I don&#8217;t know that that&#8217;s really going to bubble up into a political headwind for Democrats,&#8221; he added.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">IT&#8217;S TUESDAY </strong
+>&#8212; We hope you had a wonderful Memorial Day. Send tips, gossip and suggestions to Sam at <a
+ href="mailto:ssutton@politico.com" target="_blank">ssutton@politico.com</a
+> and Zach at <a
+ href="mailto:zwarmbrodt@politico.com" target="_blank">zwarmbrodt@politico.com</a
+>.<br></p></td>                    </tr>                                    <tr>                        </tr><tr>    <td height="10" style="height:10px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                    <p style="margin-top:0;margin-bottom:20px;line-height:24px;margin-bottom:20px;color:#000000;">                <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">GET READY FOR GLOBAL TECH DAY: </strong
+>Join POLITICO Live as we launch our first Global Tech Day alongside London Tech Week on Thursday, June 15. Register now for continuing updates and to be a part of this momentous and program-packed day! From the blockchain, to AI, and autonomous vehicles, technology is changing how power is exercised around the world, so who will write the rules? <a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11acaddacb5c45130ed91b907ee17f2a027a8b7dd5556aec7175723221e6637f82fe0d81e7f02af28f391bb8fd3044284154" target="_blank" style="text-decoration:underline;color:#007BC7;">REGISTER HERE</a
+>.            </p>            </td></tr><tr>    <td height="10" style="height:10px; font-size:0; border-bottom:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td height="15" style="height:15px; font-size:0;">&nbsp;</td></tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">Driving the Week</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;">
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">TODAY </strong
+>&#8230; Richmond Fed President Tom Barkin speaks at a National Association of Business Economics webinar at 1 p.m. &#8230; Former Treasury Secretary Lawrence Summers will deliver a keynote at the Peterson Institute for International Economics and the International Monetary Fund at 7 p.m. &#8230;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">WEDNESDAY</strong
+> &#8230; Fed Gov. Michelle Bowman and Boston Fed President Susan Collins speak at a Boston Fed event at 8:50 a.m. &#8230; Senate Banking holds a hearing on China&#8217;s economy at 10 a.m. &#8230; April job openings data will be released at 10 a.m. &#8230; Heather Boushey, member of the White House Council of Economic Advisers, speaks at the Peterson/IMF conference at 1 p.m. &#8230; Fed Gov. Philip Jefferson delivers remarks at 1:30 p.m. &#8230; Fed Beige Book will be released at 2 p.m. &#8230;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">THURSDAY </strong
+>&#8230; The FDIC holds an advisory meeting on community banking at 9 a.m. &#8230; Philadelphia Fed President Patrick Harker speaks on an NABE webinar at 1 p.m. &#8230;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">FRIDAY</strong
+> &#8230; The May jobs report will be out at 8:30 a.m.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Must read &#8212;</strong
+> Victoria Guida has a deep dive on how major wage gains for low-income workers over the last several years have created an unusual political dilemma for Biden. &#8220;Fearful of alienating middle-income voters struggling against inflation, will Democrats portray the economy as a work-in-progress, still recovering from the shock of the pandemic? Or will President Joe Biden stress the gains for low-income workers <a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11ac8bb377c9b32f667f4456a79ebe32c74a6c72f9695041ec4c9b7c65a76912bbbd0f7d3da5eac47a28791d8726735c9b29" target="_blank">as counteracting the long-running narrative</a
+> of winner-take-all benefits for the wealthy?&#8221;<br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">DEBT LIMIT FIGHT</td>    </tr>    
+</tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">They still need to pass a bill &#8212;</strong
+> That&#8217;s easier said than done. McCarthy on Sunday said that &#8220;over 95 percent&#8221; of the Republican conference is &#8220;<a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11acbe5997454ddda8ee76cea1184b3154aa81570bfc774f62c0b1d82ab4761b7332d99d4ac4fa4cf9eda027eaf5927c6027" target="_blank">overwhelmingly excited about what they see</a
+>,&#8221; per our Caitlin Emma. But on Monday, Rep. <a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11ac96151edb07bec372673fccb4570521ea2487fb502ba497d92a40b8e97a7b5c23fb604f1bb75e25882802fda4668184ef" target="_blank">Chip Roy</a
+> (R-Texas), a Freedom Caucus leader, fired a <a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11ac0e3dc1f80073d12f4a964e3bffd176813de4f5cd75acd4bfb49b82d85e6e61772785fd3a1a742cc7ce31130f51e457b4" target="_blank">warning shot on Twitter</a
+> signaling the speaker could face trouble on the House Rules Committee. Meanwhile, Biden officials worked through the weekend to calm progressive frustration over new work requirements in two government assistance programs, <a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11ac0da687c8fed589ea97ccca59033e9fd0da9e9081362e6b78ab31c742a4e88c3de22763979b9e862a36fa3427aa9bd7ac" target="_blank">Jennifer Haberkorn, Holly Otterbein and Adam Cancryn wrote</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">So, even though stock futures <a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11ac57f8f729a21feb50d46aee622455bb9bd971e1ac7456c056f3745be0fb642570950e5dba3d62e04ba1e6ddeac4ce2d83" target="_blank">bounced over the weekend</a
+> on news of the deal, there&#8217;s still risk of default that may not be priced into markets. &#8220;It&#8217;s the worst type of risk,&#8221; <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Joseph Brusuelas</strong
+>, chief economist at consulting firm RSM US, told your host on Monday. It&#8217;s &#8220;unsystematic risk that one can&#8217;t properly quantify. It&#8217;s Wall Street&#8217;s Achilles heel.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">That means prioritization, theoretically, is still on the table &#8212;</strong
+> Treasury Secretary Janet Yellen on Friday informed lawmakers that the department would make Social Security, veteran and Medicare payments on June 1-2 &#8212; all-but depleting Treasury&#8217;s coffers and ensuring June 5 would be the hard deadline to raise the debt limit. Democrats like Reps. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Pramila Jayapal</strong
+> (Wash.) and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Brad Sherman </strong
+>(Calif.) told Eleanor Mueller last week that uncertainty over whether the government would meet its obligations to Social Security recipients, in particular, had put real pressure on the process.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Now that those payments will be made, the department could end up confronting excruciating and complicated decisions about where tax revenue would be sent. Making Social Security and debt payments on time alone would mean 40 percent cuts to almost everything else, <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Wendy Edelberg</strong
+>, director of The Hamilton Project at the Brookings Institution and a former chief economist at the Congressional Budget Office, told Victoria. </p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">George Madison</strong
+>, who served as Treasury general counsel during the bruising debt ceiling fight in 2011, agreed, pointing out that roughly 70 percent of government spending is Social Security, Medicare, Medicaid and interest on the debt, leaving basically no room for payments on anything else if you prioritize those.<br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">In the markets</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Default is still a possibility, and markets are preparing for the worst &#8212;</strong
+> As IMF Managing Director Kristalina Georgieva <a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11ac0e36caac036f6ab75b34a6856c3909ff58cae468890a10f7c2e5d36fcc7cb7faf6ea304a76411b9e2c17f3aba0ba0234" target="_blank">pointed out on Friday</a
+>, Treasury markets are &#8220;the anchor of stability for the global financial system. You pull the anchor, the world economy &#8212; the ship on which we all travel &#8212; is in choppy and even worse, uncharted waters.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Treasury and Fed officials, along with the Securities Industry and Financial Markets Association and BNY Mellon &#8212; the clearing bank for Treasury settlement and a <a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11ace69f03ac575c8807f2716b6c94e5871eafcb25672babac846a0a97b8123d04ed40517ed3a1ffc9cb0b04da262346cc50" target="_blank">key player in cash markets</a
+> &#8212; have spent years preparing for what happens should things come unmoored.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The most likely event, at least for now, is that Treasury would provide advance notice if coupons or principal payments need to be delayed, according to two sources who&#8217;ve spoken with Treasury and Fed officials. The department would also extend the maturity of those securities, which would keep them transferable through the Fed&#8217;s payment system, thereby allowing them to be traded and transferred normally.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">SIFMA <a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11ac24f4cec3316c9d3f802d2d410c7f5193638beaec20be032a3833cead88784b315905c8c9748adc30784b1bffa1ea6fa0" target="_blank">outlined those scenarios</a
+> in a recent report. Still, yields on Treasury securities that expire around the &#8216;X-Date&#8217; have been spiking for months, a sign that investors are demanding a meaningful risk premium as the U.S. stares at a possible default.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;Most agreements will have language that you can&#8217;t use defaulted securities as collateral,&#8221; said <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">David Sekera</strong
+>, the chief U.S. market strategist for Morningstar Research Services. &#8220;In that case, I would hope that most parties, you know, would realize that even if there were some sort of short-term default, that people will still look at US Treasuries as being money good.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">And if you need a reminder of the consequences &#8212; </strong
+>Our Katy O&#8217;Donnell: &#8220;A U.S. debt default could derail <a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11ac404df25124ac1cca7b7c5eafa2f9ea2152de01873ed964d43afac6a3ece1f2aa5602029fe349de76aa96b820c25f582d" target="_blank">an already fragile housing market</a
+> if Republicans and the White House fail to reach a deal to raise the debt ceiling.&#8221;<br></p></td>                    </tr>                                    <tr>                        </tr><tr>    <td height="10" style="height:10px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                    <p style="margin-top:0;margin-bottom:20px;line-height:24px;margin-bottom:20px;color:#000000;">                <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DON&#8217;T MISS POLITICO&#8217;S HEALTH CARE SUMMIT</strong
+>: The Covid-19 pandemic helped spur innovation in health care, from the wide adoption of telemedicine, health apps and online pharmacies to mRNA vaccines. But what will the next health care innovations look like? Join POLITICO on Wednesday June 7 for our Health Care Summit to explore how tech and innovation are transforming care and the challenges ahead for access and delivery in the United States. <a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11acb0697ad898246a457c252a178aa541b295a17bdc5fbb809384e5e224490714f90f4ae38024013878654aaf15df824b02" style="text-decoration:underline;color:#007BC7;">REGISTER NOW</a
+>.            </p>            </td></tr><tr>    <td height="10" style="height:10px; font-size:0; border-bottom:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td height="15" style="height:15px; font-size:0;">&nbsp;</td></tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                <!-- End Ad Copy -->                <tr>                                    </tr>                <!-- Post Body Content -->                <tr>                                    </tr>                <tr>                    
+<td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>                </tr>                <!-- Twitter Handles -->                                    <tr>    <td style="color:#000000;padding:0px 20px 20px 20px;text-align:left;">        <p style="font-family:Helvetica,sans-serif;font-size:20px;color:#000000;margin-top:0;margin-bottom:15px;"><strong
+>Follow us on Twitter</strong
+></p>        <table cellpadding="0" cellspacing="0" border="0" role="presentation">            <tbody>            <tr>                <td width="52" valign="middle" style="text-align:left;padding-right:10px;"><img src="https://static.politico.com/hosted/icon-twitter-circle-blue%402x.png" title="" alt="" width="50" style="max-width:50px;"></td>                <td valign="middle" style="text-align:left;font-family:Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#000000;">                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Mark McQuillian <a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11ac9fd3242131aa83e459daf39f82dae676789e77b41bdd122199b9dffe611cec02d2cbee2ce5ef5d62da8f3bea09f2b6c2" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@mcqdc</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Ben White <a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11ac53944c09507c04cb6ae3a6b0480006b4852b41dcb499e27fd3b465bc6f747ab65a5cd105f46b0f44ab6f727f3aaaa09d" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@morningmoneyben</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Victoria Guida <a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11ac35a97861289ce6b3318f29b3e4f3fc8d70a035a1fc67c7cb5ac606903a2ebb246c5ece09d98ef484951ab4736b354b60" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@vtg2</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Katy O'Donnell <a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11ac26e26521eb93f9d1b626e18f107f0150282563cb0ed2df8366b5ef316f99a563abed2bf2d7428cf78230d526ae8dc87a" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@katyodonnell_</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Zachary Warmbrodt <a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11acb28c510616fed491b73b33425a188c475a3d11e8d0275141f4c9b91cce65e5931c346c9c5c479db3ee3990a2bf49bbae" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@Zachary</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Sam Sutton <a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11ac6c84595bbeee7d9d7b955f85ad483d7e7d0dc18ef4dea919e674ec23b397c42a4984e47bb5b48e2162dc4979a70e4a06" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@samjsutton</a
+></p>                                    </td>            </tr>            </tbody>        </table>    </td></tr><tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                                <!-- Family of Playbook -->                                <!-- Follow us -->                <tr>    <td style="color:#000000;padding:0px 20px 20px 20px;text-align:left;">        <p style="font-family:Helvetica,sans-serif;font-size:12px;color:#000000;margin-bottom:10px;line-height:14px;text-transform:uppercase;font-weight:bold;letter-spacing:2px;">Follow us</p>        
+<table cellpadding="0" cellspacing="0" border="0" role="presentation">            <tbody>            <tr>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11ac103e079114c541c102088a7632464075e9ac2658cd446e0995db9bdd5baf67c8448676f05b0325af500641bc7f955e56" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-facebook-gray%402x.png" title="Follow us on Facebook" alt="Follow us on Facebook" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11ac4409dfce4d05f626a12b90c533df6009b06912ddf96dfc98bb7733b637982e398fb9b5a7947f4d0d661140bac3a2036a" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-twitter-gray%402x.png" title="Follow us on Twitter" alt="Follow us on Twitter" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11acbbb113dab6ccd2a94642e47ae298c9cd6db6e57b4cb6ca24badd129cc7c5b26fd88e01901ce63ddadf368dc19121a5f2" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-instagram-gray%402x.png" title="Follow us on Instagram" alt="Follow us on Instagram" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11ac7917340c700a356e63abdb4f2359fa42fe951f504af0b0a35dcc2319dd30faba4bddb21b7b2c8a5896b2c22cf7944923" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-applePodcast-gray%402x.png" title="Listen on Apple Podcast" alt="Listen on Apple Podcast" width="24" border="0" style="max-width:24px;"></a
+></td>            </tr>            </tbody>        </table>    </td></tr><tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                </tbody>            </table>        </td>        <td><!-- Note: This is left blank to aid in centering across email clients --></td>    </tr>    </tbody></table><!-- Everything below this line is "new" to the template. We'll have to experiment a bit to see if it causes troubles. --><!-- howler#email.footers/core-newsletter.footer.html -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff"
+       style="padding:5px 0 15px 0;margin:0;text-align:center" role="presentation">
+    <tbody>
+    <tr>
+        <td><!-- Note: This is left blank to aid in centering across email clients --></td>
+        <td align="center" width="540">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:540px" role="presentation">
+                <tbody>
+                <tr>
+                    <td align="center" style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;">
+                        <p style="margin-bottom:15px;line-height:24px;">To change your alert settings, please log in at
+                            <a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11acd9be19088a196c5e663c429f84637336c6a29fe4ab2bc177b5ee53bb2f19beba35cd80479480be533813fab58e766eca" target="_blank" style="color:#007BC7;text-decoration:none;">https://www.politico.com/_login?base=https%3A%2F%2Fwww.politico.com/settings</a
+>
+                            <!--Commenting out the following line because it causes an undesired line to be displayed on outlook (some versions) and we couldn't find the use case of it-->
+                            <!-- <span style="display:none;"><a
+ href="https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a24f63aa9806faee90cf4982271d8937a96711a672395d2d9c">https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a24f63aa9806faee90cf4982271d8937a96711a672395d2d9c</a
+></span> -->
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="padding-bottom:15px;"><img
+                            src="https://static.politico.com/hosted/icon-politico-logo.png"
+                            class="CToWUd"></td>
+                </tr>
+                <tr>
+                    <td align="center"><p
+                            style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:20px;">
+                        This email was sent to ouchendans62@gmail.com by: POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+                        <p style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:24px;">
+                            
+
+                            Please click <a
+ href="https://go.politicoemail.com/?qs=f9f67bc846cd11ac7c40309dc520a5961749943db9475562cfabf53e178928172ff9bd28b674f31c3925ec928cc4f38844f26e665e00d58f" target="_blank" style="color:#007BC7;text-decoration:none;">here</a
+> and follow the steps to unsubscribe.
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td><!-- Note: This is left blank to aid in centering across email clients --></td>
+    </tr>
+    </tbody>
+</table>
+<img src="https://click.politicoemail.com/open.aspx?ffcb10-fe961d787565007d76-fde513797160037e70117873-fe9115737262077c7c-fece127375670579-fdf61574756104747317747c-ffcf14&d=40127&bmt=0" width="1" height="1" alt="">
+</body></html><p email-meta style="display: none;opacity:0;">source=GoggleDocument, article=00000188-6c06-d54f-af8b-fd0e95ba0000</p>
+
+--wrv1KiOVMREs=_?:--
+

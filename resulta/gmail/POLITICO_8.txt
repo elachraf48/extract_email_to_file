@@ -1,0 +1,1620 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:9f5b:0:b0:2da:43c2:96f2 with SMTP id l27csp230724imf;
+        Sat, 27 May 2023 08:08:45 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ6Sk47ac+wTq7PGgN0db3SEYbfYghtLrQm+GrFfNhivklBiwO/xVUFSme0LcN5UKcSAe9NS
+X-Received: by 2002:a17:90a:6681:b0:256:23f:abc5 with SMTP id m1-20020a17090a668100b00256023fabc5mr5639380pjj.10.1685200125111;
+        Sat, 27 May 2023 08:08:45 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685200125; cv=none;
+        d=google.com; s=arc-20160816;
+        b=VWS32ooYoQiB4vsZbC9opg5s2MOABTaGVZ9L8aTncT/cYWegfYHa/KcWqNlXbD9LVC
+         mtRRIOtF7LrsUOy7koZcTtSlm9Fx4I39WyVxxkUGXnWTGJ2huCXE1s6YkwBJJyhIbjkU
+         S7FTMGRgqpRD05xbJ2Sf79zhLCuLpJ94BPc0Q+1wEYJ3lJlbs9RThPlOCjpXBJPfsFsH
+         IuvtfdOv5WtKqlNmG1P8hIQI8JYKymJ4EZRJ4YQcfUXw+MN5cDf6NIsRLo0F784niyQr
+         h6VMUuYGRO1YsrZ6C2o85g6CyeioJ6iD9Qj09nXXJ6cQ7nN1f/7h1bpVaUo2i+jChpFD
+         Z/tw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:mime-version:subject:message-id:to:reply-to:from
+         :date:dkim-signature:dkim-signature;
+        bh=m2yPGcBWVGRLyZBLcEO8cci6hGf+hUmG2zYGcFXJvlw=;
+        b=nCYOgtjpNRavTtofZIIgiqA/wNAaMv/LvW7mpKUdNpJ/O8Ni/lYMD/ggRVIFYJIfx9
+         Z6PRH+RWbZU3YwsjYm6VDTzQ08d77gJQcq1FxgsUuk6R92nE4kYhBN6hfdwmkNEL0KX4
+         sAPmgK/0hnXK5Kzgw59GElV2KjWgglsr6c/bLRl2oBoqv6S7MrPT6/yDfXXv7itui3aW
+         fZ8MGFXjPhYWrtOR2ZyyemMF2E7HbQ7xtNaspTTT1H/D2AC5JvGLu1fch/3UHN4jhbVP
+         BGv4iYgYDWwFTuCuPcpb8R4jQFKj/9aZCJTihEM20Mf7CCkrCQTcfRp6JsqtLT0NOh7B
+         VDVw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@info.politico.com header.s=m1 header.b=GQ9S6BCt;
+       dkim=pass header.i=@mktdns.com header.s=m1 header.b="htOv/AOA";
+       spf=pass (google.com: domain of 966-khf-533.0.577700.0.0.10228.9.1559707141-1@em-sj-77.mktomail.com designates 192.28.148.45 as permitted sender) smtp.mailfrom=966-KHF-533.0.577700.0.0.10228.9.1559707141-1@em-sj-77.mktomail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=info.politico.com
+Return-Path: <966-KHF-533.0.577700.0.0.10228.9.1559707141-1@em-sj-77.mktomail.com>
+Received: from leptospondylus.mktdns.com (leptospondylus.mktdns.com. [192.28.148.45])
+        by mx.google.com with ESMTPS id t9-20020a17090abc4900b002536b553afdsi4395494pjv.98.2023.05.27.08.08.44
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 27 May 2023 08:08:45 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 966-khf-533.0.577700.0.0.10228.9.1559707141-1@em-sj-77.mktomail.com designates 192.28.148.45 as permitted sender) client-ip=192.28.148.45;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@info.politico.com header.s=m1 header.b=GQ9S6BCt;
+       dkim=pass header.i=@mktdns.com header.s=m1 header.b="htOv/AOA";
+       spf=pass (google.com: domain of 966-khf-533.0.577700.0.0.10228.9.1559707141-1@em-sj-77.mktomail.com designates 192.28.148.45 as permitted sender) smtp.mailfrom=966-KHF-533.0.577700.0.0.10228.9.1559707141-1@em-sj-77.mktomail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=info.politico.com
+X-MSFBL: UGlPX05k4Ra631RUdvwLCEzhBysOFSJLG0UhI0kV9eQ=|eyJnIjoiYmctc2pkLTQ
+	wNiIsInUiOiI5NjYtS0hGLTUzMzowOjE1NTY5OjcxNTgxOjA6MTAyMjg6OTo1Nzc
+	3MDA6MTU1OTcwNzE0MS0xIiwiciI6Im91Y2hlbmRhbnM2MkBnbWFpbC5jb20iLCJ
+	iIjoiZHZwLTE5Mi0yOC0xNDgtNDUifQ==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1685200124;
+	s=m1; d=info.politico.com; i=@info.politico.com;
+	h=Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=m2yPGcBWVGRLyZBLcEO8cci6hGf+hUmG2zYGcFXJvlw=;
+	b=GQ9S6BCt7sccM6UQrroxRUPzH4tb8Xh/6TTwo+hnIwNXt+jo1XmVfwTr3BoOUE8T
+	Wve0jB1BJRqtKDDCJaz9NHi4DRdaR5mltZ6/ZWhX4/tNJajV9p0HmCy4zYA1b0OcT3K
+	7lKuX0jrH5BLwa97ECwWPf5Cefg9EtpvBnh+prTs=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1685200124;
+	s=m1; d=mktdns.com; i=@mktdns.com;
+	h=Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=m2yPGcBWVGRLyZBLcEO8cci6hGf+hUmG2zYGcFXJvlw=;
+	b=htOv/AOAoeNaeTPLHohAD3c9XX4bkRmVIdwE96ICjv9j6tQrQUGlMdobpxfslUlD
+	umSM3FYuBLk7XA7JCRVmwhl7P4oZqow0M4L8T++tG7AWtb8k+5fw7jv1nPuV/f9pwF2
+	JylhclKRNO2O2iAWNjY8M6Xm5QJnjwGUnU0+lKLI=
+Date: Sat, 27 May 2023 10:08:44 -0500 (CDT)
+From: POLITICO <info@info.politico.com>
+Reply-To: info@info.politico.com
+To: ouchendans62@gmail.com
+Message-ID: <81889950.9274629.1685200124356@sjmktmail-trigger1i.marketo.org>
+Subject: Thank you for subscribing to POLITICO Playbook
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_9274628_1261494199.1685200124356"
+X-Binding: bg-sjd-406
+X-MarketoID: 966-KHF-533:0:15569:71581:0:10228:9:577700:1559707141-1
+X-Mailfrom: 966-KHF-533.0.577700.0.0.10228.9.1559707141-1@em-sj-77.mktomail.com
+List-Unsubscribe: <mailto:PJDVU23FOBZV6NTNJVUHO2BWL4YF6YSHKBQW26JXNFGU6RLIN5WGK5LZKQ3DMNT2FVRE2PI=.577700.10228.9@unsub-sj.mktomail.com>
+X-MktArchive: false
+X-MSYS-API: {"options":{"open_tracking":false,"click_tracking":false}}
+X-MktMailDKIM: true
+
+------=_Part_9274628_1261494199.1685200124356
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Welcome to the POLITICO Playbook community!
+POLITICO Playbook arrives in your inbox each morning, giving you an insider=
+=E2=80=99s look at the biggest stories and trends in Washington and across =
+the political landscape. Playbook cuts through the clutter and details ever=
+ything that you need to know happening in politics. We deliver a steady dos=
+e of newsy nuggets about Washington=E2=80=99s biggest power plays and power=
+ players.
+=20
+Thank you for subscribing to Playbook, the unofficial guide to official Was=
+hington.
+=20
+Your Playbook team,
+=20
+Ryan, Rachael and Eugene
+
+Have you heard about Huddle?=20
+
+As a member of the Playbook community, we know that you are watching what=
+=E2=80=99s happening on Capitol Hill closely. That=E2=80=99s why you should=
+ add our Huddle newsletter to your daily reads. POLITICO=E2=80=99s Congress=
+ team is unmatched in covering the latest from the halls of Congress, don=
+=E2=80=99t miss out!
+Newsletter subscribers are provisionally registered for a Politico account.=
+ Complete your free registration by resetting <https://goto.politico.com/OT=
+Y2LUtIRi01MzMAAAGL_LnpwFJ3u-tVV7egvktQXI6gQxeiyQ0b2cMNafoP1WTpiAqNHhNeEHgeg=
+TTwp9rlIBjjZVo=3D> your password, and gain access to your preference center=
+.
+To unsubscribe from promotions about free Politico newsletters,=20
+click here <https://goto.politico.com/OTY2LUtIRi01MzMAAAGL_LnpwFJzNfN7jRTNy=
+au2DY2VWrmRdd7n_LiiqRatHMk1rseZlhq3v8XubyVhtZ6qr7unSUU=3D>.=20
+
+=20
+
+Do not reply to this message. This address is automated, unattended, and ca=
+nnot help with questions or requests.=20
+
+=20
+
+=20
+Privacy Policy <https://goto.politico.com/OTY2LUtIRi01MzMAAAGL_LnpwOOqyzDbo=
+owEts4fNjBUZctECWaXlxNO5nE-my0ded4yvfFYodtgmZzvcyWOmv54_30=3D> |=20
+Terms & Conditions <https://goto.politico.com/OTY2LUtIRi01MzMAAAGL_LnpwK4Pf=
+X61n-S6uJt71_6enURlEa3_m3-Zo22lY0uovr8d_hVH7RNmVNGPN754Wk1Itpo=3D> | Copyri=
+ght 2021. All Rights Reserved=20
+
+POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+
+.
+
+------=_Part_9274628_1261494199.1685200124356
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" style=3D"width: 100%;">
+<head>=20
+<!-- Marketo Variable Definitions -->    =20
+<!-- Main Banner Flat Text Image -->   =20
+<!-- Two Columns - Icon and Text -->               =20
+<!-- Full Image -->   =20
+<!-- Heading - One Line -->   =20
+<!-- Full Image Left Content Right -->        =20
+<!-- Full Image Right Content Left -->        =20
+<!-- Heading - Two Lines -->   =20
+<!-- Open Content -->   =20
+<!-- Two Columns - Image and Text -->              =20
+<!-- Dark Background Content and Button -->        =20
+<!-- Button Only -->      =20
+<!-- Footer Unsubscribe -->   =20
+<!-- Other Meta Tags -->=20
+<!--[if gte mso 9]><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPer=
+Inch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml><![endif]-->=20
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />=
+=20
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" />=20
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1,=
+ minimum-scale=3D1, maximum-scale=3D1" />=20
+<meta name=3D"robots" content=3D"noindex,nofollow" />=20
+<meta content=3D"telephone=3Dno" name=3D"format-detection" />=20
+<!--[if mso]>
+=09=09<style type=3D'text/css'>
+=09=09.primary-font {
+=09=09font-family: Arial, sans-serif !important;
+=09=09}
+=09=09</style>
+=09=09<![endif]-->=20
+<!--[if mso]>
+=09=09<style type=3D'text/css'>
+=09=09.secondary-font {
+=09=09font-family: Arial, sans-serif !important;
+=09=09}
+=09=09</style>
+=09=09<![endif]-->=20
+<!--[if mso]>
+<style type=3D'text/css'>
+.lato-font {
+font-family: Arial, sans-serif !important;
+}
+</style>
+<![endif]-->=20
+<!-- Sans-serif -->=20
+<!-- Serif -->=20
+<!-- Monospace -->=20
+<!-- Calligraphic -->=20
+<style media=3D"all">
+    /* CLIENT-SPECIFIC STYLES */
+
+    /* Outlook.com / Hotmail */
+    .ExternalClass {
+      width: 100%;
+    }
+    .ReadMsgBody,
+    .ExternalClass,
+    .ExternalClass p,
+    .ExternalClass span,
+    .ExternalClass font,
+    .ExternalClass td,
+    .ExternalClass div {
+      line-height: 100%;
+    }
+
+    /* OL07-10-13 "Read in browser link" */
+    #outlook a {
+      padding: 0;
+    }
+
+    /* Various OL fixes */
+    body{
+      -webkit-text-size-adjust:100%;
+      -ms-text-size-adjust:100%;
+    }
+
+    table {
+      mso-table-lspace:0pt;
+      mso-table-rspace:0pt;
+    }
+
+    img{
+      -ms-interpolation-mode: bicubic;
+    }
+
+    a.textlink {
+    color: #015da6;=20
+  }
+
+  </style>=20
+<style media=3D"all">
+    @media only screen and (max-width: 600px) {
+      /*starttablet*/
+ =20
+  .mktoVideoThumbnail{
+  =09width: 100% !important;
+  =09height: auto!important;
+  =09max-height:inherit!important;
+  =09min-height:inherit!important;
+  }
+
+      .stack-tablet {
+        overflow: visible !important;
+        float: none !important;
+        mso-hide: none !important;
+        display: block !important;
+        max-height: none !important;
+      }
+
+      img.responsive_t {
+        width: 100% !important;
+        height: auto !important;
+        display: block;
+        max-width: none !important;
+      }
+
+      img.responsive {
+        max-width: none !important;
+      }
+
+      img.no_responsive {
+        max-width: 100% !important;
+      }
+
+      .full,
+      .t100 {
+        width: 450px !important;
+      }
+
+      .full.unboxed,
+      .t100.unboxed {
+        width: 100% !important;
+      }
+
+      .t10 {
+        width: 35px !important;
+      }
+
+      .t20 {
+        width: 80px !important;
+      }
+
+      .t30 {
+        width: 125px !important;
+      }
+
+      .t33 {
+        width: 138px !important;
+      }
+
+      .t40 {
+        width: 170px !important;
+      }
+
+      .unboxed.t40 {
+        width: 254px !important;
+      }
+
+      .t50 {
+        width: 215px !important;
+      }
+
+      .unboxed.t50 {
+        width: 320px !important;
+      }
+
+      .nogutter.t50 {
+        width: 225px !important;
+      }
+
+      .nogutter.unboxed.t50 {
+        width: 330px !important;
+      }
+
+      .t60 {
+        width: 260px !important;
+      }
+
+      .t70 {
+        width: 305px !important;
+      }
+
+      .t80 {
+        width: 350px !important;
+      }
+
+      .unboxed.t80 {
+        width: 518px !important;
+      }
+
+      .t33 {
+        width: 138px !important;
+      }
+
+      .t33.spaced {
+        width: 135px !important;
+      }
+
+      .spacer3col {
+        width: 20px !important;
+      }
+
+      .m_buttons5 .cell {
+        display: block;
+        width: 100%;
+      }
+
+      .m_buttons5 .cell .button {
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_footers5 .logo {
+        text-align: center;
+      }
+
+      .m_footers5 .logo img {
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+        display: inline-block;
+      }
+
+      .m_footers5 .pad table {
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_footers7 .tholder table {
+        margin-top: 0 !important;
+        margin-right: auto !important;
+        margin-bottom: 0 !important;
+        margin-left: auto !important;
+        float: none !important;
+      }
+
+      .m_footers8 .col1 table,
+      .m_footers8 .col2 table,
+      .m_footers8 .col3 table {
+        margin-top: 0 !important;
+        margin-right: auto !important;
+        margin-bottom: 0 !important;
+        margin-left: auto !important;
+        float: none !important;
+      }
+
+      .m_footers9 .col1 table,
+      .m_footers9 .col2 table,
+      .m_footers9 .col3 table {
+        margin-top: 0 !important;
+        margin-right: auto !important;
+        margin-bottom: 0 !important;
+        margin-left: auto !important;
+        float: none !important;
+      }
+
+      .m_headers1 .col1 table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_headers1 .col3 .links {
+        text-align: center !important;
+      }
+
+      .m_headers2 .col1 table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_headers2 .cta table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_headers3 .col1 table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_headers3 .cta table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_headers4 .col1.d70 {
+        width: 100% !important;
+      }
+
+      .m_headers4 .col2.d30 {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_headers5 .logo {
+        text-align: center;
+      }
+
+      .m_headers5 .logo img {
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+        display: inline-block;
+      }
+
+      .m_headers6 .logo,
+      .m_headers7 .logo {
+        text-align: center;
+      }
+
+      .m_headers6 .logo img,
+      .m_headers7 .logo img {
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_headers6 .col3 table,
+      .m_headers7 .col3 table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_headers6 .bordered {
+        border-top-style: none !important;
+        border-right-style: none !important;
+        border-bottom-style: none !important;
+        border-left-style: none !important;
+      }
+
+      .m_headers8 .col1 td,
+      .m_headers8 .col3 td {
+        text-align: center !important;
+      }
+
+      .m_headers8 .col2 td {
+        text-align: center;
+      }
+
+      .m_headers8 .col2 td img {
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_coupons1 .cta table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_coupons3 td {
+        text-align: center !important;
+      }
+
+      .m_coupons3 .cta table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_coupons4 td {
+        text-align: center;
+      }
+
+      .m_coupons4 .cta table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_products7 .col2 td {
+        padding-top: 0;
+        padding-right: 20px;
+        padding-bottom: 0;
+        padding-left: 20px;
+      }
+
+      .m_products9b .name {
+        text-align: right;
+      }
+
+      .m_products11 td.cta,
+      .m_products12 td.cta,
+      .m_products11 td.price,
+      .m_products12 td.price {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        text-align: left;
+      }
+
+      .m_products11 div.aligner,
+      .m_products12 div.aligner {
+        float: left;
+        margin-top: 10px;
+      }
+
+      .m_products16a .col1,
+      .m_products16b .col1 {
+        width: 50% !important;
+      }
+
+      .m_products16a .col2,
+      .m_products16b .col2 {
+        width: 50% !important;
+      }
+
+      .m_news1 .social {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_news1 .col2 table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_news7 .col2 td {
+        padding-top: 0;
+        padding-right: 20px;
+        padding-bottom: 0;
+        padding-left: 20px;
+      }
+
+      .m_team3 .name,
+      .m_team4 .name,
+      .m_team3 .role,
+      .m_team4 .role,
+      .m_team3 .text,
+      .m_team4 .text {
+        padding-top: 0;
+        padding-right: 20px;
+        padding-bottom: 0;
+        padding-left: 20px;
+      }
+
+      .m_team3 .bottom,
+      .m_team4 .bottom {
+        padding-top: 0;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+      }
+
+      .m_main-banners6 .module {
+        background-position: 20% 10%;
+      }
+
+      .m_main-banners6 .icon,
+      .m_main-banners6 .cta table,
+      .m_main-banners6 .image img {
+        float: left;
+      }
+
+      .m_main-banners6 .feature {
+        text-align: left;
+      }
+
+      .m_main-banners6 .col2 {
+        display: none;
+      }
+
+      .m_main-banners7 td {
+        text-align: center;
+      }
+
+      .m_main-banners7 .cta table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_main-banners12 td,
+      .m_main-banners13 td,
+      .m_main-banners14 td,
+      .m_main-banners15 td {
+        /*text-align: center; */
+      }
+
+      .m_main-banners12 .cta table,
+      .m_main-banners13 .cta table,
+      .m_main-banners14 .cta table,
+      .m_main-banners15 .cta table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      /*endtablet*/
+    }
+  </style>=20
+<style media=3D"all">
+    @media only screen and (max-width: 375px) {
+      /*startmobile*/
+
+      .stack-phone {
+        overflow: visible !important;
+        float: none !important;
+        mso-hide: none !important;
+        display: block !important;
+        max-height: none !important;
+      }
+
+      img.responsive_p {
+        width: 100% !important;
+        height: auto !important;
+        display: block;
+      }
+
+      img.no_responsive {
+        max-width: 100% !important;
+      }
+
+      .full,
+      .p100,
+      .p100.spaced {
+        width: 295px !important;
+      }
+
+      .full.unboxed,
+      .p100.unboxed {
+        width: 100% !important;
+      }
+
+      .p30 {
+        width: 78px !important;
+      }
+
+      .p33 {
+        width: 87px !important;
+      }
+
+      .p40 {
+        width: 108px !important;
+      }
+
+      .unboxed.p40 {
+        width: 140px !important;
+      }
+
+      .p50 {
+        width: 137px !important;
+      }
+
+      .p70 {
+        width: 196px !important;
+      }
+
+      .p80 {
+        width: 226px !important;
+      }
+
+      .unboxed.p80 {
+        width: 290px !important;
+      }
+
+      .p33 {
+        width: 87px !important;
+      }
+
+      .p33.spaced {
+        width: 84px !important;
+      }
+
+      .m_buttons4 .cell {
+        display: block;
+        width: 100%;
+      }
+
+      .m_buttons4 .cell .button {
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_footers8 .subcol,
+      .m_footers9 .subcol {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_footers6 .col1 table,
+      .m_footers6 .col2 table {
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+        float: none;
+      }
+
+      .m_headers0a .col td,
+      .m_headers0b .col td,
+      .m_headers0c .col td {
+        text-align: center !important;
+      }
+
+      .m_headers0a .col td img,
+      .m_headers0b .col td img,
+      .m_headers0c .col td img {
+        float: none !important;
+        margin-top: 0 !important;
+        margin-right: auto !important;
+        margin-bottom: 0 !important;
+        margin-left: auto !important;
+      }
+
+      .m_headers1a .col1 img {
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_headers1a .col2 .payoff {
+        text-align: center !important;
+      }
+
+      .m_headers2 tr.menu td {
+        display: block;
+        padding-top: 5px;
+        padding-right: 5px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+      }
+
+      .m_headers4 .logo {
+        text-align: center;
+      }
+
+      .m_headers4 .logo img {
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+        display: inline-block;
+      }
+
+      .m_headers4 .col2 table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_headers4 tr.menu td {
+        display: block;
+        padding-top: 5px;
+        padding-right: 5px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+      }
+
+      .m_products1 .col1 .cta table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_products1 .col2 table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_products9 td.padder,
+      .m_products9b td.padder,
+      .m_products10 td.padder,
+      .m_products10b td.padder,
+      .m_products9 td.sp,
+      .m_products9b td.sp,
+      .m_products10 td.sp,
+      .m_products10b td.sp {
+        display: none;
+      }
+
+      .m_products9 td.photo,
+      .m_products9b td.photo,
+      .m_products10 td.photo,
+      .m_products10b td.photo,
+      .m_products9 td.info,
+      .m_products9b td.info,
+      .m_products10 td.info,
+      .m_products10b td.info {
+        display: block;
+        width: 250px;
+        padding-left: 20px;
+      }
+
+      .m_products11 .col,
+      .m_products12 .col {
+        box-sizing: border-box;
+      }
+
+      .m_products11 td.data,
+      .m_products12 td.data,
+      .m_products11 td.img,
+      .m_products12 td.img {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+      }
+
+      .m_products11 td.img,
+      .m_products12 td.img {
+        height: 600px !important;
+        background-size: cover !important;
+      }
+
+      .m_products13 td.img,
+      .m_products14 td.img,
+      .m_products13 td.data,
+      .m_products14 td.data {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+      }
+
+      .m_products13 td.img,
+      .m_products14 td.img {
+        height: 400px;
+        background-position: center center !important;
+      }
+
+      .m_products16a .col1,
+      .m_products16b .col1 {
+        width: 100% !important;
+      }
+
+      .m_products16a .col1 .spacer.s1,
+      .m_products16b .col1 .spacer.s1 {
+        display: none;
+      }
+
+      .m_products16a .col2,
+      .m_products16b .col2 {
+        width: 100% !important;
+      }
+
+      .m_t_thead .quantity,
+      .m_t_thead .dottedside {
+        display: none;
+      }
+
+      .m_t_row .product {
+        width: 70% !important;
+      }
+
+      .m_t_row .quantity {
+        display: none;
+      }
+
+      .m_t_row .price {
+        width: 30% !important;
+      }
+
+      .m_t_total2 .cost,
+      .m_t_total2b .cost {
+        width: 70% !important;
+      }
+
+      .m_t_total2 .price,
+      .m_t_total2b .price {
+        width: 30% !important;
+      }
+
+      .m_t_element .label2,
+      .m_t_element .delivery,
+      .m_t_element .info2 {
+        display: none;
+      }
+
+      .m_t_element .info {
+        width: 100%;
+        text-align: left !important;
+      }
+
+      .m_t2_element .name {
+        width: 60% !important;
+      }
+
+      .m_t2_element .info {
+        width: 40% !important;
+        text-align: right !important;
+      }
+
+      .m_news1 .datebox table td {
+        display: block;
+      }
+
+      .m_news1 .spaces,
+      .m_news1 .bordered {
+        display: none !important;
+      }
+
+      .m_news1 .date {
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_news1 .title {
+        text-align: center;
+      }
+
+      .m_main-banners3 .col1 table,
+      .m_main-banners3 .col2 table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_main-banners10 .row td {
+        display: block;
+      }
+
+      .m_main-banners10 .row td table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      /*endmobile*/
+    }
+  </style>=20
+<style media=3D"all">
+    /*startdesktop*/
+
+    .ribbon:before,
+    .ribbon:after {
+      content: '';
+      position: absolute;
+      background-color: inherit;
+      width: 100%;
+      z-index: -1;
+      height: 100%;
+    }
+
+    .ribbon:before {
+      left: 0;
+      transform: skew(32deg);
+    }
+
+    .ribbon:after {
+      right: 0;
+      transform: skew(-32deg);
+    }
+
+    /*enddesktop*/
+  </style>=20
+<style>
+    /*startcommon*/
+    @media only screen and (max-width: 600px) {
+      table.m_boxing{
+        width: 100% !important;
+      }
+    }
+    /*endcommon*/
+  </style>=20
+</head>=20
+<body bgcolor=3D"#e3e3e4" style=3D"width: 100%; min-width: 100%; margin-top=
+: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; pad=
+ding-right: 0; padding-bottom: 0; padding-left: 0;"><style type=3D"text/css=
+">div#emailPreHeader{ display: none !important; }</style><div id=3D"emailPr=
+eHeader" style=3D"mso-hide:all; visibility:hidden; opacity:0; color:transpa=
+rent; mso-line-height-rule:exactly; line-height:0; font-size:0px; overflow:=
+hidden; border-width:0; display:none !important;">Welcome to POLITICO=E2=80=
+=99s Playbook Community</div>=20
+<!-- Outer table-->=20
+<table class=3D"full-container" width=3D"100%" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" style=3D"border-spacing: 0; border-collapse: collapse;=
+ mso-table-lspace: -1pt; mso-table-rspace: -1pt;">=20
+<tbody>=20
+<tr>=20
+<td class=3D"outer" valign=3D"top" align=3D"center" style=3D"mso-line-heigh=
+t-rule: exactly;word-break: break-word;-webkit-hyphens: none;-moz-hyphens: =
+none;hyphens: none;border-collapse: collapse;margin-top: 0;margin-right: au=
+to;margin-bottom: 0;margin-left: auto;background-color:#eeeeee;">=20
+<table class=3D"m_boxing" id=3D"boxing" width=3D"600" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" align=3D"center" style=3D"border-spacing: 0; bo=
+rder-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt;">=
+=20
+<tbody>=20
+<tr>=20
+<td class=3D"mktoContainer boxedbackground" id=3D"template-wrapper" style=
+=3D"mso-line-height-rule: exactly; word-break: break-word; -webkit-hyphens:=
+ none; -moz-hyphens: none; hyphens: none; border-collapse: collapse;">
+<table id=3D"imageBanner" style=3D"border-spacing: 0; border-collapse: coll=
+apse; mso-table-lspace: -1pt; mso-table-rspace: -1pt;" align=3D"center" wid=
+th=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" class=3D"mktoM=
+odule m_imageBanner">=20
+<tbody>=20
+<tr>=20
+<td class=3D"module" style=3D"mso-line-height-rule: exactly;word-break: bre=
+ak-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;border-colla=
+pse: collapse;background-color:#eeeeee;" valign=3D"top" bgcolor=3D"#eeeeee"=
+>=20
+<table class=3D"full unboxed" style=3D"border-spacing: 0; border-collapse: =
+collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt; margin-top: 0; ma=
+rgin-right: auto; margin-bottom: 0; margin-left: auto; width: 600px;" align=
+=3D"center" width=3D"600" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">=
+=20
+<tbody>=20
+<tr style=3D"outline: medium none;">=20
+<td class=3D"spacer s0" style=3D"word-break: break-word;-webkit-hyphens: no=
+ne;-moz-hyphens: none;hyphens: none;border-collapse: collapse;mso-line-heig=
+ht-rule: exactly;line-height:0px;font-size:0px;" height=3D"0px">&nbsp;</td>=
+=20
+</tr>=20
+<tr>=20
+<td class=3D"contents" style=3D"mso-line-height-rule: exactly; word-break: =
+break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; borde=
+r-collapse: collapse;">=20
+<div style=3D"display:inline-block" class=3D"mktoImg responsive" id=3D"main=
+Banner" mktolockimgsize=3D"true" mktolockimgstyle=3D"false">=20
+<a><img class=3D"responsive" src=3D"https://go.politico.com/rs/966-KHF-533/=
+images/email-banner-playbook.png" style=3D"text-decoration: none; border-to=
+p-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-widt=
+h: 0; outline: none; -ms-interpolation-mode: bicubic; line-height: 100%; ma=
+x-width: 600px; display: block; height: auto; width: 100%;" alt=3D"Politico=
+ Playbook" height=3D"auto" width=3D"600" /></a>=20
+</div> </td>=20
+</tr>=20
+<tr style=3D"outline: medium none;">=20
+<td class=3D"spacer s1" style=3D"word-break: break-word;-webkit-hyphens: no=
+ne;-moz-hyphens: none;hyphens: none;border-collapse: collapse;mso-line-heig=
+ht-rule: exactly;line-height:0px;font-size:0px;" height=3D"0px">&nbsp;</td>=
+=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table id=3D"heading1b24869ce-97e1-41a3-9868-5da7f843bbfa" style=3D"border-=
+spacing: 0; border-collapse: collapse; mso-table-lspace: -1pt; mso-table-rs=
+pace: -1pt;" align=3D"center" width=3D"100%" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" class=3D"mktoModule m_heading1">=20
+<tbody>=20
+<tr>=20
+<td class=3D"module" style=3D"mso-line-height-rule: exactly;word-break: bre=
+ak-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;border-colla=
+pse: collapse;background-color:#ffffff;" valign=3D"top" bgcolor=3D"#ffffff"=
+>=20
+<table class=3D"full unboxed" style=3D"border-spacing: 0; border-collapse: =
+collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt; margin-top: 0; ma=
+rgin-right: auto; margin-bottom: 0; margin-left: auto; width: 600px;" align=
+=3D"center" width=3D"600" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">=
+=20
+<tbody>=20
+<tr style=3D"outline: none;">=20
+<td class=3D"spacer s0" style=3D"word-break: break-word;-webkit-hyphens: no=
+ne;-moz-hyphens: none;hyphens: none;border-collapse: collapse;mso-line-heig=
+ht-rule: exactly;line-height:30px;font-size:30px;" height=3D"30px">&nbsp;</=
+td>=20
+</tr>=20
+<tr>=20
+<td class=3D"contents" style=3D"mso-line-height-rule: exactly; word-break: =
+break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; borde=
+r-collapse: collapse;">=20
+<table class=3D"col d100 t100 p100 unboxed" style=3D"border-spacing: 0; bor=
+der-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt; wid=
+th: 600px;" align=3D"left" width=3D"600">=20
+<tbody>=20
+<tr style=3D"outline: medium none;">=20
+<td class=3D"primary-font title" style=3D"border-collapse: collapse;mso-lin=
+e-height-rule: exactly;-webkit-hyphens: none;-moz-hyphens: none;hyphens: no=
+ne;word-break: break-word;font-family:Georgia,Times,'Times New Roman',serif=
+;font-size: 24px;text-align: center;font-weight: bold;color: #333333; paddi=
+ng: 0 10px;">=20
+<div class=3D"mktoText" id=3D"title4b24869ce-97e1-41a3-9868-5da7f843bbfa">
+ Welcome to the POLITICO Playbook community!=20
+</div></td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<tr style=3D"outline: medium none;">=20
+<td class=3D"spacer s1" style=3D"word-break: break-word;-webkit-hyphens: no=
+ne;-moz-hyphens: none;hyphens: none;border-collapse: collapse;mso-line-heig=
+ht-rule: exactly;line-height:30px;font-size:30px;" height=3D"30px">&nbsp;</=
+td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table id=3D"text0" style=3D"border-spacing: 0; border-collapse: collapse; =
+mso-table-lspace: -1pt; mso-table-rspace: -1pt; font-family: Georgia,Times,=
+'Times New Roman',serif; color: #4b4d52; font-size: 14px; line-height: 21px=
+;" align=3D"center" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bord=
+er=3D"0" class=3D"mktoModule m_text0">=20
+<tbody>=20
+<tr>=20
+<td class=3D"module" style=3D"mso-line-height-rule: exactly;word-break: bre=
+ak-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;border-colla=
+pse: collapse;background-color:#ffffff;" valign=3D"top" bgcolor=3D"#ffffff"=
+>=20
+<table class=3D"full unboxed" style=3D"border-spacing: 0; border-collapse: =
+collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt; margin-top: 0; ma=
+rgin-right: auto; margin-bottom: 0; margin-left: auto; width: 600px;" align=
+=3D"center" width=3D"600" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">=
+=20
+<tbody>=20
+<tr style=3D"outline: medium none;">=20
+<td class=3D"spacer s0" style=3D"word-break: break-word;-webkit-hyphens: no=
+ne;-moz-hyphens: none;hyphens: none;border-collapse: collapse;mso-line-heig=
+ht-rule: exactly;line-height:0px;font-size:0px;" height=3D"0px">&nbsp;</td>=
+=20
+</tr>=20
+<tr>=20
+<td class=3D"contents" style=3D"mso-line-height-rule: exactly; word-break: =
+break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; borde=
+r-collapse: collapse;">=20
+<table class=3D"col d100 t100 p100 unboxed" style=3D"border-spacing: 0; bor=
+der-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt; wid=
+th: 600px;" align=3D"left" width=3D"600">=20
+<tbody>=20
+<tr>=20
+<td class=3D"secondary-font text" style=3D"mso-line-height-rule: exactly;wo=
+rd-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none=
+;border-collapse: collapse; padding-top: 0; padding-right: 10px; padding-bo=
+ttom: 0px; padding-left: 10px; font-family:Georgia,Times,'Times New Roman',=
+serif;">=20
+<div class=3D"mktoText" id=3D"text8">
+ POLITICO Playbook arrives in your inbox each morning, giving you an inside=
+r=E2=80=99s look at the biggest stories and trends in Washington and across=
+ the political landscape. Playbook cuts through the clutter and details eve=
+rything that you need to know happening in politics. We deliver a steady do=
+se of newsy nuggets about Washington=E2=80=99s biggest power plays and powe=
+r players.=20
+<br />=20
+<br />Thank you for subscribing to Playbook, the unofficial guide to offici=
+al Washington.=20
+<br />=20
+<br />Your Playbook team,=20
+<br />=20
+<br />Ryan, Rachael and Eugene=20
+<br />=20
+<br />=20
+<strong>Have you heard about Huddle?</strong>=20
+<br />=20
+<br />As a member of the Playbook community, we know that you are watching =
+what=E2=80=99s happening on Capitol Hill closely. That=E2=80=99s why you sh=
+ould add our Huddle newsletter to your daily reads. POLITICO=E2=80=99s Cong=
+ress team is unmatched in covering the latest from the halls of Congress, d=
+on=E2=80=99t miss out!=20
+</div></td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<tr>=20
+<td class=3D"spacer s1" style=3D"word-break: break-word;-webkit-hyphens: no=
+ne;-moz-hyphens: none;hyphens: none;border-collapse: collapse;mso-line-heig=
+ht-rule: exactly;line-height:1px;font-size:1px;" height=3D"1px">&nbsp;</td>=
+=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table id=3D"buttons1" style=3D"border-spacing: 0px; border-collapse: colla=
+pse;" class=3D"mktoModule m_buttons1" align=3D"center" width=3D"100%" cells=
+pacing=3D"0" cellpadding=3D"0" border=3D"0">=20
+<tbody>=20
+<tr>=20
+<td class=3D"module" style=3D"mso-line-height-rule: exactly;word-break: bre=
+ak-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;border-colla=
+pse: collapse;background-color:#ffffff;" valign=3D"top" bgcolor=3D"#ffffff"=
+>=20
+<table class=3D"full unboxed" style=3D"border-spacing: 0; border-collapse: =
+collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt; margin-top: 0; ma=
+rgin-right: auto; margin-bottom: 0; margin-left: auto; width: 600px;" align=
+=3D"center" width=3D"600" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">=
+=20
+<tbody>=20
+<tr style=3D"outline: none;">=20
+<td class=3D"spacer s0" style=3D"word-break: break-word;-webkit-hyphens: no=
+ne;-moz-hyphens: none;hyphens: none;border-collapse: collapse;mso-line-heig=
+ht-rule: exactly;line-height:30px;font-size:30px;" height=3D"30px">&nbsp;</=
+td>=20
+</tr>=20
+<tr>=20
+<td class=3D"contents" style=3D"mso-line-height-rule: exactly; word-break: =
+break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; borde=
+r-collapse: collapse;">=20
+<table class=3D"col d100 t100 p100 unboxed" style=3D"border-spacing: 0; bor=
+der-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt; wid=
+th: 600px; table-layout: fixed;" align=3D"left" width=3D"600">=20
+<tbody>=20
+<tr style=3D"outline: medium none;">=20
+<td class=3D"cta" style=3D"mso-line-height-rule: exactly; word-break: break=
+-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-col=
+lapse: collapse;">=20
+<table style=3D"border-spacing: 0; border-collapse: collapse; mso-table-lsp=
+ace: -1pt; mso-table-rspace: -1pt; margin: 0 auto;" align=3D"center" cellsp=
+acing=3D"0" cellpadding=3D"0" border=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"mso-line-height-rule: exactly;border-collapse: collapse;hyphen=
+s: none;-moz-hyphens: none;-webkit-hyphens: none;word-break: break-word;-mo=
+z-border-radius: 20px;background-clip: padding-box;-webkit-background-clip:=
+ padding-box;-moz-background-clip: padding;border-radius: 20px;-webkit-bord=
+er-radius: 20px;background-color:##015da6;" align=3D"center" bgcolor=3D"#01=
+5da6"><a class=3D"primary-font button" href=3D
+"https://goto.politico.com/OTY2LUtIRi01MzMAAAGL_LnpwP25h5MAABZV9ziVtHi3n1qO=
+5XwStRan9J9OljmO5y8aZncZdjkXbVGGPlDKlbOgczk=3D" target=3D"_blank" style=3D"=
+font-size: 14px;font-family:Georgia,Times,'Times New Roman',serif;text-deco=
+ration: none;padding-top: 0.6em;padding-bottom: 0.6em;padding-left: 15px;pa=
+dding-right: 15px;font-weight: 400;background-clip: padding-box;-webkit-bac=
+kground-clip: padding-box;-moz-background-clip: padding;border-radius: 20px=
+;-moz-border-radius:=20
+20px;-webkit-border-radius: 20px;color: #ffffff;display: inline-block;borde=
+r-top-style: solid;border-right-color:#015da6;border-left-color:#015da6;bor=
+der-top-color:#015da6;border-bottom-style: solid;border-right-style:=20
+solid;border-bottom-color:#015da6;border-left-width:1px;border-bottom-width=
+:1px;border-right-width:1px;border-top-width:1px;border-left-style: solid;b=
+ackground-color:#015da6;"
+>=20
+<!--[if gte mso 9]>&nbsp;&nbsp;<![endif]-->Check out Huddle=20
+<!--[if gte mso 9]>&nbsp;&nbsp;<![endif]--></a></td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<tr style=3D"outline: medium none;">=20
+<td class=3D"spacer s1" style=3D"word-break: break-word;-webkit-hyphens: no=
+ne;-moz-hyphens: none;hyphens: none;border-collapse: collapse;mso-line-heig=
+ht-rule: exactly;line-height:50px;font-size:50px;" height=3D"50px">&nbsp;</=
+td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table id=3D"text0384c3307-2263-4103-af6c-5db4dc797c8d" style=3D"border-spa=
+cing: 0; border-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspac=
+e: -1pt; font-family: Georgia,Times,'Times New Roman',serif; color: #4b4d52=
+; font-size: 14px; line-height: 21px;" align=3D"center" width=3D"100%" cell=
+spacing=3D"0" cellpadding=3D"0" border=3D"0" class=3D"mktoModule m_text0">=
+=20
+<tbody>=20
+<tr>=20
+<td class=3D"module" style=3D"mso-line-height-rule: exactly;word-break: bre=
+ak-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;border-colla=
+pse: collapse;background-color:#ffffff;" valign=3D"top" bgcolor=3D"#ffffff"=
+>=20
+<table class=3D"full unboxed" style=3D"border-spacing: 0; border-collapse: =
+collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt; margin-top: 0; ma=
+rgin-right: auto; margin-bottom: 0; margin-left: auto; width: 600px;" align=
+=3D"center" width=3D"600" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">=
+=20
+<tbody>=20
+<tr style=3D"outline: medium none;">=20
+<td class=3D"spacer s0" style=3D"word-break: break-word;-webkit-hyphens: no=
+ne;-moz-hyphens: none;hyphens: none;border-collapse: collapse;mso-line-heig=
+ht-rule: exactly;line-height:30px;font-size:30px;" height=3D"30px">&nbsp;</=
+td>=20
+</tr>=20
+<tr>=20
+<td class=3D"contents" style=3D"mso-line-height-rule: exactly; word-break: =
+break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; borde=
+r-collapse: collapse;">=20
+<table class=3D"col d100 t100 p100 unboxed" style=3D"border-spacing: 0; bor=
+der-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt; wid=
+th: 600px;" align=3D"left" width=3D"600">=20
+<tbody>=20
+<tr>=20
+<td class=3D"secondary-font text" style=3D"mso-line-height-rule: exactly;wo=
+rd-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none=
+;border-collapse: collapse; padding-top: 0; padding-right: 10px; padding-bo=
+ttom: 0px; padding-left: 10px; font-family:Georgia,Times,'Times New Roman',=
+serif;">=20
+<div class=3D"mktoText" id=3D"text8d6da8704-f8b6-4856-b23b-5a482e189277">
+ Newsletter subscribers are provisionally registered for a Politico account=
+. Complete your free registration by=20
+<a href=3D
+"https://goto.politico.com/OTY2LUtIRi01MzMAAAGL_LnpwFJ3u-tVV7egvktQXI6gQxei=
+yQ0b2cMNafoP1WTpiAqNHhNeEHgegTTwp9rlIBjjZVo=3D" target=3D"_blank" class=3D"=
+textlink" title=3D"resetting"
+>resetting</a> your password, and gain access to your preference center.=20
+</div></td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<tr>=20
+<td class=3D"spacer s1" style=3D"word-break: break-word;-webkit-hyphens: no=
+ne;-moz-hyphens: none;hyphens: none;border-collapse: collapse;mso-line-heig=
+ht-rule: exactly;line-height:30px;font-size:30px;" height=3D"30px">&nbsp;</=
+td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table id=3D"footers2935a2fbb-c874-4cc2-a67c-7600b5b8453e" style=3D"border-=
+spacing: 0px; border-collapse: collapse;" class=3D"mktoModule m_footers2" a=
+lign=3D"center" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0">=20
+<tbody>=20
+<tr>=20
+<td class=3D"module" style=3D"mso-line-height-rule: exactly;word-break: bre=
+ak-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;border-colla=
+pse: collapse;background-color:#eeeeee;" valign=3D"top" bgcolor=3D"#eeeeee"=
+>=20
+<table class=3D"full unboxed" style=3D"border-spacing: 0; border-collapse: =
+collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt; margin-top: 0; ma=
+rgin-right: auto; margin-bottom: 0; margin-left: auto; width: 600px;" align=
+=3D"center" width=3D"600" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">=
+=20
+<tbody>=20
+<tr style=3D"outline: medium none;">=20
+<td class=3D"spacer s0" style=3D"word-break: break-word;-webkit-hyphens: no=
+ne;-moz-hyphens: none;hyphens: none;border-collapse: collapse;mso-line-heig=
+ht-rule: exactly;line-height:15px;font-size:15px;" height=3D"15px">&nbsp;</=
+td>=20
+</tr>=20
+<tr>=20
+<td class=3D"contents" style=3D"mso-line-height-rule: exactly; word-break: =
+break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; borde=
+r-collapse: collapse;">=20
+<table class=3D"col1 d70 t100 p100 unboxed" style=3D"border-spacing: 0; bor=
+der-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt; wid=
+th: 440px;" align=3D"left" width=3D"440" cellspacing=3D"0" cellpadding=3D"0=
+" border=3D"0">=20
+<tbody>=20
+<tr style=3D"outline: medium none;">=20
+<td style=3D"mso-line-height-rule: exactly; word-break: break-word; -webkit=
+-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collaps=
+e;">=20
+<table style=3D"border-spacing: 0; border-collapse: collapse; mso-table-lsp=
+ace: -1pt; mso-table-rspace: -1pt;" align=3D"left">=20
+<tbody>=20
+<tr>=20
+<td style=3D"mso-line-height-rule: exactly; word-break: break-word; -webkit=
+-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collaps=
+e;">=20
+<div style=3D"display:inline-block" class=3D"mktoImg" id=3D"social_twitter_=
+grey935a2fbb-c874-4cc2-a67c-7600b5b8453e" mktolockimgstyle=3D"false">=20
+<a href=3D
+"https://goto.politico.com/OTY2LUtIRi01MzMAAAGL_LnpwCqyh_QOtGJKDNvepISn9iyd=
+95XQlLyOSASLQfJMNI6_2AtMAN8yfyMErv5c3aZcUjg=3D"
+><img src=3D"https://go.politico.com/rs/966-KHF-533/images/icon-follow-twit=
+ter.png" style=3D"height: 28px; widht: 28px; outline: none; border-right-wi=
+dth: 0; border-bottom-width: 0; border-left-width: 0; text-decoration: none=
+; -ms-interpolation-mode: bicubic; border-top-width: 0; display: block; lin=
+e-height: 100%; border-top-style: none; border-right-style: none; border-bo=
+ttom-style: none; border-left-style: none;" alt=3D"Follow us on Twitter" />=
+</a>=20
+</div></td>=20
+<td style=3D"mso-line-height-rule: exactly; word-break: break-word; -webkit=
+-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collaps=
+e;">&nbsp;&nbsp;</td>=20
+<td style=3D"mso-line-height-rule: exactly; word-break: break-word; -webkit=
+-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collaps=
+e;">=20
+<div style=3D"display:inline-block" class=3D"mktoImg" id=3D"social_facebook=
+_grey935a2fbb-c874-4cc2-a67c-7600b5b8453e" mktolockimgstyle=3D"false">=20
+<a href=3D
+"https://goto.politico.com/OTY2LUtIRi01MzMAAAGL_LnpwGa15DctlKkncO8PA4C_1jyh=
+tfopGr6ejLeM5OGBSJ5RbuyiNgYTWn2Ifug_Id0SHyQ=3D"
+><img src=3D"https://go.politico.com/rs/966-KHF-533/images/icon-follow-face=
+book.png" style=3D"height: 28px; widht: 28px; outline: none; border-right-w=
+idth: 0; border-bottom-width: 0; border-left-width: 0; text-decoration: non=
+e; -ms-interpolation-mode: bicubic; border-top-width: 0; display: block; li=
+ne-height: 100%; border-top-style: none; border-right-style: none; border-b=
+ottom-style: none; border-left-style: none;" alt=3D"Follow us on Facebook" =
+/></a>=20
+</div></td>=20
+<td style=3D"mso-line-height-rule: exactly; word-break: break-word; -webkit=
+-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collaps=
+e;">&nbsp;&nbsp;</td>=20
+<td style=3D"mso-line-height-rule: exactly; word-break: break-word; -webkit=
+-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collaps=
+e;">=20
+<div style=3D"display:inline-block" class=3D"mktoImg" id=3D"social_instagra=
+m_grey935a2fbb-c874-4cc2-a67c-7600b5b8453e" mktolockimgstyle=3D"false">=20
+<a href=3D
+"https://goto.politico.com/OTY2LUtIRi01MzMAAAGL_LnpwNgpma10xkpYd1zvGHB58G1W=
+Cyt0l_szQIU3w5fLhbNCDe6FauFPJiBnIA9us1KzqnQ=3D"
+><img src=3D"https://go.politico.com/rs/966-KHF-533/images/icon-follow-inst=
+agram.png" style=3D"height: 28px; widht: 28px; outline: none; border-right-=
+width: 0; border-bottom-width: 0; border-left-width: 0; text-decoration: no=
+ne; -ms-interpolation-mode: bicubic; border-top-width: 0; display: block; l=
+ine-height: 100%; border-top-style: none; border-right-style: none; border-=
+bottom-style: none; border-left-style: none;" alt=3D"Follow us on Instagram=
+" /></a>=20
+</div></td>=20
+<td style=3D"mso-line-height-rule: exactly; word-break: break-word; -webkit=
+-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collaps=
+e;">&nbsp;&nbsp;</td>=20
+<td style=3D"mso-line-height-rule: exactly; word-break: break-word; -webkit=
+-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collaps=
+e;">=20
+<div style=3D"display:inline-block" class=3D"mktoImg" id=3D"social_applepod=
+cast_grey935a2fbb-c874-4cc2-a67c-7600b5b8453e" mktolockimgstyle=3D"false">=
+=20
+<a href=3D
+"https://goto.politico.com/OTY2LUtIRi01MzMAAAGL_LnpwM2r7VMOs4c8jD1BOA_1ru4d=
+OHELTa7z41WpczOOByH1UPax6SjhPjGOsjeXKa_RcYY=3D"
+><img src=3D"https://go.politico.com/rs/966-KHF-533/images/icon-follow-appl=
+epodcast.png" style=3D"height: 28px; widht: 28px; outline: none; border-rig=
+ht-width: 0; border-bottom-width: 0; border-left-width: 0; text-decoration:=
+ none; -ms-interpolation-mode: bicubic; border-top-width: 0; display: block=
+; line-height: 100%; border-top-style: none; border-right-style: none; bord=
+er-bottom-style: none; border-left-style: none;" alt=3D"Listen on Apple Pod=
+cast" /></a>=20
+</div></td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<tr style=3D"outline: medium none;">=20
+<td class=3D"unsub" style=3D"mso-line-height-rule: exactly; word-break: bre=
+ak-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-c=
+ollapse: collapse; text-align: left;"><span style=3D"font-family:Georgia,Ti=
+mes,'Times New Roman',serif;font-size: 11px;color: #4b4d52;display: inline;=
+" class=3D"secondary-font">=20
+<div class=3D"mktoText" id=3D"unsubscribe935a2fbb-c874-4cc2-a67c-7600b5b845=
+3e">=20
+<br />To unsubscribe from promotions about free Politico newsletters,=20
+<a href=3D
+"https://goto.politico.com/OTY2LUtIRi01MzMAAAGL_LnpwFJzNfN7jRTNyau2DY2VWrmR=
+dd7n_LiiqRatHMk1rseZlhq3v8XubyVhtZ6qr7unSUU=3D" style=3D"color: #4b4d52;"
+>click here</a>.=20
+<br />=20
+<br />Do not reply to this message. This address is automated, unattended, =
+and cannot help with questions or requests.=20
+<br />=20
+<br />=20
+<a href=3D
+"https://goto.politico.com/OTY2LUtIRi01MzMAAAGL_LnpwOOqyzDboowEts4fNjBUZctE=
+CWaXlxNO5nE-my0ded4yvfFYodtgmZzvcyWOmv54_30=3D" style=3D"color: #4b4d52;"
+>Privacy Policy</a> |=20
+<a href=3D
+"https://goto.politico.com/OTY2LUtIRi01MzMAAAGL_LnpwK4PfX61n-S6uJt71_6enURl=
+Ea3_m3-Zo22lY0uovr8d_hVH7RNmVNGPN754Wk1Itpo=3D" style=3D"color: #4b4d52;"
+>Terms &amp; Conditions</a> | Copyright 2021. All Rights Reserved=20
+<br />POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA=20
+</div></span></td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+<table class=3D"col1 d20 t100 p100 unboxed" style=3D"border-spacing: 0; bor=
+der-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt; wid=
+th: 160px;" align=3D"left" width=3D"160" cellspacing=3D"0" cellpadding=3D"0=
+" border=3D"0">=20
+<tbody>=20
+<tr class=3D"stack-tablet" style=3D"padding-bottom: 0; max-height: 0; overf=
+low: hidden; float: left; display: none; padding-top: 0; padding-right: 0; =
+mso-hide: all; padding-left: 0; margin-top: 0; margin-right: 0; margin-bott=
+om: 0; margin-left: 0; font-size: 35px; line-height: 35px;">=20
+<td style=3D"mso-line-height-rule: exactly; word-break: break-word; -webkit=
+-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collaps=
+e;">&nbsp;</td>=20
+</tr>=20
+<tr style=3D"outline: medium none;">=20
+<td style=3D"mso-line-height-rule: exactly; word-break: break-word; -webkit=
+-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collaps=
+e;">=20
+<table style=3D"border-spacing: 0; border-collapse: collapse; mso-table-lsp=
+ace: -1pt; mso-table-rspace: -1pt;" align=3D"left">=20
+<tbody>=20
+<tr>=20
+<td style=3D"mso-line-height-rule: exactly; word-break: break-word; -webkit=
+-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collaps=
+e;">=20
+<div style=3D"display:inline-block" class=3D"mktoImg responsive" id=3D"logo=
+Footer935a2fbb-c874-4cc2-a67c-7600b5b8453e" mktolockimgstyle=3D"false">=20
+<a href=3D
+"https://goto.politico.com/OTY2LUtIRi01MzMAAAGL_LnpwOAqbHQp1lku02Tpen_Tl3Vn=
+XoAjVAJhlbKjoAftiOE3pXSI6gtule2o-a4KzGGPt7c=3D"
+><img src=3D"https://go.politico.com/rs/966-KHF-533/images/logo-politico.pn=
+g" style=3D"height: auto; outline: none; border-right-width: 0; border-bott=
+om-width: 0; border-left-width: 0; text-decoration: none; -ms-interpolation=
+-mode: bicubic; border-top-width: 0; display: block; line-height: 100%; bor=
+der-top-style: none; border-right-style: none; border-bottom-style: none; b=
+order-left-style: none;" /></a>=20
+</div></td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<tr style=3D"outline: medium none;">=20
+<td class=3D"spacer s3" style=3D"word-break: break-word;-webkit-hyphens: no=
+ne;-moz-hyphens: none;hyphens: none;border-collapse: collapse;mso-line-heig=
+ht-rule: exactly;line-height:35px;font-size:35px;" height=3D"35px">&nbsp;</=
+td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table></td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table> =20
+<a href=3D
+"https://goto.politico.com/OTY2LUtIRi01MzMAAAGL_LnpwNn0RWNj-Y77rd4XkbsJ6fDZ=
+Ar8GunS1mGW8DWvve-a3R0KTxERLvxU_35ndW59HRLQ=3D"
+></a>
+<img src=3D"https://goto.politico.com/trk?t=3D1&mid=3DOTY2LUtIRi01MzM6MDoxN=
+TU2OTo3MTU4MTowOjEwMjI4Ojk6NTc3NzAwOjE1NTk3MDcxNDEtMTpudWxs" width=3D"1" he=
+ight=3D"1" style=3D"display:none !important;" alt=3D"" />
+
+<!-- -->
+</body>
+</html>
+------=_Part_9274628_1261494199.1685200124356--

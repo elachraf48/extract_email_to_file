@@ -1,0 +1,649 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp615492ims;
+        Tue, 30 May 2023 13:03:02 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ5gep6v37SOJ9sssEUAQoEbh0xz/vaRXU1zJ5AOTjBopnQsgrJD/vpxdFdSsPVODoVssxxW
+X-Received: by 2002:a05:6830:3a0b:b0:6ad:f979:c9b0 with SMTP id di11-20020a0568303a0b00b006adf979c9b0mr250892otb.6.1685476982489;
+        Tue, 30 May 2023 13:03:02 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685476982; cv=none;
+        d=google.com; s=arc-20160816;
+        b=e8ZdOyGluEtp6XqN/w4vysmDQnRdWdXu6iEZ4KmHoYeSdiDeyWEO59nfTHpGdfGzt9
+         9iWsku8KMx1MGatwShFfyQ66QkcrfKBCNPMf2pwYcvKOSasgaKnW2wybnRKr7KOiSZs+
+         yuRKAt0U9Y2t5RbD7JujuiFaf9A93By19src/j/r3CjZ2TlFSNr7HvYk+KJa8in7VBmR
+         utfSwny93aeMpEiMwTl0cBfMAn0KxShmysh1sR/r1va76mI1LehIV/2S8sDg8bMPXnnx
+         4BzjnqR+cVnold1AOAqCfVLv7mtRN3kQTxo3APsXgthx0hrNB2UlMS/++OQuULDvROhv
+         4zbg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:list-id:reply-to:mime-version
+         :list-unsubscribe-post:list-unsubscribe:date:subject:to:from
+         :dkim-signature;
+        bh=hJ+U1sHdGa1T9V+yuAip38pAgOClPQtj6+uQBMdhnTc=;
+        b=h3sSGE62s1tw9HFhBOqNd9u5s/0vGp0Wa6+ftABJxSqM0RWAmbH1htjR5V6SaXa6mN
+         hU+atxNOQTKMyelIOvG6psCqNf2HMizp+rJDYfP0Xe5SG9iZa9ILfQ58wa90XFzFVoSz
+         r1Rgjo4v/OYHKULOVLr4KzD2GBto510O1noi+rEzljsfkJQ5Y1VnxNPSu04GVp1EJklV
+         NnB9tfm9sxeasHPUepBXspuEymGYH0OZCIb+TwMqtlnuENAtgJ5dBx04fBwaoBclPXBK
+         IbRSRAp+4xJoChvKDeZRvaMGFdKY3rNhIWpGZy4bLpBCKsjuf1wJwO+nBtpB/TO93O/N
+         q1UA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.politico.com header.s=200608 header.b=q8l96TGl;
+       spf=pass (google.com: domain of bounce-630306_html-1405096349-9801825-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) smtp.mailfrom=bounce-630306_HTML-1405096349-9801825-1376319-0@bounce.politicoemail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.politico.com
+Return-Path: <bounce-630306_HTML-1405096349-9801825-1376319-0@bounce.politicoemail.com>
+Received: from mta.politicoemail.com (mta.politicoemail.com. [68.232.198.10])
+        by mx.google.com with ESMTPS id bh13-20020a056830380d00b006ab090d604esi6275155otb.188.2023.05.30.13.03.01
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 30 May 2023 13:03:02 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-630306_html-1405096349-9801825-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) client-ip=68.232.198.10;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.politico.com header.s=200608 header.b=q8l96TGl;
+       spf=pass (google.com: domain of bounce-630306_html-1405096349-9801825-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) smtp.mailfrom=bounce-630306_HTML-1405096349-9801825-1376319-0@bounce.politicoemail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.politico.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=200608; d=email.politico.com;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Reply-To:List-ID:X-CSA-Complaints:Message-ID:Content-Type;
+ i=nationalsecuritydaily@email.politico.com;
+ bh=hJ+U1sHdGa1T9V+yuAip38pAgOClPQtj6+uQBMdhnTc=;
+ b=q8l96TGlsAEg5yQbKsoIf3SS/gdcKdLXISoQScUS2M4Q48Tkppjn/qwssJPzFODlFpJhezSPVNsT
+   PZQJ120NVR1nmtHZ2KsuaNAzAg+3Mg4YRCWGcUZrlN1rKAvtrB41ctxleBujOVaNrhD2M1Qtcm/q
+   37mxuNBz1UGcUuIaS7s=
+Received: by mta.politicoemail.com id hepb7c2fmd4k for <ouchendans62@gmail.com>; Tue, 30 May 2023 20:02:40 +0000 (envelope-from <bounce-630306_HTML-1405096349-9801825-1376319-0@bounce.politicoemail.com>)
+From: "POLITICO's National Security Daily" <nationalsecuritydaily@email.politico.com>
+To: <ouchendans62@gmail.com>
+Subject: =?UTF-8?B?VWtyYWluZeKAmXMgY291bnRlcm9mZmVuc2l2ZSBwbGFuIOKAmGlt?=
+ =?UTF-8?B?cHJlc3NpdmUs4oCZIFNlbi4gR3JhaGFtIHNheXM=?=
+Date: Tue, 30 May 2023 14:02:39 -0600
+List-Unsubscribe: <https://click.politicoemail.com/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiIxMzc2MzE5IiwicyI6IjE0MDUwOTYzNDkiLCJsaWQiOiI2MzAzMDYiLCJqIjoiOTgwMTgyNSIsImpiIjoiMCIsImQiOiI0MDEyOCJ9.IYrY4Z1EVYuPrjfPFuJW5gBeNEV17B1rOZ7mXm6cen4>, <mailto:leave-fcb912737567047b1a4c342838-fdf61574756104747317747c-fe8e1d7875650c7f70-fe9115737262077c7c-ffcf14@leave.politicoemail.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+Reply-To: "POLITICO, LLC" <reply-fe8e1d7875650c7f70-630306_HTML-1405096349-1376319-0@politicoemail.com>
+List-ID: <1376319.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+X-SFMC-Stack: 4
+x-job: 1376319_9801825
+Message-ID: <43a87ae5-4bf8-443d-a7c7-6a32e8a5ba9e@las1s04mta1073.xt.local>
+Feedback-ID: 1376319:9801825:68.232.198.10:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="MaqGSsqfyjOD=_?:"
+
+This is a multi-part message in MIME format.
+
+--MaqGSsqfyjOD=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+From the SitRoom to the E-Ring, the inside scoop on defense, national security and foreign policy. May 30, 2023 View in browser  
+By Alexander Ward and Ari Hawkins
+
+
+
+Sen. Lindsey Graham (R-S.C.) speaks during a press conference at an open air exhibition of destroyed Russian military vehicles in Kyiv, on May 26, 2023. | SERGEI SUPINSKY/AFP/Getty Images
+
+With help from Phelim Kine and Daniel Lippman
+
+Subscribe here | Email Alex
+
+The Russians are “in for a rude awakening” when the Ukrainian counteroffensive begins, Sen. LINDSEY GRAHAM (R-S.C.) told NatSec Daily following a weekend trip to Kyiv.
+
+The lawmaker received a “deep dive” briefing on Ukraine’s military plans from President VOLODYMYR ZELENSKYY and his team, he said in a phone interview during his return home. “In the coming days, you’re going to see a pretty impressive display of power by the Ukrainians.”
+
+Zelenskyy announced Monday that “decisions have been made” about when the troop movements will begin.
+
+Graham, whom Russia wants to arrest over his support for Ukraine, wouldn't divulge any specifics about the campaign or its timing. But he did say that “shaping operations” — that is, strikes that stretch Russian defenses and worry Moscow’s planners about what’s coming next — have already begun, which means the counteroffensive itself is likely to begin relatively soon.
+
+MYKHAILO PODOLYAK, a Zelenskyy adviser, seemed to confirm that shaping operations started this month in a CNN interview Tuesday. “Everything that is happening now is a precursor to a counterattack, a necessary precondition,” he said.
+
+Asked if he thought Ukraine could push Russia back out by the end of the year, Graham didn’t say “yes.”. What he did say was that the initial priority should be “taking back some strategic locations.”
+
+The visit to the Ukrainian capital was Graham’s third since the war began. He’s seen the Zelenskyy administration shift from a shell-shocked team to one that is increasingly confident about military victory. “There’s a bounce in his step that wasn’t there before,” Graham said of the president.
+
+He reports that Zelenskyy is grateful for all the weapons and technology the United States has provided Ukraine. The Republican, though, has continuously called for the Biden administration to send more, namely the long-range Army Tactical Missile System. Graham believes the U.S. can make enough replacement ATACMS after they’re delivered to Ukraine, even if the Pentagon fears it doesn’t have any to spare.
+
+And he wants Congress to agree to a spending package that will send more equipment to Kyiv. It’s unclear, though, if lawmakers will take up a weapons supplemental as they debate how to avoid a debt-limit crisis.
+
+The senator said he told Zelenskyy: “I will do everything in my power to ensure you have a robust package of weapons and technology to finish the job.”
+
+   
+A message from Lockheed Martin:
+
+Innovating at hypersonic speed.
+
+
+ Lockheed Martin is innovating with urgency to solve today’s hypersonic strike and defense challenges. We’re investing in the American hypersonic workforce and supplier base, to ensure our customers stay ready for what’s ahead. Learn more.
+     The Inbox
+BREAKING: A Chinese J-16 fighter jet performed an aggressive maneuver last week, flying in front of the nose of a U.S. Air Force RC-135 above the South China Sea, causing the American aircraft to fly through wake turbulence. U.S. Indo-Pacific Command released a video of the incident Tuesday.
+
+AERIAL ASSAULTS: Russia was targeted by a drone attack Tuesday, according to a statement from the Russian defense ministry, per our own GABRIEL GAVIN and NICOLAS CAMUT. “The attack involved eight uncrewed aircraft. All the enemy drones were shot down,” the defense ministry said, adding that no one was “seriously injured.”
+
+The assault comes after days of fire from Moscow. On Tuesday, Russia unleashed its third air attack in 24 hours on the Ukrainian capital of Kyiv, according to the city’s mayor VITALI KLITSCHKO, per Reuters. City officials said at least one woman was killed in the assault, with at least 11 others wounded.
+
+The Ukrainian Parliament approved a sanctions package against Iran on Monday, after accusing the country of supplying weapons for Russia’s latest assault. The decision will prevent Iranian goods from transitioning through Ukraine, and includes financial and technology sanctions against the country, per Al Jazeera.
+
+ERDO-WON: As widely expected, Turkish President RECEP TAYYIP ERDOĞAN won reelection with 52 percent of the vote Sunday to stay in power for a third decade.
+
+World leaders, including President JOE BIDEN, quickly congratulated the autocrat on his victory. "I spoke to Erdoğan. I congratulated Erdoğan. He still wants to work on something on the F-16s. I told him we wanted a deal with Sweden, so let's get that done,” Biden told reporters Monday — appearing to imply that one depended on the other.
+
+Secretary of State ANTONY BLINKEN explicitly delinked the two issues on Tuesday. "While we are not linking the two issues –– when I say 'we,' I mean the Biden administration –– some members of Congress are," he said during a visit to Sweden. "We believe that both should go forward…as quickly as possible."
+
+Domestically, Erdoğan now has more authority to continue stacking the deck in his favor. The election itself wasn’t much of a fair fight because Erdoğan had near-complete control of the media, severely restricting the opposition’s ability to get their message out, and he used state resources to raise the minimum wage and physically hand out money.
+
+And on the world stage, Erdoğan –– the leader of a NATO country –– will likely continue to cozy up to Russian President VLADIMIR PUTIN. That could increase friction as the alliance heads into a major NATO summit in July.
+
+HELP WANTED: Russia's paramilitary Wagner Group has been using Twitter and Facebook to recruit medics, drone operators and even psychologists to aid fighting operations, including in Ukraine, our own CLOTHILDE GOUJARD reports.
+
+Job ads for Wagner, which has mercenaries operating in several countries, have reached nearly 120,000 views on the two social media platforms over the last 10 months.
+
+Sixty posts in dozens of languages — including French, Vietnamese and Spanish — shared information about fighting, IT, driving and medical positions apparently available with Wagner. They also included contact phone numbers, Telegram accounts and touted monthly salaries of 240,000 rubles ($3,145) with benefits including health care.
+
+SANCTIONS OVER ANTI-GAY BILL?: Biden dangled the idea of sanctioning Uganda over its anti-LGBTQ bill.
+
+“We are considering additional steps, including the application of sanctions and restriction of entry into the United States against anyone involved in serious human rights abuses or corruption,” he said in a Monday statement.
+
+The president has already instructed the National Security Council to review if the U.S. can safely deliver humanitarian assistance after the law’s enactment and Uganda’s eligibility for some free-trade agreements.
+
+To get the benefits of such deals like the African Growth and Opportunity Act, “countries must establish or make continual progress toward establishing a market-based economy, the rule of law, political pluralism, and the right to due process,” per the office of the U.S. trade representative.
+
+TAIWAN’S D.C. REP TOUTS INVASION DETERRENCE: Taiwan’s government is going all-in on asymmetrical weapons systems to help deter a possible future invasion of the self-governing island, Taiwan’s de facto Ambassador BI-KHIM HSIAO said at a press briefing on Tuesday.
+
+Taiwan is in the market for “smaller, cost-effective, highly mobile survivable systems that will target an invading force and that would be strong enough to also deter ultimately any possible invasion,” Hsiao said, per our own PHELIM KINE. Taiwan’s defense system shopping list includes Stinger and Javelin missiles as well as weaponized drones. And Hsiao expressed optimism that the U.S. will clear the backlog of delayed weapons systems shipments essential to Taiwan’s defense.
+
+That backlog “has certainly had an impact on Taiwan” but there has been “good progress in terms of moving up some of the delivery timelines,” Hsiao said.
+
+IT’S TUESDAY: Thanks for tuning in to NatSec Daily. This space is reserved for the top U.S. and foreign officials, the lawmakers, the lobbyists, the experts and the people like you who care about how the natsec sausage gets made. Aim your tips and comments at award@politico.com and mberg@politico.com, and follow us on Twitter at @alexbward and @mattberg33.
+
+While you’re at it, follow the rest of POLITICO’s national security team: @nahaltoosi, @PhelimKine, @laraseligman, @connorobrienNH, @paulmcleary, @leehudson, @magmill95, @johnnysaks130, @ErinBanco, @reporterjoe and @_AriHawkins.
+
+  
+GET READY FOR GLOBAL TECH DAY: Join POLITICO Live as we launch our first Global Tech Day alongside London Tech Week on Thursday, June 15. Register now for continuing updates and to be a part of this momentous and program-packed day! From the blockchain, to AI, and autonomous vehicles, technology is changing how power is exercised around the world, so who will write the rules? REGISTER HERE.
+     2024
+DON’T LOOK THERE: Former President DONALD TRUMP’s lawyer was told not to look for classified documents in his client’s office following a subpoena –– though that’s where the most sensitive materials were eventually found by the FBI.
+
+According to the Guardian’s HUGO LOWELL, the attorney, EVAN CORCORAN, was told by “several Trump aides” to look for pages in the storage room, where he did find 38 documents, but was later “steered away” when he wanted to search the office.
+
+“Corcoran’s previously unreported account…suggests he was materially misled as the special counsel JACK SMITH examines whether his incomplete search was actually a ploy by Trump to retain classified documents,” Lowell reports. A Trump spokesperson denied the account, telling Lowell it was “false and rooted in pure fantasy.”
+
+Smith’s investigation is reportedly nearing its end –– so we should find out soon enough what’s true or not.
+
+ Keystrokes
+‘EXTINCTION’: There’s a clear and growing consensus within the artificial intelligence industry that the technology could become one of the world’s greatest threats.
+
+“Mitigating the risk of extinction from AI should be a global priority alongside other societal-scale risks such as pandemics and nuclear war,” said the more than 350 signatories in the first large-scale warning of its kind. It follows on a number of similar warnings by industry heavyweights like GEOFFREY HINTON (often called the "godfather of AI") and SAM ALTMAN, the CEO of OpenAI. They were also among the signatories of the letter, as were YOSHUA BENGIO (a Canadian computer scientist considered an AI pioneer) and Anthropic CEO DARIO AMODEI.
+
+Fears about AI have grown ever since ChatGPT exploded on the scene, with experts worrying about lost jobs, the spread of disinformation and greater (but unspecified) societal-level dangers.
+
+ The Complex
+ADVANCES IN ORBIT: The aerospace and defense company Northrop Grumman Corporation completed its critical design review stage for a project aimed at advancing the military’s space surveillance network, the company announced Tuesday.
+
+The initiative, called the U.S. Space Force’s Deep-Space Advanced Radar Capability Program, aims to advance less sophisticated models, which can only operate at night and are impacted by weather conditions, according to the company’s statement.
+
+The first of three DARC radar systems are planned to be operational by 2025, per Inside Defense.
+
+ On the Hill
+REINING IN TIKTOK: Senate Republicans TIM SCOTT (S.C.), ROGER WICKER (Miss.) and JAMES LANKFORD (Okla.) are planning to unveil new legislation that would require app stores to identify the country where an application is created and developed, reports BROOKE SINGMAN for Fox News.
+
+The Know Your App Act, which the lawmakers claimed was aimed at protecting national security, would slap a “Made in China'' label on TikTok, and other mobile apps developed in Beijing. The bill would also compel the Treasury Department and the Department of Commerce to create a list of adversarial governments, and require the app stores to allow users to filter out applications from those countries.
+
+Amid rising tensions with China, a growing number of Democrats have warmed to the prospect of restricting the Beijing-headquartered app. All Democratic senators supported legislation barring the app from federal devices in December, and in March, MARK WARNER (D-Va.) and JOHN THUNE (R-S.D.) unveiled a bipartisan bill that would grant the president new powers to ban TikTok and other foreign-owned apps.
+
+Plans for the latest legislation came following findings in March that showed four of the five most popular American apps in the U.S. were developed by China, including CapCut, Temu, TikTok and Shein.
+
+RETURN TO SENDER: Speaker KEVIN McCARTHY (R-Calif.) is sending to charity two campaign donations by former Sen. DAVID VITTER, a lobbyist for Chinese surveillance firm Hikvision, which is sanctioned by the U.S., RealClearPolitics’ SUSAN CRABTREE reports.
+
+  
+DON’T MISS POLITICO’S HEALTH CARE SUMMIT: The Covid-19 pandemic helped spur innovation in health care, from the wide adoption of telemedicine, health apps and online pharmacies to mRNA vaccines. But what will the next health care innovations look like? Join POLITICO on Wednesday June 7 for our Health Care Summit to explore how tech and innovation are transforming care and the challenges ahead for access and delivery in the United States. REGISTER NOW.
+     Broadsides
+FEAT TO MEET: The Pentagon slid into the DMs of China’s Defense Ministry and Beijing was like, “not interested, thanks.”
+
+The prospects for a meeting between Defense Secretary LLOYD AUSTIN and Chinese Defense Minister LI SHANGFU this weekend are dim, the Wall Street Journal’s NANCY YOUSSEF reports. However, such a meeting between the two military leaders at the Shangri-La Dialogue security forum has come together hours before an encounter, including at last year’s gathering.
+
+Contacts between the U.S. and China aren’t in a rut. National security adviser JAKE SULLIVAN, Commerce Secretary GINA RAIMONDO and U.S. Ambassador to China NICK BURNS have met with their Chinese counterparts in recent weeks. The primary breakdown, for the moment, seems to be at the defense level.
+
+“The department believes strongly in the importance of maintaining open lines of military-to-military communication between Washington and Beijing to ensure that competition does not veer into conflict,” the Pentagon said in a statement to WSJ.
+
+ Transitions
+— FIRST IN NATSEC DAILY: BILL DOERRER has been named deputy chief of staff for the Office of the National Cyber Director at the White House, DANIEL LIPPMAN has learned. He currently is White House liaison at the Treasury Department. RAYMOND PHAM has been named the new White House liaison at Treasury. He most recently was national coalitions finance director at the Democratic National Committee.
+
+— SASHWATA GOSWAMI has joined the National Security Council as director of preparedness and response. He recently served as the senior adviser to the deputy administrator of FEMA.
+
+— JOHN BARSA was named the executive director of the Foundation for Human Rights in Cuba. He served as acting administrator of USAID.
+
+     
+
+     What to Read
+— MARC THIESSEN, The Washington Post: This is the ‘America First’ case for supporting Ukraine
+
+— CHUN SU-JIN, The New York Times: Why North Korea’s princess will never wear the crown
+
+— DIANA SEMAAN, Al Jazeera: Arab states cannot whitewash Syria’s human rights record
+
+ Tomorrow Today
+—​​ Axios, 8:30 a.m.: Axios News Shapers
+
+—​​ Senate Homeland Security and Governmental Affairs Committee, 10 a.m.: Securing the Nation: Modernizing DHS’ Mission-critical Legacy IT Systems
+
+—​​ Senate Foreign Relations Committee, 10 a.m.: FY 2024 Budget Request for the Middle East and North Africa
+
+—​​ Atlantic Council, 10 a.m.: USAID Equitable AI Community of Practice workshop 1
+
+— Hudson Institute, 12 p.m.: Partnership of Freedom: AUKUS Viewed by Its Architects
+
+—​​  Wilson Center, 2 p.m.: JAMES BILLINGTON Lecture | Russia and the Global Digital (Dis)Order
+
+— Senate Foreign Relations Committee, 2:15 p.m.: Accountability for Russian Atrocities in Ukraine
+
+— Senate Veterans' Affairs Committee, 3 p.m.: To Consider the Nomination of TANYA BRADSHER to be Deputy Secretary, Department of Veterans Affairs
+
+Thanks to our editor, Heidi Vogt, who says every day that we’re in for a “rude awakening.”
+
+We also thank our producer, Gregory Svirnovsky, who knows the counteroffensive plans.
+
+   
+A message from Lockheed Martin:
+
+Innovating at hypersonic speed.
+
+
+ Lockheed Martin is innovating with urgency to solve today’s hypersonic strike and defense challenges. We’re investing in the American hypersonic workforce and supplier base, to ensure our customers stay ready for what’s ahead. Learn more.
+      
+Follow us on Twitter
+
+Alex Ward @alexbward
+  
+Follow us
+  
+To change your alert settings, please log in at https://go.politicoemail.com/?qs=564a983c43cc32f788fd507b0b9bac0ae2836646245535cad793c7bad25072be7dfdc9c6bbada64186c0f16666fb653ba90c6cd6ebd02600  https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a22a834bb9bc0ce78f08d149c443077f85869f0d27e590ee787f69e0813836cfe4a35c4e4d21c11bf5f08aa904ffde1bf8
+
+This email was sent to ouchendans62@gmail.com by: POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+
+ Please click here and follow the steps to unsubscribe.
+  
+
+--MaqGSsqfyjOD=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<html><body><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml><![endif]-->
+</head><!-- Everything above this line is "new" to the template. We'll have to experiment a bit to see if it causes troubles. --><!-- preview text --><div style="display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">    From the SitRoom to the E-Ring, the inside scoop on defense, national security and foreign policy.</div><table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" style="padding:5px 0 15px 0;margin:0;text-align:center" role="presentation">    <tbody>    <tr>        <td><!-- Note: This is left blank to aid in centering across email clients --></td>        
+<td align="center" width="540">            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:540px;table-layout:fixed;" role="presentation">                <tbody>                <!-- top date and utility link -->                <tr>    <td align="center">        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="padding-bottom:15px;" role="presentation">            <tbody>            <tr>                <td width="50%" style="text-align:left;font-size:11px;font-family:Helvetica,sans-serif;color:#B1B4BD;margin:0;">May 30, 2023</td>                
+<td width="50%" style="text-align:right;font-size:11px;font-family:Helvetica,sans-serif;color:#B1B4BD;margin:0;"><a
+ href="https://go.politicoemail.com/?qs=a2f4cbc841dfad9c638b4438c60a7de4469a1d7e2bd8da69ebd813eee71dbdae77dabdb3c978df6971b9f822f43e0be67960f982e3c08274" target="_blank" style="color:#007BC7;text-decoration:none;">View in browser</a
+></td>            </tr>            </tbody>        </table>    </td></tr>                <!-- divider line -->                <tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                <!-- logo and byline -->                <tr>    <td align="center" style="text-align:center;padding:0 20px 15px 20px;margin:0">                                    
+<img src="https://static.politico.com/5c/a9/ff12b2404c499fd27eb4ac52988b/politico-national-security-daily.jpg" title="2021_NewsletterLogo_Free_NationalSecurityDaily" alt="POLITICO's National Security Daily newsletter logo" border="0" width="500" style="width:100%;max-width:500px;">                        </td></tr><tr>    <td align="center" style="padding:0 20px 10px 20px;">        <p style="text-align:center;font-family:Helvetica,sans-serif;font-size:11px;letter-spacing:2px;color:#B1B4BD;text-transform:uppercase;margin:0;">            By  <a
+ href="mailto:award@politico.com" target="_blank" style="color:#000000;text-decoration:none;font-weight:bold;">Alexander Ward</a
+> and  <a
+ href="mailto:ahawkins@politico.com" target="_blank" style="color:#000000;text-decoration:none;font-weight:bold;">Ari Hawkins</a
+>        </p>    </td></tr>                <!-- sponsor logo -->                                    <!-- body -->                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p align="center" style="margin:0 0 20px 0;">
+<img src="https://www.politico.com/dims4/default/47b88c3/2147483647/resize/1000x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2Fc2%2F5e%2Ff4eed01c472e85e6d4e7521f0cb2%2Fhttps-delivery-gettyimages.com%2Fdownloads%2F1258194862" title="2023-05-30 LindseyGraham-Getty" alt="US Senator Lindsey Graham speaks during a press conference." width="500" style="width:100%;max-width:500px;"></p><p style="font-family:Helvetica,sans-serif;font-size:12px;color:#6E7381;margin-bottom:24px;">Sen. Lindsey Graham (R-S.C.) speaks during a press conference at an open air exhibition of destroyed Russian military vehicles in Kyiv, on May 26, 2023.   |  SERGEI SUPINSKY/AFP/Getty Images</p>
+</td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><i
+>With help from Phelim Kine and Daniel Lippman</i
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><a
+ href="https://go.politicoemail.com/?qs=a2f4cbc841dfad9cc12db300554388f555294a3850b575fa9aa0d88b92a6d0dda5483e1fb2a8dace2abf387b5a7a085f2c10d8beb416fe6f" target="_blank">Subscribe here</a
+> | <a
+ href="mailto:award@politico.com" target="_blank">Email Alex</a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The Russians are &#8220;in for a rude awakening&#8221; when the Ukrainian counteroffensive begins, Sen. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">LINDSEY GRAHAM</strong
+> (R-S.C.) told NatSec Daily following a weekend trip to Kyiv.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The lawmaker received a &#8220;deep dive&#8221; briefing on Ukraine&#8217;s military plans from President <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">VOLODYMYR ZELENSKYY</strong
+> and his team, he said in a phone interview during his return home. &#8220;In the coming days, you&#8217;re going to see a pretty impressive display of power by the Ukrainians.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Zelenskyy announced Monday that &#8220;<a
+ href="https://go.politicoemail.com/?qs=a2f4cbc841dfad9c7cff6e88001ab781ac722bec1c22e714aa8c33a3c93e57d6756399297fca3c5cbe120a73fcfbaf1b6c560c0c9fa66a2b" target="_blank">decisions have been made</a
+>&#8221; about when the troop movements will begin.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Graham, whom Russia wants to arrest over his support for Ukraine, wouldn't divulge any specifics about the campaign or its timing. But he did say that &#8220;<a
+ href="https://go.politicoemail.com/?qs=a2f4cbc841dfad9c53eb6aa0752f061002bc78cc7a9028fbd617e685e39e306c271aa43cdd43fce96d5c8bcc846576733520ace233903133" target="_blank">shaping operations</a
+>&#8221; &#8212; that is, strikes that stretch Russian defenses and worry Moscow&#8217;s planners about what&#8217;s coming next &#8212; have already begun, which means the counteroffensive itself is likely to begin relatively soon.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MYKHAILO PODOLYAK</strong
+>, a Zelenskyy adviser, seemed to confirm that shaping operations started this month in a <a
+ href="https://go.politicoemail.com/?qs=a2f4cbc841dfad9c88d49d58af524c0c56a89783687e0872cbbe15084459579c2a234af38a094116646f3eb1dd3ef9872a3b54d7e7e59728" target="_blank">CNN interview Tuesday</a
+>. &#8220;Everything that is happening now is a precursor to a counterattack, a necessary precondition,&#8221; he said.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Asked if he thought Ukraine could push Russia back out by the end of the year, Graham didn&#8217;t say &#8220;yes.&#8221;. What he did say was that the initial priority should be &#8220;taking back some strategic locations.&#8221;</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">The visit to the Ukrainian capital was Graham&#8217;s third since the war began. He&#8217;s seen the Zelenskyy administration shift from a shell-shocked team to one that is increasingly confident about military victory. &#8220;There&#8217;s a bounce in his step that wasn&#8217;t there before,&#8221; Graham said of the president.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">He reports that Zelenskyy is grateful for all the weapons and technology the United States has provided Ukraine. The Republican, though, has continuously called for the Biden administration to send more, namely the long-range Army Tactical Missile System. Graham believes the U.S. can make enough replacement ATACMS after they&#8217;re delivered to Ukraine, even if the <a
+ href="https://go.politicoemail.com/?qs=a2f4cbc841dfad9c180e447a78db5ec48a7f357f1c57a14ac621f910ba3af10f811c3fcc8e13a87600a7b4261eb0e6aa7b71f62eda5c52e3" target="_blank">Pentagon fears it doesn&#8217;t have any to spare</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">And he wants Congress to agree to a spending package that will send more equipment to Kyiv. It&#8217;s unclear, though, if lawmakers will take up a weapons supplemental as they debate how to avoid a debt-limit crisis.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The senator said he told Zelenskyy: &#8220;I will do everything in my power to ensure you have a robust package of weapons and technology to finish the job.&#8221;<br></p></td>                    </tr>                                    <tr>                            </tr><tr>    
+<td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#ccd9e1;">                                            <p style="font-family:Helvetica,sans-serif;font-size:12px;margin-top:0;margin-bottom:10px;color:#000000;">A message from Lockheed Martin:</p>                                                <p style="margin-top:0;margin-bottom:20px;line-height:24px;color:#000000;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Innovating at hypersonic speed.</strong
+><br><br>Lockheed Martin is innovating with urgency to solve today&#8217;s hypersonic strike and defense challenges. We&#8217;re investing in the American hypersonic workforce and supplier base, to ensure our customers stay ready for what&#8217;s ahead. <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f7103bdb889008c59babf2f910e5d99a89f0b038296c8e5ab836e26c962de1872f4d25f4368ce57f3318b0b78476241b7e" target="_blank" style="text-decoration:underline;color:#000000;">Learn more.</a
+></p>                                            </td></tr>    <tr>        <td height="20" style="height:20px; font-size:0; border-top:1px solid #FFFFFF;">&nbsp;</td>    </tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">The Inbox</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">BREAKING:</strong
+></span><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&nbsp;</strong
+>A Chinese J-16 fighter jet performed an aggressive maneuver last week, flying in front of the nose of a U.S. Air Force RC-135 above the South China Sea, causing the American aircraft to fly through wake turbulence. U.S. Indo-Pacific Command <a
+ href="https://go.politicoemail.com/?qs=a2f4cbc841dfad9ced639f9be84a72b55070990b91700a80ed908b91bb72b8067576b844c64a17e2bf5c312974041314d8a337cc7e74db16" target="_blank">released a video of the incident</a
+> Tuesday.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">AERIAL ASSAULTS:</strong
+></span> Russia was targeted by a drone attack Tuesday, according to a statement from the Russian defense ministry, <a
+ href="https://go.politicoemail.com/?qs=a2f4cbc841dfad9c14f55baa0a325e9697cd1172bc8e2a6faf0ca91cb1c7851b5f09ce861681002a9adf438a9c5b4d5a4f1de20935ab2a3c" target="_blank">per our own <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">GABRIEL GAVIN</strong
+> and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">NICOLAS CAMUT</strong
+></a
+>. &#8220;The attack involved eight uncrewed aircraft. All the enemy drones were shot down,&#8221; the <a
+ href="https://go.politicoemail.com/?qs=a2f4cbc841dfad9cb7dd6080eafd4a44e84580d623266d8aeb443f8d2dc1658370aec3050621a77d8cb5e91c42eab1420a5afb6c3104750a" target="_blank">defense ministry said</a
+>, adding that no one was &#8220;seriously injured.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The assault comes after days of fire from Moscow. On Tuesday, Russia unleashed its third air attack in 24 hours on the Ukrainian capital of Kyiv, according to the city&#8217;s mayor <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">VITALI KLITSCHKO</strong
+>, <a
+ href="https://go.politicoemail.com/?qs=a2f4cbc841dfad9c71e5927d855e61e851730afae5c41af5a010b50eb64b840fce34b55aef70962f51bc25b42edfbe48ac9dae90bc65750a" target="_blank">per Reuters</a
+>. City officials said at least one woman was killed in the assault, with at least 11 others wounded.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The Ukrainian Parliament approved a sanctions package against Iran on Monday, after accusing the country of supplying weapons for Russia&#8217;s latest assault. The decision will prevent Iranian goods from transitioning through Ukraine, and includes financial and technology sanctions against the country, <a
+ href="https://go.politicoemail.com/?qs=a2f4cbc841dfad9c4c21bdf2ca970cc723b73b6f7b864b3512b5f7cbd86ab44c2216586dad7edc7c7f0606723ece96ee17d7cdd5a72bca90" target="_blank">per Al Jazeera</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">ERDO-WON:</strong
+></span> As widely expected, Turkish President<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> RECEP TAYYIP ERDO&#286;AN</strong
+> won reelection with 52 percent of the vote Sunday to stay in power for a third decade.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">World leaders, including President <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JOE BIDEN</strong
+>, quickly congratulated the autocrat on his victory. "I spoke to Erdo&#287;an. I congratulated Erdo&#287;an. He still wants to work on something on the F-16s. I told him we wanted a deal with Sweden, so let's get that done,&#8221; Biden told reporters Monday &#8212; appearing to imply that one depended on the other.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Secretary of State <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">ANTONY BLINKEN</strong
+> explicitly delinked the two issues on Tuesday. "While we are not linking the two issues &#8211;&#8211; when I say 'we,' I mean the Biden administration &#8211;&#8211; some members of Congress are," he <a
+ href="https://go.politicoemail.com/?qs=a2f4cbc841dfad9c49641f064e47a1e1f112fc0a444441f9b4a235dbcc3ef6c30681b2591a1057ff265e8f890e5c6d863f27a5b537175b0a" target="_blank">said during a visit to Sweden</a
+>. "We believe that both should go forward&#8230;as quickly as possible."</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Domestically, Erdo&#287;an now has more authority to continue stacking the deck in his favor. The election itself wasn&#8217;t much of a fair fight because Erdo&#287;an had near-complete control of the media, severely restricting the opposition&#8217;s ability to get their message out, and he used state resources to raise the minimum wage and physically hand out money.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">And on the world stage, Erdo&#287;an &#8211;&#8211; the leader of a NATO country &#8211;&#8211; will likely continue to cozy up to Russian President <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">VLADIMIR PUTIN</strong
+>. That could increase friction as the alliance heads into a major NATO summit in July.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">HELP WANTED:</strong
+></span> Russia's paramilitary Wagner Group has been using Twitter and Facebook to recruit medics, drone operators and even psychologists to aid fighting operations, including in Ukraine, <a
+ href="https://go.politicoemail.com/?qs=a2f4cbc841dfad9c022147ca4694c8b1e541531b368e4b1eb4020b273b9c8a78243c971e402216c482d5f6559faa6e7919344f4bc2abdb5c" target="_blank">our own <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">CLOTHILDE GOUJARD</strong
+> reports</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Job ads for Wagner, which has mercenaries operating in several countries, have reached nearly 120,000 views on the two social media platforms over the last 10 months.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Sixty posts in dozens of languages &#8212; including French, Vietnamese and Spanish &#8212; shared information about fighting, IT, driving and medical positions apparently available with Wagner. They also included contact phone numbers, Telegram accounts and touted monthly salaries of 240,000 rubles ($3,145) with benefits including health care.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">SANCTIONS OVER ANTI-GAY BILL?:</strong
+></span> Biden dangled the idea of sanctioning Uganda over its anti-LGBTQ bill.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;We are considering additional steps, including the application of sanctions and restriction of entry into the United States against anyone involved in serious human rights abuses or corruption,&#8221; he <a
+ href="https://go.politicoemail.com/?qs=a2f4cbc841dfad9ce8474cf26f8bdc7bad6d1656692896202e3cbe5d1859b514522e6ee910b48b6639900ff2d2d202d99bf43e4e3e6f4774" target="_blank">said in a Monday statement</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The president has already instructed the National Security Council to review if the U.S. can safely deliver humanitarian assistance after the law&#8217;s enactment and Uganda&#8217;s eligibility for some <a
+ href="https://go.politicoemail.com/?qs=a2f4cbc841dfad9c3f895a039a83178fe6d5f97ddd9c3c7de8dd1651a45f9f0697f2ed32b5663d5fdf40c31bcaaadd4fafbd84f352a05113" target="_blank">free-trade agreements</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">To get the benefits of such deals like the <a
+ href="https://go.politicoemail.com/?qs=a2f4cbc841dfad9c3f895a039a83178fe6d5f97ddd9c3c7de8dd1651a45f9f0697f2ed32b5663d5fdf40c31bcaaadd4fafbd84f352a05113" target="_blank">African Growth and Opportunity Act</a
+>, &#8220;countries must establish or make continual progress toward establishing a market-based economy, the rule of law, political pluralism, and the right to due process,&#8221; per the office of the U.S. trade representative.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">TAIWAN&#8217;S D.C. REP TOUTS INVASION DETERRENCE:</strong
+></span> Taiwan&#8217;s government is going all-in on asymmetrical weapons systems to help deter a possible future invasion of the self-governing island, Taiwan&#8217;s de facto Ambassador <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">BI-KHIM HSIAO</strong
+> said at a press briefing on Tuesday.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Taiwan is in the market for &#8220;smaller, cost-effective, highly mobile survivable systems that will target an invading force and that would be strong enough to also deter ultimately any possible invasion,&#8221; Hsiao said, per our own <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">PHELIM KINE</strong
+>. Taiwan&#8217;s defense system shopping list includes Stinger and Javelin missiles as well as weaponized drones. And Hsiao expressed optimism that the U.S. will clear the <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f77fe4c3f89e4aec5f8b1ff802e7ec657cbfbbbea3e89926befaba11006dc37a7395921e04bce31e4cbda658b7b6c1b3bf" target="_blank">backlog of delayed weapons systems shipments</a
+> essential to Taiwan&#8217;s defense.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">That backlog &#8220;has certainly had an impact on Taiwan&#8221; but there has been &#8220;good progress in terms of moving up some of the delivery timelines,&#8221; Hsiao said.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">IT&#8217;S TUESDAY</strong
+></span><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">: </strong
+>Thanks for tuning in to NatSec Daily. This space is reserved for the top U.S. and foreign officials, the lawmakers, the lobbyists, the experts and the people like you who care about how the natsec sausage gets made. Aim your tips and comments at <a
+ href="mailto:award@politico.com" target="_blank">award@politico.com</a
+> and <a
+ href="mailto:mberg@politico.com" target="_blank">mberg@politico.com</a
+>, and follow us on Twitter at <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f7dbf58de45f992fc673b1e5ea27643b3090525a85f1adb30715cdc807621d0128a4d5d9a64236c35baee3631429ad7704" target="_blank">@alexbward</a
+> and <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f7cda11b64822678920e0074c130ef4fb0e43270093108e8457ee9da828f2f98fb55fe1b4a1272db850001bb2311e0b3c1" target="_blank">@mattberg33</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">While you&#8217;re at it, follow the rest of POLITICO&#8217;s national security team: <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f72c3fa5b3c0ebcfcdde4ec14330f5f654b6c9ac24871afc2dcbbc50b44914e1dba1fdb4b6b20b17e63d938a87f5d50afe" target="_blank">@nahaltoosi</a
+>, <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f7a54a1c259ffa26acfa9f276733873d53081b1d3e4ff4f4762db13c99cacdabcc2bb0cbf6977adec984d0b5861e09b232" target="_blank">@PhelimKine</a
+>, <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f79dd7a3ad2b15b6a70c99f2d8ac7ff8e9c9bb119158cee6927fddc0d9d71f6f018243e288b6a45c6f3fd984b797992cb1" target="_blank">@laraseligman</a
+>, <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f765d610745f1426bf85309eb6c26000147d08a6291371d04cdabaa20d55926d29b2a21796e72520f810451832c97676c0" target="_blank">@connorobrienNH</a
+>, <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f7777794e1f07e4fc67aee427fb090fe5f7ea4a0d64894d0f31122946111090f8b999facd2d7d52d9edf94ece41ab604dd" target="_blank">@paulmcleary</a
+>, <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f7b7122a51c6e0196b2211bda0511c59165a00370812a2175d295ab4a51ecb1c8e3394e1207f4c7d79330e79053245d0e6" target="_blank">@leehudson</a
+>, <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f73a5df5c99cb93ec4a5ed96d6328bd1df39492eed56aedc7966b9be31bec5eef620cc4b535c64cc70f8b9c2a1d97e3a46" target="_blank">@magmill95</a
+>, <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f7bb4a1a535de1607a0df1205a2f973f436db13194702fd585accd535d2837ec64022dea54c32a48a6405983d34e05c5c9" target="_blank">@johnnysaks130</a
+>, <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f7d0a59dcbb9914652517f72b577b8ed35bac88ac04f62432b4f104fdc6af2008f90a4eedded3ef36a11a1a4a25562a49e" target="_blank">@ErinBanco</a
+>, <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f770372eca7a8b8936dd32a4c4b32fb564879dc62f194ac10714309decb05bd46d14cb1ca8d1dcfea952641a9ac178a72a" target="_blank">@reporterjoe</a
+> and <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f76ff069eab75ed61471fd36efe0e95c9f115da7c8b951176af82209282189050ebc0a4afe50c323aeaa5b4e66b952347e" target="_blank">@_AriHawkins</a
+>.<br></p></td>                    </tr>                                    <tr>                        </tr><tr>    <td height="10" style="height:10px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                    <p style="margin-top:0;margin-bottom:20px;line-height:24px;margin-bottom:20px;color:#000000;">                <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">GET READY FOR GLOBAL TECH DAY: </strong
+>Join POLITICO Live as we launch our first Global Tech Day alongside London Tech Week on Thursday, June 15. Register now for continuing updates and to be a part of this momentous and program-packed day! From the blockchain, to AI, and autonomous vehicles, technology is changing how power is exercised around the world, so who will write the rules? <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f7997768a4ee367b0fae627ad3eed89fc4518c05448a7a44059f05663ed691ed7a8aa9c57e2b933bf8271ad9af2bbbf34c" target="_blank" style="text-decoration:underline;color:#007BC7;">REGISTER HERE</a
+>.            </p>            </td></tr><tr>    <td height="10" style="height:10px; font-size:0; border-bottom:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td height="15" style="height:15px; font-size:0;">&nbsp;</td></tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">2024</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;">
+<span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DON&#8217;T LOOK THERE:</strong
+></span> Former President <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DONALD TRUMP</strong
+>&#8217;s lawyer was told not to look for classified documents in his client&#8217;s office following a subpoena &#8211;&#8211; though that&#8217;s where the most sensitive materials were eventually found by the FBI.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">According to <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f72dcf8c53a224d849da3bad7fec1f36900eca8073ac8621e8809c9014521b7d19c4be0d5319cc8edeba545ea81c2ae308" target="_blank">the Guardian&#8217;s <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">HUGO LOWELL</strong
+></a
+>, the attorney, <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">EVAN CORCORAN</strong
+>, was told by &#8220;several Trump aides&#8221; to look for pages in the storage room, where he did find 38 documents, but was later &#8220;steered away&#8221; when he wanted to search the office.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;Corcoran&#8217;s previously unreported account&#8230;suggests he was materially misled as the special counsel <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JACK SMITH</strong
+> examines whether his incomplete search was actually a ploy by Trump to retain classified documents,&#8221; Lowell reports. A Trump spokesperson denied the account, telling Lowell it was &#8220;false and rooted in pure fantasy.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Smith&#8217;s investigation is reportedly nearing its end &#8211;&#8211; so we should find out soon enough what&#8217;s true or not.<br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">Keystrokes</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;">
+<span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8216;EXTINCTION&#8217;:</strong
+></span> There&#8217;s a clear and growing consensus within the artificial intelligence industry that the technology could become one of the world&#8217;s greatest threats.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;Mitigating the risk of extinction from AI should be a global priority alongside other societal-scale risks such as pandemics and nuclear war,&#8221; said the <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f72865355b4e83265472ae47de66f558c7191eedcf31dac9aff89a7e8cc67c726a89c531de757101820945eb91cdb8fe3b" target="_blank">more than 350 signatories</a
+> in the first large-scale warning of its kind. It follows on a number of similar warnings by industry heavyweights like <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">GEOFFREY HINTON </strong
+>(often called the "<a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f7811b88b3bb8703c6672b891df3a40777f25fc0f3a714eab0c44ea1fd48f439312d8ea0c6d72e375e22100d6b4b95096f" target="_blank">godfather of AI</a
+>") and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">SAM ALTMAN</strong
+>, the CEO of OpenAI. They were also among the signatories of the letter, as were <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">YOSHUA BENGIO </strong
+>(a Canadian computer scientist considered an AI pioneer) and Anthropic CEO <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DARIO AMODEI</strong
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Fears about AI have grown ever since ChatGPT exploded on the scene, with experts worrying about lost jobs, the spread of disinformation and greater (but unspecified) societal-level dangers.<br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">The Complex</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">ADVANCES IN ORBIT:</strong
+></span> The aerospace and defense company Northrop Grumman Corporation completed its critical design review stage for a project aimed at advancing the military&#8217;s space surveillance network, <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f74902c4101d17d52ea14607774f8254bb5619757b316149001e4a4aab9e5b0c2de7165a20157c9a56295df3274c254f9f" target="_blank">the company announced Tuesday</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The initiative, called the U.S. Space Force&#8217;s Deep-Space Advanced Radar Capability Program, aims to advance less sophisticated models, which can only operate at night and are impacted by weather conditions, according to the company&#8217;s statement.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The first of three DARC radar systems are planned to be operational by 2025, <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f760fe143246ab30b33046ea51e5d06c1bb3bbdd490238fd32df53bd358d7d953919bd65870ba6188424574eb569d97e53" target="_blank">per Inside Defense</a
+>.<br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">On the Hill</td>    </tr>    </tbody></table></td>                    
+</tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">REINING IN TIKTOK:</strong
+></span> Senate Republicans <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">TIM SCOTT</strong
+> (S.C.), <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">ROGER WICKER</strong
+> (Miss.) and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JAMES LANKFORD</strong
+> (Okla.) are planning to unveil new legislation that would require app stores to identify the country where an application is created and developed, <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f7f885634fdebefebdd3f4b547ce02021e5397a0f4cd31797e0dddd1b75eb8fe05507d9ed8c1b97b747e31dedca024e46f" target="_blank">reports <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">BROOKE SINGMAN</strong
+> for Fox News</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The Know Your App Act, which the lawmakers claimed was aimed at protecting national security, would slap a &#8220;Made in China'' label on TikTok, and other mobile apps developed in Beijing. The bill would also compel the Treasury Department and the Department of Commerce to create a list of adversarial governments, and require the app stores to allow users to filter out applications from those countries.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Amid rising tensions with China, a <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f7724b2c15e48908b14cfe66ea9a44d614db2e47a83567642ddc232299081db8d3675dcaf764a7bbe4bb93d059a5f510be" target="_blank">growing number of Democrats</a
+> have warmed to the prospect of restricting the Beijing-headquartered app. All Democratic senators supported legislation barring the app from federal devices in December, and in March, <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f7cb80ff980910332f57cf6d8ad6f5833c232a6dc2f8d22bb74c5601e0242e9082d4a64d7dc94a816c5143ca343204b791" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MARK WARNER</strong
+> (D-Va.) and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JOHN THUNE </strong
+>(R-S.D.) unveiled a bipartisan bill</a
+> that would grant the president new powers to ban TikTok and other foreign-owned apps.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Plans for the latest legislation came following <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f78f39058e498578e5b89be5628348a3a40549b8495e7b9d57ea3dd86e072e654ea4b6118dd5775ee4a887efd377612366" target="_blank">findings in March</a
+> that showed four of the five most popular American apps in the U.S. were developed by China, including CapCut, Temu, TikTok and Shein.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">RETURN TO SENDER:</strong
+></span> Speaker <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">KEVIN McCARTHY</strong
+> (R-Calif.) is sending to charity two campaign donations by former Sen. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DAVID VITTER</strong
+>, a lobbyist for Chinese surveillance firm Hikvision, which is sanctioned by the U.S., <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f7aaaac53cfee2bcaece358c65b76e52bf0cf05d37a7d3e6c7aa3420a41da4c8e6bfd8fd359219d6269d3f292927bd9a28" target="_blank">RealClearPolitics&#8217; <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">SUSAN CRABTREE</strong
+> reports</a
+>.<br></p></td>                    </tr>                                    <tr>                        </tr><tr>    <td height="10" style="height:10px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                    <p style="margin-top:0;margin-bottom:20px;line-height:24px;margin-bottom:20px;color:#000000;">                <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DON&#8217;T MISS POLITICO&#8217;S HEALTH CARE SUMMIT</strong
+>: The Covid-19 pandemic helped spur innovation in health care, from the wide adoption of telemedicine, health apps and online pharmacies to mRNA vaccines. But what will the next health care innovations look like? Join POLITICO on Wednesday June 7 for our Health Care Summit to explore how tech and innovation are transforming care and the challenges ahead for access and delivery in the United States. <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f7f111f663830ed884c8ffb4c44b4097b9e1e46b76ab794db6f77feb455c8b9c40d5577bb129bafb6aaf8afccc3de5993a" style="text-decoration:underline;color:#007BC7;">REGISTER NOW</a
+>.            </p>            </td></tr><tr>    <td height="10" style="height:10px; font-size:0; border-bottom:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td height="15" style="height:15px; font-size:0;">&nbsp;</td></tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">Broadsides</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;">
+<span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">FEAT TO MEET:</strong
+></span> The Pentagon slid into the DMs of China&#8217;s Defense Ministry and Beijing was like, &#8220;not interested, thanks.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The prospects for a meeting between Defense Secretary <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">LLOYD AUSTIN</strong
+> and Chinese Defense Minister <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">LI SHANGFU</strong
+> this weekend are dim, <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f756753e3859af4b964e6cddd262470e75385783b421fd56719b524b094a596e1b9428582e707e9bcf44998583e6a1758b" target="_blank">the Wall Street Journal&#8217;s <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">NANCY YOUSSEF</strong
+> reports</a
+>. However, such a meeting between the two military leaders at the Shangri-La Dialogue security forum has come together hours before an encounter, including at last year&#8217;s gathering.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Contacts between the U.S. and China aren&#8217;t in a rut. National security adviser <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JAKE SULLIVAN</strong
+>, Commerce Secretary <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">GINA RAIMONDO</strong
+> and U.S. Ambassador to China <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">NICK BURNS</strong
+> have met with their Chinese counterparts in recent weeks. The primary breakdown, for the moment, seems to be at the defense level.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;The department believes strongly in the importance of maintaining open lines of military-to-military communication between Washington and Beijing to ensure that competition does not veer into conflict,&#8221; the Pentagon said in a statement to WSJ.<br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">Transitions</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;">
+<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212;</strong
+> <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">FIRST IN NATSEC DAILY: BILL DOERRER</strong
+> has been named deputy chief of staff for the Office of the National Cyber Director at the White House, <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DANIEL LIPPMAN</strong
+> has learned. He currently is White House liaison at the Treasury Department. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">RAYMOND PHAM</strong
+> has been named the new White House liaison at Treasury. He most recently was national coalitions finance director at the Democratic National Committee.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212;</strong
+> <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">SASHWATA GOSWAMI</strong
+> has joined the National Security Council as director of preparedness and response. He recently served as the senior adviser to the deputy administrator of FEMA.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212;</strong
+> <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JOHN BARSA</strong
+> was named the executive director of the Foundation for Human Rights in Cuba. He served as acting administrator of USAID.<br></p></td>                    </tr>                                    <tr>                            </tr><tr>    <td height="15" style="height:15px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>    <tr>    <td style="padding:0 20px 0 20px;text-align:center;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                                                        <p style="margin-top:0;margin-bottom:15px;line-height:15px;">                                            <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f7c6968344143928be70dc531c0e665dc51119cd8212767bc921fcebddfdd3f6a85e4d653414e80e0a2f899664c5567ade" target="_blank"><img src="https://www.politico.com/dims4/default/ad9940e/2147483647/resize/600x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2Fac%2Fc8%2F86c10ebc49919fb26af2f5dff697%2F300x250-hypersonic.png" title="Advertisement Image" alt="Advertisement Image" border="0" width="300" style="width:100%;max-width:300px;"></a
+>                                        <img src="https://ad.doubleclick.net/ddm/ad/N7384.146504POLITICO0/B29927968.367742731;sz=1x1;ord=[timestamp]" border="0" a>                </p>                                                                                    </td></tr>    <tr>        <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">What to Read</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; MARC THIESSEN, The Washington Post: </strong
+><a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f7fa1b0eec44ee80447d91175f09d3dab62a4cb45f1d10fa20622ccc3e4b3b3ad6d9dc6dd99320e23d20e94d31634c8bfb" target="_blank">This is the &#8216;America First&#8217; case for supporting Ukraine</a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212;</strong
+> <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">CHUN SU-JIN, The New York Times: </strong
+><a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f71f0caeb674659d9786be12f7cddac08db313b32cc8cf902ff49ac137bfd767af817682edbce8596659bf1470d40fb41d" target="_blank">Why North Korea&#8217;s princess will never wear the crown</a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; DIANA SEMAAN, Al Jazeera: </strong
+><a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f71dc79169e39e8e4b8bda20017bb108bbd1edda2361a6c7af8fad16c44da6a8eeae6589c8565267ec30ca0a983b10451b" target="_blank">Arab states cannot whitewash Syria&#8217;s human rights record</a
+><br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">Tomorrow Today</td>    </tr>    </tbody></table></td>                    
+</tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212;&#8203;&#8203; Axios, 8:30 a.m.: </strong
+><a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f7990b879d6ccd368fdec7cbb508e4c31ccb979a2de2984e70a63d4c1dd4e5e7c3615af1ed960e017ecf25aed4b5a22471" target="_blank">Axios News Shapers</a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212;&#8203;&#8203; Senate Homeland Security and Governmental Affairs Committee, 10 a.m.: </strong
+><a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f77ab57b0cfc5e228ccdfce5512849f1915a6ce849c1cbb5a075e03ab38c2f07f79cda33255efdc7ad66f3a65df9d5d7c9" target="_blank">Securing the Nation: Modernizing DHS&#8217; Mission-critical Legacy IT Systems</a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212;&#8203;&#8203; Senate Foreign Relations Committee, 10 a.m.: </strong
+><a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f723840ca284162d67ac512d5da186e0609edffbd1dfd97d97ef403bfb02ec93a4ca1079617f762e2cf04c0d5ec58f8542" target="_blank">FY 2024 Budget Request for the Middle East and North Africa</a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212;&#8203;&#8203; Atlantic Council, 10 a.m.: </strong
+><a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f78a87ea6712588df9381b0d46e303db08e91461d9df5304cc9ad014c37b80ee154c4fc7702d7face5393d4aefe5d19510" target="_blank">USAID Equitable AI Community of Practice workshop 1</a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; Hudson Institute, 12 p.m.: </strong
+><a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f71198d2a81951c93c0fd0b458553d16d7ebf663175be9a4337a9741dbed195101bf0c06a13b31ea15f4b4fd46cf43789e" target="_blank">Partnership of Freedom: AUKUS Viewed by Its Architects</a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212;&#8203;&#8203;&nbsp; Wilson Center, 2 p.m.: </strong
+><a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f7c3295a63add69ce1ad163f994ef12f4dd4f803d722229c3b742d1ce58abfb1435111539ca61ac5c93e5fd2069c7b8f39" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JAMES BILLINGTON</strong
+> Lecture | Russia and the Global Digital (Dis)Order</a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; Senate Foreign Relations Committee, 2:15 p.m.: </strong
+><a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f7034193204eb8506ff820fec04fc9c768e1cfbe23de4a2480287b930afe170e1d96dc898650459020686b405560a763c3" target="_blank">Accountability for Russian Atrocities in Ukraine</a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; Senate Veterans' Affairs Committee, 3 p.m.: </strong
+><a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f7fa910dd3eb2394f2bf247c7121932a3bee76b48bc1da3ad256acf9d3d157958d6b9d3e8c45b8d5fb79a999211b03453e" target="_blank">To Consider the Nomination of <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">TANYA BRADSHER</strong
+> to be Deputy Secretary, Department of Veterans Affairs</a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><i
+>Thanks to our editor, Heidi Vogt, who says every day that we&#8217;re in for a &#8220;rude awakening.&#8221;</i
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><i
+>We also thank our producer, Gregory Svirnovsky, who knows the counteroffensive plans.</i
+><br></p></td>                    </tr>                                    <tr>                            </tr><tr>    <td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#ccd9e1;">                                            <p style="font-family:Helvetica,sans-serif;font-size:12px;margin-top:0;margin-bottom:10px;color:#000000;">A message from Lockheed Martin:</p>                                                <p style="margin-top:0;margin-bottom:20px;line-height:24px;color:#000000;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Innovating at hypersonic speed.</strong
+><br><br>Lockheed Martin is innovating with urgency to solve today&#8217;s hypersonic strike and defense challenges. We&#8217;re investing in the American hypersonic workforce and supplier base, to ensure our customers stay ready for what&#8217;s ahead. <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f72f3cebef36e317024465a364d123f9033b7a591a24fbc7a184061d58547f6e0d4af4dfc62a189fc563ae571c6678d2a3" target="_blank" style="text-decoration:underline;color:#000000;">Learn more.</a
+></p>                                            </td></tr>    <tr>        <td height="20" style="height:20px; font-size:0; border-top:1px solid #FFFFFF;">&nbsp;</td>    </tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                <!-- End Ad Copy -->                <tr>                                    </tr>                <!-- Post Body Content -->                <tr>                                    </tr>                <tr>                    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;
+</td>                </tr>                <!-- Twitter Handles -->                                    <tr>    <td style="color:#000000;padding:0px 20px 20px 20px;text-align:left;">        <p style="font-family:Helvetica,sans-serif;font-size:20px;color:#000000;margin-top:0;margin-bottom:15px;"><strong
+>Follow us on Twitter</strong
+></p>        <table cellpadding="0" cellspacing="0" border="0" role="presentation">            <tbody>            <tr>                <td width="52" valign="middle" style="text-align:left;padding-right:10px;"><img src="https://static.politico.com/hosted/icon-twitter-circle-blue%402x.png" title="" alt="" width="50" style="max-width:50px;"></td>                <td valign="middle" style="text-align:left;font-family:Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#000000;">                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Alex Ward <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f7dbf58de45f992fc673b1e5ea27643b3090525a85f1adb30715cdc807621d0128a4d5d9a64236c35baee3631429ad7704" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@alexbward</a
+></p>                                    </td>            </tr>            </tbody>        </table>    </td></tr><tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                                <!-- Family of Playbook -->                                <!-- Follow us -->                <tr>    <td style="color:#000000;padding:0px 20px 20px 20px;text-align:left;">        <p style="font-family:Helvetica,sans-serif;font-size:12px;color:#000000;margin-bottom:10px;line-height:14px;text-transform:uppercase;font-weight:bold;letter-spacing:2px;">Follow us</p>        
+<table cellpadding="0" cellspacing="0" border="0" role="presentation">            <tbody>            <tr>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f7bc28787fed243852db1ad9c42064ee05101c39f1dcd5876eab4f7b6813e1cac6e7542d521d3646195cab4f34b223b1d3" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-facebook-gray%402x.png" title="Follow us on Facebook" alt="Follow us on Facebook" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f7f6b2b261b5a08c5db7c9d4a3452d7b71f39a86607c61a8b2d62a8c914482c3a20ceb90370cb4c4bd015f068d9005a171" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-twitter-gray%402x.png" title="Follow us on Twitter" alt="Follow us on Twitter" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f750c675654ef2f812f59351a898c39d939f2268813678eba979f2b71195e16271da39cf3794945f47fac5e5b1c3695870" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-instagram-gray%402x.png" title="Follow us on Instagram" alt="Follow us on Instagram" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f7f869c70af6982e5ee61e2c7668c1da438da608eb95785b93a72ecf8dbb1b25569e461f310ebe3e069198a879f79958b1" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-applePodcast-gray%402x.png" title="Listen on Apple Podcast" alt="Listen on Apple Podcast" width="24" border="0" style="max-width:24px;"></a
+></td>            </tr>            </tbody>        </table>    </td></tr><tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                </tbody>            </table>        </td>        <td><!-- Note: This is left blank to aid in centering across email clients --></td>    </tr>    </tbody></table><!-- Everything below this line is "new" to the template. We'll have to experiment a bit to see if it causes troubles. --><!-- howler#email.footers/core-newsletter.footer.html -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff"
+       style="padding:5px 0 15px 0;margin:0;text-align:center" role="presentation">
+    <tbody>
+    <tr>
+        <td><!-- Note: This is left blank to aid in centering across email clients --></td>
+        <td align="center" width="540">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:540px" role="presentation">
+                <tbody>
+                <tr>
+                    <td align="center" style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;">
+                        <p style="margin-bottom:15px;line-height:24px;">To change your alert settings, please log in at
+                            <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f788fd507b0b9bac0ae2836646245535cad793c7bad25072be7dfdc9c6bbada64186c0f16666fb653ba90c6cd6ebd02600" target="_blank" style="color:#007BC7;text-decoration:none;">https://www.politico.com/_login?base=https%3A%2F%2Fwww.politico.com/settings</a
+>
+                            <!--Commenting out the following line because it causes an undesired line to be displayed on outlook (some versions) and we couldn't find the use case of it-->
+                            <!-- <span style="display:none;"><a
+ href="https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a22a834bb9bc0ce78f08d149c443077f851fc3d7fd33e39c23">https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a22a834bb9bc0ce78f08d149c443077f851fc3d7fd33e39c23</a
+></span> -->
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="padding-bottom:15px;"><img
+                            src="https://static.politico.com/hosted/icon-politico-logo.png"
+                            class="CToWUd"></td>
+                </tr>
+                <tr>
+                    <td align="center"><p
+                            style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:20px;">
+                        This email was sent to ouchendans62@gmail.com by: POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+                        <p style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:24px;">
+                            
+
+                            Please click <a
+ href="https://go.politicoemail.com/?qs=564a983c43cc32f7a615faa952388ef31f8fcb25dd003e271025f8e636139eb4b9736e40e0959b44bb37b4fb8c1ebdb8c2467fd779c5e781" target="_blank" style="color:#007BC7;text-decoration:none;">here</a
+> and follow the steps to unsubscribe.
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td><!-- Note: This is left blank to aid in centering across email clients --></td>
+    </tr>
+    </tbody>
+</table>
+<img src="https://click.politicoemail.com/open.aspx?ffcb10-fe8e1d7875650c7f70-fdea13797160037e70127273-fe9115737262077c7c-fecd12737567047b-fdf61574756104747317747c-ffcf14&d=40128&bmt=0" width="1" height="1" alt="">
+</body></html><p email-meta style="display: none;opacity:0;">source=GoggleDocument, article=00000188-6cd7-d54f-af8b-fddf83600000</p>
+
+--MaqGSsqfyjOD=_?:--
+

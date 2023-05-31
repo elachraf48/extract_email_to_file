@@ -1,0 +1,586 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:9f5b:0:b0:2da:43c2:96f2 with SMTP id l27csp204812imf;
+        Sat, 27 May 2023 06:55:22 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ57RlxcT1iCxJgozavJ8GePlgEle21f+Uysak/pVckRICHOlw2yFQLaE1xCVGVWzam17NtT
+X-Received: by 2002:ad4:5945:0:b0:5ef:6eb6:e26e with SMTP id eo5-20020ad45945000000b005ef6eb6e26emr4464162qvb.6.1685195722039;
+        Sat, 27 May 2023 06:55:22 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685195722; cv=none;
+        d=google.com; s=arc-20160816;
+        b=VTZowvXvNqeoPmzDV3FUx5PTfqxuPn3Dnbt0qO+zXvMlrp/zF7rPrvcfa1pk9DVA/Z
+         UcNhyymNaMoxFNC5Y8SQPrEf+Hyr1VWHGAkmPw4SHK3jJUjkTkxGtEYY5WdzFk5ekCtb
+         QxbZFvfWYoXmosMLVqEAOMsJK495VWr/I7H/+e/G/2OpdK9fFl3W+dJ2uyJW8D3TjKqQ
+         JCyBDqnhVqG8ZksooUoN5J8J9Yc+eBQk952dzvUwxi8MbUFpY0g471c+0ap5Bsm578tV
+         gEqzbVJILeN8u/J27I788DGInY8FW5yovILRSoJgTT4E4lcXq2fwNw00ofwfLyJu2a/c
+         h7vw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:precedence:form-sub:mime-version:subject:message-id:to
+         :reply-to:from:date:list-unsubscribe:dkim-signature:dkim-signature;
+        bh=8mbxaSFarxvWbENXMceAJYbaGai/XA83yQe3cYGAKOA=;
+        b=Ja9nNilHHRVpdyXYfrn1ABJjM+AVbopP+SoIf7/+9yMaoOOxcZwL2AMthNuLCN4bR7
+         KPojL8J0AsGbP7eqFjh4asnBmZz6tjHMDGboP3PkN/nf+2EYPP80m9kB07ivKk+hS6Ao
+         O5CpwgFO006C7IP/kcMASIZ+otlMToo5gO9ylgvZq+PXwc0+we0uQVh0fStU+GL10bLb
+         Hjxr8AmmJWOeaVDCPl8hna/RgrpiIo5nw2EEn0oqlzsCgY7Ne940k7Qz1avQmfqv3OJw
+         YgwwYN929bKMgM+3YZdAOjJN6uHBHyvdYiOOdhSdWydvhG0pNkExY4aNLCY2lDWZVNLA
+         JOMA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@bf52x.hubspotemail.net header.s=hs2 header.b=SsXaCy0z;
+       dkim=pass header.i=@statnews.com header.s=hs1 header.b=JNRAVDWa;
+       spf=pass (google.com: domain of 1axb3gmh4hob9i5oqp8rwwr2ptge43c2izz8ea-ouchendans62=gmail.com@bf52x.hubspotemail.net designates 158.247.26.173 as permitted sender) smtp.mailfrom="1axb3gmh4hob9i5oqp8rwwr2ptge43c2izz8ea-ouchendans62=gmail.com@bf52x.hubspotemail.net";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=statnews.com
+Return-Path: <1axb3gmh4hob9i5oqp8rwwr2ptge43c2izz8ea-ouchendans62=gmail.com@bf52x.hubspotemail.net>
+Received: from bid48an.bf52x.hubspotemail.net (bid48an.bf52x.hubspotemail.net. [158.247.26.173])
+        by mx.google.com with ESMTPS id gu5-20020a056214260500b005d9aad7e836si2529389qvb.44.2023.05.27.06.55.21
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 27 May 2023 06:55:22 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 1axb3gmh4hob9i5oqp8rwwr2ptge43c2izz8ea-ouchendans62=gmail.com@bf52x.hubspotemail.net designates 158.247.26.173 as permitted sender) client-ip=158.247.26.173;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@bf52x.hubspotemail.net header.s=hs2 header.b=SsXaCy0z;
+       dkim=pass header.i=@statnews.com header.s=hs1 header.b=JNRAVDWa;
+       spf=pass (google.com: domain of 1axb3gmh4hob9i5oqp8rwwr2ptge43c2izz8ea-ouchendans62=gmail.com@bf52x.hubspotemail.net designates 158.247.26.173 as permitted sender) smtp.mailfrom="1axb3gmh4hob9i5oqp8rwwr2ptge43c2izz8ea-ouchendans62=gmail.com@bf52x.hubspotemail.net";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=statnews.com
+Received: by 172.16.46.9 with SMTP id awd9wj8vrpxffpu5s78cuxw31cgu3e8raug5;
+        Sat, 27 May 2023 13:55:21 GMT
+DKIM-Signature: v=1; s=hs2; d=bf52x.hubspotemail.net; 
+        i=@bf52x.hubspotemail.net; 
+        h=sender:from:from:reply-to:to:to:cc:cc:subject:subject:list-unsubscribe:form-sub:feedback-id; 
+        a=rsa-sha256; c=relaxed/relaxed; 
+        bh=8mbxaSFarxvWbENXMceAJYbaGai/XA83yQe3cYGAKOA=; 
+        b=SsXaCy0zEYvDWN5ZfFC7PlU+0jEWsMaHIx2BebvVNgAsKr2KuGrlYWl02Y+C7D
+         CfYbdaO2120PbB/GeD1AMmah4WwksxB5NFEw6p3D8QKxV+xDTbgUbhmHliSsNza
+         VuHbURDDbSfwROABLtTUvytnjEhOxg1OinMezZtNG1z83ski1loT0sjDvcPKarv
+         Mh481aZsAaNZpH2P6rIV+ixrmc9jWgg3tjB9t9z5a1RcUHz1jfvs429OOy+K2og
+         KuatEHwh8Jy6NrmsMK4p4NxbpjpPfUAIf607eOyFFkrnDRZx1ofXQD85+f0Ub4r
+         pnsAGkbmVyupVXJCCnqW9nPTYoAw==; q=dns/txt; t=1685195721; 
+        x=1685368521;
+DKIM-Signature: v=1; s=hs1; d=statnews.com; i=@statnews.com; 
+        h=sender:from:from:reply-to:to:to:cc:cc:subject:subject:list-unsubscribe:form-sub:feedback-id; 
+        a=rsa-sha256; c=relaxed/relaxed; 
+        bh=8mbxaSFarxvWbENXMceAJYbaGai/XA83yQe3cYGAKOA=; 
+        b=JNRAVDWaRya8KRLb2TtXejsBc1dlurmB0zpUglDE9Xs2SQ3vLsAidzCs4r2tWP
+         QWQZ1rziYOhXmWij0CHNHM6OIg6I0aTzResHSqXfrcUORARVROHvM2BgJ2HWoyf
+         0fGg4Rac2JkkoinHrFgQnZoRr0yqdHTM9v629jNoM/PiISTzO07fqeDtpuj8i0k
+         WldlwoQBH82/2PQZGBRKlxzJlEZmE2ldmgvUu1oJZIptkiuXITNecLZTWJm6gNS
+         Mkrt8p+WCsS89VgZ70To4KDympMNOwSPRepiOxBAPc2JqX3p9vmjj3+7zFS+R5Y
+         Dod4cUXf8hfBVLnExtWKrkbNMtzw==; q=dns/txt; t=1685195721; 
+        x=1685368521;
+Return-Path: <1axb3gmh4hob9i5oqp8rwwr2ptge43c2izz8ea-ouchendans62=gmail.com@bf52x.hubspotemail.net>
+X-HS-Cid: 1axfu62wswg0v40gtrhaqr11neavkxc07hn60i
+List-Unsubscribe: <mailto:1axdfhze7n394ssagqhyb4ovwwwysx5294qt0y-ouchendans62=gmail.com@bf52x.hubspotemail.net?subject=unsubscribe>
+Date: Sat, 27 May 2023 09:55:21 -0400
+From: STAT <subscribers@statnews.com>
+Reply-To: subscribers@statnews.com
+To: ouchendans62@gmail.com
+Message-ID: <1685195721018.c105df72-c613-433e-8777-a56d91fa7fc3@bf52x.hubspotemail.net>
+Subject: Please verify your email address
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_2600462_1705073462.1685195721305"
+Form-Sub: v=1; ip=none
+Precedence: bulk
+X-Report-Abuse-To: abuse@hubspot.com (see
+ https://policy.hubspot.com/abuse-complaints)
+Feedback-ID: aeb9e3m:aieailg5:aib1s:HubSpot
+
+------=_Part_2600462_1705073462.1685195721305
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Verify your email address
+
+Click the link below to verify your email address and start receiving email=
+ newsletters from STAT
+
+VERIFY EMAIL
+(https://marketing.statnews.com/e3t/Ctc/LV+113/cp47z04/VWSsbQ4bsL35W2hnfPJ4=
+0bjJ1W76My974_3cHfN26s6055js7hV3Zsc37CgZyKW7MSZlH3rtMJkW8zt1mP48hM5HN73XGbg=
+6-PPSW8_Hkw_5yhNVvN1pNdHWbcdGXN8W2npg379VGN4Zb5WRtcKPvW221J2G5Q0HzGW4yqdWP1=
+M3nV9VcLQyg8tRVcpW5VkDkt2QPkYYW7N4Mn53J1qTlW4qBvp0484TqVVDZ_5T4N6GQ2W897H72=
+6PM6NpW6RrWxs4pCywVW5p3hWx657wQcW1Lg_R07Qj1kLW8W7vKt5C1gM_N62hM-Hh5155W5DMt=
+m67L3XgtW1RtWD18KNxV3Vj7PzM5KXhzHW5R8KS26TrgdQVw4VlQ7hZgtDW8X8Jtq4rzhK6VQ9j=
+C166HymcN7NNFstRDN4-W5wF3Gj7mlNnwW3nDYTX1rxl8wMwZcqMp-lD1W1rh_gp86JFbxW2-zW=
+kM6myJNgW74shWJ4c3R09W3l5zxy5RJwJwN7fJvkH3F2pdW4tB_gL4chCmvW10CjKL8ZJzYd38B=
+w1 )
+
+If you didn't sign up for emails from STAT, you can disregard this message.=
+ For assistance, contact subscribers@statnews.com (mailto:subscribers@statn=
+ews.com) .
+
+Stat_Logo_Black (https://marketing.statnews.com/e3t/Ctc/LV+113/cp47z04/VWSs=
+bQ4bsL35W2hnfPJ40bjJ1W76My974_3cHfN26s5_Q3kWDQV1-WJV7CgHrrV4tp517dL9F1W63Md=
+nW1crkFvW6fT3Gm4Lx8zKW9flXfQ5b80r_W4pPlbv3Y8D6ZW8VnRZL1N5xHxW6NStqh1J-KYsW1=
+nnLZQ8mrHwWN7YjnlFZMNK6W6c2BVY55RKmjN8-Jk-F563nDVFw1_v3VkXFlW4rVT_R24ctnyW3=
+l9_-f12h28lW264qx693pT9sW9gzrpZ793ckSVQW3qr7TrksHW7SN_3S99TSjsW7WLW3K2fvFvk=
+V_VyhP1bHkr63mV-1 )
+
+STAT, 1 Exchange Place, Suite 201, Boston, MA 02109
+
+Unsubscribe (https://marketing.statnews.com/hs/manage-preferences/unsubscri=
+be-all?languagePreference=3Den&d=3DVnfmBY7l9lGjVRgq3t3Q_1_bW3zd-8q1S86DVW3z=
+bV8Y3Fbt5qW52678G1fkvKFVkhZ2t5fRLfBW6T0mjH6ZXXjHW6kcrh472QWQCW5m_mVL1PRjpYW=
+7jDJDW14LKqXW7n6Rkn5VTwdRW5WmRMc5cS_Fn0&v=3D3&_hsenc=3Dp2ANqtz-9qUXNvWWESEA=
+wWXT-AwQpRMIz4JgTAIXm6SHTJzAasfdf2Y9pTiYuq2eo7DzLpSpSvyT-6cdUFk1rFugE7cdaPW=
+F-Z-g&_hsmi=3D242252455 )
+
+Manage preferences (https://marketing.statnews.com/hs/manage-preferences/un=
+subscribe?languagePreference=3Den&d=3DVnfmBY7l9lGjVRgq3t3Q_1_bW3zd-8q1S86DV=
+W3zbV8Y3Fbt5qW52678G1fkvKFVkhZ2t5fRLfBW6T0mjH6ZXXjHW6kcrh472QWQCW5m_mVL1PRj=
+pYW7jDJDW14LKqXW7n6Rkn5VTwdRW5WmRMc5cS_Fn0&v=3D3&_hsenc=3Dp2ANqtz-9qUXNvWWE=
+SEAwWXT-AwQpRMIz4JgTAIXm6SHTJzAasfdf2Y9pTiYuq2eo7DzLpSpSvyT-6cdUFk1rFugE7cd=
+aPWF-Z-g&_hsmi=3D242252455 )
+------=_Part_2600462_1705073462.1685195721305
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www=
+.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"http://www.w3=
+.org/1999/xhtml" xmlns:o=3D"urn:schemas-microsoft-com:office:office" xmlns:=
+v=3D"urn:schemas-microsoft-com:vml" lang=3D"en"><head>
+    <title>Please verify your email address</title>
+    <meta property=3D"og:title" content=3D"Please verify your email address=
+">
+    <meta name=3D"twitter:title" content=3D"Please verify your email addres=
+s">
+   =20
+   =20
+   =20
+<meta name=3D"x-apple-disable-message-reformatting">
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0">
+    <!--[if gte mso 9]>
+  <xml>
+      <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+  </xml>
+ =20
+  <style>
+    ul > li {
+      text-indent: -1em;
+    }
+  </style>
+<![endif]-->
+<!--[if mso]>
+<style type=3D"text/css">
+ body, td {font-family: Arial, Helvetica, sans-serif;}=20
+ .hse-body-wrapper-table {background-color: #f0f1f2}
+</style>
+<![endif]-->
+   =20
+     =20
+   =20
+  <meta name=3D"generator" content=3D"HubSpot"><meta property=3D"og:url" co=
+ntent=3D"https://marketing.statnews.com/-temporary-slug-4aa8af56-cc3f-4d47-=
+9899-37337500e0d0"><meta name=3D"robots" content=3D"noindex,follow"><!--[if=
+ !((mso)|(IE))]><!-- --><style type=3D"text/css">.moz-text-html .hse-column=
+-container{max-width:600px !important;width:600px !important}
+.moz-text-html .hse-column{display:table-cell;vertical-align:top}.moz-text-=
+html .hse-section .hse-size-12{max-width:600px !important;width:600px !impo=
+rtant}
+[owa] .hse-column-container{max-width:600px !important;width:600px !importa=
+nt}[owa] .hse-column{display:table-cell;vertical-align:top}
+[owa] .hse-section .hse-size-12{max-width:600px !important;width:600px !imp=
+ortant}
+@media only screen and (min-width:640px){.hse-column-container{max-width:60=
+0px !important;width:600px !important}
+.hse-column{display:table-cell;vertical-align:top}.hse-section .hse-size-12=
+{max-width:600px !important;width:600px !important}
+}@media only screen and (max-width:639px){img.stretch-on-mobile,.hs_rss_ema=
+il_entries_table img,.hs-stretch-cta .hs-cta-img{height:auto !important;wid=
+th:100% !important}
+.display_block_on_small_screens{display:block}.hs_padded{padding-left:20px =
+!important;padding-right:20px !important}
+}</style><!--<![endif]--><style type=3D"text/css">body[data-outlook-cycle] =
+img.stretch-on-mobile,body[data-outlook-cycle] .hs_rss_email_entries_table =
+img{height:auto !important;width:100% !important}
+body[data-outlook-cycle] .hs_padded{padding-left:20px !important;padding-ri=
+ght:20px !important}
+a[x-apple-data-detectors]{color:inherit !important;text-decoration:none !im=
+portant;font-size:inherit !important;font-family:inherit !important;font-we=
+ight:inherit !important;line-height:inherit !important}
+#outlook a{padding:0}.yshortcuts a{border-bottom:none !important}a{text-dec=
+oration:underline}
+.ExternalClass{width:100%}.ExternalClass,.ExternalClass p,.ExternalClass td=
+,.ExternalClass div,.ExternalClass span,.ExternalClass font{line-height:100=
+%}
+p{margin:0}body{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-we=
+bkit-font-smoothing:antialiased;moz-osx-font-smoothing:grayscale}</style></=
+head>
+  <body bgcolor=3D"#f0f1f2" style=3D"margin:0 !important; padding:0 !import=
+ant; font-family:Arial, sans-serif; font-size:15px; color:#001214; word-bre=
+ak:break-word">
+   =20
+   =20
+<!--[if gte mso 9]>
+<v:background xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"t">
+ =20
+    <v:fill type=3D"tile" size=3D"100%,100%"  color=3D"#ffffff"/>
+ =20
+</v:background>
+<![endif]-->
+    <div class=3D"hse-body-background" style=3D"background-color:#f0f1f2" b=
+gcolor=3D"#f0f1f2">
+      <table role=3D"presentation" class=3D"hse-body-wrapper-table" cellpad=
+ding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !important; border-c=
+ollapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; margin:0; pad=
+ding:0; width:100% !important; min-width:320px !important; height:100% !imp=
+ortant" width=3D"100%" height=3D"100%">
+        <tbody><tr>
+          <td class=3D"hse-body-wrapper-td" valign=3D"top" style=3D"border-=
+collapse:collapse; mso-line-height-rule:exactly; font-family:Arial, sans-se=
+rif; font-size:15px; color:#001214; word-break:break-word">
+            <div id=3D"hs_cos_wrapper_main" class=3D"hs_cos_wrapper hs_cos_=
+wrapper_widget hs_cos_wrapper_type_dnd_area" style=3D"color: inherit; font-=
+size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget" d=
+ata-hs-cos-type=3D"dnd_area">  <div id=3D"section-1" class=3D"hse-section h=
+se-section-first hse-section-last" style=3D"padding-left:10px; padding-righ=
+t:10px; padding-top:20px; padding-bottom:20px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0; background-color:#ffffff" bgcolor=3D"#ffffff">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:600px">
+<![endif]-->
+<div id=3D"column-1-0" class=3D"hse-column hse-size-12">
+  <div id=3D"hs_cos_wrapper_module_16740034684578" class=3D"hs_cos_wrapper =
+hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; =
+font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widg=
+et" data-hs-cos-type=3D"module"><p style=3D"mso-line-height-rule:exactly; b=
+order-top:solid 5px #1fadb6; color:white; font-size:1px">
+  &nbsp;
+</p></div>
+<div id=3D"hs_cos_wrapper_module_16740034107686" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+=09
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !important; bord=
+er-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt">
+    <tbody>
+        <tr>
+            <td align=3D"left" valign=3D"top" style=3D"border-collapse:coll=
+apse; mso-line-height-rule:exactly; font-family:Arial, sans-serif; color:#0=
+01214; word-break:break-word; text-align:left; padding:20px; font-size:0px"=
+>
+               =20
+                <img alt=3D"Stat_Logo_Black" src=3D"https://marketing.statn=
+ews.com/hs-fs/hubfs/email-templates/misc/Stat_Logo_Black.png?width=3D146&am=
+p;upscale=3Dtrue&amp;name=3DStat_Logo_Black.png" style=3D"outline:none; tex=
+t-decoration:none; -ms-interpolation-mode:bicubic; max-width:100%; font-siz=
+e:16px" width=3D"73" align=3D"middle" srcset=3D"https://marketing.statnews.=
+com/hs-fs/hubfs/email-templates/misc/Stat_Logo_Black.png?upscale=3Dtrue&amp=
+;width=3D146&amp;upscale=3Dtrue&amp;name=3DStat_Logo_Black.png 73w, https:/=
+/marketing.statnews.com/hs-fs/hubfs/email-templates/misc/Stat_Logo_Black.pn=
+g?upscale=3Dtrue&amp;width=3D292&amp;upscale=3Dtrue&amp;name=3DStat_Logo_Bl=
+ack.png 146w" sizes=3D"(max-width: 73px) 100vw, 73px">
+               =20
+            </td>
+        </tr>
+    </tbody>
+</table></div>
+<div id=3D"hs_cos_wrapper_module_16740033993885" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<!--[if gte mso 9]>
+<div style=3D"line-height: 0; font-size: 0px">
+  <v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" stroke=3D=
+"false" style=3D"width:600px; height:2pt;" fillcolor=3D"none">
+    <v:fill type=3D"tile"/>
+    <v:textbox inset=3D"0,0,0,0">
+      <div>
+<![endif]-->
+<table role=3D"presentation" width=3D"100%" align=3D"center" border=3D"0" s=
+tyle=3D"position:relative; top:-1px; min-width:20px; width:100%; max-width:=
+100%; border-spacing:0; mso-table-lspace:0pt; mso-table-rspace:0pt; border-=
+collapse:collapse; font-size:1px">
+  <tbody><tr>
+   =20
+   =20
+   =20
+    <td width=3D"100%" valign=3D"middle" style=3D"border-collapse:collapse;=
+ mso-line-height-rule:exactly; font-family:Arial, sans-serif; font-size:15p=
+x; color:#001214; word-break:break-word; line-height:0; border:transparent;=
+ border-bottom:1px solid #f0f1f2; mso-border-bottom-alt:2pt solid #f0f1f2; =
+border-bottom-width:1px"><!--[if mso 16]>&nbsp;<![endif]--></td>
+   =20
+   =20
+  </tr>
+</tbody></table>
+<!--[if gte mso 9]></div></v:textbox></v:rect></div><![endif]--></div>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Arial, sans-serif; font-size:15px; color:#001214; word-break:break-word; pa=
+dding:25px 20px 10px"><div id=3D"hs_cos_wrapper_module_16740033764174" clas=
+s=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=
+=3D"color: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-=
+general-type=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs_cos_wrapp=
+er_module_16740033764174_" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs=
+_cos_wrapper_type_rich_text" style=3D"color: inherit; font-size: inherit; l=
+ine-height: inherit;" data-hs-cos-general-type=3D"widget" data-hs-cos-type=
+=3D"rich_text"><h1 style=3D"mso-line-height-rule:exactly; font-size:28px; l=
+ine-height:150%; text-align:center; max-width:450px; margin:0 auto" align=
+=3D"center"><span style=3D"font-family: Arial, sans-serif;">Verify your ema=
+il address</span></h1>
+<p style=3D"mso-line-height-rule:exactly; font-size:18px; line-height:150%;=
+ text-align:center; max-width:450px; margin:0 auto" align=3D"center"><span =
+style=3D"font-family: Georgia, serif;">Click the link below to verify your =
+email address and start receiving <span style=3D"font-weight: bold;">email =
+newsletters</span> from STAT</span></p></div></div></td></tr></tbody></tabl=
+e>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Arial, sans-serif; font-size:15px; color:#001214; word-break:break-word; pa=
+dding:10px 20px"><div id=3D"hs_cos_wrapper_module_16740033094093" class=3D"=
+hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"c=
+olor: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-gener=
+al-type=3D"widget" data-hs-cos-type=3D"module">
+ =20
+ =20
+   =20
+ =20
+ =20
+ =20
+  <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+role=3D"presentation" style=3D"border-spacing:0 !important; mso-table-lspac=
+e:0pt; mso-table-rspace:0pt; border-collapse:separate!important">
+    <tbody><tr>
+        <!--[if mso]>
+      <td align=3D"center" valign=3D"middle" bgcolor=3D"#1fadb6" role=3D"pr=
+esentation"  valign=3D"middle" style=3D"border-radius:0px;cursor:auto;backg=
+round-color:#1fadb6;padding:12px 18px;">
+    <![endif]-->
+    <!--[if !mso]><!-- -->
+      <td align=3D"center" valign=3D"middle" bgcolor=3D"#1fadb6" role=3D"pr=
+esentation" style=3D"border-collapse:collapse; mso-line-height-rule:exactly=
+; font-family:Arial, sans-serif; font-size:15px; color:#001214; word-break:=
+break-word; border-radius:0px; cursor:auto; background-color:#1fadb6">
+   <!--<![endif]-->
+        <a href=3D"https://marketing.statnews.com/e3t/Ctc/LV+113/cp47z04/VW=
+SsbQ4bsL35W2hnfPJ40bjJ1W76My974_3cHfN26s6055kh4yV3Zsc37CgYyxW8XMKrM7WBBH0W1=
+kXJwV3tQlg7W7LS0HH7mrdhNN4g9R8dlN_R_W2Vq9nD2hq8rLW4zdSkc8Vh4STW8Db9SD8fc9t7=
+W21WjJQ2ZPzQdW42gXzc246JQtW7dgBFS2sBHh2W6kt-VB1k7JBQW8lMJRc368Z6lW3Tf51b2Yc=
+s3JMnFvjFXsCrmW5tWtht3FHQjYW3Ym83V2_8sGzW3zyDZZ52TtJWW10m5XP4bPDKBW5fK1PR1C=
+0mCLV3-hjC8wKX6PW8vHdK2258P_jW8F-q-q32bZ7ZW712nb56CZFxdW7g7qSC1Th_gpW8-YylG=
+3RbyQkN8-ktcTGMjRqW19y2tF4Cg6GqW2TBnDW7FmGN1W6yydkS23czZhW2nlWvF8r2sgqW6bCn=
+CN2yJGSdW5Dk5D72Zz_k_W6JY2C871WtBlW2Rbsnd72_J5dW6MtTz_9lTlx4W6PjmLF4zyBBRW4=
+_RHSG1sg8lyW87ssRX7SP7kF3mR31" target=3D"_blank" style=3D"color:#00a4bd; ms=
+o-line-height-rule:exactly; font-size:16px; font-family:Arial, sans-serif; =
+Margin:0; text-transform:none; text-decoration:none; padding:12px 18px; dis=
+play:block" data-hs-link-id=3D"0">
+          <strong style=3D"color:#ffffff;font-weight:bold;text-decoration:n=
+one;font-style:normal;">VERIFY EMAIL</strong>
+        </a>
+      </td>
+    </tr>
+  </tbody></table>
+</div></td></tr></tbody></table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Arial, sans-serif; font-size:15px; color:#001214; word-break:break-word; pa=
+dding:15px 20px 35px"><div id=3D"hs_cos_wrapper_module-1-0-0" class=3D"hs_c=
+os_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color=
+: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-general-t=
+ype=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs_cos_wrapper_module=
+-1-0-0_" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_=
+rich_text" style=3D"color: inherit; font-size: inherit; line-height: inheri=
+t;" data-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"rich_text"><p s=
+tyle=3D"mso-line-height-rule:exactly; line-height:175%; margin-bottom:10px;=
+ text-align:center" align=3D"center"><span style=3D"font-family: Georgia, s=
+erif; color: #6a7580;">If you didn't sign up for emails from STAT, you can =
+disregard this message. For assistance, contact <a href=3D"mailto:subscribe=
+rs@statnews.com" rel=3D"noopener" style=3D"mso-line-height-rule:exactly; co=
+lor:#1fadb6" data-hs-link-id=3D"0" target=3D"_blank">subscribers@statnews.c=
+om</a>.</span></p></div></div></td></tr></tbody></table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Arial, sans-serif; font-size:15px; color:#001214; word-break:break-word; pa=
+dding:10px 20px"><div id=3D"hs_cos_wrapper_module_16740032168482" class=3D"=
+hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"c=
+olor: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-gener=
+al-type=3D"widget" data-hs-cos-type=3D"module">
+<!--[if gte mso 9]>
+<div style=3D"line-height: 0; font-size: 0px">
+  <v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" stroke=3D=
+"false" style=3D"width:560px; height:2pt;" fillcolor=3D"none">
+    <v:fill type=3D"tile"/>
+    <v:textbox inset=3D"0,0,0,0">
+      <div>
+<![endif]-->
+<table role=3D"presentation" width=3D"100%" align=3D"center" border=3D"0" s=
+tyle=3D"position:relative; top:-1px; min-width:20px; width:100%; max-width:=
+100%; border-spacing:0; mso-table-lspace:0pt; mso-table-rspace:0pt; border-=
+collapse:collapse; font-size:1px">
+  <tbody><tr>
+   =20
+   =20
+   =20
+    <td width=3D"100%" valign=3D"middle" style=3D"border-collapse:collapse;=
+ mso-line-height-rule:exactly; font-family:Arial, sans-serif; font-size:15p=
+x; color:#001214; word-break:break-word; line-height:0; border:transparent;=
+ border-bottom:1px solid #f0f1f2; mso-border-bottom-alt:2pt solid #f0f1f2; =
+border-bottom-width:1px"><!--[if mso 16]>&nbsp;<![endif]--></td>
+   =20
+   =20
+  </tr>
+</tbody></table>
+<!--[if gte mso 9]></div></v:textbox></v:rect></div><![endif]--></div></td>=
+</tr></tbody></table>
+<div id=3D"hs_cos_wrapper_module_16740032043871" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+=09
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !important; bord=
+er-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt">
+    <tbody>
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"border-collapse:co=
+llapse; mso-line-height-rule:exactly; font-family:Arial, sans-serif; color:=
+#001214; word-break:break-word; text-align:center; padding:10px 20px; font-=
+size:0px">
+               =20
+                    <a href=3D"https://marketing.statnews.com/e3t/Ctc/LV+11=
+3/cp47z04/VWSsbQ4bsL35W2hnfPJ40bjJ1W76My974_3cHfN26s5_Q3lLB3V1-WJV7CgLGjW2_=
+lDXB57m3pjW56bf4f6sjPjQW1dgmP94mMlP4W2qZRSK2TWgsbW3F7K262CHjDNW6tbpPh6Zh86Q=
+W2VDgsL3682vRN75pRwMsRlWcW530vh75w22PNW8tz4mG96K3FXW8RBdtp2fKMJJW33f_0-441H=
+kGW3DTDcK2GzWM1W2Sb8_X1NB0DHN88Wz8sDNg85W2N-RXH3xdSdDW6SggnR16Q8QDVWWj-47HF=
+jjqVXZft86bldFvW8KMMTh2PS_v53cY_1" target=3D"_blank" style=3D"color:#00a4bd=
+; mso-line-height-rule:exactly" data-hs-link-id=3D"0">
+               =20
+                <img alt=3D"Stat_Logo_Black" src=3D"https://marketing.statn=
+ews.com/hs-fs/hubfs/email-templates/misc/Stat_Logo_Black.png?width=3D146&am=
+p;upscale=3Dtrue&amp;name=3DStat_Logo_Black.png" style=3D"outline:none; tex=
+t-decoration:none; -ms-interpolation-mode:bicubic; border:none; max-width:1=
+00%; font-size:16px" width=3D"73" align=3D"middle" srcset=3D"https://market=
+ing.statnews.com/hs-fs/hubfs/email-templates/misc/Stat_Logo_Black.png?upsca=
+le=3Dtrue&amp;width=3D146&amp;upscale=3Dtrue&amp;name=3DStat_Logo_Black.png=
+ 73w, https://marketing.statnews.com/hs-fs/hubfs/email-templates/misc/Stat_=
+Logo_Black.png?upscale=3Dtrue&amp;width=3D292&amp;upscale=3Dtrue&amp;name=
+=3DStat_Logo_Black.png 146w" sizes=3D"(max-width: 73px) 100vw, 73px">
+               =20
+                    </a>
+               =20
+            </td>
+        </tr>
+    </tbody>
+</table></div>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td style=3D"border-collap=
+se:collapse; mso-line-height-rule:exactly; font-family:Arial, sans-serif; f=
+ont-size:15px; color:#001214; word-break:break-word; padding:0px 0px 25px">=
+<div id=3D"hs_cos_wrapper_module-2-0-0" class=3D"hs_cos_wrapper hs_cos_wrap=
+per_widget hs_cos_wrapper_type_module" style=3D"color: inherit; font-size: =
+inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget" data-hs=
+-cos-type=3D"module">
+ =20
+ =20
+ =20
+ =20
+ =20
+ =20
+ =20
+<table role=3D"presentation" class=3D"hse-footer hse-secondary" width=3D"10=
+0%" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !importan=
+t; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; fo=
+nt-family:Arial, sans-serif; font-size:12px; line-height:135%; color:#23496=
+d; margin-bottom:0; padding:0">
+    <tbody>
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"border-collapse:co=
+llapse; mso-line-height-rule:exactly; font-family:Arial, sans-serif; font-s=
+ize:15px; color:#001214; word-break:break-word; text-align:center; margin-b=
+ottom:0; line-height:135%; padding:10px 20px">
+               =20
+                <p style=3D"mso-line-height-rule:exactly; font-family:Arial=
+, sans-serif; font-size:12px; font-weight:normal; text-decoration:none; fon=
+t-style:normal; color:#6a7580; direction:lrt" dir=3D"lrt">
+                  STAT, 1 Exchange Place, Suite 201, Boston, MA 02109
+                </p>
+                <p style=3D"mso-line-height-rule:exactly">
+                 =20
+                  <a data-unsubscribe=3D"true" href=3D"https://marketing.st=
+atnews.com/hs/manage-preferences/unsubscribe-all?languagePreference=3Den&am=
+p;d=3DVnfmBY7l9lGjVRgq3t3Q_1_bW3zd-8q1S86DVW3zbV8Y3Fbt5qW52678G1fkvKFVkhZ2t=
+5fRLfBW6T0mjH6ZXXjHW6kcrh472QWQCW5m_mVL1PRjpYW7jDJDW14LKqXW7n6Rkn5VTwdRW5Wm=
+RMc5cS_Fn0&amp;v=3D3&amp;utm_source=3Dhs_automation&amp;utm_medium=3Demail&=
+amp;utm_content=3D242252455&amp;_hsenc=3Dp2ANqtz-9-dkei0SLxHXhD0--Ag1oqyC_t=
+CSkjmSfzVEFN2vICBbf6qOq2QMoNMmb3PjxiGtjsh4hNZYqhAqHobuzfAX_uPuvPNw&amp;_hsm=
+i=3D242252455" style=3D"mso-line-height-rule:exactly; font-family:Helvetica=
+,Arial,sans-serif; font-size:12px; color:#1fadb6; font-weight:normal; text-=
+decoration:underline; font-style:normal" data-hs-link-id=3D"0" target=3D"_b=
+lank">Unsubscribe</a>
+                 =20
+                  <a data-unsubscribe=3D"true" href=3D"https://marketing.st=
+atnews.com/hs/manage-preferences/unsubscribe?languagePreference=3Den&amp;d=
+=3DVnfmBY7l9lGjVRgq3t3Q_1_bW3zd-8q1S86DVW3zbV8Y3Fbt5qW52678G1fkvKFVkhZ2t5fR=
+LfBW6T0mjH6ZXXjHW6kcrh472QWQCW5m_mVL1PRjpYW7jDJDW14LKqXW7n6Rkn5VTwdRW5WmRMc=
+5cS_Fn0&amp;v=3D3&amp;utm_source=3Dhs_automation&amp;utm_medium=3Demail&amp=
+;utm_content=3D242252455&amp;_hsenc=3Dp2ANqtz-9-dkei0SLxHXhD0--Ag1oqyC_tCSk=
+jmSfzVEFN2vICBbf6qOq2QMoNMmb3PjxiGtjsh4hNZYqhAqHobuzfAX_uPuvPNw&amp;_hsmi=
+=3D242252455" style=3D"mso-line-height-rule:exactly; font-family:Helvetica,=
+Arial,sans-serif; font-size:12px; color:#1fadb6; font-weight:normal; text-d=
+ecoration:underline; font-style:normal" data-hs-link-id=3D"0" target=3D"_bl=
+ank">Manage preferences</a>
+                 =20
+                </p>
+               =20
+            </td>
+        </tr>
+    </tbody>
+</table></div></td></tr></tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+</div>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+ =20
+<img src=3D"https://marketing.statnews.com/e3t/Cto/LV+113/cp47z04/VWSsbQ4bs=
+L35W2hnfPJ40bjJ1W76My974_3cHfW26s5Nc3CCsWP112" alt=3D"" width=3D"1" height=
+=3D"1" border=3D"0" style=3D"display:none!important;min-height:1px!importan=
+t;width:1px!important;border-width:0!important;margin-top:0!important;margi=
+n-bottom:0!important;margin-right:0!important;margin-left:0!important;paddi=
+ng-top:0!important;padding-bottom:0!important;padding-right:0!important;pad=
+ding-left:0!important"></body></html>
+------=_Part_2600462_1705073462.1685195721305--
+

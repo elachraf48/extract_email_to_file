@@ -1,0 +1,1342 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:9f5b:0:b0:2da:43c2:96f2 with SMTP id l27csp230777imf;
+        Sat, 27 May 2023 08:08:51 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ5uaIdcN67x6uYtCpgJ1lDji1K3+lWImUuayL7dR8EyDIOmVRpN/fdJEqmd6J4U5EIfBYK9
+X-Received: by 2002:a17:90a:138a:b0:253:572f:79ae with SMTP id i10-20020a17090a138a00b00253572f79aemr6674014pja.46.1685200130877;
+        Sat, 27 May 2023 08:08:50 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685200130; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ZIzVyKhgNpHVv7Op9fL03xD+35/e+pxa/HWTE/who6NOgKAG+pJRwntlJG7u9YzUp8
+         MsaNrZ6MV1fk2HLqZratAOunvwXyCQXKUqZBb8RigVS8n+AOmIgtrSeSg/av2kbU/NYP
+         VzC+R2vda7L5RQaokvke3jyIU1y7grq35DKxdZfqUYpRalzuvU1khZ5Pjm+F7iGx1TfT
+         XUJt++g8oMoV2AbCnR3/qFtFJBNUUunOm/LyNqjnN6fO7C8+W+9aYbf2KKi+lDicrlLR
+         ovmdIJnGwsgypkV6pvwY4PUJ6qN9lcjud98hy9+IfduemJQroDSzvr9lwEJo+FRnb8ZD
+         eU0w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:mime-version:subject:message-id:to:reply-to:from
+         :date:dkim-signature:dkim-signature;
+        bh=YN70w/QkD/ZdMGnFlK1l1IpzmJgBgwsi93eIQ4dSYwA=;
+        b=JlkVz382whLISJmuSomvnldyFNGVn1swLKVk3hHttxMsDPb1WwrjjS56M9Tt6ZuPFr
+         jmsSBvrUqSge/F57LDE2faXur53PlewoqXwZ3wlRmlLWc6ITOhYF3XvUkt3VwXyqISHq
+         Y8zEVlMWkTFTBNlLHabW1TeDknuE++wdBuruuirW8XfbU6aU2z3RcPfYs/3WkohT88/E
+         LXz4osSV22oL3qeGCZU02+qQGtOOBMx/Y0GRyApXW0ierB90Kf45gSEVdOW+lMFsrSve
+         dGVUl3a0Gdps9x1DmyYFkfNnLMlIwdg3QfJ4PVa2SOOWSLgi7nYUL3MOU3mz64Ae6bgw
+         SNFg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@info.politico.com header.s=m1 header.b=mYlq6I8Y;
+       dkim=pass header.i=@mktdns.com header.s=m1 header.b="qtO7Wxl/";
+       spf=pass (google.com: domain of 966-khf-533.0.577718.0.0.10992.9.1559707141-1@em-sj-77.mktomail.com designates 192.28.148.45 as permitted sender) smtp.mailfrom=966-KHF-533.0.577718.0.0.10992.9.1559707141-1@em-sj-77.mktomail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=info.politico.com
+Return-Path: <966-KHF-533.0.577718.0.0.10992.9.1559707141-1@em-sj-77.mktomail.com>
+Received: from leptospondylus.mktdns.com (leptospondylus.mktdns.com. [192.28.148.45])
+        by mx.google.com with ESMTPS id t9-20020a17090abc4900b002536b553afdsi4395494pjv.98.2023.05.27.08.08.50
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 27 May 2023 08:08:50 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 966-khf-533.0.577718.0.0.10992.9.1559707141-1@em-sj-77.mktomail.com designates 192.28.148.45 as permitted sender) client-ip=192.28.148.45;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@info.politico.com header.s=m1 header.b=mYlq6I8Y;
+       dkim=pass header.i=@mktdns.com header.s=m1 header.b="qtO7Wxl/";
+       spf=pass (google.com: domain of 966-khf-533.0.577718.0.0.10992.9.1559707141-1@em-sj-77.mktomail.com designates 192.28.148.45 as permitted sender) smtp.mailfrom=966-KHF-533.0.577718.0.0.10992.9.1559707141-1@em-sj-77.mktomail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=info.politico.com
+X-MSFBL: aAZAo4Q+cay/b32njfopdC7QE8CAUkS9maeLZYD9QTU=|eyJnIjoiYmctc2pkLTQ
+	wNiIsInUiOiI5NjYtS0hGLTUzMzowOjE2NTMzOjc1Nzg5OjA6MTA5OTI6OTo1Nzc
+	3MTg6MTU1OTcwNzE0MS0xIiwiciI6Im91Y2hlbmRhbnM2MkBnbWFpbC5jb20iLCJ
+	iIjoiZHZwLTE5Mi0yOC0xNDgtNDUifQ==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1685200130;
+	s=m1; d=info.politico.com; i=@info.politico.com;
+	h=Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=YN70w/QkD/ZdMGnFlK1l1IpzmJgBgwsi93eIQ4dSYwA=;
+	b=mYlq6I8YdppoITp6HocBZZ42MnT3ffBcSTCR7RoKz3FXnaTXYUvUJdcHC5UMh5bb
+	GcFUuKGQBiryscX4eiyPuXwFLyrXOcrq3KYQt95a6JN9mjvtJL1rxIdRF0uaHr6Jdr0
+	GWZPUlTovY8OVTkoXiKYHSx2sxoLF0OrWFNpvBMI=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1685200130;
+	s=m1; d=mktdns.com; i=@mktdns.com;
+	h=Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=YN70w/QkD/ZdMGnFlK1l1IpzmJgBgwsi93eIQ4dSYwA=;
+	b=qtO7Wxl/h54/2mtqKhKofz3hFxo/9GJqSA/kF9un3eesRpscjsjgUdnrNb5Lxk5l
+	ng5K2EIvDi5FIjJ6bBz1irAN71EkKN2+R7q7qQWDGogVa1FkN4Vgmo6TseUj+l3fS8Z
+	lc+gOWHwDXg8dcfCxgpOH2Pryx1L1OlcUQfDUdZ0=
+Date: Sat, 27 May 2023 10:08:50 -0500 (CDT)
+From: POLITICO <info@info.politico.com>
+Reply-To: info@info.politico.com
+To: ouchendans62@gmail.com
+Message-ID: <1613073175.9282966.1685200130554@sjmktmail-trigger1h.marketo.org>
+Subject: Thank you for subscribing to Women Rule
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_9282965_1250199722.1685200130554"
+X-Binding: bg-sjd-406
+X-MarketoID: 966-KHF-533:0:16533:75789:0:10992:9:577718:1559707141-1
+X-Mailfrom: 966-KHF-533.0.577718.0.0.10992.9.1559707141-1@em-sj-77.mktomail.com
+List-Unsubscribe: <mailto:PJDVU23FOBZV6NTNJVUHO2BWL4YF6YSHKBQW26JXNFGU6RLIN5WGK5LZKQ3DMNT2FVRE2PI=.577718.10992.9@unsub-sj.mktomail.com>
+X-MktArchive: false
+X-MSYS-API: {"options":{"open_tracking":false,"click_tracking":false}}
+X-MktMailDKIM: true
+
+------=_Part_9282965_1250199722.1685200130554
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Welcome to=C2=A0Women Rule
+Welcome to the Women Rule Community!
+=20
+Every Friday, go behind the scenes with the women reshaping politics, polic=
+y and power in Washington, and around the world. With expert policy analysi=
+s, incisive interviews, and revelatory recommendations on what to read and =
+who to watch, this is a must-read for executives, professionals, and rising=
+ leaders to understand how what happens today affects the future for women =
+and girls.
+
+Thanks for subscribing,
+Your Women Rule team
+
+
+Women Rule Live Events
+
+Women Rule monthly virtual programming covers women in power and the inters=
+ection of gender, politics, policy, the economy and democracy.
+Newsletter subscribers are provisionally registered for a POLITICO account.=
+ Complete your free registration by resetting <https://goto.politico.com/OT=
+Y2LUtIRi01MzMAAAGL_LoB9TuYbBIcSdgnINMTdP4jxL02XnFuq7gzPwZV6MpY3Ndz0SzAkRCWW=
+bDa4uKi9tm1lPM=3D> your password, and gain access to your preference center=
+.
+To unsubscribe from promotions about free Politico newsletters,=20
+click here <https://goto.politico.com/OTY2LUtIRi01MzMAAAGL_LoB9d3cANzO-zgY6=
+Tmxgj92-q-465L3RfambeWWGeJGw55PwzSs6WGTLdx1zoO2B5_XXG0=3D>.=20
+
+=20
+
+Do not reply to this message. This address is automated, unattended, and ca=
+nnot help with questions or requests.=20
+
+=20
+
+=20
+Privacy Policy <https://goto.politico.com/OTY2LUtIRi01MzMAAAGL_LoB9VHb_hyKm=
+Lj76awwsW50ZOc4fncU_5YLSTMa5pLMxr_1ITGTOvEQUuc0wyh7GWOpNCI=3D> |=20
+Terms & Conditions <https://goto.politico.com/OTY2LUtIRi01MzMAAAGL_LoB9fG67=
+ZzJ9INihrfwdgEZ3PUuQDxcBbcaU_wVG23e28xXcOLH8WbDPXGIvpL-WA2WVc8=3D> | Copyri=
+ght 2021. All Rights Reserved=20
+
+POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+
+.
+
+------=_Part_9282965_1250199722.1685200130554
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="width: 100%;">
+<head> 
+<!-- Marketo Variable Definitions -->     
+<!-- Main Banner Flat Text Image -->    
+<!-- Two Columns - Icon and Text -->                
+<!-- Full Image -->    
+<!-- Heading - One Line -->    
+<!-- Full Image Left Content Right -->         
+<!-- Full Image Right Content Left -->         
+<!-- Heading - Two Lines -->    
+<!-- Open Content -->    
+<!-- Two Columns - Image and Text -->               
+<!-- Dark Background Content and Button -->         
+<!-- Button Only -->       
+<!-- Footer Unsubscribe -->    
+<!-- Other Meta Tags --> 
+<!--[if gte mso 9]><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml><![endif]--> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" /> 
+<meta name="robots" content="noindex,nofollow" /> 
+<meta content="telephone=no" name="format-detection" /> 
+<!--[if mso]>
+		<style type='text/css'>
+		.primary-font {
+		font-family: Arial, sans-serif !important;
+		}
+		</style>
+		<![endif]--> 
+<!--[if mso]>
+		<style type='text/css'>
+		.secondary-font {
+		font-family: Arial, sans-serif !important;
+		}
+		</style>
+		<![endif]--> 
+<!--[if mso]>
+<style type='text/css'>
+.lato-font {
+font-family: Arial, sans-serif !important;
+}
+</style>
+<![endif]--> 
+<!-- Sans-serif --> 
+<!-- Serif --> 
+<!-- Monospace --> 
+<!-- Calligraphic --> 
+<style media="all">
+    /* CLIENT-SPECIFIC STYLES */
+
+    /* Outlook.com / Hotmail */
+    .ExternalClass {
+      width: 100%;
+    }
+    .ReadMsgBody,
+    .ExternalClass,
+    .ExternalClass p,
+    .ExternalClass span,
+    .ExternalClass font,
+    .ExternalClass td,
+    .ExternalClass div {
+      line-height: 100%;
+    }
+
+    /* OL07-10-13 "Read in browser link" */
+    #outlook a {
+      padding: 0;
+    }
+
+    /* Various OL fixes */
+    body{
+      -webkit-text-size-adjust:100%;
+      -ms-text-size-adjust:100%;
+    }
+
+    table {
+      mso-table-lspace:0pt;
+      mso-table-rspace:0pt;
+    }
+
+    img{
+      -ms-interpolation-mode: bicubic;
+    }
+
+    a.textlink {
+    color: #015da6; 
+  }
+
+  </style> 
+<style media="all">
+    @media only screen and (max-width: 600px) {
+      /*starttablet*/
+  
+  .mktoVideoThumbnail{
+  	width: 100% !important;
+  	height: auto!important;
+  	max-height:inherit!important;
+  	min-height:inherit!important;
+  }
+
+      .stack-tablet {
+        overflow: visible !important;
+        float: none !important;
+        mso-hide: none !important;
+        display: block !important;
+        max-height: none !important;
+      }
+
+      img.responsive_t {
+        width: 100% !important;
+        height: auto !important;
+        display: block;
+        max-width: none !important;
+      }
+
+      img.responsive {
+        max-width: none !important;
+      }
+
+      img.no_responsive {
+        max-width: 100% !important;
+      }
+
+      .full,
+      .t100 {
+        width: 450px !important;
+      }
+
+      .full.unboxed,
+      .t100.unboxed {
+        width: 100% !important;
+      }
+
+      .t10 {
+        width: 35px !important;
+      }
+
+      .t20 {
+        width: 80px !important;
+      }
+
+      .t30 {
+        width: 125px !important;
+      }
+
+      .t33 {
+        width: 138px !important;
+      }
+
+      .t40 {
+        width: 170px !important;
+      }
+
+      .unboxed.t40 {
+        width: 254px !important;
+      }
+
+      .t50 {
+        width: 215px !important;
+      }
+
+      .unboxed.t50 {
+        width: 320px !important;
+      }
+
+      .nogutter.t50 {
+        width: 225px !important;
+      }
+
+      .nogutter.unboxed.t50 {
+        width: 330px !important;
+      }
+
+      .t60 {
+        width: 260px !important;
+      }
+
+      .t70 {
+        width: 305px !important;
+      }
+
+      .t80 {
+        width: 350px !important;
+      }
+
+      .unboxed.t80 {
+        width: 518px !important;
+      }
+
+      .t33 {
+        width: 138px !important;
+      }
+
+      .t33.spaced {
+        width: 135px !important;
+      }
+
+      .spacer3col {
+        width: 20px !important;
+      }
+
+      .m_buttons5 .cell {
+        display: block;
+        width: 100%;
+      }
+
+      .m_buttons5 .cell .button {
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_footers5 .logo {
+        text-align: center;
+      }
+
+      .m_footers5 .logo img {
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+        display: inline-block;
+      }
+
+      .m_footers5 .pad table {
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_footers7 .tholder table {
+        margin-top: 0 !important;
+        margin-right: auto !important;
+        margin-bottom: 0 !important;
+        margin-left: auto !important;
+        float: none !important;
+      }
+
+      .m_footers8 .col1 table,
+      .m_footers8 .col2 table,
+      .m_footers8 .col3 table {
+        margin-top: 0 !important;
+        margin-right: auto !important;
+        margin-bottom: 0 !important;
+        margin-left: auto !important;
+        float: none !important;
+      }
+
+      .m_footers9 .col1 table,
+      .m_footers9 .col2 table,
+      .m_footers9 .col3 table {
+        margin-top: 0 !important;
+        margin-right: auto !important;
+        margin-bottom: 0 !important;
+        margin-left: auto !important;
+        float: none !important;
+      }
+
+      .m_headers1 .col1 table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_headers1 .col3 .links {
+        text-align: center !important;
+      }
+
+      .m_headers2 .col1 table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_headers2 .cta table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_headers3 .col1 table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_headers3 .cta table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_headers4 .col1.d70 {
+        width: 100% !important;
+      }
+
+      .m_headers4 .col2.d30 {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_headers5 .logo {
+        text-align: center;
+      }
+
+      .m_headers5 .logo img {
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+        display: inline-block;
+      }
+
+      .m_headers6 .logo,
+      .m_headers7 .logo {
+        text-align: center;
+      }
+
+      .m_headers6 .logo img,
+      .m_headers7 .logo img {
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_headers6 .col3 table,
+      .m_headers7 .col3 table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_headers6 .bordered {
+        border-top-style: none !important;
+        border-right-style: none !important;
+        border-bottom-style: none !important;
+        border-left-style: none !important;
+      }
+
+      .m_headers8 .col1 td,
+      .m_headers8 .col3 td {
+        text-align: center !important;
+      }
+
+      .m_headers8 .col2 td {
+        text-align: center;
+      }
+
+      .m_headers8 .col2 td img {
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_coupons1 .cta table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_coupons3 td {
+        text-align: center !important;
+      }
+
+      .m_coupons3 .cta table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_coupons4 td {
+        text-align: center;
+      }
+
+      .m_coupons4 .cta table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_products7 .col2 td {
+        padding-top: 0;
+        padding-right: 20px;
+        padding-bottom: 0;
+        padding-left: 20px;
+      }
+
+      .m_products9b .name {
+        text-align: right;
+      }
+
+      .m_products11 td.cta,
+      .m_products12 td.cta,
+      .m_products11 td.price,
+      .m_products12 td.price {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        text-align: left;
+      }
+
+      .m_products11 div.aligner,
+      .m_products12 div.aligner {
+        float: left;
+        margin-top: 10px;
+      }
+
+      .m_products16a .col1,
+      .m_products16b .col1 {
+        width: 50% !important;
+      }
+
+      .m_products16a .col2,
+      .m_products16b .col2 {
+        width: 50% !important;
+      }
+
+      .m_news1 .social {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_news1 .col2 table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_news7 .col2 td {
+        padding-top: 0;
+        padding-right: 20px;
+        padding-bottom: 0;
+        padding-left: 20px;
+      }
+
+      .m_team3 .name,
+      .m_team4 .name,
+      .m_team3 .role,
+      .m_team4 .role,
+      .m_team3 .text,
+      .m_team4 .text {
+        padding-top: 0;
+        padding-right: 20px;
+        padding-bottom: 0;
+        padding-left: 20px;
+      }
+
+      .m_team3 .bottom,
+      .m_team4 .bottom {
+        padding-top: 0;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+      }
+
+      .m_main-banners6 .module {
+        background-position: 20% 10%;
+      }
+
+      .m_main-banners6 .icon,
+      .m_main-banners6 .cta table,
+      .m_main-banners6 .image img {
+        float: left;
+      }
+
+      .m_main-banners6 .feature {
+        text-align: left;
+      }
+
+      .m_main-banners6 .col2 {
+        display: none;
+      }
+
+      .m_main-banners7 td {
+        text-align: center;
+      }
+
+      .m_main-banners7 .cta table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_main-banners12 td,
+      .m_main-banners13 td,
+      .m_main-banners14 td,
+      .m_main-banners15 td {
+        /*text-align: center; */
+      }
+
+      .m_main-banners12 .cta table,
+      .m_main-banners13 .cta table,
+      .m_main-banners14 .cta table,
+      .m_main-banners15 .cta table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      /*endtablet*/
+    }
+  </style> 
+<style media="all">
+    @media only screen and (max-width: 375px) {
+      /*startmobile*/
+
+      .stack-phone {
+        overflow: visible !important;
+        float: none !important;
+        mso-hide: none !important;
+        display: block !important;
+        max-height: none !important;
+      }
+
+      img.responsive_p {
+        width: 100% !important;
+        height: auto !important;
+        display: block;
+      }
+
+      img.no_responsive {
+        max-width: 100% !important;
+      }
+
+      .full,
+      .p100,
+      .p100.spaced {
+        width: 295px !important;
+      }
+
+      .full.unboxed,
+      .p100.unboxed {
+        width: 100% !important;
+      }
+
+      .p30 {
+        width: 78px !important;
+      }
+
+      .p33 {
+        width: 87px !important;
+      }
+
+      .p40 {
+        width: 108px !important;
+      }
+
+      .unboxed.p40 {
+        width: 140px !important;
+      }
+
+      .p50 {
+        width: 137px !important;
+      }
+
+      .p70 {
+        width: 196px !important;
+      }
+
+      .p80 {
+        width: 226px !important;
+      }
+
+      .unboxed.p80 {
+        width: 290px !important;
+      }
+
+      .p33 {
+        width: 87px !important;
+      }
+
+      .p33.spaced {
+        width: 84px !important;
+      }
+
+      .m_buttons4 .cell {
+        display: block;
+        width: 100%;
+      }
+
+      .m_buttons4 .cell .button {
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_footers8 .subcol,
+      .m_footers9 .subcol {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_footers6 .col1 table,
+      .m_footers6 .col2 table {
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+        float: none;
+      }
+
+      .m_headers0a .col td,
+      .m_headers0b .col td,
+      .m_headers0c .col td {
+        text-align: center !important;
+      }
+
+      .m_headers0a .col td img,
+      .m_headers0b .col td img,
+      .m_headers0c .col td img {
+        float: none !important;
+        margin-top: 0 !important;
+        margin-right: auto !important;
+        margin-bottom: 0 !important;
+        margin-left: auto !important;
+      }
+
+      .m_headers1a .col1 img {
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_headers1a .col2 .payoff {
+        text-align: center !important;
+      }
+
+      .m_headers2 tr.menu td {
+        display: block;
+        padding-top: 5px;
+        padding-right: 5px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+      }
+
+      .m_headers4 .logo {
+        text-align: center;
+      }
+
+      .m_headers4 .logo img {
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+        display: inline-block;
+      }
+
+      .m_headers4 .col2 table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_headers4 tr.menu td {
+        display: block;
+        padding-top: 5px;
+        padding-right: 5px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+      }
+
+      .m_products1 .col1 .cta table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_products1 .col2 table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_products9 td.padder,
+      .m_products9b td.padder,
+      .m_products10 td.padder,
+      .m_products10b td.padder,
+      .m_products9 td.sp,
+      .m_products9b td.sp,
+      .m_products10 td.sp,
+      .m_products10b td.sp {
+        display: none;
+      }
+
+      .m_products9 td.photo,
+      .m_products9b td.photo,
+      .m_products10 td.photo,
+      .m_products10b td.photo,
+      .m_products9 td.info,
+      .m_products9b td.info,
+      .m_products10 td.info,
+      .m_products10b td.info {
+        display: block;
+        width: 250px;
+        padding-left: 20px;
+      }
+
+      .m_products11 .col,
+      .m_products12 .col {
+        box-sizing: border-box;
+      }
+
+      .m_products11 td.data,
+      .m_products12 td.data,
+      .m_products11 td.img,
+      .m_products12 td.img {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+      }
+
+      .m_products11 td.img,
+      .m_products12 td.img {
+        height: 600px !important;
+        background-size: cover !important;
+      }
+
+      .m_products13 td.img,
+      .m_products14 td.img,
+      .m_products13 td.data,
+      .m_products14 td.data {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+      }
+
+      .m_products13 td.img,
+      .m_products14 td.img {
+        height: 400px;
+        background-position: center center !important;
+      }
+
+      .m_products16a .col1,
+      .m_products16b .col1 {
+        width: 100% !important;
+      }
+
+      .m_products16a .col1 .spacer.s1,
+      .m_products16b .col1 .spacer.s1 {
+        display: none;
+      }
+
+      .m_products16a .col2,
+      .m_products16b .col2 {
+        width: 100% !important;
+      }
+
+      .m_t_thead .quantity,
+      .m_t_thead .dottedside {
+        display: none;
+      }
+
+      .m_t_row .product {
+        width: 70% !important;
+      }
+
+      .m_t_row .quantity {
+        display: none;
+      }
+
+      .m_t_row .price {
+        width: 30% !important;
+      }
+
+      .m_t_total2 .cost,
+      .m_t_total2b .cost {
+        width: 70% !important;
+      }
+
+      .m_t_total2 .price,
+      .m_t_total2b .price {
+        width: 30% !important;
+      }
+
+      .m_t_element .label2,
+      .m_t_element .delivery,
+      .m_t_element .info2 {
+        display: none;
+      }
+
+      .m_t_element .info {
+        width: 100%;
+        text-align: left !important;
+      }
+
+      .m_t2_element .name {
+        width: 60% !important;
+      }
+
+      .m_t2_element .info {
+        width: 40% !important;
+        text-align: right !important;
+      }
+
+      .m_news1 .datebox table td {
+        display: block;
+      }
+
+      .m_news1 .spaces,
+      .m_news1 .bordered {
+        display: none !important;
+      }
+
+      .m_news1 .date {
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_news1 .title {
+        text-align: center;
+      }
+
+      .m_main-banners3 .col1 table,
+      .m_main-banners3 .col2 table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      .m_main-banners10 .row td {
+        display: block;
+      }
+
+      .m_main-banners10 .row td table {
+        float: none;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+
+      /*endmobile*/
+    }
+  </style> 
+<style media="all">
+    /*startdesktop*/
+
+    .ribbon:before,
+    .ribbon:after {
+      content: '';
+      position: absolute;
+      background-color: inherit;
+      width: 100%;
+      z-index: -1;
+      height: 100%;
+    }
+
+    .ribbon:before {
+      left: 0;
+      transform: skew(32deg);
+    }
+
+    .ribbon:after {
+      right: 0;
+      transform: skew(-32deg);
+    }
+
+    /*enddesktop*/
+  </style> 
+<style>
+    /*startcommon*/
+    @media only screen and (max-width: 600px) {
+      table.m_boxing{
+        width: 100% !important;
+      }
+    }
+    /*endcommon*/
+  </style> 
+</head> 
+<body bgcolor="#e3e3e4" style="width: 100%; min-width: 100%; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;"><style type="text/css">div#emailPreHeader{ display: none !important; }</style><div id="emailPreHeader" style="mso-hide:all; visibility:hidden; opacity:0; color:transparent; mso-line-height-rule:exactly; line-height:0; font-size:0px; overflow:hidden; border-width:0; display:none !important;">Welcome to Women Rule</div> 
+<!-- Outer table--> 
+<table class="full-container" width="100%" border="0" cellpadding="0" cellspacing="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt;"> 
+<tbody> 
+<tr> 
+<td class="outer" valign="top" align="center" style="mso-line-height-rule: exactly;word-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;border-collapse: collapse;margin-top: 0;margin-right: auto;margin-bottom: 0;margin-left: auto;background-color:#eeeeee;"> 
+<table class="m_boxing" id="boxing" width="600" border="0" cellpadding="0" cellspacing="0" align="center" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt;"> 
+<tbody> 
+<tr> 
+<td class="mktoContainer boxedbackground" id="template-wrapper" style="mso-line-height-rule: exactly; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse;">
+<table id="imageBanner" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt;" align="center" width="100%" cellspacing="0" cellpadding="0" border="0" class="mktoModule m_imageBanner"> 
+<tbody> 
+<tr> 
+<td class="module" style="mso-line-height-rule: exactly;word-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;border-collapse: collapse;background-color:#eeeeee;" valign="top" bgcolor="#eeeeee"> 
+<table class="full unboxed" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt; margin-top: 0; margin-right: auto; margin-bottom: 0; margin-left: auto; width: 600px;" align="center" width="600" cellspacing="0" cellpadding="0" border="0"> 
+<tbody> 
+<tr style="outline: medium none;"> 
+<td class="spacer s0" style="word-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;border-collapse: collapse;mso-line-height-rule: exactly;line-height:0px;font-size:0px;" height="0px">&nbsp;</td> 
+</tr> 
+<tr> 
+<td class="contents" style="mso-line-height-rule: exactly; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse;"> 
+<div style="display:inline-block" class="mktoImg responsive" id="mainBanner" mktolockimgsize="true" mktolockimgstyle="false"> 
+<a><img class="responsive" src="https://go.politico.com/rs/966-KHF-533/images/WELCOME_SERIES_EMAIL_HEADER_WR.png" style="text-decoration: none; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; outline: none; -ms-interpolation-mode: bicubic; line-height: 100%; max-width: 600px; display: block; height: auto; width: 100%;" alt="POLITICO West Wing Playbook" height="auto" width="600" /></a> 
+</div> </td> 
+</tr> 
+<tr style="outline: medium none;"> 
+<td class="spacer s1" style="word-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;border-collapse: collapse;mso-line-height-rule: exactly;line-height:0px;font-size:0px;" height="0px">&nbsp;</td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+</tbody> 
+</table>
+<table id="heading1b24869ce-97e1-41a3-9868-5da7f843bbfa" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt;" align="center" width="100%" cellspacing="0" cellpadding="0" border="0" class="mktoModule m_heading1"> 
+<tbody> 
+<tr> 
+<td class="module" style="mso-line-height-rule: exactly;word-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;border-collapse: collapse;background-color:#ffffff;" valign="top" bgcolor="#ffffff"> 
+<table class="full unboxed" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt; margin-top: 0; margin-right: auto; margin-bottom: 0; margin-left: auto; width: 600px;" align="center" width="600" cellspacing="0" cellpadding="0" border="0"> 
+<tbody> 
+<tr style="outline: none;"> 
+<td class="spacer s0" style="word-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;border-collapse: collapse;mso-line-height-rule: exactly;line-height:30px;font-size:30px;" height="30px">&nbsp;</td> 
+</tr> 
+<tr> 
+<td class="contents" style="mso-line-height-rule: exactly; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse;"> 
+<table class="col d100 t100 p100 unboxed" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt; width: 600px;" align="left" width="600"> 
+<tbody> 
+<tr style="outline: medium none;"> 
+<td class="primary-font title" style="border-collapse: collapse;mso-line-height-rule: exactly;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;word-break: break-word;font-family:Georgia,Times,'Times New Roman',serif;font-size: 24px;text-align: center;font-weight: bold;color: #333333; padding: 0 10px;"> 
+<div class="mktoText" id="title4b24869ce-97e1-41a3-9868-5da7f843bbfa"> 
+<span style="font-size: 22px;">Welcome to&nbsp;Women Rule</span> 
+</div></td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+<tr style="outline: medium none;"> 
+<td class="spacer s1" style="word-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;border-collapse: collapse;mso-line-height-rule: exactly;line-height:30px;font-size:30px;" height="30px">&nbsp;</td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+</tbody> 
+</table>
+<table id="text0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt; font-family: Georgia,Times,'Times New Roman',serif; color: #4b4d52; font-size: 14px; line-height: 21px;" align="center" width="100%" cellspacing="0" cellpadding="0" border="0" class="mktoModule m_text0"> 
+<tbody> 
+<tr> 
+<td class="module" style="mso-line-height-rule: exactly;word-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;border-collapse: collapse;background-color:#ffffff;" valign="top" bgcolor="#ffffff"> 
+<table class="full unboxed" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt; margin-top: 0; margin-right: auto; margin-bottom: 0; margin-left: auto; width: 600px;" align="center" width="600" cellspacing="0" cellpadding="0" border="0"> 
+<tbody> 
+<tr style="outline: medium none;"> 
+<td class="spacer s0" style="word-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;border-collapse: collapse;mso-line-height-rule: exactly;line-height:0px;font-size:0px;" height="0px">&nbsp;</td> 
+</tr> 
+<tr> 
+<td class="contents" style="mso-line-height-rule: exactly; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse;"> 
+<table class="col d100 t100 p100 unboxed" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt; width: 600px;" align="left" width="600"> 
+<tbody> 
+<tr> 
+<td class="secondary-font text" style="mso-line-height-rule: exactly;word-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;border-collapse: collapse; padding-top: 0; padding-right: 10px; padding-bottom: 0px; padding-left: 10px; font-family:Georgia,Times,'Times New Roman',serif;"> 
+<div class="mktoText" id="text8">
+ Welcome to the Women Rule Community! 
+<br /> 
+<br />Every Friday, go behind the scenes with the women reshaping politics, policy and power in Washington, and around the world. With expert policy analysis, incisive interviews, and revelatory recommendations on what to read and who to watch, this is a must-read for executives, professionals, and rising leaders to understand how what happens today affects the future for women and girls. 
+<br /> 
+<br />Thanks for subscribing, 
+<br />Your Women Rule team 
+<br /> 
+<br /> 
+<br /> 
+<strong>Women Rule Live Events</strong> 
+<br /> 
+<br />Women Rule monthly virtual programming covers women in power and the intersection of gender, politics, policy, the economy and democracy. 
+</div></td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+<tr> 
+<td class="spacer s1" style="word-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;border-collapse: collapse;mso-line-height-rule: exactly;line-height:1px;font-size:1px;" height="1px">&nbsp;</td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+</tbody> 
+</table>
+<table id="buttons1ff34c648-7f06-408d-8fb0-d586dd166509" style="border-spacing: 0px; border-collapse: collapse;" class="mktoModule m_buttons1" align="center" width="100%" cellspacing="0" cellpadding="0" border="0"> 
+<tbody> 
+<tr> 
+<td class="module" style="mso-line-height-rule: exactly;word-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;border-collapse: collapse;background-color:#ffffff;" valign="top" bgcolor="#ffffff"> 
+<table class="full unboxed" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt; margin-top: 0; margin-right: auto; margin-bottom: 0; margin-left: auto; width: 600px;" align="center" width="600" cellspacing="0" cellpadding="0" border="0"> 
+<tbody> 
+<tr style="outline: none;"> 
+<td class="spacer s0" style="word-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;border-collapse: collapse;mso-line-height-rule: exactly;line-height:30px;font-size:30px;" height="30px">&nbsp;</td> 
+</tr> 
+<tr> 
+<td class="contents" style="mso-line-height-rule: exactly; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse;"> 
+<table class="col d100 t100 p100 unboxed" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt; width: 600px; table-layout: fixed;" align="left" width="600"> 
+<tbody> 
+<tr style="outline: medium none;"> 
+<td class="cta" style="mso-line-height-rule: exactly; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse;"> 
+<table style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt; margin: 0 auto;" align="center" cellspacing="0" cellpadding="0" border="0"> 
+<tbody> 
+<tr> 
+<td style="mso-line-height-rule: exactly;border-collapse: collapse;hyphens: none;-moz-hyphens: none;-webkit-hyphens: none;word-break: break-word;-moz-border-radius: 20px;background-clip: padding-box;-webkit-background-clip: padding-box;-moz-background-clip: padding;border-radius: 20px;-webkit-border-radius: 20px;background-color:##015da6;" align="center" bgcolor="#015da6"><a class="primary-font button" href=
+"https://goto.politico.com/OTY2LUtIRi01MzMAAAGL_LoB9ZOGjH7AI6qxM0sfeQaGzN9KtAczjjKQC9-Dqd6aaUEyN9e_BlcxsIy5nPgZV6pc8ZM=" target="_blank" style="font-size: 14px;font-family:Georgia,Times,'Times New Roman',serif;text-decoration: none;padding-top: 0.6em;padding-bottom: 0.6em;padding-left: 15px;padding-right: 15px;font-weight: 400;background-clip: padding-box;-webkit-background-clip: padding-box;-moz-background-clip: padding;border-radius: 20px;-moz-border-radius: 
+20px;-webkit-border-radius: 20px;color: #ffffff;display: inline-block;border-top-style: solid;border-right-color:#015da6;border-left-color:#015da6;border-top-color:#015da6;border-bottom-style: solid;border-right-style: 
+solid;border-bottom-color:#015da6;border-left-width:1px;border-bottom-width:1px;border-right-width:1px;border-top-width:1px;border-left-style: solid;background-color:#015da6;"
+> 
+<!--[if gte mso 9]>&nbsp;&nbsp;<![endif]-->Explore upcoming events 
+<!--[if gte mso 9]>&nbsp;&nbsp;<![endif]--></a></td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+<tr style="outline: medium none;"> 
+<td class="spacer s1" style="word-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;border-collapse: collapse;mso-line-height-rule: exactly;line-height:30px;font-size:30px;" height="30px">&nbsp;</td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+</tbody> 
+</table>
+<table id="text054d0c600-bb71-4825-9205-5c6cf6cc2df2" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt; font-family: Georgia,Times,'Times New Roman',serif; color: #4b4d52; font-size: 14px; line-height: 21px;" align="center" width="100%" cellspacing="0" cellpadding="0" border="0" class="mktoModule m_text0"> 
+<tbody> 
+<tr> 
+<td class="module" style="mso-line-height-rule: exactly;word-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;border-collapse: collapse;background-color:#ffffff;" valign="top" bgcolor="#ffffff"> 
+<table class="full unboxed" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt; margin-top: 0; margin-right: auto; margin-bottom: 0; margin-left: auto; width: 600px;" align="center" width="600" cellspacing="0" cellpadding="0" border="0"> 
+<tbody> 
+<tr style="outline: medium none;"> 
+<td class="spacer s0" style="word-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;border-collapse: collapse;mso-line-height-rule: exactly;line-height:30px;font-size:30px;" height="30px">&nbsp;</td> 
+</tr> 
+<tr> 
+<td class="contents" style="mso-line-height-rule: exactly; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse;"> 
+<table class="col d100 t100 p100 unboxed" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt; width: 600px;" align="left" width="600"> 
+<tbody> 
+<tr> 
+<td class="secondary-font text" style="mso-line-height-rule: exactly;word-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;border-collapse: collapse; padding-top: 0; padding-right: 10px; padding-bottom: 0px; padding-left: 10px; font-family:Georgia,Times,'Times New Roman',serif;"> 
+<div class="mktoText" id="text80090878f-28e6-4555-ac1f-f77a71f787bb">
+ Newsletter subscribers are provisionally registered for a POLITICO account. Complete your free registration by 
+<a href=
+"https://goto.politico.com/OTY2LUtIRi01MzMAAAGL_LoB9TuYbBIcSdgnINMTdP4jxL02XnFuq7gzPwZV6MpY3Ndz0SzAkRCWWbDa4uKi9tm1lPM=" target="_blank" class="textlink" title="resetting"
+>resetting</a> your password, and gain access to your preference center. 
+</div></td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+<tr> 
+<td class="spacer s1" style="word-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;border-collapse: collapse;mso-line-height-rule: exactly;line-height:30px;font-size:30px;" height="30px">&nbsp;</td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+</tbody> 
+</table>
+<table id="footers2935a2fbb-c874-4cc2-a67c-7600b5b8453e" style="border-spacing: 0px; border-collapse: collapse;" class="mktoModule m_footers2" align="center" width="100%" cellspacing="0" cellpadding="0" border="0"> 
+<tbody> 
+<tr> 
+<td class="module" style="mso-line-height-rule: exactly;word-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;border-collapse: collapse;background-color:#eeeeee;" valign="top" bgcolor="#eeeeee"> 
+<table class="full unboxed" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt; margin-top: 0; margin-right: auto; margin-bottom: 0; margin-left: auto; width: 600px;" align="center" width="600" cellspacing="0" cellpadding="0" border="0"> 
+<tbody> 
+<tr style="outline: medium none;"> 
+<td class="spacer s0" style="word-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;border-collapse: collapse;mso-line-height-rule: exactly;line-height:15px;font-size:15px;" height="15px">&nbsp;</td> 
+</tr> 
+<tr> 
+<td class="contents" style="mso-line-height-rule: exactly; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse;"> 
+<table class="col1 d70 t100 p100 unboxed" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt; width: 440px;" align="left" width="440" cellspacing="0" cellpadding="0" border="0"> 
+<tbody> 
+<tr style="outline: medium none;"> 
+<td style="mso-line-height-rule: exactly; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse;"> 
+<table style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt;" align="left"> 
+<tbody> 
+<tr> 
+<td style="mso-line-height-rule: exactly; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse;"> 
+<div style="display:inline-block" class="mktoImg" id="social_twitter_grey935a2fbb-c874-4cc2-a67c-7600b5b8453e" mktolockimgstyle="false"> 
+<a href=
+"https://goto.politico.com/OTY2LUtIRi01MzMAAAGL_LoB9TetESKMINne0NCdGTuURT68Bk9-hZTPAEeGXJVu0KOLZbJR0YGfAsdpKx7OdKJ4lAg="
+><img src="https://go.politico.com/rs/966-KHF-533/images/icon-follow-twitter.png" style="height: 28px; widht: 28px; outline: none; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; text-decoration: none; -ms-interpolation-mode: bicubic; border-top-width: 0; display: block; line-height: 100%; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none;" alt="Follow us on Twitter" /></a> 
+</div></td> 
+<td style="mso-line-height-rule: exactly; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse;">&nbsp;&nbsp;</td> 
+<td style="mso-line-height-rule: exactly; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse;"> 
+<div style="display:inline-block" class="mktoImg" id="social_facebook_grey935a2fbb-c874-4cc2-a67c-7600b5b8453e" mktolockimgstyle="false"> 
+<a href=
+"https://goto.politico.com/OTY2LUtIRi01MzMAAAGL_LoB9R2QEhiw7dkabwN-bFpL0YMZ4i9a5pzD00syb4-U2ylOUJk3UDQjh14HTdXWCfoO-As="
+><img src="https://go.politico.com/rs/966-KHF-533/images/icon-follow-facebook.png" style="height: 28px; widht: 28px; outline: none; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; text-decoration: none; -ms-interpolation-mode: bicubic; border-top-width: 0; display: block; line-height: 100%; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none;" alt="Follow us on Facebook" /></a> 
+</div></td> 
+<td style="mso-line-height-rule: exactly; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse;">&nbsp;&nbsp;</td> 
+<td style="mso-line-height-rule: exactly; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse;"> 
+<div style="display:inline-block" class="mktoImg" id="social_instagram_grey935a2fbb-c874-4cc2-a67c-7600b5b8453e" mktolockimgstyle="false"> 
+<a href=
+"https://goto.politico.com/OTY2LUtIRi01MzMAAAGL_LoB9T9nSCSnqCQHaSdxpkz72FsrBoE8ei3DI4RGJXzLLX5hhcgyxslYj5XVGVy-AtNnd3s="
+><img src="https://go.politico.com/rs/966-KHF-533/images/icon-follow-instagram.png" style="height: 28px; widht: 28px; outline: none; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; text-decoration: none; -ms-interpolation-mode: bicubic; border-top-width: 0; display: block; line-height: 100%; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none;" alt="Follow us on Instagram" /></a> 
+</div></td> 
+<td style="mso-line-height-rule: exactly; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse;">&nbsp;&nbsp;</td> 
+<td style="mso-line-height-rule: exactly; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse;"> 
+<div style="display:inline-block" class="mktoImg" id="social_applepodcast_grey935a2fbb-c874-4cc2-a67c-7600b5b8453e" mktolockimgstyle="false"> 
+<a href=
+"https://goto.politico.com/OTY2LUtIRi01MzMAAAGL_LoB9Yh6qb8D9ROCEBBwgt7uaMQ6SvL6bxBu2Fv3549dyYd25nvLEzRTA67qH1B1SKHxyNc="
+><img src="https://go.politico.com/rs/966-KHF-533/images/icon-follow-applepodcast.png" style="height: 28px; widht: 28px; outline: none; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; text-decoration: none; -ms-interpolation-mode: bicubic; border-top-width: 0; display: block; line-height: 100%; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none;" alt="Listen on Apple Podcast" /></a> 
+</div></td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+<tr style="outline: medium none;"> 
+<td class="unsub" style="mso-line-height-rule: exactly; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse; text-align: left;"><span style="font-family:Georgia,Times,'Times New Roman',serif;font-size: 11px;color: #4b4d52;display: inline;" class="secondary-font"> 
+<div class="mktoText" id="unsubscribe935a2fbb-c874-4cc2-a67c-7600b5b8453e"> 
+<br />To unsubscribe from promotions about free Politico newsletters, 
+<a href=
+"https://goto.politico.com/OTY2LUtIRi01MzMAAAGL_LoB9d3cANzO-zgY6Tmxgj92-q-465L3RfambeWWGeJGw55PwzSs6WGTLdx1zoO2B5_XXG0=" style="color: #4b4d52;"
+>click here</a>. 
+<br /> 
+<br />Do not reply to this message. This address is automated, unattended, and cannot help with questions or requests. 
+<br /> 
+<br /> 
+<a href=
+"https://goto.politico.com/OTY2LUtIRi01MzMAAAGL_LoB9VHb_hyKmLj76awwsW50ZOc4fncU_5YLSTMa5pLMxr_1ITGTOvEQUuc0wyh7GWOpNCI=" style="color: #4b4d52;"
+>Privacy Policy</a> | 
+<a href=
+"https://goto.politico.com/OTY2LUtIRi01MzMAAAGL_LoB9fG67ZzJ9INihrfwdgEZ3PUuQDxcBbcaU_wVG23e28xXcOLH8WbDPXGIvpL-WA2WVc8=" style="color: #4b4d52;"
+>Terms &amp; Conditions</a> | Copyright 2021. All Rights Reserved 
+<br />POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA 
+</div></span></td> 
+</tr> 
+</tbody> 
+</table> 
+<table class="col1 d20 t100 p100 unboxed" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt; width: 160px;" align="left" width="160" cellspacing="0" cellpadding="0" border="0"> 
+<tbody> 
+<tr class="stack-tablet" style="padding-bottom: 0; max-height: 0; overflow: hidden; float: left; display: none; padding-top: 0; padding-right: 0; mso-hide: all; padding-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; font-size: 35px; line-height: 35px;"> 
+<td style="mso-line-height-rule: exactly; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse;">&nbsp;</td> 
+</tr> 
+<tr style="outline: medium none;"> 
+<td style="mso-line-height-rule: exactly; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse;"> 
+<table style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: -1pt; mso-table-rspace: -1pt;" align="left"> 
+<tbody> 
+<tr> 
+<td style="mso-line-height-rule: exactly; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; border-collapse: collapse;"> 
+<div style="display:inline-block" class="mktoImg responsive" id="logoFooter935a2fbb-c874-4cc2-a67c-7600b5b8453e" mktolockimgstyle="false"> 
+<a href=
+"https://goto.politico.com/OTY2LUtIRi01MzMAAAGL_LoB9bKBC_NQ-i-_GyypsHy7Iqu6f5XrNUPO4QZXosyHVPeMbyBnEkNqPj8JCMYA5WZ135A="
+><img src="https://go.politico.com/rs/966-KHF-533/images/logo-politico.png" style="height: auto; outline: none; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; text-decoration: none; -ms-interpolation-mode: bicubic; border-top-width: 0; display: block; line-height: 100%; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none;" /></a> 
+</div></td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+<tr style="outline: medium none;"> 
+<td class="spacer s3" style="word-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;border-collapse: collapse;mso-line-height-rule: exactly;line-height:35px;font-size:35px;" height="35px">&nbsp;</td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+</tbody> 
+</table></td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+</tbody> 
+</table>  
+<a href=
+"https://goto.politico.com/OTY2LUtIRi01MzMAAAGL_LoB9MD-Y6LgXnYUzEzzKZ4Eh3hb2AK4qdFFmFZBAx0OfhRdfij0Iqr1cUNek0aZnTCCQvA="
+></a>
+<img src="https://goto.politico.com/trk?t=1&mid=OTY2LUtIRi01MzM6MDoxNjUzMzo3NTc4OTowOjEwOTkyOjk6NTc3NzE4OjE1NTk3MDcxNDEtMTpudWxs" width="1" height="1" style="display:none !important;" alt="" />
+
+<!-- -->
+</body>
+</html>
+------=_Part_9282965_1250199722.1685200130554--

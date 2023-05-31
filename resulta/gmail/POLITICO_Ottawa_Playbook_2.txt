@@ -1,0 +1,959 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp406426ims;
+        Tue, 30 May 2023 03:10:50 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ4Xrr+0Fh0lF9jrE/JQkzAbPVLfu+XUvTMEnV/95JnsuDkZgteBmTJISqIPVJ+wCs9HtBOt
+X-Received: by 2002:a05:6870:b1d2:b0:19f:880f:9bb with SMTP id x18-20020a056870b1d200b0019f880f09bbmr613306oak.42.1685441450074;
+        Tue, 30 May 2023 03:10:50 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685441450; cv=none;
+        d=google.com; s=arc-20160816;
+        b=tSn0P9mLNCLBbdNpvop2dS0P/smId/oPbUnICafJSULMaq+khILBb4JWSwrwH0rIcL
+         uUoJ6HLIMKUb3FaCMaxFaPnTpQJTzxFZRtiuHZUk35XuJG5J74XWOj7Lr9q+tbKO0O+o
+         KN427tPNO1KCvz5NaHBOHbihs90WpVAN578m/WmnsOYaANW2sypyO1rl0BPv+b0IPgG4
+         63oj2H7Fgj591wZKsQB/jk6kUlVYdGwQEnHQe+CBF14ywd3jzDZ69DjGW7l98JDU9xrc
+         frmPFC2sk9+0gmF0AUlMp+96fMyAz5asZ+uqyItmchpSn3OmKyDSzrsDBXZfYtTT2NBe
+         IwAA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:list-id:reply-to:mime-version
+         :list-unsubscribe-post:list-unsubscribe:date:subject:to:from
+         :dkim-signature;
+        bh=qKXt7DPlqefpQtQfIgyl4NLq5c5uF2+eFq62m27ZSVo=;
+        b=Rxx1V8hq7bfwnKsm8CMHU1ccAdqmVy//QOVi88auLfWxXIZlPdYQnT80QEDn3YV5s7
+         eCb/klPIGQ3cZX7SvcAm/Z2vX7uoIcnbcOzeN1zcZI6fyRyfIY7+ad2wroYh+1j6/t4g
+         TNp9fOTb48INdkpjnamZqjDYmrajzsjMM6uXOVqGSOpY/dcES/GOKbT2yuaR11rjyT8w
+         8pW0iWkBmksCR1sI7MBr7WO95Diz6OoD0f3srIZklkPviZ0nko7/hxbOqvddphfNH0Dq
+         UW9Qx+QwyYksUlLEtRHk0FSPLbcd4BvCdAt7TnWEdK5C+KcMq+J9efts0Wm3cJANCda2
+         j8JA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.politico.com header.s=200608 header.b=HYSCnemz;
+       spf=pass (google.com: domain of bounce-2718901_html-1405096349-9801350-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) smtp.mailfrom=bounce-2718901_HTML-1405096349-9801350-1376319-0@bounce.politicoemail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.politico.com
+Return-Path: <bounce-2718901_HTML-1405096349-9801350-1376319-0@bounce.politicoemail.com>
+Received: from mta.politicoemail.com (mta.politicoemail.com. [68.232.198.10])
+        by mx.google.com with ESMTPS id b5-20020a05687051c500b001927dab7b2dsi7132463oaj.160.2023.05.30.03.10.49
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 30 May 2023 03:10:50 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-2718901_html-1405096349-9801350-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) client-ip=68.232.198.10;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.politico.com header.s=200608 header.b=HYSCnemz;
+       spf=pass (google.com: domain of bounce-2718901_html-1405096349-9801350-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) smtp.mailfrom=bounce-2718901_HTML-1405096349-9801350-1376319-0@bounce.politicoemail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.politico.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=200608; d=email.politico.com;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Reply-To:List-ID:X-CSA-Complaints:Message-ID:Content-Type;
+ i=ottawaplaybook@email.politico.com;
+ bh=qKXt7DPlqefpQtQfIgyl4NLq5c5uF2+eFq62m27ZSVo=;
+ b=HYSCnemz90AJsgdTO7BAWZcpnIGP5TjoxgxYoP84ThGdLXKuaVO+KWQONd9igKSZVYnHb8yFIyem
+   EEGCO1AkNCa/eCpBbG7xv98H/pPXuZHRJ1GBXxkiVu3ntMT2AMG9wblBbb+WvhhSUZE7mpt/tkVz
+   rOcsrElr1knmvSYOb4o=
+Received: by mta.politicoemail.com id hen5qi2fmd4n for <ouchendans62@gmail.com>; Tue, 30 May 2023 10:10:25 +0000 (envelope-from <bounce-2718901_HTML-1405096349-9801350-1376319-0@bounce.politicoemail.com>)
+From: "POLITICO Ottawa Playbook" <ottawaplaybook@email.politico.com>
+To: <ouchendans62@gmail.com>
+Subject: 'Miracle on the Prairies'
+Date: Tue, 30 May 2023 04:10:25 -0600
+List-Unsubscribe: <https://click.politicoemail.com/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiIxMzc2MzE5IiwicyI6IjE0MDUwOTYzNDkiLCJsaWQiOiIyNzE4OTAxIiwiaiI6Ijk4MDEzNTAiLCJqYiI6IjAiLCJkIjoiNDAxMjYifQ.5PFyv6J-fFGXzzRMuhXIHzdi_6lXhfwf77cBzd69r8E>, <mailto:leave-fc7f1677746c0d7d747b28313958-fdf61574756104747317747c-fe951d787565077875-fe9115737262077c7c-ffcf14@leave.politicoemail.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+Reply-To: "POLITICO, LLC" <reply-fe951d787565077875-2718901_HTML-1405096349-1376319-0@politicoemail.com>
+List-ID: <1376319.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+X-SFMC-Stack: 4
+x-job: 1376319_9801350
+Message-ID: <39ab4041-bcb9-422e-9dff-2f013fabb7ff@las1s04mta1073.xt.local>
+Feedback-ID: 1376319:9801350:68.232.198.10:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="9XhEHqcQT0qq=_?:"
+
+This is a multi-part message in MIME format.
+
+--9XhEHqcQT0qq=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Presented by Google: A daily look inside Canadian politics and power. May 30, 2023 View in browser  
+By Kyle Duggan and Sue Allan
+
+Presented by Google
+
+Send tips | Subscribe here | Follow Politico Canada
+
+Thanks for reading Ottawa Playbook. We’ve got your preview of the coming opposition day and your Alberta election digest.
+
+ DRIVING THE DAY
+
+
+MP Jenny Kwan, NDP Leader Jagmeet Singh and renewed calls for a public inquiry. | Justin Tang, The Canadian Press
+
+RAMPING UP  — Welcome to day two.
+
+Members of Parliament are set to debate the motion the NDP has put in play that ups the pressure in Parliament on Prime Minister JUSTIN TRUDEAU by calling on DAVID JOHNSTON to step down as special rapporteur.
+
+NDP Leader JAGMEET SINGH revealed the motion Monday, the first day back for the Commons since the release of the foreign interference report.
+
+Today is the first of two opposition days scheduled this week.
+
+Singh has taken a middle-road approach between the Liberals and Conservatives, careful not to personally go after Johnston, focusing instead on the “appearance” and “apprehension” of bias.
+
+But he’s also in the firing line.
+
+The NDP has agreed to back the Liberals until 2025, but either party could walk away from the pact at any time. Conservative Leader PIERRE POILIEVRE addressed Singh in Question Period and called on him to “break off his coalition” if there’s no public inquiry.
+
+A quick check of the NDP’s fundraising stats … and suddenly it looks more like a dare.
+
+— Steady stream: Former CSIS and CES officials DAN STANTON and ARTUR WILCZYNSKI (both pro inquiry, in fact) are up to bat first today at the procedure and House affairs committee. They come ahead of MICHAEL WERNICK and a string of experts and other repeat guests – this time, they are appearing to specifically answer questions on the “intimidation campaign” against certain MPs.
+
+‘EVERGREEN’ TARGET — Concerns are growing about MPs being targeted by the Chinese government for foreign interference, although the details continue to be murky and mostly classified. NDP MP JENNY KWANspoke out publicly Monday about how Canada’s top spy agency informed her she has been a target for years, and probably always will be.
+
+“I was a target and I continue to be a target,” she told reporters. “They [CSIS] used the term ‘evergreen,’ meaning that I will forever be targeted.”
+
+It follows the cases of MPs ERIN O’TOOLE and MICHAEL CHONG. Kwan said the years-long delay in Chong being properly warned was “not acceptable” and said MPs need to be informed “right from the beginning.”
+
+This, of course, raises the necessary questions: Who else was targeted? And who steps forward next?
+
+OXYGEN IN THE ROOM — With Singh and Johnston in the headlines, the vote over PIERRE POILIEVRE’s controversial opioid motion received less attention — not that it won’t be brought back to needle the government. Especially after Conservative MP GARNETT GENUIS’s amendment to sue companies that stoked the opioid crisis was shot down.
+
+Know someone who could use Ottawa Playbook?  Direct them to this link . Five days a week, zero dollars.
+     
+A message from Google:
+
+
+     ALBERTA WATCH
+
+
+UCP Leader Danielle Smith celebrates in Calgary on Monday night. | Jeff McIntosh, The Canadian Press
+
+‘MIRACLE ON THE PRAIRIES’  — With a final tally to come, Alberta’s United Conservative Party is winning or elected in 49 seats; the NDP picked up 38 in Alberta’s 87-seat legislature.
+
+The six closest ridings in Calgary were settled by a total of 851 votes. Unofficial results courtesy JASON MARKUSOFF's scratch pad.
+
+"To paraphrase our dear friend (former Alberta premier) RALPH KLEIN, welcome to another miracle on the Prairies,” UCP Leader DANIELLE SMITH announced last night in Calgary.
+
+RACHEL NOTLEY will stay on as leader of the Alberta New Democratic Party. “Where we fell short, the responsibility rests entirely with me,” she said. “We ran a strong, principled campaign and it was based on our beliefs and our desire to create a better future for all Albertans.”
+
+338Canada’s PHILIPPE J. FOURNIER tells Playbook: “The rural base for the Conservatives showed up and voted en masse for Smith. Zoom out the Alberta map and one will see that Edmonton and the orange parts of Calgary are drowned out in a sea of deep conservative blue.”
+
+Three key takeaways:
+
+“The urban-rural divide is significant,” Mount Royal University political science professor LORI WILLIAMS tells CBC News. “There are a lot of divisions amongst Albertans, within the UCP, between urban and rural. This is going to be a real challenge, going forward, for leaders.”
+
+“The Conservative brand, particularly in rural Alberta, in Calgary, is still extremely strong,” Mount Royal University political scientist DUANE BRATT advised Global News. “The NDP underperformed for what they thought in Calgary (and) really barely made a dent in rural Alberta.”
+
+“There is no free ride for anybody,” Calgary Chamber of Commerce president DEB YEDLIN told KYLE BAKX. “In Calgary, we see an unemployment rate that's higher than most people expect and yet we hear all about the job vacancies and that's because we don't have the right people for the right jobs.”
+
+Overnight analysis:
+
+— DAVID STAPLES, Edmonton Journal: “The untold story of the 2023 Alberta provincial election? UCP leader Danielle Smith’s dramatic personal and policy shift to the centre. It’s almost as if Smith’s New Year’s Resolution for 2023 was: ‘I will be the most compassionate conservative that Alberta has ever seen.’”
+
+— JASON MARKUSOFF, CBC News: “A huge reason the UCP won and get to keep the premier's and ministers' offices is that one critical person was locked onto that tight message track for not just the entire campaign, but nearly all Smith's premiership. That one critical person is and will remain Alberta's premier. (For now, at least.)”
+
+— ALEX BOYD and KIERAN LEAVITT, the Star: “The UCP victory can be seen as an endorsement of Smith’s plan to move the province further to the right — one that may send ripple effects across Alberta. She also hinted that the prairie province could once again be on a collision course with Ottawa.”
+
+— JASON HERRING, Calgary Herald: “Though they won the election, the night brought several big losses for the UCP in Calgary, as several incumbents fell in their bids to return to the legislature. Those defeats include prominent cabinet ministers JASON COPPING, JEREMY NIXON, JASON LUAN and NICHOLAS MILLIKAN.”
+
+— CARRIE TAIT and ALANNA SMITH, the Globe and Mail: “The election result was the culmination of a polarizing campaign that will leave Ms. Smith in charge of a diminished caucus and a province sharply divided between rural and urban communities. The UCP lost several prominent cabinet ministers in Calgary but held onto power despite a campaign that was overshadowed by her own past comments, as well as complaints that she steered the party too far to the right.”
+
+— DON BRAID, Calgary Herald: “After the dust clears, there’s every chance Alberta will calm down as the new government gets on with the big jobs — health care, inflation, street crime, addictions, economic growth, job creation, the future of Alberta’s energy sector — all that difficult stuff that actually affects people’s lives. So, no, Alberta has not lost its mind, just a few spare marbles here and there.”
+
+What do you see in the results?  Let us know here.  
+ TODAY'S HIGHLIGHTS
+
+
+ — Prime Minister JUSTIN TRUDEAU will attend a National Prayer Breakfast and deliver remarks at 7:30 a.m. Trudeau chairs a 10-a.m. Cabinet meeting before attending Question Period at 2 p.m.
+
+— Deputy Prime Minister CHRYSTIA FREELAND will attend Cabinet at 10 a.m., QP later this afternoon.
+
+9 a.m. The Senate transport and communications committee will hear from a long list of witnesses on Bill C-18: JESSE BROWN, publisher of Canadaland; PHILLIP CRAWLEY, CEO and publisher of The Globe and Mail; PAUL DEEGAN, president and CEO, News Media Canada; JEFF ELGIE, CEO Village Media; journalist JEN GERSON; PIERRE-ELLIOTT LEVASSEUR, president of LaPresse and director of News Media Canada; and BRIAN MYLES, director of Le Devoir.
+
+10 a.m. NDP Leader JAGMEET SINGH holds a press conference to talk about his party’s opposition day motion to urge DAVID JOHNSTON to resign his special rapporteur role.
+
+10 a.m. Official Languages Commissioner RAYMOND THÉBERGE tables his 2022-23 annual report in Parliament.
+
+10:30 a.m. A media advisory from ELIZABETH MAY’s office promotes a press conference in West Block featuring opposition MPs to address the “surge in disinformation in Parliament relating to harm reduction and the opioid crisis”
+
+11 a.m. The House procedure and House affairs committee continues its study of alleged intimidation of Conservative MP MICHAEL CHONG.
+
+12:30 p.m. Transport Minister OMAR ALGHABRA and Sen. SALMA ATAULLAHJAN hold a press conference in West Block to bring attention to Project Ramadan.
+
+1:30 p.m. Natural Resources Minister JONATHAN WILKINSON, Nova Scotia’s Environment Minister TIMOTHY HALMAN, Immigration Minister SEAN FRASER and Labor Minister SEAMUS O’REGAN hold a press conference in West Block to talk about proposed amendments to the Atlantic accord and N.S.’s offshore petroleum resources accord.
+
+3 p.m. Auditor General KAREN HOGAN will table two reports to the Nunavut Legislative Assembly — one on Covid-19 vaccines, the other on child and family services in Nunavut.
+
+3:30 p.m. Public Safety Minister MARCO MEDICINO will be at the House public safety committee meeting to discuss Bill C-20.
+
+3:30 p.m. A quad of Cabinet ministers, KARINA GOULD, KAMAL KHERA, SEAMUS O’REGAN and CARLA QUALTROUGH, will be at the House human resources committee to take questions about main estimates.
+ MEDIA ROOM
+
+
+ — National post columnist JOHN IVISON speculates about prorogation or a Cabinet shuffle amid silly season on the Hill.
+
+— The Star’s DAVID RIDER surveys the race for Toronto mayor and asks, ‘Will there be an anyone but OLIVIA CHOW movement?’ 
+
+— TERRY GLAVIN writes on his substack that Ottawa is missing the more interesting conflict of interest questions over special rapporteur DAVID JOHNSTON’s appointment, after JEAN-FRANCOIS CLOUTIER in the Journal de Montreal listed eight areas of potential conflict — most of which actually involve Chinese ties.
+
+— CHRIS NARDI writes that Procurement Minister HELENDA JACZEK revealed during a committee appearance the government aims to have a plan for the dilapidated, asbestos-filled, rodent-infested 24 Sussex by fall.
+
+— MICKEY DJURIC writes Heritage Minister PABLO RODRIGUEZ suggested the online news bill, C-18, might make CBC less reliant on advertising. Conservative MP MELISSA LANTSMANused the minister’s committee appearance to press why the technocratic broadcast regulator gets to decide which online platforms will be subject to Bill C-11, the online streaming act, rather than the government.
+
+— LORI TURNBULL argues in the Globe  that David Johnston should have been “nowhere near this thing,” which has turned into yet another scandal about Trudeau rubbing elbows with Canada’s elite.
+
+— Former Ontario Cabinet minister MICHAEL CHAN is suing CSIS and Global News.
+ PROZONE
+
+
+ For POLITICO Pro subscribers, our latest policy newsletter: MP shares fresh details of Chinese interference.​​
+
+In news for POLITICO Pro subscribers:
+
+— White House to Dems: The debt deal could have been a LOT worse.
+
+— Wrinkles and curveballs in the debt ceiling bill.
+
+— Debt ceiling deal sidesteps energy permitting.
+
+— How 'Buy America' could derail high-speed trains.
+
+— Biden world confident in a Trump rematch but preps for a surprise.
+ PLAYBOOKERS
+
+
+Many happy returns: Jason Kenney. | Alik Keplicz/AP Photo
+
+Birthdays: HBD to former Alberta premier JASON KENNEY. The PMO’s HALLIE STACEY-SULLIVAN also celebrates today.
+
+Spotted: The newly updated Lobbyists' Code of Conduct — published in the Gazette.
+
+Poland’s PM MATEUSZ MORAWIECKI, heading to Canada.
+
+U.K. House of Commons Speaker LINDSAY HOYLE, in Ottawa with International Trade Minister MARY NG and Liberal MP IQRA KHALID.
+
+U.S. investor and anti-Putin critic BILL BROWDER is also in town, visiting Liberal MP s JOHN MCKAY and ANITA VANDENBELD and Conservatives JAMES BEZAN and MARTY MORANTZ.
+
+MP ARIF VIRANI celebrating the FC Commoners and another season of parliamentary soccer.
+
+Conservative MP RICHARD BRAGDON, marking the 58th annual National Prayer Breakfast on Parliament Hill — “the longest running parliamentary event in Canada; the longest running national prayer breakfast in the world.”
+
+Veterans Affairs Minister LAWRENCE MACAULAY proceeding JOHN MCGARRY with the Pearson Peace Medal in Ottawa.
+
+Farewells: Conservative MP PIERRE PAUL-HUS, Liberal MP SOPHIE CHATEL and Bloc MP MARTIN CHAMPOUX paid tribute to late Quebec actor MICHEL CÔTÉ in the House Monday. Prime Minister JUSTIN TRUDEAU called Côté’s death at 72 “an extraordinary loss for Quebecois culture and for our entire country.”
+ On the Hill
+
+
+ → Find the latest on House committee meetings here.
+
+→ Keep track of Senate committee meetings here.
+
+9 a.m. The Senate committee on Indigenous Peoples will consider Bill C-29.
+
+9 a.m. The Senate transport and communications committee will hear from a long list of witnesses on Bill C-18.
+
+9 a.m. The Senate finance committee is studying Bill C-47.
+
+10 a.m. NDP Leader JAGMEET SINGH holds a press conference.
+
+10 a.m. Official Languages Commissioner RAYMOND THÉBERGE tables his 2022-2023 annual report in Parliament.
+
+10:30 a.m. A media advisory from ELIZABETH MAY’s office promotes a press conference in West Block featuring opposition MPs to address the “surge in disinformation in Parliament relating to harm reduction and the opioid crisis.”
+
+10:30 a.m. Sen. JULIE MIVILLE-DECHÊNE and Sen. MICHAEL MACDONALD will be at the Senate rules and procedures committee.
+
+11 a.m. The House procedure and House affairs committee continues its study of alleged intimidation of Conservative MP MICHAEL CHONG.
+
+11 a.m. The House transport committee meets to study adapting infrastructure for climate change.
+
+1:30 p.m. Natural Resources Minister JONATHAN WILKINSON, Nova Scotia’s Environment Minister TIMOTHY HALMAN, Immigration Minister SEAN FRASER and Labor Minister SEAMUS O’REGAN hold a press conference to talk about proposed amendments to the Atlantic accord and N.S.’s offshore petroleum resources accord.
+
+1:30 p.m. Green MP MIKE MORRICE and Sen. KIM PATE join Dimes Canada executive VICTORIA PEARSON for a press conference in West Block to press the government to pass Bill C-22 before summer.
+
+3:30 p.m. Public Safety Minister MARCO MEDICINO will be at the House public safety committee,
+
+3:30 p.m. A quad of Cabinet ministers, KARINA GOULD, KAMAL KHERA, SEAMUS O’REGAN and CARLA QUALTROUGH, will be at the House human resources committee.
+
+3:30 p.m. The House natural resources committee meets to study Canada’s pulp and paper industry.
+
+3:30 p.m. The Canadian Forces Health Services Group is under the spotlight at the House national defense committee.
+
+3:30 p.m. The House official languages committee meets to continue their study of increased Francophone immigration to Canada.
+
+6:30 p.m. Auditor General KAREN HOGAN will be in Iqaluit to table two reports to the Nunavut Legislative Assembly about child and family services an Covid-19 vaccines.
+
+When the Senate rises but not before 6:30 p.m.: The Senate agriculture and forestry committee continues its study of soil health in Canada with Environment and Sustainable Development Commissioner JERRY DEMARCO on the witness list.
+ TRIVIA
+
+
+ Monday’s answer: The RMS Empress of Ireland sank in the St. Lawrence River near Rimouski, Québec, on May 29, 1914.
+
+Props to J.D.M. STEWART. DAN MCCARTHY, AMY CASTLE, GREG MACEACHERN, MARC LEBLANC, MURRAY WILSON, JAVIER GONZALEZ BLANCO, ROBERT MCDOUGALL, STEVE PAIKIN, SCOTT LOHNES, GERMAINE MALABRE, GORDON RANDALL, SHAUGHN MCARTHUR, JOHN ECKER, GARY ALLEN, DOUG RICE, DOUG SWEET, GEORGE YOUNG, GEORGE SCHOENHOFER. 
+
+ALASTAIR MULLIN, BILL WATSON, ALLAN FABRYKANT, GORD MCINTOSH, AMY BOUGHNER, RODDY MCFALL, STEPHEN KAROL and MATTHEW DUBÉ.
+
+Today’s question: How many parties have formed a government in Alberta since it was founded?
+
+Send your answers to ottawaplaybook@politico.com.
+
+Want to grab the attention of movers and shakers on Parliament Hill? Want your brand in front of a key audience of Ottawa influencers? Playbook can help. Contact Jesse Shapiro to find out how: jshapiro@politico.com.
+
+Playbook wouldn’t happen without: Luiza Ch. Savage, David Cohen and Sue Allan.
+
+  
+Follow us on Twitter
+
+Nick Taylor-Vaisey @TaylorVaisey
+
+Sue Allan @susan_allan
+
+Maura Forrest @MauraForrest
+
+Kyle Duggan @Kyle_Duggan
+
+Zi-Ann Lum @ziannlum
+
+POLITICO Canada @politicoottawa
+  
+Subscribe to the POLITICO Playbook family
+
+Playbook  |  Playbook PM  |  California Playbook  |  Florida Playbook  |  Illinois Playbook  |  Massachusetts Playbook  |  New Jersey Playbook  |  New York Playbook  |  Ottawa Playbook  |  Brussels Playbook  |  London Playbook
+
+View all our political and policy newsletters
+
+Follow us
+  
+To change your alert settings, please log in at https://go.politicoemail.com/?qs=d2cbf33da2c0244932a2ede6bcac45d33bc524e8ba53b19288a622bef1c52028a284a20d1f4669ada3876feab40bab15f6898eb81ebabf1b  https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a201df3a7484f2e5fec14596057173003e67b422134ce354523e860b3f89e4188eaef26b24fdbe91d2075c58d63ae9ae1a
+
+This email was sent to ouchendans62@gmail.com by: POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+
+ Please click here and follow the steps to unsubscribe.
+  
+
+--9XhEHqcQT0qq=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<html><body><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml><![endif]-->
+</head><!-- Everything above this line is "new" to the template. We'll have to experiment a bit to see if it causes troubles. --><!-- preview text --><div style="display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">    Presented by Google: A daily look inside Canadian politics and power.</div><table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" style="padding:5px 0 15px 0;margin:0;text-align:center" role="presentation">    <tbody>    <tr>        <td><!-- Note: This is left blank to aid in centering across email clients --></td>        <td align="center" width="540">            
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:540px;table-layout:fixed;" role="presentation">                <tbody>                <!-- top date and utility link -->                <tr>    <td align="center">        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="padding-bottom:15px;" role="presentation">            <tbody>            <tr>                <td width="50%" style="text-align:left;font-size:11px;font-family:Helvetica,sans-serif;color:#B1B4BD;margin:0;">May 30, 2023</td>                <td width="50%" style="text-align:right;font-size:11px;font-family:Helvetica,sans-serif;color:#B1B4BD;margin:0;"><a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879d8c0bfb0f87eec89a8c00db0c2b3024e5f20a1af67499cc7819ac4d8882ca5115ac67026db652a7f5e36fced93252018" target="_blank" style="color:#007BC7;text-decoration:none;">View in browser</a
+></td>            </tr>            </tbody>        </table>    </td></tr>                <!-- divider line -->                <tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                <!-- logo and byline -->                <tr>    <td align="center" style="text-align:center;padding:0 20px 15px 20px;margin:0">                                    <img src="https://static.politico.com/1c/0f/dfbec0404c5cbfa6c5fb6e31db5f/politico-ottawa-playbook.jpg" title="Ottawa Playbook Email Header" alt="Ottawa Playbook " border="0" width="500" style="width:100%;max-width:500px;">                        </td></tr><tr>    
+<td align="center" style="padding:0 20px 10px 20px;">        <p style="text-align:center;font-family:Helvetica,sans-serif;font-size:11px;letter-spacing:2px;color:#B1B4BD;text-transform:uppercase;margin:0;">            By  <a
+ href="mailto:kduggan@politico.com" target="_blank" style="color:#000000;text-decoration:none;font-weight:bold;">Kyle Duggan</a
+> and  <a
+ href="mailto:sallan@politico.com" target="_blank" style="color:#000000;text-decoration:none;font-weight:bold;">Sue Allan</a
+>        </p>    </td></tr>                <!-- sponsor logo -->                            <tr>            <td style="padding-bottom:15px;" align="center"><p style="font-family:Helvetica,sans-serif;font-size:12px;color:#6E7381;margin:0;padding-right:10px;">Presented by Google</p></td>        </tr>                    <!-- body -->                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><a
+ href="mailto:ottawaplaybook@politico.com" target="_blank"><u>Send tips</u></a
+> | <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879aadb6a61bbac44474b508e682fe087042d54b63712bbe431f038f6e758c1b3338122a0bcae57fe469eb0f116a008c689" target="_blank"><u>Subscribe here</u></a
+> | <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca8796fff8502bdf9346fe0dc25cbc92e4581da7f69a4b3da091f0cded0ae80f7023dedf68944916e1a36b05185780fddabca" target="_blank"><u>Follow Politico Canada</u></a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Thanks for reading Ottawa Playbook. </strong
+></span>We&#8217;ve got your preview of the coming opposition day and your Alberta election digest.<br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;">    <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">        <tbody>        <tr>            <td width="32" valign="middle" style="vertical-align:top;font-size:0;text-align:right;padding-top:10px;">
+<img src="https://s3.amazonaws.com/origin-static.politico.com/hosted/icon-red-circle%402x.png" title="" alt="" width="12" style="max-width:12px;margin-top:1px;"></td>            <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:10px;margin:0;" valign="middle">DRIVING THE DAY</td>        </tr>        </tbody>    </table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    
+</tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p align="center" style="margin:0 0 20px 0;">
+<img src="https://www.politico.com/dims4/default/dcde946/2147483647/resize/1000x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2F21%2F19%2F38fb5c544050b66a55730f6c54b2%2Fjenny-kwan.JPG" title="MP Jenny Kwan is joined by NDP Leader Jagmeet Singh on the Hill." alt="NDP MP Jenny Kwan is joined by NDP leader Jagmeet Singh as she speaks to reporters about her briefing with CSIS where they confirmed that she was a target of foreign interference." width="500" style="width:100%;max-width:500px;"></p>
+<p style="font-family:Helvetica,sans-serif;font-size:12px;color:#6E7381;margin-bottom:24px;">MP Jenny Kwan, NDP Leader Jagmeet Singh and renewed calls for a public inquiry.   |  Justin Tang, The Canadian Press</p></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">RAMPING UP&nbsp; &#8212;</strong
+></span> Welcome to day two.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Members of Parliament are set to debate the motion the NDP has put in play that ups the pressure in Parliament on Prime Minister <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JUSTIN TRUDEAU </strong
+>by calling on <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DAVID JOHNSTON</strong
+> to step down as special rapporteur.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">NDP Leader <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JAGMEET SINGH </strong
+>revealed the motion Monday, the first day back for the Commons since the release of the foreign interference report.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Today is the first of two opposition days scheduled this week.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Singh has taken a middle-road approach between the Liberals and Conservatives, careful not to personally go after Johnston, focusing instead on the &#8220;appearance&#8221; and &#8220;apprehension&#8221; of bias.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">But he&#8217;s also in the firing line.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">The NDP has agreed to back the Liberals until 2025, but either party could walk away from the pact at any time. Conservative Leader <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">PIERRE POILIEVRE </strong
+>addressed Singh in Question Period and called on him to &#8220;break off his coalition&#8221; if there&#8217;s no public inquiry.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">A quick check of the NDP&#8217;s <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca8791ac8cbd7b00a4e2dd9388e70eec75a9756caf8f2f05d2dfbb3b9ac8d9783d516cd5cce60b5cf2d1aa059469d99be57ff" target="_blank"><u>fundraising</u></a
+> stats &#8230; and suddenly it looks more like a dare.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; Steady stream:</strong
+> Former CSIS and CES officials <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DAN STANTON</strong
+> and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">ARTUR WILCZYNSKI</strong
+> (both <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca8798a6ffdd4ab54286c86e9815618107cf30553ac662bcd446a02ea81e023019d587f5a71c72dc8976b609354f3d194c851" target="_blank"><u>pro inquiry</u></a
+>, <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca87983e41b42564e1971f3d08bee5a1130adb424806bb3d898e4331f0c8cb88c80d6f46fc3be717ccd4ccfeb000b550f17c7" target="_blank"><u>in fact</u></a
+>) are up to bat first today at the procedure and House affairs committee. They come ahead of <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MICHAEL WERNICK</strong
+> and a string of experts and other repeat guests &#8211; this time, they are appearing to specifically answer questions on the &#8220;intimidation campaign&#8221; against certain MPs.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8216;EVERGREEN&#8217; TARGET &#8212; </strong
+>Concerns are growing about MPs being targeted by the Chinese government for foreign interference, although the details continue to be murky and mostly classified. NDP MP <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JENNY KWAN</strong
+><a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879e338821cd50db532f820d0f935386d36637d867c95018eb7db3cf3f07d33401297999f481feb279dbea5421ac2b86a49" target="_blank"><u>spoke out publicly</u></a
+> Monday about how Canada&#8217;s top spy agency informed her she has been a target for years, and probably always will be.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;I was a target and I continue to be a target,&#8221; she told reporters. &#8220;They [CSIS] used the term &#8216;evergreen,&#8217; meaning that I will forever be targeted.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">It follows the cases of MPs <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca87971b659388d7f57d1fd39b342a3f065f7c373953cc417015dfb7b2c241c6206fc626a2800994e7cfa039e405a3642896d" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>ERIN O&#8217;TOOLE</u></strong
+></a
+> and <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879ec5fc3bc6105bdc4fbf40f94f45ad6cf5c23eaf12b140f2a81e2ba311f6cece89e00dcc8152efd0dac77ce3a205fe0ad" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>MICHAEL CHONG</u></strong
+></a
+>. Kwan said the years-long delay in Chong being properly warned was &#8220;not acceptable&#8221; and said MPs need to be informed &#8220;right from the beginning.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">This, of course, raises the necessary questions: Who else was targeted? And who steps forward next?</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">OXYGEN IN THE ROOM &#8212; </strong
+>With Singh and Johnston in the headlines, the vote over<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> PIERRE POILIEVRE</strong
+>&#8217;s controversial opioid motion received less attention &#8212; not that it won&#8217;t be brought back to needle the government. Especially after Conservative MP <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">GARNETT GENUIS</strong
+>&#8217;s <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879729d4c3805abf8c65251dc9fe669dfb25c92b9d61541f9cebc92a934da995f96651944d38cd435671517239856dc1502" target="_blank"><u>amendment</u></a
+> to sue companies that stoked the opioid crisis was shot down.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Know someone who could use Ottawa Playbook? </strong
+></span><a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879aadb6a61bbac44474b508e682fe087042d54b63712bbe431f038f6e758c1b3338122a0bcae57fe469eb0f116a008c689" target="_blank"><bsp-playbook-rubric>  <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>Direct them to this link</u></strong
+> </bsp-playbook-rubric></a
+><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">.</strong
+> <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Five days a week, zero dollars.</strong
+></span></p></td>                    </tr>                                    <tr>                            </tr><tr>    <td height="15" style="height:15px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>    <tr>    <td style="padding:0 20px 0 20px;text-align:center;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                            <p style="font-family:Helvetica,sans-serif;font-size:12px;margin-top:0;margin-bottom:10px;color:#000000;">A message from Google:</p>                                                        <p style="margin-top:0;margin-bottom:15px;line-height:15px;">                                            <a
+ href="https://go.politicoemail.com/?qs=d2cbf33da2c0244967f5da68b59e9628cd5c1a0c01ebe4f2660cb7ba9c81522321f3995836d614396fa8424b968da2845727a52f265afbb3" target="_blank"><img src="https://www.politico.com/dims4/default/732c41b/2147483647/resize/1000x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2F95%2Fa3%2F0f42b7624c149108ea1aa8975a8e%2Fgo2300-newsletters-politico-500x500-sponsor-placement-2-security-checkup.jpg" title="Advertisement Image" alt="Advertisement Image" border="0" width="500" style="width:100%;max-width:500px;"></a
+>                                        <img src="https://ad.doubleclick.net/ddm/ad/N7384.146504POLITICO0/B29898082.367680351;sz=1x1;ord=[timestamp]" border="0" a>                </p>                                                                                    </td></tr>    <tr>        <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;">    <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">        <tbody>        <tr>            
+<td width="32" valign="middle" style="vertical-align:top;font-size:0;text-align:right;padding-top:10px;"><img src="https://s3.amazonaws.com/origin-static.politico.com/hosted/icon-red-circle%402x.png" title="" alt="" width="12" style="max-width:12px;margin-top:1px;"></td>            <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:10px;margin:0;" valign="middle">ALBERTA WATCH</td>        </tr>        </tbody>    </table></td>                    </tr>                                    <tr>                        
+<td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p align="center" style="margin:0 0 20px 0;">
+<img src="https://www.politico.com/dims4/default/3aeeee4/2147483647/resize/1000x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2Fba%2F2c%2F60c2c6fd45ec9cea3299222e900f%2Fdanielle-smith.JPG" title="Alberta Premier Danielle Smith &#8212; ONE-TIME USE ONLY " alt="UCP Leader Danielle Smith in Calgary on election night. " width="500" style="width:100%;max-width:500px;"></p><p style="font-family:Helvetica,sans-serif;font-size:12px;color:#6E7381;margin-bottom:24px;">UCP Leader Danielle Smith celebrates in Calgary on Monday night.  |  Jeff McIntosh, The Canadian Press </p></td>                    </tr>                                    <tr>                        
+<td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8216;MIRACLE ON THE PRAIRIES&#8217;&nbsp; &#8212;</strong
+></span> With a final tally to come, Alberta&#8217;s United Conservative Party is <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879269c015a47c76f63894f68536c8a4883e8f9c59beac2773530ec90dfd90f9192f93817ed4eed546a53dbb0e9534b52b1" target="_blank"><u>winning or elected in 49 seats;</u></a
+> the NDP picked up 38 in Alberta&#8217;s 87-seat legislature.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The six closest ridings in Calgary were settled by a total of 851 votes. Unofficial results courtesy <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca8794007f2236ff9b2516762a3a9b64b95afcaf70f087fc0dd7bc1e85f274c0eb66800446fd8df6961893a691f4bc5bc89a2" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JASON MARKUSOFF's </strong
+>scratch pad.</a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">"To paraphrase our dear friend (former Alberta premier) <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">RALPH KLEIN,</strong
+> welcome to another miracle on the Prairies,&#8221; UCP Leader <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DANIELLE SMITH </strong
+>announced last night in Calgary.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">RACHEL NOTLEY</strong
+> will <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879ca20c3d3218902f0c14cb6cb4d508694fa1dec33a5949321711b8c9b9de18fa9f90beff3dd9e958cefcca078e7b8de81" target="_blank"><u>stay on as leader of the Alberta New Democratic Party.</u></a
+> &#8220;Where we fell short, the responsibility rests entirely with me,&#8221; she said. &#8220;We ran a strong, principled campaign and it was based on our beliefs and our desire to create a better future for all Albertans.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">338Canada&#8217;s <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">PHILIPPE J. FOURNIER</strong
+> tells Playbook: &#8220;The rural base for the Conservatives showed up and voted en masse for Smith. Zoom out the Alberta map and one will see that Edmonton and the orange parts of Calgary are drowned out in a sea of deep conservative blue.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Three key takeaways:</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;The urban-rural divide is significant,&#8221;</strong
+></span> Mount Royal University political science professor <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca8793bcdb7e403b797c7f2b58e9ff596672eff47770ab6889ff529d7771ced4d29adf46ce671c305333d2f1f9985d0bf351a" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>LORI WILLIAMS</u></strong
+><u> tells CBC News.</u></a
+> &#8220;There are a lot of divisions amongst Albertans, within the UCP, between urban and rural. This is going to be a real challenge, going forward, for leaders.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;The Conservative brand, particularly in rural Alberta, in Calgary, is still extremely strong,&#8221;</strong
+></span> Mount Royal University political scientist <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879909d859f7743c10cc496ac4407637ee32512ee2307f1f4ceae8539d4fa2b494f261487d64015a37b2b36f85d465417f6" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>DUANE BRATT</u></strong
+><u> advised Global News.</u></a
+> &#8220;The NDP underperformed for what they thought in Calgary (and) really barely made a dent in rural Alberta.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;There is no free ride for anybody,&#8221;</strong
+></span> <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879cad3178c043bf9ebfd9069d83b3aed3e18cf4d66dfc2b1f1e8f03755c186cd27f381a808e55a205aa3de9765782f3c79" target="_blank"><u>Calgary Chamber of Commerce president </u><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>DEB YEDLIN</u></strong
+><u> told </u><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>KYLE BAKX</u></strong
+><u>.</u></a
+> &#8220;In Calgary, we see an unemployment rate that's higher than most people expect and yet we hear all about the job vacancies and that's because we don't have the right people for the right jobs.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Overnight analysis:</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; DAVID STAPLES, Edmonton Journal: </strong
+>&#8220;The untold story of the 2023 Alberta provincial election? UCP leader Danielle Smith&#8217;s <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca8791c69563deb61b58c68496633073e1c1f10af9fe37f573461396b8a737da2c9e1f009735e9a3336d783182fc62a5cda76" target="_blank"><u>dramatic personal and policy shift to the centre.</u></a
+> It&#8217;s almost as if Smith&#8217;s New Year&#8217;s Resolution for 2023 was: &#8216;I will be the most compassionate conservative that Alberta has ever seen.&#8217;&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; JASON MARKUSOFF, CBC News: </strong
+>&#8220;A huge reason the UCP won and get to keep the premier's and ministers' offices is that <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca8794f8613957177e7ef1cc3fb84ce7d748865144768b4a364fc0c05ea56e118c8243fa15a15078f51e89f097aa2aa382490" target="_blank"><u>one critical person was locked onto that tight message track</u></a
+> for not just the entire campaign, but nearly all Smith's premiership. That one critical person is and will remain Alberta's premier. (For now, at least.)&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; ALEX BOYD and KIERAN LEAVITT, the Star: </strong
+>&#8220;The UCP victory can be seen as an endorsement of Smith&#8217;s plan to move the province further to the right &#8212; one that may send ripple effects across Alberta. She also hinted that <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca8799c3f44a8eafefb157234a84704078ab47214a1ee7e2c7f79a6e351dd740e2651886d06f0c5d79987d613fd8271280131" target="_blank"><u>the prairie province could once again be on a collision course with Ottawa.&#8221;</u></a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; JASON HERRING, Calgary Herald: </strong
+>&#8220;Though they won the election, <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879932b84d894b23683c7a2f23775c47a9f8ffd4dcebf1d997fdee17303eec5c289ad01ebbae1c6c50598b645a6264767f9" target="_blank"><u>the night brought several big losses for the UCP in Calgary,</u></a
+> as several incumbents fell in their bids to return to the legislature. Those defeats include prominent cabinet ministers <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JASON COPPING, JEREMY NIXON, JASON LUAN</strong
+> and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">NICHOLAS MILLIKAN.</strong
+>&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; CARRIE TAIT and ALANNA SMITH, the Globe and Mail: </strong
+>&#8220;The election result was the culmination of a polarizing campaign that will leave Ms. Smith in charge of <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879ceeab9f4ece111575a99c0e70b6b769a0978390e20e6fc4f6857fddab8b828f0f4b9d417a8f5f5a950fb7a60a6aee384" target="_blank"><u>a diminished caucus and a province sharply divided</u></a
+> between rural and urban communities. The UCP lost several prominent cabinet ministers in Calgary but held onto power despite a campaign that was overshadowed by her own past comments, as well as complaints that she steered the party too far to the right.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; DON BRAID, Calgary Herald: </strong
+>&#8220;After the dust clears, <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879cf72824251f272bd5d8fc95db0476675cc74102f2d5e5a0d709ae6eadfd2af6a8015cd732dd1b6c180939f0cd6be5a2c" target="_blank"><u>there&#8217;s every chance Alberta will calm down</u></a
+> as the new government gets on with the big jobs &#8212; health care, inflation, street crime, addictions, economic growth, job creation, the future of Alberta&#8217;s energy sector &#8212; all that difficult stuff that actually affects people&#8217;s lives. So, no, Alberta has not lost its mind, just a few spare marbles here and there.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">What do you see in the results? </strong
+></span><a
+ href="mailto:ottawaplaybook@politico.com" target="_blank"><bsp-playbook-rubric>  <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>Let us know here.</u></strong
+> </bsp-playbook-rubric></a
+><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&nbsp;</strong
+></span></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;">    <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">        <tbody>        <tr>            <td width="32" valign="middle" style="vertical-align:top;font-size:0;text-align:right;padding-top:10px;"><img src="https://s3.amazonaws.com/origin-static.politico.com/hosted/icon-red-circle%402x.png" title="" alt="" width="12" style="max-width:12px;margin-top:1px;"></td>            
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:10px;margin:0;" valign="middle">TODAY'S HIGHLIGHTS</td>        </tr>        </tbody>    </table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><br>&#8212; Prime Minister <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JUSTIN TRUDEAU</strong
+> will attend a National Prayer Breakfast and deliver remarks at 7:30 a.m. Trudeau chairs a 10-a.m. Cabinet meeting before attending Question Period at 2 p.m.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8212; Deputy Prime Minister <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">CHRYSTIA FREELAND</strong
+> will attend Cabinet at 10 a.m., QP later this afternoon.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">9 a.m.</strong
+> <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879d048f0c8e103135649992d2781c061d944256fbc3cd81cd155903c738c463f3e09517cf00519c981f9b052013ac96d25" target="_blank"><u>The Senate transport and communications committee</u></a
+> will hear from a long list of witnesses on <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879c741818cce3983968f249fd827852d63089abeb5934b11fcb404377a399f1066acae726a588e97eb773e711f3bde5ca4" target="_blank"><u>Bill C-18:</u></a
+> <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JESSE BROWN</strong
+>, publisher of Canadaland; <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">PHILLIP CRAWLEY</strong
+>, CEO and publisher of The Globe and Mail; <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">PAUL DEEGAN</strong
+>, president and CEO, News Media Canada; <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JEFF ELGIE</strong
+>, CEO Village Media; journalist <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JEN GERSON</strong
+>; <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">PIERRE-ELLIOTT LEVASSEUR</strong
+>, president of LaPresse and director of News Media Canada; and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">BRIAN MYLES</strong
+>, director of Le Devoir.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">10 a.m. </strong
+>NDP Leader <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JAGMEET SINGH</strong
+> holds a press conference to talk about his party&#8217;s opposition day motion to urge <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DAVID JOHNSTON </strong
+>to resign his special rapporteur role. </p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">10 a.m.</strong
+> Official Languages Commissioner <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">RAYMOND TH&#201;BERGE </strong
+>tables his 2022-23 annual report in Parliament.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">10:30 a.m.</strong
+> A media advisory from <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">ELIZABETH MAY</strong
+>&#8217;s office promotes a press conference in West Block featuring opposition MPs to address the &#8220;surge in disinformation in Parliament relating to harm reduction and the opioid crisis&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">11 a.m. </strong
+><a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879f71b6c3de9a5794d1258d58ce8fc5e38afe1ba0a3757119573ac5882236ce109bcc394b52c8de9e74aa554560ba2127e" target="_blank"><u>The House procedure and House affairs committee</u></a
+> continues its study of alleged intimidation of Conservative MP <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MICHAEL CHONG.</strong
+> </p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">12:30 p.m. </strong
+>Transport Minister <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">OMAR ALGHABRA</strong
+> and Sen. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">SALMA ATAULLAHJAN </strong
+>hold a press conference in West Block to bring attention to Project Ramadan.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">1:30 p.m. </strong
+>Natural Resources Minister <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JONATHAN WILKINSON</strong
+>, Nova Scotia&#8217;s Environment Minister <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">TIMOTHY HALMAN</strong
+>, Immigration Minister <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">SEAN FRASER</strong
+> and Labor Minister <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">SEAMUS O&#8217;REGAN</strong
+> hold a press conference in West Block to talk about proposed amendments to the Atlantic accord and N.S.&#8217;s offshore petroleum resources accord.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">3 p.m. </strong
+>Auditor General <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">KAREN HOGAN</strong
+> will table two reports to the Nunavut Legislative Assembly &#8212; one on Covid-19 vaccines, the other on child and family services in Nunavut.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">3:30 p.m. </strong
+>Public Safety Minister <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MARCO MEDICINO</strong
+> will be at <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca87924438b915d5d9cfc4c3fc02858e8ef41851858254a2c772503f1e7c335659f378bcb9c4cf4279db24a83140641075c86" target="_blank"><u>the House public safety committee</u></a
+> meeting to discuss <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879a56dad2f28cba2bbe6ae7db16aefc9e3235ee83bc8f0a066cb4daf9ed185b765be636c5124db4f701773b78934c81ea1" target="_blank"><u>Bill C-20</u></a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">3:30 p.m.</strong
+> A quad of Cabinet ministers, <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">KARINA GOULD</strong
+>, <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">KAMAL KHERA</strong
+>, <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">SEAMUS O&#8217;REGAN</strong
+> and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">CARLA QUALTROUGH, </strong
+>will be at <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca8790aa48c31dff850abedb5c55863c3e437c7ff8feb6cfb39c7ad6b52d9a891be38dc8100e8ceae6ab61df84147718518a5" target="_blank"><u>the House human resources committee</u></a
+> to take questions about main estimates.</p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;">    <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">        <tbody>        <tr>            <td width="32" valign="middle" style="vertical-align:top;font-size:0;text-align:right;padding-top:10px;"><img src="https://s3.amazonaws.com/origin-static.politico.com/hosted/icon-red-circle%402x.png" title="" alt="" width="12" style="max-width:12px;margin-top:1px;"></td>            
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:10px;margin:0;" valign="middle">MEDIA ROOM</td>        </tr>        </tbody>    </table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><br>&#8212; National post columnist <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JOHN IVISON </strong
+><a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca8797b0f67136bec7eb1ccc860dd70f4998421fe474ca703867af393494fe5c846e9c6fd246da04db0d63d431b4dd942e6e6" target="_blank"><u>speculates</u></a
+> about prorogation or a Cabinet shuffle amid silly season on the Hill.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; </strong
+>The Star&#8217;s <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DAVID RIDER</strong
+> surveys the race for Toronto mayor and asks, <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca8795acd68932d0e7dc9128e00e5c6df8733e61955fd1060d925b3a4bc09a8956c4f0cff5119b5df338f887658e54beed586" target="_blank"><u>&#8216;Will there be an anyone but </u><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>OLIVIA CHOW</u></strong
+><u> movement?&#8217;&nbsp;</u></a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8212; <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">TERRY GLAVIN </strong
+><a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879778bbe7f2f184779fa1a74e12f84a5a16a6086bd8c8360749ea50c964cb35baea3d00db890e6aa5267e92ea02ccbfb6a" target="_blank"><u>writes on his substack</u></a
+> that Ottawa is missing the more interesting conflict of interest questions over special rapporteur <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DAVID JOHNSTON</strong
+>&#8217;s appointment, after <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JEAN-FRANCOIS CLOUTIER </strong
+>in the <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879bc2ce765e6e85d9abbfc8c78a4ed67e8a631b6e1d0d255ffb157327d122ba6b4b8c0e72bab218e7dd58aef5fd51bafda" target="_blank"><u>Journal de Montreal</u></a
+> listed eight areas of potential conflict &#8212; most of which actually involve Chinese ties.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8212; <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">CHRIS NARDI </strong
+>writes that Procurement Minister <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">HELENDA JACZEK</strong
+> revealed during a committee appearance the government aims to have a <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879827c55ca1a9760974e028d70f589b80aae7dccc437d80ecdb793573e0b115dc6d3a4b06a32ad42c8093b472f592832aa" target="_blank"><u>plan for the dilapidated, asbestos-filled, rodent-infested</u></a
+> 24 Sussex by fall.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8212; <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MICKEY DJURIC</strong
+> writes Heritage Minister <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">PABLO RODRIGUEZ </strong
+>suggested the online news bill, C-18, might make CBC <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879af0085745a4e8757b69c31c24978850b995f9884e1350f582d01bca0e30e4f50d0e140a2739ee57ca338694b59d7bf87" target="_blank"><u>less reliant</u></a
+> on advertising. Conservative MP <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MELISSA LANTSMAN</strong
+><a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca8793a07664221d7938a01bd6c36f13b5d5c5e5bb71285f91be0b64128af4d284070658fd50f75f1451dd256f20babfcad7f" target="_blank"><u>used the minister&#8217;s committee appearance</u></a
+> to press why the technocratic broadcast regulator gets to decide which online platforms will be subject to Bill C-11, the online streaming act, rather than the government.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8212; <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">LORI TURNBULL</strong
+> <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879ad12720b3cf82768a695741b7a2fa02cd98748f4803edd8dc46989e49bbc95863ba384e593dfd76700aa971558ea3b59" target="_blank"><u>argues in the Globe </u></a
+> that David Johnston should have been &#8220;nowhere near this thing,&#8221; which has turned into yet another scandal about Trudeau rubbing elbows with Canada&#8217;s elite.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8212; Former Ontario Cabinet minister <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MICHAEL CHAN</strong
+> <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca8793f3e1ecd312a9f77560ee6e6588191f2eb6943629e391cee10fb8ea0ab2589c39992e4bb4c7e137d77168f003af142c8" target="_blank"><u>is suing</u></a
+> CSIS and Global News.</p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;">    <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">        <tbody>        <tr>            <td width="32" valign="middle" style="vertical-align:top;font-size:0;text-align:right;padding-top:10px;"><img src="https://s3.amazonaws.com/origin-static.politico.com/hosted/icon-red-circle%402x.png" title="" alt="" width="12" style="max-width:12px;margin-top:1px;"></td>            
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:10px;margin:0;" valign="middle">PROZONE</td>        </tr>        </tbody>    </table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><br><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">For POLITICO Pro subscribers, our latest policy newsletter:</strong
+> <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca87999279d761d5c6dd89168ee0f83e2b07fe5824228c315a59a4ff1cdf276ab4fc60cbd1ecfe70df3fc9ae8639567357f28" target="_blank"><u>MP shares fresh details of Chinese interference.&#8203;&#8203;</u></a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">In news for POLITICO Pro subscribers:</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8212; <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca87911a0fc49ec0f6a41c0b256c2b20a7a9cc281a065f0510bcc57651a52be9d982bcfb0744cccbe7c584d967ec2f42f43c6" target="_blank" data-debug-source-uuid="00000188-658c-d998-ab8f-f7dd178a0000" data-debug-source-site="POLITICO Pro"><u>White House to Dems: The debt deal could have been a LOT worse.</u></a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8212; <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879740681e16084adc001ce12cc7581c3c1ebea77a187ce83cc04092944d349c58976791d9950edd6d47bed761d0f0da872" target="_blank" data-debug-source-uuid="00000188-654c-d191-afc8-6f5c1fdc0000" data-debug-source-site="POLITICO Pro"><u>Wrinkles and curveballs in the debt ceiling bill.</u></a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8212; <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca8795fb9e56a8f96dd7ba98f15ea8cf9f1f610a537113ce1cd7a39444c7c0b28457ab09eac8a32814ad94501aaac68f4a79a" target="_blank"><u>Debt ceiling deal sidesteps energy permitting.</u></a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8212; <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca87984ad9dc9a30e903c01af6506ec1b61ddd8cee733a403226ed0d87e63c7e2b6913c7efae7c3474650e9acdad1e399be20" target="_blank" data-debug-source-uuid="00000188-5ed6-d191-afc8-5edea9c20007" data-debug-source-site="POLITICO Pro"><u>How 'Buy America' could derail high-speed trains.</u></a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8212; <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca87972f4a4da24f10bd4856440c3b80820acb6621337e64833cb6c5c9630e6e9f1faf641aa9c391f7bb3425a220b107e4eb6" target="_blank"><u>Biden world confident in a Trump rematch but preps for a surprise.</u></a
+></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;">    <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">        <tbody>        <tr>            <td width="32" valign="middle" style="vertical-align:top;font-size:0;text-align:right;padding-top:10px;"><img src="https://s3.amazonaws.com/origin-static.politico.com/hosted/icon-red-circle%402x.png" title="" alt="" width="12" style="max-width:12px;margin-top:1px;"></td>            
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:10px;margin:0;" valign="middle">PLAYBOOKERS</td>        </tr>        </tbody>    </table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;">
+<p align="center" style="margin:0 0 20px 0;"><img src="https://www.politico.com/dims4/default/85aaa0b/2147483647/resize/1000x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2Fda%2F6c%2F95e62b1c4fac92c9b5e0040de336%2F20220510-jasonkenney-ap-773.jpg" title="20220510-jasonkenney-ap-773.jpg" alt="Jason Kenney is pictured." width="500" style="width:100%;max-width:500px;"></p><p style="font-family:Helvetica,sans-serif;font-size:12px;color:#6E7381;margin-bottom:24px;"> Many happy returns: Jason Kenney.  |  Alik Keplicz/AP Photo</p></td>                    </tr>                                    <tr>                        
+<td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Birthdays: </strong
+>HBD to former Alberta premier <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JASON KENNEY. </strong
+>The PMO&#8217;s <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">HALLIE STACEY-SULLIVAN</strong
+> also celebrates today.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Spotted: </strong
+>The newly updated Lobbyists' Code of Conduct &#8212; <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca87986a6377fe721d4d9f916927f1dba6080e4d66892429893044b5c9d9023deaa0b727abe074a90f0dd5fe0dcb8dce2d568" target="_blank"><u>published in the Gazette.</u></a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Poland&#8217;s PM <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MATEUSZ MORAWIECKI,</strong
+> <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879c1c06dea6241e3c06ffb3a34e19f929582916799afd16780b35295309948f2934d54e711fa7625df930f409e316d1129" target="_blank"><u>heading to Canada.</u></a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">U.K. House of Commons Speaker <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">LINDSAY HOYLE,</strong
+> in Ottawa with International Trade Minister <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MARY NG </strong
+>and <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca8790695de5f73c989adc2c766d1657ac3020944e13f03b155b05401f1a55dfc781a50cadcc44bb81d0dac20cb5d7d7aac6c" target="_blank"><u>Liberal MP</u></a
+> <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">IQRA KHALID</strong
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">U.S. investor and anti-Putin critic <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">BILL BROWDER </strong
+>is also in town, visiting <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca8794250341215c614a42aaa082598c5baa978941687d8b3c53acde9c76e8f48e9f449e7835cc9ed6a4aba3825463bff8661" target="_blank"><u>Liberal MP</u></a
+> s <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JOHN MCKAY</strong
+> and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">ANITA VANDENBELD</strong
+> and <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca8793085af3ba38467e68fc9ba233f4a08521fea9f08235d36d6d15076e19ed726924765172b0c6e52bbc8272b40c4e3fe3f" target="_blank"><u>Conservatives</u></a
+> <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JAMES BEZAN </strong
+>and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MARTY MORANTZ</strong
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">MP <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">ARIF VIRANI</strong
+> celebrating the FC Commoners and another season of parliamentary soccer.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Conservative MP <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">RICHARD BRAGDON,</strong
+> marking the 58th annual National Prayer Breakfast on Parliament Hill &#8212; &#8220;the longest running parliamentary event in Canada; the longest running national prayer breakfast in the world.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Veterans Affairs Minister <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">LAWRENCE MACAULAY </strong
+>proceeding <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JOHN MCGARRY</strong
+> with the <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca8799e02102319eb0a9cf80310bf37fd1fed7b027b94b60887b3e07533c72ab39eeda8f104c21ab22f5c594f4fab0200fe93" target="_blank"><u>Pearson Peace Medal in Ottawa</u></a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Farewells:</strong
+> Conservative MP <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">PIERRE PAUL-HUS, </strong
+>Liberal MP <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">SOPHIE CHATEL</strong
+> and Bloc MP <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MARTIN CHAMPOUX</strong
+> paid tribute to late Quebec actor <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MICHEL C&#212;T&#201; </strong
+>in the House Monday. Prime Minister <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JUSTIN TRUDEAU</strong
+> called C&#244;t&#233;&#8217;s death at 72 &#8220;<a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879bf11dae004d5946d6e098ba13fe3140b35d57e7d1b5b234fb76d42577d86dc77e5a8fcf30b3a3d768363c7a2e1bdce39" target="_blank"><u>an extraordinary loss</u></a
+> for Quebecois culture and for our entire country.&#8221;</p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;">    <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">        <tbody>        <tr>            <td width="32" valign="middle" style="vertical-align:top;font-size:0;text-align:right;padding-top:10px;"><img src="https://s3.amazonaws.com/origin-static.politico.com/hosted/icon-red-circle%402x.png" title="" alt="" width="12" style="max-width:12px;margin-top:1px;"></td>            
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:10px;margin:0;" valign="middle">On the Hill</td>        </tr>        </tbody>    </table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><br>&#8594; <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879642b7d58095ded58d390467df1d115d7d0f96b5ac4d85add4b19bd258f299fdc4cf73af6592a10c3c99ab8a925223b14" target="_blank"><u>Find the latest on House committee meetings here</u></a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8594; <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca87967a1a009782b5800b695d8173ed40906b624118814d26c90f7591dffd3c56c6aecdb6ab40ef6a5dc0badaa925ff48e6d" target="_blank"><u>Keep track of Senate committee meetings here</u></a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">9 a.m. </strong
+><a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca8791559e87b1f0b15e0ac3693452480ce6fb0c42567fa6f95eedf3147f8d4bf09d997b340f9dcfe7163e16017a314432cc4" target="_blank"><u>The Senate committee on Indigenous Peoples</u></a
+> will consider <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879a6cb1aab7532e3665ab17cedb5f6fe8a944f6cc4ed219d254039cdb51acfdebfb8c5dc4503fd442be74b3a14551c0a56" target="_blank"><u>Bill C-29.</u></a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">9 a.m.</strong
+> <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879d048f0c8e103135649992d2781c061d944256fbc3cd81cd155903c738c463f3e09517cf00519c981f9b052013ac96d25" target="_blank"><u>The Senate transport and communications committee</u></a
+> will hear from a long list of witnesses on <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879c741818cce3983968f249fd827852d63089abeb5934b11fcb404377a399f1066acae726a588e97eb773e711f3bde5ca4" target="_blank"><u>Bill C-18.</u></a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">9 a.m. </strong
+><a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879e0702b69bd6a20c3d5ea182cb1ff083bbb29f6b530a88e0c0e5ca0459e178362bcc93791f946827ca2a39e61c544988e" target="_blank"><u>The Senate finance committee</u></a
+> is studying <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca87904754cff46f474f80534ceec998c63219f71a3234e77171a5540e9bc79bcfc4d05a5ece803100884e05a27fb2d000e85" target="_blank"><u>Bill C-47.</u></a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">10 a.m. </strong
+>NDP Leader <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JAGMEET SINGH</strong
+> holds a press conference.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">10 a.m.</strong
+> Official Languages Commissioner <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">RAYMOND TH&#201;BERGE </strong
+>tables his 2022-2023 annual report in Parliament.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">10:30 a.m.</strong
+> A media advisory from <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">ELIZABETH MAY</strong
+>&#8217;s office promotes a press conference in West Block featuring opposition MPs to address the &#8220;surge in disinformation in Parliament relating to harm reduction and the opioid crisis.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">10:30 a.m. </strong
+>Sen. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JULIE MIVILLE-DECH&#202;NE</strong
+> and Sen. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MICHAEL MACDONALD</strong
+> will be at <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca87947b0de910f660eb649b9267b43f6f4a17ba340e9b34bd18f8abe74e20ce22128532efba204de07cad47514ba6623d5d8" target="_blank"><u>the Senate rules and procedures committee.</u></a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">11 a.m. </strong
+><a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879f71b6c3de9a5794d1258d58ce8fc5e38afe1ba0a3757119573ac5882236ce109bcc394b52c8de9e74aa554560ba2127e" target="_blank"><u>The House procedure and House affairs committee</u></a
+> continues its study of alleged intimidation of Conservative MP <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MICHAEL CHONG.</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">11 a.m.</strong
+> <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879217946139208df9a8a0623dc3459f78038f57762939d86785101d2993b0a3862dfc5e08576894ba1721653c5fc1eb219" target="_blank"><u>The House transport committee</u></a
+> meets to study adapting infrastructure for climate change.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">1:30 p.m. </strong
+>Natural Resources Minister <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JONATHAN WILKINSON</strong
+>, Nova Scotia&#8217;s Environment Minister <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">TIMOTHY HALMAN</strong
+>, Immigration Minister <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">SEAN FRASER</strong
+> and Labor Minister <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">SEAMUS O&#8217;REGAN</strong
+> hold a press conference to talk about proposed amendments to the Atlantic accord and N.S.&#8217;s offshore petroleum resources accord.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">1:30 p.m.</strong
+> Green MP <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MIKE MORRICE</strong
+> and Sen. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">KIM PATE</strong
+> join Dimes Canada executive <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">VICTORIA PEARSON</strong
+> for a press conference in West Block to press the government to pass <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca8796090c3a1ba9f35a81a7931cb84a02d70e120fad416ce805764a9ab8829c465020917133379f80790b27908ef0ecf2dc0" target="_blank"><u>Bill C-22</u></a
+> before summer.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">3:30 p.m. </strong
+>Public Safety Minister <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MARCO MEDICINO</strong
+> will be at <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca87924438b915d5d9cfc4c3fc02858e8ef41851858254a2c772503f1e7c335659f378bcb9c4cf4279db24a83140641075c86" target="_blank"><u>the House public safety committee,</u></a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">3:30 p.m.</strong
+> A quad of Cabinet ministers, <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">KARINA GOULD,</strong
+> <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">KAMAL KHERA</strong
+>, <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">SEAMUS O&#8217;REGAN</strong
+> and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">CARLA QUALTROUGH, </strong
+>will be at <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca8790aa48c31dff850abedb5c55863c3e437c7ff8feb6cfb39c7ad6b52d9a891be38dc8100e8ceae6ab61df84147718518a5" target="_blank"><u>the House human resources committee.</u></a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">3:30 p.m.</strong
+> <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879121e226b7452409e6c91de8c1227a191ce6477c89e7f46f88db4797aefc26fee279738140d85d9745db020118c9b86ce" target="_blank"><u>The House natural resources committee</u></a
+> meets to study Canada&#8217;s pulp and paper industry.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">3:30 p.m.</strong
+> The Canadian Forces Health Services Group is under the spotlight at <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879e2cb089a6a6f92ecc27933ba93de4b2b8c039b835a421a12258d114aea19d5efdba8046b9a0e8e063c15975adf4dd9e3" target="_blank"><u>the House national defense committee</u></a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">3:30 p.m.</strong
+> <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879503aae49c9e19d53f197026bf7731011f6b13e9748f81a34aaf926604a81f323069a9ce5c4280f56998d365c05d9d3f5" target="_blank"><u>The House official languages committee</u></a
+> meets to continue their study of increased Francophone immigration to Canada.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">6:30 p.m. </strong
+>Auditor General <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">KAREN HOGAN </strong
+>will be in Iqaluit to table two reports to the Nunavut Legislative Assembly about child and family services an Covid-19 vaccines.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">When the Senate rises but not before 6:30 p.m.:</strong
+> <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879404be123ecad32e8f0dcf9df5e665185a7bf8a7eb6e0679f1ee1fad8f7a65676c3e3eea947bc24242ae349c2ec0bebea" target="_blank"><u>The Senate agriculture and forestry committee</u></a
+> continues its study of soil health in Canada with Environment and Sustainable Development Commissioner <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JERRY DEMARCO</strong
+> on the witness list.</p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;">    <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">        <tbody>        <tr>            <td width="32" valign="middle" style="vertical-align:top;font-size:0;text-align:right;padding-top:10px;"><img src="https://s3.amazonaws.com/origin-static.politico.com/hosted/icon-red-circle%402x.png" title="" alt="" width="12" style="max-width:12px;margin-top:1px;"></td>            
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:10px;margin:0;" valign="middle">TRIVIA</td>        </tr>        </tbody>    </table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><br><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Monday&#8217;s answer:</strong
+> <a
+ href="https://go.politicoemail.com/?qs=d2cbf33da2c024493444afaa0d96893b77da989e08b34c5cb1f052ff8d1c9986b1cf3ce3a14265a45864b0a355f5f3c61e3ad9f0c252e3dc" target="_blank"><u>The RMS Empress of Ireland</u></a
+> sank in the St. Lawrence River near Rimouski, Qu&#233;bec, on May 29, 1914.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Props to<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> J.D.M. STEWART. DAN MCCARTHY, AMY CASTLE, GREG MACEACHERN, MARC LEBLANC, MURRAY WILSON, JAVIER GONZALEZ BLANCO, ROBERT MCDOUGALL, STEVE PAIKIN, SCOTT LOHNES, GERMAINE MALABRE, GORDON RANDALL, SHAUGHN MCARTHUR, JOHN ECKER, GARY ALLEN, DOUG RICE, DOUG SWEET, GEORGE YOUNG, GEORGE SCHOENHOFER.&nbsp;</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">ALASTAIR MULLIN, BILL WATSON, ALLAN FABRYKANT, GORD MCINTOSH, AMY BOUGHNER, RODDY MCFALL, STEPHEN KAROL </strong
+>and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MATTHEW DUB&#201;.</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Today&#8217;s question: </strong
+>How many parties have formed a government in Alberta since it was founded?</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Send your answers to </strong
+><a
+ href="mailto:ottawaplaybook@politico.com" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>ottawaplaybook@politico.com</u></strong
+></a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><i
+>Want to grab the attention of movers and shakers on Parliament Hill? Want your brand in front of a key audience of Ottawa influencers? Playbook can help. Contact Jesse Shapiro to find out how: </i
+><a
+ href="mailto:jshapiro@politico.com" target="_blank"><i
+><u>jshapiro@politico.com</u></i
+></a
+><i
+>.</i
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Playbook wouldn&#8217;t happen without:</strong
+> Luiza Ch. Savage, David Cohen and Sue Allan.<br></p></td>                    </tr>                                <!-- End Ad Copy -->                <tr>                                    </tr>                <!-- Post Body Content -->                <tr>                                    </tr>                <tr>                    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>                </tr>                <!-- Twitter Handles -->                                    <tr>    <td style="color:#000000;padding:0px 20px 20px 20px;text-align:left;">        
+<p style="font-family:Helvetica,sans-serif;font-size:20px;color:#000000;margin-top:0;margin-bottom:15px;"><strong
+>Follow us on Twitter</strong
+></p>        <table cellpadding="0" cellspacing="0" border="0" role="presentation">            <tbody>            <tr>                <td width="52" valign="middle" style="text-align:left;padding-right:10px;"><img src="https://static.politico.com/hosted/icon-twitter-circle-blue%402x.png" title="" alt="" width="50" style="max-width:50px;"></td>                <td valign="middle" style="text-align:left;font-family:Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#000000;">                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Nick Taylor-Vaisey <a
+ href="https://go.politicoemail.com/?qs=d2cbf33da2c02449f3ca2615bb8593c75710facbcbacc6b9d9f5caaf47b235de4d521315eba36ad69ed1446525fb1ef3f712e074a82aa545" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@TaylorVaisey</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Sue Allan <a
+ href="https://go.politicoemail.com/?qs=d2cbf33da2c024494e86df4c6361319a47370ccd1773c3ac59970dc71750d282bdec28742c1dfc89d664c60a607332d72644bdd882279102" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@susan_allan</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Maura Forrest <a
+ href="https://go.politicoemail.com/?qs=d2cbf33da2c024494edb6a1e7e6420b936858799e56259a2d9abdbc6a72dbba2123e186beee99ae9f8109c7ca596d73986ca02f80e3e3850" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@MauraForrest</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Kyle Duggan <a
+ href="https://go.politicoemail.com/?qs=d2cbf33da2c024499928cf543e3c82c9f7dcde56a201aea1051998eb1ef7a37c0fbb36e8aea012d1f87b88d8998d2cac2a48e69f8f09ab9c" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@Kyle_Duggan</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Zi-Ann Lum <a
+ href="https://go.politicoemail.com/?qs=d2cbf33da2c02449545818db7e724b597c5d2d4014034351f7112616fee2307d0d177a6ce0c783b3fe5d89437c16a5c95833b433679c97a4" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@ziannlum</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">POLITICO Canada <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca8796fff8502bdf9346fe0dc25cbc92e4581da7f69a4b3da091f0cded0ae80f7023dedf68944916e1a36b05185780fddabca" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@politicoottawa</a
+></p>                                    </td>            </tr>            </tbody>        </table>    </td></tr><tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                                <!-- Family of Playbook -->                                    <tr>    <td style="color:#000000;padding:0px 20px 0px 20px;text-align:left;">            <p style="font-family:Helvetica,sans-serif;font-size:20px;color:#000000;margin-top:0;margin-bottom:15px;"><strong
+>Subscribe to the POLITICO Playbook family</strong
+></p>            <p style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:24px;">                                    <a
+ href="https://go.politicoemail.com/?qs=d2cbf33da2c02449e3bba1e3b642c4e5d4d80be1eaf6e7fb4691e010318b039f5f292d8b9c242067fbef742b14b0d5f4d5f024cb799fa4d2" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=d2cbf33da2c02449d8de1e82b77a669f003d915b73b41f2a112aa6e578dd2dcbc3d2f958ef7325ed0cc4dd4f0b9d17a96fa19fbfa07d6c26" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Playbook PM</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=d2cbf33da2c02449f3ab77464232bad4b5e255fbe1f9290b10c712a3ea8aaad68792e976674c69debb3b0e007132e5af7baab275e632a6ba" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">California Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=d2cbf33da2c024491347a84e796a78646f0c6034c6c3c4cc0d9ff6a711dcdc850212ea597db36e83974b261664509784d591ce0d25bc5c1b" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Florida Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=d2cbf33da2c02449d0b2234af658f058790b8486847672abce55b46bd5a91f7944660f9d418edc5fe01d55389b55ef63ae2171d98a4938e0" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Illinois Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=d2cbf33da2c02449cec8d0dfe3334db9181e3187d9f6f4e0e9c899798259937463ffcf9f2d29406771ca89bacf3c04cd8e6d6696d911ccf9" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Massachusetts Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=d2cbf33da2c024490adaec690f755abe0303dccb26720ab25c740c6c9ef8f1a87e1588654d9939012afa0e9fdad05804a150762d4ef2689c" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">New Jersey Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=d2cbf33da2c02449f343afb5f6bde1c54fbccd1af7aeee866d4ac619004a723e9119b751867009a2ef8390f816f689fdb975d54ab6236671" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">New York Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=fe9288da154ca879aadb6a61bbac44474b508e682fe087042d54b63712bbe431f038f6e758c1b3338122a0bcae57fe469eb0f116a008c689" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Ottawa Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=d2cbf33da2c0244966eeff2ab5d7e2eef8659fcb9a9affb665df4d32dfb87cbca11a39ab656ae7bf110caab7346906ad529bf096b0a4ec5c" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Brussels Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=d2cbf33da2c02449ddbefb7c5f6b4a5429dc7d1e2bb5418b75e206e89e922678c8ddb597176f5a231c2a8cfdfa7f3d2e4eeedb5223ce9fa8" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">London Playbook</a
+>                                                </p>            <p style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:24px;"><a
+ href="https://go.politicoemail.com/?qs=d2cbf33da2c0244961999924dd7fcb1971b2fa038832e676bffc75583cf6bafbd143a13c513c04c54371c4765229bf7675b3ffd1be085c72" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">View all our political and policy newsletters</a
+></p>    </td></tr>                                <!-- Follow us -->                <tr>    <td style="color:#000000;padding:0px 20px 20px 20px;text-align:left;">        <p style="font-family:Helvetica,sans-serif;font-size:12px;color:#000000;margin-bottom:10px;line-height:14px;text-transform:uppercase;font-weight:bold;letter-spacing:2px;">Follow us</p>        <table cellpadding="0" cellspacing="0" border="0" role="presentation">            <tbody>            <tr>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=d2cbf33da2c02449b1788c9cc93ca173e6691cdd367f294ee5e2201ba1c4ed5f49ac5a65d05db5c04f086a8fbac7aab6f1f259c8dabe78fb" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-facebook-gray%402x.png" title="Follow us on Facebook" alt="Follow us on Facebook" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=d2cbf33da2c02449fa4dd722a971df9e61da5ba868fe142ebf07182f6a9af27c41c3ac1f12161b8fc89f5601b2b218034914db36c1900a76" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-twitter-gray%402x.png" title="Follow us on Twitter" alt="Follow us on Twitter" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=d2cbf33da2c0244977e3dcf408cb3db7def892b2df21637a95d46a42601cf6a0160cd5d7a02215ba41d3b0d294c75749e7a369ee1be2f00d" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-instagram-gray%402x.png" title="Follow us on Instagram" alt="Follow us on Instagram" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=d2cbf33da2c02449c69ec10574b654bf9b3ce7e8569b82b9dd193a7d1d9f41ac1b36bac2407486d39f7e521cd7d501a68834299894fb810e" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-applePodcast-gray%402x.png" title="Listen on Apple Podcast" alt="Listen on Apple Podcast" width="24" border="0" style="max-width:24px;"></a
+></td>            </tr>            </tbody>        </table>    </td></tr><tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                </tbody>            </table>        </td>        <td><!-- Note: This is left blank to aid in centering across email clients --></td>    </tr>    </tbody></table><!-- Everything below this line is "new" to the template. We'll have to experiment a bit to see if it causes troubles. --><!-- howler#email.footers/core-newsletter.footer.html -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff"
+       style="padding:5px 0 15px 0;margin:0;text-align:center" role="presentation">
+    <tbody>
+    <tr>
+        <td><!-- Note: This is left blank to aid in centering across email clients --></td>
+        <td align="center" width="540">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:540px" role="presentation">
+                <tbody>
+                <tr>
+                    <td align="center" style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;">
+                        <p style="margin-bottom:15px;line-height:24px;">To change your alert settings, please log in at
+                            <a
+ href="https://go.politicoemail.com/?qs=d2cbf33da2c0244932a2ede6bcac45d33bc524e8ba53b19288a622bef1c52028a284a20d1f4669ada3876feab40bab15f6898eb81ebabf1b" target="_blank" style="color:#007BC7;text-decoration:none;">https://www.politico.com/_login?base=https%3A%2F%2Fwww.politico.com/settings</a
+>
+                            <!--Commenting out the following line because it causes an undesired line to be displayed on outlook (some versions) and we couldn't find the use case of it-->
+                            <!-- <span style="display:none;"><a
+ href="https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a201df3a7484f2e5fec14596057173003e62cf7fa63e2f18b0">https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a201df3a7484f2e5fec14596057173003e62cf7fa63e2f18b0</a
+></span> -->
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="padding-bottom:15px;"><img
+                            src="https://static.politico.com/hosted/icon-politico-logo.png"
+                            class="CToWUd"></td>
+                </tr>
+                <tr>
+                    <td align="center"><p
+                            style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:20px;">
+                        This email was sent to ouchendans62@gmail.com by: POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+                        <p style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:24px;">
+                            
+
+                            Please click <a
+ href="https://go.politicoemail.com/?qs=d2cbf33da2c02449457251ac1f8f8e68e0821612d8f17903e68a76b1b2065f38b7d7b4758ef77738abd3bcdc519863c0d90898de78ce77f1" target="_blank" style="color:#007BC7;text-decoration:none;">here</a
+> and follow the steps to unsubscribe.
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td><!-- Note: This is left blank to aid in centering across email clients --></td>
+    </tr>
+    </tbody>
+</table>
+<img src="https://click.politicoemail.com/open.aspx?ffcb10-fe951d787565077875-fde813797160037e70167873-fe9115737262077c7c-fe931677746c0d7d74-fdf61574756104747317747c-ffcf14&d=40126&bmt=0" width="1" height="1" alt="">
+</body></html><p email-meta style="display: none;opacity:0;">source=GoggleDocument, article=00000188-6c01-d998-ab8f-fe5df2570000</p>
+
+--9XhEHqcQT0qq=_?:--
+

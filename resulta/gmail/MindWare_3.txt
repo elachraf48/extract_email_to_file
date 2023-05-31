@@ -1,0 +1,710 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:9f5b:0:b0:2da:43c2:96f2 with SMTP id l27csp579861imf;
+        Sun, 28 May 2023 10:14:00 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ5qDR+NcAr9dK5TVD4nCckyd7zurANIwrvzcXAkD2E2oVHgStEwqExiTkTy4l+U4dJR2839
+X-Received: by 2002:a0d:e685:0:b0:55a:30f5:3d65 with SMTP id p127-20020a0de685000000b0055a30f53d65mr10874031ywe.41.1685294040205;
+        Sun, 28 May 2023 10:14:00 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685294040; cv=none;
+        d=google.com; s=arc-20160816;
+        b=NdS82Mi2K7N2yzaxELq0ZWCJy3uerY+p+k3gFaWscdzdlKlXt1vHz28+d0gB9rCKjQ
+         IQr6pfWMIflThQTHTivdfl4Rv2l1uyR6KfJaGztXZ3E7fkOyFzsQ0xB4muwbEiMtXVQk
+         gpUW+u8+SktCSi0Gm9JuzPOalc3cltx5zGuIq2xuDUSPKbaHTOzEpWnO7zblhGjGyCQJ
+         pyublTJfOYkceauxXRaOilGAyHOlvDCa0CFU0M93QPJ9wr+d5Ni4M36SrFMn+/kLcXrz
+         rbqTTS3PJOjxP1P8MMmF7xu8f8EQ/gdjjwxHD35fxfMJS01zXETtXFrVzzUKWrAiBJh0
+         EIKQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:list-unsubscribe:reply-to:subject:message-id:mime-version:from
+         :date:content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=jQdeWfiz2DkT0l1UQCfSOoEblvFUkvv11MwhooO+yIU=;
+        b=O9eucIe5rUv6hReHL64aeVd3cey81AJhnYCS1wIE/uGbeSpWxGk0yXom/gz95vZspC
+         UmcCIQ8qTHR29txAPYzIEAuDlITdLgSQAVSbZNCtO1ponP3mz2mbm+CyvXdBGZAfXM1X
+         HlUQ0aNsLoWtwTEdyXU3MY/BfTSwrfnVV4KFkUsikekATnlcPHJlXp5anbYK9ZjBikLQ
+         DcdzHh1z2PYy6MAnkESyXr3aLS11Ng43aaDdLVnIF8HdnEoOHjKrOJpLDLbRj9vePUjX
+         opUEoi1ZS+nOYy3mSaK5r+dI5J/3CbK3LiRSfRVk1Av97pawLPmqyYpNiJPoWZFaKNUD
+         0Aiw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@b.mind-waretoys.com header.s=s1 header.b=wL6hsyNS;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=sxsCmCaY;
+       spf=pass (google.com: domain of bounces+19978200-44ed-ouchendans62=gmail.com@em.b.mind-waretoys.com designates 149.72.31.107 as permitted sender) smtp.mailfrom="bounces+19978200-44ed-ouchendans62=gmail.com@em.b.mind-waretoys.com"
+Return-Path: <bounces+19978200-44ed-ouchendans62=gmail.com@em.b.mind-waretoys.com>
+Received: from o872.b.oriental-trading.com (o872.b.oriental-trading.com. [149.72.31.107])
+        by mx.google.com with ESMTPS id x65-20020a814a44000000b0055dd5b230fdsi8366114ywa.434.2023.05.28.10.13.59
+        for <ouchendans62@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 28 May 2023 10:14:00 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+19978200-44ed-ouchendans62=gmail.com@em.b.mind-waretoys.com designates 149.72.31.107 as permitted sender) client-ip=149.72.31.107;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@b.mind-waretoys.com header.s=s1 header.b=wL6hsyNS;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=sxsCmCaY;
+       spf=pass (google.com: domain of bounces+19978200-44ed-ouchendans62=gmail.com@em.b.mind-waretoys.com designates 149.72.31.107 as permitted sender) smtp.mailfrom="bounces+19978200-44ed-ouchendans62=gmail.com@em.b.mind-waretoys.com"
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=b.mind-waretoys.com;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	reply-to:list-unsubscribe:x-feedback-id:to:cc:content-type:from:subject:to;
+	s=s1; bh=jQdeWfiz2DkT0l1UQCfSOoEblvFUkvv11MwhooO+yIU=;
+	b=wL6hsyNSVscyoldetWyJ8rLP3k7KATVTE1RSNe6BPa3KyB5F+n9z+JXIBFKEqUiv5m/g
+	WlPVvpMaqY/f+OOt7azitX1DvHQFDj8CNyyz0w1SJvWmYkW2vEPwPgQDayuMipumHcnSTn
+	p8g+dHmVALoHyXjV+8B/TMl/7ARvXvfMcq6kh4Npu2WdDt6/0XE8xogXgtLLnRrA6Jx5kn
+	K6bDFJPOgIXVHcRw3D5mogmFlq1UbOytOy7fjCNP24Rimwg1oeYLBUhYwn+wOf1Sjb5nw7
+	JO7ZvIxKW5py6XymUXjM9LlYxKbu6iYOjtOKLklzzf24W7ZHCS4QFVm6yMnMpKPA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	reply-to:list-unsubscribe:x-feedback-id:to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=jQdeWfiz2DkT0l1UQCfSOoEblvFUkvv11MwhooO+yIU=;
+	b=sxsCmCaYVKWVueNajqh8On8L48kdkl09HpJB2x3BzY6McKzAu2DuB8OxHHkGJPJrP4K8
+	APB6gLnoEupxKM5+BoGDmtA2erAWW23IKOaIVS9rTy6Kd+7InEpBCpmANOfvwgMbPFidLN
+	sEGjH37MZMCr0nZNcbaHH1A1EBGnuo168=
+Received: by filterdrecv-85c4c97bf5-5rknc with SMTP id filterdrecv-85c4c97bf5-5rknc-1-64738BD6-4
+        2023-05-28 17:13:58.167714931 +0000 UTC m=+1532275.338419550
+Received: from MTk5NzgyMDA (unknown)
+	by geopod-ismtpd-12 (SG) with HTTP
+	id _XT3Jj4kSVeHRQCx-M7zZA
+	Sun, 28 May 2023 17:13:58.097 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Date: Sun, 28 May 2023 17:13:58 +0000 (UTC)
+From: MindWare <email@b.mind-waretoys.com>
+Mime-Version: 1.0
+Message-ID: <_XT3Jj4kSVeHRQCx-M7zZA@geopod-ismtpd-12>
+Subject: Hey Friend! Special Offer Inside to Keep the FUN Going!
+Reply-To: email@b.mind-waretoys.com
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em=2Eb=2Emind-waretoys=2Ecom=3Fsubject=3Dhttp=3A=2F=2Ftrk=2E?=
+ =?us-ascii?Q?b=2Emind-waretoys=2Ecom=2Fss=2Fsu=2F65306pTPCrABH?=
+ =?us-ascii?Q?RV5ojfizQ=2F3wk=2FxEYZ3vBKReKzQmQieytpBQ=2Fum?=
+ =?us-ascii?Q?=2FL=5F9bKRw6MwaxElAmU5b9gNA2-mSzuMIBbGbZJf?=
+ =?us-ascii?Q?qDI4Y=3E?=
+X-Feedback-ID: 19978200:SG
+X-SG-EID: 
+ =?us-ascii?Q?fj+jp1RNcuZojQcStzyuqqEx8q4QIaOlIdhVA44eFvYSgk6W6woelGGT7qnkWh?=
+ =?us-ascii?Q?GC=2Fr2N+w=2F=2FLP=2Fn0PwvzcJvxn+JTeKPfpP9=2F+j3l?=
+ =?us-ascii?Q?HLTse=2FcRbJRgO7jhhCwckpBQgaTTPpbDXdUZ7ql?=
+ =?us-ascii?Q?fApm9LBUHy9KsDGtTHDQ4eF9Jv3oc5gMBs61PSf?=
+ =?us-ascii?Q?AfalL9spyLOoXqh+DVBVRpa7aW2srBkoe94GOJs?=
+ =?us-ascii?Q?1DcdN1+XVRqgLhJRtqZaO46f=2FEhd3trDxEfrYl?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8raWjw0ZPf1VmjsCkspi=2FK+Smgz7hPg1QWlxFBMil?=
+ =?us-ascii?Q?7X+mdCj4Gzlbhtdwd4tg3iHMEnjyxrY7oupTiG4?=
+ =?us-ascii?Q?A6j4PmEuFUw4pogtPIxvBHz8FNFSdvesZSjxyIH?=
+ =?us-ascii?Q?=2Fl=2FC5xkRvZT8YpPHUaNNopLlfSytzns9s7av9=2FY?=
+ =?us-ascii?Q?JgIdCf6DeJ5bHdv=2FnNXgyED2AhE3NYTLtTnv2Ae?=
+ =?us-ascii?Q?OVbAKu+z4LkjiE3ZqdFVZKhzCbdwmB4tOB6btQr?=
+ =?us-ascii?Q?O4RtC35BRppucfBKsABYmrrcZBwpoXUdXr=2Fbohp?=
+ =?us-ascii?Q?wVK0Ub9TxXC9uK5VQhLsbEpSDZgxctTOdmjp3OZ?=
+ =?us-ascii?Q?OhjlWIcK3S59D0h7rcGWsKaNYXZ+q=2FN6evCy31K?=
+ =?us-ascii?Q?6moh3n9tU=2FzvQRQNbQ1ytpQtnzx3CWxQv3t442w?=
+ =?us-ascii?Q?n7LfxThjkxRH3M75ioJrJN9SZj+rLMUl=2Fel2l+h?=
+ =?us-ascii?Q?Priu2fj=2F+42xe6Ufpn9H0oQYloOVoJJjRvVdvni?=
+ =?us-ascii?Q?16Z+=2FEmlxA7dlLZigMgBsj=2Fh189wJA++0NzadaQ?=
+ =?us-ascii?Q?1jA4GDuv0cnpxeliWvaBJjT3yWLoA48XnOwV2cj?=
+ =?us-ascii?Q?lJWE+d+BDvmhIDduRuuJZr=2F8Ks9zW8cka2sz7yM?=
+ =?us-ascii?Q?NVvkw1SlsnwTpQhWGTGN5cGYZm=2F8MEksdapcPPF?=
+ =?us-ascii?Q?iROig7G8XQdCdhfP5eHJFlTBsVKcUArc2gYA=3D?=
+To: ouchendans62@gmail.com
+X-Entity-ID: kRNWYfP/vVZ5O+mEztRYjA==
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name=3D"viewport" content=3D"width=3Ddevice-width">
+<meta name=3D"format-detection" content=3D"telephone=3Dno">
+<link rel=3D"stylesheet" href=3D"https://bluecore.com/admin/templates/fonts=
+/otc_mindware.css">
+<style type=3D"text/css" media=3D"only screen and (max-width: 600px)">@medi=
+a screen and (max-width: 600px) {div,p,a,li,span,td { -webkit-text-size-adj=
+ust:none !important; }.flex-image {width: 100% !important;height: auto !imp=
+ortant;}.flex-button {max-width:600px !important;width:100% !important;}.fl=
+ex-button a {display: block !important;font-size: 18px !important;}.mobile-=
+hide { display: none !important; }.desktop-hide {display: block !important;=
+max-height: none !important;overflow: visible !important;float: none !impor=
+tant;font-size: 12px !important;line-height: 1.5 !important;}.display-table=
+ { display: table !important; }table.desktop-hide {display: table !importan=
+t;}tr.desktop-hide {display: table-row !important;}.desktop-hide td,td.desk=
+top-hide {display: table-cell !important;}.desktop-hide img,img.desktop-hid=
+e {max-height: none !important;width: auto !important;}.desktop-hide .flex-=
+image {width: 100% !important;}#content-table,.row,.fluid-row,.md-fluid-row=
+,.row-spacer,#navigation,.row .col-1,.row .col-2,.row .col-3,.row .col-4,.r=
+ow .col-5,.row .col-6,.row .col-7,.row .col-8,.row .col-9,.row .col-10,.row=
+ .col-11,.col-12 { width: 100% !important; }.fluid-row .col-1,.md-fluid-row=
+ .col-1 { width: 8.25% !important;}.fluid-row .col-2,.md-fluid-row .col-2 {=
+ width: 16.5% !important;}.fluid-row .col-3,.md-fluid-row .col-3 { width: 2=
+5% !important;}.fluid-row .col-4,.md-fluid-row .col-4 { width: 33% !importa=
+nt;}.fluid-row .col-5,.md-fluid-row .col-5 { width: 41.25% !important;}.flu=
+id-row .col-6,.md-fluid-row .col-6 { width: 50% !important;}.fluid-row .col=
+-7,.md-fluid-row .col-7 { width: 57.75% !important;}.fluid-row .col-8,.md-f=
+luid-row .col-8 { width: 66% !important;}.fluid-row .col-9,.md-fluid-row .c=
+ol-8 { width: 74.25% !important;}.fluid-row .col-10,.md-fluid-row .col-10 {=
+ width: 82.5% !important; }.fluid-row .col-11,.md-fluid-row .col-11 { width=
+: 90.75% !important;}.m-block {width:100% !important; display: block !impor=
+tant;}.m-align-left {text-align: left !important;}.m-align-center {text-ali=
+gn: center !important;}.m-align-right {text-align: right !important;}.m-wid=
+th-25 {width: 25% !important;}.m-width-33 {width: 33.33% !important;}.m-wid=
+th-50 {width: 50% !important;}.m-width-66 {width: 66.66% !important;}.m-wid=
+th-75 {width: 75% !important;}.m-font-16 {font-size: 16px !important;}.m-fo=
+nt-24 {font-size: 24px !important;}.m-font-32 {font-size: 32px !important;}=
+.m-lineheight-1 {line-height: 1 !important;}.m-lineheight-1half {line-heigh=
+t: 1.5 !important;}.m-lineheight-2 {line-height: 2 !important;}#vte-hero-pr=
+oduct .hero-product-container {padding-top: 0 !important;}#vte-nav-widget-i=
+mage-container {padding-top: 0 !important;padding-right: 0 !important;paddi=
+ng-bottom: 0 !important;padding-left: 0 !important;}.mobile-center {text-al=
+ign: center !important;float: none !important;}.mobile-center img {text-ali=
+gn: center !important;margin: 0 auto !important;}#widget_e0c89506ad31882943=
+6f0eb6bc73bef7 .block-content .image-widget-content {padding-left: 0px !imp=
+ortant;padding-right: 0px !important;}#widget_e0c89506ad318829436f0eb6bc73b=
+ef7 .block-content .image-widget-content .mobile-width {width: 320px !impor=
+tant;}#widget_e0c89506ad318829436f0eb6bc73bef7 .widget_top_bottom_padding {=
+padding-top: 10px !important;padding-bottom: 10px !important;}
+   =20
+  #widget_82cb4dec23462d20ab5560c27657dee7 .block-content td {font-size: 16=
+px !important;line-height: 18px !important;letter-spacing: 0.0em !important=
+;padding-left: 0px !important;padding-right: 0px !important;}#widget_82cb4d=
+ec23462d20ab5560c27657dee7 .widget_top_bottom_padding {padding-top: 0px !im=
+portant;padding-bottom: 10px !important;}
+   =20
+  #widget_f10747f8f61d164084eb5efb9efc9c19 .block-content .image-widget-con=
+tent {padding-left: 0px !important;padding-right: 0px !important;}#widget_f=
+10747f8f61d164084eb5efb9efc9c19 .block-content .image-widget-content .mobil=
+e-width {width: 320px !important;}#widget_f10747f8f61d164084eb5efb9efc9c19 =
+.widget_top_bottom_padding {padding-top: 0px !important;padding-bottom: 0px=
+ !important;}
+   =20
+  #widget_75d2e85bad39bc4922a338efa8b13ea7 .block-content .image-widget-con=
+tent {padding-left: 0px !important;padding-right: 0px !important;}#widget_7=
+5d2e85bad39bc4922a338efa8b13ea7 .block-content .image-widget-content .mobil=
+e-width {width: 320px !important;}#widget_75d2e85bad39bc4922a338efa8b13ea7 =
+.widget_top_bottom_padding {padding-top: 0px !important;padding-bottom: 5px=
+ !important;}
+   =20
+  #widget_a8c9f936e13cc2628fde6324a4d169c8 .block-content .image-widget-con=
+tent {padding-left: 0px !important;padding-right: 0px !important;}#widget_a=
+8c9f936e13cc2628fde6324a4d169c8 .block-content .image-widget-content .mobil=
+e-width {width: 320px !important;}#widget_a8c9f936e13cc2628fde6324a4d169c8 =
+.widget_top_bottom_padding {padding-top: 0px !important;padding-bottom: 0px=
+ !important;}
+   =20
+  #widget_81d1d6b7203a27325a0cf7b14d8d155c .block-content .image-widget-con=
+tent {padding-left: 0px !important;padding-right: 0px !important;}#widget_8=
+1d1d6b7203a27325a0cf7b14d8d155c .block-content .image-widget-content .mobil=
+e-width {width: 320px !important;}#widget_81d1d6b7203a27325a0cf7b14d8d155c =
+.widget_top_bottom_padding {padding-top: 0px !important;padding-bottom: 10p=
+x !important;}
+   =20
+  #widget_de6dd3b455c8dc0749373481eb03fd32 td {padding-left: 0 !important;p=
+adding-right: 0 !important;}#widget_de6dd3b455c8dc0749373481eb03fd32 .widge=
+t_top_padding {padding-top: 10px !important;}#widget_de6dd3b455c8dc07493734=
+81eb03fd32 .widget_bottom_padding {padding-bottom: 10px !important;}
+   =20
+  #widget_8aafd1df6708469d772b624bf67a38be .block-content td {font-size: 10=
+px !important;line-height: 11px !important;letter-spacing: 0.0em !important=
+;padding-left: 0px !important;padding-right: 0px !important;}#widget_8aafd1=
+df6708469d772b624bf67a38be .widget_top_bottom_padding {padding-top: 10px !i=
+mportant;padding-bottom: 10px !important;}
+   =20
+  #widget_8790f94bf376bd28e90002badc2bf395 .block-content .image-widget-con=
+tent {padding-left: 0px !important;padding-right: 0px !important;}#widget_8=
+790f94bf376bd28e90002badc2bf395 .block-content .image-widget-content .mobil=
+e-width {width: 320px !important;}#widget_8790f94bf376bd28e90002badc2bf395 =
+.widget_top_bottom_padding {padding-top: 10px !important;padding-bottom: 0p=
+x !important;}#widget_67ad37f6cffb7bca5bb172dab8d43292, #widget_67ad37f6cff=
+b7bca5bb172dab8d43292 .bp {width: 100% !important;}#widget_67ad37f6cffb7bca=
+5bb172dab8d43292 .mc {padding-left: 0px !important;padding-right: 0px !impo=
+rtant;}#widget_67ad37f6cffb7bca5bb172dab8d43292 .sbe.mobile-hide {display: =
+none !important;}#widget_67ad37f6cffb7bca5bb172dab8d43292 td img {margin: 0=
+ auto !important;}#widget_67ad37f6cffb7bca5bb172dab8d43292 .bp {width: 100%=
+ !important;table-layout: fixed !important;}#widget_67ad37f6cffb7bca5bb172d=
+ab8d43292 .c {width: 50% !important;}#widget_67ad37f6cffb7bca5bb172dab8d432=
+92 .c img {width: 100% !important;}#widget_609d55ba108ea351ac77acc900a02b76=
+ .block-content td {font-size: 11px !important;line-height: 13px !important=
+;letter-spacing: 0.0em !important;padding-left: 0px !important;padding-righ=
+t: 0px !important;}#widget_609d55ba108ea351ac77acc900a02b76 .widget_top_bot=
+tom_padding {padding-top: 0px !important;padding-bottom: 10px !important;}}
+</style>
+</head> <body style=3D"margin:0; padding:0; -webkit-text-size-adjust:100%; =
+-ms-text-size-adjust:100%">
+<!-- tracking pixel container --> <div id=3D"bluecore-pixel" style=3D"displ=
+ay: none; max-height: 0px; overflow: hidden;"><div style=3D"display:none"><=
+img src=3D"http://trk.b.mind-waretoys.com/ss/o/65306pTPCrABHRV5ojfizQ/3wk/x=
+EYZ3vBKReKzQmQieytpBQ/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0=
+" style=3D"height:1px !important;width:1px !important;border-width:0 !impor=
+tant;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !imp=
+ortant;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !=
+important;padding-right:0 !important;padding-left:0 !important;"/></div></d=
+iv> <table id=3D"wrapper-table" width=3D"100%" cellspacing=3D"0" cellpaddin=
+g=3D"0" border=3D"0" style=3D"border-collapse:collapse; mso-table-lspace:0p=
+t; mso-table-rspace:0pt; margin:0; padding:0"><tr><td align=3D"center" styl=
+e=3D"border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt">=
+<table id=3D"content-table" width=3D"600" align=3D"center" cellspacing=3D"0=
+" cellpadding=3D"0" border=3D"0" style=3D"border-collapse:collapse; mso-tab=
+le-lspace:0pt; mso-table-rspace:0pt"><tr><td id=3D"content-cell" align=3D"c=
+enter" style=3D"border-collapse:collapse; mso-table-lspace:0pt; mso-table-r=
+space:0pt">
+<!-- image --><table class=3D"row" bgcolor=3D"#ffffff" id=3D"widget_e0c8950=
+6ad318829436f0eb6bc73bef7" width=3D"600" align=3D"center" cellspacing=3D"0"=
+ cellpadding=3D"0" border=3D"0" link-context-id=3D"t4790586852876288lw54685=
+70928652288" add-link-instances=3D"True" style=3D"border-collapse:collapse;=
+ mso-table-lspace:0pt; mso-table-rspace:0pt"><tr><td class=3D"widget_top_bo=
+ttom_padding" style=3D"border-collapse:collapse; mso-table-lspace:0pt; mso-=
+table-rspace:0pt; padding-top:10px; padding-bottom:10px"><table class=3D"co=
+l-12" width=3D"600" align=3D"center" cellspacing=3D"0" cellpadding=3D"0" bo=
+rder=3D"0" style=3D"border-collapse:collapse; mso-table-lspace:0; mso-table=
+-rspace:0; border-left:1px; border-right:1px"><tr><td style=3D"border-colla=
+pse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt"><table class=3D"b=
+lock-content" width=3D"100%" align=3D"center" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" style=3D"border-collapse:collapse; mso-table-lspace:0pt=
+; mso-table-rspace:0pt; width:100%; text-align:center"><tr><td align=3D"cen=
+ter" class=3D"image-widget-content" style=3D"border-collapse:collapse; mso-=
+table-lspace:0pt; mso-table-rspace:0pt; padding-left:0px; padding-right:0px=
+; line-height:1px; font-size:1px"><a href=3D"http://trk.b.mind-waretoys.com=
+/ss/c/p3qtcPY9dfj0cNgZsbXEmcrZzySfLNcJ15cr1zWl5fp4v4NkmUcIlyDiLLbpg8YHJyYB_=
+zF_-2MUYrqOTHM7he4QM88NmgUqXEdGKYjPwf41LEleG2MZEzvva8J2r5gHjHsn_HnGGpB7Af9-=
+8myFT4wG9zt8Yd7eKIAocyX_3N09-X9mHT2mx71OSoE_rBQtcm_XEFjjWNb8OAhaMw58cyLcLS8=
+JNBxo3A7QD5ZeD5Qn4DoDGWTAfYjeqnDJ9NB7P21GioH1UPeeeOZjvNlIt7sX8ZMNAuA9Njx_R3=
+HJN5noAAQJOgDT___mWY080IwJ8NTOtfZPXCDhbrSYTTM1Rw/3wk/xEYZ3vBKReKzQmQieytpBQ=
+/h0/QQOVtdczY6BMrCj9AEwIWd6ZXLBmwzxc41JN5uAyzo0" target=3D"_blank"><img cla=
+ss=3D"flex-image" src=3D"https://partner-images.bluecore.com/otc_mindware/W=
+elcomeSeries2_MW-342851-email-022123-600x1180_01.gif" alt=3D"Keep the FUN g=
+oing with more Brainy Toys! $10 off and Free Shipping on Orders $49 or more=
+!" border=3D"0" style=3D"display:block; height:auto; line-height:100%; text=
+-decoration:none; outline:none; -ms-interpolation-mode:bicubic; border:0 no=
+ne; font-size:initial" width=3D"600" height=3D"auto"></a></td></tr></table>=
+</td></tr></table></td></tr></table>
+<!-- end image --><!-- text --><table bgcolor=3D"#ffffff" class=3D"row" id=
+=3D"widget_82cb4dec23462d20ab5560c27657dee7" width=3D"600" align=3D"center"=
+ cellspacing=3D"0" cellpadding=3D"0" border=3D"0" link-context-id=3D"t47905=
+86852876288lw6594470835494912" add-link-instances=3D"True" style=3D"border-=
+collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt"><tr><td clas=
+s=3D"widget_top_bottom_padding" style=3D"border-collapse:collapse; mso-tabl=
+e-lspace:0pt; mso-table-rspace:0pt; padding-top:0px; padding-bottom:10px"><=
+table class=3D"col-12" width=3D"600" align=3D"left" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" style=3D"border-collapse:collapse; mso-table-lspa=
+ce:0; mso-table-rspace:0; border-left:1px; border-right:1px"><tr><td style=
+=3D"border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt"><=
+table class=3D"block-content" width=3D"100%" align=3D"center" cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" style=3D"border-collapse:collapse; ms=
+o-table-lspace:0pt; mso-table-rspace:0pt; width:100%; text-align:center"><t=
+r><td align=3D"center" style=3D"border-collapse:collapse; mso-table-lspace:=
+0pt; mso-table-rspace:0pt; font-size:19px; line-height:20px; letter-spacing=
+:0.0em; text-transform:none; padding-left:0px; padding-right:0px"><p style=
+=3D"margin:0 !important; text-align:center; color:#000001" align=3D"center"=
+><span style=3D"font-family: 'Century Gothic', CenturyGothic, AppleGothic, =
+sans-serif; color: #ff671f;">Simply copy and paste this one time use code <=
+/span><span style=3D"font-family: 'Century Gothic', CenturyGothic, AppleGot=
+hic, sans-serif; color: #333333;"><strong>899709306964 </strong></span><spa=
+n style=3D"font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-=
+serif; color: #ff671f;">in the Promo Code field during checkout.</span></p>=
+</td></tr></table></td></tr></table></td></tr></table>
+<!-- end text --><!-- image --><table class=3D"row" bgcolor=3D"#ffffff" id=
+=3D"widget_f10747f8f61d164084eb5efb9efc9c19" width=3D"600" align=3D"center"=
+ cellspacing=3D"0" cellpadding=3D"0" border=3D"0" link-context-id=3D"t47905=
+86852876288lw4764883486875648" add-link-instances=3D"True" style=3D"border-=
+collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt"><tr><td clas=
+s=3D"widget_top_bottom_padding" style=3D"border-collapse:collapse; mso-tabl=
+e-lspace:0pt; mso-table-rspace:0pt; padding-top:0px; padding-bottom:0px"><t=
+able class=3D"col-12" width=3D"600" align=3D"center" cellspacing=3D"0" cell=
+padding=3D"0" border=3D"0" style=3D"border-collapse:collapse; mso-table-lsp=
+ace:0; mso-table-rspace:0; border-left:1px; border-right:1px"><tr><td style=
+=3D"border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt"><=
+table class=3D"block-content" width=3D"100%" align=3D"center" cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" style=3D"border-collapse:collapse; ms=
+o-table-lspace:0pt; mso-table-rspace:0pt; width:100%; text-align:center"><t=
+r><td align=3D"center" class=3D"image-widget-content" style=3D"border-colla=
+pse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; padding-left:0px;=
+ padding-right:0px; line-height:1px; font-size:1px"><a href=3D"http://trk.b=
+.mind-waretoys.com/ss/c/p3qtcPY9dfj0cNgZsbXEmcrZzySfLNcJ15cr1zWl5fp4v4NkmUc=
+IlyDiLLbpg8YHJyYB_zF_-2MUYrqOTHM7he4QM88NmgUqXEdGKYjPwf41LEleG2MZEzvva8J2r5=
+gHjHsn_HnGGpB7Af9-8myFT4wG9zt8Yd7eKIAocyX_3N09-X9mHT2mx71OSoE_rBQtcm_XEFjjW=
+Nb8OAhaMw58cyLcLS8JNBxo3A7QD5ZeD5Qn4DoDGWTAfYjeqnDJ9NB7P21GioH1UPeeeOZjvNlI=
+t60a7tJeyz4J6QKmA7Dk5Q-6LP_4CUXKrExKEnPhUvUlMryB1O76HRnOESI98EdifA/3wk/xEYZ=
+3vBKReKzQmQieytpBQ/h1/KSm2Y6zWCGBsZyaEDxLRHJHgMxqj4aTkO4-8u_tmKpA" target=
+=3D"_blank"><img class=3D"flex-image" src=3D"https://partner-images.bluecor=
+e.com/otc_mindware/WelcomeSeries2_MW-342851-email-022123-600x1180_02.gif" a=
+lt=3D"Expires in 28 Days" border=3D"0" style=3D"display:block; height:auto;=
+ line-height:100%; text-decoration:none; outline:none; -ms-interpolation-mo=
+de:bicubic; border:0 none; font-size:initial" width=3D"600" height=3D"auto"=
+></a></td></tr></table></td></tr></table></td></tr></table>
+<!-- end image --><!-- image --><table class=3D"row" bgcolor=3D"#ffffff" id=
+=3D"widget_75d2e85bad39bc4922a338efa8b13ea7" width=3D"600" align=3D"center"=
+ cellspacing=3D"0" cellpadding=3D"0" border=3D"0" link-context-id=3D"t47905=
+86852876288lw5890783393718272" add-link-instances=3D"True" style=3D"border-=
+collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt"><tr><td clas=
+s=3D"widget_top_bottom_padding" style=3D"border-collapse:collapse; mso-tabl=
+e-lspace:0pt; mso-table-rspace:0pt; padding-top:0px; padding-bottom:5px"><t=
+able class=3D"col-12" width=3D"600" align=3D"center" cellspacing=3D"0" cell=
+padding=3D"0" border=3D"0" style=3D"border-collapse:collapse; mso-table-lsp=
+ace:0; mso-table-rspace:0; border-left:1px; border-right:1px"><tr><td style=
+=3D"border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt"><=
+table class=3D"block-content" width=3D"100%" align=3D"center" cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" style=3D"border-collapse:collapse; ms=
+o-table-lspace:0pt; mso-table-rspace:0pt; width:100%; text-align:center"><t=
+r><td align=3D"center" class=3D"image-widget-content" style=3D"border-colla=
+pse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; padding-left:0px;=
+ padding-right:0px; line-height:1px; font-size:1px"><a href=3D"http://trk.b=
+.mind-waretoys.com/ss/c/p3qtcPY9dfj0cNgZsbXEmcrZzySfLNcJ15cr1zWl5fp4v4NkmUc=
+IlyDiLLbpg8YH6k3yfUh_wZuhziENBUnKgiNogHKrXmUvvO9Bus_eXDswMYp3BL_ayiCfnSJqW_=
+CZaXgV-PeENG_CqJMK3vHnZzhKAM8znN-Bi3xFpLLLf24aaCctelwjU3BH3Nz0ZGIXDuHoMnQr9=
+G66wYRsL-PABFoBde4lMHFVY6IYvviLJghDCHcxLNz7cmyw6F0wsVXu9kEeepCx5fuBYuiJe4yP=
+cIgCaginGG3pYO77v7Cc7Iuue9ahfGiei_PXQYn82NblJApWCgqSXS78xZHR4BulAtMSIf9gjwE=
+bz_ZulzVp7J4/3wk/xEYZ3vBKReKzQmQieytpBQ/h2/f-2Zspo7lTciQXb3XG36na8QoDmj4sI5=
+8Bq0ZhhYPPY" target=3D"_blank"><img class=3D"flex-image" src=3D"https://par=
+tner-images.bluecore.com/otc_mindware/WelcomeSeries2_MW-342851-email-022123=
+-600x1180_03.gif" alt=3D"Best Sellers" border=3D"0" style=3D"display:block;=
+ height:auto; line-height:100%; text-decoration:none; outline:none; -ms-int=
+erpolation-mode:bicubic; border:0 none; font-size:initial" width=3D"600" he=
+ight=3D"auto"></a></td></tr></table></td></tr></table></td></tr></table>
+<!-- end image --><!-- image --><table class=3D"row" bgcolor=3D"#ffffff" id=
+=3D"widget_a8c9f936e13cc2628fde6324a4d169c8" width=3D"600" align=3D"center"=
+ cellspacing=3D"0" cellpadding=3D"0" border=3D"0" link-context-id=3D"t47905=
+86852876288lw5327833440296960" add-link-instances=3D"True" style=3D"border-=
+collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt"><tr><td clas=
+s=3D"widget_top_bottom_padding" style=3D"border-collapse:collapse; mso-tabl=
+e-lspace:0pt; mso-table-rspace:0pt; padding-top:0px; padding-bottom:0px"><t=
+able class=3D"col-12" width=3D"600" align=3D"center" cellspacing=3D"0" cell=
+padding=3D"0" border=3D"0" style=3D"border-collapse:collapse; mso-table-lsp=
+ace:0; mso-table-rspace:0; border-left:1px; border-right:1px"><tr><td style=
+=3D"border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt"><=
+table class=3D"block-content" width=3D"100%" align=3D"center" cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" style=3D"border-collapse:collapse; ms=
+o-table-lspace:0pt; mso-table-rspace:0pt; width:100%; text-align:center"><t=
+r><td align=3D"center" class=3D"image-widget-content" style=3D"border-colla=
+pse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; padding-left:0px;=
+ padding-right:0px; line-height:1px; font-size:1px"><a href=3D"http://trk.b=
+.mind-waretoys.com/ss/c/p3qtcPY9dfj0cNgZsbXEmcrZzySfLNcJ15cr1zWl5fp4v4NkmUc=
+IlyDiLLbpg8YH3Ed0dV1UH5H0Ef_ajz0jLYnqaonjm7TGJzUimCI847pW6ie1IwGI6VDy3pgfBh=
+lT9dLY4wkFeHnMLgs_XqvP8YXobrG8PuOTTC-PLW6wxCJVit24vkR36dhUh_3bGoWRf5YNJJ6C4=
+iFgYYIwEREvvNiYe7WLlWSRqBI0osKzQA6T7UBMLN4SoYF8bBUXssBqctsdMf1-anuEhhgW82Zp=
+_1CcK3L-2JKYks79nBIEZIO05p7w4q0CoIm9bn7PCnT6zj_CyIhfNxyzuVs27i92uzTtXCmbKQ9=
+5ktC31s3vyok/3wk/xEYZ3vBKReKzQmQieytpBQ/h3/pJBSq_G-1IN-UGlNNWJYgB_d7woMWhWz=
+98DQSyRVkoE" target=3D"_blank"><img class=3D"flex-image" src=3D"https://par=
+tner-images.bluecore.com/otc_mindware/WelcomeSeries2_MW-342851-email-022123=
+-600x1180_04.gif" alt=3D"Shop by Age" border=3D"0" style=3D"display:block; =
+height:auto; line-height:100%; text-decoration:none; outline:none; -ms-inte=
+rpolation-mode:bicubic; border:0 none; font-size:initial" width=3D"600" hei=
+ght=3D"auto"></a></td></tr></table></td></tr></table></td></tr></table>
+<!-- end image --><!-- image --><table class=3D"row" bgcolor=3D"#ffffff" id=
+=3D"widget_81d1d6b7203a27325a0cf7b14d8d155c" width=3D"600" align=3D"center"=
+ cellspacing=3D"0" cellpadding=3D"0" border=3D"0" link-context-id=3D"t47905=
+86852876288lw6453733347139584" add-link-instances=3D"True" style=3D"border-=
+collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt"><tr><td clas=
+s=3D"widget_top_bottom_padding" style=3D"border-collapse:collapse; mso-tabl=
+e-lspace:0pt; mso-table-rspace:0pt; padding-top:0px; padding-bottom:10px"><=
+table class=3D"col-12" width=3D"600" align=3D"center" cellspacing=3D"0" cel=
+lpadding=3D"0" border=3D"0" style=3D"border-collapse:collapse; mso-table-ls=
+pace:0; mso-table-rspace:0; border-left:1px; border-right:1px"><tr><td styl=
+e=3D"border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt">=
+<table class=3D"block-content" width=3D"100%" align=3D"center" cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" style=3D"border-collapse:collapse; ms=
+o-table-lspace:0pt; mso-table-rspace:0pt; width:100%; text-align:center"><t=
+r><td align=3D"center" class=3D"image-widget-content" style=3D"border-colla=
+pse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; padding-left:0px;=
+ padding-right:0px; line-height:1px; font-size:1px"><a href=3D"http://trk.b=
+.mind-waretoys.com/ss/c/p3qtcPY9dfj0cNgZsbXEmcrZzySfLNcJ15cr1zWl5fp4v4NkmUc=
+IlyDiLLbpg8YHe5yiKpN75HVPJSwZ-SCd-0jrc21M_lpBePca3fGCEo5wENU9uZI8V5spjpPu6E=
+7c/3wk/xEYZ3vBKReKzQmQieytpBQ/h4/mnx4tnuziQ72Aov8tnc9IMCMWdOqCI8iOt2yUlv8d6=
+g" target=3D"_blank"><img class=3D"flex-image" src=3D"https://partner-image=
+s.bluecore.com/otc_mindware/WelcomeSeries2_MW-342851-email-022123-600x1180_=
+05.jpg" alt=3D"Award Winners" border=3D"0" style=3D"display:block; height:a=
+uto; line-height:100%; text-decoration:none; outline:none; -ms-interpolatio=
+n-mode:bicubic; border:0 none; font-size:initial" width=3D"600" height=3D"a=
+uto"></a></td></tr></table></td></tr></table></td></tr></table>
+<!-- end image --><!-- begin divider --><table class=3D"row-spacer" bgcolor=
+=3D"#ffffff" id=3D"widget_de6dd3b455c8dc0749373481eb03fd32" width=3D"600" a=
+lign=3D"center" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" style=3D"b=
+order-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt"><tr><t=
+d class=3D"widget_bottom_padding widget_top_padding" align=3D"center" style=
+=3D"border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; p=
+adding-right:0px; padding-left:0px; padding-bottom:10px; padding-top:10px">=
+<table width=3D"100%" align=3D"center" cellspacing=3D"0" cellpadding=3D"0" =
+border=3D"0" style=3D"border-collapse:collapse; mso-table-lspace:0pt; mso-t=
+able-rspace:0pt"><tr><td height=3D"1" style=3D"border-collapse:collapse; ms=
+o-table-lspace:0pt; mso-table-rspace:0pt; border-bottom:1px solid #ebebeb; =
+mso-line-height-rule:exactly; line-height:1px; font-size:1px">&#160;</td></=
+tr></table></td></tr></table>
+<!-- end divider --><!-- text --><table bgcolor=3D"#ffffff" class=3D"row" i=
+d=3D"widget_8aafd1df6708469d772b624bf67a38be" width=3D"600" align=3D"center=
+" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" link-context-id=3D"t4790=
+586852876288lw6172258370428928" add-link-instances=3D"True" style=3D"border=
+-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt"><tr><td cla=
+ss=3D"widget_top_bottom_padding" style=3D"border-collapse:collapse; mso-tab=
+le-lspace:0pt; mso-table-rspace:0pt; padding-top:10px; padding-bottom:10px"=
+><table class=3D"col-12" width=3D"600" align=3D"left" cellspacing=3D"0" cel=
+lpadding=3D"0" border=3D"0" style=3D"border-collapse:collapse; mso-table-ls=
+pace:0; mso-table-rspace:0; border-left:1px; border-right:1px"><tr><td styl=
+e=3D"border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt">=
+<table class=3D"block-content" width=3D"100%" align=3D"center" cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" style=3D"border-collapse:collapse; ms=
+o-table-lspace:0pt; mso-table-rspace:0pt; width:100%; text-align:center"><t=
+r><td align=3D"center" style=3D"border-collapse:collapse; mso-table-lspace:=
+0pt; mso-table-rspace:0pt; font-size:11px; line-height:12px; letter-spacing=
+:0.0em; text-transform:none; padding-left:0px; padding-right:0px"><p style=
+=3D"margin:0 !important"><span style=3D"font-family: 'Century Gothic', Cent=
+uryGothic, AppleGothic, sans-serif;">*Order online within 28 days of receiv=
+ing this email and get <strong><span style=3D"color: #ff0000;">free economy=
+ shipping</span></strong> on your order of $49 or more within the contiguou=
+s U.S., APO, and FPO. PLUS, get <strong><span style=3D"color: #ff0000;">$10=
+ off</span></strong> your purchase of $49 or more. Additional charges apply=
+ for Standard and Express Shipping and may apply for oversized items. Gift =
+cards not included. Only one offer allowed per order. Enter <span style=3D"=
+color: #333333;"><strong>899709306964</strong></span> in Promo Code field a=
+t check out.</span></p></td></tr></table></td></tr></table></td></tr></tabl=
+e>
+<!-- end text --> <!-- image --><table class=3D"row" bgcolor=3D"#ffffff" id=
+=3D"widget_8790f94bf376bd28e90002badc2bf395" width=3D"600" align=3D"center"=
+ cellspacing=3D"0" cellpadding=3D"0" border=3D"0" link-context-id=3D"t47905=
+86852876288gw5508891857092608lw6149264382205952" add-link-instances=3D"True=
+" style=3D"border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace=
+:0pt"><tr><td class=3D"widget_top_bottom_padding" style=3D"border-collapse:=
+collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; padding-top:10px; pad=
+ding-bottom:0px"><table class=3D"col-12" width=3D"600" align=3D"center" cel=
+lspacing=3D"0" cellpadding=3D"0" border=3D"0" style=3D"border-collapse:coll=
+apse; mso-table-lspace:0; mso-table-rspace:0; border-left:1px; border-right=
+:1px"><tr><td style=3D"border-collapse:collapse; mso-table-lspace:0pt; mso-=
+table-rspace:0pt"><table class=3D"block-content" width=3D"100%" align=3D"ce=
+nter" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" style=3D"border-coll=
+apse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; width:100%; text=
+-align:center"><tr><td align=3D"center" class=3D"image-widget-content" styl=
+e=3D"border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; =
+padding-left:0px; padding-right:0px; line-height:1px; font-size:1px"><img c=
+lass=3D"flex-image" src=3D"https://partner-images.bluecore.com/otc_mindware=
+/FamilyOfBrandsMW-342811-email-021623-600x40_(3).jpg" alt=3D"Discover More =
+FUN with Our Family of Brands!" border=3D"0" style=3D"display:block; border=
+:0 none; height:auto; line-height:100%; text-decoration:none; outline:none;=
+ -ms-interpolation-mode:bicubic; font-size:initial" width=3D"600" height=3D=
+"auto"></td></tr></table></td></tr></table></td></tr></table>
+<!-- end image --> <!-- button pair --><table class=3D"ev" bgcolor=3D"#ffff=
+ff" id=3D"widget_67ad37f6cffb7bca5bb172dab8d43292" width=3D"600" align=3D"c=
+enter" link-context-id=3D"t4790586852876288gw5508891857092608lw558631442878=
+4640" add-link-instances=3D"True" cellpadding=3D"0" style=3D"border-collaps=
+e:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt"><tr><td class=3D"mc=
+" style=3D"border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace=
+:0pt; padding:0px 0px 0px 0px"><table class=3D"bp" width=3D"596" align=3D"c=
+enter" cellpadding=3D"0" style=3D"border-collapse:collapse; mso-table-lspac=
+e:0pt; mso-table-rspace:0pt"><tr>
+<td width=3D"288" class=3D"c left_button" style=3D"border-collapse:collapse=
+; mso-table-lspace:0pt; mso-table-rspace:0pt"><table align=3D"center" cellp=
+adding=3D"0" cellspacing=3D"0" style=3D"border-collapse:collapse; mso-table=
+-lspace:0pt; mso-table-rspace:0pt"><tr><td align=3D"center" width=3D"288" s=
+tyle=3D"border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0p=
+t"><a href=3D"http://trk.b.mind-waretoys.com/ss/c/p3qtcPY9dfj0cNgZsbXEmcrZz=
+ySfLNcJ15cr1zWl5fp4v4NkmUcIlyDiLLbpg8YHJyYB_zF_-2MUYrqOTHM7he4QM88NmgUqXEdG=
+KYjPwf41LEleG2MZEzvva8J2r5gHjHsn_HnGGpB7Af9-8myFT4wG9zt8Yd7eKIAocyX_3N09-X9=
+mHT2mx71OSoE_rBQtcm_XEFjjWNb8OAhaMw58cyLcLS8JNBxo3A7QD5ZeD5Qn4DoDGWTAfYjeqn=
+DJ9NB7P21GioH1UPeeeOZjvNlItxPSpjVVANJGyIfs06YyG_6u2XB3a8DSP112FyYR6CTmMzYwQ=
+WxE3E3TP2MrdMN31VmIG2kY_TO9pBfrG_vd5tM/3wk/xEYZ3vBKReKzQmQieytpBQ/h5/Y1qByZ=
+f3tVlXIyo5AQH9CQAPgsU47ID2Xd37t2LWV0E" target=3D"_blank"><img src=3D"https:=
+//partner-images.bluecore.com/otc_mindware/FamilyOfBrandsMWlogo-342811-emai=
+l-021623-200x48_(1).jpg" alt=3D"MindWare" width=3D"250" style=3D"display:bl=
+ock; height:auto; line-height:100%; text-decoration:none; outline:none; -ms=
+-interpolation-mode:bicubic; border:0 none" height=3D"auto"></a></td></tr><=
+/table></td>
+<td class=3D"sbe" style=3D"border-collapse:collapse; mso-table-lspace:0pt; =
+mso-table-rspace:0pt; width:20px" width=3D"20"></td>
+<td width=3D"288" class=3D"c right_button" style=3D"border-collapse:collaps=
+e; mso-table-lspace:0pt; mso-table-rspace:0pt"><table align=3D"center" cell=
+padding=3D"0" cellspacing=3D"0" style=3D"border-collapse:collapse; mso-tabl=
+e-lspace:0pt; mso-table-rspace:0pt"><tr><td align=3D"center" width=3D"288" =
+style=3D"border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0=
+pt"><a href=3D"http://trk.b.mind-waretoys.com/ss/c/p3qtcPY9dfj0cNgZsbXEmQDo=
+Ib_hr2skqXQ6g_9pWDtXCmTK-jU-RcLPFVhAwZIUf7J3JGca971sa6cRLvOwgE4YugoB-OBxk2m=
+TVMDTTiY6--UfXMOZdjLW7P5mRTXM10p1inn7eE9rlObO8sSyrXIcVNYjestpTtV_FZWTkTfvyk=
+psVXvZcYEpSAdNTR2FWYikZ5HMBXnxBbXfJPG5snNgm5QtH8XTrRJ5EwT1Qko4j1GIPVS171IC2=
+r8cinn_9VL3TySZap44ea_zYF4OfryLtWRnLW5hXHjQ_15N9RLoLMK9dkMU9i37_pqIT7PdlbuR=
+LXqNy_iACgYRDxonuA/3wk/xEYZ3vBKReKzQmQieytpBQ/h6/VbM5NYyh5wEJTosiEheBaIwB9d=
+MgNXEvGkeAVayFiRY" target=3D"_blank"><img src=3D"https://partner-images.blu=
+ecore.com/otc_mindware/FamilyOfBrandsOTClogo-342811-email-021623-200x48_(1)=
+.jpg" alt=3D"Oriental Trading Company" width=3D"250" style=3D"display:block=
+; height:auto; line-height:100%; text-decoration:none; outline:none; -ms-in=
+terpolation-mode:bicubic; border:0 none" height=3D"auto"></a></td></tr></ta=
+ble></td>
+</tr></table></td></tr></table>
+<!-- end button pair --> <!-- social --><table id=3D"widget_a553a02222b2b21=
+5191d7328852ed37e" class=3D"row" bgcolor=3D"#ffffff" width=3D"600" align=3D=
+"center" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" link-context-id=
+=3D"t4790586852876288gw5508891857092608lw6712214335627264" add-link-instanc=
+es=3D"True" style=3D"border-collapse:collapse; mso-table-lspace:0pt; mso-ta=
+ble-rspace:0pt"><tr><td style=3D"border-collapse:collapse; mso-table-lspace=
+:0pt; mso-table-rspace:0pt; padding-top:10px; padding-bottom:10px"><table a=
+lign=3D"center" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" style=3D"b=
+order-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt"><tr>
+<td align=3D"center" valign=3D"middle" width=3D"40" style=3D"border-collaps=
+e:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt"><a href=3D"http://t=
+rk.b.mind-waretoys.com/ss/c/p3qtcPY9dfj0cNgZsbXEmVxl_ozkSwFt_t5wWlmxfc0xO4S=
+nxi5ZnrO2COensLlQxx4N2OG3vrgF4itaiOlwZEgtDWxu97W6UXGQO58P77LVw8WBoDykp9D2p6=
+9ozlvwjSbbsmp81FJcSBukBJUw33zG6Z0mZD5rkDUwcY0Fui2NLfecjik3tGz6OSElslakCG1CY=
+GgPWL3XJDQvxRNCsFbcUieT6_sU63q1aDCVS15LfPovfp6Ik8KYKxLCV8g6osdEjAxwp2PHiE7d=
+_FvzVqb3ZcbA6iav7CbyKpp9clzHYfWOF9mRS_lDQbBL9JXmeyLFSs7zTDwMcWv5Rwws__Pxpjr=
+tdWLpLIV4XgZE0pU/3wk/xEYZ3vBKReKzQmQieytpBQ/h7/mgUXikx_30gmGsdiMGrQujpm6XkU=
+cqiaip1t4ldHm2Y" target=3D"_blank"><img alt=3D"Facebook" src=3D"https://par=
+tner-images.bluecore.com/oriental_trading/facebook_icon.jpg" width=3D"28" b=
+order=3D"0" style=3D"display:block; height:auto; line-height:100%; text-dec=
+oration:none; outline:none; -ms-interpolation-mode:bicubic; border:0 none" =
+height=3D"auto"></a></td>
+<td align=3D"center" valign=3D"middle" width=3D"40" style=3D"border-collaps=
+e:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt"><a href=3D"http://t=
+rk.b.mind-waretoys.com/ss/c/p3qtcPY9dfj0cNgZsbXEmYMloGF-XiE38nXFEfcCR3RnsKz=
+qi-yRtWb74W73YGcegG1bIiS7qNQb1ODS5aZzG0ZcuBn5lTyj_Sz-6tHilFbFVV7JPgQYEXGZSN=
+x41SaEFMUxYqjG1nPa_nqPn3QbPYuwQabtDP0baOBFlyxkrcG8tJRRprunHkwuVA_QG8sI10Ui6=
+sGinL_qn4k7eJ7PEiMARi7KogD2ScQkoAxTbaaQAoRhDUo81Hi2DDSHTKRb3e0Y7HItlI8IcKVz=
+yJqdwQI1Rhl14G1VuIhZtDO4UL0gsPyVOu-cdYUYM2FliXICI2VDt552CDwCgihpKXI2RtD7Dwe=
+PX6kgv_sTphZ6NxE/3wk/xEYZ3vBKReKzQmQieytpBQ/h8/KEiGol90sR5mM2hbeJLrELDCktdM=
+4SC1gIOZUOXyhbo" target=3D"_blank"><img alt=3D"Instagram" src=3D"https://pa=
+rtner-images.bluecore.com/oriental_trading/instagram_icon.jpg" width=3D"28"=
+ border=3D"0" style=3D"display:block; height:auto; line-height:100%; text-d=
+ecoration:none; outline:none; -ms-interpolation-mode:bicubic; border:0 none=
+" height=3D"auto"></a></td>
+<td align=3D"center" valign=3D"middle" width=3D"40" style=3D"border-collaps=
+e:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt"><a href=3D"http://t=
+rk.b.mind-waretoys.com/ss/c/p3qtcPY9dfj0cNgZsbXEmbocj0YRH8u-PY_KkURyWN9A1Em=
+s2BPlRUFuQOKObnGo8hMnVn03mnjZ1ReNwcFbN7fBkCVFjRNDB1q07l5waw38GUlEEdbAMqoYp5=
+pou0FvVH6Uu7hMUAscyQoxgE4mYrVikL4LIFdNv60M4EihrMdhOYb7GgNeeVcbNfUW70GXECs2N=
+JJLl-FkcUbstxjzAcvTye6QYHDamI5xTIN7cU9M1UKrJ6VA2XpRazjE8WoNJ0kFWQVaXHRJkRkR=
+HRVwpV9zfcDuCVxC-fgU1uKBCcdb_w6exW5XLSvH04Ld0Rbm3vRYg0Ttyc0cw9X7aUm3mVOJQK4=
+bCpSCpVHNJIBqyJg/3wk/xEYZ3vBKReKzQmQieytpBQ/h9/6BMaV2i0ehNr25Kd08saF_Vj3yH1=
+AzSW2BkZFmMzlsk" target=3D"_blank"><img alt=3D"You Tube" src=3D"https://par=
+tner-images.bluecore.com/oriental_trading/youtube_icon.jpg" width=3D"28" bo=
+rder=3D"0" style=3D"display:block; height:auto; line-height:100%; text-deco=
+ration:none; outline:none; -ms-interpolation-mode:bicubic; border:0 none" h=
+eight=3D"auto"></a></td>
+<td align=3D"center" valign=3D"middle" width=3D"40" style=3D"border-collaps=
+e:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt"><a href=3D"http://t=
+rk.b.mind-waretoys.com/ss/c/p3qtcPY9dfj0cNgZsbXEmZHetCwbAaRwdQQxmCAymd81_6P=
+veoG4pouMiHOCE2gvCb09AsNXLsrEscv0e7be5zMLu0Fkj7cHGFglQsCBZn5wZCv1dC8eGkJjfb=
+VuJgRTb0mNlz0MYHefD-s_qVEg9VWK0kJEArlY1VBSfj_c8spJvjMkGs4pOG6ZW53bW-Ch9R2n3=
+dg5QhSw5gNsXZRm6qap_mogZmKSHloPlYXtWbwbDioMzn60vLan1EoYRo1y4-xVhUgonPLGdVM6=
+u-UfAaRxyeAhFtZOjjSZ_B8N9cvc7FXfL0cwx0gWivRIN1SxDqYaAufB8hEwKCsSqlu35g/3wk/=
+xEYZ3vBKReKzQmQieytpBQ/h10/Ctco9m3xEUlyvFLIw_9LjBVP9g1ZXO_PJ-s0BFAT2Uc" tar=
+get=3D"_blank"><img alt=3D"TikTok " src=3D"https://partner-images.bluecore.=
+com/oriental_trading/tictokcircle.jpg" width=3D"28" border=3D"0" style=3D"d=
+isplay:block; height:auto; line-height:100%; text-decoration:none; outline:=
+none; -ms-interpolation-mode:bicubic; border:0 none" height=3D"auto"></a></=
+td>
+<td align=3D"center" valign=3D"middle" width=3D"40" style=3D"border-collaps=
+e:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt"><a href=3D"http://t=
+rk.b.mind-waretoys.com/ss/c/p3qtcPY9dfj0cNgZsbXEmWwKZZvdx_T29Lkj4QIEb2K63i9=
+jswhArrSpd9hBD7ns1j4UOZLtE-dmL_N-L12PMnHFYipSqd7Tw0Pz936bMerz24M-aZi2jnWGW9=
+5H8SQ6OjuUps4KCKeA_a7uobnB4u5dAeXeFfyAlh47xkR_aHkEQf-hNAmcTAxTYxGwvLJEpPfTh=
+AjKwnbsut1rpaSfdiM2M7s8bxbPIMGrvij76nTD-jmRa7h-rp9ocDcn-HclG_Hgwpm5lgtJYKkY=
+jRMdwYFKm4T2NyiaEb9hDbXgZ3PYDELYdjaKJqRgwLG1NtHqtgO-MBqpgGxwLgO30Tyl3Is0SQk=
+xE_GnB5ujP5Xgxfg/3wk/xEYZ3vBKReKzQmQieytpBQ/h11/8NZVNxM6M2S5ea9JS9Okv2U62Ts=
+wbUU4K8SvXhD98fw" target=3D"_blank"><img alt=3D"Pinterest" src=3D"https://p=
+artner-images.bluecore.com/oriental_trading/pinterest_icon.jpg" width=3D"28=
+" border=3D"0" style=3D"display:block; height:auto; line-height:100%; text-=
+decoration:none; outline:none; -ms-interpolation-mode:bicubic; border:0 non=
+e" height=3D"auto"></a></td>
+</tr></table></td></tr></table>
+<!-- end social --> <!-- text --><table bgcolor=3D"#ffffff" class=3D"row" i=
+d=3D"widget_609d55ba108ea351ac77acc900a02b76" width=3D"600" align=3D"center=
+" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" link-context-id=3D"t4790=
+586852876288gw5508891857092608lw4565967638208512" add-link-instances=3D"Tru=
+e" style=3D"border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspac=
+e:0pt"><tr><td class=3D"widget_top_bottom_padding" style=3D"border-collapse=
+:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; padding-top:0px; pad=
+ding-bottom:10px"><table class=3D"col-12" width=3D"600" align=3D"left" cell=
+spacing=3D"0" cellpadding=3D"0" border=3D"0" style=3D"border-collapse:colla=
+pse; mso-table-lspace:0; mso-table-rspace:0; border-left:1px; border-right:=
+1px"><tr><td style=3D"border-collapse:collapse; mso-table-lspace:0pt; mso-t=
+able-rspace:0pt"><table class=3D"block-content" width=3D"100%" align=3D"cen=
+ter" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" style=3D"border-colla=
+pse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; width:100%; text-=
+align:center"><tr><td align=3D"center" style=3D"border-collapse:collapse; m=
+so-table-lspace:0pt; mso-table-rspace:0pt; font-size:11px; line-height:13px=
+; letter-spacing:0.0em; text-transform:none; padding-left:70px; padding-rig=
+ht:70px">
+<p style=3D"text-align:center; color:#4d4d4d; margin:0px" align=3D"center">=
+<span style=3D"font-family: 'Century Gothic', CenturyGothic, AppleGothic, s=
+ans-serif; color: #333333;">California consumers, please visit&#160;<span s=
+tyle=3D"text-decoration: underline;"><a href=3D"http://trk.b.mind-waretoys.=
+com/ss/c/p3qtcPY9dfj0cNgZsbXEmQDoIb_hr2skqXQ6g_9pWDsKViXO2KlKLIhBbh433z140N=
+eGTbCyeZFS3byjouo7EL5XLw-q0v-rt14fGnkvtHrF840rBI_sCVpfWgnmVsNhfscx1w3xhRFxF=
+jGRve3FJF-g-Cb5ic33Mk5WVogFM2h6IqMsqyV6oNyMzB2Wd_-P0btwPQNsi-Q4ZAW5oXWqHrz-=
+WzusXfO0D-c-D9gk3WUXqEnQVAQtsozbu3UNaNdxgPKOjaIincFvW_yUOUn1U_P5s79oeHje3X_=
+ws5NXpJSNspzXigPJSrynG615WZRbcYoNksvIX4j7IaV7Z8QYwPrQ-UDWNmNzwMVkOaYA9vk/3w=
+k/xEYZ3vBKReKzQmQieytpBQ/h12/wgbU3u1DLolyVjfTbKr7hR_75OE6T1oyYoWDwU-T_5c" t=
+arget=3D"_blank" rel=3D"noopener" style=3D"text-decoration:inherit !importa=
+nt; color:#333333">CCPA</a></span>&#160;for information about the categorie=
+s of and purposes for which we collect and use personal information, the ri=
+ght to opt out of the sale of personal information and our privacy policy.<=
+/span></p>
+<p style=3D"text-align:center; color:#4d4d4d; margin:0px" align=3D"center">=
+&#160;</p>
+<p style=3D"text-align:center; color:#4d4d4d; margin:0px" align=3D"center">=
+&#160;</p>
+<p style=3D"text-align:center; color:#4d4d4d; margin:0px" align=3D"center">=
+<span style=3D"color: #333333;"><strong><span style=3D"font-family: 'Centur=
+y Gothic', CenturyGothic, AppleGothic, sans-serif;">We&#8217;re here to hel=
+p! Call us at 1-800-999-0398.</span></strong></span></p>
+<p style=3D"margin:0 !important">&#160;</p>
+<p style=3D"text-align:center; color:#4d4d4d; margin:0px" align=3D"center">=
+<span style=3D"font-family: 'Century Gothic', CenturyGothic, AppleGothic, s=
+ans-serif; color: #333333;"><strong><a style=3D"text-decoration:none; color=
+:#333333" href=3D"http://trk.b.mind-waretoys.com/ss/c/hCEVUq5qlMTBg8a5LQ2se=
+C-9VTsImUbGIRNnrO93E14bUEmMA_7WAAdY3tI1XPdVJqSG09q3SQ-lI4ECV0yiWr3qwoiwCgZC=
+-pH41Hco5U665ZJmj47MoMKEs35hmTnOlOIxaYEmZKDw4p1U53rdzPEK6sacG-UGyKn8SU8VQoB=
+SKWoHbeLATXsEkA3HCzk5XwoEUX3--aB2g6k-qHnZZ-2NhmcLLgcKd_ro2b44uUki-iqPEgF-HV=
+shyQoH8Y80ivGhUuprkv9zgFIZo5pLDs9nDRldbrYXQsmaB-Hs-Vq7fOAodS-IvxlqQhbZzy2qY=
+aF-QoHqjVmK8YPjCobI6lrKAxgLGQ_supxsiU6DjPdpX_w929ZsndpuxEC88H4f7JXL-Bsoetna=
+HKAdUadc7zbYRJZKXEg1ojPChNpk3Ss0_6aL2pvFUH1IA023uNE6lHl2Ekl2fnMCCjqxBiOGVw/=
+3wk/xEYZ3vBKReKzQmQieytpBQ/h13/hvLC6wTL_kcOYjDUsHi6zbGgZ1eJs1cZaatSUrRZJUw"=
+ target=3D"_blank" rel=3D"noopener noreferrer"><span style=3D"text-decorati=
+on: underline;">Customer Service</span></a>&#160;|&#160;<span style=3D"text=
+-decoration: underline;"><a style=3D"text-decoration:underline; color:#3333=
+33" href=3D"http://trk.b.mind-waretoys.com/ss/c/tRn2IDFYDp37X-VIE61Z5IoDZQf=
+SbNayBOr2txTbJnKdZ8phaKQu1fAC8H7M8XkOWtUDFms6yhkSXQ7DwcUYqHUXxsisSjplX3Cp8T=
+ZCPnqDiZ1xLiekGSPD-57t7N_nUN7paexVETVea_pvB3legbJIbAflxPacFnabz-vA8cCBX1swl=
+GmlPeYlm1hq8BLLeCLxmffaEtyWDq66ZhL1uqqDxves2e-CGRhmEEoM9c_tBRfsEdfxeqMv_bIl=
+RCZMcXZCFT7ZOIKaqjnRvgfqoa3nSk5epmppgb-_bPU7gTkAVHnAMAR-8L8k0lDN3VyQpVPrwc7=
+x4ccBSDZ1uXXO5f-vSd7fnEM9jMO5zwqNfxqxwPm-sJgiuPFf9JGkYDmM/3wk/xEYZ3vBKReKzQ=
+mQieytpBQ/h14/9cPX2K_k2bqxU1bHUqpkl0V9UGBTKF0SJcUePTKfnYM" target=3D"_blank=
+" rel=3D"noopener noreferrer">Request&#160;a Catalog</a></span>&#160;|<span=
+ style=3D"text-decoration: underline;"><a style=3D"text-decoration:underlin=
+e; color:#333333" href=3D"http://trk.b.mind-waretoys.com/ss/c/tRn2IDFYDp37X=
+-VIE61Z5MCF7drrEwMSrEVJDBolfJy6U_UKoSRqmaJXL-lzcQXJBQgWCojyBLdJ4DwUPnLmOTzS=
+NczmijnbJO0H0K_bxu9Lr_44KqwbPYzkS5VWrZCavyLb0PNNZLibu-VMOVA0VFt6FhiKKknuBwI=
+FN8tZZ0DOILe4_XjkCbMHK-iDNqMYPuoEcTp9qdbpue5VQFIP9xlQ1PjD-W7NG0-__Ev-IU0iEg=
+iT2IMnA-jtoP0xZY3n_BePq0WULYcmm1b4CSDnTkWNafw1eJwj0wSsvHul17w0zlZLw3o1CNhxh=
+jOshYGhNdrw3BQgSIY91OH4l7nfWZmw1nUghrsAWVzUOIZPedI/3wk/xEYZ3vBKReKzQmQieytp=
+BQ/h15/Ile7W4d7adCAfwMNfd21qBMkUmquGBq1dhBM0m18sWo" target=3D"_blank" rel=
+=3D"noopener noreferrer">About Us</a></span>&#160;|&#160;<span style=3D"tex=
+t-decoration: underline;"><a style=3D"text-decoration:underline; color:#333=
+333" href=3D"http://trk.b.mind-waretoys.com/ss/c/p3qtcPY9dfj0cNgZsbXEmQHfrY=
+lPsQuJz8vlycIqnNPev5VB_yzBEn7yEuFyYZO8BFN-vynEMoQQNo_p6wgFWQqADO-0CQAP6vwd9=
+y85CVxgG1zEHF0uHHUEQVk0cVXtFBDixb6_pu-ULl3QYFkLb-jBuboI2EE2GR0A3itTHTOt5TIb=
+o3VeOHGiHG0w992enZZXDq2MrXIWZTtfqNxNYVqUHAdJtXMF1Ldh7dbL0puXMJYl0XSiBt1G35u=
+J21-x7jd9jqmkzLkIu3T9V3hpjr6Rni-lN46VgcCLgy_lc5Up51xuru9--fPdc7lY-Jn71Dc4jq=
+s_PUoaJSu6sNFMrbIhmx6lTsxkk3o0VHWoWTI/3wk/xEYZ3vBKReKzQmQieytpBQ/h16/ky7nuU=
+fFCygBGypwr8wkevyWmSeImAzpSPu7-OvX5VA" target=3D"_blank" rel=3D"noopener no=
+referrer">Inventors</a></span>&#160;| <a href=3D"http://trk.b.mind-waretoys=
+.com/ss/c/p3qtcPY9dfj0cNgZsbXEmTg_IKeFkJiLZ4aXcCxAw35QYiQwlW2Lk8Sa0eVa7bTGP=
+cvn4c0zzCnFcaizp3JalfpCwuaSDPagxwtnWrUSHtw2WPg_5lLNYV28Vy8BzPLNSFzRf_0zNWdH=
+zGny7n3IUO3l3uRzP_PZr3gF8Zq_gFAIaB9L0D324o_qmaY12xcgUnOCcuw-uoE2XWBTnTSVP46=
+HLw4E4HNSZ2jKFs9Ye--N1gYuviU6Hbi64hjL0pt2_12ey8ZMz2lfWiyl8036ScG8g3gEVpHcA4=
+HZlj_-PRW4lzd7N4aDBsTKHQzKfRoBdeNAD8V23iznBbZenaUOcXSRQz3CF9ItG052xUjrktsE_=
+HA6cg738lePqaY2pw9VK4GyR8G9QRNH0b_o7sDxOIv3q7OMwapg0qiDdGjtWw-rZw_wEFw-_9iY=
+x_PkhvEXN098TWgFQh_vuVNkyBoH9G1gaEE3AFqERzeXcf9oj_XEQbk7Yf7y1E1-166p6cunmh-=
+85kAJYjxFgC3x6Kg3NQ/3wk/xEYZ3vBKReKzQmQieytpBQ/h17/mOQXUahH6YScxfI5yMglKivg=
+Y08zkjHvEBw5jDJlL8c" target=3D"_blank" class=3D"unsub-link" rel=3D"noopener=
+" style=3D"text-decoration:inherit !important; color:#333333"> <span style=
+=3D"text-decoration: underline;">Unsubscribe</span> </a><a style=3D"text-de=
+coration:none; color:#333333" href=3D"http://trk.b.mind-waretoys.com/ss/c/p=
+3qtcPY9dfj0cNgZsbXEmTg_IKeFkJiLZ4aXcCxAw35QYiQwlW2Lk8Sa0eVa7bTGPcvn4c0zzCnF=
+caizp3JalfpCwuaSDPagxwtnWrUSHtw2WPg_5lLNYV28Vy8BzPLNSFzRf_0zNWdHzGny7n3IUO3=
+l3uRzP_PZr3gF8Zq_gFAIaB9L0D324o_qmaY12xcgUnOCcuw-uoE2XWBTnTSVP46HLw4E4HNSZ2=
+jKFs9Ye--N1gYuviU6Hbi64hjL0pt2_12ey8ZMz2lfWiyl8036ScG8g3gEVpHcA4HZlj_-PRW4l=
+zd7N4aDBsTKHQzKfRoBdeNAD8V23iznBbZenaUOcXSRQz3CF9ItG052xUjrktsE_HA6cg738leP=
+qaY2pw9VK4GyR8G9QRNH0b_o7sDxOIv3q7OMwapg0qiDdGjtWw-rZw_wEFw-_9iYx_PkhvEXN09=
+8TWgFQh_vuVNkyBoH9G1gaEE3AFqERzeXcf9oj_XEQbk7Yf7y1E1-166p6cun0Mdx3xxIwH9Dd6=
+e8ZQz8rA/3wk/xEYZ3vBKReKzQmQieytpBQ/h18/fPfX-lQr2eYDGDFRW7oroIXEVTuVJKl5NW_=
+bD-6DIuo" target=3D"_blank" rel=3D"noopener noreferrer"></a></strong></span=
+></p>
+<p style=3D"text-align:center; color:#4d4d4d; margin:0px" align=3D"center">=
+&#160;</p>
+<p style=3D"text-align:center; color:#4d4d4d; margin:0px" align=3D"center">=
+<span style=3D"font-family: 'Century Gothic', CenturyGothic, AppleGothic, s=
+ans-serif; color: #333333;">MindWare Inc. | 2140 W. County Rd C, Roseville,=
+ MN 55113 | 1-800-999-0398&#160;</span></p>
+<p style=3D"text-align:center; color:#4d4d4d; margin:0px" align=3D"center">=
+<span style=3D"font-family: 'Century Gothic', CenturyGothic, AppleGothic, s=
+ans-serif; color: #333333;"><em>Copyright &#169; 2023 MindWare, Inc. All Ri=
+ghts Reserved.</em></span></p>
+</td></tr></table></td></tr></table></td></tr></table>
+<!-- end text --> </td></tr></table></td></tr></table>
+</body>
+</html>

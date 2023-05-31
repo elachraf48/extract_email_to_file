@@ -1,0 +1,1326 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp422178ims;
+        Tue, 30 May 2023 04:02:17 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ69v0K3sa5qJCeXri++tRyy8WeWSmHFvakS5CByBumYOac+qVp4J7OAiv2Bc0SxE3cbzHJk
+X-Received: by 2002:a05:620a:43a2:b0:75b:23a1:3641 with SMTP id a34-20020a05620a43a200b0075b23a13641mr1620732qkp.2.1685444537546;
+        Tue, 30 May 2023 04:02:17 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685444537; cv=none;
+        d=google.com; s=arc-20160816;
+        b=KaSf0SX6Y7BHox+CSvPPfJxT6b6qCJ8neoo/eTrRXGgFmpTmXNddYtLPcORr66zuTd
+         JRH4GdKih+OIRv2VMS01dJsnJpeKrhKsI7f+4q8d5Y/s3MmBZsXds81V/RThH2gw+l54
+         Q84DL9+rYIREnhjBHX2bWotazP1nSzJq5UY9nduZYf/pyRQmj3PIzWdc0pxDSZN1CeR9
+         ThTKQaOJ23A15CF2RK10NwHC6MYDQ8+FP0gb3k8gb5gUsnv+Mc5EwLl5TXlabQmqt1pD
+         QtCpNE5Hx7F8LjVYEP9SlaVOiiOqEL1dntQ4ZqPTw3Qc5vNM7pZZZQH9mZNy5bUAe35Y
+         cmxA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:precedence:mime-version:subject:message-id:to:from
+         :date:dkim-signature:dkim-signature;
+        bh=7MWOg1Ytfa6Huo4RqSm3e4ov622jSMTHpEXoTM6/lkM=;
+        b=ep6l46e0DUxXNVF5rKNdOEc7HTS0lLSa6dZsrcT89aQ50ettP3soDSNnAL3OovetpV
+         IoyCEUM504ocqY5GFZj4TkB6ouuH3I+gBDbZZQ2NO3Ek2KnMD3l1qzenUmq8jrxvXXJ3
+         66w9JE0sYWD7hcHLpxgGtq7clHqgVEZUt9NZUj27WskTdFbqd35Zq8l6pTBPjIkH1evx
+         YSAP7uOHzs51fqLHB4AOYraqK1RmE0d7RSXGghlq2utUwEqv9/omlCNfN0Hsf8s76Cd+
+         PnbZRy+6CpIPISSklTBafBKmtq8tEEvnquKpluVD6uQGMah4duFoSzRTY8ssFCoYJxLY
+         Gxww==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@thesportsletter.com header.s=sailthru header.b=ui6BVL5g;
+       dkim=pass header.i=@pmta.sailthru.com header.s=mt header.b=aYVujrXm;
+       spf=pass (google.com: domain of delivery_20230530070212.31629930.317097@mx.sailthru.com designates 163.47.181.110 as permitted sender) smtp.mailfrom=delivery_20230530070212.31629930.317097@mx.sailthru.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=thesportsletter.com
+Return-Path: <delivery_20230530070212.31629930.317097@mx.sailthru.com>
+Received: from pmta181-110.sailthru.com (pmta181-110.sailthru.com. [163.47.181.110])
+        by mx.google.com with ESMTPS id m1-20020a05620a13a100b0075b0bf43c10si6270089qki.429.2023.05.30.04.02.17
+        for <ouchendans62@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 30 May 2023 04:02:17 -0700 (PDT)
+Received-SPF: pass (google.com: domain of delivery_20230530070212.31629930.317097@mx.sailthru.com designates 163.47.181.110 as permitted sender) client-ip=163.47.181.110;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@thesportsletter.com header.s=sailthru header.b=ui6BVL5g;
+       dkim=pass header.i=@pmta.sailthru.com header.s=mt header.b=aYVujrXm;
+       spf=pass (google.com: domain of delivery_20230530070212.31629930.317097@mx.sailthru.com designates 163.47.181.110 as permitted sender) smtp.mailfrom=delivery_20230530070212.31629930.317097@mx.sailthru.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=thesportsletter.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed; s=sailthru; d=thesportsletter.com;
+ h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:List-Unsubscribe;
+ i=team@thesportsletter.com;
+ bh=7MWOg1Ytfa6Huo4RqSm3e4ov622jSMTHpEXoTM6/lkM=;
+ b=ui6BVL5gXm+P1bm2zlNxYVQPkc3aw8PVDw94y9VV+7uBFIDBIIvikTkOgBQQWXI/mA/X2gFWe5eR
+   mH5EyT79/5NHTXxroQRRcAN5SkGIcznX2q9p/eauIqJ8coJQjZR83sv4g+ph5a+yDuACKq0MVHTa
+   5x4+JX43RkkDZfDH9zw=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=mt; d=pmta.sailthru.com;
+ h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:List-Unsubscribe;
+ bh=7MWOg1Ytfa6Huo4RqSm3e4ov622jSMTHpEXoTM6/lkM=;
+ b=aYVujrXmr/Lz7U2/tAbTqigsRmWAohevssXayE6+bjsIQ+1WjbKF6SytWYKiZg/cb10L3LcXI0KA
+   lK/FYTlCvNrbG2mdPYt65bQKHsvX17Xoth1bHA5lJz8jWWw8SDA/XBJIdDq1VYjxo/bIfFYg6YSD
+   NhSTwL7VhzsXQ9Dz9Rc=
+Received: from nj1-mta31.sailthru.com (204.153.120.166) by pmta180-112.sailthru.com id henbri301fov for <ouchendans62@gmail.com>; Tue, 30 May 2023 06:02:13 -0500 (envelope-from <delivery_20230530070212.31629930.317097@mx.sailthru.com>)
+Date: Tue, 30 May 2023 07:02:12 -0400 (EDT)
+From: The Sportsletter <team@thesportsletter.com>
+To: ouchendans62@gmail.com
+Message-ID: <20230530070212.31629930.317097@sailthru.com>
+Subject: =?utf-8?B?SGVhdCBTdHJva2Ug8J+ltQ==?=
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_47687021_1833582852.1685444532235"
+Precedence: bulk
+x-job: 8936-31629930-20230530
+X-Feedback-ID: 8936:31629930:campaign:sailthru
+X-TM-ID: 20230530070212.31629930.317097
+X-Info: Message sent by sailthru.com customer thesportsletter.com
+X-Info: We do not permit unsolicited commercial email
+X-Info: Please report abuse by forwarding complete headers to
+X-Info: abuse@sailthru.com
+X-Mailer: sailthru.com
+X-JMailer: nj1-illmaroon.flt
+X-Unsubscribe-Web: https://link.thesportsletter.com/oc/64720faecafa877ef30657e3itxt6.6so9/40a688f9
+List-Unsubscribe: <https://link.thesportsletter.com/oc/64720faecafa877ef30657e3itxt6.6so9/40a688f9>, <mailto:unsubscribe_20230530070212.31629930.317097@mx.sailthru.com>
+X-rpcampaign: stnfs31629930
+
+------=_Part_47687021_1833582852.1685444532235
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html><html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"u=
+rn:schemas-microsoft-com:office:office" lang=3D"en"><head><title></title><m=
+eta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><met=
+a name=3D"viewport" content=3D"width=3Ddevice-width,initial-scale=3D1"><!--=
+[if mso]><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInc=
+h><o:AllowPNG/></o:OfficeDocumentSettings></xml><![endif]--><!--[if !mso]><=
+!--><link href=3D"https://fonts.googleapis.com/css?family=3DMontserrat"=20
+rel=3D"stylesheet" type=3D"text/css"><!--<![endif]--><style>
+*{box-sizing:border-box}body{margin:0;padding:0}a[x-apple-data-detectors]{c=
+olor:inherit!important;text-decoration:inherit!important}#MessageViewBody a=
+{color:inherit;text-decoration:none}p{line-height:inherit}.desktop_hide,.de=
+sktop_hide table{mso-hide:all;display:none;max-height:0;overflow:hidden}.im=
+age_block img+div{display:none} @media (max-width:620px){.social_block.desk=
+top_hide .social-table{display:inline-block!important}.image_block img.big,=
+.row-content{width:100%!important}.mobile_hide,.row .side{display:none}.sta=
+ck .column{width:100%;display:block}.mobile_hide{min-height:0;max-height:0;=
+max-width:0;overflow:hidden;font-size:0}.desktop_hide,.desktop_hide table{d=
+isplay:table!important;max-height:none!important}}
+</style></head><body style=3D"background-color:#fff;margin:0;padding:0;-web=
+kit-text-size-adjust:none;text-size-adjust:none"><div class=3D"sailthru-emc=
+o-preheader" style=3D"display: none; max-height: 0px; overflow: hidden;">He=
+at Avoid Collapse. Newgarden Steals Indy. Vegas Cashes Out. French Open Fir=
+sts & More...</div><div style=3D"display:none"><a href=3D""><img src=3D"htt=
+ps://link.thesportsletter.com/img/64720faecafa877ef30657e3itxt6.6so9/ce5f94=
+5e.gif" alt=3D"" border=3D"0" /></a></div><table class=3D"nl-container" wid=
+th=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" style=3D"mso-table-lspace:0;mso-table-rspace:0;background-color:#ff=
+f"><tbody><tr><td><table class=3D"row row-1" align=3D"center" width=3D"100%=
+" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" st=
+yle=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table=20
+class=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-ta=
+ble-rspace:0;background-color:#e2e2e2;border-bottom:3px solid #000;border-l=
+eft:3px solid #000;border-radius:10px;border-right:3px solid #000;border-to=
+p:3px solid #000;color:#000;width:600px" width=3D"600.00"><tbody><tr><td cl=
+ass=3D"column column-1" width=3D"100%"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:l=
+eft;vertical-align:top;border-top:0;border-right:0;border-bottom:0;border-l=
+eft:0"><table class=3D"html_block block-1" width=3D"100%" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-ls=
+pace:0;mso-table-rspace:0"><tr><td class=3D"pad"><div style=3D"font-family:=
+Arial,Helvetica Neue,Helvetica,sans-serif;text-align:center" align=3D"cente=
+r"><div style=3D"display: none; max-height: 0px; overflow: hidden;">
+=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=
+=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=
+=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=
+=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=
+=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=
+=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=
+=C2=A0=C2=A0=C2=A0
+</div></div></td></tr></table><table=20
+class=3D"image_block block-2" width=3D"100%" border=3D"0" cellpadding=3D"10=
+" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-t=
+able-rspace:0"><tr><td class=3D"pad"><div class=3D"alignment" align=3D"cent=
+er" style=3D"line-height:10px"><a href=3D"https://link.thesportsletter.com/=
+click/31629930.317097/aHR0cHM6Ly93d3cudGhlc3BvcnRzbGV0dGVyLmNvbS8/64720faec=
+afa877ef30657e3B5a90f612" target=3D"_blank" style=3D"outline:none" tabindex=
+=3D"-1"><img src=3D"https://media.sailthru.com/composer/images/sailthru-pro=
+d-6w8/SL_logo_black.png"=20
+style=3D"display:block;height:auto;border:0;width:270px;max-width:100%" wid=
+th=3D"270"></a></div></td></tr></table><table class=3D"text_block block-3" =
+width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-=
+word"><tr><td class=3D"pad" style=3D"padding-bottom:5px;padding-left:10px;p=
+adding-right:10px;padding-top:5px"><div style=3D"font-family:Arial,sans-ser=
+if"><div class=20
+style=3D"font-size:12px;font-family:Arial,'Helvetica Neue',Helvetica,sans-s=
+erif;mso-line-height-alt:18px;color:#000;line-height:1.5"><p style=3D"margi=
+n:0;text-align:center;mso-line-height-alt:18px"><em><strong>BY JEFF YODER</=
+strong></em></p><p style=3D"margin:0;text-align:center;mso-line-height-alt:=
+18px">
+<strong><span style=3D"color:#0068a5;"><u><span style>MAY 30, 2023</span></=
+u></span> |&nbsp; </strong><strong><a href=3D"https://link.thesportsletter.=
+com/click/31629930.317097/aHR0cHM6Ly93d3cudGhlc3BvcnRzbGV0dGVyLmNvbS8/64720=
+faecafa877ef30657e3C5a90f612" target=3D"_blank" rel=3D"noopener" style=3D"t=
+ext-decoration: underline; color: #0068A5;">SUBSCRIBE</a>&nbsp; | &nbsp;<a =
+href=3D"https://link.thesportsletter.com/view/64720faecafa877ef30657e3itxt6=
+.6so9/56aca4d7" target=3D"_blank" rel=3D"noopener" style=3D"text-decoration=
+: underline; color: #0068A5;">WEB VIEW</a></strong></p></div></div></td></t=
+r></table><table=20
+class=3D"button_block block-4" width=3D"100%" border=3D"0" cellpadding=3D"1=
+0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-=
+table-rspace:0"><tr><td class=3D"pad"><div class=3D"alignment" align=3D"cen=
+ter">
+<!--[if mso]><v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=
+=3D"urn:schemas-microsoft-com:office:word" href=3D"https://www.thesportslet=
+ter.com/teamid/" style=3D"height:34px;width:161px;v-text-anchor:middle;" ar=
+csize=3D"15%" stroke=3D"false" fillcolor=3D"#0d0d0d"><w:anchorlock/><v:text=
+box inset=3D"0px,0px,0px,0px"><center style=3D"color:#ebebeb; font-family:A=
+rial, sans-serif; font-size:14px"><![endif]-->
+<a href=3D"https://link.thesportsletter.com/click/31629930.317097/aHR0cHM6L=
+y93d3cudGhlc3BvcnRzbGV0dGVyLmNvbS90ZWFtaWQv/64720faecafa877ef30657e3Bfd9a7e=
+bd" target=3D"_blank" style=3D"text-decoration:none;display:inline-block;co=
+lor:#ebebeb;background-color:#0d0d0d;border-radius:5px;width:auto;border-to=
+p:0px solid transparent;font-weight:400;border-right:0px solid transparent;=
+border-bottom:0px solid transparent;border-left:0px solid transparent;paddi=
+ng-top:5px;padding-bottom:5px;font-family:Arial, 'Helvetica Neue', Helvetic=
+a, sans-serif;font-size:14px;text-align:center;mso-border-alt:none;word-bre=
+ak:keep-all;"><span style=3D"padding-left:15px;padding-right:15px;font-size=
+:14px;display:inline-block;letter-spacing:normal;"><span dir=3D"ltr" style=
+=3D"font-size: 16px; word-break: break-word; line-height: 1.5; mso-line-hei=
+ght-alt: 24px;"><strong><span style=3D"font-size: 14px;" dir=3D"ltr" data-m=
+ce-style=3D"font-size: 14px;">=F0=9F=94=8A&nbsp; <em>SHARE SPORTS</em></spa=
+n></strong></span></span></a>
+<!--[if mso]></center></v:textbox></v:roundrect><![endif]--></div></td></tr=
+></table></td></tr></tbody></table></td></tr></tbody></table><table class=
+=3D"row row-2" align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-=
+table-rspace:0"><tbody><tr><td><table class=3D"row-content stack" align=3D"=
+center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentati=
+on"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;background-color:#fff;color:=
+#000;border-radius:0;width:600px" width=3D"600.00"><tbody><tr><td class=3D"=
+column column-1" width=3D"100%" style=3D"mso-table-lspace:0;mso-table-rspac=
+e:0;font-weight:400;text-align:left;vertical-align:top;border-top:0;border-=
+right:0;border-bottom:0;border-left:0"><div class=3D"spacer_block block-1" =
+style=3D"height:10px;line-height:10px;font-size:1px">&#8202;</div></td></tr=
+></tbody></table></td></tr></tbody></table><table=20
+class=3D"row row-3" align=3D"center" width=3D"100%" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0=
+;mso-table-rspace:0"><tbody><tr><td><table class=3D"row-content stack" alig=
+n=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;background-color:#fff;color:=
+#000;border-bottom:1px solid #595959;border-left:1px solid #595959;border-r=
+adius:10px;border-right:1px solid #595959;border-top:1px solid #595959;widt=
+h:600px" width=3D"600.00"><tbody><tr><td class=3D"column column-1" width=3D=
+"100%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-=
+align:left;padding-bottom:5px;padding-top:5px;vertical-align:top;border-top=
+:0;border-right:0;border-bottom:0;border-left:0"><table=20
+class=3D"text_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-tab=
+le-rspace:0;word-break:break-word"><tr><td class=3D"pad" style=3D"padding-b=
+ottom:5px;padding-left:10px;padding-right:10px;padding-top:5px"><div style=
+=3D"font-family:Arial,sans-serif"><div class style=3D"font-size:12px;font-f=
+amily:Arial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:18px;=
+color:#000;line-height:1.5"><p=20
+style=3D"margin:0;font-size:14px;mso-line-height-alt:21px"><strong>Welcome =
+Back =F0=9F=91=8B</strong></p><p style=3D"margin:0;font-size:14px;mso-line-=
+height-alt:18px">&nbsp;</p><p style=3D"margin:0;font-size:14px;mso-line-hei=
+ght-alt:21px">
+<span style=3D"font-size:14px;">We hope you enjoyed your holiday break with=
+ some warm weather, cookouts, family, friends, and plenty of sports. Three =
+days of racing, playoffs, tennis, golf and soccer produced a never-ending h=
+ighlight reel, so we=E2=80=99ll do our best to recap the action.</span></p>=
+<p style=3D"margin:0;font-size:14px;mso-line-height-alt:18px">&nbsp;</p><p =
+style=3D"margin:0;font-size:14px;mso-line-height-alt:21px">
+<span style=3D"font-size:14px;">From the Indy 500=E2=80=99s frenetic finish=
+ to locking down the NBA and Stanley Cup finalists, let=E2=80=99s catch you=
+ up on 96 hours of sports in about five minutes or less.</span></p><p style=
+=3D"margin:0;font-size:14px;mso-line-height-alt:18px">&nbsp;</p><p style=3D=
+"margin:0;font-size:14px;text-align:right;mso-line-height-alt:21px"><span s=
+tyle=3D"font-size:14px;"><em><strong><span style>Letter Rip!</span></strong=
+></em></span></p></div></div></td></tr></table></td></tr></tbody></table>
+</td></tr></tbody></table><table class=3D"row row-4" align=3D"center" width=
+=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presenta=
+tion" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table=
+ class=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-t=
+able-rspace:0;background-color:#fff;color:#000;border-radius:0;width:600px"=
+ width=3D"600.00"><tbody><tr><td class=3D"column column-1" width=3D"100%"=
+=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:l=
+eft;vertical-align:top;border-top:0;border-right:0;border-bottom:0;border-l=
+eft:0"><div class=3D"spacer_block block-1" style=3D"height:10px;line-height=
+:10px;font-size:1px">&#8202;</div></td></tr></tbody></table></td></tr></tbo=
+dy></table><table class=3D"row row-5" align=3D"center" width=3D"100%" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"=
+mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table=20
+class=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-ta=
+ble-rspace:0;background-color:#fff;border-bottom:1px solid #000;border-left=
+:1px solid #000;border-radius:10px;border-right:1px solid #000;border-top:1=
+px solid #000;color:#000;width:600px" width=3D"600.00"><tbody><tr><td class=
+=3D"column column-1" width=3D"100%"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:l=
+eft;padding-bottom:5px;padding-top:5px;vertical-align:top;border-top:0;bord=
+er-right:0;border-bottom:0;border-left:0"><table class=3D"text_block block-=
+1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"=
+presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:bre=
+ak-word"><tr><td class=3D"pad" style=3D"padding-bottom:5px;padding-left:10p=
+x;padding-right:10px;padding-top:5px"><div=20
+style=3D"font-family:Arial,sans-serif"><div class style=3D"font-size:12px;f=
+ont-family:Arial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:=
+14.399999999999999px;color:#ebebeb;line-height:1.2"><p style=3D"margin:0;fo=
+nt-size:14px;mso-line-height-alt:16.8px">
+<span style=3D"color:#ffffff;background-color:#666666;"><strong><span style=
+><span style=3D"font-size:12px;background-color:#666666;"><em><span style=
+=3D"font-size:12px;background-color:#666666;">&nbsp; NBA PLAYOFFS&nbsp;&nbs=
+p;</span></em></span></span></strong></span></p></div></div></td></tr></tab=
+le><table class=3D"text_block block-2" width=3D"100%" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace=
+:0;mso-table-rspace:0;word-break:break-word"><tr><td class=3D"pad"=20
+style=3D"padding-bottom:5px;padding-left:10px;padding-right:10px;padding-to=
+p:5px"><div style=3D"font-family:sans-serif"><div class style=3D"font-size:=
+12px;font-family:Arial,Helvetica Neue,Helvetica,sans-serif;mso-line-height-=
+alt:14.399999999999999px;color:#555;line-height:1.2"><p style=3D"margin:0;f=
+ont-size:16px;text-align:left;mso-line-height-alt:19.2px"><span style=3D"co=
+lor:#000000;font-size:20px;"><span style><strong>Heat Stroke =F0=9F=A5=B5</=
+strong></span></span></p></div></div></td></tr></table><table=20
+class=3D"image_block block-3" width=3D"100%" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-ta=
+ble-rspace:0"><tr><td class=3D"pad" style=3D"width:100%;padding-right:0;pad=
+ding-left:0"><div class=3D"alignment" align=3D"center" style=3D"line-height=
+:10px"><a href=3D"https://link.thesportsletter.com/click/31629930.317097/aH=
+R0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g_dj1zNG1YeGZsQWpwcyZmZWF0dXJlPW9uZWJve=
+A/64720faecafa877ef30657e3Bc15ddc28" target=3D"_blank" style=3D"outline:non=
+e" tabindex=3D"-1"><img class=3D"big" src=3D"https://media.sailthru.com/com=
+poser/images/sailthru-prod-6w8/giphy-12.gif"=20
+style=3D"display:block;height:auto;border:0;width:598px;max-width:100%" wid=
+th=3D"598"></a></div></td></tr></table><table class=3D"text_block block-4" =
+width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-=
+word"><tr><td class=3D"pad"><div style=3D"font-family:Arial,sans-serif"><di=
+v class=20
+style=3D"font-size:12px;font-family:Arial,'Helvetica Neue',Helvetica,sans-s=
+erif;mso-line-height-alt:14.399999999999999px;color:#555;line-height:1.2"><=
+p style=3D"margin:0;font-size:14px;text-align:right;mso-line-height-alt:16.=
+8px"><span style=3D"font-size:10px;"><em>Image via Giphy</em></span></p></d=
+iv></div></td></tr></table><table class=3D"text_block block-5" width=3D"100=
+%" border=3D"0" cellpadding=3D"10" cellspacing=3D"0" role=3D"presentation" =
+style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word">
+<tr><td class=3D"pad"><div style=3D"font-family:Arial,sans-serif"><div clas=
+s style=3D"font-size:12px;mso-line-height-alt:18px;color:#000;line-height:1=
+.5;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif"><p style=3D"mar=
+gin:0;font-size:14px;mso-line-height-alt:21px"><span style=3D"font-size:14p=
+x;"><strong><em>After Surrendering 3-0 Series Lead to Celtics, Heat Avoid C=
+ollapse, Catch Fire in Game 7 to Reach NBA Finals (103-84)</em></strong></s=
+pan></p><p=20
+style=3D"margin:0;font-size:14px;mso-line-height-alt:18px">&nbsp;</p><p sty=
+le=3D"margin:0;font-size:14px;mso-line-height-alt:21px">
+<span style=3D"font-size:14px;">The Celtics almost did the unthinkable... A=
+lmost. The Eastern Conference Finals entered the holiday weekend with the H=
+eat holding a 3-2 series lead over the Celtics. Miami watched their grip on=
+ the series continue to slip. Boston won its third straight game on Saturda=
+y night via <a href=3D"https://link.thesportsletter.com/click/31629930.3170=
+97/aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g_dj1BU3NLZ2tCc1FzNA/64720faecafa8=
+77ef30657e3C96b4dec1" target=3D"_blank" style=3D"text-decoration: underline=
+; color: #0068A5;" rel=3D"noopener"><strong>Derrick White=E2=80=99s tip-in =
+game-winner</strong></a>, forcing a Game 7 and setting the stage for the bi=
+ggest comeback in NBA playoff lore. No team in NBA history had ever come ba=
+ck to win a series after trailing 3-0, and the Celtics were heading back to=
+ Boston with a shot. Almost...</span>
+</p><p style=3D"margin:0;font-size:14px;mso-line-height-alt:18px">&nbsp;</p=
+><p style=3D"margin:0;font-size:14px;mso-line-height-alt:21px">
+<span style=3D"font-size:14px;"><strong>Game 7: </strong>Jimmy Butler (28 p=
+oints) and the Heat finally put the series to bed with a Game 7 runaway (10=
+3-84) and a sharpshooting performance for the ages. Miami shot 50 percent f=
+rom beyond the arc (14-for-28, 3pt) while the Celtics were an ice-cold 21 p=
+ercent (9-for-42, 3pt). Boston started the game 0-for-12 from deep, and the=
+ trio of Jayson Tatum, Jaylen Brown and Marcus Smart shot a combined 3-for-=
+19 from 3. That cold shooting start gave Miami control, and they never look=
+ed back. It was a wire-to-wire Game 7 closeout for Erik Spoelstra's squad, =
+and the Heat, after sweating it out for four games, are officially heading =
+to the NBA Finals for a showdown with the Denver Nuggets.</span>
+</p><p style=3D"margin:0;font-size:14px;mso-line-height-alt:18px">&nbsp;</p=
+><p style=3D"margin:0;font-size:14px;mso-line-height-alt:21px"><u><span sty=
+le=3D"font-size:14px;"><strong>Eastern Conference Finals Highlights</strong=
+></span></u></p><p style=3D"margin:0;font-size:14px;mso-line-height-alt:21p=
+x">
+<span style=3D"font-size:14px;"><strong>Gm 6: </strong><a href=3D"https://l=
+ink.thesportsletter.com/click/31629930.317097/aHR0cHM6Ly93d3cueW91dHViZS5jb=
+20vd2F0Y2g_dj0wYnVTbTBMV3JXTQ/64720faecafa877ef30657e3D460a64bd" style=3D"t=
+ext-decoration: underline; color: #0068A5;"><strong>Celtics def. Heat (104-=
+103</strong></a><strong>) | </strong><em>*White Game-Winner</em></span></p>=
+<p style=3D"margin:0;font-size:14px;mso-line-height-alt:21px">
+<span style=3D"font-size:14px;"><strong>Gm 7: </strong><a href=3D"https://l=
+ink.thesportsletter.com/click/31629930.317097/aHR0cHM6Ly93d3cueW91dHViZS5jb=
+20vd2F0Y2g_dj1zNG1YeGZsQWpwcyZmZWF0dXJlPW9uZWJveA/64720faecafa877ef30657e3E=
+c15ddc28" style=3D"text-decoration: underline; color: #0068A5;"><strong>Hea=
+t def. Celtics (103-84)</strong></a><strong> | </strong><em>MIA Wins Series=
+ (4-3)</em></span></p><p style=3D"margin:0;font-size:14px;mso-line-height-a=
+lt:18px">&nbsp;</p><p style=3D"margin:0;font-size:14px;mso-line-height-alt:=
+21px"><u><span style=3D"font-size:14px;"><strong>Game 7 Statistics</strong>=
+</span></u></p><p=20
+style=3D"margin:0;font-size:14px;mso-line-height-alt:21px"><span style=3D"f=
+ont-size:14px;">J. Butler (MIA): 28 points, 7 rebounds, 6 assists, 3 steals=
+</span></p><p style=3D"margin:0;font-size:14px;mso-line-height-alt:21px"><s=
+pan style=3D"font-size:14px;">C. Martin (MIA): 26 points, 10 rebounds</span=
+></p><p style=3D"margin:0;font-size:14px;mso-line-height-alt:21px"><span st=
+yle=3D"font-size:14px;">J. Brown (BOS): 19 points, 8 rebounds, 5 assists, 8=
+ turnovers</span></p><p=20
+style=3D"margin:0;font-size:14px;mso-line-height-alt:21px"><span style=3D"f=
+ont-size:14px;">J. Tatum (BOS): 14 points, 11 rebounds, 4 assists</span></p=
+><p style=3D"margin:0;font-size:14px;mso-line-height-alt:18px">&nbsp;</p><p=
+ style=3D"margin:0;font-size:14px;mso-line-height-alt:21px"><strong>=F0=9F=
+=94=A5 <u>Heat of History</u> (Miami's Incredible Playoff Run)</strong></p>=
+<ul style=3D"list-style-type:square;line-height:1.5;mso-line-height-alt:21p=
+x;font-size:14px"><li>Lost 1st Play-In Game to Hawks</li><li>
+Beat Bulls for 8-Seed Play-In Game</li><li>Knocked Out 1-Seed Bucks in 5</l=
+i><li>Knocked Out 5-Seed Knicks in 6</li><li>Knocked Out 2-Seed Celtics in =
+7</li><li>1st Play-In Team to Reach NBA Finals</li><li>2nd 8-Seed to Ever R=
+each NBA Finals (1999 Knicks)</li></ul><p style=3D"margin:0;font-size:14px;=
+mso-line-height-alt:21px"><u><span style=3D"font-size:14px;"><strong>NBA Fi=
+nals Schedule</strong></span></u></p><p style=3D"margin:0;font-size:14px;ms=
+o-line-height-alt:21px">
+<span style=3D"font-size:14px;"><strong>Gm 1: </strong>Heat at Nuggets (Thu=
+rsday, 8:30 pm ET)</span></p><p style=3D"margin:0;font-size:14px;mso-line-h=
+eight-alt:18px">&nbsp;</p><p style=3D"margin:0;font-size:14px;mso-line-heig=
+ht-alt:21px"><u><span style=3D"font-size:14px;"><strong>Read More</strong><=
+/span></u></p><p style=3D"margin:0;font-size:14px;mso-line-height-alt:21px"=
+>
+<span style=3D"font-size:14px;"><strong>FOX Sports: </strong><a href=3D"htt=
+ps://link.thesportsletter.com/click/31629930.317097/aHR0cHM6Ly93d3cuZm94c3B=
+vcnRzLmNvbS9zdG9yaWVzL25iYS9oZWF0LWF2b2lkLW1ha2luZy13cm9uZy1raW5kLW9mLWhpc3=
+RvcnktdnMtY2VsdGljcy1pbnN0ZWFkLWhlYWRlZC10by1uYmEtZmluYWxz/64720faecafa877e=
+f30657e3B6c95e5dc" style=3D"text-decoration: underline; color: #0068A5;"><s=
+trong>Heat Avoid Making Wrong Kind of History, Instead Headed to NBA Finals=
+</strong></a></span></p><p style=3D"margin:0;font-size:14px;mso-line-height=
+-alt:21px">
+<span style=3D"font-size:14px;"><strong>B/R: </strong><a href=3D"https://li=
+nk.thesportsletter.com/click/31629930.317097/aHR0cHM6Ly9ibGVhY2hlcnJlcG9ydC=
+5jb20vdmlkZW9zLzQ0ODM1Ni1qaW1teS13aW5zLWVjZi1tdnA/64720faecafa877ef30657e3B=
+39681b7b" style=3D"text-decoration: underline; color: #0068A5;"><strong>Jim=
+my Butler Wins Eastern Conference Finals MVP</strong></a><strong> (Video)</=
+strong></span></p><p style=3D"margin:0;font-size:14px;mso-line-height-alt:2=
+1px">
+<span style=3D"font-size:14px;"><strong>SI: </strong><a href=3D"https://lin=
+k.thesportsletter.com/click/31629930.317097/aHR0cHM6Ly93d3cuc2kuY29tL25iYS8=
+yMDIzLzA1LzI5L2NhbGViLW1hcnRpbi1oZWF0LWNlbHRpY3MtZ2FtZS03LXJlZGVtcHRpb24/64=
+720faecafa877ef30657e3B7076a896" style=3D"text-decoration: underline; color=
+: #0068A5;"><strong>The Heat Wouldn=E2=80=99t Have Had A Chance Without Cal=
+eb Martin</strong></a></span></p></div></div></td></tr></table></td></tr></=
+tbody></table></td></tr></tbody></table><table class=3D"row row-6" align=3D=
+"center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0">
+<tbody><tr><td><table class=3D"row-content stack" align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"m=
+so-table-lspace:0;mso-table-rspace:0;background-color:#fff;color:#000;width=
+:600px" width=3D"600.00"><tbody><tr><td class=3D"column column-1" width=3D"=
+100%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-a=
+lign:left;vertical-align:top;border-top:0;border-right:0;border-bottom:0;bo=
+rder-left:0"><div class=3D"spacer_block block-1"=20
+style=3D"height:10px;line-height:10px;font-size:1px">&#8202;</div></td></tr=
+></tbody></table></td></tr></tbody></table><table class=3D"row row-7" align=
+=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbo=
+dy><tr><td><table class=3D"row-content stack" align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;background-color:#fff;border=
+-bottom:1px solid #000;border-left:1px solid #000;border-radius:10px;border=
+-right:1px solid #000;border-top:1px solid #000;color:#000;width:600px" wid=
+th=3D"600.00"><tbody><tr><td class=3D"column column-1" width=3D"100%" style=
+=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;p=
+adding-bottom:5px;padding-top:5px;vertical-align:top;border-top:0;border-ri=
+ght:0;border-bottom:0;border-left:0"><table=20
+class=3D"text_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-tab=
+le-rspace:0;word-break:break-word"><tr><td class=3D"pad" style=3D"padding-b=
+ottom:5px;padding-left:10px;padding-right:10px;padding-top:5px"><div style=
+=3D"font-family:Arial,sans-serif"><div class style=3D"font-size:12px;font-f=
+amily:Arial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:14.39=
+9999999999999px;color:#ebebeb;line-height:1.2"><p=20
+style=3D"margin:0;font-size:14px;mso-line-height-alt:16.8px"><span style=3D=
+"color:#ffffff;background-color:#666666;"><strong><span style><span style=
+=3D"font-size:12px;background-color:#666666;"><em><span style=3D"font-size:=
+12px;background-color:#666666;">&nbsp; INDY 500&nbsp;&nbsp;</span></em></sp=
+an></span></strong></span></p></div></div></td></tr></table><table class=3D=
+"text_block block-2" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" role=3D"presentation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"><tr><=
+td class=3D"pad" style=3D"padding-bottom:5px;padding-left:10px;padding-righ=
+t:10px;padding-top:5px"><div style=3D"font-family:sans-serif"><div class st=
+yle=3D"font-size:12px;font-family:Arial,Helvetica Neue,Helvetica,sans-serif=
+;mso-line-height-alt:14.399999999999999px;color:#555;line-height:1.2"><p st=
+yle=3D"margin:0;font-size:16px;text-align:left;mso-line-height-alt:19.2px">
+<span style=3D"color:#000000;font-size:20px;"><span style><strong>Newgarden=
+ Wins 1st Indy 500</strong></span></span></p></div></div></td></tr></table>=
+<table class=3D"image_block block-3" width=3D"100%" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0=
+;mso-table-rspace:0"><tr><td class=3D"pad" style=3D"width:100%;padding-righ=
+t:0;padding-left:0"><div class=3D"alignment" align=3D"center" style=3D"line=
+-height:10px">
+<a href=3D"https://link.thesportsletter.com/click/31629930.317097/aHR0cHM6L=
+y93d3cueW91dHViZS5jb20vd2F0Y2g_dj13dnpvWVNieG5XQQ/64720faecafa877ef30657e3F=
+a8508870" target=3D"_blank" style=3D"outline:none" tabindex=3D"-1"><img cla=
+ss=3D"big" src=3D"https://media.sailthru.com/composer/images/sailthru-prod-=
+6w8/Newgarden-053023.jpg" style=3D"display:block;height:auto;border:0;width=
+:598px;max-width:100%" width=3D"598"></a></div></td></tr></table><table cla=
+ss=3D"text_block block-4" width=3D"100%" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"><tr><=
+td class=3D"pad"><div style=3D"font-family:Arial,sans-serif"><div class sty=
+le=3D"font-size:12px;font-family:Arial,'Helvetica Neue',Helvetica,sans-seri=
+f;mso-line-height-alt:14.399999999999999px;color:#555;line-height:1.2"><p s=
+tyle=3D"margin:0;font-size:14px;text-align:right;mso-line-height-alt:16.8px=
+"><span style=3D"font-size:10px;"><em>Photo: James Gilbert / Getty Images</=
+em></span></p></div></div></td></tr></table><table=20
+class=3D"text_block block-5" width=3D"100%" border=3D"0" cellpadding=3D"10"=
+ cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-ta=
+ble-rspace:0;word-break:break-word"><tr><td class=3D"pad"><div style=3D"fon=
+t-family:Arial,sans-serif"><div class style=3D"font-size:12px;mso-line-heig=
+ht-alt:18px;color:#000;line-height:1.5;font-family:Arial,'Helvetica Neue',H=
+elvetica,sans-serif"><p style=3D"margin:0;font-size:14px;mso-line-height-al=
+t:21px">
+<span style=3D"font-size:14px;"><strong><em>Josef Newgarden Strikes Late in=
+ Crash-Filled, Chaotic Finish to 107th Indianapolis 500</em></strong></span=
+></p><p style=3D"margin:0;font-size:14px;mso-line-height-alt:18px">&nbsp;</=
+p><p style=3D"margin:0;font-size:14px;mso-line-height-alt:21px">
+<span style=3D"font-size:14px;">The marquee event of Memorial Day Weekend d=
+id not disappoint. And at the end of 500 miles, a chaotic finish to the Ind=
+y 500 saw three red flags in the final 16 laps, one where tires and debris =
+flew into the stands, and one driver stood alone at the yard of bricks. Jos=
+ef Newgarden claimed his first Indianapolis 500 victory with a last-lap pas=
+s in the third red-flag restart of Sunday=E2=80=99s race. He used a stunnin=
+g maneuver to jet past race leader Marcus Ericsson in a mad dash for the ch=
+eckered flag. Ericsson, who was gunning for back-to-back Indy 500 wins, led=
+ for much of the late stages until the final-lap fireworks.</span>
+</p><p style=3D"margin:0;font-size:14px;mso-line-height-alt:18px">&nbsp;</p=
+><p style=3D"margin:0;font-size:14px;mso-line-height-alt:21px"><span style=
+=3D"font-size:14px;"><strong>Red Flags of Race Day</strong></span></p><p st=
+yle=3D"margin:0;font-size:14px;mso-line-height-alt:21px">
+<span style=3D"font-size:14px;">The Indy 500 was pretty much smooth sailing=
+ for three-quarters of the race. With 16 laps to go, Felix Rosenqvist slid =
+into the wall and Kyle Kirkwood clipped him from the side, sending Kirkwood=
+=E2=80=99s back tire vaulting into the stands. Luckily, the tire missed the=
+ fans and only <a href=3D"https://link.thesportsletter.com/click/31629930.3=
+17097/aHR0cHM6Ly9zcG9ydHMueWFob28uY29tL2luZGlhbmFwb2xpcy01MDAtZmFuLXdob3NlL=
+WNhci13YXMtaGl0LWJ5LWZseWluZy10aXJlLWdldHMtYnJpY2t5YXJkLXZpc2l0LXJpZGUtaG9t=
+ZS0xNjM4MzU0NzMuaHRtbA/64720faecafa877ef30657e3B9d7899e5" target=3D"_blank"=
+ style=3D"text-decoration: underline; color: #0068A5;" rel=3D"noopener"><st=
+rong>struck a car in the parking lot</strong></a>. That was the first of th=
+ree red-flag restarts down the stretch. With 5 laps to go, race leader Pato=
+ O=E2=80=99Ward surrendered the lead before getting squeezed into the grass=
+ and causing more chaos...</span>
+</p><p style=3D"margin:0;font-size:14px;mso-line-height-alt:18px">&nbsp;</p=
+><p style=3D"margin:0;font-size:14px;mso-line-height-alt:21px"><span style=
+=3D"font-size:14px;"><strong>An Epic Finish</strong></span></p><p style=3D"=
+margin:0;font-size:14px;mso-line-height-alt:21px">
+<span style=3D"font-size:14px;">Two more cars traded paint on the straighta=
+way with 2 laps left, setting the stage for a shootout between Ericsson (1s=
+t) and Newgarden (2nd) in a final-lap, winner-take-all restart full of cont=
+roversy. Newgarden quickly swiped the lead before Turn 1 and went full <a h=
+ref=3D"https://link.thesportsletter.com/click/31629930.317097/aHR0cHM6Ly9uZ=
+XdzLnlhaG9vLmNvbS9kcmFnb24tbW92ZS1uZWNlc3NhcnktZXZpbC1uZXdnYXJkZW4tMTMzNzEy=
+NzE2Lmh0bWw/64720faecafa877ef30657e3Bca1ffc64" target=3D"_blank" style=3D"t=
+ext-decoration: underline; color: #0068A5;" rel=3D"noopener"><strong>'drago=
+n move' down the final straightaway</strong></a> to avoid letting Ericsson =
+grab any draft and momentum. He crossed the bricks and took his victory lap=
+ before jumping out of the car and going into the stands to celebrate face-=
+to-face with the fans. Pure emotion for a 32-year-old driver who finally wo=
+n the big one. It was the first win for Team Penske / Roger Penske since he=
+ purchased the Indianapolis Motor Speedway in 2019. Newgarden also started =
+the race in the 17th spot, the lowest starting position for an Indy 500 win=
+ner since Ryan Hunter-Reay in 2014.</span>
+</p><p style=3D"margin:0;font-size:14px;mso-line-height-alt:18px">&nbsp;</p=
+><p style=3D"margin:0;font-size:14px;mso-line-height-alt:21px"><span style=
+=3D"font-size:14px;"><a href=3D"https://link.thesportsletter.com/click/3162=
+9930.317097/aHR0cHM6Ly9zY29yZXMubmJjc3BvcnRzLmNvbS9yYWNpbmcvbGVhZGVyYm9hcmQ=
+uYXNwP3Nlcmllcz1JUkw/64720faecafa877ef30657e3B98bdd238" style=3D"text-decor=
+ation: underline; color: #0068A5;"><strong>Indy 500 Results</strong></a><st=
+rong> (Starting Position / Laps Led)</strong></span></p><p style=3D"margin:=
+0;font-size:14px;mso-line-height-alt:21px">
+<span style=3D"font-size:14px;">1. Josef Newgarden (17th / 5 Laps)</span></=
+p><p style=3D"margin:0;font-size:14px;mso-line-height-alt:21px"><span style=
+=3D"font-size:14px;">2. Marcus Ericsson (10th / 30 Laps)</span></p><p style=
+=3D"margin:0;font-size:14px;mso-line-height-alt:21px"><span style=3D"font-s=
+ize:14px;">3. Santino Ferrucci (4th / 11 Laps)</span></p><p style=3D"margin=
+:0;font-size:14px;mso-line-height-alt:21px"><span style=3D"font-size:14px;"=
+>4. Alex Palou (1st / 36 Laps)</span></p><p=20
+style=3D"margin:0;font-size:14px;mso-line-height-alt:21px"><span style=3D"f=
+ont-size:14px;">5. Alexander Rossi (7th / 4 Laps)</span></p><p style=3D"mar=
+gin:0;font-size:14px;mso-line-height-alt:18px">&nbsp;</p><p style=3D"margin=
+:0;font-size:14px;mso-line-height-alt:21px"><span style=3D"font-size:14px;"=
+><strong>Watch: </strong><a href=3D"https://link.thesportsletter.com/click/=
+31629930.317097/aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g_dj13dnpvWVNieG5XQQ/=
+64720faecafa877ef30657e3Ga8508870" style=3D"text-decoration: underline; col=
+or: #0068A5;"><strong>2023 Indianapolis 500 Highlights</strong></a></span><=
+/p><p=20
+style=3D"margin:0;font-size:14px;mso-line-height-alt:18px">&nbsp;</p><p sty=
+le=3D"margin:0;font-size:14px;mso-line-height-alt:21px"><u><span style=3D"f=
+ont-size:14px;"><strong>Read More</strong></span></u></p><p style=3D"margin=
+:0;font-size:14px;mso-line-height-alt:21px">
+<span style=3D"font-size:14px;"><strong>AP: </strong><a href=3D"https://lin=
+k.thesportsletter.com/click/31629930.317097/aHR0cHM6Ly9hcG5ld3MuY29tL2FydGl=
+jbGUvaW5keS01MDAtbmV3Z2FyZGVuLXBlbnNrZS1yZWQtZmxhZy1lOTQ3MWZmYWViNzU2YmY5Yz=
+Y0MTM5Y2JmNmYxMDAxMw/64720faecafa877ef30657e3B04eee756" style=3D"text-decor=
+ation: underline; color: #0068A5;"><strong>Indy 500=E2=80=99s Ending Create=
+s Controversy & Conspiracies</strong></a></span></p><p style=3D"margin:0;fo=
+nt-size:14px;mso-line-height-alt:21px">
+<span style=3D"font-size:14px;"><strong>Motorsport: </strong><a href=3D"htt=
+ps://link.thesportsletter.com/click/31629930.317097/aHR0cHM6Ly93d3cubW90b3J=
+zcG9ydC5jb20vaW5keWNhci9uZXdzL2hvdy1uZXdnYXJkZW4tcm9zZS10by1iZS1hLXRob3JuLX=
+RvLWVyaWNzc29ucy1kb3VibGUtaW5keS01MDAtYmlkLzEwNDc1MjUxLw/64720faecafa877ef3=
+0657e3Baf4c30e3" style=3D"text-decoration: underline; color: #0068A5;"><str=
+ong>How Newgarden Rose to be a Thorn in Ericsson=E2=80=99s Double Indy 500 =
+Bid</strong></a></span></p><p style=3D"margin:0;font-size:14px;mso-line-hei=
+ght-alt:21px">
+<span style=3D"font-size:14px;"><strong>Racer: </strong><a href=3D"https://=
+link.thesportsletter.com/click/31629930.317097/aHR0cHM6Ly9yYWNlci5jb20vMjAy=
+My8wNS8yOS9kcmFnb24tbW92ZS1hLW5lY2Vzc2FyeS1ldmlsLW5ld2dhcmRlbi8/64720faecaf=
+a877ef30657e3B03dbcd05" style=3D"text-decoration: underline; color: #0068A5=
+;"><strong>Newgarden Says Late =E2=80=98Dragon Move=E2=80=99 A Necessary Ev=
+il</strong></a></span></p><p style=3D"margin:0;font-size:14px;mso-line-heig=
+ht-alt:21px">
+<span style=3D"font-size:14px;"><strong>Yahoo! Sports: </strong><a href=3D"=
+https://link.thesportsletter.com/click/31629930.317097/aHR0cHM6Ly9zcG9ydHMu=
+eWFob28uY29tL2luZGlhbmFwb2xpcy01MDAtZmFuLXdob3NlLWNhci13YXMtaGl0LWJ5LWZseWl=
+uZy10aXJlLWdldHMtYnJpY2t5YXJkLXZpc2l0LXJpZGUtaG9tZS0xNjM4MzU0NzMuaHRtbA/647=
+20faecafa877ef30657e3C9d7899e5" style=3D"text-decoration: underline; color:=
+ #0068A5;"><strong>Indy 500 Fan Whose Car Was Hit by Flying Tire Gets Brick=
+yard Visit, Ride Home</strong></a></span></p></div></div></td></tr></table>=
+</td></tr></tbody></table></td></tr></tbody></table><table class=3D"row row=
+-8" align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" role=3D"presentation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table class=
+=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-r=
+space:0;background-color:#fff;color:#000;width:600px" width=3D"600.00"><tbo=
+dy><tr><td class=3D"column column-1" width=3D"100%" style=3D"mso-table-lspa=
+ce:0;mso-table-rspace:0;font-weight:400;text-align:left;vertical-align:top;=
+border-top:0;border-right:0;border-bottom:0;border-left:0"><div=20
+class=3D"spacer_block block-1" style=3D"height:10px;line-height:10px;font-s=
+ize:1px">&#8202;</div></td></tr></tbody></table></td></tr></tbody></table><=
+table class=3D"row row-9" align=3D"center" width=3D"100%" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-ls=
+pace:0;mso-table-rspace:0"><tbody><tr><td><table class=3D"row-content stack=
+" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D=
+"presentation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;background-color:#fff;border=
+-bottom:1px solid #000;border-left:1px solid #000;border-radius:10px;border=
+-right:1px solid #000;border-top:1px solid #000;color:#000;width:600px" wid=
+th=3D"600.00"><tbody><tr><td class=3D"column column-1" width=3D"100%" style=
+=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;p=
+adding-bottom:5px;padding-top:5px;vertical-align:top;border-top:0;border-ri=
+ght:0;border-bottom:0;border-left:0"><table=20
+class=3D"text_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-tab=
+le-rspace:0;word-break:break-word"><tr><td class=3D"pad" style=3D"padding-b=
+ottom:5px;padding-left:10px;padding-right:10px;padding-top:5px"><div style=
+=3D"font-family:Arial,sans-serif"><div class style=3D"font-size:12px;font-f=
+amily:Arial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:14.39=
+9999999999999px;color:#ebebeb;line-height:1.2"><p=20
+style=3D"margin:0;font-size:14px;mso-line-height-alt:16.8px"><span style=3D=
+"color:#ffffff;background-color:#666666;"><strong><span style><span style=
+=3D"font-size:12px;background-color:#666666;"><em><span style=3D"font-size:=
+12px;background-color:#666666;">&nbsp; NHL PLAYOFFS&nbsp;&nbsp;</span></em>=
+</span></span></strong></span></p></div></div></td></tr></table><table clas=
+s=3D"text_block block-2" width=3D"100%" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"><tr><=
+td class=3D"pad" style=3D"padding-bottom:5px;padding-left:10px;padding-righ=
+t:10px;padding-top:5px"><div style=3D"font-family:sans-serif"><div class st=
+yle=3D"font-size:12px;font-family:Arial,Helvetica Neue,Helvetica,sans-serif=
+;mso-line-height-alt:14.399999999999999px;color:#555;line-height:1.2"><p st=
+yle=3D"margin:0;font-size:16px;text-align:left;mso-line-height-alt:19.2px">
+<span style=3D"color:#000000;font-size:20px;"><span style><strong>Vegas, Vi=
+ctors of the West</strong></span></span></p></div></div></td></tr></table><=
+table class=3D"image_block block-3" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0"><tr><td class=3D"pad" style=3D"width:100%;padding-right=
+:0;padding-left:0"><div class=3D"alignment" align=3D"center" style=3D"line-=
+height:10px">
+<a href=3D"https://link.thesportsletter.com/click/31629930.317097/aHR0cHM6L=
+y93d3cubmhsLmNvbS92aWRlby9yZWNhcC12Z2stNi1kYWwtMC90LTI3NzM1MDkxMi9jLTE3NDMy=
+ODgy/64720faecafa877ef30657e3Baac771ac" target=3D"_blank" style=3D"outline:=
+none" tabindex=3D"-1"><img class=3D"big" src=3D"https://media.sailthru.com/=
+composer/images/sailthru-prod-6w8/Vegas-053023.jpg" style=3D"display:block;=
+height:auto;border:0;width:598px;max-width:100%" width=3D"598"></a></div></=
+td></tr></table><table class=3D"text_block block-4" width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"><tr><=
+td class=3D"pad"><div style=3D"font-family:Arial,sans-serif"><div class sty=
+le=3D"font-size:12px;font-family:Arial,'Helvetica Neue',Helvetica,sans-seri=
+f;mso-line-height-alt:14.399999999999999px;color:#555;line-height:1.2"><p s=
+tyle=3D"margin:0;font-size:14px;text-align:right;mso-line-height-alt:16.8px=
+"><span style=3D"font-size:10px;"><em>Photo: Steph Chambers / Getty Images<=
+/em></span></p></div></div></td></tr></table><table=20
+class=3D"text_block block-5" width=3D"100%" border=3D"0" cellpadding=3D"10"=
+ cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-ta=
+ble-rspace:0;word-break:break-word"><tr><td class=3D"pad"><div style=3D"fon=
+t-family:Arial,sans-serif"><div class style=3D"font-size:12px;mso-line-heig=
+ht-alt:18px;color:#000;line-height:1.5;font-family:Arial,'Helvetica Neue',H=
+elvetica,sans-serif"><p style=3D"margin:0;font-size:14px;mso-line-height-al=
+t:21px">
+<span style=3D"font-size:14px;"><strong><em>Golden Knights Blow Out Stars i=
+n Game 6 (6-0) to Reach Stanley Cup Finals</em></strong></span></p><p style=
+=3D"margin:0;font-size:14px;mso-line-height-alt:18px">&nbsp;</p><p style=3D=
+"margin:0;font-size:14px;mso-line-height-alt:21px">
+<span style=3D"font-size:14px;">Leave no doubt! Much like the Heat, the Gol=
+den Knights saw a 3-0 series lead start to dwindle in the West Finals of th=
+e Stanley Cup Playoffs. The Stars won Game 5 on Saturday (4-2) to force a G=
+ame 6 on Memorial Day, but this one was never in question. Vegas blanked Da=
+llas in Game 6 (6-0) after scoring three goals in the first 14 minutes and =
+demoralizing the Stars on their home ice. William Karlsson (2 goals, 1 assi=
+st) was the offensive catalyst while Vegas goaltender Adin Hill (18 saves) =
+delivered his second shutout of the series. Vegas is heading back to the Cu=
+p Finals against the underdog Florida Panthers.</span>
+</p><p style=3D"margin:0;font-size:14px;mso-line-height-alt:18px">&nbsp;</p=
+><p style=3D"margin:0;font-size:14px;mso-line-height-alt:21px"><span style=
+=3D"font-size:14px;"><strong>Coming Back for the Cup: </strong>In Year 6 af=
+ter the franchise=E2=80=99s inception (2017-18), the Golden Knights are mak=
+ing their second Stanley Cup Finals appearance. Vegas went to the Finals in=
+ that inaugural season before losing to the Capitals. Now, they=E2=80=99re =
+back with another shot at the franchise=E2=80=99s first Cup.</span></p><p=
+=20
+style=3D"margin:0;font-size:14px;mso-line-height-alt:18px">&nbsp;</p><p sty=
+le=3D"margin:0;font-size:14px;mso-line-height-alt:21px"><u><span style=3D"f=
+ont-size:14px;"><strong>Western Conference Finals Highlights</strong></span=
+></u></p><p style=3D"margin:0;font-size:14px;mso-line-height-alt:21px">
+<span style=3D"font-size:14px;"><strong>Gm 5: </strong><a href=3D"https://l=
+ink.thesportsletter.com/click/31629930.317097/aHR0cHM6Ly93d3cubmhsLmNvbS92a=
+WRlby9yZWNhcC1kYWwtNC12Z2stMi90LTI3NzM1MDkxMi9jLTE3Mzk3MTE0/64720faecafa877=
+ef30657e3B18c39749" style=3D"text-decoration: underline; color: #0068A5;"><=
+strong>Stars def. Golden Knights (4-2)</strong></a></span></p><p style=3D"m=
+argin:0;font-size:14px;mso-line-height-alt:21px">
+<span style=3D"font-size:14px;"><strong>Gm 6: </strong><a href=3D"https://l=
+ink.thesportsletter.com/click/31629930.317097/aHR0cHM6Ly93d3cubmhsLmNvbS92a=
+WRlby9yZWNhcC12Z2stNi1kYWwtMC90LTI3NzM1MDkxMi9jLTE3NDMyODgy/64720faecafa877=
+ef30657e3Caac771ac" style=3D"text-decoration: underline; color: #0068A5;"><=
+strong>Golden Knights def. Stars (6-0)</strong></a><strong> |</strong> <em>=
+VGK Wins Series (4-2)</em></span></p><p style=3D"margin:0;font-size:14px;ms=
+o-line-height-alt:18px">&nbsp;</p><p style=3D"margin:0;font-size:14px;mso-l=
+ine-height-alt:21px"><u><span style=3D"font-size:14px;"><strong>Stanley Cup=
+ Finals Schedule</strong></span></u>
+</p><p style=3D"margin:0;font-size:14px;mso-line-height-alt:21px"><span sty=
+le=3D"font-size:14px;"><strong>Gm 1: </strong>Panthers at Golden Knights (S=
+aturday, 8:00 pm ET)</span></p><p style=3D"margin:0;font-size:14px;mso-line=
+-height-alt:18px">&nbsp;</p><p style=3D"margin:0;font-size:14px;mso-line-he=
+ight-alt:21px"><u><span style=3D"font-size:14px;"><strong>Read More</strong=
+></span></u></p><p style=3D"margin:0;font-size:14px;mso-line-height-alt:21p=
+x">
+<span style=3D"font-size:14px;"><strong>ESPN: </strong><a href=3D"https://l=
+ink.thesportsletter.com/click/31629930.317097/aHR0cHM6Ly93d3cuZXNwbi5jb20vb=
+mhsL3N0b3J5L18vaWQvMzc3NTczMTgvZ29sZGVuLWtuaWdodHMtZG9taW5hdGUtc3RhcnMtc2V0=
+LWN1cC1maW5hbC12cy1wYW50aGVycw/64720faecafa877ef30657e3B74272f50" style=3D"=
+text-decoration: underline; color: #0068A5;"><strong>=E2=80=98Another Level=
+=E2=80=99: Golden Knights Dominate Stars to Set Up Final With Panthers</str=
+ong></a></span></p><p style=3D"margin:0;font-size:14px;mso-line-height-alt:=
+21px">
+<span style=3D"font-size:14px;"><strong>NHL: </strong><a href=3D"https://li=
+nk.thesportsletter.com/click/31629930.317097/aHR0cHM6Ly93d3cubmhsLmNvbS9uZX=
+dzL2dvbGRlbi1rbmlnaHRzLXBhbnRoZXJzLXN0YW5sZXktY3VwLWZpbmFsLWZpcnN0LWxvb2svY=
+y0zNDQ2NDgwODY_dGlkPTM0NDU0NDI1Ng/64720faecafa877ef30657e3B0f21649a" style=
+=3D"text-decoration: underline; color: #0068A5;"><strong>2023 Stanley Cup F=
+inals Primer: Golden Knights vs. Panthers</strong></a></span></p></div></di=
+v></td></tr></table></td></tr></tbody></table></td></tr></tbody></table><ta=
+ble class=3D"row row-10" align=3D"center" width=3D"100%" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" role=3D"presentation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table class=
+=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-r=
+space:0;background-color:#fff;color:#000;width:600px" width=3D"600.00"><tbo=
+dy><tr><td class=3D"column column-1" width=3D"100%" style=3D"mso-table-lspa=
+ce:0;mso-table-rspace:0;font-weight:400;text-align:left;vertical-align:top;=
+border-top:0;border-right:0;border-bottom:0;border-left:0"><div=20
+class=3D"spacer_block block-1" style=3D"height:10px;line-height:10px;font-s=
+ize:1px">&#8202;</div></td></tr></tbody></table></td></tr></tbody></table><=
+table class=3D"row row-11" align=3D"center" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-l=
+space:0;mso-table-rspace:0"><tbody><tr><td><table class=3D"row-content stac=
+k" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;background-color:#fff;border=
+-bottom:1px solid #000;border-left:1px solid #000;border-radius:10px;border=
+-right:1px solid #000;border-top:1px solid #000;color:#000;width:600px" wid=
+th=3D"600.00"><tbody><tr><td class=3D"column column-1" width=3D"100%" style=
+=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;p=
+adding-bottom:5px;padding-top:5px;vertical-align:top;border-top:0;border-ri=
+ght:0;border-bottom:0;border-left:0"><table=20
+class=3D"text_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-tab=
+le-rspace:0;word-break:break-word"><tr><td class=3D"pad" style=3D"padding-b=
+ottom:5px;padding-left:10px;padding-right:10px;padding-top:5px"><div style=
+=3D"font-family:Arial,sans-serif"><div class style=3D"font-size:12px;font-f=
+amily:Arial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:14.39=
+9999999999999px;color:#ebebeb;line-height:1.2"><p=20
+style=3D"margin:0;font-size:14px;mso-line-height-alt:16.8px"><span style=3D=
+"color:#ffffff;background-color:#666666;"><strong><span style><span style=
+=3D"font-size:12px;background-color:#666666;"><em><span style=3D"font-size:=
+12px;background-color:#666666;">&nbsp; TENNIS&nbsp;&nbsp;</span></em></span=
+></span></strong></span></p></div></div></td></tr></table><table class=3D"t=
+ext_block block-2" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"><tr><=
+td class=3D"pad" style=3D"padding-bottom:5px;padding-left:10px;padding-righ=
+t:10px;padding-top:5px"><div style=3D"font-family:sans-serif"><div class st=
+yle=3D"font-size:12px;font-family:Arial,Helvetica Neue,Helvetica,sans-serif=
+;mso-line-height-alt:14.399999999999999px;color:#555;line-height:1.2"><p st=
+yle=3D"margin:0;font-size:16px;text-align:left;mso-line-height-alt:19.2px">
+<span style=3D"color:#000000;font-size:20px;"><span style><strong>French Op=
+en 1st Round</strong></span></span></p></div></div></td></tr></table><table=
+ class=3D"image_block block-3" width=3D"100%" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-t=
+able-rspace:0"><tr><td class=3D"pad" style=3D"width:100%;padding-right:0;pa=
+dding-left:0"><div class=3D"alignment" align=3D"center" style=3D"line-heigh=
+t:10px">
+<a href=3D"#" target=3D"_blank" style=3D"outline:none" tabindex=3D"-1"><img=
+ class=3D"big" src=3D"https://media.sailthru.com/composer/images/sailthru-p=
+rod-6w8/Alcaraz-053023.jpg" style=3D"display:block;height:auto;border:0;wid=
+th:598px;max-width:100%" width=3D"598"></a></div></td></tr></table><table c=
+lass=3D"text_block block-4" width=3D"100%" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" role=3D"presentation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"><tr><=
+td class=3D"pad"><div style=3D"font-family:Arial,sans-serif"><div class sty=
+le=3D"font-size:12px;font-family:Arial,'Helvetica Neue',Helvetica,sans-seri=
+f;mso-line-height-alt:14.399999999999999px;color:#555;line-height:1.2"><p s=
+tyle=3D"margin:0;font-size:14px;text-align:right;mso-line-height-alt:16.8px=
+"><span style=3D"font-size:10px;"><em>Photo: Tim Clayton-Corbis / Getty Ima=
+ges</em></span></p></div></div></td></tr></table><table=20
+class=3D"text_block block-5" width=3D"100%" border=3D"0" cellpadding=3D"10"=
+ cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-ta=
+ble-rspace:0;word-break:break-word"><tr><td class=3D"pad"><div style=3D"fon=
+t-family:Arial,sans-serif"><div class style=3D"font-size:12px;mso-line-heig=
+ht-alt:18px;color:#000;line-height:1.5;font-family:Arial,'Helvetica Neue',H=
+elvetica,sans-serif"><p style=3D"margin:0;font-size:14px;mso-line-height-al=
+t:21px">
+<span style=3D"font-size:14px;"><strong><em>Alcaraz, Djokovic & More Cruise=
+ Through Round 1 at Roland-Garros </em></strong></span></p><p style=3D"marg=
+in:0;font-size:14px;mso-line-height-alt:18px">&nbsp;</p><p style=3D"margin:=
+0;font-size:14px;mso-line-height-alt:21px">
+<span style=3D"font-size:14px;">Tennis is back in the spotlight as the next=
+ major is underway from France. The French Open began on Monday with top se=
+eds advancing unscathed. Only two of the top-10 seeds (both men and women) =
+went down in Round 1, and they were both No. 10 seeds =E2=80=94 #10 Felix A=
+uger-Aliassime and #10 Petra Kvitova. We=E2=80=99ll have full coverage from=
+ Roland-Garros as the tournament progresses over the next two weeks.</span>=
+</p><p style=3D"margin:0;font-size:14px;mso-line-height-alt:18px">
+&nbsp;</p><p style=3D"margin:0;font-size:14px;mso-line-height-alt:21px"><u>=
+<span style=3D"font-size:14px;"><strong>French Open Highlights</strong></sp=
+an></u></p><p style=3D"margin:0;font-size:14px;mso-line-height-alt:21px"><s=
+pan style=3D"font-size:14px;"><strong>M: </strong><a href=3D"https://link.t=
+hesportsletter.com/click/31629930.317097/aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2=
+F0Y2g_dj1UUXdRSTM4emxUdw/64720faecafa877ef30657e3H453262b7" style=3D"text-d=
+ecoration: underline; color: #0068A5;"><strong>#1 C. Alcaraz def. F. Coboll=
+i (6-0, 6-2, 7-5)</strong></a></span></p><p=20
+style=3D"margin:0;font-size:14px;mso-line-height-alt:21px"><span style=3D"f=
+ont-size:14px;"><strong>M: </strong><a href=3D"https://link.thesportsletter=
+.com/click/31629930.317097/aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g_dj1RU3hj=
+MVlXeWxoWQ/64720faecafa877ef30657e3I073aa42d" style=3D"text-decoration: und=
+erline; color: #0068A5;"><strong>#3 N. Djokovic def. A. Kovacevic (6-3, 6-2=
+, 7-6)</strong></a></span></p><p style=3D"margin:0;font-size:14px;mso-line-=
+height-alt:21px">
+<span style=3D"font-size:14px;"><strong>W: </strong><a href=3D"https://link=
+.thesportsletter.com/click/31629930.317097/aHR0cHM6Ly93d3cueW91dHViZS5jb20v=
+d2F0Y2g_dj0zakpKRTNOTTZ2OA/64720faecafa877ef30657e3Je255126b" style=3D"text=
+-decoration: underline; color: #0068A5;"><strong>S. Stephens def. #16 K. Pl=
+iskova (6-0, 6-4)</strong></a></span></p><p style=3D"margin:0;font-size:14p=
+x;mso-line-height-alt:18px">&nbsp;</p><p style=3D"margin:0;font-size:14px;m=
+so-line-height-alt:21px"><u><span style=3D"font-size:14px;"><strong>Today=
+=E2=80=99s Top Matches</strong></span></u></p><p=20
+style=3D"margin:0;font-size:14px;mso-line-height-alt:21px"><span style=3D"f=
+ont-size:14px;"><strong>M: </strong>#2 D. Medvedev vs. T. Seyboth-Wild (6:0=
+0 am ET)</span></p><p style=3D"margin:0;font-size:14px;mso-line-height-alt:=
+21px"><span style=3D"font-size:14px;"><strong>W:</strong> #6 C. Gauff vs. R=
+. Masarova (6:00 am ET)</span></p><p style=3D"margin:0;font-size:14px;mso-l=
+ine-height-alt:21px"><span style=3D"font-size:14px;"><strong>W:</strong> #1=
+ I. Swiatek vs. C. Bucsa (8:00 am ET)</span></p><p=20
+style=3D"margin:0;font-size:14px;mso-line-height-alt:18px">&nbsp;</p><p sty=
+le=3D"margin:0;font-size:14px;mso-line-height-alt:21px"><u><span style=3D"f=
+ont-size:14px;"><strong>Read More</strong></span></u></p><p style=3D"margin=
+:0;font-size:14px;mso-line-height-alt:21px">
+<span style=3D"font-size:14px;"><strong>ESPN: </strong><a href=3D"https://l=
+ink.thesportsletter.com/click/31629930.317097/aHR0cHM6Ly93d3cuZXNwbi5jb20vd=
+GVubmlzL3N0b3J5L18vaWQvMzc3NTMzMDUvbm92YWstZGpva292aWMtYWR2YW5jZXMtZnJlbmNo=
+LW9wZW4tc2Vjb25kLXJvdW5k/64720faecafa877ef30657e3Be0d71203" style=3D"text-d=
+ecoration: underline; color: #0068A5;"><strong>Alcaraz, Djokovic Breeze Int=
+o French Open 2nd Round</strong></a></span></p><p style=3D"margin:0;font-si=
+ze:14px;mso-line-height-alt:21px">
+<span style=3D"font-size:14px;"><strong>USA Today: </strong><a href=3D"http=
+s://link.thesportsletter.com/click/31629930.317097/aHR0cHM6Ly93d3cudXNhdG9k=
+YXkuY29tL3N0b3J5L3Nwb3J0cy90ZW5uaXMvMjAyMy8wNS8yOC9mcmVuY2gtb3Blbi0yMDIzLWl=
+nYS1zd2lhdGVrLWNvY28tZ2F1ZmYtZmluYWxseS1nZXQtc3RhcnRlZC1vbi1kYXktMy1hdC1yb2=
+xhbmQtZ2Fycm9zLzcwMjY0NjQ3MDA3Lw/64720faecafa877ef30657e3B7a97da96" style=
+=3D"text-decoration: underline; color: #0068A5;"><strong>Iga Swiatek, Coco =
+Gauff Finally Get Started on Day 3 at Roland Garros</strong></a></span></p>=
+</div></div></td></tr></table></td></tr></tbody></table></td></tr></tbody><=
+/table><table class=3D"row row-12" align=3D"center" width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table class=
+=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-r=
+space:0;background-color:#fff;color:#000;width:600px" width=3D"600.00"><tbo=
+dy><tr><td class=3D"column column-1" width=3D"100%" style=3D"mso-table-lspa=
+ce:0;mso-table-rspace:0;font-weight:400;text-align:left;vertical-align:top;=
+border-top:0;border-right:0;border-bottom:0;border-left:0"><div=20
+class=3D"spacer_block block-1" style=3D"height:10px;line-height:10px;font-s=
+ize:1px">&#8202;</div></td></tr></tbody></table></td></tr></tbody></table><=
+table class=3D"row row-13" align=3D"center" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-l=
+space:0;mso-table-rspace:0"><tbody><tr><td><table class=3D"row-content stac=
+k" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;background-color:#fff;border=
+-bottom:1px solid #000;border-left:1px solid #000;border-radius:10px;border=
+-right:1px solid #000;border-top:1px solid #000;color:#000;width:600px" wid=
+th=3D"600.00"><tbody><tr><td class=3D"column column-1" width=3D"100%" style=
+=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;p=
+adding-bottom:5px;padding-top:5px;vertical-align:top;border-top:0;border-ri=
+ght:0;border-bottom:0;border-left:0"><table=20
+class=3D"text_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-tab=
+le-rspace:0;word-break:break-word"><tr><td class=3D"pad" style=3D"padding-b=
+ottom:5px;padding-left:10px;padding-right:10px;padding-top:5px"><div style=
+=3D"font-family:Arial,sans-serif"><div class style=3D"font-size:12px;font-f=
+amily:Arial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:14.39=
+9999999999999px;color:#ebebeb;line-height:1.2"><p=20
+style=3D"margin:0;font-size:14px;mso-line-height-alt:16.8px">
+<span style=3D"color:#ffffff;background-color:#666666;"><strong><span style=
+><span style=3D"font-size:12px;background-color:#666666;"><em><span style=
+=3D"font-size:12px;background-color:#666666;">&nbsp; </span></em><em><span =
+style=3D"font-size:12px;background-color:#666666;">HIGHLIGHTS&nbsp; </span>=
+</em></span></span></strong></span><span style=3D"color:#ffffff;"><strong><=
+span style><span style=3D"font-size:12px;"><span style=3D"font-size:12px;">=
+&nbsp;=F0=9F=8E=A5</span></span></span></strong></span></p></div></div></td=
+>
+</tr></table><table class=3D"text_block block-2" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-ta=
+ble-lspace:0;mso-table-rspace:0;word-break:break-word"><tr><td class=3D"pad=
+" style=3D"padding-bottom:5px;padding-left:10px;padding-right:10px;padding-=
+top:5px"><div style=3D"font-family:Arial,sans-serif"><div class style=3D"fo=
+nt-size:12px;mso-line-height-alt:18px;color:#000;line-height:1.5;font-famil=
+y:Arial,'Helvetica Neue',Helvetica,sans-serif"><p=20
+style=3D"margin:0;font-size:14px;mso-line-height-alt:21px"><span style=3D"f=
+ont-size:14px;"><strong><span style=3D"font-size:12px;">=E2=9A=BE=EF=B8=8F<=
+/span> MLB: </strong><a href=3D"https://link.thesportsletter.com/click/3162=
+9930.317097/aHR0cHM6Ly93d3cubWxiLmNvbS9uZXdzL2xpYW0taGVuZHJpa3MtcmV0dXJucy1=
+0by1iaWctbGVhZ3VlLW1vdW5kLWFmdGVyLWNhbmNlci1iYXR0bGU/64720faecafa877ef30657=
+e3B5009980a" style=3D"text-decoration: underline; color: #0068A5;"><strong>=
+Hendriks Returns for ChiSox After Cancer</strong></a></span></p><p style=3D=
+"margin:0;font-size:14px;mso-line-height-alt:21px">
+<span style=3D"font-size:14px;">Amid a full weekend of highlights from the =
+diamond, one moment stood tall. White Sox pitcher Liam Hendriks made a shor=
+t late-game appearance to a standing ovation after making his return from a=
+ battle with non-Hodgkin=E2=80=99s lymphoma. The White Sox lost to the Ange=
+ls (6-4).</span></p><p style=3D"margin:0;font-size:14px;mso-line-height-alt=
+:18px">&nbsp;</p><p style=3D"margin:0;font-size:14px;mso-line-height-alt:21=
+px">
+<span style=3D"font-size:14px;"><strong><span style=3D"font-size:12px;">=F0=
+=9F=8F=80</span> WNBA: </strong><a href=3D"https://link.thesportsletter.com=
+/click/31629930.317097/aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g_dj0tQjU1cEl0=
+bGw3cw/64720faecafa877ef30657e3K05e0bac1" style=3D"text-decoration: underli=
+ne; color: #0068A5;"><strong>Fever End WNBA=E2=80=99s Longest Losing Streak=
+</strong></a></span></p><p style=3D"margin:0;font-size:14px;mso-line-height=
+-alt:21px">
+<span style=3D"font-size:14px;">The Indiana Fever ended their two-season lo=
+sing streak at 20 games =E2=80=94 dating back to last season =E2=80=94 with=
+ Sunday=E2=80=99s win over the Atlanta Dream (90-87). Indiana=E2=80=99s 20-=
+game skid was tied for the WNBA record.</span></p><p style=3D"margin:0;font=
+-size:14px;mso-line-height-alt:18px">&nbsp;</p><p style=3D"margin:0;font-si=
+ze:14px;mso-line-height-alt:21px">
+<span style=3D"font-size:14px;"><strong><span style=3D"font-size:12px;">=E2=
+=9B=B3=EF=B8=8F</span> PGA: </strong><a href=3D"https://link.thesportslette=
+r.com/click/31629930.317097/aHR0cHM6Ly93d3cuY2Jzc3BvcnRzLmNvbS9nb2xmL25ld3M=
+vd2F0Y2gtZW1pbGlhbm8tZ3JpbGxvLW92ZXJjb21lcy1hcXVlZHVjdC1maWFzY28tb24tNzJuZC=
+1ob2xlLXRvLXdpbi0yMDIzLWNoYXJsZXMtc2Nod2FiLWNoYWxsZW5nZS8/64720faecafa877ef=
+30657e3B7ff53bde" style=3D"text-decoration: underline; color: #0068A5;"><st=
+rong>Grillo Wins After Floating Ball Fiasco</strong></a></span></p><p style=
+=3D"margin:0;font-size:14px;mso-line-height-alt:21px">
+<span style=3D"font-size:14px;">The Charles Schwab Challenge was won by Emi=
+liano Grillo (-8) in a playoff with Adam Schenk (-8) after one of his shots=
+ floated down a stream for more than five minutes. It was the 30-year-old A=
+rgentinian=E2=80=99s second career PGA Tour victory, but his first in nearl=
+y eight years.</span></p><p style=3D"margin:0;font-size:14px;mso-line-heigh=
+t-alt:18px">&nbsp;</p><p style=3D"margin:0;font-size:14px;mso-line-height-a=
+lt:21px">
+<span style=3D"font-size:14px;"><strong><span style=3D"font-size:12px;">=F0=
+=9F=8F=8E=EF=B8=8F</span> NASCAR: </strong><a href=3D"https://link.thesport=
+sletter.com/click/31629930.317097/aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g_d=
+j13YldjUlRHTjNKRQ/64720faecafa877ef30657e3L67332f9a" style=3D"text-decorati=
+on: underline; color: #0068A5;"><strong>Blaney Takes Delayed Coca-Cola 600<=
+/strong></a></span></p><p style=3D"margin:0;font-size:14px;mso-line-height-=
+alt:21px">
+<span style=3D"font-size:14px;">Sunday=E2=80=99s Coca-Cola 600 was rain-del=
+ayed into Memorial Day before Ryan Blaney held on to the lead following mul=
+tiple late restarts similar to the Indy 500. Blaney snapped a 59-race winle=
+ss streak, and he earned the second holiday weekend win for Team Penske.</s=
+pan></p></div></div></td></tr></table></td></tr></tbody></table></td></tr><=
+/tbody></table><table class=3D"row row-14" align=3D"center" width=3D"100%" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table class=
+=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-r=
+space:0;background-color:#fff;color:#000;width:600px" width=3D"600.00"><tbo=
+dy><tr><td class=3D"column column-1" width=3D"100%" style=3D"mso-table-lspa=
+ce:0;mso-table-rspace:0;font-weight:400;text-align:left;vertical-align:top;=
+border-top:0;border-right:0;border-bottom:0;border-left:0"><div=20
+class=3D"spacer_block block-1" style=3D"height:10px;line-height:10px;font-s=
+ize:1px">&#8202;</div></td></tr></tbody></table></td></tr></tbody></table><=
+table class=3D"row row-15" align=3D"center" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-l=
+space:0;mso-table-rspace:0"><tbody><tr><td><table class=3D"row-content stac=
+k" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;background-color:#fff;border=
+-bottom:1px solid #000;border-left:1px solid #000;border-radius:10px;border=
+-right:1px solid #000;border-top:1px solid #000;color:#000;width:600px" wid=
+th=3D"600.00"><tbody><tr><td class=3D"column column-1" width=3D"100%" style=
+=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;p=
+adding-bottom:5px;padding-top:5px;vertical-align:top;border-top:0;border-ri=
+ght:0;border-bottom:0;border-left:0"><table=20
+class=3D"text_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-tab=
+le-rspace:0;word-break:break-word"><tr><td class=3D"pad" style=3D"padding-b=
+ottom:5px;padding-left:10px;padding-right:10px;padding-top:5px"><div style=
+=3D"font-family:Arial,sans-serif"><div class style=3D"font-size:12px;font-f=
+amily:Arial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:14.39=
+9999999999999px;color:#ebebeb;line-height:1.2"><p=20
+style=3D"margin:0;font-size:14px;mso-line-height-alt:16.8px">
+<span style=3D"color:#ffffff;background-color:#666666;"><strong><span style=
+><span style=3D"font-size:12px;background-color:#666666;"><em><span style=
+=3D"font-size:12px;background-color:#666666;">&nbsp; </span></em><em><span =
+style=3D"font-size:12px;background-color:#666666;">NEWS&nbsp;&nbsp;</span><=
+/em></span></span></strong></span><span style=3D"color:#ffffff;"><strong><s=
+pan style><span style=3D"font-size:12px;"><span style=3D"font-size:12px;"> =
+</span></span></span></strong><strong><span style><span style=3D"font-size:=
+12px;"><span style=3D"font-size:12px;">=F0=9F=93=B0&nbsp;</span></span></sp=
+an></strong></span>
+</p></div></div></td></tr></table><table class=3D"text_block block-2" width=
+=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presenta=
+tion" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"=
+><tr><td class=3D"pad" style=3D"padding-bottom:5px;padding-left:10px;paddin=
+g-right:10px;padding-top:5px"><div style=3D"font-family:Arial,sans-serif"><=
+div class style=3D"font-size:12px;mso-line-height-alt:18px;color:#000;line-=
+height:1.5;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif"><ul=20
+style=3D"list-style-type:square;line-height:1.5;mso-line-height-alt:18px;fo=
+nt-size:14px"><li><p style=3D"margin:0;mso-line-height-alt:21px"><a href=3D=
+"https://link.thesportsletter.com/click/31629930.317097/aHR0cHM6Ly9zcG9ydHM=
+ueWFob28uY29tL3JlcG9ydC03NmVycy10by1oaXJlLW5pY2stbnVyc2UtYXMtbmV4dC1oZWFkLW=
+NvYWNoLTIwNDY0NzQ5NC5odG1s/64720faecafa877ef30657e3B9d4021b6" style=3D"text=
+-decoration: underline; color: #0068A5;"><strong>Philadelphia 76ers Hire Ex=
+-Raptors Head Coach Nick Nurse</strong></a><strong> (Yahoo! Sports)</strong=
+></p></li><li>
+<span style=3D"font-size:14px;"><a href=3D"https://link.thesportsletter.com=
+/click/31629930.317097/aHR0cHM6Ly9ibGVhY2hlcnJlcG9ydC5jb20vYXJ0aWNsZXMvMTAw=
+Nzc0NDUtbmJhLXJ1bW9ycy1naWFubmlzLWFudGV0b2tvdW5tcG8tZW5kb3JzZWQtYWRyaWFuLWd=
+yaWZmaW4tZm9yLWJ1Y2tzLWhjLWpvYg/64720faecafa877ef30657e3B66aa081e" style=3D=
+"text-decoration: underline; color: #0068A5;"><strong>Milwaukee Bucks Hire =
+Former Player & Raptors Assistant Adrian Griffin as Next Head Coach</strong=
+></a><strong> (B/R)</strong></span></li><li>
+<span style=3D"font-size:14px;"><a href=3D"https://link.thesportsletter.com=
+/click/31629930.317097/aHR0cHM6Ly93d3cuc2kuY29tL3NvY2Nlci8yMDIzLzA1LzI5L2No=
+ZWxzZWEtYW5ub3VuY2VzLW1hdXJpY2lvLXBvY2hldHRpbm8tbWFuYWdlcg/64720faecafa877e=
+f30657e3B31054c47" style=3D"text-decoration: underline; color: #0068A5;"><s=
+trong>Chelsea Announces Mauricio Pochettino as Next Manager</strong></a><st=
+rong> (SI)</strong></span></li><li>
+<span style=3D"font-size:14px;"><a href=3D"https://link.thesportsletter.com=
+/click/31629930.317097/aHR0cHM6Ly93d3cuY2Jzc3BvcnRzLmNvbS9uZmwvbmV3cy9kZWFu=
+ZHJlLWhvcGtpbnMtcmVsZWFzZWQtb25seS10aGVzZS10d28tdGVhbXMtaGFkLXJlYWwtdHJhZGU=
+tdGFsa3MtZm9yLWV4LWNhcmRpbmFscy1yZWNlaXZlci1wZXItcmVwb3J0Lw/64720faecafa877=
+ef30657e3B9fa50482" style=3D"text-decoration: underline; color: #0068A5;"><=
+strong>Cardinals Release WR DeAndre Hopkins After Trade Request</strong></a=
+><strong> (CBS Sports)</strong></span></li><li>
+<span style=3D"font-size:14px;"><a href=3D"https://link.thesportsletter.com=
+/click/31629930.317097/aHR0cHM6Ly93d3cudXNhdG9kYXkuY29tL3N0b3J5L3Nwb3J0cy9u=
+YmEvMjAyMy8wNS8yOS9uYmEtaW52ZXN0aWdhdGlvbi1yZWZlcmVlLWVyaWMtbGV3aXMtb3Zlci1=
+0d2l0dGVyLWJ1cm5lci1hY2NvdW50LzcwMjY2MzI2MDA3Lw/64720faecafa877ef30657e3B2e=
+2b8ca9" style=3D"text-decoration: underline; color: #0068A5;"><strong>NBA O=
+pens Investigation Into Referee Over Use of Burner Account</strong></a><str=
+ong> (USA Today)</strong></span></li><li>
+<span style=3D"font-size:14px;"><a href=3D"https://link.thesportsletter.com=
+/click/31629930.317097/aHR0cHM6Ly93d3cuZXNwbi5jb20vY29sbGVnZS1iYXNlYmFsbC9z=
+dG9yeS9fL2lkLzM3NzU0NDg5L3dha2UtZm9yZXN0LW5hbWVkLW5vLTEtc2VlZC1uY2FhLWJhc2V=
+iYWxsLXRvdXJuYW1lbnQ/64720faecafa877ef30657e3B353e319b" style=3D"text-decor=
+ation: underline; color: #0068A5;"><strong>Wake Forest Earns No. 1 Overall =
+Seed in College Baseball World Series</strong></a><strong> (ESPN)</strong><=
+/span></li><li>
+<span style=3D"font-size:14px;"><a href=3D"https://link.thesportsletter.com=
+/click/31629930.317097/aHR0cHM6Ly9zcG9ydHMueWFob28uY29tL25mbC1ydW1vcnMtamlt=
+bXktZ2Fyb3Bwb2xvLWZhaWxlZC0xNjM4NTYwMjkuaHRtbA/64720faecafa877ef30657e3B790=
+6c2da" style=3D"text-decoration: underline; color: #0068A5;"><strong>Jimmy =
+Garoppolo=E2=80=99s Failed Raiders Physical Leads to Contract Waiver</stron=
+g></a><strong> (Yahoo! Sports)</strong></span></li><li>
+<span style=3D"font-size:14px;"><a href=3D"https://link.thesportsletter.com=
+/click/31629930.317097/aHR0cHM6Ly93d3cudXNhdG9kYXkuY29tL3N0b3J5L3Nwb3J0cy8y=
+MDIzLzA1LzI5L3dvbWFuLTk2LWJyZWFrcy01ay13b3JsZC1yZWNvcmQtYXQtb3R0YXdhLXJhY2U=
+vNzAyNjY1ODcwMDcv/64720faecafa877ef30657e3B547d6a2a" style=3D"text-decorati=
+on: underline; color: #0068A5;"><strong>96-Year-Old Woman Sets World Record=
+ for Age Group in Ottawa 5K Race</strong></a><strong> (USA Today)</strong><=
+/span></li><li>
+<span style=3D"font-size:14px;"><a href=3D"https://link.thesportsletter.com=
+/click/31629930.317097/aHR0cHM6Ly9zb2NjZXIubmJjc3BvcnRzLmNvbS8yMDIzLzA1LzI5=
+L2V2ZXJ0b24tdnMtYm91cm5lbW91dGgtdmlkZW8taGlnaGxpZ2h0cy1hbmFseXNpcy1yZWNhcC8=
+/64720faecafa877ef30657e3B80e98a53" style=3D"text-decoration: underline; co=
+lor: #0068A5;"><strong>Everton Hold Off Bournemouth to Avoid Premier League=
+ Relegation</strong></a><strong> (NBC Sports)</strong></span></li><li>
+<span style=3D"font-size:14px;"><a href=3D"https://link.thesportsletter.com=
+/click/31629930.317097/aHR0cHM6Ly93d3cuZm94c3BvcnRzLmNvbS9zdG9yaWVzL25mbC9m=
+b3JtZXItc3RlZWxlcnMtamV0cy1ydW5uaW5nLWJhY2stbGV2ZW9uLWJlbGwtc2F5cy1oZS1zbW9=
+rZWQtbWFyaWp1YW5hLWJlZm9yZS1nYW1lcw/64720faecafa877ef30657e3B7c959b10" styl=
+e=3D"text-decoration: underline; color: #0068A5;"><strong>Former Steelers &=
+ Jets RB Le=E2=80=99Veon Bell Admits He =E2=80=98Smoked Pot=E2=80=99 Before=
+ Games</strong></a><strong> (FOX Sports)</strong></span></li></ul></div></d=
+iv></td></tr></table></td></tr></tbody></table></td></tr></tbody></table><t=
+able class=3D"row row-16" align=3D"center" width=3D"100%" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" role=3D"presentation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table class=
+=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-r=
+space:0;background-color:#fff;color:#000;width:600px" width=3D"600.00"><tbo=
+dy><tr><td class=3D"column column-1" width=3D"100%" style=3D"mso-table-lspa=
+ce:0;mso-table-rspace:0;font-weight:400;text-align:left;vertical-align:top;=
+border-top:0;border-right:0;border-bottom:0;border-left:0"><div=20
+class=3D"spacer_block block-1" style=3D"height:10px;line-height:10px;font-s=
+ize:1px">&#8202;</div></td></tr></tbody></table></td></tr></tbody></table><=
+table class=3D"row row-17" align=3D"center" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-l=
+space:0;mso-table-rspace:0"><tbody><tr><td><table class=3D"row-content stac=
+k" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;background-color:#fff;border=
+-bottom:1px solid #000;border-left:1px solid #000;border-radius:10px;border=
+-right:1px solid #000;border-top:1px solid #000;color:#000;width:600px" wid=
+th=3D"600.00"><tbody><tr><td class=3D"column column-1" width=3D"100%" style=
+=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;p=
+adding-bottom:5px;padding-top:5px;vertical-align:top;border-top:0;border-ri=
+ght:0;border-bottom:0;border-left:0"><table=20
+class=3D"text_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-tab=
+le-rspace:0;word-break:break-word"><tr><td class=3D"pad" style=3D"padding-b=
+ottom:5px;padding-left:10px;padding-right:10px;padding-top:5px"><div style=
+=3D"font-family:Arial,sans-serif"><div class style=3D"font-size:12px;font-f=
+amily:Arial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:14.39=
+9999999999999px;color:#ebebeb;line-height:1.2"><p=20
+style=3D"margin:0;font-size:14px;mso-line-height-alt:16.8px">
+<span style=3D"color:#ffffff;background-color:#666666;"><strong><span style=
+><span style=3D"font-size:12px;background-color:#666666;"><em><span style=
+=3D"font-size:12px;background-color:#666666;">&nbsp;</span></em><span style=
+=3D"font-size:12px;background-color:#666666;">&nbsp;</span><em><span style=
+=3D"font-size:12px;background-color:#666666;">SCHEDULE &nbsp;</span></em></=
+span></span></strong></span><span style=3D"color:#ffffff;"><strong><span st=
+yle><span style=3D"font-size:12px;"><span style=3D"font-size:12px;"> </span=
+></span></span></strong><strong><span style><span style=3D"font-size:12px;"=
+><span style=3D"font-size:12px;">=F0=9F=97=93=EF=B8=8F&nbsp;</span></span><=
+/span></strong></span>
+</p></div></div></td></tr></table><table class=3D"text_block block-2" width=
+=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presenta=
+tion" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"=
+><tr><td class=3D"pad" style=3D"padding-bottom:5px;padding-left:10px;paddin=
+g-right:10px;padding-top:5px"><div style=3D"font-family:sans-serif"><div cl=
+ass=20
+style=3D"font-size:12px;font-family:Arial,Helvetica Neue,Helvetica,sans-ser=
+if;mso-line-height-alt:14.399999999999999px;color:#555;line-height:1.2"><p =
+style=3D"margin:0;font-size:16px;text-align:left;mso-line-height-alt:19.2px=
+"><span style=3D"color:#000000;font-size:20px;"><span style><strong>Today's=
+ Must-Watch List</strong></span></span></p></div></div></td></tr></table><t=
+able class=3D"text_block block-3" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"><tr><=
+td class=3D"pad" style=3D"padding-bottom:5px;padding-left:10px;padding-righ=
+t:10px;padding-top:5px"><div style=3D"font-family:Arial,sans-serif"><div cl=
+ass style=3D"font-size:12px;mso-line-height-alt:18px;color:#000;line-height=
+:1.5;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif"><p style=3D"m=
+argin:0;font-size:14px;mso-line-height-alt:21px"><u><span style=3D"font-siz=
+e:14px;"><strong>French Open</strong></span></u></p><p=20
+style=3D"margin:0;font-size:14px;mso-line-height-alt:21px"><span style=3D"f=
+ont-size:14px;"><strong>M: </strong>#2 D. Medvedev vs. T. Seyboth-Wild (6:0=
+0 am ET)</span></p><p style=3D"margin:0;font-size:14px;mso-line-height-alt:=
+21px"><span style=3D"font-size:14px;"><strong>W:</strong> #6 C. Gauff vs. R=
+. Masarova (6:00 am ET)</span></p><p style=3D"margin:0;font-size:14px;mso-l=
+ine-height-alt:21px"><span style=3D"font-size:14px;"><strong>W:</strong> #1=
+ I. Swiatek vs. C. Bucsa (8:00 am ET)</span></p><p=20
+style=3D"margin:0;font-size:14px;mso-line-height-alt:18px">&nbsp;</p><p sty=
+le=3D"margin:0;font-size:14px;mso-line-height-alt:21px"><u><span style=3D"f=
+ont-size:14px;"><strong>MLB</strong></span></u></p><p style=3D"margin:0;fon=
+t-size:14px;mso-line-height-alt:21px"><span style=3D"font-size:14px;">Phill=
+ies at Mets (6:10 pm ET)</span></p><p style=3D"margin:0;font-size:14px;mso-=
+line-height-alt:21px"><span style=3D"font-size:14px;">Nationals at Dodgers =
+(9:10 pm ET)</span></p><p=20
+style=3D"margin:0;font-size:14px;mso-line-height-alt:18px">&nbsp;</p><p sty=
+le=3D"margin:0;font-size:14px;mso-line-height-alt:21px"><em><span style=3D"=
+font-size:14px;">*NBA Finals (Thursday) & Stanley Cup Finals (Saturday) Beg=
+in Later This Week</span></em></p><p style=3D"margin:0;font-size:14px;mso-l=
+ine-height-alt:18px">&nbsp;</p><p style=3D"margin:0;font-size:14px;mso-line=
+-height-alt:21px">
+<a href=3D"https://link.thesportsletter.com/click/31629930.317097/aHR0cHM6L=
+y93d3cudGhlc3BvcnRzbGV0dGVyLmNvbS90aGUtc3BvcnRzbGV0dGVycy1tdXN0LXdhdGNoLWNh=
+bGVuZGFyLw/64720faecafa877ef30657e3Bc4ea4c91" target=3D"_blank" style=3D"te=
+xt-decoration: underline; color: #0068A5;" rel=3D"noopener"><span style><st=
+rong><span style=3D"font-size:14px;">Download The Sportsletter's Must-Watch=
+ Calendar</span></strong></span></a></p></div></div></td></tr></table></td>=
+</tr></tbody></table></td></tr></tbody></table><table class=3D"row row-18" =
+align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table class=
+=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-r=
+space:0;background-color:#fff;color:#000;width:600px" width=3D"600.00"><tbo=
+dy><tr><td class=3D"column column-1" width=3D"100%" style=3D"mso-table-lspa=
+ce:0;mso-table-rspace:0;font-weight:400;text-align:left;vertical-align:top;=
+border-top:0;border-right:0;border-bottom:0;border-left:0"><div=20
+class=3D"spacer_block block-1" style=3D"height:10px;line-height:10px;font-s=
+ize:1px">&#8202;</div></td></tr></tbody></table></td></tr></tbody></table><=
+table class=3D"row row-19" align=3D"center" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-l=
+space:0;mso-table-rspace:0"><tbody><tr><td><table class=3D"row-content stac=
+k" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;background-color:#fff;color:=
+#000;border-bottom:1px solid #000;border-left:1px solid #000;border-radius:=
+6px;border-right:1px solid #000;border-top:1px solid #000;width:600px" widt=
+h=3D"600.00"><tbody><tr><td class=3D"column column-1" width=3D"100%" style=
+=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;p=
+adding-bottom:5px;padding-top:5px;vertical-align:top;border-top:0;border-ri=
+ght:0;border-bottom:0;border-left:0"><table=20
+class=3D"text_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-tab=
+le-rspace:0;word-break:break-word"><tr><td class=3D"pad" style=3D"padding-b=
+ottom:5px;padding-left:10px;padding-right:10px;padding-top:5px"><div style=
+=3D"font-family:Arial,sans-serif"><div class style=3D"font-size:12px;font-f=
+amily:Arial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:14.39=
+9999999999999px;color:#ebebeb;line-height:1.2"><p=20
+style=3D"margin:0;font-size:14px;mso-line-height-alt:16.8px"><span style=3D=
+"color:#ffffff;background-color:#666666;"><strong><span style><span style=
+=3D"font-size:12px;background-color:#666666;"><span style=3D"font-size:12px=
+;background-color:#666666;"><em>&nbsp; </em><em>THE TEAM</em></span><em><sp=
+an style=3D"font-size:12px;background-color:#666666;"> &nbsp;</span></em></=
+span></span></strong></span></p></div></div></td></tr></table><table class=
+=3D"text_block block-2" width=3D"100%" border=3D"0" cellpadding=3D"10"=20
+cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-tab=
+le-rspace:0;word-break:break-word"><tr><td class=3D"pad"><div style=3D"font=
+-family:Arial,sans-serif"><div class style=3D"font-size:14px;font-family:Ar=
+ial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:16.8px;color:=
+#555;line-height:1.2"><p style=3D"margin:0;font-size:11px;mso-line-height-a=
+lt:13.2px">
+<span style=3D"color:#000000;"><strong><em><span style=3D"font-size:11px;">=
+Writer & Editor: </span></em></strong><em><span style=3D"font-size:11px;">J=
+eff Yoder</span></em></span></p><p style=3D"margin:0;font-size:11px;mso-lin=
+e-height-alt:13.2px"><span style=3D"color:#000000;"><strong><em><span style=
+=3D"font-size:11px;">Product Manager: </span></em></strong><em><span style=
+=3D"font-size:11px;">Matthew Cahill</span></em></span></p><p style=3D"margi=
+n:0;font-size:11px;mso-line-height-alt:13.2px">
+<span style=3D"color:#000000;"><strong><em><span style=3D"font-size:11px;">=
+Lead Designer: </span></em></strong><em><span style=3D"font-size:11px;">Joe=
+ Stella</span></em></span></p><p style=3D"margin:0;font-size:11px;mso-line-=
+height-alt:13.2px"><span style=3D"color:#000000;"><strong><em><span style=
+=3D"font-size:11px;">Assistant Writer: </span></em></strong><em><span style=
+=3D"font-size:11px;">Marissa Kasch</span></em></span></p><p style=3D"margin=
+:0;font-size:11px;mso-line-height-alt:16.8px">&nbsp;</p><p=20
+style=3D"margin:0;font-size:11px;mso-line-height-alt:13.2px"><span style=3D=
+"color:#0068a5;font-size:14px;"><a href=3D"https://link.thesportsletter.com=
+/click/31629930.317097/aHR0cHM6Ly9kb25vcmJveC5vcmcvdGhlLXNwb3J0c2xldHRlcg/6=
+4720faecafa877ef30657e3B216e75cd" target=3D"_blank" style=3D"text-decoratio=
+n:underline;color:#0068a5;" rel=3D"noopener"><strong>Please consider suppor=
+ting&nbsp;The Sportsletter, an independently operated and bootstrapped publ=
+ication, and you'll receive our exclusive Sunday edition. Many thanks to ev=
+eryone who already supports us!</strong></a></span></p></div></div></td>
+</tr></table></td></tr></tbody></table></td></tr></tbody></table><table cla=
+ss=3D"row row-20" align=3D"center" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0"><tbody><tr><td><table class=3D"row-content stack" align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" style=3D"mso-table-lspace:0;mso-table-rspace:0;background-color:#ff=
+f;color:#000;width:600px" width=3D"600.00"><tbody><tr><td class=3D"column c=
+olumn-1"=20
+width=3D"100%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:4=
+00;text-align:left;vertical-align:top;border-top:0;border-right:0;border-bo=
+ttom:0;border-left:0"><div class=3D"spacer_block block-1" style=3D"height:1=
+0px;line-height:10px;font-size:1px">&#8202;</div></td></tr></tbody></table>=
+</td></tr></tbody></table><table class=3D"row row-21" align=3D"center" widt=
+h=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"present=
+ation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td>
+<table class=3D"row-content stack" align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0=
+;mso-table-rspace:0;background-color:#fff;color:#000;border-bottom:2px soli=
+d #000;border-left:2px solid #000;border-radius:10px;border-right:2px solid=
+ #000;border-top:2px solid #000;width:600px" width=3D"600.00"><tbody><tr><t=
+d class=3D"column column-1" width=3D"100%"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:l=
+eft;background-color:#000;padding-bottom:5px;padding-top:5px;vertical-align=
+:top;border-top:0;border-right:0;border-bottom:0;border-left:0"><table clas=
+s=3D"image_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-=
+rspace:0"><tr><td class=3D"pad" style=3D"padding-bottom:10px;padding-top:10=
+px;width:100%;padding-right:0;padding-left:0"><div class=3D"alignment"=20
+align=3D"center" style=3D"line-height:10px"><img src=3D"https://sailthru-me=
+dia.s3.amazonaws.com/composer/images/sailthru-prod-6w8/sl_logo_gray.png" st=
+yle=3D"display:block;height:auto;border:0;width:209px;max-width:100%" width=
+=3D"209"></div></td></tr></table><table class=3D"social_block block-2" widt=
+h=3D"100%" border=3D"0" cellpadding=3D"5" cellspacing=3D"0" role=3D"present=
+ation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td class=3D"pad=
+"><div class=3D"alignment" align=3D"center"><table class=3D"social-table"=
+=20
+width=3D"180px" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pr=
+esentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;display:inline-b=
+lock"><tr><td style=3D"padding:0 2px 0 2px"><a href=3D"mailto:mailto:yourfr=
+iend@gmail.com?subject=3DThe%20Sportsletter&body=3DHello%2C%20I%20thought%2=
+0you%20might%20enjoy%20reading%20this%20daily%20sports%20newsletter%20that%=
+20I%20subscribed%20to%20called%20The%20Sportsletter.%20It%20sends%20all%20t=
+he%20top%20highlights%20and%20storylines%20straight%20to%20my%20email%20eve=
+ry%20morning%20to%20keep%20me%20up-to-date%20with%20everything%20going%20on=
+%20in%20sports.%20Enjoy!%20https%3A%2F%2Fwww.thesportsletter.com%2F%3FrefId=
+%3Dteam23102260" target=3D"_blank"><img src=3D"https://app-rsrc.getbee.io/p=
+ublic/resources/social-networks-icon-sets/circle-dark-gray/mail@2x.png" wid=
+th=3D"32" height=3D"32" alt=3D"E-Mail" title=3D"E-Mail" style=3D"display:bl=
+ock;height:auto;border:0"></a></td><td=20
+style=3D"padding:0 2px 0 2px"><a href=3D"https://link.thesportsletter.com/c=
+lick/31629930.317097/aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NoYXJlLnBocD91PWh0dH=
+BzOi8vd3d3LnRoZXNwb3J0c2xldHRlci5jb20vP3JlZklkPXRlYW0yMzEwMjI2MA/64720faeca=
+fa877ef30657e3B57aeb475" target=3D"_blank"><img src=3D"https://app-rsrc.get=
+bee.io/public/resources/social-networks-icon-sets/circle-dark-gray/facebook=
+@2x.png" width=3D"32" height=3D"32" alt=3D"Facebook" title=3D"Facebook" sty=
+le=3D"display:block;height:auto;border:0"></a></td><td style=3D"padding:0 2=
+px 0 2px"><a href=3D"https://link.thesportsletter.com/click/31629930.317097=
+/aHR0cHM6Ly90d2l0dGVyLmNvbS9pbnRlbnQvdHdlZXQ_dGV4dD1TdWJzY3JpYmUlMjB0byUyMC=
+U0MFRoZVNwb3J0c2xldHRlciUyMHRvJTIwZ2V0JTIwYWxsJTIwdGhlJTIwdG9wJTIwaGlnaGxpZ=
+2h0cyUyMCUyNiUyMHN0b3J5bGluZXMlMjBzZW50JTIwc3RyYWlnaHQlMjB0byUyMHlvdXIlMjBp=
+bmJveCUyMGVhY2glMjBtb3JuaW5nLiBodHRwczovL3d3dy50aGVzcG9ydHNsZXR0ZXIuY29tLz9=
+yZWZJZD10ZWFtMjMxMDIyNjA/64720faecafa877ef30657e3B22c72a3c" target=3D"_blan=
+k"><img=20
+src=3D"https://app-rsrc.getbee.io/public/resources/social-networks-icon-set=
+s/circle-dark-gray/twitter@2x.png" width=3D"32" height=3D"32" alt=3D"Twitte=
+r" title=3D"Twitter" style=3D"display:block;height:auto;border:0"></a></td>=
+<td style=3D"padding:0 2px 0 2px"><a href=3D"https://link.thesportsletter.c=
+om/click/31629930.317097/aHR0cHM6Ly9pbnN0YWdyYW0uY29tL2h0dHBzOi8vd3d3Lmluc3=
+RhZ3JhbS5jb20vdGhlc3BvcnRzbGV0dGVyLw/64720faecafa877ef30657e3B19129526" tar=
+get=3D"_blank"><img src=3D"https://app-rsrc.getbee.io/public/resources/soci=
+al-networks-icon-sets/circle-dark-gray/instagram@2x.png" width=3D"32" heigh=
+t=3D"32" alt=3D"Instagram" title=3D"Instagram"=20
+style=3D"display:block;height:auto;border:0"></a></td><td style=3D"padding:=
+0 2px 0 2px"><a href=3D"https://link.thesportsletter.com/click/31629930.317=
+097/aHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2NvbXBhbnkvdGhlLXNwb3J0c2xldHRlci8/647=
+20faecafa877ef30657e3B9a1c06cb" target=3D"_blank"><img src=3D"https://app-r=
+src.getbee.io/public/resources/social-networks-icon-sets/circle-dark-gray/l=
+inkedin@2x.png" width=3D"32" height=3D"32" alt=3D"LinkedIn" title=3D"Linked=
+In" style=3D"display:block;height:auto;border:0"></a></td></tr></table></di=
+v></td></tr></table><table class=3D"text_block block-3" width=3D"100%" bord=
+er=3D"0" cellpadding=3D"10"=20
+cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-tab=
+le-rspace:0;word-break:break-word"><tr><td class=3D"pad"><div style=3D"font=
+-family:Arial,sans-serif"><div class style=3D"font-size:12px;font-family:Ar=
+ial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:18px;color:#f=
+ff;line-height:1.5"><p style=3D"margin:0;font-size:14px;text-align:center;m=
+so-line-height-alt:16.5px">
+<span style=3D"font-size:11px;">Did Someone Forward You This Email? <a href=
+=3D"https://link.thesportsletter.com/click/31629930.317097/aHR0cHM6Ly93d3cu=
+dGhlc3BvcnRzbGV0dGVyLmNvbS8/64720faecafa877ef30657e3D5a90f612" target=3D"_b=
+lank" rel=3D"noopener" style=3D"color: #00a2ff;">Subscribe Here</a></span><=
+br><span style=3D"font-size:11px;">Feedback? Contact Our Editor: <a href=3D=
+"mailto:jeff@thesportsletter.com?subject=3DToday%27s%20Sportsletter" target=
+=3D"_blank" rel=3D"noopener" style=3D"color: #00a2ff;">Jeff@TheSportsletter=
+.com</a></span><br>
+<span style=3D"font-size:11px;">Not Loving The Letter? <a href=3D"https://l=
+ink.thesportsletter.com/oc/64720faecafa877ef30657e3itxt6.6so9/40a688f9" tar=
+get=3D"_blank" style=3D"text-decoration: underline; color: #00a2ff;" rel=3D=
+"noopener">Unsubscribe</a></span></p><p style=3D"margin:0;font-size:14px;te=
+xt-align:center;mso-line-height-alt:18px">&nbsp;</p><p style=3D"margin:0;fo=
+nt-size:14px;text-align:center;mso-line-height-alt:15px"><span style=3D"fon=
+t-size:10px;"><em>Copyright =C2=A9 2023 The Sportsletter</em></span><br>
+<span style=3D"font-size:10px;"><em>717 Market Street, San Francisco, CA, 9=
+4103</em></span></p></div></div></td></tr></table></td></tr></tbody></table=
+></td></tr></tbody></table></td></tr></tbody></table><!-- End --></body></h=
+tml>
+------=_Part_47687021_1833582852.1685444532235--
+

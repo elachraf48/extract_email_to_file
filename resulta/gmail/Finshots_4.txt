@@ -1,0 +1,212 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:9f5b:0:b0:2da:43c2:96f2 with SMTP id l27csp206581imf;
+        Sat, 27 May 2023 07:01:20 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ55qkr7DDgPthlRppa8G1LsKaWUcx4U5/J9bBrziEJOW8+1gxSRjTrw9Wrka7WYUqosFbMH
+X-Received: by 2002:a05:620a:6609:b0:75b:23a1:3649 with SMTP id qf9-20020a05620a660900b0075b23a13649mr1987962qkn.10.1685196079701;
+        Sat, 27 May 2023 07:01:19 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685196079; cv=none;
+        d=google.com; s=arc-20160816;
+        b=vBarh8YulFgZLkZkpm47Nniw5UMfbQlDZilLBaL8BM/6gUXQHWeI2dStYsjgq5BOQA
+         UQhxMrVRckHynS3D9Yc4vnEAAoocVhptLO9Ly89cOMQ3WjU4727JlU2PDZ+B2qdm8GC/
+         gTW5YLQoX+Eu5dYqJ9Vwn6xSmvlnWSFcg8NNvxU4BNv+rdunSXBFElwrbYhdWjcVOy2q
+         LpXIaGzRGEMc0hW07VjtSEiQcJYUxYeb/JL3+RHEGPZUO2UDmigcaSCH6zcwPq6Ryy0Y
+         TlW9Sl3p4LWec7etk8edaZgoqfzayWwRuHXR3puIJVT7h/yrx1V/iBPxkcDlZHpB3VzR
+         uZ7A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:date:to:from:subject:mime-version
+         :dkim-signature:dkim-signature;
+        bh=PQkUVz0PgioZM8mQQTk2g5FWTWTAT0H4kPo4cV+Cy7w=;
+        b=ZQtw5U0KWjTW+h2sJJC/YHkZgvILoq4rpmHDIsXdbRHJvDATe74wcq0OCfgR0dhywK
+         9B0+BdR/2IM2+46gYfFsQmlWRxwnrG5RChV/Sn0l/3QpEnN0a+KRYfjXKimSLYA4N6J0
+         WHvV5hDnfYy7/1aSuxAGZ2yTNHZMQivOmQDZ25CilhD1YkhpgINqdUABF7ZtN1/Ke3jM
+         EFTfJqeBMHbg+kLCO57CXz1/34jxviyJYytcoaGN/F+kSs5yI0olBFALeWWl6tddG2Ii
+         ZoMV8L48k14jlvQjJ5eehrDrT5uzchjzh1mfzW2fo8II2DhGEl8YRk2IiIlEOKdV5DNl
+         K02Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@finshots.in header.s=lgathoxm23wr275ega6lju2bgmuxkolm header.b=PRn9Objo;
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=V1EF+zF4;
+       spf=pass (google.com: domain of 010001885d837f97-35798113-0ecb-4898-bb0a-4b2230f5421a-000000@mailer.finshots.in designates 23.251.230.209 as permitted sender) smtp.mailfrom=010001885d837f97-35798113-0ecb-4898-bb0a-4b2230f5421a-000000@mailer.finshots.in
+Return-Path: <010001885d837f97-35798113-0ecb-4898-bb0a-4b2230f5421a-000000@mailer.finshots.in>
+Received: from e230-209.smtp-out.amazonses.com (e230-209.smtp-out.amazonses.com. [23.251.230.209])
+        by mx.google.com with ESMTPS id j4-20020a05620a000400b0075b125fe9c3si2430408qki.182.2023.05.27.07.01.19
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 27 May 2023 07:01:19 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 010001885d837f97-35798113-0ecb-4898-bb0a-4b2230f5421a-000000@mailer.finshots.in designates 23.251.230.209 as permitted sender) client-ip=23.251.230.209;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@finshots.in header.s=lgathoxm23wr275ega6lju2bgmuxkolm header.b=PRn9Objo;
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=V1EF+zF4;
+       spf=pass (google.com: domain of 010001885d837f97-35798113-0ecb-4898-bb0a-4b2230f5421a-000000@mailer.finshots.in designates 23.251.230.209 as permitted sender) smtp.mailfrom=010001885d837f97-35798113-0ecb-4898-bb0a-4b2230f5421a-000000@mailer.finshots.in
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=lgathoxm23wr275ega6lju2bgmuxkolm; d=finshots.in; t=1685196079;
+	h=Content-Type:MIME-Version:Subject:From:To:Date:Message-ID;
+	bh=6zEcT/3U7CUT3F9JZ0BIXIKaR1Tm+ENWY8t5Mo6jOSE=;
+	b=PRn9ObjoHJeKxMbbVPLKKt7VTRQ3T0J5TG+ZN/h6kTrsKZ265qZw7sRC4zhEu/qT
+	a6IlxeqHFP3UsTMYzu71RX13cTGwRM/Z3Y8YUTZgjXuEK2SF7D+jXJnW8J/ZjQ+y3PW
+	av+QsOMLwvtbXJBCiOmf86HE16reVCzmJ8vXTCpY=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=224i4yxa5dv7c2xz3womw6peuasteono; d=amazonses.com; t=1685196079;
+	h=Content-Type:MIME-Version:Subject:From:To:Date:Message-ID:Feedback-ID;
+	bh=6zEcT/3U7CUT3F9JZ0BIXIKaR1Tm+ENWY8t5Mo6jOSE=;
+	b=V1EF+zF4RmRqcf6SDQkqIE+S+GjfVYR85phCaHrHQrCoMeETqftbXER6KS4gNnmN
+	PZDhGWseta00hczzRYq3MtbTC35e6eCRPZ96FJ/JHN5Hf0RjhTe75ElCxLCrxERLB3P
+	fcQX37jgtqm3atiTsMjZ9sYdaVVScpKsHYwZHDj4=
+Content-Type: multipart/alternative;
+ boundary="===============3644862366356912189=="
+MIME-Version: 1.0
+Subject: Finshots: Please Confirm your Finshots Subscription
+From: Finshots <morning@finshots.in>
+To: ouchendans62@gmail.com
+Date: Sat, 27 May 2023 14:01:19 +0000
+Message-ID: <010001885d837f97-35798113-0ecb-4898-bb0a-4b2230f5421a-000000@email.amazonses.com>
+Feedback-ID: 1.us-east-1.2fA5CXFMGJjDByfGW7IMy8xAwSNY1JghnllAR5c/lro=:AmazonSES
+X-SES-Outgoing: 2023.05.27-23.251.230.209
+
+--===============3644862366356912189==
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+
+Finshots | Financial news made simple
+
+Please Confirm your Subscription by going to the url below:
+https://send.finshots.in/api/subscribe/confirm?token=48544daa8b3e39d26e5ec
+
+If you received this email by mistake, simply delete it. You won't be subscribed if you don't navigate to the confirmation link above.
+
+For questions about this list, please contact:
+support@finshots.in
+
+Have a good day,
+Crafted with ❤️ by Finshots.
+--===============3644862366356912189==
+Content-Type: text/html; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1,user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0"
+    />
+  </head>
+  <body
+    style="background-color: #f0f1f3; font-family: Helvetica, Arial, sans-serif"
+  >
+    <div style="margin: auto; max-width: 760px; padding: 5px 0">
+      <div>
+        <table style="width: 100%">
+          <tr>
+            <td width="50%" align="left">
+              <a
+                href="https://finshots.in?utm_source=emailHeader&utm_medium=confirmSubscription"
+                style="margin-left: 10px"
+                ><img
+                  src="https://d3jlwjv6gmyigl.cloudfront.net/assets/two/images/logo-2d6831bc63e1ecb76091541e2f20069a.png"
+                  style="
+                    max-width: 150px;
+                    margin-top: 30px;
+                    margin-bottom: 20px;
+                  "
+                  alt="Finshots"
+              /></a>
+            </td>
+          </tr>
+        </table>
+
+        <div
+          class="articleText"
+          style="
+            background: #fff;
+            padding-top: 10px;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            width: 100%;
+            border-radius: 10px;
+          "
+          width="100%"
+        >
+          <div style="margin: auto; max-width: 95%">
+            <p><strong></strong></p>
+            <div>
+              <div>
+                <h3
+                  style="
+                    font-size: 20px;
+                    margin: 0.5em 0 0.5em;
+                    font-weight: 700;
+                  "
+                >
+                  Please confirm your Subscription
+                </h3>
+                <div style="margin-top: 20px">
+                  <a
+                    href="https://send.finshots.in/api/subscribe/confirm?token=48544daa8b3e39d26e5ec"
+                    style="
+                      text-decoration: none;
+                      color: #fff;
+                      font-size: 14px;
+                      background-color: #25d366;
+                      padding: 10px;
+                      border: 1px solid #25d366;
+                    "
+                    >Yes, subscribe me to this list.</a
+                  >
+                </div>
+                <br />
+                <div>
+                  If you received this email by mistake, simply delete it. You
+                  won't be subscribed if you don't click the confirmation link
+                  above.
+                </div>
+              </div>
+            </div>
+            <br />
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div
+          class="container"
+          style="
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 13px;
+            line-height: 1;
+            text-align: left;
+            color: #283444;
+          "
+        >
+          <div style="margin: 15px">
+            <br />
+            <p class="terms">Have a good day,</p>
+            <p class="terms">
+              Crafted with ❤️ by
+              <a
+                href="https://finshots.in?utm_source=emailHeader&utm_medium=confirmSubscription"
+                style="color: #299ff2; text-decoration: none"
+                ><strong>Finshots</strong></a
+              >.
+            </p>
+            <p
+              style="
+                color: #283444;
+                font-family: Helvetica, Arial, sans-serif;
+                font-size: 13px;
+                line-height: 18px;
+                margin: 0 0 14px 0;
+              "
+            ></p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <br />
+  </body>
+</html>
+
+--===============3644862366356912189==--

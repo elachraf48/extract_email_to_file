@@ -1,0 +1,140 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:9f5b:0:b0:2da:43c2:96f2 with SMTP id l27csp210275imf;
+        Sat, 27 May 2023 07:09:31 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ5OaIObqbrISWS9FduJAuFEpWzShffKbQaEKDdoWniZAbQe9/RnpdFmtZtOVMyg910RBNFG
+X-Received: by 2002:ac8:5f96:0:b0:3f3:942a:1221 with SMTP id j22-20020ac85f96000000b003f3942a1221mr5498964qta.66.1685196571378;
+        Sat, 27 May 2023 07:09:31 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685196571; cv=none;
+        d=google.com; s=arc-20160816;
+        b=z6ug0ZnYhzY4Vp1NKKC2PGUG+Zind0o8cl4iq9e3c8CMxuB2kRxA3b5aZaOBgvRNDf
+         LPmM+RW84Sh5PNQc4hPQqK4Uo/6i088HQOL7OfW04T/HM0UiGwQBtfQaWMTHmcerbtYx
+         eM+JIBei9MntZ5w0utvyIPhkJENarec9Cz+n3l/3sapPH9WWA+f9135yuXkIZN/+cKPM
+         EH7JjYVpeoZEnQx2/HGWgQxOkNmNqJ6wA6UdZbjCsD8v+uBGY9pQhw5oh0lyzASzzqTL
+         7QnA6JsryROAE1YJJdbOsvQlbkXxqAs/qx4M7iEfqbb/cbX2cL+LgAcEfGni6nmlvScg
+         d+zg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:date:reply-to:message-id:mime-version:subject:from
+         :dkim-signature:dkim-signature;
+        bh=GRmUz2FqBt/nWFUodz60OfIDY/R7VGPPC1pFOzMbz84=;
+        b=HvRQcU1shDhAbcnPHf9Shvmtfha79fXBI22z8iOt82e93Tc925X7d9i2ZrdDCxgeNG
+         e/Rgfei1DzQTb2SySqCfYGJPHfLgZEPXA9o195HHy+ZkVEgDIQ1M+0YeyU5DPo4Of2SG
+         qtuN4JMd9wvHJ1EghT1iElCxl0DZW8Q7E8M9zQXZZsdBPhVucwJFJSaNyF42LQclMIO/
+         z5ujVLULYsD9gX/HQttIeHmz3kI/8x4uCZ1olXlTV8B+Ifv4W47/iTyaAA4UnfFotlr7
+         DCR4aXi7LP13UH0QCzEp31qfu80FBAlf/mD3m9tpRu+8CjTfcMemPixWchUMIJ/+/YE6
+         l57w==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.bandcamp.com header.s=smtpapi header.b="nsKMofp/";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=CsAufM3j;
+       spf=pass (google.com: domain of bounces+715912-9eb8-ouchendans62=gmail.com@email.bandcamp.com designates 198.21.0.215 as permitted sender) smtp.mailfrom="bounces+715912-9eb8-ouchendans62=gmail.com@email.bandcamp.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=bandcamp.com
+Return-Path: <bounces+715912-9eb8-ouchendans62=gmail.com@email.bandcamp.com>
+Received: from o3.email.bandcamp.com (o3.email.bandcamp.com. [198.21.0.215])
+        by mx.google.com with ESMTPS id i22-20020ac85c16000000b003f221c60353si2520025qti.748.2023.05.27.07.09.31
+        for <ouchendans62@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 27 May 2023 07:09:31 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+715912-9eb8-ouchendans62=gmail.com@email.bandcamp.com designates 198.21.0.215 as permitted sender) client-ip=198.21.0.215;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.bandcamp.com header.s=smtpapi header.b="nsKMofp/";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=CsAufM3j;
+       spf=pass (google.com: domain of bounces+715912-9eb8-ouchendans62=gmail.com@email.bandcamp.com designates 198.21.0.215 as permitted sender) smtp.mailfrom="bounces+715912-9eb8-ouchendans62=gmail.com@email.bandcamp.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=bandcamp.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=email.bandcamp.com;
+	h=from:subject:mime-version:content-type:reply-to:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=smtpapi; bh=GRmUz2FqBt/nWFUodz60OfIDY/R7VGPPC1pFOzMbz84=;
+	b=nsKMofp/VAakYex99zdIEirLS3jby1NSyrr8lBo+WzZy+Io35XFYwRwfMeedF98AVtvb
+	g4sIyOehcw6yhRSVoXQh231cKuUexkFPocKvT/tahwqFePrdj91WQ40/v1kHXO10JowsPj
+	33AfZS5LsMrkSioHC26xTM8EXOPRNszmQ=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=from:subject:mime-version:content-type:reply-to:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=smtpapi; bh=GRmUz2FqBt/nWFUodz60OfIDY/R7VGPPC1pFOzMbz84=;
+	b=CsAufM3j0neyudJ7jVPpsOmyYFY97Z8h3D+RA4oDcJ4phkmCDsu32kJJoiEZemKiGXPZ
+	ALTDzGa20opNwRHERLWYcumBbC+TchUJ41SfZo5KDEwt0v1dmFTKRp4fM5+n5cbGYonWAc
+	Fn5ryO6op7H//fo03iNKjCoFBqoOuOUvA=
+Received: by filterdrecv-6d564dfd6c-n6l22 with SMTP id filterdrecv-6d564dfd6c-n6l22-1-64720F1A-1A0
+        2023-05-27 14:09:31.059776769 +0000 UTC m=+1434589.679496577
+Received: from bandcamp.com (unknown)
+	by geopod-ismtpd-3 (SG) with ESMTP
+	id -64Vt8A1RLio-46vqyaPqA
+	for <ouchendans62@gmail.com>;
+	Sat, 27 May 2023 14:09:30.838 +0000 (UTC)
+From: Bandcamp <noreply@bandcamp.com>
+Subject: Confirm your subscription to =?UTF-8?B?QmFuZGNhbXDigJlz?= weekly
+ newsletter
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="it_was_only_a_kiss"
+Message-ID: <-64Vt8A1RLio-46vqyaPqA@geopod-ismtpd-3>
+Reply-To: noreply@bandcamp.com
+Date: Sat, 27 May 2023 14:09:31 +0000 (UTC)
+X-Feedback-ID: 715912:SG
+X-SG-EID: 
+ =?us-ascii?Q?MaCFGT5XhjPhXD86jTBuRKAKntck7LiU+1yGdAQOt1cpheZwrGzWrUQxJlUDvz?=
+ =?us-ascii?Q?drCywp4GzhtFm4jL95LOuRAWpIRCLK=2FOEP8K8Va?=
+ =?us-ascii?Q?yvB8bsxmgXWH7uOU5YqS5CkYG=2FiI7WdgO6i5zfR?=
+ =?us-ascii?Q?Mvyyi3P5SG8Dieu6CpkMJ3m22m1fILjKXkOzuxU?=
+ =?us-ascii?Q?tInFqHmp8jYKLtyDmBs7b5oilLUiPqAEyA9LghI?=
+ =?us-ascii?Q?TLYdXFGKzo0KUbYJWmzaMlUE6+TVCaLFSYIp8b?=
+To: ouchendans62@gmail.com
+X-Entity-ID: TYI/rBBQ/j3k7mGE92RFTA==
+
+This is a multi-part message in MIME format.
+--it_was_only_a_kiss
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+
+You’re moments away from getting the best new music delivered to your inbox every week! Visit the following link to confirm your subscription and get started:
+https://bandcamp.com/confirm_subscription?email=ouchendans62%40gmail.com&sig=44m57kYYqegzhlFNDFQNMr1gN7g%3D
+If you received this in error or do not wish to subscribe, please disregard this email.
+
+
+--it_was_only_a_kiss
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style type="text/css">
+        @media only screen and (max-device-width:480px) {
+            div[class="main-wrapper"] {
+                margin:0 !important;
+                max-width:100% !important;
+                width:100% !important;
+            }
+            div[class="footer"] {
+                margin:0 auto !important;
+                width:94% !important;
+            }
+        }
+    </style>
+</head>
+<body style="font-family:'Helvetica Neue-Medium',Helvetica,Arial,sans-serif; height:100%; margin:0px; width:100%;">
+    <div class="main-wrapper" style="color:#333; font-family:'Helvetica Neue-Medium',Helvetica,Arial,sans-serif; line-height:140%; font-size:16px; margin:18px auto; max-width:600px;">
+        <div class="body">
+            <span>You’re moments away from getting the best new music delivered to your inbox every week! Confirm your subscription to get started:</span>
+        </div>
+        <br>
+        <div class="verify-link">
+            <a href="https://bandcamp.com/confirm_subscription?email=ouchendans62%40gmail.com&sig=44m57kYYqegzhlFNDFQNMr1gN7g%3D" style="width:175px; text-decoration:none; text-align:center; color:white; display:block; font-size:16px; font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; background-color:#232323; border-radius:3px; padding-top:5px; padding-bottom:5px; margin:auto;">
+                    Confirm subscription
+            </a>
+        </div>
+        <br><br>
+        <a href="https://bandcamp.com"><img src="https://bandcamp.com/img/email/bc-logo-small-2.gif" width="105" height="19" border="0" alt="bandcamp logo"></a><br/>
+        <br>
+        <span style="font-size:12px;border-top:1px dotted #ccc;color: #9B9B99;width:95%;display:block;padding:1em 0;margin:1em 0 0;">If you received this in error or do not wish to subscribe, please disregard this email.</span>
+        <br>&nbsp;
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+--it_was_only_a_kiss--

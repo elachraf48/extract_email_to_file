@@ -1,0 +1,443 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp570857ims;
+        Tue, 30 May 2023 10:44:03 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ69qhCX0dKxdFoVFbaGC0eA02pTLeyYL1t8ezd095M1A07rSzxQiqJYVYZS5kJQqkvcvN4c
+X-Received: by 2002:a25:aaf3:0:b0:ba6:fe90:b264 with SMTP id t106-20020a25aaf3000000b00ba6fe90b264mr4296473ybi.33.1685468643231;
+        Tue, 30 May 2023 10:44:03 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685468643; cv=none;
+        d=google.com; s=arc-20160816;
+        b=SZo+OstAIbhC+x0NOPGzVtO61+RNX5Oht1v936dRynMDXQSvsK2G4ran416vYxwqWA
+         sjTSfuqGpjoSL3uPIpOfUxrf7apk/Ha+yTT7R8xBVOkGsL3+pdZ6EbIGJaTEcPQ6VnkS
+         b6YqDy6BE7FmsplmBPtu+zd2bgBzfjWqiq3YjX8UWL5X4JQvaU1rRRjMYwvEY4lvDj12
+         aQ1lJSWl1diznr2XAyg8fJ5VSWaycikkWidCmYRIREFm7+TggcFMvCwd78KNNuUC0Yf2
+         /Whbb1yWA7+SNtdRAno+SoA680nWLXBLDj+lG9VBC1VnciEmdoqvuFCctkVUdH7KNm/t
+         lkzg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:mime-version:from:date:dkim-signature
+         :dkim-signature;
+        bh=75VpqE6jJsS3Ev8boOSaIFcP6r5IDNq6ODITRxrebJ8=;
+        b=iFRaxnaVlKDTAG24mN007H5id47R0aNQkScf2mF/L6Bftbls+6OITTSAYT2z0kMiUJ
+         XBSLYhhPNgeDGz1hquIZz0MReFJtnrrB+Xdv21JbGq5hZFLyHfHRxJuIE8+styYiFdCs
+         9SSMn3yVBj5wwHGuH360e+AxvESmpDLs/UVZWLnCnsSeaJwVeTh/ChZemwENp9wCBD0x
+         rmtTraDw7M6K//jjSnYu2mNwWnq/+tEBBdLxAH/sHdrKnRtdmtnN8LGIPgMlQb8+TDm8
+         KTu9UwFGkcI+lT3ctMgYIbESyHDhWWvWePX8BDra5/fatVVhVo8G+cWMDsR0yehS0FYi
+         B+EA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@brief.me header.s=s1 header.b=TQvWERkT;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=NFVmOq6x;
+       spf=pass (google.com: domain of bounces+1551938-96b0-ouchendans62=gmail.com@em4969.brief.me designates 168.245.62.142 as permitted sender) smtp.mailfrom="bounces+1551938-96b0-ouchendans62=gmail.com@em4969.brief.me";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=brief.me
+Return-Path: <bounces+1551938-96b0-ouchendans62=gmail.com@em4969.brief.me>
+Received: from o5.ptr1795.brief.eco (o5.ptr1795.brief.eco. [168.245.62.142])
+        by mx.google.com with ESMTPS id z10-20020a25ba4a000000b00bac2ee84d57si13181480ybj.150.2023.05.30.10.44.02
+        for <ouchendans62@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 30 May 2023 10:44:03 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+1551938-96b0-ouchendans62=gmail.com@em4969.brief.me designates 168.245.62.142 as permitted sender) client-ip=168.245.62.142;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@brief.me header.s=s1 header.b=TQvWERkT;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=NFVmOq6x;
+       spf=pass (google.com: domain of bounces+1551938-96b0-ouchendans62=gmail.com@em4969.brief.me designates 168.245.62.142 as permitted sender) smtp.mailfrom="bounces+1551938-96b0-ouchendans62=gmail.com@em4969.brief.me";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=brief.me
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=brief.me;
+	h=content-type:from:mime-version:subject:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=s1; bh=75VpqE6jJsS3Ev8boOSaIFcP6r5IDNq6ODITRxrebJ8=;
+	b=TQvWERkTwoF03U3Qtc34hifdIGd1ZoIPPher/p2TDuPx5gyuZf+MicZIyVigoAlmrqy+
+	kTGr+Lgw+Z+ObrcslqYdt9XPGLFgh5+tQBmgVODpUsKVBX2L6a5oArAPDJAMf8H9nDkoP/
+	aEjb0WjArRN1KR4hxIbI/Y2XjPWheYA4ShNWwH4mxxkmV4zmYHzLuEwpbf32SlfHM1uBPc
+	0Rj1vWOEOJDZSxS5KxpdA9eK29bFreVaMFwFmwMA+jdYfhYbP66EeJLAIoK+OduJttubHQ
+	NSR8yEexLY92jVLRSuj+0d6SjPRC3HfeNMIA2oOQPJBXkMHr0k+qjEDzMaYC45HA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=smtpapi; bh=75VpqE6jJsS3Ev8boOSaIFcP6r5IDNq6ODITRxrebJ8=;
+	b=NFVmOq6xtC43/rEFsFAMWMEgmKb5kwarYY3EchhZIBt9+YHwLQo6UKxHUf+EsD+RHknd
+	2I7Y8JKWXnZS6cYuLzxKNNRehyc1SoGRXZ3u+4cBQsqMdZxrPfpp1OCyfCG5DBwTJXOPkf
+	QG7As5uyaMSsStumlwIzaKrTzlxmHPMjk=
+Received: by filterdrecv-666fc9b6d6-m8ztw with SMTP id filterdrecv-666fc9b6d6-m8ztw-1-647635D9-3C
+        2023-05-30 17:43:53.439345094 +0000 UTC m=+1706863.099850672
+Received: from MTU1MTkzOA (unknown)
+	by geopod-ismtpd-8 (SG) with HTTP
+	id rCe1V1BzQiqcJ0cTubew0g
+	Tue, 30 May 2023 17:43:53.236 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=8c301b5c85e31dc25eeadb543955f4011eee9ce2561b805c2be36ab62827
+Date: Tue, 30 May 2023 17:44:02 +0000 (UTC)
+From: "Brief.me" <hello@brief.me>
+Mime-Version: 1.0
+Message-ID: <rCe1V1BzQiqcJ0cTubew0g@geopod-ismtpd-8>
+Subject: Bienvenue =?UTF-8?B?w6AgbGEgcsOpZGFjwqAh?=
+X-Feedback-ID: 1551938:SG
+X-SG-EID: 
+ =?us-ascii?Q?DiGdcEab8lyYqCiuWu07hMzDbddyNFjHB3LpSsyIkEQ+7xu1=2F5sSr+Ctz0Ks3Q?=
+ =?us-ascii?Q?7shSWLyr0=2Ft7bs5Tz2jjR=2FFtICLhpvOsb5AMwHu?=
+ =?us-ascii?Q?FlNxZsZ+OFm6TVMrh+bjAddOu3MQolXDTxmKrtp?=
+ =?us-ascii?Q?QKJGTP3nveYXqhbwJAaYd1rLqCClmkB4bd+5oK2?=
+ =?us-ascii?Q?4U22SVfz++QCGze2xfqDaj8jVzDYL1FGTnMXoE1?=
+ =?us-ascii?Q?FAmZI2vCz47o5Kz0=2FYwMPCdjS0iAotl1VpxTN3?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8+WJS8HtJtzCprCzyMY9AiQmGDA+Kc7rIeUFYDnyk?=
+ =?us-ascii?Q?15kETgpIyKM2w4sBNm=2FykNBCKT=2F8YHwmJs+xFYp?=
+ =?us-ascii?Q?bo9kBxXb9LxKFkfyTZgvFknPP=2FiUzkFJXOCp+9v?=
+ =?us-ascii?Q?jVx8qqqWRBWStMBR3X2SJ+C0lyuSY=2FCNVX1gqBV?=
+ =?us-ascii?Q?Iv5x4Zh5V86JBnNaGtK0OUyTl6VTpssKcXSOpyY?=
+ =?us-ascii?Q?Xr1WgQoNPxDCVUP=2F6VZZze5brtcy26ILDvCAHYt?=
+ =?us-ascii?Q?vsKnOPYsD0bzKLxfOZGaQMhYLwxASG3l2J9a5rn?=
+ =?us-ascii?Q?O47qsMIyr2HOz7f=2FrEpp=2FswAcdguYaNVmYuVwNR?=
+ =?us-ascii?Q?EcnW6Jf=2FNINDugACgoYr1WzNhWihIVel15+JMtC?=
+ =?us-ascii?Q?Ndpgm1Qo1nCYmTrRpZT5uZyUnbh6WzfA=3D=3D?=
+To: ouchendans62@gmail.com
+X-Entity-ID: Mam0Mvv+PaRt1QuKzuih8w==
+
+--8c301b5c85e31dc25eeadb543955f4011eee9ce2561b805c2be36ab62827
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+Brief.me
+
+( https://www.brief.me )
+
+Ch=C3=A8res lectrices, chers lecteurs,
+
+Parce que nous vous esp=C3=A9rons repos=C3=A9s apr=C3=A8s cet =C3=A9ni=C3=
+=A8me long week-end printanier, nous nous permettons de vous faire un peu t=
+ravailler=C2=A0: comme chaque mardi, nous avons pr=C3=A9s=C3=A9lectionn=C3=
+=A9 trois th=C3=A8mes possibles pour le sujet principal de notre =C3=A9diti=
+on du week-end. Voici trois options ci-dessous. Votez pour celle qui retien=
+t le plus votre attention et nous traiterons le sujet ayant recueilli une m=
+ajorit=C3=A9 de voix.
+
+*La grande distribution.* Le groupe Casino a annonc=C3=A9 vendredi c=C3=A9d=
+er au groupement Les Mousquetaires (Intermarch=C3=A9, Netto) plusieurs maga=
+sins en France repr=C3=A9sentant environ 1=C2=A0milliard d=E2=80=99euros de=
+ chiffre d=E2=80=99affaires. Casino a =C3=A9galement annonc=C3=A9 son entr=
+=C3=A9e dans une proc=C3=A9dure de conciliation de quatre mois avec ses cr=
+=C3=A9anciers afin de ren=C3=A9gocier sa dette. =C3=80 quelle =C3=A9poque o=
+nt ouvert les premiers hypermarch=C3=A9s en France=C2=A0? Pourquoi la grand=
+e distribution a-t-elle commenc=C3=A9 =C3=A0 conna=C3=AEtre des difficult=
+=C3=A9s au tournant des ann=C3=A9es 2000=C2=A0? Comment l=E2=80=99emploi a-=
+t-il =C3=A9volu=C3=A9 dans ce secteur=C2=A0? Cliquez ici pour choisir ce su=
+jet. ( https://www.brief.me/briefme/week-end/?reponse=3Dreponse1 )
+
+*Le bipartisme en Espagne.* La gauche espagnole a subi une importante d=C3=
+=A9faite aux =C3=A9lections municipales et r=C3=A9gionales organis=C3=A9es =
+dimanche. Le Premier ministre, le socialiste Pedro Sanchez, a convoqu=C3=A9=
+ hier des =C3=A9lections l=C3=A9gislatives anticip=C3=A9es le 23=C2=A0juill=
+et. Quels sont les deux grands partis dominant la vie politique espagnole d=
+epuis le retour de l=E2=80=99Espagne =C3=A0 la d=C3=A9mocratie=C2=A0? Quels=
+ nouveaux partis ont remis en cause le bipartisme=C2=A0? Leur essor a-t-il =
+donn=C3=A9 lieu =C3=A0 la formation de coalitions=C2=A0? Cliquez ici pour c=
+hoisir ce sujet. ( https://www.brief.me/briefme/week-end/?reponse=3Dreponse=
+2 )
+
+*Les investissements des industriels dans les m=C3=A9dias.* L=E2=80=99armat=
+eur CMA CGM a d=C3=A9clar=C3=A9 vendredi qu=E2=80=99il allait racheter le j=
+ournal =C3=A9conomique La Tribune. Le groupe marseillais, dirig=C3=A9 par l=
+e Franco-Libanais Rodolphe Saad=C3=A9, poursuit ainsi son d=C3=A9veloppemen=
+t dans le secteur des m=C3=A9dias, apr=C3=A8s avoir r=C3=A9cemment rachet=
+=C3=A9 le groupe La Provence. Quels groupes industriels poss=C3=A8dent des =
+m=C3=A9dias en France=C2=A0? Quelles sont les motivations des industriels d=
+erri=C3=A8re ces acquisitions=C2=A0? Ce ph=C3=A9nom=C3=A8ne nourrit-il une =
+plus grande concentration=C2=A0? Cliquez ici pour choisir ce sujet. ( https=
+://www.brief.me/briefme/week-end/?reponse=3Dreponse3 )
+
+Nos bureaux de vote sont ouverts jusqu=E2=80=99=C3=A0 demain (mercredi) mid=
+i. Nous vous donnerons les r=C3=A9sultats sur Facebook et Twitter, ainsi qu=
+e dans notre =C3=A9dition de demain soir.
+
+Bon vote =C3=A0 toutes et =C3=A0 tous=C2=A0!
+
+La commission =C3=A9lectorale de B=E2=80=8Cr=E2=80=8Ci=E2=80=8Ce=E2=80=8Cf=
+=E2=80=8C.=E2=80=8Cm=E2=80=8Ce
+
+Pour =C3=AAtre s=C3=BBr(e) de recevoir B=E2=80=8Cr=E2=80=8Ci=E2=80=8Ce=E2=
+=80=8Cf=E2=80=8C.=E2=80=8Cm=E2=80=8Ce, ajoutez =C2=AB hello@brief.me =C2=BB=
+ =C3=A0 votre carnet d'adresses.
+Vous recevez ce message car vous =C3=AAtes abonn=C3=A9(e) ou en train de d=
+=C3=A9couvrir gratuitement B=E2=80=8Cr=E2=80=8Ci=E2=80=8Ce=E2=80=8Cf=E2=80=
+=8C.=E2=80=8Cm=E2=80=8Ce.
+
+brief.me ( https://www.brief.me )
+
+Contact ( https://www.brief.me/contact/ ) =E2=96=AA Pr=C3=A9f=C3=A9rences d=
+e r=C3=A9ception ( https://www.brief.me/login/NjU5MzI4:1q43Nw:K0xNTn8Dq5q9B=
+zQAJOegohHmbrCAEcJaMV9ao8mxJaQ/?redirect=3Dhttps://app.brief.me/notificatio=
+ns )
+--8c301b5c85e31dc25eeadb543955f4011eee9ce2561b805c2be36ab62827
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xml=
+ns=3Dhttp://www.w3.org/1999/xhtml xmlns:o=3Durn:schemas-microsoft-com:offic=
+e:office xmlns:v=3Durn:schemas-microsoft-com:vml> <head><meta content=3D"te=
+xt/html; charset=3Dutf-8" http-equiv=3DContent-Type><style type=3Dtext/css>
+        body {
+            margin: 0;
+            padding: 0;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        table,
+        td {
+            border-collapse: collapse;
+            mso-table-lspace: 0;
+            mso-table-rspace: 0;
+        }
+
+        img {
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+            -ms-interpolation-mode: bicubic;
+        }
+
+        .quote {
+            border-left-width: 5px;
+            border-left-style: solid;
+            border-left-color: #d281b9;
+            padding-left: 20px;
+            margin-left: 20px;
+        }
+
+        .quote_chronology {
+            border-left-width: 1px;
+            border-left-style: solid;
+            border-left-color: #C8C8C8;
+            padding-left: 20px;
+            margin-left: 20px;
+            margin-bottom: 14px;
+        }
+
+        .borderize {
+            padding-bottom: 14px !important;
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: #C8C8C8;
+        }
+
+        strong {
+            color: #61A1ED;
+        }
+
+        .content a {
+            color: #61A1ED;
+        }
+
+        @media (max-width: 480px) {
+            .mobile_link {
+                font-size: 12px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .quote {
+                border-left-width: 2px !important;
+                border-left-color: #d281b9 !important;
+                padding-left: 20px !important;
+                margin-left: 0 !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .quote_chronology {
+                border-left-width: 1px;
+                border-left-style: solid;
+                border-left-color: #C8C8C8;
+                padding-left: 20px !important;
+                margin-left: 20px !important;
+            }
+        }
+
+        @media only screen and (min-width: 480px) {
+            .mobile_only {
+                display: none !important;
+            }
+        }
+
+        @media only screen and (min-width: 480px) {
+            .mj-column-per-100 {
+                width: 100% !important;
+            }
+        }
+
+        @media only screen and (min-width: 480px) {
+            .mj-column-per-100 {
+                width: 100% !important;
+            }
+        }
+
+        @media only screen and (min-width: 480px) {
+            .mj-column-per-19 {
+                width: 19% !important;
+            }
+        }
+
+        @media only screen and (min-width: 480px) {
+            .mj-column-per-81 {
+                width: 81% !important;
+            }
+        }
+
+        @media only screen and (min-width: 480px) {
+            .mj-column-per-40 {
+                width: 40% !important;
+            }
+        }
+
+        @media only screen and (min-width: 480px) {
+            .mj-column-per-60 {
+                width: 60% !important;
+            }
+        }
+    </style></head> <body> <title>Brief.me</title> <meta content=3D"IE=3Ded=
+ge" http-equiv=3DX-UA-Compatible> <meta content=3D"text/html; charset=3Dutf=
+-8" http-equiv=3Dcontent-type> <meta content=3D"width=3Ddevice-width, initi=
+al-scale=3D1.0" name=3Dviewport> <table border=3D0 cellpadding=3D0 cellspac=
+ing=3D0 style=3Dbackground:#ffffff;width:100%;padding:0;border-collapse:col=
+lapse;border-spacing:0px;> <tr> <td> <div style=3D"margin:0px auto;max-widt=
+h:700px;padding:0;"> <table border=3D0 cellpadding=3D0 cellspacing=3D0> <tr=
+> <td align=3Dleft style=3D"word-wrap:break-word;font-size:0px;padding:28px=
+ 20px 0px 20px;"> <table align=3Dleft border=3D0 cellpadding=3D0 cellspacin=
+g=3D0 role=3Dpresentation style=3Dborder-collapse:collapse;border-spacing:0=
+px;> <tbody> <tr> <td style=3Dwidth:195px;> <a clicktracking=3D"on" href=3D=
+https://url3003.brief.me/ss/c/AWD9AEydda1BlzAIDIER2jf_izozKv5oxSwW-JeaNG0/3=
+wm/DPWvietYTJq1BUbtuLJZDA/h0/X_qbE8TbVRezOGvCBiSJ1uO66rdILfClcW55NE7Mudw ta=
+rget=3D_blank> <img alt=3Dbrief.me src=3Dhttps://www.brief.me/static/editor=
+ial/img/logo_header.png style=3Dborder:none;border-radius:0px;display:block=
+;outline:none;text-decoration:none;width:100%;height:auto; title=3Dbrief.me=
+ width=3D195></a> </td> </tr> </tbody> </table> </td> </tr> <tr> <td style=
+=3D"text-align:left;vertical-align:top;direction:ltr;font-size:0px;padding:=
+0px 20px 20px 20px;"> <div style=3D"color:#4d4d4d;font-family:Helvetica, Ar=
+ial, sans-serif;font-size:18px;line-height:22px;text-align:left;"> </div> <=
+/td> </tr> </table> </div> </td> </tr> </table> <table border=3D0 cellpaddi=
+ng=3D0 cellspacing=3D0 class=3Dcontent style=3Dbackground:#efefec;width:100=
+%;padding:0;border-collapse:collapse;border-spacing:0px;> <tr> <td> <div st=
+yle=3D"margin:0px auto;max-width:700px;padding:0;"> <table border=3D0 cellp=
+adding=3D0 cellspacing=3D0 style=3Dborder-collapse:collapse;border-spacing:=
+0px;padding:0px; width=3D100%> <tr> <td height=3D10 style=3D"padding:0 20px=
+;height:10px;font-size:0px;padding-bottom:43px;"> <table border=3D0 cellpad=
+ding=3D0 cellspacing=3D0 style=3Dheight:10px;font-size:1px;border-collapse:=
+collapse;border-spacing:0px;padding:0px; width=3D19%> <tr> <td class=3Dcat2=
+_border style=3Dbackground-color:#61A1ED;height:10px;> </td> </tr> </table>=
+ </td> </tr> <tr> <td style=3D"padding:0 20px 20px;font-family:Helvetica, A=
+rial, sans-serif;font-size:17px;line-height:27px;color:#424242;"> <p>Ch=C3=
+=A8res lectrices, chers lecteurs,</p> <p>Parce que nous vous esp=C3=A9rons =
+repos=C3=A9s apr=C3=A8s cet =C3=A9ni=C3=A8me long week-end printanier, nous=
+ nous permettons de vous faire un peu travailler=C2=A0: comme chaque mardi,=
+ nous avons pr=C3=A9s=C3=A9lectionn=C3=A9 trois th=C3=A8mes possibles pour =
+le sujet principal de notre =C3=A9dition du week-end. Voici trois options c=
+i-dessous. Votez pour celle qui retient le plus votre attention et nous tra=
+iterons le sujet ayant recueilli une majorit=C3=A9 de voix.</p> <p><strong>=
+La grande distribution.</strong> Le groupe Casino a annonc=C3=A9 vendredi c=
+=C3=A9der au groupement Les Mousquetaires (Intermarch=C3=A9, Netto) plusieu=
+rs magasins en France repr=C3=A9sentant environ 1=C2=A0milliard d=E2=80=99e=
+uros de chiffre d=E2=80=99affaires. Casino a =C3=A9galement annonc=C3=A9 so=
+n entr=C3=A9e dans une proc=C3=A9dure de conciliation de quatre mois avec s=
+es cr=C3=A9anciers afin de ren=C3=A9gocier sa dette. =C3=80 quelle =C3=A9po=
+que ont ouvert les premiers hypermarch=C3=A9s en France=C2=A0? Pourquoi la =
+grande distribution a-t-elle commenc=C3=A9 =C3=A0 conna=C3=AEtre des diffic=
+ult=C3=A9s au tournant des ann=C3=A9es 2000=C2=A0? Comment l=E2=80=99emploi=
+ a-t-il =C3=A9volu=C3=A9 dans ce secteur=C2=A0? <a clicktracking=3D"on" hre=
+f=3D"https://url3003.brief.me/ss/c/AWD9AEydda1BlzAIDIER2i2RNGJ8PywwMCqe-SrH=
+_trDMQHFJ6LfQrAyVri-KcJaFdz8lhZQx2GH-OlZHrtuug/3wm/DPWvietYTJq1BUbtuLJZDA/h=
+1/b_OfyfX1Qakz3lS-kfEDuM6ohaap-_xXRRSiw1r7REs">Cliquez ici pour choisir ce =
+sujet.</a></p> <p><strong>Le bipartisme en Espagne.</strong> La gauche espa=
+gnole a subi une importante d=C3=A9faite aux =C3=A9lections municipales et =
+r=C3=A9gionales organis=C3=A9es dimanche. Le Premier ministre, le socialist=
+e Pedro Sanchez, a convoqu=C3=A9 hier des =C3=A9lections l=C3=A9gislatives =
+anticip=C3=A9es le 23=C2=A0juillet. Quels sont les deux grands partis domin=
+ant la vie politique espagnole depuis le retour de l=E2=80=99Espagne =C3=A0=
+ la d=C3=A9mocratie=C2=A0? Quels nouveaux partis ont remis en cause le bipa=
+rtisme=C2=A0? Leur essor a-t-il donn=C3=A9 lieu =C3=A0 la formation de coal=
+itions=C2=A0? <a clicktracking=3D"on" href=3D"https://url3003.brief.me/ss/c=
+/AWD9AEydda1BlzAIDIER2i2RNGJ8PywwMCqe-SrH_trDMQHFJ6LfQrAyVri-KcJaUHreaT32ul=
+NsiX0PbQ5xHg/3wm/DPWvietYTJq1BUbtuLJZDA/h2/L8GZ7EPk49mHa7oSB-wjKv5yu__EcXCt=
+juV_2FjGzhI">Cliquez ici pour choisir ce sujet.</a></p> <p><strong>Les inve=
+stissements des industriels dans les m=C3=A9dias.</strong> L=E2=80=99armate=
+ur CMA CGM a d=C3=A9clar=C3=A9 vendredi qu=E2=80=99il allait racheter le jo=
+urnal =C3=A9conomique La Tribune. Le groupe marseillais, dirig=C3=A9 par le=
+ Franco-Libanais Rodolphe Saad=C3=A9, poursuit ainsi son d=C3=A9veloppement=
+ dans le secteur des m=C3=A9dias, apr=C3=A8s avoir r=C3=A9cemment rachet=C3=
+=A9 le groupe La Provence. Quels groupes industriels poss=C3=A8dent des m=
+=C3=A9dias en France=C2=A0? Quelles sont les motivations des industriels de=
+rri=C3=A8re ces acquisitions=C2=A0? Ce ph=C3=A9nom=C3=A8ne nourrit-il une p=
+lus grande concentration=C2=A0? <a clicktracking=3D"on" href=3D"https://url=
+3003.brief.me/ss/c/AWD9AEydda1BlzAIDIER2i2RNGJ8PywwMCqe-SrH_trDMQHFJ6LfQrAy=
+Vri-KcJafsiiZzvUYbFEa0CtzRiszw/3wm/DPWvietYTJq1BUbtuLJZDA/h3/GfuarsEeG3MFLG=
+zFjnCFDcQaa5oRyGYtdAyViPJ5BoA">Cliquez ici pour choisir ce sujet.</a></p> <=
+p>Nos bureaux de vote sont ouverts jusqu=E2=80=99=C3=A0 demain (mercredi) m=
+idi. Nous vous donnerons les r=C3=A9sultats sur Facebook et Twitter, ainsi =
+que dans notre =C3=A9dition de demain soir.</p> <p>Bon vote =C3=A0 toutes e=
+t =C3=A0 tous=C2=A0!</p> <p>La commission =C3=A9lectorale de B=E2=80=8Cr=E2=
+=80=8Ci=E2=80=8Ce=E2=80=8Cf=E2=80=8C.=E2=80=8Cm=E2=80=8Ce</p> </td> </tr> <=
+/table> </div> </td> </tr> </table> <table border=3D0 cellpadding=3D0 cells=
+pacing=3D0 style=3Dbackground:#ffffff;width:100%;padding:0;border-collapse:=
+collapse;border-spacing:0px;> <tr> <td> <div style=3D"margin:0px auto;max-w=
+idth:700px;padding:0;"> <table border=3D0 cellpadding=3D0 cellspacing=3D0 s=
+tyle=3Dborder-collapse:collapse;border-spacing:0px;padding:0px; width=3D100=
+%> <tr> <td style=3D"padding:25px 20px 0px 20px;"> <div style=3D"color:#4a4=
+a4a;font-family:Helvetica, Arial, sans-serif;font-size:13px;font-weight:bol=
+d;line-height:22px;text-align:left;"> Pour =C3=AAtre s=C3=BBr(e) de recevoi=
+r B=E2=80=8Cr=E2=80=8Ci=E2=80=8Ce=E2=80=8Cf=E2=80=8C.=E2=80=8Cm=E2=80=8Ce, =
+ajoutez =C2=AB=C2=A0<a clicktracking=3D"on" href=3Dmailto:hello@brief.me st=
+yle=3Dcolor:#4a4a4a;text-decoration:none;>hello@brief.me</a>=C2=A0=C2=BB =
+=C3=A0 votre carnet d'adresses. </div> </td> </tr> <tr> <td style=3D"paddin=
+g:0px 20px 20px 20px;"> <div style=3D"color:#c0c0c0;font-family:Helvetica, =
+Arial, sans-serif;font-size:12px;line-height:22px;text-align:left;"> Vous r=
+ecevez ce message car vous =C3=AAtes abonn=C3=A9(e) ou en train de d=C3=A9c=
+ouvrir gratuitement B=E2=80=8Cr=E2=80=8Ci=E2=80=8Ce=E2=80=8Cf=E2=80=8C.=E2=
+=80=8Cm=E2=80=8Ce. </div> </td> </tr> <tr> <td> <table align=3Dcenter borde=
+r=3D0 cellpadding=3D0 cellspacing=3D0 role=3Dpresentation style=3Dfont-size=
+:0px;width:100%;> <tbody> <tr> <td style=3Dtext-align:left;vertical-align:t=
+op;direction:ltr;font-size:0px;padding:20px;> <div class=3Dmj-column-per-10=
+0 style=3Dvertical-align:top;display:inline-block;font-size:0px;line-height=
+:0px;text-align:left;width:100%;> <div class=3D"mj-column-per-40 outlook-gr=
+oup-fix" style=3Dvertical-align:middle;display:inline-block;direction:ltr;f=
+ont-size:13px;text-align:left;width:40%;> <table border=3D0 cellpadding=3D0=
+ cellspacing=3D0 role=3Dpresentation style=3Dvertical-align:middle; width=
+=3D100%> <tbody> <tr> <td align=3Dleft style=3Dword-wrap:break-word;font-si=
+ze:0px;padding:0px;> <table align=3Dleft border=3D0 cellpadding=3D0 cellspa=
+cing=3D0 role=3Dpresentation style=3Dborder-collapse:collapse;border-spacin=
+g:0px;> <tbody> <tr> <td style=3Dwidth:111px;> <a clicktracking=3D"on" href=
+=3Dhttps://url3003.brief.me/ss/c/AWD9AEydda1BlzAIDIER2jf_izozKv5oxSwW-JeaNG=
+0/3wm/DPWvietYTJq1BUbtuLJZDA/h4/0fPCM7N2maN8avtVvD1vvcmFUkKYxNoCuYbV09EUCuo=
+ target=3D_blank><img alt=3Dbrief.me height=3D33 src=3Dhttps://www.brief.me=
+/static/editorial/img/logo_footer.png style=3Dborder:none;border-radius:0px=
+;display:block;outline:none;text-decoration:none;width:100%;height:33px; ti=
+tle=3Dbrief.me width=3D111></a> </td> </tr> </tbody> </table> </td> </tr> <=
+/tbody> </table> </div> <div class=3D"mj-column-per-60 outlook-group-fix" s=
+tyle=3Dvertical-align:middle;display:inline-block;direction:ltr;font-size:1=
+3px;text-align:left;width:60%;> <table border=3D0 cellpadding=3D0 cellspaci=
+ng=3D0 role=3Dpresentation style=3Dvertical-align:middle; width=3D100%> <tb=
+ody> <tr> <td align=3Dright style=3Dword-wrap:break-word;font-size:0px;padd=
+ing:0px;> <div style=3D"color:#000;font-family:Helvetica, Arial, sans-serif=
+;font-size:13px;line-height:22px;text-align:right;"> <a class=3Dmobile_link=
+ clicktracking=3D"on" href=3Dhttps://url3003.brief.me/ss/c/AWD9AEydda1BlzAI=
+DIER2lrV2YXsrA_IfTzFh4PxLVtUrUhPII1D0fFcUzm3Jysf/3wm/DPWvietYTJq1BUbtuLJZDA=
+/h5/m7vyx5cpAYhXusg79xtwvYgG0nwIhLwn5mi9wnib2mg style=3Dfont-size:15px;colo=
+r:#4a4a4a;font-weight:bold;padding-right:1px; title=3DContact>Contact</a> <=
+span> =E2=96=AA </span> <span class=3Dmobile_link style=3D"font-size:15px;c=
+olor:#9b9b9b;font-weight:bold; text-decoration: underline; padding-right: 1=
+px;"> <a class=3Dmobile_link clicktracking=3D"on" href=3D"https://url3003.b=
+rief.me/ss/c/AWD9AEydda1BlzAIDIER2vTWGuwPvG6ULhhDmAzMbvkrJDhgTLZ1mJls5IZKV-=
+yk3y206Iz-1OHJHIqtimH3tzS1QV0gWNZkwwiud5eO10rXZVY4sY6kGuza_kuTEt6W71REcoAnb=
+mxAeOGGzA-dBhT3-ZmHnO-RcGIL2Tg1lP0ood9LfV6GysCEszvxZdTN/3wm/DPWvietYTJq1BUb=
+tuLJZDA/h6/RHbdtIYb0TXhYJ85CxXjB4q56Ru_AxtwLL5MJzMhZKc" style=3Dfont-size:1=
+5px;color:#9b9b9b;font-weight:bold; title=3D"Se d=C3=A9sinscrire">Pr=C3=A9f=
+=C3=A9rences de r=C3=A9ception</a> </span> </div> </td> </tr> </tbody> </ta=
+ble> </div> </div> </td> </tr> </tbody> </table> </td> </tr> </table> </div=
+> </td> </tr> </table> <img src=3D"https://url3003.brief.me/ss/o/qs7XBWwj2h=
+Hs7vJwVKpOPA/3wm/DPWvietYTJq1BUbtuLJZDA/ho.gif" alt=3D"" width=3D"1" height=
+=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !important;bor=
+der-width:0 !important;margin-top:0 !important;margin-bottom:0 !important;m=
+argin-right:0 !important;margin-left:0 !important;padding-top:0 !important;=
+padding-bottom:0 !important;padding-right:0 !important;padding-left:0 !impo=
+rtant;"/></body> </html>=20=
+
+--8c301b5c85e31dc25eeadb543955f4011eee9ce2561b805c2be36ab62827--

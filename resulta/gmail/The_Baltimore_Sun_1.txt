@@ -1,0 +1,809 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:9f5b:0:b0:2da:43c2:96f2 with SMTP id l27csp640276imf;
+        Sun, 28 May 2023 16:11:01 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ5RD7S0HqSGjgPKMlTcy3F/IxZSr1PjGgNNu8pvQ3gzilEqnKCKvTR9tXiIScbEb4Vctn2+
+X-Received: by 2002:a05:6870:b1d2:b0:19e:d5f5:8db4 with SMTP id x18-20020a056870b1d200b0019ed5f58db4mr4097316oak.46.1685315461086;
+        Sun, 28 May 2023 16:11:01 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685315461; cv=none;
+        d=google.com; s=arc-20160816;
+        b=c/A/kdHS66vW7A7+TxegblB68F8I0KYOQtSdZ7wVmA5uwTa5z2QE5KEbLZ0wuOXdkE
+         6i/SmSZwraQXziWHspb4muYVkIENa0ZOCmuC/CowfCNYC5CpBJSbA6Vz/kwH5/KIWsrw
+         ITmsxbTJWTtjA4yrHg49fy6eX5PTB9kfzGQxyBNmFVhlSuOkbqF7JgehomuuWkvemgsJ
+         DPsBTx1dz/Ua2YX40NGlp7asr8nEBw9mlh0xJphuCf0rpOfFShZI3qHw57FFF1/HN+oP
+         nyMd2Uog5sP0or2JV/MJMUZYi8VagfgSVKWZop2nw+1KZzGrYC8YnZCm5YX0j0d7r16Z
+         RH8Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=date:to:from:subject:reply-to:feedback-id:mime-version:message-id
+         :list-unsubscribe:dkim-signature;
+        bh=UkEVxDT6RqrZcNtqLn63GyZJZ/kzsEyYux0zkSxeR8A=;
+        b=vIWFKsSVc/XAEItqoF8v/fBnY+BIUt1XAcRyHmZwtDRJYmxTqjABwYmSv15J4yL8Dg
+         aYRTmRQHbuJyjR69VcimXIZz57IXB7KD5Kop40tQ9MyMOa42ZZo9bEmKQEvGvTaJIBTJ
+         aXcQH6HBfaLJJkCPQmkXTgHQ/DixkEBx5QiNpnKmNIxCvbTcXNEBBojDQf/dCdk9X554
+         b4lY0B8Mvm7Zise75IlpMpPbvbO8UrH69WBfwPAPZrBCEPEwzh0uT4lvPqnEe5ys/upt
+         JaTa4IdZbbduwm0n500TKnSg4tOiUHGoI07QINEmKiM+1UI9lObmyUBkAO5jb6w1Yol5
+         vTFg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mkt.baltimoresun.com header.s=ep1 header.b="ZX7jvQF/";
+       spf=pass (google.com: domain of baltimoresun-hp2v60000018864a11c1dbbd0cbf4bbcf76f8024@mkt.baltimoresun.com designates 159.127.162.122 as permitted sender) smtp.mailfrom=baltimoresun-HP2v60000018864a11c1dbbd0cbf4bbcf76f8024@mkt.baltimoresun.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=baltimoresun.com
+Return-Path: <baltimoresun-HP2v60000018864a11c1dbbd0cbf4bbcf76f8024@mkt.baltimoresun.com>
+Received: from mta122aa.pmx1.epsl1.com (mta122aa.pmx1.epsl1.com. [159.127.162.122])
+        by mx.google.com with ESMTPS id z15-20020a056870e14f00b0019a0e282df8si5181954oaa.104.2023.05.28.16.11.00
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 28 May 2023 16:11:01 -0700 (PDT)
+Received-SPF: pass (google.com: domain of baltimoresun-hp2v60000018864a11c1dbbd0cbf4bbcf76f8024@mkt.baltimoresun.com designates 159.127.162.122 as permitted sender) client-ip=159.127.162.122;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mkt.baltimoresun.com header.s=ep1 header.b="ZX7jvQF/";
+       spf=pass (google.com: domain of baltimoresun-hp2v60000018864a11c1dbbd0cbf4bbcf76f8024@mkt.baltimoresun.com designates 159.127.162.122 as permitted sender) smtp.mailfrom=baltimoresun-HP2v60000018864a11c1dbbd0cbf4bbcf76f8024@mkt.baltimoresun.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=baltimoresun.com
+Return-Path: <baltimoresun-HP2v60000018864a11c1dbbd0cbf4bbcf76f8024@mkt.baltimoresun.com>
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=mkt.baltimoresun.com;
+	s=ep1; t=1685315460;
+	bh=dciPE9HwH5q+bRo6ODaiVLhiDmDqypBLtcV4lzXpzi4=;
+	h=MIME-Version:Subject:From:To:Date:Content-Type;
+	b=ZX7jvQF/DQ2xZ8NjGQO+zCCFPpHdLELXkJ8fSHWVulCMTPje6gB/KiBq0gIib84Xl
+	 HiCo+aCtMS9e1Y2m5UBUbqvVCV8RCjO06Q65jCjLe9AbuL+X7NbGb/JM+Yii5Vb0L2
+	 pI69cBDeKtz10lLfF6ORU7mTSsodxs5gveltC57U=
+Received: from [10.233.18.231] ([10.233.18.231:35014])
+	by pc1udsmtn2n16 (envelope-from <baltimoresun-HP2v60000018864a11c1dbbd0cbf4bbcf76f8024@mkt.baltimoresun.com>)
+	(ecelerity 3.6.9.48312 r(Core:3.6.9.0)) with ECSTREAM
+	id 76/57-11474-48FD3746; Sun, 28 May 2023 23:11:00 +0000
+List-Unsubscribe: <mailto:baltimoresun-HP2v60000018864a11c1dbbd0cbf4bbcf76f8024@mkt.baltimoresun.com?subject=list-unsubscribe>
+Message-ID: <HP2v60000018864a11c1dbbd0cbf4bbcf76f8024@mkt.baltimoresun.com>
+MIME-Version: 1.0
+Feedback-ID: 6a877b5e-1e10-4920-aecb-c5d064de59ed:af7af807-e7d3-44e2-8006-bfd02f61e070:email:epslh1
+X-NSS: 6a877b5e-1e10-4920-aecb-c5d064de59ed
+Reply-To: "baltimoresun@mkt.baltimoresun.com"
+ <baltimoresun-HP2v60000018864a11c1dbbd0cbf4bbcf76f8024@mkt.baltimoresun.com>
+Subject: Welcome to The Baltimore Sun newsletters
+From: The Baltimore Sun  <baltimoresun@mkt.baltimoresun.com>
+To: ouchendans62@gmail.com
+Date: Sun, 28 May 2023 23:11:00 +0000
+Content-Type: multipart/alternative;
+ boundary="-=Part.1ec68dc.4dce11ddc1575b20.18864a11ce2.54b0cbfbc04b94a9=-"
+
+---=Part.1ec68dc.4dce11ddc1575b20.18864a11ce2.54b0cbfbc04b94a9=-
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1=2E0 Transitional//EN" "http://ww=
+w=2Ew3=2Eorg/TR/xhtml1/DTD/xhtml1-transitional=2Edtd">
+
+	<html xmlns=3D"http://www=2Ew3=2Eorg/1999/xhtml" lang=3D"en" xml:lang=3D"=
+en"
+xmlns:v=3D"urn:schemas-microsoft-com:vml"
+xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+<!--[if gte mso 9]><xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml><![endif]-->
+<!--[if mso]><xml xmlns:w=3D"urn:schemas-microsoft-com:office:word"><w:Wor=
+dDocument><w:AutoHyphenation/></w:WordDocument></xml><![endif]-->
+<head>
+	<title>
+		The Baltimore Sun	</title>
+	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8" =
+/>
+	<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" />
+	<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1=2E0 " />
+	<meta name=3D"format-detection" content=3D"telephone=3Dno" />
+	<!--[if !mso]><!-->
+	<link href=3D'https://fonts=2Egoogleapis=2Ecom/css?family=3DLato:300,300i=
+talic,400,400italic,700,700italic,900,900italic' rel=3D'stylesheet' type=3D=
+'text/css'>
+
+	<link rel=3D"preconnect" href=3D"https://fonts=2Egoogleapis=2Ecom">
+	<link rel=3D"preconnect" href=3D"https://fonts=2Egstatic=2Ecom" crossorig=
+in>
+	<link href=3D"https://fonts=2Egoogleapis=2Ecom/css2?family=3DOpen+Sans:it=
+al,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=
+=3Dswap" rel=3D"stylesheet">
+
+	<!-- Refresh Font Link Mostly Header Font : Spectral -->
+	<link rel=3D"preconnect" href=3D"https://fonts=2Egoogleapis=2Ecom">
+	<link rel=3D"preconnect" href=3D"https://fonts=2Egstatic=2Ecom" crossorig=
+in>
+	<link href=3D"https://fonts=2Egoogleapis=2Ecom/css2?family=3DSpectral:ita=
+l,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,=
+600;1,700;1,800&display=3Dswap" rel=3D"stylesheet">
+	<!--<![endif]-->
+		<style type=3D"text/css">
+=2EiosFix a { text-decoration:none; pointer-events: none; color: #161a21;}
+
+/* RESET STYLES */
+p{margin:1em 0;}
+table{border-collapse:collapse; table-layout:fixed;}
+img, a img{border:0; height:auto; outline:none; text-decoration:none;}
+h1, h2, h3, h4, h5, h6{display:block !important; margin:0 !important; padd=
+ing:0 !important;}
+body, #bodyTable, #bodyCell{height:100% !important; margin:0 !important; p=
+adding:0; width:100% !important;}
+div[style*=3D"margin: 16px 0;"] { margin: 0 !important; }
+
+/* CLIENT-SPECIFIC STYLES */
+img{-ms-interpolation-mode: bicubic;}
+#outlook a{padding:0;}
+table{mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse: collaps=
+e}
+=2EReadMsgBody{width:100%;} =2EExternalClass{width:100%;}
+p, a, li, td, blockquote{mso-line-height-rule:exactly;}
+a[href^=3D"tel"], a[href^=3D"sms"]{color:inherit; cursor:default; text-dec=
+oration:none;}
+p, a, li, td, body, table, blockquote{-ms-text-size-adjust:100%; -webkit-t=
+ext-size-adjust:100%;}
+=2EExternalClass, =2EExternalClass p, =2EExternalClass td, =2EExternalClas=
+s div, =2EExternalClass span, =2EExternalClass font{line-height:100%;}
+
+
+/* Refresh Font Link Mostly Header Font : Spectral */
+=2Emod-txt-b {font-family: 'Spectral', serif !important;}
+
+=2Emod-txt-c {font-family: 'Open Sans', sans-serif !important;}
+
+=2Econtainer {
+  max-width:600px !important;
+  display:block !important;
+  margin:0 auto !important;
+  clear:both !important;
+}
+=2Eimg { width:100%; }
+=2EemailContainer {max-width:600px;}
+=2EflexibleColumn {max-width:300px;}
+=2EflexibleColumn2 {max-width: 200px;}
+
+=2Eswapper1 {display:none!important;max-height:0px!important;overflow:hidd=
+en!important; visibility: hidden!important; width: 0px!important;}
+
+=2Em_cta_center_container{text-align: left;}
+=2Em_br {display:none;}
+
+
+@media screen and (min-width:768px){
+=2EemailContainer {width:600px !important;}
+=2EflexibleColumn {width:50% !important;}
+}
+@media screen and (max-width:768px){
+  body {background-color:#ffffff !important}
+=2EflexibleColumn {max-width:50% !important; width:100% !important;}
+
+}
+@media only screen and (max-device-width:599px), screen and (max-width: 59=
+9px) {
+=2ElgPdd { padding-left:15px !important; padding-right:15px !important; }
+}
+@media only screen and (max-device-width:480px), screen and (max-width: 48=
+0px) {
+body { width:100% !important; min-width:100% !important; }
+=2EflexibleColumn { max-width:100% !important; width:100% !important;}
+=2EflexibleColumn2 {max-width: 100% !important; width:100% !important; }
+table=2Etop-features {border:0 !important;}
+=2Edivider {border-top:1px solid #cccccc !important; width:10% !important;=
+height:1px  !important;    float: none !important;}
+td=2Etop-features {padding-bottom:0 !important}
+=2ElgPdd { padding-left:10px !important; padding-right:10px !important; }
+=2ElgPdd2 { padding-left:0 !important; padding-right:0 !important; }
+=2Emod-txt-b=2ElgPdd {font-size: 16px !important;}
+=2EgmlFix {min-width: 100% !important;width: 100% !important;}
+=2Eem_hide { display: none !important; }
+td[class=3Dem_hide], br[class=3Dem_hide] { display: none !important; }
+=2Egmail-mobile {width: 100vw !important;}
+=2Eswapper1 {display: table-cell !important; visibility: visible !importan=
+t;max-height:auto !important;width: auto !important;}
+=2Eswapper2 {display: none !important;}
+=2EiconCtr {padding-left: 0 !important; padding-right: 0 !important;}
+    div[class=3Dmobilecontent]{
+    display: block !important;
+    max-height: none !important;
+   visibility: visible !important;
+  }
+=2EudaTxt {padding: 0 0 0 40px !important;}
+=2EtxtCtr {text-align: center !important;}
+=2EtxtCtrPadd {padding-left: 5px !important; padding-right: 5px !important=
+;}
+=2Egrid {width: 100% !important;}
+=2Em_grid table{width:90% !important;}
+=2Em_pad {padding-left: 25px !important; padding-right:25px !important;}
+=2Em_hide {display: none !important;}
+=2Em_row {width: 100% !important;}
+=2Em_singleblock {height:auto!important;border:0 !important;border-bottom:=
+12px solid #ffffff !important;padding:15px 30px 30px!important;}
+=2Em_singleblock=2Enews {border:0 !important;background:#ffffff !important=
+;padding:0 0 12px !important}
+=2Em_singleblock=2Elast {border:0 !important;}
+=2Em_singleblock=2Enews=2Elast {display:none!important;}=20
+=2Emod-txt-b=2Econf-text {font-size: 12px !important;  line-height: 14px !=
+important;}
+=2Ecolum55{width:55% !important;}
+=2Ecolum45{width:45% !important;}
+
+
+=2Em_cta_center_container {text-align: center !important;padding:0 !import=
+ant;}
+=2Em_cta_center_container > table {width:100% !important;text-align: cente=
+r !important;}
+=2Em_cta_center_container img {max-width:155px !important;width:100% !impo=
+rtant;}
+=2Em_br {display:block;}
+
+=2Em_email5_header {width:320px !important;max-width:375px !important;}
+=2Em_fullwidth {width:320px !important;max-width:375px !important;}
+
+=2Em_title {font-size:21px !important; line-height:24px !important;padding=
+-left:0 !important;}
+=2Em_title=2Eny {padding-top:0 !important;line-height:22px !important;}
+=2Em_headline {font-size:12px !important; line-height:15px !important;padd=
+ing-left:0 !important;}
+=2Em_cta {width:155px !important;padding-left:0 !important;}
+=2Em_cta table, =2Em_cta td {width:155px !important;}
+=2Em_cta img {height:auto !important;max-width:155px !important;width:100%=
+ !important;}
+
+=2Em_device {width:100% !important;}
+=2Em_device img{width:100% !important;}
+=2Em_email5_col1 {width:165px !important;padding-top:12px!important;}
+=2Em_email5_col2 {width:150px !important;padding-top:0!important;}
+=2Em_email5_col2 > table tr td {width:100% !important;}
+=2Em_email5_col2 > table  img {width:100% !important;height:auto !importan=
+t}
+
+=2Eem_show {display:block !important;}
+
+=2EbgChanger{
+  height: auto !important;
+  padding-bottom:20px !important;
+  background-size:cover !important;
+}
+=2EbgChanger2{
+  height: auto !important;
+  padding-bottom:20px !important;
+  background-size:cover !important;
+  background: url(http://tribpubads=2Ecom/email-newsletter-onboarding/img/=
+1/m_bg=2Ejpg) no-repeat center top #ebf1f6 !important;
+}
+=2Ecta{
+  padding-bottom:130px !important;
+}
+
+=2Edefault {display:none  !important;}
+=2Emobile {overflow: visible !important; max-height: 800px !important; wid=
+th: auto !important; display: block !important; line-height: auto !importan=
+t; visibility: visible !important;}
+
+
+  /* Refresh specific styles - global */
+  =2Econtent-container {width: 100% !important;}
+  =2Esteps-container {width: 75% !important;}
+
+  =2Ehelp-bg{
+      background-image: url(http://tribpubads=2Ecom/email-newsletter-onboa=
+rding/img/1/m_help-section=2Epng) !important;
+      background-size:100% !important;
+      width:100% !important;=20
+    }
+
+    =2Ehelp-bg2{
+    =20
+    }
+
+    /* =2Efooter{font-size:11px !important;} */
+  =2Eone-two{
+    font-size:14px !important
+  }
+  /* Email 1 styles */
+  =2Econfirmation-container {width: 90%!important}
+
+  /* Email 2 styles */
+  =2Eletter{font-size: 14px !important;padding:0px 29px 60px !important;}
+  =2Eletter-hc{font-size: 14px !important;padding:30px 29px 60px !importan=
+t;}
+ =20
+ =20
+ =20
+  =2Efeedback-bg{
+      background-image: url(http://tribpubads=2Ecom/email-newsletter-onboa=
+rding/img/1/m_feedback-bg=2Ejpg) !important;
+      background-size:100% !important;
+      width:100% !important;=20
+    }
+  =2Ereach-out{
+    padding: 10px 0 38px !important;
+    font-size: 16px !important;
+  }
+
+  =2Eeditor-email{font-size: 16px !important;}
+
+  /* Email 3 styles */
+  =2Ediscount-copy{padding: 10px 0 20px 0 !important;}
+
+  =2Eicon-mobile-6{padding: 0px 0 60px !important}
+
+  =2Eicon-container{
+    width: 100% !important;
+  }
+
+
+  /* Email 4 styles */
+ =20
+
+    =2Eicon-1-text{
+      font-size:14px !important;
+    }
+    =2Eicon-2-text{
+    font-size:14px !important;
+    text-align: center !important;=20
+    width:240px !important;
+    }
+    =2Eicon-3-text{
+        font-size:14px !important;
+    }
+
+
+    /* Email 5 styles */
+    =2Eblurb-5{font-size:14px !important;}
+
+
+  /* Email 7 styles */
+  =2Ethoughts-bg{
+    background-image: url(http://tribpubads=2Ecom/email-newsletter-onboard=
+ing/img/1/m_thoughts-bg=2Ejpg) !important;
+    background-size:100% !important;
+    width:100% !important;=20
+  }
+
+  =2Ethoughts-copy{font-size: 18px !important;line-height:1=2E5 !important=
+;}
+
+}
+@media only screen and (max-device-width:414px), screen and (max-width: 41=
+4px) {
+body { width:100% !important; min-width:100% !important; }
+=2EflexibleColumn { max-width:100% !important; width:100% !important;}
+=2EflexibleColumn2 {width:100% !important; }
+=2ElgTxt {font-size: 30px !important; line-height: 36px !important;}
+=2ElgTxt2 {font-size: 34px !important; line-height: 38px !important;}
+=2ElgTxt4 {font-size: 38px !important; line-height: 42px !important;}
+=2ElgTxt3 {font-size: 33px !important; line-height: 37px !important;}
+ =2EamtTxt {line-height: 40px !important; padding-bottom: 0px !important;}
+ =2EbilledTxt {padding-left: 15px !important;}
+ =2Em_headline {white-space: normal !important;}
+=2Eph {font-size: 10px !important;} =20
+}
+@media only screen and (max-device-width:375px), screen and (max-width: 37=
+5px) {
+=2ElgTxt2 {font-size: 32px !important; line-height: 36px !important;}
+=2EcolumW {width: 110px !important;}
+}
+@media only screen and (max-device-width:360px), screen and (max-width: 36=
+0px) {
+=2ElgTxt2 {font-size: 31px !important; line-height: 35px !important;}
+=2ElgTxt4 {font-size: 34px !important; line-height: 40px !important;}
+=2ElgTxt3 {font-size: 31px !important; line-height: 35px !important;}
+}
+@media only screen and (max-device-width:320px), screen and (max-width: 32=
+0px) {
+=2Emod-txt-b=2ElgPdd {font-size: 14px !important;}=20
+=2ElgPdd { padding-left:15px !important; padding-right:15px !important; }
+=2ElgTxt2 {font-size: 26px !important; line-height: 30px !important;}
+=2ElgTxt3 {font-size: 27px !important; line-height: 31px !important;}
+=2ElgTxt4 {font-size: 31px !important; line-height: 35px !important;}
+=2EcolumW {width: 100px !important;}
+=2EfontRed {font-size: 15px !important;}
+=2Em_email5_header {width:280px !important;max-width:280px !important;}
+=2Em_fullwidth {width:280px !important;max-width:280px !important;}
+
+=2Em_cta {width:150px !important;padding-left:0 !important;}
+=2Em_cta table, =2Em_cta td {width:150px !important;}
+=2Em_cta img {height:auto !important;max-width:150px !important;width:100%=
+ !important;}
+
+=2Em_email5_col1 {width:150px !important;padding-top:15px!important;}
+=2Em_email5_col2 {width:140px !important;padding-top:0!important;}
+}
+</style>
+</head>
+
+<body leftmargin=3D"0" topmargin=3D"0" marginwidth=3D"0" marginheight=3D"0=
+" style=3D"table-layout:fixed;padding:0px;background-color: #ffffff;">
+	<table class=3D"gmail-mobile" width=3D"100%" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" align=3D"center" style=3D"margin:0 auto; max-width: 60=
+0px;">
+		<tr>
+			<td class=3D"container" align=3D"center" style=3D" vertical-align: top;=
+ ">
+				<!--[if (gte mso 9)|(IE)]>
+				<table width=3D"600" align=3D"center" cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0">
+				<tr>
+				<td width=3D"600" valign=3D"top">
+				<![endif]-->
+				<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"=
+>
+					<tr>
+
+					</tr>
+					<tr>
+						<td valign=3D"top">
+														<!--Default state if market not included in campaing START--=
+>
+															<!--CONTINUE see else condtion below body table=2E=2E=2E-->
+							<table class=3D"gmail-mobile" width=3D"100%" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" align=3D"center" style=3D"margin:0 auto; max-wid=
+th: 600px;">
+		<tr>
+			<td class=3D"container" align=3D"center" style=3D" vertical-align: top;=
+ ">
+				<!--[if (gte mso 9)|(IE)]>
+				<table width=3D"600" align=3D"center" cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0">
+				<tr>
+				<td width=3D"600" valign=3D"top">
+				<![endif]-->
+				<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"=
+>
+					<tr>
+
+					</tr>
+					<tr>
+						<td valign=3D"top">
+														<!--Default state if market not included in campaing START--=
+>
+															<!--CONTINUE see else condtion below body table=2E=2E=2E-->
+								<!--Top links START-->
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">
+<tr>
+<td class=3D"ph" width=3D"100%" align=3D"left" style=3D"font-family:Helvet=
+ica, Arial, sans-serif;font-size:11px;color:#222222;  padding:10px 0 5px 5p=
+x; overflow: hidden;">
+      <span style=3D"white-space:nowrap;">You chose a great newsletter=C2=
+=A0</span>
+      &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj=
+;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&zwnj;
+      &nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;
+    </td>
+</tr>
+</table>
+<!--Top links end-->
+
+								<!--Content Wrapper START-->
+								<table class=3D"emailContainer" width=3D"100%" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"0" align=3D"center" style=3D"background-color: #=
+d9d9d9;">
+									<tr>
+										<td align=3D"center">
+											<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" width=3D"100%" bgcolor=3D"#d9d9d9" style=3D"background-color:#d9d=
+9d9;">
+
+<tr>
+    <td align=3D"center" valign=3D"top" style=3D"padding:25px 0px 17px;">
+      <a href=3D"http://mkt=2Ebaltimoresun=2Ecom/T/v60000018864a11c1dbbd0c=
+bf4bbcf76f8/6a877b5e1e1049200000021ef3a0bcc2/6a877b5e-1e10-4920-aecb-c5d064=
+de59ed?__dU__=3Dv0oQlZ2XmHtXguGamVfW7E0G76VTZ3n_q11XhPgKDfDU8=3D&__F__=3Dv0=
+fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_3eaFHlkq5FQwa7QU90SbWL5uRpOPj8K6o=
+ssf24OGoza2Q_wqR-be1mUCVCL9MBfUp3GZ1Xaqc1SgC7ZrhxBQbnKcPktKpe191cHmOqemqy2o=
+Qy_DH7xpq9yQYgVvBe2Mbfp07yZU5SSRqQsz5aNPr7FQGK1UO87aEC6_oXLsM35Bb7Yhyyh5Su6=
+M41uqYKZe8suHaajpx5-pRC5sLQvv_KODaMeeUIxp6CX9cChnJ3UEVZD5txUjS5kaKfD679j8Br=
+lQA4Ubl34HgTFPteb5_t" target=3D"_blank"><img width=3D"300px" class=3D"img" =
+src=3D"http://tribpubads=2Ecom/email-newsletter-onboarding/img/blue_logos/b=
+s=2Epng" alt=3D"The Baltimore Sun" style=3D"display: block; border:none; fo=
+nt-size:14px; color: #ffffff; width:300px;"></a>
+    </td>
+  </tr>
+
+
+
+  <tr>
+    <td valign=3D"top" align=3D"center">
+      <table class=3D"content-container" cellpadding=3D"0" cellspacing=3D"=
+0" border=3D"0" bgcolor=3D"#ffffff" style=3D"background-color:#ffffff; widt=
+h:543px;">
+
+
+      <tr>
+          <td class=3D"mod-txt-b " valign=3D"top" align=3D"center" style=
+=3D"font-family: 'Spectral', Georgia, serif; font-weight:600; font-size: 35=
+px; line-height: 1;  color: #064e86; background-color: #ffffff; -webkit-tex=
+t-size-adjust: none; padding:50px 20px 0;">
+         Thank you for <br class=3D"em_show" style=3D"display: none;">sign=
+ing up!
+
+          </td>
+        </tr>
+       =20
+
+      =20
+        <tr>
+          <td class=3D"mod-txt-c lgPdd" valign=3D"top" align=3D"center" st=
+yle=3D"font-family: Arial, Helvetica, sans-serif; font-weight:500; font-siz=
+e: 16px; line-height: 1=2E5; color: #36393d; -webkit-text-size-adjust: none=
+; padding:20px 60px 40px; ">
+
+
+     =20
+=20
+     =20
+
+     =20
+
+     =20
+
+     =20
+
+     =20
+
+     =20
+
+       =20
+
+       =20
+
+       =20
+
+       =20
+
+       =20
+
+       =20
+
+
+ =20
+
+
+=20
+
+
+=20
+
+
+=20
+
+
+=20
+
+
+=20
+
+
+=20
+
+
+=20
+
+
+=20
+
+
+=20
+  We think you'll love our newsletters=2E To keep up with what's happening=
+ locally, nationwide and around the world, look for our emails every week i=
+n your inbox=2E
+ =20
+
+            </td>
+         </tr>
+
+
+      =20
+
+    =20
+        <!-- server update -->
+        <tr>
+          <td align=3D"center">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" al=
+ign=3D"center" style=3D"width:100%;">
+                      <tr>
+                         <td class=3D"" width=3D"223" height=3D"208" align=
+=3D"center" valign=3D"top" style=3D"padding:0 0 50px;">
+                        =20
+                           <img class=3D"img" src=3D"http://tribpubads=2Ec=
+om/email-newsletter-onboarding/img/1/img=2Epng" style=3D"border:none; width=
+:80%;max-width:252px;display: block;" width=3D"252">
+                       =20
+                        </td>
+                      </tr>
+
+             =20
+
+                 <tr>
+                  <td class=3D"mod-txt-c lgPdd" valign=3D"top" align=3D"ce=
+nter" style=3D"font-family: Arial, Helvetica, sans-serif; font-weight:600; =
+font-size: 15px; line-height: 1=2E5; color: #064e86; -webkit-text-size-adju=
+st: none; padding:0 60px 20px; ">
+                 =20
+                  Want to manage your newsletter subscription and discover=
+ more topics of interest?=20
+
+                </tr>
+
+         <!-- CTA start -->
+         <tr>
+          <td class=3D"" align=3D"center" style=3D"width: 100%; padding:0 =
+0 70px;">
+            <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"203" height=3D"52">
+              <tr>
+                <td valign=3D"top" align=3D"center" style=3D"background-co=
+lor:#f0e61f; border-radius:4px;" >
+                  <table width=3D"203" height=3D"52" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" align=3D"center" style=3D"text-decoration:none;=
+">
+                    <tr>
+                      <td class=3D"font-custom-c" width=3D"203" height=3D"=
+52" align=3D"center" valign=3D"middle" style=3D"font-family:'Open Sans', sa=
+ns-serif; font-size:16px; font-weight:600; color:#004e87; -webkit-text-size=
+-adjust:none;">
+                        <a  href=3D"http://mkt=2Ebaltimoresun=2Ecom/T/v600=
+00018864a11c1dbbd0cbf4bbcf76f8/6a877b5e1e1049200000021ef3a0bcc3/6a877b5e-1e=
+10-4920-aecb-c5d064de59ed?__dU__=3Dv0oQlZ2XmHtXguGamVfW7E0G76VTZ3n_q11XhPgK=
+DfDU8=3D&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_1MRNoSxtX_Orx5=
+8rbXPoJp-9Db0PmyjONnSVKMFc4Srohxqu_Zi_8BtXF3QY9LiN5pzsLuXV8nVHy6CcIYzXeU2Oy=
+nbRoHCHksS4sH6gAB3fLdkePPDJO4UP7CYL5G1WX1Coz5BgG49XlAWA_6rq5W2Z33b0MyUtpROo=
+FDBhrUUZr6O3emVySIkoAUsImGZ3S64JBxVne3XMMp-kUDVGIq3oESzGGYuj8-hUcUAylJSNRAb=
+9Mtj9m9w1oJ1ixaKmxdWg9AV5voVteLdslDEGDIPezD2XpmseJvkf1_tw_hfk7mJ0wvtc7A" ta=
+rget=3D"_blank" style=3D" color: #004e87; text-decoration:none;">
+                          Visit now
+                        </a>
+                      </td>
+
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- CTA end -->
+       =20
+                </table>
+          </td>
+        </tr>
+
+       =20
+      </table>
+    </td>
+  </tr>
+
+
+</table>										=09
+										=09
+										=09
+										</td>
+									</tr>
+
+
+									<!-- Footer START -->
+
+<!-- Qa 1 update please -->
+<tr>
+  <td valign=3D"top">
+    <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"=
+ align=3D"center" bgcolor=3D"#d9d9d9" style=3D"background-color: #d9d9d9;">
+      <tr>
+        <td class=3D"footer" style=3D"font-family:Helvetica, Arial, sans-s=
+erif; font-size:10px;line-height:16px;color:#47494c; text-align:center; pad=
+ding:25px 20px 0;background-color: #d9d9d9;">
+          <span style=3D"color:#47494c;">
+            <a href=3D"http://mkt=2Ebaltimoresun=2Ecom/H/2/v60000018864a11=
+c1dbbd0cbf4bbcf76f8/6a877b5e-1e10-4920-aecb-c5d064de59ed/HTML" target=3D"_b=
+lank" style=3D"text-decoration:none;color:#47494c;">View in browser</a> &nb=
+sp;|&nbsp; <a href=3D"http://mkt=2Ebaltimoresun=2Ecom/T/v60000018864a11c1db=
+bd0cbf4bbcf76f8/6a877b5e1e1049200000021ef3a0bcc4/6a877b5e-1e10-4920-aecb-c5=
+d064de59ed?__dU__=3Dv0oQlZ2XmHtXguGamVfW7E0G76VTZ3n_q11XhPgKDfDU8=3D&__F__=
+=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_1MRNoSxtX_Orx58rbXPoJp-9Db0P=
+myjONnSVKMFc4Srohxqu_Zi_8BtXF3QY9LiN5pzsLuXV8nVHy6CcIYzXeU2OynbRoHCHksS4sH6=
+gAB3fLdkePPDJO4UP7CYL5G1WX1Coz5BgG49XlAWA_6rq5W2Z33b0MyUtpROoFDBhrUUZr6O3em=
+VySIkoAUsImGZ3S64JBxVne3XMMp-kUDVGIq3oESzGGYuj8-hUcUAylJSP06iew2ZfnUc2qIy3s=
+5bfMDR9am-TfkTNuw5vir0V37AKoi_fKpbcFvkf1_tw_hfk7mJ0wvtc7A" target=3D"_blank=
+" style=3D"text-decoration:none;color:#47494c;">Sign up for newsletters</a>=
+ &nbsp;|&nbsp; <a href=3D"http://mkt=2Ebaltimoresun=2Ecom/T/v60000018864a11=
+c1dbbd0cbf4bbcf76f8/6a877b5e1e1049200000021ef3a0bcc5/6a877b5e-1e10-4920-aec=
+b-c5d064de59ed?__dU__=3Dv0oQlZ2XmHtXguGamVfW7E0G76VTZ3n_q11XhPgKDfDU8=3D&__=
+F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_1MRNoSxtX_Orx58rbXPoJp-9D=
+b0PmyjONnSVKMFc4Srohxqu_Zi_8B_685NDOBHLbm1O8Q86jFhK6dWVOYn4LyuuCQcVZ3t1zDKf=
+pFA1RiKiyx_bg4ajNrZD_CpH5t7WZQJUIv0wF9SncZnVdqpzVKALtmuHEFBucpw-S0ql7X3VweY=
+6p6arLahDL8MfvGmr3JBiBW8F7Yxt-nTvJlTlJJGpCzPlo0-vsVAYrVQ7ztoQLr-hcuwzfkFvti=
+HLKHlK7ozjW6pgpl7yy4dpqOnHn6lELmwtC-_8q_kbFt8ppRNoMJQKxhMyerG34XDP33i4abRbf=
+wTtvLGuTBUvNyjUzneBMU-15vn-0=3D" target=3D"_blank" style=3D"text-decoration=
+:none;color:#555555;">Unsubscribe</a> &nbsp;|&nbsp;<br class=3D"em_show" st=
+yle=3D"display:none;"><a href=3D"http://mkt=2Ebaltimoresun=2Ecom/T/v6000001=
+8864a11c1dbbd0cbf4bbcf76f8/6a877b5e1e1049200000021ef3a0bcc6/6a877b5e-1e10-4=
+920-aecb-c5d064de59ed?__dU__=3Dv0oQlZ2XmHtXguGamVfW7E0G76VTZ3n_q11XhPgKDfDU=
+8=3D&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_3eaFHlkq5FQ4RqpGOJ=
+wH2Y_6b8a9YXw6irU37N-k-Ty6--8Dk7VHg4ac7C7l1fJ1R8ugnCGM13lNjsp20aBwh5LEuLB-o=
+AAd3y3ZHjzwyTuFD-wmC-RtVl9QqM-QYBuPV5QFgP-q6uVtmd929DMlLaUTqBQwYa1FGa-jt3pl=
+ckiJKAFLCJhmd0uuCQcVZ3t1zDKfpFA1RiKt6BEsxhmLo_PoVHFAMpSUiaXYQ5CtimR4K4D8-kg=
+ZS-Tkp5w67UZn5HBbjAE_Zfm2bWKLCKVIVcb5H9f7cP4X5O5idML7XOwA=3D=3D" target=3D"=
+_blank" style=3D"text-decoration:none;color:#47494c;">Privacy Policy</a>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td class=3D"footer" style=3D"font-family:Helvetica, Arial, sans-s=
+erif; font-size:10px;line-height:16px;color:#47494c; text-align:center; pad=
+ding:0px 20px 25px;">
+          Copyright&nbsp;&copy;&nbsp;2022 &nbsp;|&nbsp; The Baltimore Sun =
+&nbsp;|&nbsp; <a href=3D"#" class=3D"iosFix" style=3D"color:#47494c; text-d=
+ecoration:none; pointer-events: none; font-weight:normal;">300 E=2E Cromwel=
+l St=2E, Baltimore, MD 21230 &nbsp;|&nbsp; </a>
+          <a href=3D"tel:4436929011" style=3D"text-decoration:none;color:#=
+47494c; white-space:nowrap;">(443) 692-9011</a>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+<!--Footer END-->
+								</table>
+
+								<!--=2E=2E=2E CONTINUE see if  condtion above body table-->
+						=09
+				<!--[if (gte mso 9)|(IE)]>
+					</td>
+					</tr>
+					</table>
+					<![endif]-->
+			</td>
+		</tr>
+	</table>
+	</td>
+	</tr>
+	</table>
+                       =20
+								<!--=2E=2E=2E CONTINUE see if  condtion above body table-->
+						=09
+				<!--[if (gte mso 9)|(IE)]>
+					</td>
+					</tr>
+					</table>
+					<![endif]-->
+			</td>
+		</tr>
+	</table>
+	</td>
+	</tr>
+	</table>
+
+<img src=3D'http://mkt=2Ebaltimoresun=2Ecom/O/v60000018864a11c1dbbd0cbf4bb=
+cf76f8/6a877b5e1e10492000004c5a42963aa1' style=3D"display:none; max-height:=
+ 0px; font-size: 0px; overflow: hidden; mso-hide: all"/></body>
+
+</html> 
+---=Part.1ec68dc.4dce11ddc1575b20.18864a11ce2.54b0cbfbc04b94a9=---
+

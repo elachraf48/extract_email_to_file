@@ -1,0 +1,1689 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp543906ims;
+        Tue, 30 May 2023 09:35:39 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ6RyExw3nMyMampqJh1L0q0jiJWSZHibiP/VFJwV1PTbv3f3S14kWj3BcnAnArnHkJko1pF
+X-Received: by 2002:a05:620a:4608:b0:75b:23a1:365e with SMTP id br8-20020a05620a460800b0075b23a1365emr3187999qkb.31.1685464539058;
+        Tue, 30 May 2023 09:35:39 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685464539; cv=none;
+        d=google.com; s=arc-20160816;
+        b=qXjEIqITEtzzn64208UoEAk/YUYqO9JjQoYFbFVbpqrJTcx6kRq3oF5UOmqswi7Dw/
+         suJ/93iC3xTG7VvPEE35LPNNwPVwxH5aqDPB0EghEDnnXhH39B6lUYtc2aaEdTbRaWFd
+         jvIRieL7x+888nwPlJu+NfuE+EfGCVZmftn5eUgg6w89yX63PzNVae2KLzTjYNepY27A
+         IWdxVkjZt9bCunWnuINmPVBae97TwyAVQeUE+LdpWF6+NBMSpZwcjgJcgS+XJVivdT2E
+         7NLhIe2XDuCwQpuioRDCDMsCavx5wYtDsoWr5I0WoF4+KNhUo41Di+lNLxFFDcgC//p7
+         kISQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:mime-version:from:date:dkim-signature
+         :dkim-signature;
+        bh=i6cdpw5e6X2T864nfsudg5KopJ0oIRvQ5Z2/jijv1QI=;
+        b=uvZnzkSsFgZeTbq+xbtij1U/sSIkMO1rX8f7crh39J0BxlrqRRfwfxZqzjFEHMhNrs
+         5UGw3NIDMo5pYHTpwxJ368IvOjgGW+DkmdnQW0UiqF6QNuwAza1dgRhoAhUDrT14gyP/
+         1IdiVu7KYmw8QujpMbzoncbpkZqxi4mRzCXL9qqpHw0XCN2+PwhTe9uE/OWqXSzx/+S0
+         U0MhEiYqcsvaHTR27o9c2yJwewUXzHJLf0Tm3dPzRRQrrwJtIEj3TzRPFHh1+6TUK+JU
+         DlCAP3U1GPZV/s4bNEWZSuvdkc/NRB6Y63RCOKmYPEwc1XTNkAhKg7gB//X6eNZHiOxF
+         WIYw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@brief.me header.s=s1 header.b=V9J0BVM9;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=PCON2zto;
+       spf=pass (google.com: domain of bounces+1551938-96b0-ouchendans62=gmail.com@em4969.brief.me designates 159.183.113.148 as permitted sender) smtp.mailfrom="bounces+1551938-96b0-ouchendans62=gmail.com@em4969.brief.me";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=brief.me
+Return-Path: <bounces+1551938-96b0-ouchendans62=gmail.com@em4969.brief.me>
+Received: from o8.ptr7471.brief.science (o8.ptr7471.brief.science. [159.183.113.148])
+        by mx.google.com with ESMTPS id h8-20020a05620a10a800b0075905fd5d99si3983065qkk.406.2023.05.30.09.35.38
+        for <ouchendans62@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 30 May 2023 09:35:39 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+1551938-96b0-ouchendans62=gmail.com@em4969.brief.me designates 159.183.113.148 as permitted sender) client-ip=159.183.113.148;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@brief.me header.s=s1 header.b=V9J0BVM9;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=PCON2zto;
+       spf=pass (google.com: domain of bounces+1551938-96b0-ouchendans62=gmail.com@em4969.brief.me designates 159.183.113.148 as permitted sender) smtp.mailfrom="bounces+1551938-96b0-ouchendans62=gmail.com@em4969.brief.me";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=brief.me
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=brief.me;
+	h=content-type:from:mime-version:subject:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=s1; bh=i6cdpw5e6X2T864nfsudg5KopJ0oIRvQ5Z2/jijv1QI=;
+	b=V9J0BVM9XMD74ojkqR8iFpjqj8yMGw5YzFANp3+m097k0Ev+DjUK32nUnBfMTciEJ3VN
+	VNL6dp3Ts82unfDMJ+hTYmvHeP1gIVdgMRgaTKDJWCvplWQf5CwdrerJXzZAYJw2aeb+l+
+	kjuj8a8pEDD3w5m2iDAEoCQqRGc+Xvq26yWjrsjBFiSAsGZITQ+2OuE3vOcwGDwOPkVk8C
+	wrx4+jFAJz9IozBP+VJ3tS2/R5NNinl+drtkafjN3UMFxbdSM+xiMG/nJsIR8ziL8nFoEF
+	QoAmC/mAvsfII7GkZfi+/IWjDUtZbI8zXN5w8fXjsnGJbqRb64eC/BSM8QM7RuWQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=smtpapi; bh=i6cdpw5e6X2T864nfsudg5KopJ0oIRvQ5Z2/jijv1QI=;
+	b=PCON2ztoPBtkQPYUF4CMRQnrhUy2MhoG2RzJFd6tizbiiHctq0yOigipMhMTUPsdM11b
+	Jmf8r8hC+dlzRfs08tnu3TpUw16rV0Q85zE94rHDpj4E3GU717qo85dgfwYHS6GNSd748H
+	aimFbk1Kz7pf7uCToSz6xSqbUWi85rjDo=
+Received: by filterdrecv-65c95b745b-tddk5 with SMTP id filterdrecv-65c95b745b-tddk5-1-647625C6-B7
+        2023-05-30 16:35:18.452265178 +0000 UTC m=+1702524.792780594
+Received: from MTU1MTkzOA (unknown)
+	by geopod-ismtpd-3 (SG) with HTTP
+	id 7yJ4sOTOQW6h3yaq01hsFg
+	Tue, 30 May 2023 16:35:18.241 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=e0e471fedb79663d3c80977e7614c5905ed409740f34bf88ab446a1a8bf1
+Date: Tue, 30 May 2023 16:35:38 +0000 (UTC)
+From: "Brief.me" <hello@brief.me>
+Mime-Version: 1.0
+Message-ID: <7yJ4sOTOQW6h3yaq01hsFg@geopod-ismtpd-3>
+Subject: Erdogan =?UTF-8?B?csOpw6lsdQ==?= | Premier avion de ligne chinois |
+ Shakespeare et Jeanne =?UTF-8?B?ZOKAmUFyYw==?= en 2023
+X-Feedback-ID: 1551938:SG
+X-SG-EID: 
+ =?us-ascii?Q?DiGdcEab8lyYqCiuWu07hMzDbddyNFjHB3LpSsyIkEQ+7xu1=2F5sSr+Ctz0Ks3Q?=
+ =?us-ascii?Q?7sExkTACzlrhZvHSABZbZ9p0JnkQ3Qa+SQuGAdc?=
+ =?us-ascii?Q?F4CiyQ3eOSRLDre=2FRQDQlHsujnqVh=2FWitYeJokz?=
+ =?us-ascii?Q?G0VOFLiqVaIs9SzGhKP1DG5ERxJ4JKLk6=2FbqD+O?=
+ =?us-ascii?Q?3xFJ8lHyRQNEK8oV5h2ItpxA1IEuZoIdBUtRsA3?=
+ =?us-ascii?Q?0eaJPe8xklTQw9D3OL=2FCw3MBfBGO++y0PZn7Gg?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsbwBNVckzqbYdf3KWb8iLithHbPWxQKfjD1jsnEIa=2FP?=
+ =?us-ascii?Q?jBaVunYn+Y0=2FLQ4BE9y=2F2olxbOY1tR=2FIvD2cn5G?=
+ =?us-ascii?Q?hbVel7JlMWndT+hKi6sbe8KQPMpTPi2F5gHksBr?=
+ =?us-ascii?Q?4gVRbL6QWkjdBDc=2FrzwIwGF=2Fg8f7aXK5wS2Aba3?=
+ =?us-ascii?Q?QcKmhXsNamriliZ0+NsPgjt8bJohAUlUyz0pIYb?=
+ =?us-ascii?Q?8eFy5ZNeeHO7Pf5RCDzpHFGoHkiVEIvH5nWDNtn?=
+ =?us-ascii?Q?rLhhnXnrj1BLpsR55ZQLJ0jA9AyQqPJI8N2B2rB?=
+ =?us-ascii?Q?ELpUkJIsSLr0YK38VaN2YBnMPYe1Epx66J+AIFv?=
+ =?us-ascii?Q?7GAIpvS0QCnceimJDcGEC++QBCfE0mQ3rCspqZl?=
+ =?us-ascii?Q?=2F=2FHmQcU9Vv0Hba3JIKzsNIEkHadFoLMw=2FZbcV8l?=
+ =?us-ascii?Q?NX+vBacGLn+uLWr0C0hRAOyKzSfmT=2FfKoUlM3WW?=
+ =?us-ascii?Q?folsfGeOHJ466PxbdL+RkEhlEPQ6fW2VceFsP0q?=
+ =?us-ascii?Q?=2FtYiGywmM3xXgncVTaRkAaWJdLMxVCP7Kf=2Fl03o?=
+ =?us-ascii?Q?97uDC7CE98q82lfQ+b5yJoE4A=3D?=
+To: ouchendans62@gmail.com
+X-Entity-ID: Mam0Mvv+PaRt1QuKzuih8w==
+
+--e0e471fedb79663d3c80977e7614c5905ed409740f34bf88ab446a1a8bf1
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+Un troisi=C3=A8me mandat pour le pr=C3=A9sident turc.
+
+Dans B=E2=80=8Cr=E2=80=8Ci=E2=80=8Ce=E2=80=8Cf=E2=80=8C.=E2=80=8Cm=E2=80=8C=
+e aujourd=E2=80=99hui, le pr=C3=A9sident turc Erdogan r=C3=A9=C3=A9lu pour =
+un troisi=C3=A8me mandat, le premier avion de ligne chinois et des personna=
+lit=C3=A9s historiques r=C3=A9actualis=C3=A9es.
+
+          =20
+
+brief.me| ( https://www.brief.me )
+
+ic=C3=B4ne 1 ( https://www.brief.me/login/NjU5MzI4:1q42JZ:Y9qWsVezko4vSpPnq=
+lxjAKrQVfuqKAnPbI_p2E7126A/?redirect=3Dhttps%3A%2F%2Fapp.brief.me%2Fedition=
+%2F2023-05-30-3294-erdogan-reelu-premier-avion-de-ligne-chinois-shakespeare=
+-et-jeanne-darc-en-2023%2F&utm_source=3Demail&utm_campaign=3Decouter&utm_co=
+ntent=3Dquotidien_2023-05-30 ) =C3=89couter l=E2=80=99=C3=A9dition ( https:=
+//www.brief.me/login/NjU5MzI4:1q42JZ:Y9qWsVezko4vSpPnqlxjAKrQVfuqKAnPbI_p2E=
+7126A/?redirect=3Dhttps%3A%2F%2Fapp.brief.me%2Fedition%2F2023-05-30-3294-er=
+dogan-reelu-premier-avion-de-ligne-chinois-shakespeare-et-jeanne-darc-en-20=
+23%2F&utm_source=3Demail&utm_campaign=3Decouter&utm_content=3Dquotidien_202=
+3-05-30 )
+
+Mardi 30 mai 2023
+
+Dans B=E2=80=8Cr=E2=80=8Ci=E2=80=8Ce=E2=80=8Cf=E2=80=8C.=E2=80=8Cm=E2=80=8C=
+e aujourd=E2=80=99hui, le pr=C3=A9sident turc Erdogan r=C3=A9=C3=A9lu pour =
+un troisi=C3=A8me mandat, le premier avion de ligne chinois et des personna=
+lit=C3=A9s historiques r=C3=A9actualis=C3=A9es.
+
+        =20
+
+ON REMBOBINE
+
+UKRAINE-RUSSIE
+
+*Le gouvernement russe a accus=C3=A9 ce matin l=E2=80=99arm=C3=A9e ukrainie=
+nne d=E2=80=99avoir lanc=C3=A9 une attaque de drones sur plusieurs sites =
+=C3=A0 Moscou.* Des b=C3=A2timents ont subi des =C2=AB=C2=A0d=C3=A9g=C3=A2t=
+s mineurs=C2=A0=C2=BB et personne n=E2=80=99a =C3=A9t=C3=A9 =C2=AB=C2=A0gra=
+vement bless=C3=A9=C2=A0=C2=BB, selon le maire de la capitale russe. Des mi=
+ssiles et drones russes ont vis=C3=A9 Kiev dans le week-end et la nuit dern=
+i=C3=A8re, faisant un mort, selon le maire de la capitale ukrainienne.
+
+Lire notre panorama sur l=E2=80=99Ukraine. ( https://app.brief.me/panorama/=
+ukraine?access=3D76594ac2-db5a-45d2-9935-38c869e1faa2 )
+
+KOSOVO
+
+*30=C2=A0soldats de la force internationale de l=E2=80=99Otan au Kosovo, la=
+ KFor, ont =C3=A9t=C3=A9 bless=C3=A9s dans des heurts avec des manifestants=
+ serbes hier* , a rapport=C3=A9 aujourd=E2=80=99hui cette alliance militair=
+e de 31=C2=A0pays. La pr=C3=A9sidence serbe a =C3=A9galement fait =C3=A9tat=
+ de bless=C3=A9s parmi les manifestants. Ces derniers protestaient contre l=
+a prise de fonction de maires albanais nouvellement =C3=A9lus dans quatre l=
+ocalit=C3=A9s =C3=A0 majorit=C3=A9 serbe du nord du Kosovo. La Serbie n=E2=
+=80=99a jamais reconnu l=E2=80=99ind=C3=A9pendance proclam=C3=A9e en 2008=
+=C2=A0par son ex-province.
+
+OUGANDA
+
+*Le pr=C3=A9sident de l=E2=80=99Ouganda, Yoweri Museveni, a promulgu=C3=A9 =
+une loi =C2=AB=C2=A0anti-homosexualit=C3=A9=C2=A0=C2=BB* , a rapport=C3=A9 =
+hier la pr=C3=A9sidence. Le texte, adopt=C3=A9 d=C3=A9but mai par le Parlem=
+ent, renforce la l=C3=A9gislation anti-homosexuelle dans ce pays o=C3=B9 l=
+=E2=80=99homosexualit=C3=A9 est ill=C3=A9gale=C2=A0: il rend passibles de p=
+eine de mort certaines relations homosexuelles et criminalise la =C2=AB=C2=
+=A0promotion=C2=A0=C2=BB de l=E2=80=99homosexualit=C3=A9. Plusieurs gouvern=
+ements de pays occidentaux ont condamn=C3=A9 cette loi.
+
+BATTERIES
+
+*Le ministre de l=E2=80=99=C3=89conomie, Bruno Le Maire, a inaugur=C3=A9 au=
+jourd=E2=80=99hui la premi=C3=A8re grande usine de batteries pour voitures =
+=C3=A9lectriques construite en France.* Situ=C3=A9e dans le Pas-de-Calais, =
+cette usine de la coentreprise franco-allemande ACC (Stellantis, TotalEnerg=
+ies, Mercedes-Benz) doit entrer en service cet =C3=A9t=C3=A9. En 2022, la q=
+uasi-totalit=C3=A9 de la production mondiale de batteries =C3=A9lectriques =
+=C3=A9tait assur=C3=A9e par 10=C2=A0entreprises, toutes asiatiques, selon l=
+es donn=C3=A9es de SNE Research, un cabinet de conseil sud-cor=C3=A9en.
+
+Lire notre article sur la production de batteries =C3=A9lectriques. ( https=
+://app.brief.me/article/2023-05-12-15430-installation-dune-usine-de-batteri=
+es-electriques-a-dunkerque?access=3D76594ac2-db5a-45d2-9935-38c869e1faa2 )
+
+YVAN COLONNA
+
+Une commission parlementaire charg=C3=A9e d=E2=80=99enqu=C3=AAter sur les c=
+irconstances de l=E2=80=99agression mortelle du militant ind=C3=A9pendantis=
+te corse Yvan Colonna *a conclu =C3=A0 des =C2=AB=C2=A0d=C3=A9faillances=C2=
+=A0=C2=BB des autorit=C3=A9s p=C3=A9nitentiaires* , dans un rapport publi=
+=C3=A9 aujourd=E2=80=99hui. Yvan Colonna, qui purgeait une peine pour l=E2=
+=80=99assassinat du pr=C3=A9fet Claude =C3=89rignac en 1998, est mort le 21=
+=C2=A0mars 2022=C2=A0apr=C3=A8s avoir =C3=A9t=C3=A9 attaqu=C3=A9 par un cod=
+=C3=A9tenu radicalis=C3=A9 =C3=A0 la prison d=E2=80=99Arles.
+
+Consulter le rapport d=E2=80=99enqu=C3=AAte parlementaire. ( https://www.as=
+semblee-nationale.fr/dyn/16/rapports/cedysap/l16b1273_rapport-enquete )
+
+FRAUDE SOCIALE
+
+Le ministre charg=C3=A9 des Comptes publics, Gabriel Attal, a pr=C3=A9sent=
+=C3=A9 dans une interview au Parisien publi=C3=A9e hier soir *un plan visan=
+t =C3=A0 lutter contre la fraude sociale, qui permettrait selon lui de doub=
+ler les redressements entre 2022=C2=A0et 2027*. Il souhaite renforcer les c=
+onditions de r=C3=A9sidence en France pour b=C3=A9n=C3=A9ficier d=E2=80=99a=
+llocations sociales, de six mois actuellement pour certaines =C3=A0 neuf mo=
+is, et faire fusionner la carte Vitale et la carte d=E2=80=99identit=C3=A9 =
+pour lutter contre les fraudes aux prestations de sant=C3=A9.
+
+CIN=C3=89MA
+
+*Le jury du 76 e Festival de Cannes a d=C3=A9cern=C3=A9 samedi la Palme d=
+=E2=80=99or =C3=A0 la r=C3=A9alisatrice fran=C3=A7aise Justine Triet* pour =
+son film =C2=AB=C2=A0Anatomie d=E2=80=99une chute=C2=A0=C2=BB. Lors de son =
+discours, la cin=C3=A9aste a estim=C3=A9 que =C2=AB=C2=A0la marchandisation=
+ de la culture=C2=A0=C2=BB d=C3=A9fendue par le gouvernement =C3=A9tait en =
+train de =C2=AB=C2=A0casser l=E2=80=99exception culturelle fran=C3=A7aise=
+=C2=A0=C2=BB. La ministre de la Culture, Rima Abdul Malak, s=E2=80=99est di=
+te =C2=AB=C2=A0estomaqu=C3=A9e=C2=A0=C2=BB par ces propos et a jug=C3=A9 qu=
+e le film de Justine Triet n=E2=80=99aurait pu =C3=AAtre r=C3=A9alis=C3=A9 =
+sans le =C2=AB=C2=A0mod=C3=A8le fran=C3=A7ais de financement du cin=C3=A9ma=
+=C2=A0=C2=BB.
+
+Voir le palmar=C3=A8s complet. ( https://www.festival-cannes.com/palmares/ =
+)
+
+TOUT S=E2=80=99EXPLIQUE
+
+Erdogan r=C3=A9=C3=A9lu pr=C3=A9sident de la Turquie pour un troisi=C3=A8me=
+ mandat
+
+=E2=80=A2 Le pr=C3=A9sident sortant a obtenu 52=C2=A0% des voix au second t=
+our de la pr=C3=A9sidentielle.
+
+=E2=80=A2 Il a b=C3=A9n=C3=A9fici=C3=A9 du soutien des zones rurales et du =
+caract=C3=A8re h=C3=A9t=C3=A9roclite de l=E2=80=99opposition.
+
+Quel a =C3=A9t=C3=A9 le r=C3=A9sultat des =C3=A9lections organis=C3=A9es en=
+ Turquie=C2=A0?
+
+Le pr=C3=A9sident islamo-conservateur turc sortant, Recep Tayyip Erdogan, a=
+ =C3=A9t=C3=A9 r=C3=A9=C3=A9lu dimanche pour un troisi=C3=A8me mandat de ci=
+nq ans. *Il a remport=C3=A9 le second tour de l=E2=80=99=C3=A9lection pr=C3=
+=A9sidentielle avec 52,1=C2=A0% des voix* contre 47,9=C2=A0% pour le social=
+-d=C3=A9mocrate Kemal Kili=C3=A7daroglu, candidat unique de six partis d=E2=
+=80=99opposition. Dans son discours de victoire, Recep Tayyip Erdogan a d=
+=C3=A9clar=C3=A9 que l=E2=80=99une de ses priorit=C3=A9s =C3=A9tait de =C2=
+=AB=C2=A0r=C3=A9gler les probl=C3=A8mes caus=C3=A9s par les hausses de prix=
+=C2=A0=C2=BB. Le taux d=E2=80=99inflation annuel a atteint pr=C3=A8s de 44=
+=C2=A0% en avril, selon l=E2=80=99institut turc de statistiques, et m=C3=AA=
+me davantage selon des =C3=A9conomistes ind=C3=A9pendants. *Recep Tayyip Er=
+dogan est arriv=C3=A9 au pouvoir en Turquie =C3=A0 l=E2=80=99issue des =C3=
+=A9lections l=C3=A9gislatives de novembre 2002.* Premier ministre pendant u=
+n peu plus de 11=C2=A0ans, il est devenu en 2014=C2=A0pr=C3=A9sident de la =
+R=C3=A9publique, transformant la Turquie en un r=C3=A9gime pr=C3=A9sidentie=
+l, o=C3=B9 le chef de l=E2=80=99=C3=89tat dirige =C3=A9galement le gouverne=
+ment.
+
+Quels =C3=A9l=C3=A9ments peuvent expliquer la victoire de Recep Tayyip Erdo=
+gan=C2=A0?
+
+=C2=AB=C2=A0Erdogan a gagn=C3=A9 parce que les =C3=A9lecteurs ont vu que *l=
+=E2=80=99opposition =C3=A9tait tellement h=C3=A9t=C3=A9roclite qu=E2=80=99e=
+lle aurait rencontr=C3=A9 des difficult=C3=A9s* pour diriger le pays=C2=A0=
+=C2=BB, a estim=C3=A9 le politologue Bayram Balci dans une interview =C3=A0=
+ TF1. Le pr=C3=A9sident turc a pu =C3=A9galement compter sur le soutien des=
+ zones rurales, observe le consultant en politique Derin Ko=C3=A7er dans la=
+ revue Le Grand Continent. =C2=AB=C2=A0Les interventions du gouvernement su=
+r le march=C3=A9 et les subventions qu=E2=80=99il a accord=C3=A9es=C2=A0=C2=
+=BB ont att=C3=A9nu=C3=A9 la crise =C3=A9conomique actuelle dans ces r=C3=
+=A9gions, explique-t-il. *Recep Tayyip Erdogan et son parti, l=E2=80=99AKP,=
+ ont b=C3=A2ti leur force sur =C2=AB=C2=A0un syst=C3=A8me d=E2=80=99aide et=
+ d=E2=80=99assistance enti=C3=A8rement contr=C3=B4l=C3=A9 par le parti-=C3=
+=89tat=C2=A0=C2=BB* , estime dans une tribune au Monde le g=C3=A9ographe Je=
+an-Fran=C3=A7ois P=C3=A9rouse. =C2=AB=C2=A0Il laisse accroire que, en cas d=
+e changement politique, l=E2=80=99assistance cessera et les plans d=E2=80=
+=99acc=C3=A8s au cr=C3=A9dit (pour le logement, la voiture, la consommation=
+, les =C3=A9tudes) seront mis en p=C3=A9ril=C2=A0=C2=BB, ajoute-t-il.
+
+Quelles sont les relations de Recep Tayyip Erdogan avec l=E2=80=99Union eur=
+op=C3=A9enne=C2=A0?
+
+Plusieurs dirigeants europ=C3=A9ens ont f=C3=A9licit=C3=A9 le pr=C3=A9siden=
+t turc tout en rappelant les difficult=C3=A9s pesant sur leurs relations av=
+ec la Turquie. =C2=AB=C2=A0La France et la Turquie ont d=E2=80=99immenses d=
+=C3=A9fis =C3=A0 relever ensemble. Retour de la paix en Europe, avenir de n=
+otre Alliance euro-atlantique, mer M=C3=A9diterran=C3=A9e=C2=A0=C2=BB, a ai=
+nsi tweet=C3=A9 Emmanuel Macron dimanche. La question migratoire =C3=A9voqu=
+=C3=A9e par le pr=C3=A9sident fran=C3=A7ais, en particulier le cas des mill=
+ions de r=C3=A9fugi=C3=A9s syriens pr=C3=A9sents en Turquie, a =C3=A9t=C3=
+=A9 l=E2=80=99un des th=C3=A8mes de campagne de l=E2=80=99entre-deux-tours =
+en Turquie. Les deux candidats ont souhait=C3=A9 que ces r=C3=A9fugi=C3=A9s=
+ retournent en Syrie. En 2016, *l=E2=80=99UE a sign=C3=A9 un accord avec la=
+ Turquie pour qu=E2=80=99elle retienne les migrants* en =C3=A9change de fin=
+ancements europ=C3=A9ens. Recep Tayyip Erdogan a plusieurs fois menac=C3=A9=
+ de rompre cet accord lors de ses diff=C3=A9rends avec l=E2=80=99UE. *Il s=
+=E2=80=99est =C3=A9galement oppos=C3=A9 =C3=A0 l=E2=80=99entr=C3=A9e de la =
+Su=C3=A8de dans l=E2=80=99Otan* , une alliance militaire de 31=C2=A0pays, r=
+eprochant au pays d=E2=80=99h=C3=A9berger des terroristes kurdes.
+
+Pour aller plus loin Notre dossier sur la transformation de la Turquie sous=
+ Erdogan ( https://app.brief.me/article/2023-02-18-15077-la-transformation-=
+de-la-turquie-sous-erdogan?access=3D76594ac2-db5a-45d2-9935-38c869e1faa2 ).
+
+facebook ( http://www.facebook.com/sharer/sharer.php?u=3Dhttps://app.brief.=
+me/article/2023-05-30-15492-erdogan-reelu-president-de-la-turquie-pour-un-t=
+roisieme-mandat ) twitter ( http://twitter.com/share?url=3Dhttps://app.brie=
+f.me/article/2023-05-30-15492-erdogan-reelu-president-de-la-turquie-pour-un=
+-troisieme-mandat&text=3DErdogan%20r%C3%A9%C3%A9lu%20pr%C3%A9sident%20de%20=
+la%20Turquie%20pour%20un%20troisi%C3%A8me%20mandat&via=3Dbriefmenews ) what=
+sapp ( https://api.whatsapp.com/send?text=3Dhttps://app.brief.me/article/20=
+23-05-30-15492-erdogan-reelu-president-de-la-turquie-pour-un-troisieme-mand=
+at ) mail ( ?subject=3DErdogan%20r%C3%A9%C3%A9lu%20pr%C3%A9sident%20de%20la=
+%20Turquie%20pour%20un%20troisi%C3%A8me%20mandat&body=3DJe%20pense%20que%20=
+cet%20article%20pourrait%20t'int=C3=A9resser%20:%0AErdogan%20r%C3%A9%C3%A9l=
+u%20pr%C3%A9sident%20de%20la%20Turquie%20pour%20un%20troisi%C3%A8me%20manda=
+t%0Ahttps://app.brief.me/article/2023-05-30-15492-erdogan-reelu-president-d=
+e-la-turquie-pour-un-troisieme-mandat )
+
+C=E2=80=99EST LEUR AVIS
+
+Les socialistes espagnols fragilis=C3=A9s par leurs alliances
+
+Le Premier ministre espagnol, le socialiste Pedro Sanchez, a convoqu=C3=A9 =
+hier des =C3=A9lections l=C3=A9gislatives anticip=C3=A9es le 23=C2=A0juille=
+t. Dimanche, la gauche a subi une importante d=C3=A9faite aux =C3=A9lection=
+s municipales et r=C3=A9gionales. Le Parti socialiste espagnol (PSOE) paie =
+toutefois moins les r=C3=A9sultats de sa politique que ses alliances, a jug=
+=C3=A9 hier aupr=C3=A8s de France=C2=A024 ( https://www.france24.com/fr/eur=
+ope/20230529-espagne-apr%C3%A8s-la-d%C3%A9b%C3%A2cle-aux-%C3%A9lections-loc=
+ales-les-socialistes-doivent-se-remettre-en-question ) la politologue Maria=
+ Elisa Alonso.
+
+=C2=AB=C2=A0C=E2=80=99est vraiment un changement de cycle politique en Espa=
+gne. Tout le monde s=E2=80=99attendait =C3=A0 une d=C3=A9faite du Parti soc=
+ialiste, mais pas aussi importante. On peut se demander sur quels crit=C3=
+=A8res se sont bas=C3=A9s les =C3=A9lecteurs pour infliger une telle d=C3=
+=A9faite au PSOE. Malgr=C3=A9 l=E2=80=99augmentation des prix des aliments =
+due au contexte international, l=E2=80=99=C3=A9conomie espagnole se porte b=
+ien par rapport =C3=A0 d=E2=80=99autres p=C3=A9riodes. Le gouvernement a do=
+nc =C3=A9t=C3=A9 puni par les =C3=A9lecteurs pour autre chose. Soit pour sa=
+ coalition avec le parti de la gauche radicale Podemos, qui est =C3=A0 l=E2=
+=80=99origine de lois assez controvers=C3=A9es. [=E2=80=A6] Soit pour ses a=
+ccords avec le parti basque Bildu, qui ont d=C3=A9plu aux =C3=A9lecteurs so=
+cialistes.=C2=A0=C2=BB Maria Elisa Alonso
+
+facebook ( http://www.facebook.com/sharer/sharer.php?u=3Dhttps://app.brief.=
+me/article/2023-05-30-15493-les-socialistes-espagnols-fragilises-par-leurs-=
+alliances ) twitter ( http://twitter.com/share?url=3Dhttps://app.brief.me/a=
+rticle/2023-05-30-15493-les-socialistes-espagnols-fragilises-par-leurs-alli=
+ances&text=3DLes%20socialistes%20espagnols%20fragilis%C3%A9s%20par%20leurs%=
+20alliances&via=3Dbriefmenews ) whatsapp ( https://api.whatsapp.com/send?te=
+xt=3Dhttps://app.brief.me/article/2023-05-30-15493-les-socialistes-espagnol=
+s-fragilises-par-leurs-alliances ) mail ( ?subject=3DLes%20socialistes%20es=
+pagnols%20fragilis%C3%A9s%20par%20leurs%20alliances&body=3DJe%20pense%20que=
+%20cet%20article%20pourrait%20t'int=C3=A9resser%20:%0ALes%20socialistes%20e=
+spagnols%20fragilis%C3%A9s%20par%20leurs%20alliances%0Ahttps://app.brief.me=
+/article/2023-05-30-15493-les-socialistes-espagnols-fragilises-par-leurs-al=
+liances )
+
+=C3=87A ALORS
+
+Entr=C3=A9e en service du premier avion d=C3=A9velopp=C3=A9 par la Chine
+
+Le premier avion de ligne d=C3=A9velopp=C3=A9 par la Chine, le C919, a effe=
+ctu=C3=A9 dimanche son premier vol commercial, marquant sa mise en service =
+officielle. Le vol, exploit=C3=A9 par la compagnie chinoise China Eastern A=
+irlines, a reli=C3=A9 Shanghai =C3=A0 P=C3=A9kin avec 128=C2=A0passagers, s=
+elon l=E2=80=99agence de presse officielle chinoise Xinhua. Le C919, produi=
+t par le constructeur a=C3=A9ronautique chinois Comac, vient concurrencer l=
+es avions moyen-courriers A320=C2=A0de l=E2=80=99europ=C3=A9en Airbus et 73=
+7=C2=A0Max de l=E2=80=99am=C3=A9ricain Boeing. Ces deux constructeurs *s=E2=
+=80=99attendent =C3=A0 une tr=C3=A8s forte progression du march=C3=A9 chino=
+is dans les 20=C2=A0prochaines ann=C3=A9es* , ont-ils d=C3=A9clar=C3=A9 ces=
+ derniers mois. La Chine repr=C3=A9sentait pr=C3=A8s de 20=C2=A0% du trafic=
+ a=C3=A9rien mondial en nombre de passagers en 2021, selon l=E2=80=99Organi=
+sation de l=E2=80=99aviation civile internationale, un organisme de l=E2=80=
+=99ONU.
+
+facebook ( http://www.facebook.com/sharer/sharer.php?u=3Dhttps://app.brief.=
+me/article/2023-05-30-15494-entree-en-service-du-premier-avion-developpe-pa=
+r-la-chine ) twitter ( http://twitter.com/share?url=3Dhttps://app.brief.me/=
+article/2023-05-30-15494-entree-en-service-du-premier-avion-developpe-par-l=
+a-chine&text=3DEntr%C3%A9e%20en%20service%20du%20premier%20avion%20d%C3%A9v=
+elopp%C3%A9%20par%20la%20Chine&via=3Dbriefmenews ) whatsapp ( https://api.w=
+hatsapp.com/send?text=3Dhttps://app.brief.me/article/2023-05-30-15494-entre=
+e-en-service-du-premier-avion-developpe-par-la-chine ) mail ( ?subject=3DEn=
+tr%C3%A9e%20en%20service%20du%20premier%20avion%20d%C3%A9velopp%C3%A9%20par=
+%20la%20Chine&body=3DJe%20pense%20que%20cet%20article%20pourrait%20t'int=C3=
+=A9resser%20:%0AEntr%C3%A9e%20en%20service%20du%20premier%20avion%20d%C3%A9=
+velopp%C3%A9%20par%20la%20Chine%0Ahttps://app.brief.me/article/2023-05-30-1=
+5494-entree-en-service-du-premier-avion-developpe-par-la-chine )
+
+=C3=87A VAUT UN CLIC
+
+Jeanne d=E2=80=99Arc en 2023
+
+=C3=80 quoi ressembleraient Jeanne d=E2=80=99Arc et William Shakespeare s=
+=E2=80=99ils vivaient =C3=A0 notre =C3=A9poque=C2=A0? La graphiste Becca Sa=
+ladin a une r=C3=A9ponse. Gr=C3=A2ce au logiciel de retouche Photoshop, ell=
+e a tir=C3=A9 le portrait de plusieurs personnalit=C3=A9s historiques dans =
+leur version moderne. Le r=C3=A9sultat, =C3=A0 d=C3=A9couvrir sur le site C=
+reapills ( https://creapills.com/portraits-personnalites-historiques-photos=
+hop-becca-saladin-20230526 ) , est bluffant de r=C3=A9alisme.
+
+facebook ( http://www.facebook.com/sharer/sharer.php?u=3Dhttps://app.brief.=
+me/article/2023-05-30-15495-jeanne-darc-en-2023 ) twitter ( http://twitter.=
+com/share?url=3Dhttps://app.brief.me/article/2023-05-30-15495-jeanne-darc-e=
+n-2023&text=3DJeanne%20d%E2%80%99Arc%20en%202023&via=3Dbriefmenews ) whatsa=
+pp ( https://api.whatsapp.com/send?text=3Dhttps://app.brief.me/article/2023=
+-05-30-15495-jeanne-darc-en-2023 ) mail ( ?subject=3DJeanne%20d%E2%80%99Arc=
+%20en%202023&body=3DJe%20pense%20que%20cet%20article%20pourrait%20t'int=C3=
+=A9resser%20:%0AJeanne%20d%E2%80%99Arc%20en%202023%0Ahttps://app.brief.me/a=
+rticle/2023-05-30-15495-jeanne-darc-en-2023 )
+
+Vous voil=C3=A0 =C2=AB=C2=A0brief=C3=A9s=C2=A0=C2=BB sur l=E2=80=99actualit=
+=C3=A9 du jour et quelques autres consid=C3=A9rations. On vous souhaite une=
+ bonne soir=C3=A9e =C3=A0 vous demander =C3=A0 quoi vous auriez ressembl=C3=
+=A9 =C3=A0 l=E2=80=99=C3=A9poque de Jeanne d=E2=80=99Arc.
+
+=E2=80=94 Mathilde Belin, Nicolas Filio, Laurent Mauriac et Aude Villiers-M=
+oriam=C3=A9
+
+   =20
+
+brief.me| ( https://www.brief.me/ )
+
+facebook ( https://www.facebook.com/briefmenews ) twitter ( https://twitter=
+.com/briefmenews/ ) twich ( https://www.twitch.tv/briefmenews ) mail ( hell=
+o@brief.me ) linkedin ( https://www.linkedin.com/company/brief-me/ )
+
+D=C3=A9couvrez nos autres m=C3=A9dias
+
+La science expliqu=C3=A9e ( https://www.brief.science )
+
+L=E2=80=99=C3=A9conomie expliqu=C3=A9e ( https://www.brief.eco )
+
+=C3=89ditions pr=C3=A9c=C3=A9dentes ( https://www.brief.me/login/NjU5MzI4:1=
+q42JZ:Y9qWsVezko4vSpPnqlxjAKrQVfuqKAnPbI_p2E7126A/?redirect=3Dhttps%3A%2F%2=
+Fapp.brief.me ) =E2=80=A2 Panoramas ( https://www.brief.me/login/NjU5MzI4:1=
+q42JZ:Y9qWsVezko4vSpPnqlxjAKrQVfuqKAnPbI_p2E7126A/?redirect=3Dhttps%3A%2F%2=
+Fapp.brief.me%2Fpanoramas )  Le projet Brief.me ( https://www.brief.me/en-b=
+ref/ ) =E2=80=A2 L=E2=80=99=C3=A9quipe ( https://www.brief.me/qui-sommes-no=
+us/ ) =E2=80=A2 Questions fr=C3=A9quentes ( https://www.brief.me/faq/ )=20
+
+T=C3=A9l=C3=A9chargez notre application mobile
+
+T=C3=A9l=C3=A9charger dans I'App Store ( https://apps.apple.com/us/app/brie=
+f-me-lactu-qui-compte/id1491061809 ) T=C3=A9l=C3=A9chargez sur Google play =
+( https://play.google.com/store/apps/details?id=3Dme.brief.app )
+
+Pour =C3=AAtre s=C3=BBr(e) de recevoir brief.me ( https://www.brief.me/ ) ,=
+ ajoutez =C2=AB hello@brief.me =C2=BB =C3=A0 votre carnet d=E2=80=99adresse=
+s. Vous =C3=AAtes inscrit(e) sur cette liste car vous avez demand=C3=A9 =C3=
+=A0 recevoir les informations de Brief.me.
+
+Se d=C3=A9sinscrire ( https://www.brief.me/login/NjU5MzI4:1q42JZ:Y9qWsVezko=
+4vSpPnqlxjAKrQVfuqKAnPbI_p2E7126A/?redirect=3D%2Fcompte%2Foptins%2F ) =E2=
+=80=A2 Contact ( hello@brief.me )
+--e0e471fedb79663d3c80977e7614c5905ed409740f34bf88ab446a1a8bf1
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3Dhttp://www.w3.o=
+rg/1999/xhtml xmlns:o=3Durn:schemas-microsoft-com:office:office xmlns:v=3Du=
+rn:schemas-microsoft-com:vml><head><!--[if gte mso 9]><xml><o:OfficeDocumen=
+tSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocum=
+entSettings></xml><![endif]--><title>Brief.me</title><meta content=3D"text/=
+html; charset=3Dutf-8" http-equiv=3DContent-Type><meta content=3D"IE=3Dedge=
+" http-equiv=3DX-UA-Compatible><meta content=3D"width=3Ddevice-width, initi=
+al-scale=3D1.0" name=3Dviewport><style type=3Dtext/css>
+			a{outline:none; color:#424242; text-decoration:underline;}
+			a:hover, .h-n a:hover .txt{text-decoration:none!important;}
+			.h-u a{text-decoration:none;}
+			.h-u a:hover{text-decoration:underline!important;}
+			a[x-apple-data-detectors]{color:inherit!important; text-decoration:none!=
+important;}
+			a[href^=3D"tel"]:hover{text-decoration:none!important;}
+			.active-i a:hover,
+			.active-t:hover{opacity:0.8;}
+			.active-i a,
+			.active-t{transition:all 0.3s ease;}
+			a img{border:none;}
+			b, strong{font-weight:700;}
+			p{margin:0;}
+			th{padding:0;}
+			table td{mso-line-height-rule:exactly;}
+			.ns span, .ns a{color:inherit!important; text-decoration:none!important;=
+ border:none!important;}
+			.edition-color{color:#de4949!important}
+			.l-fff a{color:#fff;}
+			.l-F13841 a{color:#F13841;}
+			.l-447BCD a{color:#447BCD;}
+			.l-FF6801 a{color:#FF6801;}
+			.l-A8006F a{color:#A8006F;}
+			.l-19996A a{color:#19996A;}
+			.l-00989A a{color:#00989A;}
+			.l-6C52C7 a{color:#6C52C7;}
+			.l-61A1ED a{color:#61A1ED;}
+			.l-DE4949 a{color:#DE4949;}
+			.l-6676FC a{color:#6676FC;}
+			.b-6C52C7 b{color:#6C52C7;}
+			.pm-0 p{margin:0px !important;}
+			.cat2 {background-color:#fffffe !important;}
+			.cat3 {background-color:#fffffe !important;}
+			.cat3 {background-color:#fffffe !important;}
+			.cat5 {background-color:#fffffe !important;}
+			.cat6 {background-color:#fffffe !important;}
+			.cat7 {background-color:#eff6fd !important;}
+			.cat13 {background-color:#fffffe !important;}
+			.catx {background-color:#fffffe !important;}
+			.cat_intro_outro a{color:#de4949!important}
+            .cat1_list_cell p {margin: 0;padding:14px 0;mso-margin-top-alt:=
+14px;mso-margin-bottom-alt:14px;}
+            .cat1_list_cell span {color:#ff6801;}
+		</style><style data-premailer=3Dignore>
+			@media only screen and (min-width: 480px) {
+	            .mobile_only {
+	                display: none !important
+	            }
+
+	            .mj-column-per-100 {
+	                width: 100% !important
+	            }
+
+	            .mj-column-per-100 {
+	                width: 100% !important
+	            }
+
+	            .mj-column-per-19 {
+	                width: 19% !important
+	            }
+
+	            .mj-column-per-81 {
+	                width: 81% !important
+	            }
+
+	            .mj-column-per-40 {
+	                width: 40% !important
+	            }
+
+	            .mj-column-per-60 {
+	                width: 60% !important
+	            }
+	        }
+			@media only screen and (max-width:624px) {
+				.w-100p{width:100%!important;}
+				.tflex{display:block!important;width:100%!important;}
+				.t-c{float:none!important;margin:0 auto!important;}
+				.d-tc{display:table-cell!important;}
+				.d-b{display:block!important;}
+				.ta-c{text-align:center!important;}
+				.ta-l{text-align:left!important;}
+				.hm{display:none!important;width:0!important;height:0!important;padding=
+:0!important;font-size:0!important;line-height:0!important;}
+				.va-m{vertical-align:middle!important;}
+				.w-9{width:9px!important;}
+				.w-16{width:16px!important;}
+				.w-27{width:27px!important;}
+				.w-47{width:47px!important;}
+				.w-150{width:150px!important;}
+				.wi-141 img{width:141px!important;height:auto!important;}
+				.wi-188 img{width:188px!important;height:auto!important;}
+				.wi-100p img{width:100%!important;height:auto!important;}
+				.plr-2{padding-left:2px!important;padding-right:2px!important;}
+				.plr-8{padding-left:8px!important;padding-right:8px!important;}
+				.plr-15{padding-left:15px!important;padding-right:15px!important;}
+				.plr-16{padding-left:16px!important;padding-right:16px!important;}
+				.pl-15{padding-left:15px!important;}
+				.pr-10{padding-right:10px!important;}
+				.pr-13{padding-right:13px!important;}
+				.pt-0{padding-top:0!important;}
+				.pt-14{padding-top:14px!important;}
+				.pt-18{padding-top:18px!important;}
+				.pt-22{padding-top:22px!important;}
+				.pt-23{padding-top:23px!important;}
+				.pt-24{padding-top:24px!important;}
+				.pt-31{padding-top:31px!important;}
+				.pt-39{padding-top:39px!important;}
+				.pb-0{padding-bottom:0!important;}
+				.pb-4{padding-bottom:4px!important;}
+				.pb-12{padding-bottom:12px!important;}
+				.pb-13{padding-bottom:13px!important;}
+				.pb-16{padding-bottom:16px!important;}
+				.pb-17{padding-bottom:17px!important;}
+				.pb-22{padding-bottom:22px!important;}
+				.pb-23{padding-bottom:23px!important;}
+				.pb-24{padding-bottom:24px!important;}
+				.pb-26{padding-bottom:26px!important;}
+				.pb-29{padding-bottom:29px!important;}
+				.pb-32{padding-bottom:32px!important;}
+				.pb-38{padding-bottom:38px!important;}
+			}
+			@media only screen and (max-width:374px) {
+				.fs-13-374{font-size:13px !important;}
+				.fs-14-374{font-size:14px !important;}
+				.fs-15-374{font-size:15px !important;}
+				.fs-16-374{font-size:16px !important;}
+				.fs-18-374{font-size:18px !important;}
+				.fs-22-374{font-size:22px !important;}
+				.fs-24-374{font-size:24px !important;}
+				.fs-26-374{font-size:26px !important;}
+				.fs-30-374{font-size:30px !important;}
+				.lh-15-374{line-height:15px !important;}
+				.lh-22-374{line-height:22px !important;}
+				.lh-24-374{line-height:24px !important;}
+				.lh-26-374{line-height:26px !important;}
+				.lh-28-374{line-height:28px !important;}
+				.lh-30-374{line-height:30px !important;}
+				.lh-32-374{line-height:32px !important;}
+				.lh-40-374{line-height:40px !important;}
+				.lh-42-374{line-height:42px !important;}
+				.pr-0-374{padding-right:0 !important;}
+				.pb-2-374{padding-bottom:2px !important;}
+				.pb-14-374{padding-bottom:14px !important;}
+				.pb-20-374{padding-bottom:20px !important;}
+				.pb-24-374{padding-bottom:24px !important;}
+				.pb-36-374{padding-bottom:36px !important;}
+				.pt-16-374{padding-top:16px !important;}
+				.pt-18-374{padding-top:18px !important;}
+				.pt-24-374{padding-top:24px !important;}
+				.pt-30-374{padding-top:30px !important;}
+				.w-7-374{width:7px !important;}
+				.w-16-374{width:16px !important;}
+				.w-19-374{width:19px !important;}
+				.w-90-374{width:90px !important;}
+				.w-104-374{width:104px !important;}
+				.w-113-374{width:113px !important;}
+				.wi-100p-374 img{width:100%!important; height:auto!important;}
+				.wi-124-374 img{width:124px!important; height:auto!important;}
+				.wi-141-374 img{width:141px!important; height:auto!important;}
+				.wi-200-374 img{width:200px!important; height:auto!important;}
+				.tflex-374{display:block!important; width:100%!important;}
+			}
+			@media (prefers-dark-interface) {body{-apple-color-filter:none;}}
+		</style></head><body style=3D"background:#fff; margin:0; padding:0; -webk=
+it-text-size-adjust:100%; -ms-text-size-adjust:100%;"><span style=3D"displa=
+y: none !important;"><p>Un troisi=C3=A8me mandat pour le pr=C3=A9sident tur=
+c.</p> <p>Dans B=E2=80=8Cr=E2=80=8Ci=E2=80=8Ce=E2=80=8Cf=E2=80=8C.=E2=80=8C=
+m=E2=80=8Ce aujourd=E2=80=99hui, le pr=C3=A9sident turc Erdogan r=C3=A9=C3=
+=A9lu pour un troisi=C3=A8me mandat, le premier avion de ligne chinois et d=
+es personnalit=C3=A9s historiques r=C3=A9actualis=C3=A9es.</p></span>      =
+        <table border=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p st=
+yle=3Dbackground:#f8f8f8;width:100%;padding:0;border-collapse:collapse;bord=
+er-spacing:0px;><tr><td><!--[if mso | IE]><table align=3D"center" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" style=3D"width:608px;" w=
+idth=3D"608"><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height=
+-rule:exactly;"><![endif]--><div style=3D"Margin:0px auto;max-width:608px;"=
+><table align=3Dcenter border=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw=
+-100p role=3Dpresentation style=3Dwidth:100%;><tbody><tr><td class=3D"pt-31=
+ pt-24-374 pb-12" style=3D"direction:ltr;font-size:0px;padding:25px 24px 16=
+px;text-align:left;vertical-align:top;"><!--[if mso | IE]><table role=3D"pr=
+esentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td style=
+=3D"vertical-align:middle;width:560px;"><![endif]--><div class=3D"mj-column=
+-per-100 outlook-group-fix" style=3Dfont-size:13px;text-align:left;directio=
+n:ltr;display:inline-block;vertical-align:middle;width:100%;><table border=
+=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p role=3Dpresentation wid=
+th=3D100%><tbody><tr><td class=3D"wi-188 wi-141-374" valign=3Dtop><a clickt=
+racking=3D"on" href=3Dhttps://url3003.brief.me/ss/c/AWD9AEydda1BlzAIDIER2jf=
+_izozKv5oxSwW-JeaNG0/3wm/ck1gpKoJTQui8ozUm9v7aQ/h0/jBY3X0zDausLsmNtLe6nSm4V=
+OBAUu2umFnPhVHiqtM0 style=3Dtext-decoration:none;><img alt=3Dbrief.me| src=
+=3Dhttps://www.brief.me/static/editorial/img/newsletters/briefme_quotidien/=
+v2/logo-01.png style=3D"width:164px; font:30px/34px Arial, Helvetica, sans-=
+serif; color:#424242; vertical-align:top;" width=3D164></a></td><td class=
+=3Dva-m valign=3Dtop><table align=3Dright cellpadding=3D0 cellspacing=3D0><=
+tr><td class=3Dpt-0 style=3D"padding:16px 0 0;"><table cellpadding=3D0 cell=
+spacing=3D0 class=3Dw-100p width=3D100%><tr><td width=3D32><a clicktracking=
+=3D"on" href=3D"https://url3003.brief.me/ss/c/AWD9AEydda1BlzAIDIER2vTWGuwPv=
+G6ULhhDmAzMbvnai4Iy8-_GoDSn6aYUl1jQL_xHaInVTtIM4cAxX-gRkj2rGqRW32xWtsBRwwO7=
+FDZJDj38y94F78VJs2r0m3Rq-6fDDEQJkDRM7GxL9Ku_X2FvtWI9ia6ir7Z5aCYy99eNf_caT9_=
+KUnMx7OIGDckbdKBevJK3Bu_bDGaVC5OG_rkSbMJIOIYVItI_9ZftDqzLiUbIHTKlGBlOflG9NA=
+p1a2fL7OyEp-v9d1NbYlmhFOtEjGXjRJnVZG36vnDrXVspWAXgK-bd1OAIEK6or6QZKCAQgyNrW=
+CNwubW3Vq24Gmi72Mcubis3T3gZyRpDoHm98eO2ZD8Ct2z0lRC-5V4fmOpilAChq1yA0c9W22XW=
+bk-IA8d0BXnBFY4IGcgJw40/3wm/ck1gpKoJTQui8ozUm9v7aQ/h1/KJZjkm3Pvypwb-rhtYPVJ=
+C6Y08mAokIbHbrISzol49A" style=3Dtext-decoration:none;><img alt=3D"ic=C3=B4n=
+e 1" src=3Dhttps://www.brief.me/static/editorial/img/newsletters/briefme_qu=
+otidien/v2/ico-01.png style=3D"width:26px; display:block; vertical-align:to=
+p;" width=3D26></a></td><td align=3Dright style=3D"font:bold 14px/16px Aria=
+l, Helvetica, sans-serif; color:#424242; letter-spacing:-0.2px;"><a clicktr=
+acking=3D"on" href=3D"https://url3003.brief.me/ss/c/AWD9AEydda1BlzAIDIER2vT=
+WGuwPvG6ULhhDmAzMbvnai4Iy8-_GoDSn6aYUl1jQL_xHaInVTtIM4cAxX-gRkj2rGqRW32xWts=
+BRwwO7FDZJDj38y94F78VJs2r0m3Rq-6fDDEQJkDRM7GxL9Ku_X2FvtWI9ia6ir7Z5aCYy99eNf=
+_caT9_KUnMx7OIGDckbdKBevJK3Bu_bDGaVC5OG_rkSbMJIOIYVItI_9ZftDqzLiUbIHTKlGBlO=
+flG9NAp1a2fL7OyEp-v9d1NbYlmhFOtEjGXjRJnVZG36vnDrXVspWAXgK-bd1OAIEK6or6QZKCA=
+QgyNrWCNwubW3Vq24Gmi72Mcubis3T3gZyRpDoHm98eO2ZD8Ct2z0lRC-5V4fmOpilAChq1yA0c=
+9W22XWbk-IA8d0BXnBFY4IGcgJw40/3wm/ck1gpKoJTQui8ozUm9v7aQ/h2/vbSHM4JIFYfimd5=
+6wsoQ_s9fxE6_QTXOGFuLHV_IcYE" style=3D"color:#424242; text-decoration:none;=
+"><span class=3Dd-b>=C3=89couter</span> l=E2=80=99=C3=A9dition</a></td></tr=
+></table></td></tr></table></td></tr></tbody></table></div><!--[if mso | IE=
+]></td></tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso=
+ | IE]></td></tr></table><![endif]--></td></tr></table><table border=3D0 ce=
+llpadding=3D0 cellspacing=3D0 class=3Dw-100p style=3Dbackground:#f8f8f8;wid=
+th:100%;padding:0;border-collapse:collapse;border-spacing:0px;><tr><td><!--=
+[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0" class=3D"" style=3D"width:608px;" width=3D"608"><tr><td style=
+=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-=
+-><div style=3D"Margin:0px auto;max-width:608px;"><table align=3Dcenter bor=
+der=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p role=3Dpresentation =
+style=3Dwidth:100%;><tbody><tr><td class=3Dpb-23 style=3D"direction:ltr;fon=
+t-size:0px;padding:0 24px 23px;text-align:left;vertical-align:top;"><!--[if=
+ mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0"><tr><td style=3D"vertical-align:middle;width:560px;"><![endif=
+]--><div class=3D"mj-column-per-100 outlook-group-fix" style=3Dfont-size:13=
+px;text-align:left;direction:ltr;display:inline-block;vertical-align:middle=
+;width:100%;><table border=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-10=
+0p role=3Dpresentation width=3D100%><tbody><tr><td class=3Dpb-16 style=3D"p=
+adding:0 0 24px; font:bold 14px/24px Arial, Helvetica, sans-serif; color:#D=
+E4949;"> Mardi 30 mai 2023 </td></tr><tr><td class=3D"fs-18-374 lh-28-374" =
+style=3D"font:bold 20px/30px Arial, Helvetica, sans-serif; color:#424242;">=
+<p>Dans B=E2=80=8Cr=E2=80=8Ci=E2=80=8Ce=E2=80=8Cf=E2=80=8C.=E2=80=8Cm=E2=80=
+=8Ce aujourd=E2=80=99hui, le pr=C3=A9sident turc Erdogan r=C3=A9=C3=A9lu po=
+ur un troisi=C3=A8me mandat, le premier avion de ligne chinois et des perso=
+nnalit=C3=A9s historiques r=C3=A9actualis=C3=A9es.</p></td></tr></tbody></t=
+able></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbod=
+y></table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr><=
+/table>             <table border=3D0 cellpadding=3D0 cellspacing=3D0 class=
+=3Dw-100p style=3Dbackground:#f8f8f8;width:100%;padding:0;border-collapse:c=
+ollapse;border-spacing:0px;><tr><td class=3Dcat2_border_bottom style=3D"bor=
+der-bottom: 2px solid #DE4949"><!--[if mso | IE]><table align=3D"center" bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" style=3D"width:60=
+8px;" width=3D"608"><tr><td style=3D"line-height:0px;font-size:0px;mso-line=
+-height-rule:exactly;"><![endif]--><div style=3D"Margin:0px auto;max-width:=
+608px;"><table align=3Dcenter border=3D0 cellpadding=3D0 cellspacing=3D0 cl=
+ass=3Dw-100p role=3Dpresentation style=3Dwidth:100%;><tbody><tr><td class=
+=3Dpt-23 style=3D"direction:ltr;font-size:0px;padding:24px 24px 0;text-alig=
+n:left;vertical-align:top;"><!--[if mso | IE]><table role=3D"presentation" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td style=3D"vertical-=
+align:middle;width:560px;"><![endif]--><div class=3D"mj-column-per-100 outl=
+ook-group-fix" style=3Dfont-size:13px;text-align:left;direction:ltr;display=
+:inline-block;vertical-align:middle;width:100%;><table border=3D0 cellpaddi=
+ng=3D0 cellspacing=3D0 class=3Dw-100p role=3Dpresentation width=3D100%><tbo=
+dy><tr><td><table cellpadding=3D0 cellspacing=3D0><tr><td class=3D"l-fff ca=
+t2_background" style=3D"background-color: #DE4949; padding:3px 25px 1px; fo=
+nt:bold 16px/24px Arial, Helvetica, sans-serif; color:#fff; border-radius:2=
+7px 27px 0 0;"> ON REMBOBINE </td></tr></table></td></tr></tbody></table></=
+div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody></tab=
+le></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></table>=
+<table border=3D0 cellpadding=3D0 cellspacing=3D0 class=3D"cat2 w-100p" sty=
+le=3D"background-color: #fffffe; width:100%;padding:0;border-collapse:colla=
+pse;border-spacing:0px;"><tr><td><!--[if mso | IE]><table align=3D"center" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" style=3D"width:=
+608px;" width=3D"608"><tr><td style=3D"line-height:0px;font-size:0px;mso-li=
+ne-height-rule:exactly;"><![endif]--><div style=3D"Margin:0px auto;max-widt=
+h:608px;"><table align=3Dcenter border=3D0 cellpadding=3D0 cellspacing=3D0 =
+class=3Dw-100p role=3Dpresentation style=3Dwidth:100%;><tbody><tr><td class=
+=3Dpt-30-374 style=3D"direction:ltr;font-size:0px;padding:32px 24px;text-al=
+ign:left;vertical-align:top;"><!--[if mso | IE]><table role=3D"presentation=
+" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td style=3D"vertica=
+l-align:middle;width:560px;"><![endif]--><div class=3D"mj-column-per-100 ou=
+tlook-group-fix" style=3Dfont-size:13px;text-align:left;direction:ltr;displ=
+ay:inline-block;vertical-align:middle;width:100%;><table border=3D0 cellpad=
+ding=3D0 cellspacing=3D0 class=3Dw-100p role=3Dpresentation width=3D100%><t=
+body class=3Dcat2 style=3D"background-color: #fffffe"><tr><td style=3D"padd=
+ing:0 0 3px;"><table align=3Dleft cellpadding=3D0 cellspacing=3D0><tr><td s=
+tyle=3D"padding:2px 4px 0 0; mso-padding-alt:2px 4px 0 0;"><table cellpaddi=
+ng=3D0 cellspacing=3D0 width=3D100%><tr><td class=3D"fs-13-374 lh-15-374 pb=
+-2-374 cat2_title cat2_kicker" style=3D"color: #DE4949; background-color: #=
+fddfe1; padding:3px 6px; font:bold 15px/16px Arial, Helvetica, sans-serif; =
+border-radius:3px;"> UKRAINE-RUSSIE </td></tr></table></td></tr></table><di=
+v class=3D"fs-16-374 lh-26-374 pm-0" style=3D"font-family: Arial,Helvetica,=
+sans-serif; font-size: 18px; line-height: 28px; color: #424242; text-indent=
+:7px;"><p><strong>Le gouvernement russe a accus=C3=A9 ce matin l=E2=80=99ar=
+m=C3=A9e ukrainienne d=E2=80=99avoir lanc=C3=A9 une attaque de drones sur p=
+lusieurs sites =C3=A0 Moscou.</strong> Des b=C3=A2timents ont subi des =C2=
+=AB=C2=A0d=C3=A9g=C3=A2ts mineurs=C2=A0=C2=BB et personne n=E2=80=99a =C3=
+=A9t=C3=A9 =C2=AB=C2=A0gravement bless=C3=A9=C2=A0=C2=BB, selon le maire de=
+ la capitale russe. Des missiles et drones russes ont vis=C3=A9 Kiev dans l=
+e week-end et la nuit derni=C3=A8re, faisant un mort, selon le maire de la =
+capitale ukrainienne.</p></div></td></tr><tr><td class=3D"fs-16-374 lh-26-3=
+74 h-n" style=3D"padding:0 0 25px; font-family: Helvetica,Arial,sans-serif;=
+ font-size: 18px; line-height: 28px; color: #424242;" valign=3Dtop><a click=
+tracking=3D"on" href=3D"https://url3003.brief.me/ss/c/pzEjhFizng49ja4-MJl0G=
+H3UTIhu52G4m-72ucbkjTY99Oo6fSCvkL6SoqjR13L5uP8jpqOUUx0lTwXJQ71k-qxJk9PvAcjV=
+8yDSjaZNSogv2BBFPvKC4tx-OVZ8u6C1/3wm/ck1gpKoJTQui8ozUm9v7aQ/h3/grBSkp8T6p8H=
+TA7RIl2siqWb92j-nc6h3tyMZ5MnjA0" style=3D"color: #DE4949; text-decoration:n=
+one; color:#424242;"><span style=3D"display:inline-block; vertical-align:-2=
+px;"><img alt=3D"picto cat2" src=3Dhttps://www.brief.me/static/editorial/im=
+g/newsletters/briefme_quotidien/v2/picto_link_cat2.png style=3D"width:20px;=
+ display:block; vertical-align:top;" width=3D20></span>=E2=80=82<span class=
+=3Dtxt style=3Dtext-decoration:underline;>Lire notre panorama sur l=E2=80=
+=99Ukraine.</span></a></td></tr><tr><td align=3Dcenter style=3D"padding:0 0=
+ 24px; line-height:1px; font-size:1px; mso-line-height-rule:at-least;"><img=
+ alt=3D"separator cat2" src=3Dhttps://www.brief.me/static/editorial/img/new=
+sletters/briefme_quotidien/v2/separator_cat2.png style=3D"width:48px; verti=
+cal-align:top;" width=3D48></td></tr><tr><td style=3D"padding:0 0 24px;"><t=
+able align=3Dleft cellpadding=3D0 cellspacing=3D0><tr><td style=3D"padding:=
+2px 4px 0 0; mso-padding-alt:2px 4px 0 0;"><table cellpadding=3D0 cellspaci=
+ng=3D0 width=3D100%><tr><td class=3D"fs-13-374 lh-15-374 pb-2-374 cat2_titl=
+e cat2_kicker" style=3D"color: #DE4949; background-color: #fddfe1; padding:=
+3px 6px; font:bold 15px/16px Arial, Helvetica, sans-serif; border-radius:3p=
+x;"> KOSOVO </td></tr></table></td></tr></table><div class=3D"fs-16-374 lh-=
+26-374 pm-0" style=3D"font-family: Arial,Helvetica,sans-serif; font-size: 1=
+8px; line-height: 28px; color: #424242; text-indent:7px;"><p><strong>30=C2=
+=A0soldats de la force internationale de l=E2=80=99Otan au Kosovo, la KFor,=
+ ont =C3=A9t=C3=A9 bless=C3=A9s dans des heurts avec des manifestants serbe=
+s hier</strong>, a rapport=C3=A9 aujourd=E2=80=99hui cette alliance militai=
+re de 31=C2=A0pays. La pr=C3=A9sidence serbe a =C3=A9galement fait =C3=A9ta=
+t de bless=C3=A9s parmi les manifestants. Ces derniers protestaient contre =
+la prise de fonction de maires albanais nouvellement =C3=A9lus dans quatre =
+localit=C3=A9s =C3=A0 majorit=C3=A9 serbe du nord du Kosovo. La Serbie n=E2=
+=80=99a jamais reconnu l=E2=80=99ind=C3=A9pendance proclam=C3=A9e en 2008=
+=C2=A0par son ex-province.</p></div></td></tr><tr><td align=3Dcenter style=
+=3D"padding:0 0 24px; line-height:1px; font-size:1px; mso-line-height-rule:=
+at-least;"><img alt=3D"separator cat2" src=3Dhttps://www.brief.me/static/ed=
+itorial/img/newsletters/briefme_quotidien/v2/separator_cat2.png style=3D"wi=
+dth:48px; vertical-align:top;" width=3D48></td></tr><tr><td style=3D"paddin=
+g:0 0 24px;"><table align=3Dleft cellpadding=3D0 cellspacing=3D0><tr><td st=
+yle=3D"padding:2px 4px 0 0; mso-padding-alt:2px 4px 0 0;"><table cellpaddin=
+g=3D0 cellspacing=3D0 width=3D100%><tr><td class=3D"fs-13-374 lh-15-374 pb-=
+2-374 cat2_title cat2_kicker" style=3D"color: #DE4949; background-color: #f=
+ddfe1; padding:3px 6px; font:bold 15px/16px Arial, Helvetica, sans-serif; b=
+order-radius:3px;"> OUGANDA </td></tr></table></td></tr></table><div class=
+=3D"fs-16-374 lh-26-374 pm-0" style=3D"font-family: Arial,Helvetica,sans-se=
+rif; font-size: 18px; line-height: 28px; color: #424242; text-indent:7px;">=
+<p><strong>Le pr=C3=A9sident de l=E2=80=99Ouganda, Yoweri Museveni, a promu=
+lgu=C3=A9 une loi =C2=AB=C2=A0anti-homosexualit=C3=A9=C2=A0=C2=BB</strong>,=
+ a rapport=C3=A9 hier la pr=C3=A9sidence. Le texte, adopt=C3=A9 d=C3=A9but =
+mai par le Parlement, renforce la l=C3=A9gislation anti-homosexuelle dans c=
+e pays o=C3=B9 l=E2=80=99homosexualit=C3=A9 est ill=C3=A9gale=C2=A0: il ren=
+d passibles de peine de mort certaines relations homosexuelles et criminali=
+se la =C2=AB=C2=A0promotion=C2=A0=C2=BB de l=E2=80=99homosexualit=C3=A9. Pl=
+usieurs gouvernements de pays occidentaux ont condamn=C3=A9 cette loi.</p><=
+/div></td></tr><tr><td align=3Dcenter style=3D"padding:0 0 24px; line-heigh=
+t:1px; font-size:1px; mso-line-height-rule:at-least;"><img alt=3D"separator=
+ cat2" src=3Dhttps://www.brief.me/static/editorial/img/newsletters/briefme_=
+quotidien/v2/separator_cat2.png style=3D"width:48px; vertical-align:top;" w=
+idth=3D48></td></tr><tr><td style=3D"padding:0 0 3px;"><table align=3Dleft =
+cellpadding=3D0 cellspacing=3D0><tr><td style=3D"padding:2px 4px 0 0; mso-p=
+adding-alt:2px 4px 0 0;"><table cellpadding=3D0 cellspacing=3D0 width=3D100=
+%><tr><td class=3D"fs-13-374 lh-15-374 pb-2-374 cat2_title cat2_kicker" sty=
+le=3D"color: #DE4949; background-color: #fddfe1; padding:3px 6px; font:bold=
+ 15px/16px Arial, Helvetica, sans-serif; border-radius:3px;"> BATTERIES </t=
+d></tr></table></td></tr></table><div class=3D"fs-16-374 lh-26-374 pm-0" st=
+yle=3D"font-family: Arial,Helvetica,sans-serif; font-size: 18px; line-heigh=
+t: 28px; color: #424242; text-indent:7px;"><p><strong>Le ministre de l=E2=
+=80=99=C3=89conomie, Bruno Le Maire, a inaugur=C3=A9 aujourd=E2=80=99hui la=
+ premi=C3=A8re grande usine de batteries pour voitures =C3=A9lectriques con=
+struite en France.</strong> Situ=C3=A9e dans le Pas-de-Calais, cette usine =
+de la coentreprise franco-allemande ACC (Stellantis, TotalEnergies, Mercede=
+s-Benz) doit entrer en service cet =C3=A9t=C3=A9. En 2022, la quasi-totalit=
+=C3=A9 de la production mondiale de batteries =C3=A9lectriques =C3=A9tait a=
+ssur=C3=A9e par 10=C2=A0entreprises, toutes asiatiques, selon les donn=C3=
+=A9es de SNE Research, un cabinet de conseil sud-cor=C3=A9en.</p></div></td=
+></tr><tr><td class=3D"fs-16-374 lh-26-374 h-n" style=3D"padding:0 0 25px; =
+font-family: Helvetica,Arial,sans-serif; font-size: 18px; line-height: 28px=
+; color: #424242;" valign=3Dtop><a clicktracking=3D"on" href=3D"https://url=
+3003.brief.me/ss/c/pzEjhFizng49ja4-MJl0GFN21MwCXEOmTljptCKsPrdgEVtYQq3i7L_K=
+45sY8yPck7IdGOXqLCYOd64FxMAbmPJK_lN2jyXEwL-xwbpCsewMeO8wFkWKVlnIc2hdBRKnNQ8=
+QhI5oDoNC8lPrG8F0P2pjS3S8RbU8QtaWYwhuVyljdX4zA3-xR4iDvvU-iuEM_Xr1ZT53fAn_c0=
+dpcQAi4g/3wm/ck1gpKoJTQui8ozUm9v7aQ/h4/Ff8IBsIgXlEz2KtxHTKh4QJSUSBZuLfgWxa_=
+qP7-5ic" style=3D"color: #DE4949; text-decoration:none; color:#424242;"><sp=
+an style=3D"display:inline-block; vertical-align:-2px;"><img alt=3D"picto c=
+at2" src=3Dhttps://www.brief.me/static/editorial/img/newsletters/briefme_qu=
+otidien/v2/picto_link_cat2.png style=3D"width:20px; display:block; vertical=
+-align:top;" width=3D20></span>=E2=80=82<span class=3Dtxt style=3Dtext-deco=
+ration:underline;>Lire notre article sur la production de batteries =C3=A9l=
+ectriques.</span></a></td></tr><tr><td align=3Dcenter style=3D"padding:0 0 =
+24px; line-height:1px; font-size:1px; mso-line-height-rule:at-least;"><img =
+alt=3D"separator cat2" src=3Dhttps://www.brief.me/static/editorial/img/news=
+letters/briefme_quotidien/v2/separator_cat2.png style=3D"width:48px; vertic=
+al-align:top;" width=3D48></td></tr><tr><td style=3D"padding:0 0 3px;"><tab=
+le align=3Dleft cellpadding=3D0 cellspacing=3D0><tr><td style=3D"padding:2p=
+x 4px 0 0; mso-padding-alt:2px 4px 0 0;"><table cellpadding=3D0 cellspacing=
+=3D0 width=3D100%><tr><td class=3D"fs-13-374 lh-15-374 pb-2-374 cat2_title =
+cat2_kicker" style=3D"color: #DE4949; background-color: #fddfe1; padding:3p=
+x 6px; font:bold 15px/16px Arial, Helvetica, sans-serif; border-radius:3px;=
+"> YVAN COLONNA </td></tr></table></td></tr></table><div class=3D"fs-16-374=
+ lh-26-374 pm-0" style=3D"font-family: Arial,Helvetica,sans-serif; font-siz=
+e: 18px; line-height: 28px; color: #424242; text-indent:7px;"><p>Une commis=
+sion parlementaire charg=C3=A9e d=E2=80=99enqu=C3=AAter sur les circonstanc=
+es de l=E2=80=99agression mortelle du militant ind=C3=A9pendantiste corse Y=
+van Colonna <strong>a conclu =C3=A0 des =C2=AB=C2=A0d=C3=A9faillances=C2=A0=
+=C2=BB des autorit=C3=A9s p=C3=A9nitentiaires</strong>, dans un rapport pub=
+li=C3=A9 aujourd=E2=80=99hui. Yvan Colonna, qui purgeait une peine pour l=
+=E2=80=99assassinat du pr=C3=A9fet Claude =C3=89rignac en 1998, est mort le=
+ 21=C2=A0mars 2022=C2=A0apr=C3=A8s avoir =C3=A9t=C3=A9 attaqu=C3=A9 par un =
+cod=C3=A9tenu radicalis=C3=A9 =C3=A0 la prison d=E2=80=99Arles.</p></div></=
+td></tr><tr><td class=3D"fs-16-374 lh-26-374 h-n" style=3D"padding:0 0 25px=
+; font-family: Helvetica,Arial,sans-serif; font-size: 18px; line-height: 28=
+px; color: #424242;" valign=3Dtop><a clicktracking=3D"on" href=3Dhttps://ur=
+l3003.brief.me/ss/c/AWD9AEydda1BlzAIDIER2gCUF8OSh5uy_K0DGtMms4XSVuXdSoGpi8e=
+TWVeJBKTE7O3lcSloPK59Ip-edu2Bg8ahjSo4KL8aC8fBbkvzDEsoNTCv9R_EtjxtMMHJluME/3=
+wm/ck1gpKoJTQui8ozUm9v7aQ/h5/O_Hzl4GaN1UecMKlDDwjzH5uRzEZlC2W5zWoDd2Y4Dg st=
+yle=3D"color: #DE4949; text-decoration:none; color:#424242;"><span style=3D=
+"display:inline-block; vertical-align:-2px;"><img alt=3D"picto cat2" src=3D=
+https://www.brief.me/static/editorial/img/newsletters/briefme_quotidien/v2/=
+picto_link_cat2.png style=3D"width:20px; display:block; vertical-align:top;=
+" width=3D20></span>=E2=80=82<span class=3Dtxt style=3Dtext-decoration:unde=
+rline;>Consulter le rapport d=E2=80=99enqu=C3=AAte parlementaire.</span></a=
+></td></tr><tr><td align=3Dcenter style=3D"padding:0 0 24px; line-height:1p=
+x; font-size:1px; mso-line-height-rule:at-least;"><img alt=3D"separator cat=
+2" src=3Dhttps://www.brief.me/static/editorial/img/newsletters/briefme_quot=
+idien/v2/separator_cat2.png style=3D"width:48px; vertical-align:top;" width=
+=3D48></td></tr><tr><td style=3D"padding:0 0 24px;"><table align=3Dleft cel=
+lpadding=3D0 cellspacing=3D0><tr><td style=3D"padding:2px 4px 0 0; mso-padd=
+ing-alt:2px 4px 0 0;"><table cellpadding=3D0 cellspacing=3D0 width=3D100%><=
+tr><td class=3D"fs-13-374 lh-15-374 pb-2-374 cat2_title cat2_kicker" style=
+=3D"color: #DE4949; background-color: #fddfe1; padding:3px 6px; font:bold 1=
+5px/16px Arial, Helvetica, sans-serif; border-radius:3px;"> FRAUDE SOCIALE =
+</td></tr></table></td></tr></table><div class=3D"fs-16-374 lh-26-374 pm-0"=
+ style=3D"font-family: Arial,Helvetica,sans-serif; font-size: 18px; line-he=
+ight: 28px; color: #424242; text-indent:7px;"><p>Le ministre charg=C3=A9 de=
+s Comptes publics, Gabriel Attal, a pr=C3=A9sent=C3=A9 dans une interview a=
+u Parisien publi=C3=A9e hier soir <strong>un plan visant =C3=A0 lutter cont=
+re la fraude sociale, qui permettrait selon lui de doubler les redressement=
+s entre 2022=C2=A0et 2027</strong>. Il souhaite renforcer les conditions de=
+ r=C3=A9sidence en France pour b=C3=A9n=C3=A9ficier d=E2=80=99allocations s=
+ociales, de six mois actuellement pour certaines =C3=A0 neuf mois, et faire=
+ fusionner la carte Vitale et la carte d=E2=80=99identit=C3=A9 pour lutter =
+contre les fraudes aux prestations de sant=C3=A9.</p></div></td></tr><tr><t=
+d align=3Dcenter style=3D"padding:0 0 24px; line-height:1px; font-size:1px;=
+ mso-line-height-rule:at-least;"><img alt=3D"separator cat2" src=3Dhttps://=
+www.brief.me/static/editorial/img/newsletters/briefme_quotidien/v2/separato=
+r_cat2.png style=3D"width:48px; vertical-align:top;" width=3D48></td></tr><=
+tr><td style=3D"padding:0 0 3px;"><table align=3Dleft cellpadding=3D0 cells=
+pacing=3D0><tr><td style=3D"padding:2px 4px 0 0; mso-padding-alt:2px 4px 0 =
+0;"><table cellpadding=3D0 cellspacing=3D0 width=3D100%><tr><td class=3D"fs=
+-13-374 lh-15-374 pb-2-374 cat2_title cat2_kicker" style=3D"color: #DE4949;=
+ background-color: #fddfe1; padding:3px 6px; font:bold 15px/16px Arial, Hel=
+vetica, sans-serif; border-radius:3px;"> CIN=C3=89MA </td></tr></table></td=
+></tr></table><div class=3D"fs-16-374 lh-26-374 pm-0" style=3D"font-family:=
+ Arial,Helvetica,sans-serif; font-size: 18px; line-height: 28px; color: #42=
+4242; text-indent:7px;"><p><strong>Le jury du 76<sup>e</sup>=C2=A0Festival =
+de Cannes a d=C3=A9cern=C3=A9 samedi la Palme d=E2=80=99or =C3=A0 la r=C3=
+=A9alisatrice fran=C3=A7aise Justine Triet</strong> pour son film =C2=AB=C2=
+=A0Anatomie d=E2=80=99une chute=C2=A0=C2=BB. Lors de son discours, la cin=
+=C3=A9aste a estim=C3=A9 que =C2=AB=C2=A0la marchandisation de la culture=
+=C2=A0=C2=BB d=C3=A9fendue par le gouvernement =C3=A9tait en train de =C2=
+=AB=C2=A0casser l=E2=80=99exception culturelle fran=C3=A7aise=C2=A0=C2=BB. =
+La ministre de la Culture, Rima Abdul Malak, s=E2=80=99est dite =C2=AB=C2=
+=A0estomaqu=C3=A9e=C2=A0=C2=BB par ces propos et a jug=C3=A9 que le film de=
+ Justine Triet n=E2=80=99aurait pu =C3=AAtre r=C3=A9alis=C3=A9 sans le =C2=
+=AB=C2=A0mod=C3=A8le fran=C3=A7ais de financement du cin=C3=A9ma=C2=A0=C2=
+=BB.</p></div></td></tr><tr><td class=3D"fs-16-374 lh-26-374 h-n" style=3D"=
+padding:0 0 25px; font-family: Helvetica,Arial,sans-serif; font-size: 18px;=
+ line-height: 28px; color: #424242;" valign=3Dtop><a clicktracking=3D"on" h=
+ref=3Dhttps://url3003.brief.me/ss/c/AWD9AEydda1BlzAIDIER2hIhNXkrIeKRMyZOWPn=
+MOF9K50SybHCiiWMXCzgevZvCWQ2V1xATVSMWYZi0OqtFhA/3wm/ck1gpKoJTQui8ozUm9v7aQ/=
+h6/QGBPqY_ilc12ba_R36J7f0AopeYgAuEvKlYCaHo-eKk style=3D"color: #DE4949; tex=
+t-decoration:none; color:#424242;"><span style=3D"display:inline-block; ver=
+tical-align:-2px;"><img alt=3D"picto cat2" src=3Dhttps://www.brief.me/stati=
+c/editorial/img/newsletters/briefme_quotidien/v2/picto_link_cat2.png style=
+=3D"width:20px; display:block; vertical-align:top;" width=3D20></span>=E2=
+=80=82<span class=3Dtxt style=3Dtext-decoration:underline;>Voir le palmar=
+=C3=A8s complet.</span></a></td></tr></tbody></table></div><!--[if mso | IE=
+]></td></tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso=
+ | IE]></td></tr></table><![endif]--></td></tr></table><table border=3D0 ce=
+llpadding=3D0 cellspacing=3D0 class=3Dw-100p style=3Dbackground:#f8f8f8;wid=
+th:100%;padding:0;border-collapse:collapse;border-spacing:0px;><tr><td clas=
+s=3Dcat1_border_bottom style=3D"border-bottom: 2px solid #ff6801"><!--[if m=
+so | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" class=3D"" style=3D"width:608px;" width=3D"608"><tr><td style=3D"lin=
+e-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><div =
+style=3D"Margin:0px auto;max-width:608px;"><table align=3Dcenter border=3D0=
+ cellpadding=3D0 cellspacing=3D0 class=3Dw-100p role=3Dpresentation style=
+=3Dwidth:100%;><tbody><tr><td class=3Dpt-23 style=3D"direction:ltr;font-siz=
+e:0px;padding:31px 24px 0;text-align:left;vertical-align:top;"><!--[if mso =
+| IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0"><tr><td style=3D"vertical-align:middle;width:560px;"><![endif]--><=
+div class=3D"mj-column-per-100 outlook-group-fix" style=3Dfont-size:13px;te=
+xt-align:left;direction:ltr;display:inline-block;vertical-align:middle;widt=
+h:100%;><table border=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p ro=
+le=3Dpresentation width=3D100%><tbody><tr><td><table cellpadding=3D0 cellsp=
+acing=3D0><tr><td class=3D"l-fff cat1_background" style=3D"background-color=
+: #ff6801; padding:3px 25px 1px; font:bold 16px/24px Arial, Helvetica, sans=
+-serif; color:#fff; border-radius:27px 27px 0 0;"> TOUT S=E2=80=99EXPLIQUE =
+</td></tr></table></td></tr></tbody></table></div><!--[if mso | IE]></td></=
+tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></=
+td></tr></table><![endif]--></td></tr></table><table border=3D0 cellpadding=
+=3D0 cellspacing=3D0 class=3D"cat1 w-100p" style=3D"background-color: #fff0=
+e6; background-color: #fff; width:100%;padding:0;border-collapse:collapse;b=
+order-spacing:0px;"><tr><td><!--[if mso | IE]><table align=3D"center" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" style=3D"width:608px=
+;" width=3D"608"><tr><td style=3D"line-height:0px;font-size:0px;mso-line-he=
+ight-rule:exactly;"><![endif]--><div style=3D"Margin:0px auto;max-width:608=
+px;"><table align=3Dcenter border=3D0 cellpadding=3D0 cellspacing=3D0 class=
+=3Dw-100p role=3Dpresentation style=3Dwidth:100%;><tbody><tr><td style=3D"d=
+irection:ltr;font-size:0px;padding:24px 16px 47px;text-align:left;vertical-=
+align:top;"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0"><tr><td style=3D"vertical-align:middle;wid=
+th:560px;"><![endif]--><div class=3D"mj-column-per-100 outlook-group-fix" s=
+tyle=3Dfont-size:13px;text-align:left;direction:ltr;display:inline-block;ve=
+rtical-align:middle;width:100%;><table border=3D0 cellpadding=3D0 cellspaci=
+ng=3D0 class=3Dw-100p role=3Dpresentation width=3D100%><tbody><tr><td class=
+=3D"fs-30-374 lh-40-374 cat1_title" style=3D"color: #ff6801; padding:0 8px =
+24px; font:bold 32px/42px Arial, Helvetica, sans-serif;"> Erdogan r=C3=A9=
+=C3=A9lu pr=C3=A9sident de la Turquie pour un troisi=C3=A8me mandat </td></=
+tr><tr><td style=3D"padding-bottom: 32px;"><table border=3D0 cellpadding=3D=
+0 cellspacing=3D0 class=3D"w-100p cat1" role=3Dpresentation style=3D"backgr=
+ound-color: #fff0e6; border-radius:8px; background-color:#f9eadf;" width=3D=
+100%><tr><td class=3D"cat1_list_cell plr-16 fs-16-374 lh-26-374" style=3D"p=
+adding:10px 24px; color:#424242; font:18px/28px Arial, Helvetica, sans-seri=
+f;"><p><span style=3D"font-size:24px; line-height:24px; vertical-align:midd=
+le;">=E2=80=A2</span> Le pr=C3=A9sident sortant a obtenu 52=C2=A0% des voix=
+ au second tour de la pr=C3=A9sidentielle. </p><p><span style=3D"font-size:=
+24px; line-height:24px; vertical-align:middle;">=E2=80=A2</span> Il a b=C3=
+=A9n=C3=A9fici=C3=A9 du soutien des zones rurales et du caract=C3=A8re h=C3=
+=A9t=C3=A9roclite de l=E2=80=99opposition. </p></td></tr></table></td></tr>=
+<tr><td class=3D"fs-22-374 lh-30-374 cat1_title" style=3D"color: #ff6801; p=
+adding:0 8px 17px; font:bold 24px/32px Arial, Helvetica, sans-serif;"> Quel=
+ a =C3=A9t=C3=A9 le r=C3=A9sultat des =C3=A9lections organis=C3=A9es en Tur=
+quie=C2=A0? </td></tr><tr><td class=3D"pb-24-374 fs-16-374 lh-26-374 pm-0" =
+style=3D"padding:0 8px 23px; font:18px/28px Arial, Helvetica, sans-serif; c=
+olor:#424242;"><p>Le pr=C3=A9sident islamo-conservateur turc sortant, Recep=
+ Tayyip Erdogan, a =C3=A9t=C3=A9 r=C3=A9=C3=A9lu dimanche pour un troisi=C3=
+=A8me mandat de cinq ans. <strong>Il a remport=C3=A9 le second tour de l=E2=
+=80=99=C3=A9lection pr=C3=A9sidentielle avec 52,1=C2=A0% des voix</strong> =
+contre 47,9=C2=A0% pour le social-d=C3=A9mocrate Kemal Kili=C3=A7daroglu, c=
+andidat unique de six partis d=E2=80=99opposition. Dans son discours de vic=
+toire, Recep Tayyip Erdogan a d=C3=A9clar=C3=A9 que l=E2=80=99une de ses pr=
+iorit=C3=A9s =C3=A9tait de =C2=AB=C2=A0r=C3=A9gler les probl=C3=A8mes caus=
+=C3=A9s par les hausses de prix=C2=A0=C2=BB. Le taux d=E2=80=99inflation an=
+nuel a atteint pr=C3=A8s de 44=C2=A0% en avril, selon l=E2=80=99institut tu=
+rc de statistiques, et m=C3=AAme davantage selon des =C3=A9conomistes ind=
+=C3=A9pendants. <strong>Recep Tayyip Erdogan est arriv=C3=A9 au pouvoir en =
+Turquie =C3=A0 l=E2=80=99issue des =C3=A9lections l=C3=A9gislatives de nove=
+mbre 2002.</strong> Premier ministre pendant un peu plus de 11=C2=A0ans, il=
+ est devenu en 2014=C2=A0pr=C3=A9sident de la R=C3=A9publique, transformant=
+ la Turquie en un r=C3=A9gime pr=C3=A9sidentiel, o=C3=B9 le chef de l=E2=80=
+=99=C3=89tat dirige =C3=A9galement le gouvernement.</p></td></tr><tr><td cl=
+ass=3D"fs-22-374 lh-30-374 cat1_title" style=3D"color: #ff6801; padding:0 8=
+px 17px; font:bold 24px/32px Arial, Helvetica, sans-serif;"> Quels =C3=A9l=
+=C3=A9ments peuvent expliquer la victoire de Recep Tayyip Erdogan=C2=A0? </=
+td></tr><tr><td class=3D"pb-24-374 fs-16-374 lh-26-374 pm-0" style=3D"paddi=
+ng:0 8px 23px; font:18px/28px Arial, Helvetica, sans-serif; color:#424242;"=
+><p>=C2=AB=C2=A0Erdogan a gagn=C3=A9 parce que les =C3=A9lecteurs ont vu qu=
+e <strong>l=E2=80=99opposition =C3=A9tait tellement h=C3=A9t=C3=A9roclite q=
+u=E2=80=99elle aurait rencontr=C3=A9 des difficult=C3=A9s</strong> pour dir=
+iger le pays=C2=A0=C2=BB, a estim=C3=A9 le politologue Bayram Balci dans un=
+e interview =C3=A0 TF1. Le pr=C3=A9sident turc a pu =C3=A9galement compter =
+sur le soutien des zones rurales, observe le consultant en politique Derin =
+Ko=C3=A7er dans la revue Le Grand Continent. =C2=AB=C2=A0Les interventions =
+du gouvernement sur le march=C3=A9 et les subventions qu=E2=80=99il a accor=
+d=C3=A9es=C2=A0=C2=BB ont att=C3=A9nu=C3=A9 la crise =C3=A9conomique actuel=
+le dans ces r=C3=A9gions, explique-t-il. <strong>Recep Tayyip Erdogan et so=
+n parti, l=E2=80=99AKP, ont b=C3=A2ti leur force sur =C2=AB=C2=A0un syst=C3=
+=A8me d=E2=80=99aide et d=E2=80=99assistance enti=C3=A8rement contr=C3=B4l=
+=C3=A9 par le parti-=C3=89tat=C2=A0=C2=BB</strong>, estime dans une tribune=
+ au Monde le g=C3=A9ographe Jean-Fran=C3=A7ois P=C3=A9rouse. =C2=AB=C2=A0Il=
+ laisse accroire que, en cas de changement politique, l=E2=80=99assistance =
+cessera et les plans d=E2=80=99acc=C3=A8s au cr=C3=A9dit (pour le logement,=
+ la voiture, la consommation, les =C3=A9tudes) seront mis en p=C3=A9ril=C2=
+=A0=C2=BB, ajoute-t-il.</p></td></tr><tr><td class=3D"fs-22-374 lh-30-374 c=
+at1_title" style=3D"color: #ff6801; padding:0 8px 17px; font:bold 24px/32px=
+ Arial, Helvetica, sans-serif;"> Quelles sont les relations de Recep Tayyip=
+ Erdogan avec l=E2=80=99Union europ=C3=A9enne=C2=A0? </td></tr><tr><td clas=
+s=3D"pb-24-374 fs-16-374 lh-26-374 pm-0" style=3D"padding:0 8px 23px; font:=
+18px/28px Arial, Helvetica, sans-serif; color:#424242;"><p>Plusieurs dirige=
+ants europ=C3=A9ens ont f=C3=A9licit=C3=A9 le pr=C3=A9sident turc tout en r=
+appelant les difficult=C3=A9s pesant sur leurs relations avec la Turquie. =
+=C2=AB=C2=A0La France et la Turquie ont d=E2=80=99immenses d=C3=A9fis =C3=
+=A0 relever ensemble. Retour de la paix en Europe, avenir de notre Alliance=
+ euro-atlantique, mer M=C3=A9diterran=C3=A9e=C2=A0=C2=BB, a ainsi tweet=C3=
+=A9 Emmanuel Macron dimanche. La question migratoire =C3=A9voqu=C3=A9e par =
+le pr=C3=A9sident fran=C3=A7ais, en particulier le cas des millions de r=C3=
+=A9fugi=C3=A9s syriens pr=C3=A9sents en Turquie, a =C3=A9t=C3=A9 l=E2=80=99=
+un des th=C3=A8mes de campagne de l=E2=80=99entre-deux-tours en Turquie. Le=
+s deux candidats ont souhait=C3=A9 que ces r=C3=A9fugi=C3=A9s retournent en=
+ Syrie. En 2016, <strong>l=E2=80=99UE a sign=C3=A9 un accord avec la Turqui=
+e pour qu=E2=80=99elle retienne les migrants</strong> en =C3=A9change de fi=
+nancements europ=C3=A9ens. Recep Tayyip Erdogan a plusieurs fois menac=C3=
+=A9 de rompre cet accord lors de ses diff=C3=A9rends avec l=E2=80=99UE. <st=
+rong>Il s=E2=80=99est =C3=A9galement oppos=C3=A9 =C3=A0 l=E2=80=99entr=C3=
+=A9e de la Su=C3=A8de dans l=E2=80=99Otan</strong>, une alliance militaire =
+de 31=C2=A0pays, reprochant au pays d=E2=80=99h=C3=A9berger des terroristes=
+ kurdes.</p></td></tr><tr><td align=3Dcenter style=3D"padding:8px 8px 17px;=
+ line-height:1px; font-size:1px; mso-line-height-rule:at-least;"><img alt=
+=3D"separator cat1" src=3Dhttps://www.brief.me/static/editorial/img/newslet=
+ters/briefme_quotidien/v2/separator_cat1.png style=3D"width:48px; vertical-=
+align:top;" width=3D48></td></tr><tr><td class=3D"pt-18-374 pb-38" style=3D=
+"padding:15px 8px 38px;"><table cellpadding=3D0 cellspacing=3D0 class=3Dw-1=
+00p width=3D100%><tr><td class=3D"pb-24-374 fs-22-374 lh-30-374" style=3D"p=
+adding:0 0 25px; font:bold 24px/32px Arial, Helvetica, sans-serif; color:#4=
+24242;"> Pour aller plus loin </td></tr><tr><td class=3D"fs-16-374 lh-26-37=
+4" style=3D"font-family: Helvetica,Arial,sans-serif; font-size: 18px; line-=
+height: 28px; color: #424242;" valign=3Dtop><span style=3D"display:inline-b=
+lock; vertical-align:-2px;"><img alt=3D"picto cat1" src=3Dhttps://www.brief=
+.me/static/editorial/img/newsletters/briefme_quotidien/v2/picto_link_cat1.p=
+ng style=3D"width:20px; display:block; vertical-align:top;" width=3D20></sp=
+an>=E2=80=82Notre dossier sur <a clicktracking=3D"on" href=3D"https://url30=
+03.brief.me/ss/c/pzEjhFizng49ja4-MJl0GFN21MwCXEOmTljptCKsPrexhaGuK1ggDWpMtw=
+juRcnsD8V-D3dbPbilvxGPjzHzGmK3Y3aRFt8lB7E7vtqhhfmvW4C31clPkK0wIptouahiTARb7=
+CPpUAtYroumd3HWQRaNptX6wU-q43Tpnrmu4nJZjdNoCzAP8VKFBZC4wWuh/3wm/ck1gpKoJTQu=
+i8ozUm9v7aQ/h7/K_HRhZatowzw5BilGucp2QE6FL52QcdChQ3fDrV4l2I" style=3D"color:=
+ #ff6801">la transformation de la Turquie sous Erdogan</a>. </td></tr></tab=
+le></td></tr><tr><td><table align=3Dcenter cellpadding=3D0 cellspacing=3D0>=
+<tr><td align=3Dcenter class=3D"w-47 active-i" style=3D"line-height:1px; fo=
+nt-size:1px; mso-line-height-rule:at-least;" width=3D58><a clicktracking=3D=
+"on" href=3D"https://url3003.brief.me/ss/c/uvWhLgfybEKOci_rkpCTKFzFjO-ySKfk=
+YYOM1X9ypiHa3duCib5hZiB4_TwVzTaCJrGrFzjsfbVsJ8bOWe0ZHAaCB-vMvBb3wsa39K4kIpU=
+H88SIVm-nE5b65rDPVK3RqtjDrpy6vlBU0sm4sCaPPuNd4udChn12VH3mSkK4zXwVgw_AmuSm66=
+N9kgSbdegGtawcTAxauL_E-IoXv9uQmw/3wm/ck1gpKoJTQui8ozUm9v7aQ/h8/-2JBycMgSihn=
+Zsv5tDpHbmfQHI1KbU9Oc1PqUwpmlVY" style=3D"color: #ff6801; text-decoration:n=
+one;"><img alt=3Dfacebook src=3Dhttps://www.brief.me/static/editorial/img/n=
+ewsletters/briefme_quotidien/v2/ico-facebook.png style=3D"width:11px; font:=
+19px/28px Arial, Helvetica, sans-serif; color:#0954c0; vertical-align:botto=
+m;" width=3D11></a></td><td align=3Dcenter class=3D"w-47 active-i" style=3D=
+"line-height:1px; font-size:1px; mso-line-height-rule:at-least;" width=3D54=
+><a clicktracking=3D"on" href=3D"https://url3003.brief.me/ss/c/ZBOlHrnWkOSc=
+o6Tx7wp6grHsYM0kGEArPClfcNaiHycF2peu9aMUsmTBFnjiHZsqs_FfGxyivxVCwvgcvRLvhku=
+P-x2-TIheFla_qqiZzfi3wZjXrMKHZkxSgx12xNO4cA7RItBgF8MUk_ySgDavziwPuKmupI_uBL=
+Y05YERmBMQn3tqii_PhZpTtAGEBzHEDwlz1AjpEEKlrq5JACRP8KkkLK5Au5HX9Px5uRYdOCH8-=
+M9amupR4sDva8ITQQLirbDmqU76460nRsF0oUa-tDjlpDk9Ovmx0sVxilrNtNtqhHQywPIzeNDb=
+O2NWg8o5mPWZXrloK_2WASxQ0bjCANzUhkwDIpYcU-0NGD5R5yg/3wm/ck1gpKoJTQui8ozUm9v=
+7aQ/h9/g09RpC6pkqr1igk2L4zfTlDye_PPNe9uB5m8Io5U_PQ" style=3D"color: #ff6801=
+; text-decoration:none;"><img alt=3Dtwitter src=3Dhttps://www.brief.me/stat=
+ic/editorial/img/newsletters/briefme_quotidien/v2/ico-twitter.png style=3D"=
+width:18px; font:19px/28px Arial, Helvetica, sans-serif; color:#0954c0; ver=
+tical-align:bottom;" width=3D18></a></td><td align=3Dcenter class=3D"d-b w-=
+47 active-i" style=3D"display:none; line-height:0px; font-size:0px; mso-lin=
+e-height-rule:at-least; mso-hide:all" valign=3Dbottom width=3D0><a clicktra=
+cking=3D"on" href=3D"https://url3003.brief.me/ss/c/pzEjhFizng49ja4-MJl0GMmd=
+KqgQze08ZpY3etJm1HEyBYKtPkpXVQVWvYsMIGJ0PqHBdQ-LFYWtpoNMv8YdGAnKbwfLCDS8KZC=
+Aa4Wf9Bj8QIM0xBdhqkE0m5UXPVtP0HhlvqAnrNbkZbWk82H6FOSKuYNfWx8Dyc0gDc0MQDpWZj=
+XaRJByRaM6ZUB3IE3e3Fo9KTOXuP6YHnOmquCXPQ/3wm/ck1gpKoJTQui8ozUm9v7aQ/h10/2CL=
+WxSdK3tJ9hg0ydfDlUUoeKWa5BySVi1DICGZlps4" style=3D"color: #ff6801; text-dec=
+oration:none;"><img alt=3Dwhatsapp src=3Dhttps://www.brief.me/static/editor=
+ial/img/newsletters/briefme_quotidien/v2/ico-whatsapp.png style=3D"width:20=
+px; font:19px/28px Arial, Helvetica, sans-serif; color:#0954c0; vertical-al=
+ign:bottom;" width=3D20></a></td><td align=3Dcenter class=3D"w-47 active-i"=
+ style=3D"line-height:1px; font-size:1px; mso-line-height-rule:at-least;" w=
+idth=3D56><a clicktracking=3D"on" href=3D"mailto:?subject=3DErdogan%20r%C3%=
+A9%C3%A9lu%20pr%C3%A9sident%20de%20la%20Turquie%20pour%20un%20troisi%C3%A8m=
+e%20mandat&body=3DJe%20pense%20que%20cet%20article%20pourrait%20t'int=C3=A9=
+resser%20:%0AErdogan%20r%C3%A9%C3%A9lu%20pr%C3%A9sident%20de%20la%20Turquie=
+%20pour%20un%20troisi%C3%A8me%20mandat%0Ahttps://app.brief.me/article/2023-=
+05-30-15492-erdogan-reelu-president-de-la-turquie-pour-un-troisieme-mandat"=
+ style=3D"color: #ff6801; text-decoration:none;"><img alt=3Dmail src=3Dhttp=
+s://www.brief.me/static/editorial/img/newsletters/briefme_quotidien/v2/ico-=
+mail.png style=3D"width:19px; font:19px/28px Arial, Helvetica, sans-serif; =
+color:#0954c0; vertical-align:bottom;" width=3D19></a></td></tr></table></t=
+d></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]-=
+-></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![en=
+dif]--></td></tr></table><table border=3D0 cellpadding=3D0 cellspacing=3D0 =
+class=3Dw-100p style=3Dbackground:#f8f8f8;width:100%;padding:0;border-colla=
+pse:collapse;border-spacing:0px;><tr><td class=3Dcat3_border_bottom style=
+=3D"border-bottom: 2px solid #A8006F"><!--[if mso | IE]><table align=3D"cen=
+ter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" style=3D"w=
+idth:608px;" width=3D"608"><tr><td style=3D"line-height:0px;font-size:0px;m=
+so-line-height-rule:exactly;"><![endif]--><div style=3D"Margin:0px auto;max=
+-width:608px;"><table align=3Dcenter border=3D0 cellpadding=3D0 cellspacing=
+=3D0 class=3Dw-100p role=3Dpresentation style=3Dwidth:100%;><tbody><tr><td =
+class=3Dpt-23 style=3D"direction:ltr;font-size:0px;padding:31px 24px 0;text=
+-align:left;vertical-align:top;"><!--[if mso | IE]><table role=3D"presentat=
+ion" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td style=3D"vert=
+ical-align:middle;width:560px;"><![endif]--><div class=3D"mj-column-per-100=
+ outlook-group-fix" style=3Dfont-size:13px;text-align:left;direction:ltr;di=
+splay:inline-block;vertical-align:middle;width:100%;><table border=3D0 cell=
+padding=3D0 cellspacing=3D0 class=3Dw-100p role=3Dpresentation width=3D100%=
+><tbody><tr><td><table cellpadding=3D0 cellspacing=3D0><tr><td class=3D"l-f=
+ff cat3_background" style=3D"background-color: #A8006F; padding:3px 25px 1p=
+x; font:bold 16px/24px Arial, Helvetica, sans-serif; color:#fff; border-rad=
+ius:27px 27px 0 0;"> C=E2=80=99EST LEUR AVIS </td></tr></table></td></tr></=
+tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></=
+tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--></=
+td></tr></table><table border=3D0 cellpadding=3D0 cellspacing=3D0 class=3D"=
+cat3 w-100p" style=3D"background-color: #fffffe; width:100%;padding:0;borde=
+r-collapse:collapse;border-spacing:0px;"><tr><td><!--[if mso | IE]><table a=
+lign=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D""=
+ style=3D"width:608px;" width=3D"608"><tr><td style=3D"line-height:0px;font=
+-size:0px;mso-line-height-rule:exactly;"><![endif]--><div style=3D"Margin:0=
+px auto;max-width:608px;"><table align=3Dcenter border=3D0 cellpadding=3D0 =
+cellspacing=3D0 class=3Dw-100p role=3Dpresentation style=3Dwidth:100%;><tbo=
+dy><tr><td style=3D"direction:ltr;font-size:0px;padding:24px 24px 47px;text=
+-align:left;vertical-align:top;"><!--[if mso | IE]><table role=3D"presentat=
+ion" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td style=3D"vert=
+ical-align:middle;width:560px;"><![endif]--><div class=3D"mj-column-per-100=
+ outlook-group-fix" style=3Dfont-size:13px;text-align:left;direction:ltr;di=
+splay:inline-block;vertical-align:middle;width:100%;><table border=3D0 cell=
+padding=3D0 cellspacing=3D0 class=3Dw-100p role=3Dpresentation width=3D100%=
+><tbody class=3Dcat3 style=3D"background-color: #fffffe"><tr><td class=3D"f=
+s-30-374 lh-42-374 cat3_title" style=3D"color: #A8006F; padding:0 0 17px; f=
+ont:bold 32px/42px Arial, Helvetica, sans-serif;"> Les socialistes espagnol=
+s fragilis=C3=A9s par leurs alliances </td></tr><tr class=3Dl-A8006F><td cl=
+ass=3D"pb-20-374 fs-16-374 lh-26-374 pm-0" style=3D"padding:0 0 23px; font:=
+18px/28px Arial, Helvetica, sans-serif; color:#424242;"><p>Le Premier minis=
+tre espagnol, le socialiste Pedro Sanchez, a convoqu=C3=A9 hier des =C3=A9l=
+ections l=C3=A9gislatives anticip=C3=A9es le 23=C2=A0juillet. Dimanche, la =
+gauche a subi une importante d=C3=A9faite aux =C3=A9lections municipales et=
+ r=C3=A9gionales. Le Parti socialiste espagnol (PSOE) paie toutefois moins =
+les r=C3=A9sultats de sa politique que ses alliances, a <a clicktracking=3D=
+"on" href=3Dhttps://url3003.brief.me/ss/c/AWD9AEydda1BlzAIDIER2p7nHdMJb0-ON=
+zc34jRSvLE535eGQTSf_2Mtv07y0FsoQCiwk65XjBgWr_tZl6bRmlDssw08_yHxMJ8fRj6INlIF=
+WxC1BJ11iiUCu2qYUAUu3CHXZcbXGW2DUYnWlULx14yI8WzxFykSi0gi7mvAEpeFaBBKEU2yUAX=
+vzOMDr_uJ6Gjy19GzEFXwKbS9C2R4NMmP4gEs_IvgC1mpF1SqEjU/3wm/ck1gpKoJTQui8ozUm9=
+v7aQ/h11/NaOiFLYO5HDpxXrl8e_laEVxAShrWyfdEdUnbHGro98 rel=3Dnoopener style=
+=3D"color: #A8006F" target=3D_blank>jug=C3=A9 hier aupr=C3=A8s de France=C2=
+=A024</a> la politologue Maria Elisa Alonso.</p></td></tr><tr><td class=3D"=
+fs-15-374 lh-24-374 cat3_border_left" style=3D"border-left: 2px solid #A800=
+6F; padding:0 0 0 12px; font:17px/27px Arial, Helvetica, sans-serif; color:=
+#424242;"> =C2=AB=C2=A0C=E2=80=99est vraiment un changement de cycle politi=
+que en Espagne. Tout le monde s=E2=80=99attendait =C3=A0 une d=C3=A9faite d=
+u Parti socialiste, mais pas aussi importante. On peut se demander sur quel=
+s crit=C3=A8res se sont bas=C3=A9s les =C3=A9lecteurs pour infliger une tel=
+le d=C3=A9faite au PSOE. Malgr=C3=A9 l=E2=80=99augmentation des prix des al=
+iments due au contexte international, l=E2=80=99=C3=A9conomie espagnole se =
+porte bien par rapport =C3=A0 d=E2=80=99autres p=C3=A9riodes. Le gouverneme=
+nt a donc =C3=A9t=C3=A9 puni par les =C3=A9lecteurs pour autre chose. Soit =
+pour sa coalition avec le parti de la gauche radicale Podemos, qui est =C3=
+=A0 l=E2=80=99origine de lois assez controvers=C3=A9es. [=E2=80=A6] Soit po=
+ur ses accords avec le parti basque Bildu, qui ont d=C3=A9plu aux =C3=A9lec=
+teurs socialistes.=C2=A0=C2=BB Maria Elisa Alonso </td></tr><tr><td style=
+=3D"padding:38px 0 0;"><table align=3Dcenter cellpadding=3D0 cellspacing=3D=
+0><tr><td align=3Dcenter class=3D"w-47 active-i" style=3D"line-height:1px; =
+font-size:1px; mso-line-height-rule:at-least;" width=3D58><a clicktracking=
+=3D"on" href=3D"https://url3003.brief.me/ss/c/uvWhLgfybEKOci_rkpCTKFzFjO-yS=
+KfkYYOM1X9ypiHa3duCib5hZiB4_TwVzTaCJrGrFzjsfbVsJ8bOWe0ZHAaCB-vMvBb3wsa39K4k=
+IpVdiFZFOfyztE3yfdo6_VPD2Np_juuh-Plycfr9p6zcdq2jLmnjruxk_nU3B5tTL1GfFL7m6-r=
+Q56XsxeqAv36EV1c-zebVc0HPGgYJ62mfng/3wm/ck1gpKoJTQui8ozUm9v7aQ/h12/CsDD-09I=
+zho1ctwkpWkQ0VnAwNzxBD0qeoxeAoD-4AY" style=3D"color: #A8006F; text-decorati=
+on:none;"><img alt=3Dfacebook src=3Dhttps://www.brief.me/static/editorial/i=
+mg/newsletters/briefme_quotidien/v2/ico-facebook.png style=3D"width:11px; f=
+ont:19px/28px Arial, Helvetica, sans-serif; color:#0954c0; vertical-align:b=
+ottom;" width=3D11></a></td><td align=3Dcenter class=3D"w-47 active-i" styl=
+e=3D"line-height:1px; font-size:1px; mso-line-height-rule:at-least;" width=
+=3D54><a clicktracking=3D"on" href=3D"https://url3003.brief.me/ss/c/ZBOlHrn=
+WkOSco6Tx7wp6grHsYM0kGEArPClfcNaiHycF2peu9aMUsmTBFnjiHZsqs_FfGxyivxVCwvgcvR=
+LvhkuP-x2-TIheFla_qqiZzfhYSsj0sTro_cPD30fHoc84MRu6d6JzWCLXD82R6PLtBSy-PoR0-=
+CpyE4MVfCjvvzWPFDRvvaRGq-mCDzJ6qwBOC8c0pQl8hCfXOz9rJWV4JPtC5zTYoAjQFbhHY3e5=
+W5WhITZKGXhIanY_KYGMFuLkGj-eZgMb2vlGkws3Nzuwe2wVQkLmX6_n9Tvf67s42TDNUWYwn6y=
+pijlLqy9-Rf9r/3wm/ck1gpKoJTQui8ozUm9v7aQ/h13/utGNal4I9XtMSNLhhbbNy3E3wnX6EP=
+6JBWFWFi41avc" style=3D"color: #A8006F; text-decoration:none;"><img alt=3Dt=
+witter src=3Dhttps://www.brief.me/static/editorial/img/newsletters/briefme_=
+quotidien/v2/ico-twitter.png style=3D"width:18px; font:19px/28px Arial, Hel=
+vetica, sans-serif; color:#0954c0; vertical-align:bottom;" width=3D18></a><=
+/td><td align=3Dcenter class=3D"d-b w-47 active-i" style=3D"display:none; l=
+ine-height:0px; font-size:0px; mso-line-height-rule:at-least; mso-hide:all"=
+ valign=3Dbottom width=3D0><a clicktracking=3D"on" href=3D"https://url3003.=
+brief.me/ss/c/pzEjhFizng49ja4-MJl0GMmdKqgQze08ZpY3etJm1HEyBYKtPkpXVQVWvYsMI=
+GJ0PqHBdQ-LFYWtpoNMv8YdGAnKbwfLCDS8KZCAa4Wf9Bj64ygHTSYhZ6mxqaesmjvuNfkD08Dt=
+n_MVbYmAlMya5ePIwOyx4Bjz2iAR4w_azRI9Ee7SMbAzKzgUvpSd5YjyejChk5d0LQAGI--fFQ0=
+ECQ/3wm/ck1gpKoJTQui8ozUm9v7aQ/h14/z464hqmVTtkTZcXv04JXqTkIN7VmGyDYilj0x3A0=
+0Xc" style=3D"color: #A8006F; text-decoration:none;"><img alt=3Dwhatsapp sr=
+c=3Dhttps://www.brief.me/static/editorial/img/newsletters/briefme_quotidien=
+/v2/ico-whatsapp.png style=3D"width:20px; font:19px/28px Arial, Helvetica, =
+sans-serif; color:#0954c0; vertical-align:bottom;" width=3D20></a></td><td =
+align=3Dcenter class=3D"w-47 active-i" style=3D"line-height:1px; font-size:=
+1px; mso-line-height-rule:at-least;" width=3D56><a clicktracking=3D"on" hre=
+f=3D"mailto:?subject=3DLes%20socialistes%20espagnols%20fragilis%C3%A9s%20pa=
+r%20leurs%20alliances&body=3DJe%20pense%20que%20cet%20article%20pourrait%20=
+t'int=C3=A9resser%20:%0ALes%20socialistes%20espagnols%20fragilis%C3%A9s%20p=
+ar%20leurs%20alliances%0Ahttps://app.brief.me/article/2023-05-30-15493-les-=
+socialistes-espagnols-fragilises-par-leurs-alliances" style=3D"color: #A800=
+6F; text-decoration:none;"><img alt=3Dmail src=3Dhttps://www.brief.me/stati=
+c/editorial/img/newsletters/briefme_quotidien/v2/ico-mail.png style=3D"widt=
+h:19px; font:19px/28px Arial, Helvetica, sans-serif; color:#0954c0; vertica=
+l-align:bottom;" width=3D19></a></td></tr></table></td></tr></tbody></table=
+></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody></=
+table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tab=
+le><table border=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p style=
+=3Dbackground:#f8f8f8;width:100%;padding:0;border-collapse:collapse;border-=
+spacing:0px;><tr><td class=3Dcat6_border_bottom style=3D"border-bottom: 2px=
+ solid #00989A"><!--[if mso | IE]><table align=3D"center" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" class=3D"" style=3D"width:608px;" width=3D"=
+608"><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:ex=
+actly;"><![endif]--><div style=3D"Margin:0px auto;max-width:608px;"><table =
+align=3Dcenter border=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p ro=
+le=3Dpresentation style=3Dwidth:100%;><tbody><tr><td class=3Dpt-23 style=3D=
+"direction:ltr;font-size:0px;padding:24px 24px 0;text-align:left;vertical-a=
+lign:top;"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0"><tr><td style=3D"vertical-align:middle;widt=
+h:560px;"><![endif]--><div class=3D"mj-column-per-100 outlook-group-fix" st=
+yle=3Dfont-size:13px;text-align:left;direction:ltr;display:inline-block;ver=
+tical-align:middle;width:100%;><table border=3D0 cellpadding=3D0 cellspacin=
+g=3D0 class=3Dw-100p role=3Dpresentation width=3D100%><tbody><tr><td><table=
+ cellpadding=3D0 cellspacing=3D0><tr><td class=3D"l-fff cat6_background" st=
+yle=3D"background-color: #00989A; padding:3px 25px 1px; font:bold 16px/24px=
+ Arial, Helvetica, sans-serif; color:#fff; border-radius:27px 27px 0 0;"> =
+=C3=87A ALORS </td></tr></table></td></tr></tbody></table></div><!--[if mso=
+ | IE]></td></tr></table><![endif]--></td></tr></tbody></table></div><!--[i=
+f mso | IE]></td></tr></table><![endif]--></td></tr></table><table border=
+=3D0 cellpadding=3D0 cellspacing=3D0 class=3D"cat6 w-100p" style=3D"backgro=
+und-color: #fffffe; width:100%;padding:0;border-collapse:collapse;border-sp=
+acing:0px;"><tr><td><!--[if mso | IE]><table align=3D"center" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" class=3D"" style=3D"width:608px;" width=
+=3D"608"><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rul=
+e:exactly;"><![endif]--><div style=3D"Margin:0px auto;max-width:608px;"><ta=
+ble align=3Dcenter border=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100=
+p role=3Dpresentation style=3Dwidth:100%;><tbody><tr><td style=3D"direction=
+:ltr;font-size:0px;padding:22px 24px 47px;text-align:left;vertical-align:to=
+p;"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0"><tr><td style=3D"vertical-align:middle;width:560px=
+;"><![endif]--><div class=3D"mj-column-per-100 outlook-group-fix" style=3Df=
+ont-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-a=
+lign:middle;width:100%;><table border=3D0 cellpadding=3D0 cellspacing=3D0 c=
+lass=3Dw-100p role=3Dpresentation width=3D100%><tbody><tr><td class=3D"fs-3=
+0-374 lh-40-374 cat6_title" style=3D"color: #00989A; padding:0; font:bold 3=
+2px/42px Arial, Helvetica, sans-serif;"> Entr=C3=A9e en service du premier =
+avion d=C3=A9velopp=C3=A9 par la Chine </td></tr><tr class=3Dcat6 style=3D"=
+background-color: #fffffe"><td class=3D"fs-16-374 lh-26-374 pm-0 paragraphs=
+" style=3D"padding:0 0 37px; font:18px/28px Arial, Helvetica, sans-serif; c=
+olor:#424242;"><p style=3D"padding-top: 16px">Le premier avion de ligne d=
+=C3=A9velopp=C3=A9 par la Chine, le C919, a effectu=C3=A9 dimanche son prem=
+ier vol commercial, marquant sa mise en service officielle. Le vol, exploit=
+=C3=A9 par la compagnie chinoise China Eastern Airlines, a reli=C3=A9 Shang=
+hai =C3=A0 P=C3=A9kin avec 128=C2=A0passagers, selon l=E2=80=99agence de pr=
+esse officielle chinoise Xinhua. Le C919, produit par le constructeur a=C3=
+=A9ronautique chinois Comac, vient concurrencer les avions moyen-courriers =
+A320=C2=A0de l=E2=80=99europ=C3=A9en Airbus et 737=C2=A0Max de l=E2=80=99am=
+=C3=A9ricain Boeing. Ces deux constructeurs <strong>s=E2=80=99attendent =C3=
+=A0 une tr=C3=A8s forte progression du march=C3=A9 chinois dans les 20=C2=
+=A0prochaines ann=C3=A9es</strong>, ont-ils d=C3=A9clar=C3=A9 ces derniers =
+mois. La Chine repr=C3=A9sentait pr=C3=A8s de 20=C2=A0% du trafic a=C3=A9ri=
+en mondial en nombre de passagers en 2021, selon l=E2=80=99Organisation de =
+l=E2=80=99aviation civile internationale, un organisme de l=E2=80=99ONU.</p=
+></td></tr><tr><td><table align=3Dcenter cellpadding=3D0 cellspacing=3D0><t=
+r><td align=3Dcenter class=3D"w-47 active-i" style=3D"line-height:1px; font=
+-size:1px; mso-line-height-rule:at-least;" width=3D58><a clicktracking=3D"o=
+n" href=3D"https://url3003.brief.me/ss/c/uvWhLgfybEKOci_rkpCTKFzFjO-ySKfkYY=
+OM1X9ypiHa3duCib5hZiB4_TwVzTaCJrGrFzjsfbVsJ8bOWe0ZHAaCB-vMvBb3wsa39K4kIpV60=
+q_CNsSrL2KbiwOdTnHeDzKxz3s1X201s7MoU3e3UoArPQGOxVmYLlXjjWJav2QoTckllumG4VY2=
+wFLDOYnHbJFyNRHUm4wMospltX2phw/3wm/ck1gpKoJTQui8ozUm9v7aQ/h15/8W-_3VT5Zx3B2=
+06D0SVspqxA4FL2FZYtlDUVOSsx6io" style=3D"color: #00989A; text-decoration:no=
+ne;"><img alt=3Dfacebook src=3Dhttps://www.brief.me/static/editorial/img/ne=
+wsletters/briefme_quotidien/v2/ico-facebook.png style=3D"width:11px; font:1=
+9px/28px Arial, Helvetica, sans-serif; color:#0954c0; vertical-align:bottom=
+;" width=3D11></a></td><td align=3Dcenter class=3D"w-47 active-i" style=3D"=
+line-height:1px; font-size:1px; mso-line-height-rule:at-least;" width=3D54>=
+<a clicktracking=3D"on" href=3D"https://url3003.brief.me/ss/c/ZBOlHrnWkOSco=
+6Tx7wp6grHsYM0kGEArPClfcNaiHycF2peu9aMUsmTBFnjiHZsqs_FfGxyivxVCwvgcvRLvhkuP=
+-x2-TIheFla_qqiZzfhKWOIrXr6atSvk_qdSoPxnVI7QGCvyxoKSSUIbulWGa1W42QyZa-41Dqa=
+EakxMu76quV6LUMet2-fCAb7pJonpmMBwLOEzFs-ELSoxSx0_OKUguUfE-m3IEBXDbEQAyQ5l-U=
+cyfnaquGG62wBJhDi-mUu-96mDQk3SiZKbnGvSKX1SsKfTR7VYL6tm9Ctil464A3MoCIBqHKa6X=
+s0KJaXkzKen95BJ7qugaaJr7agVxA/3wm/ck1gpKoJTQui8ozUm9v7aQ/h16/kaf0neCrOxQGoz=
+hKaASySlCbdN_c7Fd-EP157RiOiiI" style=3D"color: #00989A; text-decoration:non=
+e;"><img alt=3Dtwitter src=3Dhttps://www.brief.me/static/editorial/img/news=
+letters/briefme_quotidien/v2/ico-twitter.png style=3D"width:18px; font:19px=
+/28px Arial, Helvetica, sans-serif; color:#0954c0; vertical-align:bottom;" =
+width=3D18></a></td><td align=3Dcenter class=3D"d-b w-47 active-i" style=3D=
+"display:none; line-height:0px; font-size:0px; mso-line-height-rule:at-leas=
+t; mso-hide:all" valign=3Dbottom width=3D0><a clicktracking=3D"on" href=3D"=
+https://url3003.brief.me/ss/c/pzEjhFizng49ja4-MJl0GMmdKqgQze08ZpY3etJm1HEyB=
+YKtPkpXVQVWvYsMIGJ0PqHBdQ-LFYWtpoNMv8YdGAnKbwfLCDS8KZCAa4Wf9BjFJ0o380pkdCe1=
+LWf7e0ey0ov_5lWoRoIrgM78F1us0rHE_gxh2RQizVWAk8M1toxo3tAWJ8Q6xfn95rwKz8vFiVU=
+up9RG8uSszxq2iegKdQ/3wm/ck1gpKoJTQui8ozUm9v7aQ/h17/9ZBTJCsE_-oPonL1KkM8Ocxh=
+C-NgKoyED0w7rtidHMg" style=3D"color: #00989A; text-decoration:none;"><img a=
+lt=3Dwhatsapp src=3Dhttps://www.brief.me/static/editorial/img/newsletters/b=
+riefme_quotidien/v2/ico-whatsapp.png style=3D"width:20px; font:19px/28px Ar=
+ial, Helvetica, sans-serif; color:#0954c0; vertical-align:bottom;" width=3D=
+20></a></td><td align=3Dcenter class=3D"w-47 active-i" style=3D"line-height=
+:1px; font-size:1px; mso-line-height-rule:at-least;" width=3D56><a clicktra=
+cking=3D"on" href=3D"mailto:?subject=3DEntr%C3%A9e%20en%20service%20du%20pr=
+emier%20avion%20d%C3%A9velopp%C3%A9%20par%20la%20Chine&body=3DJe%20pense%20=
+que%20cet%20article%20pourrait%20t'int=C3=A9resser%20:%0AEntr%C3%A9e%20en%2=
+0service%20du%20premier%20avion%20d%C3%A9velopp%C3%A9%20par%20la%20Chine%0A=
+https://app.brief.me/article/2023-05-30-15494-entree-en-service-du-premier-=
+avion-developpe-par-la-chine" style=3D"color: #00989A; text-decoration:none=
+;"><img alt=3Dmail src=3Dhttps://www.brief.me/static/editorial/img/newslett=
+ers/briefme_quotidien/v2/ico-mail.png style=3D"width:19px; font:19px/28px A=
+rial, Helvetica, sans-serif; color:#0954c0; vertical-align:bottom;" width=
+=3D19></a></td></tr></table></td></tr></tbody></table></div><!--[if mso | I=
+E]></td></tr></table><![endif]--></td></tr></tbody></table></div><!--[if ms=
+o | IE]></td></tr></table><![endif]--></td></tr></table><table border=3D0 c=
+ellpadding=3D0 cellspacing=3D0 class=3Dw-100p style=3Dbackground:#f8f8f8;wi=
+dth:100%;padding:0;border-collapse:collapse;border-spacing:0px;><tr><td cla=
+ss=3Dcat13_border_bottom style=3D"border-bottom: 2px solid #6676FC"><!--[if=
+ mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" class=3D"" style=3D"width:608px;" width=3D"608"><tr><td style=3D"l=
+ine-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><di=
+v style=3D"Margin:0px auto;max-width:608px;"><table align=3Dcenter border=
+=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p role=3Dpresentation sty=
+le=3Dwidth:100%;><tbody><tr><td class=3Dpt-23 style=3D"direction:ltr;font-s=
+ize:0px;padding:24px 24px 0;text-align:left;vertical-align:top;"><!--[if ms=
+o | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0"><tr><td style=3D"vertical-align:middle;width:560px;"><![endif]--=
+><div class=3D"mj-column-per-100 outlook-group-fix" style=3Dfont-size:13px;=
+text-align:left;direction:ltr;display:inline-block;vertical-align:middle;wi=
+dth:100%;><table border=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p =
+role=3Dpresentation width=3D100%><tbody><tr><td><table cellpadding=3D0 cell=
+spacing=3D0><tr><td class=3D"l-fff cat13_background" style=3D"background-co=
+lor: #6676FC; padding:3px 25px 1px; font:bold 16px/24px Arial, Helvetica, s=
+ans-serif; color:#fff; border-radius:27px 27px 0 0;"> =C3=87A VAUT UN CLIC =
+</td></tr></table></td></tr></tbody></table></div><!--[if mso | IE]></td></=
+tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></=
+td></tr></table><![endif]--></td></tr></table><table border=3D0 cellpadding=
+=3D0 cellspacing=3D0 class=3D"cat13 w-100p" style=3D"background-color: #fff=
+ffe; width:100%;padding:0;border-collapse:collapse;border-spacing:0px;"><tr=
+><td><!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" class=3D"" style=3D"width:608px;" width=3D"608"><tr><t=
+d style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![=
+endif]--><div style=3D"Margin:0px auto;max-width:608px;"><table align=3Dcen=
+ter border=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p role=3Dpresen=
+tation style=3Dwidth:100%;><tbody><tr><td style=3D"direction:ltr;font-size:=
+0px;padding:22px 24px 47px;text-align:left;vertical-align:top;"><!--[if mso=
+ | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0"><tr><td style=3D"vertical-align:middle;width:560px;"><![endif]-->=
+<div class=3D"mj-column-per-100 outlook-group-fix" style=3Dfont-size:13px;t=
+ext-align:left;direction:ltr;display:inline-block;vertical-align:middle;wid=
+th:100%;><table border=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p r=
+ole=3Dpresentation width=3D100%><tbody><tr><td class=3D"fs-30-374 lh-40-374=
+ cat13_title" style=3D"color: #6676FC; padding:0; font:bold 32px/42px Arial=
+, Helvetica, sans-serif;"> Jeanne d=E2=80=99Arc en 2023 </td></tr><tr class=
+=3Dcat13 style=3D"background-color: #fffffe"><td class=3D"fs-16-374 lh-26-3=
+74 pm-0 paragraphs" style=3D"padding:0 0 37px; font:18px/28px Arial, Helvet=
+ica, sans-serif; color:#424242;"><p style=3D"padding-top: 16px">=C3=80 quoi=
+ ressembleraient Jeanne d=E2=80=99Arc et William Shakespeare s=E2=80=99ils =
+vivaient =C3=A0 notre =C3=A9poque=C2=A0? La graphiste Becca Saladin a une r=
+=C3=A9ponse. Gr=C3=A2ce au logiciel de retouche Photoshop, elle a tir=C3=A9=
+ le portrait de plusieurs personnalit=C3=A9s historiques dans leur version =
+moderne. <a clicktracking=3D"on" href=3Dhttps://url3003.brief.me/ss/c/GAGLd=
+HaXRp2IzSwzMK4mplb8UmKqOuvqbpwugBuxTLYK7dKNti6nH_ahSaunMmBSv9PX_c1brm2iO4tS=
+C-y7oOA1ePQWSFUh-vv9TjhRW4xFIYP2O0dXrJRU7bCgZuKoNrIn2GiJ40-Ombp7KklCPw/3wm/=
+ck1gpKoJTQui8ozUm9v7aQ/h18/LVM38aoOzJq7Das6VRco2psg-ksEslvZX-Lo7TGA1Ms rel=
+=3Dnoopener style=3D"color: #6676FC" target=3D_blank>Le r=C3=A9sultat, =C3=
+=A0 d=C3=A9couvrir sur le site Creapills</a>, est bluffant de r=C3=A9alisme=
+.</p></td></tr><tr><td><table align=3Dcenter cellpadding=3D0 cellspacing=3D=
+0><tr><td align=3Dcenter class=3D"w-47 active-i" style=3D"line-height:1px; =
+font-size:1px; mso-line-height-rule:at-least;" width=3D58><a clicktracking=
+=3D"on" href=3D"https://url3003.brief.me/ss/c/uvWhLgfybEKOci_rkpCTKFzFjO-yS=
+KfkYYOM1X9ypiHa3duCib5hZiB4_TwVzTaCJrGrFzjsfbVsJ8bOWe0ZHAaCB-vMvBb3wsa39K4k=
+IpU_N2kw99QkV4NjmDL1qor6g1vpqz4mZgBjXXrCWXBK3eDCRWt1IrpAZ-anJZqk65k/3wm/ck1=
+gpKoJTQui8ozUm9v7aQ/h19/bZ4dJz1ZlJ95pRnxvVfywCS5JfAk96hqYYDj5ZpnmZI" style=
+=3D"color: #6676FC; text-decoration:none;"><img alt=3Dfacebook src=3Dhttps:=
+//www.brief.me/static/editorial/img/newsletters/briefme_quotidien/v2/ico-fa=
+cebook.png style=3D"width:11px; font:19px/28px Arial, Helvetica, sans-serif=
+; color:#0954c0; vertical-align:bottom;" width=3D11></a></td><td align=3Dce=
+nter class=3D"w-47 active-i" style=3D"line-height:1px; font-size:1px; mso-l=
+ine-height-rule:at-least;" width=3D54><a clicktracking=3D"on" href=3D"https=
+://url3003.brief.me/ss/c/ZBOlHrnWkOSco6Tx7wp6grHsYM0kGEArPClfcNaiHycF2peu9a=
+MUsmTBFnjiHZsqs_FfGxyivxVCwvgcvRLvhkuP-x2-TIheFla_qqiZzfjFEXIM-nr9w0dK_ht2g=
+uvZhV-sNp0a2HkM8RMYdkUzEVOmcQmRPPtvxsCLyBtPjEGog1mVBbu67uOLgcDh7smUlo0mNM0e=
+PLISmvryisNlbQ/3wm/ck1gpKoJTQui8ozUm9v7aQ/h20/HeSaPRVT2bWKtypkxym8S4kU8WU7L=
+jf7fJlxdVYj1s4" style=3D"color: #6676FC; text-decoration:none;"><img alt=3D=
+twitter src=3Dhttps://www.brief.me/static/editorial/img/newsletters/briefme=
+_quotidien/v2/ico-twitter.png style=3D"width:18px; font:19px/28px Arial, He=
+lvetica, sans-serif; color:#0954c0; vertical-align:bottom;" width=3D18></a>=
+</td><td align=3Dcenter class=3D"d-b w-47 active-i" style=3D"display:none; =
+line-height:0px; font-size:0px; mso-line-height-rule:at-least; mso-hide:all=
+" valign=3Dbottom width=3D0><a clicktracking=3D"on" href=3D"https://url3003=
+.brief.me/ss/c/pzEjhFizng49ja4-MJl0GMmdKqgQze08ZpY3etJm1HEyBYKtPkpXVQVWvYsM=
+IGJ0PqHBdQ-LFYWtpoNMv8YdGAnKbwfLCDS8KZCAa4Wf9BjH9wjT_hN__S1uWins6FTRDQF7V2q=
+CrQ3DbkU4hz3fYA/3wm/ck1gpKoJTQui8ozUm9v7aQ/h21/tgp6XW9_6qa7MeIew-rjrh0KkzMx=
+IaU--sfxNWVl3E4" style=3D"color: #6676FC; text-decoration:none;"><img alt=
+=3Dwhatsapp src=3Dhttps://www.brief.me/static/editorial/img/newsletters/bri=
+efme_quotidien/v2/ico-whatsapp.png style=3D"width:20px; font:19px/28px Aria=
+l, Helvetica, sans-serif; color:#0954c0; vertical-align:bottom;" width=3D20=
+></a></td><td align=3Dcenter class=3D"w-47 active-i" style=3D"line-height:1=
+px; font-size:1px; mso-line-height-rule:at-least;" width=3D56><a clicktrack=
+ing=3D"on" href=3D"mailto:?subject=3DJeanne%20d%E2%80%99Arc%20en%202023&bod=
+y=3DJe%20pense%20que%20cet%20article%20pourrait%20t'int=C3=A9resser%20:%0AJ=
+eanne%20d%E2%80%99Arc%20en%202023%0Ahttps://app.brief.me/article/2023-05-30=
+-15495-jeanne-darc-en-2023" style=3D"color: #6676FC; text-decoration:none;"=
+><img alt=3Dmail src=3Dhttps://www.brief.me/static/editorial/img/newsletter=
+s/briefme_quotidien/v2/ico-mail.png style=3D"width:19px; font:19px/28px Ari=
+al, Helvetica, sans-serif; color:#0954c0; vertical-align:bottom;" width=3D1=
+9></a></td></tr></table></td></tr></tbody></table></div><!--[if mso | IE]><=
+/td></tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso | =
+IE]></td></tr></table><![endif]--></td></tr></table><table border=3D0 cellp=
+adding=3D0 cellspacing=3D0 class=3Dw-100p style=3Dbackground:#f8f8f8;width:=
+100%;padding:0;border-collapse:collapse;border-spacing:0px;><tr><td><!--[if=
+ mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" class=3D"" style=3D"width:608px;" width=3D"608"><tr><td style=3D"l=
+ine-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><di=
+v style=3D"Margin:0px auto;max-width:608px;"><table align=3Dcenter border=
+=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p role=3Dpresentation sty=
+le=3Dwidth:100%;><tbody><tr><td class=3D"pt-24 pb-24-374" style=3D"directio=
+n:ltr;font-size:0px;padding:33px 24px 32px;text-align:left;vertical-align:t=
+op;"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0"><tr><td style=3D"vertical-align:middle;width:560p=
+x;"><![endif]--><div class=3D"mj-column-per-100 outlook-group-fix" style=3D=
+font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-=
+align:middle;width:100%;><table border=3D0 cellpadding=3D0 cellspacing=3D0 =
+class=3Dw-100p role=3Dpresentation width=3D100%><tbody><tr><td class=3D"fs-=
+16-374 lh-26-374 cat_intro_outro" style=3D"font:18px/28px Arial, Helvetica,=
+ sans-serif; color:#424242;"><p>Vous voil=C3=A0 =C2=AB=C2=A0brief=C3=A9s=C2=
+=A0=C2=BB sur l=E2=80=99actualit=C3=A9 du jour et quelques autres consid=C3=
+=A9rations. On vous souhaite une bonne soir=C3=A9e =C3=A0 vous demander =C3=
+=A0 quoi vous auriez ressembl=C3=A9 =C3=A0 l=E2=80=99=C3=A9poque de Jeanne =
+d=E2=80=99Arc.</p><br><p>=E2=80=94 Mathilde Belin, Nicolas Filio, Laurent M=
+auriac et Aude Villiers-Moriam=C3=A9</p></td></tr></tbody></table></div><!-=
+-[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody></table></di=
+v><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></table>       =
+ <table border=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p style=3D"=
+background:#fffffe; width:100%;padding:0;border-collapse:collapse;border-sp=
+acing:0px;"><tr><td><!--[if mso | IE]><table align=3D"center" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" class=3D"" style=3D"width:608px;" width=
+=3D"608"><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rul=
+e:exactly;"><![endif]--><div style=3D"Margin:0px auto;max-width:608px;"><ta=
+ble align=3Dcenter border=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100=
+p role=3Dpresentation style=3Dwidth:100%;><tbody><tr><td class=3D"pb-22 pt-=
+31" style=3D"direction:ltr;font-size:0px;padding:39px 24px 23px;text-align:=
+left;vertical-align:top;"><!--[if mso | IE]><table role=3D"presentation" bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td style=3D"vertical-al=
+ign:middle;width:560px;"><![endif]--><div class=3D"mj-column-per-100 outloo=
+k-group-fix" style=3Dfont-size:13px;text-align:left;direction:ltr;display:i=
+nline-block;vertical-align:middle;width:100%;><table border=3D0 cellpadding=
+=3D0 cellspacing=3D0 class=3Dw-100p role=3Dpresentation width=3D100%><tbody=
+><tr><td align=3Dcenter class=3Dpb-24 style=3D"padding:0 0 16px;"><a clickt=
+racking=3D"on" href=3Dhttps://url3003.brief.me/ss/c/AWD9AEydda1BlzAIDIER2ul=
+yH6VMKDg4DIhkk_wTtPk/3wm/ck1gpKoJTQui8ozUm9v7aQ/h22/nY8bvUcvuvklWTvF7EYDQIa=
+6vc4x1_1K1a-0cge3dAc style=3Dtext-decoration:none;><img alt=3Dbrief.me| src=
+=3Dhttps://www.brief.me/static/editorial/img/newsletters/briefme_quotidien/=
+v2/logo-02.png style=3D"width:164px; font:30px/34px Arial, Helvetica, sans-=
+serif; color:#424242; vertical-align:top;" width=3D164></a></td></tr><tr><t=
+d style=3D"padding:0 0 24px;"><table align=3Dcenter cellpadding=3D0 cellspa=
+cing=3D0><tr><td class=3Dactive-i><a clicktracking=3D"on" href=3Dhttps://ur=
+l3003.brief.me/ss/c/AWD9AEydda1BlzAIDIER2tpaddIrXUsfkKtnYBz0kOnwSbhsfJwT4BQ=
+xDq9Pwbg0/3wm/ck1gpKoJTQui8ozUm9v7aQ/h23/eKR_riXfKUTZ8zwDaICLwTlpxUHYd2xiTx=
+xCm9vluLU style=3Dtext-decoration:none;><img alt=3Dfacebook src=3Dhttps://w=
+ww.brief.me/static/editorial/img/newsletters/briefme_quotidien/v2/ico-faceb=
+ook-02.png style=3D"width:32px; font:10px/32px Arial, Helvetica, sans-serif=
+; color:#000; vertical-align:top;" width=3D32></a></td><td class=3Dw-16-374=
+ width=3D24></td><td class=3Dactive-i><a clicktracking=3D"on" href=3Dhttps:=
+//url3003.brief.me/ss/c/nszGnMFdwCa6q_Y2UUYMrZ6i7WWZ_hjAIvW2ql1Qt9TF977uX5n=
+yOhPBdAXNbWAR/3wm/ck1gpKoJTQui8ozUm9v7aQ/h24/5gtBWXPhD5QdGjkl-hdNdJePeEG1IS=
+3BVmbETX4o7p0 style=3Dtext-decoration:none;><img alt=3Dtwitter src=3Dhttps:=
+//www.brief.me/static/editorial/img/newsletters/briefme_quotidien/v2/ico-tw=
+itter-02.png style=3D"width:32px; font:10px/32px Arial, Helvetica, sans-ser=
+if; color:#000; vertical-align:top;" width=3D32></a></td><td class=3Dw-16-3=
+74 width=3D24></td><td class=3Dactive-i><a clicktracking=3D"on" href=3Dhttp=
+s://url3003.brief.me/ss/c/AWD9AEydda1BlzAIDIER2jPEIckYX4tpv8EhbOJ67xgyittQQ=
+FS-36wTs1gDLvu9/3wm/ck1gpKoJTQui8ozUm9v7aQ/h25/AGSccWnLW02utWk68NV3pUvcjrD5=
+k6fd-O_V5WsOTIY style=3Dtext-decoration:none;><img alt=3Dtwich src=3Dhttps:=
+//www.brief.me/static/editorial/img/newsletters/briefme_quotidien/v2/ico-tw=
+ich.png style=3D"width:32px; font:10px/32px Arial, Helvetica, sans-serif; c=
+olor:#000; vertical-align:top;" width=3D32></a></td><td class=3Dw-16-374 wi=
+dth=3D24></td><td class=3Dactive-i><a clicktracking=3D"on" href=3Dmailto:he=
+llo@brief.me style=3Dtext-decoration:none;><img alt=3Dmail src=3Dhttps://ww=
+w.brief.me/static/editorial/img/newsletters/briefme_quotidien/v2/ico-mail-0=
+2.png style=3D"width:32px; font:10px/32px Arial, Helvetica, sans-serif; col=
+or:#000; vertical-align:top;" width=3D32></a></td><td class=3Dw-16-374 widt=
+h=3D24></td><td class=3Dactive-i><a clicktracking=3D"on" href=3Dhttps://url=
+3003.brief.me/ss/c/AWD9AEydda1BlzAIDIER2hlufDkIEPdfh3Psb7x1h5Cjuf6QARtNZMF_=
+LCYhQxeAEruiz-EQo6b7b5rrqaOMvA/3wm/ck1gpKoJTQui8ozUm9v7aQ/h26/A7PFH-tcKUcHY=
+tsjWS45HQ7WL68aaOO0H1suQZiO2Rs style=3Dtext-decoration:none;><img alt=3Dlin=
+kedin src=3Dhttps://www.brief.me/static/editorial/img/newsletters/briefme_q=
+uotidien/v2/ico-linkedin.png style=3D"width:32px; font:10px/32px Arial, Hel=
+vetica, sans-serif; color:#000; vertical-align:top;" width=3D32></a></td></=
+tr></table></td></tr><tr><td align=3Dcenter class=3D"fs-16-374 lh-26-374" s=
+tyle=3D"padding:0 0 15px; font:bold 18px/32px Arial, Helvetica, sans-serif;=
+ color:#424242;"> D=C3=A9couvrez nos autres m=C3=A9dias </td></tr><tr><td><=
+table align=3Dcenter cellpadding=3D0 cellspacing=3D0 class=3Dw-100p><tr><th=
+ align=3Dleft class=3D"w-150 tflex-374" style=3D"border:1px solid #ddd; bor=
+der-radius:10px; vertical-align:top;" width=3D200><table cellpadding=3D0 ce=
+llspacing=3D0 width=3D100%><tr><td><table align=3Dcenter cellpadding=3D0 ce=
+llspacing=3D0><tr><td class=3Dactive-t style=3D"mso-padding-alt:8px 9px 6px=
+;"><a clicktracking=3D"on" href=3Dhttps://url3003.brief.me/ss/c/AWD9AEydda1=
+BlzAIDIER2lmg2DEbnz00Si_3r2Z31UdVfFohImNdik0lcHPsFt6a/3wm/ck1gpKoJTQui8ozUm=
+9v7aQ/h27/vlTh6amor2xBBpcLDIVagYd1-YRzBh37vmmuKZH6C4k style=3D"color:#80808=
+0; text-decoration:none; display:block; padding:8px 9px 6px; font:bold 12px=
+/21px Arial, Helvetica, sans-serif;"><span style=3D"display:inline-block; v=
+ertical-align:1px;"><img alt=3Dbrief.science| src=3Dhttps://www.brief.me/st=
+atic/editorial/img/newsletters/briefme_quotidien/v2/logo-03.png style=3D"wi=
+dth:132px; display:block; font:bold 12px/21px Arial, Helvetica, sans-serif;=
+ color:#000; vertical-align:top;" width=3D132></span><br> La science expliq=
+u=C3=A9e </a></td></tr></table></td></tr></table></th><th class=3D"w-27 tfl=
+ex-374" height=3D14 width=3D22></th><th align=3Dleft class=3D"w-150 tflex-3=
+74" style=3D"border:1px solid #ddd; border-radius:10px; vertical-align:top;=
+" width=3D200><table cellpadding=3D0 cellspacing=3D0 width=3D100%><tr><td><=
+table align=3Dcenter cellpadding=3D0 cellspacing=3D0><tr><td class=3Dactive=
+-t style=3D"mso-padding-alt:8px 9px 6px;"><a clicktracking=3D"on" href=3Dht=
+tps://url3003.brief.me/ss/c/AWD9AEydda1BlzAIDIER2pNrcFfAJcXY6_8TiTp-kb4/3wm=
+/ck1gpKoJTQui8ozUm9v7aQ/h28/KAMMuLKvvVdsrQsI0NsoImLLlQKcqbnVUDgfeQmS7d0 sty=
+le=3D"color:#808080; text-decoration:none; display:block; padding:8px 9px 6=
+px; font:bold 12px/16px Arial, Helvetica, sans-serif;"><span style=3D"displ=
+ay:inline-block; vertical-align:1px;"><img alt=3Dbrief.eco| src=3Dhttps://w=
+ww.brief.me/static/editorial/img/newsletters/briefme_quotidien/v2/logo-04.p=
+ng style=3D"width:105px; display:block; font:bold 12px/21px Arial, Helvetic=
+a, sans-serif; color:#000; vertical-align:top;" width=3D105></span><br> L=
+=E2=80=99=C3=A9conomie expliqu=C3=A9e </a></td></tr></table></td></tr></tab=
+le></th></tr></table></td></tr></tbody></table></div><!--[if mso | IE]></td=
+></tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]=
+></td></tr></table><![endif]--></td></tr></table><table border=3D0 cellpadd=
+ing=3D0 cellspacing=3D0 class=3Dw-100p style=3Dbackground:#fffffe;width:100=
+%;padding:0;border-collapse:collapse;border-spacing:0px;><tr><td style=3D"b=
+order-top:4px solid #f2f2f2;"><!--[if mso | IE]><table align=3D"center" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" style=3D"width:616=
+px;" width=3D"616"><tr><td style=3D"line-height:0px;font-size:0px;mso-line-=
+height-rule:exactly;"><![endif]--><div style=3D"Margin:0px auto;max-width:6=
+08px;"><table align=3Dcenter border=3D0 cellpadding=3D0 cellspacing=3D0 cla=
+ss=3Dw-100p role=3Dpresentation style=3Dwidth:100%;><tbody><tr><td class=3D=
+pb-24 style=3D"direction:ltr;font-size:0px;padding:24px 28px;text-align:lef=
+t;vertical-align:top;"><!--[if mso | IE]><table role=3D"presentation" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td style=3D"vertical-align=
+:middle;width:568px;"><![endif]--><div class=3D"mj-column-per-100 outlook-g=
+roup-fix" style=3Dfont-size:13px;text-align:left;direction:ltr;display:inli=
+ne-block;vertical-align:middle;width:100%;><table border=3D0 cellpadding=3D=
+0 cellspacing=3D0 class=3Dw-100p role=3Dpresentation width=3D100%><tbody><t=
+r><td class=3D"fs-16-374 lh-26-374 h-u" style=3D"font:bold 18px/32px Arial,=
+ Helvetica, sans-serif; color:#424242;"><a clicktracking=3D"on" href=3D"htt=
+ps://url3003.brief.me/ss/c/AWD9AEydda1BlzAIDIER2vTWGuwPvG6ULhhDmAzMbvnai4Iy=
+8-_GoDSn6aYUl1jQL_xHaInVTtIM4cAxX-gRkj2rGqRW32xWtsBRwwO7FDZJDj38y94F78VJs2r=
+0m3Rq-6fDDEQJkDRM7GxL9Ku_X2FvtWI9ia6ir7Z5aCYy99ff7Lp17QKywPHPBfddfj0W/3wm/c=
+k1gpKoJTQui8ozUm9v7aQ/h29/l5ZDC2A7dM2_rtW6FebKTWTqpy70QUwE96gnP_TQnTc" styl=
+e=3D"text-decoration:none; color:#424242;">=C3=89ditions pr=C3=A9c=C3=A9den=
+tes</a> =E2=80=A2 <a clicktracking=3D"on" href=3D"https://url3003.brief.me/=
+ss/c/AWD9AEydda1BlzAIDIER2vTWGuwPvG6ULhhDmAzMbvnai4Iy8-_GoDSn6aYUl1jQL_xHaI=
+nVTtIM4cAxX-gRkj2rGqRW32xWtsBRwwO7FDZJDj38y94F78VJs2r0m3Rq-6fDDEQJkDRM7GxL9=
+Ku_X2FvtWI9ia6ir7Z5aCYy99dvXimo6dXgvrZ_xb6OImdJ/3wm/ck1gpKoJTQui8ozUm9v7aQ/=
+h30/ZrrfswgooEWXcSNtGVJiOsW8n5RF6Kb-me_4q6YHNZc" style=3D"text-decoration:n=
+one; color:#424242;">Panoramas</a></td></tr><tr><td class=3D"fs-16-374 lh-2=
+6-374 l-a0a0a0 h-u" style=3D"font:bold 18px/32px Arial, Helvetica, sans-ser=
+if; color:#a0a0a0;">  <a clicktracking=3D"on" href=3Dhttps://url3003.brief.=
+me/ss/c/AWD9AEydda1BlzAIDIER2oCyLMJY8sQhqKAXBNEetypCbPhYSiwEKg5LcuICFZyE/3w=
+m/ck1gpKoJTQui8ozUm9v7aQ/h31/wkUYMIL0sdb31R8c6BQI1HbrB4d_dZS6DAGK1lEopew st=
+yle=3Dcolor:#a0a0a0;text-decoration:none;>Le projet Brief.me</a> =E2=80=A2 =
+<a clicktracking=3D"on" href=3Dhttps://url3003.brief.me/ss/c/AWD9AEydda1Blz=
+AIDIER2pPbrUT7opHHjxxgQrQzatgnKs_YI_qjsCcm458DIKP1/3wm/ck1gpKoJTQui8ozUm9v7=
+aQ/h32/igDrlpngPORUpYuBvRouwo3JormJuxAQSnkmUfdxK3M style=3Dcolor:#a0a0a0;te=
+xt-decoration:none;>L=E2=80=99=C3=A9quipe</a> =E2=80=A2 <a clicktracking=3D=
+"on" href=3Dhttps://url3003.brief.me/ss/c/AWD9AEydda1BlzAIDIER2t-lDILEIjYLT=
+catFfBiDex3HaaNCC04_s3AkEvVQ_pl/3wm/ck1gpKoJTQui8ozUm9v7aQ/h33/ZhkZqZncmFS-=
+Xiq7hql3l_E8zVyOPHc-mQqhdnzteFE style=3Dcolor:#a0a0a0;text-decoration:none;=
+>Questions fr=C3=A9quentes</a>  </td></tr></tbody></table></div><!--[if mso=
+ | IE]></td></tr></table><![endif]--></td></tr></tbody></table></div><!--[i=
+f mso | IE]></td></tr></table><![endif]--></td></tr></table><table border=
+=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p style=3Dbackground:#fff=
+ffe;width:100%;padding:0;border-collapse:collapse;border-spacing:0px;><tr><=
+td style=3D"border-top:4px solid #f2f2f2;"><!--[if mso | IE]><table align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" sty=
+le=3D"width:608px;" width=3D"608"><tr><td style=3D"line-height:0px;font-siz=
+e:0px;mso-line-height-rule:exactly;"><![endif]--><div style=3D"Margin:0px a=
+uto;max-width:608px;"><table align=3Dcenter border=3D0 cellpadding=3D0 cell=
+spacing=3D0 class=3Dw-100p role=3Dpresentation style=3Dwidth:100%;><tbody><=
+tr><td class=3Dpb-23 style=3Ddirection:ltr;font-size:0px;padding:24px;text-=
+align:left;vertical-align:top;><!--[if mso | IE]><table role=3D"presentatio=
+n" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td style=3D"vertic=
+al-align:middle;width:560px;"><![endif]--><div class=3D"mj-column-per-100 o=
+utlook-group-fix" style=3Dfont-size:13px;text-align:left;direction:ltr;disp=
+lay:inline-block;vertical-align:middle;width:100%;><table border=3D0 cellpa=
+dding=3D0 cellspacing=3D0 class=3Dw-100p role=3Dpresentation width=3D100%><=
+tbody><tr><td class=3D"fs-16-374 lh-26-374" style=3D"padding:0 0 15px; font=
+:bold 18px/32px Arial, Helvetica, sans-serif; color:#424242;"> T=C3=A9l=C3=
+=A9chargez notre application mobile </td></tr><tr><td><table cellpadding=3D=
+0 cellspacing=3D0><tr><td class=3D"wi-100p-374 active-i"><a clicktracking=
+=3D"on" href=3Dhttps://url3003.brief.me/ss/c/pzEjhFizng49ja4-MJl0GPyGeiEGqW=
+DosRsX7P6N33KpFyZVyMFMoisKTEfG4l7ckflY3_VW_hRiL2Bcr8qoyHDVXhImTs0nxDPVTEaA8=
+_o/3wm/ck1gpKoJTQui8ozUm9v7aQ/h34/_1w7DwkMgCHu9syOz6D8aWzrLD9djK11dlPIaMNaU=
+a8 style=3Dtext-decoration:none;><img alt=3D"T=C3=A9l=C3=A9charger dans I'A=
+pp Store" src=3Dhttps://www.brief.me/static/editorial/img/newsletters/brief=
+me_quotidien/v2/btn-01.png style=3D"width:152px; max-width:152px; font:14px=
+/16px Arial, Helvetica, sans-serif; color:#000; vertical-align:top;" width=
+=3D152></a></td><td class=3Dw-7-374 width=3D25></td><td class=3D"wi-100p-37=
+4 active-i"><a clicktracking=3D"on" href=3D"https://url3003.brief.me/ss/c/2=
+_YXmwRzAARDVHGCYnBEGdpPtUVvcWwGm3PQs2lBBbl6NlZnkvF60k_tgiiZCuLJp9J-sngq4VhX=
+up7PJroeZ17FqSuwXVrjLKhkprUm7Qg/3wm/ck1gpKoJTQui8ozUm9v7aQ/h35/ANo9ce_muEEH=
+rsN4jrKlo4wUA5lkY4_B9hJkZhvBIYA" style=3Dtext-decoration:none;><img alt=3D"=
+T=C3=A9l=C3=A9chargez sur Google play" src=3Dhttps://www.brief.me/static/ed=
+itorial/img/newsletters/briefme_quotidien/v2/btn-02.png style=3D"width:152p=
+x; max-width:152px; font:14px/16px Arial, Helvetica, sans-serif; color:#000=
+; vertical-align:top;" width=3D152></a></td></tr></table></td></tr></tbody>=
+</table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></t=
+body></table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></t=
+r></table><table border=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p =
+style=3Dbackground:#fffffe;width:100%;padding:0;border-collapse:collapse;bo=
+rder-spacing:0px;><tr><td style=3D"border-top:4px solid #f2f2f2;"><!--[if m=
+so | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" class=3D"" style=3D"width:608px;" width=3D"608"><tr><td style=3D"lin=
+e-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><div =
+style=3D"Margin:0px auto;max-width:608px;"><table align=3Dcenter border=3D0=
+ cellpadding=3D0 cellspacing=3D0 class=3Dw-100p role=3Dpresentation style=
+=3Dwidth:100%;><tbody><tr><td class=3D"pt-22 pt-25-374 pb-26" style=3Ddirec=
+tion:ltr;font-size:0px;padding:24px;text-align:left;vertical-align:top;><!-=
+-[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0"><tr><td style=3D"vertical-align:middle;width:560px;"><![e=
+ndif]--><div class=3D"mj-column-per-100 outlook-group-fix" style=3Dfont-siz=
+e:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:mi=
+ddle;width:100%;><table border=3D0 cellpadding=3D0 cellspacing=3D0 class=3D=
+w-100p role=3Dpresentation width=3D100%><tbody><tr><td class=3Dpb-0 style=
+=3D"padding:0 0 15px; font:bold 16px/24px Arial, Helvetica, sans-serif; col=
+or:#424242;"> Pour =C3=AAtre s=C3=BBr(e) de recevoir <a class=3Dedition-col=
+or clicktracking=3D"on" href=3Dhttps://url3003.brief.me/ss/c/AWD9AEydda1Blz=
+AIDIER2ulyH6VMKDg4DIhkk_wTtPk/3wm/ck1gpKoJTQui8ozUm9v7aQ/h36/RK2HwW2kQeXG8R=
+AJa3lwIPTNicxA9acBBy81PCePg1g style=3Dtext-decoration:none;>brief.me</a>, a=
+joutez =C2=AB=C2=A0<a class=3Dedition-color clicktracking=3D"on" href=3Dmai=
+lto:hello@brief.me style=3Dtext-decoration:none;>hello@brief.me</a>=C2=A0=
+=C2=BB =C3=A0 votre carnet d=E2=80=99adresses. </td></tr><tr><td style=3D"f=
+ont:16px/24px Arial, Helvetica, sans-serif; color:#717171;"> Vous =C3=AAtes=
+ inscrit(e) sur cette liste car vous avez demand=C3=A9 =C3=A0 recevoir les =
+informations de Brief.me.<br><br><a clicktracking=3D"on" href=3D"https://ur=
+l3003.brief.me/ss/c/AWD9AEydda1BlzAIDIER2vTWGuwPvG6ULhhDmAzMbvnai4Iy8-_GoDS=
+n6aYUl1jQL_xHaInVTtIM4cAxX-gRkj2rGqRW32xWtsBRwwO7FDZJDj38y94F78VJs2r0m3Rqs3=
+lhYNFDbO8E2g2z9L4O_ANvdhTGx8Nk6yDwbP73iUE/3wm/ck1gpKoJTQui8ozUm9v7aQ/h37/L1=
+vGFAHHAMIYtNYTXLkSlsFT9PAHo2bxLmdnxT4SolM" style=3D"text-decoration:underli=
+ne; color:#717171;">Se d=C3=A9sinscrire</a> =E2=80=A2 <a clicktracking=3D"o=
+n" href=3Dmailto:hello@brief.me style=3D"text-decoration:underline; color:#=
+717171;">Contact</a></td></tr></tbody></table></div><!--[if mso | IE]></td>=
+</tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]>=
+</td></tr></table><![endif]--></td></tr></table><img src=3D"https://url3003=
+.brief.me/ss/o/qs7XBWwj2hHs7vJwVKpOPA/3wm/ck1gpKoJTQui8ozUm9v7aQ/ho.gif" al=
+t=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !important=
+;width:1px !important;border-width:0 !important;margin-top:0 !important;mar=
+gin-bottom:0 !important;margin-right:0 !important;margin-left:0 !important;=
+padding-top:0 !important;padding-bottom:0 !important;padding-right:0 !impor=
+tant;padding-left:0 !important;"/></body></html>
+--e0e471fedb79663d3c80977e7614c5905ed409740f34bf88ab446a1a8bf1--

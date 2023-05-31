@@ -1,0 +1,864 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp132294ims;
+        Mon, 29 May 2023 07:19:03 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ4l09ov53b94gGa0aCUVvMs6M8VxIHNQEPhlB+8DbWsenQN6qiy59+ldIHZG3GUxccN7hPr
+X-Received: by 2002:a37:895:0:b0:75b:23a0:de86 with SMTP id 143-20020a370895000000b0075b23a0de86mr6710192qki.4.1685369942779;
+        Mon, 29 May 2023 07:19:02 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685369942; cv=none;
+        d=google.com; s=arc-20160816;
+        b=YYxOOJuhlpstyNyfw4PxyF69nsWMdbk4FfOeDdiIi2tBg30bL1NmkD1oHt34+PnHDv
+         aoZI3U0xoSyyIhaa1oTfLVHM9pebkUDS5HRBoVz6i/vGzwVduIBCSL1OWSLAON8OmsuC
+         RNMLHV0UfxENA6GIAxfjzUUs8RycD6DAUBlmQGaks29hW1tXQsGA/X55B9GPB/ownSHL
+         O099vuTmkAz5JocQmx/KBPAlHrDg1cWDw4VZi5BCn3gsAmTl8tOC0CUI/nQEEV6MLTlZ
+         sZZFT+uP7bDrfo2OwHX0rSR+/dSbvI7zOVatkbnWjyC1qVOmQbqKudtPC3ARE6CjyMyq
+         +sfw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:mime-version:subject:message-id:to:reply-to:from
+         :date:dkim-signature;
+        bh=F+9Xvcz2z0d4G5SmlF4t2zetoTP801niFHvbNOZMAY8=;
+        b=W0RO00eReS48/b/Pd96FldXgRYCYlTYWHTH2R4aa75mBIAPjMm3upQipglyW52jUZM
+         xqIHeULIHyIN//UDFYTO/qZsXdxdhl48oIf/S7SXRmhaxvweJkbch/LsW/s9o/pbecN5
+         orC8liiVXtB0WXHNewap9cNK9BCU6+p0HKK1dh8aparVBE9jR4cmhrI8HCDGNKRp6rh5
+         AJGx0P632X8IxgViukYqi+RWqFliEaepQC7b4XEi7Un3HPlVj29tOK45uclBSDGtEz0t
+         0Gm48fLIIQds4cXxdqiFIM4q0opgCIqm55nOqHtdjY0L1vkxokhz2txRjWLnpEM7t9r6
+         BpDw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@minted.com header.s=sailthru header.b=lIPAXCnP;
+       spf=pass (google.com: domain of delivery_20230529141902.6474b45564144c0001ca586e@bounce.minted.com designates 192.64.236.107 as permitted sender) smtp.mailfrom=delivery_20230529141902.6474b45564144c0001ca586e@bounce.minted.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=minted.com
+Return-Path: <delivery_20230529141902.6474b45564144c0001ca586e@bounce.minted.com>
+Received: from mta236-107.sailthru.com (mta236-107.sailthru.com. [192.64.236.107])
+        by mx.google.com with ESMTPS id x10-20020a05620a01ea00b0075b39115540si3856975qkn.502.2023.05.29.07.19.02
+        for <ouchendans62@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 29 May 2023 07:19:02 -0700 (PDT)
+Received-SPF: pass (google.com: domain of delivery_20230529141902.6474b45564144c0001ca586e@bounce.minted.com designates 192.64.236.107 as permitted sender) client-ip=192.64.236.107;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@minted.com header.s=sailthru header.b=lIPAXCnP;
+       spf=pass (google.com: domain of delivery_20230529141902.6474b45564144c0001ca586e@bounce.minted.com designates 192.64.236.107 as permitted sender) smtp.mailfrom=delivery_20230529141902.6474b45564144c0001ca586e@bounce.minted.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=minted.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed; s=sailthru; d=minted.com;
+ h=Date:From:Reply-To:To:Message-ID:Subject:MIME-Version:Content-Type:
+ List-Unsubscribe; i=mintedemail@minted.com;
+ bh=fgtayz0Q2kyUgV0IV2fs8VVLHng0+FXl1U/H7KIg20c=;
+ b=lIPAXCnPaZsE9iOI0k5mI4LUdTnlWFcalUGV8+89knFxMIsK1RnDGwByJgl0pEcrzy4fRG3K7iMc
+   44IxrR83ot98DhtFeQIFAqTHqvvC0AKyLH1lwsZWFtI22+cdhTJ5tiYc3b1sWh7wmuSlJulITWpu
+   +8XwHo7PPtaAxAtv1Dg=
+Received: from njmta-53.sailthru.com (173.228.155.53) by mta236-107.sailthru.com id heiq5c2v0f84 for <ouchendans62@gmail.com>; Mon, 29 May 2023 09:19:02 -0500 (envelope-from <delivery_20230529141902.6474b45564144c0001ca586e@bounce.minted.com>)
+Received: from nj1-heyblush.flt (172.18.20.28) by njmta-53.sailthru.com id heiq5c1qqbs8 for <ouchendans62@gmail.com>; Mon, 29 May 2023 10:19:02 -0400 (envelope-from <delivery_20230529141902.6474b45564144c0001ca586e@bounce.minted.com>)
+Date: Mon, 29 May 2023 14:19:02 +0000 (UTC)
+From: Minted <mintedemail@minted.com>
+Reply-To: help@minted.com
+To: ouchendans62@gmail.com
+Message-ID: <20230529141902.6474b45564144c0001ca586e@sailthru.com>
+Subject: Welcome! Save 20% off your first order
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_25677268_579529967.1685369942185"
+x-job: 7174-transactional-20230529
+X-Feedback-ID: 7174:transactional:sailthru
+X-TM-ID: 20230529141902.6474b45564144c0001ca586e
+X-Sail-Id: 7174.50929945.50929945
+X-Info: Message sent by sailthru.com customer Minted, LLC
+X-Info: We do not permit unsolicited commercial email
+X-Info: Please report abuse by forwarding complete headers to
+X-Info: abuse@sailthru.com
+X-Mailer: sailthru.com
+X-JMailer: nj1-heyblush.flt
+X-Unsubscribe-Web: https://sailthru.minted.com/oc/6472118e67168a360c0798fc6474b45564144c0001ca586e/804a9fc5
+List-Unsubscribe: <https://sailthru.minted.com/oc/6472118e67168a360c0798fc6474b45564144c0001ca586e/804a9fc5>, <mailto:unsubscribe_20230529141902.6474b45564144c0001ca586e@mx.sailthru.com>
+
+------=_Part_25677268_579529967.1685369942185
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+ Shop now <https://sailthru.minted.com/click/6474b45564144c0001ca586e/aHR0cHM6Ly93d3cubWludGVkLmNvbT91dG1fY2FtcGFpZ249VGltZVRyaWdnZXJfR0VOX1Bvc3RSZWdfV2VsY29tZV8yME9mZl8yMDIzJnV0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT1vbnNpdGVfdHJpZ2dlciZ1dG1fY2lkPTY0NzIxMThlNjcxNjhhMzYwYzA3OThmYyZ1dG1fc3ViPWVtJmJ4aWQ9NjQ3MjExOGU2NzE2OGEzNjBjMDc5OGZj/6472118e67168a360c0798fcC19b7b383>.Click here <https://sailthru.minted.com/view/6472118e67168a360c0798fc6474b45564144c0001ca586e/65cc768e> to view this email in your browser.
+
+<a href="https://sailthru.minted.com/click/6474b45564144c0001ca586e/aHR0cDovL3d3dy5taW50ZWQuY29tIj91dG1fY2FtcGFpZ249VGltZVRyaWdnZXJfR0VOX1Bvc3RSZWdfV2VsY29tZV8yME9mZl8yMDIzJnV0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT1vbnNpdGVfdHJpZ2dlciZ1dG1fY2lkPTY0NzIxMThlNjcxNjhhMzYwYzA3OThmYyZ1dG1fc3ViPWVtJmJ4aWQ9NjQ3MjExOGU2NzE2OGEzNjBjMDc5OGZj/6472118e67168a360c0798fcB7bb3479c><img src="https://sailthru.minted.com/img/6472118e67168a360c0798fc6474b45564144c0001ca586e/0556b26d.gif" alt="" border="0" /></a>   
+
+Use code: NCBK23J34TCD2 through 6/12.
+
+Shop Minted <https://sailthru.minted.com/click/6474b45564144c0001ca586e/aHR0cHM6Ly93d3cubWludGVkLmNvbS8_JnV0bV9jYW1wYWlnbj1UaW1lVHJpZ2dlcl9HRU5fUG9zdFJlZ19XZWxjb21lXzIwT2ZmXzIwMjMmdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPW9uc2l0ZV90cmlnZ2VyJnV0bV9jaWQ9NjQ3MjExOGU2NzE2OGEzNjBjMDc5OGZjJnV0bV9zdWI9ZW0mYnhpZD02NDcyMTE4ZTY3MTY4YTM2MGMwNzk4ZmM/6472118e67168a360c0798fcDe570163e>
+*Offer applies to all Minted products, excluding fine art prints, postage stamps, Minted More membership program, custom design services fee, and wax seals. Offer cannot be combined with any other offers or promotions, including discounted credit. Offer does not apply to shipping and tax.
+
+  
+
+    
+
+ 
+ 
+
+If you believe this has been sent to you in error, please click <https://sailthru.minted.com/oc/6472118e67168a360c0798fc6474b45564144c0001ca586e/804a9fc5> to safely unsubscribe.
+------=_Part_25677268_579529967.1685369942185
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www=
+.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8" />
+<!--[if !mso]><!-->
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" />
+<!--<![endif]-->
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0"/>
+<title>Minted</title>
+<link href=3D"https://minted-fonts.mintedcdn.net/mier-a/500.woff" rel=3D"st=
+ylesheet" type=3D"text/css">=09
+<style type=3D"text/css">
+@charset "UTF-8";
+@font-face {
+font-family: 'Mier-A';
+font-style: normal;
+font-weight: 500;
+src: local('Mier-A'), url('https://minted-fonts.mintedcdn.net/mier-a/500.wo=
+ff') format('woff');
+}
+@media screen and (min-width: 200px) and (max-width: 375px) {
+.nav{
+border-bottom-color: #333333 !important;
+}
+.footernav {
+font-size: 10px !important;
+}
+.socialmediaicon {
+max-width: 50% !important; overflow:hidden;
+}
+div[class=3D"hideTopNav"] {
+display:none !important;
+mso-hide:all;
+font-size: 0;
+max-height: 0;
+overflow: hidden;
+line-height: 0;
+visibility:hidden;
+width: 0px;=20
+height: 0px;=20
+max-width: 0px;
+}
+.hideTopNav {
+display:none !important;
+mso-hide:all;
+font-size: 0;
+max-height: 0;
+overflow: hidden;
+line-height: 0;
+visibility:hidden;
+width: 0px;=20
+height: 0px;=20
+max-width: 0px;
+}
+div[class=3D"mobilecontent"]{
+display: block !important;
+max-height: none !important;
+}
+}
+@media screen and (min-width: 376px) and  (max-width: 424px) {
+.nav{
+border-bottom-color: #333333 !important;
+}
+.two-column .column, {
+max-width: 100% !important;
+}
+.socialmediaicon {
+max-width: 50% !important; overflow:hidden;
+}
+.footernav {
+font-size: 14px !important;
+}
+div[class=3D"hideTopNav"] {
+display:none !important;
+mso-hide:all;
+font-size: 0;
+max-height: 0;
+overflow: hidden;
+line-height: 0;
+visibility:hidden;
+width: 0px;=20
+height: 0px;=20
+max-width: 0px;
+}
+.hideTopNav {
+display:none !important;
+mso-hide:all;
+font-size: 0;
+max-height: 0;
+overflow: hidden;
+line-height: 0;
+visibility:hidden;
+width: 0px;=20
+height: 0px;=20
+max-width: 0px;
+}
+div[class=3D"mobilecontent"] {
+display: block !important;
+max-height: none !important;
+}
+}
+@media screen and (min-width: 425px) and (max-width: 640px) {
+.nav{
+border-bottom-color: #333333 !important;
+}
+.socialmediaicon {
+max-width: 50% !important; overflow:hidden;
+}
+.learnmoreCTA {
+min-width: 10% !important;
+}
+div[class=3D"mobilecontent"] {
+display: block !important;
+max-height: none !important;
+}
+div[class=3D"hideTopNav"] {
+display:none !important;
+mso-hide:all;
+font-size: 0;
+max-height: 0;
+overflow: hidden;
+line-height: 0;
+visibility:hidden;
+width: 0px;=20
+height: 0px;=20
+max-width: 0px;
+}
+.hideTopNav {
+display:none !important;
+mso-hide:all;
+font-size: 0;
+max-height: 0;
+overflow: hidden;
+line-height: 0;
+visibility:hidden;
+width: 0px;=20
+height: 0px;=20
+max-width: 0px;
+}
+}
+@media screen and (max-device-width: 480px) {
+div[class=3D"mobilecontent"]{
+display: block !important;
+max-height: none !important;
+}
+div[class=3D"hideTopNav"] {
+display:none !important;
+mso-hide:all;
+font-size: 0;
+max-height: 0;
+overflow: hidden;
+line-height: 0;
+visibility:hidden;
+width: 0px;=20
+height: 0px;=20
+max-width: 0px;
+}
+}
+body {
+margin: 0 !important;
+padding: 0;
+background-color: #FFFFFF;
+}
+table {
+border-spacing: 0;
+font-family: sans-serif;
+color: #FFFFFF;
+border-collapse: collapse;
+}
+td {
+padding: 0;
+}
+img {
+border: 0;
+display:block;
+}
+div[style*=3D"margin: 16px 0"] {
+margin:0 !important;
+}
+.wrapper {
+width: 100%;
+table-layout: fixed;
+-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%;
+}
+.webkit {
+max-width: 640px;
+margin: 0 auto;
+}
+.outer {
+Margin: 0 auto;
+width: 100%;
+max-width: 640px;
+}
+.inner {
+padding: 10px;
+}
+p {
+Margin: 0;
+}
+.full-width-image img {
+width: 100%;
+max-width: 640px;
+height: auto;
+}
+.one-column .contents {
+text-align: left;
+}
+.one-column p {
+font-size: 14px;
+}
+.h1 {
+font-size: 18px;
+Margin-bottom: 18px;
+text-align:center;
+font-family: Courier, Courier New, Georgia, Times, Times New Roman, serif;
+color: #666666;
+}
+.h2 {
+font-size: 14px;
+text-align:center;
+Margin-bottom: 12px;
+font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.contents {
+width: 100%;
+}
+.two-column {
+text-align: center;
+font-size: 0;
+}
+.two-column .column {
+width: 100%;
+display: inline-block;
+vertical-align: top;
+}
+.two-column .contents {
+font-size: 14px;
+text-align: left;
+}
+.two-column img {
+width: 100%;
+height: auto;
+}
+</style>
+<!--[if (gte mso 9)|(IE)]>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<style type=3D"text/css">
+table {border-collapse: collapse !important;},
+</style>
+<![endif]-->
+<!--[if gte mso 15]>
+<style type=3D"text/css">
+.marginOutlook2013{margin-top: 10px;}
+</style>
+<![endif]-->
+<!--[if mso]>
+<style type=3D=E2=80=9Dtext/css=E2=80=9D>
+.fallback-text {
+font-family: Arial, sans-serif !important;
+}
+</style>
+<![endif]-->
+</head>
+<body style=3D"margin-top:0 !important;margin-bottom:0 !important;margin-ri=
+ght:0 !important;margin-left:0 !important;padding-top:0;padding-bottom:0;pa=
+dding-right:0;padding-left:0;background-color:#FFFFFF;">
+<center class=3D"wrapper" style=3D"width:100%;table-layout:fixed;-webkit-te=
+xt-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div class=3D"webkit" style=3D"max-width:640px;margin-top:0;margin-bottom:0=
+;margin-right:auto;margin-left:auto;">
+<!--[if (gte mso 9)|(IE)]>
+<table width=3D"640" align=3D"center" style=3D"border-spacing:0;font-family=
+:sans-serif;color:#333333;border-collapse:collapse;" >
+<tr>
+<td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;=
+" >
+<![endif]-->
+<table class=3D"outer" align=3D"center" cellspacing=3D"0" cellpadding=3D"0"=
+ style=3D"border-spacing:0;font-family:sans-serif;border-collapse:collapse;=
+color:#FFFFFF;Margin:0 auto;width:100%;max-width:640px; line-height:0">
+<!-- =3D=3D=3D=3D=3D RETURN PATH PIXEL =3D=3D=3D=3D=3D -->
+<img src=3D"https://pixel.app.returnpath.net/pixel.gif?r=3Df9dd6437cf26bc63=
+781176cc18ee4b898a39a4eb" width=3D"1" height=3D"1" />
+<!-- =3D=3D=3D=3D=3D HEADER =3D=3D=3D=3D=3D -->
+<!-- START PREHEADER -->
+<tr>
+<td class=3D"inner" style=3D"padding-top:0px;padding-bottom:0px;padding-rig=
+ht:0px;padding-left:0px;width:100%;text-align:left;" >
+<p style=3D"font-size:11px;font-family:Arial, Helvetica, sans-serif; color:=
+#666666;padding-bottom:0px;padding-top:10px;line-height:16px;Margin:0;text-=
+align: center;">Enjoy 20% off.&nbsp;<a href=3D"https://sailthru.minted.com/=
+click/6474b45564144c0001ca586e/aHR0cHM6Ly93d3cubWludGVkLmNvbT91dG1fY2FtcGFp=
+Z249VGltZVRyaWdnZXJfR0VOX1Bvc3RSZWdfV2VsY29tZV8yME9mZl8yMDIzJnV0bV9tZWRpdW0=
+9ZW1haWwmdXRtX3NvdXJjZT1vbnNpdGVfdHJpZ2dlciZ1dG1fY2lkPTY0NzIxMThlNjcxNjhhMz=
+YwYzA3OThmYyZ1dG1fc3ViPWVtJmJ4aWQ9NjQ3MjExOGU2NzE2OGEzNjBjMDc5OGZj/6472118e=
+67168a360c0798fcB19b7b383" target=3D"_blank" style=3D"color:#333333;font-we=
+ight:bold;text-decoration:none;" >Shop now</a>.<br><a href=3D"https://sailt=
+hru.minted.com/view/6472118e67168a360c0798fc6474b45564144c0001ca586e/65cc76=
+8e" target=3D"_blank" style=3D"color:#666666;text-decoration:none;font-weig=
+ht:bold;"><strong>Click here</strong></a> to view this email in your browse=
+r.</p>
+</td>
+</tr>
+<!-- END PREHEADER -->
+<a href=3D"https://sailthru.minted.com/click/6474b45564144c0001ca586e/aHR0c=
+DovL3d3dy5taW50ZWQuY29tP3V0bV9jYW1wYWlnbj1UaW1lVHJpZ2dlcl9HRU5fUG9zdFJlZ19X=
+ZWxjb21lXzIwT2ZmXzIwMjMmdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPW9uc2l0ZV90cml=
+nZ2VyJnV0bV9jaWQ9NjQ3MjExOGU2NzE2OGEzNjBjMDc5OGZjJnV0bV9zdWI9ZW0mYnhpZD02ND=
+cyMTE4ZTY3MTY4YTM2MGMwNzk4ZmM/6472118e67168a360c0798fcB5fbc4c24"><img src=
+=3D"https://sailthru.minted.com/img/6472118e67168a360c0798fc6474b45564144c0=
+001ca586e/0556b26d.gif" alt=3D"" border=3D"0" /></a>
+<!-- START MARKETING HEADER -->
+<tr>
+<td align=3D"center"><a target=3D"_blank" href=3D"https://sailthru.minted.c=
+om/click/6474b45564144c0001ca586e/aHR0cHM6Ly93d3cubWludGVkLmNvbT91dG1fY29ud=
+GVudD10b3BuYXYmdXRtX2NhbXBhaWduPVRpbWVUcmlnZ2VyX0dFTl9Qb3N0UmVnX1dlbGNvbWVf=
+MjBPZmZfMjAyMyZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9b25zaXRlX3RyaWdnZXImdXR=
+tX2NpZD02NDcyMTE4ZTY3MTY4YTM2MGMwNzk4ZmMmdXRtX3N1Yj1lbSZieGlkPTY0NzIxMThlNj=
+cxNjhhMzYwYzA3OThmYw/6472118e67168a360c0798fcB4791af38"><img src=3D"https:/=
+/media.sailthru.com/5ja/1k3/3/j/5c918b4a09559.gif" alt=3D"Minted" width=3D"=
+640" border=3D"0" style=3D"max-width:640px;border-width:0;display:block;wid=
+th:100%;height:auto;"></a></td>
+</tr>
+<!-- nav holiday -->
+<tr>
+<td class=3D"nav" style=3D"border-bottom-style: solid; border-bottom-width:=
+ 2px; border-bottom-color: #eeeeee;">
+<div class=3D"hideTopNav">
+<table width=3D"100%" border=3D"0" style=3D"border-spacing:0;font-family:sa=
+ns-serif;border-collapse:collapse;" >
+<tr>
+<td><img src=3D"https://media.sailthru.com/5ja/1k3/3/l/5c93e1c60ac43.gif" a=
+lt=3D"" width=3D"40" border=3D"0" style=3D"max-width:40px;border-width:0;di=
+splay:block;width:100%;height:auto;"></td>
+<td><a target=3D"_blank" href=3D"https://sailthru.minted.com/click/6474b455=
+64144c0001ca586e/aHR0cHM6Ly93d3cubWludGVkLmNvbS9ob2xpZGF5LXBob3RvLWNhcmRzP3=
+V0bV9jb250ZW50PXRvcG5hdiZ1dG1fY2FtcGFpZ249VGltZVRyaWdnZXJfR0VOX1Bvc3RSZWdfV=
+2VsY29tZV8yME9mZl8yMDIzJnV0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT1vbnNpdGVfdHJp=
+Z2dlciZ1dG1fY2lkPTY0NzIxMThlNjcxNjhhMzYwYzA3OThmYyZ1dG1fc3ViPWVtJmJ4aWQ9NjQ=
+3MjExOGU2NzE2OGEzNjBjMDc5OGZj/6472118e67168a360c0798fcB73dc2863"><img src=
+=3D"https://media.sailthru.com/5ja/1k3/3/l/5c93e1c639ff7.gif" alt=3D"Holida=
+y" width=3D"60" border=3D"0" style=3D"max-width:60px;border-width:0;display=
+:block;width:100%;height:auto;"></a></td>
+<td><img src=3D"https://media.sailthru.com/5ja/1k3/3/l/5c93e1c65b3f6.gif" a=
+lt=3D"" width=3D"40" border=3D"0" style=3D"max-width:40px;border-width:0;di=
+splay:block;width:100%;height:auto;"></td>
+<td><a target=3D"_blank" href=3D"https://sailthru.minted.com/click/6474b455=
+64144c0001ca586e/aHR0cHM6Ly93d3cubWludGVkLmNvbS93ZWRkaW5nP3V0bV9jb250ZW50PX=
+RvcG5hdiZ1dG1fY2FtcGFpZ249VGltZVRyaWdnZXJfR0VOX1Bvc3RSZWdfV2VsY29tZV8yME9mZ=
+l8yMDIzJnV0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT1vbnNpdGVfdHJpZ2dlciZ1dG1fY2lk=
+PTY0NzIxMThlNjcxNjhhMzYwYzA3OThmYyZ1dG1fc3ViPWVtJmJ4aWQ9NjQ3MjExOGU2NzE2OGE=
+zNjBjMDc5OGZj/6472118e67168a360c0798fcB23cb00b3"><img src=3D"https://media.=
+sailthru.com/5ja/1k3/3/l/5c93e1c67fdf0.gif" alt=3D"Weddings" width=3D"75" b=
+order=3D"0" style=3D"max-width:75px;border-width:0;display:block;width:100%=
+;height:auto;"></a></td>
+<td><img src=3D"https://media.sailthru.com/5ja/1k3/3/l/5c93e1c6aca68.gif" a=
+lt=3D"" width=3D"40" border=3D"0" style=3D"max-width:40px;border-width:0;di=
+splay:block;width:100%;height:auto;"></td>
+<td><a target=3D"_blank" href=3D"https://sailthru.minted.com/click/6474b455=
+64144c0001ca586e/aHR0cHM6Ly93d3cubWludGVkLmNvbS9scC9iYWJ5LWtpZHM_dXRtX2Nvbn=
+RlbnQ9dG9wbmF2JnV0bV9jYW1wYWlnbj1UaW1lVHJpZ2dlcl9HRU5fUG9zdFJlZ19XZWxjb21lX=
+zIwT2ZmXzIwMjMmdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPW9uc2l0ZV90cmlnZ2VyJnV0=
+bV9jaWQ9NjQ3MjExOGU2NzE2OGEzNjBjMDc5OGZjJnV0bV9zdWI9ZW0mYnhpZD02NDcyMTE4ZTY=
+3MTY4YTM2MGMwNzk4ZmM/6472118e67168a360c0798fcBcbd0cb58"><img src=3D"https:/=
+/media.sailthru.com/5ja/1k3/3/l/5c93e1c6ce0ce.gif" alt=3D"Baby and Kids" wi=
+dth=3D"90" border=3D"0" style=3D"max-width:90px;border-width:0;display:bloc=
+k;width:100%;height:auto;"></a></td>
+<td><img src=3D"https://media.sailthru.com/5ja/1k3/3/l/5c93e1c700069.gif" a=
+lt=3D"" width=3D"40" border=3D"0" style=3D"max-width:40px;border-width:0;di=
+splay:block;width:100%;height:auto;"></td>
+<td><a target=3D"_blank" href=3D"https://sailthru.minted.com/click/6474b455=
+64144c0001ca586e/aHR0cHM6Ly93d3cubWludGVkLmNvbS9scC9hcnQtcHJpbnRzP3V0bV9jb2=
+50ZW50PXRvcG5hdiZ1dG1fY2FtcGFpZ249VGltZVRyaWdnZXJfR0VOX1Bvc3RSZWdfV2VsY29tZ=
+V8yME9mZl8yMDIzJnV0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT1vbnNpdGVfdHJpZ2dlciZ1=
+dG1fY2lkPTY0NzIxMThlNjcxNjhhMzYwYzA3OThmYyZ1dG1fc3ViPWVtJmJ4aWQ9NjQ3MjExOGU=
+2NzE2OGEzNjBjMDc5OGZj/6472118e67168a360c0798fcBdcf6e756"><img src=3D"https:=
+//media.sailthru.com/5ja/1k3/3/l/5c93e1c722eaa.gif" alt=3D"Art" width=3D"40=
+" border=3D"0" style=3D"max-width:40px;border-width:0;display:block;width:1=
+00%;height:auto;"></a></td>
+<td><img src=3D"https://media.sailthru.com/5ja/1k3/3/l/5c93e1c7483f0.gif" a=
+lt=3D"" width=3D"40" border=3D"0" style=3D"max-width:40px;border-width:0;di=
+splay:block;width:100%;height:auto;"></td>
+<td><a target=3D"_blank" href=3D"https://sailthru.minted.com/click/6474b455=
+64144c0001ca586e/aHR0cHM6Ly93d3cubWludGVkLmNvbS9naWZ0cz91dG1fY29udGVudD10b3=
+BuYXYmdXRtX2NhbXBhaWduPVRpbWVUcmlnZ2VyX0dFTl9Qb3N0UmVnX1dlbGNvbWVfMjBPZmZfM=
+jAyMyZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9b25zaXRlX3RyaWdnZXImdXRtX2NpZD02=
+NDcyMTE4ZTY3MTY4YTM2MGMwNzk4ZmMmdXRtX3N1Yj1lbSZieGlkPTY0NzIxMThlNjcxNjhhMzY=
+wYzA3OThmYw/6472118e67168a360c0798fcB07d40c93"><img src=3D"https://media.sa=
+ilthru.com/5ja/1k3/3/l/5c93e1c769fbb.gif" alt=3D"Gifts" width=3D"40" border=
+=3D"0" style=3D"max-width:40px;border-width:0;display:block;width:100%;heig=
+ht:auto;"></a></td>
+<td><img src=3D"https://media.sailthru.com/5ja/1k3/3/l/5c93e1c78b1b0.gif" a=
+lt=3D"" width=3D"40" border=3D"0" style=3D"max-width:40px;border-width:0;di=
+splay:block;width:100%;height:auto;"></td>
+<td><a target=3D"_blank" href=3D"https://sailthru.minted.com/click/6474b455=
+64144c0001ca586e/aHR0cHM6Ly93d3cubWludGVkLmNvbS9ob21lP3V0bV9jb250ZW50PXRvcG=
+5hdiZ1dG1fY2FtcGFpZ249VGltZVRyaWdnZXJfR0VOX1Bvc3RSZWdfV2VsY29tZV8yME9mZl8yM=
+DIzJnV0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT1vbnNpdGVfdHJpZ2dlciZ1dG1fY2lkPTY0=
+NzIxMThlNjcxNjhhMzYwYzA3OThmYyZ1dG1fc3ViPWVtJmJ4aWQ9NjQ3MjExOGU2NzE2OGEzNjB=
+jMDc5OGZj/6472118e67168a360c0798fcB4d9cf35a"><img src=3D"https://media.sail=
+thru.com/5ja/1k3/3/l/5c93e1c7af56a.gif" alt=3D"Home" width=3D"50" border=3D=
+"0" style=3D"max-width:50px;border-width:0;display:block;width:100%;height:=
+auto;"></a></td>
+<td><img src=3D"https://media.sailthru.com/5ja/1k3/3/l/5c93e1c7d0b4f.gif" a=
+lt=3D"" width=3D"45" border=3D"0" style=3D"max-width:45px;border-width:0;di=
+splay:block;width:100%;height:auto;"></td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+<!-- /nav holiday -->
+<!-- END MARKETING HEADER -->
+<tr><td class=3D"spacer-30" height=3D"30" style=3D"height:30px;width:100%;"=
+ width=3D"100%"></td></tr>=09
+<!-- =3D=3D=3D=3D=3D BODY CONTENT =3D=3D=3D=3D=3D -->
+<tr>
+<td>
+<!-- START SINGLE COLUMN TABLE -->
+<!--start main content table here-->
+<!--Change table/nested table background color and styling according to lay=
+out-->
+<table bgcolor=3D"#ffffff" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ width=3D"100%" style=3D"line-height: 0; border-collapse: collapse; mso-cel=
+lspacing: 0px; mso-padding-alt: 0px;">
+<!-- 20% OFF for CONTROL -->
+<tr>
+<td>
+<a href=3D"https://sailthru.minted.com/click/6474b45564144c0001ca586e/aHR0c=
+HM6Ly93d3cubWludGVkLmNvbS8_JnV0bV9jYW1wYWlnbj1UaW1lVHJpZ2dlcl9HRU5fUG9zdFJl=
+Z19XZWxjb21lXzIwT2ZmXzIwMjMmdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPW9uc2l0ZV9=
+0cmlnZ2VyJnV0bV9jaWQ9NjQ3MjExOGU2NzE2OGEzNjBjMDc5OGZjJnV0bV9zdWI9ZW0mYnhpZD=
+02NDcyMTE4ZTY3MTY4YTM2MGMwNzk4ZmM/6472118e67168a360c0798fcBe570163e" target=
+=3D"_blank"><img src=3D"https://media.sailthru.com/5ja/1k4/2/o/5e545d333892=
+3.jpg" width=3D"640" border=3D"0" alt=3D"Enjoy 20% off your first order." s=
+tyle=3D"max-width: 640px; border-width: 0; display: block !important; width=
+:100%; height: auto;"></a>
+</td>
+</tr>
+<tr>
+<td background=3D"https://media.sailthru.com/5ja/1k3/c/6/5deb31795bd27.jpg"=
+ bgcolor=3D"#fafafa" width=3D"640" valign=3D"top" style=3D"background-size:=
+ cover; background-position:top center; background-repeat:no-repeat;max-wid=
+th:640px;width: 100%;height:auto;">
+<!--[if gte mso 9]>
+<v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" stroke=3D"f=
+alse" style=3D"width:640px;height:59px;">
+<v:fill type=3D"frame" src=3D"https://media.sailthru.com/5ja/1k3/c/6/5deb31=
+795bd27.jpg" color=3D"#fafafa" />
+<v:textbox inset=3D"0,0,0,0">
+<![endif]-->
+<div>
+<p style=3D"font-size:14px;line-height:20px;font-family:helvetica, arial, s=
+ans-serif;color:black; padding-bottom:10px;padding-top:10px;padding-left:10=
+px;padding-right:10px;text-align:center;margin-top:5px;margin-bottom:5px;">=
+Use code: <strong>NCBK23J34TCD2</strong> through 6/12.</p>
+</div>
+<!--[if gte mso 9]>
+</v:textbox>
+</v:rect>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td>
+<a href=3D"https://sailthru.minted.com/click/6474b45564144c0001ca586e/aHR0c=
+HM6Ly93d3cubWludGVkLmNvbS8_JnV0bV9jYW1wYWlnbj1UaW1lVHJpZ2dlcl9HRU5fUG9zdFJl=
+Z19XZWxjb21lXzIwT2ZmXzIwMjMmdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPW9uc2l0ZV9=
+0cmlnZ2VyJnV0bV9jaWQ9NjQ3MjExOGU2NzE2OGEzNjBjMDc5OGZjJnV0bV9zdWI9ZW0mYnhpZD=
+02NDcyMTE4ZTY3MTY4YTM2MGMwNzk4ZmM/6472118e67168a360c0798fcCe570163e" target=
+=3D"_blank"><img src=3D"https://media.sailthru.com/5ja/1k3/c/6/5deb30775f30=
+e.jpg" width=3D"640" border=3D"0" alt=3D"Shop Minted" style=3D"max-width: 6=
+40px; border-width: 0; display: block !important; width:100%; height: auto;=
+"></a>
+</td>
+</tr>
+<tr><td><p style=3D"font-size:14px;line-height:20px;font-family:helvetica, =
+arial, sans-serif;color:#666666; padding-bottom:10px;padding-top:10px;paddi=
+ng-left:10px;padding-right:10px;text-align:left;margin-top:5px;margin-botto=
+m:5px;">
+*Offer is available to new customers only. Cannot be combined with other of=
+fers. Offer excludes fine art prints, Minted More membership program, Photo=
+ Op by Minted, art styling services, gift cards, wax seals, custom design s=
+ervices, direct from artist products, wedding marketplace products, and sel=
+ect fabric goods (adult and kids=E2=80=99 aprons and oven mitts, kids=E2=80=
+=99 backpacks, lunch bags, pencil cases, tree skirts, stockings, and tea to=
+wels). The full promo code value must be used in one transaction. Discount =
+does not apply to shipping and tax. Offer cannot be combined with any other=
+ offers or promotions, including discounted credit.</p></td></tr>
+</table>
+<!--end main content table here-->
+</td>
+</tr>
+<!-- END ONE COLUMN TABLE -->
+<!-- =3D=3D=3D=3D=3D FOOTER MODULE INCLUDES =3D=3D=3D=3D=3D -->
+<tr><td class=3D"spacer-30" height=3D"30" style=3D"height:30px;width:100%;"=
+ width=3D"100%"></td></tr>
+<!--ghost buttons -->
+<tr><td><table bgcolor=3D"#ffffff" border=3D"2" cellpadding=3D"0" cellspaci=
+ng=3D"0" width=3D"100%" style=3D"line-height: 0; border-collapse: collapse;=
+ border-color: #262626; border-width: 2px; mso-cellspacing: 0px; mso-paddin=
+g-alt: 0px;">=09=09=09=09
+<tr>
+<td align=3D"center" class=3D"marginOutlook2013"><a href=3D"https://sailthr=
+u.minted.com/click/6474b45564144c0001ca586e/aHR0cHM6Ly93d3cubWludGVkLmNvbS9=
+ob2xpZGF5LXBob3RvLWNhcmRzP3V0bV9jYW1wYWlnbj1UaW1lVHJpZ2dlcl9HRU5fUG9zdFJlZ1=
+9XZWxjb21lXzIwT2ZmXzIwMjMmdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPW9uc2l0ZV90c=
+mlnZ2VyJnV0bV9jaWQ9NjQ3MjExOGU2NzE2OGEzNjBjMDc5OGZjJnV0bV9zdWI9ZW0mYnhpZD02=
+NDcyMTE4ZTY3MTY4YTM2MGMwNzk4ZmM/6472118e67168a360c0798fcBce078c14" target=
+=3D"_blank"><img src=3D"https://media.sailthru.com/5ja/1k2/a/i/5bc8de6b5adf=
+c.png" width=3D"316" alt=3D"Holiday" style=3D"max-width:316px;border-width:=
+0;display:block;width:100%;height:auto;" /></a></td>
+<td align=3D"center" class=3D"marginOutlook2013"><a href=3D"https://sailthr=
+u.minted.com/click/6474b45564144c0001ca586e/aHR0cHM6Ly93d3cubWludGVkLmNvbS9=
+3ZWRkaW5nP3V0bV9jYW1wYWlnbj1UaW1lVHJpZ2dlcl9HRU5fUG9zdFJlZ19XZWxjb21lXzIwT2=
+ZmXzIwMjMmdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPW9uc2l0ZV90cmlnZ2VyJnV0bV9ja=
+WQ9NjQ3MjExOGU2NzE2OGEzNjBjMDc5OGZjJnV0bV9zdWI9ZW0mYnhpZD02NDcyMTE4ZTY3MTY4=
+YTM2MGMwNzk4ZmM/6472118e67168a360c0798fcB8d5574c9" target=3D"_blank"><img s=
+rc=3D"https://media.sailthru.com/5ja/1k1/a/k/59ea68e9b5e9a.png" width=3D"31=
+6" alt=3D"Wedding" style=3D"max-width:316px;border-width:0;display:block;wi=
+dth:100%;height:auto;" /></a></td>
+</tr>
+<!-- 2nd row -->
+<tr>
+<td align=3D"center" class=3D"marginOutlook2013"><a href=3D"https://sailthr=
+u.minted.com/click/6474b45564144c0001ca586e/aHR0cHM6Ly93d3cubWludGVkLmNvbS9=
+naWZ0cy9iYWJ5LWtpZHM_dXRtX2NhbXBhaWduPVRpbWVUcmlnZ2VyX0dFTl9Qb3N0UmVnX1dlbG=
+NvbWVfMjBPZmZfMjAyMyZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9b25zaXRlX3RyaWdnZ=
+XImdXRtX2NpZD02NDcyMTE4ZTY3MTY4YTM2MGMwNzk4ZmMmdXRtX3N1Yj1lbSZieGlkPTY0NzIx=
+MThlNjcxNjhhMzYwYzA3OThmYw/6472118e67168a360c0798fcBb6b09ff5" target=3D"_bl=
+ank"><img src=3D"https://media.sailthru.com/5ja/1k2/9/t/5bafa4b762d7e.png" =
+width=3D"316" alt=3D"Baby and Kids" style=3D"max-width:316px;border-width:0=
+;display:block;width:100%;height:auto;" /></a></td>
+<td align=3D"center" class=3D"marginOutlook2013"><a href=3D"https://sailthr=
+u.minted.com/click/6474b45564144c0001ca586e/aHR0cHM6Ly93d3cubWludGVkLmNvbS9=
+hcnQ_dXRtX2NhbXBhaWduPVRpbWVUcmlnZ2VyX0dFTl9Qb3N0UmVnX1dlbGNvbWVfMjBPZmZfMj=
+AyMyZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9b25zaXRlX3RyaWdnZXImdXRtX2NpZD02N=
+DcyMTE4ZTY3MTY4YTM2MGMwNzk4ZmMmdXRtX3N1Yj1lbSZieGlkPTY0NzIxMThlNjcxNjhhMzYw=
+YzA3OThmYw/6472118e67168a360c0798fcB690feef7" target=3D"_blank"><img src=3D=
+"https://media.sailthru.com/5ja/1k2/a/i/5bc8de6b2ff52.png" width=3D"316" al=
+t=3D"Fine Art" style=3D"max-width:316px;border-width:0;display:block;width:=
+100%;height:auto;" /></a></td>
+</tr>
+<!-- /2nd row -->
+<!--3rd row -->
+<tr>
+<td align=3D"center" class=3D"marginOutlook2013"><a href=3D"https://sailthr=
+u.minted.com/click/6474b45564144c0001ca586e/aHR0cHM6Ly93d3cubWludGVkLmNvbS9=
+waG90by1hcnQ_dXRtX2NhbXBhaWduPVRpbWVUcmlnZ2VyX0dFTl9Qb3N0UmVnX1dlbGNvbWVfMj=
+BPZmZfMjAyMyZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9b25zaXRlX3RyaWdnZXImdXRtX=
+2NpZD02NDcyMTE4ZTY3MTY4YTM2MGMwNzk4ZmMmdXRtX3N1Yj1lbSZieGlkPTY0NzIxMThlNjcx=
+NjhhMzYwYzA3OThmYw/6472118e67168a360c0798fcBd83bc0fe" target=3D"_blank"><im=
+g src=3D"https://media.sailthru.com/5ja/1k1/a/k/59ea68e94109d.png" width=3D=
+"316" alt=3D"Photo Gifts" style=3D"max-width:316px;border-width:0;display:b=
+lock;width:100%;height:auto;" /></a></td>=20
+<td align=3D"center" class=3D"marginOutlook2013"><a href=3D"https://sailthr=
+u.minted.com/click/6474b45564144c0001ca586e/aHR0cHM6Ly93d3cubWludGVkLmNvbS9=
+ob21lP3V0bV9jYW1wYWlnbj1UaW1lVHJpZ2dlcl9HRU5fUG9zdFJlZ19XZWxjb21lXzIwT2ZmXz=
+IwMjMmdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPW9uc2l0ZV90cmlnZ2VyJnV0bV9jaWQ9N=
+jQ3MjExOGU2NzE2OGEzNjBjMDc5OGZjJnV0bV9zdWI9ZW0mYnhpZD02NDcyMTE4ZTY3MTY4YTM2=
+MGMwNzk4ZmM/6472118e67168a360c0798fcB0bcdf01b" target=3D"_blank"><img src=
+=3D"https://media.sailthru.com/5ja/1k1/a/k/59ea4c77d07ff.png" width=3D"316"=
+ alt=3D"Home Decor" style=3D"max-width:316px;border-width:0;display:block;w=
+idth:100%;height:auto;" /></a></td>
+</tr>
+<!-- /3rd row -->
+</table></td></tr>
+<!-- /ghost buttons -->
+<!-- =3D=3D=3D=3D=3D END FOOTER MODULE INCLUDES =3D=3D=3D=3D=3D -->=09
+<tr><td class=3D"spacer-30" height=3D"30" style=3D"height:30px;width:100%;"=
+ width=3D"100%"></td></tr>=09
+<!-- =3D=3D=3D=3D=3D FOOTER =3D=3D=3D=3D=3D -->
+<tr>
+<td class=3D"one-column">
+<table cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" border=3D"0" styl=
+e=3D"border-spacing:0;font-family:sans-serif;color:#333333;border-collapse:=
+collapse;">
+<tr><td style=3D"border-bottom-style: solid; border-bottom-width: 2px; bord=
+er-bottom-color: #eeeeee;"><table>
+<tr><td class=3D"spacer-20" height=3D"20" style=3D"height:20px;width:100%;"=
+ width=3D"100%"></td></tr>
+</table></td></tr>
+<!-- START SOCIAL -->
+<tr>
+<td align=3D"center" style=3D"padding-top:0px;padding-bottom:0px;padding-ri=
+ght:0;padding-left:0;">
+<table class=3D"contents" bgcolor=3D"#ffffff" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" width=3D"100%" style=3D"line-height: 0; border-collapse=
+: collapse; mso-cellspacing: 0px; mso-padding-alt: 0px;">
+<tr>
+<td align=3D"center"><img src=3D"https://media.sailthru.com/5ja/1k3/3/q/5c9=
+aae09254ef.gif" alt=3D"" width=3D"135" border=3D"0" style=3D"max-width:135p=
+x;border-width:0;display:block;width:100%;height:auto;" ></td>
+<td align=3D"center"><a href=3D"https://sailthru.minted.com/click/6474b4556=
+4144c0001ca586e/aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9taW50ZWQ_dXRtX2NhbXBhaWd=
+uPVRpbWVUcmlnZ2VyX0dFTl9Qb3N0UmVnX1dlbGNvbWVfMjBPZmZfMjAyMyZ1dG1fbWVkaXVtPW=
+VtYWlsJnV0bV9zb3VyY2U9b25zaXRlX3RyaWdnZXImdXRtX2NpZD02NDcyMTE4ZTY3MTY4YTM2M=
+GMwNzk4ZmMmdXRtX3N1Yj1lbSZieGlkPTY0NzIxMThlNjcxNjhhMzYwYzA3OThmYw/6472118e6=
+7168a360c0798fcB3dc0cded" target=3D"_blank"><img src=3D"https://media.sailt=
+hru.com/5ja/1k3/3/q/5c9aae094a808.gif" alt=3D"Minted Instagram" width=3D"13=
+5" border=3D"0" style=3D"display:block !important;min-width:135px;overflow:=
+hidden;border-width:0;border-style:none;line-height:100%;outline-style:none=
+;text-decoration:none;height:auto;" ></a></td>
+<td align=3D"center"><a href=3D"https://sailthru.minted.com/click/6474b4556=
+4144c0001ca586e/aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL21pbnRlZD91dG1fY2FtcGFpZ24=
+9VGltZVRyaWdnZXJfR0VOX1Bvc3RSZWdfV2VsY29tZV8yME9mZl8yMDIzJnV0bV9tZWRpdW09ZW=
+1haWwmdXRtX3NvdXJjZT1vbnNpdGVfdHJpZ2dlciZ1dG1fY2lkPTY0NzIxMThlNjcxNjhhMzYwY=
+zA3OThmYyZ1dG1fc3ViPWVtJmJ4aWQ9NjQ3MjExOGU2NzE2OGEzNjBjMDc5OGZj/6472118e671=
+68a360c0798fcB3b39dda9" target=3D"_blank"><img src=3D"https://media.sailthr=
+u.com/5ja/1k3/3/q/5c9aae0972bd9.gif" alt=3D"Facebook" width=3D"100" border=
+=3D"0" style=3D"display:block !important;min-width:100px;overflow:hidden;bo=
+rder-width:0;border-style:none;line-height:100%;outline-style:none;text-dec=
+oration:none;height:auto;" ></a></td>
+<td align=3D"center"><a href=3D"https://sailthru.minted.com/click/6474b4556=
+4144c0001ca586e/aHR0cHM6Ly93d3cucGludGVyZXN0LmNvbS9taW50ZWQ_dXRtX2NhbXBhaWd=
+uPVRpbWVUcmlnZ2VyX0dFTl9Qb3N0UmVnX1dlbGNvbWVfMjBPZmZfMjAyMyZ1dG1fbWVkaXVtPW=
+VtYWlsJnV0bV9zb3VyY2U9b25zaXRlX3RyaWdnZXImdXRtX2NpZD02NDcyMTE4ZTY3MTY4YTM2M=
+GMwNzk4ZmMmdXRtX3N1Yj1lbSZieGlkPTY0NzIxMThlNjcxNjhhMzYwYzA3OThmYw/6472118e6=
+7168a360c0798fcBa3aa04d3" target=3D"_blank"><img src=3D"https://media.sailt=
+hru.com/5ja/1k3/3/q/5c9aae0996c41.gif" alt=3D"Pinterest" width=3D"135" bord=
+er=3D"0" style=3D"display:block !important;min-width:135px;overflow:hidden;=
+border-width:0;border-style:none;line-height:100%;outline-style:none;text-d=
+ecoration:none;height:auto;" ></a></td>
+<td align=3D"center"><img src=3D"https://media.sailthru.com/5ja/1k3/3/q/5c9=
+aae09c0893.gif" alt=3D"" width=3D"135" border=3D"0" style=3D"max-width:135p=
+x;border-width:0;display:block;width:100%;height:auto;" ></td>
+</tr>
+</table>
+</td>
+</tr>=09=09
+<!-- END SOCIAL -->=09=09=09
+<tr><td class=3D"spacer-20" height=3D"20" style=3D"height:20px;width:100%;"=
+ width=3D"100%"></td></tr>=20
+<tr>
+<td>
+<table class=3D"contents" bgcolor=3D"#ffffff" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" width=3D"100%" style=3D"line-height: 0; border-collapse=
+: collapse; mso-cellspacing: 0px; mso-padding-alt: 0px;">
+<tr>
+<td>
+<p class=3D"footernav" style=3D"font-family:Helvetica, Arial, sans-serif;co=
+lor:#262626;font-size:8.25pt!important;mso-ansi-font-size:8.25pt;line-heigh=
+t:11pt;padding-top:5px;padding-bottom:5px;padding-right:0px;font-wight:900;=
+text-align:center;Margin:0; -webkit-text-size-adjust: none;">
+<a href=3D"https://sailthru.minted.com/click/6474b45564144c0001ca586e/aHR0c=
+DovL3d3dy5taW50ZWQuY29tL2NvbnRhY3QtdXM_dXRtX2NvbnRlbnQ9Y29weXJpZ2h0X2NvbnRh=
+Y3QmdXRtX2NhbXBhaWduPVRpbWVUcmlnZ2VyX0dFTl9Qb3N0UmVnX1dlbGNvbWVfMjBPZmZfMjA=
+yMyZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9b25zaXRlX3RyaWdnZXImdXRtX2NpZD02ND=
+cyMTE4ZTY3MTY4YTM2MGMwNzk4ZmMmdXRtX3N1Yj1lbSZieGlkPTY0NzIxMThlNjcxNjhhMzYwY=
+zA3OThmYw/6472118e67168a360c0798fcB2c0d28a1" target=3D"_blank" style=3D"col=
+or:#262626; text-decoration:none;"><strong>CONTACT US</strong></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;
+<a href=3D"https://sailthru.minted.com/click/6474b45564144c0001ca586e/aHR0c=
+DovL3d3dy5taW50ZWQuY29tL2Fib3V0LXVzP3V0bV9jb250ZW50PWNvcHlyaWdodF9hYm91dCZ1=
+dG1fY2FtcGFpZ249VGltZVRyaWdnZXJfR0VOX1Bvc3RSZWdfV2VsY29tZV8yME9mZl8yMDIzJnV=
+0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT1vbnNpdGVfdHJpZ2dlciZ1dG1fY2lkPTY0NzIxMT=
+hlNjcxNjhhMzYwYzA3OThmYyZ1dG1fc3ViPWVtJmJ4aWQ9NjQ3MjExOGU2NzE2OGEzNjBjMDc5O=
+GZj/6472118e67168a360c0798fcBde88fdd6" target=3D"_blank" style=3D"color:#26=
+2626; text-decoration:none;"><strong>ABOUT US</strong></a>
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td class=3D"spacer-20" height=3D"20" style=3D"height:20px;width:100%;"=
+ width=3D"100%"></td></tr> =09
+<tr>
+<td class=3D"one-column" style=3D"border-bottom-style: solid; border-bottom=
+-width: 2px; border-bottom-color: #eeeeee;">
+<table width=3D"100%" border=3D"0" style=3D"border-spacing:0;font-family:sa=
+ns-serif;color:#878787;border-collapse:collapse;" >
+<!-- START UNSUBSCRIBE -->
+<tr>
+<td>
+<table width=3D"100%" border=3D"0" style=3D"border-spacing:0;font-family:sa=
+ns-serif;color:#878787;border-collapse:collapse;" >
+<tr>
+<td style=3D"font-size:10px;font-family:helvetica, arial, sans-serif;color:=
+#666666;padding-bottom:5px;padding-top:5px;padding-left:10px;line-height:15=
+px;padding-right:10px;text-align:center;">Please remember to add <strong>Mi=
+nted</strong> (mintedemail@minted.com) to your email address book to contin=
+ue receiving our emails in your mailbox.<br>
+<a href=3D"https://sailthru.minted.com/view/6472118e67168a360c0798fc6474b45=
+564144c0001ca586e/65cc768e" target=3D"_blank" style=3D"color:#666666;text-d=
+ecoration:none;font-weight:bold;"><strong>Click here</strong></a> to view t=
+his email in your browser. Safely <a href=3D"https://sailthru.minted.com/oc=
+/6472118e67168a360c0798fc6474b45564144c0001ca586e/804a9fc5" style=3D"color:=
+#666666; text-decoration: none;font-weight:bold"><strong>unsubscribe</stron=
+g></a> from Minted email at any time.
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!-- END UNSUBSCRIBE -->=09=09=09
+<tr><td style=3D"border-bottom-style: solid; border-bottom-width: 2px; bord=
+er-bottom-color: #eeeeee;"><table>
+<tr><td class=3D"spacer-20" height=3D"20" style=3D"height:20px;width:100%;"=
+ width=3D"100%"></td></tr>
+</table></td></tr>
+<tr><td class=3D"spacer-20" height=3D"20" style=3D"height:20px;width:100%;"=
+ width=3D"100%"></td></tr>
+<tr>
+<td>
+<table width=3D"100%" border=3D"0" style=3D"border-spacing:0;font-family:sa=
+ns-serif;color:#878787;border-collapse:collapse;" >
+<tr>
+<td style=3D"font-size:10px;font-family:helvetica, arial, sans-serif;color:=
+#666666;padding-bottom:5px;padding-top:5px;padding-left:10px;line-height:15=
+px;padding-right:10px;text-align:center;">
+Copyright &copy; 2023, MINTED LLC, All rights reserved.<br>=20
+<a href=3D"https://sailthru.minted.com/click/6474b45564144c0001ca586e/aHR0c=
+DovL2hlbHAubWludGVkLmNvbS9hcnRpY2xlcy9HZW5lcmFsL1ByaXZhY3ktUG9saWN5P3V0bV9j=
+b250ZW50PWNvcHlyaWdodF9wcml2YWN5JnV0bV9jYW1wYWlnbj1UaW1lVHJpZ2dlcl9HRU5fUG9=
+zdFJlZ19XZWxjb21lXzIwT2ZmXzIwMjMmdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPW9uc2=
+l0ZV90cmlnZ2VyJnV0bV9jaWQ9NjQ3MjExOGU2NzE2OGEzNjBjMDc5OGZjJnV0bV9zdWI9ZW0mY=
+nhpZD02NDcyMTE4ZTY3MTY4YTM2MGMwNzk4ZmM/6472118e67168a360c0798fcB926f6868" t=
+arget=3D"_blank" style=3D"color:#666666;text-decoration:none;font-weight:bo=
+ld;">
+<strong>Privacy Policy</strong></a>.=20
+<a href=3D"https://sailthru.minted.com/click/6474b45564144c0001ca586e/aHR0c=
+HM6Ly93d3cubWludGVkLmNvbS90ZXJtcz91dG1fY29udGVudD1jb3B5cmlnaHRfdGVybXMmdXRt=
+X2NhbXBhaWduPVRpbWVUcmlnZ2VyX0dFTl9Qb3N0UmVnX1dlbGNvbWVfMjBPZmZfMjAyMyZ1dG1=
+fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9b25zaXRlX3RyaWdnZXImdXRtX2NpZD02NDcyMTE4ZT=
+Y3MTY4YTM2MGMwNzk4ZmMmdXRtX3N1Yj1lbSZieGlkPTY0NzIxMThlNjcxNjhhMzYwYzA3OThmY=
+w/6472118e67168a360c0798fcBd9e08046" target=3D"_blank" style=3D"color:#6666=
+66;text-decoration:none;font-weight:bold;"><strong>
+Terms &amp; Conditions</strong></a>.
+<br/>
+747 Front Street, Suite 200 =E2=80=A2 San Francisco, California 94111 =E2=
+=80=A2 USA
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td class=3D"spacer-30" height=3D"30" style=3D"height:30px;width:100%;"=
+ width=3D"100%"></td></tr>
+</table>
+</td>
+</tr>=09=09=09
+</table>
+</td>
+</tr>
+<!-- =3D=3D=3D=3D=3D FOOTER =3D=3D=3D=3D=3D -->
+</table>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</div>
+</center>
+</body>
+</html>
+
+------=_Part_25677268_579529967.1685369942185--
+

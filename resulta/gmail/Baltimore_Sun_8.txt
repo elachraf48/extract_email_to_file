@@ -1,0 +1,805 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp629111ims;
+        Tue, 30 May 2023 13:49:42 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ5AEw2PJgDT95cOuakIoigF9Ql5mnPOLfIpcgcScoWOh7aks5fy7tAkzBIQfRJHOO/RXGUL
+X-Received: by 2002:a05:6808:1449:b0:398:58f5:7209 with SMTP id x9-20020a056808144900b0039858f57209mr2434156oiv.49.1685479781987;
+        Tue, 30 May 2023 13:49:41 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685479781; cv=none;
+        d=google.com; s=arc-20160816;
+        b=uCAcND99meYJPRmbzjd9qWCeiLJ87dKdh9iMK2JzG/23FiGgFgS61Wz8RHvqyzKVF8
+         o167LQEO+DzaGCD2eu9d+D8G2XToL0OxmBXn6yVwMhI0BuygDc4C3MkFnW39Sr2vMq0Z
+         hMHA1N6xaSoxnCLpt9qOqrtTqJEb7LTxVQxi+FqbHKoBgfklldbwv0J5nEsj0vGO4cBC
+         4huAT3HIr0tcKbFFx52NIt0NmTxr5qf/hjei9BOS02XBcLDgLCQXwcI8/Dokjv28K3JJ
+         G/Csoc5doQin4LkDAhhTrkF9ixyXEgyrj7zPbkyC/69Np1N76EOvn2S066KZU6jWem9+
+         gMJw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=date:to:from:subject:reply-to:feedback-id:mime-version:message-id
+         :list-unsubscribe:dkim-signature;
+        bh=2T9f/rl7Qr1hcVCkKSUA1Rg/b7ZOc7GU5CLKFG0Ph3g=;
+        b=XmKHgz6T2Dst9GFf9imxOz38K9mxtyJphQd37aax9yqGzajSoNnXORJ9VFT9e2ruQA
+         OwTWaxe01JI2F8nkpgiXkpJaa8TlLBgnn7RGykSV55uCCFAgvhcaUW6IS1eOImIYqBqL
+         qR4foMVvCUEOhXOZ0kT7vx0g2ksV4DSjAkXYrlfidX5nl7Eo/8NJevJtWgErLEawTaPm
+         JK21LwcialJWfEyisD3fnDWJuRxaqRjLwOoZ30r4rDSc26WJL0RdUMAPi1ovGdNPf/aA
+         cH2jnD7XgGItNhQ6aUUvI7j06ZBeiP5Eg/7wfGM+2wnbZAm6OCvplURG65JhhEhgLCRU
+         Lqlw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@nsl.baltimoresun.com header.s=ep1 header.b=gfN2ebhe;
+       spf=pass (google.com: domain of baltimoresun-hp2v6000001886e6c4afb83f837f4bbcfbb48099@nsl.baltimoresun.com designates 159.127.162.122 as permitted sender) smtp.mailfrom=baltimoresun-HP2v6000001886e6c4afb83f837f4bbcfbb48099@nsl.baltimoresun.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=baltimoresun.com
+Return-Path: <baltimoresun-HP2v6000001886e6c4afb83f837f4bbcfbb48099@nsl.baltimoresun.com>
+Received: from mta122aa.pmx1.epsl1.com (mta122aa.pmx1.epsl1.com. [159.127.162.122])
+        by mx.google.com with ESMTPS id bk10-20020a0568081a0a00b0039811c0f9fesi8055082oib.310.2023.05.30.13.49.41
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 30 May 2023 13:49:41 -0700 (PDT)
+Received-SPF: pass (google.com: domain of baltimoresun-hp2v6000001886e6c4afb83f837f4bbcfbb48099@nsl.baltimoresun.com designates 159.127.162.122 as permitted sender) client-ip=159.127.162.122;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@nsl.baltimoresun.com header.s=ep1 header.b=gfN2ebhe;
+       spf=pass (google.com: domain of baltimoresun-hp2v6000001886e6c4afb83f837f4bbcfbb48099@nsl.baltimoresun.com designates 159.127.162.122 as permitted sender) smtp.mailfrom=baltimoresun-HP2v6000001886e6c4afb83f837f4bbcfbb48099@nsl.baltimoresun.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=baltimoresun.com
+Return-Path: <baltimoresun-HP2v6000001886e6c4afb83f837f4bbcfbb48099@nsl.baltimoresun.com>
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=nsl.baltimoresun.com;
+	s=ep1; t=1685479771;
+	bh=9fniSNfGkAG5CBgpXH936kd3/iurT2aGYK2UW4AvFVs=;
+	h=MIME-Version:Subject:From:To:Date:Content-Type;
+	b=gfN2ebhe4Af9lCJgot5ry6GA1vtj+cPcNwqscVhCKHE6FYWWi16hNk4QjG2nt9nK+
+	 yJ1M1NwWF29Nh9/90Y367bhPsjoMoqr11KME+KZYUZYQRY8C/Fl7O6RlAFlHXojpEQ
+	 unPm2QlNtBKpDQX/0A9EEtMxerwMrKjoKzluqgZA=
+Received: from [10.233.84.199] ([10.233.84.199:41292])
+	by pc1udsmtn2n19 (envelope-from <baltimoresun-HP2v6000001886e6c4afb83f837f4bbcfbb48099@nsl.baltimoresun.com>)
+	(ecelerity 3.6.9.48312 r(Core:3.6.9.0)) with ECSTREAM
+	id 25/A6-32479-B5166746; Tue, 30 May 2023 20:49:31 +0000
+List-Unsubscribe: <mailto:baltimoresun-HP2v6000001886e6c4afb83f837f4bbcfbb48099@nsl.baltimoresun.com?subject=list-unsubscribe>
+Message-ID: <HP2v6000001886e6c4afb83f837f4bbcfbb48099@nsl.baltimoresun.com>
+MIME-Version: 1.0
+Feedback-ID: 7fcf661a-0a9b-4f47-ba64-7bef8301dadd:af7af807-e7d3-44e2-8006-bfd02f61e070:email:epslh1
+X-NSS: 7fcf661a-0a9b-4f47-ba64-7bef8301dadd
+Reply-To: "baltimoresun@nsl.baltimoresun.com"
+ <baltimoresun-HP2v6000001886e6c4afb83f837f4bbcfbb48099@nsl.baltimoresun.com>
+Subject: Will new process change how Baltimore County officers fare when
+ contesting use-of-force violations? 
+From: Baltimore Sun  <baltimoresun@nsl.baltimoresun.com>
+To: ouchendans62@gmail.com
+Date: Tue, 30 May 2023 20:49:31 +0000
+Content-Type: multipart/alternative;
+ boundary="-=Part.22730a6.2743d0e8f109935e.1886e6c4e70.fa675c17c8b04072=-"
+
+---=Part.22730a6.2743d0e8f109935e.1886e6c4e70.fa675c17c8b04072=-
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html><html xmlns=3D"http://www=2Ew3=2Eorg/1999/xhtml"><head><meta=
+ charset=3D"UTF-8">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1=2E0">
+    <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3D9; IE=3D8; IE=3D7=
+; IE=3DEDGE">
+   =20
+    <!--[if !mso]><!-->
+    <link href=3D"//fonts=2Egoogleapis=2Ecom/css?family=3DLato:400,700,900=
+" rel=3D"stylesheet" type=3D"text/css">
+    <!--<![endif]-->
+		<title>  Don=E2=80=99t Miss =E2=80=93 05/30/2023</title>
+      <style type=3D"text/css">
+      * { -webkit-font-smoothing: antialiased; }
+      /* RESET STYLES */
+      =2EiosFix a { text-decoration:none; color:#ffffff; pointer-events: n=
+one; }
+      p{margin:1em 0;}
+      table{border-collapse:collapse; table-layout:fixed;}
+      img, a img{border:0; height:auto; outline:none; text-decoration:none=
+;}
+      h1, h2, h3, h4, h5, h6{display:block !important; margin:0 !important=
+; padding:0 !important;}
+      body, #bodyTable, #bodyCell{height:100% !important; margin:0 !import=
+ant; padding:0; width:100% !important;}
+      div[style*=3D"margin: 16px 0;"] { margin: 0 !important; }
+      /* CLIENT-SPECIFIC STYLES */
+      img{-ms-interpolation-mode: bicubic;}
+      #outlook a{padding:0;}
+      table{mso-table-lspace:0pt; mso-table-rspace:0pt;}
+      =2EReadMsgBody{width:100%;} =2EExternalClass{width:100%;}
+      a[href^=3D"tel"], a[href^=3D"sms"]{color:inherit; cursor:default; te=
+xt-decoration:none;}
+      p, a, li, td, body, table, blockquote{-ms-text-size-adjust:100%; -we=
+bkit-text-size-adjust:100%;}
+      =2EExternalClass, =2EExternalClass p, =2EExternalClass td, =2EExtern=
+alClass div, =2EExternalClass span, =2EExternalClass font{line-height:100%;=
+}
+
+      =2Econtainer { max-width:600px !important; display:block !important;=
+ margin:0 auto !important; clear:both !important; }
+
+      table=2Eworking {    border: 1px solid #ddd!important; background-co=
+lor: #ccc !important;}
+      table=2Eworking::before {
+        content: 'STATUS: WORKING';
+        background-color: #777;
+        font-family: Arial;
+        display: block;
+        font-size: 10px;
+        padding: 0px 4px;
+        line-height: 21px;
+        color: #fff;
+        height: 20px;
+        width: 93px;
+        float:right;
+     }
+
+     table=2Emarket-lead-story=2Eworking::before {
+        position:relative;
+        right:-300px;
+     }
+    =20
+     table=2Eadvertisement {
+        width: 95%;
+     }
+
+     table=2Eadvertisement table {
+       margin: auto;
+     }
+
+     table=2Eadvertisement img {
+       width: 100% !important;
+     }
+
+      @media only screen and (max-device-width:480px), screen and (max-wid=
+th: 480px) {
+        body { width:100% !important; min-width:100% !important; }
+        =2EgmlFix {min-width: 100% !important;width: 100% !important;}
+      }
+     =20
+      @media only screen and (max-width: 480px) {
+        table=2EinnerContainer { max-width: 96% !important; }
+        table=2EresponsiveTable { width:100% !important; }
+        td=2EtwoColumnWrap { display:block !important; width:100% !importa=
+nt; }
+        table=2EarticleLink { max-width: 100% !important; }
+        td=2EleftTwoColumn, td=2ErightTwoColumn, td=2EfeaturedColumn, td=
+=2EoneColumn { padding: 16px !important; }
+        td=2EleftTwoColumn { padding-bottom: 0px !important; }
+        td=2EleftTwoColumn p, td=2ErightTwoColumn p, td=2EfeaturedColumn p=
+, td=2EoneColumn p { margin-top: 8px !important; margin-bottom: 8px !import=
+ant; margin-left: 0px !important; margin-right: 0px !important; }
+        td=2EleftFooterColumn { padding: 16px !important; }
+        td=2ErightFooterColumn { padding: 16px 16px 16px 0px !important; }
+        td=2EbottomFooterColumn { padding: 0 16px 16px !important; }
+        td=2EsocialWrap { padding: 0px 10px 20px 15px !important; }
+        td=2EsocialWrap a=2Etwitter { margin-right: 4px !important; }
+        td=2EsocialWrap a=2Efacebook { margin-right: 4px !important; }
+        td=2ElinkWrap { padding: 0px 15px 20px 10px !important; }
+        img=2EbrandingImg, img=2Eimg-insert, table=2Eadvertisement { width=
+: 340px !important; }
+        /* DELETE THE LINE BELOW ONCE THE ADS TEAM FIX THE ADS TAGS LAYOUT=
+ FOR RESPONSIVENESS 11/20/2018  */
+        table=2Eadvertisement > tbody > tr:nth-child(1) > td > table > tbo=
+dy > tr:nth-child(1) > td > a > img { width: 100% !important; }
+      }
+
+      @media only screen and (max-device-width:414px), screen and (max-wid=
+th: 414px) {
+        body { width:100% !important; min-width:100% !important; }
+        img=2EbrandingImg, img=2Eimg-insert, table=2Eadvertisement { width=
+: 95% !important; }
+      }
+      /*enotify*/
+      @media only screen and (max-device-width:599px), screen and (max-wid=
+th:599px) {
+        td=2Eem_aside{ width: 10px !important; }
+        span=2Eem_brk { display: block !important; }
+      }
+      @media screen and (max-width: 480px) {
+        =2Econtent { padding-left: 20px; padding-right: 20px; }
+        =2Econtent=2Ebody-text { font-size: 12px; line-height: 22px; }
+        =2Econtent h2 { font-size: 16px; font-weight: normal; line-height:=
+ 20px; font-family: Georgia; -webkit-font-smoothing: antialiased; color: #0=
+00; font-weight: normal; padding-top: 20px; padding-bottom: 16px; }
+        =2Ebody-text p { font-size: 12px; line-height: 22px; }
+        hr { padding-left: 16px; padding-right: 16px; border: none; }
+        =2Ead { font-size: 7px; line-height: 7px; }
+        td=2Eunsub-links { font-size: 6px; line-height: 12px; padding: 16p=
+x 0 0; }
+        td=2Ecopyright { font-size: 7px; line-height: 8px; }
+        td=2Elast-row { font-size: 7px; line-height: 8px; padding: 8px 0 1=
+6px; }
+      }
+
+      @media only screen and (max-width: 360px) {
+        =2Elihide {
+          display: none !important;
+        }
+        =2Elishow {
+          display: block !important;
+          width: auto !important;
+          overflow: visible !important;
+          float: none !important;
+          max-height: inherit !important;
+          line-height: inherit !important;
+        }
+      }
+   =20
+    </style>
+  </head>
+  <body class=3D"tribpub_campaign-template-default single single-tribpub_c=
+ampaign postid-321364" leftmargin=3D"0" topmargin=3D"0" marginwidth=3D"0" m=
+arginheight=3D"0" style=3D"table-layout:fixed;padding:0px 0px 20px 0px; bac=
+kground-color: #f3f3f3;">
+  <div style=3D"overflow:hidden;display:none;font-size:1px;color:#ffffff;l=
+ine-height:1px;font-family:Arial;max-height:0px;max-width:0px;opacity:0;">
+=09
+  </div>
+
+  <!--[if (gte mso 9)|(IE)]>
+  <table width=3D"600" align=3D"center" cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0">
+    <tr>
+      <td width=3D"600" valign=3D"top">
+  <![endif]-->			<article class=3D"post-321364 tribpub_campaign type-tribp=
+ub_campaign status-publish hentry market_cat-baltimore-sun" id=3D"post-3213=
+64">
+			<title style=3D"-webkit-font-smoothing: antialiased;">Don't Miss</title=
+>
+
+
+<!--[if (gte mso 9)|(IE)]>
+<style type=3D"text/css">
+	table {border-collapse: collapse !important;}
+</style>
+<![endif]-->
+
+
+	<center class=3D"wrapper" style=3D"width: 100%;table-layout: fixed;-webki=
+t-text-size-adjust: 100%;-ms-text-size-adjust: 100%;background-color: #EEE;=
+-webkit-font-smoothing: antialiased;">
+		<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" s=
+tyle=3D"background-color: #EEE;font-family: Arial;-webkit-font-smoothing: a=
+ntialiased;border-spacing: 0;color: #EEE;" bgcolor=3D"#EEE;">
+			<tbody><tr style=3D"-webkit-font-smoothing: antialiased;">
+				<td width=3D"100%" style=3D"-webkit-font-smoothing: antialiased;">
+					<div class=3D"webkit" style=3D"max-width: 600px;margin: 0 auto;-webki=
+t-font-smoothing: antialiased;">
+
+						<!--[if (gte mso 9)|(IE)]>
+
+						<table width=3D"600" align=3D"center" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" style=3D"border-spacing:0;font-family: Calibri, sans-se=
+rif;color:#333333;" >
+							<tr>
+								<td style=3D"padding-top:0;padding-bottom:0;padding-right:0;paddin=
+g-left:0;" >
+								<![endif]-->
+
+						<!-- =3D=3D=3D=3D=3D=3D=3D start main body =3D=3D=3D=3D=3D=3D=3D -->
+						<table class=3D"outer" align=3D"center" cellpadding=3D"0" cellspacin=
+g=3D"0" border=3D"0" style=3D"border-spacing: 0;font-family: Arial, sans-se=
+rif;color: #333333;margin: 0 auto;width: 100%;max-width: 600px;-webkit-font=
+-smoothing: antialiased;">
+							<tbody><tr style=3D"-webkit-font-smoothing: antialiased;">
+								<td style=3D"padding-top: 0;padding-bottom: 0;padding-right: 0;pad=
+ding-left: 0;-webkit-font-smoothing: antialiased;">
+									<!-- =3D=3D=3D=3D=3D=3D=3D start header =3D=3D=3D=3D=3D=3D=3D -->
+									<table border=3D"0" width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" bgcolor=3D"#FFF" style=3D"-webkit-font-smoothing: antialiased;border=
+-spacing: 0;color: #EEE;font-family: Georgia;">
+										<tbody><tr style=3D"-webkit-font-smoothing: antialiased;">
+											<td style=3D"background-color: #FFF;-webkit-font-smoothing: ant=
+ialiased;" bgcolor=3D"#FFF">
+												<table style=3D"width: 100%;-webkit-font-smoothing: antialiase=
+d;border-spacing: 0;color: #EEE;font-family: Georgia;" cellpadding=3D"0" ce=
+llspacing=3D"0" border=3D"0">
+													<tbody style=3D"-webkit-font-smoothing: antialiased;">
+														<tr style=3D"-webkit-font-smoothing: antialiased;">
+															<td align=3D"center" style=3D"-webkit-font-smoothing: antia=
+liased;">
+																<center style=3D"-webkit-font-smoothing: antialiased;">
+																	<table border=3D"0" align=3D"center" width=3D"100%" cellp=
+adding=3D"0" cellspacing=3D"0" style=3D"margin: 0 auto;-webkit-font-smoothi=
+ng: antialiased;border-spacing: 0;color: #EEE;font-family: Georgia;">
+																		<tbody style=3D"-webkit-font-smoothing: antialiased;">
+																			<tr style=3D"-webkit-font-smoothing: antialiased;">
+																				<td class=3D"one-column" style=3D"padding-top: 0;paddi=
+ng-bottom: 0;padding-right: 0;padding-left: 0;-webkit-font-smoothing: antia=
+liased;">
+																					<table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%" style=3D"border-spacing: 0;font-family: Arial;-webkit-fon=
+t-smoothing: antialiased;color: #EEE;">
+																						<tbody><tr style=3D"-webkit-font-smoothing: antialia=
+sed;">
+																							<td style=3D"width: 100%;display: none !important;v=
+isibility: hidden;mso-hide: all;font-size: 1px;color: #FFF;line-height: 1px=
+;max-height: 0px;max-width: 0px;opacity: 0;overflow: hidden;-webkit-font-sm=
+oothing: antialiased;">
+																								<!-- =3D=3D=3D=3D=3D=3D=3D PREHEADER TEXT HERE =3D=
+=3D=3D=3D=3D=3D=3D -->
+																							</td>
+																						</tr>
+																						<tr style=3D"-webkit-font-smoothing: antialiased;">
+																							<td class=3D"content" style=3D"width: 100%;-webkit-=
+font-smoothing: antialiased;padding-left: 40px;padding-right: 40px;">
+																								<table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" align=3D"center" style=3D"margin: 0 auto;min-height: 75px;-webkit-fo=
+nt-smoothing: antialiased;border-spacing: 0;color: #EEE;font-family: Georgi=
+a;">
+																									<tbody style=3D"-webkit-font-smoothing: antialias=
+ed;">
+																										<tr style=3D"-webkit-font-smoothing: antialiased=
+;">
+																											<!-- =3D=3D=3D=3D=3D=3D=3D logo =3D=3D=3D=3D=3D=
+=3D=3D -->
+																											<td align=3D"center" style=3D"-webkit-font-smoo=
+thing: antialiased;">
+																												<a href=3D"http://nsl=2Ebaltimoresun=2Ecom/T/v=
+6000001886e6c4afb83f837f4bbcfbb48/7fcf661a0a9b4f470000021ef3a0bcc2/7fcf661a=
+-0a9b-4f47-ba64-7bef8301dadd?__dU__=3Dv0oQlZ2XmHtXguGamVfW7E0G76VTZ3n_q11Xh=
+PgKDfDU8=3D&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQF=
+y4ZqZV9bsTQbvpVNnef-rUPyEo-4WQXZUW600WQQfLLBGQ8tuoBtQMYMxlZqfQ9_fPwOEUasDm_=
+AB0Xoge1X2ornVLJZgqrIxiCn59TaOaHxi38qTo1e0qszONRoj3HuYrd5IrcAY4fC9AEv9C6VsV=
+_2CQCpVGvWBqQsz5aNPr7bz-gjOS1Kgg9-on_zoC4SnXANxOrT2fCiKKfvLO_F6N6iovx0NwueJ=
+nZySSzTFZZv2AfFsaqKSo=3D" style=3D"display: block;border: 0px !important;pa=
+dding-top: 16px;-webkit-font-smoothing: antialiased;">
+																													<img border=3D"0" width=3D"264" style=3D"disp=
+lay: block;-webkit-font-smoothing: antialiased;border: 0;" src=3D"http://ww=
+w=2Etrbimg=2Ecom/img-591cd54d/turbine/la-market-logos-20170517-015" alt=3D"=
+Baltimore Sun">
+																												</a>
+																											</td>
+																										</tr>
+																										<tr style=3D"-webkit-font-smoothing: antialiased=
+;">
+																											<td align=3D"center" style=3D"padding: 4px 0;-w=
+ebkit-font-smoothing: antialiased;">
+																											  <span class=3D"header-date date populate inne=
+r_html_with_timestamp" style=3D"color: #999;font-family: Lato, Arial;-webki=
+t-font-smoothing: antialiased;font-size: 10px;letter-spacing: 1px;line-heig=
+ht: 12px;text-align: center;text-transform: uppercase;">May 30, 2023</span>
+																											</td>
+																										</tr>
+																									</tbody>
+																								</table>
+																							</td>
+																						</tr>
+																							=09
+
+
+							<tr style=3D"-webkit-font-smoothing: antialiased;">
+								<td align=3D"center" height=3D"25" style=3D"background-color: #003=
+366;-webkit-font-smoothing: antialiased;">
+									<span style=3D"color: #FFF;font-family: Lato, Arial; font-weight:=
+ bold; -webkit-font-smoothing: antialiased;">
+									&nbsp;DON'T MISS&nbsp; =20
+									</span>
+								</td>
+							</tr>
+
+
+																						<tr style=3D"-webkit-font-smoothing: antialiased;">
+																							<td style=3D"-webkit-font-smoothing: antialiased;">
+																								<table class=3D"alert-content" border=3D"0" align=
+=3D"left" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D"margi=
+n: 0 auto;text-align: left;-webkit-font-smoothing: antialiased;border-spaci=
+ng: 0;color: #EEE;font-family: Georgia;">
+																									<tbody><tr style=3D"-webkit-font-smoothing: antia=
+liased;">
+																										<td class=3D"content" style=3D"padding-top: 36px=
+;padding-bottom: 20px;-webkit-font-smoothing: antialiased;padding-left: 40p=
+x;padding-right: 40px;"><h2 style=3D"color: #000;font-weight: normal;margin=
+: 0;-webkit-font-smoothing: antialiased;font-size: 31px;line-height: 36px;f=
+ont-family: Georgia, Arial;"><a class=3D"populate href_with_url content_wit=
+h_headline" href=3D"http://nsl=2Ebaltimoresun=2Ecom/T/v6000001886e6c4afb83f=
+837f4bbcfbb48/7fcf661a0a9b4f470000021ef3a0bcc3/7fcf661a-0a9b-4f47-ba64-7bef=
+8301dadd?__dU__=3Dv0oQlZ2XmHtXguGamVfW7E0G76VTZ3n_q11XhPgKDfDU8=3D&__F__=3D=
+v0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQFy4ZqZV9bsTQbvpVNnef-=
+rVYYzfHsV4A8Bpu6W3XFILelliHcsQi70laymkYh8ef9MPXZ5DtoWHxR_VVck1x5GhIEAGBUhf9=
+qLPT-fXKlXPgyMUfbwQFXLlKzIduJ7jSUJo3zLSXuXPldh6VlKQepcvn_IpOKEvcN8LOhx416o4=
+cIo0obSIy1D2zvhqdS3PtzcxYmrSm0A_WDxFu1HUDcj2DDgPy_fPY0zQqUJ1gIOgLx2gHA52riv=
+Z86XCxPXafTfYT_z8g3FQXqRRLHX-dejszNCMxGJXFA_1bPWAHbAfuZoEPkxQYYiQAz6vkRda-i=
+nz6jIo6CX167WGuh_u9195FutNFkEHyywRkPLbqAbUDGDMZWan0Pf3z8DhFGrA5vwAdF6IHtV9q=
+K51SyWYKqyMYgp-fU2jmh8Yt_Kk6NXtKrMzjUaI9x7mK3eSK3AGOHwvQBL_QulbFf9gkAqVRr1g=
+akLM-WjT6-28_oIzktSoIL72eFdwC_LChpE14liAZdmwgLPFjPMXsNXoCbS41Z2WZ2ckks0xWWb=
+9gHxbGqikq" style=3D"text-decoration: none;color: #000000;font-family: Geor=
+gia;-webkit-font-smoothing: antialiased;">Will new process change how Balti=
+more County officers fare when contesting use-of-force violations? </a></h2=
+></td>
+																									</tr>
+																									<tr style=3D"-webkit-font-smoothing: antialiased;=
+">
+																										<td class=3D"content body-text" style=3D"color: =
+#333;font-family: Georgia;padding-bottom: 34px;text-align: left;-webkit-fon=
+t-smoothing: antialiased;padding-left: 40px;padding-right: 40px; font-size:=
+ 16px; line-height: 28px;">
+																											<span class=3D"message-body populate inner_html=
+_with_body_text" style=3D"-webkit-font-smoothing: antialiased; font-size: 1=
+6px;line-height: 28px;">None of the three Baltimore County Police officers =
+accused of use-of-force violations in trial boards held this year has been =
+found guilty, according to a department spokesperson=2E</span>
+																											<br style=3D"-webkit-font-smoothing: antialiase=
+d;"><a href=3D"http://nsl=2Ebaltimoresun=2Ecom/T/v6000001886e6c4afb83f837f4=
+bbcfbb48/7fcf661a0a9b4f470000021ef3a0bcc4/7fcf661a-0a9b-4f47-ba64-7bef8301d=
+add?__dU__=3Dv0oQlZ2XmHtXguGamVfW7E0G76VTZ3n_q11XhPgKDfDU8=3D&__F__=3Dv0fUY=
+vjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQFy4ZqZV9bsTQbvpVNnef-rVYYz=
+fHsV4A8Bpu6W3XFILelliHcsQi70laymkYh8ef9MPXZ5DtoWHxR_VVck1x5GhIEAGBUhf9qLPT-=
+fXKlXPgyMUfbwQFXLlKzIduJ7jSUJo3zLSXuXPldh6VlKQepcvn_IpOKEvcN8LOhx416o4cIo0o=
+bSIy1D2zvhqdS3PtzcxYmrSm0A_WDxFu1HUDcj2DDgPy_fPY0zQqUJ1gIOgLx2gHA52rivZ86XC=
+xPXafTfYT_z8g3FQXqRRLHX-dejszNCMxGJXFA_1bPWAHbAfuZoEPkxQYYiQAz6vkRda-inz6jI=
+o6CX167WGuh_u9195FutNFkEHyywRkPLbqAbUDGDMZWan0Pf3z8DhFGrA5vwAdF6IHtV9qK51Sy=
+WYKqyMYgp-fU2jmh8Yt_Kk6NXtKrMzjUaI9x7mK3eSK3AGOHwvQBL_QulbFf9gkAqVRr1gakLM-=
+WjT6-28_oIzktSoIRqm7WeeVGYli07mjvaXEDz4HuMKMuy4bSaH9xb_m6BOZ2ckks0xWWb9gHxb=
+Gqikq" class=3D"more-link populate href_with_url" style=3D"color: #D00018;t=
+ext-decoration: underline;-webkit-font-smoothing: antialiased;">Read the La=
+test</a>
+																										</td>
+																									</tr>
+																								</tbody></table>
+																							</td>
+																						</tr>
+																					</tbody></table>
+																				</td>
+																			</tr>
+																		</tbody>
+																	</table>
+																</center>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+										</tr>
+									</tbody></table>
+									<!-- =3D=3D=3D=3D=3D=3D=3D end header =3D=3D=3D=3D=3D=3D=3D -->
+
+									<!-- =3D=3D=3D=3D=3D=3D=3D start ad tag  =3D=3D=3D=3D=3D=3D=3D --=
+>
+									<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"=
+100%" style=3D"border-spacing: 0;max-width: 600px;background-color: #EEE;te=
+xt-align: center;-webkit-font-smoothing: antialiased;color: #EEE;font-famil=
+y: Georgia;" align=3D"center" bgcolor=3D"#EEE">
+										<tbody><tr style=3D"-webkit-font-smoothing: antialiased;">
+											<td height=3D"24" style=3D"-webkit-font-smoothing: antialiased;=
+"></td>
+										</tr>
+										<tr style=3D"-webkit-font-smoothing: antialiased;">
+											<td style=3D"-webkit-font-smoothing: antialiased;">
+											 <table width=3D"100%" height=3D"12" cellpadding=3D"0" cellspac=
+ing=3D"0" style=3D"-webkit-font-smoothing: antialiased;border-spacing: 0;co=
+lor: #EEE;font-family: Georgia;">
+												<tbody><tr style=3D"-webkit-font-smoothing: antialiased;">
+													<td height=3D"1" style=3D"font-size: 1px;mso-line-height-rule=
+: exactly;line-height: 1px;border-top: 1px solid #CCC;padding-top: 10px;pad=
+ding-bottom: 10px;-webkit-font-smoothing: antialiased;">-</td>
+													<td class=3D"ad" height=3D"1" width=3D"220" style=3D"mso-line=
+-height-rule: exactly;padding: 0 0 0;color: #999;font-family: Arial;-webkit=
+-font-smoothing: antialiased;font-size: 10px;line-height: 11px; text-align:=
+ center;">
+BREAKING NEWS PRESENTED BY
+
+
+</td>
+													<td height=3D"1" style=3D"font-size: 1px;mso-line-height-rule=
+: exactly;line-height: 1px;border-top: 1px solid #CCC;padding-top: 10px;pad=
+ding-bottom: 10px;-webkit-font-smoothing: antialiased;">-</td>
+												</tr>
+											 </tbody></table>
+										 </td>
+										 </tr>
+										 <tr style=3D"-webkit-font-smoothing: antialiased;">
+ 											<td height=3D"24" style=3D"-webkit-font-smoothing: antialiased=
+;"></td>
+ 										</tr>
+										<tr style=3D"-webkit-font-smoothing: antialiased;">
+											<td style=3D"text-align: center;width: 100%;-webkit-font-smooth=
+ing: antialiased;" align=3D"center">
+												<table align=3D"center" style=3D"table-layout: fixed;margin: 0=
+ auto;-webkit-font-smoothing: antialiased;border-spacing: 0;color: #EEE;fon=
+t-family: Georgia;">
+													<tbody><tr style=3D"-webkit-font-smoothing: antialiased;">
+														<td style=3D"-webkit-font-smoothing: antialiased;">
+															<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ali=
+gn=3D"center" style=3D"margin: 0 auto;-webkit-font-smoothing: antialiased;b=
+order-spacing: 0;color: #EEE;font-family: Georgia;"><tbody><tr style=3D"-we=
+bkit-font-smoothing: antialiased;"><td style=3D"-webkit-font-smoothing: ant=
+ialiased;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tbody><=
+tr><td colspan=3D"2"><a href=3D"http://nsl=2Ebaltimoresun=2Ecom/T/v60000018=
+86e6c4afb83f837f4bbcfbb48/7fcf661a0a9b4f470000021ef3a0bcc5/7fcf661a-0a9b-4f=
+47-ba64-7bef8301dadd?__dU__=3Dv0oQlZ2XmHtXguGamVfW7E0G76VTZ3n_q11XhPgKDfDU8=
+=3D&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0r7FigEMozyeP0TZMXm=
+lDabvpVNnef-rVdY1Svy9_3gXXFhXMvvHBat83jHW3Zaxndwj1Zx2ZJxW_P0ku83emNdZ1qvqlp=
+520cFyJ4cVgL9JU-TXCAZjEruUe9Z_sHXNqMg4_A9bLObZSiSVToK6S7RTyWJG5-M2t2ZKLwbqM=
+LTfand5lhpmZ4rryac7xaMTLYsOSwUkeOpdv9dHNDPPdxcgo6Pqhj6KdXEdXsHXW_iEKiQnwybN=
+OWgoNq8G0J0628nPVghd_-dTUj46TKcmMlzMQmH1qvpO9Ohxw-o7J_pBmgJIUGTBi7HsVaD9p-9=
+vNlvbq1z7m6T5PMDlRF7LMqiySuJCxJNjjKlOJk7r9T-3umbjeMu3Y6tCP2Zkvk5VdFp0B5dGKY=
+yw=3D=3D" rel=3D"nofollow"><img src=3D"https://sli=2Ebaltimoresun=2Ecom/imp=
+?s=3D833879&amp;li=3D{LIST_ID}&amp;e=3Douchendans62@gmail=2Ecom&amp;p=3D7fc=
+f661a-0a9b-4f47-ba64-7bef8301dadd&amp;stpe=3Ddefault" border=3D"0" width=3D=
+"600" style=3D"width: 100%; max-width: 600px !important;"></a></td></tr><tr=
+><td align=3D"left"><a style=3D"display: block; max-width: 116px;  max-heig=
+ht: 15px;" href=3D"http://nsl=2Ebaltimoresun=2Ecom/T/v6000001886e6c4afb83f8=
+37f4bbcfbb48/7fcf661a0a9b4f470000021ef3a0bcc6/7fcf661a-0a9b-4f47-ba64-7bef8=
+301dadd?__dU__=3Dv0oQlZ2XmHtXguGamVfW7E0G76VTZ3n_q11XhPgKDfDU8=3D&__F__=3Dv=
+0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0r7FigEMozyeP0TZMXmlDabvpVNnef-r=
+VdY1Svy9_3gXXFhXMvvHBaiID3F5zpCELdwj1Zx2ZJxW_P0ku83emNdZ1qvqlp520cFyJ4cVgL9=
+JU-TXCAZjEruUe9Z_sHXNqMg4_A9bLObZSiSVToK6S7RTyWJG5-M2tDnTEYt3dPEkcUJgzB9O_F=
+RbrTRZBB8ssEZDy26gG1AxgzGVmp9D398_A4RRqwOb8AHReiB7VfaiudUslmCqsjGIKfn1No5of=
+GLfypOjV7SqzM41GiPce5it3kitwBjh8L0AS_0LpWxX_YJAKlUa9YGpCzPlo0-vtvP6CM5LUqCA=
+Sa9EG7-Y4MJu0vHTvM9SF95-cGV2VtTE60s9OPB2BEmdnJJLNMVlm_YB8WxqopKg=3D=3D" rel=
+=3D"nofollow"><img src=3D"https://sli=2Ebaltimoresun=2Ecom/imp?s=3D833880&a=
+mp;li=3D{LIST_ID}&amp;e=3Douchendans62@gmail=2Ecom&amp;p=3D7fcf661a-0a9b-4f=
+47-ba64-7bef8301dadd&amp;stpe=3Dstatic" border=3D"0"></a></td><td align=3D"=
+right"><a style=3D"display: block; max-width: 19px;  max-height: 15px;" hre=
+f=3D"http://nsl=2Ebaltimoresun=2Ecom/T/v6000001886e6c4afb83f837f4bbcfbb48/7=
+fcf661a0a9b4f470000021ef3a0bcc7/7fcf661a-0a9b-4f47-ba64-7bef8301dadd?__dU__=
+=3Dv0oQlZ2XmHtXguGamVfW7E0G76VTZ3n_q11XhPgKDfDU8=3D&__F__=3Dv0fUYvjHMDjRPMS=
+h3tviDHXIoXcPxvDgUUCCPvXMWoX_0r7FigEMozyeP0TZMXmlDabvpVNnef-rVdY1Svy9_3gXXF=
+hXMvvHBaka4_ZY0Jjh3dwj1Zx2ZJxW_P0ku83emNdZ1qvqlp520cFyJ4cVgL9JU-TXCAZjEruUe=
+9Z_sHXNqMg4_A9bLObZSiSVToK6S7RTyWJG5-M2tDnTEYt3dPEkcUJgzB9O_FRbrTRZBB8ssEZD=
+y26gG1AxgzGVmp9D398_A4RRqwOb8AHReiB7VfaiudUslmCqsjGIKfn1No5ofGLfypOjV7SqzM4=
+1GiPce5it3kitwBjh8L0AS_0LpWxX_YJAKlUa9YGpCzPlo0-vtvP6CM5LUqCGPJccyKyEPFAILQ=
+x4eqfZuAuRno-UAO6CwUIU_3OjddmdnJJLNMVlm_YB8WxqopKg=3D=3D" rel=3D"nofollow">=
+<img src=3D"https://sli=2Ebaltimoresun=2Ecom/imp?s=3D833882&amp;li=3D{LIST_=
+ID}&amp;e=3Douchendans62@gmail=2Ecom&amp;p=3D7fcf661a-0a9b-4f47-ba64-7bef83=
+01dadd&amp;stpe=3Dstatic" border=3D"0"></a></td></tr></tbody></table>
+
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"40" heigh=
+t=3D"6"><tbody><tr><td><img src=3D"https://sli=2Ebaltimoresun=2Ecom/imp?s=
+=3D126607300&amp;li=3D{LIST_ID}&amp;e=3Douchendans62@gmail=2Ecom&amp;p=3D7f=
+cf661a-0a9b-4f47-ba64-7bef8301dadd&amp;stpe=3Dpixel&amp;lctg=3D69261573" wi=
+dth=3D"2" height=3D"6" border=3D"0"></td><td><img src=3D"https://sli=2Ebalt=
+imoresun=2Ecom/imp?s=3D126607301&amp;li=3D{LIST_ID}&amp;e=3Douchendans62@gm=
+ail=2Ecom&amp;p=3D7fcf661a-0a9b-4f47-ba64-7bef8301dadd&amp;stpe=3Dpixel&amp=
+;lctg=3D69261573" width=3D"2" height=3D"6" border=3D"0"></td><td><img src=
+=3D"https://sli=2Ebaltimoresun=2Ecom/imp?s=3D126607302&amp;li=3D{LIST_ID}&a=
+mp;e=3Douchendans62@gmail=2Ecom&amp;p=3D7fcf661a-0a9b-4f47-ba64-7bef8301dad=
+d&amp;stpe=3Dpixel&amp;lctg=3D69261573" width=3D"2" height=3D"6" border=3D"=
+0"></td><td><img src=3D"https://sli=2Ebaltimoresun=2Ecom/imp?s=3D126607303&=
+amp;li=3D{LIST_ID}&amp;e=3Douchendans62@gmail=2Ecom&amp;p=3D7fcf661a-0a9b-4=
+f47-ba64-7bef8301dadd&amp;stpe=3Dpixel&amp;lctg=3D69261573" width=3D"2" hei=
+ght=3D"6" border=3D"0"></td><td><img src=3D"https://sli=2Ebaltimoresun=2Eco=
+m/imp?s=3D126607304&amp;li=3D{LIST_ID}&amp;e=3Douchendans62@gmail=2Ecom&amp=
+;p=3D7fcf661a-0a9b-4f47-ba64-7bef8301dadd&amp;stpe=3Dpixel&amp;lctg=3D69261=
+573" width=3D"2" height=3D"6" border=3D"0"></td></tr></tbody></table>
+</td></tr></tbody></table>
+														</td>
+													</tr>
+												</tbody></table>
+											</td>
+										</tr>
+										<tr style=3D"-webkit-font-smoothing: antialiased;">
+										 <td height=3D"24" style=3D"-webkit-font-smoothing: antialiased;=
+"></td>
+									 </tr>
+										<tr style=3D"-webkit-font-smoothing: antialiased;">
+											<td style=3D"-webkit-font-smoothing: antialiased;">
+											 <table width=3D"100%" height=3D"1" cellpadding=3D"0" cellspaci=
+ng=3D"0" style=3D"background-color: #EEE;-webkit-font-smoothing: antialiase=
+d;border-spacing: 0;color: #EEE;font-family: Georgia;">
+												<tbody><tr style=3D"-webkit-font-smoothing: antialiased;">
+													<td height=3D"1" style=3D"font-size: 1px;mso-line-height-rule=
+: exactly;line-height: 1px;border-top: 1px solid #CCC;-webkit-font-smoothin=
+g: antialiased;">-</td>
+												</tr>
+											 </tbody></table>
+										 </td>
+										</tr>
+										<tr style=3D"-webkit-font-smoothing: antialiased;">
+										 <td height=3D"24" style=3D"-webkit-font-smoothing: antialiased;=
+"></td>
+									 </tr>
+									</tbody></table>
+									<!-- =3D=3D=3D=3D=3D=3D=3D end ad tag =3D=3D=3D=3D=3D=3D=3D -->
+
+									<!-- =3D=3D=3D=3D=3D=3D=3D start footer =3D=3D=3D=3D=3D=3D=3D -->
+									<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" bgcolor=3D"#FFF" style=3D"background-color: #FFF;-webkit-font-smooth=
+ing: antialiased;border-spacing: 0;color: #EEE;font-family: Georgia;">
+										<tbody><tr style=3D"-webkit-font-smoothing: antialiased;">
+											<td class=3D"one-column" style=3D"padding-top: 0;padding-bottom=
+: 0;padding-right: 0;padding-left: 0;-webkit-font-smoothing: antialiased;">
+												<table border=3D"0" cellpadding=3D"24" cellspacing=3D"0" width=
+=3D"100%" style=3D"-webkit-font-smoothing: antialiased;border-spacing: 0;co=
+lor: #EEE;font-family: Georgia;">
+													<tbody style=3D"-webkit-font-smoothing: antialiased;">
+														<tr style=3D"-webkit-font-smoothing: antialiased;">
+															<td style=3D"text-align: center;-webkit-font-smoothing: ant=
+ialiased;">
+
+																<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" al=
+ign=3D"left" style=3D"-webkit-font-smoothing: antialiased;border-spacing: 0=
+;color: #EEE;font-family: Georgia;">
+																	<tbody><tr style=3D"-webkit-font-smoothing: antialiased;"=
+>
+																		<td style=3D"-webkit-font-smoothing: antialiased;">
+																			<span style=3D"font-size: 15px;line-height: 18px;color:=
+ #000000;font-family: Georgia, sans-serif;font-style: italic;-webkit-font-s=
+moothing: antialiased;"><a href=3D"http://nsl=2Ebaltimoresun=2Ecom/T/v60000=
+01886e6c4afb83f837f4bbcfbb48/7fcf661a0a9b4f470000021ef3a0bcc8/7fcf661a-0a9b=
+-4f47-ba64-7bef8301dadd?__dU__=3Dv0oQlZ2XmHtXguGamVfW7E0G76VTZ3n_q11XhPgKDf=
+DU8=3D&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQFy4ZqZ=
+V9bsTQbvpVNnef-rUPyEo-4WQXZUW600WQQfLLBGQ8tuoBtQMYMxlZqfQ9_fPwOEUasDm_AB0Xo=
+ge1X2ornVLJZgqrIxiCn59TaOaHxi38qTo1e0qszONRoj3HuYrd5IrcAY4fC9AEv9C6VsV_2CQC=
+pVGvWBqQsz5aNPr7bz-gjOS1Kggca6zSRdkYx8z71Khptp1bBgR8Rr2fAGFkQWapj0xdTZnZySS=
+zTFZZv2AfFsaqKSo=3D" style=3D"-webkit-font-smoothing: antialiased;"><img wi=
+dth=3D"32" src=3D"http://www=2Etrbimg=2Ecom/img-595a6930/turbine/la-market-=
+logos-20170517-016" border=3D"0" style=3D"-webkit-font-smoothing: antialias=
+ed;border: 0;"></a></span>
+																		</td>
+																	</tr>
+																</tbody></table>
+																<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" al=
+ign=3D"right" style=3D"-webkit-font-smoothing: antialiased;border-spacing: =
+0;color: #EEE;font-family: Georgia;">
+																	<tbody><tr style=3D"-webkit-font-smoothing: antialiased;"=
+>
+																		<td style=3D"-webkit-font-smoothing: antialiased;">
+																			<a href=3D"http://nsl=2Ebaltimoresun=2Ecom/T/v600000188=
+6e6c4afb83f837f4bbcfbb48/7fcf661a0a9b4f470000021ef3a0bcc9/7fcf661a-0a9b-4f4=
+7-ba64-7bef8301dadd?__dU__=3Dv0oQlZ2XmHtXguGamVfW7E0G76VTZ3n_q11XhPgKDfDU8=
+=3D&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_1P8SSwvgaM7Bj1wKVct=
+32ARiiRE2Lk0pFga_RvFOtLOCutnoDyw5yyy0zFalv-GaZpdxyaR-NWnBjBpmMSGBRfsPjGx-3A=
+mZRtZfJZm5E-Dd-nTvJlTlJJGpCzPlo0-vsVAYrVQ7ztoQLr-hcuwzfkFvtiHLKHlK7ozjW6pgp=
+l7yy4dpqOnHn6lELmwtC-_8rbaYP3jcVNJ8qvx-85hcsFnmkh1JjRK9boV_kIBFnXkXOet-wfaH=
+I2eBMU-15vn-0=3D" style=3D"-webkit-font-smoothing: antialiased;"><img src=
+=3D"http://www=2Etrbimg=2Ecom/img-599f5d5a/turbine/la-breaking-twitter-icon=
+-blue-20170530" width=3D"14" alt=3D"" style=3D"border-width: 0;margin: 0 au=
+to;display: inline-block; -webkit-font-smoothing: antialiased;border: 0;" c=
+lass=3D"social-icon"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+																			<a href=3D"http://nsl=2Ebaltimoresun=2Ecom/T/v600000188=
+6e6c4afb83f837f4bbcfbb48/7fcf661a0a9b4f470000021ef3a0bcca/7fcf661a-0a9b-4f4=
+7-ba64-7bef8301dadd?__dU__=3Dv0oQlZ2XmHtXguGamVfW7E0G76VTZ3n_q11XhPgKDfDU8=
+=3D&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQF9OJQbzKj=
+WJqjvxdDSaKpQbJPymQ_S3QCJz_6igKBjBUrryac7xaMTLYsOSwUkeOpdv9dHNDPPdxcgo6Pqhj=
+6KdXEdXsHXW_iEKiQnwybNOWgoNq8G0J0628nPVghd_-dTUj46TKcmMlzMQmH1qvpO9Ohxw-o7J=
+_pBmgJIUGTBi7HsVaD9p-9vNlvbq1z7m6T7urkItbhRP0pXP4dfWhvIqCbOWBxuPu2M3-xIQING=
+VYKsBi8Z9BmYhFp0B5dGKYyw=3D=3D" style=3D"-webkit-font-smoothing: antialiase=
+d;"><img src=3D"http://www=2Etrbimg=2Ecom/img-592e0689/turbine/la-breaking-=
+facebook-logo-blue-20170530" width=3D"12" alt=3D"" style=3D"border-width: 0=
+;margin: 0 auto;display: inline-block; -webkit-font-smoothing: antialiased;=
+border: 0;" class=3D"social-icon"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+																			<a href=3D"http://nsl=2Ebaltimoresun=2Ecom/T/v600000188=
+6e6c4afb83f837f4bbcfbb48/7fcf661a0a9b4f470000021ef3a0bccb/7fcf661a-0a9b-4f4=
+7-ba64-7bef8301dadd?__dU__=3Dv0oQlZ2XmHtXguGamVfW7E0G76VTZ3n_q11XhPgKDfDU8=
+=3D&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQF4zau-oFB=
+c2TNlTq7z8LKg2CHj-XzC6-M7AWMdOZZcBQTsAY9yft30VJ3Q83RXx_r50X1AjlEDuQhHs4t_f6=
+52cg4jaA5CWwWB7WpQSse02GXtHtv3Sw9Ck-hUcUAylJSMYqr5EyidlrEwFAuwD8uRI17mjHhJI=
+GrLsw1sXbaaIn4pQqAVE4Glo5IQlExjnWjxSAMzWFqceNR3htRCzgTev81twknuJXqMYd80QCnn=
+41FMhcpLD9Ka0aMiJk-Et9vw=3D=3D" style=3D"-webkit-font-smoothing: antialiase=
+d;"><img src=3D"http://www=2Etrbimg=2Ecom/img-591c8a14/turbine/la-instagram=
+-icon-20170517" width=3D"14" alt=3D"" style=3D"border-width: 0;margin: 0 au=
+to;display: inline-block; -webkit-font-smoothing: antialiased;border: 0;" c=
+lass=3D"social-icon"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+																		=09
+																			<a href=3D"http://nsl=2Ebaltimoresun=2Ecom/T/v600000188=
+6e6c4afb83f837f4bbcfbb48/7fcf661a0a9b4f470000021ef3a0bccc/7fcf661a-0a9b-4f4=
+7-ba64-7bef8301dadd?__dU__=3Dv0oQlZ2XmHtXguGamVfW7E0G76VTZ3n_q11XhPgKDfDU8=
+=3D&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0k4eFf_MPpUbbhIlz_j=
+5Wz94Eaqw78mQPm5Gk4-PwrqlYasYXi-shuSdtLeEpF-BdOwBj3J-3fRUndDzdFfH-vnRfUCOUQ=
+O5CEezi39_rnZyDiNoDkJbBYHtalBKx7TYZe0e2_dLD0KT6FRxQDKUlIxiqvkTKJ2WsTAUC7APy=
+5EjXuaMeEkgasuzDWxdtpoifilCoBUTgaWjkhCUTGOdaPqZwsZSGaMpvwpdNZIVOgFva9_mK7gs=
+_Bj5znEWa7P97UE6wjeKtLKRoyImT4S32_" style=3D"-webkit-font-smoothing: antial=
+iased;"><img src=3D"http://www=2Etrbimg=2Ecom/img-599f5ecb/turbine/la-newsl=
+etter-contact-us-20170421" width=3D"14" alt=3D"" style=3D"border-width: 0;m=
+argin: 0 auto;display: inline-block; -webkit-font-smoothing: antialiased;bo=
+rder: 0;"></a>
+																		</td>
+																	</tr>
+																</tbody></table>
+															</td>
+														</tr>
+														<tr style=3D"-webkit-font-smoothing: antialiased;">
+															<td class=3D"unsub-links" style=3D"text-align: center;color=
+: #999;font-family: Lato, Arial; font-weight: bold; -webkit-font-smoothing:=
+ antialiased; font-size: 9px;line-height: 11px;padding: 16px 0 0;">
+																<a href=3D"http://nsl=2Ebaltimoresun=2Ecom/T/v6000001886e6=
+c4afb83f837f4bbcfbb48/7fcf661a0a9b4f470000021ef3a0bccd/7fcf661a-0a9b-4f47-b=
+a64-7bef8301dadd?__dU__=3Dv0oQlZ2XmHtXguGamVfW7E0G76VTZ3n_q11XhPgKDfDU8=3D&=
+__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_1MRNoSxtX_Orx58rbXPoJp-=
+9Db0PmyjONnSVKMFc4Srohxqu_Zi_8BjtXOCrw2vHHutThn647XiAEa1gAq65nuuuCQcVZ3t1zD=
+KfpFA1RiKsdodiSNdKIXrGSEJO5mmK0sFKbvMvTZowkMTN3Ckn1AXwZ5uDUNdMGiWWafqaBPdUW=
+600WQQfLLBGQ8tuoBtQMYMxlZqfQ9_fPwOEUasDm_AB0Xoge1X2ornVLJZgqrIxiCn59TaOaHxi=
+38qTo1e0qszONRoj3HuYrd5IrcAY4fC9AEv9C6VsV_2CQCpVGvWBqQsz5aNPr7bz-gjOS1Kggl4=
+612OZgubDeyz9tUgdaqWdIlUEH9GxrcSMEAE8azy5nZySSzTFZZv2AfFsaqKSo=3D" style=3D=
+"text-transform: uppercase;color: #999;text-decoration: none;-webkit-font-s=
+moothing: antialiased;">UNSUBSCRIBE</a>&nbsp;&nbsp;&nbsp;&nbsp;<span style=
+=3D"color: #999;-webkit-font-smoothing: antialiased;">|</span>&nbsp;&nbsp;&=
+nbsp;&nbsp;<a href=3D"http://nsl=2Ebaltimoresun=2Ecom/T/v6000001886e6c4afb8=
+3f837f4bbcfbb48/7fcf661a0a9b4f470000021ef3a0bcce/7fcf661a-0a9b-4f47-ba64-7b=
+ef8301dadd?__dU__=3Dv0oQlZ2XmHtXguGamVfW7E0G76VTZ3n_q11XhPgKDfDU8=3D&__F__=
+=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0k4eFf_MPpUbbhIlz_j5Wz94Eaqw=
+78mQPm5Gk4-PwrqlYasYXi-shuSdtLeEpF-BdOwBj3J-3fRUndDzdFfH-vnRfUCOUQO5CEezi39=
+_rnZyDiNoDkJbBYHtalBKx7TYZe0e2_dLD0KT6FRxQDKUlIxiqvkTKJ2WsTAUC7APy5EjXuaMeE=
+kgasuzDWxdtpoifilCoBUTgaWjkhCUTGOdaPSD-Z3lAGzZmZfZv3RBEFeDZYJrGrqtIFRtG_mQr=
+ccubgxyNsr7uKzBoyImT4S32_" style=3D"text-transform: uppercase;color: #999;t=
+ext-decoration: none;-webkit-font-smoothing: antialiased;">NEWSLETTERS</a>&=
+nbsp;&nbsp;&nbsp;&nbsp;<span style=3D"color: #999;-webkit-font-smoothing: a=
+ntialiased;">|</span>
+																&nbsp;&nbsp;&nbsp;&nbsp;<a href=3D"http://nsl=2Ebaltimores=
+un=2Ecom/T/v6000001886e6c4afb83f837f4bbcfbb48/7fcf661a0a9b4f470000021ef3a0b=
+ccf/7fcf661a-0a9b-4f47-ba64-7bef8301dadd?__dU__=3Dv0oQlZ2XmHtXguGamVfW7E0G7=
+6VTZ3n_q11XhPgKDfDU8=3D&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX=
+_0JoZLAZABQF2NeIuvISwT0Do0Oym2yHrXUUwHJ4c3vSxtc4i_H3fo7TsAY9yft30VJ3Q83RXx_=
+r50X1AjlEDuQhHs4t_f652cg4jaA5CWwWB7WpQSse02GXtHtv3Sw9Ck-hUcUAylJSMYqr5Eyidl=
+rEwFAuwD8uRI17mjHhJIGrLsw1sXbaaIn4pQqAVE4Glo5IQlExjnWj_GnTSnfajN-5ZZ9QK5Tio=
+Z1ytUByC1-Db8jTzXdLEanu6Gnm7Q_E14aMiJk-Et9vw=3D=3D" style=3D"text-transform=
+: uppercase;color: #999;text-decoration: none;-webkit-font-smoothing: antia=
+liased;">PRIVACY POLICY</a>&nbsp;&nbsp;&nbsp;&nbsp;<span style=3D"color: #9=
+99;-webkit-font-smoothing: antialiased;">|</span>&nbsp;&nbsp;&nbsp;&nbsp;<a=
+ href=3D"http://nsl=2Ebaltimoresun=2Ecom/T/v6000001886e6c4afb83f837f4bbcfbb=
+48/7fcf661a0a9b4f470000021ef3a0bcd0/7fcf661a-0a9b-4f47-ba64-7bef8301dadd?__=
+dU__=3Dv0oQlZ2XmHtXguGamVfW7E0G76VTZ3n_q11XhPgKDfDU8=3D&__F__=3Dv0fUYvjHMDj=
+RPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQF2NeIuvISwT0hxIyt51CRve3AVALgSxn=
+0W6696rhEMcAfncxdhBJ1bEFLmjwNbDvNaYX_Tm8qGFnP35r5PWWBm4tz0qn3GoxqikODEpXh4b=
+1YMqYzooxv6KPt2sG63kYxpaT9t1kyWhXy1s7SnQi5LdMrDdsLNh6r3Wdar6paedtHBcieHFYC_=
+QyA3L2s6U27mrGlJWmeyAHN8gdVVXvM-jVaFyNdnx9i0QsjakKUZrqCK1ZK1arDW4Ifn7IRZOoA=
+YEmdyFrPEBr" style=3D"text-transform: uppercase;color: #999;text-decoration=
+: none;-webkit-font-smoothing: antialiased; white-space: nowrap;">TERMS OF =
+SERVICE</a>
+															</td>
+														</tr>
+														<tr style=3D"-webkit-font-smoothing: antialiased;">
+															<td style=3D"padding-top: 8px;padding-bottom: 8px;-webkit-f=
+ont-smoothing: antialiased;">
+															 <table width=3D"100%" height=3D"1" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"-webkit-font-smoothing: antialiased;border-spacing: 0=
+;color: #EEE;font-family: Georgia;">
+																<tbody><tr style=3D"-webkit-font-smoothing: antialiased;">
+																	<td height=3D"1" style=3D"font-size: 1px;mso-line-height-=
+rule: exactly;line-height: 1px;border-top: 1px solid #CCC;-webkit-font-smoo=
+thing: antialiased;">-</td>
+																</tr>
+															 </tbody></table>
+														 </td>
+														</tr>
+														<tr style=3D"-webkit-font-smoothing: antialiased;">
+															<td class=3D"copyright" style=3D"text-align: center;color: =
+#999999;font-family: Lato, Arial;padding: 0;-webkit-font-smoothing: antiali=
+ased;font-size: 10px;line-height: 12px;">
+																Copyright =C2=A9 <span class=3D"newsletter-date populate i=
+nner_html_with_timestamp" style=3D"-webkit-font-smoothing: antialiased;">20=
+23</span> | Baltimore Sun | <a href=3D"#" style=3D"color: #999999;font-fami=
+ly: Lato, Arial;padding: 0; text-decoration: none;font-size: 10px;line-heig=
+ht: 12px; cursor: default;">PO Box 1377, Baltimore, MD 21278</a> | <a href=
+=3D"#" style=3D"color: #999999;font-family: Lato, Arial;padding: 0; text-de=
+coration: none;font-size: 10px;line-height: 12px; cursor: default;">(443) 6=
+92-9011</a>
+															</td>
+														</tr>
+														<tr style=3D"-webkit-font-smoothing: antialiased;">
+															<td class=3D"last-row" style=3D"text-align: center;color: #=
+333333;font-family: Lato, Arial;-webkit-font-smoothing: antialiased;font-si=
+ze: 10px;line-height: 12px;padding: 8px 0 24px;">
+ABOUT THIS EMAIL You received this email because you are following the Bre=
+aking News newsletter=2E
+														</td>
+														</tr>
+													</tbody>
+												</table>
+
+											</td>
+										</tr>
+									</tbody></table>
+									<!-- =3D=3D=3D=3D=3D=3D=3D end footer =3D=3D=3D=3D=3D=3D=3D -->
+
+								</td>
+								</tr>
+						</tbody></table>
+						<!--[if (gte mso 9)|(IE)]>
+					</td>
+				</tr>
+			</table>
+			<![endif]-->
+					</div>
+				</td>
+				</tr>
+		</tbody></table>
+	</center>
+		</article>
+	<!--[if (gte mso 9)|(IE)]>
+      </td>
+    </tr>
+  </table>
+  <![endif]-->
+ =20
+
+<img src=3D'http://nsl=2Ebaltimoresun=2Ecom/O/v6000001886e6c4afb83f837f4bb=
+cfbb48/7fcf661a0a9b4f4700004c5a42963aa1' style=3D"display:none; max-height:=
+ 0px; font-size: 0px; overflow: hidden; mso-hide: all"/></body></html>
+---=Part.22730a6.2743d0e8f109935e.1886e6c4e70.fa675c17c8b04072=---
+

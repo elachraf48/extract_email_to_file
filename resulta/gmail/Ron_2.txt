@@ -1,0 +1,551 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp78959ims;
+        Mon, 29 May 2023 04:38:06 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ7C9/H1M/ryF6FasJJAEqTb6KYyEFlhTt+Y6bLHFCaUk2tBAZ3UyUJ/Ng7ITBmskHtZaNVq
+X-Received: by 2002:a17:906:fe48:b0:973:9521:cd50 with SMTP id wz8-20020a170906fe4800b009739521cd50mr9849967ejb.41.1685360286121;
+        Mon, 29 May 2023 04:38:06 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685360286; cv=none;
+        d=google.com; s=arc-20160816;
+        b=MGk/Q4oT0Ua4DLB7MoEq74pW/nu5yL/TGMayehLojHwea1WuUzfBvKdlyc1/xHj19+
+         bQr/TiG0goA3w2DvD+RuIle3t+T9wE3ABf8SWMg74CA8pWH/0Wv1T/pS2sKepz8e4WqU
+         z25gD/zy6TLGQkMPAl/zGaWfJK0M4iuEKcA4qPfyYaiiZVWwH6sOqvY4azth/Ksb8tVK
+         Fhmpxtcr2CsVKW43WTEabSanI7rOL1dXVuTOi432pcvjiDyeeev6gfSHyznmldOxCKvv
+         qUDc1N54i6Aa4CZeTgnY4Iaq12VxLDidcqX2w7LGZhuH2Ivn/EUcDc+BFRrH2nr0kIR5
+         c2cA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:list-unsubscribe:message-id:date:to:from:subject
+         :feedback-id:dkim-signature:dkim-signature;
+        bh=tBtI06Aadk4swwwmm2GEPtpOJquuLx2x0/LhU54LBEw=;
+        b=QPYNOieNNj7e5SzlT8uPIOkILXXyWpcrBHSE+RHMFZxE33a/UxCdBVPYiCTUfLIWhb
+         6eKxXEZh85kC2BpXyOC+hlpwwQViFqdmyJOEop0/2sUtX3FhzJJE/m8GPDjurQpiiVPp
+         RByCI93tvD+2GKPlW3gTyFyeVQQojmTNtRaHpQ4pflDz0eiAf+q1cogfRIaMyB6zdqff
+         XRaP6qy+w9MgLsPmnwUbqMU2m1n1SetoLIZUKw7glh0vHFlUTv4pX6VG+xU8E0uJuRZV
+         MGd3svxyiz/7EQyd/5ZIcZ563iq/8r4c1URWfVT2Z6ORhQvB/gxoHJCOSdOHvg9PVXcY
+         fEAQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gasv9.com header.s=def header.b=H3NfcJbJ;
+       dkim=pass header.i=@exceptional-ron.com header.s=astrology header.b=VPDWDMgG;
+       spf=pass (google.com: domain of return-t1-ron_us230529-788961-a0c61f=2@ga.exceptional-ron.com designates 70.47.67.12 as permitted sender) smtp.mailfrom="return-t1-ron_us230529-788961-a0c61f=2@ga.exceptional-ron.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=exceptional-ron.com
+Return-Path: <return-t1-ron_us230529-788961-a0c61f=2@ga.exceptional-ron.com>
+Received: from pond2.drhinternet.net (pond2.drhinternet.net. [70.47.67.12])
+        by mx.google.com with ESMTPS id wl6-20020a170907310600b0094e5ba86388si6705296ejb.831.2023.05.29.04.38.05
+        for <ouchendans62@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 29 May 2023 04:38:06 -0700 (PDT)
+Received-SPF: pass (google.com: domain of return-t1-ron_us230529-788961-a0c61f=2@ga.exceptional-ron.com designates 70.47.67.12 as permitted sender) client-ip=70.47.67.12;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gasv9.com header.s=def header.b=H3NfcJbJ;
+       dkim=pass header.i=@exceptional-ron.com header.s=astrology header.b=VPDWDMgG;
+       spf=pass (google.com: domain of return-t1-ron_us230529-788961-a0c61f=2@ga.exceptional-ron.com designates 70.47.67.12 as permitted sender) smtp.mailfrom="return-t1-ron_us230529-788961-a0c61f=2@ga.exceptional-ron.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=exceptional-ron.com
+DKIM-Signature: a=rsa-sha256; bh=c9lBtHTUU+T9fGUuLt2VOEMxwbG3WQ5GJ5Fd4W59YyU=;
+ c=simple/simple; d=gasv9.com;
+ h=DKIM-Signature:X-Mailer-Info:Feedback-ID:Subject:From:To:Date:Message-ID:X-CampaignID:List-Unsubscribe:X-Feedback-ID:MIME-Version:Content-Type;
+ s=def; t=1685359815; v=1;
+ b=H3NfcJbJ4dgeV0VEzzeuEfzh9/N9gB+8ugHeSAziu+bbghI0yVd1tu4bAwAsOjIxrPXXWGpJ
+ 4cE1sl42RzHgH+V6J5AZL//GuPXKBIe1DSqZ+4reGJ8/vexWW0P7+GZikIvLC/EQzD/+/4YCblC
+ iQYTbmqoj49d6F+ks6XovcbI=
+DKIM-Signature: a=rsa-sha256; bh=c9lBtHTUU+T9fGUuLt2VOEMxwbG3WQ5GJ5Fd4W59YyU=;
+ c=simple/simple; d=exceptional-ron.com;
+ h=X-Mailer-Info:Feedback-ID:Subject:From:To:Date:Message-ID:X-CampaignID:List-Unsubscribe:X-Feedback-ID:MIME-Version:Content-Type;
+ s=astrology; t=1685359815; v=1;
+ b=VPDWDMgG56kKyu1WXfRTEK/GOtpV5cqJH/vIQXiE8biLex130Q9dF/SdygMdCIxzQj/BVusL
+ Nfl1o5wzJyUFyYZjJDvCgf1aXUn6V+BxeDNGCjuaXcilTVWzncgYcXZBhuz6r7ir9iubQd4v/d5
+ pgsjgfQHgC48yu/ozWEMd11M=
+X-Mailer-Info: 10.QXM.y9mbfV3cyMDM1ITO.wb1NGal5GZh52c2IDQn1WYpxmLj9Wb.zATN5kT
+ M5MTO....
+Feedback-ID: 92677649:28500::GASV
+Subject: I'm ready to start working on your psychic reading
+From: Ron <ron@exceptional-ron.com>
+To: Rerum <ouchendans62@gmail.com>
+Date: 29 May 2023 11:30:14 -0000
+Message-ID: <mid-163a5986d0202ef6767045a31b18251e@gasv9.com>
+X-CampaignID: astrology:ron_us230529
+List-Unsubscribe: <mailto:unsubscribe@exceptional-ron.com>,<https://fortune.exceptional-ron.com/uiPBLlVNr1pvZAkyyszmf6rj/305991939/unsubscribe.html>
+X-Feedback-ID: take_1050:engine_7:ron_us:astrology
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="==78f7b1deef18e0cb6d3ad906b4336e17"
+
+This is a multi-part message in MIME format.
+
+--==78f7b1deef18e0cb6d3ad906b4336e17
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Hello Rerum!
+First and foremost, I would like to thank you for placing your trust and=
+ confidence in my psychic abilities. You've made the right choice by ask=
+ing for my help!
+Second, I apologize that I didn't answer last night, right after receivi=
+ng your request. In fact, I was during a phone session with a well-known=
+ actress, whose name unfortunately I cannot reveal, but who is currently=
+ experiencing a very painful heartbreak (I'm pretty sure you'll read abo=
+ut it in some colorful magazines soon)
+But at this moment I'm giving you all my attention, and very soon I'm go=
+ing to start working on your reading, just like I promised! I know that =
+you're having some issues with the love of your life, and I feel for you=
+. I promise to focus my reading precisely on this problem, and I am sure=
+ with the help of my gift, together we will find solution and once for a=
+ll make things right between you and him!
+But before we start, I want to make sure that you add my e-mail address =
+to your Gmail Contact List.=20
+It is very important that you do so, as I will be sending you a very det=
+ailed psychic study, supported by charts and drawings in PDF format. The=
+ last thing I want is for you to be frustrated because you haven't heard=
+ from me at all, while at the same time my reading went straight into yo=
+ur junk mail folder.
+Even worse - you may want to e-mail my about your reading, and I won't h=
+ave a chance to respond, because again Gmail will assume my messages are=
+ unwanted and will send them straight to your junk mail folder. It has h=
+appened too many times before and I want to avoid this unpleasant situat=
+ion again, Rerum.
+So, to add my e-mail to your Gmail Contacts List, all you have to do is =
+to hover your mouse over my avatar next to my name (&quot;Exceptional Ro=
+n&quot;). Once a popup shows up, click on &quot;Contact Info&quot;, and =
+then &quot;Add to My Contacts&quot;. And that&#039;s it! Oh, you may als=
+o want to click &quot;Display images below&quot;, if you see this notice=
+ above my message. That way if I want to share an image with you, it won=
+&#039;t be blocked by Google. And if you have already found my messages =
+being placed in your &quot;unwanted e-mails&quot; folder, then click on =
+&quot;Not unwanted e-mail&quot; button above my message. Here is a very =
+simple step-by-step help-page https://fortune.exceptional-ron.com/email_=
+help/34552/guide_to_uninterrupted_emails_from_ron.html with screenshots.=
+ Please take a look at it, if you need additional help.
+Going back to your psychic reading study now, I want to confirm that you=
+r date of birth is the 8th of May 1951, which obviously makes you Astrol=
+ogical Taurus. That's great! People born under the sign of Taurus or Pis=
+ces tend to have the most powerful and magnetic personalities one can co=
+me across! Frankly, I can't wait to read your Stars and learn more about=
+ REAL YOU, RERUM!
+But in the meantime, please reply to CONFIRM YOUR DATE OF BIRTH.
+I shall be back with your in-depth reading very soon...
+P.S.: When you find a minute, could you fill out a PERSONAL QUESTIONNAIR=
+E that I have created for you? https://fortune.exceptional-ron.com/suiPN=
+Tt6tKekyyszmf6rjZN97M/questionnaire_rerum.html It's not mandatory... but=
+ will definitely help me focus on the most important problems that you'r=
+e facing in your life today. Thank you!
+Your friend and spiritual adviser
+
+--==78f7b1deef18e0cb6d3ad906b4336e17
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://=
+www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+
+	<head>
+
+		<title></title>
+		<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-=
+8">
+
+	<style type=3D"text/css">
+=09
+	/* Mobile-specific Styles */
+
+	@media only screen and (max-width: 660px)=20
+	{=20
+		table[class=3Dw0], td[class=3Dw0] { width: 0 !important; }
+		table[class=3Dw10], td[class=3Dw10], img[class=3Dw10] { width:10px !im=
+portant; }
+		table[class=3Dw15], td[class=3Dw15], img[class=3Dw15] { width:5px !imp=
+ortant; }
+		table[class=3Dw30], td[class=3Dw30], img[class=3Dw30] { width:10px !im=
+portant; }
+		table[class=3Dw60], td[class=3Dw60], img[class=3Dw60] { width:10px !im=
+portant; }
+		table[class=3Dw125], td[class=3Dw125], img[class=3Dw125] { width:80px =
+!important; }
+		table[class=3Dw130], td[class=3Dw130], img[class=3Dw130] { width:55px =
+!important; }
+		table[class=3Dw140], td[class=3Dw140], img[class=3Dw140] { width:90px =
+!important; }
+		table[class=3Dw160], td[class=3Dw160], img[class=3Dw160] { width:180px=
+ !important; }
+		table[class=3Dw170], td[class=3Dw170], img[class=3Dw170] { width:100px=
+ !important; }
+		table[class=3Dw180], td[class=3Dw180], img[class=3Dw180] { width:80px =
+!important; }
+		table[class=3Dw195], td[class=3Dw195], img[class=3Dw195] { width:80px =
+!important; }
+		table[class=3Dw220], td[class=3Dw220], img[class=3Dw220] { width:80px =
+!important; }
+		table[class=3Dw240], td[class=3Dw240], img[class=3Dw240] { width:180px=
+ !important; }
+		table[class=3Dw255], td[class=3Dw255], img[class=3Dw255] { width:185px=
+ !important; }
+		table[class=3Dw275], td[class=3Dw275], img[class=3Dw275] { width:135px=
+ !important; }
+		table[class=3Dw280], td[class=3Dw280], img[class=3Dw280] { width:135px=
+ !important; }
+		table[class=3Dw300], td[class=3Dw300], img[class=3Dw300] { width:140px=
+ !important; }
+		table[class=3Dw325], td[class=3Dw325], img[class=3Dw325] { width:95px =
+!important; }
+		table[class=3Dw360], td[class=3Dw360], img[class=3Dw360] { width:140px=
+ !important; }
+		table[class=3Dw410], td[class=3Dw410], img[class=3Dw410] { width:180px=
+ !important; }
+		table[class=3Dw470], td[class=3Dw470], img[class=3Dw470] { width:200px=
+ !important; }
+		table[class=3Dw580], td[class=3Dw580], img[class=3Dw580] { width:280px=
+ !important; }
+		table[class=3Dw640], td[class=3Dw640], img[class=3Dw640] { width:350px=
+ !important; }
+		table[class*=3Dhide], td[class*=3Dhide], img[class*=3Dhide], p[class*=3D=
+hide], span[class*=3Dhide] { display:none !important; }
+		table[class=3Dh0], td[class=3Dh0] { height: 0 !important; }
+		p[class=3Dfooter-content-left] { text-align: center !important; }
+		#headline p { font-size: 30px !important; }
+		.article-content, #left-sidebar{ -webkit-text-size-adjust: 90% !import=
+ant; -ms-text-size-adjust: 90% !important; }
+		.header-content, .footer-content-left {-webkit-text-size-adjust: 80% !=
+important; -ms-text-size-adjust: 80% !important;}
+		img { height: auto; line-height: 100%;}
+	}=20
+
+	/* Client-specific Styles */
+
+	#outlook a { padding: 0; }	/* Force Outlook to provide a "view in brows=
+er" button. */
+	body { width: 100% !important; }
+	.ReadMsgBody { width: 100%; }
+	.ExternalClass { width: 100%; display:block !important; } /* Force Hotm=
+ail to display emails at full width */
+
+	/* Reset Styles */
+	/* Add 100px so mobile switch bar doesn't cover street address. */
+
+	body { background-color: #e9edf2; margin: 0; padding: 0; }
+	img { outline: none; text-decoration: none; display: block;}
+	br, strong br, b br, em br, i br { line-height:100%; }
+	h1, h2, h3, h4, h5, h6 { line-height: 100% !important; -webkit-font-smo=
+othing: antialiased; }
+	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: blue !important; }
+	h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:active, h6 a:=
+active {	color: red !important; }
+	/* Preferably not the same color as the normal header link color.  Ther=
+e is limited support for psuedo classes in email clients, this was added=
+ just for good measure. */
+	h1 a:visited, h2 a:visited,  h3 a:visited, h4 a:visited, h5 a:visited, =
+h6 a:visited { color: purple !important; }
+	/* Preferably not the same color as the normal header link color. There=
+ is limited support for psuedo classes in email clients, this was added =
+just for good measure. */ =20
+	table td, table tr { border-collapse: collapse; }
+	.yshortcuts, .yshortcuts a, .yshortcuts a:link,.yshortcuts a:visited, .=
+yshortcuts a:hover, .yshortcuts a span {
+	color: black; text-decoration: none !important; border-bottom: none !im=
+portant; background: none !important;
+	}	/* Body text color for the New Yahoo.  This example sets the font of =
+Yahoo's Shortcuts to black. */
+
+	/* This most probably won't work in all email clients. Don't include co=
+de blocks in email. */
+
+	code=20
+	{
+	  white-space: normal;
+	  word-break: break-all;
+	}
+
+	#background-table { background-color: #e9edf2; }
+
+	/* Webkit Elements */
+
+	#top-bar { border-radius:6px 6px 0px 0px; -moz-border-radius: 6px 6px 0=
+px 0px; -webkit-border-radius:6px 6px 0px 0px; -webkit-font-smoothing: a=
+ntialiased; background-color: #ffffff; color: #4e7ec2; }
+	#top-bar a { font-weight: bold; color: #627a9c; text-decoration: none;}=
+
+	#footer { border-radius:0px 0px 6px 6px; -moz-border-radius: 0px 0px 6p=
+x 6px; -webkit-border-radius:0px 0px 6px 6px; -webkit-font-smoothing: an=
+tialiased; }
+
+	/* Fonts and Content */
+
+	body, td { line-height: 21px; font-size: 14px; color: #363636; font-fam=
+ily: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif; }
+	.header-content, .footer-content-left, .footer-content-right { -webkit-=
+text-size-adjust: none; -ms-text-size-adjust: none; }
+
+	/* Prevent Webkit and Windows Mobile platforms from changing default fo=
+nt sizes on header and footer. */
+
+	.header-spam { font-size: 13px !important; font-weight: bold; }
+	.header-spam p { font-size: 13px !important; font-weight: bold; }
+	.header-content { font-size: 12px; color: #4e7ec2; }
+	.header-content a { font-weight: bold; color: #627a9c; text-decoration:=
+ none; }
+	#headline p { color: #444444; font-family: HelveticaNeue, sans-serif; f=
+ont-size: 36px; text-align: center; margin-top:0px; margin-bottom:30px; =
+}
+	#headline p a { color: #444444; text-decoration: none; }
+	.article-title { font-size: 15px; line-height:24px; color: #3673ad; fon=
+t-weight:bold; margin-top:0px; margin-bottom:18px; font-family: 'Lucida =
+Grande', 'Lucida Sans Unicode', Verdana, sans-serif; }
+	.article-title a { color: #3673ad; text-decoration: none; }
+	.article-title.with-meta {margin-bottom: 0;}
+	.article-meta { font-size: 14px; line-height: 20px; color: #ccc; font-w=
+eight: bold; margin-top: 0;}
+	.article-content { margin-left: 8px; margin-right: 10px; font-size: 14p=
+x; line-height: 19px; color: #2D2D2D; margin-top: 0px; margin-bottom: 18=
+px; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-s=
+erif; }
+	.article-content a { color: #306aad; font-weight:bold; text-decoration:=
+none; }
+	.article-content img { max-width: 100% }
+	.article-content ol, .article-content ul { margin-top:0px; margin-botto=
+m:18px; margin-left: 19px; padding: 0; }
+	.article-content li { font-size: 14px; line-height: 18px; color: #2D2D2=
+D; }
+	.article-content li a { color: #306aad; text-decoration:underline; }
+	.article-content p {margin-bottom: 15px;}
+	.disclaimer-content { font-size: 10px; line-height: 14px; color: #52505=
+2; margin-left: 5px; margin-right: 5px; margin-top: 20px; margin-bottom:=
+ 20px; text-align: justify; -webkit-text-size-adjust: 90% !important; -m=
+s-text-size-adjust: 90% !important; }
+	.footer-content-left { font-size: 11px; line-height: 14px; color: #5250=
+52; margin-top: 0px; margin-bottom: 15px; }
+	.footer-content-left a { color: #196ad4; font-weight: bold; text-decora=
+tion: none; }
+	.footer-content-right { font-size: 11px; line-height: 14px; color: #525=
+052; margin-top: 0px; margin-bottom: 15px; }
+	.footer-content-right a { color: #196ad4; font-weight: bold; text-decor=
+ation: none; }
+	#footer { background-color: #d4d4d4; color: #525052; }
+	#footer a { color: #196ad4; text-decoration: none; font-weight: bold; }=
+
+	#permission-reminder { white-space: normal; }
+	#street-address { color: #4f4f52; white-space: normal; }
+
+	</style>
+	=09
+		<!--[if gte mso 9]><style _tmplitem=3D"6055" >
+	=09
+			.article-content ol, .article-content ul=20
+			{
+				margin: 0 0 0 24px;
+				padding: 0;
+				list-style-position: inside;
+			}
+		=09
+		</style><![endif]-->
+	=09
+	</head>
+=09
+	<body><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D=
+"0" id=3D"background-table" style=3D"table-layout:fixed" align=3D"center=
+">
+	=09
+		<tbody>
+
+		=09
+
+			<tr><td align=3D"center" bgcolor=3D"#e9edf2" id=3D"offer-t-1050">
+
+			<table class=3D"w640" style=3D"margin: 0px 0px 0px 0px" width=3D"640"=
+ cellpadding=3D"0" cellspacing=3D"0" id=3D"friend-key-cEr2zkyyszmf6rjdy3=
+s1" border=3D"0"><tbody>
+
+				<tr><td class=3D"w640" width=3D"640" align=3D"center" valign=3D"midd=
+le" height=3D"20"></td></tr>
+
+				<tr><td class=3D"w640" width=3D"640"><table id=3D"top-bar" class=3D"=
+w640" width=3D"640" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" bgc=
+olor=3D"#ffffff"><tbody>
+
+					<tr><td class=3D"w640" width=3D"640" valign=3D"middle" align=3D"cen=
+ter">
+
+						<table class=3D"w640" width=3D"640" cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0"><tbody><tr><td class=3D"w325" width=3D"350" height=3D"8=
+"></td></tr></tbody></table>
+
+						<div class=3D"header-content"><a href=3D"https://fortune.exception=
+al-ron.com/oc2023148kyyszmf6rj/eoc0f2k9j3l2b1t7y5c9o2ml/email_online_cop=
+y.html?fkei=3Dky305991939rj" id=3D"online_copy" style=3D"font-weight: no=
+rmal; font-size: 12px; color: #4e7ec2; text-decoration: none">Online cop=
+y</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=3D"https://fortune.exceptional-ron=
+.com/rsilKeEnlAXgTVkyyszmf6rjoRTiK3e/unsubscribe.html" style=3D"font-wei=
+ght: normal; font-size: 12px; color: #4e7ec2; text-decoration: none">Rep=
+ort SPAM</a> (<a href=3D"https://fortune.exceptional-ron.com/rs/report_s=
+pam_mail.html" style=3D"font-weight: normal; font-size: 12px; color: #4e=
+7ec2; text-decoration: none">click here</a>)&nbsp;&nbsp;|&nbsp;&nbsp;<a =
+href=3D"https://fortune.exceptional-ron.com/email_help/for_email/gmail.c=
+om/guide_to_uninterrupted_emails_from_ron.html" style=3D"font-weight: no=
+rmal; font-size: 12px; color: #4e7ec2; text-decoration: none">Add me to =
+your Contacts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=3D"https://fortune.exc=
+eptional-ron.com/mskg96VpKSNgIvkyyszmf6rj6wTiK3e/unsubscribe.html" style=
+=3D"font-weight: normal; font-size: 12px; color: #4e7ec2; text-decoratio=
+n: none">Stop my e-mails & <font style=3D"color: #e22222; font-weight: b=
+old">unsubscribe</font></a></div>
+
+						<table class=3D"w640" width=3D"640" cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0"><tbody><tr><td class=3D"w325" width=3D"350" height=3D"8=
+"></td></tr></tbody></table>
+					=09
+					</td></tr>
+
+				</tbody></table></td></tr>
+
+				<tr><td id=3D"header" class=3D"w640" width=3D"640" align=3D"center" =
+bgcolor=3D"#ffffff">
+
+					<div align=3D"center" style=3D"text-align: center"><img id=3D"custo=
+mHeaderImage" alt=3D"Header Image" label=3D"Header Image" editable=3D"tr=
+ue" width=3D"640" height=3D"72" src=3D"https://up.astro-cdn.com/pl1/emai=
+l/fx3seB.jpg" class=3D"w640" border=3D"0" align=3D"top" style=3D"display=
+: inline"></div>
+				=09
+				</td></tr>
+
+				<tr><td class=3D"w640" width=3D"640" height=3D"25" bgcolor=3D"#fffff=
+f"></td></tr>
+
+				<tr id=3D"simple-content-row"><td class=3D"w640" width=3D"640" bgcol=
+or=3D"#ffffff"><table align=3D"left" class=3D"w640" width=3D"640" cellpa=
+dding=3D"0" cellspacing=3D"0" border=3D"0"><tbody>
+			=09
+					<tr><td class=3D"w30" width=3D"30"></td><td class=3D"w580" width=3D=
+"580">
+				=09
+						<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D=
+"0">
+						<tbody><tr><td><div class=3D"article-content" style=3D"margin-left=
+: 8px; margin-right: 10px; font-size: 14px; line-height: 19px; color: #2=
+D2D2D; margin-top: 0px; margin-bottom: 15px; font-family: 'Lucida Grande=
+', 'Lucida Sans Unicode', Verdana, sans-serif; background: #ffffff"><mul=
+tiline code=3D"content_start">Hello Rerum!<br><br>First and foremost, I =
+would like to <b>thank you</b> for placing your trust and confidence in =
+my psychic abilities. You've made the right choice by asking for my help=
+!<br><br>Second, <b>I apologize that I didn't answer last night</b>, rig=
+ht after receiving your request. In fact, I was during a phone session w=
+ith a well-known actress, whose name unfortunately I cannot reveal, but =
+who is currently experiencing a very painful heartbreak (I'm pretty sure=
+ you'll read about it in some colorful magazines soon)<br><br><br>But at=
+ this moment <b>I'm giving you all my attention</b>, and very soon I'm g=
+oing to start working on your reading, just like I promised! I know that=
+ you're having some issues with the love of your life, and I feel for yo=
+u. I promise to focus my reading precisely on this problem, and I am sur=
+e with the help of my gift, together we will find solution and once for =
+all make things right between you and him!<br><br><br>But before we star=
+t, I want to make sure that you <b>add my e-mail address to your Gmail C=
+ontact List</b>. <br><br>It is <u>very important</u> that you do so, as =
+I will be sending you a very detailed psychic study, supported by charts=
+ and drawings in PDF format. The last thing I want is for you to be frus=
+trated because you haven't heard from me at all, while at the same time =
+my reading went straight into your <i>junk mail folder</i>.<br><br>Even =
+worse - you may want to e-mail my about your reading, and I won't have a=
+ chance to respond, because again Gmail will assume my messages are unwa=
+nted and will send them straight to your <i>junk mail folder</i>. It has=
+ happened too many times before and I want to avoid this unpleasant situ=
+ation again, Rerum.<br><br>So, to add my e-mail to your Gmail Contacts L=
+ist, all you have to do is to hover your mouse over my avatar next to my=
+ name (&quot;Exceptional Ron&quot;). Once a popup shows up, click on &qu=
+ot;Contact Info&quot;, and then &quot;Add to My Contacts&quot;. And that=
+&#039;s it! Oh, you may also want to click &quot;Display images below&qu=
+ot;, if you see this notice above my message. That way if I want to shar=
+e an image with you, it won&#039;t be blocked by Google. And if you have=
+ already found my messages being placed in your &quot;unwanted e-mails&q=
+uot; folder, then click on &quot;Not unwanted e-mail&quot; button above =
+my message. Here is a <a href=3D"https://fortune.exceptional-ron.com/ema=
+il_help/34552/guide_to_uninterrupted_emails_from_ron.html"><b>very simpl=
+e step-by-step help-page</b></a> with screenshots. Please take a look at=
+ it, if you need additional help.<br><br><br>Going back to your psychic =
+reading study now, I want to <b>confirm that your date of birth is the 8=
+th of May 1951</b>, which obviously makes you Astrological Taurus. That'=
+s great! People born under the sign of Taurus or Pisces tend to have the=
+ most powerful and magnetic personalities one can come across! Frankly, =
+I can't wait to read your Stars and learn more about REAL YOU, RERUM!<br=
+><br>But in the meantime, <b>please reply to CONFIRM YOUR DATE OF BIRTH.=
+</b><br><br><br>I shall be back with your in-depth reading very soon...<=
+br><br><br><br><br>P.S.: When you find a minute, could you <a href=3D"ht=
+tps://fortune.exceptional-ron.com/suiPNTt6tKekyyszmf6rjZN97M/questionnai=
+re_rerum.html?fkei=3Dky305991939rj"><b>fill out a PERSONAL QUESTIONNAIRE=
+ that I have created for you?</b></a> It's not mandatory... but will def=
+initely help me focus on the most important problems that you're facing =
+in your life today. Thank you!<br><br><br><br><br>Your friend and spirit=
+ual adviser,<br class=3D"content_signature"><br><img src=3D"https://up.a=
+stro-cdn.com/jointron/signature_en.png" alt=3D"Sig" title=3D"Sig"></mult=
+iline code=3D"content_stop"></div><div class=3D"disclaimer-content hide"=
+ style=3D"font-size: 10px; line-height: 14px; color: #525052; margin-lef=
+t: 5px; margin-right: 5px; margin-top: 20px; margin-bottom: 20px; text-a=
+lign: justify; -webkit-text-size-adjust: 90% !important; -ms-text-size-a=
+djust: 90% !important"><multiline label=3D"Disclaimer"><div>IMPORTANT NO=
+TICE: The information contained in this message, including the attachmen=
+ts, is confidential and intended only for the individual named on this t=
+ransmission. You are hereby notified that any disclosure or distribution=
+, without the express written consent of the sender is unauthorized. The=
+ content of this communication is not to be forwarded to third parties. =
+Content provided for entertainment purposes only. If the reader of this =
+communication is not the intended recipient, you are hereby notified tha=
+t any dissemination, distribution or copying of this message is strictly=
+ prohibited. If you have received this communication in error, delete it=
+ immediately.</div></multiline></div></td></tr></tbody></table>
+
+					</td><td class=3D"w30" width=3D"30"></td></tr>
+
+				</tbody></table></td></tr>
+			=09
+				<tr><td class=3D"w640" width=3D"640" height=3D"15" bgcolor=3D"#fffff=
+f"></td></tr>
+
+				<tr><td class=3D"w640" width=3D"640">
+			=09
+					<table id=3D"footer" class=3D"w640" width=3D"640" cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0" bgcolor=3D"#d4d4d4" style=3D"background:=
+ #d4d4d4"><tbody>
+				=09
+						<tr>
+							<td class=3D"w30" width=3D"30"></td>
+							<td class=3D"w580" width=3D"360" valign=3D"top"><span><p id=3D"pe=
+rmission-reminder" align=3D"left" class=3D"footer-content-left" style=3D=
+"font-size: 12px; line-height: 15px; color: #525052; margin-top: 20px; m=
+argin-bottom: 0px"><span>I sent you this e-mail, because you have opt-in=
+ by requesting my psychic reading. Message <a href=3D"https://www.ftc.go=
+v/tips-advice/business-center/guidance/can-spam-act-compliance-guide-bus=
+iness"><nobr>CAN-SPAM</nobr></a> compliant #1050A.<br>You can <a href=3D=
+"https://fortune.exceptional-ron.com/mskg96VpKSNgIvkyyszmf6rj6wTiK3e/uns=
+ubscribe.html" style=3D"color: #e22222; text-decoration: underline"><b>u=
+nsubscribe</b></a> from my e-mails anytime. <a href=3D"https://fortune.e=
+xceptional-ron.com/tos/">Terms</a>.</span><span></span></td>
+							<td class=3D"hide w0" width=3D"60"></td>
+							<td class=3D"hide w0" width=3D"160" valign=3D"top"><p id=3D"stree=
+t-address" align=3D"right" class=3D"footer-content-right" style=3D"font-=
+size: 12px; line-height: 15px; color: #525052; margin-top: 20px; margin-=
+bottom: 0px"><span>Karma Corporation a.s.<br>M=C3=A1chova 439/27<br>Vino=
+hrady, 120 00<br>Praha 2, Czech Republic</span></p></td>
+							<td class=3D"w30" width=3D"30"></td>
+						</tr>
+
+						<tr>
+							<td class=3D"w30" width=3D"30"></td>
+							<td class=3D"w580 h0" width=3D"360" height=3D"22"></td>
+							<td class=3D"w0" width=3D"60"></td>
+							<td class=3D"w0" width=3D"160"></td>
+							<td class=3D"w30" width=3D"30"></td>
+						</tr>
+					=09
+					</tbody></table>
+
+				</td></tr>
+			=09
+				<tr><td class=3D"w640" width=3D"640" height=3D"30"></td></tr>
+
+			</tbody></table>
+
+		</td></tr></tbody>
+
+	</table><img src=3D"https://fortune.exceptional-ron.com/eot/1685359813-=
+305991939-2171816.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" />=
+<img src=3D"https://ga.exceptional-ron.com/click.php?e788961/h561308/s0t=
+ba0a348b" height=3D"2" width=3D"3" alt=3D""></body>
+
+</html>
+
+--==78f7b1deef18e0cb6d3ad906b4336e17--

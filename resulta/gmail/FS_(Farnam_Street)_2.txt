@@ -1,0 +1,366 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp151132ims;
+        Mon, 29 May 2023 08:16:26 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ5t2SGj1haw5v0LwoXIAczo6nTLHeQ8SbQwseOWh0S0e2cm8OYztdU+HtL19JF3grDrduQx
+X-Received: by 2002:a17:906:ef06:b0:973:92d4:9f4e with SMTP id f6-20020a170906ef0600b0097392d49f4emr10533297ejs.53.1685373386130;
+        Mon, 29 May 2023 08:16:26 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685373386; cv=none;
+        d=google.com; s=arc-20160816;
+        b=AH+6mT8RwzieHjLDW6PZWQ75GWuVhdiYRqp1hT+71pjD2xf8gsmk7VTCcsjmlYZk4L
+         zT7H20T23o16Ox0+mEaPqIqLuxr14MKKi0I7yDQx7SiBTVWw7uahikINHidWCkM+IUpm
+         EWqNmRRgu7ZCOL98bfvJN3AWl5QG/D10ydrQKgVFcAXSYBZUy8SDqrqE/b2YAIXD5u/l
+         mG46OB4hMJxRudxmCvz8xy/CaKXArZPH30DGtXogckU13YTdTRSI3zqHClmzpNYm7Yse
+         Vb6OIonBPsOxG2+fXcyxZ0LGz3FsOivTO+8duzlADGo1lcTwbpvPXAtmbPHcpBgzbCFx
+         +OAA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:precedence:list-unsubscribe:feedback-id:subject:message-id
+         :mime-version:from:date:dkim-signature:dkim-signature;
+        bh=jUL9imhv8OuTcbCo3HZ/7LAvXKWnREEc+JhoCgBLNh8=;
+        b=Ddik97PYWHc7YK4Jh1f0Yrhfa39AXjQkSLKuJnToVUuMzgqWRfCQhuCKztDi8w3Bvc
+         VRW5oMpvdSPpOgbzbl9ripk6h/f8F42am9Cv3MKUa07G9zdc8qW0dHbWtZg8+f1Zvfeh
+         3v2tXEsjnYIQ5sRIgwf+Mfs5kYWCE+gGm3uqDtY+ai8o4Xni2DqmmJGwOhuB0jcOD65W
+         qRp6Yix/snIUwFzJzN0f+1nSdC+UQ73dBORS6ZOAMSj2yE9ahbIy2JciMEOP/tHkZOtk
+         hO257JIdyHoxzg3alQ2y4lzwEbdYRl50v4PGnxUNGK7EPUWw8kDZ4AmfgQT2DxDX4QJN
+         k/cA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@farnamstreetblog.com header.s=cka header.b=CHDW+dm8;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=jgMIz4fT;
+       spf=pass (google.com: domain of bounces+8746246-8c61-ouchendans62=gmail.com@ckespa.farnamstreetblog.com designates 167.89.80.227 as permitted sender) smtp.mailfrom="bounces+8746246-8c61-ouchendans62=gmail.com@ckespa.farnamstreetblog.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=farnamstreetblog.com
+Return-Path: <bounces+8746246-8c61-ouchendans62=gmail.com@ckespa.farnamstreetblog.com>
+Received: from o1.ck.h.convertkit.com (o1.ck.h.convertkit.com. [167.89.80.227])
+        by mx.google.com with ESMTPS id gh17-20020a1709073c1100b009659256e995si7370547ejc.298.2023.05.29.08.16.25
+        for <ouchendans62@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 29 May 2023 08:16:26 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+8746246-8c61-ouchendans62=gmail.com@ckespa.farnamstreetblog.com designates 167.89.80.227 as permitted sender) client-ip=167.89.80.227;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@farnamstreetblog.com header.s=cka header.b=CHDW+dm8;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=jgMIz4fT;
+       spf=pass (google.com: domain of bounces+8746246-8c61-ouchendans62=gmail.com@ckespa.farnamstreetblog.com designates 167.89.80.227 as permitted sender) smtp.mailfrom="bounces+8746246-8c61-ouchendans62=gmail.com@ckespa.farnamstreetblog.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=farnamstreetblog.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=farnamstreetblog.com;
+	h=content-type:from:mime-version:subject:list-unsubscribe:x-feedback-id:
+	to:cc:content-type:from:subject:to;
+	s=cka; bh=jUL9imhv8OuTcbCo3HZ/7LAvXKWnREEc+JhoCgBLNh8=;
+	b=CHDW+dm8jllCCT3vdSO1O0CeIPe7oPt43urZ+kknpR4PcyD+ylD915DanNAMsnC38rTF
+	H393d8M90cYVe8Z9NbCHU+UfsMlEEEkws0MjnS4UrcBayPGIw57i+s9GKFgZQcyVYX7KGN
+	lyz5BMTedetBhfjMlJ+GkXK7TA6B1/GuU=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:list-unsubscribe:x-feedback-id:
+	to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=jUL9imhv8OuTcbCo3HZ/7LAvXKWnREEc+JhoCgBLNh8=;
+	b=jgMIz4fTIyhxkqhvbks7J9OA12QHolsZMtJ3z6N/LuL3ROzVjMZ/lKfGKKLXkeLA2KNY
+	G+ZfrbR6HH5PZCB54tnMxt+TtcnaZ/Ya2Vn6MbGJou/QgQYf0He4UvJ6z89UPgGmXKTcCV
+	lby1cOjtVLQuMnmjUpOzpeUbPjPKXsIIA=
+Received: by filterdrecv-54d8cb5576-phc62 with SMTP id filterdrecv-54d8cb5576-phc62-1-6474C1C7-D6
+        2023-05-29 15:16:23.865622045 +0000 UTC m=+1611592.034763659
+Received: from ODc0NjI0Ng (unknown)
+	by geopod-ismtpd-8 (SG) with HTTP
+	id W5TrnccvSS2dmFWq482RcQ
+	Mon, 29 May 2023 15:16:23.659 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=6ebc601b29ff53406767d45dbd80c613c97541205e1ae9280b87cd5b3440
+Date: Mon, 29 May 2023 15:16:24 +0000 (UTC)
+From: "FS (Farnam Street)" <newsletter@farnamstreetblog.com>
+Mime-Version: 1.0
+Message-ID: <xmumn6ge3rt3uz394gh3@convertkit-mail4.com>
+Subject: Wisdom You Can Use
+Feedback-ID: 1153679:44892:emailtemplate:CK
+List-Unsubscribe: 
+ <https://unsubscribe.convertkit-mail4.com/xmumn6ge3rt3uz394gh3>
+X-Report-Spam: <abuse@convertkit.com>
+X-Report-Abuse: <abuse@convertkit.com>
+Precedence: bulk
+X-Feedback-ID: 8746246:SG
+X-SG-EID: 
+ =?us-ascii?Q?PBaata5IYSatz5hk=2FPQkBo92yAnIkJ6pBHOIiJY4ESvPNchkWnhhJNrBehucA1?=
+ =?us-ascii?Q?PsYUpx8wN=2FU0e4N1WrfDZEPuiG4u6IIqKpdkNER?=
+ =?us-ascii?Q?a2f9KU1TSQumwsczPB8O0bflBbddD54p7XbqJAc?=
+ =?us-ascii?Q?N0r+IfUsVU4x6Tv1sTPd+R6bR19tIhJcLzWyDYS?=
+ =?us-ascii?Q?T8RYT74OaBly8KZ+v3xBxoMh7N+O3oLXL9B4caH?=
+ =?us-ascii?Q?4SEFXaohZ+HLT4DvFU7Ew81RB=2F2CNZsJMi5jPs1?=
+ =?us-ascii?Q?Pzn2xgLJk418rddq69gRQ=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8raWjw0ZPf1VmjsCkspi=2FJHjDFAea1uZocvZojyqe?=
+ =?us-ascii?Q?ADQ50LBfgq+I4+A6Z1JesksIXQQlU1jrl25qsVO?=
+ =?us-ascii?Q?H6x3cXfDYxu25pE4ilGHxMNIgJy5qUOsrRydrAL?=
+ =?us-ascii?Q?yINzQsBU3cd85s6x5fDL04P1oZBF0hm2xbb37O0?=
+ =?us-ascii?Q?BYwbLZ4n7xAkPOzPlANcK1bbtQRGIZXcceHRtdz?=
+ =?us-ascii?Q?mn2UYqOkUjVM1BISk22QnM3x7jF4REYkcORyARi?=
+ =?us-ascii?Q?SQMSi6rEY6Qb0miDfNTE5eTz7faoRw+WKpfL1AJ?=
+ =?us-ascii?Q?KzfBvtKhWeamwM5YbAfN+GfANKvaRt2yupHwTTH?=
+ =?us-ascii?Q?RSr6LIFTAj=2FdgOzfLQHEV7=2FIHQQY=3D?=
+To: ouchendans62@gmail.com
+X-Entity-ID: 8MwrblpWcLDGTwyq65sy6Q==
+
+--6ebc601b29ff53406767d45dbd80c613c97541205e1ae9280b87cd5b3440
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+Farnam Street (FS) helps you unlock better levels of thinking
+and living. We do that through a variety of means.
+
+-------
+Website
+-------
+
+Explore some of our most popular articles on improving your
+thinking (
+https://click.convertkit-mail4.com/xmumn6ge3rt3uz394gh3/dpheh0hq9pm097bm/aH=
+R0cHM6Ly9mcy5ibG9nL2hvdy10by10aGluay8=3D
+), learning faster (
+https://click.convertkit-mail4.com/xmumn6ge3rt3uz394gh3/e0hph7hnz4z3lrf8/aH=
+R0cHM6Ly9mcy5ibG9nL2xlYXJuaW5nLw=3D=3D
+), focusing (
+https://click.convertkit-mail4.com/xmumn6ge3rt3uz394gh3/e0hph7hk3r203ks8/aH=
+R0cHM6Ly9mcy5ibG9nL2ZvY3VzLXRvLXdpbi8=3D
+), making effective decisions (
+https://click.convertkit-mail4.com/xmumn6ge3rt3uz394gh3/owhkhqh8eoem6ehv/aH=
+R0cHM6Ly9mcy5ibG9nL3NtYXJ0LWRlY2lzaW9ucy8=3D
+), and reading better (
+https://click.convertkit-mail4.com/xmumn6ge3rt3uz394gh3/l2hehmhkprpmn9h6/aH=
+R0cHM6Ly9mcy5ibG9nL3JlYWRpbmcv
+).
+
+-----------------------------
+The Knowledge Project Podcast
+-----------------------------
+
+One of the most popular podcasts in the world, The Knowledge
+Project (TKP) delves into the wisdom of people at the top of
+their game. I do my research and ask insightful questions.
+
+New episodes are released every second Tuesday.
+
+Listen on Apple Podcasts (
+https://click.convertkit-mail4.com/xmumn6ge3rt3uz394gh3/48hvheh05ew5w8tx/aH=
+R0cHM6Ly9wb2RjYXN0cy5hcHBsZS5jb20vdXMvcG9kY2FzdC90aGUta25vd2xlZGdlLXByb2plY=
+3Qtd2l0aC1zaGFuZS1wYXJyaXNoL2lkOTkwMTQ5NDgxP210PTI=3D
+).Listen on Spotify (
+https://click.convertkit-mail4.com/xmumn6ge3rt3uz394gh3/9qhzhnh339l65c9/aHR=
+0cHM6Ly9vcGVuLnNwb3RpZnkuY29tL3Nob3cvMVZ5SzUyTlNaSGFES2VNSnpUNFRTTQ=3D=3D
+).See a list of all episodes by theme (
+https://click.convertkit-mail4.com/xmumn6ge3rt3uz394gh3/7qh7h8h02nmo2ocz/aH=
+R0cHM6Ly9mcy5ibG9nL2VwaXNvZGVzLw=3D=3D
+).
+
+New Book
+
+After a decade of researching, writing, and re-writing, I=E2=80=99m
+releasing my first major book this fall.
+
+Clear Thinking: Turning Ordinary Moments into Extraordinary
+Results (
+https://click.convertkit-mail4.com/xmumn6ge3rt3uz394gh3/g3hnh5he2rldqrcr/aH=
+R0cHM6Ly9nZW5pLnVzL3BwRndZZg=3D=3D
+).
+
+The book weaves together the simple lessons I=E2=80=99ve learned from
+others, which I've used to start multiple businesses. A few
+people, whom you might have heard of, have already read the book.
+
+James Clear, who wrote Atomic Habits, called it =E2=80=9Can indispensable
+guide to making smarter decisions each day.=E2=80=9D Morgan Housel, who
+wrote the Psychology of Money, said it was, =E2=80=9Ca valuable antidote
+to stupidity, and a game-changer for anyone seeking to succeed.=E2=80=9D
+I think you=E2=80=99ll enjoy the book as much as they did.
+
+I'd love your help making it a success. The biggest way to help
+right now is to pre-order the book (
+https://click.convertkit-mail4.com/xmumn6ge3rt3uz394gh3/g3hnh5he2rldqrcr/aH=
+R0cHM6Ly9nZW5pLnVzL3BwRndZZg=3D=3D
+). I=E2=80=99ll share more about it closer to the launch.
+
+Thank you
+
+=E2=80=94 Shane
+
+Unsubscribe (
+https://unsubscribe.convertkit-mail4.com/xmumn6ge3rt3uz394gh3 ) |
+Update your profile (
+https://preferences.convertkit-mail4.com/xmumn6ge3rt3uz394gh3 ) |
+201-854 Bank Street, Ottawa, ON K1S 3W3
+--6ebc601b29ff53406767d45dbd80c613c97541205e1ae9280b87cd5b3440
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html>
+<html style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#11=
+1111">
+<head style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#11=
+1111">
+
+
+<!--[if mso]>
+  <center>
+  <table><tr><td width=3D"580">
+<![endif]-->
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" st=
+yle=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#111111">
+</head>
+<body style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#11=
+1111"><div class=3D"message-content" style=3D"font-family:Georgia, 'Times N=
+ew Roman', serif;font-color:#111111;max-width:600px;margin:30px auto;line-h=
+eight:150%;background-color:#FFFFFF">
+
+  <p style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#111=
+111;font-size:20px;line-height:150%">Farnam Street (FS) helps you unlock be=
+tter levels of thinking and living. We do that through a variety of means. =
+</p>
+<h2 style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#1111=
+11;font-family:'Sofia Pro', 'Europa', Helvetica, serif;color:#111111;font-w=
+eight:600;font-size:24px;line-height:125%">Website</h2>
+<p style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#11111=
+1;font-size:20px;line-height:150%">Explore some of our most popular article=
+s on <a href=3D"https://click.convertkit-mail4.com/xmumn6ge3rt3uz394gh3/dph=
+eh0hq9pm097bm/aHR0cHM6Ly9mcy5ibG9nL2hvdy10by10aGluay8=3D" style=3D"font-fam=
+ily:Georgia, 'Times New Roman', serif;font-color:#111111;font-size:20px;lin=
+e-height:150%;color:#0875c1;text-decoration:underline" url-id=3D"1487757750=
+">improving your thinking</a>, <a href=3D"https://click.convertkit-mail4.co=
+m/xmumn6ge3rt3uz394gh3/e0hph7hnz4z3lrf8/aHR0cHM6Ly9mcy5ibG9nL2xlYXJuaW5nLw=
+=3D=3D" style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#=
+111111;font-size:20px;line-height:150%;color:#0875c1;text-decoration:underl=
+ine" url-id=3D"1325759684">learning faster</a>, <a href=3D"https://click.co=
+nvertkit-mail4.com/xmumn6ge3rt3uz394gh3/e0hph7hk3r203ks8/aHR0cHM6Ly9mcy5ibG=
+9nL2ZvY3VzLXRvLXdpbi8=3D" style=3D"font-family:Georgia, 'Times New Roman', =
+serif;font-color:#111111;font-size:20px;line-height:150%;color:#0875c1;text=
+-decoration:underline" url-id=3D"1487757751">focusing</a>, <a href=3D"https=
+://click.convertkit-mail4.com/xmumn6ge3rt3uz394gh3/owhkhqh8eoem6ehv/aHR0cHM=
+6Ly9mcy5ibG9nL3NtYXJ0LWRlY2lzaW9ucy8=3D" style=3D"font-family:Georgia, 'Tim=
+es New Roman', serif;font-color:#111111;font-size:20px;line-height:150%;col=
+or:#0875c1;text-decoration:underline" url-id=3D"1325759686">making effectiv=
+e decisions</a>, and <a href=3D"https://click.convertkit-mail4.com/xmumn6ge=
+3rt3uz394gh3/l2hehmhkprpmn9h6/aHR0cHM6Ly9mcy5ibG9nL3JlYWRpbmcv" style=3D"fo=
+nt-family:Georgia, 'Times New Roman', serif;font-color:#111111;font-size:20=
+px;line-height:150%;color:#0875c1;text-decoration:underline" url-id=3D"1325=
+759681">reading better</a>.
+</p>
+<h2 style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#1111=
+11;font-family:'Sofia Pro', 'Europa', Helvetica, serif;color:#111111;font-w=
+eight:600;font-size:24px;line-height:125%">The Knowledge Project Podcast</h=
+2> <p style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#11=
+1111;font-size:20px;line-height:150%">One of the most popular podcasts in t=
+he world, The Knowledge Project (TKP) delves into the wisdom of people at t=
+he top of their game. I do my research and ask insightful questions. </p>
+<p style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#11111=
+1;font-size:20px;line-height:150%">New episodes are released every second T=
+uesday. </p>
+<p style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#11111=
+1;font-size:20px;line-height:150%"><a href=3D"https://click.convertkit-mail=
+4.com/xmumn6ge3rt3uz394gh3/48hvheh05ew5w8tx/aHR0cHM6Ly9wb2RjYXN0cy5hcHBsZS5=
+jb20vdXMvcG9kY2FzdC90aGUta25vd2xlZGdlLXByb2plY3Qtd2l0aC1zaGFuZS1wYXJyaXNoL2=
+lkOTkwMTQ5NDgxP210PTI=3D" style=3D"font-family:Georgia, 'Times New Roman', =
+serif;font-color:#111111;font-size:20px;line-height:150%;color:#0875c1;text=
+-decoration:underline" url-id=3D"1351504264">Listen on Apple Podcasts</a>.<=
+br style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#11111=
+1;font-size:20px;line-height:150%"><a href=3D"https://click.convertkit-mail=
+4.com/xmumn6ge3rt3uz394gh3/9qhzhnh339l65c9/aHR0cHM6Ly9vcGVuLnNwb3RpZnkuY29t=
+L3Nob3cvMVZ5SzUyTlNaSGFES2VNSnpUNFRTTQ=3D=3D" style=3D"font-family:Georgia,=
+ 'Times New Roman', serif;font-color:#111111;font-size:20px;line-height:150=
+%;color:#0875c1;text-decoration:underline" url-id=3D"33332612">Listen on Sp=
+otify</a>.<br style=3D"font-family:Georgia, 'Times New Roman', serif;font-c=
+olor:#111111;font-size:20px;line-height:150%"><a href=3D"https://click.conv=
+ertkit-mail4.com/xmumn6ge3rt3uz394gh3/7qh7h8h02nmo2ocz/aHR0cHM6Ly9mcy5ibG9n=
+L2VwaXNvZGVzLw=3D=3D" style=3D"font-family:Georgia, 'Times New Roman', seri=
+f;font-color:#111111;font-size:20px;line-height:150%;color:#0875c1;text-dec=
+oration:underline" url-id=3D"1487757752">See a list of all episodes by them=
+e</a>.</p>
+<p style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#11111=
+1;font-size:20px;line-height:150%"><span style=3D"font-family:Georgia, 'Tim=
+es New Roman', serif;font-color:#111111;font-size:20px;line-height:150%;col=
+or:rgb(0, 0, 0);font-family:inherit;font-size:24px;font-weight:700;">New Bo=
+ok</span><br style=3D"font-family:Georgia, 'Times New Roman', serif;font-co=
+lor:#111111;font-size:20px;line-height:150%"></p>
+<p style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#11111=
+1;font-size:20px;line-height:150%">After a decade of researching, writing, =
+and re-writing, I=E2=80=99m releasing my first major book this fall. </p>
+<p style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#11111=
+1;font-size:20px;line-height:150%"><em style=3D"font-family:Georgia, 'Times=
+ New Roman', serif;font-color:#111111;font-size:20px;line-height:150%"><a h=
+ref=3D"https://click.convertkit-mail4.com/xmumn6ge3rt3uz394gh3/g3hnh5he2rld=
+qrcr/aHR0cHM6Ly9nZW5pLnVzL3BwRndZZg=3D=3D" style=3D"font-family:Georgia, 'T=
+imes New Roman', serif;font-color:#111111;font-size:20px;line-height:150%;c=
+olor:#0875c1;text-decoration:underline" url-id=3D"1517572142">Clear Thinkin=
+g: Turning Ordinary Moments into Extraordinary Results</a></em>. </p>
+<p style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#11111=
+1;font-size:20px;line-height:150%">The book weaves together the simple less=
+ons I=E2=80=99ve learned from others, which I've used to start multiple bus=
+inesses. A few people, whom you might have heard of, have already read the =
+book. </p>
+<p style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#11111=
+1;font-size:20px;line-height:150%">James Clear, who wrote Atomic Habits, ca=
+lled it =E2=80=9Can indispensable guide to making smarter decisions each da=
+y.=E2=80=9D Morgan Housel, who wrote the Psychology of Money, said it was, =
+=E2=80=9Ca valuable antidote to stupidity, and a game-changer for anyone se=
+eking to succeed.=E2=80=9D I think you=E2=80=99ll enjoy the book as much as=
+ they did.</p>
+<p style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#11111=
+1;font-size:20px;line-height:150%">I'd love your help making it a success. =
+The biggest way to help right now is to <a href=3D"https://click.convertkit=
+-mail4.com/xmumn6ge3rt3uz394gh3/g3hnh5he2rldqrcr/aHR0cHM6Ly9nZW5pLnVzL3BwRn=
+dZZg=3D=3D" style=3D"font-family:Georgia, 'Times New Roman', serif;font-col=
+or:#111111;font-size:20px;line-height:150%;color:#0875c1;text-decoration:un=
+derline;background-color:rgb(255, 255, 255);" url-id=3D"1517572142">pre-ord=
+er the book</a>. I=E2=80=99ll share more about it closer to the launch.</p>
+<p style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#11111=
+1;font-size:20px;line-height:150%">
+	Thank you</p>
+<p style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#11111=
+1;font-size:20px;line-height:150%">=E2=80=94 Shane</p>
+<p style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#11111=
+1;font-size:20px;line-height:150%"><br style=3D"font-family:Georgia, 'Times=
+ New Roman', serif;font-color:#111111;font-size:20px;line-height:150%">
+</p>
+
+<p style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#11111=
+1;font-size:20px;line-height:150%"><br style=3D"font-family:Georgia, 'Times=
+ New Roman', serif;font-color:#111111;font-size:20px;line-height:150%">
+</p>
+<p style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#11111=
+1;font-size:20px;line-height:150%"><br style=3D"font-family:Georgia, 'Times=
+ New Roman', serif;font-color:#111111;font-size:20px;line-height:150%">
+</p>
+<p style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#11111=
+1;font-size:20px;line-height:150%"><br style=3D"font-family:Georgia, 'Times=
+ New Roman', serif;font-color:#111111;font-size:20px;line-height:150%">
+</p>
+<p style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#11111=
+1;font-size:20px;line-height:150%"><br style=3D"font-family:Georgia, 'Times=
+ New Roman', serif;font-color:#111111;font-size:20px;line-height:150%">
+</p>
+<p style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#11111=
+1;font-size:20px;line-height:150%"><br style=3D"font-family:Georgia, 'Times=
+ New Roman', serif;font-color:#111111;font-size:20px;line-height:150%">
+</p>
+<p style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#11111=
+1;font-size:20px;line-height:150%"><br style=3D"font-family:Georgia, 'Times=
+ New Roman', serif;font-color:#111111;font-size:20px;line-height:150%">
+</p>
+
+
+<small style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#1=
+11111">
+<a href=3D"https://unsubscribe.convertkit-mail4.com/xmumn6ge3rt3uz394gh3">U=
+nsubscribe</a> | <a href=3D"https://preferences.convertkit-mail4.com/xmumn6=
+ge3rt3uz394gh3">Update your profile</a> | 201-854 Bank Street, Ottawa, ON K=
+1S 3W3
+<br style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#1111=
+11">
+</small>
+
+<!--[if mso]>
+  </td></tr></table>
+  </center>
+<![endif]-->
+
+<!-- -->
+<img src=3D"https://open.convertkit-mail4.com/xmumn6ge3rt3uz394gh3" alt=3D"=
+" style=3D"font-family:Georgia, 'Times New Roman', serif;font-color:#111111=
+;max-width:100%;display:block;height:auto;margin:0 auto">
+</div></body>
+</html>
+
+--6ebc601b29ff53406767d45dbd80c613c97541205e1ae9280b87cd5b3440--

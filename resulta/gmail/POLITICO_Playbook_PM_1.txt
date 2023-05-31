@@ -1,0 +1,699 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp561655ims;
+        Tue, 30 May 2023 10:19:16 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ4IcEgBypf/Ga2F3Phet96Aam9qk7opDz3kCVtXt9vw2VxawpVxTNfOFjRKeKw1osyozNd9
+X-Received: by 2002:a05:6808:9b4:b0:398:19d2:2882 with SMTP id e20-20020a05680809b400b0039819d22882mr1461369oig.24.1685467156187;
+        Tue, 30 May 2023 10:19:16 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685467156; cv=none;
+        d=google.com; s=arc-20160816;
+        b=nqqGOD0UaSvryEzyE62K/Tt33CnVC41Bulux1lHcT6/EHeYukCaupoZbwC4HQSS5PU
+         DjsA1/V8GUnTB+5OtO2+inzP7/Oj4NEAhj8T5tgwdYp8+R9kDOGT7xdRG6rRgFOlidvv
+         90Ej+ZgB7ROJmSVECIdtNRDPb8nThEMw9bHSnIOKBSP2kUrMz4twDA0Oi39J7lnAv66I
+         q2BGicml/L1SvryjCo4fTzTcPZaPVHcTkwDF04YfszJglmNKupqsEyy0XfCwQD+3Zowj
+         dgOkJZ8WjJWUX2ruqu4wJjdEjtXlgj1C0VqQu8bVKwGfnNXIwUxSI3T0ry/4hlay80XD
+         js7A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:list-id:reply-to:mime-version
+         :list-unsubscribe-post:list-unsubscribe:date:subject:to:from
+         :dkim-signature;
+        bh=n7m/ffw9L/4OJ9Q5TiazZHM5wdJvjBZbk17Jmje5SRM=;
+        b=hCTJtMYFEDLzZawGk/0ze9Yr80k9LzQvZRjNitCMwbAHnoG905wBKoGTiq9i5E6CPx
+         +j3uStk7hP5/1mOp/krWm88lnWn5VUcsRUSNnhxhRF3cn9vmyFYceUKwzv3FRpjMr034
+         gCjJX5CAHOBPcHgeokf+Gjq2PokYOerppgvxZEwffl6Qt08Gf9kfv5ANGg/PDvhvqQLY
+         S6aA0OLC+DY69E4QQTSQCS6CwrczKQgHCibys6HXNz7XHRR0TtAeGxbHuLspIQLeHAA2
+         c9OCFnv0wFrsQUBwjBt4sJHL6v4pA2QkFCz5UXrWSmkBCOS72EqsqplXktuAMUeZUxpu
+         q1lQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.politico.com header.s=200608 header.b=N5QFepNX;
+       spf=pass (google.com: domain of bounce-964328_html-1405096349-9801705-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) smtp.mailfrom=bounce-964328_HTML-1405096349-9801705-1376319-0@bounce.politicoemail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.politico.com
+Return-Path: <bounce-964328_HTML-1405096349-9801705-1376319-0@bounce.politicoemail.com>
+Received: from mta.politicoemail.com (mta.politicoemail.com. [68.232.198.10])
+        by mx.google.com with ESMTPS id y206-20020a4a45d7000000b00552330b48d7si7226149ooa.74.2023.05.30.10.19.15
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 30 May 2023 10:19:16 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-964328_html-1405096349-9801705-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) client-ip=68.232.198.10;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.politico.com header.s=200608 header.b=N5QFepNX;
+       spf=pass (google.com: domain of bounce-964328_html-1405096349-9801705-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) smtp.mailfrom=bounce-964328_HTML-1405096349-9801705-1376319-0@bounce.politicoemail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.politico.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=200608; d=email.politico.com;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Reply-To:List-ID:X-CSA-Complaints:Message-ID:Content-Type;
+ i=politicoplaybook@email.politico.com;
+ bh=n7m/ffw9L/4OJ9Q5TiazZHM5wdJvjBZbk17Jmje5SRM=;
+ b=N5QFepNXZW7eyY9A2f5/O86Fb9AlnsTAHbw3QuPJ58iYymf+8A2AuRbeq4M/FwdoVtheCSC7mjof
+   0lnNbjaasElF5+jSWYAp1qyIFmqJJxHsgGXkAimq5CBWY9V79uD//KlLhq4O8seKcWgMYgZ1EIWN
+   9Y+prHR4PBB6a/XFpCc=
+Received: by mta.politicoemail.com id heoo182fmd44 for <ouchendans62@gmail.com>; Tue, 30 May 2023 17:15:29 +0000 (envelope-from <bounce-964328_HTML-1405096349-9801705-1376319-0@bounce.politicoemail.com>)
+From: "POLITICO Playbook PM" <politicoplaybook@email.politico.com>
+To: <ouchendans62@gmail.com>
+Subject: Conservatives roar on debt ceiling and McCarthy
+Date: Tue, 30 May 2023 11:15:29 -0600
+List-Unsubscribe: <https://click.politicoemail.com/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiIxMzc2MzE5IiwicyI6IjE0MDUwOTYzNDkiLCJsaWQiOiI5NjQzMjgiLCJqIjoiOTgwMTcwNSIsImpiIjoiMCIsImQiOiI0MDEyNiJ9.vGyxG9N6qP9MLX_18aINV8_OJX3bRDb-NHogpIrVTrU>, <mailto:leave-fcab1d76716706751a4c342838-fdf61574756104747317747c-fe911d787565037d70-fe9115737262077c7c-ffcf14@leave.politicoemail.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+Reply-To: "POLITICO, LLC" <reply-fe911d787565037d70-964328_HTML-1405096349-1376319-0@politicoemail.com>
+List-ID: <1376319.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+X-SFMC-Stack: 4
+x-job: 1376319_9801705
+Message-ID: <ccc81fa6-67a0-4837-942d-0e6270a5bfc4@las1s04mta1076.xt.local>
+Feedback-ID: 1376319:9801705:68.232.198.10:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="YJlsXOZ63JDV=_?:"
+
+This is a multi-part message in MIME format.
+
+--YJlsXOZ63JDV=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Presented by Altria: POLITICO's must-read briefing on what's driving the afternoon in Washington. May 30, 2023 View in browser  
+By Eli Okun
+
+Presented by
+
+
+
+Rep. Chip Roy (R-Texas) excoriates the debt ceiling bill as having “torn asunder” the House GOP Conference. | Francis Chung/POLITICO via AP Photo
+
+STURM UND DRANG — The House GOP’s far-right flank roared this morning as several Freedom Caucus members — and some others — signaled they won’t support the deal to raise the debt ceiling.
+
+Now, the question is whether they’ll have enough power to derail it — and whether they’ll threaten KEVIN McCARTHY’s hold on the speakership.
+
+Well more than a dozen members of Congress have said they won’t vote for the bill, with several more leaning against, per the latest informal whip count from CNN’s Haley Talbot. There are some notable “no” or “lean no” votes, including GOP leadership ally WESLEY HUNT (R-Texas), frequent temporary dissenter NANCY MACE (R-S.C.) and progressive RAÚL GRIJALVA (D-Ariz.). But overall, the group mostly comprises the usual ultra-conservative rabble-rousers.
+
+This afternoon, a furious Rep. CHIP ROY (R-Texas) excoriated McCarthy, declaring at a Freedom Caucus presser that the bill has “torn asunder” the House GOP Conference.
+
+“There’s going to be a reckoning,” Roy warned.
+
+“Kevin has just sold us out,” fumed Rep. RALPH NORMAN (R-S.C.) on the radio this morning.
+
+And earlier, talking to GLENN BECK, Roy issued perhaps the closest thing yet to a motion-to-vacate threat: If the bill passes, he said, “then we’re going to have to then regroup and figure out the whole leadership arrangement again.”
+
+Rep. DAN BISHOP (R-N.C.) went there too, telling Olivia Beavers and Sarah Ferris even more explicitly that it’s “inescapable” the motion to vacate would be on the table.
+
+But, but, but: The angriest Freedom Caucus forces may not yet have marshaled sufficient support to take down McCarthy or the bill. For one thing, even the likes of Reps. MATT GAETZ (R-Fla.) and ANDY OGLES (R-Tenn.) indicated skepticism of a possible motion to vacate. McCarthy got backup from former congressman and Freedom Caucus founder MICK MULVANEY, who called the bill a “minor miracle” in an op-ed for The Hill. And for another, some of the most crucial figures in the chamber are holding their fire for now.
+
+WHAT TO WATCH FOR …
+
+— All eyes on THOMAS MASSIE: The Kentucky Republican looks to be the swing vote on the Rules Committee to get the Fiscal Responsibility Act to the floor — if he jumps ship along with Roy and Norman, the GOP would need help from Democrats to get it through committee. Massie’s been quiet so far. He was in McCarthy’s office early this afternoon, per Jordain Carney. (Notably, Dems on the committee “aren’t expected to help bail Republicans out,” Olivia, Sarah and Jordain report with the latest details.)
+
+— All eyes on JIM JORDAN: If the right flank’s rebellion is going to spread more widely across the conference, you can look to the Ohio Republican and House Judiciary chair as a bellwether. Jordan is very conservative, but has been a key McCarthy ally. And he too was in McCarthy’s office with Massie, signaling he wasn’t concerned about the speaker.
+
+— All eyes on the clock: With every passing day, the nation teeters closer to catastrophic default. If the bill makes it past Rules later today, it’s expected on the floor for a final vote after 7 p.m. tomorrow.
+
+Good Tuesday afternoon, and thanks for reading Playbook PM. Drop me a line at eokun@politico.com.
+
+     
+A message from Altria:
+
+The future of Tobacco Harm Reduction. More than 70% of U.S. adults 21+ surveyed support Tobacco Harm Reduction as the right path forward for tobacco regulation. And two out of three believe the FDA should focus its efforts on Tobacco Harm Reduction. See the poll results here.
+    
+ALL POLITICS
+
+BATTLE FOR THE SENATE — NRSC Chair STEVE DAINES (R-Mont.) gets another sigh of relief: Rep. WARREN DAVIDSON (R-Ohio) won’t run for Senate, the Plain Dealer’s Andrew Tobias reports. Davidson had been urged to run by the Club for Growth, often a thorn in the GOP establishment’s side in Senate primaries, and went so far as to put together a campaign staff before opting against a bid. But the field is already looking crowded.
+
+YOWZA — A new poll from East Carolina University finds West Virginia Gov. JIM JUSTICE trouncing Sen. JOE MANCHIN (D-W.Va.) among registered voters, 54% to 32%.
+
+TOP-ED — “Move over, evangelicals. Non-churchgoers now rule the GOP,” by WaPo’s David Byler: “This isn’t to say that Republicans are giving up on faith. Nine in 10 Republicans believe in God … But as the country as a whole becomes less religiously active, so, too, is the GOP. This non-practicing bloc of the party has grown ever-more powerful — silently driving much of the GOP’s agenda and forcing it to adopt a more populist bent.”
+
+2024 WATCH
+
+BORN TO RUN — Former New Jersey Gov. CHRIS CHRISTIE is likely to jump into the presidential race in the next couple of weeks, and now he has a super PAC to back him, NYT’s Maggie Haberman scooped. BRIAN JONES will run Tell It Like It Is, the outside group supporting a Christie bid, along with chair BILL PALATUCCI, senior adviser RUSS SCHRIEFER and voter targeting guru BRENT SEABORN. Though Christie would be a long shot, he’ll aim to occupy a unique spot as the race’s most vocal Trump critic, not focusing on any specific state but instead trying to gin up press coverage with out-of-the-box tactics. MARIA COMELLA and MIKE DuHAIME would be expected to lead the campaign.
+
+CONSTITUTION, SCHMONSTITUTION — Trump’s rollout of policy proposals continued today with the extreme but familiar announcement that he would end birthright citizenship on Day One of a second term, as Breitbart’s Matthew Doyle scooped. Any attempt to do so would be on (at best) shaky legal ground and immediately invite a court challenge, seeing as birthright citizenship is protected by the 14th amendment to the Constitution. Trump’s video says the executive order “will choke off a major incentive for continued illegal immigration.”
+
+DEMOCRACY WATCH — “Team Trump Scrambles to Unmask the Feds Investigating Him,” by Rolling Stone’s Asawin Suebsaeng and Adam Rawnsley: “In recent months, the former president has asked close advisers, including at least one of his personal attorneys, if ‘we know’ all the names of senior FBI agents and Justice Department personnel who have worked on the federal probes into him. … The former president has then privately discussed that should he return to the White House, it is imperative his new Department of Justice ‘quickly’ and ‘immediately’ purge the FBI and DOJ’s ranks of these officials and agents.”
+
+WATCHING LIKE A HAWKEYE — As Florida Gov. RON DeSANTIS kicks off his campaign in Iowa today, Trump could face a real challenge in the first-in-the-nation caucuses, where the former president’s “victory is far from assured,” WaPo’s Isaac Arnsdorf, Hannah Knowles and Josh Dawsey report from Des Moines. Iowans on the ground say the field is still fairly unsettled, and there’s plenty of support for DeSantis. The governor’s team “is staking a major bet on the state” and working to replicate Sen. TED CRUZ’s (R-Texas) success there in 2016, even as the Trump campaign plans to establish a much more robust ground game than he had that year.
+
+CHASING LIBERTY — Moms for Liberty, the Covid-era conservative activist group that has emerged as a leading champion for parental rights in schools, has become an “influential force” in the 2024 primary, WSJ’s Eliza Collins reports from North Charleston, S.C. Members of the nominally nonpartisan network pushing for right-wing limits on what’s taught in school are crafting the GOP’s education platform. Presidential candidates hope to win over key figures and use Moms for Liberty’s powerful networks to build support. But the group itself doesn’t plan to endorse.
+
+  
+DON’T MISS POLITICO’S HEALTH CARE SUMMIT: The Covid-19 pandemic helped spur innovation in health care, from the wide adoption of telemedicine, health apps and online pharmacies to mRNA vaccines. But what will the next health care innovations look like? Join POLITICO on Wednesday June 7 for our Health Care Summit to explore how tech and innovation are transforming care and the challenges ahead for access and delivery in the United States. REGISTER NOW.
+    
+THE WHITE HOUSE
+
+SOLEMN ANNIVERSARY — Today marks eight years since Biden lost his son BEAU to brain cancer, which the Biden family marked in Delaware by attending a memorial Mass at St. Joseph on the Brandywine and going to the cemetery, AP’s Darlene Superville reports from Wilmington.
+
+MARK YOUR CALENDARS — British PM RISHI SUNAK will visit the White House on June 8, press secretary KARINE JEAN-PIERRE announced this morning. They’ll discuss everything from the war in Ukraine to Northern Ireland.
+
+CONGRESS
+
+THE NEXT BIG FIGHT? — McCarthy warned on Fox News today that he’s ready to hold CHRISTOPHER WRAY in contempt of Congress if the FBI director doesn’t meet Republicans’ deadline of today to produce a document that Republicans think could substantiate allegations of corruption by Biden. House Oversight Chair JAMES COMER (R-Ky.) has subpoenaed the document. “If he does not follow through with the law, we will move contempt charges against Christopher Wray and the FBI,” McCarthy said directly. “They are not above the law.”
+
+TRUMP CARDS
+
+WITH FRIENDS LIKE THESE — “Trump’s Lawyers Start to Wonder if One Could Be a Snitch,” by The Daily Beast’s Jose Pagliery: “[C]lashing personalities and the increasing outside threat of law enforcement has sown deep divisions that have only worsened in recent months. The internal bickering has already sparked one departure in recent weeks—and that could be just the beginning. … [M]uch of the anger from Trump’s lawyers is directed at the former president’s right-hand man, BORIS EPSHTEYN.”
+
+BEYOND THE BELTWAY
+
+ANNALS OF APOCALYPSE — “A.I. Poses ‘Risk of Extinction,’ Industry Leaders Warn,” by NYT’s Kevin Roose: “A group of industry leaders is planning to warn on Tuesday that the artificial intelligence technology they are building may one day pose an existential threat to humanity and should be considered a societal risk on par with pandemics and nuclear wars.”
+
+NOTHING GOLD(EN STATE) CAN STAY — “Can the ‘California Effect’ Survive in a Hyperpartisan America?” by Conor Dougherty in the NYT Magazine: “California has been so successful at bending national policy in its direction that academics have taken to calling the phenomenon the California effect. … [But] Republican governors, like GREG ABBOTT of Texas and Ron DeSantis of Florida, have sought to experiment with legislative activism of their own — a kind of anti-California effect. … What [Gov. GAVIN] NEWSOM aspires to is a whole new kind of California effect, one that goes way beyond environmental and consumer regulations … This fight is purely about changing behavior beyond the borders of his
+ state.”
+
+Plus: State Assemblymember BUFFY WICKS on why she declined to run for Congress: “I pass big bills here … Why would I walk away from my ability to do that and go be one of 435 people in a very divided House that does not have a great track record of actually accomplishing anything?”
+
+THE ECONOMY
+
+WHAT THE WHITE HOUSE IS READING — Democrats have long argued that corporate profit-seeking was partially to blame for elevated inflation. And economists say there’s growing evidence that they’re correct, as the shocks of the pandemic and the war in Ukraine fade but companies keep pushing prices higher, NYT’s Talmon Joseph Smith and Joe Rennison report. Using PepsiCo as an example, they document how big corporations have not relented on their sticker shock even as cost challenges recede, helping keep inflation sticky and forcing the Fed to crank interest rates higher. But, but, but: Profit margins now “are below their peak in 2021.”
+
+  
+GET READY FOR GLOBAL TECH DAY: Join POLITICO Live as we launch our first Global Tech Day alongside London Tech Week on Thursday, June 15. Register now for continuing updates and to be a part of this momentous and program-packed day! From the blockchain, to AI, and autonomous vehicles, technology is changing how power is exercised around the world, so who will write the rules? REGISTER HERE.
+    
+JUDICIARY SQUARE
+
+NUANCED PUBLIC OPINION — The Supreme Court could strike down race-based affirmative action in college admissions in the next few weeks. A new survey from the AP-NORC Center for Public Affairs Research finds that Americans’ views on the matter are mixed: There’s broad support for both retaining affirmative action and keeping its impact limited, Collin Binkley and Emily Swanson report. Sixty-three percent of U.S. adults say SCOTUS shouldn’t block the policies allowing universities to consider race/ethnicity — notably with “little divide along political or racial lines.” But at the same time, 68% don’t think it should be a major factor in admissions.
+
+AMERICA AND THE WORLD
+
+FOR YOUR RADAR — “U.S. Pressured to Secure Persian Gulf After Iran Seizes Tankers,” by WSJ’s Benoit Faucon in Dubai and Dion Nissenbaum: “The United Arab Emirates has pressed the U.S. to make more muscular moves to deter Iran after the Islamic Republic’s military seized two oil tankers in the Gulf of Oman in recent weeks.”
+
+PLAYBOOKERS
+
+FIRST IN PLAYBOOK — Katie (Thompson) Sansone will be VP at Cogent Strategies. She most recently was associate director of digital media and public policy at S&P Global and is a Will Hurd and John Curtis alum.
+
+TRANSITIONS — Lauren Sierra is now press secretary for Rep. Joaquin Castro (D-Texas). She was previously an anchor/reporter at KTXS-TV in Abilene, Texas.
+
+ENGAGED — Devin Garbitt, a producer at ABC News, proposed to Julia Metjian, assistant director of media relations at GW and an NBC News alum, on Saturday by the Reflecting Pool on the National Mall. They met working as news assistants at CNN and both hail from Massachusetts. Pic … Another pic
+
+— Roger Jeannotte, senior manager for customer success at POLITICO, and Paige Davis, art director at NP Agency, got engaged Saturday on the beach in Avalon, N.J. They met through their involvement in student theater at George Washington University. Pic
+
+WEEKEND WEDDING — Sofia Rose Gross, director of comms at Anduril Industries and a public affairs officer in the Navy Reserve, and Michael Haft, co-founder and CEO of Compass Coffee, got married Sunday on the beach in Nantucket. They met on Bumble. Pic … Another pic
+
+WELCOME TO THE WORLD — Patrick Boland, chief of staff for Rep. Adam Schiff (D-Calif.), and Jill Brimmer Boland, senior policy adviser for Sen. Jack Reed (D-R.I.), on Thursday welcomed Riley Brimmer Boland, who came in at 8 lbs, 6 oz.
+
+Did someone forward this email to you? Sign up here.
+
+Send Playbookers tips to playbook@politico.com or text us at 202-556-3307. Playbook couldn’t happen without our editor Mike DeBonis, deputy editor Zack Stanton and producers Setota Hailemariam and Bethany Irvine.
+
+     
+A message from Altria:
+
+
+
+Altria is leading the way in transitioning millions of adult smokers from cigarettes to a smoke-free future.
+      
+Follow us on Twitter
+
+Rachael Bade @rachaelmbade
+
+Eugene Daniels @EugeneDaniels2
+
+Ryan Lizza @RyanLizza
+
+Eli Okun @eliokun
+
+Garrett Ross @garrett_ross
+  
+Subscribe to the POLITICO Playbook family
+
+Playbook  |  Playbook PM  |  California Playbook  |  Florida Playbook  |  Illinois Playbook  |  Massachusetts Playbook  |  New Jersey Playbook  |  New York Playbook  |  Ottawa Playbook  |  Brussels Playbook  |  London Playbook
+
+View all our politics and policy newsletters
+
+Follow us
+  
+To change your alert settings, please log in at https://go.politicoemail.com/?qs=953f12ac276dcd76fcdb8856d6701ddadc7bfd1f689fb3f9434959b8be2a7565bc2163d668c976405d067ca3d3aed619e2c43918f2194646  https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a2aeb0863568da0b043e996c51f3fd608ec650d4960865eb2f50dc2fb2b3a2cbb7452a6438a47b0d47db56cced945eede2
+
+This email was sent to ouchendans62@gmail.com by: POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+
+ Please click here and follow the steps to unsubscribe.
+  
+
+--YJlsXOZ63JDV=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<html><body><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml><![endif]-->
+</head><!-- Everything above this line is "new" to the template. We'll have to experiment a bit to see if it causes troubles. --><!-- preview text --><div style="display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">    Presented by Altria: POLITICO's must-read briefing on what's driving the afternoon in Washington.</div><table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" style="padding:5px 0 15px 0;margin:0;text-align:center" role="presentation">    <tbody>    <tr>        <td><!-- Note: This is left blank to aid in centering across email clients --></td>        
+<td align="center" width="540">            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:540px;table-layout:fixed;" role="presentation">                <tbody>                <!-- top date and utility link -->                <tr>    <td align="center">        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="padding-bottom:15px;" role="presentation">            <tbody>            <tr>                <td width="50%" style="text-align:left;font-size:11px;font-family:Helvetica,sans-serif;color:#B1B4BD;margin:0;">May 30, 2023</td>                
+<td width="50%" style="text-align:right;font-size:11px;font-family:Helvetica,sans-serif;color:#B1B4BD;margin:0;"><a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd762fdf1a46529be5a5cc1a0396566be81f70907eb3bf1c69d3d618db32b063eff5bee10ef021f7319032fb66aa6dc9cf66" target="_blank" style="color:#007BC7;text-decoration:none;">View in browser</a
+></td>            </tr>            </tbody>        </table>    </td></tr>                <!-- divider line -->                <tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                <!-- logo and byline -->                <tr>    <td align="center" style="text-align:center;padding:0 20px 15px 20px;margin:0">                                    <img src="https://static.politico.com/f2/b8/4dbe80f64bb3bf4ee026a8635574/politico-playbook-pm.jpg" title="POLITICO-PLAYBOOK_PM.jpg" alt="Playbook PM" border="0" width="500" style="width:100%;max-width:500px;">                        </td></tr><tr>    
+<td align="center" style="padding:0 20px 10px 20px;">        <p style="text-align:center;font-family:Helvetica,sans-serif;font-size:11px;letter-spacing:2px;color:#B1B4BD;text-transform:uppercase;margin:0;">            By  <a
+ href="mailto:eokun@politico.com" target="_blank" style="color:#000000;text-decoration:none;font-weight:bold;">Eli Okun</a
+>        </p>    </td></tr>                <!-- sponsor logo -->                    <tr>        <td style="padding-bottom:15px; min-width:100%; width:100%;">            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#FFFFFF; min-width:100%;" role="presentation">                <tbody>                                        <tr>                        <td align="center" style="min-width:100%; width: 100%;">                            <table cellspacing="0" cellpadding="0" border="0">                                <tbody><tr>                                    <td width="50%" valign="middle" style="text-align:right;padding-right:6px;">
+<p style="font-family:Helvetica,sans-serif;font-size:12px;color:#6E7381;margin:0;">Presented by</p></td>                                    <td width="50%" valign="middle" style="text-align:left;">                                        <div style="width:100%;max-width:90px;">                                                                                            
+<img width="90" src="https://www.politico.com/dims4/default/9799104/2147483647/resize/180x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2F2d%2Ff6%2Ff79536764a91b455e9546019e867%2Faltria-politico-playbook-pm-logo-2.png" alt="Altria" border="0" style="width:90px;max-width:100%;">                                                                                    </div>                                    </td>                                </tr>                            </tbody></table>                        </td>                    </tr>                                    </tbody>            </table>        </td>    </tr>                
+<!-- body -->                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p align="center" style="margin:0 0 20px 0;">
+<img src="https://www.politico.com/dims4/default/975e78f/2147483647/resize/1000x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2F5f%2F05%2F0f7f8ee34c4486c5d27b7a221b74%2Ffreedom-caucus-press-conference-on-debt-ceiling-95381.jpg" title="Freedom Caucus Press Conference on Debt Ceiling" alt="Rep. Chip Roy (R-Texas) speaks during a House Freedom Caucus press conference on the debt ceiling outside the U.S. Capitol May 30, 2023. (Francis Chung/POLITICO via AP Images)" width="500" style="width:100%;max-width:500px;"></p>
+<p style="font-family:Helvetica,sans-serif;font-size:12px;color:#6E7381;margin-bottom:24px;">Rep. Chip Roy (R-Texas) excoriates the debt ceiling bill as having &#8220;torn asunder&#8221; the House GOP Conference.  |  Francis Chung/POLITICO via AP Photo</p></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">STURM UND DRANG &#8212; </strong
+>The House GOP&#8217;s far-right flank roared this morning as several Freedom Caucus members &#8212; and some others &#8212; signaled they won&#8217;t support the deal to raise the debt ceiling.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Now, the question is</strong
+> whether they&#8217;ll have enough power to derail it &#8212; and whether they&#8217;ll threaten <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">KEVIN McCARTHY&#8217;s</strong
+> hold on the speakership.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Well more than a dozen members of Congress</strong
+> have said they won&#8217;t vote for the bill, with several more leaning against, per the latest informal whip count <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd7695d218080d792c501539a20ff2270b5a25857a0f89768d923e72ea523e44f3c5cbf7832d0c65b082dbc974de5ed9090d" target="_blank">from CNN&#8217;s Haley Talbot</a
+>. There are some notable &#8220;no&#8221; or &#8220;lean no&#8221; votes, including GOP leadership ally <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd768e8e719dd8080629725c0114f064c730c89e0b215fe3ee58b6e1464df3c396ae6fe42783a98099466c0d8bfa57e14a97" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">WESLEY HUNT</strong
+></a
+> (R-Texas), frequent temporary dissenter <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd767d077797626cf9286b85244137eed0416748f745738156ac27f8dfbfac3da372481405cf654039d2e03974a43b9aa9b7" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">NANCY MACE</strong
+></a
+> (R-S.C.) and progressive <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd763fb870fdd7b92a57a662f97e1ffad16ee3de473d63d187edc6765907f3bfab1899c09d1c2e34903e49537968d8b12381" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">RA&#218;L GRIJALVA</strong
+></a
+> (D-Ariz.). But overall, the group mostly comprises the usual ultra-conservative rabble-rousers.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">This afternoon, a furious Rep. CHIP ROY </strong
+>(R-Texas) excoriated McCarthy, declaring at a Freedom Caucus presser that the bill has &#8220;torn asunder&#8221; the House GOP Conference.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;There&#8217;s going to be a reckoning,&#8221;</strong
+> Roy warned.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;Kevin has just sold us out,&#8221;</strong
+> fumed Rep. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">RALPH NORMAN </strong
+>(R-S.C.) <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd767be27bdc8359c15a5061b02d8728a4a1ed8df6368e939505514ed93d303361a092d01ae20541255aed9a64ab2f1b6578" target="_blank">on the radio</a
+> this morning.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">And earlier, talking to GLENN BECK,</strong
+> Roy issued perhaps the closest thing yet to a motion-to-vacate threat: If the bill passes, <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76905955a958e2e389778fc3c93e96c087020516e86e7e322dccfabfaee85d2b9f5b5dca7c14f309fc7b493996a72791cb" target="_blank">he said</a
+>, &#8220;then we&#8217;re going to have to then regroup and figure out the whole leadership arrangement again.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Rep. DAN BISHOP </strong
+>(R-N.C.) went there too, <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd765f1e7dfe7cf9b4d1e3c8c8ae0136e706133702fb40982e2594e05df9493d27d2a4289f8c4812955b62d2410b15ab34db" target="_blank">telling Olivia Beavers and Sarah Ferris</a
+> even more explicitly that it&#8217;s &#8220;inescapable&#8221; the motion to vacate would be on the table.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>But, but, but:</i
+></strong
+> The angriest Freedom Caucus forces may not yet have marshaled sufficient support to take down McCarthy or the bill. For one thing, even the likes of Reps. <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd7604f1032df16cde7efbf54769e8a4cd8cbf83b696aac5c191701ff70a6dfc6e3515e7c39e21d2fb6c04424a5e4734be00" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MATT GAETZ</strong
+></a
+> (R-Fla.) and <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76069cfdc04b338610ce4fa151fb0db6024c5e2dbc46b4be0a11c2c70479d87e88ccbd47dffa4afb8ee9b7c5b8d3ee75d2" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">ANDY OGLES</strong
+></a
+> (R-Tenn.) indicated skepticism of a possible motion to vacate. McCarthy got backup from former congressman and Freedom Caucus founder <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MICK MULVANEY</strong
+>, who called the bill a &#8220;minor miracle&#8221; in <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd765003bf8da62265eedab6d168f42e6c02b7f8d159c4186d013323ea0f7d692b375b9c89b22b117b1a256b68897bc55218" target="_blank">an op-ed for The Hill</a
+>. And for another, some of the most crucial figures in the chamber are holding their fire for now.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">WHAT TO WATCH FOR &#8230;</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; All eyes on THOMAS MASSIE:</strong
+> The Kentucky Republican looks to be the swing vote on the Rules Committee to get the Fiscal Responsibility Act to the floor &#8212; if he jumps ship along with Roy and Norman, the GOP would need help from Democrats to get it through committee. Massie&#8217;s been quiet so far. He was in McCarthy&#8217;s office early this afternoon, <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76799f4fec05421df2eaa6fbab751d523d4ef9abbf35cb04bef72b6d2547543c3b627f5dfdbb92feecc22c0889e8e77e17" target="_blank">per Jordain Carney</a
+>. (Notably, Dems on the committee &#8220;aren&#8217;t expected to help bail Republicans out,&#8221; <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76608fb808e46d0fbe5cb8fd87c60320edfa840753750447e17fe1ddf3d443a6e043c9b8c420a9e8dbde900d427d7be5ef" target="_blank">Olivia, Sarah and Jordain report</a
+> with the latest details.)</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; All eyes on JIM JORDAN: </strong
+>If the right flank&#8217;s rebellion is going to spread more widely across the conference, you can look to the Ohio Republican and House Judiciary chair as a bellwether. Jordan is very conservative, but has been a key McCarthy ally. And he too was in McCarthy&#8217;s office with Massie, <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd761dfd0940169532f91b0be42363f9477cf6f8c872b10bef31748a5f5629016542578c545cd1ea583585d0676d55d0de96" target="_blank">signaling he wasn&#8217;t concerned about the speaker</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; All eyes on the clock:</strong
+> With every passing day, the nation teeters closer to catastrophic default. If the bill makes it past Rules later today, it&#8217;s expected on the floor for a final vote after 7 p.m. tomorrow.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Good Tuesday afternoon,</strong
+> and thanks for reading Playbook PM. Drop me a line at <a
+ href="mailto:eokun@politico.com" target="_blank">eokun@politico.com</a
+>.<br></p></td>                    </tr>                                    <tr>                            </tr><tr>    <td height="15" style="height:15px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>    <tr>    <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#ffffff;">                                            <p style="font-family:Helvetica,sans-serif;font-size:12px;margin-top:0;margin-bottom:10px;color:#000000;">A message from Altria:</p>                                                <p style="margin-top:0;margin-bottom:20px;line-height:24px;color:#000000;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">The future of Tobacco Harm Reduction.</strong
+> More than 70% of U.S. adults 21+ surveyed support Tobacco Harm Reduction as the right path forward for tobacco regulation. And two out of three believe the FDA should focus its efforts on Tobacco Harm Reduction. See the poll results <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd7627cfad8bb26af4d2131e8fa286b4fc557effea3706d5596153d6cefe45fde511c8e958ebe3456256cd97a3c11fb8b875" target="_blank" style="text-decoration:underline;color:#007bc7;">here.</a
+></p>                                            </td></tr>    <tr>        <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">ALL POLITICS</strong
+></span></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">BATTLE FOR THE SENATE &#8212; </strong
+>NRSC Chair <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">STEVE DAINES </strong
+>(R-Mont.) gets another sigh of relief: Rep. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">WARREN DAVIDSON </strong
+>(R-Ohio) won&#8217;t run for Senate, <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76bd44f6ebf3401fa9609b042e9fdce7acdd186f5edc303aec661a0b2ea6a2fbcde8dfb093722bb3222eef629af2059f41" target="_blank">the Plain Dealer&#8217;s Andrew Tobias reports</a
+>. Davidson had been urged to run by the Club for Growth, often a thorn in the GOP establishment&#8217;s side in Senate primaries, and went so far as to put together a campaign staff before opting against a bid. But the field is already looking crowded.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">YOWZA &#8212; </strong
+>A <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76524c1d802997d59fa0a87302441e2c0c7502b98b518dbd508a50bf95126a1d8d39d9e4bd1c121c77f50247956bcc6071" target="_blank">new poll from East Carolina University</a
+> finds West Virginia Gov. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JIM JUSTICE </strong
+>trouncing Sen. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JOE MANCHIN </strong
+>(D-W.Va.) among registered voters, 54% to 32%.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">TOP-ED &#8212; </strong
+><a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd766cc31ede6a1126698a436d1a5a7bb1ac7256ef9064c5e9fa658f4e4dfc7759fc11afe8eadfff0e2c8e724c1bb30248c8" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;Move over, evangelicals. Non-churchgoers now rule the GOP,&#8221;</strong
+></a
+> by WaPo&#8217;s David Byler: &#8220;This isn&#8217;t to say that Republicans are giving up on faith. Nine in 10 Republicans believe in God &#8230; But as the country as a whole becomes less religiously active, so, too, is the GOP. This non-practicing bloc of the party has grown ever-more powerful &#8212; silently driving much of the GOP&#8217;s agenda and forcing it to adopt a more populist bent.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">2024 WATCH</strong
+></span></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">BORN TO RUN &#8212; </strong
+>Former New Jersey Gov. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">CHRIS CHRISTIE</strong
+> is likely to jump into the presidential race in the next couple of weeks, and now he has a super PAC to back him, <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd762cd5f760916ae01a3faffa57dbb9764bf11080abb8de2a2c8d8f5e099282fba91666d3597d341154abd218daec41100d" target="_blank">NYT&#8217;s Maggie Haberman scooped</a
+>. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">BRIAN JONES</strong
+> will run Tell It Like It Is, the outside group supporting a Christie bid, along with chair <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">BILL PALATUCCI, </strong
+>senior adviser<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> RUSS SCHRIEFER </strong
+>and voter targeting guru<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> BRENT SEABORN.</strong
+> Though Christie would be a long shot, he&#8217;ll aim to occupy a unique spot as the race&#8217;s most vocal Trump critic, not focusing on any specific state but instead trying to gin up press coverage with out-of-the-box tactics. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MARIA COMELLA </strong
+>and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MIKE DuHAIME</strong
+> would be expected to lead the campaign.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">CONSTITUTION, SCHMONSTITUTION &#8212; </strong
+>Trump&#8217;s rollout of policy proposals continued today with the extreme but familiar announcement that he would end birthright citizenship on Day One of a second term, <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd7677d371bb6aee080caeaf85f12864261c9588024796d6ab2e309e11fca39b2ada893439af12a6b10b317c6cb96d104113" target="_blank">as Breitbart&#8217;s Matthew Doyle scooped</a
+>. Any attempt to do so would be on (at best) shaky legal ground and immediately invite a court challenge, seeing as birthright citizenship is protected by the 14th amendment to the Constitution. Trump&#8217;s video says the executive order &#8220;will choke off a major incentive for continued illegal immigration.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DEMOCRACY WATCH &#8212; </strong
+><a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76001b7e034a83b7eb25449b6b3a9cd7a2287851814ba21aa6ccae4fb30af6be097d4475154793fea1cc3f7606fb74a6c9" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;Team Trump Scrambles to Unmask the Feds Investigating Him,&#8221;</strong
+></a
+> by Rolling Stone&#8217;s Asawin Suebsaeng and Adam Rawnsley: &#8220;In recent months, the former president has asked close advisers, including at least one of his personal attorneys, if &#8216;we know&#8217; all the names of senior FBI agents and Justice Department personnel who have worked on the federal probes into him. &#8230; The former president has then privately discussed that should he return to the White House, it is imperative his new Department of Justice &#8216;quickly&#8217; and &#8216;immediately&#8217; purge the FBI and DOJ&#8217;s ranks of these officials and agents.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">WATCHING LIKE A HAWKEYE &#8212;</strong
+> As Florida Gov. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">RON DeSANTIS</strong
+> kicks off his campaign in Iowa today, Trump could face a real challenge in the first-in-the-nation caucuses, where the former president&#8217;s &#8220;victory is far from assured,&#8221; <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76005529639c336bcdb429db15764ff2e619be8ef5f99b96aaa7fd3245e4798c176e5ed955757502befc80c279024fd56e" target="_blank">WaPo&#8217;s Isaac Arnsdorf, Hannah Knowles and Josh Dawsey report</a
+> from Des Moines. Iowans on the ground say the field is still fairly unsettled, and there&#8217;s plenty of support for DeSantis. The governor&#8217;s team &#8220;is staking a major bet on the state&#8221; and working to replicate Sen. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">TED CRUZ&#8217;s</strong
+> (R-Texas) success there in 2016, even as the Trump campaign plans to establish a much more robust ground game than he had that year.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">CHASING LIBERTY &#8212; </strong
+>Moms for Liberty, the Covid-era conservative activist group that has emerged as a leading champion for parental rights in schools, has become an &#8220;influential force&#8221; in the 2024 primary, <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76cdcbc5ecdae0e5c3607eb389e482b9cdeea34dd37e3b7bb4260073cdc905b6567040d834b218618cd3dd3fe2003d0b10" target="_blank">WSJ&#8217;s Eliza Collins reports</a
+> from North Charleston, S.C. Members of the nominally nonpartisan network pushing for right-wing limits on what&#8217;s taught in school are crafting the GOP&#8217;s education platform. Presidential candidates hope to win over key figures and use Moms for Liberty&#8217;s powerful networks to build support. But the group itself doesn&#8217;t plan to endorse.<br></p></td>                    </tr>                                    <tr>                        </tr><tr>    <td height="10" style="height:10px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    
+<td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                    <p style="margin-top:0;margin-bottom:20px;line-height:24px;margin-bottom:20px;color:#000000;">                <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DON&#8217;T MISS POLITICO&#8217;S HEALTH CARE SUMMIT</strong
+>: The Covid-19 pandemic helped spur innovation in health care, from the wide adoption of telemedicine, health apps and online pharmacies to mRNA vaccines. But what will the next health care innovations look like? Join POLITICO on Wednesday June 7 for our Health Care Summit to explore how tech and innovation are transforming care and the challenges ahead for access and delivery in the United States. <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76737106cdfe3085d34bacdd3751f406beceb447225e829d203b625568c252cc7db39a1e2c9c09d1d59ff969128b358fe5" style="text-decoration:underline;color:#007BC7;">REGISTER NOW</a
+>.            </p>            </td></tr><tr>    <td height="10" style="height:10px; font-size:0; border-bottom:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td height="15" style="height:15px; font-size:0;">&nbsp;</td></tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">THE WHITE HOUSE</strong
+></span></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">SOLEMN ANNIVERSARY &#8212; </strong
+>Today marks eight years since Biden lost his son <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">BEAU</strong
+> to brain cancer, which the Biden family marked in Delaware by attending a memorial Mass at St. Joseph on the Brandywine and going to the cemetery, <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd7609e29f1e4fefd89bceb330648cab932474cded00a46507025791214d9ccf328a20be82d50133b534b6d51f410ee64708" target="_blank">AP&#8217;s Darlene Superville reports</a
+> from Wilmington.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MARK YOUR CALENDARS &#8212; </strong
+>British PM <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">RISHI SUNAK</strong
+> will visit the White House on June 8, press secretary <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">KARINE JEAN-PIERRE</strong
+> announced this morning. They&#8217;ll discuss everything from the war in Ukraine to Northern Ireland.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">CONGRESS</strong
+></span></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">THE NEXT BIG FIGHT? &#8212; </strong
+>McCarthy <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76cc53be12aa12b1bf38a97d871ea0849b17a3d6c696472c979d428124c0703ca1043b0057a6fc7f1966d46ba0f31ef646" target="_blank">warned on Fox News today</a
+> that he&#8217;s ready to hold <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">CHRISTOPHER WRAY</strong
+> in contempt of Congress if the FBI director doesn&#8217;t meet Republicans&#8217; deadline of <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>today</i
+></strong
+> to produce a document that Republicans think could substantiate allegations of corruption by Biden. House Oversight Chair <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JAMES COMER </strong
+>(R-Ky.) has subpoenaed the document. &#8220;If he does not follow through with the law, we will move contempt charges against Christopher Wray and the FBI,&#8221; McCarthy said directly. &#8220;They are not above the law.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">TRUMP CARDS</strong
+></span></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">WITH FRIENDS LIKE THESE &#8212; </strong
+><a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd7623ae6b1c7549ebbc909c9557351a383d6fab80af25d95b822febfab5c6e56717be152071251c6c92213e3dda21303b71" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;Trump&#8217;s Lawyers Start to Wonder if One Could Be a Snitch,&#8221;</strong
+></a
+> by The Daily Beast&#8217;s Jose Pagliery: &#8220;[C]lashing personalities and the increasing outside threat of law enforcement has sown deep divisions that have only worsened in recent months. The internal bickering has already sparked one departure in recent weeks&#8212;and that could be just the beginning. &#8230; [M]uch of the anger from Trump&#8217;s lawyers is directed at the former president&#8217;s right-hand man, <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">BORIS EPSHTEYN</strong
+>.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">BEYOND THE BELTWAY</strong
+></span></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">ANNALS OF APOCALYPSE &#8212; </strong
+><a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76a1dda99a22b0d065c0895b81e9d562e9a844adf31abd3714e767d90bf7b3b27b5e85365c8d82f62e7891e12a7932af90" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;A.I. Poses &#8216;Risk of Extinction,&#8217; Industry Leaders Warn,&#8221;</strong
+></a
+> by NYT&#8217;s Kevin Roose: &#8220;A group of industry leaders is planning to warn on Tuesday that the artificial intelligence technology they are building may one day pose an existential threat to humanity and should be considered a societal risk on par with pandemics and nuclear wars.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">NOTHING GOLD(EN STATE) CAN STAY &#8212; </strong
+><a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd7685669ed414b0375a54cae68ddbb8fdba68f5cb0940b93c21e4746be1e9ad7b6e6bc5242d8050cf719793bc0d03fd1113" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;Can the &#8216;California Effect&#8217; Survive in a Hyperpartisan America?&#8221;</strong
+></a
+> by Conor Dougherty in the NYT Magazine: &#8220;California has been so successful at bending national policy in its direction that academics have taken to calling the phenomenon the California effect. &#8230; [But] Republican governors, like<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> GREG ABBOTT</strong
+> of Texas and Ron DeSantis of Florida, have sought to experiment with legislative activism of their own &#8212; a kind of anti-California effect. &#8230; What [Gov. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">GAVIN</strong
+>] <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">NEWSOM </strong
+>aspires to is a whole new kind of California effect, one that goes way beyond environmental and consumer regulations &#8230; This fight is purely about changing behavior beyond the borders of his state.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>Plus: </i
+></strong
+>State Assemblymember <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">BUFFY WICKS</strong
+> on why she declined to run for Congress: &#8220;I pass big bills here &#8230; Why would I walk away from my ability to do that and go be one of 435 people in a very divided House that does not have a great track record of actually accomplishing anything?&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">THE ECONOMY</strong
+></span></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">WHAT THE WHITE HOUSE IS READING &#8212; </strong
+>Democrats have long argued that corporate profit-seeking was partially to blame for elevated inflation. And economists say there&#8217;s growing evidence that they&#8217;re correct, as the shocks of the pandemic and the war in Ukraine fade but companies keep pushing prices higher, <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd765fe1216396d76fc8be75c450ec7c4fea8b27c608461ac885d97af398526d42aff7bf6101dc20a1ca2254d8c698e7e078" target="_blank">NYT&#8217;s Talmon Joseph Smith and Joe Rennison report</a
+>. Using PepsiCo as an example, they document how big corporations have not relented on their sticker shock even as cost challenges recede, helping keep inflation sticky and forcing the Fed to crank interest rates higher. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>But, but, but:</i
+></strong
+> Profit margins now &#8220;are below their peak in 2021.&#8221;<br></p></td>                    </tr>                                    <tr>                        </tr><tr>    <td height="10" style="height:10px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                    <p style="margin-top:0;margin-bottom:20px;line-height:24px;margin-bottom:20px;color:#000000;">                <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">GET READY FOR GLOBAL TECH DAY: </strong
+>Join POLITICO Live as we launch our first Global Tech Day alongside London Tech Week on Thursday, June 15. Register now for continuing updates and to be a part of this momentous and program-packed day! From the blockchain, to AI, and autonomous vehicles, technology is changing how power is exercised around the world, so who will write the rules? <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76fe34ff245caa096a9c62abefd80fd95522b3e4cf688a19a532f1ef8fdfa668ef2f2380cda698ead7ee5aca8aa46a1fd7" target="_blank" style="text-decoration:underline;color:#007BC7;">REGISTER HERE</a
+>.            </p>            </td></tr><tr>    <td height="10" style="height:10px; font-size:0; border-bottom:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td height="15" style="height:15px; font-size:0;">&nbsp;</td></tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JUDICIARY SQUARE</strong
+></span></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">NUANCED PUBLIC OPINION &#8212; </strong
+>The Supreme Court could strike down race-based affirmative action in college admissions in the next few weeks. A new survey from the AP-NORC Center for Public Affairs Research finds that Americans&#8217; views on the matter are mixed: There&#8217;s broad support for both retaining affirmative action and keeping its impact limited, <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd7638972d2cf00b28bb9ece65e3f768fa42be6a58f9af419819d730c590fbade040fd6ec3a889bce2425310a1a349c3c276" target="_blank">Collin Binkley and Emily Swanson report</a
+>. Sixty-three percent of U.S. adults say SCOTUS <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>shouldn&#8217;t</i
+></strong
+> block the policies allowing universities to consider race/ethnicity &#8212; notably with &#8220;little divide along political or racial lines.&#8221; But at the same time, 68% don&#8217;t think it should be a major factor in admissions.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">AMERICA AND THE WORLD</strong
+></span></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">FOR YOUR RADAR &#8212; </strong
+><a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd7699bc98bdebeaf5b3f8eeb41548d816e615334d496414e448f1a13322736b8cc95075c3c0d0b8edb7517570f0812e93d8" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;U.S. Pressured to Secure Persian Gulf After Iran Seizes Tankers,&#8221;</strong
+></a
+> by WSJ&#8217;s Benoit Faucon in Dubai and Dion Nissenbaum: &#8220;The United Arab Emirates has pressed the U.S. to make more muscular moves to deter Iran after the Islamic Republic&#8217;s military seized two oil tankers in the Gulf of Oman in recent weeks.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">PLAYBOOKERS</strong
+></span></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">FIRST IN PLAYBOOK &#8212;</strong
+></span><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> Katie (Thompson) Sansone </strong
+>will be VP at Cogent Strategies. She most recently was associate director of digital media and public policy at S&amp;P Global and is a Will Hurd and John Curtis alum.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">TRANSITIONS &#8212; Lauren Sierra</strong
+> is now press secretary for Rep. Joaquin Castro (D-Texas). She was previously an anchor/reporter at KTXS-TV in Abilene, Texas.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">ENGAGED &#8212; Devin Garbitt</strong
+>, a producer at ABC News, proposed to <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Julia Metjian</strong
+>, assistant director of media relations at GW and an NBC News alum, on Saturday by the Reflecting Pool on the National Mall. They met working as news assistants at CNN and both hail from Massachusetts. <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76a36e26581a117b5f275337f34c826d077fe814ae61e7208b828b2e817635d654e994b26f0d739331018c02a5a21a4d73" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>Pic</i
+></strong
+></a
+> &#8230; <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd7606c6c8b8096cf947fb80e818196448e95eb0dcd8c84a19e2c6026604a4b56f4d536f718cfc80511d4e79577d5ccb47a8" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>Another pic</i
+></strong
+></a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; Roger Jeannotte</strong
+>, senior manager for customer success at POLITICO, and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Paige Davis</strong
+>, art director at NP Agency, got engaged Saturday on the beach in Avalon, N.J. They met through their involvement in student theater at George Washington University. <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76067a5861620f878ae4b2216ec2df5e52b63408b66e316668494f645173e69697646c03707bbde5717b93a01c6215a17b" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>Pic</i
+></strong
+></a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">WEEKEND WEDDING &#8212; Sofia Rose Gross</strong
+>, director of comms at Anduril Industries and a public affairs officer in the Navy Reserve, and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Michael Haft</strong
+>, co-founder and CEO of Compass Coffee, got married Sunday on the beach in Nantucket. They met on Bumble. <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76f58f5f4311cadb69b2474889152895ae5c6fd967c908a661559697a10e303fbfa7f010c883ea7c5a8134c4c8910b46bb" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>Pic</i
+></strong
+></a
+> &#8230; <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76efa3b2396547eab8bc3fb43610c4ee7e3a90cbfca71b077f49fc94d162ac6da1e50f27959d1a87f534f98241d133123e" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>Another pic</i
+></strong
+></a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">WELCOME TO THE WORLD &#8212; Patrick Boland</strong
+>, chief of staff for Rep. Adam Schiff (D-Calif.), and<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> Jill Brimmer Boland</strong
+>, senior policy adviser for Sen. Jack Reed (D-R.I.), on Thursday welcomed Riley Brimmer Boland, who came in at 8 lbs, 6 oz.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><i
+>Did someone forward this email to you? </i
+><a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76a0ab8129ef96d933acd7205be3ebc4c84bd4b2ea6083696bc9d85bf80c3a3b48ef17ede783e4c2987b52531c5326fc75" target="_blank"><i
+>Sign up here.</i
+></a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><i
+>Send Playbookers tips to </i
+><a
+ href="mailto:playbook@politico.com" target="_blank"><i
+>playbook@politico.com</i
+></a
+><i
+> or text us at </i
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>202-556-3307.</i
+></strong
+><i
+> Playbook couldn&#8217;t happen without our editor </i
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>Mike DeBonis,</i
+></strong
+><i
+> deputy editor </i
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>Zack Stanton</i
+></strong
+><i
+> and producers </i
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>Setota Hailemariam </i
+></strong
+><i
+>and </i
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>Bethany Irvine.</i
+></strong
+><br></p></td>                    </tr>                                    <tr>                            </tr><tr>    <td height="15" style="height:15px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>    <tr>    <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                            <p style="font-family:Helvetica,sans-serif;font-size:12px;margin-top:0;margin-bottom:10px;color:#000000;">A message from Altria:</p>                                                        <p style="margin-top:0;margin-bottom:15px;line-height:15px;">                                            <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd769768bed083be327ebdda008e0c86d32014f556453b0aaab94461ac54edc14b0811e16f9a87c28a1132f7b9bea8b67e2e" target="_blank"><img src="https://www.politico.com/dims4/default/3f74237/2147483647/resize/1000x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2F7b%2F54%2F04d0bcd645eca6a5411221072226%2Fpolitico-playbook-mbs-500x500.jpeg" title="Advertisement Image" alt="Advertisement Image" border="0" width="500" style="width:100%;max-width:500px;"></a
+>                                        <img src="https://ad.doubleclick.net/ddm/ad/N7384.146504POLITICO0/B30029754.368047626;sz=1x1;ord=[timestamp]" border="0" a>                </p>                                        <p style="margin-top:0;margin-bottom:20px;line-height:24px;color:#000000;">Altria is leading the way in transitioning millions of adult smokers from cigarettes to a smoke-free future.</p>                                                                </td></tr>    <tr>        <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                <!-- End Ad Copy -->                <tr>                                    </tr>                
+<!-- Post Body Content -->                <tr>                                    </tr>                <tr>                    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;
+</td>                </tr>                <!-- Twitter Handles -->                                    <tr>    <td style="color:#000000;padding:0px 20px 20px 20px;text-align:left;">        <p style="font-family:Helvetica,sans-serif;font-size:20px;color:#000000;margin-top:0;margin-bottom:15px;"><strong
+>Follow us on Twitter</strong
+></p>        <table cellpadding="0" cellspacing="0" border="0" role="presentation">            <tbody>            <tr>                <td width="52" valign="middle" style="text-align:left;padding-right:10px;"><img src="https://static.politico.com/hosted/icon-twitter-circle-blue%402x.png" title="" alt="" width="50" style="max-width:50px;"></td>                <td valign="middle" style="text-align:left;font-family:Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#000000;">                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Rachael Bade <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd763e1a6a8055ca4b1b2a22714c50340ff70e4cafe2544174e4deea2ff22db7f2ef8263bd91a071038811130e21d6ea3c1d" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@rachaelmbade</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Eugene Daniels <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76bbb5ec8b8650e2fb770b5aade5293c06283b58c2d8166c6d723f80f61a38704882721dd2290c4262f5158741a6008c6a" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@EugeneDaniels2</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Ryan Lizza <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76ea1407d69f846bbf84facd8fd5c10ac3635d7cacc5d238fc9640abf9c3a14de41f37ecd46a9b838709ff809c88fcf287" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@RyanLizza</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Eli Okun <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76b0414fa80a902c72222dc6fa5aa734e69f26001af0b4b1c2ca29996e9da7d47c1edc324502d859d9cadd1c22bef473ff" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@eliokun</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Garrett Ross <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd762d417d3ad830af47e0ff7d3aa243891b2c1a8835391a9e84a7da76b9be1a69f5011474f689fa742e7fb3872a8033435a" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@garrett_ross</a
+></p>                                    </td>            </tr>            </tbody>        </table>    </td></tr><tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                                <!-- Family of Playbook -->                                    <tr>    <td style="color:#000000;padding:0px 20px 0px 20px;text-align:left;">            <p style="font-family:Helvetica,sans-serif;font-size:20px;color:#000000;margin-top:0;margin-bottom:15px;"><strong
+>Subscribe to the POLITICO Playbook family</strong
+></p>            <p style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:24px;">                                    <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76a0ab8129ef96d933acd7205be3ebc4c84bd4b2ea6083696bc9d85bf80c3a3b48ef17ede783e4c2987b52531c5326fc75" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd7674fff79f13fb3da2d6f26e8ae344e981fddab1f181fc12b59bc4b0748a9516dfb52170a0f8f7030709bfd7d483b6cc9d" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Playbook PM</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76f086936a58f2b5bc01a816c816b9e805be417d65afd85bbf440a15c6d61c47280597a348a83ec9abffb01c508c6e98b9" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">California Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd765e4ce347ed84a989f7426f22f71b2d5267dad5bdcc70aec99e468386a034caddea6c4a7d6cd126824952d72fe8323cf8" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Florida Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76e2f6f6b0309cc4205ffe0bc25a547392ed6b6f75dbd3157d0e928e50078432add7e85ef904f1842910fe1163c22d6fc9" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Illinois Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76506f919453f1b3ce4cfba8a249b53f8ac8c734a04bb4e62dbfa528d4b1bedfb0b73afff9843ad47ba385b72bfcdcc16c" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Massachusetts Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76c1a787221d4ec60e48beec50d9f0d98dce1bced1422b9c30511804898a03facba2101b80812f53523094bf3bb31d2c92" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">New Jersey Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76781fdcbe9d9b287f25ce0c397ba8d9fdab6760d86c3ab8c28644d8af91c168a8ae4c64f3fe54fcf09448458759ba84b4" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">New York Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd763bfa3eeed04ff5814304a0781d1d17845c3aa995bcd96f31f74d6631bfe5a23be14a819a949558083cfe2cbec0dc97f3" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Ottawa Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76332a5ee550c10ad426b42478405043812a2e269778fda76d986ee31f34aa61aa443f2bf40dab6db462443fd5596ec663" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Brussels Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76332a5ee550c10ad426b42478405043812a2e269778fda76d986ee31f34aa61aa443f2bf40dab6db462443fd5596ec663" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">London Playbook</a
+>                                                </p>            <p style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:24px;"><a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76c22cfd952810670fd4512d3c56e04c815aa004f62778db51afd2c721edfde9634b96083cf097e28e305fcd30428badf1" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">View all our politics and policy newsletters</a
+></p>    </td></tr>                                <!-- Follow us -->                <tr>    <td style="color:#000000;padding:0px 20px 20px 20px;text-align:left;">        <p style="font-family:Helvetica,sans-serif;font-size:12px;color:#000000;margin-bottom:10px;line-height:14px;text-transform:uppercase;font-weight:bold;letter-spacing:2px;">Follow us</p>        <table cellpadding="0" cellspacing="0" border="0" role="presentation">            <tbody>            <tr>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76f3d75592bba1229f578040ed845e2ac83c0d6c5811b17b5959a6798c3de546702797fd4798493f4ad28cfc888f535015" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-facebook-gray%402x.png" title="Follow us on Facebook" alt="Follow us on Facebook" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76d5678a8b7171385e215b9b7d65016b99be3c4dfd9dcc7bd64600bd158cc4996048b5dc3bac7cf4704a352199936cbb2a" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-twitter-gray%402x.png" title="Follow us on Twitter" alt="Follow us on Twitter" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd762a17dc85356dfec6b1dc0e13090d3a6e38104013dfd6c4c73fcaea4380d87049b3ca8aceeffd7fe3c17ba939dbfb23a7" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-instagram-gray%402x.png" title="Follow us on Instagram" alt="Follow us on Instagram" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76f9cbd839dff80d12e2868dfc6f47ea94644af5b11348dc8c700e87b5a31e59aaa78ab0d8ee910bc9c878012af8da8e47" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-applePodcast-gray%402x.png" title="Listen on Apple Podcast" alt="Listen on Apple Podcast" width="24" border="0" style="max-width:24px;"></a
+></td>            </tr>            </tbody>        </table>    </td></tr><tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                </tbody>            </table>        </td>        <td><!-- Note: This is left blank to aid in centering across email clients --></td>    </tr>    </tbody></table><!-- Everything below this line is "new" to the template. We'll have to experiment a bit to see if it causes troubles. --><!-- howler#email.footers/core-newsletter.footer.html -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff"
+       style="padding:5px 0 15px 0;margin:0;text-align:center" role="presentation">
+    <tbody>
+    <tr>
+        <td><!-- Note: This is left blank to aid in centering across email clients --></td>
+        <td align="center" width="540">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:540px" role="presentation">
+                <tbody>
+                <tr>
+                    <td align="center" style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;">
+                        <p style="margin-bottom:15px;line-height:24px;">To change your alert settings, please log in at
+                            <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76fcdb8856d6701ddadc7bfd1f689fb3f9434959b8be2a7565bc2163d668c976405d067ca3d3aed619e2c43918f2194646" target="_blank" style="color:#007BC7;text-decoration:none;">https://www.politico.com/_login?base=https%3A%2F%2Fwww.politico.com/settings</a
+>
+                            <!--Commenting out the following line because it causes an undesired line to be displayed on outlook (some versions) and we couldn't find the use case of it-->
+                            <!-- <span style="display:none;"><a
+ href="https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a2aeb0863568da0b043e996c51f3fd608e5b8cea71ccc37881">https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a2aeb0863568da0b043e996c51f3fd608e5b8cea71ccc37881</a
+></span> -->
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="padding-bottom:15px;"><img
+                            src="https://static.politico.com/hosted/icon-politico-logo.png"
+                            class="CToWUd"></td>
+                </tr>
+                <tr>
+                    <td align="center"><p
+                            style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:20px;">
+                        This email was sent to ouchendans62@gmail.com by: POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+                        <p style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:24px;">
+                            
+
+                            Please click <a
+ href="https://go.politicoemail.com/?qs=953f12ac276dcd76a0bc26bfda5be3c2f1758dc99c4f08c891fd8b4f198a9efc993cb9bcc9bbc0428c5f2f2eb9b15dffc3d8c1e859871fc3" target="_blank" style="color:#007BC7;text-decoration:none;">here</a
+> and follow the steps to unsubscribe.
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td><!-- Note: This is left blank to aid in centering across email clients --></td>
+    </tr>
+    </tbody>
+</table>
+<img src="https://click.politicoemail.com/open.aspx?ffcb10-fe911d787565037d70-fde813797160037e711d7370-fe9115737262077c7c-febf1d7671670675-fdf61574756104747317747c-ffcf14&d=40126&bmt=0" width="1" height="1" alt="">
+</body></html><p email-meta style="display: none;opacity:0;">source=GoggleDocument, article=00000188-6d97-d5ba-a7fe-ffdfa1d10000</p>
+
+--YJlsXOZ63JDV=_?:--
+

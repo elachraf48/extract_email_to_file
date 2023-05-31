@@ -1,0 +1,440 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp550807ims;
+        Tue, 30 May 2023 10:00:10 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ5iXNn7giWg7lxASnR4FFu78xWjlYR7Vk1P27fazX55/XZ9IA5RaHRUCiGiSBKO4kNgFlJA
+X-Received: by 2002:a25:4cc8:0:b0:b9e:659c:60d4 with SMTP id z191-20020a254cc8000000b00b9e659c60d4mr3003929yba.15.1685466010296;
+        Tue, 30 May 2023 10:00:10 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685466010; cv=none;
+        d=google.com; s=arc-20160816;
+        b=YslReppeYP+urGZ2ezRS3Oc/Km3MnbDJ+T8aS/4vlR7Nhmk04upblCI8MlW1e5dMJu
+         HJDZlkIb5HbLpIei/VrIv7TJx37UWCx4OTi13i4DmKILCrVXxN6YBbxhZEco5TkA8dgp
+         nOgB10xESMAyu30c4aDo8/1//OqHANpDIUg3amHKiGyiIG+XYPJ+sQ2AeiqiOY1fHI/Z
+         EslkJu3C+bTUGDgBHUMsLwiE1Hmp8VhjtdRKkX+dYWBSBE1zpVTiJCtOOtdKh8z6ilQc
+         ALhg5adrRUq3l9JYvbAEQWazSB9rCRo2+n+YzpMOkiVQBDzj1Ws0jZkkkea4+sdCYlFJ
+         3UUA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:mime-version:from:date:dkim-signature
+         :dkim-signature;
+        bh=K+VGND0E+RklGjqyi/RXZecVBfX53MmR5fVsf2Ue5xg=;
+        b=FSNJ8DnVdrasGcwKLPSy1jyx07EsXpe3R2HsLy8HZxJQuSq7BYqY06VVs76YA988tS
+         bZcwg8dlfAMr9Cr50Jm7LvuMC9qvgrWXinEHYPCFYFEeGgLTVyB+LxWW1fywMgz+1C7n
+         a+zXOGh9gHPpjjSSbhnEj2jBfEYUlUjVXKKNUu+LDcPbL/VVCZH1/X/UZFndAt/61j+6
+         Xf6Yp/9O6M9kBPp4g7/xxVgqU1Jnvt416GttQ1bHu5rosKMA7L+1jGmqnMfAUS9r1RZV
+         hPIR6pTk1n3IyS+TgjIznlWIcYFup3Wx7D4gCLeEyfPwVVX5f5+UNi3JPWCi6o8Qxd2o
+         9E1g==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@socialmediaexaminer.com header.s=dr1 header.b=ymR6SFmm;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=EPaznn9W;
+       spf=pass (google.com: domain of bounces+9195725-7ef3-ouchendans62=gmail.com@drip.socialmediaexaminer.com designates 149.72.134.118 as permitted sender) smtp.mailfrom="bounces+9195725-7ef3-ouchendans62=gmail.com@drip.socialmediaexaminer.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=socialmediaexaminer.com
+Return-Path: <bounces+9195725-7ef3-ouchendans62=gmail.com@drip.socialmediaexaminer.com>
+Received: from o35.m.socialmediaexaminer.com (o35.m.socialmediaexaminer.com. [149.72.134.118])
+        by mx.google.com with ESMTPS id 1-20020a250b01000000b00ba7dfa6c07esi11849957ybl.677.2023.05.30.10.00.09
+        for <ouchendans62@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 30 May 2023 10:00:10 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+9195725-7ef3-ouchendans62=gmail.com@drip.socialmediaexaminer.com designates 149.72.134.118 as permitted sender) client-ip=149.72.134.118;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@socialmediaexaminer.com header.s=dr1 header.b=ymR6SFmm;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=EPaznn9W;
+       spf=pass (google.com: domain of bounces+9195725-7ef3-ouchendans62=gmail.com@drip.socialmediaexaminer.com designates 149.72.134.118 as permitted sender) smtp.mailfrom="bounces+9195725-7ef3-ouchendans62=gmail.com@drip.socialmediaexaminer.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=socialmediaexaminer.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=socialmediaexaminer.com;
+	h=content-type:from:mime-version:subject:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=dr1; bh=K+VGND0E+RklGjqyi/RXZecVBfX53MmR5fVsf2Ue5xg=;
+	b=ymR6SFmmD3Ppvq4a8QeUJNWIgjlR8hU5CeNj6Mlr0Fx3Fk4+p6qdXPl+pUeTQHR5m3VV
+	yFPTBciuyGB/0X+vfgAQ1uqZe+dCqkrX8qKz88dsadtatmVh+iafXXVX3jBOaDof9Th1z1
+	DgXX3IJ92CaJCWuOkl1B9wE617ZU3gLzFXNTDQ77jv6gBvQpz8G7CjZTCrjLiFVbwQE2/y
+	Br7BtlRpQ84iQedAe9xHaTmnWDehdwV1G8pwL5FBmnvoeCV7w2seP831n7ZY9gHohPJdxf
+	vpeUWoqsfL3oMEWJdeyNYicnaXitONKmx5tlC5rnCyvS1zETu8N9z5SJpIdDkj7Q==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=smtpapi; bh=K+VGND0E+RklGjqyi/RXZecVBfX53MmR5fVsf2Ue5xg=;
+	b=EPaznn9WIFZ/X2x8/+5XxORKIrHOyePec6QD9EDH/arwspUaPLGy4aZ1BUj7KaIDVCkD
+	DylkVWPZVnykdMT2NzA7fdgK1h0Jexa+nsdKGaKuad7pk+NRTR+T9jmtOs8l6WT37BJED0
+	B7jxWDSbm80mP/+WGwn193IdvmFgB5b4Q=
+Received: by filterdrecv-68f649d54f-hcl48 with SMTP id filterdrecv-68f649d54f-hcl48-1-647610AE-131
+        2023-05-30 15:05:18.824997996 +0000 UTC m=+1697341.544600286
+Received: from OTE5NTcyNQ (unknown)
+	by geopod-ismtpd-37 (SG) with HTTP
+	id Ks59KQTGTfKD3TlNnv7Rdw
+	Tue, 30 May 2023 15:05:18.790 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=2199035c864900f5fcccb371d49cda326f8e95459a92b1d9732238519f6b
+Date: Tue, 30 May 2023 17:00:00 +0000 (UTC)
+From: "Social Media Examiner: Michael Stelzner"
+	<michael@socialmediaexaminer.com>
+Mime-Version: 1.0
+Message-ID: <Ks59KQTGTfKD3TlNnv7Rdw@geopod-ismtpd-37>
+Subject: Do you listen to podcasts, Expedita?
+X-Drip-SendingAccount: 8668815
+X-Feedback-ID: 9195725:SG
+X-SG-EID: 
+ =?us-ascii?Q?Bbg3Ra9AwSdeZDMZBCW=2FkGS36Ho8RPda8qziTRJKpbKXTieSB6SYjtR49ff9HH?=
+ =?us-ascii?Q?N=2FHJg2m05vSQyBBU2WHF8RuA+GlBSBInOg7KDZj?=
+ =?us-ascii?Q?CqxfKDynQDohNh=2FLyjDn+7Q4qZ49aK8+5DpnKoK?=
+ =?us-ascii?Q?W4LE1YHjs4y99Mw9QdNCyrqGlFcjipDhZiQvZQH?=
+ =?us-ascii?Q?7zq0LjZe5mlaJrd8cjqge2odzbs96KHLSnJtN4N?=
+ =?us-ascii?Q?JwcER6SFj+AdNAD2FtPEh+8DobKa4xYXwXWYF3=2F?=
+ =?us-ascii?Q?MvHdm1i6GwBXRAAZ7gzjwXZzcIKXkL+djl6zOmA?=
+ =?us-ascii?Q?=2Fp5Yj4u4z=2FQYVt9LsbmWjAsL?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8raWjw0ZPf1VmjsCkspi=2FIueY507NIPg7Bbtt+Qog?=
+ =?us-ascii?Q?yZeIeRh+ezqRCghNRsUCZ5n9O43Pydp1dY0Okws?=
+ =?us-ascii?Q?HW+9okJ3R+rKe89NfrqQETxR3TQuC5msyEg65Qf?=
+ =?us-ascii?Q?LBRdNaanXt2fKlV0FNJmUNH+BUjSjNNz9LgQ6Yj?=
+ =?us-ascii?Q?K4TM6usfPkD3SmRcAYDgEl2ImKZ+wSZ=2FzVdmtG+?=
+ =?us-ascii?Q?F1onWCuGpq3h5mKukVi17nmq7I5tQV2y=2FUW7PgF?=
+ =?us-ascii?Q?kEBJABACM0Dd5u+tHjAezxJIPolxtDNjnNeVseX?=
+ =?us-ascii?Q?ARTKCO5cBBLaMsmWkGLReXBib07XHRPKr49QcXW?=
+ =?us-ascii?Q?Zh5u3VHONIyP4G9nDzpuMPlT1ckO3xBjFgqNV7D?=
+ =?us-ascii?Q?zXyNUtzhKl4gpD+sgq7Kzo=2FUN6JyOjT4ELySOfX?=
+ =?us-ascii?Q?GBXyAwjVI30QVI6M98U2W8b+f7x7Cv70rNMmRMD?=
+ =?us-ascii?Q?Uz2nYZyTk=2FQKl9hqRH6uXREdsp9o3jjtT3DHydj?=
+ =?us-ascii?Q?Hb63kr+auqo8j8IM91GILiujnn5LYVtXvzgFLX+?=
+ =?us-ascii?Q?XfEBNdkpnHpYKBlZQJuqbfxhCLooblIMzZhysXL?=
+ =?us-ascii?Q?NoO5XPaXYUlz9hAlCDNdopOgGMG4UI+XFDyyJ6c?=
+ =?us-ascii?Q?v5sMyNtXav+GjQeKGhlMXjJ6khoU3OJ1Uf+jJPw?=
+ =?us-ascii?Q?iDrYoQdim2wFvxg=3D=3D?=
+To: ouchendans62@gmail.com
+X-Entity-ID: 8vjR5rU3lVgUh1f2lD81HQ==
+
+--2199035c864900f5fcccb371d49cda326f8e95459a92b1d9732238519f6b
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+If you=E2=80=99re anything like me, Expedita, you love podcasts. =F0=9F=8E=
+=99=EF=B8=8F
+
+You can get your weekly dose of marketing advice while you=E2=80=99re
+driving, working out, or walking the dog=E2=80=A6making it easy to feed
+your mind without having to take time out of your busy day.
+
+Did you know that you can tune into the Social Media Marketing
+Podcast=E2=80=94hosted by yours truly=E2=80=94each week for a heaping helpi=
+ng of
+business goodness?
+
+You'll discover how successful marketers use social, learn new
+strategies and tactics, and gain actionable tips to improve your
+business.
+
+It's been a top podcast for eight years straight.
+
+Join tens of thousands of fellow marketers who listen weekly.
+Here's what a few had to say:
+
+"This is the one podcast I don't ever miss. Love the content,"
+said Whitney Bingham.
+
+"This show quickly became my go-to source for all things
+marketing," Rachel Stewart.
+
+There are hundreds of episodes already available and you can
+listen whenever you want. New shows drop weekly.
+
+Here=E2=80=99s how to listen:
+
+#1: Click here now to SUBSCRIBE on Apple Podcasts=20
+( http://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc3=
+MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNjg1NDU5MTE4LCJuYmYiO=
+jE2ODU0NTkxMTgsImFjY291bnRfaWQiOiI4NjY4ODE1IiwiZGVsaXZlcnlfaWQiOiJsa3B4anow=
+N2E3YjA5MjA5bXB6cCIsInVybCI6Imh0dHA6Ly93d3cuc29jaWFsbWVkaWFleGFtaW5lci5jb20=
+vaXR1bmVzP19fcz14eHh4eHh4Jl9fcz1sN3hvbGRzZDNuZGltbDFvbGxyayJ9.1Y2goSUe5BLfJ=
+YskA-1Ymm6HAnzySGxbjA8B6Fy00v0 ) (scroll
+down for other options).
+
+#2: Click the Subscribe button.
+
+#3: Download at least 5 episodes.
+
+#4: Sit back and enjoy the content, knowing you'll never miss a
+future episode because it auto downloads to your device.
+
+Here are some other ways to find the show=20
+( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc=
+3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNjg1NDU5MTE4LCJuYmYi=
+OjE2ODU0NTkxMTgsImFjY291bnRfaWQiOiI4NjY4ODE1IiwiZGVsaXZlcnlfaWQiOiJsa3B4ano=
+wN2E3YjA5MjA5bXB6cCIsInVybCI6Imh0dHBzOi8vd3d3LnNvY2lhbG1lZGlhZXhhbWluZXIuY2=
+9tL3NvY2lhbC1tZWRpYS1tYXJrZXRpbmctcG9kY2FzdC8_X19zPWw3eG9sZHNkM25kaW1sMW9sb=
+HJrIn0.yA4HmOoUmbFnq5telxM1q1U5pxGLOOZURJiOX4ns2hg )
+.
+
+Happy listening.
+
+Michael Stelzner, founder of Social Media Examiner
+
+---------------------
+Stop all emails from Social Media Examiner or update email
+address ( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvd=
+XIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNjg1NDU5MTE4=
+LCJuYmYiOjE2ODU0NTkxMTgsImFjY291bnRfaWQiOiI4NjY4ODE1IiwiZGVsaXZlcnlfaWQiOiJ=
+sa3B4anowN2E3YjA5MjA5bXB6cCIsInVybCI6Imh0dHBzOi8vd3d3LmdldGRyaXAuY29tL3N1Yn=
+NjcmliZXJzL2w3eG9sZHNkM25kaW1sMW9sbHJrL3N1YnNjcmlwdGlvbnM_ZD1sa3B4anowN2E3Y=
+jA5MjA5bXB6cCZleGNsdWRlX2NsaWNrPTEmaW50ZW50PXVuc3Vic2NyaWJlJl9fcz1sN3hvbGRz=
+ZDNuZGltbDFvbGxyayJ9.oXngBIZPfP8zo842AomYlAzizLNItNX2-18yXQUrfb8 )
+
+Social Media Examiner: 13025 Danielson Street, Poway, Ca 92064
+
+--2199035c864900f5fcccb371d49cda326f8e95459a92b1d9732238519f6b
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" style=3D"font-family: 'calluna=
+-sans' ,'Arial', sans-serif;">
+<head>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width">
+ =20
+  <title>Do you listen to podcasts, Expedita?</title>
+<style>body {
+width: 100% !important; -webkit-text-size-adjust: none; -ms-text-size-adjus=
+t: none; margin: 0; padding: 0;
+}
+.ExternalClass {
+width: 100%;
+}
+.ExternalClass {
+line-height: 100%;
+}
+#backgroundTable {
+margin: 0; padding: 0; width: 600px !important; line-height: 100% !importan=
+t;
+}
+img {
+outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;
+}
+h1 a:active {
+color: #c94f31 !important;
+}
+h2 a:active {
+color: #c94f31 !important;
+}
+h3 a:active {
+color: #c94f31 !important;
+}
+h4 a:active {
+color: #c94f31 !important;
+}
+h5 a:active {
+color: #c94f31 !important;
+}
+h6 a:active {
+color: #c94f31 !important;
+}
+h1 a:visited {
+color: #c94f31 !important;
+}
+h2 a:visited {
+color: #c94f31 !important;
+}
+h3 a:visited {
+color: #c94f31 !important;
+}
+h4 a:visited {
+color: #c94f31 !important;
+}
+h5 a:visited {
+color: #c94f31 !important;
+}
+h6 a:visited {
+color: #c94f31 !important;
+}
+h1 a:hover {
+color: #ab4329 !important;
+}
+h2 a:hover {
+color: #ab4329 !important;
+}
+h3 a:hover {
+color: #ab4329 !important;
+}
+h4 a:hover {
+color: #ab4329 !important;
+}
+h5 a:hover {
+color: #ab4329 !important;
+}
+h6 a:hover {
+color: #ab4329 !important;
+}
+a:hover {
+color: #ab4329 !important;
+}
+body {
+font-family: 'calluna-sans','Arial', sans-serif;
+}
+img {
+max-width: 100%;
+}
+.cta-button:hover {
+background: #e4931b; color: #fff !important;
+}
+</style></head>
+<body style=3D"width: 100% !important; -webkit-text-size-adjust: none; -ms-=
+text-size-adjust: none; font-family: 'calluna-sans','Arial', sans-serif; ma=
+rgin: 0; padding: 0;">
+  <table id=3D"body-wrap" style=3D"border-collapse: collapse; mso-table-lsp=
+ace: 0pt; mso-table-rspace: 0pt; font-family: 'calluna-sans' ,'Arial', sans=
+-serif; width: 100%;">
+    <tr style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+      <td style=3D"border-collapse: collapse; font-family: 'calluna-sans' ,=
+'Arial', sans-serif;"></td>
+      <td class=3D"container" style=3D"border-collapse: collapse; font-fami=
+ly: 'calluna-sans' ,'Arial', sans-serif; display: block !important; max-wid=
+th: 600px !important; clear: both !important;">
+        <div class=3D"content" style=3D"font-family: 'calluna-sans' ,'Arial=
+', sans-serif; max-width: 600px; display: block; margin: 0 auto;">
+          <table style=3D"border-collapse: collapse; mso-table-lspace: 0pt;=
+ mso-table-rspace: 0pt; font-family: 'calluna-sans' ,'Arial', sans-serif; w=
+idth: 100%;">
+            <tr style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;"=
+>
+              <td style=3D"border-collapse: collapse; font-family: 'calluna=
+-sans' ,'Arial', sans-serif;">
+                <div id=3D"main-content" style=3D"font-family: 'calluna-san=
+s' , 'Arial', sans-serif; font-size: 16px; color: #31251c; line-height: 1.4=
+; padding: 10px;">
+                  If you=E2=80=99re anything like me, Expedita, you <em sty=
+le=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">love</em><strong s=
+tyle=3D"font-family: 'calluna-sans' ,'Arial', sans-serif; font-weight: bold=
+;"> </strong>podcasts. =F0=9F=8E=99=EF=B8=8F<br style=3D"font-family: 'call=
+una-sans' ,'Arial', sans-serif;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+You can <strong style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif; =
+font-weight: bold;">get your weekly dose of marketing advice</strong> while=
+ you=E2=80=99re driving, working out, or walking the dog=E2=80=A6making it =
+easy to feed your mind without having to take time out of your busy day.<br=
+ style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+Did you know that you can <strong style=3D"font-family: 'calluna-sans' ,'Ar=
+ial', sans-serif; font-weight: bold;">tune into the Social Media Marketing =
+Podcast</strong>=E2=80=94hosted by yours truly=E2=80=94each week for a heap=
+ing helping of business goodness?<br style=3D"font-family: 'calluna-sans' ,=
+'Arial', sans-serif;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+You'll discover how successful marketers use social, learn new strategies a=
+nd tactics, and gain actionable tips to improve your business.<br style=3D"=
+font-family: 'calluna-sans' ,'Arial', sans-serif;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+It's been a top podcast for eight years straight.=C2=A0<br style=3D"font-fa=
+mily: 'calluna-sans' ,'Arial', sans-serif;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+Join tens of thousands of fellow marketers who listen weekly. Here's what a=
+ few had to say:<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-ser=
+if;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+"<em style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">This is th=
+e one podcast I don't ever miss. Love the content</em>," said Whitney Bingh=
+am.=C2=A0<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+"<em style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">This show =
+quickly became my go-to source for all things marketing</em>," Rachel Stewa=
+rt.<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+There are hundreds of episodes already available and you can listen wheneve=
+r you want. New shows drop weekly.<br style=3D"font-family: 'calluna-sans' =
+,'Arial', sans-serif;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+Here=E2=80=99s how to listen:<br style=3D"font-family: 'calluna-sans' ,'Ari=
+al', sans-serif;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+<strong style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif; font-wei=
+ght: bold;">#1</strong>: <a href=3D"http://t.dripemail2.com/c/eyJhbGciOiJIU=
+zI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5=
+rIiwiaWF0IjoxNjg1NDU5MTE4LCJuYmYiOjE2ODU0NTkxMTgsImFjY291bnRfaWQiOiI4NjY4OD=
+E1IiwiZGVsaXZlcnlfaWQiOiJsa3B4anowN2E3YjA5MjA5bXB6cCIsInVybCI6Imh0dHA6Ly93d=
+3cuc29jaWFsbWVkaWFleGFtaW5lci5jb20vaXR1bmVzP19fcz14eHh4eHh4Jl9fcz1sN3hvbGRz=
+ZDNuZGltbDFvbGxyayJ9.1Y2goSUe5BLfJYskA-1Ymm6HAnzySGxbjA8B6Fy00v0" style=3D"=
+color: #c94f31; text-decoration: none; font-family: 'calluna-sans' ,'Arial'=
+, sans-serif;"><span style=3D"font-family: 'calluna-sans' ,'Arial', sans-se=
+rif;">Click here now to SUBSCRIBE on Apple Podcasts</span></a> (scroll down=
+ for other options).<br style=3D"font-family: 'calluna-sans' ,'Arial', sans=
+-serif;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+<strong style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif; font-wei=
+ght: bold;">#2</strong>: Click the Subscribe button.<br style=3D"font-famil=
+y: 'calluna-sans' ,'Arial', sans-serif;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+<strong style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif; font-wei=
+ght: bold;">#3</strong>: Download at least 5 episodes.<br style=3D"font-fam=
+ily: 'calluna-sans' ,'Arial', sans-serif;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+<strong style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif; font-wei=
+ght: bold;">#4</strong>: Sit back and enjoy the content, knowing you'll nev=
+er miss a future episode because it auto downloads to your device.<br style=
+=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+<a href=3D"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRv=
+dXIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNjg1NDU5MTE=
+4LCJuYmYiOjE2ODU0NTkxMTgsImFjY291bnRfaWQiOiI4NjY4ODE1IiwiZGVsaXZlcnlfaWQiOi=
+Jsa3B4anowN2E3YjA5MjA5bXB6cCIsInVybCI6Imh0dHBzOi8vd3d3LnNvY2lhbG1lZGlhZXhhb=
+WluZXIuY29tL3NvY2lhbC1tZWRpYS1tYXJrZXRpbmctcG9kY2FzdC8_X19zPWw3eG9sZHNkM25k=
+aW1sMW9sbHJrIn0.yA4HmOoUmbFnq5telxM1q1U5pxGLOOZURJiOX4ns2hg" style=3D"color=
+: #c94f31; text-decoration: none; font-family: 'calluna-sans' ,'Arial', san=
+s-serif;"><span style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;"=
+>Here are some other ways to find the show</span></a>.<br style=3D"font-fam=
+ily: 'calluna-sans' ,'Arial', sans-serif;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+Happy listening.<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-ser=
+if;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+Michael Stelzner, founder of Social Media Examiner<br style=3D"font-family:=
+ 'calluna-sans' ,'Arial', sans-serif;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+=C2=A0
+                </div>
+
+               =20
+                  <div id=3D"footer" style=3D"font-family: 'calluna-sans' ,=
+ 'Arial', sans-serif; font-size: 13px; line-height: 1.4; color: #777; borde=
+r-top-width: 1px; border-top-color: #d0d0d0; border-top-style: solid; paddi=
+ng: 5px;">
+                    <a href=3D"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1N=
+iJ9.eyJhdWQiOiJkZXRvdXIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiw=
+iaWF0IjoxNjg1NDU5MTE4LCJuYmYiOjE2ODU0NTkxMTgsImFjY291bnRfaWQiOiI4NjY4ODE1Ii=
+wiZGVsaXZlcnlfaWQiOiJsa3B4anowN2E3YjA5MjA5bXB6cCIsInVybCI6Imh0dHBzOi8vd3d3L=
+mdldGRyaXAuY29tL3N1YnNjcmliZXJzL2w3eG9sZHNkM25kaW1sMW9sbHJrL3N1YnNjcmlwdGlv=
+bnM_ZD1sa3B4anowN2E3YjA5MjA5bXB6cCZleGNsdWRlX2NsaWNrPTEmaW50ZW50PXVuc3Vic2N=
+yaWJlJl9fcz1sN3hvbGRzZDNuZGltbDFvbGxyayJ9.oXngBIZPfP8zo842AomYlAzizLNItNX2-=
+18yXQUrfb8" style=3D"color: #c94f31; text-decoration: none; font-family: 'c=
+alluna-sans' ,'Arial', sans-serif;">Stop all emails from Social Media Exami=
+ner or update email address</a><br style=3D"font-family: 'calluna-sans' ,'A=
+rial', sans-serif;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+Social Media Examiner: 13025 Danielson Street, Poway, Ca 92064
+                  </div>
+               =20
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+  </table>
+<img src=3D"https://u9195725.ct.sendgrid.net/wf/open?upn=3D0-2FSlkfjewhujMc=
+ah5D-2FrTK7EeURWe0cipTZtuhw6-2BXYW4pX8EPWpR7ybT0BACuFegWfWk5pob-2FiCyCco5wl=
+SYvDk9u-2Bht1GGe4j6CZKyu4DdZhDDfD9u7OuGORLJ16-2BK-2F2sNn1-2BlaWusYs03-2FGqA=
+So4X7gHIi8ypsrTqFfARxUN-2BratD2Bpw7EZiqhrIpRHfHK7ASS9joZfaqpZDOtvi60pinJFCn=
+OV8xxPB8I7LCGNysTzmRTYyjm0PfAaVlN9pE7pH4M3tXPnjTlkCHX9XPmiJ2IFRVz-2FSEGJ-2B=
+0Sc5dI6NVWuNX6-2B5PVU63eKd-2FCAFVVdWOetOG-2BLs8-2Bnzz0WKLfaQ2bKgYinBGZPqUpa=
+JfU989oRi5AmqlSLVTK7klup5GJIa77noRQq1yUNlI4SYCHpV9DdbtvcERO-2B2i9ycEkUfJbgW=
+n2ALIkYQH-2FOQDEVDO6TAL2ZIWcaXWYSopS2mnKeqV98IR6v9Lzgmj2vAKKZqzehqz-2FcY8zG=
+gvCcW2KExVpDhcpvm-2F-2BENml-2BuY1k9Dz1RbyPJ3fF2z-2F-2B11OwtTstHHtQQkzopWhMJ=
+KvNt-2B33xkT53LNkGBn4OH5BdoI9Ckj1LQyA9I14PYWns3rgK-2FZz1mP74IhIwxotfht1FIxZ=
+Nijkizpzz0MtLIAEzmDCdfSGILxZf4kCq81ZwMAkZg9MRxTxOlTifiinJdSLzRmqH7wr8cFJFiJ=
+WXa6mgwX0A1fteGvBx4-2Ft7VPaaMORe9KdnLw-2BuypiLube6-2F-2BBes8ffHF5oPQG8Q7lam=
+yP9qnAPY-2BP9pj-2FPg6Mmx3LakTfPhWqDCjL8TTNzFygW17N-2BhJ5cb5c3-2BLo-2FjmgQ8q=
+rUxB4-2FtQ-3D-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"h=
+eight:1px !important;width:1px !important;border-width:0 !important;margin-=
+top:0 !important;margin-bottom:0 !important;margin-right:0 !important;margi=
+n-left:0 !important;padding-top:0 !important;padding-bottom:0 !important;pa=
+dding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+
+--2199035c864900f5fcccb371d49cda326f8e95459a92b1d9732238519f6b--

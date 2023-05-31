@@ -1,0 +1,737 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:9f5b:0:b0:2da:43c2:96f2 with SMTP id l27csp202495imf;
+        Sat, 27 May 2023 06:46:08 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ4izGRnG33wut5cHslOrXFErCA09J/MYtJJMzTxum1VMvH8cdRHrE87WPYaZ5fGqI1RWH9L
+X-Received: by 2002:a05:6214:c29:b0:623:7483:23ee with SMTP id a9-20020a0562140c2900b00623748323eemr5366134qvd.18.1685195168344;
+        Sat, 27 May 2023 06:46:08 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685195168; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ltZD33FmLTzp2ZjIXDxnKl2zaEwP1gvhjQgVvOLWivaA9kUNKwlOF0s9TtGyFsw4Jd
+         2KSmtGG4iwTc7hvfZxlgd81Qp8ZtDYa03ZRMbflhL41ysDGZbOKYX42yR69uMNLclQ+c
+         9tUL6N/KmtcCnO1ZuK1JD0LH49j0wz0WzCGCFSg+53WnqybgUcs9eTOhiSpk3CFA64O9
+         ExRBPDXr4PP+imVZ2RaIzlhysM0YOWuVHrbh1bqbue/gVCljoNYV3Zf8ImxI855DakOG
+         Bp3n7XgWKfleDJ29n8oZs3VBmd6m/J7cteE5lIxq3dPQec9mffXWykLsfIn+2OKbkoK2
+         32Gg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe-post:list-unsubscribe:subject:feedback-id
+         :require-recipient-valid-since:x_id:to:from:mime-version:message-id
+         :date:dkim-signature:dkim-signature:dkim-signature:dkim-signature;
+        bh=QQSczBFz+F1CytvjZ8hXToR6daG21tDVX9nt2lp+Qz4=;
+        b=iV5bT/7w3V7ktjrmbzQ8MhJh7i2WOoK2LN3fnLIfCkpcy4obXVyVJcdaX3pG+QO8/k
+         UNe+R7Mw3cEx9kXIFZxyGm+hvo6LMiwJcPzBBvIzh8PceFUeJJhIwIV5+pdneSX2MydO
+         97tesSTvA6lSyH724lrKxKoYptYmRoN/iJsoy/oHEVQuU4IVHoJb9FF9rN2hfqDQAI8d
+         BecQX5gvpI8lk4EHPXhXVu8IJVm2DPCrLg+V+5+M7+bi4W1bJZ73vjLYveAPOBmzOj4R
+         93FiNYCbw64WQqsVb2msXX2/MRR7DP/rrot5l/vQ0rbITBOGWdZFJ9/3dUOhHcTj5M07
+         ++ww==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@explodingtopics.com header.s=aweber_key_b header.b=QfSkHa+b;
+       dkim=pass header.i=@aweber.com header.s=aweber_key_b header.b=sneIFdDV;
+       dkim=pass header.i=@explodingtopics.optin.com header.s=k2 header.b=qBTbdlTs;
+       dkim=pass header.i=@optin.com header.s=k2 header.b="6X6vL/jY";
+       spf=pass (google.com: domain of bizsnjymdlrmjcystjwchgystga07qzg@smtp-soi-g16-145.aweber.com designates 204.194.223.145 as permitted sender) smtp.mailfrom=bIzsnJyMDLRMjCysTJwcHGystGa07qZG@smtp-soi-g16-145.aweber.com
+Return-Path: <bIzsnJyMDLRMjCysTJwcHGystGa07qZG@smtp-soi-g16-145.aweber.com>
+Received: from smtp-soi-g16-145.aweber.com (smtp-soi-g16-145.aweber.com. [204.194.223.145])
+        by mx.google.com with ESMTPS id 11-20020ad45b8b000000b00623814d77fbsi2419925qvp.291.2023.05.27.06.46.08
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 27 May 2023 06:46:08 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bizsnjymdlrmjcystjwchgystga07qzg@smtp-soi-g16-145.aweber.com designates 204.194.223.145 as permitted sender) client-ip=204.194.223.145;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@explodingtopics.com header.s=aweber_key_b header.b=QfSkHa+b;
+       dkim=pass header.i=@aweber.com header.s=aweber_key_b header.b=sneIFdDV;
+       dkim=pass header.i=@explodingtopics.optin.com header.s=k2 header.b=qBTbdlTs;
+       dkim=pass header.i=@optin.com header.s=k2 header.b="6X6vL/jY";
+       spf=pass (google.com: domain of bizsnjymdlrmjcystjwchgystga07qzg@smtp-soi-g16-145.aweber.com designates 204.194.223.145 as permitted sender) smtp.mailfrom=bIzsnJyMDLRMjCysTJwcHGystGa07qZG@smtp-soi-g16-145.aweber.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=explodingtopics.com;
+	s=aweber_key_b; t=1685195168; x=1686145568;
+	bh=QQSczBFz+F1CytvjZ8hXToR6daG21tDVX9nt2lp+Qz4=;
+	h=Date:Message-ID:Content-Type:MIME-Version:From:X-AWMessage:To:
+	 X_Id:Require-Recipient-Valid-Since:Feedback-ID:X-Subscription:
+	 Subject:List-Unsubscribe:List-Unsubscribe-Post:X-Mailer:CC;
+	b=QfSkHa+bUcAkUxPmE0MJ9OgThHagjgJBFRzGH5E2uOB6jm2hwS3XPKc8Y7FEzf4Ag
+	 51NojEaN0Xlf1rGQbYi2R2cy2TpjT82+cHxU6rWmspkYTVxR8qIM0HEP+VtacFiFb1
+	 zpS+6nvoQkA+AcPWRzIe48h8i3iUntx36E5fawv3hs2i9sk8onIr9v/rHA6J7AemHe
+	 Z3iqrG/uEF5Dnn4wwz34akcw6K8+w3Dj///70Ip522OHP6Y6HksdCUqccDUgd4vRJC
+	 Ie4FLcHkbogB2k8dVy1b9wwHE4Tzc6hSwSgEN4dKCi+NMan9YDng+fxrrU+7ZzEkWv
+	 W8V/7+E4YV7dw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aweber.com;
+	s=aweber_key_b; t=1685195168; x=1686145568;
+	bh=QQSczBFz+F1CytvjZ8hXToR6daG21tDVX9nt2lp+Qz4=;
+	h=Date:Message-ID:Content-Type:MIME-Version:From:X-AWMessage:To:
+	 X_Id:Require-Recipient-Valid-Since:Feedback-ID:X-Subscription:
+	 Subject:List-Unsubscribe:List-Unsubscribe-Post:X-Mailer:CC;
+	b=sneIFdDV/zgKhazpKbhhYUkzgKxdeHOvlC3Kv69RGMI4VakYrTS43qJfIdoOsyKrD
+	 ZyoiCrqH057E5xmdY/CEbshEBDkoRpTqPbuF4FdeH0SST2MYRAh/DXVar61umnDx/7
+	 tbIwobWknNfDyxHklrg0/+ODz1JtKy/9ZO67qHFyyzmxZIKf8p54jlO++x8QRyZmcl
+	 /JvLtBekXz9VDWe7qKyalskHCjyMlgl+oBfB52GhsJns9LuM31s1I5f3qd8HakOj1l
+	 X/ttXzz6IiOuJGAwoAUVU6L167TLMlNg8yRBf1TlhKUfbh/xqDFiyTe2zJNfAe0FsQ
+	 rlMbEz7inP3/g==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=explodingtopics.optin.com; s=k2; t=1685195168; x=1686145568;
+	bh=QQSczBFz+F1CytvjZ8hXToR6daG21tDVX9nt2lp+Qz4=;
+	h=Date:Message-ID:Content-Type:MIME-Version:From:X-AWMessage:To:
+	 X_Id:Require-Recipient-Valid-Since:Feedback-ID:X-Subscription:
+	 Subject:List-Unsubscribe:List-Unsubscribe-Post:X-Mailer:CC;
+	b=qBTbdlTs2jUKKNE15DJY9Qvv46K/LQjy/yQ4GlzdZpL/u4LKO6snxOi+t9WMXhosY
+	 OkQhU7V5XrgQT9zm5sMdVgx3RCRxtEfnyoSShxAjWcBRypCqrggKxohUwYZHpP6jh4
+	 SZnOhtsF6FCo4YW4LsVV7qFr72+6oCzOTL3sErNq7NB9E2IXUlUu38g9pHuSrMtQJ8
+	 yY1pkrsbNLO8oDWE9USQdyDSKAce71hgCjtTOGp/VQEG3eN2UngG6ZgXeinObNxq2N
+	 RfAa8krlx0SnK+wz78nnekAej6ugZ28aHRX+8OZn5lGPc2zyfObAsskxPvHhtfPDfp
+	 TsHhzyG1N/N/A==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=optin.com; s=k2;
+	t=1685195168; x=1686145568;
+	bh=QQSczBFz+F1CytvjZ8hXToR6daG21tDVX9nt2lp+Qz4=;
+	h=Date:Message-ID:Content-Type:MIME-Version:From:X-AWMessage:To:
+	 X_Id:Require-Recipient-Valid-Since:Feedback-ID:X-Subscription:
+	 Subject:List-Unsubscribe:List-Unsubscribe-Post:X-Mailer:CC;
+	b=6X6vL/jYyY73MUdn+CXyLzZnKRhSVGAMTsG8ScTEjD54R9rkpTOrpcPEA3V4i8yif
+	 zQrHQFFIL2xpFQP2ob5TTEGCoAl1Cr22r1rrC7+PTw8pG82axl+uPvXCrcTahTFw8K
+	 iz0sSRpmNgQQpA92Z+bJNgqNhztiiFjv0/6loL5H1R9ez29qTN8CYh7o8+W9E7C/rL
+	 yR57hPNjwDhgqfAjuvNoflYW6qVf76h4cnYLCDtJNYYuC0JihNbshIrz+81VSwcEkP
+	 HJ54xVq/BOJhl46rANvR9gruHQT+hE4pzniKalF0WWPWt0boTdVrVxdaF3rQlGnkX4
+	 Gz4R0slZo91Jw==
+Date: Sat, 27 May 2023 13:46:08 +0000
+Message-ID: <9F.2A.16241.0A902746@momentum-soi-02-mta1.prod.aweberint.com>
+Content-Type: multipart/alternative; boundary="===============5996790184902570798=="
+MIME-Version: 1.0
+From: "Exploding Topics" <info@explodingtopics.com>
+X-AWMessage: 20ba4588-e730-4e96-81c7-7bb8bd831d01
+To: ouchendans62@gmail.com
+X_Id: 6179910:112552583:ouchendans62@gmail.com
+Require-Recipient-Valid-Since: ouchendans62@gmail.com;
+ Sat, 27 May 2023 13:46:03 +0000
+Feedback-ID: A8ae10d3a-7982-4673-b048-739e8949ee52:Ldf5ca922-bdf8-4350-9611-96fa56dbadfb:CAMPAIGN-20ba4588-e730-4e96-81c7-7bb8bd831d01:AWeber
+X-Subscription: Subscribed on 05/27/2023, via Webform, by 197.147.8.26,
+ from https://explodingtopics.com/
+Subject: Welcome to Exploding Topics
+List-Unsubscribe: <https://www.aweber.com/z/r/?bIzsnJyMDLRMjCysTJwcHGystGa07qZG>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Mailer: AWeber Composer 2.79.1
+
+--===============5996790184902570798==
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+
+Exploding Topics Logo
+
+https://clicks.aweber.com/y/ct/?l=3DUyQ8tn&m=3D90cogi_Tom3vQ0zU&b=3DY9bslv7=
+2hbAz9012msCkjQ
+
+Welcome.
+
+You're the latest member of the Exploding Topics newsletter. Welcome!
+
+We send out our latest and greatest exploding topics every Tuesday. To make=
+ sure you receive the next newsletter, we recommend these quick steps:
+
+Gmail users=E2=80=94move us to your primary inbox
+
+
+
+On your phone? Hit the 3 dots at top right corner, click "Move to" then "Pr=
+imary"
+
+On desktop? Back out of this email then drag and drop this email into the "=
+Primary" tab near the top left of your screen.
+
+
+
+And here's how it works:
+
+1. Our advanced technology analyzes millions of searches, conversations and=
+ mentions across the internet.
+
+2. Our algorithm identifies Exploding Topics=E2=80=A6 before they take off.
+
+3. We curate the best topics from this list.
+
+4. Each week we'll send you "Exploding Topics Tuesday": a curated list of t=
+he best trending topics that we find. Plus, insight and analysis.
+
+Oh, and you can read last week's newsletter
+
+https://clicks.aweber.com/y/ct/?l=3DUyQ8tn&m=3D90cogi_Tom3vQ0zU&b=3DVxYSF7N=
+oi5PG4iGNlltKsQ
+ to catch up on what you=E2=80=99ve missed.
+
+See you on Tuesday.
+
+PS: What's the #1 thing that made you want to check out this newsletter? Re=
+ply and let us know. We read every reply.
+
+Exploding Topics
+548 Market St. Suite 95149
+San Francisco CA 94104-5401
+USA
+
+To unsubscribe or change subscriber options, visit:
+https://www.aweber.com/z/r/?bIzsnJyMDLRMjCysTJwcHGystGa07qZG
+
+
+--===============5996790184902570798==
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+Content-Type: text/html; charset="utf-8"
+
+<!DOCTYPE html>
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml">
+<head>
+<title>Welcome to Exploding Topics</title>
+<meta charset=3D"UTF-8">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1">
+<style id=3D"aw-autoinject" type=3D"text/css">
+body,a {
+        word-break: break-word;
+    }
+    .feed__title a {
+        text-decoration: underline;
+    }
+    .text-element h1 {
+        color: inherit;
+        font-family: inherit;
+        font-size: 36px;
+        line-height: 1.15;
+        font-weight:700;
+        margin: 0.5em 0;
+    }
+    .text-element h2 {
+        color: inherit;
+        font-family: inherit;
+        font-size: 32px;
+        line-height: 1.15;
+        font-weight:700;
+        margin: 0.5em 0;
+    }
+    .text-element h3 {
+        color: inherit;
+        font-family: inherit;
+        font-size: 28px;
+        line-height: 1.15;
+        font-weight:700;
+        margin: 0.5em 0;
+    }
+    .text-element h4 {
+        color: inherit;
+        font-family: inherit;
+        font-size: 24px;
+        line-height: 1.15;
+        font-weight:700;
+        margin: 0.5em 0;
+    }
+    .text-element h5 {
+        color: inherit;
+        font-family: inherit;
+        font-size: 20px;
+        line-height: 1.15;
+        font-weight:700;
+        margin: 0.5em 0;
+    }
+    .text-element h6 {
+        color: inherit;
+        font-family: inherit;
+        font-size: 16px;
+        line-height: 1.15;
+        font-weight:700;
+        margin: 0.5em 0;
+    }
+    .text-element p, .paragraph p {
+        color: inherit;
+        font-family: inherit;
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 0;
+    }
+    .text-element div {
+        color: inherit;
+        font-family: inherit;
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 0;
+    }
+    .text-element pre {
+        color: inherit;
+        display: block;
+        font-family: monospace;
+        font-size: 16px;
+        line-height: 1;
+        margin: 1em auto;
+        white-space: pre;
+        max-width:500px;
+        overflow: auto;
+        overflow-wrap: break-word;
+    }
+    .text-element address {
+        color: inherit;
+        font-family: inherit;
+        display: block;
+        font-size: 16px;
+        font-style: italic;
+        line-height: 1.15;
+        margin: 0.5em 0;
+    }
+    .text-element blockquote, .headline blockquote, .paragraph blockquote {
+            border-left: 5px solid #ccc;
+            font-style: normal;
+            margin-left: 0;
+            margin-right: 0;
+            overflow: hidden;
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+            box-sizing: border-box;
+    }
+    @media only screen and (max-width:599px) {
+        img {
+            max-width: 100% !important;
+            min-height: 1px !important;
+            height: auto !important;
+        }
+        .text-element pre {
+            max-width:250px;
+        }
+        .aw-stack .container {
+            box-sizing: border-box;
+            display: block !important;
+            float: left;
+            max-width: 100% !important;
+            margin: auto;
+            width: 100% !important;
+        }
+        .video .video-content {
+            width: auto !important;
+        }
+
+        .feed__item--postcard-side,
+        .feed__item--postcard-main,
+        .feed__item--block {
+            box-sizing: border-box;
+            display: block !important;
+            max-width: 100% !important;
+            margin: auto;
+            width: 100% !important;
+        }
+        .feed__item--block > div {
+            margin: 0 0 16px 0 !important;
+        }
+        .feed__image {
+            width: 100% !important;
+        }
+        .feed__spacer {
+            display: none !important;
+        }
+    }
+</style>
+<style type=3D"text/css">
+v:* { behavior: url(#default#VML); display: inline-block; }
+<style type=3D"text/css">
+/*-----MAIN BODY-----*/
+.mains {
+  font-size:16px;
+  color:#595D73;
+  line-height: 1.5em;
+}
+.mains .headline {
+  color: #121737;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  padding-bottom: 6px;
+}
+.mains .text-element p,
+.mains .text-element div {
+  font-size:16px;
+  color:#595D73;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  line-height: 1.5em;
+}
+.mains .paragraph p, =
+
+.mains .paragraph div {
+  font-size:16px;
+  color:#595D73;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  line-height: 1.5em;
+}
+.mains .text-element h1 {
+    color: #121737;
+    font-size:24px;
+    font-weight: 700;
+    line-height: 1.5em;
+    padding: 0;
+    margin: 0;
+}
+.mains .text-element h2 {
+    color: #121737;
+    font-size:18px;
+    font-weight: 700;
+    line-height: 1.5em;
+    padding-bottom:4px;
+}
+.mains .text-element h3 {
+    color: #121737;
+    font-size:16px;
+    font-weight: 700;
+    line-height: 1.5em;
+    padding-bottom:2px;
+}
+.mains .text-element h4 {
+    color: #121737;
+    font-size:14px;
+    font-weight: 700;
+    line-height: 1.5em;
+    padding-bottom:2px;
+}
+
+/*-----ARTICLES-----*/
+.article {
+  font-size:16px;
+  color:#595D73;
+  padding: 15px 0;
+}
+.article .headline {
+  font-size:20px;
+  color: #121737;
+  font-family: Arial, sans-serif;
+  padding-bottom: 6px;
+}
+.article .paragraph {
+  font-size:12px;
+  color:#595D73;
+  font-family: Arial, sans-serif;
+  margin:0;
+}
+.article .text {
+  padding: 16px;
+}
+.article .permalink {
+  text-align: right;
+}
+
+/*-----OVERALL STYLES-----*/
+body {
+  margin:auto;
+  background-color:#ffffff;
+  font-size: 16px;
+}
+table {
+  border:none;
+}
+.containerbox {
+  width:100%;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  background-color:#ffffff;
+}
+.floated-left {
+  margin-right:10px;
+  }
+.floated-right {
+  margin-left:10px;
+  }
+.floated-left {
+ mso-table-rspace:6pt;
+}
+.floated-right {
+ mso-table-lspace:6pt;
+}
+img {
+  height:auto;
+  max-width:100%!important;
+  margin:5px 0px 5px 0px;
+}
+
+/* Removes unwanted borders around hyperlinked images */
+a img {
+  border:0;
+  outline:none;
+  text-decoration:none;
+}
+
+#aweber_rem {
+  margin: 0 auto;
+}
+</style>
+<style type=3D"text/css">
+center > div {
+  box-sizing: border-box;
+}
+</style>
+<style type=3D"text/css">
+/*-----MEDIA QUERIES-----*/
+
+/* -Smaller Mobile Devices- */
+@media only screen and (min-width:10px) and (max-width: 400px) {
+  .containerbox {
+    width:100%!important;
+    margin:auto;
+    clear:both!important;
+    display: block;
+  }
+  table {
+    width:100%;
+  }
+  .headline {
+    font-size:24px!important;
+  }
+  .paragraph {
+    font-size:16px!important;
+  }
+  img {
+    height:auto!important;
+    max-height:300%;
+    max-width:100%;
+  }
+  .follow-me td {
+    height:auto!important;
+  }
+  .share img {
+    width:20px!important;
+    height:auto!important;
+    display:inline-block;
+  }
+  .signature {
+    text-align:center;
+  }
+  .article div {
+    float:none!important;
+    display:block!important;
+    width:100%!important;
+  }
+  .video td {
+    display:table-cell!important;
+  }
+  .floated-left {
+    display:inline-table !important;
+    width:100% !important;
+    text-align:center !important;
+  }
+  .floated-left td {
+    padding:10px 0px !important;
+  }
+  .floated-right {
+    display:inline-table !important;
+    width:100% !important;
+    text-align:center !important;
+  }
+  .floated-right td {
+    padding:10px 0px !important;
+  }
+}
+</style>
+<style type=3D"text/css">
+/* -Larger Mobile Devices- */
+@media only screen and (min-width:401px) and (max-width: 500px) {
+  .containerbox {
+    width:100%!important;
+    margin:auto;
+    clear:both!important;
+    display: block;
+  }
+  table {
+    width:100%;
+  }
+  .headline {
+    font-size:24px!important;
+  }
+  .paragraph {
+    font-size:16px!important;
+  }
+
+  img {
+    height:auto!important;
+    max-height:300%;
+    max-width:100%!important;
+  }
+  .follow-me td {
+    height:auto!important;
+  }
+  .share img {
+    width:20px!important;
+    height:auto!important;
+    display:inline-block;
+  }
+  .signature {
+    text-align:center;
+  }
+  .article div {
+    float:none!important;
+    display:block!important;
+    width:100%!important;
+  }
+  .video td {
+    display:table-cell!important;
+  }
+  .floated-left {
+    display:inline-table !important;
+    width:100% !important;
+    text-align:center !important;
+  }
+  .floated-left td {
+    padding:10px 0px !important;
+  }
+  .floated-right {
+    display:inline-table !important;
+    width:100% !important;
+    text-align:center !important;
+  }
+  .floated-right td {
+    padding:10px 0px !important;
+  }
+}
+</style>
+<style type=3D"text/css">
+@media only screen and (min-width:10px) and (max-width:599px) {
+ u ~ div img {
+  width: auto!important;
+ }
+}
+</style>
+
+</style>
+</head>
+<body>
+
+<center>
+<div align=3D"center"><div class=3D"containerbox" style=3D"width: 100%; fon=
+t-family: Arial, sans-serif; font-size: 16px; background-color: rgb(255, 25=
+5, 255);">
+  <div align=3D"center">
+    <table class=3D"aw-bgc" bgcolor=3D"#ffffff" align=3D"center" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-width: medium; bor=
+der-style: none;">
+      <tbody><tr>
+        <td>
+          <!--[if !mso]><!--><table align=3D"center" cellpadding=3D"0" cell=
+spacing=3D"0" width=3D"100%" style=3D"max-width: 580px !important; border-w=
+idth: medium; border-style: none;"><!--<![endif]-->
+          <!--[if gte mso 9]><table align=3D"center" cellpadding=3D"0" cell=
+spacing=3D"0" width=3D"580"><![endif]-->
+            <!--Body-->
+            <tbody><tr>
+              <td class=3D"aw-bgc" bgcolor=3D"#ffffff">
+                <!--[if !mso]><!--><table align=3D"left" class=3D"aw-bgc" c=
+ellpadding=3D"20" cellspacing=3D"0" width=3D"100%" style=3D"background-colo=
+r: rgb(255, 255, 255); border-width: medium; border-style: none;"><!--<![en=
+dif]-->
+                <!--[if gte mso 9]><table align=3D"left" cellpadding=3D"20"=
+ cellspacing=3D"0" width=3D"580"><![endif]-->
+                  <tbody><tr>
+                    <td class=3D"mains" style=3D"text-align:left; min-width=
+: 100%;">
+                      <div class=3D"region"><div><table class=3D"row aw-sta=
+ck" style=3D"width: 100%; border-width: medium; border-style: none;" role=
+=3D"presentation"><tbody><tr><td class=3D"container" style=3D"padding: 10px=
+ 0px 0px; width: 100%;" width=3D"100%" valign=3D"middle"><div class=3D"defi=
+nition-parent"><span><table align=3D"center" width=3D"100%" class=3D"floate=
+d-none" style=3D"float: none; text-align: center; border-width: medium; bor=
+der-style: none;" role=3D"presentation">
+  <tbody><tr>
+    <td align=3D"center" style=3D"padding: 0px 0px 0px 0px;">
+      <a class=3D"aw-image-link" href=3D"https://clicks.aweber.com/y/ct/?l=
+=3DUyQ8tn&amp;m=3D90cogi_Tom3vQ0zU&amp;b=3DY9bslv72hbAz9012msCkjQ">
+      <img class=3D"model" src=3D"https://hostedimages-cdn.aweber-static.co=
+m/MTg0ODQzMQ=3D=3D/original/3df6a4b445b24074b26f10955353c2c3.png?t=3D165779=
+5764" style=3D"display: block; width: 290px; height: 40px; max-width: 100%;=
+ margin: 5px 0px; border-width: 0px; border-style: none; outline-width: med=
+ium; outline-style: none; text-decoration: none;" alt=3D"Exploding Topics L=
+ogo" width=3D"290" height=3D"40">
+      </a>
+    </td>
+  </tr>
+</tbody></table></span></div></td></tr></tbody></table><table class=3D"row =
+aw-stack" style=3D"width: 100%; border-width: medium; border-style: none;" =
+role=3D"presentation"><tbody><tr><td class=3D"container" style=3D"padding: =
+10px 0px; width: 100%;" width=3D"100%" valign=3D"top"><div class=3D"definit=
+ion-parent"><div class=3D"text-element paragraph"><div style=3D"font-size: =
+16px; color: rgb(89, 93, 115); font-family: Arial, sans-serif; margin: 0px;=
+ line-height: 1.5em;"><h2 style=3D"color: rgb(18, 23, 55); font-size:
+18px; font-weight: 700; line-height: 1.5em; padding-bottom: 4px;">Welcome.<=
+/h2>
+
+<div style=3D"font-size: 16px; color: rgb(89, 93, 115); font-family: Arial,=
+ sans-serif; margin: 0px; line-height: 1.5em;">You're the latest member of =
+the Exploding Topics newsletter. Welcome!<br>
+<br>
+We send out our latest and greatest exploding topics every Tuesday. To make=
+ sure you receive the next newsletter, we recommend these quick steps:</div>
+
+<div style=3D"font-size: 16px; color: rgb(89, 93, 115); font-family: Arial,=
+ sans-serif; margin: 0px; line-height: 1.5em;"><br>
+<strong>Gmail users</strong>=E2=80=94move us to your primary inbox</div>
+
+<div style=3D"font-size: 16px; color: rgb(89, 93, 115); font-family: Arial,=
+ sans-serif; margin: 0px; line-height: 1.5em;">&nbsp;</div>
+
+<div style=3D"font-size: 16px; color: rgb(89, 93, 115); font-family: Arial,=
+ sans-serif; margin: 0px; line-height: 1.5em;">On your phone? Hit the 3 dot=
+s at top right corner, click "Move to" then "Primary"<br>
+<br>
+On desktop? Back out of this email then drag and drop this email into the "=
+Primary" tab near the top left of your screen.</div>
+
+<div style=3D"font-size: 16px; color: rgb(89, 93, 115); font-family: Arial,=
+ sans-serif; margin: 0px; line-height: 1.5em;">&nbsp;</div>
+
+<h2 style=3D"color: rgb(18, 23, 55); font-size: 18px; font-weight: 700; lin=
+e-height: 1.5em; padding-bottom: 4px;">And here's how it works:</h2>
+
+<div style=3D"font-size: 16px; color: rgb(89, 93, 115); font-family: Arial,=
+ sans-serif; margin: 0px; line-height: 1.5em;">1. Our advanced technology a=
+nalyzes millions of searches, conversations and mentions across the interne=
+t.<br>
+<br>
+2. Our algorithm identifies Exploding Topics=E2=80=A6 before they take off.=
+<br>
+<br>
+3. We curate the best topics from this list.<br>
+<br>
+4. Each week we'll send you "Exploding Topics Tuesday": a curated list of t=
+he best trending topics that we find. Plus, insight and analysis.<br>
+<br>
+Oh, and you can read <a class=3D"validating" href=3D"https://clicks.aweber.=
+com/y/ct/?l=3DUyQ8tn&amp;m=3D90cogi_Tom3vQ0zU&amp;b=3DVxYSF7Noi5PG4iGNlltKs=
+Q">last week's newsletter</a> to catch up on what you=E2=80=99ve missed.<br>
+<br>
+See you on Tuesday.<br>
+<br>
+<strong>PS:</strong> What's the #1 thing that made you want to check out th=
+is newsletter? Reply and let us know. We read every reply.</div>
+</div></div></div></td></tr></tbody></table></div>
+</div>
+                    </td>
+                  </tr>
+                </tbody></table>
+              </td>
+            </tr>
+            <!--End Body-->
+          </tbody></table>
+        </td>
+      </tr>
+   </tbody></table>
+ </div>
+</div></div>
+</center>
+
+<div>&nbsp;</div><div align=3D"center" id=3D"aweber_container" style=3D"bac=
+kground-color:#ffffff; width:100% !important"><div id=3D"aweber_rem" style=
+=3D"box-sizing:border-box; color:#000000 !important; font-family:Helvetica,=
+Arial,sans-serif !important; font-size:12px !important; line-height:16px; m=
+argin:0px; max-width:600px; padding:0px 8px; width:100%"><!--[if gte mso 9]=
+><table width=3D"600" style=3D"color: #000000;font-family: Helvetica, Arial=
+, sans-serif;font-size: 12px;line-height: 16px;"><tr><td style=3D"padding:8=
+px;"><![endif]--><div class=3D"rem_align" style=3D"text-align:center;"><spa=
+n style=3D"color:#000000 !important"><br><br>Exploding Topics<br>
+548 Market St. Suite 95149<br>
+San Francisco CA 94104-5401<br>
+USA</span><br><br><a href=3D"https://www.aweber.com/z/r/?bIzsnJyMDLRMjCysTJ=
+wcHGystGa07qZG" rel=3D"noopener noreferrer" style=3D"color: #000000;" targe=
+t=3D"_blank"><span style=3D"color:#000000 !important">Unsubscribe</span></a=
+> &nbsp; | &nbsp; <a href=3D"https://www.aweber.com/z/r/?bIzsnJyMDLRMjCysTJ=
+wcHGystGa07qZG" rel=3D"noopener noreferrer" style=3D"color: #000000;" targe=
+t=3D"_blank"><span style=3D"color:#000000 !important">Change&nbsp;Subscribe=
+r&nbsp;Options</span></a><br><br></div><!--[if gte mso 9]></td></tr></table=
+><![endif]--></div></div><img src=3D"https://openrate.aweber.com/y/o/?l=3DU=
+yQ8tn&m=3D90cogi_Tom3vQ0zU" width=3D"1" height=3D"1"></body></html>
+--===============5996790184902570798==--

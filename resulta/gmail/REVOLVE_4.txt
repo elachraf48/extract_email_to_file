@@ -1,0 +1,961 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:9f5b:0:b0:2da:43c2:96f2 with SMTP id l27csp380778imf;
+        Sat, 27 May 2023 19:18:38 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ6yuGk9/vm7YK/GvvUpZ720j6d/G084n9sRXrjH8Ldc2jluz1TPUrwblsuunCA0HfRWYx8j
+X-Received: by 2002:a05:6a21:99a0:b0:10c:ef18:746e with SMTP id ve32-20020a056a2199a000b0010cef18746emr5788680pzb.58.1685240317647;
+        Sat, 27 May 2023 19:18:37 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685240317; cv=none;
+        d=google.com; s=arc-20160816;
+        b=gb7y7l2DnuY5EBpMOERJPa2V7grDi5eRJN7YwShCe5JTYmZiyu4RPXH7mvFwcvpVMx
+         xNAOr/a2gv6NpY96KevAG/iBL4XZfz3unMIL2b6nvPgke+YZc2ESfVKHnjMpbNLEwLEe
+         h0xGFFQLnhIgn89JQuf1SsV82aiLI/oZHSrc/5WASCphBbuVeVcTVJtAQTmAfsaw5IIk
+         JFYgUVgHIqVmJIfzcIAfKacsTnR0g8Imizay43L8uXGEUTM8N5c8uSK4L6Tdkrd6JvhO
+         5j+zfsKR2peaqtMGL35gWhhpA6foAYbRwzPe4ex7wqmRNWoiloG4TpG+9GgQc7W+pH6u
+         57Zg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-id:list-unsubscribe:reply-to:from:subject:mime-version:date
+         :message-id:to:content-transfer-encoding:dkim-signature;
+        bh=jpenkQ06zwpgDXARwKdzkTphXERKqWYfEJWlFr8n8Tk=;
+        b=PAbWlAAKdB/fH/4xYYdT4AQqr3V1/b1+7HxhgAvRQbdDZPIjRma/5YAI/940Sw9vmw
+         G3MirzZLjChRQsnbHvbiKzzshX3kB2iJvy6t1Zla5DsCDic0qNAS6TtJ2KO48pu/W1cI
+         9XoJbrzYo0WHOsFCoJn9xQ7DBTaM7v4/8Exhezs7EYe+2BRliXhYldu5sY3PuzD533+e
+         1PsZJeY6VvtytWSHigApmr7xBzbIaJ0w/r0X5kVHXM56VL4xmsDaN6cpaxnbVF+Ee7Xl
+         eeLvG6fKPe4C0N3TDB4vQ4R+lGlPndqF59pYAKxpArhzAlnTLu76vZijuJb1PQtRWNUs
+         AhCQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@p.revolve.com header.s=scph0317 header.b=jodqoUKF;
+       spf=pass (google.com: domain of bounces+ouchendans62=gmail.com@p.revolve.com designates 192.174.91.191 as permitted sender) smtp.mailfrom="bounces+ouchendans62=gmail.com@p.revolve.com";
+       dmarc=pass (p=REJECT sp=NONE dis=NONE) header.from=p.revolve.com
+Return-Path: <bounces+ouchendans62=gmail.com@p.revolve.com>
+Received: from mta-174-91-191.revolve.com.sparkpostmail.com (mta-174-91-191.revolve.com.sparkpostmail.com. [192.174.91.191])
+        by mx.google.com with ESMTPS id bv4-20020a632e04000000b005307598826csi6275802pgb.87.2023.05.27.19.18.37
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 27 May 2023 19:18:37 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+ouchendans62=gmail.com@p.revolve.com designates 192.174.91.191 as permitted sender) client-ip=192.174.91.191;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@p.revolve.com header.s=scph0317 header.b=jodqoUKF;
+       spf=pass (google.com: domain of bounces+ouchendans62=gmail.com@p.revolve.com designates 192.174.91.191 as permitted sender) smtp.mailfrom="bounces+ouchendans62=gmail.com@p.revolve.com";
+       dmarc=pass (p=REJECT sp=NONE dis=NONE) header.from=p.revolve.com
+X-MSFBL: 6Re5NcQsz/9tREL0+ZvHkUnFEXsP4Rs1l3yIFYRbdJk=|eyJzdWJhY2NvdW50X2l
+	kIjoiODYiLCJjdXN0b21lcl9pZCI6IjEiLCJtZXNzYWdlX2lkIjoiNjQ2ZmZkYjk
+	3MjY0ZDk1MGQyMTIiLCJyIjoib3VjaGVuZGFuczYyQGdtYWlsLmNvbSIsInRlbmF
+	udF9pZCI6ImNvcmRpYWwifQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=p.revolve.com;
+	s=scph0317; t=1685240317; i=@p.revolve.com;
+	bh=jpenkQ06zwpgDXARwKdzkTphXERKqWYfEJWlFr8n8Tk=;
+	h=Content-Type:To:Message-ID:Date:Subject:From:List-Unsubscribe:
+	 From:To:Cc:Subject;
+	b=jodqoUKFrPF6tJrvX94L2+FL283XJr2C57ElohnHpmsDB4uEd8nWtHYlaZ1SG3SYm
+	 LI27gyI4loFZxubqJ5mBsYO71sxi3sOsgSAI0zBBuQAtXcLd0rQPEK88EFPeBvku5e
+	 nlKvCvA19vuNstCkHWmikBhS5h04L716QCq+sVrY=
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+To: ouchendans62@gmail.com
+Message-ID: <2D.21.47534.DF9B2746@gh.mta2vrest.cc.prd.sparkpost>
+Date: Sun, 28 May 2023 02:18:37 +0000
+MIME-Version: 1.0
+Subject: let's do 15% off
+From: "REVOLVE" <revolve@p.revolve.com>
+X-Crdl-Mc: 248:5fb6eb46d31fb1055690ead7:rm202305280215:647209ead332ea811103c651:1
+X-Feedback-ID: 248:5fb6eb46d31fb1055690ead7:647209ead332ea811103c651:cordial
+Reply-To: sales@revolveclothing.com
+List-Unsubscribe: <mailto:unsubscribe@sp.crdl.io?subject=unsubscribe:noIOJI7lBl-yk2oXMM4z-D1EePiFjpH-NXeP_dO315c~|eyAicmNwdF90byI6ICJvdWNoZW5kYW5zNjJAZ21haWwuY29tIiwgInRlbmFudF9pZCI6ICJjb3JkaWFsIiwgImN1c3RvbWVyX2lkIjogIjEiLCAibWVzc2FnZV9pZCI6ICI2NDZmZmRiOTcyNjRkOTUwZDIxMiIsICJzdWJhY2NvdW50X2lkIjogIjg2IiB9>
+List-Id: <cordial.1.86.sparkpostmail.com>
+
+<!DOCTYPE html><body style=3D"background-color: #fff; margin:0;padding:0;">=
+<img src=3D"https://e.p.revolve.com/o/p/248:5fb6eb46d31fb1055690ead7:rm2023=
+05280215:647209ead332ea811103c651:1/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.ey=
+JpYXQiOjE2ODUyNDAzMTd9.FabOwVLXIn3ngRgIatO6z8BrpLzycNtQtFM5UZylqVU" height=
+=3D1 width=3D1 />=0A<head>=0A    =0A=0A=0A<meta charset=3D"UTF-8">=0A<title=
+></title>=0A<meta name=3D"viewport" content=3D"width=3Ddevice-width, initia=
+l-scale=3D1.0">=0A<meta name=3D"x-apple-disable-message-reformatting">=0A=
+=0A<style type=3D"text/css">=0A=0A    @import url(http://fonts.googleapis.c=
+om/css=3Ffamily=3DMontserrat);=0A    =0A    [style*=3D"Montserrat"] {=0A   =
+ font-family: 'Montserrat', Arial, sans-serif !important;=0A    }=0A    =0A=
+    body, html {=0A        background-color: #ffffff;=0A    }=0A    =0A    =
+body {=0A        margin: 0; padding: 0;=0A        -webkit-text-size-adjust:=
+ none;=0A        -ms-text-size-adjust: none;=0A    }=0A    =0A    table td =
+{=0A        border-collapse: collapse;=0A    }=0A=0A    a, a:link, a:visite=
+d, a:active {=0A        color: #000000; /* or any other color*/=0A    }=0A =
+   .appleLinks {=0A        color: #949494 !important;=0A        text-decora=
+tion: none !important;=0A    }=0A    a.link, a.link:visited, a.link:active =
+{=0A        color: #717171;=0A        text-decoration: underline;=0A    }=
+=0A    a.link:hover {=0A        text-decoration: none;=0A        color: #00=
+0000;=0A    }=0A    a.link--bold {=0A      color: #000000 !important;=0A   =
+   font-weight: bold; =0A      text-decoration: none; =0A      border-botto=
+m: 2px solid #000000; =0A      text-transform: uppercase;=0A    }=0A     .b=
+tn {=0A        border: .16666667rem solid #000;=0A        background-color:=
+ #000;=0A        color: #fff;=0A        padding: .75rem .66666667rem .66666=
+667rem .83333333rem;=0A        font-size: 1em;=0A        line-height: 2;=0A=
+        display: inline-block;=0A        transition: all .25s ease-in-out;=
+=0A        letter-spacing: 2px;=0A        text-align: center;=0A        tex=
+t-decoration: none;=0A        text-transform: uppercase;=0A        white-sp=
+ace: normal;=0A        cursor: pointer;=0A        border-radius: 0;=0A    }=
+=0A    .btn--full {=0A        width: 100%;=0A    }=0A    .btn--loyalty {=0A=
+        letter-spacing: 1.4px;=0A        height: 60px;=0A        line-heigh=
+t: 60px;=0A        padding: 0;=0A        font-size: 14px;=0A        color: =
+#ffffff !important;=0A        box-sizing: border-box;=0A        border: non=
+e;=0A        font-weight: bold;=0A        font-family: Arial;=0A        bac=
+kground-color: #F9ADAD;=0A    }=0A    =0A    /* Media Query for desktop */=
+=0A    @media screen and (min-width: 481px) {=0A        .u-padding-r--md__d=
+esktop {=0A            padding-right: 8px;=0A        }=0A        .u-padding=
+-l--md__desktop {=0A            padding-left: 8px;=0A        }=0A    }=0A  =
+  /* Media Query for mobile */=0A    @media screen and (max-width: 480px) {=
+=0A        .mob-clear-spacing {=0A            margin:0 !important;=0A      =
+      padding:0 !important;=0A        }=0A        .responsive-width-three {=
+=0A          width: 50% !important;=0A        }=0A        .last-of-three {=
+=0A          display: block;=0A          margin: 0 auto !important;=0A     =
+   }    =0A        .mob-p {=0A            width:90%;=0A            margin-l=
+eft: auto;=0A            margin-right: auto;=0A        }=0A        =0A     =
+   .truncate-text {=0A            white-space: nowrap;=0A            overfl=
+ow: hidden;=0A            text-overflow: ellipsis;=0A        }=0A        .p=
+roduct-container {=0A          display: table-row;=0A        }=0A        .r=
+ev_logo {=0A            width: 197px !important;=0A        }=0A        .foo=
+ter_container {=0A            padding-top: 14px !important;=0A            p=
+adding-right: 14px !important;=0A            padding-bottom: 14px !importan=
+t;=0A            padding-left: 14px !important;=0A        }=0A        .foot=
+er_element {=0A            font-size: 10px !important;=0A            paddin=
+g: 8px 0 !important;=0A        }=0A        .footer_social {=0A            p=
+adding-top: 12px !important;=0A            padding-bottom: 6px !important;=
+=0A        }=0A        .content_area {=0A            padding-top: 0 !import=
+ant;=0A            padding-right: 0 !important;=0A            padding-botto=
+m: auto !important;=0A            padding-left: 0 !important;=0A        }=
+=0A        .content_top_wrap {=0A            padding-bottom: 0 !important;=
+=0A        }=0A        .appleLinks,=0A        .appleLinks a {=0A           =
+ color: #949494 !important;=0A            text-decoration: none !important;=
+=0A        }=0A        .social_icons,=0A        .social_tiktok,=0A        .=
+social_youtube,=0A        .social_facebook,=0A        .social_twitter,=0A  =
+      .social_pinterest,=0A        .social_instagram,=0A        .social_goo=
+gle {=0A            width: 35px !important;=0A        }=0A        .mob_text=
+_center {=0A            text-align: center !important;=0A        }=0A      =
+   .mob_text_right {=0A            text-align: right !important;=0A        =
+}=0A        .footer_link_list {=0A            width: 250px !important;=0A  =
+      }=0A        .footer_link_list td {=0A            width: inherit !impo=
+rtant;=0A        }=0A        .mob_font_size_12 {=0A            font-size: 1=
+2px !important;=0A        }=0A=0A        .footer_app_download_section {=0A =
+           width: 280px !important;=0A        }=0A        .footer-manage-li=
+ne {=0A            padding-top: 12px;=0A        }=0A=0A=0A        /* Prefer=
+ences Banner */=0A        .preferences_banner__stick {=0A            width:=
+ 150px !important;=0A            height: 1px !important; =0A        }=0A   =
+     .preferences_banner__stick-container {=0A            padding-top: 16px=
+ !important;=0A            padding-right: 0 !important;=0A            paddi=
+ng-bottom: 12px !important;=0A            padding-left: 0 !important;=0A   =
+     }=0A        .preferences_banner__td-container {=0A            padding:=
+ 20px !important;=0A        }=0A        .preferences_banner__border {=0A   =
+         border-width: 3px !important;=0A        }=0A=0A        /* This res=
+izes tables and images to be 100% wide with a proportionate width */=0A=0A =
+       .show {=0A            display: block !important;=0A            max-h=
+eight: none !important;=0A            overflow: visible !important;=0A     =
+       line-height: normal !important;=0A        }=0A        {*.hide {=0A  =
+          display: none !important;=0A        }*}=0A        .showTable {=0A=
+            display: block !important;=0A        }=0A=0A        .mob-font-1=
+0 {=0A            font-size: 10px !important=0A        }=0A=0A        .resp=
+onsive {=0A            width: 100% !important;=0A            height: auto !=
+important;=0A        }=0A=0A        .nomob {=0A            max-height: 0;=
+=0A            font-size: 0;=0A            display: none !important;=0A    =
+        width: 0px !important;=0A            height: 0px !important;=0A    =
+    }=0A=0A        .responsive_remove {=0A          display: none;=0A      =
+    display: none !important;=0A          height: 0;=0A          width: 0 !=
+important;=0A          overflow: hidden !important;=0A        }=0A=0A      =
+  .mob_center {=0A          text-align: center !important;=0A        }=0A  =
+      .small-pad-top-collapse {=0A            padding-top: 0 !important;=0A=
+        }=0A        .max320 {=0A            max-width: 320px !important;=0A=
+        }=0A        /* Grid Modules */=0A        .small-1 {=0A            d=
+isplay: block !important;=0A            width: 100% !important;=0A        }=
+=0A        .small-2 {=0A            width: 50% !important;=0A            fl=
+oat: left !important;=0A        }=0A        .small-3 {=0A            width:=
+ 33.333333% !important;=0A        }=0A        .small-4 {=0A            widt=
+h: 25% !important;=0A        }=0A        .small-5 {=0A            width: 20=
+% !important;=0A        }=0A        .small-1 a,=0A        .small-3 a {=0A  =
+          border-right: 0 !important;=0A            border-left: 0 !importa=
+nt;=0A        }=0A        .small-no-border-right {=0A            border-rig=
+ht: 0 !important;=0A        }=0A        .small-no-border-left {=0A         =
+   border-left: 0 !important;=0A        }=0A        .small-no-border {=0A  =
+          border-left: 0 !important;=0A            border-right: 0 !importa=
+nt;=0A        }=0A    }=0A</style>=0A=0A</head>=0A<!-- BEGIN EMAIL TABLES -=
+->=0A<body style=3D"background-color: #fff; margin:0;padding:0;">=0A    <ta=
+ble width=3D"100%" margin=3D"0" padding=3D"0" bgcolor=3D"#ffffff" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0">=0A        <tr>=0A            <td>=
+=0A          =0A=0A<!--rpcampaign: REVAPPDOWNLOADAPPDOWNLOADTRIG_REV-->=0A=
+=0A          <!--MonitorCampaignID:REVAPPDOWNLOADAPPDOWNLOADTRIG_REV-->=0A=
+=0A                <!-- BEGIN HEADER -->=0A                <table width=3D"=
+750" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center" clas=
+s=3D"responsive content_top_wrap" style=3D"margin: 0 auto;">=0A            =
+        <tr>=0A                        <td>=0A                            <=
+table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=
+=3D"nomob" align=3D"center">=0A                                <tr valign=
+=3D"top">=0A                                    =0A                        =
+             <td valign=3D"top" style=3D"font-family: arial;font-size: 10px=
+;text-decoration:none;text-align:center;color:#717171;padding-top:10px;">Jo=
+in us on the app and save 15% | =0A                                     <a =
+https: data-crdl-variant=3D"" style=3D"font-family: arial;font-size: 10px;c=
+olor:#717171;" conversion=3D"true" target=3D"_blank" href=3D"https://e.p.re=
+volve.com/c2/248:5fb6eb46d31fb1055690ead7:rm202305280215:647209ead332ea8111=
+03c651:1/9dfb98a1=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJp=
+YXQiOjE2ODUyNDAzMTcsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV=
+2b2x2ZSIsIm10bElEIjoiNjQ3MmI5OGJlZTVkMWMxYjk2MGI3MmI4IiwibGlua1VybCI6Imh0dH=
+BzOlwvXC93d3cucmV2b2x2ZS5jb21cL3JcL015RW1haWxTZXR0aW5ncy5qc3A_dXRtX21lZGl1b=
+T1lbWFpbCZ1dG1fc291cmNlPXRyaWdnZXImdXRtX2NhbXBhaWduPVRSSUdfUkVWX0FQUERPV05M=
+T0FEX0FQUERPV05MT0FEXzIwMjMwNTI4JnV0bV9jb250ZW50PVRSSUdfUkVWX0FQUERPV05MT0F=
+EX0FQUERPV05MT0FEJnVzZXJJRD0mY0lEPTY0NzIwOWVhZDMzMmVhODExMTAzYzY1MSJ9&jwtS=
+=3DUCJ29IgoHl84OypSATZuzBbiLed3sKgmg8F7U6NNBxc">Update Your Email Preferenc=
+es</a>=0A                                     </td>=0A                     =
+                                                </tr>=0A                   =
+         </table>=0A                            <table width=3D"100%" borde=
+r=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center">=0A           =
+                     <tr valign=3D"top">=0A                                =
+    <td valign=3D"top" align=3D"center" style=3D"padding-bottom:20px;paddin=
+g-top:20px">=0A                                        <a http: data-crdl-v=
+ariant=3D"" style=3D"font-family: arial;font-size: 11px;text-decoration:non=
+e;color:#717171;" conversion=3D"true" target=3D"_blank" href=3D"http://e.p.=
+revolve.com/c2/248:5fb6eb46d31fb1055690ead7:rm202305280215:647209ead332ea81=
+1103c651:1/98a641cb=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3Dey=
+JpYXQiOjE2ODUyNDAzMTcsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoic=
+mV2b2x2ZSIsIm10bElEIjoiNjQ3MmI5OGJlZTVkMWMxYjk2MGI3MmI5IiwibGlua1VybCI6Imh0=
+dHA6XC9cL3Jldm9sdmUuY29tP3V0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT10cmlnZ2VyJnV=
+0bV9jYW1wYWlnbj1UUklHX1JFVl9BUFBET1dOTE9BRF9BUFBET1dOTE9BRF8yMDIzMDUyOCZ1dG=
+1fY29udGVudD1UUklHX1JFVl9BUFBET1dOTE9BRF9BUFBET1dOTE9BRCZ1c2VySUQ9JmNJRD02N=
+DcyMDllYWQzMzJlYTgxMTEwM2M2NTEifQ&jwtS=3DOPKI9u-lNnBGPaT48Lu6ajxeGo13sa9Kfv=
+A-V0hug-k">=0A                                            <img src=3D"http:=
+//is4.revolveassets.com/images/4.0_email/logo2_lrg.png" class=3D"rev_logo n=
+omob" style=3D"display:block;border:0;margin:0 auto;" width=3D"262" border=
+=3D"0">=0A                                            <img src=3D"https://i=
+s4.revolveassets.com/images/up/2019/December/REVmobile_email_logo.png" clas=
+s=3D"show" style=3D"display:none;border:0;margin:0 auto;width:100%;" border=
+=3D"0">=0A                                        </a>=0A                  =
+                  </td>=0A                                </tr>=0A         =
+                   </table>=0A                            <table width=3D"1=
+00%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"nomob" align=
+=3D"center" style=3D"padding-top:5px;padding-bottom:15px">=0A              =
+                  <tr valign=3D"top">=0A                                   =
+ <td valign=3D"top">=0A                                        <table width=
+=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">=0A             =
+                               <tr>=0A                                     =
+           <td style=3D"width: 17px"></td>=0A                              =
+                  <td style=3D"width: 97px">=0A                            =
+                        <a http: data-crdl-variant=3D"" style=3D"text-decor=
+ation:none;text-transform:uppercase;letter-spacing:.08em;color:#000001;font=
+: bold 14px Arial;white-space: nowrap;" conversion=3D"true" target=3D"blank=
+" href=3D"http://e.p.revolve.com/c2/248:5fb6eb46d31fb1055690ead7:rm20230528=
+0215:647209ead332ea811103c651:1/42b0af3a=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciO=
+iJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2ODUyNDAzMTcsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJj=
+ZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQ3MmI5OGJlZTVkMWMxYjk2MGI3MmJ=
+hIiwibGlua1VybCI6Imh0dHA6XC9cL3d3dy5yZXZvbHZlLmNvbVwvbmV3XC9hbGwtbmV3LWl0ZW=
+1zXC9iclwvN2Y1OTQ2P3V0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT10cmlnZ2VyJnV0bV9jY=
+W1wYWlnbj1UUklHX1JFVl9BUFBET1dOTE9BRF9BUFBET1dOTE9BRF8yMDIzMDUyOCZ1dG1fY29u=
+dGVudD1UUklHX1JFVl9BUFBET1dOTE9BRF9BUFBET1dOTE9BRCZ1c2VySUQ9JmNJRD02NDcyMDl=
+lYWQzMzJlYTgxMTEwM2M2NTEifQ&jwtS=3Dkze70Eh1IRVntRybjUicu1Z5L6AE2oQy7n9VT9lj=
+wWQ">New</a>=0A                                                </td>=0A    =
+                                            <td style=3D"width: 134px;">=0A=
+                                                    <a http: data-crdl-vari=
+ant=3D"" style=3D"text-decoration:none;text-transform:uppercase;letter-spac=
+ing:.08em;color:#000001;font: bold 14px Arial;white-space: nowrap;" convers=
+ion=3D"true" target=3D"blank" href=3D"http://e.p.revolve.com/c2/248:5fb6eb4=
+6d31fb1055690ead7:rm202305280215:647209ead332ea811103c651:1/3b5d8b27=3FjwtH=
+=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2ODUyNDAzMTcsImNk=
+IjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQ=
+3MmI5OGJlZTVkMWMxYjk2MGI3MmJiIiwibGlua1VybCI6Imh0dHA6XC9cL3d3dy5yZXZvbHZlLm=
+NvbVwvZHJlc3Nlc1wvYnJcL2E4ZTk4MT91dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9dHJpZ=
+2dlciZ1dG1fY2FtcGFpZ249VFJJR19SRVZfQVBQRE9XTkxPQURfQVBQRE9XTkxPQURfMjAyMzA1=
+MjgmdXRtX2NvbnRlbnQ9VFJJR19SRVZfQVBQRE9XTkxPQURfQVBQRE9XTkxPQUQmdXNlcklEPSZ=
+jSUQ9NjQ3MjA5ZWFkMzMyZWE4MTExMDNjNjUxIn0&jwtS=3Dv3PDwYZeNQ3T79JDlTwWWjmN45a=
+IjA3ARo6GnXm1-Og">Dresses</a>=0A                                           =
+     </td>=0A                                                <td style=3D"w=
+idth: 176px;">=0A                                                    <a htt=
+p: data-crdl-variant=3D"" style=3D"text-decoration:none;text-transform:uppe=
+rcase;letter-spacing:.08em;color:#000001;font: bold 14px Arial;white-space:=
+ nowrap;" conversion=3D"true" target=3D"blank" href=3D"http://e.p.revolve.c=
+om/c2/248:5fb6eb46d31fb1055690ead7:rm202305280215:647209ead332ea811103c651:=
+1/14500c65=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE=
+2ODUyNDAzMTcsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZS=
+IsIm10bElEIjoiNjQ3MmI5OGJlZTVkMWMxYjk2MGI3MmJjIiwibGlua1VybCI6Imh0dHA6XC9cL=
+3d3dy5yZXZvbHZlLmNvbVwvYmVzdFNlbGxlclwvYWxsLWJlc3Qtc2VsbGVyc1wvYnJcLzIwMjJk=
+ND91dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9dHJpZ2dlciZ1dG1fY2FtcGFpZ249VFJJR19=
+SRVZfQVBQRE9XTkxPQURfQVBQRE9XTkxPQURfMjAyMzA1MjgmdXRtX2NvbnRlbnQ9VFJJR19SRV=
+ZfQVBQRE9XTkxPQURfQVBQRE9XTkxPQUQmdXNlcklEPSZjSUQ9NjQ3MjA5ZWFkMzMyZWE4MTExM=
+DNjNjUxIn0&jwtS=3DMh26RHe3RKQMlpNualHHDF_FubUh7NB7gKjZ74oVkGI">Best Sellers=
+</a>=0A                                                </td>=0A            =
+                                    <td style=3D"width: 102px;">=0A        =
+                                            <a http: data-crdl-variant=3D""=
+ style=3D"text-decoration:none;text-transform:uppercase;letter-spacing:.08e=
+m;color:#000001;font: bold 14px Arial;white-space: nowrap;" conversion=3D"t=
+rue" target=3D"blank" href=3D"http://e.p.revolve.com/c2/248:5fb6eb46d31fb10=
+55690ead7:rm202305280215:647209ead332ea811103c651:1/d753fc1a=3FjwtH=3DeyJ0e=
+XAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2ODUyNDAzMTcsImNkIjoiLnAu=
+cmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQ3MmI5OGJ=
+lZTVkMWMxYjk2MGI3MmJkIiwibGlua1VybCI6Imh0dHA6XC9cL3d3dy5yZXZvbHZlLmNvbVwvc2=
+FsZVwvYWxsLXNhbGUtaXRlbXNcL2JyXC81NGNjN2I_dXRtX21lZGl1bT1lbWFpbCZ1dG1fc291c=
+mNlPXRyaWdnZXImdXRtX2NhbXBhaWduPVRSSUdfUkVWX0FQUERPV05MT0FEX0FQUERPV05MT0FE=
+XzIwMjMwNTI4JnV0bV9jb250ZW50PVRSSUdfUkVWX0FQUERPV05MT0FEX0FQUERPV05MT0FEJnV=
+zZXJJRD0mY0lEPTY0NzIwOWVhZDMzMmVhODExMTAzYzY1MSJ9&jwtS=3DjTpd_mZsSs7ngDtVTh=
+9gDHBwXk2HyjICXBZH37KLQQs">Sale</a>=0A                                     =
+           </td>=0A                                                <td styl=
+e=3D"width: 175px;">=0A                                                    =
+<a http: data-crdl-variant=3D"" style=3D"text-decoration:none;text-transfor=
+m:uppercase;letter-spacing:.08em;color:#000001;font: bold 14px Arial;white-=
+space: nowrap;" conversion=3D"true" target=3D"blank" href=3D"http://e.p.rev=
+olve.com/c2/248:5fb6eb46d31fb1055690ead7:rm202305280215:647209ead332ea81110=
+3c651:1/c9cf510c=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpY=
+XQiOjE2ODUyNDAzMTcsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2=
+b2x2ZSIsIm10bElEIjoiNjQ3MmI5OGJlZTVkMWMxYjk2MGI3MmJlIiwibGlua1VybCI6Imh0dHA=
+6XC9cL3d3dy5yZXZvbHZlLmNvbVwvY29udGVudFwvbXlmYXZcL29uYm9hcmRpbmc_dXRtX21lZG=
+l1bT1lbWFpbCZ1dG1fc291cmNlPXRyaWdnZXImdXRtX2NhbXBhaWduPVRSSUdfUkVWX0FQUERPV=
+05MT0FEX0FQUERPV05MT0FEXzIwMjMwNTI4JnV0bV9jb250ZW50PVRSSUdfUkVWX0FQUERPV05M=
+T0FEX0FQUERPV05MT0FEJnVzZXJJRD0mY0lEPTY0NzIwOWVhZDMzMmVhODExMTAzYzY1MSJ9&jw=
+tS=3DwxG7TX7KsN8u2-DLbcwIMS-wrM6qioiRMgc8RfAN6RQ">My Favorites</a>=0A      =
+                                          </td>=0A                         =
+                       <td style=3D"width: 49px;">=0A                      =
+                              <a https: data-crdl-variant=3D"" style=3D"tex=
+t-decoration:none;text-transform:uppercase;letter-spacing:.08em;color:#0000=
+01;font: bold 14px Arial;white-space: nowrap;" conversion=3D"true" target=
+=3D"blank" href=3D"https://e.p.revolve.com/c2/248:5fb6eb46d31fb1055690ead7:=
+rm202305280215:647209ead332ea811103c651:1/f247eec0=3FjwtH=3DeyJ0eXAiOiJKV1Q=
+iLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2ODUyNDAzMTcsImNkIjoiLnAucmV2b2x2ZS=
+5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQ3MmI5OGJlZTVkMWMxY=
+jk2MGI3MmJmIiwibGlua1VybCI6Imh0dHBzOlwvXC93d3cucmV2b2x2ZS5jb21cL2NvbnRlbnRc=
+L2xwXC9iZWF1dHlcLz9uYXZzcmM9bWFpbiZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9dHJ=
+pZ2dlciZ1dG1fY2FtcGFpZ249VFJJR19SRVZfQVBQRE9XTkxPQURfQVBQRE9XTkxPQURfMjAyMz=
+A1MjgmdXRtX2NvbnRlbnQ9VFJJR19SRVZfQVBQRE9XTkxPQURfQVBQRE9XTkxPQUQmdXNlcklEP=
+SZjSUQ9NjQ3MjA5ZWFkMzMyZWE4MTExMDNjNjUxIn0&jwtS=3D-n3Hyn-yR2hnnqWNAzKL-B9Mz=
+KlrN_KqHy9bzFk9fDw">Beauty</a>=0A                                          =
+      </td>=0A                                            </tr>=0A         =
+                               </table>=0A                                 =
+   </td>=0A                                </tr>=0A                        =
+    </table>=0A                    <!-- END HEADER -->=0A                  =
+  <!--loyalty top banner start-->=0A=0A=0A =0A                   <!-- OLD V=
+ERSION BEFORE 5/27/2021 -->=0A=0A<!-- NEW VERSION FROM 5/27/2021 -->=0A=0A=
+=0A=0A<!-- if the user is in the supplement, use supplement data -->=0A=0A =
+                 =0A                  =0A =0A=0A                           =
+   =0A                     =0A=0A<!--FWRD TOP BANNER AB TEST-->=0A         =
+            =0A<!-- BEGIN CONTENT -->=0A<custom type=3D"content" name=3D"Co=
+ntent">=0A<table class=3D"nomob" width=3D"750" align=3D"center" border=3D"0=
+" cellspacing=3D"0" cellpadding=3D"0" style=3D"color:#000;">=0A    =0A    =
+=0A   <tr>=0A       <td>=0A           <img width=3D"100%" src=3D"http://is4=
+=2Erevolveassets.com/r/assets/email/main-ipad-discount-landing/border.png">=
+=0A       </td>=0A   </tr>=0A        =0A=0A    <tr>=0A        <td>=0A      =
+    <table width=3D"750" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" s=
+tyle=3D"font-family:Arial; color:black;display:block;">=0A                 =
+   <tr>=0A                      <td width=3D"300" style=3D"padding: 32px 32=
+px;line-height:1.25;letter-spacing: .3px;" valign=3D"top">=0A              =
+            <img src=3D"https://is4.revolveassets.com/images/up/2022/Novemb=
+er/062422_R_App_Download_Refresh_footer.png">=0A                      </td>=
+=0A                        <td width=3D"450" style=3D"padding: 40px 0px;lin=
+e-height:1.25;letter-spacing: .3px;vertical-align: top;">=0A               =
+             <div>=0A                              <h3 style=3D"letter-spac=
+ing: .8px;margin-top: 0;margin-bottom: 8px;">GET REVOLVE ON THE GO!</h3>=0A=
+                              <p style=3D"margin-top:0;">Download our super=
+ cool IOS or Android app and get</p>=0A                              <h1 st=
+yle=3D"font-size: 50px;margin-top: 10px;margin-bottom: 10px;">15% OFF</h1>=
+=0A                              <p style=3D"margin-bottom: 24px;">your fir=
+st in-app purchase!</p>=0A                            </div>=0A            =
+                <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0">=0A=
+        =0A                                <tr>=0A                         =
+           <td style=3D"padding-right: 20px;">=0A                          =
+              <a data-crdl-variant=3D"" style=3D"color: black;text-decorati=
+on: none;" href=3D"https://e.p.revolve.com/c2/248:5fb6eb46d31fb1055690ead7:=
+rm202305280215:647209ead332ea811103c651:1/ec395b9a=3FjwtH=3DeyJ0eXAiOiJKV1Q=
+iLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2ODUyNDAzMTcsImNkIjoiLnAucmV2b2x2ZS=
+5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQ3MmI5OGJlZTVkMWMxY=
+jk2MGI3MmMwIiwibGlua1VybCI6Imh0dHBzOlwvXC9hcHAuYWRqdXN0LmNvbVwvbHRpeGg4NyJ9=
+&jwtS=3DZ9NExT2vC4OCfQOhvh5Dhapqji85dyuBW4eKp017wcI">=0A                   =
+                         <img src=3D"https://is4.revolveassets.com/images/u=
+p/2020/September/dl_iphone.png" style=3D"width: 120px">=0A                 =
+                           <p style=3D"text-align: center;font-size:12px;">=
+Use <strong>IPHONE15</strong><br> at Checkout</p>=0A                       =
+                 </a>=0A                                        <div>=0A   =
+                                         <p style=3D"font-style:italic;font=
+-size:10px;margin-top: 32px;margin-bottom: 0;">restrictions may apply</p>=
+=0A                                        </div>=0A                       =
+             </td>    =0A                                    <td valign=3D"=
+top" style=3D"padding-right: 20px;">=0A                                    =
+    <a data-crdl-variant=3D"" style=3D"color: black;text-decoration: none;"=
+ href=3D"https://e.p.revolve.com/c2/248:5fb6eb46d31fb1055690ead7:rm20230528=
+0215:647209ead332ea811103c651:1/1b5eec46=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciO=
+iJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2ODUyNDAzMTcsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJj=
+ZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQ3MmI5OGJlZTVkMWMxYjk2MGI3MmM=
+xIiwibGlua1VybCI6Imh0dHBzOlwvXC9hcHAuYWRqdXN0LmNvbVwvNzFjd3ZsbiJ9&jwtS=3D_w=
+_f3WV9h9N9fABT473SIRfc4eNFa2MypZ7LcjPx8pc">=0A                             =
+               <img src=3D"https://is4.revolveassets.com/images/up/2020/Sep=
+tember/dl_ipad.png" style=3D"width: 120px">=0A                             =
+           <p style=3D"text-align: center;font-size:12px;">Use <strong>IPAD=
+15</strong><br> at Checkout</p>=0A                                        <=
+/a>=0A                                    </td> =0A                        =
+            <td valign=3D"top" style=3D"padding-right: 20px;">=0A          =
+                              <a data-crdl-variant=3D"" style=3D"color: bla=
+ck;text-decoration: none;" href=3D"https://e.p.revolve.com/c2/248:5fb6eb46d=
+31fb1055690ead7:rm202305280215:647209ead332ea811103c651:1/e3f8e769=3FjwtH=
+=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2ODUyNDAzMTcsImNk=
+IjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQ=
+3MmI5OGJlZTVkMWMxYjk2MGI3MmMyIiwibGlua1VybCI6Imh0dHBzOlwvXC9hcHAuYWRqdXN0Lm=
+NvbVwvNHRwdXVkYyJ9&jwtS=3DPOTvmIaHuKpfHMr_IM5x4WFPeALPbneddwF7EukvIS4">=0A =
+                                           <img src=3D"https://is4.revolvea=
+ssets.com/images/up/2020/September/dl_android.png" style=3D"width: 120px">=
+=0A                                            <p style=3D"text-align: cent=
+er;font-size:12px;">Use <strong>ANDROID15</strong><br> at Checkout</p>=0A  =
+                                      </a>=0A                              =
+      </td> =0A                                    =0A                     =
+           </tr>=0A                                =0A                     =
+       </table>=0A                        </td>=0A                    </tr>=
+=0A             =0A            =0A            </table>=0A            </td><=
+/tr><tr>=0A               <td>=0A                   <img width=3D"100%" src=
+=3D"http://is4.revolveassets.com/r/assets/email/main-ipad-discount-landing/=
+border.png">=0A               </td>=0A            </tr>=0A            =0A  =
+  </table>=0A<!-- DESKTOP VERSION ENDS -->    =0A    =0A    =0A<!-- MOBILE =
+VERSION -->    =0A    =0A    <table class=3D"show" width=3D"100%" border=3D=
+"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"font-family:Arial; color:b=
+lack;display:block;display:none;" align=3D"center">=0A    <tr>=0A        <t=
+d>=0A            <img width=3D"100%" src=3D"http://is4.revolveassets.com/r/=
+assets/email/main-ipad-discount-landing/border.png">=0A        </td>=0A    =
+</tr>=0A    <tr>=0A        <td align=3D"center">=0A            <div style=
+=3D"margin: 32px 0;">=0A                <img width=3D"80%" src=3D"https://i=
+s4.revolveassets.com/images/up/2022/November/062422_R_App_Download_Refresh_=
+footer.png">=0A            </div>=0A            =0A        </td>=0A    </tr=
+>=0A    <tr>=0A        <td align=3D"center">=0A            <h3 style=3D"let=
+ter-spacing: .8px;margin-bottom: 8px;margin-top:0;">GET REVOLVE ON THE GO!<=
+/h3>=0A            <p style=3D"margin-top:0;">Download our super cool IOS o=
+r<br> Android app and get</p>=0A            <h1 style=3D"font-size: 40px;ma=
+rgin:32px 0;">15% OFF</h1>=0A            <p>your first in-app purchase!</p>=
+=0A            <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpad=
+ding=3D"0" style=3D"font-family:Arial; color:black;display:block;" align=3D=
+"center">=0A                <tr>=0A                    <td width=3D"30%" co=
+lspan=3D"1">=0A                        <div style=3D"padding: 0 10px;">=0A =
+                           <a data-crdl-variant=3D"" style=3D"color: black;=
+text-decoration: none;" href=3D"https://e.p.revolve.com/c2/248:5fb6eb46d31f=
+b1055690ead7:rm202305280215:647209ead332ea811103c651:1/ec395b9a=3FjwtH=3Dey=
+J0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2ODUyNDAzMTcsImNkIjoiL=
+nAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQ3MmI5=
+OGJlZTVkMWMxYjk2MGI3MmMwIiwibGlua1VybCI6Imh0dHBzOlwvXC9hcHAuYWRqdXN0LmNvbVw=
+vbHRpeGg4NyJ9&jwtS=3DZ9NExT2vC4OCfQOhvh5Dhapqji85dyuBW4eKp017wcI">=0A      =
+                      <img src=3D"https://is4.revolveassets.com/images/up/2=
+020/September/dl_iphone.png" style=3D"max-width: 140px">=0A                =
+            <p style=3D"text-align: center;font-size:10px;margin-top:0;">Us=
+e <strong>IPHONE15</strong> at Checkout</p>=0A                        </a><=
+/div>=0A                            =0A                    </td>    =0A    =
+                <td width=3D"30%" colspan=3D"1">=0A                        =
+<div style=3D"padding: 0 10px;">=0A                            <a data-crdl=
+-variant=3D"" style=3D"color: black;text-decoration: none;" href=3D"https:/=
+/e.p.revolve.com/c2/248:5fb6eb46d31fb1055690ead7:rm202305280215:647209ead33=
+2ea811103c651:1/1b5eec46=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=
+=3DeyJpYXQiOjE2ODUyNDAzMTcsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRr=
+IjoicmV2b2x2ZSIsIm10bElEIjoiNjQ3MmI5OGJlZTVkMWMxYjk2MGI3MmMxIiwibGlua1VybCI=
+6Imh0dHBzOlwvXC9hcHAuYWRqdXN0LmNvbVwvNzFjd3ZsbiJ9&jwtS=3D_w_f3WV9h9N9fABT47=
+3SIRfc4eNFa2MypZ7LcjPx8pc">=0A                            <img src=3D"https=
+://is4.revolveassets.com/images/up/2020/September/dl_ipad.png" style=3D"max=
+-width: 140px">=0A                            <p style=3D"text-align: cente=
+r;font-size:10px;margin-top:0;">Use <strong>IPAD15</strong> at Checkout</p>=
+=0A                        </a></div>=0A                    </td> =0A      =
+              =0A                </tr>=0A                <tr>=0A           =
+        <td align=3D"center" colspan=3D"2">=0A                        <div =
+style=3D"width:45%;">=0A                            <a data-crdl-variant=3D=
+"" style=3D"color: black;text-decoration: none;" href=3D"https://e.p.revolv=
+e.com/c2/248:5fb6eb46d31fb1055690ead7:rm202305280215:647209ead332ea811103c6=
+51:1/e3f8e769=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQi=
+OjE2ODUyNDAzMTcsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x=
+2ZSIsIm10bElEIjoiNjQ3MmI5OGJlZTVkMWMxYjk2MGI3MmMyIiwibGlua1VybCI6Imh0dHBzOl=
+wvXC9hcHAuYWRqdXN0LmNvbVwvNHRwdXVkYyJ9&jwtS=3DPOTvmIaHuKpfHMr_IM5x4WFPeALPb=
+neddwF7EukvIS4">=0A                                <img src=3D"https://is4.=
+revolveassets.com/images/up/2020/September/dl_android.png" style=3D"max-wid=
+th: 140px">=0A                                <p style=3D"text-align: cente=
+r;font-size:10px;margin-top:0;">Use <strong>ANDROID15</strong> at Checkout<=
+/p>=0A                            </a>=0A                        </div>=0A =
+                      =0A                    </td>  =0A                </tr=
+>=0A                <tr>=0A                    <td colspan=3D"2" align=3D"c=
+enter">=0A                        <p style=3D"font-style:italic;font-size:1=
+0px;margin: 32px 0;">restricions may apply</p>=0A                    </td>=
+=0A                </tr>=0A            </table>=0A        </td>=0A    </tr>=
+=0A    <tr>=0A        <td>=0A            <img style=3D"margin-bottom:-5px;"=
+ width=3D"100%" src=3D"http://is4.revolveassets.com/r/assets/email/main-ipa=
+d-discount-landing/border.png">=0A        </td>=0A    </tr>=0A</table>=0A=
+=0A<!-- MOBILE VERSION ENDS -->=0A=0A =0A=0A=0A=0A =0A =0A=0A =0A=0A=0A    =
+   =0A               =0A    =0A                         <custom type=3D"con=
+tent" name=3D"Content">=0A                            =0A                  =
+          <!-- MAIN LAYOUT -->=0A                            <table class=
+=3D"responsive nomob" width=3D"750" height=3D"250" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"margin:0 auto;background-image:url('https=
+://d1ok0qgebci2d3.cloudfront.net/248/750x250/080618_ntfcoupon_bg_2.jpg');ba=
+ckground-repeat:no-repeat;background-size:contain;">=0A                    =
+            <tr>=0A                                    <td colspan=3D"3" st=
+yle=3D"color:#000000;font-family:Helvetica, Arial, sans-serif;font-size:20p=
+x;text-align: center;letter-spacing:.7px;padding-top:45px;height:15px;">=0A=
+                                        Don't forget to use your <span styl=
+e=3D"color:#000000;font-family:Helvetica, Arial, sans-serif;font-size:24px;=
+font-weight:bold;text-align: center;letter-spacing:.7px;padding-top:45px;he=
+ight:15px;"><i>10% OFF</i></span><br>coupon before it's too late!=0A       =
+                             </td>=0A                                </tr>=
+=0A                                <tr>=0A                                 =
+   <td colspan=3D"3">=0A                                        <table clas=
+s=3D"responsive" width=3D"750" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"margin:0 auto;">=0A                                        =
+    <tr>=0A                                                <td style=3D"col=
+or:#000000;font-family:Helvetica, Arial, sans-serif;font-size:20px;text-ali=
+gn: center;letter-spacing:.7px;padding-top:10px;">Shop Now and use code at =
+checkout:</td>=0A                                            </tr>=0A      =
+                                      <tr>=0A                              =
+                  <td style=3D"text-align:center;padding: 10px 0;" width=3D=
+"47.6%">=0A                                                    <div><!--[if=
+ mso]>=0A                                                        <v:rect xm=
+lns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-co=
+m:office:word" href=3D"http://" style=3D"height:60px;v-text-anchor:middle;w=
+idth:357px;" stroke=3D"f" fillcolor=3D"#000000">=0A                        =
+                                    <w:anchorlock/>=0A                     =
+                                       <center>=0A                         =
+                               <![endif]-->=0A                             =
+                            <a https: data-crdl-variant=3D"" conversion=3D"=
+true" style=3D"color:#000000;display:inline-block;border-style:solid;border=
+-width: 2px;font-family:Helvetica, Arial, sans-serif;font-size:20px;font-we=
+ight:bold;text-align:center;text-decoration:none;-webkit-text-size-adjust:n=
+one;letter-spacing:0.7px;padding:5px 30px;" href=3D"https://e.p.revolve.com=
+/c2/248:5fb6eb46d31fb1055690ead7:rm202305280215:647209ead332ea811103c651:1/=
+a6c44e65=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2O=
+DUyNDAzMTcsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIs=
+Im10bElEIjoiNjQ3MmI5OGNlZTVkMWMxYjk2MGI3MmQ1IiwibGlua1VybCI6Imh0dHBzOlwvXC9=
+3d3cucmV2b2x2ZS5jb21cL25ld1wvYWxsLW5ldy1pdGVtc1wvYnJcLzdmNTk0NlwvP3V0bV9tZW=
+RpdW09ZW1haWwmdXRtX3NvdXJjZT10cmlnZ2VyJnV0bV9jYW1wYWlnbj1UUklHX1JFVl9BUFBET=
+1dOTE9BRF9BUFBET1dOTE9BRF8yMDIzMDUyOCZ1dG1fY29udGVudD1UUklHX1JFVl9BUFBET1dO=
+TE9BRF9BUFBET1dOTE9BRCZ1c2VySUQ9JmNJRD02NDcyMDllYWQzMzJlYTgxMTEwM2M2NTEifQ&=
+jwtS=3Dnq7YMD9el4sZyAAEtzVBvaq_BHRyU4xX-7ZcjOXMyps">NTF0523Z1K76AKM0</a>=0A=
+                                                        <!--[if mso]>=0A   =
+                                                     </center>=0A          =
+                                              </v:rect>=0A                 =
+                                       <![endif]-->=0A                     =
+                                    <tr>=0A                                =
+                <td style=3D"color:#000000;font-family:Helvetica, Arial, sa=
+ns-serif;font-size:12px;text-align: center;letter-spacing:.7px;padding-top:=
+0px;">*Click the code above to activate*</td>=0A                           =
+                 </tr>=0A                                                  =
+      </div>=0A                                                </td>=0A    =
+                                        </tr>=0A                           =
+             </table>=0A                                    </td>=0A       =
+                         </tr>=0A                            </table>=0A   =
+        <!-- MAIN LAYOUT END -->=0A<!--mobile layout-->=0A<table class=3D"r=
+esponsive show" width=3D"750" height=3D"463" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" style=3D"display:none;margin:0 auto;background-image:url=
+('https://d1ok0qgebci2d3.cloudfront.net/248/310x283/080618_ntfcoupon_bg_2_m=
+obile.jpg');background-repeat:no-repeat;background-size:100%;">=0A         =
+                       <thead>=0A                                    <tr><t=
+d width=3D"750"></td></tr>=0A                                </thead>=0A   =
+                             <tbody>=0A                                    =
+<tr>=0A                                        <td colspan=3D"3" style=3D"c=
+olor:#000000;font-family:Helvetica, Arial, sans-serif;font-size:14px;text-a=
+lign: center;letter-spacing:.7px;padding-top:40px;padding-bottom:20px;heigh=
+t:15px;">=0A                                        Don't forget to use you=
+r <span style=3D"color:#000000;font-family:Helvetica, Arial, sans-serif;fon=
+t-size:24px;font-weight:bold;text-align: center;letter-spacing:.7px;padding=
+-top:45px;height:15px;"><i>10% OFF</i></span><br>coupon before it's too lat=
+e!=0A                                    </td>=0A                          =
+      </tr>=0A                                <tr>=0A                      =
+              <td colspan=3D"3">=0A                                        =
+<table class=3D"responsive" width=3D"750" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" style=3D"margin:0 auto;">=0A                               =
+             <tr>=0A                                                <td sty=
+le=3D"color:#000000;font-family:Helvetica, Arial, sans-serif;font-size:14px=
+;text-align: center;letter-spacing:.7px;padding-top:0px;">Shop Now and use =
+code at checkout:</td>=0A                                            </tr>=
+=0A                                            <tr>=0A                     =
+                           <td style=3D"text-align:center;padding: 10px 0;"=
+ width=3D"47.6%">=0A                                                    <di=
+v><!--[if mso]>=0A                                                        <=
+v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-mic=
+rosoft-com:office:word" href=3D"http://" style=3D"height:60px;v-text-anchor=
+:middle;width:357px;" stroke=3D"f" fillcolor=3D"#000000">=0A               =
+                                             <w:anchorlock/>=0A            =
+                                                <center>=0A                =
+                                        <![endif]-->=0A                    =
+                                     <a https: data-crdl-variant=3D"" conve=
+rsion=3D"true" style=3D"color:#000000;display:inline-block;border-style:sol=
+id;border-width: 2px;font-family:Helvetica, Arial, sans-serif;font-size:14p=
+x;font-weight:bold;text-align:center;text-decoration:none;-webkit-text-size=
+-adjust:none;letter-spacing:0.7px;padding:5px 30px;" href=3D"https://e.p.re=
+volve.com/c2/248:5fb6eb46d31fb1055690ead7:rm202305280215:647209ead332ea8111=
+03c651:1/a6c44e65=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJp=
+YXQiOjE2ODUyNDAzMTcsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV=
+2b2x2ZSIsIm10bElEIjoiNjQ3MmI5OGNlZTVkMWMxYjk2MGI3MmQ1IiwibGlua1VybCI6Imh0dH=
+BzOlwvXC93d3cucmV2b2x2ZS5jb21cL25ld1wvYWxsLW5ldy1pdGVtc1wvYnJcLzdmNTk0NlwvP=
+3V0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT10cmlnZ2VyJnV0bV9jYW1wYWlnbj1UUklHX1JF=
+Vl9BUFBET1dOTE9BRF9BUFBET1dOTE9BRF8yMDIzMDUyOCZ1dG1fY29udGVudD1UUklHX1JFVl9=
+BUFBET1dOTE9BRF9BUFBET1dOTE9BRCZ1c2VySUQ9JmNJRD02NDcyMDllYWQzMzJlYTgxMTEwM2=
+M2NTEifQ&jwtS=3Dnq7YMD9el4sZyAAEtzVBvaq_BHRyU4xX-7ZcjOXMyps">NTF0523Z1K76AK=
+M0</a>=0A                                                        <!--[if ms=
+o]>=0A                                                        </center>=0A =
+                                                       </v:rect>=0A        =
+                                                <![endif]-->=0A            =
+                                             <tr>=0A                       =
+                         <td style=3D"color:#000000;font-family:Helvetica, =
+Arial, sans-serif;font-size:10px;text-align: center;letter-spacing:.7px;pad=
+ding-top:0px;padding-bottom:40px;">*Click the code above to activate*</td>=
+=0A                                            </tr>=0A                    =
+                                    </div>=0A                              =
+                  </td>=0A                                            </tr>=
+=0A                                        </table>=0A                     =
+               </td>=0A                                </tr>=0A            =
+                </tbody></table>=0A<!--mobile layout end-->=0A =0A=0A=0A<!-=
+- if the user is in the supplement, use supplement data -->=0A=0A <!-- laps=
+ed coupon code end-->=0A=0A  =0A   =0A   =0A   =0A   =0A   =0A  =0A  =0A   =
+=0A   =0A   =0A  =0A   =0A   =0A   =0A   =0A   =0A  =0A  =0A   =0A   =0A =
+=0A                   =0A                =0A                               =
+ =0A                =0A                  =0A<!-- timer starts-->=0A        =
+  =0A=0A=0A=0A  <!--intl promo banner starts here-->=0A=0A <!--intl promo b=
+anner ends here-->  =0A=0A =0A=0A   <br>=0A=0A<table width=3D"750" class=3D=
+"responsive" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"cent=
+er" sett-table-pad-top=3D"" sett-table-background-color=3D"">=0A  <tbody>=
+=0A    <tr valign=3D"top">=0A      <td valign=3D"top" style=3D"padding-top:=
+0px;" class=3D"small-1" sett-col-pad-top=3D"">=0A      <eg-edit type=3D"lin=
+k-image"><a http: data-crdl-variant=3D"" conversion=3D"true" style=3D"displ=
+ay:block;border-left:0px solid transparent;border-right:0px solid transpare=
+nt" sett-col-pad-lr=3D"" href=3D"http://e.p.revolve.com/c2/248:5fb6eb46d31f=
+b1055690ead7:rm202305280215:647209ead332ea811103c651:1/da7ed423=3FjwtH=3Dey=
+J0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2ODUyNDAzMTcsImNkIjoiL=
+nAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQ3MmI5=
+OGNlZTVkMWMxYjk2MGI3MmMzIiwibGlua1VybCI6Imh0dHA6XC9cL3d3dy5yZXZvbHZlLmNvbVw=
+vbmV3XC9hbGwtbmV3LWl0ZW1zXC9iclwvN2Y1OTQ2XC8_dXRtX21lZGl1bT1lbWFpbCZ1dG1fc2=
+91cmNlPXRyaWdnZXImdXRtX2NhbXBhaWduPVRSSUdfUkVWX0FQUERPV05MT0FEX0FQUERPV05MT=
+0FEXzIwMjMwNTI4JnV0bV9jb250ZW50PVRSSUdfUkVWX0FQUERPV05MT0FEX0FQUERPV05MT0FE=
+JnVzZXJJRD0mY0lEPTY0NzIwOWVhZDMzMmVhODExMTAzYzY1MSJ9&jwtS=3DOIG7c-uuCNLn7_j=
+Dp6lq2gPBa36IAEr3l1EMjMhG020"><img src=3D"https://is4.revolveassets.com/ima=
+ges/up/2018/December/freeshipping_revolve_intl.jpg" width=3D"750" style=3D"=
+display:block;margin:0 auto;" class=3D"responsive" alt=3D"We provide FREE 2=
+-DAY SHIPPING &amp; RETURNS within the US + FREE EXPRESS SHIPPING on Intern=
+ational orders"></a></eg-edit>=0A      </td>=0A    </tr>=0A  </tbody>=0A</t=
+able>=0A=0A=0A<br>=0A=0A<br>      =0A=0A=0A </custom></custom></td>=0A </tr=
+>=0A </table>=0A <!-- END CONTENT -->=0A <!-- BEGIN FOOTER -->=0A <!-- Mobi=
+le Content -->=0A <!--[if !mso 9]><!-->=0A <div class=3D"show" style=3D"fon=
+t-size: 0; max-height: 0; overflow: hidden; display: none;">=0A   <table wi=
+dth=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"cent=
+er" style=3D"text-align:center;padding:0 0 0 0;font-size:12px;">=0A     <tr=
+ valign=3D"top">=0A       <td style=3D"border-top:1px solid #F1F1F1;border-=
+bottom:1px solid #F1F1F1;">=0A         <table width=3D"100%" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0" style=3D"font-size:14px;">=0A           =
+<tr>=0A             <td>=0A               <a http: data-crdl-variant=3D"" s=
+tyle=3D"font-family: Arial, sans-serif;font-size: 14px;text-transform: uppe=
+rcase;text-decoration:none;padding:18px;display:block;font-weight:bold;" co=
+nversion=3D"true" target=3D"_blank" href=3D"http://e.p.revolve.com/c2/248:5=
+fb6eb46d31fb1055690ead7:rm202305280215:647209ead332ea811103c651:1/42b0af3a=
+=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2ODUyNDAzM=
+TcsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElE=
+IjoiNjQ3MmI5OGJlZTVkMWMxYjk2MGI3MmJhIiwibGlua1VybCI6Imh0dHA6XC9cL3d3dy5yZXZ=
+vbHZlLmNvbVwvbmV3XC9hbGwtbmV3LWl0ZW1zXC9iclwvN2Y1OTQ2P3V0bV9tZWRpdW09ZW1haW=
+wmdXRtX3NvdXJjZT10cmlnZ2VyJnV0bV9jYW1wYWlnbj1UUklHX1JFVl9BUFBET1dOTE9BRF9BU=
+FBET1dOTE9BRF8yMDIzMDUyOCZ1dG1fY29udGVudD1UUklHX1JFVl9BUFBET1dOTE9BRF9BUFBE=
+T1dOTE9BRCZ1c2VySUQ9JmNJRD02NDcyMDllYWQzMzJlYTgxMTEwM2M2NTEifQ&jwtS=3Dkze70=
+Eh1IRVntRybjUicu1Z5L6AE2oQy7n9VT9ljwWQ">New</a>=0A             </td>=0A    =
+       </tr>=0A         </table>=0A       </td>=0A     </tr>=0A     <tr val=
+ign=3D"top">=0A       <td style=3D"border-bottom:1px solid #F1F1F1;">=0A   =
+      <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0=
+" style=3D"font-size:14px;">=0A           <tr>=0A             <td>=0A      =
+         <a http: data-crdl-variant=3D"" style=3D"font-family: Arial, sans-=
+serif;font-size: 14px;text-transform: uppercase;text-decoration:none;paddin=
+g:18px;display:block;font-weight:bold;" conversion=3D"true" target=3D"_blan=
+k" href=3D"http://e.p.revolve.com/c2/248:5fb6eb46d31fb1055690ead7:rm2023052=
+80215:647209ead332ea811103c651:1/3b5d8b27=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGci=
+OiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2ODUyNDAzMTcsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJ=
+jZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQ3MmI5OGJlZTVkMWMxYjk2MGI3Mm=
+JiIiwibGlua1VybCI6Imh0dHA6XC9cL3d3dy5yZXZvbHZlLmNvbVwvZHJlc3Nlc1wvYnJcL2E4Z=
+Tk4MT91dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9dHJpZ2dlciZ1dG1fY2FtcGFpZ249VFJJ=
+R19SRVZfQVBQRE9XTkxPQURfQVBQRE9XTkxPQURfMjAyMzA1MjgmdXRtX2NvbnRlbnQ9VFJJR19=
+SRVZfQVBQRE9XTkxPQURfQVBQRE9XTkxPQUQmdXNlcklEPSZjSUQ9NjQ3MjA5ZWFkMzMyZWE4MT=
+ExMDNjNjUxIn0&jwtS=3Dv3PDwYZeNQ3T79JDlTwWWjmN45aIjA3ARo6GnXm1-Og">Dresses</=
+a>=0A             </td>=0A           </tr>=0A         </table>=0A       </t=
+d>=0A     </tr>=0A     <tr valign=3D"top">=0A       <td style=3D"border-bot=
+tom:1px solid #F1F1F1;">=0A         <table width=3D"100%" border=3D"0" cell=
+spacing=3D"0" cellpadding=3D"0" style=3D"font-size:14px;">=0A           <tr=
+>=0A             <td>=0A               <a http: data-crdl-variant=3D"" styl=
+e=3D"font-family: Arial, sans-serif;font-size: 14px;text-transform: upperca=
+se;text-decoration:none;padding:18px;display:block;font-weight:bold;" conve=
+rsion=3D"true" target=3D"_blank" href=3D"http://e.p.revolve.com/c2/248:5fb6=
+eb46d31fb1055690ead7:rm202305280215:647209ead332ea811103c651:1/14500c65=3Fj=
+wtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2ODUyNDAzMTcsI=
+mNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoi=
+NjQ3MmI5OGJlZTVkMWMxYjk2MGI3MmJjIiwibGlua1VybCI6Imh0dHA6XC9cL3d3dy5yZXZvbHZ=
+lLmNvbVwvYmVzdFNlbGxlclwvYWxsLWJlc3Qtc2VsbGVyc1wvYnJcLzIwMjJkND91dG1fbWVkaX=
+VtPWVtYWlsJnV0bV9zb3VyY2U9dHJpZ2dlciZ1dG1fY2FtcGFpZ249VFJJR19SRVZfQVBQRE9XT=
+kxPQURfQVBQRE9XTkxPQURfMjAyMzA1MjgmdXRtX2NvbnRlbnQ9VFJJR19SRVZfQVBQRE9XTkxP=
+QURfQVBQRE9XTkxPQUQmdXNlcklEPSZjSUQ9NjQ3MjA5ZWFkMzMyZWE4MTExMDNjNjUxIn0&jwt=
+S=3DMh26RHe3RKQMlpNualHHDF_FubUh7NB7gKjZ74oVkGI">Best=0A                 Se=
+llers</a>=0A             </td>=0A           </tr>=0A         </table>=0A   =
+    </td>=0A     </tr>=0A     <tr valign=3D"top">=0A       <td style=3D"bor=
+der-bottom:1px solid #F1F1F1;">=0A         <table width=3D"100%" border=3D"=
+0" cellspacing=3D"0" cellpadding=3D"0" style=3D"font-size:14px;">=0A       =
+    <tr>=0A             <td>=0A               <a http: data-crdl-variant=3D=
+"" style=3D"font-family: Arial, sans-serif;font-size: 14px;text-transform: =
+uppercase;text-decoration:none;padding:18px;display:block;font-weight:bold;=
+" conversion=3D"true" target=3D"_blank" href=3D"http://e.p.revolve.com/c2/2=
+48:5fb6eb46d31fb1055690ead7:rm202305280215:647209ead332ea811103c651:1/d753f=
+c1a=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2ODUyND=
+AzMTcsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10b=
+ElEIjoiNjQ3MmI5OGJlZTVkMWMxYjk2MGI3MmJkIiwibGlua1VybCI6Imh0dHA6XC9cL3d3dy5y=
+ZXZvbHZlLmNvbVwvc2FsZVwvYWxsLXNhbGUtaXRlbXNcL2JyXC81NGNjN2I_dXRtX21lZGl1bT1=
+lbWFpbCZ1dG1fc291cmNlPXRyaWdnZXImdXRtX2NhbXBhaWduPVRSSUdfUkVWX0FQUERPV05MT0=
+FEX0FQUERPV05MT0FEXzIwMjMwNTI4JnV0bV9jb250ZW50PVRSSUdfUkVWX0FQUERPV05MT0FEX=
+0FQUERPV05MT0FEJnVzZXJJRD0mY0lEPTY0NzIwOWVhZDMzMmVhODExMTAzYzY1MSJ9&jwtS=3D=
+jTpd_mZsSs7ngDtVTh9gDHBwXk2HyjICXBZH37KLQQs">Sale</a>=0A             </td>=
+=0A           </tr>=0A         </table>=0A       </td>=0A     </tr>=0A     =
+<tr valign=3D"top">=0A       <td style=3D"border-bottom:1px solid #F1F1F1;"=
+>=0A         <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" style=3D"font-size:14px;">=0A           <tr>=0A             <td>=
+=0A               <a https: data-crdl-variant=3D"" style=3D"font-family: Ar=
+ial, sans-serif;font-size: 14px;text-transform: uppercase;text-decoration:n=
+one;padding:18px;display:block;font-weight:bold;" conversion=3D"true" targe=
+t=3D"_blank" href=3D"https://e.p.revolve.com/c2/248:5fb6eb46d31fb1055690ead=
+7:rm202305280215:647209ead332ea811103c651:1/89fc1972=3FjwtH=3DeyJ0eXAiOiJKV=
+1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2ODUyNDAzMTcsImNkIjoiLnAucmV2b2x2=
+ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQ3MmI5OGJlZTVkMWM=
+xYjk2MGI3MmJlIiwibGlua1VybCI6Imh0dHBzOlwvXC93d3cucmV2b2x2ZS5jb21cL3JcL015Rm=
+F2b3JpdGUuanNwP29wZW49U2hhcmVGYXZzJnV0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT10c=
+mlnZ2VyJnV0bV9jYW1wYWlnbj1UUklHX1JFVl9BUFBET1dOTE9BRF9BUFBET1dOTE9BRF8yMDIz=
+MDUyOCZ1dG1fY29udGVudD1UUklHX1JFVl9BUFBET1dOTE9BRF9BUFBET1dOTE9BRCZ1c2VySUQ=
+9JmNJRD02NDcyMDllYWQzMzJlYTgxMTEwM2M2NTEifQ&jwtS=3DlxBIgWIzoHkwwDmAm3TOWXmW=
+TI5k6fPD5S7C4xYxMCY">My=0A                 Favorites</a>=0A             </t=
+d>=0A           </tr>=0A         </table>=0A       </td>=0A     </tr>=0A   =
+  <tr valign=3D"top">=0A       <td style=3D"border-bottom:1px solid #F1F1F1=
+;">=0A         <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpad=
+ding=3D"0" style=3D"font-size:14px;">=0A           <tr>=0A             <td>=
+=0A               <a https: data-crdl-variant=3D"" style=3D"font-family: Ar=
+ial, sans-serif;font-size: 14px;text-transform: uppercase;text-decoration:n=
+one;padding:18px;display:block;font-weight:bold;" conversion=3D"true" targe=
+t=3D"_blank" href=3D"https://e.p.revolve.com/c2/248:5fb6eb46d31fb1055690ead=
+7:rm202305280215:647209ead332ea811103c651:1/f247eec0=3FjwtH=3DeyJ0eXAiOiJKV=
+1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2ODUyNDAzMTcsImNkIjoiLnAucmV2b2x2=
+ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQ3MmI5OGJlZTVkMWM=
+xYjk2MGI3MmJmIiwibGlua1VybCI6Imh0dHBzOlwvXC93d3cucmV2b2x2ZS5jb21cL2NvbnRlbn=
+RcL2xwXC9iZWF1dHlcLz9uYXZzcmM9bWFpbiZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9d=
+HJpZ2dlciZ1dG1fY2FtcGFpZ249VFJJR19SRVZfQVBQRE9XTkxPQURfQVBQRE9XTkxPQURfMjAy=
+MzA1MjgmdXRtX2NvbnRlbnQ9VFJJR19SRVZfQVBQRE9XTkxPQURfQVBQRE9XTkxPQUQmdXNlckl=
+EPSZjSUQ9NjQ3MjA5ZWFkMzMyZWE4MTExMDNjNjUxIn0&jwtS=3D-n3Hyn-yR2hnnqWNAzKL-B9=
+MzKlrN_KqHy9bzFk9fDw">Beauty</a>=0A             </td>=0A           </tr>=0A=
+         </table>=0A       </td>=0A     </tr>=0A   </table>=0A </div>=0A <!=
+--<![endif]-->=0A <table width=3D"750" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"padding:10px;margin: 0 auto;" class=3D"responsive" al=
+ign=3D"center">=0A   <tr>=0A     <td valign=3D"top">=0A       <table width=
+=3D"730" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"margin: =
+0 auto;border: 5px solid black;" class=3D"responsive preferences_banner__bo=
+rder" align=3D"center">=0A         <tr>=0A           <td style=3D"padding: =
+10px;" class=3D"preferences_banner__td-container">=0A             <table wi=
+dth=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"marg=
+in: 0 auto;letter-spacing:.05em" class=3D"responsive" align=3D"center">=0A =
+              <tr>=0A                 <td valign=3D"middle" class=3D"small-=
+1" align=3D"center" width=3D"350">=0A                   <a https: data-crdl=
+-variant=3D"" style=3D"font:16px Arial, sans-serif; text-decoration:none;co=
+lor:#000001" class=3D"mob_font_size_12" target=3D"_blank" href=3D"https://e=
+=2Ep.revolve.com/c2/248:5fb6eb46d31fb1055690ead7:rm202305280215:647209ead33=
+2ea811103c651:1/5491576e=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=
+=3DeyJpYXQiOjE2ODUyNDAzMTcsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRr=
+IjoicmV2b2x2ZSIsIm10bElEIjoiNjQ3MmI5OGNlZTVkMWMxYjk2MGI3MmM0IiwibGlua1VybCI=
+6Imh0dHBzOlwvXC93d3cucmV2b2x2ZS5jb21cL3JcL015RW1haWxTZXR0aW5ncy5qc3A_dXRtX2=
+1lZGl1bT1lbWFpbCZ1dG1fc291cmNlPXRyaWdnZXImdXRtX2NhbXBhaWduPVRSSUdfUkVWX0FQU=
+ERPV05MT0FEX0FQUERPV05MT0FEXzIwMjMwNTI4JnV0bV9jb250ZW50PVRSSUdfUkVWX0FQUERP=
+V05MT0FEX0FQUERPV05MT0FEJnVzZXJJRD0mY0lEPTY0NzIwOWVhZDMzMmVhODExMTAzYzY1MSJ=
+9&jwtS=3D3kc8x6abAXc_wGEl3n7UpmRAri3TyYra-10wleV0EbE">Tell us what you want=
+!</a><br><a https: data-crdl-variant=3D"" style=3D"font:bold 14px Arial, sa=
+ns-serif;text-decoration:none;color:#000001" class=3D"mob_font_size_12" tar=
+get=3D"_blank" href=3D"https://e.p.revolve.com/c2/248:5fb6eb46d31fb1055690e=
+ad7:rm202305280215:647209ead332ea811103c651:1/5491576e=3FjwtH=3DeyJ0eXAiOiJ=
+KV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2ODUyNDAzMTcsImNkIjoiLnAucmV2b2=
+x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQ3MmI5OGNlZTVkM=
+WMxYjk2MGI3MmM0IiwibGlua1VybCI6Imh0dHBzOlwvXC93d3cucmV2b2x2ZS5jb21cL3JcL015=
+RW1haWxTZXR0aW5ncy5qc3A_dXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPXRyaWdnZXImdXR=
+tX2NhbXBhaWduPVRSSUdfUkVWX0FQUERPV05MT0FEX0FQUERPV05MT0FEXzIwMjMwNTI4JnV0bV=
+9jb250ZW50PVRSSUdfUkVWX0FQUERPV05MT0FEX0FQUERPV05MT0FEJnVzZXJJRD0mY0lEPTY0N=
+zIwOWVhZDMzMmVhODExMTAzYzY1MSJ9&jwtS=3D3kc8x6abAXc_wGEl3n7UpmRAri3TyYra-10w=
+leV0EbE">UPDATE YOUR PREFERENCES</a>=0A                 </td>=0A           =
+      <td valign=3D"middle" class=3D"small-1 preferences_banner__stick-cont=
+ainer" align=3D"center">=0A                   <div style=3D"border-left:1px=
+ solid #000000; height: 57px;" class=3D"nomob"></div>=0A                   =
+<div style=3D"width: 60%;border-top: 1px solid #000000;margin:0 auto;displa=
+y:none;" class=3D"show"></div>=0A                   <!--<img src=3D"http://=
+is4.revolveassets.com/images/emailpics/rev_pixel.jpg" width=3D"1" height=3D=
+"57" class=3D"preferences_banner__stick" style=3D"display:block;">-->=0A   =
+              </td>=0A                 <td valign=3D"middle" class=3D"small=
+-1" align=3D"center" width=3D"350">=0A                   <a href=3D"mailto:=
+emailteam@revolve.com=3Fsubject=3DSuggestions%20regarding%20the%20content%2=
+0of%20this%20email=3F&body=3D%5BINSERT%20YOUR%20COMMENTS%20HERE%5D%20For%20=
+order%20related%20inquiries%20and%20unsubscribe%20requests,%20please%20emai=
+l%20sales@revolve.com." data-crdl-notrack=3D"true" data-crdl-tags=3D"202305=
+28, didyoulikethisemail" data-crdl-key=3D"Didyoulikethisemail_CTA" conversi=
+on=3D"true" style=3D"font:16px Arial, sans-serif; text-decoration:none;colo=
+r:#000001" class=3D"mob_font_size_12" target=3D"_blank">Have email content =
+suggestions=3F</a><br><a href=3D"mailto:emailteam@revolve.com=3Fsubject=3DS=
+uggestions%20regarding%20the%20content%20of%20this%20email=3F&body=3D%5BINS=
+ERT%20YOUR%20COMMENTS%20HERE%5D%20For%20order%20related%20inquiries%20and%2=
+0unsubscribe%20requests,%20please%20email%20sales@revolve.com." data-crdl-n=
+otrack=3D"true" ddata-crdl-tags=3D"20230528, didyoulikethisemail" data-crdl=
+-key=3D"Didyoulikethisemail_CTA" conversion=3D"true" style=3D"font:bold 14p=
+x Arial, sans-serif;text-decoration:none;color:#000001" class=3D"mob_font_s=
+ize_12" target=3D"_blank">CLICK HERE TO LET US KNOW</a>=0A                 =
+</td>=0A               </tr>=0A             </table>=0A           </td>=0A =
+        </tr>=0A       </table>=0A     </td>=0A   </tr>=0A </table>=0A=0A <=
+table width=3D"750" bgcolor=3D"#000001" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" style=3D"margin: 0 auto;background-color:#000001;padding-bott=
+om:20px;padding-top:20px;" class=3D"footer_container responsive" align=3D"c=
+enter">=0A   <tr>=0A     <td>=0A       <table width=3D"710" border=3D"0" ce=
+llspacing=3D"0" cellpadding=3D"0" class=3D"responsive footer_element" align=
+=3D"center" style=3D"font-family: arial;font-size:10px;margin:0 auto;">=0A =
+        <tr valign=3D"top">=0A           <td valign=3D"top" class=3D"small-=
+1" style=3D"vertical-align:middle;color:#949494;text-align:center;padding: =
+0 0 16px 0">*Free Shipping offer only=0A             applies to US orders a=
+nd international orders over $100. Other restrictions may apply. <a http: d=
+ata-crdl-variant=3D"" target=3D"_blank" conversion=3D"true" style=3D"color:=
+#949494;" href=3D"http://e.p.revolve.com/c2/248:5fb6eb46d31fb1055690ead7:rm=
+202305280215:647209ead332ea811103c651:1/a3f8b155=3FjwtH=3DeyJ0eXAiOiJKV1QiL=
+CJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2ODUyNDAzMTcsImNkIjoiLnAucmV2b2x2ZS5j=
+b20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQ3MmI5OGNlZTVkMWMxYjk=
+2MGI3MmM1IiwibGlua1VybCI6Imh0dHA6XC9cL3d3dy5yZXZvbHZlLmNvbVwvc2hpcHBpbmdkZW=
+xpdmVyeT91dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9dHJpZ2dlciZ1dG1fY2FtcGFpZ249V=
+FJJR19SRVZfQVBQRE9XTkxPQURfQVBQRE9XTkxPQURfMjAyMzA1MjgmdXRtX2NvbnRlbnQ9VFJJ=
+R19SRVZfQVBQRE9XTkxPQURfQVBQRE9XTkxPQUQmdXNlcklEPSZjSUQ9NjQ3MjA5ZWFkMzMyZWE=
+4MTExMDNjNjUxIn0&jwtS=3DHTwgYPNYTzom6eqksnzbxFyHLyUGbXiTDGCxvnTeWag">More i=
+nformation</a>=0A           </td>=0A         </tr>=0A         =0A<!--MENA s=
+ocial footer start-->}=0A=0A =0A         <tr valign=3D"top">=0A           <=
+td valign=3D"top" class=3D"small-1" style=3D"vertical-align:middle;">=0A   =
+          <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"=
+center" class=3D"footer_social" width=3D"150" style=3D"font-family: arial;f=
+ont-size:10px;margin:0 auto;padding-top: 0px;padding-bottom: 14px;">=0A  <t=
+r valign=3D"top">=0A    <td valign=3D"top" style=3D"padding-right:20px;vert=
+ical-align:middle;">=0A      <a data-crdl-variant=3D"" target=3D"_blank" hr=
+ef=3D"https://e.p.revolve.com/c2/248:5fb6eb46d31fb1055690ead7:rm20230528021=
+5:647209ead332ea811103c651:1/14830be6=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJI=
+UzI1NiJ9&jwtP=3DeyJpYXQiOjE2ODUyNDAzMTcsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI=
+6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQ3MmI5OGNlZTVkMWMxYjk2MGI3MmM2Ii=
+wibGlua1VybCI6Imh0dHBzOlwvXC93d3cudGlrdG9rLmNvbVwvQHJldm9sdmUifQ&jwtS=3DcS2=
+oLhgThWutrkxDj1MGvVg_OqUIleUVuGV1kWXiOP4"><img src=3D"https://is4.revolveas=
+sets.com/images/up/2023/March/REVMobile_email_social_tiktok.png" data-crdl-=
+tags=3D"social_tiktok" data-crdl-key=3D"footer_tiktok" width=3D"30" style=
+=3D"display:block;" class=3D"social_instagram">=0A      </a>=0A    </td>=0A=
+    <td valign=3D"top" style=3D"padding-right:20px;vertical-align:middle;">=
+=0A      <a data-crdl-variant=3D"" target=3D"_blank" href=3D"https://e.p.re=
+volve.com/c2/248:5fb6eb46d31fb1055690ead7:rm202305280215:647209ead332ea8111=
+03c651:1/c0e1bd00=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJp=
+YXQiOjE2ODUyNDAzMTcsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV=
+2b2x2ZSIsIm10bElEIjoiNjQ3MmI5OGNlZTVkMWMxYjk2MGI3MmM3IiwibGlua1VybCI6Imh0dH=
+BzOlwvXC93d3cueW91dHViZS5jb21cL1Jldm9sdmVDbG90aGluZyJ9&jwtS=3D4iYR4JOyIDD6R=
+dR4UXSf9qhPhfQmKx9TGC9QDFCvDmc"><img src=3D"https://is4.revolveassets.com/i=
+mages/up/2023/March/REVmobile_email_social_YT.png" data-crdl-tags=3D"social=
+_youtube" data-crdl-key=3D"footer_youtube" width=3D"30" style=3D"display:bl=
+ock;" class=3D"social_instagram">=0A      </a>=0A    </td>    =0A    <td va=
+lign=3D"top" style=3D"padding-right:20px;vertical-align:middle;">=0A      <=
+a data-crdl-variant=3D"" target=3D"_blank" href=3D"http://e.p.revolve.com/c=
+2/248:5fb6eb46d31fb1055690ead7:rm202305280215:647209ead332ea811103c651:1/11=
+fe7a59=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2ODU=
+yNDAzMTcsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm=
+10bElEIjoiNjQ3MmI5OGNlZTVkMWMxYjk2MGI3MmM4IiwibGlua1VybCI6Imh0dHA6XC9cL2luc=
+3RhZ3JhbS5jb21cL3Jldm9sdmVcLyJ9&jwtS=3DHgG9_FYfg_JaLGop9zp_AQwyOMZ1dkUvBUV4=
+GIAaw5M"><img src=3D"https://is4.revolveassets.com/images/up/2019/December/=
+REVmobile_email_social_ig.png" data-crdl-tags=3D"social_instagram" data-crd=
+l-key=3D"footer_Instagram" width=3D"30" style=3D"display:block;" class=3D"s=
+ocial_instagram">=0A      </a>=0A    </td>=0A    <td valign=3D"top" style=
+=3D"padding-right:20px;vertical-align:middle;">=0A      <a data-crdl-varian=
+t=3D"" conversion=3D"true" target=3D"_blank" href=3D"http://e.p.revolve.com=
+/c2/248:5fb6eb46d31fb1055690ead7:rm202305280215:647209ead332ea811103c651:1/=
+1975d81d=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2O=
+DUyNDAzMTcsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIs=
+Im10bElEIjoiNjQ3MmI5OGNlZTVkMWMxYjk2MGI3MmM5IiwibGlua1VybCI6Imh0dHA6XC9cL3d=
+3dy5mYWNlYm9vay5jb21cL1JFVk9MVkUifQ&jwtS=3DecVdiMeeRviFQCpjMlr0H0XXDltiEsT9=
+yhAEx3i_a58"><img src=3D"https://is4.revolveassets.com/images/up/2019/Decem=
+ber/REVmobile_email_social_fbook.png" width=3D"30" style=3D"display:block;"=
+ class=3D"social_facebook">=0A      </a>=0A    </td>=0A  </tr>=0A</table>  =
+         </td>=0A         </tr>=0A       </table>=0A       <table border=3D=
+"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center" class=3D"footer_el=
+ement footer_app_download_section" width=3D"322" style=3D"font-family: aria=
+l;font-size:10px;margin:0 auto;padding-bottom:4px;">=0A         <tr valign=
+=3D"top">=0A           <td valign=3D"top" align=3D"right" style=3D"padding-=
+right:10px;">=0A             <a data-crdl-variant=3D"" target=3D"_blank" hr=
+ef=3D"https://e.p.revolve.com/c2/248:5fb6eb46d31fb1055690ead7:rm20230528021=
+5:647209ead332ea811103c651:1/e69edb17=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJI=
+UzI1NiJ9&jwtP=3DeyJpYXQiOjE2ODUyNDAzMTcsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI=
+6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQ3MmI5OGNlZTVkMWMxYjk2MGI3MmNhIi=
+wibGlua1VybCI6Imh0dHBzOlwvXC9hcHAuYWRqdXN0LmNvbVwvY3ZsNmlqIn0&jwtS=3DZ-M_YJ=
+Nr3of3b8avYhWn2wM1AUlmfavqXQ9uDxX_1zY">=0A               <img src=3D"https:=
+//is4.revolveassets.com/images/emailpics/rev_social_app_iphone_2.png" width=
+=3D"97" style=3D"display:block;">=0A             </a>=0A           </td>=0A=
+           <td valign=3D"top" class=3D"nomob">=0A             <a data-crdl-=
+variant=3D"" target=3D"_blank" href=3D"https://e.p.revolve.com/c2/248:5fb6e=
+b46d31fb1055690ead7:rm202305280215:647209ead332ea811103c651:1/8e5dd5bb=3Fjw=
+tH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2ODUyNDAzMTcsIm=
+NkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiN=
+jQ3MmI5OGNlZTVkMWMxYjk2MGI3MmNiIiwibGlua1VybCI6Imh0dHBzOlwvXC9hcHAuYWRqdXN0=
+LmNvbVwvc3JsOGNnIn0&jwtS=3D4usmts5Z9kZWn7ZmqjHxhweDdsL3oAhj9uvPR5iHN-g">=0A=
+               <img src=3D"https://is4.revolveassets.com/images/emailpics/r=
+ev_social_app_ipad_2.png" width=3D"97" style=3D"display:block;">=0A        =
+     </a>=0A           </td>=0A           <td valign=3D"top" align=3D"left"=
+ style=3D"padding-left:10px;">=0A             <a data-crdl-variant=3D"" tar=
+get=3D"_blank" href=3D"https://e.p.revolve.com/c2/248:5fb6eb46d31fb1055690e=
+ad7:rm202305280215:647209ead332ea811103c651:1/1a48439b=3FjwtH=3DeyJ0eXAiOiJ=
+KV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2ODUyNDAzMTcsImNkIjoiLnAucmV2b2=
+x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQ3MmI5OGNlZTVkM=
+WMxYjk2MGI3MmNjIiwibGlua1VybCI6Imh0dHBzOlwvXC9hcHAuYWRqdXN0LmNvbVwvdnRlbTR2=
+In0&jwtS=3DY_Z4ed66kqbfhY0pngJEDKXRmRsuoNjkR6Ha8O9Mzlg">=0A               <=
+img src=3D"https://is4.revolveassets.com/images/emailpics/rev_social_app_an=
+droid_2.png" width=3D"97" style=3D"display:block;">=0A             </a>=0A =
+          </td>=0A         </tr>=0A       </table>=0A       <table width=3D=
+"710" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"responsive =
+mob_text_center" align=3D"center" style=3D"font-family: Arial;font-size:10p=
+x;color:#949494;margin:0 auto;">=0A         <tr valign=3D"top" class=3D"foo=
+ter_element">=0A           <td valign=3D"top" style=3D"padding:10px 0 5px 0=
+;color:#949494;font-family: Arial;font-size:10px;text-align:center">You are=
+=0A             subscribed as=0A=0A             <a href=3D"mailto:ouchendan=
+s62@gmail.com" data-crdl-notrack=3D"true" style=3D"color:#949494;" data-crd=
+l-tags=3D"youaresubscribedas" data-crdl-key=3D"footer_contactChannels" conv=
+ersion=3D"true" target=3D"_blank">ouchendans62@gmail.com=0A             </a=
+><span class=3D"nomob">=C2=A0=C2=A0=C2=A0</span><span class=3D"small-1 foot=
+er-manage-line">=0A=0A               <a https: data-crdl-variant=3D"" conve=
+rsion=3D"true" style=3D"color:#949494;font-family: Arial;font-size:10px;" t=
+arget=3D"_blank" href=3D"https://e.p.revolve.com/c2/248:5fb6eb46d31fb105569=
+0ead7:rm202305280215:647209ead332ea811103c651:1/0a8e7152=3FjwtH=3DeyJ0eXAiO=
+iJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2ODUyNDAzMTcsImNkIjoiLnAucmV2=
+b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQ3MmI5OGNlZTV=
+kMWMxYjk2MGI3MmNkIiwibGlua1VybCI6Imh0dHBzOlwvXC93d3cucmV2b2x2ZS5jb21cL3JcL0=
+15RW1haWxTZXR0aW5ncy5qc3A_dXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPXRyaWdnZXImd=
+XRtX2NhbXBhaWduPVRSSUdfUkVWX0FQUERPV05MT0FEX0FQUERPV05MT0FEXzIwMjMwNTI4JnV0=
+bV9jb250ZW50PVRSSUdfUkVWX0FQUERPV05MT0FEX0FQUERPV05MT0FEJnVzZXJJRD0mY0lEPTY=
+0NzIwOWVhZDMzMmVhODExMTAzYzY1MSJ9&jwtS=3DSM6OxkMOLjhm2CEcJ4HHAzgm6rfohHu455=
+UMnGdO-rc">Manage your Email=0A                 Preferences</a>=C2=A0=C2=A0=
+=C2=A0=0A=0A               <a http: data-crdl-variant=3D"" style=3D"color:#=
+949494;font-family: Arial;font-size:10px;" conversion=3D"true" target=3D"_b=
+lank" href=3D"http://e.p.revolve.com/c2/248:5fb6eb46d31fb1055690ead7:rm2023=
+05280215:647209ead332ea811103c651:1/ba50e3f0=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhb=
+GciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2ODUyNDAzMTcsImNkIjoiLnAucmV2b2x2ZS5jb20i=
+LCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQ3MmI5OGNlZTVkMWMxYjk2MGI=
+3MmNlIiwibGlua1VybCI6Imh0dHA6XC9cL3d3dy5yZXZvbHZlLmNvbVwvVW5zdWJzY3JpYmUuan=
+NwP3V0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT10cmlnZ2VyJnV0bV9jYW1wYWlnbj1UUklHX=
+1JFVl9BUFBET1dOTE9BRF9BUFBET1dOTE9BRF8yMDIzMDUyOCZ1dG1fY29udGVudD1UUklHX1JF=
+Vl9BUFBET1dOTE9BRF9BUFBET1dOTE9BRCZ1c2VySUQ9JmNJRD02NDcyMDllYWQzMzJlYTgxMTE=
+wM2M2NTEifQ&jwtS=3DdUAcQQpl-5em3erTLZrHT7gqMYO4nOWLEtgJaaJlCsA">Unsubscribe=
+</a>=C2=A0=C2=A0=C2=A0=0A=0A               <a http: data-crdl-variant=3D"" =
+conversion=3D"true" style=3D"color:#949494;font-family: Arial;font-size:10p=
+x;" target=3D"_blank" href=3D"http://e.p.revolve.com/c2/248:5fb6eb46d31fb10=
+55690ead7:rm202305280215:647209ead332ea811103c651:1/abcde647=3FjwtH=3DeyJ0e=
+XAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2ODUyNDAzMTcsImNkIjoiLnAu=
+cmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQ3MmI5OGN=
+lZTVkMWMxYjk2MGI3MmNmIiwibGlua1VybCI6Imh0dHA6XC9cL3d3dy5yZXZvbHZlLmNvbVwvcl=
+wvaW5mb0NvbnRhY3RVcy5qc3A_dXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPXRyaWdnZXImd=
+XRtX2NhbXBhaWduPVRSSUdfUkVWX0FQUERPV05MT0FEX0FQUERPV05MT0FEXzIwMjMwNTI4JnV0=
+bV9jb250ZW50PVRSSUdfUkVWX0FQUERPV05MT0FEX0FQUERPV05MT0FEJnVzZXJJRD0mY0lEPTY=
+0NzIwOWVhZDMzMmVhODExMTAzYzY1MSJ9&jwtS=3D2q6wrwlOeLIhtmN9pywgLOOeGGRw7HObaC=
+R2e4tqZyo">Contact Us</a>=C2=A0=C2=A0=C2=A0=0A                 =0A         =
+      <a https: data-crdl-variant=3D"" conversion=3D"true" style=3D"color:#=
+949494;font-family: Arial;font-size:10px;" target=3D"_blank" href=3D"https:=
+//e.p.revolve.com/c2/248:5fb6eb46d31fb1055690ead7:rm202305280215:647209ead3=
+32ea811103c651:1/c5433903=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwt=
+P=3DeyJpYXQiOjE2ODUyNDAzMTcsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInR=
+rIjoicmV2b2x2ZSIsIm10bElEIjoiNjQ3MmI5OGNlZTVkMWMxYjk2MGI3MmNmIiwibGlua1VybC=
+I6Imh0dHBzOlwvXC93d3cucmV2b2x2ZS5jb21cL3ByaXZhY3lwb2xpY3k_dXRtX21lZGl1bT1lb=
+WFpbCZ1dG1fc291cmNlPXRyaWdnZXImdXRtX2NhbXBhaWduPVRSSUdfUkVWX0FQUERPV05MT0FE=
+X0FQUERPV05MT0FEXzIwMjMwNTI4JnV0bV9jb250ZW50PVRSSUdfUkVWX0FQUERPV05MT0FEX0F=
+QUERPV05MT0FEJnVzZXJJRD0mY0lEPTY0NzIwOWVhZDMzMmVhODExMTAzYzY1MSJ9&jwtS=3DkE=
+1_eYU_Zo3Y148TvE0Yj0AvrR35u0d2BN59nLeK1KE">Privacy Policy</a>     =0A      =
+           </span>=0A=0A           </td>=0A         </tr>=0A         <tr va=
+lign=3D"top">=0A           <td valign=3D"top" class=3D"footer_element" styl=
+e=3D"padding:0px 0 5px 0;color:#949494;font-family: Arial;font-size:10px;te=
+xt-align:center">=C2=A9=0A             Eminent, Inc. All Rights Reserved<sp=
+an class=3D"nomob">=C2=A0=C2=A0 =E2=80=A2 =C2=A0=C2=A0</span><span class=3D=
+"appleLinks small-1">12889 Moore Street, Cerritos, CA 90703=C2=A0=C2=A0=C2=
+=A0USA</span></td>=0A         </tr>=0A       </table>=0A     </td>=0A   </t=
+r>=0A </table>=0A <!--https://d.p.revolve.com/optout/index.php=3FmcID=3D248=
+:5fb6eb46d31fb1055690ead7:rm202305280215:647209ead332ea811103c651:1-->=0A <=
+!-- END FOOTER -->=0A </td>=0A </tr>=0A </table>=0A <!-- END EMAIL TABLES -=
+->=0A <div style=3D"display:none;">=0A   <custom name=3D"opencounter" type=
+=3D"tracking"></custom>=0A </div>=0A =0D=0A<img border=3D"0" width=3D"1" he=
+ight=3D"1" alt=3D"" src=3D"http://trcksp.cordial.io/q/jTEp1NEBpsl02EsYtdKHw=
+A~~/AAAAAQA~/RgRmVT79PlcHY29yZGlhbEIKZG_9uXJk2VDSElIWb3VjaGVuZGFuczYyQGdtYW=
+lsLmNvbVgEAAAAVg~~">=0D=0A</body>=0A=0A </html>
+

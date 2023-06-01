@@ -10,6 +10,7 @@ import tkinter.simpledialog as sd  # Add this line for the simpledialog module
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
+
 def extract_emails(email_provider):
     # Connect to the IMAP server based on the email provider
     if email_provider == "Hotmail":
@@ -193,7 +194,24 @@ email_password_dict = {}
 
 def save_email_password(window, provider, email, password):
     email_password_dict[provider] = {"email": email, "password": password}
+     # Save the new email and password to Google Sheets
+    scope = ['https://www.googleapis.com/auth/spreadsheets']
+    scopes = [
+     'https://www.googleapis.com/auth/spreadsheets'
+     'https://www.googleapis.com/auth/drive'
+     ]
 
+    credentials = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scopes=scopes)
+    client = gspread.authorize(credentials)
+    sheet = client.open('extract_data').sheet1  # Replace 'EmailPasswords' with your Google Sheet name
+   
+
+    row = [provider, email, password]
+    sheet.append_row(row)
+
+    # Notify the user that the email and password have been saved
+    success_text = f"Email and password for {provider} have been saved."
+    error_text.insert(tk.END, success_text)
     # Save the new email and password to data.txt
     with open("data.txt", "a") as file:
         file.write(f"{email},{password}\n")

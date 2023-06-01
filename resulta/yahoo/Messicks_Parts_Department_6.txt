@@ -1,0 +1,1401 @@
+Received: from 127.0.0.1
+ by atlas-production.v2-mail-prod1-gq1.omega.yahoo.com pod-id atlas--production-gq1-5f79bdbfcb-xkghc.gq1.yahoo.com with HTTP; Thu, 16 Mar 2023 19:20:13 +0000
+Return-Path: <bounce-mc.us2_2668662.703485-6d83c96f2d@mail199.atl221.rsgsv.net>
+X-Originating-Ip: [198.2.139.199]
+Received-SPF: pass (domain of mail199.atl221.rsgsv.net designates 198.2.139.199 as permitted sender)
+Authentication-Results: atlas-production.v2-mail-prod1-gq1.omega.yahoo.com;
+ dkim=pass header.i=@fbl.mcsv.net header.s=k2;
+ dkim=pass header.i=@messicks.com header.s=k1;
+ spf=pass smtp.mailfrom=mail199.atl221.rsgsv.net;
+ dmarc=pass(p=QUARANTINE) header.from=messicks.com;
+X-Apparently-To: achrafel73114@yahoo.com; Thu, 16 Mar 2023 19:20:13 +0000
+X-YMailAVSC: wn2rZ.Q3bBvDO0L954O7.XIDH3jY2JS3VckHs8Hcm_I5DW5
+ .2bvqDyEvef_GTzfYNvvjKr4YfwouvEtt.dzuawixxrubejlgu.iajo1K4JJ
+ 2s9tWQZhY6hImz20uRGPGGZNZ.dm6BGgVWiFTVsAHGYRWxiaOZIXAAsZBhU1
+ JLRhJlqERshYHfDOkP0SDpsn20pOya4YKFZpII2S030KZa40EoqUb437ajb1
+ gFftx_fXmzgnaB8HzdXYaHrxrfYMQjBC5waXRGaukTzulUO.JjYJN0B88zy4
+ VefFTCOJLGnuiDv61snWlSz1Go7b9FPKBQBjZ_objDDiq8JHraxZUI.TNwXE
+ SzuY2qHO248SzeMvWQXJ1JSVXl4kcMg0UObLONAyaxSRsOr36XzjjfK9WpHL
+ gKfcLshE2t.d88niYrcD6_sIH96ymVSDvECdChl.VPWu9PIcnApj0dCLR1It
+ tvKUYAl_X8KKAbdZdnVJioxjQf_tRZlkRlg.VCjZM8K7m3vgj295IsoNEgV5
+ IIl16Oe9p72Asg8v9PdTBVYnHFUcFyTYibp5pUdJKehWlQ8Tr8kqAVmFTV35
+ T3VC_n3EPNTCy2uzkNVRrdubra0jLtzrheXi8xiP9LA06HIfqi6QPkn2PYxm
+ LBaAcp67Uiujd0GTrNE4nGDhpuKdJJsG2T3Oj01o5_9P.kl4LlI5febR0h_i
+ WO37xJqps4skNSgtUpIeRGVpRI58bHb7qTLZxDkLP74fA.Wx3BlmyTBwoyGM
+ aslesk1VOLNhp.bYNc_oNeFgzL78E__lX3BpoyGOOF3ebvv3VYZZJIFrP5kb
+ q6xvj2ekAGGsjdtPi9PtMuP_Oedv6IH9BKBjboPFA27RfbW.lIRKpmfMdkKj
+ 7QjUtVtbuwn65d527O9oP.AKO0JD_WSKv7tH.HzN1PAcJOPphdsPcCHoMpyY
+ t8PLhFelIUVntuYW.G1gDerWg8COulBJzbsD4wS_BUPj1GJREYkjLcuafq67
+ Rr2lxj7X_wywvZPqFIQPZjXaCSyN.P3.GnEjGwTpkif9Rw50roD2dK3I2iZF
+ vf56ttPXDSgth.mL6zcu_aGO4RF2avZpmGOlvxubSDoPUBw_TOfd2.JpN6wt
+ TQnOsthc9zuIRg9SAfEI.VkdipHx3.jOK5.hHXA5MEsNnyfZ1b8avROX6Emt
+ jsS3dcA7_UKyAmON_v6VNE7NXmO2g5RoI1P4BQN01OHdngeFVOk_Xy9GlxkR
+ DfgUbzL_tV9bMvvNSyzd7w6rhjxJsOnIl7S.19iA2OIffd3.jd14soxl4Abf
+ 9W2c61smE
+X-YMailISG: 7aQCFfMWLDsYaoFMZnZ5F8HD0c_F.W2jJidZZEEJ7NU.c0gx
+ bCmbhV6r3miRI.AkAZhsywZ4px3VJbkHmEajJ_bOy5atIGb_AbJqOFeixAgc
+ 7pulf814hx5RE1zstWBOgJ_26_ZFia7hfKeT88y.Au5lcA4jQkBOHuoFk18T
+ nWxnk9_6mtFWcTF8A.Pqnrcy6jBfA7Ixsmlz1ssIYz_7fmlwa4qqzyjU.nRA
+ yJX7IIm68iHM2xfFXD0QUOIaCw8h_lstEzd4TRxATpYloLmYQePwTHgWUCBu
+ KcFZU5BRA8xiCZCXY5qx3zGNAfYq9vJkOhxipKfp4zhBgpqrJQvbm7badvjh
+ r07QrANONS2FOahwp2RQCnZt3zTh.EYAXvKcT7FLq.S1BvPQJmc3raaxH_cX
+ vCpZsQ9npHyQ0TXxWA62nYw9GKWKf4wLLYzehCicyuIkYYNq4dJDYN77oY7W
+ UAEN2qpb.8CpR2Wn2aIeyZmujLRcPCphOvuHVhsJzpeRNbAzMicNJtP9WvsS
+ kyAULRKVDb490P87UwiURBiSAoxGOz_1nH7DVGeT8PHSx1sFLdAEqHAkGkgX
+ WOZ8vhSHbKjWieNK9fbw1x_zm1XO6NcwJasdt8gpwjGWZHlooVhknuFXEgo4
+ sItItK4XYsHdDAAakjJT5VWGUsVSg4H4JChqoSbXNnZYKXYWtWIebDKnpwXg
+ zDpQUWS2DgnwgJollyXuWkOi9En7AEBYPIvR.KbEE7iM2IFvepvCUGaQYdKW
+ uIVww9.PT5bq5YWXo7gw_4yeXxHjdgEamXch6JSQoLBVaaU7Gu2LLdC6ycK8
+ W8g1J6KW3oxiiL017oCmIpO6tTvuEimmbOjKkK2sr9y4PyuCOGeDOknmi1NY
+ .BgnMVaYfe3VQcCK.A8LLQ77bsL4jyk7PI35INUsQ10NW.4grcJS6I1iHNnU
+ ar08xT8BK6.MHeCYLsrzkZFzlNEUyCbljUICIg..dRimLGcOcyGhfwcD36nH
+ q0mTy3fqeaRBcsVTGFGXAYDmOpYyu8e6q09iyMz_7JVkJgXnSfNvxijsYabK
+ 6jDSYdDPb5_GKuSBZ47S5yx11XFiXy9oTflKjDBs7vB0dJ6prShV5a9codRZ
+ CeZI9bc6iPDgD9IycvKXx3L2BcrgUXTkYk7kD4J1QmgbrTuyxSoa2nWGlVY5
+ m1zVfeL4EH4BVv_96ASVRBlmAAJeJZtL85Xuu9eyuK_zKRiB1hrICEGU9ZMU
+ lqIbUk5p5trvwKY_5AimUVxyuiTXoEDWPka2_lQ5IjRqcwWlCt6BQ_AuKhMI
+Received: from 198.2.139.199 (EHLO mail199.atl221.rsgsv.net)
+ by 10.214.147.16 with SMTPs
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256);
+ Thu, 16 Mar 2023 19:20:13 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fbl.mcsv.net; s=k2;
+	t=1678994384; x=1679051984;
+	bh=FEK5wb9fBPnZ7vhw45OZpMBSyLlEzuL+KPm1N0bDNkc=;
+	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
+	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
+	 MIME-Version:CC:Date:Subject:From;
+	b=bN7/tPv3UJfZRNWCgzMiFxsMcDouwc2A81Ga3clrSASna5k4b4klW6LTCGkz9X4pL
+	 S+EWA/HgjievjoDIA2xxl49mLrprcpEX/QHEQwIQWw4ei5ZMGtlgZyXznMjClDz5hq
+	 0/HWkx8Y8mCcWmB/pWj770KA770TXz0+C0pQeX5o2wObm9xD5MGQCGXOzlwGl181os
+	 IitNPb9X64q+EcZ1XKm3tnrC3cL30dS0ek9rF4Rm03zcRAhg5W3rApWEQu5przlJ9T
+	 yYKICo8LZK6KZcvi5IgQfzNvtKFS4O2fz/x7vvxHWkeXjN7rSo7h1yxflC+N3RG6ih
+	 Kiv97xVJ4jtVQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=messicks.com; s=k1;
+	t=1678994384; x=1679051984; i=donotreply@messicks.com;
+	bh=FEK5wb9fBPnZ7vhw45OZpMBSyLlEzuL+KPm1N0bDNkc=;
+	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
+	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
+	 MIME-Version:CC:Date:Subject:From;
+	b=S37pBj421NY5aT1Bkaun3BUruYfEZghLU4zDiD4pq0eaI7HL7t3Gu3OFgVOJAr9hy
+	 4yL+eG2tZGNWfqfed7zEiZNj6v0tcON9SPPwBZMFtzR/R8lSJi+DMIMbMi5nT1lLnA
+	 YNIZOMXfNovsMEWipzfbzWpgHMC4+e1mLD8Mr8oE=
+Received: from localhost (localhost [127.0.0.1])
+	by mail199.atl221.rsgsv.net (Mailchimp) with ESMTP id 4PcxsX0Z58z373PMN
+	for <achrafel73114@yahoo.com>; Thu, 16 Mar 2023 19:19:44 +0000 (GMT)
+Subject: =?utf-8?Q?Always=20Your=20Best=20Source=20For=20Equipment=20Parts?=
+From: =?utf-8?Q?Messicks=20Parts=20Department?= <DoNotReply@messicks.com>
+Reply-To: =?utf-8?Q?Messicks=20Parts=20Department?= <DoNotReply@messicks.com>
+To: <achrafel73114@yahoo.com>
+Date: Thu, 16 Mar 2023 19:19:40 +0000
+Message-ID: <e67e9d5eb977fa65f74448023.6d83c96f2d.20230316191928.ce1d7e9250.24b62f89@mail199.atl221.rsgsv.net>
+X-Mailer: Mailchimp Mailer - **CIDce1d7e92506d83c96f2d**
+X-Campaign: mailchimpe67e9d5eb977fa65f74448023.ce1d7e9250
+X-campaignid: mailchimpe67e9d5eb977fa65f74448023.ce1d7e9250
+X-Report-Abuse: Please report abuse for this campaign here: https://mailchimp.com/contact/abuse/?u=e67e9d5eb977fa65f74448023&id=ce1d7e9250&e=6d83c96f2d
+X-MC-User: e67e9d5eb977fa65f74448023
+Feedback-ID: 2668662:2668662.703485:us2:mc
+List-ID: e67e9d5eb977fa65f74448023mc list <e67e9d5eb977fa65f74448023.324941.list-id.mcsv.net>
+X-Accounttype: pd
+List-Unsubscribe: <https://messicks.us2.list-manage.com/unsubscribe?u=e67e9d5eb977fa65f74448023&id=acee3048b5&e=6d83c96f2d&c=ce1d7e9250>, <mailto:unsubscribe-mc.us2_e67e9d5eb977fa65f74448023.ce1d7e9250-6d83c96f2d@unsubscribe.mailchimpapp.net?subject=unsubscribe>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Content-Type: multipart/alternative; boundary="_----------=_MCPart_1714628960"
+MIME-Version: 1.0
+Content-Length: 55441
+
+This is a multi-part message in MIME format
+
+--_----------=_MCPart_1714628960
+Content-Type: text/plain; charset="utf-8"; format="fixed"
+Content-Transfer-Encoding: quoted-printable
+
+Convenience. Speed. Reliability.=C2=A0
+
+http://www.messicks.com?mc_cid=3Dce1d7e9250&mc_eid=3DUNIQID
+https://www.messicks.com/?mc_cid=3Dce1d7e9250&mc_eid=3DUNIQID
+https://messicks.com/tractorparts?mc_cid=3Dce1d7e9250&mc_eid=3DUNIQID
+https://messicks.com/used/recent?mc_cid=3Dce1d7e9250&mc_eid=3DUNIQID
+https://messicks.com/used/compact-tractors/128198?mc_cid=3Dce1d7e9250&mc_e=
+id=3DUNIQID
+
+https://messicks.com/used/round-balers/175833?mc_cid=3Dce1d7e9250&mc_eid=
+=3DUNIQID
+
+https://messicks.com/used/excavators/26441?mc_cid=3Dce1d7e9250&mc_eid=3DUN=
+IQID
+
+https://messicks.com/used/zeroturnmowers/179055?mc_cid=3Dce1d7e9250&mc_eid=
+=3DUNIQID
+
+https://youtu.be/n123fZ63poQ?mc_cid=3Dce1d7e9250&mc_eid=3DUNIQID
+Compact Tractor Configurations - Tractor Buyers Guide Part #2
+
+https://youtu.be/uxjSNS9U1po?mc_cid=3Dce1d7e9250&mc_eid=3DUNIQID
+Transformer Mower - Lane Shark Front Loader Brush Mowers
+
+http://www.messicks.com?mc_cid=3Dce1d7e9250&mc_eid=3DUNIQID
+Copyright =C2=A9 *2023 Messick's Equipment*=2C All rights reserved.
+Want to change how you receive these emails?
+You can update your preferences (https://messicks.us2.list-manage.com/prof=
+ile?u=3De67e9d5eb977fa65f74448023&id=3Dacee3048b5&e=3D6d83c96f2d&c=3Dce1d7e9=
+250) or unsubscribe from this list (https://messicks.us2.list-manage.com/u=
+nsubscribe?u=3De67e9d5eb977fa65f74448023&id=3Dacee3048b5&e=3D6d83c96f2d&c=3D=
+ce1d7e9250) .
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+--_----------=_MCPart_1714628960
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-micros=
+oft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+    <head>
+    =09<!-- NAME: MONOCHROMIC -->
+        <!--[if gte mso 15]>
+=09=09<xml>
+=09=09=09<o:OfficeDocumentSettings>
+=09=09=09<o:AllowPNG/>
+=09=09=09<o:PixelsPerInch>96</o:PixelsPerInch>
+=09=09=09</o:OfficeDocumentSettings>
+=09=09</xml>
+=09=09<![endif]-->
+=09=09<meta charset=3D"UTF-8">
+        <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width=2C initial=
+-scale=3D1">
+=09=09<title>Always Your Best Source For Equipment Parts</title>
+
+    <style type=3D"text/css">
+=09=09p{
+=09=09=09margin:10px 0;
+=09=09=09padding:0;
+=09=09}
+=09=09table{
+=09=09=09border-collapse:collapse;
+=09=09}
+=09=09h1=2Ch2=2Ch3=2Ch4=2Ch5=2Ch6{
+=09=09=09display:block;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09}
+=09=09img=2Ca img{
+=09=09=09border:0;
+=09=09=09height:auto;
+=09=09=09outline:none;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09body=2C#bodyTable=2C#bodyCell{
+=09=09=09height:100%;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09=09width:100%;
+=09=09}
+=09=09.mcnPreviewText{
+=09=09=09display:none !important;
+=09=09}
+=09=09#outlook a{
+=09=09=09padding:0;
+=09=09}
+=09=09img{
+=09=09=09-ms-interpolation-mode:bicubic;
+=09=09}
+=09=09table{
+=09=09=09mso-table-lspace:0pt;
+=09=09=09mso-table-rspace:0pt;
+=09=09}
+=09=09.ReadMsgBody{
+=09=09=09width:100%;
+=09=09}
+=09=09.ExternalClass{
+=09=09=09width:100%;
+=09=09}
+=09=09p=2Ca=2Cli=2Ctd=2Cblockquote{
+=09=09=09mso-line-height-rule:exactly;
+=09=09}
+=09=09a[href^=3Dtel]=2Ca[href^=3Dsms]{
+=09=09=09color:inherit;
+=09=09=09cursor:default;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09p=2Ca=2Cli=2Ctd=2Cbody=2Ctable=2Cblockquote{
+=09=09=09-ms-text-size-adjust:100%;
+=09=09=09-webkit-text-size-adjust:100%;
+=09=09}
+=09=09.ExternalClass=2C.ExternalClass p=2C.ExternalClass td=2C.ExternalCla=
+ss div=2C.ExternalClass span=2C.ExternalClass font{
+=09=09=09line-height:100%;
+=09=09}
+=09=09a[x-apple-data-detectors]{
+=09=09=09color:inherit !important;
+=09=09=09text-decoration:none !important;
+=09=09=09font-size:inherit !important;
+=09=09=09font-family:inherit !important;
+=09=09=09font-weight:inherit !important;
+=09=09=09line-height:inherit !important;
+=09=09}
+=09=09a.mcnButton{
+=09=09=09display:block;
+=09=09}
+=09=09.mcnImage=2C.mcnRetinaImage{
+=09=09=09vertical-align:bottom;
+=09=09}
+=09=09.mcnTextContent{
+=09=09=09word-break:break-word;
+=09=09}
+=09=09.mcnTextContent img{
+=09=09=09height:auto !important;
+=09=09}
+=09=09.mcnDividerBlock{
+=09=09=09table-layout:fixed !important;
+=09=09}
+=09=09body=2C#bodyTable{
+=09=09=09background-color:#cccccc;
+=09=09}
+=09=09#bodyCell{
+=09=09=09border-top:0;
+=09=09}
+=09=09#templateContainer{
+=09=09=09border:0;
+=09=09}
+=09=09h1{
+=09=09=09color:#000000 !important;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:50px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:normal;
+=09=09=09line-height:125%;
+=09=09=09letter-spacing:-1px;
+=09=09=09text-align:center;
+=09=09}
+=09=09h2{
+=09=09=09color:#404040 !important;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:20px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:normal;
+=09=09=09line-height:125%;
+=09=09=09letter-spacing:-.75px;
+=09=09=09text-align:left;
+=09=09}
+=09=09h3{
+=09=09=09color:#000000 !important;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:18px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:normal;
+=09=09=09line-height:125%;
+=09=09=09letter-spacing:-.5px;
+=09=09=09text-align:center;
+=09=09}
+=09=09h4{
+=09=09=09color:#808080 !important;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:16px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:normal;
+=09=09=09line-height:125%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:left;
+=09=09}
+=09=09#templatePreheader{
+=09=09=09background-color:#ffffff;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09}
+=09=09.preheaderContainer .mcnTextContent=2C.preheaderContainer .mcnTextCo=
+ntent p{
+=09=09=09color:#000000;
+=09=09=09font-family:'Times New Roman';
+=09=09=09font-size:12px;
+=09=09=09line-height:125%;
+=09=09=09text-align:left;
+=09=09}
+=09=09.preheaderContainer .mcnTextContent a{
+=09=09=09color:#000000;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateHeader{
+=09=09=09background-color:#FFFFFF;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09}
+=09=09.headerContainer .mcnTextContent=2C.headerContainer .mcnTextContent=
+ p{
+=09=09=09color:#000000;
+=09=09=09font-family:'Times New Roman';
+=09=09=09font-size:14px;
+=09=09=09line-height:150%;
+=09=09=09text-align:left;
+=09=09}
+=09=09.headerContainer .mcnTextContent a{
+=09=09=09color:#000000;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateBody{
+=09=09=09background-color:#FFFFFF;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09}
+=09=09.bodyContainer .mcnTextContent=2C.bodyContainer .mcnTextContent p{
+=09=09=09color:#000000;
+=09=09=09font-family:'Times New Roman';
+=09=09=09font-size:14px;
+=09=09=09line-height:150%;
+=09=09=09text-align:left;
+=09=09}
+=09=09.bodyContainer .mcnTextContent a{
+=09=09=09color:#000000;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateColumns{
+=09=09=09background-color:#FFFFFF;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09}
+=09=09.leftColumnContainer .mcnTextContent=2C.leftColumnContainer .mcnText=
+Content p{
+=09=09=09color:#000000;
+=09=09=09font-family:'Times New Roman';
+=09=09=09font-size:14px;
+=09=09=09line-height:150%;
+=09=09=09text-align:left;
+=09=09}
+=09=09.leftColumnContainer .mcnTextContent a{
+=09=09=09color:#000000;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09.centerColumnContainer .mcnTextContent=2C.centerColumnContainer .mcn=
+TextContent p{
+=09=09=09color:#000000;
+=09=09=09font-family:'Times New Roman';
+=09=09=09font-size:14px;
+=09=09=09line-height:150%;
+=09=09=09text-align:left;
+=09=09}
+=09=09.centerColumnContainer .mcnTextContent a{
+=09=09=09color:#000000;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09.rightColumnContainer .mcnTextContent=2C.rightColumnContainer .mcnTe=
+xtContent p{
+=09=09=09color:#000000;
+=09=09=09font-family:'Times New Roman';
+=09=09=09font-size:14px;
+=09=09=09line-height:150%;
+=09=09=09text-align:left;
+=09=09}
+=09=09.rightColumnContainer .mcnTextContent a{
+=09=09=09color:#000000;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateFooter{
+=09=09=09background-color:#EAEAEA;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09}
+=09=09.footerContainer .mcnTextContent=2C.footerContainer .mcnTextContent=
+ p{
+=09=09=09color:#000000;
+=09=09=09font-family:'Times New Roman';
+=09=09=09font-size:12px;
+=09=09=09line-height:125%;
+=09=09=09text-align:left;
+=09=09}
+=09=09.footerContainer .mcnTextContent a{
+=09=09=09color:#000000;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09@media only screen and (max-width: 480px){
+=09=09body=2Ctable=2Ctd=2Cp=2Ca=2Cli=2Cblockquote{
+=09=09=09-webkit-text-size-adjust:none !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09body{
+=09=09=09width:100% !important;
+=09=09=09min-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09#templateContainer=2C#templatePreheader=2C#templateHeader=2C#templat=
+eColumns=2C#templateBody=2C#templateFooter{
+=09=09=09max-width:600px !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.columnsContainer{
+=09=09=09display:block!important;
+=09=09=09max-width:600px !important;
+=09=09=09padding-bottom:18px !important;
+=09=09=09padding-left:0 !important;
+=09=09=09width:100%!important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnRetinaImage{
+=09=09=09max-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImage{
+=09=09=09height:auto !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnCartContainer=2C.mcnCaptionTopContent=2C.mcnRecContentContainer=
+=2C.mcnCaptionBottomContent=2C.mcnTextContentContainer=2C.mcnBoxedTextCont=
+entContainer=2C.mcnImageGroupContentContainer=2C.mcnCaptionLeftTextContent=
+Container=2C.mcnCaptionRightTextContentContainer=2C.mcnCaptionLeftImageCon=
+tentContainer=2C.mcnCaptionRightImageContentContainer=2C.mcnImageCardLeftT=
+extContentContainer=2C.mcnImageCardRightTextContentContainer=2C.mcnImageCa=
+rdLeftImageContentContainer=2C.mcnImageCardRightImageContentContainer{
+=09=09=09max-width:100% !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnBoxedTextContentContainer{
+=09=09=09min-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupContent{
+=09=09=09padding:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnCaptionLeftContentOuter .mcnTextContent=2C.mcnCaptionRightConten=
+tOuter .mcnTextContent{
+=09=09=09padding-top:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardTopImageContent=2C.mcnCaptionBottomContent:last-child .=
+mcnCaptionBottomImageContent=2C.mcnCaptionBlockInner .mcnCaptionTopContent=
+:last-child .mcnTextContent{
+=09=09=09padding-top:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardBottomImageContent{
+=09=09=09padding-bottom:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupBlockInner{
+=09=09=09padding-top:0 !important;
+=09=09=09padding-bottom:0 !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupBlockOuter{
+=09=09=09padding-top:9px !important;
+=09=09=09padding-bottom:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnTextContent=2C.mcnBoxedTextContentColumn{
+=09=09=09padding-right:18px !important;
+=09=09=09padding-left:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardLeftImageContent=2C.mcnImageCardRightImageContent{
+=09=09=09padding-right:18px !important;
+=09=09=09padding-bottom:0 !important;
+=09=09=09padding-left:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcpreview-image-uploader{
+=09=09=09display:none !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h1{
+=09=09=09font-size:24px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h2{
+=09=09=09font-size:20px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h3{
+=09=09=09font-size:18px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h4{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnBoxedTextContentContainer .mcnTextContent=2C.mcnBoxedTextContent=
+Container .mcnTextContent p{
+=09=09=09font-size:18px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09#templatePreheader{
+=09=09=09display:block !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.preheaderContainer .mcnTextContent=2C.preheaderContainer .mcnTextCo=
+ntent p{
+=09=09=09font-size:14px !important;
+=09=09=09line-height:115% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.headerContainer .mcnTextContent=2C.headerContainer .mcnTextContent=
+ p{
+=09=09=09font-size:18px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.bodyContainer .mcnTextContent=2C.bodyContainer .mcnTextContent p{
+=09=09=09font-size:18px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.leftColumnContainer .mcnTextContent=2C.leftColumnContainer .mcnText=
+Content p{
+=09=09=09font-size:18px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.centerColumnContainer .mcnTextContent=2C.centerColumnContainer .mcn=
+TextContent p{
+=09=09=09font-size:18px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.rightColumnContainer .mcnTextContent=2C.rightColumnContainer .mcnTe=
+xtContent p{
+=09=09=09font-size:18px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.footerContainer .mcnTextContent=2C.footerContainer .mcnTextContent=
+ p{
+=09=09=09font-size:14px !important;
+=09=09=09line-height:115% !important;
+=09=09}
+
+}</style></head>
+    <body leftmargin=3D"0" marginwidth=3D"0" topmargin=3D"0" marginheight=
+=3D"0" offset=3D"0" style=3D"height: 100%;margin: 0;padding: 0;width: 100%=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-colo=
+r: #cccccc;">
+        <!--
+-->
+        <!--[if !gte mso 9]><!----><span class=3D"mcnPreviewText" style=
+=3D"display:none; font-size:0px; line-height:0px; max-height:0px; max-widt=
+h:0px; opacity:0; overflow:hidden; visibility:hidden; mso-hide:all;">Conve=
+nience. Speed. Reliability.=C2=A0</span><!--<![endif]-->
+        <!--
+-->
+        <center>
+            <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" height=3D"100%" width=3D"100%" id=3D"bodyTable" style=3D"border=
+-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-s=
+ize-adjust: 100%;-webkit-text-size-adjust: 100%;height: 100%;margin: 0;pad=
+ding: 0;width: 100%;background-color: #cccccc;">
+                <tr>
+                    <td align=3D"center" valign=3D"top" id=3D"bodyCell" st=
+yle=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-te=
+xt-size-adjust: 100%;height: 100%;margin: 0;padding: 0;width: 100%;border-=
+top: 0;">
+                        <!-- BEGIN TEMPLATE // -->
+                        <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"600" id=3D"templateContainer" style=3D"border-collapse: co=
+llapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;border: 0;">
+                            <tr>
+                                <td align=3D"center" valign=3D"top" style=
+=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;">
+                                    <!-- BEGIN PREHEADER // -->
+                                    <table border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" width=3D"600" id=3D"templatePreheader" style=3D"border-=
+collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-si=
+ze-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #ffffff;b=
+order-top: 0;border-bottom: 0;">
+                                        <tr>
+                                        =09<td valign=3D"top" class=3D"pre=
+headerContainer" style=3D"padding-top: 9px;padding-bottom: 9px;mso-line-he=
+ight-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 10=
+0%;"><table class=3D"mcnImageBlock" style=3D"min-width: 100%;border-collap=
+se: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%" cellspacing=3D"0=
+" cellpadding=3D"0" border=3D"0">
+    <tbody class=3D"mcnImageBlockOuter">
+            <tr>
+                <td style=3D"padding: 0px;mso-line-height-rule: exactly;-m=
+s-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class=3D"mcnImag=
+eBlockInner" valign=3D"top">
+                    <table class=3D"mcnImageContentContainer" style=3D"min=
+-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rsp=
+ace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width=
+=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"left">
+                        <tbody><tr>
+                            <td class=3D"mcnImageContent" style=3D"padding=
+-right: 0px;padding-left: 0px;padding-top: 0;padding-bottom: 0;text-align:=
+ center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-t=
+ext-size-adjust: 100%;" valign=3D"top">
+
+                                    <a href=3D"https://messicks.us2.list-m=
+anage.com/track/click?u=3De67e9d5eb977fa65f74448023&id=3D7d6f3295ad&e=3D6d83c96f2d" title=3D"" class=3D"" target=3D"_blank" style=3D"mso-line-heigh=
+t-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+">
+                                        <img alt=3D"" src=3D"https://galle=
+ry.mailchimp.com/e67e9d5eb977fa65f74448023/images/9b1ca186-4532-43b4-88e6-=
+88083a9fb91b.jpg" style=3D"max-width: 800px;padding-bottom: 0px;display: i=
+nline !important;vertical-align: bottom;border: 1px dotted #000000;height:=
+ auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;=
+" class=3D"mcnImage" width=3D"600" align=3D"middle">
+                                    </a>
+
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </td>
+            </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </table>
+                                    <!-- // END PREHEADER -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" style=
+=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;">
+                                    <!-- BEGIN HEADER // -->
+                                    <table border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" width=3D"600" id=3D"templateHeader" style=3D"border-col=
+lapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;bord=
+er-top: 0;border-bottom: 0;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"he=
+aderContainer" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust=
+: 100%;-webkit-text-size-adjust: 100%;"><table border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" width=3D"100%" class=3D"mcnImageBlock" style=3D"min-=
+width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspa=
+ce: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnImageBlockOuter">
+            <tr>
+                <td valign=3D"top" style=3D"padding: 0px;mso-line-height-r=
+ule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" c=
+lass=3D"mcnImageBlockInner">
+                    <table align=3D"left" width=3D"100%" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" class=3D"mcnImageContentContainer" style=
+=3D"min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-ta=
+ble-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+">
+                        <tbody><tr>
+                            <td class=3D"mcnImageContent" valign=3D"top" s=
+tyle=3D"padding-right: 0px;padding-left: 0px;padding-top: 0;padding-bottom=
+: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;">
+
+                                    <a href=3D"https://messicks.us2.list-m=
+anage.com/track/click?u=3De67e9d5eb977fa65f74448023&id=3D92c535e46a&e=3D6d83c96f2d" title=3D"Messick's Rentals" class=3D"" target=3D"_blank" style=
+=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;">
+                                        <img align=3D"center" alt=3D"Your=
+ source for equipment parts" src=3D"https://mcusercontent.com/e67e9d5eb977=
+fa65f74448023/images/4dc1c7c1-c72e-78da-8c3a-d23eb4a5bdcb.jpg" width=3D"Na=
+N" style=3D"max-width: 600px;padding-bottom: 0px;vertical-align: bottom;di=
+splay: inline !important;border: 1px solid #FF0000;height: auto;outline: n=
+one;text-decoration: none;-ms-interpolation-mode: bicubic;" class=3D"mcnIm=
+age">
+                                    </a>
+
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </td>
+            </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 5px 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-t=
+op-width: 2px;border-top-style: solid;border-top-color: #EAEAEA;border-col=
+lapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnImageBlock" style=3D"min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnImageBlockOuter">
+            <tr>
+                <td valign=3D"top" style=3D"padding: 0px;mso-line-height-r=
+ule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" c=
+lass=3D"mcnImageBlockInner">
+                    <table align=3D"left" width=3D"100%" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" class=3D"mcnImageContentContainer" style=
+=3D"min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-ta=
+ble-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+">
+                        <tbody><tr>
+                            <td class=3D"mcnImageContent" valign=3D"top" s=
+tyle=3D"padding-right: 0px;padding-left: 0px;padding-top: 0;padding-bottom=
+: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;">
+
+                                    <a href=3D"https://messicks.us2.list-m=
+anage.com/track/click?u=3De67e9d5eb977fa65f74448023&id=3D0ea310605e&e=3D6d83c96f2d" title=3D"" class=3D"" target=3D"_blank" style=3D"mso-line-heigh=
+t-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+">
+                                        <img align=3D"center" alt=3D"" src=
+=3D"https://mcusercontent.com/e67e9d5eb977fa65f74448023/images/7e73d176-d5=
+e9-0eab-e105-1185058b3555.jpg" width=3D"600" style=3D"max-width: 600px;pad=
+ding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0=
+;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode:=
+ bicubic;" class=3D"mcnImage">
+                                    </a>
+
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </td>
+            </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 5px 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-t=
+op-width: 2px;border-top-style: solid;border-top-color: #EAEAEA;border-col=
+lapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnImageBlock" style=3D"min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnImageBlockOuter">
+            <tr>
+                <td valign=3D"top" style=3D"padding: 0px;mso-line-height-r=
+ule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" c=
+lass=3D"mcnImageBlockInner">
+                    <table align=3D"left" width=3D"100%" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" class=3D"mcnImageContentContainer" style=
+=3D"min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-ta=
+ble-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+">
+                        <tbody><tr>
+                            <td class=3D"mcnImageContent" valign=3D"top" s=
+tyle=3D"padding-right: 0px;padding-left: 0px;padding-top: 0;padding-bottom=
+: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;">
+
+                                    <a href=3D"https://messicks.us2.list-m=
+anage.com/track/click?u=3De67e9d5eb977fa65f74448023&id=3D7189fc9e6d&e=3D6d83c96f2d" title=3D"" class=3D"" target=3D"_blank" style=3D"mso-line-heigh=
+t-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+">
+                                        <img align=3D"center" alt=3D"Used=
+ Equipment" src=3D"https://mcusercontent.com/e67e9d5eb977fa65f74448023/ima=
+ges/21f4ad4b-9bf0-8666-ce00-06f016a44b03.jpg" width=3D"600" style=3D"max-w=
+idth: 880px;padding-bottom: 0px;vertical-align: bottom;display: inline !im=
+portant;border: 1px solid #FF0000;height: auto;outline: none;text-decorati=
+on: none;-ms-interpolation-mode: bicubic;" class=3D"mcnImage">
+                                    </a>
+
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </td>
+            </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnImageGroupBlock" style=3D"border-collapse: collapse;mso-t=
+able-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-=
+text-size-adjust: 100%;">
+    <tbody class=3D"mcnImageGroupBlockOuter">
+
+            <tr>
+                <td valign=3D"top" style=3D"padding: 9px;mso-line-height-r=
+ule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" c=
+lass=3D"mcnImageGroupBlockInner">
+
+                    <table align=3D"left" width=3D"273" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" class=3D"mcnImageGroupContentContainer" sty=
+le=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0p=
+t;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <tbody><tr>
+                                <td class=3D"mcnImageGroupContent" valign=
+=3D"top" style=3D"padding-left: 9px;padding-top: 0;padding-bottom: 0;mso-l=
+ine-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adju=
+st: 100%;">
+
+                                    <a href=3D"https://messicks.us2.list-m=
+anage.com/track/click?u=3De67e9d5eb977fa65f74448023&id=3D74633e132e&e=3D6d83c96f2d" title=3D"" class=3D"" target=3D"_blank" style=3D"mso-line-heigh=
+t-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+">
+                                        <img alt=3D"Used Kubota BX2680RV"=
+ src=3D"https://mcusercontent.com/e67e9d5eb977fa65f74448023/images/7140ed3=
+b-1dd5-5b26-30c5-44fe933061c0.jpg" width=3D"264" style=3D"max-width: 400px=
+;padding-bottom: 0px;border: 1px solid #FF0000;height: auto;outline: none;=
+text-decoration: none;-ms-interpolation-mode: bicubic;vertical-align: bott=
+om;" class=3D"mcnImage">
+                                    </a>
+
+                                </td>
+                            </tr>
+                        </tbody></table>
+
+                    <table align=3D"right" width=3D"273" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" class=3D"mcnImageGroupContentContainer" st=
+yle=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0=
+pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <tbody><tr>
+                                <td class=3D"mcnImageGroupContent" valign=
+=3D"top" style=3D"padding-right: 9px;padding-top: 0;padding-bottom: 0;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;">
+
+                                    <a href=3D"https://messicks.us2.list-m=
+anage.com/track/click?u=3De67e9d5eb977fa65f74448023&id=3D0b23b79520&e=3D6d83c96f2d" title=3D"" class=3D"" target=3D"_blank" style=3D"mso-line-heigh=
+t-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+">
+                                        <img alt=3D"Used New Holland RB450=
+RC" src=3D"https://mcusercontent.com/e67e9d5eb977fa65f74448023/images/65b2=
+08da-210e-ba86-025d-8b671d47c97c.jpg" width=3D"264" style=3D"max-width: 40=
+0px;padding-bottom: 0px;border: 1px solid #FF0000;height: auto;outline: no=
+ne;text-decoration: none;-ms-interpolation-mode: bicubic;vertical-align: b=
+ottom;" class=3D"mcnImage">
+                                    </a>
+
+                                </td>
+                            </tr>
+                        </tbody></table>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td valign=3D"top" style=3D"padding: 9px;mso-line-height-r=
+ule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" c=
+lass=3D"mcnImageGroupBlockInner">
+
+                    <table align=3D"left" width=3D"273" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" class=3D"mcnImageGroupContentContainer" sty=
+le=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0p=
+t;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <tbody><tr>
+                                <td class=3D"mcnImageGroupContent" valign=
+=3D"top" style=3D"padding-left: 9px;padding-top: 0;padding-bottom: 0;mso-l=
+ine-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adju=
+st: 100%;">
+
+                                    <a href=3D"https://messicks.us2.list-m=
+anage.com/track/click?u=3De67e9d5eb977fa65f74448023&id=3Db43a405457&e=3D6d83c96f2d" title=3D"" class=3D"" target=3D"_blank" style=3D"mso-line-heigh=
+t-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+">
+                                        <img alt=3D"Used Kubota KX080-4R3"=
+ src=3D"https://mcusercontent.com/e67e9d5eb977fa65f74448023/images/4bf5007=
+8-fd7a-7c4d-9f13-b942098decc4.jpg" width=3D"264" style=3D"max-width: 400px=
+;padding-bottom: 0px;border: 1px solid #FF0000;height: auto;outline: none;=
+text-decoration: none;-ms-interpolation-mode: bicubic;vertical-align: bott=
+om;" class=3D"mcnImage">
+                                    </a>
+
+                                </td>
+                            </tr>
+                        </tbody></table>
+
+                    <table align=3D"right" width=3D"273" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" class=3D"mcnImageGroupContentContainer" st=
+yle=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0=
+pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <tbody><tr>
+                                <td class=3D"mcnImageGroupContent" valign=
+=3D"top" style=3D"padding-right: 9px;padding-top: 0;padding-bottom: 0;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;">
+
+                                    <a href=3D"https://messicks.us2.list-m=
+anage.com/track/click?u=3De67e9d5eb977fa65f74448023&id=3D5ffa4f5e6a&e=3D6d83c96f2d" title=3D"" class=3D"" target=3D"_blank" style=3D"mso-line-heigh=
+t-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+">
+                                        <img alt=3D"Used John Deere Z915E"=
+ src=3D"https://mcusercontent.com/e67e9d5eb977fa65f74448023/images/115c79f=
+8-fced-3e92-72be-8fe33e359d19.jpg" width=3D"264" style=3D"max-width: 400px=
+;padding-bottom: 0px;border: 1px solid #FF0000;height: auto;outline: none;=
+text-decoration: none;-ms-interpolation-mode: bicubic;vertical-align: bott=
+om;" class=3D"mcnImage">
+                                    </a>
+
+                                </td>
+                            </tr>
+                        </tbody></table>
+
+                </td>
+            </tr>
+
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 5px 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-t=
+op-width: 2px;border-top-style: solid;border-top-color: #EAEAEA;border-col=
+lapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnImageCardBlock" style=3D"border-collapse: collapse;mso-ta=
+ble-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-t=
+ext-size-adjust: 100%;">
+    <tbody class=3D"mcnImageCardBlockOuter">
+        <tr>
+            <td class=3D"mcnImageCardBlockInner" valign=3D"top" style=3D"p=
+adding-top: 9px;padding-right: 18px;padding-bottom: 9px;padding-left: 18px=
+;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;">
+
+<table align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cla=
+ss=3D"mcnImageCardBottomContent" width=3D"100%" style=3D"background-color:=
+ #404040;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace:=
+ 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody><tr>
+        <td class=3D"mcnImageCardBottomImageContent" align=3D"left" valign=
+=3D"top" style=3D"padding-top: 0px;padding-right: 0px;padding-bottom: 0;pa=
+dding-left: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">
+
+
+            <a href=3D"https://messicks.us2.list-manage.com/track/click?u=
+=3De67e9d5eb977fa65f74448023&id=3D54583d0fa9&e=3D6d83c96f2d" title=3D"Tra=
+ctor Configurations | Compact Tractor Buyers Guide Part #2" class=3D"" tar=
+get=3D"_blank" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust=
+: 100%;-webkit-text-size-adjust: 100%;">
+
+
+            <img alt=3D"" src=3D"https://mcusercontent.com/e67e9d5eb977fa6=
+5f74448023/video_thumbnails_new/7853fcf312e2583e53465e14a34287fe.png" widt=
+h=3D"564" style=3D"max-width: 640px;border: 0;height: auto;outline: none;t=
+ext-decoration: none;-ms-interpolation-mode: bicubic;vertical-align: botto=
+m;" class=3D"mcnImage">
+            </a>
+
+        </td>
+    </tr>
+    <tr>
+        <td class=3D"mcnTextContent" valign=3D"top" style=3D"padding: 9px=
+ 18px;color: #F2F2F2;font-family: Helvetica;font-size: 14px;font-weight: n=
+ormal;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjus=
+t: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;line-height:=
+ 150%;" width=3D"546">
+            <span style=3D"font-size:17px"><strong>Compact&nbsp;Tractor Co=
+nfigurations - Tractor Buyers Guide Part #2</strong></span>
+        </td>
+    </tr>
+</tbody></table>
+
+
+
+
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnImageCardBlock" style=3D"border-collapse: collapse;mso-ta=
+ble-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-t=
+ext-size-adjust: 100%;">
+    <tbody class=3D"mcnImageCardBlockOuter">
+        <tr>
+            <td class=3D"mcnImageCardBlockInner" valign=3D"top" style=3D"p=
+adding-top: 9px;padding-right: 18px;padding-bottom: 9px;padding-left: 18px=
+;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;">
+
+<table align=3D"right" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"mcnImageCardBottomContent" width=3D"100%" style=3D"background-color=
+: #404040;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace=
+: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody><tr>
+        <td class=3D"mcnImageCardBottomImageContent" align=3D"left" valign=
+=3D"top" style=3D"padding-top: 0px;padding-right: 0px;padding-bottom: 0;pa=
+dding-left: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">
+
+
+            <a href=3D"https://messicks.us2.list-manage.com/track/click?u=
+=3De67e9d5eb977fa65f74448023&id=3D6526f3b898&e=3D6d83c96f2d" title=3D"Tra=
+nsformer Mower | Lane Shark Front Loader Brush Mowers" class=3D"" target=
+=3D"_blank" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+
+
+            <img alt=3D"" src=3D"https://mcusercontent.com/e67e9d5eb977fa6=
+5f74448023/video_thumbnails_new/5d46512138488226a7414a831eb0e002.png" widt=
+h=3D"564" style=3D"max-width: 640px;border: 0;height: auto;outline: none;t=
+ext-decoration: none;-ms-interpolation-mode: bicubic;vertical-align: botto=
+m;" class=3D"mcnImage">
+            </a>
+
+        </td>
+    </tr>
+    <tr>
+        <td class=3D"mcnTextContent" valign=3D"top" style=3D"padding: 9px=
+ 18px;color: #F2F2F2;font-family: Helvetica;font-size: 14px;font-weight: n=
+ormal;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjus=
+t: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;line-height:=
+ 150%;" width=3D"546">
+            <span style=3D"font-size:17px"><strong>Transformer Mower - Lan=
+e Shark Front Loader Brush Mowers</strong></span>
+        </td>
+    </tr>
+</tbody></table>
+
+
+
+
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </table>
+                                    <!-- // END HEADER -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" style=
+=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;">
+                                    <!-- BEGIN BODY // -->
+                                    <table border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" width=3D"600" id=3D"templateBody" style=3D"border-colla=
+pse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-ad=
+just: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;border=
+-top: 0;border-bottom: 0;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"bo=
+dyContainer" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;"><table class=3D"mcnImageBlock" styl=
+e=3D"min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-t=
+able-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%=
+;" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+    <tbody class=3D"mcnImageBlockOuter">
+            <tr>
+                <td style=3D"padding: 0px;mso-line-height-rule: exactly;-m=
+s-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class=3D"mcnImag=
+eBlockInner" valign=3D"top">
+                    <table class=3D"mcnImageContentContainer" style=3D"min=
+-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rsp=
+ace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width=
+=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"left">
+                        <tbody><tr>
+                            <td class=3D"mcnImageContent" style=3D"padding=
+-right: 0px;padding-left: 0px;padding-top: 0;padding-bottom: 0;text-align:=
+ center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-t=
+ext-size-adjust: 100%;" valign=3D"top">
+
+                                    <a href=3D"https://messicks.us2.list-m=
+anage.com/track/click?u=3De67e9d5eb977fa65f74448023&id=3D2f188a82e7&e=3D6d83c96f2d" title=3D"" class=3D"" target=3D"_blank" style=3D"mso-line-heigh=
+t-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+">
+                                        <img alt=3D"" src=3D"https://mcuse=
+rcontent.com/e67e9d5eb977fa65f74448023/images/7a13ce7a-3aae-729c-9f51-dfbc=
+e5d9cda5.jpg" style=3D"max-width: 600px;padding-bottom: 0px;display: inlin=
+e !important;vertical-align: bottom;border: 1px dotted #000000;height: aut=
+o;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" cl=
+ass=3D"mcnImage" width=3D"600" align=3D"middle">
+                                    </a>
+
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </td>
+            </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: coll=
+apse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;word-break: break-word;color: #000000;font-family: 'Time=
+s New Roman';font-size: 14px;line-height: 150%;text-align: left;">
+
+                            <div style=3D"text-align: center;"><em>Copyrig=
+ht =C2=A9 *2023 Messick's Equipment*=2C All rights reserved.</em><br>
+Want to change how you receive these emails?<br>
+You can <a href=3D"https://messicks.us2.list-manage.com/profile?u=3De67e9d=
+5eb977fa65f74448023&id=3Dacee3048b5&e=3D6d83c96f2d&c=3Dce1d7e9250" style=3D"=
+mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size=
+-adjust: 100%;color: #000000;font-weight: normal;text-decoration: underlin=
+e;">update your preferences</a> or <a href=3D"https://messicks.us2.list-ma=
+nage.com/unsubscribe?u=3De67e9d5eb977fa65f74448023&id=3Dacee3048b5&e=3D6d83c96f2d&c=3Dce1d7e9250" style=3D"mso-line-height-rule: exactly;-ms-text-size=
+-adjust: 100%;-webkit-text-size-adjust: 100%;color: #000000;font-weight: n=
+ormal;text-decoration: underline;">unsubscribe from this list</a>.</div>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </table>
+                                    <!-- // END BODY -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" style=
+=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;">
+                                    <!-- BEGIN COLUMNS // -->
+                                    <table border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" width=3D"600" id=3D"templateColumns" style=3D"border-co=
+llapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size=
+-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;bor=
+der-top: 0;border-bottom: 0;">
+                                        <tr>
+                                            <td align=3D"left" valign=3D"t=
+op" class=3D"columnsContainer" width=3D"33%" style=3D"mso-line-height-rule=
+: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                <table align=3D"left" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templ=
+ateColumn" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-ta=
+ble-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+">
+                                                    <tr>
+                                                        <td valign=3D"top"=
+ class=3D"leftColumnContainer" style=3D"mso-line-height-rule: exactly;-ms-=
+text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td align=3D"left" valign=3D"t=
+op" class=3D"columnsContainer" width=3D"33%" style=3D"mso-line-height-rule=
+: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                <table align=3D"left" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templ=
+ateColumn" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-ta=
+ble-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+">
+                                                    <tr>
+                                                        <td valign=3D"top"=
+ class=3D"centerColumnContainer" style=3D"mso-line-height-rule: exactly;-m=
+s-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td align=3D"left" valign=3D"t=
+op" class=3D"columnsContainer" width=3D"33%" style=3D"mso-line-height-rule=
+: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                <table align=3D"left" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templ=
+ateColumn" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-ta=
+ble-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+">
+                                                    <tr>
+                                                        <td valign=3D"top"=
+ class=3D"rightColumnContainer" style=3D"mso-line-height-rule: exactly;-ms=
+-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- // END COLUMNS -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" style=
+=3D"padding-bottom: 40px;mso-line-height-rule: exactly;-ms-text-size-adjus=
+t: 100%;-webkit-text-size-adjust: 100%;">
+                                    <!-- BEGIN FOOTER // -->
+                                    <table border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" width=3D"600" id=3D"templateFooter" style=3D"border-col=
+lapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #EAEAEA;bord=
+er-top: 0;border-bottom: 0;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"fo=
+oterContainer" style=3D"padding-top: 9px;padding-bottom: 9px;mso-line-heig=
+ht-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%=
+;"><table class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collap=
+se: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;"=
+ width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 2px 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" style=3D"min-width: 100=
+%;border-top: 2px solid #EAEAEA;border-collapse: collapse;mso-table-lspace=
+: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-a=
+djust: 100%;" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D=
+"0">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </table>
+                                    <!-- // END FOOTER -->
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- // END TEMPLATE -->
+                    </td>
+                </tr>
+            </table>
+        </center>
+    <img src=3D"https://messicks.us2.list-manage.com/track/open.php?u=3De6=
+7e9d5eb977fa65f74448023&id=3Dce1d7e9250&e=3D6d83c96f2d" height=3D"1" widt=
+h=3D"1" alt=3D""></body>
+</html>
+--_----------=_MCPart_1714628960--

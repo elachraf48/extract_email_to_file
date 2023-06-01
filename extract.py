@@ -5,19 +5,26 @@ import re
 from email.header import decode_header
 from email.parser import BytesParser
 import tkinter as tk
-from tkinter import filedialog
+from tkinter import filedialog, ttk
+import tkinter.simpledialog as sd  # Add this line for the simpledialog module
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
 
 def extract_emails(email_provider):
     # Connect to the IMAP server based on the email provider
-    if email_provider.lower() == "1":
+    if email_provider == "Hotmail":
         imap_server = imaplib.IMAP4_SSL("imap-mail.outlook.com")
         provider = "hotmail.com"
         folder_name = "hotmail"
-    elif email_provider.lower() == "2":
+    elif email_provider == "Outlook":
+        imap_server = imaplib.IMAP4_SSL("imap-mail.outlook.com")
+        provider = "outlook.com"
+        folder_name = "Outlook"
+    elif email_provider == "Yahoo":
         imap_server = imaplib.IMAP4_SSL("imap.mail.yahoo.com")
         provider = "yahoo.com"
         folder_name = "yahoo"
-    elif email_provider.lower() == "3":
+    elif email_provider == "Gmail":
         imap_server = imaplib.IMAP4_SSL("imap.gmail.com")
         provider = "gmail.com"
         folder_name = "gmail"
@@ -30,7 +37,6 @@ def extract_emails(email_provider):
         os.makedirs(f"resulta/{folder_name}")
 
     # Read the email and password data from the file "data.txt"
-    email_password_dict = {}
     with open("data.txt", "r") as file:
         email_password_data = file.readlines()
 
@@ -44,20 +50,26 @@ def extract_emails(email_provider):
             line = line.strip()
             if line:
                 email, password = line.split(",")
-                email_password_dict[provider] = {"email": email, "password": password}
+                if email.endswith(provider):
+                    email_password_dict[provider] = {"email": email, "password": password}
 
     # Check if the email provider is supported and retrieve the corresponding email and password
     if provider in email_password_dict:
         email_address = email_password_dict[provider]["email"]
         password = email_password_dict[provider]["password"]
     else:
-        error_text.insert(tk.END, "Email provider not found in data.txt.\n")
-        email_address = input("Enter your email address: ")
-        password = input("Enter your password: ")
-        email_password_dict[provider] = {"email": email_address, "password": password}
+        # error_text.insert(tk.END, "Email provider not found in data.txt.\n")
+        # email_address = sd.askstring("Add Email and Password", "Enter your email address:")
+        # password = sd.askstring("Add Email and Password", "Enter your password:")
+        # email_password_dict[provider] = {"email": email_address, "password": password}
 
+        # # Save the new email and password to data.txt
+        # with open("data.txt", "a") as file:
+        #     file.write(f"{email_address},{password}\n")
+        add_email_password()
     # Connect to the IMAP server
     try:
+        print(email_address, password)
         imap_server.login(email_address, password)
     except imaplib.IMAP4.error as e:
         error_text.insert(tk.END, f"Failed to log in to the email server: {str(e)}\n")
@@ -88,7 +100,10 @@ def extract_emails(email_provider):
                 email_message = email_parser.parsebytes(raw_email)
 
                 # Extract the "From" name from the email headers and decode if necessary
-                from_name = decode_header(email_message["From"])[0][0]
+                # from_name = decode_header(email_message["From"])[0][0]
+                from_name_bytes = decode_header(email_message["From"])[0][0]
+                from_name = from_name_bytes.decode("utf-8") if isinstance(from_name_bytes, bytes) else from_name_bytes
+
                 if isinstance(from_name, bytes):
                     from_name = from_name.decode("utf-8")
 
@@ -127,44 +142,120 @@ def extract_emails(email_provider):
             error_text.insert(tk.END, f"Error details: {str(e)}\n")
 
         # Update the progress
-        progress_text = f"Progress: {current_email}/{total_emails} emails processed\n"
+        progress_text = f"Progress: {current_email}/{total_emails} emails processed"
+        print(progress_text)
+        error_text.delete("1.0", tk.END)
         error_text.insert(tk.END, progress_text)
         error_text.update_idletasks()
         current_email += 1
+
+        # Check if extraction is paused
+        if pause_extraction:
+            error_text.delete("1.0", tk.END)
+            error_text.insert(tk.END, "Extraction paused.\n")
+            while pause_extraction:
+                window.update()
+                if not email_extraction_running:
+                    return
 
     # Close the connection to the IMAP server
     imap_server.expunge()
     imap_server.close()
     imap_server.logout()
 
-def select_folder():
-    folder_selected = filedialog.askdirectory()
-    folder_path.set(folder_selected)
+def add_email_password():
+    # Create a new window for adding email and password
+    add_window = tk.Toplevel(window)
+    add_window.title("Add Email and Password")
 
-def start_extraction_gmail():
-    extract_emails("3")
+    # Create labels and entry fields for email and password
+    email_label = ttk.Label(add_window, text="Email Address:")
+    email_entry = ttk.Entry(add_window)
+    password_label = ttk.Label(add_window, text="Password:")
+    password_entry = ttk.Entry(add_window, show="*")
+    submit_button = ttk.Button(add_window, text="Submit",
+                               command=lambda: save_email_password(add_window, provider_var.get(), email_entry.get(), password_entry.get()))
+    
+    # Grid layout for widgets in the add window
+    email_label.grid(row=0, column=0, padx=10, pady=5, sticky="w")
+    email_entry.grid(row=0, column=1, padx=10, pady=5)
+    password_label.grid(row=1, column=0, padx=10, pady=5, sticky="w")
+    password_entry.grid(row=1, column=1, padx=10, pady=5)
+    submit_button.grid(row=2, column=0, columnspan=2, padx=10, pady=10, sticky="we")
 
-def start_extraction_yahoo():
-    extract_emails("2")
+    # Center the add window on the screen
+    add_window.geometry("+%d+%d" % (add_window.winfo_screenwidth() / 2 - add_window.winfo_width() / 2, add_window.winfo_screenheight() / 2 - add_window.winfo_height() / 2))
 
-def start_extraction_hotmail():
-    extract_emails("1")
+
+   
+email_password_dict = {}
+
+
+def save_email_password(window, provider, email, password):
+    email_password_dict[provider] = {"email": email, "password": password}
+
+    # Save the new email and password to data.txt
+    with open("data.txt", "a") as file:
+        file.write(f"{email},{password}\n")
+
+    # Close the add window
+    window.destroy()
+def start_extraction():
+    global email_extraction_running
+    email_extraction_running = True
+    email_provider = provider_var.get()
+    extract_emails(email_provider)
+    email_extraction_running = False
+
+
+def pause_extraction():
+    global pause_extraction
+    if email_extraction_running:
+        pause_extraction = True
+
+
+def resume_extraction():
+    global pause_extraction
+    if email_extraction_running and pause_extraction:
+        pause_extraction = False
+        error_text.delete("1.0", tk.END)
+        error_text.insert(tk.END, "Extraction resumed.\n")
 
 # Create the Tkinter window
 window = tk.Tk()
 window.title("Email Extraction")
-window.geometry("410x410")
+window.geometry("430x220")
+
+# Configure style for the widgets
+style = ttk.Style()
+style.configure("TLabel", font=("Arial", 12))
+style.configure("TCombobox", font=("Arial", 12))
+style.configure("TButton", font=("Arial", 12))
 
 # Create widgets
-gmail_button = tk.Button(window, text="Gmail", command=start_extraction_gmail)
-yahoo_button = tk.Button(window, text="Yahoo", command=start_extraction_yahoo)
-hotmail_button = tk.Button(window, text="Hotmail", command=start_extraction_hotmail)
-error_text = tk.Text(window, height=10, width=50)
+provider_var = tk.StringVar()
+provider_label = ttk.Label(window, text="Select Email Provider:")
+provider_dropdown = ttk.Combobox(window, textvariable=provider_var, values=["Gmail", "Yahoo", "Hotmail","Outlook"])
+provider_dropdown.set("Yahoo")
+start_button = ttk.Button(window, text="Start Extraction", command=start_extraction)
+pause_button = ttk.Button(window, text="Pause Extraction", command=pause_extraction)
+resume_button = ttk.Button(window, text="Resume Extraction", command=resume_extraction)
+error_text = tk.Text(window, height=2, width=50)
 
 # Grid layout for widgets
-gmail_button.grid(row=0, column=0, pady=5)
-yahoo_button.grid(row=1, column=0, pady=5)
-hotmail_button.grid(row=2, column=0, pady=5)
-error_text.grid(row=3, column=0, padx=0, pady=10)
+provider_label.grid(row=0, column=0, padx=10, pady=5, sticky="w")
+provider_dropdown.grid(row=0, column=1, padx=10, pady=5, sticky="we")
+start_button.grid(row=1, column=0, columnspan=2, padx=10, pady=10, sticky="we")
+pause_button.grid(row=2, column=0, columnspan=2, padx=10, pady=5, sticky="we")
+resume_button.grid(row=3, column=0, columnspan=2, padx=10, pady=5, sticky="we")
+error_text.grid(row=4, column=0, columnspan=2, padx=10, pady=10, sticky="we")
 
+# Center the window on the screen
+window.eval('tk::PlaceWindow . center')
+
+# Global variables
+email_extraction_running = False
+pause_extraction = False
+
+# Start the Tkinter event loop
 window.mainloop()

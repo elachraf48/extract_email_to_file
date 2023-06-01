@@ -1,0 +1,995 @@
+Received: from 10.223.248.245
+ by atlas119.free.mail.ne1.yahoo.com pod-id NONE with HTTPS; Tue, 7 Mar 2023 12:52:10 +0000
+Return-Path: <382-JZB-798.0.16738.0.0.8640.9.15648049-1@bounce.a16z.com>
+X-Originating-Ip: [192.28.152.140]
+Received-SPF: pass (domain of bounce.a16z.com designates 192.28.152.140 as permitted sender)
+Authentication-Results: atlas119.free.mail.ne1.yahoo.com;
+ dkim=pass header.i=@a16z.com header.s=mkto;
+ dkim=pass header.i=@mktomail.com header.s=m1;
+ spf=pass smtp.mailfrom=bounce.a16z.com;
+ dmarc=pass(p=QUARANTINE,sp=REJECT) header.from=a16z.com;
+X-Apparently-To: achrafel73114@yahoo.com; Tue, 7 Mar 2023 12:52:11 +0000
+X-YMailAVSC: Xz3ZUFU3bBu.FC4OgZSvjqxDQBU4hN2g7HTjd1Cp.tScBO7
+ oIW7YmfdrBX2ONX6Jx6w8sl7kbsEHfliABAyMl_PqJLyC4eu_xp23lFWueGW
+ mKPpJl6nR8prAuLHp.0EaR2RlQ1_Iy8_FRYKXYdNJcCow2VlYXeOMPBJfbN.
+ Ba4wu1IZuqz7xGNw0OL3.GFr54b0ori_l6a4faUS844B_WE5B7aXIfhcFsS_
+ EmraQvAuI.eLe3a5Pa_.VdqSNNkZXS95DKddiw2sfSZ3qELYgCtE4adKc7On
+ olRGkCc3OagdumflkxfDtYtpy5jdMDuzok_CV8svOIrdfcFLOQIGR.MfVUFC
+ vVC1ZKZVETzo57jqc5o31uAsInmpnFqekwjFHa5K0YXxxd9M1QMvxdzYKfeP
+ hGtuETiFQ_QF4O5cf5E4h3wehdpx51q9fXfNmVqHw5r.RT.h4zJUYwvus.nG
+ 06m5fgU6hKSCExBEd8axLWQGYpiqE._2dMjsgiDX6PuDL2plNkKCFshis4QO
+ MDgOYW_t6Vs7g2KvG2yZBGUB3eVIeerKZDaHPffqcT0lftqksgLmPaI_hanj
+ zrDsyxc_m2LgFQ7_S.M12amgsC0Oa_g7VLI0.0bqpamOx_grKnhaY3GyuOfR
+ j2E48aONYUVCh0Fa15hI5wQ4bn.aH1oFySkzxJ6lVFfbC4eQFIDNW7wd5Uhl
+ uco761aQbqvDRC7sN0G958j8CcPviCExwArgQXk1QugNQ6RllfNpJoysPlIf
+ S9bGxQh27goSa2TlMoyYrmq5CxA4I2jkMZWin65Qy1HpsqBmThmDtLpUFLKR
+ wiDrzWdkMBNMvOtbt6Lrk3qEXyaH_EEMOzzx38SGqiAHJu8RG4e11L3Bcq8c
+ dnBdWX09xa6Bx6uSOL8EK44vGm1Zfm_B3wcuR82iagfok9eEgjcbOlgyYBg2
+ Llxv.qK09IV.A7vbVQ3k_J11FzAzEj310gwc_.9Kylv7nfIwfdV5TzIQJFqW
+ oWVM5PY0uhJ.TUoOEduKEE60eEDL1tqb77UcsoLTUJyow63dAGC74wZI8EVj
+ yOJsr8xCgUEsKbReJhaYu8fp7FAj6Hp1iIn.ffDa11VEiiE0j5zeGqopNELZ
+ FU2GTm3pZKHSoeQNttRFTSu3ODa0O9b8urcmd6i.auyCG0zJl_tdLAZXR8zs
+ jzdHNiQB1KsFq3V.BWh.dnx3mKcQZ8Q4cOX8-
+X-YMailISG: YKopgKsWLDsjZA2e9S_elzX4DAkVXGVQUQlTi48xjLpL0R_g
+ 5bOY5K9RzJqbHLWTwx1JD20RgkmwEM53XVORefljLc96Mqhi7Mx9Grqf8xAp
+ _qpTzB0uP9ZsI9SwfuUJo7psmXXKl459kG1AcY8gG7O.dv3vpo9iwz3rFr3G
+ glMGTv1cc.SeZeLInq.rj8T8nnBWMZkBzWvTlcXrY2wi4zsPXSgXQihVQoNc
+ NP9bGI1bFTXWhd2yj_uWBlmt9CORfE8KaEY8hHDJKSE5XcUMgaIkDR7XWPIV
+ mBP8ljyQHkO3563XK0Uvxkpz8FY_bsCUZXB_CmpnnYkqXujgXX103CgV_8wH
+ oRWvayKxmiELKb4a5DDNj7zxwQ0YNIssfku7QDQhV4.cipW2nbafOGJseJEe
+ EseivXo6XG8tyAj5EjNASExAqAOJeTRGVsIlPdHo6xESQfhYo0qRvL5K24Sm
+ _k1o2CZ1_0z7tetMSODy6X0HfuGX_j92B8mTohSINHuayaoSyZFBHPIx6_UF
+ JN689HumIjIM5g3WdLRqyD20UbQddKWIyohJwGwwsrn1nm8LSr7j4rCL9TM0
+ 8HIBVqRKPImkaa4xaZF_ud0mqRllABRFO0YWbNWp9DVMj5orjMxVlj2QnVH.
+ HEkH.z68kPixR1VJ5XSzMAy2sFDV15ds8rFm2YBuEItVtSJK4nfjeFIat8qZ
+ PXLx6O8kNCVXUJDns_TE8oI3sK6_N0mX9deikY8qmKrsYMtjHQkFHNWnr6jj
+ pTorPS3TfwJ552Q53rjDTGLRTGd9uodZrTtwKQRIM6QJOKZJ5CT5YsFK9BL5
+ .ZIc8hR5c8xEzSg0wfbfzLHMFPCNY9j8aHbmq90sut2qhd5Eg4qGrJwkmz2O
+ I9Iqn1ZXysSvHxS7ekbTEbtVcs_Sv6KJImUuOsiU2._1yIgK3SbG6KVhIbCT
+ QZg4PczCMJwj6GQBs23myDEj.LZQMK_ZSF93cuZiwAcD4kz45A6W4xJ6YjT1
+ 6E7UF6H6GkReObhYfuzTIDbSnEbpniZ8Whe.hFm3QrT2xqgsqv7B5ayhMgJZ
+ oBF_Gy6tTk.G7xZiGSkO3BMPwJZqtNc.Ok5PnxlVEtqGbNBNloEAiRO2QGf7
+ NN9zO5kMlHX2BdYMW5BLXJCDifCe21rKMaNfxJzR1NEb4bKTIAtq5wOQN_ME
+ irBY4eVqNarT6Zbi95vQdMyJmW_OXDeC13Xuv2dFHwOJTvX4y.pOvskavZve
+ ht78D4._ClKhnSgpNTRCUzJMSLBF5tTgBSU.qyjh8YMuIm6jrXVND9hRBJfm
+ C.l54PE-
+Received: from 192.28.152.140 (EHLO potomac2140.mktomail.com)
+ by 10.223.248.245 with SMTPs
+ (version=TLS1_2 cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256);
+ Tue, 07 Mar 2023 12:52:10 +0000
+X-MSFBL: q9T3bTNHRDeKZ2oYkQ03DYb4Bdcu75FD2moCCkEnqk0=|eyJyIjoiYWNocmFmZWw
+	3MzExNEB5YWhvby5jb20iLCJnIjoiYmctYWItMDEiLCJ1IjoiMzgyLUpaQi03OTg
+	6MDozNjc2OjE3MTkwOjE6ODY0MDo5OjE2NzM4OjE1NjQ4MDQ5LTEiLCJiIjoiZHZ
+	wLTE5Mi0yOC0xNTItMTQwIn0=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1678193530;
+	s=mkto; d=a16z.com; i=@a16z.com;
+	h=Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=RyBy6gYFzW6sMrsR3i5qOi1X7CjD2INweL5Aa4oMBMA=;
+	b=d8G44eUzwGkLjFWKCML81E3BSUctShBJYLzGvnSVYg5X5PkYxizehjJTrBTgTJzt
+	VHTfuC3xAtw5FGSQGpOhzUCIzf+xXalqTTVbII/HF1q8rMu2NDQob0V6CRxu4HBIa3S
+	Xk9jTA/JCBkWUCkvQCx44IzwpM/PVftqPUPhkxjo=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1678193530;
+	s=m1; d=mktomail.com; i=@mktomail.com;
+	h=Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=RyBy6gYFzW6sMrsR3i5qOi1X7CjD2INweL5Aa4oMBMA=;
+	b=K4YSd+DPwOAH10oH7V9pzRM7f9XRa23faUUImI/HaYx3v/u5tMlfyKF8gThljH45
+	fxM3WUygSKV2WZ2PZ7ZkFB0JXrpwBoqHvdc/IEVSJ1FOmqrh6x6yfSTuECXUXQ1kVA9
+	+WFLPF38665z/Rycr26JP71QlnFVLdYoF4aPBXtE=
+Date: Tue, 7 Mar 2023 06:52:10 -0600 (CST)
+From: a16z Bio + Health Team <bio_healthnewsletter@a16z.com>
+Reply-To: bio_healthnewsletter@reply.a16z.com
+To: achrafel73114@yahoo.com
+Message-ID: <1478155453.55902193.1678193530421@abmktmail-trigger1h.marketo.org>
+Subject: Thank you for subscribing to the a16z Bio + Health newsletter!
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_55902192_1211520872.1678193530409"
+X-Binding: bg-ab-01
+X-MarketoID: 382-JZB-798:0:3676:17190:1:8640:9:16738:15648049-1
+X-Mailfrom: 382-JZB-798.0.16738.0.0.8640.9.15648049-1@bounce.a16z.com
+X-MktArchive: false
+X-MSYS-API: {"options":{"open_tracking":false,"click_tracking":false}}
+X-MktMailDKIM: true
+Content-Length: 34971
+
+------=_Part_55902192_1211520872.1678193530409
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+To view this email as a web page, go to the following address: https://info=
+.a16z.com/index.php/email/emailWebview?mkt_tok=3DMzgyLUpaQi03OTgAAAGKWxnGJH=
+gf9IQTJh5apMSPz1KrMMZbsp08pKGywHqg8F0I1znkjAi82H09O4zsVUHEab_CpFMsFv_eKuz4H=
+3szxBQkGrfTOy68fkaN7NLn_rY&md_id=3D8640
+
+Thanks for subscribing!
+
+Welcome to the a16z Bio newsletter! Thank you for being part of our communi=
+ty of industry leaders, entrepreneurs, scientists, and other thinkers and m=
+akers. Here's what you can expect from us (with a few hints on where to get=
+ started on your own):
+
+- Deep dives on all the ways bio is eating the world <https://go2.a16z.com/=
+MzgyLUpaQi03OTgAAAGKWxnGJNy6ocZZRcn2mGzo6SWSJFh8awQGkFB_x00X6sn8ycZ8G-QJ4cg=
+Mw0VFdL0BT_98mWE=3D>, in everything from healthcare <https://go2.a16z.com/M=
+zgyLUpaQi03OTgAAAGKWxnGJDXXEdeVJI5bz1Hx23rg2lGwbfEJsWitsVmcSdhbRj9A2X7ouknF=
+EZ4mYJDr03eCXFg=3D> to gene editing <https://go2.a16z.com/MzgyLUpaQi03OTgAA=
+AGKWxnGJBnPAlrDmUoQ0S7U_2r6GAonkTBAginfkYtTPkxhLCMQfM8bg1dhGoAGgu4GRhp8g6M=
+=3D>, engineering biology <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnGJFQ=
+vePRl_ZqdWiNJRLsDy5_ETC7pPf7wh73isfa1NXZZLqkHXVXZEarxZGONF-H3iPQ=3D>, thera=
+peutics <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnGJCsMjCPsxmIlah2C0DU3H=
+5kRjnE94z1o1h3N4ywuGF6SeyNwMZegpO7I4vQUzA1ONb8=3D>, and more.
+
+- Practical advice for creating a culture of innovation <https://go2.a16z.c=
+om/MzgyLUpaQi03OTgAAAGKWxnGJG3NEV822E98EYOc_g4WTWVsdr1xrIm6yoTLO_ZgVCnKLifQ=
+FuDUs6ZtJihWFh83lEM=3D> =E2=80=94 at any size =E2=80=94 as well as building=
+ great products <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnGJBoNcdZB5zfsp=
+qkYXQ23ScdLxQA-ExGLEinx0HslLeUBAm1AHZ3pggY7VEix3Ow6NyQ=3D>, understanding k=
+ey metrics, growing marketplaces and network effects, and hiring and nurtur=
+ing talent.
+
+- Discussions of tech and life science trends, news, and the future, such a=
+s: covering the past, present, and future of engineering biology; the futur=
+e of healthcare; deep learning & medicine; the business of building healthc=
+are and life science companies; policy; and much more.
+
+And, in case you haven't already, check out the a16z Podcast <https://go2.a=
+16z.com/MzgyLUpaQi03OTgAAAGKWxnGJADw6qWQJymOjCu18NK5UOck3uY8yK-lLqrtgvOGmPr=
+ExuUnjbZja_GMnG7vqcm-ORw=3D>. With over 30 million listens, we feature top =
+experts, business leaders, book authors, and other interesting voices from =
+around the world, such as George Church, Andrew Lo, Amy Abernethy, and othe=
+rs. We release multiple episodes a week, and you can check out all-time top=
+ episodes here <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnGJEHm9b6YIGQaYg=
+SpHqiRfjsbnSo7aWwk0tjGerQjtjyqTBPvmioG6PfEAQ8MrJ4AFjk=3D>. Find it on Apple=
+ Podcasts <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnGJGXSLxlBuMCmahfy4jc=
+KZWxlyAb-2pxhikCSUJtgzl4dJI0W1dU8CUUlBY-YJPfoln8=3D>, Spotify <https://go2.=
+a16z.com/MzgyLUpaQi03OTgAAAGKWxnGJCxJdzY4WwV3GwBhlvFwWipUCr4GP4NUo8CnuSEiBT=
+BtU-X50ZtW9VTuspx9I7a3aFo=3D>, SoundCloud <https://go2.a16z.com/MzgyLUpaQi0=
+3OTgAAAGKWxnGJHBPM-wTk8NeipH1Pld0s3ZeIIt5VjpZ5aLMn1FsKQL09dAYJSZL6K6WoflIL-=
+02588=3D>, Sirius XM, or your favorite podcast app.
+
+Thank you again, and happy reading/listening/watching,
+
+The a16z Editorial team
+
+
+
+2865 Sand Hill Road, Suite 101=20
+Menlo Park, CA 94025=20
+11 Madison Avenue, 15th Floor=20
+New York, NY, 10010
+Update email preferences <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnGJPTD=
+PND0IYA_QkNrieBgWXzSVELB-czMaJeqbtT2SANvDrbgUNCwSXuNtZU25h2pjZQ=3D>
+Unsubscribe <[[https://info.a16z.com/UnsubscribePage.html?mkt_unsubscribe=
+=3D1&mkt_tok=3DMzgyLUpaQi03OTgAAAGKWxnGJHgf9IQTJh5apMSPz1KrMMZbsp08pKGywHqg=
+8F0I1znkjAi82H09O4zsVUHEab_CpFMsFv_eKuz4H3szxBQkGrfTOy68fkaN7NLn_rY]]>
+Software Is Eating the World
+
+------=_Part_55902192_1211520872.1678193530409
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:sch=
+emas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office"=
+>
+<head>=20
+<!-- Marketo Variable Definitions -->                                   =20
+<!-- Background variables -->                                              =
+                                                                           =
+               =20
+<!-- Separator height variables -->                                        =
+                         =20
+<!-- Other Meta Tags -->=20
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8" />=
+=20
+<meta content=3D"telephone=3Dno" name=3D"format-detection" />=20
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0" />=20
+<style type=3D"text/css">
+=09=09@font-face {
+=09=09=09font-family: 'Proxima Nova';
+=09=09=09src: url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-=
+Regular.woff2') format('woff2'),
+=09=09=09url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-Regul=
+ar.woff') format('woff');
+=09=09=09font-weight: 400;
+=09=09=09font-style: normal;
+=09=09}
+=09=09@font-face {
+=09=09=09font-family: 'Proxima Nova';
+=09=09=09src: url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-=
+RegularIt--09-01-020.woff2') format('woff2'),
+=09=09=09url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-Regul=
+arIt--09-01-020.woff') format('woff');
+=09=09=09font-weight: 400;
+=09=09=09font-style: italic;
+=09=09}
+
+=09=09@font-face {
+=09=09=09font-family: 'Proxima Nova';
+=09=09=09src: url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-=
+Medium--09-01-020.woff2') format('woff2'),
+=09=09=09url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-Mediu=
+m--09-01-020.woff') format('woff');
+=09=09=09font-weight: 500;
+=09=09=09font-style: normal;
+=09=09}
+
+=09=09@font-face {
+=09=09=09font-family: 'Proxima Nova';
+=09=09=09src: url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-=
+Semibold--09-01-020.woff2') format('woff2'),
+=09=09=09url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-Semib=
+old--09-01-020.woff') format('woff');
+=09=09=09font-weight: 600;
+=09=09=09font-style: normal;
+=09=09}
+
+=09=09@font-face {
+=09=09=09font-family: 'Proxima Nova';
+=09=09=09src: url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-=
+Bold--09-01-020.woff2') format('woff2'),
+=09=09=09url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-Bold-=
+-09-01-020.woff') format('woff');
+=09=09=09font-weight: 700;
+=09=09=09font-style: normal;
+=09=09}
+=09=09@font-face {
+=09=09=09font-family: 'Proxima Nova';
+=09=09=09src: url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-=
+BoldIt--09-01-020.woff2') format('woff2'),
+=09=09=09url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-BoldI=
+t--09-01-020.woff') format('woff');
+=09=09=09font-weight: 700;
+=09=09=09font-style: italic;
+=09=09}
+=09=09a{
+=09=09=09outline:none;
+=09=09=09text-decoration:underline;
+=09=09=09-webkit-transition:all 0.2s ease;
+=09=09=09-moz-transition:all 0.2s ease;
+=09=09=09-ms-transition:all 0.2s ease;
+=09=09=09transition:all 0.2s ease;
+=09=09=09text-decoration: none;
+=09=09}
+=09=09a:hover,
+=09=09a:focus { opacity: 0.8; }
+=09=09a[x-apple-data-detectors]{color:inherit !important; text-decoration:n=
+one !important;}
+=09=09a img{border:none;}
+=09=09.long-word-td {
+=09=09=09word-break: break-all;
+=09=09=09overflow-wrap: break-word;
+=09=09=09line-break: anywhere;
+=09=09=09word-break:inherit !important;
+=09=09}
+=09=09.long-word a {
+=09=09=09line-break: anywhere;
+=09=09=09word-break: break-all;
+=09=09=09word-wrap: break-word;
+=09=09=09overflow-wrap: break-word;
+=09=09}
+=09=09.button {
+=09=09=09-webkit-transition:all 0.3s ease;
+=09=09=09-moz-transition:all 0.3s ease;
+=09=09=09-ms-transition:all 0.3s ease;
+=09=09=09transition:all 0.3s ease;
+=09=09=09word-break: break-all;
+=09=09}
+=09=09.button:hover { opacity: 0.8; }
+=09=09table td{mso-line-height-rule:exactly;}
+=09=09.ExternalClass, .ExternalClass a, .ExternalClass span, .ExternalClass=
+ b, .ExternalClass br, .ExternalClass p, .ExternalClass div{line-height:inh=
+erit;}
+=09=09.address,
+=09=09.date { color: #35353a !important; background: none !important; text-=
+decoration: none !important;}
+=09=09.address span,
+=09=09.address *,
+=09=09.date span,
+=09=09.date * { color: #35353a !important; text-decoration: none !important=
+; border:none !important; background: none !important;}
+=09=09img { max-width: 100%; height: auto; }
+=09=09ul,
+=09=09ol {
+=09=09=09padding-left: 23px;
+=09=09=09margin-top: 0;
+=09=09=09padding-top: 13px;
+=09=09=09padding-bottom: 0;
+=09=09}
+=09=09ul { list-style-type: disc; }
+=09=09ul li,
+=09=09ol li { margin-bottom: 6px; }
+
+=09=09p { padding-top: 0 !important; padding-bottom: 0 !important; margin-t=
+op: 0 !important; margin-bottom: 0 !important; }
+=09=09p + p { margin-top: 10px !important; }
+
+=09=09img + div { display:none !important; width:0 !important; height:0 !im=
+portant; padding:0 !important; font-size:0 !important; line-height:0 !impor=
+tant; }
+
+=09=09.hide-everywhere { display:none !important; width:0 !important; heigh=
+t:0 !important; padding:0 !important; font-size:0 !important; line-height:0=
+ !important; }
+
+=09=09/* Styling for screen size 639 and less */
+=09=09@media only screen and (max-width:639px) {
+=09=09=09.py-md-10 { padding-top: 10px !important; padding-bottom: 10px !im=
+portant; }
+=09=09=09.px-md-0 { padding-left: 0 !important; padding-right: 0 !important=
+; }
+=09=09=09.px-md-30 { padding-left: 30px !important; padding-right: 30px !im=
+portant; }
+=09=09=09.pl-md-30 { padding-left: 30px !important; }
+=09=09=09.pr-md-30 { padding-right: 30px !important; }
+=09=09}
+
+=09=09/* Styling for screen size 599 and less */
+=09=09@media only screen and (max-width:599px) {
+=09=09=09.flexible { width:100% !important; }
+=09=09=09.table-center { float:none !important; margin:0 auto !important; }
+=09=09=09.table-left { float:none !important; margin:0 auto 0 0 !important;=
+ }
+=09=09=09.hide { display:none !important; width:0 !important; height:0 !imp=
+ortant; padding:0 !important; font-size:0 !important; line-height:0 !import=
+ant; }
+=09=09=09.db { display:block !important; }
+=09=09=09.image-m { display:table-cell !important; }
+=09=09=09.image-m img { display:block !important; width:100% !important; he=
+ight:auto !important; font: 10px/13px Arial,Helvetica,Verdana,Helvetica,san=
+s-serif; }
+=09=09=09.img-flex img { width:100% !important; height:auto !important; }
+=09=09=09.img-flex { width:100% !important; height:auto !important; }
+=09=09=09.aligncenter { text-align:center !important; }
+=09=09=09.alignleft { text-align:left !important; }
+=09=09=09.table-holder { display:table !important; width:100% !important; }
+=09=09=09.tcap { display:table-caption !important; width:100% !important; }
+=09=09=09.thead { display:table-header-group !important; width:100% !import=
+ant; }
+=09=09=09.trow { display:table-row !important; width:100% !important; }
+=09=09=09.tfoot { display:table-footer-group !important; width:100% !import=
+ant; }
+=09=09=09.flex { display:block !important; width:100% !important; padding-l=
+eft: 0 !important; padding-right: 0 !important; border-left: none !importan=
+t; border-right: none !important; }
+=09=09=09/* Custom */
+=09=09=09.pl-0 { padding-left: 0 !important; }
+=09=09=09.pr-0 { padding-right: 0 !important; }
+=09=09=09.px-30 { padding-left: 30px !important; padding-right: 30px !impor=
+tant; }
+=09=09=09.pt-30 { padding-top: 30px !important; }
+=09=09=09.pb-20 { padding-bottom: 20px !important; }
+=09=09=09.h-10 { height: 10px !important; }
+=09=09=09.h-25 { height: 25px !important; }
+=09=09=09.h-30 { height: 30px !important; }
+=09=09=09.pt-15 { padding-top: 15px !important; }
+         =20
+         =09 .px-15 { padding-left: 15px !important; padding-right: 15px !i=
+mportant; }
+=09=09=09.pt-2 {padding-top: 2px !important;}
+            .pt-4 {padding-top: 4px !important;}
+=09=09=09.pb-5 {padding-bottom: 5px !important;}
+=09=09=09.pb-7 {padding-bottom: 7px !important;}
+=09=09=09.pb-12 {padding-bottom: 12px !important;}
+=09=09=09.pb-13 {padding-bottom: 13px !important;}
+=09=09=09.pb-15 {padding-bottom: 15px !important;}
+=09=09=09.fz-11 {font-size: 11px !important;}
+=09=09=09.fz-12 {font-size: 12px !important;}
+=09=09=09.fz-14 {font-size: 14px !important;}
+=09=09=09.px-9 {padding-left: 9px !important; padding-right: 9px !important=
+;}
+=09=09=09.lh-116 {line-height: 116% !important;}
+=09=09=09.w-148 {width: 148px !important;}
+=09=09=09.w-auto {width: auto !important;}
+=09=09}
+
+=09=09/* Styling for screen size 499 and less */
+=09=09@media only screen and (max-width:374px) {
+=09=09=09.aligncenter-xs { text-align:center !important; }
+=09=09=09.flex-xs { display:block !important; width:100% !important; paddin=
+g-left: 0 !important; padding-right: 0 !important; border-left: none !impor=
+tant; border-right: none !important; }
+=09=09}
+=09</style>=20
+<!--[if gte mso 9]><xml>
+=09=09<o:OfficeDocumentSettings>
+=09=09=09<o:AllowPNG/>
+=09=09=09<o:PixelsPerInch>96</o:PixelsPerInch>
+=09=09</o:OfficeDocumentSettings>
+=09</xml><![endif]-->=20
+<!--[if (gte mso 9)|(IE)]>
+=09=09<style type=3D"text/css">
+=09=09=09table {
+=09=09=09=09border-collapse: collapse;
+=09=09=09=09border-spacing: 0;=20
+=09=09=09=09mso-line-height-rule: exactly;=20
+=09=09=09=09mso-margin-bottom-alt: 0;=20
+=09=09=09=09mso-margin-top-alt: 0;=20
+=09=09=09=09mso-table-lspace: 0pt;
+=09=09=09=09mso-table-rspace: 0pt;
+=09=09=09}
+=09=09=09td {
+=09=09=09=09mso-table-lspace: 0pt !important;
+=09=09=09=09mso-table-rspace: 0pt !important;
+=09=09=09}
+=09=09=09p,
+=09=09=09h1,
+=09=09=09h2,
+=09=09=09h3,
+=09=09=09h4,
+=09=09=09h5,
+=09=09=09h6,
+=09=09=09ol,
+=09=09=09li,
+=09=09=09ul,
+=09=09=09td,
+=09=09=09th {
+=09=09=09=09font-family: Helvetica, Arial, sans-serif !important;
+=09=09=09}
+
+=09=09=09p {
+=09=09=09=09margin-bottom: 10px !important;
+=09=09=09}
+
+=09=09=09p:last-child {
+=09=09=09=09margin-bottom: 0 !important;
+=09=09=09}
+
+=09=09=09.ico-audio { padding-top: 0 !important; }
+=09=09</style>
+=09<![endif]-->=20
+</head>=20
+<body style=3D"margin:0; padding:0; -webkit-text-size-adjust:100%; -ms-text=
+-size-adjust:100%;" bgcolor=3D"#f0f0f0"><style type=3D"text/css">div#emailP=
+reHeader{ display: none !important; }</style><div id=3D"emailPreHeader" sty=
+le=3D"mso-hide:all; visibility:hidden; opacity:0; color:transparent; mso-li=
+ne-height-rule:exactly; line-height:0; font-size:0px; overflow:hidden; bord=
+er-width:0; display:none !important;">Thank you for being part of our commu=
+nity of industry leaders, entrepreneurs, scientists, and other thinkers and=
+ makers. Here's what you can expect from us (with a few hints on where to g=
+et started on your own)</div>=20
+<table style=3D"min-width:320px;" width=3D"100%" cellspacing=3D"0" cellpadd=
+ing=3D"0" bgcolor=3D"#f0f0f0">=20
+<tbody>
+<tr>=20
+<td style=3D"line-height:0;">
+<div style=3D"display:none; white-space:nowrap; font:15px/1px courier;">
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp=
+; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nb=
+sp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &=
+nbsp;
+</div></td>=20
+</tr>=20
+<tr>=20
+<td>=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>
+<tr>=20
+<td>=20
+<center>=20
+<div style=3D"max-width: 640px; margin: auto;">=20
+<!--[if mso]>
+=09=09=09=09=09=09=09=09=09<table role=3D"presentation" style=3D"width: 640=
+px;" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"center">
+=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09<td>
+=09=09=09=09=09=09=09=09=09=09=09<![endif]-->=20
+<table class=3D"flexible" style=3D"max-width: 640px; width: 100%; margin: 0=
+ auto;" cellpadding=3D"0" cellspacing=3D"0" align=3D"center">=20
+<tbody>
+<tr>=20
+<td>=20
+<!-- ||| Header ||| -->=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>
+<tr>=20
+<td class=3D"py-md-10" style=3D"padding: 20px 10px 7px;">=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>
+<tr>=20
+<td style=3D"font: 14px/120% Proxima Nova, Arial, Helvetica, sans-serif; co=
+lor: #97999b;" valign=3D"top">=20
+<div class=3D"mktoText" id=3D"preHeaderLeftContent"></div> </td>=20
+<td style=3D"width: 15px;" width=3D"15"></td>=20
+<td style=3D"font: 14px/120% Proxima Nova, Arial, Helvetica, sans-serif; co=
+lor: #97999b;" align=3D"right" valign=3D"top">=20
+<div class=3D"mktoText" id=3D"preHeaderRightContent">
+<a style=3D"text-decoration: none; color: #97999b;" href=3D"https://info.a1=
+6z.com/index.php/email/emailWebview?mkt_tok=3DMzgyLUpaQi03OTgAAAGKWxnGJHgf9=
+IQTJh5apMSPz1KrMMZbsp08pKGywHqg8F0I1znkjAi82H09O4zsVUHEab_CpFMsFv_eKuz4H3sz=
+xBQkGrfTOy68fkaN7NLn_rY&md_id=3D8640&aliId=3DjExSecPNKQIAxSITlZPlScSb%2BFuj=
+GPbUxMgcc4KOsqpEvCkZFoOyUQ%3D%3D" target=3D"_blank">View Online</a>
+</div> </td>=20
+</tr>=20
+</tbody>
+</table> </td>=20
+</tr>=20
+</tbody>
+</table>=20
+<!-- ||| Header end ||| --> </td>=20
+</tr>=20
+<tr>=20
+<td class=3D"mktoContainer" id=3D"mkto-container" style=3D"background-image=
+: url('https://info.a16z.com/rs/382-JZB-798/images/bg-wave01--newsletter-09=
+-29-020.png'); background-repeat: no-repeat; background-position: top left;=
+" bgcolor=3D"#ffffff">
+<table class=3D"mktoModule" id=3D"sep49" width=3D"100%" cellspacing=3D"0" c=
+ellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 39px;" height=3D"39"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"pageHeader" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"padding-left: 30px; padding-right: 30px;" valign=3D"middle">=
+=20
+<table class=3D"flexible" style=3D"margin-right: auto;" width=3D"100%" cell=
+spacing=3D"0" cellpadding=3D"0" align=3D"left">=20
+<tbody>=20
+<tr>=20
+<td class=3D"aligncenter" style=3D"padding: 0; text-align: center;" valign=
+=3D"middle" align=3D"center">=20
+<div class=3D"mktoImg" id=3D"headerLogo" mktolockimgsize=3D"false">=20
+<a style=3D"text-decoration: none;" href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnGJPQatSr3WZRv3dc0xknvIEN54jksk=
+1TZUl-9JJ8vwBctgb6ijITAxYRgAxJ646sQT78=3D" target=3D"_blank"
+><img style=3D"vertical-align: top; max-width: 100%; height: auto;" src=3D"=
+https://info.a16z.com/rs/382-JZB-798/images/logo-new-black--01-26-021.png" =
+width=3D"190" alt=3D"ANDREESSEN HOROWITZ" border=3D"0" /></a>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+<table class=3D"hide-everywhere flexible" style=3D"margin-left: auto;" widt=
+h=3D"30%" cellspacing=3D"0" cellpadding=3D"0" align=3D"right">=20
+<tbody>=20
+<tr class=3D"hide-everywhere">=20
+<td class=3D"aligncenter pt-15 hide-everywhere" style=3D"padding: 5px 0 0; =
+text-align: right; font: 14px/136% Proxima Nova, Arial, Helvetica, sans-ser=
+if; color: #97999b;" valign=3D"middle">=20
+<div class=3D"mktoText hide-everywhere" id=3D"headerRightContent"></div> </=
+td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"sep50" width=3D"100%" cellspacing=3D"0" c=
+ellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 29px;" height=3D"29"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"verticalLogo" width=3D"100%" cellspacing=
+=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"padding-left: 30px; padding-right: 30px;">=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td align=3D"center"> <img style=3D"vertical-align: top; max-width: 100%; h=
+eight: auto;" src=3D"https://info.a16z.com/rs/382-JZB-798/images/a16z-Bio--=
+01-26-021.png" alt=3D"a16z Bio" border=3D"0" /> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"sep51" width=3D"100%" cellspacing=3D"0" c=
+ellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 20px;" height=3D"20"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"mainHeading" width=3D"100%" cellspacing=
+=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"padding-left: 30px; padding-right: 30px;">=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font: 700 32px/120% Proxima Nova, Arial, Helvetica, sans-serif=
+; color: #ed8b00;" align=3D"center">=20
+<div class=3D"mktoText" id=3D"headerMainHeading">
+<p><span style=3D"color: #5bc2e7;">Thanks for subscribing!</span></p>
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"sep47" width=3D"100%" cellspacing=3D"0" c=
+ellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 22px;" height=3D"22"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"txtBlock02" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" bgcolor=3D"#ffffff">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font: 16px/128% Proxima Nova, Arial, Helvetica, sans-serif; co=
+lor: #4b4f54;">=20
+<div class=3D"mktoText" id=3D"txtBlock02Content">=20
+<p>Welcome to the a16z Bio + Health newsletter! Thank you for being part of=
+ our community of industry leaders, entrepreneurs, scientists, and other th=
+inkers and makers. Here's what you can expect from us (with a few hints on =
+where to get started on your own):<br /></p>=20
+<ul>=20
+<li>Deep dives on all the ways bio is eating the world, including &nbsp;<a =
+href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnGJKI_J5APfQVMkFZsZdjVth81czuMh=
+W5xtH1r9dHBc806TDAFsOhnzmzyCxcirmY6h5g=3D" target=3D"_blank" style=3D"color=
+: #97c24e;"
+>healthcare</a>,&nbsp;<a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnGJNszKQnIsQagKUvcmfX_fg1XHxGou=
+NvVGsKyaHCqTz_k3EC3UUQi7A_xoq5FkWX8QCI=3D" target=3D"_blank" id=3D"" style=
+=3D"color: #97c24e;"
+>gene editing</a>, <a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnGJGsU8ixO5mkl_xt0vlXIFDJdb0kjg=
+OaccnOAJZCTu8lSYGsZf3I20iwUrjfv5RkmQm0=3D" target=3D"_blank" id=3D"" style=
+=3D"color: #97c24e;"
+>engineering biology</a>, <a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnGJKvLi1MlSxaDN1Pg7zpxcFOOL4r-8=
+JQKm2MP9NdjQ3w4egn0bPCUh2E21bWeIvBAAM8=3D" target=3D"_blank" id=3D"" style=
+=3D"color: #97c24e;"
+>therapeutics</a>, and more.</li>=20
+<li>Practical advice&nbsp;on topics ranging from <span style=3D"color: #97c=
+24e;"><a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnGJAT_1bf45Yza3-25AuxD-38qjVuN7=
+KFYVvr_LgzuUXE6kF-pINDECeS4NSVeyb-uU_Y=3D" target=3D"_blank" style=3D"color=
+: #97c24e;"
+>digital health builders</a></span> thinking through GTM strategies&nbsp;to=
+ bio platforms thinking about <span style=3D"color: #97c24e;"><a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnGJA0OeGSeheAuYbimxaW_L7iWctMwx=
+9efWC8oYskP7mkKV2m7I11_DoddaSWNxRXjhhU=3D" target=3D"_blank" style=3D"color=
+: #97c24e;"
+>platform-partnership fit</a></span>.</li>=20
+<li>Discussions of tech and life science trends, news, and the future, such=
+ as: covering the past, present, and future of engineering biology; the fut=
+ure of healthcare; deep learning &amp; medicine; the business of building h=
+ealthcare and life science companies; policy; and much more.<br /></li>=20
+</ul>=20
+<p>And, in case you haven't already, check out the <span style=3D"color: #9=
+7c24e;"><a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnGJAJUJ6yz9qYvCI8u0QwSzXI-azLb-=
+zFVKYH43vMX03hHlgRjQSiDhGVodu6hK6q8lts=3D" target=3D"_blank" id=3D"" style=
+=3D"color: #97c24e;"
+>Bio Eats World podcast</a></span>. We feature top experts, founders, autho=
+rs, and other interesting voices from around the world, such as George Chur=
+ch, Jennifer Doudna, Eric Topol, and others. Find it on <span style=3D"colo=
+r: #97c24e;"><a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnGJLaWpAquchLJqeJkKMbTp-0Q4mqqg=
+QZ-30-_9lrxptuzKsXG4YiuxqUe9q1Fg1xIWWI=3D" target=3D"_blank" id=3D"" style=
+=3D"color: #97c24e;"
+>Apple Podcasts</a></span>, <span style=3D"color: #97c24e;"><a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnGJFGNmBzuiQyHz5CHCmDWBqvln0z5v=
+NyBTzesKEGkR9ppifZpYSSlKTn_Ev_LwytH8cc=3D" target=3D"_blank" id=3D"" style=
+=3D"color: #97c24e;"
+>Spotify</a></span>, or wherever you listen to podcasts.<br /> <br />Thank =
+you again, and happy reading and listening,<br /><br />The Bio + Health Edi=
+torial team<br /></p>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"sep31" width=3D"100%" cellspacing=3D"0" c=
+ellpadding=3D"0" bgcolor=3D"#ffffff">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 40px;" height=3D"40"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"footerSep01" width=3D"100%" cellspacing=
+=3D"0" cellpadding=3D"0" bgcolor=3D"#4c4f53">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 32px;" height=3D"32"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"footerLogoBlock" width=3D"100%" cellspaci=
+ng=3D"0" cellpadding=3D"0" bgcolor=3D"#4b4f54">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 60px; padding-right: 60px;">=
+=20
+<table class=3D"table-center w-148" width=3D"100%" cellspacing=3D"0" cellpa=
+dding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td align=3D"center">=20
+<div class=3D"mktoImg" id=3D"footerLogoBlockLogo" mktolockimgsize=3D"false"=
+>=20
+<a style=3D"text-decoration: none;" href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnGJPQatSr3WZRv3dc0xknvIEN54jksk=
+1TZUl-9JJ8vwBctgb6ijITAxYRgAxJ646sQT78=3D" target=3D"_blank"
+><img style=3D"vertical-align: top; max-width: 100%; height: auto;" src=3D"=
+https://info.a16z.com/rs/382-JZB-798/images/a16z-logo-white-09-29-020.png" =
+width=3D"174" alt=3D"ANDREESSEN HOROWITZ" border=3D"0" /></a>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<tr>=20
+<td class=3D"fz-14 pb-7 pt-4" style=3D"font: 16px/143% Proxima Nova, Arial,=
+ Helvetica, sans-serif; color: #a0a3a9; padding-top: 6px; padding-bottom: 8=
+px;" valign=3D"top" align=3D"center">=20
+<div class=3D"mktoText" id=3D"footerLogoBlockSlogan">
+ Software Is eating the world=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"socialNetworkingItems" width=3D"100%" cel=
+lspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#4b4f54">=20
+<tbody>=20
+<tr>=20
+<td>=20
+<table style=3D"margin-left: auto; margin-right: auto;" cellspacing=3D"0" c=
+ellpadding=3D"0" align=3D"center">=20
+<tbody>=20
+<tr>=20
+<td valign=3D"middle">=20
+<div class=3D"mktoImg" id=3D"socialNetworkingItemsItem01" mktolockimgsize=
+=3D"false">=20
+<a style=3D"text-decoration: none;" href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnGJLBxBTETihW9j65SvOZXiua2UCsp6=
+Ll52noVoUTcpQVRoaeWr5l8CffuNV7XmyK-Iq0=3D" target=3D"_blank"
+> <img style=3D"display: block; vertical-align: top; max-width: 100%; heigh=
+t: auto;" src=3D"https://info.a16z.com/rs/382-JZB-798/images/twitter-white-=
+ico@2x--newsletter-09-29-020.png" alt=3D"twitter icon" width=3D"12" border=
+=3D"0" /> </a>=20
+</div> </td>=20
+<td style=3D"width: 16px;" width=3D"16"></td>=20
+<td valign=3D"middle">=20
+<div class=3D"mktoImg" id=3D"socialNetworkingItemsItem02" mktolockimgsize=
+=3D"false">=20
+<a style=3D"text-decoration: none;" href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnGJDR6mtI3r0OdtfG7juuRkiCARWWmT=
+f_Ezq21lICOgf0cxcJzcoIb5d_Ro9NKvxx8uw8=3D" target=3D"_blank"
+> <img style=3D"display: block; vertical-align: top; max-width: 100%; heigh=
+t: auto;" src=3D"https://info.a16z.com/rs/382-JZB-798/images/linkedin-white=
+-ico@2x--newsletter-09-29-020.png" alt=3D"linkedin icon" width=3D"12" borde=
+r=3D"0" /> </a>=20
+</div> </td>=20
+<td style=3D"width: 16px;" width=3D"16"></td>=20
+<td valign=3D"middle">=20
+<div class=3D"mktoImg" id=3D"socialNetworkingItemsItem03" mktolockimgsize=
+=3D"false">=20
+<a style=3D"text-decoration: none;" href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnGJLCroLEOz-fE3AXpffyC0qAJkKgc1=
+7h89kqdZngs2vXZp2HJ-BIMnDOnZNEWR7AKEXs=3D" target=3D"_blank"
+> <img style=3D"display: block; vertical-align: top; max-width: 100%; heigh=
+t: auto;" src=3D"https://info.a16z.com/rs/382-JZB-798/images/podcast-white-=
+ico@2x--newsletter-09-29-020.png" alt=3D"podcast icon" width=3D"12" border=
+=3D"0" /> </a>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"footerSep02" width=3D"100%" cellspacing=
+=3D"0" cellpadding=3D"0" bgcolor=3D"#4c4f53">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 37px;" height=3D"37"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"footerAddress" width=3D"100%" cellspacing=
+=3D"0" cellpadding=3D"0" bgcolor=3D"#4b4f54">=20
+<tbody>=20
+<tr>=20
+<td style=3D"padding: 0 33px; padding-top: 2px;">=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr align=3D"center">=20
+<td class=3D"flex pb-13" style=3D"padding: 0 5px" valign=3D"top">=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font:700 10px/116% Proxima Nova, Arial, Helvetica, sans-serif;=
+ color: #a0a3a9; text-transform: uppercase; padding-bottom: 2px;" align=3D"=
+center">=20
+<div class=3D"mktoText" id=3D"footerAddressTitle">
+ MENLO PARK OFFICE=20
+</div> </td>=20
+</tr>=20
+<tr>=20
+<td class=3D"lh-116" style=3D"font:12px/116% Proxima Nova, Arial, Helvetica=
+, sans-serif; color: #e5e6e5;" align=3D"center">=20
+<div class=3D"mktoText" id=3D"footerAddress01">
+ 2865 Sand Hill Road, Suite 101=20
+<br />Menlo Park, CA 94025=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+<td class=3D"flex pb-15" style=3D"padding: 0 5px" valign=3D"top">=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font:700 10px/116% Proxima Nova, Arial, Helvetica, sans-serif;=
+ color: #a0a3a9; text-transform: uppercase; padding-bottom: 2px;" align=3D"=
+center">=20
+<div class=3D"mktoText" id=3D"footerAddressTitle02">
+ SAN FRANCISCO OFFICE=20
+</div> </td>=20
+</tr>=20
+<tr>=20
+<td class=3D"lh-116" style=3D"font:11px/127% Proxima Nova, Arial, Helvetica=
+, sans-serif; color: #e5e6e5;" align=3D"center">=20
+<div class=3D"mktoText" id=3D"footerAddress02">
+ 180 Townsend Street=20
+<br />San Francisco, CA 94107=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+<td class=3D"flex pb-12" style=3D"padding: 0 5px" valign=3D"top">=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font:700 10px/116% Proxima Nova, Arial, Helvetica, sans-serif;=
+ color: #a0a3a9; text-transform: uppercase; padding-bottom: 2px;" align=3D"=
+center">=20
+<div class=3D"mktoText" id=3D"footerAddressTitle03">
+ NEW YORK OFFICE=20
+</div> </td>=20
+</tr>=20
+<tr>=20
+<td class=3D"lh-116" style=3D"font:11px/127% Proxima Nova, Arial, Helvetica=
+, sans-serif; color: #e5e6e5;" align=3D"center">=20
+<div class=3D"mktoText" id=3D"footerAddress03">
+ 11 Madison Avenue, 15th Floor=20
+<br />New York, NY 10010=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"footerSep03" width=3D"100%" cellspacing=
+=3D"0" cellpadding=3D"0" bgcolor=3D"#4c4f53">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 25px;" height=3D"25"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"footerUnsubscribeBlock" width=3D"100%" ce=
+llspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#4b4f54">=20
+<tbody>=20
+<tr>=20
+<td>=20
+<table style=3D"margin-left: auto; margin-right: auto;" cellspacing=3D"0" c=
+ellpadding=3D"0" align=3D"center">=20
+<tbody>=20
+<tr class=3D"table-holder" align=3D"center">=20
+<td class=3D"tfoot">=20
+<table class=3D"table-center w-auto" width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td class=3D"fz-11" style=3D"font: 9px/143% Proxima Nova, Arial, Helvetica,=
+ sans-serif; color: #e5e6e5;" valign=3D"top">=20
+<div class=3D"mktoText" id=3D"footerCopyrights">
+ =C2=A92022 Andreessen Horowitz. All rights reserved.=20
+</div> </td>=20
+<td class=3D"hide" style=3D"font: 9px/143% Proxima Nova, Arial, Helvetica, =
+sans-serif; color: #e5e6e5; padding: 0 6px;" valign=3D"top">=E2=80=A2</td>=
+=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+<td class=3D"thead">=20
+<table class=3D"table-center w-auto" width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td class=3D"fz-11 pb-5" style=3D"font: 9px/143% Proxima Nova, Arial, Helve=
+tica, sans-serif; color: #e5e6e5;" valign=3D"top">=20
+<div class=3D"mktoText" id=3D"footerUpdateEmailPref">=20
+<a style=3D"text-decoration: underline; color: #e5e6e5;" href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnGJPTDPND0IYA_QkNrieBgWXzSVELB-=
+czMaJeqbtT2SANvDrbgUNCwSXuNtZU25h2pjZQ=3D" target=3D"_blank"
+>Update email preferences</a>=20
+</div> </td>=20
+<td class=3D"fz-11 px-9" style=3D"font: 9px/143% Proxima Nova, Arial, Helve=
+tica, sans-serif; color: #e5e6e5; padding: 0 7px;" valign=3D"top">=E2=80=A2=
+</td>=20
+<td class=3D"fz-11 pb-5" style=3D"font: 9px/143% Proxima Nova, Arial, Helve=
+tica, sans-serif; color: #e5e6e5;" valign=3D"top">=20
+<div class=3D"mktoText" id=3D"footerUnsubscribe">=20
+<a style=3D"text-decoration: underline; color: #e5e6e5;" href=3D"https://in=
+fo.a16z.com/UnsubscribePage.html?mkt_unsubscribe=3D1&mkt_tok=3DMzgyLUpaQi03=
+OTgAAAGKWxnGJHgf9IQTJh5apMSPz1KrMMZbsp08pKGywHqg8F0I1znkjAi82H09O4zsVUHEab_=
+CpFMsFv_eKuz4H3szxBQkGrfTOy68fkaN7NLn_rY" target=3D"_blank">Unsubscribe fro=
+m list</a>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"footerSep04" width=3D"100%" cellspacing=
+=3D"0" cellpadding=3D"0" bgcolor=3D"#4c4f53">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 35px;" height=3D"35"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table></td>=20
+</tr>=20
+</tbody>
+</table>=20
+<!--[if mso]>
+=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09<![endif]-->=20
+</div>=20
+</center> </td>=20
+</tr>=20
+</tbody>
+</table> </td>=20
+</tr>=20
+</tbody>
+</table> =20
+<a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnGJKbOVMKBW1dskWbu0VG4yqiLAalgt=
+EIgJwclrnksxV_Ymq6ABrYdGFkj7jidOgyYVZc=3D"
+></a>
+<img src=3D"https://go2.a16z.com/trk?t=3D1&mid=3DMzgyLUpaQi03OTg6MDozNjc2Oj=
+E3MTkwOjE6ODY0MDo5OjE2NzM4OjE1NjQ4MDQ5LTE6bnVsbA%3D%3D" width=3D"1" height=
+=3D"1" style=3D"display:none !important;" alt=3D"" />
+</body>
+</html>
+------=_Part_55902192_1211520872.1678193530409--

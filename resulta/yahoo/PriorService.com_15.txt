@@ -1,0 +1,493 @@
+Received: from 127.0.0.1
+ by atlas-production.v2-mail-prod1-gq1.omega.yahoo.com pod-id atlas--production-gq1-fbf5d4674-v6ffh.gq1.yahoo.com with HTTP; Tue, 28 Mar 2023 15:05:03 +0000
+Return-Path: <bounces+14097904-5530-achrafel73114=yahoo.com@em10.priorservice.com>
+X-Originating-Ip: [149.72.173.17]
+Received-SPF: pass (domain of em10.priorservice.com designates 149.72.173.17 as permitted sender)
+Authentication-Results: atlas-production.v2-mail-prod1-gq1.omega.yahoo.com;
+ dkim=pass header.i=@priorservice.com header.s=s1;
+ dkim=pass header.i=@sendgrid.info header.s=smtpapi;
+ spf=pass smtp.mailfrom=em10.priorservice.com;
+ dmarc=unknown header.from=priorservice.com;
+X-Apparently-To: achrafel73114@yahoo.com; Tue, 28 Mar 2023 15:05:03 +0000
+X-YMailAVSC: lx_B0WE3bBuAmSHJudLJpRhvfRAlDvCRN7z_CqzQ875.uXG
+ auNeP2Mce2ioDrD9j08Gt9e6c4hBLoA7hvbdTTMLQDwIepNOleAvK26tQsAl
+ aXuwBXiRJvLJQdaVZYStyptpj6tzKOwKwi8RtAd0jxoV4T4DW1yZm2MLm7jM
+ QDhVTGumD_5_dXh5OBG98WDp3BzGzjorvvOXjYMsScgL.8XJnlrkr6aGSoJ8
+ gEjzWDWpbEZIXznNOHAc0U4rRGsjrbwCUzD5rGu3OuzuenRBa3l4DctMU2uT
+ H3CN4DdOlIIp34OZbfsGVL2ZZ_C690MEEztheVN79xd813uCAXbRDJU7axvM
+ RjyzhLZqabtQxzWSW4mK5aiovGHgS8lOOlHaIpHRRvh29M4HiUALYmeLKEyW
+ 0PjZwveL2mEWudXR3XT6Sl9q7lEWjOApbgvxqpSjROkfL.7gZYKvMF4uZVIm
+ 5yAxd3akqjmTAWqLP.9t3uuH3rY.yy6OisAk2UKB9oJWPwFuusAWf9.IRZyb
+ sVETZZozMjULG4OQi3FjkcjLu4XBZWxNMiL5gJjJFqLlILpdh3jBlY72r2Fc
+ uZIBzROnyYIW95giZCWdKjLS6kX49tPeXsrmhNbEk_j40GURW6mnw7kyLA0P
+ LBqGbYkMW.00bHb4AwUDqzPzPF0_Ey46bBC82VIzbrcprboSPa_uWg8cZ_BP
+ kKVjrDIBbSDjMx70rLWJ2.Gkl2tP92jXMagy4mPg1FX2Ux03UL1vTTdJNX_W
+ Yd3CStSedkN.0iEJVb452MExr.IAxj36lRimMVqO6ObfrfIRjw4X47IiE1BI
+ 1vVyVEK01kXJHWCUEmJjFRp6ZJfq03HxjNiAxIcTaid.7IvoIXZ_IQh5mVT1
+ wfBfnJmrgP4CsV5Z8WI49Fv4c.V8qk1bszi9uFq2VcOdyR4QIVL1L08qf7fV
+ DxPv21VK1cAhLZmTPv2VFmy.ZNYK7Yp1gOikdNZcp03BhPTarcnNjuIoxhP6
+ 09Rc0NIDsCcOovvzWTZmb5zNJsE5IstxDSyHpDM.8jojWnTpfN.GOtXExApx
+ upWs7V2HUDhBxpkcp2gzenK6ZKiorjKFEoLcNn8AVFN.2zqSWCnLCvQB6SVK
+ aOWwcwSkIQ6TkXdxYvNGeFq2i23lkJL.hZG2fQ6afmwkVeAVBN7zxhncpd9X
+ 12DQ5feqeHOlWY7PaVnID87vD395kBLyaBIOBn5Khc6M8ETEdAx0bf4yxOq1
+ c.poZ2XzM6HgvHhxFbDj3SnGro7ctrfuR3aF5if3wIv_oSHqE3YQDBH7fGn2
+ 2zBnU5ZmdPm1.ElT2.FV0VrZ_DlssYbApduWR8vm85JwDiOXGY2.5ZDVYFd1
+ Q54pOeNgpEoDXpiTGKWOr0NmRphmGFOS8pOkq1Fa2zGhDm1BDNFK6WGct7ws
+ fLDskN1VZLR1arQ19_AwtAQZ2KQVlCq5yskGs0ABXlJlFA5oIG53IeiZtMha
+ iRrv4zdDh3NBV8OWVUutBUwQJ_AImKGl6jH8GtAVgjSZpoxN_c3p5xXgL0HC
+ 9V5ak5_ZZEAqd5y_g41Y-
+X-YMailISG: HL20HlMWLDvatp00TDsBPO8gX7nNvhJXmTOS2x8jzT_O1ETd
+ tnBqkcCOpA7mzZFhQg1SWuMawl3Yiw6RD8JJiPqUn4aO1ysIotPQQAjoGLzb
+ eTT8ErWlRQwrKVeha6jZuwnU84yLnovFlx0fbe.UpfG_3n1UEtIaJOif8acr
+ Kn1Z2Tym6sF1mnZHkouWUBE.MZbjcMV5Ek8ny5uYvhJkr7iJ1MZA78AK7y6g
+ MlCEKvIdq9kwKIVCFLqoHGL_71yj.PNYL2fEQOygirlw0Lgrk_V4x8ljAm2D
+ NpeXYM.MFQgKoOJyvvA0pcFggi9OJeHiB2qdE3fdeY.qm7OhqlRqn0WQ7kOP
+ PHfdnoSBERNSjv0BJ8IGQGYCTmcFWojlPm0hUBfIxBRuqLde5FGVO61qZd.a
+ Wsa7Bptn5vpi8WUBW7RTQNAysOPr0s93zKvbrTIJ5XH4021UNGlLh6.uoD7N
+ Ay3Qap98AHrofbKPin9A8GZLebtTpS_4mbGhEya1y_SxlxRP1cGW0R56Ech1
+ p6mGYGiYMG0dXZkgp0SJv0rV9RV_WkXgt23PO3lXWE.uhVfqVfAkmHe9NmDB
+ CF7mBy6tTtAXX7hJO99cyIVPxj395xYJqGdz.4zhYpFSkGvREyt8qFqMYQna
+ xfOInLay309cboWkML4ovhHslzsK7_SJ6xJe8TqyJayONRPtosCScofqt_0L
+ hhGYOHdC2jsaR4xKebrabeAXt3zfzons5qNcnvyDOhIqrGV8iL30rnyZ2TOb
+ S4iRwbEUQ1LBhK_GM1jhfFrc0FZ9yD96UcahIYpLP_2Rq6pmHv8NLStj65H1
+ Il_nJfZGP5RCFwnz4E9_C6YqiA06vPuTdMYY7Zy4PrNnLU0n_3UUMoIybMpb
+ cHPhhTmXDG357PqfPH.uKZTVHH2DMyPkuIUuyHr62SDytsr2CxlbpZr0LSRe
+ BXPfAfxeN0cfchNejlJuBlhSflGpgl4oWH48.FlYQOVRToNkvm_SOgexzs25
+ PgGeA9gL3ISVF6PVuDothon.yt0yEox6vAb_Ly3mYOzKq.E.8GZBfliwuvnN
+ vBo4W0fJP_dBBGyEpzgje_xaZJad0hWNjtd729yQKC0IchR8cSfPxRVSHaKF
+ F.9aklRc1OdpTUmZJxoNeZNVSNLsTS6PIYlSLsTrl6A2qIJ1czjfy9mihYYI
+ qrN2GxBwSw1aNkA7A_Jb6JuJMUoDY3bxAbNcCmy399VEu.Cbif8ttZuzej.P
+ aXagslcrt8v6QsyQjDN2IIcZ30ibFJbLUg--
+Received: from 149.72.173.17 (EHLO wrqvxdkk.outbound-mail.sendgrid.net)
+ by 10.253.31.94 with SMTPs
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256);
+ Tue, 28 Mar 2023 15:05:03 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=priorservice.com;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	reply-to:list-unsubscribe:to:cc:content-type:from:subject:to;
+	s=s1; bh=EswDd9P8VhvJohU3TiJNHtuhU5Ds5AGliLKzwu9F0Ok=;
+	b=EllwPjCBXOiX/U3E+LrQjtdLCN9/VLe2gcJKnDjtopg+/d7mwspK2SiCsElCc0UaM1eg
+	n6tsIN5In8NuXNVyAWvhpphuC1qODnRKjh80tk+YCyPjREr3QeEypT/k97Z004z2IsFZWC
+	Bym+8DCmZr4gY7oSvq05UzEtEpNyDw8HlHNj5AS+ICdYbJQzjLfZLARyGS+mKktNY+jfbN
+	2upQ0OiRXU4OVxzQvJXYX3EVUYWfJ3oPTHW339aVwthiolxNwkif3KL2+6cr5uZQPy7hIL
+	VHhJT6Je0v58U2DpJW2s38zAH39GwBpraCh17fkMm4bjJ1uJSjIiqB87Ene3eG8g==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	reply-to:list-unsubscribe:to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=EswDd9P8VhvJohU3TiJNHtuhU5Ds5AGliLKzwu9F0Ok=;
+	b=jbuqtuiGyKLXHNhFYaK7pUr+fEwlR95GBXvPSmKqzHtmXpWD6y1QjLXPyLeUE3vPezbM
+	ET7oRKitmEA10tq4KxCvOA/5bMtuYY38tvWfafT25/ghlgkPa8wkX7SZ8i7pOj4x7jCGC/
+	pQL/CKp7593vddjco7F6AmzHUYG88qUHY=
+Received: by filterdrecv-596d94dd65-sd5f2 with SMTP id filterdrecv-596d94dd65-sd5f2-1-6423021E-D3
+        2023-03-28 15:05:02.4759504 +0000 UTC m=+2993508.425702138
+Received: from MTQwOTc5MDQ (unknown)
+	by geopod-ismtpd-6 (SG) with HTTP
+	id DnDiUa74RLSbhCrJ6TMmEg
+	Tue, 28 Mar 2023 15:05:02.464 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=iso-8859-1
+Date: Tue, 28 Mar 2023 15:05:02 +0000 (UTC)
+From: "PriorService.com" <customerservice@priorservice.com>
+Mime-Version: 1.0
+Message-ID: <DnDiUa74RLSbhCrJ6TMmEg@geopod-ismtpd-6>
+Subject: Great New US Army Branch of Sevice Afghanistan Veteran Ball Caps!!
+ Made in USA!!
+Reply-To: customerservice@priorservice.com
+List-Unsubscribe: 
+ =?us-ascii?Q?https=3A=2F=2Fyahoo=2Eremarkety=2Ecom=2Fpublic=2Fsubscribers=2Foptout=2Fumk=2FNjQy?=
+ =?us-ascii?Q?MzAyMWMxMThiYjMuMjAzNTE5MDY2NDIzMDIxYzE?=
+ =?us-ascii?Q?=3D=2Femail=2FYWNocmFmZWw3MzExNCU0MHlhaG9vLmN?=
+ =?us-ascii?Q?vbQ=3D=3D?=
+X-SG-EID: 
+ =?us-ascii?Q?wmvsRT0iMyNlyG9ggGe8r4VwBkU+X+sa2+VxFL7VK2ymRnq=2FGF2p58VJ9n8Iyv?=
+ =?us-ascii?Q?dtVLlyStVgIyVMR+ELVlRC4YVui+aQfeG3MJkqp?=
+ =?us-ascii?Q?rwmTmUjHfdYPqkSdxHtVJuvsSe2RxpIgPF8b6p6?=
+ =?us-ascii?Q?XNfcF8vkGGRQyzfuksSc6ZMDzcXXKPxspEAw8kR?=
+ =?us-ascii?Q?2HHi8SLjuYgdaAFvodxFKbrIJL8wkr+h2fvGKWT?=
+ =?us-ascii?Q?uy7=2FcxLvbT35IVhWZNr58ejFA3FsqGgLGwi8fcK?=
+ =?us-ascii?Q?gk23eT3V5jg4hnof4oeeA=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8raWjw0ZPf1VmjsCkspi=2FIARr5ApfQLGQYXi0KvHQ?=
+ =?us-ascii?Q?0zsiJtSVtBaGdo=2F6bqRbKx7I3=2FS=2Fe+2loB5iWML?=
+ =?us-ascii?Q?JLYPXH4GEJIoH35A3XNPyjCfnkun+DY0qKR4ro4?=
+ =?us-ascii?Q?53rQVDOMIzA=2FJojvFRerEGPh55yhTfxJX2oM04S?=
+ =?us-ascii?Q?gFIw6Hz5nSOboLshSwdOToD9Jl2cHjPwxtn0fQJ?=
+ =?us-ascii?Q?rdrmVGV9Q6nkFtRjPePeMx2CV8V1btVKdyaxkcG?=
+ =?us-ascii?Q?6RtsRlES71DIbN+CuJqyVTPiQTrLHTv6WpPs276?=
+ =?us-ascii?Q?r37rWUccBMm+3VnMFl2qaF8C59cpvbaOCc3vhmp?=
+ =?us-ascii?Q?RgH3PwgL6wSfFEJySpfnxXd5MGva2pVbrEE7as3?=
+ =?us-ascii?Q?ALhHlpvZQo?=
+To: achrafel73114@yahoo.com
+X-Entity-ID: +IdReYdIYLl5EX6qSZP1Cg==
+Content-Length: 26903
+
+<!DOCTYPE html><html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"u=
+rn:schemas-microsoft-com:office:office" lang=3D"en"><head><title></title><m=
+eta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><met=
+a name=3D"viewport" content=3D"width=3Ddevice-width,initial-scale=3D1"><!--=
+[if mso]><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInc=
+h><o:AllowPNG/></o:OfficeDocumentSettings></xml><![endif]--><style>*{box-si=
+zing:border-box}body{margin:0;padding:0}a[x-apple-data-detectors]{color:inh=
+erit!important;text-decoration:inherit!important}#MessageViewBody a{color:i=
+nherit;text-decoration:none}p{line-height:inherit}.desktop_hide,.desktop_hi=
+de table{mso-hide:all;display:none;max-height:0;overflow:hidden}.image_bloc=
+k img+div{display:none} @media (max-width:660px){.social_block.desktop_hide=
+ .social-table{display:inline-block!important}.image_block img.big,.row-con=
+tent{width:100%!important}.mobile_hide{display:none}.stack .column{width:10=
+0%;display:block}.mobile_hide{min-height:0;max-height:0;max-width:0;overflo=
+w:hidden;font-size:0}.desktop_hide,.desktop_hide table{display:table!import=
+ant;max-height:none!important}}
+</style></head><body style=3D"background-color:#f1f1f1;margin:0;padding:0;-=
+webkit-text-size-adjust:none;text-size-adjust:none"><table class=3D"nl-cont=
+ainer" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;background=
+-color:#f1f1f1"><tbody><tr><td><table class=3D"row row-1" align=3D"center" =
+width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><=
+table=20
+class=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-ta=
+ble-rspace:0;background-color:#fff;color:#000;width:640px" width=3D"640"><t=
+body><tr><td class=3D"column column-1" width=3D"100%" style=3D"mso-table-ls=
+pace:0;mso-table-rspace:0;font-weight:400;text-align:left;padding-bottom:5p=
+x;padding-top:5px;vertical-align:top;border-top:0;border-right:0;border-bot=
+tom:0;border-left:0"><table class=3D"text_block block-1" width=3D"100%"=20
+border=3D"0" cellpadding=3D"10" cellspacing=3D"0" role=3D"presentation" sty=
+le=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"><tr><td =
+class=3D"pad"><div style=3D"font-family:sans-serif"><div class style=3D"fon=
+t-size:12px;font-family:Arial,Helvetica Neue,Helvetica,sans-serif;mso-line-=
+height-alt:14.399999999999999px;color:#555;line-height:1.2"><p style=3D"mar=
+gin:0;text-align:center;font-size:12px;mso-line-height-alt:14.3999999999999=
+99px">
+<span style=3D"font-size:22px;"><span style=3D"font-size:22px;"><strong>Gre=
+at New US Army Branch of Service</strong></span></span></p><p style=3D"marg=
+in:0;text-align:center;font-size:12px;mso-line-height-alt:14.39999999999999=
+9px"><span style=3D"font-size:22px;"><span style=3D"font-size:22px;"><stron=
+g>Afghanistan Veteran Ball Caps!! </strong></span></span></p><p style=3D"ma=
+rgin:0;text-align:center;font-size:12px;mso-line-height-alt:14.399999999999=
+999px">
+<span style=3D"font-size:22px;"><span style=3D"font-size:22px;"><strong>Dir=
+ect Embroidered - Made in USA!!<br></strong></span></span></p></div></div><=
+/td></tr></table></td></tr></tbody></table></td></tr></tbody></table><table=
+ class=3D"row row-2" align=3D"center" width=3D"100%" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:=
+0;mso-table-rspace:0"><tbody><tr><td><table class=3D"row-content stack" ali=
+gn=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=20
+role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;backgr=
+ound-color:#fff;color:#000;width:640px" width=3D"640"><tbody><tr><td class=
+=3D"column column-1" width=3D"100%" style=3D"mso-table-lspace:0;mso-table-r=
+space:0;font-weight:400;text-align:left;padding-top:10px;vertical-align:top=
+;border-top:0;border-right:0;border-bottom:0;border-left:0"><table class=3D=
+"image_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" role=3D"presentation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td class=3D"pad" style=
+=3D"width:100%;padding-right:0;padding-left:0"><div class=3D"alignment" ali=
+gn=3D"center" style=3D"line-height:10px"><a data-link_id=3D"95540" href=3D"=
+https://t03.mailsrv-e.com/click?v=3D2&umk=3D6423021c118bb3.203519066423021c=
+1&origurl=3DaHR0cHM6Ly93d3cucHJpb3JzZXJ2aWNlLmNvbS9pbmRleC5odG1sP3V0bV9zb3V=
+yY2U9cm0mdXRtX21lZGl1bT1lbWFpbCZ1dG1fY2FtcGFpZ249bmV3dXNuYXZ0c2hpcCZ1dG1fY2=
+9udGVudD0mX3JtSWQ9QUJ6QUo1UEd5bmNMUWUwMm9xckJ1TnJEanFrQUVESGd2dzVXVzZl&link=
+_id=3D95540&s=3D7efa3181171f485adaba3964a6f2cbd9" target=3D"_blank" style=
+=3D"outline:none" tabindex=3D"-1"><img class=3D"big" src=3D"https://img-cdn=
+.mailsrv-e.com/private/A42p73XG/prior-service-email-logo.jpg" style=3D"disp=
+lay:block;height:auto;border:0;width:640px;max-width:100%" width=3D"640"=20
+alt=3D"Prior Service Veteran Superstore" title=3D"Prior Service Veteran Sup=
+erstore"></a></div></td></tr></table></td></tr></tbody></table></td></tr></=
+tbody></table><table class=3D"row row-3" align=3D"center" width=3D"100%" bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table class=3D"r=
+ow-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" role=3D"presentation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;background-color:#fff;color:=
+#000;width:640px" width=3D"640"><tbody><tr><td class=3D"column column-1" wi=
+dth=3D"100%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400=
+;text-align:left;padding-bottom:5px;padding-top:5px;vertical-align:top;bord=
+er-top:0;border-right:0;border-bottom:0;border-left:0"><table class=3D"imag=
+e_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td class=3D"pad" style=
+=3D"width:100%;padding-right:0;padding-left:0"><div class=3D"alignment" ali=
+gn=3D"center" style=3D"line-height:10px"><img class=3D"big" src=3D"https://=
+img-cdn.mailsrv-e.com/private/A42p73XG/priorservice-email-bottom.jpg" style=
+=3D"display:block;height:auto;border:0;width:640px;max-width:100%" width=3D=
+"640" alt=3D"Trusted Source Since 2002" title=3D"Trusted Source Since 2002"=
+></div></td></tr></table></td></tr></tbody></table></td>
+</tr></tbody></table><table class=3D"row row-4" align=3D"center" width=3D"1=
+00%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation"=
+ style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table clas=
+s=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-=
+rspace:0;background-color:#fff;color:#000;width:640px" width=3D"640"><tbody=
+><tr><td class=3D"column column-1" width=3D"100%"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:l=
+eft;padding-bottom:5px;padding-top:5px;vertical-align:top;border-top:0;bord=
+er-right:0;border-bottom:0;border-left:0"><table class=3D"image_block block=
+-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D=
+"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td clas=
+s=3D"pad" style=3D"width:100%;padding-right:0;padding-left:0"><div class=3D=
+"alignment" align=3D"center" style=3D"line-height:10px">
+<a data-link_id=3D"14953" href=3D"https://t03.mailsrv-e.com/click?v=3D2&umk=
+=3D6423021c118bb3.203519066423021c1&origurl=3DaHR0cHM6Ly93d3cucHJpb3JzZXJ2a=
+WNlLmNvbS91cy1hcm15LWJyYW5jaC1hZmdoYW5pc3Rhbi12ZXRlcmFuLWRpcmVjdC1lbWJyb2lk=
+ZXJlZC1jYXBzLmh0bWw%2FdXRtX3NvdXJjZT1yZW1hcmtldHklMjBmb3IlMjB5YWhvbyUyMHNtY=
+WxsJTIwYnVzaW5lc3MmdXRtX21lZGl1bT1lbWFpbCZ1dG1fY2FtcGFpZ249VVMlMjBBcm15JTIw=
+QnJhbmNoJTIwb2YlMjBTZXJ2aWNlJTIwQWZnaGFuaXN0YW4lMjBWZXRlcmFuJTIwQmFsbCUyMEN=
+hcHMhISUyME1hZGUlMjBpbiUyMFVTQSEhXzEmdXRtX2NvbnRlbnQ9Jl9ybUlkPUFCekFKNVBHeW=
+5jTFFlMDJvcXJCdU5yRGpxa0FFREhndnc1V1c2ZQ%3D%3D&link_id=3D14953&s=3D7efa3181=
+171f485adaba3964a6f2cbd9" target=3D"_blank" style=3D"outline:none" tabindex=
+=3D"-1"><img class=3D"big" src=3D"https://img-cdn.mailsrv-e.com/private/A42=
+p73XG/new%20army%20branch%20afghanistan%20caps%20banner.png" style=3D"displ=
+ay:block;height:auto;border:0;width:640px;max-width:100%" width=3D"640" alt=
+=3D"New US Army Caps" title=3D"New US Army Caps"></a></div></td></tr></tabl=
+e></td></tr></tbody></table></td></tr></tbody></table><table class=3D"row r=
+ow-5"=20
+align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0=
+"><tbody><tr><td><table class=3D"row-content stack" align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"m=
+so-table-lspace:0;mso-table-rspace:0;background-color:#fff;color:#000;width=
+:640px" width=3D"640"><tbody><tr><td class=3D"column column-1" width=3D"100=
+%"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:l=
+eft;padding-bottom:5px;padding-top:5px;vertical-align:top;border-top:0;bord=
+er-right:0;border-bottom:0;border-left:0"><table class=3D"text_block block-=
+1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"=
+presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:bre=
+ak-word"><tr><td class=3D"pad"><div style=3D"font-family:Arial,sans-serif">=
+<div class=20
+style=3D"font-size:12px;font-family:Arial,Helvetica Neue,Helvetica,sans-ser=
+if;mso-line-height-alt:18px;color:#1c345e;line-height:1.5"><p style=3D"marg=
+in:0;font-size:12px;text-align:center;mso-line-height-alt:33px"><span style=
+=3D"font-size:22px;"><strong><span style=3D"font-size:22px;">BEST SELECTION=
+ FOR EVERY MILITARY BRANCH</span></strong></span></p></div></div></td></tr>=
+</table></td></tr></tbody></table></td></tr></tbody></table><table class=3D=
+"row row-6" align=3D"center" width=3D"100%" border=3D"0"=20
+cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-tabl=
+e-lspace:0;mso-table-rspace:0"><tbody><tr><td><table class=3D"row-content s=
+tack" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;backgroun=
+d-color:#fff;color:#000;background-image:url(https://img-cdn.mailsrv-e.com/=
+private/A42p73XG/priorservice-menu.jpg);background-position:top center;back=
+ground-repeat:no-repeat;width:640px" width=3D"640"><tbody>
+<tr><td class=3D"column column-1" width=3D"100%" style=3D"mso-table-lspace:=
+0;mso-table-rspace:0;font-weight:400;text-align:left;padding-bottom:20px;pa=
+dding-top:5px;vertical-align:top;border-top:0;border-right:0;border-bottom:=
+0;border-left:0"><table class=3D"image_block block-1" width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"m=
+so-table-lspace:0;mso-table-rspace:0"><tr><td class=3D"pad" style=3D"paddin=
+g-bottom:15px;width:100%;padding-right:0;padding-left:0"><div=20
+class=3D"alignment" align=3D"center" style=3D"line-height:10px"><a data-lin=
+k_id=3D"42487" href=3D"https://t03.mailsrv-e.com/click?v=3D2&umk=3D6423021c=
+118bb3.203519066423021c1&origurl=3DaHR0cHM6Ly93d3cucHJpb3JzZXJ2aWNlLmNvbS9p=
+bmRleC5odG1sP3V0bV9zb3VyY2U9cm0mdXRtX21lZGl1bT1lbWFpbCZ1dG1fY2FtcGFpZ249bmV=
+3eWVhcjIwJnV0bV9jb250ZW50PSZfcm1JZD1BQnpBSjVQR3luY0xRZTAyb3FyQnVOckRqcWtBRU=
+RIZ3Z3NVdXNmU%3D&link_id=3D42487&s=3D7efa3181171f485adaba3964a6f2cbd9" targ=
+et=3D"_blank" style=3D"outline:none" tabindex=3D"-1"><img class=3D"big" src=
+=3D"https://img-cdn.mailsrv-e.com/private/A42p73XG/priorservice-email-d.jpg=
+" style=3D"display:block;height:auto;border:0;width:640px;max-width:100%" w=
+idth=3D"640" alt=3D"Shop now" title=3D"Shop now"></a></div></td></tr></tabl=
+e><table class=3D"button_block block-2" width=3D"100%" border=3D"0" cellpad=
+ding=3D"10"=20
+cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-tab=
+le-rspace:0"><tr><td class=3D"pad"><div class=3D"alignment" align=3D"center=
+">
+<!--[if mso]><v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=
+=3D"urn:schemas-microsoft-com:office:word" href=3D"https://t03.mailsrv-e.co=
+m/click?v=3D2&umk=3D6423021c118bb3.203519066423021c1&origurl=3DaHR0cHM6Ly93=
+d3cucHJpb3JzZXJ2aWNlLmNvbS9zaGJ5YnJ1bi5odG1sP3V0bV9zb3VyY2U9cm0mdXRtX21lZGl=
+1bT1lbWFpbCZ1dG1fY2FtcGFpZ249bmV3eWVhcjIwJnV0bV9jb250ZW50PSZfcm1JZD1BQnpBSj=
+VQR3luY0xRZTAyb3FyQnVOckRqcWtBRURIZ3Z3NVdXNmU%3D&s=3D7efa3181171f485adaba39=
+64a6f2cbd9" style=3D"height:47px;width:498px;v-text-anchor:middle;" arcsize=
+=3D"0%" strokeweight=3D"0.75pt" strokecolor=3D"#FFFFFF" fill=3D"false"><w:a=
+nchorlock/><v:textbox inset=3D"0px,0px,0px,0px"><center style=3D"color:#fff=
+fff; font-family:Arial, sans-serif; font-size:18px"><![endif]-->
+<a data-link_id=3D"14489" href=3D"https://t03.mailsrv-e.com/click?v=3D2&umk=
+=3D6423021c118bb3.203519066423021c1&origurl=3DaHR0cHM6Ly93d3cucHJpb3JzZXJ2a=
+WNlLmNvbS9zaGJ5YnJ1bi5odG1sP3V0bV9zb3VyY2U9cm0mdXRtX21lZGl1bT1lbWFpbCZ1dG1f=
+Y2FtcGFpZ249bmV3eWVhcjIwJnV0bV9jb250ZW50PSZfcm1JZD1BQnpBSjVQR3luY0xRZTAyb3F=
+yQnVOckRqcWtBRURIZ3Z3NVdXNmU%3D&link_id=3D14489&s=3D7efa3181171f485adaba396=
+4a6f2cbd9" target=3D"_blank" style=3D"text-decoration:none;display:block;co=
+lor:#ffffff;background-color:transparent;border-radius:0px;width:80%;border=
+-top:1px solid #FFFFFF;font-weight:undefined;border-right:1px solid #FFFFFF=
+;border-bottom:1px solid #FFFFFF;border-left:1px solid #FFFFFF;padding-top:=
+5px;padding-bottom:5px;font-family:Arial, Helvetica Neue, Helvetica, sans-s=
+erif;font-size:18px;text-align:center;mso-border-alt:none;word-break:keep-a=
+ll;"><span style=3D"padding-left:20px;padding-right:20px;font-size:18px;dis=
+play:inline-block;letter-spacing:normal;"><span style=3D"word-break:break-w=
+ord;"><span style=3D"line-height: 36px;" data-mce-style>SHOP BY BRANCH</spa=
+n></span></span></a>
+<!--[if mso]></center></v:textbox></v:roundrect><![endif]--></div></td></tr=
+></table><table class=3D"button_block block-3" width=3D"100%" border=3D"0" =
+cellpadding=3D"10" cellspacing=3D"0" role=3D"presentation" style=3D"mso-tab=
+le-lspace:0;mso-table-rspace:0"><tr><td class=3D"pad"><div class=3D"alignme=
+nt" align=3D"center">
+<!--[if mso]><v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=
+=3D"urn:schemas-microsoft-com:office:word" href=3D"https://t03.mailsrv-e.co=
+m/click?v=3D2&umk=3D6423021c118bb3.203519066423021c1&origurl=3DaHR0cHM6Ly93=
+d3cucHJpb3JzZXJ2aWNlLmNvbS9uZXdpdGVtcy5odG1sP3V0bV9zb3VyY2U9cm0mdXRtX21lZGl=
+1bT1lbWFpbCZ1dG1fY2FtcGFpZ249bmV3eWVhcjIwJnV0bV9jb250ZW50PSZfcm1JZD1BQnpBSj=
+VQR3luY0xRZTAyb3FyQnVOckRqcWtBRURIZ3Z3NVdXNmU%3D&s=3D7efa3181171f485adaba39=
+64a6f2cbd9" style=3D"height:47px;width:498px;v-text-anchor:middle;" arcsize=
+=3D"0%" strokeweight=3D"0.75pt" strokecolor=3D"#FFFFFF" fill=3D"false"><w:a=
+nchorlock/><v:textbox inset=3D"0px,0px,0px,0px"><center style=3D"color:#fff=
+fff; font-family:Arial, sans-serif; font-size:18px"><![endif]-->
+<a data-link_id=3D"37572" href=3D"https://t03.mailsrv-e.com/click?v=3D2&umk=
+=3D6423021c118bb3.203519066423021c1&origurl=3DaHR0cHM6Ly93d3cucHJpb3JzZXJ2a=
+WNlLmNvbS9uZXdpdGVtcy5odG1sP3V0bV9zb3VyY2U9cm0mdXRtX21lZGl1bT1lbWFpbCZ1dG1f=
+Y2FtcGFpZ249bmV3eWVhcjIwJnV0bV9jb250ZW50PSZfcm1JZD1BQnpBSjVQR3luY0xRZTAyb3F=
+yQnVOckRqcWtBRURIZ3Z3NVdXNmU%3D&link_id=3D37572&s=3D7efa3181171f485adaba396=
+4a6f2cbd9" target=3D"_blank" style=3D"text-decoration:none;display:block;co=
+lor:#ffffff;background-color:transparent;border-radius:0px;width:80%;border=
+-top:1px solid #FFFFFF;font-weight:undefined;border-right:1px solid #FFFFFF=
+;border-bottom:1px solid #FFFFFF;border-left:1px solid #FFFFFF;padding-top:=
+5px;padding-bottom:5px;font-family:Arial, Helvetica Neue, Helvetica, sans-s=
+erif;font-size:18px;text-align:center;mso-border-alt:none;word-break:keep-a=
+ll;"><span style=3D"padding-left:20px;padding-right:20px;font-size:18px;dis=
+play:inline-block;letter-spacing:normal;"><span style=3D"word-break:break-w=
+ord;"><span style data-mce-style><span style=3D"line-height: 36px;" data-mc=
+e-style>SHOP NEW PRODUCTS</span></span></span></span></a>
+<!--[if mso]></center></v:textbox></v:roundrect><![endif]--></div></td></tr=
+></table><table class=3D"button_block block-4" width=3D"100%" border=3D"0" =
+cellpadding=3D"10" cellspacing=3D"0" role=3D"presentation" style=3D"mso-tab=
+le-lspace:0;mso-table-rspace:0"><tr><td class=3D"pad"><div class=3D"alignme=
+nt" align=3D"center">
+<!--[if mso]><v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=
+=3D"urn:schemas-microsoft-com:office:word" href=3D"https://t03.mailsrv-e.co=
+m/click?v=3D2&umk=3D6423021c118bb3.203519066423021c1&origurl=3DaHR0cHM6Ly93=
+d3cucHJpb3JzZXJ2aWNlLmNvbS9jdXN0b20tbWlsaXRhcnktaXRlbXMuaHRtbD91dG1fc291cmN=
+lPXJtJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPW5ld3llYXIyMCZ1dG1fY29udGVudD=
+0mX3JtSWQ9QUJ6QUo1UEd5bmNMUWUwMm9xckJ1TnJEanFrQUVESGd2dzVXVzZl&s=3D7efa3181=
+171f485adaba3964a6f2cbd9" style=3D"height:47px;width:498px;v-text-anchor:mi=
+ddle;" arcsize=3D"0%" strokeweight=3D"0.75pt" strokecolor=3D"#FFFFFF" fill=
+=3D"false"><w:anchorlock/><v:textbox inset=3D"0px,0px,0px,0px"><center styl=
+e=3D"color:#ffffff; font-family:Arial, sans-serif; font-size:18px"><![endif=
+]-->
+<a data-link_id=3D"32126" href=3D"https://t03.mailsrv-e.com/click?v=3D2&umk=
+=3D6423021c118bb3.203519066423021c1&origurl=3DaHR0cHM6Ly93d3cucHJpb3JzZXJ2a=
+WNlLmNvbS9jdXN0b20tbWlsaXRhcnktaXRlbXMuaHRtbD91dG1fc291cmNlPXJtJnV0bV9tZWRp=
+dW09ZW1haWwmdXRtX2NhbXBhaWduPW5ld3llYXIyMCZ1dG1fY29udGVudD0mX3JtSWQ9QUJ6QUo=
+1UEd5bmNMUWUwMm9xckJ1TnJEanFrQUVESGd2dzVXVzZl&link_id=3D32126&s=3D7efa31811=
+71f485adaba3964a6f2cbd9" target=3D"_blank" style=3D"text-decoration:none;di=
+splay:block;color:#ffffff;background-color:transparent;border-radius:0px;wi=
+dth:80%;border-top:1px solid #FFFFFF;font-weight:undefined;border-right:1px=
+ solid #FFFFFF;border-bottom:1px solid #FFFFFF;border-left:1px solid #FFFFF=
+F;padding-top:5px;padding-bottom:5px;font-family:Arial, Helvetica Neue, Hel=
+vetica, sans-serif;font-size:18px;text-align:center;mso-border-alt:none;wor=
+d-break:keep-all;"><span style=3D"padding-left:20px;padding-right:20px;font=
+-size:18px;display:inline-block;letter-spacing:normal;"><span style=3D"word=
+-break:break-word;"><span style=3D"line-height: 36px;" data-mce-style>SHOP =
+CUSTOM MADE</span></span></span></a>
+<!--[if mso]></center></v:textbox></v:roundrect><![endif]--></div></td></tr=
+></table></td></tr></tbody></table></td></tr></tbody></table><table class=
+=3D"row row-7" align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-=
+table-rspace:0"><tbody><tr><td><table class=3D"row-content stack" align=3D"=
+center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentati=
+on"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0;background-color:#fff;color:=
+#000;width:640px" width=3D"640"><tbody><tr><td class=3D"column column-1" wi=
+dth=3D"100%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400=
+;text-align:left;padding-bottom:5px;padding-top:5px;vertical-align:top;bord=
+er-top:0;border-right:0;border-bottom:0;border-left:0"><table class=3D"divi=
+der_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"10" cellspaci=
+ng=3D"0" role=3D"presentation"=20
+style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td class=3D"pad"><div =
+class=3D"alignment" align=3D"center"><table border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" role=3D"presentation" width=3D"100%" style=3D"mso-table-l=
+space:0;mso-table-rspace:0"><tr><td class=3D"divider_inner" style=3D"font-s=
+ize:1px;line-height:1px;border-top:0 solid #bbb"><span>&#8202;</span></td><=
+/tr></table></div></td></tr></table><table class=3D"divider_block block-2" =
+width=3D"100%" border=3D"0" cellpadding=3D"10" cellspacing=3D"0"=20
+role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><=
+td class=3D"pad"><div class=3D"alignment" align=3D"center"><table border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%=
+" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td class=3D"divider_=
+inner" style=3D"font-size:1px;line-height:1px;border-top:1px solid #bbb"><s=
+pan>&#8202;</span></td></tr></table></div></td></tr></table><table class=3D=
+"social_block block-3" width=3D"100%" border=3D"0" cellpadding=3D"10"=20
+cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-tab=
+le-rspace:0"><tr><td class=3D"pad"><div class=3D"alignment" align=3D"center=
+"><table class=3D"social-table" width=3D"148px" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso=
+-table-rspace:0;display:inline-block"><tr><td style=3D"padding:0 5px 0 0"><=
+a data-link_id=3D"23690" href=3D"https://t03.mailsrv-e.com/click?v=3D2&umk=
+=3D6423021c118bb3.203519066423021c1&origurl=3DaHR0cHM6Ly93d3cuZmFjZWJvb2suY=
+29tL3ByaW9yc2VydmljZS8%2FdXRtX3NvdXJjZT1yZW1hcmtldHklMjBmb3IlMjB5YWhvbyUyMH=
+NtYWxsJTIwYnVzaW5lc3MmdXRtX21lZGl1bT1lbWFpbCZ1dG1fY2FtcGFpZ249VVMlMjBBcm15J=
+TIwQnJhbmNoJTIwb2YlMjBTZXJ2aWNlJTIwQWZnaGFuaXN0YW4lMjBWZXRlcmFuJTIwQmFsbCUy=
+MENhcHMhISUyME1hZGUlMjBpbiUyMFVTQSEhXzEmdXRtX2NvbnRlbnQ9Jl9ybUlkPUFCekFKNVB=
+HeW5jTFFlMDJvcXJCdU5yRGpxa0FFREhndnc1V1c2ZQ%3D%3D&link_id=3D23690&s=3D7efa3=
+181171f485adaba3964a6f2cbd9" target=3D"_blank"><img=20
+src=3D"https://app-rsrc.getbee.io/public/resources/social-networks-icon-set=
+s/circle-gray/facebook@2x.png" width=3D"32" height=3D"32" alt=3D"Facebook" =
+title=3D"Facebook" style=3D"display:block;height:auto;border:0"></a></td><t=
+d style=3D"padding:0 5px 0 0"><a data-link_id=3D"87101" href=3D"https://t03=
+.mailsrv-e.com/click?v=3D2&umk=3D6423021c118bb3.203519066423021c1&origurl=
+=3DaHR0cHM6Ly90d2l0dGVyLmNvbS9AUHJpb3JTZXJ2aWNlMT91dG1fc291cmNlPXJlbWFya2V0=
+eSUyMGZvciUyMHlhaG9vJTIwc21hbGwlMjBidXNpbmVzcyZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9=
+jYW1wYWlnbj1VUyUyMEFybXklMjBCcmFuY2glMjBvZiUyMFNlcnZpY2UlMjBBZmdoYW5pc3Rhbi=
+UyMFZldGVyYW4lMjBCYWxsJTIwQ2FwcyEhJTIwTWFkZSUyMGluJTIwVVNBISFfMSZ1dG1fY29ud=
+GVudD0mX3JtSWQ9QUJ6QUo1UEd5bmNMUWUwMm9xckJ1TnJEanFrQUVESGd2dzVXVzZl&link_id=
+=3D87101&s=3D7efa3181171f485adaba3964a6f2cbd9" target=3D"_blank"><img src=
+=3D"https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/c=
+ircle-gray/twitter@2x.png" width=3D"32" height=3D"32" alt=3D"Twitter" title=
+=3D"Twitter"=20
+style=3D"display:block;height:auto;border:0"></a></td><td style=3D"padding:=
+0 5px 0 0"><a data-link_id=3D"58953" href=3D"https://t03.mailsrv-e.com/clic=
+k?v=3D2&umk=3D6423021c118bb3.203519066423021c1&origurl=3DaHR0cHM6Ly93d3cucG=
+ludGVyZXN0LmNvbS9wcmlvcnNlcnZpY2UvP3V0bV9zb3VyY2U9cmVtYXJrZXR5JTIwZm9yJTIwe=
+WFob28lMjBzbWFsbCUyMGJ1c2luZXNzJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPVVT=
+JTIwQXJteSUyMEJyYW5jaCUyMG9mJTIwU2VydmljZSUyMEFmZ2hhbmlzdGFuJTIwVmV0ZXJhbiU=
+yMEJhbGwlMjBDYXBzISElMjBNYWRlJTIwaW4lMjBVU0EhIV8xJnV0bV9jb250ZW50PSZfcm1JZD=
+1BQnpBSjVQR3luY0xRZTAyb3FyQnVOckRqcWtBRURIZ3Z3NVdXNmU%3D&link_id=3D58953&s=
+=3D7efa3181171f485adaba3964a6f2cbd9" target=3D"_blank"><img src=3D"https://=
+app-rsrc.getbee.io/public/resources/social-networks-icon-sets/circle-gray/p=
+interest@2x.png" width=3D"32" height=3D"32" alt=3D"Pinterest" title=3D"Pint=
+erest" style=3D"display:block;height:auto;border:0"></a></td><td style=3D"p=
+adding:0 5px 0 0"><a data-link_id=3D"63019" href=3D"https://t03.mailsrv-e.c=
+om/click?v=3D2&umk=3D6423021c118bb3.203519066423021c1&origurl=3DaHR0cHM6Ly9=
+3d3cueW91dHViZS5jb20vUHJpb3JTZXJ2aWNlP3V0bV9zb3VyY2U9cmVtYXJrZXR5JTIwZm9yJT=
+IweWFob28lMjBzbWFsbCUyMGJ1c2luZXNzJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduP=
+VVTJTIwQXJteSUyMEJyYW5jaCUyMG9mJTIwU2VydmljZSUyMEFmZ2hhbmlzdGFuJTIwVmV0ZXJh=
+biUyMEJhbGwlMjBDYXBzISElMjBNYWRlJTIwaW4lMjBVU0EhIV8xJnV0bV9jb250ZW50PSZfcm1=
+JZD1BQnpBSjVQR3luY0xRZTAyb3FyQnVOckRqcWtBRURIZ3Z3NVdXNmU%3D&link_id=3D63019=
+&s=3D7efa3181171f485adaba3964a6f2cbd9" target=3D"_blank"><img=20
+src=3D"https://app-rsrc.getbee.io/public/resources/social-networks-icon-set=
+s/circle-gray/youtube@2x.png" width=3D"32" height=3D"32" alt=3D"YouTube" ti=
+tle=3D"YouTube" style=3D"display:block;height:auto;border:0"></a></td></tr>=
+</table></div></td></tr></table><table class=3D"text_block block-4" width=
+=3D"100%" border=3D"0" cellpadding=3D"10" cellspacing=3D"0" role=3D"present=
+ation" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word=
+"><tr><td class=3D"pad"><div style=3D"font-family:sans-serif"><div class=20
+style=3D"font-size:12px;font-family:Arial,Helvetica Neue,Helvetica,sans-ser=
+if;mso-line-height-alt:14.399999999999999px;color:#555;line-height:1.2"><p =
+style=3D"margin:0;font-size:12px;text-align:center;mso-line-height-alt:14.3=
+99999999999999px">Can't read this email?<a data-link_id=3D"38183" style=3D"=
+text-decoration: underline; color: #1c345e;" href=3D"https://yahoo.remarket=
+y.com/public/view?d=3DeJw9zTEOwjAMheG7eI6QnaRu0htwAfa0tVAEaaPGTIi7kzKwPX3D%=
+2F97QdD%2FkusJEdkRvQKXUZ9IfMTH5aGBJpaZ8307zY%2BTgDLzKAyZgbx1aWojCPLuLRTdQRP=
+4z9GAu0rQX%2BgUHRBoiooEqR8tNZb2dY996%2BfMFMu4oew%3D%3D&h=3D920f15a9f54afc90=
+fb0ee40af381cf5b" target=3D"_blank" rel=3D"noopener"> View in browser&nbsp;=
+</a></p><p=20
+style=3D"margin:0;font-size:12px;text-align:center;mso-line-height-alt:14.3=
+99999999999999px">&nbsp;</p><p style=3D"margin:0;font-size:12px;text-align:=
+center;mso-line-height-alt:14.399999999999999px">All rights reserved =A9 Pr=
+iorService.com, 2023</p><p style=3D"margin:0;font-size:12px;text-align:cent=
+er;mso-line-height-alt:14.399999999999999px">Address: 117 Old Padonia Road =
+Suite C, Cockeysville, Maryland</p><p style=3D"margin:0;font-size:12px;text=
+-align:center;mso-line-height-alt:14.399999999999999px">Phone: 877-241-8611=
+</p><p=20
+style=3D"margin:0;font-size:12px;text-align:center;mso-line-height-alt:14.3=
+99999999999999px">&nbsp;</p><p style=3D"margin:0;font-size:12px;text-align:=
+center;mso-line-height-alt:14.399999999999999px">&nbsp;</p><p style=3D"marg=
+in:0;font-size:12px;text-align:center;mso-line-height-alt:14.39999999999999=
+9px">&nbsp;</p><p style=3D"margin:0;font-size:12px;text-align:center;mso-li=
+ne-height-alt:14.399999999999999px">If you wish to stop receiving emails, c=
+lick <a data-link_id=3D"32826" href=3D"https://yahoo.remarkety.com/public/s=
+ubscribers/optout/umk/NjQyMzAyMWMxMThiYjMuMjAzNTE5MDY2NDIzMDIxYzE=3D/email/=
+YWNocmFmZWw3MzExNCU0MHlhaG9vLmNvbQ=3D=3D" target=3D"_blank" rel=3D"noopener=
+" style=3D"color: #1c345e;">Unsubscribe </a>&nbsp;</p></div></div>
+</td></tr></table></td></tr></tbody></table></td></tr></tbody></table></td>=
+</tr></tbody></table><!-- End --><img src=3D"https://t03.mailsrv-e.com/open=
+?v=3D2&umk=3D6423021c118bb3.203519066423021c1&s=3D7efa3181171f485adaba3964a=
+6f2cbd9" alt=3D""/></body></html>

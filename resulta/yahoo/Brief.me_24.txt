@@ -1,0 +1,906 @@
+Received: from 10.217.135.212
+ by atlas214.free.mail.ne1.yahoo.com pod-id NONE with HTTPS; Thu, 23 Mar 2023 12:32:15 +0000
+Return-Path: <bounce+v2+99683c.42819.1679574730.BAABAQV9Vdx2YJJv3hZCdpu51WtDGSIOYQ==~achrafel73114=yahoo.com@brief.me>
+X-Originating-Ip: [143.55.234.220]
+Received-SPF: pass (domain of brief.me designates 143.55.234.220 as permitted sender)
+Authentication-Results: atlas214.free.mail.ne1.yahoo.com;
+ dkim=pass header.i=@brief.me header.s=mailo;
+ dkim=pass header.i=@mailgun.org header.s=mg;
+ spf=pass smtp.mailfrom=brief.me;
+ dmarc=pass(p=NONE,sp=NONE) header.from=brief.me;
+X-Apparently-To: achrafel73114@yahoo.com; Thu, 23 Mar 2023 12:32:16 +0000
+X-YMailAVSC: Ks_Yl8k3bBubG3tw2uMGdoxlS.TLQRIwFsI0KhJAtm5sGLA
+ rCmCXOkIKX9VDUDpTVcMmTIG_cGqxbc7gV.OcNxe8qiOsHOVHSMZslq3S.8j
+ eQjNcCQBdHW2hggdL3FCx9LYSHhiy8wVhQe02L3aPZHJEB69aNBSnVLUPVzL
+ NgZKjJHTZx8GY5CLFC0eLPjdIEd5pSy_Hd_h0uDI_r7R7IPsuCK_5OOjQT_f
+ uV4ZrpFlrOeqSf5Gfy_9_K1jF85FFWOf5bxCgsayisNOjFbmGDTfktBudFob
+ i8K0mJ9O_ernp.Nir6oQYPgcfWdMvrpMtm3W8M1u4rM6tjSwmtuH7F3hUUcJ
+ i_.qfRhbvqXVlZ693nNZ.gxJeefElHQ.iQDQTDMiNOrsec9AFeUP7oDnEuVB
+ ubAXxQrl0tPhlR9uhZsdE2jY4LrCoN46RfwLcGDNwIM2xr1lWFSPIIEigqIh
+ BK4Lk04LUrVGNuRkKez3mIj1BZjaalFKVNRJhNPAqSpDeWHGTrkOs7Iev8qk
+ q3nckQLcPALjN2OF1TsxrkDYkvZcU6_3ycXMO1u4BaZW4LiLdB_eGNyJz2gL
+ qIk5t.dJ0yV5BJXaR8L7haoRkox_7PzNkch04j2GdXMwUUpCbvusaA9tE0ow
+ TZcE5WpQ0.BI0RrGDE0RN47ickuW8CTBSkbCLziwOPTz7a1WqKwXwYzkwroZ
+ 4lPJIoDvLp2pywbQoHRnbQoghG04o2srrwOnVu_qp12nVLP_k7k7ft.tBuFx
+ _DApfSfHAev6qozA1hd6uOKDmZd7njb03rpOB.yrCxZ1h05GZYT1rZGsZj0b
+ PYMc2QrySEBfOjfBe4Hkq4rWn4sN6uSq3ZpgmB6CW1zjJyRfpW4ulTB45c6D
+ JRmRfhU22ElnIb3b15Dc.Nbofxrhhfl6Cgpsz_cw.tKpQNsfZb1FIbKPvhJd
+ _orX6X5aP7h7PvgShSysudp3TrdB5VjwjcR0q1Uis048wx_qGbMo3UWzRLw9
+ fNHk8y7PLpc_PNg5wX9cAXz471c1y0yzQt89LU30bOtsHOr4SjZJH94r6vJE
+ gmIuHJ3FhgtG1bcYIJqfWv1Eip8JSNlE.ZUQloFtdvHnALVuqN7aTIsP5iMP
+ 26TKQELycryaB.m58mIQObhJQ5jHEyODaJuLnj2sp73_5k2MCEfLraLCqzID
+ df5GYthSSQqgM5bS8iwBwV4MQn_NfyYik3yauWc4Khq7ZoHbXExF4y_Prc1x
+ mbnZEEa5jk5b7z_0OJV3jKETXQ.D9yTd0cf9ZQ98YyA_JZW6FfQ--
+X-YMailISG: 7wBkAVkWLDt.SBb_S6ScxsHERMO8fxE.ch3o2T05yaJB2wzL
+ dO8r808ITcpcvJkR2o7cA4qpKZtoSWqtQPnkEkTJicnHdmIWCeqhYYMcS.53
+ Kdm_rdLBAU3pb94XYB5oQJ5cMpDs1tPh1dDXa0Lh5oh3TJ1Atbs6PsXGHzxi
+ S8NMrySKV5cuArV4frkc5dddFzLupIqJ5CJdvnCyMnMNfCxpfxSiefp0jY1L
+ iRjax8AOCPqUT5S7H9YaLJs35H1BgpXGFMv6PHszwZ2s5JI5Cynt8NNJxWIN
+ OLSicEdonD9W15xFWzEFadAzci3Y_l9zKSmgQLy9JFti8rRlNQGm5WWZu.pl
+ cG6dQUFAHm3r_HvqNpik41zxN8mSCJGicLesvFVZDEus69UeI2DEEJ7vpfnt
+ sXMS10tlV0azQAPuLIFXxalsoO9l2dMZ97kiQR7gtVdAoaYQ10Y_ILzpw2qv
+ NYHDpQhBa2pmRvEyz2Tj8rgDwfXBpwZC0EXPC.OHY7XgQ4aSb9qxAwPnOm8f
+ cu4KEdVVevAi4DAKy4EnRfIBlAghloDgjuLUeJRDcgBLvvpoCeMMTRLqrFmh
+ EWD5ICKYeLfS9uVwVir0T9N3CF9AquujB6q7Sq1uhEj9mX3h_k4VwwTGsvwu
+ 4BVRhJbtWq5e6esodYvphm.Q4qMnKpBO57avoxsR684CpvGLqa_ujMie78ci
+ SEznwQiqmaV2X0koiWDvNLlw_Wbc6YvTMbFEmSNZEHVU.2PZIHqHE1v7jxed
+ Le_jVsHS05BMabF4PYeOnnq2oKGXoeQvwblb2oRwfSQtff99sSHmJ1WY8WJR
+ SgeOjpfwpsf9_4_chNjYOjOkR3NJXQ6XfG2fmneUdrmucNVpMqZZMQ4bt2th
+ 9lhx39yPOPWjqrJRlRRwt0.CTrzQTGTc_hyam.mUJSnlK7V1SnBgCPvfZYWr
+ we1irQKK3Z0AgorynhCfaDUc5TsECFmYL6V13J6n__liA.kLI5wnEDIk3O41
+ y65A3WXJzDN7dKA_ib.IxcTrOYYygMWpZatTQ7.FF_uwxC0.iN3Z9KXOWHKy
+ 5YkZsEByny1Mh1Q2E7m1riLM21jQakWK2Vyr9vPndBUyvTrF2iEmwxw7C7rM
+ xFQi_YEcjUGhqZMN5KuLjnQO4tgHfhPuDkZnuI.VRM7E8tJa2EcAo8ajlAQn
+ 6wIYxNR.T92_ZF4NiIM65lmw9qh5ZNX4awladAHc
+Received: from 143.55.234.220 (EHLO pc234-220.mailgun.net)
+ by 10.217.135.212 with SMTPs
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256);
+ Thu, 23 Mar 2023 12:32:15 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=brief.me; q=dns/txt; s=mailo;
+ t=1679574730; x=1679581930; h=Message-Id: Reply-To: To: To: From: From:
+ Subject: Subject: Content-Type: Mime-Version: Date: Sender: Sender;
+ bh=R5Wtcp5xvkxePY1L04kt3g4AdD99hpnxG0nQzWVDR3M=; b=NODaspwJfde3pDwk3Um/V6lHbHEc8sbNZcI4XmQ+D7V6AonD+l61rzv7ISZ2CFDif+xZducg
+ AKO6+FyfUufHsWCqd24K0rPkYsEFLSpx7Rh7P4vmwg1rxTtzcM1il5iurhbQ2HWbfJM3X+Ab
+ gcjTjbsTMpsmVlGnEQUKl/OHzl0=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org; q=dns/txt; s=mg;
+ t=1679574730; x=1679581930; h=Message-Id: Reply-To: To: To: From: From:
+ Subject: Subject: Content-Type: Mime-Version: Date: Sender: Sender;
+ bh=R5Wtcp5xvkxePY1L04kt3g4AdD99hpnxG0nQzWVDR3M=; b=HaFRugq01c3DLQiDf4cpLV7cxHRmjfUp+vgg5NioGc8E/FEIBV3ZJsWqODMjWpGY9ml/ldwC
+ xXLvmVER3ySTiXUNwn16O+I1e+gullTwWcSAlFgRvkC2oy/CFV/vxl3A0ArGVXNC1WSBEtrK
+ ajab2uIOkoaUBKr0k8cYupNTcqY=
+X-Mailgun-Sending-Ip: 143.55.234.220
+X-Mailgun-Sid: WyJkYjljMyIsImFjaHJhZmVsNzMxMTRAeWFob28uY29tIiwiNDI4MTkiXQ==
+Received: from <unknown> (<unknown> []) by 8467515471ff with HTTP id
+ 641c46c3a30a5ed7255cd708; Thu, 23 Mar 2023 12:32:03 GMT
+Sender: hello@brief.me
+Date: Thu, 23 Mar 2023 12:32:03 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary="77552a737c2933f18b6bd55deb270dd60ca73a53349e456651c5b66e8811"
+Subject: Votre avis compte
+From: Brief.me <hello@brief.me>
+To: achrafel73114@yahoo.com
+X-Mailgun-Tag: vero
+X-Mailgun-Tag: behavioural
+X-Mailgun-Track-Clicks: true
+X-Mailgun-Track-Opens: true
+X-Vero-Id: 22803646451
+Reply-To: hello@brief.me
+X-Mailgun-Variables: {"campaign[campaign_id]": "240988",
+ "campaign[email_subject]": "Votre avis compte", "campaign[project_name]":
+ "Brief.me", "campaign[recipient_domain]": "yahoo.com", "campaign[subject]":
+ "Votre avis compte", "campaign[template_name]": "Prospects avec CTA",
+ "campaign[type]": "Behavioural", "campaign[variation]": "Control"}
+Message-Id: <20230323123203.f0fb9e2d9a89471c@brief.me>
+Content-Length: 43420
+
+--77552a737c2933f18b6bd55deb270dd60ca73a53349e456651c5b66e8811
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+brief.me| ( http://email.brief.me/c/eJyNUU1vozAU_DVwiRQZ23z4wKEkyjZZtduVErb=
+NJTLmEbwL2DIONP31a7rKhmMlS7bmzbx5byx4q7k8d16YGRBSS-jsqVQtlw5ap1deK7UUqvUhDa=
+KYhTGNCfLLlOIkYL64qwduJLdSfcpWqrNGNb5MMcIEEUwCTDAiywpVBQNcMp4wGgfCo6gwEqplC=
+36dohiqgkaMkYISKJ1byBNSCcKAlRWLfJNyURteQROTIKBOfR-wSWtrde-RBw9v3BnHcXnrPSFk=
+M4BRJ1l6ZB1RShnxcPQJCdUNDszIqN42O9mqqIkOzL5GZptsk92G7y-7c6Ojld7Sd1B9l-Xdal_=
+CGsKP4_Bsd2Yk9vjjEUftz1_fXt72fzJ0-DjKOr--F5fH_Llk4vp0_Z4_DYfkXOEj8nBI1vP0-k=
+vxG4SdssuVNbDgg-wXbi1tYc67Pac1HBdTxJJkTtBGTY1OHXdbO0Z2S3fGsVf9rwa1s1EXw5t5G=
+dznN6evTmSh1Q238N_xxaheO2XvFCAWq_2Db9MpZ3cVd8e_bYPSQg )
+
+Ch=C3=A8re lectrice, cher lecteur,
+
+Vous profitez de B=EF=BB=BFri=EF=BB=BFef=EF=BB=BF.m=EF=BB=BFe depuis deux s=
+emaines. Nous esp=C3=A9rons vous =C3=AAtre utile au quotidien pour y voir c=
+lair dans l=E2=80=99actualit=C3=A9.
+
+Depuis le d=C3=A9but, B=EF=BB=BFri=EF=BB=BFef=EF=BB=BF.m=EF=BB=BFe se const=
+ruit avec ses lecteurs, en tirant parti de leurs remarques. Nous avons pr=
+=C3=A9par=C3=A9 un questionnaire tr=C3=A8s court pour recueillir vos premi=
+=C3=A8res impressions. Cela nous serait pr=C3=A9cieux d=E2=80=99avoir vos r=
+=C3=A9ponses.
+
+Je r=C3=A9ponds =C3=A0 cinq petites questions ( http://email.brief.me/c/eJy=
+NUk2TojAQ_TVwscqCBCI5cBi_dmRrHB2VWb1YIQTJCIQNUcRfv4FdV_a2Vamkq_u9ft2dpiQvCT=
+8VhjuWjPKSs0IdY5ETrl1TvyGpEEMqcpP5Nhphd-SMoGXGvgM8G5v0yb4SyYnioqNNRKGkyEzuA=
+wtACwJoAwgsOEysJMIMxJh42BnZ1HCsSHKWDHNmpj71gO3ROLYQphBTSrBLEhtHhDk2dD3blD6h=
+qSQJy0bQth3NfhaY-alSZWXAFwPM9eny5myompIlQuYtSLuV0Ndm1fxEmQHnTDeq3-m_aYHbS2w=
+AxGMNycSJFxeZ6Sic_pbSlhZzWzl91XU9fDTTOTpGZy2_1tZyer53DLs8fG7eO9PCuzWoZzRY8o=
+9wtQm2l4AhPjnD-b6Jqo_1bFZG9W11u3vijw66MimOXUHIcRwMHy4qiqt2jmEt9vOA5wJlaIfVD=
+yQX3sIL5kTnPmUlmpQL58ZEVYzDYrKN2ZS598N1qQJZQ3V4fwUoX39-W-2357G1ux94Gja36PIa=
+LmNMm7fme_h23XmnBBysbhD9Fagu0Rejql2AUCjJBuTKq4EeYalYH_cw2zY0FjgW9rw-oJSiTXQ=
+siJ6kRowfK9LDtN_axViqZcRFkqwf7j72-L8VKZaXGVHsr-JKiqrUzEozGB1Mti-m8ts56yd6Kv=
+4CTWQP9g )
+
+Vous pouvez bien s=C3=BBr =C3=A0 tout moment nous dire ce que vous pensez d=
+e B=EF=BB=BFri=EF=BB=BFef=EF=BB=BF.m=EF=BB=BFe en nous =C3=A9crivant par si=
+mple retour de mail.
+
+=C3=80 bient=C3=B4t pour un nouveau B=EF=BB=BFri=EF=BB=BFef=EF=BB=BF.m=EF=
+=BB=BFe.
+
+Laurent Mauriac, r=C3=A9dacteur en chef
+
+brief.me| ( http://email.brief.me/c/eJyNUU1vozAU_DVwiRQZ23z4wKEkyjZZtduVErb=
+NJTLmEbwL2DIONP31a7rKhmMlS7bmzbx5byx4q7k8d16YGRBSS-jsqVQtlw5ap1deK7UUqvUhDa=
+KYhTGNCfLLlOIkYL64qwduJLdSfcpWqrNGNb5MMcIEEUwCTDAiywpVBQNcMp4wGgfCo6gwEqplC=
+36dohiqgkaMkYISKJ1byBNSCcKAlRWLfJNyURteQROTIKBOfR-wSWtrde-RBw9v3BnHcXnrPSFk=
+M4BRJ1l6ZB1RShnxcPQJCdUNDszIqN42O9mqqIkOzL5GZptsk92G7y-7c6Ojld7Sd1B9l-Xdal_=
+CGsKP4_Bsd2Yk9vjjEUftz1_fXt72fzJ0-DjKOr--F5fH_Llk4vp0_Z4_DYfkXOEj8nBI1vP0-k=
+vxG4SdssuVNbDgg-wXbi1tYc67Pac1HBdTxJJkTtBGTY1OHXdbO0Z2S3fGsVf9rwa1s1EXw5t5G=
+dznN6evTmSh1Q238N_xxaheO2XvFCAWq_2Db9MpZ3cVd8e_bYPSQg )
+
+=C3=89ditions pr=C3=A9c=C3=A9dentes ( http://email.brief.me/c/eJyNUltzojAY_=
+TXy0hknJNzywEO9sJWdWm2Vrr44IURJBZIJEcRfv6EdVx53hgnJyTnf-S6hpJSEn6qRO1GMcslZ=
+pQ-ZKAk30CzsSC7EmIrSYqHt-dj1HR8BKwsdGNjYog91QxQnmotv2VRUWonC4iEEEAEEkQ0RBGh=
+8BMcUM5hhEmDHt-nIAani7DgumZWHnksCL0hxxtwAI-oTD9kGyyhIUwfBzFIhobkiR1b4yLYdo3=
+4kWIS51rIeoecRjMzXtu34HtscC3EyJcFo-bUGy9n5Zni23H9-vJkNwNs1bOc0XvL3ZPURby4x8=
+_j0jKJdl9bv6_lcpu11db0Foo-NIsUybtqlR2j2Ywrd3tbtjc1CpBxYf6New5Q48MwoPMdxMLpD=
+VFSNASeoFbso5qXwCm-L9R9PLYJFEEfEJHMqpDeVC-fKRF1Nkmq6ydiMubd9s9SxapHev71Ar1x=
+__lrtNucJ2N72PE-6a3p5SZYZpt1r9zt5bbbB6Qj3oE92NhxdfUm_-mLM4BKhFXsiDa-fTE-lZk=
+PefduXYbjQATgIhgSpRB_oUBFTt2FM7qMdcHQnf-5YbmzERZFieM3MyysO_5uRZqUsiGb_HFdK1=
+NIoa6Ng9Gm6ebZ02PfZ_NKH418EXfkv ) =E2=80=A2 Week-end ( http://email.brief.m=
+e/c/eJyNUltzojAY_TXy0hknJNzywEO9sJWdWm2Vrr44IURJBZIJEcRfv6EdVx53hgnJyTnf-S6=
+hpJSEn6qRO1GMcslZpQ-ZKAk30CzsSC7EmIrSYqHt-dj1HR8BKwsdGNjYog91QxQnmotv2VRUWo=
+nC4iEEEAEEkQ0RBGh8BMcUM5hhEmDHt-nIAani7DgumZWHnksCL0hxxtwAI-oTD9kGyyhIUwfBz=
+FIhobkiR1b4yLYdo34kWIS51rIeoecRjMzXtu34HtscC3EyJcFo-bUGy9n5Zni23H9-vJkNwNs1=
+bOc0XvL3ZPURby4x8_j0jKJdl9bv6_lcpu11db0Foo-NIsUybtqlR2j2Ywrd3tbtjc1CpBxYf6N=
+ew5Q48MwoPMdxMLpDVFSNASeoFbso5qXwCm-L9R9PLYJFEEfEJHMqpDeVC-fKRF1Nkmq6ydiMub=
+d9s9SxapHev71Ar1x__lrtNucJ2N72PE-6a3p5SZYZpt1r9zt5bbbB6Qj3oE92NhxdfUm_-mLM4=
+BKhFXsiDa-fTE-lZkPefduXYbjQATgIhgSpRB_oUBFTt2FM7qMdcHQnf-5YbmzERZFieM3MyysO=
+_5uRZqUsiGb_HFdK1NIoa6Ng9Gm6ebZ02PfZ_NKH418EXfkv ) =E2=80=A2 Panoramas ( ht=
+tp://email.brief.me/c/eJyNUstu4jAU_RqyqYQc23ktsiiPTMmoFFpIBzbIcRziksSWYwjh6=
+-tMxZDlSJZ9fX3OPfdhSipJ-LEeORPFKJec1fqQiYpw45qFHSmEGFNRWSy0XS9wPOwhYGUhhr4d=
+WPTBvhDFiebiL20qaq1EafEQAogAgsiGCAI0zkGeBgxmAfED7Nl0hEGqOMvHFbOKMPeImzsBDTB=
+lNiEEkwxS5GAAU5LbwLFUSGihSM5KD9k2NuxHgmVYaC2bEXoewcistm3H99jmWoqjKQlGy681WM=
+5ON4Oz5f7z480YINiuYTun8ZK_J6uPeHOOmcunJxTturR5X8_nMm2vq-vNF31sFCmWcdMuPUKzH=
+1Ho9LJOL2w2IuVA2jgkqYUiFTFA98KUOPDMUF2McYDuLirqi3FOUCt2Ucwr4ZbuNtB_XLXwF34c=
+EZPVsZTuVC7wlYmmniT1dJOxGXNu-8tSx6pFev_2At1q_flrtducJmB72_Mi6a7p-SVZZgHtXrv=
+fyetl6x9zuAd91rPhDJtz-tVXZSaYCK3YE7nw5sk0V2o2xN3NvgyDhRgEvj8ESCX6QIeamAYYxO=
+Q-4wFGd_LnjRVGRpwVKYfPzHzB8vC_GWlWyZJo9k9xpUQjDbMxDEafpptnS4d9n82RPhS_Af_v_=
+Wg )
+
+Le projet B=EF=BB=BFri=EF=BB=BFef=EF=BB=BF.m=EF=BB=BFe ( http://email.brief=
+=2Eme/c/eJyNUk1vozAU_DVwiTYytvk6cCiJsk2qf=
+kkJu80lMuYRvAVsGQdKf31NV9lwXMmS7fdm3=
+nhG5qxRTJxbx081cKEEtOZUyIYJW1onI6ukXHLZuJB4QRj7IQ0JcouE4siLXX5j90wLZoT8pq1k=
+a7SsXZFghAkimHiYYESWJSrzGHARsyimoccdinItoFw24FZJ4Qc5EAxWJSekYNTHoe_xEoU8YkX=
+MXZ0wXmlWQh0Sz6OWfXtgnVTGqM4hdw7e2DUMw_I6216h_ZFrKKce2fSg5UkUDlkHlNKYODj4Ln=
+HZ9raYkkG-bXaikUEdHGLzO9DbaBvtNmx_2Z1rFazUln6A7No0a1f7Atbgfx77J7PTAzHH53scN=
+K-_fr687d9TdPg8iiobP_LLffZkTYyP40P22B-ic4mPyME-Wc9z7C75H-BmSjGTRsOC9aJbWIPK=
+wBx3PU42LBZTFEfRHKC0nAadWmb9W0R6zXmGMaP624PKysiLZvW8DfYb1Kf_fZGBRtXMwD_FFy0=
+7ZZmdZQBfrPZ3rkmmnO2W3xS_AG_n1Yg ) =E2=80=A2 L=E2=80=99=C3=A9quipe ( http:/=
+/email.brief.me/c/eJyNUl1vmzAU_TXwEjXCHxj8wENJlDWZ2nVSwtq8RMZcgjfAzBjS9NfX6=
+ZSGx0mW7HvuOffjyFI0nVDH1gtTA1J1Clp7KHQjlIOWyVlUWs-lbnxIEIt4GNGIBH6RUBwj7sub=
+ehRGCav0p2yhW2t07asEB5gEBBOECQ7IvAzKnAMuuIg5jZD0aJAbBeW8Ab9KiATJRIQwIjgMGSo=
+IlJSzEHEaojAnvkmErIwooY4IQtSpbwPWSWVt13vk3sMrd06n0_xa24V_B3XX66aB_q7VQ3_hkN=
+UIRh9U4ZElo5Ry4mH2CUndjg5MyUm_rjaq0axmO25fmFnH63izEtthc6w7tujW9A1036ZZu9gWs=
+ITwfT8-2Y05Ebv_8YBZ8_PXt-fX7Z802L3vVZWd3_LhIXsquDw_nr9nj-MuPpZ4H3g4JMupn_2Q=
+_wZpL25m2hqYiVH1M7doZ2HKuz4vazgupgGP4ymhM_pS6NAK54NjpFe_Jxx77v7loHJt9GBEPU2=
+D-w714X8nstB0tbDw1fHZ6L5zyt4pQM4W23vfJhef3ZXfOn4AW5XX-A ) =E2=80=A2 Questio=
+ns fr=C3=A9quentes ( http://email.brief.me/c/eJyNUl1vmzAU_TXwEikytmPwAw8lUd=
+ZkatdJCVvzEtnGBG-APeNA6a-v6ZSFx0mW7HvuOffjyII1hqlLG6wyK4UySrbuXOiGKQ9t0pFVW=
+i-FbkKZRiSmqxjHCIRFimES0VDc1T2zijmlP2Vr3Tqr61ClEEAEEEQRRBCgZQlKTiUsKEsojiMR=
+YMCtkuWykWGVxgkXMSFYYIYjlmDOKZekLDmJAOAgCm3KRGVZKesYRRH26vuAdVo5Z7oAPQRw688=
+wDMtbbR-W7M-Eo20vrT6rIkAbgjGmKIDkExK67T2YoUG_bveq0aQmR-p-ErtLdsl-yw7X_aU2ZG=
+12-E3qrs3ydn0o5Eau3k_9s9vbAbnTt0dImu8_vry8Hn5n4Ph-UlU-vvHrY_5cUDE-jV_zp_6YX=
+Ep4AgFcoc3cw-7Kf0nhJgdz7axcsF51C7-ccXLOuz2nNTwXYkCTZE4wVk-Fzi3zu3tGdvN4xnGj=
+-ZuTlW-jr5bV87T0X6A-_-9ETjamZk7-6_hidWe8svMKKRbrw0Po0slnf_F7xw8DFtQX )
+
+Le projet B=EF=BB=BFri=EF=BB=BFef=EF=BB=BF.m=EF=BB=BFe ( http://email.brief=
+=2Eme/c/eJyNUk1vozAU_DVwiTYytvk6cCiJsk2qf=
+kkJu80lMuYRvAVsGQdKf31NV9lwXMmS7fdm3=
+nhG5qxRTJxbx081cKEEtOZUyIYJW1onI6ukXHLZuJB4QRj7IQ0JcouE4siLXX5j90wLZoT8pq1k=
+a7SsXZFghAkimHiYYESWJSrzGHARsyimoccdinItoFw24FZJ4Qc5EAxWJSekYNTHoe_xEoU8YkX=
+MXZ0wXmlWQh0Sz6OWfXtgnVTGqM4hdw7e2DUMw_I6216h_ZFrKKce2fSg5UkUDlkHlNKYODj4Ln=
+HZ9raYkkG-bXaikUEdHGLzO9DbaBvtNmx_2Z1rFazUln6A7No0a1f7Atbgfx77J7PTAzHH53scN=
+K-_fr687d9TdPg8iiobP_LLffZkTYyP40P22B-ic4mPyME-Wc9z7C75H-BmSjGTRsOC9aJbWIPK=
+wBx3PU42LBZTFEfRHKC0nAadWmb9W0R6zXmGMaP624PKysiLZvW8DfYb1Kf_fZGBRtXMwD_FFy0=
+7ZZmdZQBfrPZ3rkmmnO2W3xS_AG_n1Yg ) =E2=80=A2 L=E2=80=99=C3=A9quipe ( http:/=
+/email.brief.me/c/eJyNUl1vmzAU_TXwEjXCHxj8wENJlDWZ2nVSwtq8RMZcgjfAzBjS9NfX6=
+ZSGx0mW7HvuOffjyFI0nVDH1gtTA1J1Clp7KHQjlIOWyVlUWs-lbnxIEIt4GNGIBH6RUBwj7sub=
+ehRGCav0p2yhW2t07asEB5gEBBOECQ7IvAzKnAMuuIg5jZD0aJAbBeW8Ab9KiATJRIQwIjgMGSo=
+IlJSzEHEaojAnvkmErIwooY4IQtSpbwPWSWVt13vk3sMrd06n0_xa24V_B3XX66aB_q7VQ3_hkN=
+UIRh9U4ZElo5Ry4mH2CUndjg5MyUm_rjaq0axmO25fmFnH63izEtthc6w7tujW9A1036ZZu9gWs=
+ITwfT8-2Y05Ebv_8YBZ8_PXt-fX7Z802L3vVZWd3_LhIXsquDw_nr9nj-MuPpZ4H3g4JMupn_2Q=
+_wZpL25m2hqYiVH1M7doZ2HKuz4vazgupgGP4ymhM_pS6NAK54NjpFe_Jxx77v7loHJt9GBEPU2=
+D-w714X8nstB0tbDw1fHZ6L5zyt4pQM4W23vfJhef3ZXfOn4AW5XX-A ) =E2=80=A2 Questio=
+ns fr=C3=A9quentes ( http://email.brief.me/c/eJyNUl1vmzAU_TXwEikytmPwAw8lUd=
+ZkatdJCVvzEtnGBG-APeNA6a-v6ZSFx0mW7HvuOffjyII1hqlLG6wyK4UySrbuXOiGKQ9t0pFVW=
+i-FbkKZRiSmqxjHCIRFimES0VDc1T2zijmlP2Vr3Tqr61ClEEAEEEQRRBCgZQlKTiUsKEsojiMR=
+YMCtkuWykWGVxgkXMSFYYIYjlmDOKZekLDmJAOAgCm3KRGVZKesYRRH26vuAdVo5Z7oAPQRw688=
+wDMtbbR-W7M-Eo20vrT6rIkAbgjGmKIDkExK67T2YoUG_bveq0aQmR-p-ErtLdsl-yw7X_aU2ZG=
+12-E3qrs3ydn0o5Eau3k_9s9vbAbnTt0dImu8_vry8Hn5n4Ph-UlU-vvHrY_5cUDE-jV_zp_6YX=
+Ep4AgFcoc3cw-7Kf0nhJgdz7axcsF51C7-ccXLOuz2nNTwXYkCTZE4wVk-Fzi3zu3tGdvN4xnGj=
+-ZuTlW-jr5bV87T0X6A-_-9ETjamZk7-6_hidWe8svMKKRbrw0Po0slnf_F7xw8DFtQX )
+
+Pourquoi s=E2=80=99abonner ( http://email.brief.me/c/eJyNUl1zojAU_TXy0qkDSY=
+DwwEP9YCs7tdoqXX1xQgiSCiQbIqi_fsN2XZ192pnMJLk55557zw0llSR8Xw_ckWKUS85qvctER=
+bgJTcIzKYQYUlFZLHQ8P3B95EPbykIEsBNY9MZuieJEc_GbNha1VqK0eAhsAG0IoAMgsOEwt_M0=
+YCALCA6Q79ABslPFWT6smFWE2GEOxinxMcqcPE19RF3MCMgARcDzMkuFhBaK5Kz0oeMgw74VWIa=
+F1rIZwKcBiMzqum54zW2updiblkA0_1za88nhYnCO3H68v5qDHayXoJvSeM7fksV7vDrGzOPjA4=
+w257R5W06nMu1Oi9MFiz43jBTLuLFLD-DkSxS4vazbC7v_SpuAFEf18yj4Y_NIUlHXTP0Bey1TY=
+sczk8hDCAXwGqKibk1wBDuxiWJeCa_01oH-4akZnuE4IqbGfSm9sZyhExNNPUrq8SpjE-Zetu1c=
+x6qDevv6DLxq-fFtsVkdRvb6suVFcj6lx-dkngX0_HL-nry0a7zPwdbue5jcT7Q5pp99j2aeidC=
+KPZCWNw_GaqnZPe567NswWIDsAON7gFSiT7SribHDIEbXid9h9Fl-vbHCyBi7SHn_zMyHLHf_W5=
+FmlSyJZn8VF0o00jAbw2D0Ybx6snTY-2y29Kb4C_ElAco ) =E2=80=A2 Nos offres d=E2=
+=80=99abonnement ( http://email.brief.me/c/eJyNUluPojAU_jXwYmKgBaQPPIwXdmQz=
+js6os_piSinSESgpFcRfP4eZuJp92qRJ29Pvci5ltKioOJaGO1aciUrwUh8SWVABoWnQ0UzKIZO=
+FyQPbGxF35IywZSaBg3ybmOzObqgSVAv5TZvIUiuZmyJAFsIWRthGGFl4mFppTDhKCPWJM7KZ4V=
+ixEjwdFtzMAmJjmxBwYT524piRUYwoT7004STmDJkqoCxTNOX5CNu2A-x7gnmQaV3VBn4yUAirb=
+dvhTRuuuTxCSShcfK6sxfR0BZxd7T_eX-Fgkc0KtTMWLcTbdvkerc8R98TkhMNdF9dvq9msitvL=
+8nL1Za-NQ8UTAe3SBp7-mCK3t3V7Y_dfawjQWJYlL6C339dUquKcU5AwkNdwJQ8iASnPcRyCbyE=
+mywaCY9zKXRiJQnq5tyH6j6fm_tyPQgpZHvPKm1Rz58JlXY635WSd8Cl3r_tmoSPVYr1_fUZesf=
+r4tdytT2Nrc92LbNtd4vPzdpEQ1r10v7cvzcY_pmhv9VVMH2dan-PPvkqY6FZqxQe0EfUAml1p_=
+oi7HfsyAIsci_j-I6BSshc6lBQaAojxbeYPGN1VP288Axt5VjR_fObwJfPD_2akeVHlVPO_jksl=
+6wqYNTA4G0zWT6YO-j7DFt8dvwA9-AMz )
+
+Pourquoi s=E2=80=99abonner ( http://email.brief.me/c/eJyNUl1zojAU_TXy0qkDSY=
+DwwEP9YCs7tdoqXX1xQgiSCiQbIqi_fsN2XZ192pnMJLk55557zw0llSR8Xw_ckWKUS85qvctER=
+bgJTcIzKYQYUlFZLHQ8P3B95EPbykIEsBNY9MZuieJEc_GbNha1VqK0eAhsAG0IoAMgsOEwt_M0=
+YCALCA6Q79ABslPFWT6smFWE2GEOxinxMcqcPE19RF3MCMgARcDzMkuFhBaK5Kz0oeMgw74VWIa=
+F1rIZwKcBiMzqum54zW2updiblkA0_1za88nhYnCO3H68v5qDHayXoJvSeM7fksV7vDrGzOPjA4=
+w257R5W06nMu1Oi9MFiz43jBTLuLFLD-DkSxS4vazbC7v_SpuAFEf18yj4Y_NIUlHXTP0Bey1TY=
+sczk8hDCAXwGqKibk1wBDuxiWJeCa_01oH-4akZnuE4IqbGfSm9sZyhExNNPUrq8SpjE-Zetu1c=
+x6qDevv6DLxq-fFtsVkdRvb6suVFcj6lx-dkngX0_HL-nry0a7zPwdbue5jcT7Q5pp99j2aeidC=
+KPZCWNw_GaqnZPe567NswWIDsAON7gFSiT7SribHDIEbXid9h9Fl-vbHCyBi7SHn_zMyHLHf_W5=
+FmlSyJZn8VF0o00jAbw2D0Ybx6snTY-2y29Kb4C_ElAco ) =E2=80=A2 Nos offres d=E2=
+=80=99abonnement ( http://email.brief.me/c/eJyNUluPojAU_jXwYmKgBaQPPIwXdmQz=
+js6os_piSinSESgpFcRfP4eZuJp92qRJ29Pvci5ltKioOJaGO1aciUrwUh8SWVABoWnQ0UzKIZO=
+FyQPbGxF35IywZSaBg3ybmOzObqgSVAv5TZvIUiuZmyJAFsIWRthGGFl4mFppTDhKCPWJM7KZ4V=
+ixEjwdFtzMAmJjmxBwYT524piRUYwoT7004STmDJkqoCxTNOX5CNu2A-x7gnmQaV3VBn4yUAirb=
+dvhTRuuuTxCSShcfK6sxfR0BZxd7T_eX-Fgkc0KtTMWLcTbdvkerc8R98TkhMNdF9dvq9msitvL=
+8nL1Za-NQ8UTAe3SBp7-mCK3t3V7Y_dfawjQWJYlL6C339dUquKcU5AwkNdwJQ8iASnPcRyCbyE=
+mywaCY9zKXRiJQnq5tyH6j6fm_tyPQgpZHvPKm1Rz58JlXY635WSd8Cl3r_tmoSPVYr1_fUZesf=
+r4tdytT2Nrc92LbNtd4vPzdpEQ1r10v7cvzcY_pmhv9VVMH2dan-PPvkqY6FZqxQe0EfUAml1p_=
+oi7HfsyAIsci_j-I6BSshc6lBQaAojxbeYPGN1VP288Axt5VjR_fObwJfPD_2akeVHlVPO_jksl=
+6wqYNTA4G0zWT6YO-j7DFt8dvwA9-AMz )
+
+T=C3=A9l=C3=A9chargez notre application mobile
+
+T=C3=A9l=C3=A9charger dans I'App Store ( http://email.brief.me/c/eJyNUltv2j=
+AU_jXJCwL5losf8lBArDC16yRgKy_IcU6ItyT2HCct_fVzQB08TrKOre_ic7GlaIxQpzaI5hakM=
+gpadyx0I5SHltlZVFrPpG5CyHCc8ChhCUVhkTGSYh7Km3sQVgmn9MW20K2zug5VRhChiBKKCSWI=
+zkpU5hxIwUXKWYJlwFBuFZSzBsIqwzjiKRISCiFykhZFikuESZyIkseI8tBmQlZWlFAnFGPm3bc=
+C66xyznQBfQjIyi9hTDfzoYaR9kDfXVEfLzmnDUxrIV0__dOrqdcYB55TBWYcoxiniAd0NYDVR1=
+UEdBkzxjgNSHyBpG4HD87pm35dbVSj4zrecfcztut0nW5WYttvTrWJF2bN3kF37XzfLrYFLCH6O=
+AzPbmPfqDt8eyRx8_3Hl5fX7e852n0cVLU_v-f94_654PL8dP66fxp26akkBxSQiC7vR971-S-Q=
+bhz4XjsLEzGobnJt5F73eRzb8FrCEE_Te4Gxerzo2IoGRsX880nuNO5srhxUPo3urajvafA_pj7=
+-b0UOGlMLB_8yvljdGe_svAPkZLF9CF02ztlv-S3jX5to4y8 )
+
+DISPONIBLE SUR Google Play ( http://email.brief.me/c/eJyNUstuozAU_RrYRIr8Cu=
+AFiyZR2mTUTkdKMtNsImMu4A5gyzi09OtrWmXCciRL1zoP35elaIxQZRsslhakMgpad851I5SH1=
+ukgKq3nUjchpDiK-SJmMUVhnjKSYB7Km7sXVgmn9JdtpVtndR2qlCBCESUUE0oQnReoyDiQnIuE=
+sxjLgKHMKijmDYRVChlCUYxYguNsgTHHKEaC5KQgGeYFE6FNhaysKKCOKcbMu28F1mnlnOkCehe=
+QjT-mFsO81LqsYeQ90jltwUdhvIxscnBC1d6wUXlA1w3Mv0vxdECiHqw-fxERY4zTKyR123twSd=
+_0y2anGh3V0YG7P5HdJttktxH7y66sTbQyW_YOumuXx3a1z2ENi49T_-R29o26088HEjW_ft8_v=
+-z_LtHh46Sq4_CeXR6OTzmXw-Pw4_jYH5KyICcUkAVdT0fdXbJXkG4c9FE7CzPRq27mezQOprrr=
+dWzDawlDPEmmAmP1-NC5FQ2MiuV1FRONG8w3B5VPoy9W1FMa_E-pz_9bkYPGr8XBv4zPVnfGOzv=
+vADlb7e9Cl45z9iG7ZfwERrbhFg )
+
+Pour =C3=AAtre s=C3=BBr(e) de recevoir B=EF=BB=BFri=EF=BB=BFef=EF=BB=BF.m=
+=EF=BB=BFe, ajoutez =C2=AB hello@brief.me =C2=BB =C3=A0 votre carnet d=E2=
+=80=99adresses.
+
+Vous =C3=AAtes inscrit(e) sur cette liste car vous avez demand=C3=A9 =C3=A0=
+ recevoir les informations de B=EF=BB=BFri=EF=BB=BFef=EF=BB=BF.m=EF=BB=BFe.
+
+G=C3=A9rer mes pr=C3=A9f=C3=A9rences de r=C3=A9ception ( http://email.brief=
+=2Eme/c/eJyNUk1v4jAQ_TXkgoQcOzjJIYfykS2sS=
+qEFunBBjjMBlyS2HEMIv75OuywcV4oce_zev=
+Jk35qxQTOzLTn-ggQsloDS7VBZM2NAoathByh6XhQORS_2w73s-QU4aeThwQ4ff2WemBTNCftOG=
+sjRa5o6IMMIEEUxcTDAivQxlSQg4DVkQer7LOx5KtICsV4BziBLU95OAphmiHBAFP_MpIJ9DCpQ=
+nHnF0xPhBswxyn7iuZ9n3AvPoYIyqOuSpg2P71XXdu-W2x1zubUs4nn0u0Gx0vFqcq7Yf7692g8=
+LVAtdjPp2Jt_X8fbo8TYGK4ZHEmyap3hbjsUrqy_xyDWSbm8QaUmHtMh0y-hHF_Va23wrbhSn1I=
+G0DpTQiE_zbn-ovjp5By51IbQ7qeV5IbiEuy7MNDkgtN_FUFJLmdBWaP1RPgkkwjZktb58rOlQT=
+7wKyKgfrcrhMYQT96_Y8M1NdE7N9fca0WHz8mm-WxwFaXbfisG4uyel5PUtD3rw0v9cv51Wwz_A=
+WteWPHodZnZLPtj07yrU0GrrsLKqudVkZeMTdtm0bFos9FAbBI0Bp2Sbalcw6YRGD27AfMKZRP3=
+dwsDLypFn-eA32Lea7_63IQKFyZuCf4lzLSllmZRnAu8Plk2Oi1mf7S-6KX5pyAE4 ) =E2=80=
+=A2 Me d=C3=A9sinscrire ( http://email.brief.me/c/eJyNUk2TojAQ_TVymVorJHzlw=
+GH8YEe2xtEZdVYvVoAgGYGkQgDx10_QdbX2tFWh8ui816-7k5gUgrBDObBHksZMMFqqfcILwnRo=
+4nck43wY88Kgvum42HYtFwEj8S3omdiI7-qGSEYU4xfZmJdK8txgPgQQAQSRCREEaJiCNMIUJph=
+42HLNeGCBSDKaDgtqZD6GUQRdGmEP6M92Tc-zbOBRbCdpkqauIX0SZ5KkNHeRaVpafS8w9zOlRD=
+VAzwMY6NW27fCWW__m_KBbgsH8awnmk-NZ80yx-_x40wDg9RK20zics_fN4iNc1SF12PiIgm0XV=
+e_L6VRE7WlxOnu8z40CSROmx6UGaHI1hXZva_fG9r_WOqDrE-oKuVCsrG6Q1-oCL-yC_uh4_SeN=
+01DJ9yzRFo5lWRjdQjEvGx0coZZvg5AV3MmdNVa_HTnzZl4YEF39IRfOWMysE-VVOdqU41VCJ9Q=
+-75q5CmWL1O7tBTrF8vPnYrs6jsD6vGPZpjtF9ctmnuC4e-1-bV6btXdI4Q703U0e77qqo6--e3=
+3TG64kfSINq56uTT7ybrBvQ3OhBbDnPRKE5H2ifUn0oDRjdHsLDxzViesZzbQNryXJH4-pfqr5_=
+n8rUrQQOVH0r-NC8kpoZaUVNH4ar54N5fdz1lt0d_wGWCgJkw ) =E2=80=A2 Contact ( htt=
+p://email.brief.me/c/eJyNUk1vozAQ_TVwiRQZ23z4wKEkyjZZtduVErbNJTJmCN4FbBkHSn=
+_9Ol1lw7GSJXtm3pt582TBW83lufPCzICQWkJnT6VquXSpdTrxWqmlUK0PaRDFLIxpTJBfphQnA=
+fPFnT1wI7mV6pO2Up01qvFlihEmiGASYIIRWVaoKhjgkvGE0TgQHkWFkVAtW_DrFHhAEoQoEQkN=
+AyHKoBA4QhQDZwUvqW9SLmrDK2hiEgTUse8Cm7S2VvceefDwxp1xHJe33i4UThIX9lojmwGMOsn=
+SI-uIUsqIh6PPlAMNLpmRUb1tdrJVURMdmH2NzDbZJrsN319250ZHK72l76D6Lsu71b6ENYQfx-=
+HZ7sxI7PHHI47an7--vbzt_2To8HGUdT69F5fH_LlkYnqavudPwyE5V_iIPByS9dzH_lL8BqfTu=
+Zgra2DBB9kv3ILawhx3e17XcFhMEUuSOUAbdW106rjb3yGym88zjJ30vxrUboy6GN7My-C-QXP6=
+qiILrW64hf8TX4zqtWP2jgFisdo_-Da9-uyu4j7xL7QB1bo )
+--77552a737c2933f18b6bd55deb270dd60ca73a53349e456651c5b66e8811
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+<head>
+<!--[if gte mso 9]><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPer=
+Inch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml><![endif]-->
+<title>Votre avis compte</title>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0">
+<style>a:hover {
+text-decoration: none !important;
+}
+=2Eh-u a:hover {
+text-decoration: underline !important;
+}
+a[href^=3D"tel"]:hover {
+text-decoration: none !important;
+}
+=2Eactive-i a:hover {
+opacity: 0.8;
+}
+=2Eactive-t:hover {
+opacity: 0.8;
+}
+@media only screen and (max-width:667px) {
+  .w-100p {
+    width: 100% !important;
+  }
+  .d-b {
+    display: block !important;
+  }
+  .hm {
+    display: none !important; width: 0 !important; height: 0 !important; pa=
+dding: 0 !important; font-size: 0 !important; line-height: 0 !important;
+  }
+  .wi-122 img {
+    width: 122px !important; height: auto !important;
+  }
+  .wi-140 img {
+    width: 140px !important; height: auto !important;
+  }
+  .wi-148 img {
+    width: 148px !important; height: auto !important;
+  }
+  .wi-150 img {
+    width: 150px !important; height: auto !important;
+  }
+  .plr-24 {
+    padding-left: 24px !important; padding-right: 24px !important;
+  }
+  .ptb-23 {
+    padding-top: 23px !important; padding-bottom: 23px !important;
+  }
+  .pt-20 {
+    padding-top: 20px !important;
+  }
+  .pt-25 {
+    padding-top: 25px !important;
+  }
+  .pt-29 {
+    padding-top: 29px !important;
+  }
+  .pt-31 {
+    padding-top: 31px !important;
+  }
+  .pb-13 {
+    padding-bottom: 13px !important;
+  }
+  .pb-14 {
+    padding-bottom: 14px !important;
+  }
+  .pb-16 {
+    padding-bottom: 16px !important;
+  }
+  .pb-22 {
+    padding-bottom: 22px !important;
+  }
+  .pb-26 {
+    padding-bottom: 26px !important;
+  }
+  .pb-27 {
+    padding-bottom: 27px !important;
+  }
+  .pb-31 {
+    padding-bottom: 31px !important;
+  }
+  .pb-33 {
+    padding-bottom: 33px !important;
+  }
+  .pb-41 {
+    padding-bottom: 41px !important;
+  }
+  .pb-43 {
+    padding-bottom: 43px !important;
+  }
+  .pb-48 {
+    padding-bottom: 48px !important;
+  }
+  .fs-12 {
+    font-size: 12px !important;
+  }
+  .fs-16 {
+    font-size: 16px !important;
+  }
+  .lh-18 {
+    line-height: 18px !important;
+  }
+}
+@media only screen and (max-width:413px) {
+  .wi-120-413 img {
+    width: 120px !important; height: auto !important;
+  }
+  .wi-130-413 img {
+    width: 130px !important; height: auto !important;
+  }
+}
+@media only screen and (max-width:375px) {
+  .fs-18-375 {
+    font-size: 19px !important;
+  }
+}
+@media (prefers-dark-interface) {
+  body {
+    -apple-color-filter: none;
+  }
+}
+</style></head>
+<body style=3D"background-color: #fffffe; -webkit-text-size-adjust: 100%; -=
+ms-text-size-adjust: 100%; margin: 0; padding: 0;" bgcolor=3D"#fffffe">
+<table width=3D"100%" style=3D"background-color: #fffffe; min-width: 320px;=
+" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#fffffe">
+<!-- header -->
+<tr>
+<td height=3D"14" align=3D"center" style=3D"background-color: #00b19e; font=
+-size: 1px; line-height: 1px; mso-line-height-rule: exactly;" bgcolor=3D"#0=
+0b19e"></td>
+</tr>
+<tr>
+<td class=3D"pt-20 plr-24 pb-43" style=3D"mso-line-height-rule: exactly; pa=
+dding: 32px 24px 55px 29px;">
+<table class=3D"w-100p" width=3D"660" align=3D"center" style=3D"max-width: =
+660px;" cellpadding=3D"0" cellspacing=3D"0">
+<tr>
+<td class=3D"wi-148" align=3D"center" style=3D"mso-line-height-rule: exactl=
+y;">
+<a style=3D"text-decoration: none; outline: none; color: #00b19e;" href=3D"=
+http://email.brief.me/c/eJyNUU1vozAU_DVwiRQZ23z4wKEkyjZZtduVErbNJTLmEbwL2DI=
+ONP31a7rKhmMlS7bmzbx5byx4q7k8d16YGRBSS-jsqVQtlw5ap1deK7UUqvUhDaKYhTGNCfLLlO=
+IkYL64qwduJLdSfcpWqrNGNb5MMcIEEUwCTDAiywpVBQNcMp4wGgfCo6gwEqplC36dohiqgkaMk=
+YISKJ1byBNSCcKAlRWLfJNyURteQROTIKBOfR-wSWtrde-RBw9v3BnHcXnrPSFkM4BRJ1l6ZB1R=
+ShnxcPQJCdUNDszIqN42O9mqqIkOzL5GZptsk92G7y-7c6Ojld7Sd1B9l-Xdal_CGsKP4_Bsd2Y=
+k9vjjEUftz1_fXt72fzJ0-DjKOr--F5fH_Llk4vp0_Z4_DYfkXOEj8nBI1vP0-kvxG4SdssuVNb=
+Dgg-wXbi1tYc67Pac1HBdTxJJkTtBGTY1OHXdbO0Z2S3fGsVf9rwa1s1EXw5t5GdznN6evTmSh1=
+Q238N_xxaheO2XvFCAWq_2Db9MpZ3cVd8e_bYPSQg"><img src=3D"https://www.brief.me=
+/static/editorial/img/logo_header.png" width=3D"178" style=3D"width: 178px;=
+ max-width: 178px; color: #222; vertical-align: top; border: none; font: 30=
+px/34px Arial, Helvetica, sans-serif;" alt=3D"brief.me|"></a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!-- content -->
+<!-- text -->
+<tr>
+<td class=3D"pb-26" style=3D"mso-line-height-rule: exactly; padding: 0 24px=
+ 33px;">
+<table class=3D"w-100p" width=3D"660" align=3D"center" style=3D"max-width: =
+660px;" cellpadding=3D"0" cellspacing=3D"0">
+<tr>
+<td class=3D"vero-editable" style=3D"color: #424242; mso-line-height-rule: =
+exactly; font: 20px/28px Arial, Helvetica, sans-serif;">Ch=C3=A8re lectrice=
+, cher lecteur,
+<br>
+<br>Vous profitez de B=EF=BB=BFri=EF=BB=BFef=EF=BB=BF.m=EF=BB=BFe depuis de=
+ux semaines. Nous esp=C3=A9rons vous =C3=AAtre utile au quotidien pour y vo=
+ir clair dans l=E2=80=99actualit=C3=A9.
+<br>
+<br><strong style=3D"color: #00b19e; font-weight: 700;">Depuis le d=C3=A9bu=
+t, B=EF=BB=BFri=EF=BB=BFef=EF=BB=BF.m=EF=BB=BFe se construit avec ses lecte=
+urs, en tirant parti de leurs remarques. Nous avons pr=C3=A9par=C3=A9 un qu=
+estionnaire tr=C3=A8s court pour recueillir vos premi=C3=A8res impressions.=
+ Cela nous serait pr=C3=A9cieux d=E2=80=99avoir vos r=C3=A9ponses.</strong>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!-- button -->
+<tr>
+<td class=3D"pb-48" style=3D"mso-line-height-rule: exactly; padding: 0 24px=
+ 40px;">
+<table class=3D"w-100p" width=3D"660" align=3D"center" style=3D"max-width: =
+660px;" cellpadding=3D"0" cellspacing=3D"0">
+<tr>
+<td style=3D"mso-line-height-rule: exactly;">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0">
+<tr>
+<td class=3D"vero-editable" align=3D"center" style=3D"background-color: #00=
+b19e; mso-padding-alt: 15px 38px 13px; text-transform: uppercase; mso-line-=
+height-rule: exactly; font: bold 19px/20px Arial, Helvetica, sans-serif;" b=
+gcolor=3D"#00b19e"><a href=3D"http://email.brief.me/c/eJyNUk2TojAQ_TVwscqCB=
+CI5cBi_dmRrHB2VWb1YIQTJCIQNUcRfv4FdV_a2Vamkq_u9ft2dpiQvCT8VhjuWjPKSs0IdY5ET=
+rl1TvyGpEEMqcpP5Nhphd-SMoGXGvgM8G5v0yb4SyYnioqNNRKGkyEzuAwtACwJoAwgsOEysJMI=
+MxJh42BnZ1HCsSHKWDHNmpj71gO3ROLYQphBTSrBLEhtHhDk2dD3blD6hqSQJy0bQth3NfhaY-a=
+lSZWXAFwPM9eny5myompIlQuYtSLuV0Ndm1fxEmQHnTDeq3-m_aYHbS2wAxGMNycSJFxeZ6Sic_=
+pbSlhZzWzl91XU9fDTTOTpGZy2_1tZyer53DLs8fG7eO9PCuzWoZzRY8o9wtQm2l4AhPjnD-b6J=
+qo_1bFZG9W11u3vijw66MimOXUHIcRwMHy4qiqt2jmEt9vOA5wJlaIfVDyQX3sIL5kTnPmUlmpQ=
+L58ZEVYzDYrKN2ZS598N1qQJZQ3V4fwUoX39-W-2357G1ux94Gja36PIaLmNMm7fme_h23XmnBB=
+ysbhD9Fagu0Rejql2AUCjJBuTKq4EeYalYH_cw2zY0FjgW9rw-oJSiTXQsiJ6kRowfK9LDtN_ax=
+ViqZcRFkqwf7j72-L8VKZaXGVHsr-JKiqrUzEozGB1Mti-m8ts56yd6Kv4CTWQP9g" style=3D=
+"color: #fff; text-decoration: none; display: block; outline: none; padding=
+: 15px 38px 13px;">Je r=C3=A9ponds =C3=A0 cinq petites questions</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!-- box -->
+<!-- text -->
+<tr>
+<td class=3D"pb-41" style=3D"mso-line-height-rule: exactly; padding: 0 24px=
+ 33px;">
+<table class=3D"w-100p" width=3D"660" align=3D"center" style=3D"max-width: =
+660px;" cellpadding=3D"0" cellspacing=3D"0">
+<tr>
+<td class=3D"vero-editable" style=3D"color: #424242; mso-line-height-rule: =
+exactly; font: 20px/28px Arial, Helvetica, sans-serif;">Vous pouvez bien s=
+=C3=BBr =C3=A0 tout moment nous dire ce que vous pensez de B=EF=BB=BFri=EF=
+=BB=BFef=EF=BB=BF.m=EF=BB=BFe en nous =C3=A9crivant par simple retour de ma=
+il.
+<br>
+<br>=C3=80 bient=C3=B4t pour un nouveau B=EF=BB=BFri=EF=BB=BFef=EF=BB=BF.m=
+=EF=BB=BFe.
+<br>
+<br>Laurent Mauriac, r=C3=A9dacteur en chef
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!-- footer -->
+<tr>
+<td style=3D"background-color: #f5f5f5; mso-line-height-rule: exactly;" bgc=
+olor=3D"#f5f5f5">
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0">
+<tr>
+<td class=3D"pt-29 pb-27" style=3D"border-top-width: 1px; border-top-color:=
+ #c8c8c8; border-top-style: solid; mso-line-height-rule: exactly; padding: =
+24px 26px 19px;">
+<table class=3D"w-100p" width=3D"660" align=3D"center" style=3D"max-width: =
+660px;" cellpadding=3D"0" cellspacing=3D"0">
+<tr>
+<td class=3D"wi-122 pb-14" style=3D"mso-line-height-rule: exactly; padding:=
+ 0 0 10px;">
+<a style=3D"text-decoration: none; outline: none; color: #00b19e;" href=3D"=
+http://email.brief.me/c/eJyNUU1vozAU_DVwiRQZ23z4wKEkyjZZtduVErbNJTLmEbwL2DI=
+ONP31a7rKhmMlS7bmzbx5byx4q7k8d16YGRBSS-jsqVQtlw5ap1deK7UUqvUhDaKYhTGNCfLLlO=
+IkYL64qwduJLdSfcpWqrNGNb5MMcIEEUwCTDAiywpVBQNcMp4wGgfCo6gwEqplC36dohiqgkaMk=
+YISKJ1byBNSCcKAlRWLfJNyURteQROTIKBOfR-wSWtrde-RBw9v3BnHcXnrPSFkM4BRJ1l6ZB1R=
+ShnxcPQJCdUNDszIqN42O9mqqIkOzL5GZptsk92G7y-7c6Ojld7Sd1B9l-Xdal_CGsKP4_Bsd2Y=
+k9vjjEUftz1_fXt72fzJ0-DjKOr--F5fH_Llk4vp0_Z4_DYfkXOEj8nBI1vP0-kvxG4SdssuVNb=
+Dgg-wXbi1tYc67Pac1HBdTxJJkTtBGTY1OHXdbO0Z2S3fGsVf9rwa1s1EXw5t5GdznN6evTmSh1=
+Q238N_xxaheO2XvFCAWq_2Db9MpZ3cVd8e_bYPSQg"><img src=3D"https://www.brief.me=
+/static/editorial/img/logo_header.png" width=3D"111" style=3D"width: 111px;=
+ color: #222; vertical-align: top; border: none; font: 30px/34px Arial, Hel=
+vetica, sans-serif;" alt=3D"brief.me|"></a>
+</td>
+</tr>
+<tr>
+<td class=3D"pb-16 fs-16 lh-18 l-424242 h-u" style=3D"color: #424242; mso-l=
+ine-height-rule: exactly; padding: 0 0 10px; font: bold 15px/16px Arial, He=
+lvetica, sans-serif;">
+<a style=3D"text-decoration: none; color: #424242; outline: none;" href=3D"=
+http://email.brief.me/c/eJyNUltzojAY_TXy0hknJNzywEO9sJWdWm2Vrr44IURJBZIJEcR=
+fv6EdVx53hgnJyTnf-S6hpJSEn6qRO1GMcslZpQ-ZKAk30CzsSC7EmIrSYqHt-dj1HR8BKwsdGN=
+jYog91QxQnmotv2VRUWonC4iEEEAEEkQ0RBGh8BMcUM5hhEmDHt-nIAani7DgumZWHnksCL0hxx=
+twAI-oTD9kGyyhIUwfBzFIhobkiR1b4yLYdo34kWIS51rIeoecRjMzXtu34HtscC3EyJcFo-bUG=
+y9n5Zni23H9-vJkNwNs1bOc0XvL3ZPURby4x8_j0jKJdl9bv6_lcpu11db0Foo-NIsUybtqlR2j=
+2Ywrd3tbtjc1CpBxYf6New5Q48MwoPMdxMLpDVFSNASeoFbso5qXwCm-L9R9PLYJFEEfEJHMqpD=
+eVC-fKRF1Nkmq6ydiMubd9s9SxapHev71Ar1x__lrtNucJ2N72PE-6a3p5SZYZpt1r9zt5bbbB6=
+Qj3oE92NhxdfUm_-mLM4BKhFXsiDa-fTE-lZkPefduXYbjQATgIhgSpRB_oUBFTt2FM7qMdcHQn=
+f-5YbmzERZFieM3MyysO_5uRZqUsiGb_HFdK1NIoa6Ng9Gm6ebZ02PfZ_NKH418EXfkv">=C3=
+=89ditions pr=C3=A9c=C3=A9dentes</a> =E2=80=A2 <a style=3D"text-decoration:=
+ none; color: #424242; outline: none;" href=3D"http://email.brief.me/c/eJyN=
+UltzojAY_TXy0hknJNzywEO9sJWdWm2Vrr44IURJBZIJEcRfv6EdVx53hgnJyTnf-S6hpJSEn6q=
+RO1GMcslZpQ-ZKAk30CzsSC7EmIrSYqHt-dj1HR8BKwsdGNjYog91QxQnmotv2VRUWonC4iEEEA=
+EEkQ0RBGh8BMcUM5hhEmDHt-nIAani7DgumZWHnksCL0hxxtwAI-oTD9kGyyhIUwfBzFIhobkiR=
+1b4yLYdo34kWIS51rIeoecRjMzXtu34HtscC3EyJcFo-bUGy9n5Zni23H9-vJkNwNs1bOc0XvL3=
+ZPURby4x8_j0jKJdl9bv6_lcpu11db0Foo-NIsUybtqlR2j2Ywrd3tbtjc1CpBxYf6New5Q48Mw=
+oPMdxMLpDVFSNASeoFbso5qXwCm-L9R9PLYJFEEfEJHMqpDeVC-fKRF1Nkmq6ydiMubd9s9Sxap=
+Hev71Ar1x__lrtNucJ2N72PE-6a3p5SZYZpt1r9zt5bbbB6Qj3oE92NhxdfUm_-mLM4BKhFXsiD=
+a-fTE-lZkPefduXYbjQATgIhgSpRB_oUBFTt2FM7qMdcHQnf-5YbmzERZFieM3MyysO_5uRZqUs=
+iGb_HFdK1NIoa6Ng9Gm6ebZ02PfZ_NKH418EXfkv">Week-end</a> =E2=80=A2 <a style=
+=3D"text-decoration: none; color: #424242; outline: none;" href=3D"http://e=
+mail.brief.me/c/eJyNUstu4jAU_RqyqYQc23ktsiiPTMmoFFpIBzbIcRziksSWYwjh6-tMxZD=
+lSJZ9fX3OPfdhSipJ-LEeORPFKJec1fqQiYpw45qFHSmEGFNRWSy0XS9wPOwhYGUhhr4dWPTBvh=
+DFiebiL20qaq1EafEQAogAgsiGCAI0zkGeBgxmAfED7Nl0hEGqOMvHFbOKMPeImzsBDTBlNiEEk=
+wxS5GAAU5LbwLFUSGihSM5KD9k2NuxHgmVYaC2bEXoewcistm3H99jmWoqjKQlGy681WM5ON4Oz=
+5f7z480YINiuYTun8ZK_J6uPeHOOmcunJxTturR5X8_nMm2vq-vNF31sFCmWcdMuPUKzH1Ho9LJ=
+OL2w2IuVA2jgkqYUiFTFA98KUOPDMUF2McYDuLirqi3FOUCt2Ucwr4ZbuNtB_XLXwF34cEZPVsZ=
+TuVC7wlYmmniT1dJOxGXNu-8tSx6pFev_2At1q_flrtducJmB72_Mi6a7p-SVZZgHtXrvfyetl6=
+x9zuAd91rPhDJtz-tVXZSaYCK3YE7nw5sk0V2o2xN3NvgyDhRgEvj8ESCX6QIeamAYYxOQ-4wFG=
+d_LnjRVGRpwVKYfPzHzB8vC_GWlWyZJo9k9xpUQjDbMxDEafpptnS4d9n82RPhS_Af_v_Wg">Pa=
+noramas</a>
+</td>
+</tr>
+<tr>
+<td class=3D"pb-16 fs-16 lh-18 l-8f8f8f h-u" style=3D"color: #8f8f8f; mso-l=
+ine-height-rule: exactly; padding: 0 0 10px; font: bold 15px/16px Arial, He=
+lvetica, sans-serif;">
+<!-- links-on-desktop -->
+<span class=3D"hm"><a style=3D"text-decoration: none; color: #8f8f8f; outli=
+ne: none;" href=3D"http://email.brief.me/c/eJyNUk1vozAU_DVwiTYytvk6cCiJsk2q=
+fkkJu80lMuYRvAVsGQdKf31NV9lwXMmS7fdm3nhG5qxRTJxbx081cKEEtOZUyIYJW1onI6ukXHL=
+ZuJB4QRj7IQ0JcouE4siLXX5j90wLZoT8pq1ka7SsXZFghAkimHiYYESWJSrzGHARsyimoccdin=
+ItoFw24FZJ4Qc5EAxWJSekYNTHoe_xEoU8YkXMXZ0wXmlWQh0Sz6OWfXtgnVTGqM4hdw7e2DUMw=
+_I6216h_ZFrKKce2fSg5UkUDlkHlNKYODj4LnHZ9raYkkG-bXaikUEdHGLzO9DbaBvtNmx_2Z1r=
+FazUln6A7No0a1f7Atbgfx77J7PTAzHH53scNK-_fr687d9TdPg8iiobP_LLffZkTYyP40P22B-=
+ic4mPyME-Wc9z7C75H-BmSjGTRsOC9aJbWIPKwBx3PU42LBZTFEfRHKC0nAadWmb9W0R6zXmGMa=
+P624PKysiLZvW8DfYb1Kf_fZGBRtXMwD_FFy07ZZmdZQBfrPZ3rkmmnO2W3xS_AG_n1Yg">Le p=
+rojet B=EF=BB=BFri=EF=BB=BFef=EF=BB=BF.m=EF=BB=BFe</a> =E2=80=A2 <a style=
+=3D"text-decoration: none; color: #8f8f8f; outline: none;" href=3D"http://e=
+mail.brief.me/c/eJyNUl1vmzAU_TXwEjXCHxj8wENJlDWZ2nVSwtq8RMZcgjfAzBjS9NfX6ZS=
+Gx0mW7HvuOffjyFI0nVDH1gtTA1J1Clp7KHQjlIOWyVlUWs-lbnxIEIt4GNGIBH6RUBwj7subeh=
+RGCav0p2yhW2t07asEB5gEBBOECQ7IvAzKnAMuuIg5jZD0aJAbBeW8Ab9KiATJRIQwIjgMGSoIl=
+JSzEHEaojAnvkmErIwooY4IQtSpbwPWSWVt13vk3sMrd06n0_xa24V_B3XX66aB_q7VQ3_hkNUI=
+Rh9U4ZElo5Ry4mH2CUndjg5MyUm_rjaq0axmO25fmFnH63izEtthc6w7tujW9A1036ZZu9gWsIT=
+wfT8-2Y05Ebv_8YBZ8_PXt-fX7Z802L3vVZWd3_LhIXsquDw_nr9nj-MuPpZ4H3g4JMupn_2Q_w=
+ZpL25m2hqYiVH1M7doZ2HKuz4vazgupgGP4ymhM_pS6NAK54NjpFe_Jxx77v7loHJt9GBEPU2D-=
+w714X8nstB0tbDw1fHZ6L5zyt4pQM4W23vfJhef3ZXfOn4AW5XX-A">L=E2=80=99=C3=A9quip=
+e</a> =E2=80=A2 <a style=3D"text-decoration: none; color: #8f8f8f; outline:=
+ none;" href=3D"http://email.brief.me/c/eJyNUl1vmzAU_TXwEikytmPwAw8lUdZkatd=
+JCVvzEtnGBG-APeNA6a-v6ZSFx0mW7HvuOffjyII1hqlLG6wyK4UySrbuXOiGKQ9t0pFVWi-Fbk=
+KZRiSmqxjHCIRFimES0VDc1T2zijmlP2Vr3Tqr61ClEEAEEEQRRBCgZQlKTiUsKEsojiMRYMCtk=
+uWykWGVxgkXMSFYYIYjlmDOKZekLDmJAOAgCm3KRGVZKesYRRH26vuAdVo5Z7oAPQRw688wDMtb=
+bR-W7M-Eo20vrT6rIkAbgjGmKIDkExK67T2YoUG_bveq0aQmR-p-ErtLdsl-yw7X_aU2ZG12-E3=
+qrs3ydn0o5Eau3k_9s9vbAbnTt0dImu8_vry8Hn5n4Ph-UlU-vvHrY_5cUDE-jV_zp_6YXEp4Ag=
+Fcoc3cw-7Kf0nhJgdz7axcsF51C7-ccXLOuz2nNTwXYkCTZE4wVk-Fzi3zu3tGdvN4xnGj-ZuTl=
+W-jr5bV87T0X6A-_-9ETjamZk7-6_hidWe8svMKKRbrw0Po0slnf_F7xw8DFtQX">Questions =
+fr=C3=A9quentes</a></span>
+<!-- links-on-mobile -->
+<span class=3D"d-b" style=3D"display: none;"><a style=3D"text-decoration: n=
+one; color: #8f8f8f; outline: none;" href=3D"http://email.brief.me/c/eJyNUk=
+1vozAU_DVwiTYytvk6cCiJsk2qfkkJu80lMuYRvAVsGQdKf31NV9lwXMmS7fdm3nhG5qxRTJxbx=
+081cKEEtOZUyIYJW1onI6ukXHLZuJB4QRj7IQ0JcouE4siLXX5j90wLZoT8pq1ka7SsXZFghAki=
+mHiYYESWJSrzGHARsyimoccdinItoFw24FZJ4Qc5EAxWJSekYNTHoe_xEoU8YkXMXZ0wXmlWQh0=
+Sz6OWfXtgnVTGqM4hdw7e2DUMw_I6216h_ZFrKKce2fSg5UkUDlkHlNKYODj4LnHZ9raYkkG-bX=
+aikUEdHGLzO9DbaBvtNmx_2Z1rFazUln6A7No0a1f7Atbgfx77J7PTAzHH53scNK-_fr687d9Td=
+Pg8iiobP_LLffZkTYyP40P22B-ic4mPyME-Wc9z7C75H-BmSjGTRsOC9aJbWIPKwBx3PU42LBZT=
+FEfRHKC0nAadWmb9W0R6zXmGMaP624PKysiLZvW8DfYb1Kf_fZGBRtXMwD_FFy07ZZmdZQBfrPZ=
+3rkmmnO2W3xS_AG_n1Yg">Le projet B=EF=BB=BFri=EF=BB=BFef=EF=BB=BF.m=EF=BB=BF=
+e</a> =E2=80=A2 <a style=3D"text-decoration: none; color: #8f8f8f; outline:=
+ none;" href=3D"http://email.brief.me/c/eJyNUl1vmzAU_TXwEjXCHxj8wENJlDWZ2nV=
+Swtq8RMZcgjfAzBjS9NfX6ZSGx0mW7HvuOffjyFI0nVDH1gtTA1J1Clp7KHQjlIOWyVlUWs-lbn=
+xIEIt4GNGIBH6RUBwj7subehRGCav0p2yhW2t07asEB5gEBBOECQ7IvAzKnAMuuIg5jZD0aJAbB=
+eW8Ab9KiATJRIQwIjgMGSoIlJSzEHEaojAnvkmErIwooY4IQtSpbwPWSWVt13vk3sMrd06n0_xa=
+24V_B3XX66aB_q7VQ3_hkNUIRh9U4ZElo5Ry4mH2CUndjg5MyUm_rjaq0axmO25fmFnH63izEtt=
+hc6w7tujW9A1036ZZu9gWsITwfT8-2Y05Ebv_8YBZ8_PXt-fX7Z802L3vVZWd3_LhIXsquDw_nr=
+9nj-MuPpZ4H3g4JMupn_2Q_wZpL25m2hqYiVH1M7doZ2HKuz4vazgupgGP4ymhM_pS6NAK54Njp=
+Fe_Jxx77v7loHJt9GBEPU2D-w714X8nstB0tbDw1fHZ6L5zyt4pQM4W23vfJhef3ZXfOn4AW5XX=
+-A">L=E2=80=99=C3=A9quipe</a> =E2=80=A2 <a style=3D"text-decoration: none; =
+color: #8f8f8f; outline: none;" href=3D"http://email.brief.me/c/eJyNUl1vmzA=
+U_TXwEikytmPwAw8lUdZkatdJCVvzEtnGBG-APeNA6a-v6ZSFx0mW7HvuOffjyII1hqlLG6wyK4=
+UySrbuXOiGKQ9t0pFVWi-FbkKZRiSmqxjHCIRFimES0VDc1T2zijmlP2Vr3Tqr61ClEEAEEEQRR=
+BCgZQlKTiUsKEsojiMRYMCtkuWykWGVxgkXMSFYYIYjlmDOKZekLDmJAOAgCm3KRGVZKesYRRH2=
+6vuAdVo5Z7oAPQRw688wDMtbbR-W7M-Eo20vrT6rIkAbgjGmKIDkExK67T2YoUG_bveq0aQmR-p=
+-ErtLdsl-yw7X_aU2ZG12-E3qrs3ydn0o5Eau3k_9s9vbAbnTt0dImu8_vry8Hn5n4Ph-UlU-vv=
+HrY_5cUDE-jV_zp_6YXEp4AgFcoc3cw-7Kf0nhJgdz7axcsF51C7-ccXLOuz2nNTwXYkCTZE4wV=
+k-Fzi3zu3tGdvN4xnGj-ZuTlW-jr5bV87T0X6A-_-9ETjamZk7-6_hidWe8svMKKRbrw0Po0sln=
+f_F7xw8DFtQX">Questions fr=C3=A9quentes</a></span>
+</td>
+</tr>
+<tr>
+<td class=3D"pb-22 fs-16 lh-18 l-8f8f8f h-u" style=3D"color: #8f8f8f; mso-l=
+ine-height-rule: exactly; padding: 0 0 10px; font: bold 15px/16px Arial, He=
+lvetica, sans-serif;">
+<!-- links-on-desktop -->
+<span class=3D"hm"><a style=3D"text-decoration: none; color: #8f8f8f; outli=
+ne: none;" href=3D"http://email.brief.me/c/eJyNUl1zojAU_TXy0qkDSYDwwEP9YCs7=
+tdoqXX1xQgiSCiQbIqi_fsN2XZ192pnMJLk55557zw0llSR8Xw_ckWKUS85qvctERbgJTcIzKYQ=
+YUlFZLHQ8P3B95EPbykIEsBNY9MZuieJEc_GbNha1VqK0eAhsAG0IoAMgsOEwt_M0YCALCA6Q79=
+ABslPFWT6smFWE2GEOxinxMcqcPE19RF3MCMgARcDzMkuFhBaK5Kz0oeMgw74VWIaF1rIZwKcBi=
+Mzqum54zW2updiblkA0_1za88nhYnCO3H68v5qDHayXoJvSeM7fksV7vDrGzOPjA4w257R5W06n=
+Mu1Oi9MFiz43jBTLuLFLD-DkSxS4vazbC7v_SpuAFEf18yj4Y_NIUlHXTP0Bey1TYsczk8hDCAX=
+wGqKibk1wBDuxiWJeCa_01oH-4akZnuE4IqbGfSm9sZyhExNNPUrq8SpjE-Zetu1cx6qDevv6DL=
+xq-fFtsVkdRvb6suVFcj6lx-dkngX0_HL-nry0a7zPwdbue5jcT7Q5pp99j2aeidCKPZCWNw_Ga=
+qnZPe567NswWIDsAON7gFSiT7SribHDIEbXid9h9Fl-vbHCyBi7SHn_zMyHLHf_W5FmlSyJZn8V=
+F0o00jAbw2D0Ybx6snTY-2y29Kb4C_ElAco">Pourquoi s=E2=80=99abonner</a> =E2=80=
+=A2 <a style=3D"text-decoration: none; color: #8f8f8f; outline: none;" href=
+=3D"http://email.brief.me/c/eJyNUluPojAU_jXwYmKgBaQPPIwXdmQzjs6os_piSinSESg=
+pFcRfP4eZuJp92qRJ29Pvci5ltKioOJaGO1aciUrwUh8SWVABoWnQ0UzKIZOFyQPbGxF35IywZS=
+aBg3ybmOzObqgSVAv5TZvIUiuZmyJAFsIWRthGGFl4mFppTDhKCPWJM7KZ4VixEjwdFtzMAmJjm=
+xBwYT524piRUYwoT7004STmDJkqoCxTNOX5CNu2A-x7gnmQaV3VBn4yUAirbdvhTRuuuTxCSShc=
+fK6sxfR0BZxd7T_eX-Fgkc0KtTMWLcTbdvkerc8R98TkhMNdF9dvq9msitvL8nL1Za-NQ8UTAe3=
+SBp7-mCK3t3V7Y_dfawjQWJYlL6C339dUquKcU5AwkNdwJQ8iASnPcRyCbyEmywaCY9zKXRiJQn=
+q5tyH6j6fm_tyPQgpZHvPKm1Rz58JlXY635WSd8Cl3r_tmoSPVYr1_fUZesfr4tdytT2Nrc92Lb=
+Ntd4vPzdpEQ1r10v7cvzcY_pmhv9VVMH2dan-PPvkqY6FZqxQe0EfUAml1p_oi7HfsyAIsci_j-=
+I6BSshc6lBQaAojxbeYPGN1VP288Axt5VjR_fObwJfPD_2akeVHlVPO_jksl6wqYNTA4G0zWT6Y=
+O-j7DFt8dvwA9-AMz">Nos offres d=E2=80=99abonnement</a></span>
+<!-- links-on-mobile -->
+<span class=3D"d-b" style=3D"display: none;"><a style=3D"text-decoration: n=
+one; color: #8f8f8f; outline: none;" href=3D"http://email.brief.me/c/eJyNUl=
+1zojAU_TXy0qkDSYDwwEP9YCs7tdoqXX1xQgiSCiQbIqi_fsN2XZ192pnMJLk55557zw0llSR8X=
+w_ckWKUS85qvctERbgJTcIzKYQYUlFZLHQ8P3B95EPbykIEsBNY9MZuieJEc_GbNha1VqK0eAhs=
+AG0IoAMgsOEwt_M0YCALCA6Q79ABslPFWT6smFWE2GEOxinxMcqcPE19RF3MCMgARcDzMkuFhBa=
+K5Kz0oeMgw74VWIaF1rIZwKcBiMzqum54zW2updiblkA0_1za88nhYnCO3H68v5qDHayXoJvSeM=
+7fksV7vDrGzOPjA4w257R5W06nMu1Oi9MFiz43jBTLuLFLD-DkSxS4vazbC7v_SpuAFEf18yj4Y=
+_NIUlHXTP0Bey1TYsczk8hDCAXwGqKibk1wBDuxiWJeCa_01oH-4akZnuE4IqbGfSm9sZyhExNN=
+PUrq8SpjE-Zetu1cx6qDevv6DLxq-fFtsVkdRvb6suVFcj6lx-dkngX0_HL-nry0a7zPwdbue5j=
+cT7Q5pp99j2aeidCKPZCWNw_GaqnZPe567NswWIDsAON7gFSiT7SribHDIEbXid9h9Fl-vbHCyB=
+i7SHn_zMyHLHf_W5FmlSyJZn8VF0o00jAbw2D0Ybx6snTY-2y29Kb4C_ElAco">Pourquoi s=
+=E2=80=99abonner</a> =E2=80=A2 <a style=3D"text-decoration: none; color: #8=
+f8f8f; outline: none;" href=3D"http://email.brief.me/c/eJyNUluPojAU_jXwYmKg=
+BaQPPIwXdmQzjs6os_piSinSESgpFcRfP4eZuJp92qRJ29Pvci5ltKioOJaGO1aciUrwUh8SWVA=
+BoWnQ0UzKIZOFyQPbGxF35IywZSaBg3ybmOzObqgSVAv5TZvIUiuZmyJAFsIWRthGGFl4mFppTD=
+hKCPWJM7KZ4VixEjwdFtzMAmJjmxBwYT524piRUYwoT7004STmDJkqoCxTNOX5CNu2A-x7gnmQa=
+V3VBn4yUAirbdvhTRuuuTxCSShcfK6sxfR0BZxd7T_eX-Fgkc0KtTMWLcTbdvkerc8R98TkhMNd=
+F9dvq9msitvL8nL1Za-NQ8UTAe3SBp7-mCK3t3V7Y_dfawjQWJYlL6C339dUquKcU5AwkNdwJQ8=
+iASnPcRyCbyEmywaCY9zKXRiJQnq5tyH6j6fm_tyPQgpZHvPKm1Rz58JlXY635WSd8Cl3r_tmoS=
+PVYr1_fUZesfr4tdytT2Nrc92LbNtd4vPzdpEQ1r10v7cvzcY_pmhv9VVMH2dan-PPvkqY6FZqx=
+Qe0EfUAml1p_oi7HfsyAIsci_j-I6BSshc6lBQaAojxbeYPGN1VP288Axt5VjR_fObwJfPD_2ak=
+eVHlVPO_jksl6wqYNTA4G0zWT6YO-j7DFt8dvwA9-AMz">Nos offres d=E2=80=99abonneme=
+nt</a></span>
+</td>
+                                  </tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class=3D"ptb-23" style=3D"border-top-width: 1px; border-top-color: #c8c=
+8c8; border-top-style: solid; mso-line-height-rule: exactly; padding: 24px =
+26px 27px;">
+<table class=3D"w-100p" width=3D"660" align=3D"center" style=3D"max-width: =
+660px;" cellpadding=3D"0" cellspacing=3D"0">
+<tr>
+<td class=3D"pb-13 fs-16 lh-18 l-424242" style=3D"color: #424242; mso-line-=
+height-rule: exactly; padding: 0 0 15px; font: bold 15px/16px Arial, Helvet=
+ica, sans-serif;">
+T=C3=A9l=C3=A9chargez notre application mobile
+</td>
+</tr>
+<tr>
+<td style=3D"mso-line-height-rule: exactly;">
+<table cellpadding=3D"0" cellspacing=3D"0">
+<tr>
+<td class=3D"wi-140 wi-120-413 active-i" style=3D"mso-line-height-rule: exa=
+ctly;">
+<a style=3D"text-decoration: none; outline: none; color: #00b19e; transitio=
+n: all 0.3s ease;" href=3D"http://email.brief.me/c/eJyNUltv2jAU_jXJCwL5losf=
+8lBArDC16yRgKy_IcU6ItyT2HCct_fVzQB08TrKOre_ic7GlaIxQpzaI5hakMgpadyx0I5SHltl=
+ZVFrPpG5CyHCc8ChhCUVhkTGSYh7Km3sQVgmn9MW20K2zug5VRhChiBKKCSWIzkpU5hxIwUXKWY=
+JlwFBuFZSzBsIqwzjiKRISCiFykhZFikuESZyIkseI8tBmQlZWlFAnFGPm3bcC66xyznQBfQjIy=
+i9hTDfzoYaR9kDfXVEfLzmnDUxrIV0__dOrqdcYB55TBWYcoxiniAd0NYDVR1UEdBkzxjgNSHyB=
+pG4HD87pm35dbVSj4zrecfcztut0nW5WYttvTrWJF2bN3kF37XzfLrYFLCH6OAzPbmPfqDt8eyR=
+x8_3Hl5fX7e852n0cVLU_v-f94_654PL8dP66fxp26akkBxSQiC7vR971-S-Qbhz4XjsLEzGobn=
+Jt5F73eRzb8FrCEE_Te4Gxerzo2IoGRsX880nuNO5srhxUPo3urajvafA_pj7-b0UOGlMLB_8yv=
+ljdGe_svAPkZLF9CF02ztlv-S3jX5to4y8">
+<img src=3D"https://www.brief.me/static/editorial/img/app-store.png" width=
+=3D"127" style=3D"width: 127px; color: #4a4a4a; vertical-align: top; border=
+: none; font: 14px/16px Arial, Helvetica, sans-serif;" alt=3D"T=C3=A9l=C3=
+=A9charger dans I'App Store">
+</a>
+</td>
+<td width=3D"12" style=3D"mso-line-height-rule: exactly;"></td>
+<td class=3D"wi-150 wi-130-413 active-i" style=3D"mso-line-height-rule: exa=
+ctly;">
+<a style=3D"text-decoration: none; outline: none; color: #00b19e; transitio=
+n: all 0.3s ease;" href=3D"http://email.brief.me/c/eJyNUstuozAU_RrYRIr8CuAF=
+iyZR2mTUTkdKMtNsImMu4A5gyzi09OtrWmXCciRL1zoP35elaIxQZRsslhakMgpad851I5SH1uk=
+gKq3nUjchpDiK-SJmMUVhnjKSYB7Km7sXVgmn9JdtpVtndR2qlCBCESUUE0oQnReoyDiQnIuEsx=
+jLgKHMKijmDYRVChlCUYxYguNsgTHHKEaC5KQgGeYFE6FNhaysKKCOKcbMu28F1mnlnOkCeheQj=
+T-mFsO81LqsYeQ90jltwUdhvIxscnBC1d6wUXlA1w3Mv0vxdECiHqw-fxERY4zTKyR123twSd_0=
+y2anGh3V0YG7P5HdJttktxH7y66sTbQyW_YOumuXx3a1z2ENi49T_-R29o26088HEjW_ft8_v-z=
+_LtHh46Sq4_CeXR6OTzmXw-Pw4_jYH5KyICcUkAVdT0fdXbJXkG4c9FE7CzPRq27mezQOprrrdW=
+zDawlDPEmmAmP1-NC5FQ2MiuV1FRONG8w3B5VPoy9W1FMa_E-pz_9bkYPGr8XBv4zPVnfGOzvvA=
+Dlb7e9Cl45z9iG7ZfwERrbhFg">
+<img src=3D"https://www.brief.me/static/editorial/img/google-play.png" widt=
+h=3D"135" style=3D"width: 135px; color: #4a4a4a; vertical-align: top; borde=
+r: none; font: 14px/16px Arial, Helvetica, sans-serif;" alt=3D"DISPONIBLE S=
+UR Google Play">
+</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class=3D"pt-25" style=3D"border-top-width: 1px; border-top-color: #c8c8=
+c8; border-top-style: solid; mso-line-height-rule: exactly; padding: 23px 2=
+6px;">
+<table class=3D"w-100p" width=3D"660" align=3D"center" style=3D"max-width: =
+660px;" cellpadding=3D"0" cellspacing=3D"0">
+<td class=3D"vero-editable" style=3D"color: #9b9b9b; mso-line-height-rule: =
+exactly; font: 13px/18px Arial, Helvetica, sans-serif;">
+<b style=3D"font-weight: 700;">Pour =C3=AAtre s=C3=BBr(e) de recevoir B=EF=
+=BB=BFri=EF=BB=BFef=EF=BB=BF.m=EF=BB=BFe, ajoutez =C2=AB <a style=3D"text-d=
+ecoration: underline; color: #9b9b9b; outline: none;" href=3D"mailto:hello@=
+brief.me">hello@brief.me</a> =C2=BB =C3=A0 votre carnet d=E2=80=99adresses.=
+</b><br>
+Vous =C3=AAtes inscrit(e) sur cette liste car vous avez demand=C3=A9 =C3=A0=
+ recevoir les informations de B=EF=BB=BFri=EF=BB=BFef=EF=BB=BF.m=EF=BB=BFe.
+</td>
+<tr>
+<td class=3D"vero-editable" style=3D"color: #9b9b9b; mso-line-height-rule: =
+exactly; font: 13px/18px Arial, Helvetica, sans-serif;">
+<a href=3D"http://email.brief.me/c/eJyNUk1v4jAQ_TXkgoQcOzjJIYfykS2sSqEFunBB=
+jjMBlyS2HEMIv75OuywcV4oce_zevJk35qxQTOzLTn-ggQsloDS7VBZM2NAoathByh6XhQORS_2=
+w73s-QU4aeThwQ4ff2WemBTNCftOGsjRa5o6IMMIEEUxcTDAivQxlSQg4DVkQer7LOx5KtICsV4=
+BziBLU95OAphmiHBAFP_MpIJ9DCpQnHnF0xPhBswxyn7iuZ9n3AvPoYIyqOuSpg2P71XXdu-W2x=
+1zubUs4nn0u0Gx0vFqcq7Yf7692g8LVAtdjPp2Jt_X8fbo8TYGK4ZHEmyap3hbjsUrqy_xyDWSb=
+m8QaUmHtMh0y-hHF_Va23wrbhSn1IG0DpTQiE_zbn-ovjp5By51IbQ7qeV5IbiEuy7MNDkgtN_F=
+UFJLmdBWaP1RPgkkwjZktb58rOlQT7wKyKgfrcrhMYQT96_Y8M1NdE7N9fca0WHz8mm-WxwFaXb=
+fisG4uyel5PUtD3rw0v9cv51Wwz_AWteWPHodZnZLPtj07yrU0GrrsLKqudVkZeMTdtm0bFos9F=
+AbBI0Bp2Sbalcw6YRGD27AfMKZRP3dwsDLypFn-eA32Lea7_63IQKFyZuCf4lzLSllmZRnAu8Pl=
+k2Oi1mf7S-6KX5pyAE4" style=3D"color: #9b9b9b; text-decoration: underline; o=
+utline: none;">G=C3=A9rer mes pr=C3=A9f=C3=A9rences de r=C3=A9ception</a> =
+=E2=80=A2 <a href=3D"http://email.brief.me/c/eJyNUk2TojAQ_TVymVorJHzlwGH8YE=
+e2xtEZdVYvVoAgGYGkQgDx10_QdbX2tFWh8ui816-7k5gUgrBDObBHksZMMFqqfcILwnRo4nck4=
+3wY88Kgvum42HYtFwEj8S3omdiI7-qGSEYU4xfZmJdK8txgPgQQAQSRCREEaJiCNMIUJph42HLN=
+eGCBSDKaDgtqZD6GUQRdGmEP6M92Tc-zbOBRbCdpkqauIX0SZ5KkNHeRaVpafS8w9zOlRDVAzwM=
+Y6NW27fCWW__m_KBbgsH8awnmk-NZ80yx-_x40wDg9RK20zics_fN4iNc1SF12PiIgm0XVe_L6V=
+RE7WlxOnu8z40CSROmx6UGaHI1hXZva_fG9r_WOqDrE-oKuVCsrG6Q1-oCL-yC_uh4_SeN01DJ9=
+yzRFo5lWRjdQjEvGx0coZZvg5AV3MmdNVa_HTnzZl4YEF39IRfOWMysE-VVOdqU41VCJ9Q-75q5=
+CmWL1O7tBTrF8vPnYrs6jsD6vGPZpjtF9ctmnuC4e-1-bV6btXdI4Q703U0e77qqo6--e33TG64=
+kfSINq56uTT7ybrBvQ3OhBbDnPRKE5H2ifUn0oDRjdHsLDxzViesZzbQNryXJH4-pfqr5_n8rUr=
+QQOVH0r-NC8kpoZaUVNH4ar54N5fdz1lt0d_wGWCgJkw" style=3D"color: #9b9b9b; text=
+-decoration: underline; outline: none;">Me&nbsp;d=C3=A9sinscrire</a> =E2=80=
+=A2 <a href=3D"http://email.brief.me/c/eJyNUk1vozAQ_TVwiRQZ23z4wKEkyjZZtduV=
+ErbNJTJmCN4FbBkHSn_9Ol1lw7GSJXtm3pt582TBW83lufPCzICQWkJnT6VquXSpdTrxWqmlUK0=
+PaRDFLIxpTJBfphQnAfPFnT1wI7mV6pO2Up01qvFlihEmiGASYIIRWVaoKhjgkvGE0TgQHkWFkV=
+AtW_DrFHhAEoQoEQkNAyHKoBA4QhQDZwUvqW9SLmrDK2hiEgTUse8Cm7S2VvceefDwxp1xHJe33=
+i4UThIX9lojmwGMOsnSI-uIUsqIh6PPlAMNLpmRUb1tdrJVURMdmH2NzDbZJrsN319250ZHK72l=
+76D6Lsu71b6ENYQfx-HZ7sxI7PHHI47an7--vbzt_2To8HGUdT69F5fH_LlkYnqavudPwyE5V_i=
+IPByS9dzH_lL8BqfTuZgra2DBB9kv3ILawhx3e17XcFhMEUuSOUAbdW106rjb3yGym88zjJ30vx=
+rUboy6GN7My-C-QXP6qiILrW64hf8TX4zqtWP2jgFisdo_-Da9-uyu4j7xL7QB1bo" style=3D=
+"color: #9b9b9b; text-decoration: underline; outline: none;">Contact</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class=3D"hm" style=3D"line-height: 0; mso-line-height-rule: exactly;"><=
+div style=3D"white-space: nowrap; font: 15px/0 courier;">                  =
+                                                       </div></td>
+</tr>
+</table>
+<img width=3D"1px" height=3D"1px" alt=3D"" src=3D"http://email.brief.me/o/e=
+Jx9j81uhCAURp9m3JgY_hRZsOhMH6CLpltzwWulUSHImMzbF9tMxyZNVxDu4TvftTAHcO_LqT5H=
+tC44XFLX-xlcfnrWNxi9r6yfC_sAMU-nbr2aD7Rpp958iljC5tYyoyFh0WvBWqqOvzaIDpLzX7k=
+Xv6Top8JpRhgnnHHKOCO8GshgFLJeQauEpPYkiIkOh2rGYtS9VD0AgqkbyWpqsRnq2jApDG8t4f=
+bo-7df1GDHCANOklMqsuXPTUP0e0a3wIx70Ple5cCkW_ie4ZgN_hphKlDTRqpaCsnJLxbnMEHCn=
+8CX6NeQDWtuh7a8vD4d8fu1c_0OM0FU2xZJbxh9PszD-AmoZJhb"></body>
+</html>
+
+--77552a737c2933f18b6bd55deb270dd60ca73a53349e456651c5b66e8811--

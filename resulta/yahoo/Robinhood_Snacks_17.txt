@@ -1,0 +1,2760 @@
+Received: from 127.0.0.1
+ by atlas-production.v2-mail-prod1-gq1.omega.yahoo.com pod-id atlas--production-gq1-7cf964b49d-mj5tc.gq1.yahoo.com with HTTP; Wed, 22 Mar 2023 10:42:48 +0000
+Return-Path: <bounces+6630771-337d-achrafel73114=yahoo.com@sg-email.robinhood.com>
+X-Originating-Ip: [149.72.41.30]
+Received-SPF: pass (domain of sg-email.robinhood.com designates 149.72.41.30 as permitted sender)
+Authentication-Results: atlas-production.v2-mail-prod1-gq1.omega.yahoo.com;
+ dkim=pass header.i=@robinhood.com header.s=s1;
+ dkim=pass header.i=@sendgrid.info header.s=smtpapi;
+ spf=pass smtp.mailfrom=sg-email.robinhood.com;
+ dmarc=pass(p=QUARANTINE) header.from=robinhood.com;
+X-Apparently-To: achrafel73114@yahoo.com; Wed, 22 Mar 2023 10:42:48 +0000
+X-YMailAVSC: bQXfL6k3bBvsTOieySsjGDkxzfjr1sp_zkvEbppHIj9mzgI
+ pagBfnYPG_.b0EZIJZ43zJ4INO3ukZfftrAntlxMySYUNh_4NQNx5GwdrDKV
+ GM831sIwH.RR8QoYjEOCMEdMcyfsPSuBq3bAYJIMlEE4xTye2LK1RJGJexLH
+ qFzTQAFlUDI0efHjXw.vBJA0oKlrzIsI4yKlhiBcaTMnjj.AJOrZucimaU7t
+ exX3cYOedb5Sgyjb3Ww2NiHOmdu6Ta1IOWu5vETeFcYtQpOrD1cbUR3Gvw62
+ 1FGv2HbLrtDgGmYjFzuu4DJES4yBvq2MWO8z7YcJhacSPIGwnjkCow4c8CUB
+ CV3D1jJGeRmdOzKxFtDgJLgIMLJ9L.1kgL1oS.wTepi9CHRWsgTbS0O4nTyU
+ tdUeVoxaU7uBcg4vdLBYUakP0u0ld8SdIhKfWCxNosVOYfLfYPZha75b82tn
+ SQrzpWXHPuHOTGZV4YupMBv81gntJB6Ky5gkMAARgQ_w8z3FYwGnu.2w4y_E
+ NK9sNOl1Ft2Uj31v3NV1WU0rDTseY4OlgmO_ll4VnF5e4DxZqz2fmaUrkDHb
+ Y7WfJh1.AkpzrNQZWotokvxWioXXEX2wSlzYTsu8R9GUUzvun5qh3Sd8aj27
+ nZLfFi3Aw_oGK3JtAvWsd23k.xWBr.XQ6rRA1D45uO6XKukVxXs91IL.6A6s
+ qkvV0_gwJKmWKxl_sY9oyaXg.5S3SN83en5mptabwYRmdUgzxC9m3elI.ISL
+ P0XCFb5ONJ5npy54HE4HUObQCd098s3wArFQ76s8SFt9EvtXKFc7LilKCss3
+ 9irSTrdSZrtAify6wb48NpuGR6bqUnHJsuLJgstdo1Bx7hVnTog1I6x5es9.
+ ajLqofW_ozZ3J7uZmZsl0JD8ZErHeFzPP2GEdxe_gbAhFENTLhforCSDv57W
+ Jq9FbYP9kq9kYfHBq8dor_CM9_kSrCn9q_0OiL6D5OwfpnsLOxXMG5NJ2SbN
+ j58G.9ariV9Dya2GcyuF2U2HViKNf_xFDaXBHS64DMjnYrN.r3KY1z9UtbOb
+ c7umwoHsAOvP5NDpfLTI_CZILeSaoICliSXvI5DQdNC68CjNVCFcVEjQhxzG
+ u_RZsdjNxphRllsWVIEJBitZ5nQvCyq6yh3sCa5GBMPeCCy5x1FkmL2WKC0U
+ RwE0JfrxCiJCAVBHy45e3s_iLg6iPVp1nd6MCpqVxqre_E9.eGnCNOOVOtkD
+ C9Zv3zTf4Nd.KAVKwngF3
+X-YMailISG: ji_B9bcWLDvfsAeMgoQ5i90eDbwmYC4ZpS2W0.J3GXKx9pQP
+ Kawq5JBzsw0u8ys5qgP7IGHeExfWVWt2Ru3UQVWUoyLObIk8gN5bPJuXMg5P
+ 2swA9QPZtsIMAlDiGmCBW3uSqqwUV3RbqIq33FUDMGw8Dziq1SRUiS6_GMSk
+ JoYCzHzGrthJLOhLOCbbUqPqxQurBEjkWV4EPNs5zOkeFDNitO_X7DVZ7UTd
+ eLmH8Eq6qlP7Uexq6M2zOL3jG1S_K2lqsn0.vPWwHRUq7xA3ogtTfwi8AIiI
+ S38.CWuy1TzuIVQ7eUHKH.FTYhBLo1Vadm6F9TKaa6vx4wEh2mZFGXlENRiy
+ apt7qOHOEPqApQGFvoWdtOQokKteBot47EPlkbElzoLHzEjY_Xn1rWVwXxmO
+ M_XYEKlOSpcStPzG9Io5ih7diFZ5GLGEIx7TJ1cAcnkRDSheZOEar.UcJGdC
+ cq0miVD5LNKVKKHtTxprC9bhJTQOTWmcYtWY.ZxMOZF2WzplqvMLXI.lL2p.
+ fpThDXTsg1q0JRFUsupguxQLDJnBA4DtIuVKvVV8TkWpcBsfMsYRoPUhL7Qo
+ NUGBCiCdbs.H_tCfn_DZvQeVSC5jjNI5lG_Xxv18SmpumahEhGWJjvPbeieA
+ ppseXnhGE.rgQGC6POK4rhLv_hzFGPlXT2QpsdNWnI0EHjk_rt..9YIgHBxr
+ 3L8za9j_jtjaeXSYKUqLk.MoVzYPCKMtoK.eJuVvRxQx5DR4WNrcUajn51sX
+ abdO_M216wNKgdPXVjGz8YXjLQE.L2qJeyYFZ.a_oRJZ6C7IgNA.JwaWXzYN
+ WYB0Gn_uVSCC0mLOCTDeINXsk22xoUIGsB9tgwHkxTFLaxHuwoDqLxDZDhMW
+ JJVvXzdsm6t26VE150.dwT5y1DTL8iJKzCSqk0VBRHN4C6VWE7M2732GraVB
+ OsxgXy2fNJC.wA5hQUW5DNXI_O493EDxLEaAHEWr3f09DCZmkrfxW3tZ4Rf6
+ jXYgdeNXMIITWm.HpHPNofTJ5BWvFZq.w5h6U_eFkGQUksst4Cb4f67QBpQI
+ cikQlPbM14YRMND5yv5bMbP3mjtFMRXFxsEBlWA3p3XKRJIH1d6.carqaI_J
+ 3VmuNPTeUL99O_lDTNYpHWJ.Z0suWzy90sGBJFTarJV31kzMa97v.dWOolnI
+ chRnJuEtr._tn7pDjkWegTft_HESh4ZuN1KBS_FONVfQeQ--
+Received: from 149.72.41.30 (EHLO o16.email.robinhood.com)
+ by 10.253.230.151 with SMTPs
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256);
+ Wed, 22 Mar 2023 10:42:48 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=robinhood.com;
+	h=content-type:from:mime-version:subject:to:cc:content-type:from:
+	subject:to;
+	s=s1; bh=OXmXD3u33Voc9YRod7qCM9LgdQu649XNw9sjXs8MdI4=;
+	b=BhMX7wF24QIIyz2JWS64nETAw+u1LS9Rof/T+YHPye1mYbMbZpTanRrs8yHwsZXE9S9d
+	v+rPxgtKMVBSCnGYHCTWC08BnyqI3RnN/KgtSnkn+itvcwEqYUKVPh0xJ2IdP86TJ4y2iC
+	gFIute2R+ui6YcEipHfbcH/D5VQQ9zWEJRvlFwLUCNVafWs7XOH+Is3xEMzzMqwQoAF4PY
+	0vMjkanhVViI4j/kBAIwG7u3f+mMF6om7nBaw9aNnVmjbd/fvU5cXd6FlyQySJ8hr7va4u
+	Ljx5a5rfuhaKKrKV4LVzbDtcj5FYOMRnMyz+sjUIvqmUx1+DMwK4XsSY1Lx+JzTw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:to:cc:content-type:from:
+	subject:to;
+	s=smtpapi; bh=OXmXD3u33Voc9YRod7qCM9LgdQu649XNw9sjXs8MdI4=;
+	b=N51grgkH125+p2nmK/DtKokMXTHeIpEKMlvAg0mFXcH6mFshTD7vLtl3TXHfjYWPV0cl
+	+qkeG0+D1Ma9lpgFhPb8C7ZMbaJZpJIoJfHRkajppmF2QaR/WoZU+SpGDNFSdGntKBz8Dt
+	MbHX+cl0JR4+bn6pBDiRTo9XCXtdVa4Uo=
+Received: by filterdrecv-5784594f58-9b5xp with SMTP id filterdrecv-5784594f58-9b5xp-1-641ADBA6-57
+        2023-03-22 10:42:46.97637672 +0000 UTC m=+2459326.188654846
+Received: from NjYzMDc3MQ (unknown)
+	by geopod-ismtpd-8 (SG) with HTTP
+	id OGJkC_A1QvSgdQoUWM5fsg
+	Wed, 22 Mar 2023 10:42:46.926 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=00f494a917f52eb66008aa56cade38ff53cb8e4943ea6c034a721b2375b3
+Date: Wed, 22 Mar 2023 10:42:47 +0000 (UTC)
+From: Robinhood Snacks <noreply@robinhood.com>
+Mime-Version: 1.0
+Message-ID: <OGJkC_A1QvSgdQoUWM5fsg@geopod-ismtpd-8>
+Subject: =?UTF-8?B?8J+NvyBOZXRmbGl44oCZcw==?= (ad)option
+X-SG-EID: 
+ =?us-ascii?Q?JD1WbddfoCN9JDT0g4N+Wc0+ThLKrMPOV3sdUVZ4xRe8fjGgw7P91rV+6xnLKL?=
+ =?us-ascii?Q?MzcrxZPvF2Wm0UGkOpMK9Gisd2V0B4JvVRJ84oN?=
+ =?us-ascii?Q?MRClPmzF+xitjX2n=2FfJuEXl544orE6lr4q0l0Xx?=
+ =?us-ascii?Q?UNmPmIv7jK4Gu1ocGHr=2FPMgwco75+ibbUzKRiZX?=
+ =?us-ascii?Q?F+oUgY0Yi62JAxW6AZl62WU9nQJeYDc4WE+z9Ym?=
+ =?us-ascii?Q?77xlwuhOvVEa2VlKYljDPmD=2FwhGkXvqVgoEhNu1?=
+ =?us-ascii?Q?gf9cQ2B1vIOGo4gzxR5=2FA=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb3p46cUDFdp6jr721Rh08punZeZP0Wt1Dfz1nOeM6z?=
+ =?us-ascii?Q?f8nV+bx6ugTwHaHvst7o9e=2FQ4uUtcDEqf5gbKLZ?=
+ =?us-ascii?Q?+jIlic85l=2F3VcexL0ewlAhfdg6=2F984nyxSuM71D?=
+ =?us-ascii?Q?TAAZY78qCSqmny0V=2FdJd=2Fa4ujCsXCb1XhdUQDhG?=
+ =?us-ascii?Q?inVwkbd=2Fyb2IECo0U4PBru1lMCddo9Tf3VSIfuS?=
+ =?us-ascii?Q?oWH1alPpyGw6YkKdtFdmI2NZhrX3D9oxyw5QQbS?=
+ =?us-ascii?Q?vs7MD=2Fiji8h1k3STh0b9+ZEhjbsDN6cF2SKIf6e?=
+ =?us-ascii?Q?Cn7kb2U1sO+AljNY3E8JMWBekiqZw3DFHaY0GQS?=
+ =?us-ascii?Q?C3Cef+KY97=2Ftn9UrpDFYITd35UyG76P=2FFbZvJiG?=
+ =?us-ascii?Q?SByqpOYGWUQJYdl+w+8JN8ek25UqQuSw=3D=3D?=
+To: achrafel73114@yahoo.com
+X-Entity-ID: zye8UXqvUGcUF9ZcIbeLwg==
+Content-Length: 187479
+
+--00f494a917f52eb66008aa56cade38ff53cb8e4943ea6c034a721b2375b3
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+<!doctype html><html xmlns=3D"https://sg.robinhood.com/ls/click?upn=3DCoIEy=
+GtdHpyCoJV2e-2Fhud8hbUXSaoSHqfQHp-2FLYwS1d1uN0ki-2BmN9u1UX0fl4EvWa574_Q-2Fl=
+qu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZ=
+ma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsA=
+cGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LK=
+HuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5y=
+JOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXE4hyLpdRzSBeEe-2Fl7wExqlyP9kQx6=
+PZxE8-2BbbH9AISrtA-2Bf8CWEOajK3io0H7fyjT-2B22w9Jk7490OB-2FGD8-2FB-2BN-2FlvU=
+J3Jw6YAd0xbc5MLOlCWwuwCLtec8ge7ojdps2lO74c7mvJj8ZxplIsan2aEQ0o0r3yRnaxEsZH9=
+tQeJ4wM8YFrKSWO860ZZI8N62nEuTywrGvNjrilFJqjkJlCW6pckIRQUY7bWyWNU4mncur8XRWL=
+kQc-2B7-2B9SWvVwLSBB84SBd4oqu4SKHlURy7RnS0Q-3D-3D xmlns:v=3D"urn:schemas-mi=
+crosoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office"><head>=
+<title></title><!--[if !mso]><!--><meta http-equiv=3D"X-UA-Compatible" cont=
+ent=3D"IE=3Dedge"><!--<![endif]--><meta http-equiv=3D"Content-Type" content=
+=3D"text/html; charset=3DUTF-8"><meta name=3D"viewport" content=3D"width=3D=
+device-width,initial-scale=3D1"><style type=3D"text/css">#outlook a {
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+
+    table,
+    td {
+      border-collapse: collapse;
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+
+    img {
+      border: 0;
+      height: auto;
+      line-height: 100%;
+      outline: none;
+      text-decoration: none;
+      -ms-interpolation-mode: bicubic;
+    }
+
+    p {
+      display: block;
+      margin: 13px 0;
+    }</style><!--[if mso]>
+    <noscript>
+    <xml>
+    <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+    </xml>
+    </noscript>
+    <![endif]--><!--[if lte mso 11]>
+    <style type=3D"text/css">
+      .mj-outlook-group-fix { width:100% !important; }
+    </style>
+    <![endif]--><!--[if !mso]><!--><link href=3D"https://sg.robinhood.com/l=
+s/click?upn=3D6fntGirSE5selsQKrSSUHhlVHSZUg2RjnmzAANAYlJWW-2BL3K615wI-2BBU-=
+2B7gW0-2Bz3udYFfbvmX5t38nFUm-2FnQIfrrnXiTLIo035MKAMl54n1c04PTvjXfOpYHK7Grce=
+3xBGtR_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9K=
+x5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6=
+UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3K=
+VmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBB=
+tb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEL43B0zpzMHDy8UxvGP=
+vF3yR4qiCPAh-2BQ1BkvPr-2F5D9dckRlwltekELdL5la73wNo4U3rej30wUxMOw2-2FqN3OS0L=
+brO9xBMZO06GiemOMT6mXEoqJUipMFb0KhXWnj8iTZaFPSm1XH83SPrNKhoXUuxhMtdDwQu9oQ2=
+-2BJLzVZOn3GLiLnofOJG5k8ufbttTnsWxcTSI-2FVSIPbhIEhmbrjLf4leAUjVQV-2Fzv2xOoe=
+raNqv3ZswZIPxeCyjb06bW1MOMfTu2OqUVvqmpP5KJFefVw-3D-3D rel=3D"stylesheet" ty=
+pe=3D"text/css"><link href=3D"https://sg.robinhood.com/ls/click?upn=3D6fntG=
+irSE5selsQKrSSUHhlVHSZUg2RjnmzAANAYlJWW-2BL3K615wI-2BBU-2B7gW0-2Bz3v7xPkHYp=
+omUo-2Fh-2FpHe2juPDnj5j7S8lrG4ULC2lmGHo-3DnPft_Q-2Flqu7vv4WEwX7O0huvLnV7kPf=
+-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRb=
+M-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i=
+3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlK=
+sicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m=
+3mMnbM-2F1vghWa807nAXEuARs74tNYNdY-2BsA7QtR9iDkwy8X1iYmxsFBRKfX13gpilhLnMjk=
+Z0AAklnGmXQtuG9xqxoogdiFypxbUZawR-2F6A2Ozbd-2FMgmlu5Qz3BrGrOdNoWnHa3K9x81-2=
+Bw3GzvJfxSGIAd4IoHGerfPmoa2f7DGhi3mI-2FfghXYdydTZdzu3KGghnEHAsaCca3XYEjayOH=
+N7ZFnmRI39bmoZ6grFeGJp18m77kUqeL6woN0deg4NzYex-2FSKuGA8oCZqqgdaU2J5eM-2BSdz=
+bw39BhGhRVeSYA-3D-3D rel=3D"stylesheet" type=3D"text/css"><style type=3D"te=
+xt/css">@import url(https://sg.robinhood.com/ls/click?upn=3D6fntGirSE5selsQ=
+KrSSUHhlVHSZUg2RjnmzAANAYlJWW-2BL3K615wI-2BBU-2B7gW0-2Bz3udYFfbvmX5t38nFUm-=
+2FnQIfzyc5B-2F-2BYHWuyxg8z-2B3KeAYMXwRj-2Bn-2FSzWavjV6ryIyOUwI_Q-2Flqu7vv4W=
+EwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2Bak=
+BtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-=
+2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2F=
+LwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe84=
+6IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEMP-2F-2BcRNavnvM4wdyQw0HgVUt3peGaV4dM=
+YtsLqiuOQcQ7wICP-2FxiM0Pfummmo-2FUSR20EWg4PJkwYLoHQil-2BDScvJ2y-2FXKaa9CZaI=
+ALOq31IpM1N7UP5aM6gk1WvtSQKC2djAu3s0nGBd1Z-2ByuZhChH2oZwcgL7M-2FOdqNBsviJU9=
+nDOTwDT76kaR-2BnhmjnYP9BogcpC5tFIkJMc-2FG-2BeU-2FhQk-2BPQ0PkuANSumTA0twsEk-=
+2BWoiyf8W5E79XG0JsAodRT1TXTvU-2B2aB8i1QakXhEJA-3D-3D
+    @import url(https://sg.robinhood.com/ls/click?upn=3D6fntGirSE5selsQKrSS=
+UHhlVHSZUg2RjnmzAANAYlJWW-2BL3K615wI-2BBU-2B7gW0-2Bz3v7xPkHYpomUo-2Fh-2FpHe=
+2juHo9rZMVENXKghd-2Fv238KHk-3D65Ov_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fr=
+a-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFG=
+IQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHO=
+B1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxR=
+Tr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vg=
+hWa807nAXEOcNOw-2Bj0YTQvPmecFazezyfZ8oH5Ff6jgug1CQhGnGz8dT4w3I5DCiGRlCrPu0n=
+Y2PMg8njc0vTHjXvQ1ZMkHcOCOpPb5ZglMeiUbFiO5iYDOVVVyWsfSLEAI0LjBYn20e0H3qxOMh=
+O0zd93breI0YzBm4CQJu0lMr3PLT7LV4mHX4owSGckLBjlovLjlLp2bN1MRREEbM-2BL1A0tsCL=
+zwMTgwBroixYsPJptxwUVK3Z7fgG0TziELKnSUvr91sRBCfYhQGPWakpQP-2FJatTvOfQ-3D-3D=
+</style><!--<![endif]--><style type=3D"text/css">@media only screen and (mi=
+n-width:480px) {
+      .mj-column-per-100 {
+        width: 100% !important;
+        max-width: 100%;
+      }
+
+      .mj-column-per-50 {
+        width: 50% !important;
+        max-width: 50%;
+      }
+    }</style><style media=3D"screen and (min-width:480px)">.moz-text-html .=
+mj-column-per-100 {
+      width: 100% !important;
+      max-width: 100%;
+    }
+
+    .moz-text-html .mj-column-per-50 {
+      width: 50% !important;
+      max-width: 50%;
+    }</style><style type=3D"text/css">@media only screen and (max-width:480=
+px) {
+      table.mj-full-width-mobile {
+        width: 100% !important;
+      }
+
+      td.mj-full-width-mobile {
+        width: auto !important;
+      }
+    }</style><style type=3D"text/css">.article ul {
+      margin-left: 5px;
+    }
+
+    .snacking ul {
+      list-style-type: none;
+      padding-inline-start: 0;
+      padding-left: 0 !important;
+    }
+
+    .factOfTheDay a {
+      font-weight: normal !important;
+    }
+
+    .disclosureLinks a {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    .disclosureLinks .disclosureLinksFirst {
+      margin-left: 0;
+    }
+
+    .text {
+      color: #000;
+    }
+
+    p {
+      margin: 12px 0;
+    }
+
+    ul {
+      margin-top: 12px;
+      margin-bottom: 12px;
+      margin-left: 5px;
+    }
+
+    .type-no-paragraph-margins p {
+      margin: 0;
+    }
+
+    /* This DOES NOT work on Outlook for Windows. Be sure to use if/endif !=
+mso wrappers in addition to .mobile */
+    .mobile {
+      display: none;
+    }
+
+    @media screen and (max-width: 500px) {
+      .mobile {
+        display: block;
+      }
+
+      .desktop {
+        display: none !important;
+      }
+
+      .marketIndices {
+        padding: 0 25px !important;
+      }
+
+      .mobile-snacks-title-spacing {
+        padding-bottom: 32px !important;
+      }
+    }</style><meta name=3D"color-scheme" content=3D"light"><meta name=3D"su=
+pported-color-schemes" content=3D"light"></head><body style=3D"word-spacing=
+:normal;background-color:rgb(255, 255, 255);"><div class=3D"body" style=3D"=
+background-color:rgb(255, 255, 255);"><div style=3D"display:none;font-size:=
+1px;color:rgb(255, 255, 255);line-height:1px;max-height:0px;max-width:0px;o=
+pacity:0;overflow:hidden;mso-hide:all;">=E2=80=A6and semi-private flights t=
+ake off with commercial prices</div><!--[if mso | IE]><table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"pres=
+entation" style=3D"width:600px;" width=3D"600" bgcolor=3D"rgb(255, 255, 255=
+)" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exa=
+ctly;"><![endif]--><div style=3D"background:rgb(255, 255, 255);background-c=
+olor:rgb(255, 255, 255);margin:0px auto;max-width:600px;"><table align=3D"c=
+enter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"background:rgb(255, 255, 255);background-color:rgb(255, 255, 25=
+5);width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding=
+:0 10px;text-align:center;"><!--[if mso | IE]><table role=3D"presentation" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"column-ou=
+tlook" style=3D"vertical-align:middle;width:580px;" ><![endif]--><div class=
+=3D"mj-column-per-100 mj-outlook-group-fix column" style=3D"font-size:0px;t=
+ext-align:left;direction:ltr;display:inline-block;vertical-align:middle;wid=
+th:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"p=
+resentation" width=3D"100%"><tbody><tr><td style=3D"vertical-align:middle;p=
+adding:0;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"=
+presentation" width=3D"100%"><tbody><tr><td align=3D"left" style=3D"font-si=
+ze:0px;padding:24px 0 0;word-break:break-word;"><table cellpadding=3D"0" ce=
+llspacing=3D"0" width=3D"100%" border=3D"0" style=3D"color:#000000;font-fam=
+ily:'Capsule Sans Text', Arial;font-size:13px;line-height:22px;table-layout=
+:auto;width:100%;border:none;"><tr><td style=3D"width: 30px;"><img class=3D=
+"light" width=3D"23" src=3D"https://sg.robinhood.com/ls/click?upn=3D6fntGir=
+SE5selsQKrSSUHhlVHSZUg2RjnmzAANAYlJWW-2BL3K615wI-2BBU-2B7gW0-2Bz3VR400XTqbw=
+03Mso-2BkBuRas3N7c2U6rTq1mrDb570IQM-3DTcet_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2By=
+Zuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2B=
+nowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2F=
+mDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicN=
+qf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMn=
+bM-2F1vghWa807nAXEjqxh8ofW1j16Y247VuA4XcL8kjE1Ph8NouVnN1Ala-2F1XzYFiQpzlzcH=
+NIb4PYJ5GJD9gKsOOLpagx9POOgkd84cgLkNeOX9cKokuhU-2F-2B3Q0158z8J-2F-2Bu3qUBsF=
+PEr2JgED20vMOLWeiV49yNi-2B6eEpzCzBrgu1pnIWY-2Fqvr3wZevHCPWPg9vLNui3JAv6xJ1r=
+kKC28nYxWJMdf1VicWoEBjXYU8qFoaJfiZktsZ5MJjgyUj549lFYiJOAlVUn-2BDA0PC8iwzRKD=
+AaDnVcK208qA-3D-3D srcset=3D"https://sg.robinhood.com/ls/click?upn=3D6fntGi=
+rSE5selsQKrSSUHhlVHSZUg2RjnmzAANAYlJWW-2BL3K615wI-2BBU-2B7gW0-2Bz3VR400XTqb=
+w03Mso-2BkBuRaq-2FmsQVpxNi3CK4eUwY5b2Q-3DYwRW_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-=
+2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM=
+-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3=
+-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKs=
+icNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3=
+mMnbM-2F1vghWa807nAXEMkQfjcDPRTXW47L7BQ04KlaQoxybypCcLemIydaOt0Fhda7gzvLqjY=
+fhdk1wn3kw4El1NP2CeUZltFxQox-2FR4jySY9yHt81ZAqGlaDyUPCAlvhgKVdGzRmzOEl6yRoN=
+hWyqvffC62-2FgYARm6hXb8d8gl5pcibx7UX3qhBAeg-2FUQA4Zk253wAKzC8ntX6Lkb7-2BiFj=
+GBoqnKTTPMCwU2rmcn8ckuiiaQUqgxlOgt2NsUv6IwqakWjVKWs9vKYrJhWX94SXXvsfwSspbFm=
+xq5Cktg-3D-3D https://sg.robinhood.com/ls/click?upn=3D6fntGirSE5selsQKrSSUH=
+hlVHSZUg2RjnmzAANAYlJWW-2BL3K615wI-2BBU-2B7gW0-2Bz3J6kAbPhxmbGgmS1DUT3bgAI5=
+Kv67ooTDHqqZbS-2F1rdE-3DeSLk_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb=
+67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ys=
+BImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0I=
+mDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY=
+8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807=
+nAXEcY9s-2BLu4RDV1LSCTPE7gxPJDsD-2BHB8TS3GzfyfeXz9N-2Fmxi-2BV-2BFQqGAw-2FnG=
+DpmRNvDmkHWfarv5b2zpAoWN4vYbGI5eGjddbmNPFqMcKdRq8Qnm2k5lVAb6N-2Fu2gi9KtrLyh=
+l7wtL8kK-2Fbab3xTdLbvkT9mNxg3CiMBtmIOn7hLnaoQ3308f-2Bv3RK2vMj9OTqxmrgBN-2B1=
+kX7Z6AATxBtzwO6wad02Vr1XxnPJognS9LFAMIyCccHnKyHfHVdgVPlks4h4CoYi-2F4rZA1agN=
+GEVQ-3D-3D 2x"></td><td align=3D"right"><a href=3D"https://sg.robinhood.com=
+/ls/click?upn=3D6fntGirSE5selsQKrSSUHhlVHSZUg2RjnmzAANAYlJXYYgyWQ1sztkfLzoo=
+9man-2BnTE7sfoTf0nk2D4ybnWwXUaGtIXLarNykaHXP7nvvT7v1T5Z8dDU41gx39KcRTdbFvxL=
+_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXP=
+KVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtux=
+zJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcfl=
+Vx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB=
+1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEVbHP2mdeGOG2WyuaxR5tgPJI=
+top3EXIIYwRjKCb0jiu3D-2Bxvq4Lz-2BMFYs3RKnZtL4-2FVePaQnI-2BpsLFf4PvG5gE47p3M=
+wM2glbY1mvJiEkvrwosZPIvW0ibHSZn2TeZNnjUYsrwcXFddDk2bKvZsv9urR6eEx7o5luTxd5w=
+gsHPbVm1Q0rIdjQxhn4dKlJhp7Drb8Zl1cumn9cntytxvxrZepfxpgPSowJUK3dUCzQAdhu6siz=
+f9BGjMEttIJQYzr65RjIHEUiaK0ojOFYb8qFg-3D-3D style=3D"color: rgb(0, 200, 5);=
+ text-decoration: underline; font-weight: bold; text-decoration-thickness: =
+2px; text-underline-offset: 1px;" target=3D"_blank" rel=3D"noopener">Disclo=
+sures</a></td></tr></table></td></tr></tbody></table></td></tr></tbody></ta=
+ble></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody=
+></table></div><!--[if mso | IE]></td></tr></table><table align=3D"center" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"present=
+ation" style=3D"width:600px;" width=3D"600" bgcolor=3D"rgb(255, 255, 255)" =
+><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactl=
+y;"><![endif]--><div style=3D"background:rgb(255, 255, 255);background-colo=
+r:rgb(255, 255, 255);margin:0px auto;max-width:600px;"><table align=3D"cent=
+er" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" =
+style=3D"background:rgb(255, 255, 255);background-color:rgb(255, 255, 255);=
+width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:0 =
+10px;text-align:center;"><!--[if mso | IE]><table role=3D"presentation" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"v=
+ertical-align:top;width:580px;" ><![endif]--><div class=3D"mj-column-per-10=
+0 mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;direction:lt=
+r;display:inline-block;vertical-align:top;width:100%;"><table border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"vertical=
+-align:top;" width=3D"100%"><tbody><tr><td style=3D"font-size:0px;word-brea=
+k:break-word;"><div style=3D"height:50px;line-height:50px;">&#8202;</div></=
+td></tr><tr><td align=3D"center" style=3D"font-size:0px;padding:10px 25px;w=
+ord-break:break-word;"><div style=3D"font-family:'Capsule Sans Text', Arial=
+;font-size:13px;line-height:1;text-align:center;color:#000000;"><a href=3D"=
+https://sg.robinhood.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHvD1boXzg2LnBS3=
+-2Fj-2FyVcTbr4oRSo6C8KVPd7yeAwt4VdCNW_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-=
+2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2Bnowpr=
+DFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwo=
+JHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2B=
+DxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F=
+1vghWa807nAXEz4pJ4EC-2FjKWLb2q3wKCHPvBDWnXh0UDuPHdgsTp813Y1-2BVlE6hdh5QiOBJ=
+P7hJ6wcbE1rGx9LlF5vTUAcx1X1F0BWpY8-2Fp5VQAf8VvTEDla3IIPAK29qkhNLbTDI6L5-2Ft=
+WDAk-2FKsU1CxhhFSt-2B92WzfnQiSXVaCnjRk3dv4XTIQz4-2FNZZxLPmYDWRoiK62UCyTt93P=
+7xWdwaZ5pygErCUtW1DvOk4GS3J-2Flr0ZvlJafqTPJRl8m-2BoNtYCFTNTah2wT-2FPw2nx4ws=
+QJ-2BMcfro4cQ-3D-3D target=3D"_blank"><img style=3D"padding-bottom: 24px; w=
+idth: 100%; max-width: 340px;" src=3D"https://sg.robinhood.com/ls/click?upn=
+=3D6fntGirSE5selsQKrSSUHhlVHSZUg2RjnmzAANAYlJWW-2BL3K615wI-2BBU-2B7gW0-2Bz3=
+TpVEUpX2Y3nV47Kzbx7EGbJtU5McnMaQbZNBC4bwj3g-3Dtkop_Q-2Flqu7vv4WEwX7O0huvLnV=
+7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9=
+khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6=
+Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD=
+8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYY=
+f31m3mMnbM-2F1vghWa807nAXE4-2FK4lK0gZZLaoCH27rCKIav2RVsY9mVmhNzcb-2FhhY5jT-=
+2BJ7oILZgPFvW6gkxUV5N2ZktEXq-2F0TI44z8sy2NH2C1FlEXuUlv1ZmC3qK4e4QC7RMwyG8Q6=
+T2UNlOdyP8yFcyQKHT0gXzli6hPHSStlxHjPdefJVqTCvq5C0IitPVSMypYr1LGmcU92CGLMORr=
+dE6WawBcX09GMV8Cw-2B8INTF9ZkrE-2BXRyi09ZKChp6BF-2B941sCnik5SCcUcxfq-2FVIxhH=
+0JRccdAe-2F-2BjzHpBUbWlQ-3D-3D width=3D"420"></a></div></td></tr></tbody></=
+table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbo=
+dy></table></div><!--[if mso | IE]></td></tr></table><table align=3D"center=
+" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"prese=
+ntation" style=3D"width:600px;" width=3D"600" bgcolor=3D"rgb(255, 255, 255)=
+" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exac=
+tly;"><![endif]--><div style=3D"background:rgb(255, 255, 255);background-co=
+lor:rgb(255, 255, 255);margin:0px auto;max-width:600px;"><table align=3D"ce=
+nter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation=
+" style=3D"background:rgb(255, 255, 255);background-color:rgb(255, 255, 255=
+);width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:=
+0;text-align:center;"><!--[if mso | IE]><table role=3D"presentation" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vert=
+ical-align:top;width:600px;" ><![endif]--><div class=3D"mj-column-per-100 m=
+j-outlook-group-fix" style=3D"font-size:0px;text-align:left;direction:ltr;d=
+isplay:inline-block;vertical-align:top;width:100%;"><table border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbod=
+y><tr><td style=3D"vertical-align:top;padding:0;"><table border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody>=
+<tr><td align=3D"center" style=3D"font-size:0px;padding:0;word-break:break-=
+word;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pres=
+entation" style=3D"border-collapse:collapse;border-spacing:0px;"><tbody><tr=
+><td style=3D"width:600px;"><img height=3D"auto" src=3D"https://sg.robinhoo=
+d.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHstW-2BSod3qMWbkjIjpF3ybtPyVLy-2Fq=
+XOUTwdr9Y6GH96y-2BuOK6TmBff7nmuTL4U6iXrF1RUqFdxYLB5j8-2BV0MaK1PXtUQ6yX1vABF=
+8v3grYQWy4VO8xK3w6pUktMPruS1dTRhl25EM1ls7ZrfxfCPozbqgamc0d5ZnT4RaSHkp-2Fx3n=
+iB_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oE=
+XPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPt=
+uxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjc=
+flVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8I=
+MB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEo90y9uHRG4X7a6awjbtpjB=
+8FgnknXu-2BKdG-2BR3ME3KJdzhwq-2FvK-2FADJvihj6GOgPDJRoO9VE87dF1vrWc8aze01ivh=
+K-2BGcW5XDkiDRk7IxiAbYcbPwAk6ip6tErs5CO3952dIq86E2BDipITscoo4FFgw2PuFZ7D83M=
+Ldk106ehFE9pfHUOlw5-2BsC5ZP6q-2B8sm0Ot-2FJgRZd-2BKBZx3BUktI6ytjUbAYDrZOKsBt=
+Yd75IFz6dW8-2FOHiUw-2FRIHyANhZbH09sk0RU1Bd-2F0msz8luJHg-3D-3D style=3D"bord=
+er:0;display:block;outline:none;text-decoration:none;height:auto;width:100%=
+;font-size:13px;" width=3D"600"></td></tr></tbody></table></td></tr><tr><td=
+ align=3D"center" style=3D"font-size:0px;padding:0 10px;word-break:break-wo=
+rd;"><div style=3D"font-family:'Capsule Sans Text', Arial;font-size:13px;fo=
+nt-style:italic;font-weight:400;letter-spacing:-0.1px;line-height:153%;text=
+-align:center;color:#000000;"><p>11 minutes of ads (Matt Winkelmeyer/Getty =
+Images)</p></div></td></tr><tr><td style=3D"font-size:0px;word-break:break-=
+word;"><div style=3D"height:20px;line-height:20px;">&#8202;</div></td></tr>=
+</tbody></table></td></tr></tbody></table></div><!--[if mso | IE]></td></tr=
+></table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td=
+></tr></table><table align=3D"center" border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px;" width=
+=3D"600" bgcolor=3D"rgb(255, 255, 255)" ><tr><td style=3D"line-height:0px;f=
+ont-size:0px;mso-line-height-rule:exactly;"><![endif]--><div style=3D"backg=
+round:rgb(255, 255, 255);background-color:rgb(255, 255, 255);margin:0px aut=
+o;max-width:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" role=3D"presentation" style=3D"background:rgb(255, 255, 2=
+55);background-color:rgb(255, 255, 255);width:100%;"><tbody><tr><td style=
+=3D"direction:ltr;font-size:0px;padding:0 10px;text-align:center;"><!--[if =
+mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0"><tr><td class=3D"" style=3D"vertical-align:top;width:580px;" >=
+<![endif]--><div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"=
+font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-a=
+lign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" role=3D"presentation" width=3D"100%"><tbody><tr><td style=3D"vertical-al=
+ign:top;padding:0;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ role=3D"presentation" width=3D"100%"><tbody><tr><td align=3D"center" style=
+=3D"font-size:0px;padding:10px 25px;word-break:break-word;"><div style=3D"f=
+ont-family:'Capsule Sans Text', Arial;font-size:13px;line-height:1;text-ali=
+gn:center;color:#000000;">Yesterday=E2=80=99s Market Moves</div></td></tr><=
+tr><td style=3D"font-size:0px;word-break:break-word;"><div style=3D"height:=
+20px;line-height:20px;">&#8202;</div></td></tr><tr><td align=3D"left" class=
+=3D"desktop marketIndices" style=3D"font-size:0px;padding:0;word-break:brea=
+k-word;"><table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" border=
+=3D"0" style=3D"color:#000000;font-family:'Capsule Sans Text', Arial;font-s=
+ize:13px;line-height:22px;table-layout:auto;width:100%;border:none;"><tr><t=
+d><span class=3D"text" style=3D"font-family: 'Capsule Sans Text', Arial; fo=
+nt-size: 13px; line-height: 22px; padding: 0;">Dow Jones<br><span style=3D"=
+font-weight: 700;">32,561 <span style=3D"color: rgb(0, 200, 5);">(+0.98%)</=
+span></span></span></td><td><span class=3D"text" style=3D"font-family: 'Cap=
+sule Sans Text', Arial; font-size: 13px; line-height: 22px; padding: 0;">S&=
+P 500<br><span style=3D"font-weight: 700;">4,003 <span style=3D"color: rgb(=
+0, 200, 5);">(+1.30%)</span></span></span></td><td><span class=3D"text" sty=
+le=3D"font-family: 'Capsule Sans Text', Arial; font-size: 13px; line-height=
+: 22px; padding: 0;">Nasdaq<br><span style=3D"font-weight: 700;">11,860 <sp=
+an style=3D"color: rgb(0, 200, 5);">(+1.58%)</span></span></span></td><td><=
+span class=3D"text" style=3D"font-family: 'Capsule Sans Text', Arial; font-=
+size: 13px; line-height: 22px; padding: 0;">Bitcoin<br><span style=3D"font-=
+weight: 700;">$28,081 <span style=3D"color: rgb(0, 200, 5);">(+0.94%)</span=
+></span></span></td></tr></table></td></tr><!--[if !mso]><!--><tr><td align=
+=3D"left" class=3D"mobile marketIndices" style=3D"font-size:0px;padding:0;w=
+ord-break:break-word;"><table cellpadding=3D"0" cellspacing=3D"0" width=3D"=
+100%" border=3D"0" style=3D"color:#000000;font-family:'Capsule Sans Text', =
+Arial;font-size:13px;line-height:22px;table-layout:auto;width:100%;border:n=
+one;"><tr><td><span class=3D"text" style=3D"font-family: 'Capsule Sans Text=
+', Arial; font-size: 13px; line-height: 22px; padding: 0;">Dow Jones<br><sp=
+an style=3D"font-weight: 700;">32,561 <span style=3D"color: rgb(0, 200, 5);=
+">(+0.98%)</span></span></span></td><td><span class=3D"text" style=3D"font-=
+family: 'Capsule Sans Text', Arial; font-size: 13px; line-height: 22px; pad=
+ding: 0;">S&P 500<br><span style=3D"font-weight: 700;">4,003 <span style=3D=
+"color: rgb(0, 200, 5);">(+1.30%)</span></span></span></td></tr><tr><td><sp=
+an class=3D"text" style=3D"font-family: 'Capsule Sans Text', Arial; font-si=
+ze: 13px; line-height: 22px; padding: 0;">Nasdaq<br><span style=3D"font-wei=
+ght: 700;">11,860 <span style=3D"color: rgb(0, 200, 5);">(+1.58%)</span></s=
+pan></span></td><td><span class=3D"text" style=3D"font-family: 'Capsule San=
+s Text', Arial; font-size: 13px; line-height: 22px; padding: 0;">Bitcoin<br=
+><span style=3D"font-weight: 700;">$28,081 <span style=3D"color: rgb(0, 200=
+, 5);">(+0.94%)</span></span></span></td></tr></table></td></tr><!--<![endi=
+f]--></tbody></table></td></tr></tbody></table></div><!--[if mso | IE]></td=
+></tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]=
+></td></tr></table><table align=3D"center" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px;" wi=
+dth=3D"600" bgcolor=3D"rgb(255, 255, 255)" ><tr><td style=3D"line-height:0p=
+x;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><div style=3D"ba=
+ckground:rgb(255, 255, 255);background-color:rgb(255, 255, 255);margin:0px =
+auto;max-width:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" role=3D"presentation" style=3D"background:rgb(255, 255=
+, 255);background-color:rgb(255, 255, 255);width:100%;"><tbody><tr><td styl=
+e=3D"direction:ltr;font-size:0px;padding:27px 10px;text-align:center;"><!--=
+[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0"><tr><td class=3D"column-outlook" style=3D"vertical-align:t=
+op;width:580px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-gr=
+oup-fix column" style=3D"font-size:0px;text-align:left;direction:ltr;displa=
+y:inline-block;vertical-align:top;width:100%;"><table border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr=
+><td style=3D"vertical-align:top;padding:0;"><table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><=
+td align=3D"left" style=3D"font-size:0px;padding:0;word-break:break-word;">=
+<div style=3D"font-family:'Capsule Sans Text', Arial;font-size:15px;font-we=
+ight:400;letter-spacing:-0.1px;line-height:24px;text-align:left;color:#0000=
+00;"><p><strong>Hey Snackers,</strong></p><p><strong><a href=3D"https://sg.=
+robinhood.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHk6R8tCrM-2FUICq73HMQolwWb=
+zgxg8eaYc2MpL3P4V7ICtTDO_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0=
+uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK=
+460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhy=
+EQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZ=
+xrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXE=
+kV6Pyk5UTn0uzWAP-2BxHGR7junrjYQJrxeadQOTP78wgiTkO4Bv8H-2BtjcoeK0iqxYUo2vXnf=
+lO7sgndkLxn0tT9TfKvp8zvg3jyiMdPtof2EuKhF4rpBJKh6PYDHHFm3qhv5AYyWq6Fhjm8HiDE=
+LqwGylLbeSEX57lf8-2BGv0YyTMcfd26p3HzGRCuP0IMaVO6CKRcuutLjCMieiONcdD1fmcF8-2=
+BhyWN1zVM-2BPJcBV8KIc06xJas0ecm0xr8IvTOidT-2BAOfEwnTxq0nzkQLROGtQ-3D-3D sty=
+le=3D"color: rgb(0, 200, 5); text-decoration: underline; font-weight: bold;=
+ text-decoration-thickness: 2px; text-underline-offset: 1px;" target=3D"_bl=
+ank" rel=3D"noopener">Credit Suisse</a></strong> is staging a (fashion) com=
+eback: memorabilia featuring the bank&#39;s logo was listed for sale shortl=
+y after rival <strong><a href=3D"https://sg.robinhood.com/ls/click?upn=3D6f=
+ntGirSE5selsQKrSSUHk6R8tCrM-2FUICq73HMQolwVQv765FMQhxBoKgY2FffSynVwy_Q-2Flq=
+u7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZm=
+a-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAc=
+GEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKH=
+uwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJ=
+OoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXETjR-2Fx8zvA-2B3c3P37FILL0CoHHUa=
+-2FxM94iBq-2BYdoIkXCzH0PdzwQViQ5dIVPxVXJfPlKAAoHxBjDxZcpy897bujXE-2FYDnNBl7=
+aVVYG6JnqIhGceAZsUcj-2FjJZErn6YsAsphoiWKNN7386v5kxefOGPNwEptv1t3yRnBLHzBCG2=
+rbgyTacZpP6V2g7YOcwTT-2FPGRycAOJ0jH-2F3HpME534mi9rIAxuHhnRi69wwoX-2F9-2FSA-=
+2BnvXyTbovMzzJQCdZ73MbiQIyTmiDHPwoL3KTuNueyw-3D-3D style=3D"color: rgb(0, 2=
+00, 5); text-decoration: underline; font-weight: bold; text-decoration-thic=
+kness: 2px; text-underline-offset: 1px;" target=3D"_blank" rel=3D"noopener"=
+>UBS</a></strong> agreed to take it over. <strong>SVB</strong> swag was <em=
+>so</em> last week.</p><p>Stocks gained yesterday after Treasury Secretary =
+Janet Yellen said the US government could backstop more banks if needed. To=
+day, all eyes are on the Fed&#39;s important rate-hike decision.</p></div><=
+/td></tr><tr><td align=3D"center" class=3D"light" style=3D"font-size:0px;pa=
+dding:10px 25px;padding-top:24px;padding-right:0;padding-bottom:24px;paddin=
+g-left:0;word-break:break-word;"><p style=3D"border-top:solid 1px #e3e9ed;f=
+ont-size:1px;margin:0px auto;width:100%;"></p><!--[if mso | IE]><table alig=
+n=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"bord=
+er-top:solid 1px #e3e9ed;font-size:1px;margin:0px auto;width:580px;" role=
+=3D"presentation" width=3D"580px" ><tr><td style=3D"height:0;line-height:0;=
+"> &nbsp;
+</td></tr></table><![endif]--></td></tr></tbody></table></td></tr></tbody><=
+/table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tb=
+ody></table></div><!--[if mso | IE]></td></tr></table><![endif]--><!-- OPEN=
+_TRACKING_TAG --><!--[if mso | IE]><table align=3D"center" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"=
+width:600px;" width=3D"600" bgcolor=3D"rgb(255, 255, 255)" ><tr><td style=
+=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-=
+-><div style=3D"background:rgb(255, 255, 255);background-color:rgb(255, 255=
+, 255);margin:0px auto;max-width:600px;"><table align=3D"center" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"backg=
+round:rgb(255, 255, 255);background-color:rgb(255, 255, 255);width:100%;"><=
+tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:0 10px;text-alig=
+n:center;"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0"><tr><td class=3D"column-outlook" style=3D"v=
+ertical-align:top;width:580px;" ><![endif]--><div class=3D"mj-column-per-10=
+0 mj-outlook-group-fix column" style=3D"font-size:0px;text-align:left;direc=
+tion:ltr;display:inline-block;vertical-align:top;width:100%;"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"1=
+00%"><tbody><tr><td style=3D"vertical-align:top;padding:0;"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"1=
+00%"><tbody><tr><td align=3D"left" style=3D"font-size:0px;padding:0;word-br=
+eak:break-word;"><div style=3D"font-family:'Capsule Sans Text', Arial;font-=
+size:13px;line-height:15px;text-align:left;color:#000000;"><div style=3D"fo=
+nt-family: 'Capsule Sans Text', Arial; font-weight: 700; letter-spacing: 0.=
+03em; text-transform: uppercase; color: #000000; padding: 6px 19px; border-=
+radius: 30px; border: 0; background-color:rgb(195, 245, 60); display: inlin=
+e-block;">Play</div></div></td></tr></tbody></table></td></tr></tbody></tab=
+le></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody>=
+</table></div><!--[if mso | IE]></td></tr></table><table align=3D"center" b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presenta=
+tion" style=3D"width:600px;" width=3D"600" bgcolor=3D"rgb(255, 255, 255)" >=
+<tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly=
+;"><![endif]--><div style=3D"background:rgb(255, 255, 255);background-color=
+:rgb(255, 255, 255);margin:0px auto;max-width:600px;"><table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" s=
+tyle=3D"background:rgb(255, 255, 255);background-color:rgb(255, 255, 255);w=
+idth:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:0 1=
+0px 20px;text-align:center;"><!--[if mso | IE]><table role=3D"presentation"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"column-o=
+utlook article-outlook" style=3D"vertical-align:top;width:580px;" ><![endif=
+]--><div class=3D"mj-column-per-100 mj-outlook-group-fix column article" st=
+yle=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;ver=
+tical-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td style=3D"vert=
+ical-align:top;padding:0;"><table border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td align=3D"left" =
+class=3D"type-no-paragraph-margins" style=3D"font-size:0px;padding:0;paddin=
+g-top:24px;padding-bottom:12px;word-break:break-word;"><div style=3D"font-f=
+amily:'Nib Pro', Arial;font-size:24px;font-weight:600;line-height:32px;text=
+-align:left;color:#000000;"><p>As Netflix=E2=80=99s ad tier hits 1M subs, t=
+he streamer bets on games and blockbusters to lure fresh eyes</p></div></td=
+></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:0;word-break:br=
+eak-word;"><div style=3D"font-family:'Capsule Sans Text', Arial;font-size:1=
+5px;font-weight:400;letter-spacing:-0.1px;line-height:24px;text-align:left;=
+color:#000000;"><p><strong>12 hours of =E2=80=9COuter Banks=E2=80=9D=E2=80=
+=A6</strong> two hours of ads. <strong><a href=3D"https://sg.robinhood.com/=
+ls/click?upn=3D6fntGirSE5selsQKrSSUHk6R8tCrM-2FUICq73HMQolwUoMLmcmdv5GurZTe=
+B3ZXL3Nj27_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2F=
+Ox9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSj=
+hwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0ca=
+TI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56=
+QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXESfOCLGBE7OxA9Q=
+1A-2BZUQWHnfMD4-2Fq9qVinbvwfPYTTMneIW12ZHKYI7yUTT6coiLufYm-2BxqBTQy4RqGdBhY=
+UuRrmfh-2BIIWOLkSglTtuFt-2BScgKZ23brBr83RMTuKc3-2BLW4HY3yRE2uuHURLZ2i3zL-2F=
+3GwxIXM8YtEtCHLMuXe-2FYNK21mVDQPJKhLPYg0-2FD6DmGv3TaV43UcDZre9nEseOAWdZJuE3=
+uoKO-2BSIXMW6MxzLM-2FnXt16ad7xi0hCwcy-2FxA0Xa9uCRiSOCyqRc-2Fxqu-2BQ-3D-3D s=
+tyle=3D"color: rgb(0, 200, 5); text-decoration: underline; font-weight: bol=
+d; text-decoration-thickness: 2px; text-underline-offset: 1px;" target=3D"_=
+blank" rel=3D"noopener">Netflix</a>&#39;s</strong> ad tier is growing as mo=
+re Americans pivot to cheaper streaming options. Bloomberg <a href=3D"https=
+://sg.robinhood.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHjI4oHY3u2iOKr7TfJqY=
+8xYTokY4vnXQMOWo0rPfOJCgFQc2jUBXgdzZuI3vGY-2FrFoT7M4AiOMAfIDDq1xg6TifJ9Q2T9=
+FV7QEIkoB3pdGEP6PEknbGj4DxYP7x0EBAzj22KZ3jqsP8hQmh0zxgNVIc-3DP72o_Q-2Flqu7v=
+v4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2=
+BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEP=
+vM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI=
+-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoC=
+e846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEJMz6jQUrqgr0grCm9CIXpNUOWRL2JY9Fhc=
+Nct0K8xbaipYcshiXRBytfRmcByGkY8PE1zL3TFxacijBAu1DGy1ZfRE3ayqxZXg-2Fy132O2O-=
+2FtlHpGje3MX-2B83pmgiHewiKVSFASeV8RZfGYfwe3UNB7rH-2BlfE9c46pJfQRI4LWY-2FiDa=
+Rjw2yviUXPftG0zaHDOCEP-2FwUAjfOs7GQFqPkdkESXqNUJx7dNil-2Bux910IgYPXC4xs5Nx5=
+r32GRDeNGLw3cAl91NUA26Pr8vfW0dYDg-3D-3D style=3D"color: rgb(0, 200, 5); tex=
+t-decoration: underline; font-weight: bold; text-decoration-thickness: 2px;=
+ text-underline-offset: 1px;" target=3D"_blank" rel=3D"noopener">reported</=
+a> that the $7/month subscription hit 1M US users two months after launchin=
+g in November. While the #s are a drop in the popcorn bucket compared to Ne=
+tflix&#39;s 230M+ non-ad subs, they apparently topped advertisers=E2=80=99 =
+expectations.</p><ul style=3D"padding-left: 18px;"><li style=3D"margin-bott=
+om: 12px;"><p><strong>Adoption:</strong> In January 19% of new Netflix subs=
+cribers chose its ad tier. The ad-adoption is slower than that of its rival=
+s: 36% of new <strong><a href=3D"https://sg.robinhood.com/ls/click?upn=3D6f=
+ntGirSE5selsQKrSSUHk6R8tCrM-2FUICq73HMQolwUsIKpm2mpYZ1nP7Y4xBqGaa9DT_Q-2Flq=
+u7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZm=
+a-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAc=
+GEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKH=
+uwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJ=
+OoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEwKK1SnmwGUkm4Qc-2B-2FG-2F-2FyPq=
+8DS0qRthgjHAW8FMkIAzOYyiYbZVOLcPxC-2Fkh6U3i9C1IFiP7CT8U1qf8vMwJcCdYXV8f4U3t=
+-2Fe3oJKPwhGvZZNlOFjVld-2FIEa8P1QlTwY-2BynTMmTU4Ns4OxVBalU3wTrOvSS2opPAVomf=
+pUtpD0B-2BxrVHy-2BcE-2B-2BW-2FIBy8m7FbfMBPf8jaDBmhBpaVYpA8gBXHkKLd23prBnPPS=
+8ft6yBL-2BdhMYb1mXPYXSQcDooOOfwiGn6v8unviagLWfo5hQ-3D-3D style=3D"color: rg=
+b(0, 200, 5); text-decoration: underline; font-weight: bold; text-decoratio=
+n-thickness: 2px; text-underline-offset: 1px;" target=3D"_blank" rel=3D"noo=
+pener">Disney</a></strong>+ subscribers opted for ads after three months (a=
+nd 21% for HBO Max).</p></li><li style=3D"margin-bottom: 12px;"><p><strong>=
+#Subscripturation:</strong> The number of Americans who say streaming subsc=
+riptions are getting too pricey is up 50% since 2020, and nearly half of pe=
+ople in a recent <a href=3D"https://sg.robinhood.com/ls/click?upn=3D6fntGir=
+SE5selsQKrSSUHpQ0hmHSmuJXpHikkNaPXCSuxH36SCFpO7iAfre8vZ-2F0xS5r50s3DD0jC1wc=
+A4h6bv1nFPpydrvBuVH-2FSzvO4KQ-3DzRYc_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2=
+Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprD=
+FGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJ=
+HOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BD=
+xRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1=
+vghWa807nAXEFoLKK4nCMnZRDHGh7W4c-2FcqH86K2fdwpnubTXMGNyQp1WLuOrOSiXegZrJwTf=
+Q2jiWzoBmnKMmM6en34nDR-2FhDzF4hUXu0-2BIweZcFrPMRCeB2sso-2FJfoDtNOocjDD89Gyf=
+JIwksAN9d49-2FdzN1nwDAqrFcs0656Nqv-2FvTNFcqJHwYLMvZQLTDVZ-2BxF5Ql8bKm-2BiIY=
+aw3u-2ByU7d6X1OKdrTByoQgHzRNcWpLNdcM25fIC5CQ3O6hnSob7HuFwUIJKvicQqZuLuW571-=
+2FFFFxmV0w-3D-3D style=3D"color: rgb(0, 200, 5); text-decoration: underline=
+; font-weight: bold; text-decoration-thickness: 2px; text-underline-offset:=
+ 1px;" target=3D"_blank" rel=3D"noopener">survey</a> said they pay for stre=
+aming services they don=E2=80=99t use.</p></li></ul><p><strong>Brick-breaki=
+ng &amp; blockbusters=E2=80=A6</strong> Americans are bracing for Netflix=
+=E2=80=99s password-mooching crackdown (expected this month). Meanwhile, Ne=
+tflix needs to give 100M+ non-paying households a reason to pay for their o=
+wn accounts. Yesterday the streaming leader said it planned to release 40 n=
+ew in-app games this year, with 70 more in the works. It now has 55 games, =
+including a &quot;Too Hot to Handle&quot; spin-off that=E2=80=99s racked up=
+ 1M+ downloads. Netflix also <a href=3D"https://sg.robinhood.com/ls/click?u=
+pn=3D6fntGirSE5selsQKrSSUHkYJFA3tUXqLZNTmIOP1GJXsFcTVjYASTElCAL4F1PL7Lgaq6Q=
+rBa0c4d1GL1xF2Rij9jWCA3NNgJxc9BQwwaDaHO7xCHw3-2FTVFlrgmKzOID7k6-2BKmIT9EIfT=
+yXgnfz4o2fvV3LLo-2BeYqaotPVm1SOiARIodJT9tky1iUDAN2Cktbey5_Q-2Flqu7vv4WEwX7O=
+0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR04=
+6D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR=
+4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcC=
+ZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB=
+0ACsyYYf31m3mMnbM-2F1vghWa807nAXEF87dq-2FqgZRdgfPX6pgU9eoqUJLaE2rsY-2BzNqZH=
+qy0U1iFRMKQe2LQVZE-2FjGqE3lEVe0IdL7lV6AOPp6ZLG2lhGdx7D6cYtZv9BfNw4BT22KSoqi=
+pCZYYTBSUce5k0bASchPeJdj3Eucpm2fQefU0d7JFrNUEqWwmmL7wO-2F6-2FroTceza-2B0mVv=
+pl3VQfhYtKJWXcSlTEh3QS-2FnJEfS84nnvqRxxWXZtIh66iMB4vMLwQ2spysCIPPc9ArcdtSGz=
+3BPuThAlMutzxLBH2XoL2d4lA-3D-3D style=3D"color: rgb(0, 200, 5); text-decora=
+tion: underline; font-weight: bold; text-decoration-thickness: 2px; text-un=
+derline-offset: 1px;" target=3D"_blank" rel=3D"noopener">reportedly</a> pla=
+ns to splurge $200M+ on an original sci-fi flick (=E2=80=9CThe Electric Sta=
+te=E2=80=9D). The Chris Pratt and Millie Bobby Brown movie could spawn more=
+ games, shows, and merch.</p></div></td></tr><tr><td align=3D"left" style=
+=3D"font-size:0px;padding:0;padding-top:18px;word-break:break-word;"><div s=
+tyle=3D"font-family:'Capsule Sans Text', Arial;font-size:15px;font-weight:7=
+00;letter-spacing:0.5px;line-height:0;text-align:left;color:#000000;"><tabl=
+e><tbody><tr><td style=3D"padding: 0 8px 0 0; height: 17px;"><img src=3D"ht=
+tps://sg.robinhood.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHhlVHSZUg2RjnmzAA=
+NAYlJWW-2BL3K615wI-2BBU-2B7gW0-2Bz3231hEIrWUfN3ypik9VpmIfZW7EB0V5FZPohWmmIm=
+-2Bi8-3DVK3Y_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-=
+2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0R=
+SjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0=
+caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp=
+56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEMDjUc0G-2B9y=
+GFdVeeDLfJNRpukM5BcBzjIaOwpFrMuERVoC41CmE953B3PhDWv9J0d8FLxtGF1FpbPiNcswUBQ=
+b-2BKDP3YQbUnZazsEvpwhE09ODBHj-2Fqko9ZdnaC6l368u5D69yaJwxDnRaz4MoRqrNz1dDp6=
+qBWV49-2FEgvAPXALW-2Bu8Qkt4hSN6qVUjtkItnASyOIr-2BsfCnSKcrPCLDWQr-2FUy2Gvl-2=
+BcVYhGKuXaUS66-2BXslsWY0dxXdUmDgeo93392OXmmRR0ALU8yhPs-2Bf6HA-3D-3D width=
+=3D"17px" height=3D"17px"></td><td style=3D"font-weight: 700; width: 100%; =
+padding: 0; height: 17px; line-height: 0; padding-top: 1px;">THE TAKEAWAY</=
+td></tr></tbody></table></div></td></tr><tr><td align=3D"left" style=3D"fon=
+t-size:0px;padding:0;word-break:break-word;"><div style=3D"font-family:'Cap=
+sule Sans Text', Arial;font-size:15px;font-weight:400;letter-spacing:-0.1px=
+;line-height:24px;text-align:left;color:#000000;"><p><strong>The biggest te=
+st is still ahead=E2=80=A6</strong> So far, Netflix has rolled out its pass=
+word crackdown only in a handful of countries, including Spain and Canada =
+=E2=80=94 but complaints are already flooding in. Still, the end of moochin=
+g could mean more ad-tier subs. Netflix hopes that if users are price-sensi=
+tive enough to =E2=80=9Cshare=E2=80=9D accounts with an ex, they might be w=
+illing to shell out $7 for ad-Flix. Especially if there are more reasons to=
+ tune in.</p></div></td></tr><tr><td align=3D"center" class=3D"light" style=
+=3D"font-size:0px;padding:10px 25px;padding-top:24px;padding-right:0;paddin=
+g-bottom:24px;padding-left:0;word-break:break-word;"><p style=3D"border-top=
+:solid 1px #e3e9ed;font-size:1px;margin:0px auto;width:100%;"></p><!--[if m=
+so | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-top:solid 1px #e3e9ed;font-size:1px;margin:0px auto;=
+width:580px;" role=3D"presentation" width=3D"580px" ><tr><td style=3D"heigh=
+t:0;line-height:0;"> &nbsp;
+</td></tr></table><![endif]--></td></tr></tbody></table></td></tr></tbody><=
+/table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tb=
+ody></table></div><!--[if mso | IE]></td></tr></table><table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"pres=
+entation" style=3D"width:600px;" width=3D"600" bgcolor=3D"rgb(255, 255, 255=
+)" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exa=
+ctly;"><![endif]--><div style=3D"background:rgb(255, 255, 255);background-c=
+olor:rgb(255, 255, 255);margin:0px auto;max-width:600px;"><table align=3D"c=
+enter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"background:rgb(255, 255, 255);background-color:rgb(255, 255, 25=
+5);width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding=
+:0 10px;text-align:center;"><!--[if mso | IE]><table role=3D"presentation" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"column-ou=
+tlook" style=3D"vertical-align:top;width:580px;" ><![endif]--><div class=3D=
+"mj-column-per-100 mj-outlook-group-fix column" style=3D"font-size:0px;text=
+-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100=
+%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"present=
+ation" width=3D"100%"><tbody><tr><td style=3D"vertical-align:top;padding:0;=
+"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentat=
+ion" width=3D"100%"><tbody><tr><td align=3D"left" style=3D"font-size:0px;pa=
+dding:0;word-break:break-word;"><div style=3D"font-family:'Capsule Sans Tex=
+t', Arial;font-size:13px;line-height:15px;text-align:left;color:#000000;"><=
+div style=3D"font-family: 'Capsule Sans Text', Arial; font-weight: 700; let=
+ter-spacing: 0.03em; text-transform: uppercase; color: #000000; padding: 6p=
+x 19px; border-radius: 30px; border: 0; background-color:rgb(195, 245, 60);=
+ display: inline-block;">Private</div></div></td></tr></tbody></table></td>=
+</tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]-->=
+</td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><table =
+align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"=
+" role=3D"presentation" style=3D"width:600px;" width=3D"600" bgcolor=3D"rgb=
+(255, 255, 255)" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-h=
+eight-rule:exactly;"><![endif]--><div style=3D"background:rgb(255, 255, 255=
+);background-color:rgb(255, 255, 255);margin:0px auto;max-width:600px;"><ta=
+ble align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"background:rgb(255, 255, 255);background-color:r=
+gb(255, 255, 255);width:100%;"><tbody><tr><td style=3D"direction:ltr;font-s=
+ize:0px;padding:0 10px 20px;text-align:center;"><!--[if mso | IE]><table ro=
+le=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><t=
+d class=3D"column-outlook article-outlook" style=3D"vertical-align:top;widt=
+h:580px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-group-fix=
+ column article" style=3D"font-size:0px;text-align:left;direction:ltr;displ=
+ay:inline-block;vertical-align:top;width:100%;"><table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><t=
+r><td style=3D"vertical-align:top;padding:0;"><table border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr>=
+<td align=3D"left" class=3D"type-no-paragraph-margins" style=3D"font-size:0=
+px;padding:0;padding-top:24px;padding-bottom:12px;word-break:break-word;"><=
+div style=3D"font-family:'Nib Pro', Arial;font-size:24px;font-weight:600;li=
+ne-height:32px;text-align:left;color:#000000;"><p>Semi-private-flight compa=
+nies like JSX take off as passengers seek a =E2=80=9CGoldilocks option=E2=
+=80=9D</p></div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;pad=
+ding:0;word-break:break-word;"><div style=3D"font-family:'Capsule Sans Text=
+', Arial;font-size:15px;font-weight:400;letter-spacing:-0.1px;line-height:2=
+4px;text-align:left;color:#000000;"><p><strong>Arrived 20 minutes before ta=
+keoff=E2=80=A6</strong> didn=E2=80=99t even fly private. Semi-private fligh=
+ts (think: 15 to 30 passengers) have gained traction since the pandemic beg=
+an, as germ fears led some travelers to seek out less crowded options. Thes=
+e flights aren=E2=80=99t regulated by the TSA and typically depart from pri=
+vate terminals, so security is much quicker.</p><ul style=3D"padding-left: =
+18px;"><li style=3D"margin-bottom: 12px;"><p><strong>While these semi-priva=
+te perks sound pricey,</strong> some companies are offering them for prices=
+ comparable to first class or even economy.</p></li><li style=3D"margin-bot=
+tom: 12px;"><p><strong>For example,</strong> <strong>JSX</strong> offers a =
+round trip from Los Angeles to Vegas for under $200. Or an Austin-Dallas ro=
+undtrip for $170. Luxury rivals like <strong>Aero</strong>, <strong>Tradewi=
+nd</strong>, and <strong>Set Jet</strong> are more comparable to first-clas=
+s prices.</p></li><li style=3D"margin-bottom: 12px;"><p><strong>Sweeteners:=
+</strong> JSX passengers can valet their cars at the airport and hop on a 3=
+0-seat jet (with their pet) just 20 minutes before takeoff. JSX says it=E2=
+=80=99s the first air carrier to roll out in-flight WiFi from <strong>Space=
+X=E2=80=99s</strong> Starlink satellites.</p></li><li style=3D"margin-botto=
+m: 12px;"><p><strong>Downsides:</strong> These companies have a limited num=
+ber of routes (nothing near commercial airlines). And they=E2=80=99re typic=
+ally pricier than a regular flight.</p></li></ul><p><strong>Not too hot, no=
+t too cold=E2=80=A6</strong> Most folks can=E2=80=99t afford a first-class =
+ticket, much less a private plane. But most people <em>also</em> hate being=
+ sandwiched in the middle seat in economy and would rather skip long TSA li=
+nes. Travelers are also tired of thousands of cancellations and delays from=
+ major airlines. Semi-private flights offer a Goldilocks option between fly=
+ing private and flying commercial.</p></div></td></tr><tr><td align=3D"left=
+" style=3D"font-size:0px;padding:0;padding-top:18px;word-break:break-word;"=
+><div style=3D"font-family:'Capsule Sans Text', Arial;font-size:15px;font-w=
+eight:700;letter-spacing:0.5px;line-height:0;text-align:left;color:#000000;=
+"><table><tbody><tr><td style=3D"padding: 0 8px 0 0; height: 17px;"><img sr=
+c=3D"https://sg.robinhood.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHhlVHSZUg2=
+RjnmzAANAYlJWW-2BL3K615wI-2BBU-2B7gW0-2Bz3231hEIrWUfN3ypik9VpmIfZW7EB0V5FZP=
+ohWmmIm-2Bi8-3D_dSA_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0A=
+rFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460Wc=
+vFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRT=
+OUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvp=
+Cih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEk4DG8=
+0cTqzhrMtqI02CpE7-2B3t6JgF4gaNgdqJStfmmEQ5GFsbI8CT24aMhmEJYqC0mE-2FBNUBeKJc=
+VU9D1-2FRsjX1VzWvzzIJYGhn3diuiJ2XTMBn3HUnXD8E4sBjEQZL2lqL7lZLPRrobZw35toM-2=
+Bo8YqAhcpeId2xwd1baIwjmv366T7udBRFdypC-2Ba7Ck1G64n-2FIKcZsoGjEBRuLqvpPXrBEO=
+1ruH4ugNz-2BghnqshPUaT7woAr7AxX55KgVPRuRPLSpOs9sjtPH22RJAPBk6A-3D-3D width=
+=3D"17px" height=3D"17px"></td><td style=3D"font-weight: 700; width: 100%; =
+padding: 0; height: 17px; line-height: 0; padding-top: 1px;">THE TAKEAWAY</=
+td></tr></tbody></table></div></td></tr><tr><td align=3D"left" style=3D"fon=
+t-size:0px;padding:0;word-break:break-word;"><div style=3D"font-family:'Cap=
+sule Sans Text', Arial;font-size:15px;font-weight:400;letter-spacing:-0.1px=
+;line-height:24px;text-align:left;color:#000000;"><p><strong>=E2=80=9CToo g=
+ood to be true=E2=80=9D is hard to maintain=E2=80=A6</strong> There=E2=80=
+=99s a reason airlines squeeze us in like sardines: $$. Planes are expensiv=
+e to fly and maintain, and 30-person flights at commercial prices don=E2=80=
+=99t seem like sustainable moneymakers. To expand its routes, JSX said it=
+=E2=80=99s going to add a new aircraft to its fleet every six weeks. These =
+companies are cruising in growth mode, but they might have to lift prices t=
+o lengthen their runway.</p></div></td></tr><tr><td align=3D"center" class=
+=3D"light" style=3D"font-size:0px;padding:10px 25px;padding-top:24px;paddin=
+g-right:0;padding-bottom:24px;padding-left:0;word-break:break-word;"><p sty=
+le=3D"border-top:solid 1px #e3e9ed;font-size:1px;margin:0px auto;width:100%=
+;"></p><!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"border-top:solid 1px #e3e9ed;font-size:1p=
+x;margin:0px auto;width:580px;" role=3D"presentation" width=3D"580px" ><tr>=
+<td style=3D"height:0;line-height:0;"> &nbsp;
+</td></tr></table><![endif]--></td></tr></tbody></table></td></tr></tbody><=
+/table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tb=
+ody></table></div><!--[if mso | IE]></td></tr></table><table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"pres=
+entation" style=3D"width:600px;" width=3D"600" bgcolor=3D"rgb(255, 255, 255=
+)" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exa=
+ctly;"><![endif]--><div style=3D"background:rgb(255, 255, 255);background-c=
+olor:rgb(255, 255, 255);margin:0px auto;max-width:600px;"><table align=3D"c=
+enter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"background:rgb(255, 255, 255);background-color:rgb(255, 255, 25=
+5);width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding=
+:0 10px;text-align:center;"><!--[if mso | IE]><table role=3D"presentation" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"column-ou=
+tlook" style=3D"vertical-align:top;width:580px;" ><![endif]--><div class=3D=
+"mj-column-per-100 mj-outlook-group-fix column" style=3D"font-size:0px;text=
+-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100=
+%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"present=
+ation" width=3D"100%"><tbody><tr><td style=3D"vertical-align:top;padding:0;=
+"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentat=
+ion" width=3D"100%"><tbody><tr><td align=3D"left" style=3D"font-size:0px;pa=
+dding:0;word-break:break-word;"><div style=3D"font-family:'Capsule Sans Tex=
+t', Arial;font-size:13px;line-height:15px;text-align:left;color:#000000;"><=
+div style=3D"font-family: 'Capsule Sans Text', Arial; font-weight: 700; let=
+ter-spacing: 0.03em; text-transform: uppercase; color: #000000; padding: 6p=
+x 19px; border-radius: 30px; border: 0; background-color:rgb(195, 245, 60);=
+ display: inline-block;">DEFI(NE)</div></div></td></tr></tbody></table></td=
+></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--=
+></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><table=
+ align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D=
+"" role=3D"presentation" style=3D"width:600px;" width=3D"600" bgcolor=3D"rg=
+b(255, 255, 255)" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-=
+height-rule:exactly;"><![endif]--><div style=3D"background:rgb(255, 255, 25=
+5);background-color:rgb(255, 255, 255);margin:0px auto;max-width:600px;"><t=
+able align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"background:rgb(255, 255, 255);background-color:r=
+gb(255, 255, 255);width:100%;"><tbody><tr><td style=3D"direction:ltr;font-s=
+ize:0px;padding:0 10px 20px;text-align:center;"><!--[if mso | IE]><table ro=
+le=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><t=
+d class=3D"column-outlook article-outlook" style=3D"vertical-align:top;widt=
+h:580px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-group-fix=
+ column article" style=3D"font-size:0px;text-align:left;direction:ltr;displ=
+ay:inline-block;vertical-align:top;width:100%;"><table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><t=
+r><td style=3D"vertical-align:top;padding:0;"><table border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr>=
+<td align=3D"left" class=3D"type-no-paragraph-margins" style=3D"font-size:0=
+px;padding:0;padding-top:24px;padding-bottom:12px;word-break:break-word;"><=
+div style=3D"font-family:'Nib Pro', Arial;font-size:24px;font-weight:600;li=
+ne-height:32px;text-align:left;color:#000000;"><p>Heard on the Block: &quot=
+;layer 2&quot;</p></div></td></tr><tr><td align=3D"left" style=3D"font-size=
+:0px;padding:0;word-break:break-word;"><div style=3D"font-family:'Capsule S=
+ans Text', Arial;font-size:15px;font-weight:400;letter-spacing:-0.1px;line-=
+height:24px;text-align:left;color:#000000;"><p>=F0=9F=9B=A3=EF=B8=8F <em>Li=
+ke an elevated highway built over a cobblestoned road=E2=80=A6</em></p><p>L=
+ayer-1 blockchains like <strong><a href=3D"https://sg.robinhood.com/ls/clic=
+k?upn=3D6fntGirSE5selsQKrSSUHp8moFAngD2hO-2B8hAHAWLIMrQmYhPMZiFkdM-2FOcgC-2=
+BmTMSBO_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9=
+Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL=
+6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3=
+KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIB=
+Btb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXElUR94VvGT-2B6YvuQ=
+GL1XlI1-2BOoDrfNSGemXY-2BcFo-2BL7K402DvVNI-2B3au6E9JegWqH0gsoEX3imPFlwg282R=
+SfnQFfWPp9rRvWvB6uTTkoBWIYtrU6iSTCpIsn4MKVBaBxh6HYrQjXhLrU9OLcGOC0SxrIxaXxA=
+j57wAw51eqoFgju5s4ysrL-2FJBXnMnAzhX2beM7d5QjYOJftm9k09NSa3YTT0OCY2L7OSEJeLq=
+xlPy60HyrkGCw3MSxABTWBwVsfxM9VNikZm2FN-2FuaMrLqNsw-3D-3D style=3D"color: rg=
+b(0, 200, 5); text-decoration: underline; font-weight: bold; text-decoratio=
+n-thickness: 2px; text-underline-offset: 1px;" target=3D"_blank" rel=3D"noo=
+pener">ethereum</a></strong> and <strong><a href=3D"https://sg.robinhood.co=
+m/ls/click?upn=3D6fntGirSE5selsQKrSSUHp8moFAngD2hO-2B8hAHAWLIMpSEpGtYYt9cpl=
+VU2N2pYaHFn7_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-=
+2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0R=
+SjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0=
+caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp=
+56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXErEDH52WCjDRk=
+qNi7-2B4E5g3SjvtdhDnDbab39cHIAt7dVvh6IpCBVNrFoZtwVdQM7jTbzeUWDwmMSgifDy5fqk=
+sgwN7PlGMROIZza1-2BT-2F5A1HFX4L8-2BsQDWxDD5s3dTCxnRzPLsUFFuztsAI-2Bp1WNatEP=
+2gkH2FPbJ-2BQ9TVDY9gl5LkvDKL2dMR1eQgNKAjdrsachIvvh35IxW192hn0LteD-2B4G6HFNX=
+9Rsy-2BHg-2B-2Fm4C8Sy8SE5-2BPrhk5ybuTGFVJBtouqT6tSbR3dCjVIaPv5Q-3D-3D style=
+=3D"color: rgb(0, 200, 5); text-decoration: underline; font-weight: bold; t=
+ext-decoration-thickness: 2px; text-underline-offset: 1px;" target=3D"_blan=
+k" rel=3D"noopener">bitcoin</a></strong> have gotten flak for slow transact=
+ions and high fees. <strong>Layer-2</strong> networks are designed to be fa=
+ster and cheaper: they let users make crypto transactions <em>outside</em> =
+the main chains, batch them up, and then report them back to L1s. <strong>A=
+rbitrum</strong>, a leading ethereum L2, is set to <a href=3D"https://sg.ro=
+binhood.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHqr2Z-2BOskJVdINsdBUcR6H-2B9=
+pGmnPXUAMGp-2FHXeXSaY1a0Pos8sQhlku94UO5icfwARVojILTWvzcgk4crX8VwjezWCYjrqCc=
+plDxPPtYHcbK-2F0xX4fAnJDvrtu3fel1Zw-3D-3DiQWu_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-=
+2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM=
+-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3=
+-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKs=
+icNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3=
+mMnbM-2F1vghWa807nAXEIiC567BBQRlEh05wROQoOvPklg-2FC-2BdACJP2a2lkNSHP715S9dY=
+rmOIax9XgMKTGZL3gE9P-2F-2BEbSP9G8Tbl7OOSy8foZCMZXtqOEDCOOBrFz2m51sB-2BN-2Bv=
+74Jb2qoajKiRGKiL87kM9EKzF5qKsnZLtbVG-2BAYIRaGMZUIPpLNoo7xhLXgznFxpuE2Bh9y53=
+04LIyZlm35C1AwwnB5A4jueoiUru0o2qq09tKuv2qg5eZSAyuwi50bXMtRKszH74-2F3khhVwQP=
+yE-2F36EezckwXSMQ-3D-3D style=3D"color: rgb(0, 200, 5); text-decoration: un=
+derline; font-weight: bold; text-decoration-thickness: 2px; text-underline-=
+offset: 1px;" target=3D"_blank" rel=3D"noopener">launch</a> a hotly anticip=
+ated token tomorrow that=E2=80=99ll give holders the ability to vote on cha=
+nges to its network.</p></div></td></tr><tr><td align=3D"center" class=3D"l=
+ight" style=3D"font-size:0px;padding:10px 25px;padding-top:24px;padding-rig=
+ht:0;padding-bottom:24px;padding-left:0;word-break:break-word;"><p style=3D=
+"border-top:solid 1px #e3e9ed;font-size:1px;margin:0px auto;width:100%;"></=
+p><!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" style=3D"border-top:solid 1px #e3e9ed;font-size:1px;margi=
+n:0px auto;width:580px;" role=3D"presentation" width=3D"580px" ><tr><td sty=
+le=3D"height:0;line-height:0;"> &nbsp;
+</td></tr></table><![endif]--></td></tr></tbody></table></td></tr></tbody><=
+/table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tb=
+ody></table></div><!--[if mso | IE]></td></tr></table><table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"pres=
+entation" style=3D"width:600px;" width=3D"600" bgcolor=3D"rgb(255, 255, 255=
+)" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exa=
+ctly;"><![endif]--><div style=3D"background:rgb(255, 255, 255);background-c=
+olor:rgb(255, 255, 255);margin:0px auto;max-width:600px;"><table align=3D"c=
+enter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"background:rgb(255, 255, 255);background-color:rgb(255, 255, 25=
+5);width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding=
+:0 10px 18px 10px;text-align:center;"><!--[if mso | IE]><table role=3D"pres=
+entation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D=
+"column-outlook" style=3D"vertical-align:top;width:580px;" ><![endif]--><di=
+v class=3D"mj-column-per-100 mj-outlook-group-fix column" style=3D"font-siz=
+e:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top=
+;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" width=3D"100%"><tbody><tr><td style=3D"vertical-align:top=
+;padding:0;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" width=3D"100%"><tbody><tr><td align=3D"left" style=3D"fon=
+t-size:0px;padding:0;word-break:break-word;"><div style=3D"font-family:'Nib=
+ Pro', Arial;font-size:24px;font-weight:600;line-height:32px;text-align:lef=
+t;color:#000000;">What else we're Snackin'</div></td></tr><tr><td align=3D"=
+left" style=3D"font-size:0px;padding:0;padding-top:12px;word-break:break-wo=
+rd;"><div style=3D"font-family:'Capsule Sans Text', Arial;font-size:15px;fo=
+nt-weight:400;letter-spacing:-0.1px;line-height:24px;text-align:left;color:=
+#000000;"><ul style=3D"padding-left: 18px;"><li style=3D"margin-bottom: 12p=
+x;"><p><strong><a href=3D"https://sg.robinhood.com/ls/click?upn=3D6fntGirSE=
+5selsQKrSSUHqKeH-2FmzTmoP04MXGd9pfJIqGN-2FPV-2ByUclTtSB1WeeLr2cgHezNU6q-2FS=
+vrCcQDvG7rTWctRi48bNFGvQzNxQHPKjbN-2FAa8buYRqATCvLKYqEf9TVa02WTpOC-2BI9S0NY=
+mBg-3D-3DX-c9_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep=
+-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0=
+RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk=
+0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2F=
+p56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXExRe-2BBvEO5=
+uRj-2FSXR-2FKD8GJmqo3Ry3uZfUodYBl9-2B8ZgcO-2FKflOCFKZ8mfc1zynBqnqp4GditAYU4=
+cqiOqQaF3-2BesDtLYcNd6ld3UPk6vDZQuOjmqKVHBKjzPMKmEg-2BA41gCoi-2FWiwDn8ICkYF=
+MLTa1Wm56p7dlYuTtFQGzOj5FRGcxuq68IakRHx-2BmAWWNbwcjb1TX3SJHtMNx1nHixp3R3zeK=
+OYVFaFmWOO0N0XiADL3Xhr4OdZW6Yvww7i-2Fl6-2FdnWk-2B-2FU38aiyn35KSuPflQ-3D-3D =
+style=3D"color: rgb(0, 200, 5); text-decoration: underline; font-weight: bo=
+ld; text-decoration-thickness: 2px; text-underline-offset: 1px;" target=3D"=
+_blank" rel=3D"noopener">TikTalk</a>:</strong> <strong>TikTok</strong> CEO =
+Shou Zi Chew is set to testify in front of US lawmakers tomorrow as officia=
+ls debate banning the app. Yesterday Chew asked the platform&#39;s 150M US =
+users to speak up in defense of the Tok.</p></li><li style=3D"margin-bottom=
+: 12px;"><p><strong><a href=3D"https://sg.robinhood.com/ls/click?upn=3D6fnt=
+GirSE5selsQKrSSUHqKeH-2FmzTmoP04MXGd9pfJJ4VjL8vV7hEgi54A57-2F9bkUJsd2I1O8d3=
+8v3KVqKTkN7MPWKiguRmCwhhHTeVz6bg-3D9C5K_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuw=
+g-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2Bnow=
+prDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDH=
+woJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-=
+2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-=
+2F1vghWa807nAXEGyvHVTZ1QW4Kp7YPhDpYQb-2BsSzblxr8Ikp70N3dOVqlmsKgVMKmx2zP2H2=
+PXTwe2o3abY5HaJI3ci8L7eiF84RnvhixnK-2FPBvQnAovGluYAmasEW2lVSE-2BjKsLaQ1UXrF=
+Vg2JVjlTcW6B2g6jsIpQiFotJzv0M1nIqEuncNF6CcbXK2GEfODbznFmde1cet3143i4z4VN7yZ=
+bGo-2Bz8zYMy1e38fs7mB-2BHr7MEtz9S7R1f7tsBEqrOLF6G-2F4w0eTwUiGjTXSLyytj521gn=
+6DCrw-3D-3D style=3D"color: rgb(0, 200, 5); text-decoration: underline; fon=
+t-weight: bold; text-decoration-thickness: 2px; text-underline-offset: 1px;=
+" target=3D"_blank" rel=3D"noopener">GamePop</a>:</strong> <strong><a href=
+=3D"https://sg.robinhood.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHk6R8tCrM-2=
+FUICq73HMQolwWFKEPB0CbRdkw0ZiLci7Pc2gmB_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuw=
+g-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2Bnow=
+prDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDH=
+woJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-=
+2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-=
+2F1vghWa807nAXEjQRHaSW5zs-2FT-2BUl0JhPgSiz2EJ07t3i9LCGfCbWvRtKt96AgCMbNbbgc=
+fKcvNbpzq13Bc11vDcujl4qNV23pY7ZEWmSgN71Xk4tgWU7liA7wd5CMfdweVgDwgJrGyqudRLW=
+rsNX2TEqSMUxb8RfgCDLoCB3vyArE-2F-2F5Ejxn-2BZWfOwD-2BUXIoVrpnAYKeHWt-2F0ZwvM=
+6aOn3vcr9zYwCK9JBA3mKKxEMUNTTGjoQKQ7dI3m1PqXNNvs4KusNV2lLST1pv8SX7f9Xggq2Xy=
+BC013cA-3D-3D style=3D"color: rgb(0, 200, 5); text-decoration: underline; f=
+ont-weight: bold; text-decoration-thickness: 2px; text-underline-offset: 1p=
+x;" target=3D"_blank" rel=3D"noopener">GameStop</a></strong> reported a qua=
+rterly profit for the first time in two years. Though sales dipped, the bri=
+ck-and-mortar chain cut costs by laying off employees and homing in on =E2=
+=80=9Coperational efficiency.=E2=80=9D</p></li><li style=3D"margin-bottom: =
+12px;"><p><strong><a href=3D"https://sg.robinhood.com/ls/click?upn=3D6fntGi=
+rSE5selsQKrSSUHkYJFA3tUXqLZNTmIOP1GJWqBnOb9FHf45f9-2FGQ0nFqyBu3-2B-2BhO5r0D=
+gIZpTZlefWOq1viuqEKP1wp-2B-2BfJFtzMdIZiUGdhqNRtowWQBZ1vA-2B2dntdZ9y0BuL0LKd=
+MqnsEw-3D-3D6Jbf_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFO=
+wep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFl=
+JO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUT=
+DPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih=
+-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEJB8li5yY=
+1EHB0iDnp3RE-2BNAD8jdqEhkarjx5sYsfAAsGoceqyDFAgfT6JSp6rGIP2PNPSHG16ysEOxNv5=
+8ATqwbcSIr-2BWvnofMd8zJx3Kng1EW4QLUF1oNFe4yTbCxt7S-2BUUXJpG0dJ21SLyG0cm81dM=
+LMg3MquJHOSLK5n6VmPYe-2Be-2Bxce2DllyaXrnDUY51Mz1fK0uhdDJ1swkcXNWPXuxQbnX5l8=
+JLbY4Z31dTCkG-2Bt25jbYF5Sk0WC4X6-2FBBbjYEi8u4UTl3Z4pTctaMiA-3D-3D style=3D"=
+color: rgb(0, 200, 5); text-decoration: underline; font-weight: bold; text-=
+decoration-thickness: 2px; text-underline-offset: 1px;" target=3D"_blank" r=
+el=3D"noopener">SearchAI</a>:</strong> <strong><a href=3D"https://sg.robinh=
+ood.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHk6R8tCrM-2FUICq73HMQolwXXJ1-2FX=
+yMq0jVpR9nE9TVOA2lcq_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0=
+ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460W=
+cvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBR=
+TOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzv=
+pCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEAc44=
+V8e8T1XfdjIoblWCA4VC0E9X-2B9U9orT3cqNAyv6jFrKccWgwxWsZ-2BBkEoguEyO4FKUNkbo9=
+vW7Pba2J8t-2B1ArDAM-2FuM5LMsLdorA9k-2BGfnolfe0S8HoHu3dEet5kLBlw1rfGVqV1O18d=
+FlRTTQttktBPlWhtbUf7Syo1Oo-2FTkzsuKyTyvN64IRIF055fSArHzcO1I0SdqMUUmSoYMHgTw=
+3RBisKoffTpJILMGcL3Jy1ytBlcm5DkFq-2Fh4CvNo-2FlLYCb5DiibpXz8rVxsZQ-3D-3D sty=
+le=3D"color: rgb(0, 200, 5); text-decoration: underline; font-weight: bold;=
+ text-decoration-thickness: 2px; text-underline-offset: 1px;" target=3D"_bl=
+ank" rel=3D"noopener">Google</a></strong> opened a waitlist for its ChatGPT=
+ rival Bard. Last month <strong><a href=3D"https://sg.robinhood.com/ls/clic=
+k?upn=3D6fntGirSE5selsQKrSSUHk6R8tCrM-2FUICq73HMQolwVQ6q-2BqeuvNrjgdqPkI3aT=
+m5mvS_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx=
+5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6U=
+OPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KV=
+mjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBt=
+b8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEnM7n7JPvkDE12ogVFFo=
+wFWZhuFkzLs42miK4F-2BLkLCNJdCWQJPkTggtfMtzZRgsDy68ML58-2BYSQaaEYJTp93rMj3w6=
+6oea1VE589veR4460HtwCAK7xuzZoWeE2Ac5kf3xM6TH-2BATERbJ2XNy3mv-2BAz4Y9HrgUDFP=
+n-2B3T0Mogt2O2JMmL2X3QmyURdZxHEepBQMs-2BFee3Ns-2B6d-2FjDsfRoaHLxDB-2F-2BXBS=
+Vq9B8ZSwwaZ54-2F2Fj0tBbRW5ZDLQ1svVcEkidSTdZDbX-2B1tz10d5eA-3D-3D style=3D"c=
+olor: rgb(0, 200, 5); text-decoration: underline; font-weight: bold; text-d=
+ecoration-thickness: 2px; text-underline-offset: 1px;" target=3D"_blank" re=
+l=3D"noopener">Microsoft</a></strong> incorporated ChatGPT into its Bing se=
+arch engine in what=E2=80=99s seen as a big threat to Google&#39;s search d=
+ominance.</p></li><li style=3D"margin-bottom: 12px;"><p><strong><a href=3D"=
+https://sg.robinhood.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHkYJFA3tUXqLZNT=
+mIOP1GJX0FBP-2FYluu3pr82NQl5U3yMHI4szLUF6SvXWdmqNA1zDiCc3T82SvUMXufT2AJDKj3=
+vDValHz6BZn0aGWdEQ9Byt1OwAyT5I6byobqTrlG3A-3D-3D9RJu_Q-2Flqu7vv4WEwX7O0huvL=
+nV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2B=
+t9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMh=
+A6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcU=
+ZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsy=
+YYf31m3mMnbM-2F1vghWa807nAXEa24Y9T-2B4hi6U6df2ZPP7vMZdDOvS9m022UMXmfK5mmKZT=
+AVrEkHckqcwYK9Rn2UdlIuQca-2FxCpWm11TIMGdsdR2j2K7YlMh1q0NmY2OhRhUcXoG37GVpUu=
+bCUxY3lOo3Sfz2Jb54Qzm1Yp4XMMLv6QuraGRv6rfLPtvQNNcXuG-2FdFI4bV6Qs3LM1hYJHG51=
+gGtIRosN26HxwD6cKPeP0JvTs-2FUczGtMfAAW-2BIqn52LgXgb9VhHEaU2p0F9cpELu9SeB9Al=
+dZzD-2B8g3yuXepy-2FA-3D-3D style=3D"color: rgb(0, 200, 5); text-decoration:=
+ underline; font-weight: bold; text-decoration-thickness: 2px; text-underli=
+ne-offset: 1px;" target=3D"_blank" rel=3D"noopener">Housed</a>:</strong> Ex=
+isting-home sales jumped 14.5% last month as February year-over-year prices=
+ ticked down for the first time in 11 years. Meanwhile, mortgage rates fell=
+ last week ahead of spring (aka: peak home-buying szn).</p></li><li style=
+=3D"margin-bottom: 12px;"><p><strong><a href=3D"https://sg.robinhood.com/ls=
+/click?upn=3D6fntGirSE5selsQKrSSUHjI4oHY3u2iOKr7TfJqY8xZFQzQo9oFKCbcPNgr2Ej=
+PFLYCDKkBuaMJibb1NWQmGT2cYMEawUoY1BgKsgTSLC7vSuQoF3zcUIM9syvyHsgS3OH9zyiGAB=
+0HsiIccMT4pKlJJceGddNXtN0rn4U8Ip4U-3DQFxG_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZ=
+uwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2Bn=
+owprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2Fm=
+DHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNq=
+f-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnb=
+M-2F1vghWa807nAXE0t-2FjYsijEczT-2FB4dY98ab16mEadI0lBWrkoI4HD47S5TZbWJ7qJVss=
+INOjv5GWpUNyDbo7rFAYGZfZWoJKQGlcs4ck4BWhaihu2hdYdwA6s2P80sL4UISW-2F8vVi-2By=
+MiJ9jZRezP766dQ57d9fQZPorHFh8UJ5S7fdyQoasMRHu-2BJDYue0mLO-2FvZrSE0P4I9-2FGY=
+1KwrQH7In750IqVDmhvszS0qDc12-2B5s-2Bbox2JSVHZBKfvWUHI2ppuFCvA7DkiHa37N1Nqd-=
+2BduoHxyR7YKSGA-3D-3D style=3D"color: rgb(0, 200, 5); text-decoration: unde=
+rline; font-weight: bold; text-decoration-thickness: 2px; text-underline-of=
+fset: 1px;" target=3D"_blank" rel=3D"noopener">Pindont</a>:</strong> <stron=
+g>Google</strong> suspended Play Store downloads of Chinese shopping app <s=
+trong><a href=3D"https://sg.robinhood.com/ls/click?upn=3D6fntGirSE5selsQKrS=
+SUHk6R8tCrM-2FUICq73HMQolwW7JaYEuJF5-2Fsnumi51uqW20Ryo_Q-2Flqu7vv4WEwX7O0hu=
+vLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-=
+2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4TH=
+MhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVt=
+cUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0AC=
+syYYf31m3mMnbM-2F1vghWa807nAXEFsMCKLilNAGhzILd9Pvst-2Fe-2FTjALIEQiRK71xvbNw=
+y3sFitODed0zBJgQwapAZgTznDt-2FbiZBvxd-2Fzd2hSC9YJ2aEKZLn7rALwsM7R1338woKHi-=
+2BF4TFGvOebkuu4Qwet7OQDHB1aHYhfjz41Gj-2FBUOggCZD2tcHut6IcAYA9de8-2FigJ5XsjA=
+8n49S0ffGiOmSb316n-2FAS2sMfsc5a9VgEcco-2Be7GaQaysNdJmLV-2Fum66gzu6WXtAdidDt=
+ZHLK6EupKZOualr2Y-2BBx3rWyVQCA-3D-3D style=3D"color: rgb(0, 200, 5); text-d=
+ecoration: underline; font-weight: bold; text-decoration-thickness: 2px; te=
+xt-underline-offset: 1px;" target=3D"_blank" rel=3D"noopener">Pinduoduo</a>=
+</strong> after malware was spotted in some versions. Google didn&#39;t sus=
+pend Temu, the popular US version of the app.</p></li></ul></div></td></tr>=
+<tr><td align=3D"left" style=3D"font-size:0px;padding:0;word-break:break-wo=
+rd;"><div style=3D"font-family:'Capsule Sans Text', Arial;font-size:15px;fo=
+nt-weight:400;letter-spacing:-0.1px;line-height:24px;text-align:left;color:=
+#000000;"><p>=F0=9F=8D=AA Thanks for Snacking with us! Want to share the Sn=
+acks? <strong>Invite your friends to sign up <a href=3D"https://sg.robinhoo=
+d.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHvD1boXzg2LnBS3-2Fj-2FyVcTbr4oRSo6=
+C8KVPd7yeAwt4VSRzA_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0Ar=
+FOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460Wcv=
+FlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTO=
+UTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpC=
+ih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEc8LiDr=
+2wa7lPff-2Fr6Gbx1NlvYbcgSzHKapcGvRGQXmWHjQdrgyFs4lLgH74QpfQ4Aaqx3Dlp86byurY=
+g8yb8kGShUbOiC6ofP-2BtLjKvEOTaRTFPNmZmQ5VSwkDc2jMF7AR1DHFP4l3T1WQ6MqSSNtJRd=
+CUZKt3QdaD599lj4vXXWTT-2FuVSqXQ4XKmqFbpMWzY2joTJQz0OkBXDhOjFL2spZB6VDkvhmxQ=
+DWha557-2BUXKe4-2Bjr362Jz01m7NJeZJJ1LcVvoxlyV4TuNpIKwa3HA-3D-3D style=3D"co=
+lor: rgb(0, 200, 5); text-decoration: underline; font-weight: bold; text-de=
+coration-thickness: 2px; text-underline-offset: 1px;" target=3D"_blank" rel=
+=3D"noopener">here</a></strong>.</p></div></td></tr><tr><td align=3D"center=
+" class=3D"light" style=3D"font-size:0px;padding:10px 25px;padding-top:24px=
+;padding-right:0;padding-bottom:24px;padding-left:0;word-break:break-word;"=
+><p style=3D"border-top:solid 1px #e3e9ed;font-size:1px;margin:0px auto;wid=
+th:100%;"></p><!--[if mso | IE]><table align=3D"center" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" style=3D"border-top:solid 1px #e3e9ed;font-si=
+ze:1px;margin:0px auto;width:580px;" role=3D"presentation" width=3D"580px" =
+><tr><td style=3D"height:0;line-height:0;"> &nbsp;
+</td></tr></table><![endif]--></td></tr></tbody></table></td></tr></tbody><=
+/table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tb=
+ody></table></div><!--[if mso | IE]></td></tr></table><table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"pres=
+entation" style=3D"width:600px;" width=3D"600" bgcolor=3D"rgb(255, 255, 255=
+)" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exa=
+ctly;"><![endif]--><div style=3D"background:rgb(255, 255, 255);background-c=
+olor:rgb(255, 255, 255);margin:0px auto;max-width:600px;"><table align=3D"c=
+enter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"background:rgb(255, 255, 255);background-color:rgb(255, 255, 25=
+5);width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding=
+:0px 10px 18px 10px;text-align:center;"><!--[if mso | IE]><table role=3D"pr=
+esentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=
+=3D"column-outlook" style=3D"vertical-align:top;width:580px;" ><![endif]-->=
+<div class=3D"mj-column-per-100 mj-outlook-group-fix column" style=3D"font-=
+size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:=
+top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" width=3D"100%"><tbody><tr><td style=3D"vertical-align:t=
+op;padding:0;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" width=3D"100%"><tbody><tr><td align=3D"left" style=3D"fon=
+t-size:0px;padding:0;padding-bottom:18px;word-break:break-word;"><div style=
+=3D"font-family:'Nib Pro', Arial;font-size:24px;font-weight:600;line-height=
+:32px;text-align:left;color:#000000;">Snack Fact Of the Day</div></td></tr>=
+<tr><td align=3D"left" style=3D"font-size:0px;padding:0;padding-bottom:24px=
+;word-break:break-word;"><div style=3D"font-family:'Capsule Sans Text', Ari=
+al;font-size:24px;font-weight:500;letter-spacing:-0.33px;line-height:32px;t=
+ext-align:left;color:rgb(0, 200, 5);">While 5.9M Americans quit or lost a j=
+ob in January, 6.4M got hired</div></td></tr><tr><td align=3D"left" style=
+=3D"font-size:0px;padding:0;word-break:break-word;"><div style=3D"font-fami=
+ly:'Capsule Sans Text', Arial;font-size:15px;font-weight:400;letter-spacing=
+:-0.1px;line-height:24px;text-align:left;color:#000000;"><a href=3D"https:/=
+/sg.robinhood.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHucYdcgYqTlCM3pmMCRYW4=
+STlEQwtBMWcC44vO9S7mRv4aLbHjRPxKjje8BYifeFVw-3D-3Dth9J_Q-2Flqu7vv4WEwX7O0hu=
+vLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-=
+2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4TH=
+MhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVt=
+cUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0AC=
+syYYf31m3mMnbM-2F1vghWa807nAXEDxrqr-2FmHBW82a7FsWuxsPRtOsvG7iWZ0PkqFyTrY5n6=
+iVMVIJJvJYF6ywnOfmu-2BpSuDErzNrM3QABlXAIlWmrRpmQcJqa6QzoqHV-2Bc1OWjjuEJ1KUB=
+hrtT2ZttgoBoUGiOmVNnHj-2Bfbhuq-2FH6ycOF7GtjQPtQ5evkZWF9-2BpFRLRD2wG6Tx42ETs=
+N-2BknEkqE9N4N-2BH-2Bw97yzTozlhjReVpTwK7S8mmjxUzII17gEjnIZzyNj-2Fmiki1b-2F2=
+yxFT4hUGx4WRG9cVqTQ24DAyMX5EXA-3D-3D style=3D"color: rgb(0, 200, 5); text-d=
+ecoration: underline; font-weight: bold; text-decoration-thickness: 2px; te=
+xt-underline-offset: 1px;" target=3D"_blank" rel=3D"noopener">Read more</a>=
+</div></td></tr><tr><td align=3D"center" class=3D"light" style=3D"font-size=
+:0px;padding:10px 25px;padding-top:24px;padding-right:0;padding-bottom:24px=
+;padding-left:0;word-break:break-word;"><p style=3D"border-top:solid 1px #e=
+3e9ed;font-size:1px;margin:0px auto;width:100%;"></p><!--[if mso | IE]><tab=
+le align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"border-top:solid 1px #e3e9ed;font-size:1px;margin:0px auto;width:580px;=
+" role=3D"presentation" width=3D"580px" ><tr><td style=3D"height:0;line-hei=
+ght:0;"> &nbsp;
+</td></tr></table><![endif]--></td></tr></tbody></table></td></tr></tbody><=
+/table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tb=
+ody></table></div><!--[if mso | IE]></td></tr></table><table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"pres=
+entation" style=3D"width:600px;" width=3D"600" bgcolor=3D"rgb(255, 255, 255=
+)" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exa=
+ctly;"><![endif]--><div style=3D"background:rgb(255, 255, 255);background-c=
+olor:rgb(255, 255, 255);margin:0px auto;max-width:600px;"><table align=3D"c=
+enter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"background:rgb(255, 255, 255);background-color:rgb(255, 255, 25=
+5);width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding=
+:0 10px;text-align:center;"><!--[if mso | IE]><table role=3D"presentation" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"column-ou=
+tlook" style=3D"vertical-align:top;width:580px;" ><![endif]--><div class=3D=
+"mj-column-per-100 mj-outlook-group-fix column" style=3D"font-size:0px;text=
+-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100=
+%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"present=
+ation" width=3D"100%"><tbody><tr><td style=3D"vertical-align:top;padding:0;=
+"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentat=
+ion" width=3D"100%"><tbody><tr><td align=3D"left" style=3D"font-size:0px;pa=
+dding:0;padding-bottom:12px;word-break:break-word;"><div style=3D"font-fami=
+ly:'Nib Pro', Arial;font-size:24px;font-weight:600;line-height:32px;text-al=
+ign:left;color:#000000;">Wednesday</div></td></tr><tr><td align=3D"left" st=
+yle=3D"font-size:0px;padding:0;word-break:break-word;"><div style=3D"font-f=
+amily:'Capsule Sans Text', Arial;font-size:15px;font-weight:400;letter-spac=
+ing:-0.1px;line-height:24px;text-align:left;color:#000000;"><ul style=3D"pa=
+dding-left: 18px;"><li style=3D"margin-bottom: 12px;"><p>Ramadan begins</p>=
+</li><li style=3D"margin-bottom: 12px;"><p>Earnings expected from Chewy and=
+ Petco</p></li></ul><p>Authors of this Snacks own bitcoin and ethereum and =
+shares: of Google, Disney, and Microsoft</p><p>ID: 2806251</p></div></td></=
+tr><tr><td align=3D"center" class=3D"light" style=3D"font-size:0px;padding:=
+10px 25px;padding-top:24px;padding-right:0;padding-bottom:24px;padding-left=
+:0;word-break:break-word;"><p style=3D"border-top:solid 1px #e3e9ed;font-si=
+ze:1px;margin:0px auto;width:100%;"></p><!--[if mso | IE]><table align=3D"c=
+enter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-top=
+:solid 1px #e3e9ed;font-size:1px;margin:0px auto;width:580px;" role=3D"pres=
+entation" width=3D"580px" ><tr><td style=3D"height:0;line-height:0;"> &nbsp=
+;
+</td></tr></table><![endif]--></td></tr></tbody></table></td></tr></tbody><=
+/table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tb=
+ody></table></div><!--[if mso | IE]></td></tr></table><table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"pres=
+entation" style=3D"width:600px;" width=3D"600" bgcolor=3D"rgb(255, 255, 255=
+)" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exa=
+ctly;"><![endif]--><div style=3D"background:rgb(255, 255, 255);background-c=
+olor:rgb(255, 255, 255);margin:0px auto;max-width:600px;"><table align=3D"c=
+enter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"background:rgb(255, 255, 255);background-color:rgb(255, 255, 25=
+5);width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding=
+:0 0 20px;text-align:center;"><!--[if mso | IE]><table role=3D"presentation=
+" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=
+=3D"width:600px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-g=
+roup-fix" style=3D"font-size:0;line-height:0;text-align:left;display:inline=
+-block;width:100%;direction:ltr;"><!--[if mso | IE]><table border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" ><tr><td style=3D"ve=
+rtical-align:top;width:300px;" ><![endif]--><div class=3D"mj-column-per-50 =
+mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;direction:ltr;=
+display:inline-block;vertical-align:top;width:50%;"><table border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbod=
+y><tr><td style=3D"vertical-align:top;padding:10px 0;"><table border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><t=
+body><tr><td align=3D"right" style=3D"font-size:0px;padding:10px 25px;word-=
+break:break-word;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+role=3D"presentation" style=3D"border-collapse:collapse;border-spacing:0px;=
+"><tbody><tr><td style=3D"width:40px;"><a href=3D"https://sg.robinhood.com/=
+ls/click?upn=3D6fntGirSE5selsQKrSSUHtUYfswbcLUS4PVSSGCh-2Bp5P7wG1vFeMd-2BEh=
+033k5qSDu947b1iaETvxNobW-2BEOciw-3D-3D3Nhs_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2By=
+Zuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2B=
+nowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2F=
+mDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicN=
+qf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMn=
+bM-2F1vghWa807nAXEpci1fh5ysHXDGYb1Jgpf87S3W893zSaMJA4msk1S5yCOAtdWrBVLucTLo=
+ADQcyvgoUFu-2BwVFS6fbEFEm87miJZGB8Jq7w0PtdNzd90M1hg65b18aqZCphQnBVJmBOuSNb6=
+OySBeZ2vjEfN07ahgObx6jA4dfN5LQ8NHKVo87621S85AK1Po5ujEqukzbJVp8-2BQbHHc-2Bla=
+fSj5931A47ZH3SiAq7tL4D2juTPWqRD566kPaxMn7Ns0zgTXO3qwtvngnYah7mMRD127AviQqWP=
+vA-3D-3D target=3D"_blank"><img height=3D"auto" src=3D"https://sg.robinhood=
+.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHhlVHSZUg2RjnmzAANAYlJUoayEhFMDSn7T=
+BBJZkMhzhaN0Tk4J6R6r-2FCWwNN3EXwYDsLxQWsQ8gXRCLHMR2s94-3D0778_Q-2Flqu7vv4WE=
+wX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakB=
+tR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2=
+FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FL=
+wGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846=
+IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEkODBRZPbRmXcyr6IuOYSkMuajqgPTBieZHTOom=
+JvYI1EPkMyWW1hrBbUgftsILfhtkcYRZLQqAOQUAR0p8Mjc8OV4NQWYOvSpLNkCJ1BW5TpL1rn-=
+2FjUCvjnOhutioTiwwJGE0jv5XkjqMKT3eenoY9SkCfeWZTgW7dVVdaCbGY-2BM-2BjdukwQA8w=
+YUTcnjMStZ3-2Bi-2Bvg1GZ4eL1XcIIlGqwUJ45kf6QjPXjzK6lVkCBzWgIcatQZ-2BsRt7GUkn=
+7LPhjhvd4mp1uQ-2F18s-2F7jdybFPA-3D-3D style=3D"border:0;display:block;outli=
+ne:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width=
+=3D"40"></a></td></tr></tbody></table></td></tr></tbody></table></td></tr><=
+/tbody></table></div><!--[if mso | IE]></td><td style=3D"vertical-align:top=
+;width:300px;" ><![endif]--><div class=3D"mj-column-per-50 mj-outlook-group=
+-fix" style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-b=
+lock;vertical-align:top;width:50%;"><table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td style=
+=3D"vertical-align:top;padding:10px 0;"><table border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td al=
+ign=3D"left" style=3D"font-size:0px;padding:10px 25px;word-break:break-word=
+;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presenta=
+tion" style=3D"border-collapse:collapse;border-spacing:0px;"><tbody><tr><td=
+ style=3D"width:40px;"><a href=3D"https://sg.robinhood.com/ls/click?upn=3D6=
+fntGirSE5selsQKrSSUHiYZEQBGWTDcpGmlGq7RpCX-2BUk0zoDPcypR21equlXPJWOCV_Q-2Fl=
+qu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZ=
+ma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsA=
+cGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LK=
+HuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5y=
+JOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXElpez1pGLj0YIJbT9BVCLfJphJC8Fzw=
+O9rH0zNcS8YRSicpdSR014o9Q8PlZnjJtp0uASQC60W34INhTS7XXo9sUkGsXW2mLk-2FL0yiCI=
+qV0iyiIsxQG-2FuDCwvTUcpuLMVbilLtVZsx-2F4JtuzaRquhjha1QXyLUJrNKi-2BeouCYWG11=
+ZynDd-2B66Isf7-2F6-2F29wkAt6BRHvy1fKxrhQ4UzM5rsw-2Fh3HQ7gBFoLnwXy-2F2WM9kLM=
+1JUZZD4ycHfh-2Fp-2FuGGXGrUd8I4fZT2XcZU9yGEoRg-3D-3D target=3D"_blank"><img =
+height=3D"auto" src=3D"https://sg.robinhood.com/ls/click?upn=3D6fntGirSE5se=
+lsQKrSSUHhlVHSZUg2RjnmzAANAYlJUoayEhFMDSn7TBBJZkMhzh91ZjI2He6aUPTHa-2FKWxsI=
+lCCSODRrlbIGntfcVRvfxI-3DNiRT_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ft=
+b67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7y=
+sBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0=
+ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2F=
+Y8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa80=
+7nAXEUgnncnsqvazxjuhTZoxGJd-2F19UqDqC9ELtWhBrsWq5yN8F-2FUW55FJ8UD-2BZsICyHN=
+bEqhkn8ijg9pxEFMnLKnsefaDT5Y4zBW5LWqoqd1Xl7KWMHuanO5npgiT-2FqY-2FGsOZbhu2M3=
+DAIqFN51FZv3YPMwUqJAyr0zfigHQxEToxnlfVCpYgHsWQ66j1H333gWUt8GyFcGHvXCYv13eza=
+-2BWt6wHKblRxn3n4ZHnONCKO0uJFIfiyaCy2qX7m1VYW4Ed-2FXKRNuhUB9DeHutdj44OCA-3D=
+-3D style=3D"border:0;display:block;outline:none;text-decoration:none;heigh=
+t:auto;width:100%;font-size:13px;" width=3D"40"></a></td></tr></tbody></tab=
+le></td></tr></tbody></table></td></tr></tbody></table></div><!--[if mso | =
+IE]></td></tr></table><![endif]--></div><!--[if mso | IE]></td></tr></table=
+><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></=
+table><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" class=3D"" role=3D"presentation" style=3D"width:600px;" width=3D"600" b=
+gcolor=3D"rgb(255, 255, 255)" ><tr><td style=3D"line-height:0px;font-size:0=
+px;mso-line-height-rule:exactly;"><![endif]--><div style=3D"background:rgb(=
+255, 255, 255);background-color:rgb(255, 255, 255);margin:0px auto;max-widt=
+h:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"background:rgb(255, 255, 255);backgr=
+ound-color:rgb(255, 255, 255);width:100%;"><tbody><tr><td style=3D"directio=
+n:ltr;font-size:0px;padding:0 10px;text-align:center;"><!--[if mso | IE]><t=
+able role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+><tr><td class=3D"column-outlook" style=3D"vertical-align:top;width:580px;"=
+ ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-group-fix column" =
+style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;v=
+ertical-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td style=3D"ve=
+rtical-align:top;padding:0;"><table border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td align=3D"left=
+" style=3D"font-size:0px;padding:0;word-break:break-word;"><div style=3D"fo=
+nt-family:'Capsule Sans Text', Arial;font-size:9px;font-weight:400;letter-s=
+pacing:-0.1px;line-height:20px;text-align:left;color:rgb(106, 114, 120);">R=
+obinhood Snacks newsletters reflect the opinions of only the authors who ar=
+e associated persons of Robinhood Financial LLC (Member <a href=3D"https://=
+sg.robinhood.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHnNvQIjbCso3jBgxj9iy6Co=
+-3DcuD1_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9=
+Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL=
+6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3=
+KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIB=
+Btb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXE4nK-2Bqjl1dKqIdQ0=
+uLSMOzNZkVK0O0dDyPdPKUbCBgFNGW-2BG0qxniZ8gMIiW1owWXsp-2FEElRbHbM4cC-2BPs1ji=
+bu5oV8i3Wfq6U6qw275bzGe4haaea6CWmHPInHvV1ZX-2BrHf3ckfeOJH98giI-2BkbxFnbVN3-=
+2FkU5xGzhuB96LO6GTgO07Hyp0YX9vUlRf3DIqgS7e-2BSsIgBuMYV0F59ZxQw0P5Pg7-2BXx3r=
+COagwOA-2Beu6AXeOGB57XLD2udarAkp-2Ff-2FYnL8Ao37mWDZaL2pUhysA-3D-3D style=3D=
+"color: rgb(0, 200, 5); text-decoration: none; font-weight: bold;" target=
+=3D"_blank" rel=3D"noopener">SIPC</a>) and do not reflect the views of Robi=
+nhood Markets, Inc. or any of its subsidiaries or affiliates. They are for =
+informational purposes only, and are not a recommendation of an investment =
+strategy or to buy or sell any security, digital asset (cryptocurrency, etc=
+) in any account. They are also not research reports and are not intended t=
+o serve as the basis for any investment decision. Any third-party informati=
+on provided therein does not reflect the views of Robinhood Markets, Inc., =
+Robinhood Financial LLC, or any of their subsidiaries or affiliates. All in=
+vestments involve risk including the loss of principal and past performance=
+ does not guarantee future results.</div></td></tr><tr><td align=3D"left" s=
+tyle=3D"font-size:0px;padding:15px 0 15px 0;word-break:break-word;"><div st=
+yle=3D"font-family:'Capsule Sans Text', Arial;font-size:9px;font-weight:400=
+;letter-spacing:-0.1px;line-height:20px;text-align:left;color:#000000;"><di=
+v class=3D"disclosureLinks"><a href=3D"https://sg.robinhood.com/ls/click?up=
+n=3D6fntGirSE5selsQKrSSUHhlVHSZUg2RjnmzAANAYlJXYYgyWQ1sztkfLzoo9man-2BnTE7s=
+foTf0nk2D4ybnWwXf2jgt-2FACnIHHG00d-2BKtpMRhCjCHxFPaufw84R6gjVV7r3nlP9xhCb7q=
+ac9J94VXpw-3D-3D5mnj_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0=
+ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460W=
+cvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBR=
+TOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzv=
+pCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEBxwQ=
+M2QV2fYUp8z0aA8WF8-2FHwd-2FLmmDfRWaEsug9tPAajzRNwascv2Xn0V95pa4QOJB5PoMwY1f=
+lomxro6xAoHjwIiwPfj-2BuE9ZwcQF4-2FTfhfYxd5H8cK99v36LxPwvt6OGcwAS8DF7ZaiqHX0=
+GMXug7avD4Ro-2Fj7RWI11feu2b68dcGqsg-2BUTwFL9li2zd79qhrhvMyoUzidD2HITsIXToep=
+jZwX2VuDc6ep3APIWPwp-2FmEe5JNP2-2FPp-2FQTAuWRRpzMUt346DnLs-2FvtN5TYWA-3D-3D=
+ style=3D"color: rgb(0, 200, 5); text-decoration: none; font-weight: bold;"=
+ target=3D"_blank" rel=3D"noopener" class=3D"disclosureLinksFirst">Robinhoo=
+d Terms and Conditions</a>&nbsp;=E2=80=A2&nbsp;<a href=3D"https://sg.robinh=
+ood.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHvi8qmYLxQthX6AOydwFNg8iQH309Dm3=
+eTaeCI7xXFvSMp8j_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFO=
+wep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFl=
+JO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUT=
+DPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih=
+-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEtXMdMK8e=
+mb9-2FLMkwT5AIUfEO708sreOw5yll1dO6qUyov7tt02A8zOtcA7kWRKEQ4PNvX71yly1p1W6ac=
+89L4ajulAWa3SebTWHXRvN7TOeKXEQK4x5YJkUi7Pzw-2BiFdThdPZrXdueig9NMaUyDtqR67f6=
+-2FZXxrJvgxOSWxy7Al-2BSI51h-2Bp11nTbIhae8fAmUL3SubWuakUqOWtQ0e2DMLj1yo36DGF=
+AOsdB7kW3PQAph9D2vy41eE-2BiB5wuu2B55mnUJK2Nv2g8oAzLIXv9fg-3D-3D style=3D"co=
+lor: rgb(0, 200, 5); text-decoration: none; font-weight: bold;" target=3D"_=
+blank" rel=3D"noopener">Disclosure Library</a>&nbsp;=E2=80=A2&nbsp;<a href=
+=3D"https://sg.robinhood.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHjMA59bDfCW=
+W6qZNCvrM0fJJl1X47T2AcffKHm-2BaJqTTkwhJp8prao6fdKKrGgoaq6G-2BpCu3e-2B3h9jas=
+fyMnnRo-3DFSI__Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwe=
+p-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO=
+0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDP=
+k0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2=
+Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEu62uons38y=
+iiNLpClZ5V8kYBT4n1EeVTm8uwcLszlvBUClntt6hNLzpZBsam-2BY8TkqmBIjzKM5EfHBUWcdI=
+K2pBa-2BL949Jk0S1iGfbZQ7qs4-2B5DEOrFWoaRDohf2x56QpOWLLOggqRtTQ0Q9WAg2v-2Bve=
+gf4aJNggYSrIPNJW431dq6USV7TsX4AkENBSXo0HEncFXlQ-2BARuBC-2BIvwIpH9lsC14M3UTp=
+OtuP6JeyruAQwh4t0uGKxf-2FwWNHeYag8icMjMrJvHvdXZyBnXCOAssw-3D-3D style=3D"co=
+lor: rgb(0, 200, 5); text-decoration: none; font-weight: bold;" target=3D"_=
+blank" rel=3D"noopener">Our Editorial Principles</a>&nbsp;=E2=80=A2&nbsp;<a=
+ href=3D"https://sg.robinhood.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHrnnz1=
+tojdTgZ3cGFnj-2BSsfy7N7gVHkFp-2Fe3dAhcYO-2F9ZFVX_Q-2Flqu7vv4WEwX7O0huvLnV7k=
+Pf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9kh=
+RbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi=
+4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8L=
+lKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf3=
+1m3mMnbM-2F1vghWa807nAXEsniJNRPQKeCwngdS3SX8xLGqc7hEiCZ2ElezaLYhCVx1yG3lCyn=
+Qf-2FVPPu-2FdOZrkLMZprcm4LvyfOC23-2B-2FijRnkZo37kfpHFjN34JKmyr-2FbffY2g-2F5=
+EKFFEK3KqaF1jUpxAfiFlbj24in0xdPD3XYpxmdiwwlJ-2FFywdBEVG-2FoW8zXx-2B1fqSap8X=
+1hR9Nc4joMmtc4d-2FZPhRZq1ZgFrD4vdoCTaWHfWokYnDfUPswkC63vZW-2FpsXEqM6ld8YSnc=
+5xDJulrAZNIpNfgFKxVlb6fg-3D-3D style=3D"color: rgb(0, 200, 5); text-decorat=
+ion: none; font-weight: bold;" target=3D"_blank" rel=3D"noopener">Contact U=
+s</a>&nbsp;=E2=80=A2&nbsp;<a href=3D"https://sg.robinhood.com/ls/click?upn=
+=3D6fntGirSE5selsQKrSSUHmuCDw8d-2BYNK8JD6LTAMaGs43e9K6UnhUpJVjhLb6mVZujBK_Q=
+-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKV=
+SwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJ=
+FOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx=
+01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E=
+2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEbx40VrHo2qAGLF1uqmpie6bz-2=
+BFAvE29aoGhSdmmkMtd5QCKs-2FNrog2qDMH2i4aDX1ZlxI-2BQnqATFKq1cC-2BSP-2FkJ-2B0=
+JJbQ7cwthMEyCk2WrZnlh6IJ9G6X19WzoNI2QPlvIgTKN5xFOFoJmxSNKchGCgO5tMPySzRfC1P=
+OX44Z1boI27lYfPABZo92OKj27ROR4TPZjx1dAx-2BdCIhdkene6BYDpE1HeS8frFEjzMJX08YW=
+oq3rjl6u51YqOkG5dZ2xs9AOlZ7-2FtccfnqEAjZRxA-3D-3D style=3D"color: rgb(0, 20=
+0, 5); text-decoration: none; font-weight: bold;" target=3D"_blank" rel=3D"=
+noopener">FAQ</a></div><div style=3D"padding-top: 15px;"><a href=3D"https:/=
+/sg.robinhood.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHvD1boXzg2LnBS3-2Fj-2F=
+yVcTazmp0hh8K8R8-2FBqRF49nrqBkO-2Fp9JP0UC5hgwxj-2BH3geueSaSSjT9-2Baw9jbfwN8=
+47mVzUa4FaqDnYUMYovg6TP0QfbuviM-2FeqYg9-2BdlNdPUjggaD6fO5X8fMot30TXX10-3Dfu=
+yq_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oE=
+XPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPt=
+uxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjc=
+flVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8I=
+MB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEW6oSH-2Fixhp9gxIOFYoyN=
+GZeiPJf8uvIMlL8i1H8cnjuNJTz5afdQxzYerQTquFCaWL3hWmRgaMKuBEhKP8mMP3e7XKcCMPr=
+o3TPL57k4JkrHOWIGPZWDn6bLXDeiJK-2Byx1agjTNP1i58glv3lKXZK27R9xdEScT9F-2F3YtY=
+BWrxXNqKQSAnOtCkOb9BRYpkHtjxP1Kq4ZXnigDeq8nfuuXsyLaR-2FXfBomfwCL2qXqQ40Zo2h=
+MVNaoPOh-2FXquxSNg2ri7a1J0hrlPSOnvYXnIi1Q-3D-3D style=3D"color: rgb(0, 200,=
+ 5); text-decoration: none; font-weight: bold;" target=3D"_blank" rel=3D"no=
+opener">Manage Your Subscription Preferences</a></div></div></td></tr></tbo=
+dy></table></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></ta=
+ble><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td></tr=
+></table><![endif]--></div></body></html>
+--00f494a917f52eb66008aa56cade38ff53cb8e4943ea6c034a721b2375b3
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!doctype html><html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:=
+schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:offi=
+ce"><head><title></title><!--[if !mso]><!--><meta http-equiv=3D"X-UA-Compat=
+ible" content=3D"IE=3Dedge"><!--<![endif]--><meta http-equiv=3D"Content-Typ=
+e" content=3D"text/html; charset=3DUTF-8"><meta name=3D"viewport" content=
+=3D"width=3Ddevice-width,initial-scale=3D1"><style type=3D"text/css">#outlo=
+ok a {
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+
+    table,
+    td {
+      border-collapse: collapse;
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+
+    img {
+      border: 0;
+      height: auto;
+      line-height: 100%;
+      outline: none;
+      text-decoration: none;
+      -ms-interpolation-mode: bicubic;
+    }
+
+    p {
+      display: block;
+      margin: 13px 0;
+    }</style><!--[if mso]>
+    <noscript>
+    <xml>
+    <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+    </xml>
+    </noscript>
+    <![endif]--><!--[if lte mso 11]>
+    <style type=3D"text/css">
+      .mj-outlook-group-fix { width:100% !important; }
+    </style>
+    <![endif]--><!--[if !mso]><!--><link href=3D"https://cdn.robinhood.com/=
+marketsnacks_assets/fonts/CapsuleSansText.css" rel=3D"stylesheet" type=3D"t=
+ext/css"><link href=3D"https://cdn.robinhood.com/marketsnacks_assets/fonts/=
+NibPro.css" rel=3D"stylesheet" type=3D"text/css"><style type=3D"text/css">@=
+import url(https://cdn.robinhood.com/marketsnacks_assets/fonts/CapsuleSansT=
+ext.css);
+    @import url(https://cdn.robinhood.com/marketsnacks_assets/fonts/NibPro.=
+css);</style><!--<![endif]--><style type=3D"text/css">@media only screen an=
+d (min-width:480px) {
+      .mj-column-per-100 {
+        width: 100% !important;
+        max-width: 100%;
+      }
+
+      .mj-column-per-50 {
+        width: 50% !important;
+        max-width: 50%;
+      }
+    }</style><style media=3D"screen and (min-width:480px)">.moz-text-html .=
+mj-column-per-100 {
+      width: 100% !important;
+      max-width: 100%;
+    }
+
+    .moz-text-html .mj-column-per-50 {
+      width: 50% !important;
+      max-width: 50%;
+    }</style><style type=3D"text/css">@media only screen and (max-width:480=
+px) {
+      table.mj-full-width-mobile {
+        width: 100% !important;
+      }
+
+      td.mj-full-width-mobile {
+        width: auto !important;
+      }
+    }</style><style type=3D"text/css">.article ul {
+      margin-left: 5px;
+    }
+
+    .snacking ul {
+      list-style-type: none;
+      padding-inline-start: 0;
+      padding-left: 0 !important;
+    }
+
+    .factOfTheDay a {
+      font-weight: normal !important;
+    }
+
+    .disclosureLinks a {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    .disclosureLinks .disclosureLinksFirst {
+      margin-left: 0;
+    }
+
+    .text {
+      color: #000;
+    }
+
+    p {
+      margin: 12px 0;
+    }
+
+    ul {
+      margin-top: 12px;
+      margin-bottom: 12px;
+      margin-left: 5px;
+    }
+
+    .type-no-paragraph-margins p {
+      margin: 0;
+    }
+
+    /* This DOES NOT work on Outlook for Windows. Be sure to use if/endif !=
+mso wrappers in addition to .mobile */
+    .mobile {
+      display: none;
+    }
+
+    @media screen and (max-width: 500px) {
+      .mobile {
+        display: block;
+      }
+
+      .desktop {
+        display: none !important;
+      }
+
+      .marketIndices {
+        padding: 0 25px !important;
+      }
+
+      .mobile-snacks-title-spacing {
+        padding-bottom: 32px !important;
+      }
+    }</style><meta name=3D"color-scheme" content=3D"light"><meta name=3D"su=
+pported-color-schemes" content=3D"light"></head><body style=3D"word-spacing=
+:normal;background-color:rgb(255, 255, 255);"><div class=3D"body" style=3D"=
+background-color:rgb(255, 255, 255);"><div style=3D"display:none;font-size:=
+1px;color:rgb(255, 255, 255);line-height:1px;max-height:0px;max-width:0px;o=
+pacity:0;overflow:hidden;mso-hide:all;">=E2=80=A6and semi-private flights t=
+ake off with commercial prices</div><!--[if mso | IE]><table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"pres=
+entation" style=3D"width:600px;" width=3D"600" bgcolor=3D"rgb(255, 255, 255=
+)" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exa=
+ctly;"><![endif]--><div style=3D"background:rgb(255, 255, 255);background-c=
+olor:rgb(255, 255, 255);margin:0px auto;max-width:600px;"><table align=3D"c=
+enter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"background:rgb(255, 255, 255);background-color:rgb(255, 255, 25=
+5);width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding=
+:0 10px;text-align:center;"><!--[if mso | IE]><table role=3D"presentation" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"column-ou=
+tlook" style=3D"vertical-align:middle;width:580px;" ><![endif]--><div class=
+=3D"mj-column-per-100 mj-outlook-group-fix column" style=3D"font-size:0px;t=
+ext-align:left;direction:ltr;display:inline-block;vertical-align:middle;wid=
+th:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"p=
+resentation" width=3D"100%"><tbody><tr><td style=3D"vertical-align:middle;p=
+adding:0;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"=
+presentation" width=3D"100%"><tbody><tr><td align=3D"left" style=3D"font-si=
+ze:0px;padding:24px 0 0;word-break:break-word;"><table cellpadding=3D"0" ce=
+llspacing=3D"0" width=3D"100%" border=3D"0" style=3D"color:#000000;font-fam=
+ily:'Capsule Sans Text', Arial;font-size:13px;line-height:22px;table-layout=
+:auto;width:100%;border:none;"><tr><td style=3D"width: 30px;"><img class=3D=
+"light" width=3D"23" src=3D"https://cdn.robinhood.com/marketsnacks_assets/v=
+2/rhlogo.png" srcset=3D"https://cdn.robinhood.com/marketsnacks_assets/v2/rh=
+logo.png, https://cdn.robinhood.com/marketsnacks_assets/v2/rhlogo@2x.png 2x=
+"></td><td align=3D"right"><a href=3D"https://sg.robinhood.com/ls/click?upn=
+=3D6fntGirSE5selsQKrSSUHhlVHSZUg2RjnmzAANAYlJXYYgyWQ1sztkfLzoo9man-2BnTE7sf=
+oTf0nk2D4ybnWwXUaGtIXLarNykaHXP7nvvT7OHEZsbHIJzKPYGG6swxeT9GIL_Q-2Flqu7vv4W=
+EwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2Bak=
+BtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-=
+2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2F=
+LwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe84=
+6IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEi-2BaypCUwvUj-2BG2MfDV0lsXC3w-2BHM95q=
+tbOkhcWjgL78FDGLaW50DcAJL9QrP7IdYNTOORw1qPuKF5hbh7lAPGgTWp8t9TkzhyafnIohZDk=
+ZjmlR-2B-2Fy79ujm5g6EzWvMTS6wVq2UwubqrX3ZByPQ5QO6LgNHY0JNhF-2B0g1ktXK1T48kQ=
+Z1zfehNgdhgayGgXfLZDNgw5h4Xr-2BnhzqD-2BGBWZYbmpEzQxrXzKGDtpTy8ZyhVvH8LJZuTG=
+pemzBAbN79QyZP1-2BIndi2E3s5xiyGKLQ-3D-3D" style=3D"color: rgb(0, 200, 5); t=
+ext-decoration: underline; font-weight: bold; text-decoration-thickness: 2p=
+x; text-underline-offset: 1px;" target=3D"_blank" rel=3D"noopener">Disclosu=
+res</a></td></tr></table></td></tr></tbody></table></td></tr></tbody></tabl=
+e></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody><=
+/table></div><!--[if mso | IE]></td></tr></table><table align=3D"center" bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentat=
+ion" style=3D"width:600px;" width=3D"600" bgcolor=3D"rgb(255, 255, 255)" ><=
+tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;=
+"><![endif]--><div style=3D"background:rgb(255, 255, 255);background-color:=
+rgb(255, 255, 255);margin:0px auto;max-width:600px;"><table align=3D"center=
+" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" st=
+yle=3D"background:rgb(255, 255, 255);background-color:rgb(255, 255, 255);wi=
+dth:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:0 10=
+px;text-align:center;"><!--[if mso | IE]><table role=3D"presentation" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"ver=
+tical-align:top;width:580px;" ><![endif]--><div class=3D"mj-column-per-100 =
+mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;direction:ltr;=
+display:inline-block;vertical-align:top;width:100%;"><table border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"vertical-a=
+lign:top;" width=3D"100%"><tbody><tr><td style=3D"font-size:0px;word-break:=
+break-word;"><div style=3D"height:50px;line-height:50px;">&#8202;</div></td=
+></tr><tr><td align=3D"center" style=3D"font-size:0px;padding:10px 25px;wor=
+d-break:break-word;"><div style=3D"font-family:'Capsule Sans Text', Arial;f=
+ont-size:13px;line-height:1;text-align:center;color:#000000;"><a href=3D"ht=
+tps://sg.robinhood.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHvD1boXzg2LnBS3-2=
+Fj-2FyVcTYD4x0wjlEXjxMas2QsbybggScE_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2F=
+ra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDF=
+GIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJH=
+OB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDx=
+RTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1v=
+ghWa807nAXEm6mqhbCCJcSLB47UzDs-2Bt7DaVzvhuVcA28Vcm4-2F63CymFcUvwypMFJcH-2Fy=
+jhPFrXHAAh0xMtjdtPCJa818NT6Wp9cZNoM7PHaYiec2I7HCL4sdn5c4XQc9f7vcN2rOR4Gb6vh=
+d3AGfd4-2FjFGFkPG84K4WWS6uDth1firzvFm77e6pQ5nuq0KDSR4EN0zAlnddx7DfRcH8elpq6=
+zUXcF0GJHYQ-2BwiW8kK73-2Fd0zRpcQYXCXtCDYyEQ18qhu7loJZQJl1mzjexdNnHMeKPebt26=
+w-3D-3D" target=3D"_blank"><img style=3D"padding-bottom: 24px; width: 100%;=
+ max-width: 340px;" src=3D"https://cdn.robinhood.com/marketsnacks_assets/v2=
+/snacks.png" width=3D"420"></a></div></td></tr></tbody></table></div><!--[i=
+f mso | IE]></td></tr></table><![endif]--></td></tr></tbody></table></div><=
+!--[if mso | IE]></td></tr></table><table align=3D"center" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"=
+width:600px;" width=3D"600" bgcolor=3D"rgb(255, 255, 255)" ><tr><td style=
+=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-=
+-><div style=3D"background:rgb(255, 255, 255);background-color:rgb(255, 255=
+, 255);margin:0px auto;max-width:600px;"><table align=3D"center" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"backg=
+round:rgb(255, 255, 255);background-color:rgb(255, 255, 255);width:100%;"><=
+tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:0;text-align:cen=
+ter;"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-align:top;w=
+idth:600px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-group-=
+fix" style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-bl=
+ock;vertical-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td style=
+=3D"vertical-align:top;padding:0;"><table border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td align=
+=3D"center" style=3D"font-size:0px;padding:0;word-break:break-word;"><table=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" sty=
+le=3D"border-collapse:collapse;border-spacing:0px;"><tbody><tr><td style=3D=
+"width:600px;"><img height=3D"auto" src=3D"https://images.ctfassets.net/mwp=
+hzyq69oso/1KCvZVMCZpeR0hn5Tm35nZ/ff47c75124a3ee8cf536be3cb19d7471/GettyImag=
+es-1158961449.jpg" style=3D"border:0;display:block;outline:none;text-decora=
+tion:none;height:auto;width:100%;font-size:13px;" width=3D"600"></td></tr><=
+/tbody></table></td></tr><tr><td align=3D"center" style=3D"font-size:0px;pa=
+dding:0 10px;word-break:break-word;"><div style=3D"font-family:'Capsule San=
+s Text', Arial;font-size:13px;font-style:italic;font-weight:400;letter-spac=
+ing:-0.1px;line-height:153%;text-align:center;color:#000000;"><p>11 minutes=
+ of ads (Matt Winkelmeyer/Getty Images)</p></div></td></tr><tr><td style=3D=
+"font-size:0px;word-break:break-word;"><div style=3D"height:20px;line-heigh=
+t:20px;">&#8202;</div></td></tr></tbody></table></td></tr></tbody></table><=
+/div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody></ta=
+ble></div><!--[if mso | IE]></td></tr></table><table align=3D"center" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation=
+" style=3D"width:600px;" width=3D"600" bgcolor=3D"rgb(255, 255, 255)" ><tr>=
+<td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><=
+![endif]--><div style=3D"background:rgb(255, 255, 255);background-color:rgb=
+(255, 255, 255);margin:0px auto;max-width:600px;"><table align=3D"center" b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"background:rgb(255, 255, 255);background-color:rgb(255, 255, 255);width=
+:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:0 10px;=
+text-align:center;"><!--[if mso | IE]><table role=3D"presentation" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vert=
+ical-align:top;width:580px;" ><![endif]--><div class=3D"mj-column-per-100 m=
+j-outlook-group-fix" style=3D"font-size:0px;text-align:left;direction:ltr;d=
+isplay:inline-block;vertical-align:top;width:100%;"><table border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbod=
+y><tr><td style=3D"vertical-align:top;padding:0;"><table border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody>=
+<tr><td align=3D"center" style=3D"font-size:0px;padding:10px 25px;word-brea=
+k:break-word;"><div style=3D"font-family:'Capsule Sans Text', Arial;font-si=
+ze:13px;line-height:1;text-align:center;color:#000000;">Yesterday=E2=80=99s=
+ Market Moves</div></td></tr><tr><td style=3D"font-size:0px;word-break:brea=
+k-word;"><div style=3D"height:20px;line-height:20px;">&#8202;</div></td></t=
+r><tr><td align=3D"left" class=3D"desktop marketIndices" style=3D"font-size=
+:0px;padding:0;word-break:break-word;"><table cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%" border=3D"0" style=3D"color:#000000;font-family:'Caps=
+ule Sans Text', Arial;font-size:13px;line-height:22px;table-layout:auto;wid=
+th:100%;border:none;"><tr><td><span class=3D"text" style=3D"font-family: 'C=
+apsule Sans Text', Arial; font-size: 13px; line-height: 22px; padding: 0;">=
+Dow Jones<br><span style=3D"font-weight: 700;">32,561 <span style=3D"color:=
+ rgb(0, 200, 5);">(+0.98%)</span></span></span></td><td><span class=3D"text=
+" style=3D"font-family: 'Capsule Sans Text', Arial; font-size: 13px; line-h=
+eight: 22px; padding: 0;">S&P 500<br><span style=3D"font-weight: 700;">4,00=
+3 <span style=3D"color: rgb(0, 200, 5);">(+1.30%)</span></span></span></td>=
+<td><span class=3D"text" style=3D"font-family: 'Capsule Sans Text', Arial; =
+font-size: 13px; line-height: 22px; padding: 0;">Nasdaq<br><span style=3D"f=
+ont-weight: 700;">11,860 <span style=3D"color: rgb(0, 200, 5);">(+1.58%)</s=
+pan></span></span></td><td><span class=3D"text" style=3D"font-family: 'Caps=
+ule Sans Text', Arial; font-size: 13px; line-height: 22px; padding: 0;">Bit=
+coin<br><span style=3D"font-weight: 700;">$28,081 <span style=3D"color: rgb=
+(0, 200, 5);">(+0.94%)</span></span></span></td></tr></table></td></tr><!--=
+[if !mso]><!--><tr><td align=3D"left" class=3D"mobile marketIndices" style=
+=3D"font-size:0px;padding:0;word-break:break-word;"><table cellpadding=3D"0=
+" cellspacing=3D"0" width=3D"100%" border=3D"0" style=3D"color:#000000;font=
+-family:'Capsule Sans Text', Arial;font-size:13px;line-height:22px;table-la=
+yout:auto;width:100%;border:none;"><tr><td><span class=3D"text" style=3D"fo=
+nt-family: 'Capsule Sans Text', Arial; font-size: 13px; line-height: 22px; =
+padding: 0;">Dow Jones<br><span style=3D"font-weight: 700;">32,561 <span st=
+yle=3D"color: rgb(0, 200, 5);">(+0.98%)</span></span></span></td><td><span =
+class=3D"text" style=3D"font-family: 'Capsule Sans Text', Arial; font-size:=
+ 13px; line-height: 22px; padding: 0;">S&P 500<br><span style=3D"font-weigh=
+t: 700;">4,003 <span style=3D"color: rgb(0, 200, 5);">(+1.30%)</span></span=
+></span></td></tr><tr><td><span class=3D"text" style=3D"font-family: 'Capsu=
+le Sans Text', Arial; font-size: 13px; line-height: 22px; padding: 0;">Nasd=
+aq<br><span style=3D"font-weight: 700;">11,860 <span style=3D"color: rgb(0,=
+ 200, 5);">(+1.58%)</span></span></span></td><td><span class=3D"text" style=
+=3D"font-family: 'Capsule Sans Text', Arial; font-size: 13px; line-height: =
+22px; padding: 0;">Bitcoin<br><span style=3D"font-weight: 700;">$28,081 <sp=
+an style=3D"color: rgb(0, 200, 5);">(+0.94%)</span></span></span></td></tr>=
+</table></td></tr><!--<![endif]--></tbody></table></td></tr></tbody></table=
+></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody></=
+table></div><!--[if mso | IE]></td></tr></table><table align=3D"center" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentati=
+on" style=3D"width:600px;" width=3D"600" bgcolor=3D"rgb(255, 255, 255)" ><t=
+r><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"=
+><![endif]--><div style=3D"background:rgb(255, 255, 255);background-color:r=
+gb(255, 255, 255);margin:0px auto;max-width:600px;"><table align=3D"center"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" sty=
+le=3D"background:rgb(255, 255, 255);background-color:rgb(255, 255, 255);wid=
+th:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:27px =
+10px;text-align:center;"><!--[if mso | IE]><table role=3D"presentation" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"column-outlo=
+ok" style=3D"vertical-align:top;width:580px;" ><![endif]--><div class=3D"mj=
+-column-per-100 mj-outlook-group-fix column" style=3D"font-size:0px;text-al=
+ign:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"=
+><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentati=
+on" width=3D"100%"><tbody><tr><td style=3D"vertical-align:top;padding:0;"><=
+table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation=
+" width=3D"100%"><tbody><tr><td align=3D"left" style=3D"font-size:0px;paddi=
+ng:0;word-break:break-word;"><div style=3D"font-family:'Capsule Sans Text',=
+ Arial;font-size:15px;font-weight:400;letter-spacing:-0.1px;line-height:24p=
+x;text-align:left;color:#000000;"><p><strong>Hey Snackers,</strong></p><p><=
+strong><a href=3D"https://sg.robinhood.com/ls/click?upn=3D6fntGirSE5selsQKr=
+SSUHk6R8tCrM-2FUICq73HMQolwV5K3ZM3pUFhQBHfQqVnXoq_GoU_Q-2Flqu7vv4WEwX7O0huv=
+LnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2=
+Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THM=
+hA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtc=
+UZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACs=
+yYYf31m3mMnbM-2F1vghWa807nAXEv-2FYNLc4uqIrI5LjVLBWHaRj7aB7RzP3zz8vacVynkmQl=
+LZrMBfua-2FEhOnm3C7GzykosLm1xOZ2W-2FSQ5g-2BJyNTI4juYZPOzaHFNMxhnwMWCM4FmMW1=
+9vo33iWc1c8ye0MvUq-2Fwgbg-2BC7-2BCzcTJYUzejvZzZURhPbWooBAo-2BO1o83-2FV1Lw8e=
+rfGaZO9DvXWW9b8ECP1hHGTKEdokPL0if-2By31zKodrB0kgeBkPAHQtblUZf9Z-2Bgv0yLMmA-=
+2F-2BnF8hcsOkq-2FICfc0luiqGUmoIkMIQ-3D-3D" style=3D"color: rgb(0, 200, 5); =
+text-decoration: underline; font-weight: bold; text-decoration-thickness: 2=
+px; text-underline-offset: 1px;" target=3D"_blank" rel=3D"noopener">Credit =
+Suisse</a></strong> is staging a (fashion) comeback: memorabilia featuring =
+the bank&#39;s logo was listed for sale shortly after rival <strong><a href=
+=3D"https://sg.robinhood.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHk6R8tCrM-2=
+FUICq73HMQolwWTO-2FRzB9K-2Few8vE0OWTveOL6Wa_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2B=
+yZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2=
+BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2=
+FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsic=
+Nqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mM=
+nbM-2F1vghWa807nAXEIj1K6BkgF7n-2FiAj1e7xZDYao8OSb8j1BvGmFQXjxxumOcE1RincnLI=
+LVJqHbwB9G3iUJ7JWhbZ-2BF-2BEDYJ1CMV36IpUQmLpYRtTFDgA6sRxe-2BqsFegv9Gd0ssmFz=
+X5-2BcNTtZ54W8o2xkT8hkD6h3WC1Y5GLhQBgzYbPv2D5Bj1tNTakg1ki759El1LcvnyReZssxO=
+irGuhKIejRxUkOtznoEdTMpzNbopuPDkmBgdOaRyG1LAPtpRp5TkrR0dkqTZIUcxcDYPOpsyv2d=
+lhJO9ZQ-3D-3D" style=3D"color: rgb(0, 200, 5); text-decoration: underline; =
+font-weight: bold; text-decoration-thickness: 2px; text-underline-offset: 1=
+px;" target=3D"_blank" rel=3D"noopener">UBS</a></strong> agreed to take it =
+over. <strong>SVB</strong> swag was <em>so</em> last week.</p><p>Stocks gai=
+ned yesterday after Treasury Secretary Janet Yellen said the US government =
+could backstop more banks if needed. Today, all eyes are on the Fed&#39;s i=
+mportant rate-hike decision.</p></div></td></tr><tr><td align=3D"center" cl=
+ass=3D"light" style=3D"font-size:0px;padding:10px 25px;padding-top:24px;pad=
+ding-right:0;padding-bottom:24px;padding-left:0;word-break:break-word;"><p =
+style=3D"border-top:solid 1px #e3e9ed;font-size:1px;margin:0px auto;width:1=
+00%;"></p><!--[if mso | IE]><table align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" style=3D"border-top:solid 1px #e3e9ed;font-size:1=
+px;margin:0px auto;width:580px;" role=3D"presentation" width=3D"580px" ><tr=
+><td style=3D"height:0;line-height:0;"> &nbsp;
+</td></tr></table><![endif]--></td></tr></tbody></table></td></tr></tbody><=
+/table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tb=
+ody></table></div><!--[if mso | IE]></td></tr></table><![endif]--><img src=
+=3D"https://sg.robinhood.com/wf/open?upn=3D95yS1zU0Hd2yvynNgXswEkVANJkU-2FR=
+bC-2BiIB-2BU2YZ7oJyHSV6PVEXxi9iTb0zDKvyEsa46Uf2-2FetHvCnVuKlvu-2FsFzWzW9TQh=
+yIBaWnq1R-2BBAg8T3mOe-2B-2BcNXC5Vkr7ECMEYUeM4Fs4wgPMhLzQNi1jQArPumDjGrPzPQb=
+51OSIR6IKMm9mbILQBDD4ojIN2Cp0PSaWZMDqS7657Dw27MEN1AfbNsxsVvVA8uZFBlVPL-2ByE=
+JdlcfMKa8YOxqn8v-2Fq0-2Bsg-2FViMdssYu5-2BtXnrt7b-2FFMINQdg4LctwYxOcXCtRAMaU=
+G1BuNCRd9T27rRN0lNWlA9q343mStXMEFtZZKtqwxVvgP5J7OHkyA5CfIDgCDriWW6YVez9fFtR=
+YTOMDy-2BKCph0-2Bm4-2FNAVJF5Tu42u7-2Fcn-2Baj9-2FGFvbAzSbeTTxeWCTISVAs8zCDmD=
+vyzJ-2By7Zs8hEtP2JY9lNN6JLbDaW75DLvU3muxVEOSATS4YbsQPn1Mq87TNgneIeNSHGGwJYV=
+Qx7gVHwFQ-2B-2BmI5nD-2FayD8wN2ejH4uzVjgNNd9m4DI9qUGuzRBXsVA5ZKh9SKntBfiuTkH=
+NX0lhjNDaiguPBnx1An-2BllJ99-2FMVZQBzUEk-3D" alt=3D"" width=3D"1" height=3D"=
+1" border=3D"0" style=3D"height:1px !important;width:1px !important;border-=
+width:0 !important;margin-top:0 !important;margin-bottom:0 !important;margi=
+n-right:0 !important;margin-left:0 !important;padding-top:0 !important;padd=
+ing-bottom:0 !important;padding-right:0 !important;padding-left:0 !importan=
+t;"/><!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px;=
+" width=3D"600" bgcolor=3D"rgb(255, 255, 255)" ><tr><td style=3D"line-heigh=
+t:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><div style=
+=3D"background:rgb(255, 255, 255);background-color:rgb(255, 255, 255);margi=
+n:0px auto;max-width:600px;"><table align=3D"center" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"background:rgb(25=
+5, 255, 255);background-color:rgb(255, 255, 255);width:100%;"><tbody><tr><t=
+d style=3D"direction:ltr;font-size:0px;padding:0 10px;text-align:center;"><=
+!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0"><tr><td class=3D"column-outlook" style=3D"vertical-alig=
+n:top;width:580px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook=
+-group-fix column" style=3D"font-size:0px;text-align:left;direction:ltr;dis=
+play:inline-block;vertical-align:top;width:100%;"><table border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody>=
+<tr><td style=3D"vertical-align:top;padding:0;"><table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><t=
+r><td align=3D"left" style=3D"font-size:0px;padding:0;word-break:break-word=
+;"><div style=3D"font-family:'Capsule Sans Text', Arial;font-size:13px;line=
+-height:15px;text-align:left;color:#000000;"><div style=3D"font-family: 'Ca=
+psule Sans Text', Arial; font-weight: 700; letter-spacing: 0.03em; text-tra=
+nsform: uppercase; color: #000000; padding: 6px 19px; border-radius: 30px; =
+border: 0; background-color:rgb(195, 245, 60); display: inline-block;">Play=
+</div></div></td></tr></tbody></table></td></tr></tbody></table></div><!--[=
+if mso | IE]></td></tr></table><![endif]--></td></tr></tbody></table></div>=
+<!--[if mso | IE]></td></tr></table><table align=3D"center" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D=
+"width:600px;" width=3D"600" bgcolor=3D"rgb(255, 255, 255)" ><tr><td style=
+=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-=
+-><div style=3D"background:rgb(255, 255, 255);background-color:rgb(255, 255=
+, 255);margin:0px auto;max-width:600px;"><table align=3D"center" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"backg=
+round:rgb(255, 255, 255);background-color:rgb(255, 255, 255);width:100%;"><=
+tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:0 10px 20px;text=
+-align:center;"><!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"column-outlook articl=
+e-outlook" style=3D"vertical-align:top;width:580px;" ><![endif]--><div clas=
+s=3D"mj-column-per-100 mj-outlook-group-fix column article" style=3D"font-s=
+ize:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:t=
+op;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" width=3D"100%"><tbody><tr><td style=3D"vertical-align:to=
+p;padding:0;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" width=3D"100%"><tbody><tr><td align=3D"left" class=3D"typ=
+e-no-paragraph-margins" style=3D"font-size:0px;padding:0;padding-top:24px;p=
+adding-bottom:12px;word-break:break-word;"><div style=3D"font-family:'Nib P=
+ro', Arial;font-size:24px;font-weight:600;line-height:32px;text-align:left;=
+color:#000000;"><p>As Netflix=E2=80=99s ad tier hits 1M subs, the streamer =
+bets on games and blockbusters to lure fresh eyes</p></div></td></tr><tr><t=
+d align=3D"left" style=3D"font-size:0px;padding:0;word-break:break-word;"><=
+div style=3D"font-family:'Capsule Sans Text', Arial;font-size:15px;font-wei=
+ght:400;letter-spacing:-0.1px;line-height:24px;text-align:left;color:#00000=
+0;"><p><strong>12 hours of =E2=80=9COuter Banks=E2=80=9D=E2=80=A6</strong> =
+two hours of ads. <strong><a href=3D"https://sg.robinhood.com/ls/click?upn=
+=3D6fntGirSE5selsQKrSSUHk6R8tCrM-2FUICq73HMQolwUFuZOMkMTHQzZKAwtAuHAnvNKc_Q=
+-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKV=
+SwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJ=
+FOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx=
+01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E=
+2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEEmChl2XDIs7HfVg3o0juNNpiTX=
+kW6JrxsOYB75D6GCplWDRd-2B8ChvmGKtEti-2FfVR5-2Bomzl5OmxZsj2NiKOzduz-2BKEnqug=
+Q7IcxwdbH5xeYN8GN3QzP1CIwRwTMNzxNGbcdaaA9SHTWOGhyIho7XqO3ztp-2BP-2FZzK5LEXm=
+eMVsrnxm3z9x7oyJVoP0HZkXUD33N89gScHqBoBJbrzV8Vk1d7LLY8oqoOKeqvbelpxUaRbVPoO=
+2tM2xLT8wbRBUlEk5Y58rX44gqze-2F3uX8BFdc4g-3D-3D" style=3D"color: rgb(0, 200=
+, 5); text-decoration: underline; font-weight: bold; text-decoration-thickn=
+ess: 2px; text-underline-offset: 1px;" target=3D"_blank" rel=3D"noopener">N=
+etflix</a>&#39;s</strong> ad tier is growing as more Americans pivot to che=
+aper streaming options. Bloomberg <a href=3D"https://sg.robinhood.com/ls/cl=
+ick?upn=3D6fntGirSE5selsQKrSSUHjI4oHY3u2iOKr7TfJqY8xYTokY4vnXQMOWo0rPfOJCgF=
+Qc2jUBXgdzZuI3vGY-2FrFoT7M4AiOMAfIDDq1xg6TifJ9Q2T9FV7QEIkoB3pdGEP6PEknbGj4D=
+xYP7x0EBAzj1Gz5eSl8PjFhFoaTod-2BDCE-3Dlw3v_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2By=
+Zuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2B=
+nowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2F=
+mDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicN=
+qf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMn=
+bM-2F1vghWa807nAXEzq8ZUR22aq-2FE2IvigbYokFjkhq9fKJo5mv2q7-2Buc6F4-2BLDDUnX-=
+2BFUpMMmacps9rLrWLRyrzmdS1tnVfdKIx-2BMqgIDOo8Tk52K88GTRbLKonNsYD4ASKml2-2BN=
+J3UuZQZU2MRRA-2B5s2orpqC5j4K12maJGLEj14tEN4pxgaCmdIwoQmQh4sDQEEAgzk1pIw77W6=
+LAsdBXOuy2THO-2FZTrYZEzI4T8gbFGY6KnUtX9balYBo6mnbSd859ombRMXACdBac5aT52xa-2=
+B-2Fg6HbmifBKKjw-3D-3D" style=3D"color: rgb(0, 200, 5); text-decoration: un=
+derline; font-weight: bold; text-decoration-thickness: 2px; text-underline-=
+offset: 1px;" target=3D"_blank" rel=3D"noopener">reported</a> that the $7/m=
+onth subscription hit 1M US users two months after launching in November. W=
+hile the #s are a drop in the popcorn bucket compared to Netflix&#39;s 230M=
++ non-ad subs, they apparently topped advertisers=E2=80=99 expectations.</p=
+><ul style=3D"padding-left: 18px;"><li style=3D"margin-bottom: 12px;"><p><s=
+trong>Adoption:</strong> In January 19% of new Netflix subscribers chose it=
+s ad tier. The ad-adoption is slower than that of its rivals: 36% of new <s=
+trong><a href=3D"https://sg.robinhood.com/ls/click?upn=3D6fntGirSE5selsQKrS=
+SUHk6R8tCrM-2FUICq73HMQolwWiBl43lkvTOPPMCtr4M65ATp3O_Q-2Flqu7vv4WEwX7O0huvL=
+nV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2B=
+t9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMh=
+A6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcU=
+ZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsy=
+YYf31m3mMnbM-2F1vghWa807nAXEM6bY0RVZJz50AfXpNJdyzHlenix70bJcz-2FqBtNeG7SkWf=
+diws2hndjGb6Gem-2FIz4PmnYb0-2FNEqVZVGgKBX4NyE5-2B6djDe86Mu9cSl-2B1MKNOpat72=
+aECxy4Rx2w2nGXychQ9sybsKi2APH4hQSMWy0FZ7Ur3IeQuJKHpJWJ4T-2F56iOjaAVXLONV8QD=
+l9P8XnBdSiwO5haELd-2F1J1v13FV94EKyaW9mbnEJWWDXXvLTSdKS-2BQw0-2BW4X-2B9lt728=
+HyZCRVkICXVyhd7zg2YE6KhRfQ-3D-3D" style=3D"color: rgb(0, 200, 5); text-deco=
+ration: underline; font-weight: bold; text-decoration-thickness: 2px; text-=
+underline-offset: 1px;" target=3D"_blank" rel=3D"noopener">Disney</a></stro=
+ng>+ subscribers opted for ads after three months (and 21% for HBO Max).</p=
+></li><li style=3D"margin-bottom: 12px;"><p><strong>#Subscripturation:</str=
+ong> The number of Americans who say streaming subscriptions are getting to=
+o pricey is up 50% since 2020, and nearly half of people in a recent <a hre=
+f=3D"https://sg.robinhood.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHpQ0hmHSmu=
+JXpHikkNaPXCSuxH36SCFpO7iAfre8vZ-2F0xS5r50s3DD0jC1wcA4h6boTZe5eLDmdYJ5tkFq-=
+2FDPRY-3DnBVQ_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep=
+-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0=
+RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk=
+0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2F=
+p56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXElmNKBnZO7j8=
+Pic-2Fe0Zzqc1a9zEqPOzFd7QSS-2BYSnpvyAdBD-2Boo3fMoObjNdYGq1xD8k2FDJUnHWpiqS-=
+2FXlZPQ-2BMWylzQ4B-2Bgaqp6xv7bS88-2B7CVC-2FdSFQcsSf-2FPK6q79bpR7Ev9l4UjmCtP=
+-2BX5MtriEtprI30uXVBncSGjKI38Prw1G0-2BKUdLfISeNk-2B21TWovmOw6ZYv89vHY8Pu8jR=
+ccA-2BpTl9DjNIBAND4VypAaql-2F8eRUR37Y7omrXsHFircDvb1suDVsbMehJw0hWnFYA-3D-3=
+D" style=3D"color: rgb(0, 200, 5); text-decoration: underline; font-weight:=
+ bold; text-decoration-thickness: 2px; text-underline-offset: 1px;" target=
+=3D"_blank" rel=3D"noopener">survey</a> said they pay for streaming service=
+s they don=E2=80=99t use.</p></li></ul><p><strong>Brick-breaking &amp; bloc=
+kbusters=E2=80=A6</strong> Americans are bracing for Netflix=E2=80=99s pass=
+word-mooching crackdown (expected this month). Meanwhile, Netflix needs to =
+give 100M+ non-paying households a reason to pay for their own accounts. Ye=
+sterday the streaming leader said it planned to release 40 new in-app games=
+ this year, with 70 more in the works. It now has 55 games, including a &qu=
+ot;Too Hot to Handle&quot; spin-off that=E2=80=99s racked up 1M+ downloads.=
+ Netflix also <a href=3D"https://sg.robinhood.com/ls/click?upn=3D6fntGirSE5=
+selsQKrSSUHkYJFA3tUXqLZNTmIOP1GJXsFcTVjYASTElCAL4F1PL7Lgaq6QrBa0c4d1GL1xF2R=
+ij9jWCA3NNgJxc9BQwwaDaHO7xCHw3-2FTVFlrgmKzOID7k6-2BKmIT9EIfTyXgnfz4o2fvV3LL=
+o-2BeYqaotPVm1SOhreaFmZg9tBBGpUorL1SKFnKlD_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2By=
+Zuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2B=
+nowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2F=
+mDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicN=
+qf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMn=
+bM-2F1vghWa807nAXEks9NolRpDTal-2FYeGF9NvgHAFWXF6GPjd0Gko3oPDGKwVeG5dvqg6lFi=
+qur-2F1EAJAYzXOEHGtdQL6QVybfj2PI1v3gzoCdTLWdG2d6ASivfW2KPaHGmuGMpEetGsgpLiU=
+-2B0RdlJGipo2EtA2oPnxFac6Op7pfXv6If8TNgNY81zG1YNnSUcV1o8Qu6DNJ17Yr8n9m4XRXG=
+3w4IBuxqdZRZUfwq7-2F-2FMxJZKlsCwdrmHpXErCgAIklm25mXhJyLOWRQfgeUlB7fNjYV9Aos=
+9XKp-2Fg-3D-3D" style=3D"color: rgb(0, 200, 5); text-decoration: underline;=
+ font-weight: bold; text-decoration-thickness: 2px; text-underline-offset: =
+1px;" target=3D"_blank" rel=3D"noopener">reportedly</a> plans to splurge $2=
+00M+ on an original sci-fi flick (=E2=80=9CThe Electric State=E2=80=9D). Th=
+e Chris Pratt and Millie Bobby Brown movie could spawn more games, shows, a=
+nd merch.</p></div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;=
+padding:0;padding-top:18px;word-break:break-word;"><div style=3D"font-famil=
+y:'Capsule Sans Text', Arial;font-size:15px;font-weight:700;letter-spacing:=
+0.5px;line-height:0;text-align:left;color:#000000;"><table><tbody><tr><td s=
+tyle=3D"padding: 0 8px 0 0; height: 17px;"><img src=3D"https://cdn.robinhoo=
+d.com/marketsnacks_assets/v2/takeaway-black.png" width=3D"17px" height=3D"1=
+7px"></td><td style=3D"font-weight: 700; width: 100%; padding: 0; height: 1=
+7px; line-height: 0; padding-top: 1px;">THE TAKEAWAY</td></tr></tbody></tab=
+le></div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:0;=
+word-break:break-word;"><div style=3D"font-family:'Capsule Sans Text', Aria=
+l;font-size:15px;font-weight:400;letter-spacing:-0.1px;line-height:24px;tex=
+t-align:left;color:#000000;"><p><strong>The biggest test is still ahead=E2=
+=80=A6</strong> So far, Netflix has rolled out its password crackdown only =
+in a handful of countries, including Spain and Canada =E2=80=94 but complai=
+nts are already flooding in. Still, the end of mooching could mean more ad-=
+tier subs. Netflix hopes that if users are price-sensitive enough to =E2=80=
+=9Cshare=E2=80=9D accounts with an ex, they might be willing to shell out $=
+7 for ad-Flix. Especially if there are more reasons to tune in.</p></div></=
+td></tr><tr><td align=3D"center" class=3D"light" style=3D"font-size:0px;pad=
+ding:10px 25px;padding-top:24px;padding-right:0;padding-bottom:24px;padding=
+-left:0;word-break:break-word;"><p style=3D"border-top:solid 1px #e3e9ed;fo=
+nt-size:1px;margin:0px auto;width:100%;"></p><!--[if mso | IE]><table align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"borde=
+r-top:solid 1px #e3e9ed;font-size:1px;margin:0px auto;width:580px;" role=3D=
+"presentation" width=3D"580px" ><tr><td style=3D"height:0;line-height:0;"> =
+&nbsp;
+</td></tr></table><![endif]--></td></tr></tbody></table></td></tr></tbody><=
+/table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tb=
+ody></table></div><!--[if mso | IE]></td></tr></table><table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"pres=
+entation" style=3D"width:600px;" width=3D"600" bgcolor=3D"rgb(255, 255, 255=
+)" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exa=
+ctly;"><![endif]--><div style=3D"background:rgb(255, 255, 255);background-c=
+olor:rgb(255, 255, 255);margin:0px auto;max-width:600px;"><table align=3D"c=
+enter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"background:rgb(255, 255, 255);background-color:rgb(255, 255, 25=
+5);width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding=
+:0 10px;text-align:center;"><!--[if mso | IE]><table role=3D"presentation" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"column-ou=
+tlook" style=3D"vertical-align:top;width:580px;" ><![endif]--><div class=3D=
+"mj-column-per-100 mj-outlook-group-fix column" style=3D"font-size:0px;text=
+-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100=
+%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"present=
+ation" width=3D"100%"><tbody><tr><td style=3D"vertical-align:top;padding:0;=
+"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentat=
+ion" width=3D"100%"><tbody><tr><td align=3D"left" style=3D"font-size:0px;pa=
+dding:0;word-break:break-word;"><div style=3D"font-family:'Capsule Sans Tex=
+t', Arial;font-size:13px;line-height:15px;text-align:left;color:#000000;"><=
+div style=3D"font-family: 'Capsule Sans Text', Arial; font-weight: 700; let=
+ter-spacing: 0.03em; text-transform: uppercase; color: #000000; padding: 6p=
+x 19px; border-radius: 30px; border: 0; background-color:rgb(195, 245, 60);=
+ display: inline-block;">Private</div></div></td></tr></tbody></table></td>=
+</tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]-->=
+</td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><table =
+align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"=
+" role=3D"presentation" style=3D"width:600px;" width=3D"600" bgcolor=3D"rgb=
+(255, 255, 255)" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-h=
+eight-rule:exactly;"><![endif]--><div style=3D"background:rgb(255, 255, 255=
+);background-color:rgb(255, 255, 255);margin:0px auto;max-width:600px;"><ta=
+ble align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"background:rgb(255, 255, 255);background-color:r=
+gb(255, 255, 255);width:100%;"><tbody><tr><td style=3D"direction:ltr;font-s=
+ize:0px;padding:0 10px 20px;text-align:center;"><!--[if mso | IE]><table ro=
+le=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><t=
+d class=3D"column-outlook article-outlook" style=3D"vertical-align:top;widt=
+h:580px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-group-fix=
+ column article" style=3D"font-size:0px;text-align:left;direction:ltr;displ=
+ay:inline-block;vertical-align:top;width:100%;"><table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><t=
+r><td style=3D"vertical-align:top;padding:0;"><table border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr>=
+<td align=3D"left" class=3D"type-no-paragraph-margins" style=3D"font-size:0=
+px;padding:0;padding-top:24px;padding-bottom:12px;word-break:break-word;"><=
+div style=3D"font-family:'Nib Pro', Arial;font-size:24px;font-weight:600;li=
+ne-height:32px;text-align:left;color:#000000;"><p>Semi-private-flight compa=
+nies like JSX take off as passengers seek a =E2=80=9CGoldilocks option=E2=
+=80=9D</p></div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;pad=
+ding:0;word-break:break-word;"><div style=3D"font-family:'Capsule Sans Text=
+', Arial;font-size:15px;font-weight:400;letter-spacing:-0.1px;line-height:2=
+4px;text-align:left;color:#000000;"><p><strong>Arrived 20 minutes before ta=
+keoff=E2=80=A6</strong> didn=E2=80=99t even fly private. Semi-private fligh=
+ts (think: 15 to 30 passengers) have gained traction since the pandemic beg=
+an, as germ fears led some travelers to seek out less crowded options. Thes=
+e flights aren=E2=80=99t regulated by the TSA and typically depart from pri=
+vate terminals, so security is much quicker.</p><ul style=3D"padding-left: =
+18px;"><li style=3D"margin-bottom: 12px;"><p><strong>While these semi-priva=
+te perks sound pricey,</strong> some companies are offering them for prices=
+ comparable to first class or even economy.</p></li><li style=3D"margin-bot=
+tom: 12px;"><p><strong>For example,</strong> <strong>JSX</strong> offers a =
+round trip from Los Angeles to Vegas for under $200. Or an Austin-Dallas ro=
+undtrip for $170. Luxury rivals like <strong>Aero</strong>, <strong>Tradewi=
+nd</strong>, and <strong>Set Jet</strong> are more comparable to first-clas=
+s prices.</p></li><li style=3D"margin-bottom: 12px;"><p><strong>Sweeteners:=
+</strong> JSX passengers can valet their cars at the airport and hop on a 3=
+0-seat jet (with their pet) just 20 minutes before takeoff. JSX says it=E2=
+=80=99s the first air carrier to roll out in-flight WiFi from <strong>Space=
+X=E2=80=99s</strong> Starlink satellites.</p></li><li style=3D"margin-botto=
+m: 12px;"><p><strong>Downsides:</strong> These companies have a limited num=
+ber of routes (nothing near commercial airlines). And they=E2=80=99re typic=
+ally pricier than a regular flight.</p></li></ul><p><strong>Not too hot, no=
+t too cold=E2=80=A6</strong> Most folks can=E2=80=99t afford a first-class =
+ticket, much less a private plane. But most people <em>also</em> hate being=
+ sandwiched in the middle seat in economy and would rather skip long TSA li=
+nes. Travelers are also tired of thousands of cancellations and delays from=
+ major airlines. Semi-private flights offer a Goldilocks option between fly=
+ing private and flying commercial.</p></div></td></tr><tr><td align=3D"left=
+" style=3D"font-size:0px;padding:0;padding-top:18px;word-break:break-word;"=
+><div style=3D"font-family:'Capsule Sans Text', Arial;font-size:15px;font-w=
+eight:700;letter-spacing:0.5px;line-height:0;text-align:left;color:#000000;=
+"><table><tbody><tr><td style=3D"padding: 0 8px 0 0; height: 17px;"><img sr=
+c=3D"https://cdn.robinhood.com/marketsnacks_assets/v2/takeaway-black.png" w=
+idth=3D"17px" height=3D"17px"></td><td style=3D"font-weight: 700; width: 10=
+0%; padding: 0; height: 17px; line-height: 0; padding-top: 1px;">THE TAKEAW=
+AY</td></tr></tbody></table></div></td></tr><tr><td align=3D"left" style=3D=
+"font-size:0px;padding:0;word-break:break-word;"><div style=3D"font-family:=
+'Capsule Sans Text', Arial;font-size:15px;font-weight:400;letter-spacing:-0=
+.1px;line-height:24px;text-align:left;color:#000000;"><p><strong>=E2=80=9CT=
+oo good to be true=E2=80=9D is hard to maintain=E2=80=A6</strong> There=E2=
+=80=99s a reason airlines squeeze us in like sardines: $$. Planes are expen=
+sive to fly and maintain, and 30-person flights at commercial prices don=E2=
+=80=99t seem like sustainable moneymakers. To expand its routes, JSX said i=
+t=E2=80=99s going to add a new aircraft to its fleet every six weeks. These=
+ companies are cruising in growth mode, but they might have to lift prices =
+to lengthen their runway.</p></div></td></tr><tr><td align=3D"center" class=
+=3D"light" style=3D"font-size:0px;padding:10px 25px;padding-top:24px;paddin=
+g-right:0;padding-bottom:24px;padding-left:0;word-break:break-word;"><p sty=
+le=3D"border-top:solid 1px #e3e9ed;font-size:1px;margin:0px auto;width:100%=
+;"></p><!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"border-top:solid 1px #e3e9ed;font-size:1p=
+x;margin:0px auto;width:580px;" role=3D"presentation" width=3D"580px" ><tr>=
+<td style=3D"height:0;line-height:0;"> &nbsp;
+</td></tr></table><![endif]--></td></tr></tbody></table></td></tr></tbody><=
+/table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tb=
+ody></table></div><!--[if mso | IE]></td></tr></table><table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"pres=
+entation" style=3D"width:600px;" width=3D"600" bgcolor=3D"rgb(255, 255, 255=
+)" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exa=
+ctly;"><![endif]--><div style=3D"background:rgb(255, 255, 255);background-c=
+olor:rgb(255, 255, 255);margin:0px auto;max-width:600px;"><table align=3D"c=
+enter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"background:rgb(255, 255, 255);background-color:rgb(255, 255, 25=
+5);width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding=
+:0 10px;text-align:center;"><!--[if mso | IE]><table role=3D"presentation" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"column-ou=
+tlook" style=3D"vertical-align:top;width:580px;" ><![endif]--><div class=3D=
+"mj-column-per-100 mj-outlook-group-fix column" style=3D"font-size:0px;text=
+-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100=
+%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"present=
+ation" width=3D"100%"><tbody><tr><td style=3D"vertical-align:top;padding:0;=
+"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentat=
+ion" width=3D"100%"><tbody><tr><td align=3D"left" style=3D"font-size:0px;pa=
+dding:0;word-break:break-word;"><div style=3D"font-family:'Capsule Sans Tex=
+t', Arial;font-size:13px;line-height:15px;text-align:left;color:#000000;"><=
+div style=3D"font-family: 'Capsule Sans Text', Arial; font-weight: 700; let=
+ter-spacing: 0.03em; text-transform: uppercase; color: #000000; padding: 6p=
+x 19px; border-radius: 30px; border: 0; background-color:rgb(195, 245, 60);=
+ display: inline-block;">DEFI(NE)</div></div></td></tr></tbody></table></td=
+></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--=
+></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><table=
+ align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D=
+"" role=3D"presentation" style=3D"width:600px;" width=3D"600" bgcolor=3D"rg=
+b(255, 255, 255)" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-=
+height-rule:exactly;"><![endif]--><div style=3D"background:rgb(255, 255, 25=
+5);background-color:rgb(255, 255, 255);margin:0px auto;max-width:600px;"><t=
+able align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"background:rgb(255, 255, 255);background-color:r=
+gb(255, 255, 255);width:100%;"><tbody><tr><td style=3D"direction:ltr;font-s=
+ize:0px;padding:0 10px 20px;text-align:center;"><!--[if mso | IE]><table ro=
+le=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><t=
+d class=3D"column-outlook article-outlook" style=3D"vertical-align:top;widt=
+h:580px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-group-fix=
+ column article" style=3D"font-size:0px;text-align:left;direction:ltr;displ=
+ay:inline-block;vertical-align:top;width:100%;"><table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><t=
+r><td style=3D"vertical-align:top;padding:0;"><table border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr>=
+<td align=3D"left" class=3D"type-no-paragraph-margins" style=3D"font-size:0=
+px;padding:0;padding-top:24px;padding-bottom:12px;word-break:break-word;"><=
+div style=3D"font-family:'Nib Pro', Arial;font-size:24px;font-weight:600;li=
+ne-height:32px;text-align:left;color:#000000;"><p>Heard on the Block: &quot=
+;layer 2&quot;</p></div></td></tr><tr><td align=3D"left" style=3D"font-size=
+:0px;padding:0;word-break:break-word;"><div style=3D"font-family:'Capsule S=
+ans Text', Arial;font-size:15px;font-weight:400;letter-spacing:-0.1px;line-=
+height:24px;text-align:left;color:#000000;"><p>=F0=9F=9B=A3=EF=B8=8F <em>Li=
+ke an elevated highway built over a cobblestoned road=E2=80=A6</em></p><p>L=
+ayer-1 blockchains like <strong><a href=3D"https://sg.robinhood.com/ls/clic=
+k?upn=3D6fntGirSE5selsQKrSSUHp8moFAngD2hO-2B8hAHAWLINApV5wqPnzRyK9sSspWje3G=
+pIh_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5o=
+EXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOP=
+tuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmj=
+cflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8=
+IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEvF0hTRtDlarTbBu220NUV=
+2EmI8itvo7s8FLaibqjwIem2-2BkRGZuOUD3tNI6awZT7oGvWz9kddrM8D0lvEDQuM4ON4xVRmU=
+4MxV8PZM-2Fl8Pgo-2FV0oUUdO4jgVnyTdupAWemob-2F0hAWyFPk4aXIi-2FksMzkLRxKyPxOu=
+9a9-2BlXjPq1rBI2xVmsG9s4VWaBY-2BrP-2FOskdBi1bt23HgR3qMCl0bQHSbBfG6fMoiyth07=
+o9DkbqRV697yder7g-2Flp0kb9F5K-2FdkjesX-2FXXqx71wXEPTog-3D-3D" style=3D"colo=
+r: rgb(0, 200, 5); text-decoration: underline; font-weight: bold; text-deco=
+ration-thickness: 2px; text-underline-offset: 1px;" target=3D"_blank" rel=
+=3D"noopener">ethereum</a></strong> and <strong><a href=3D"https://sg.robin=
+hood.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHp8moFAngD2hO-2B8hAHAWLINPd0wQL=
+cRl5S8T-2BRoybpc3OZaI_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM=
+0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460=
+WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQB=
+RTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrz=
+vpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEWzO=
+-2Fcsw4uOFKU139rkBPimeJWpS17LF0r-2F67XAproyIxbe143yBfeERF1zhQiyZrRw8s2ZY1aO=
+z5eID-2B747lgg0GOEJBgySp5FjB5QsHYBjfCaTO-2Fzq6Sqg-2BMmBavfd9dGVTx2MOfY0VXuO=
+l2G7Qa-2B7rABqM3m2iSPtj-2BenbGYcVwU-2F4aOfasUgeFL6Ht3NFdqfXrRPL9F3NYSDLvBgp=
+MYL6UKptRsPdPfhPTvVJyKi7g6V8enJAclr0hY0-2BJNQ6l6sRRZ-2F7MpeEAZny2O3VZw-3D-3=
+D" style=3D"color: rgb(0, 200, 5); text-decoration: underline; font-weight:=
+ bold; text-decoration-thickness: 2px; text-underline-offset: 1px;" target=
+=3D"_blank" rel=3D"noopener">bitcoin</a></strong> have gotten flak for slow=
+ transactions and high fees. <strong>Layer-2</strong> networks are designed=
+ to be faster and cheaper: they let users make crypto transactions <em>outs=
+ide</em> the main chains, batch them up, and then report them back to L1s. =
+<strong>Arbitrum</strong>, a leading ethereum L2, is set to <a href=3D"http=
+s://sg.robinhood.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHqr2Z-2BOskJVdINsdB=
+UcR6H-2B9pGmnPXUAMGp-2FHXeXSaY1a0Pos8sQhlku94UO5icfwARVojILTWvzcgk4crX8Vwje=
+zWCYjrqCcplDxPPtYHcbMrF2DoYWOw7dQgZ23vWS7Q-3D-3D5hsU_Q-2Flqu7vv4WEwX7O0huvL=
+nV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2B=
+t9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMh=
+A6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcU=
+ZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsy=
+YYf31m3mMnbM-2F1vghWa807nAXEK8y8geFK0wjKRPxUsQx5Sia-2FbR4T84zbN5K04yZymVL89=
+UevFaMOYOUAZforHb87W1aCS7NUrcVFfKXpD6-2BzeLq3IXO-2BSY5XUx74TDx-2F7j7-2Fpfs2=
+tTPtL1z-2Frk3ToHDn1w19-2F8Hr6iW-2FTMzySQtjtyACMTYzbSGoC6xUHUrI2TvZI1uhpBFtX=
+-2BodDrWRSK8i4Gu26Y7oK-2BTj1HPy0-2BXxOfbeqkWAGj7WlZYn-2FQa1BuexUj0bw8rKbG1n=
+9SywNM-2Br-2BMbWoKIS3G-2Fj9sSlx-2FnKQA-3D-3D" style=3D"color: rgb(0, 200, 5=
+); text-decoration: underline; font-weight: bold; text-decoration-thickness=
+: 2px; text-underline-offset: 1px;" target=3D"_blank" rel=3D"noopener">laun=
+ch</a> a hotly anticipated token tomorrow that=E2=80=99ll give holders the =
+ability to vote on changes to its network.</p></div></td></tr><tr><td align=
+=3D"center" class=3D"light" style=3D"font-size:0px;padding:10px 25px;paddin=
+g-top:24px;padding-right:0;padding-bottom:24px;padding-left:0;word-break:br=
+eak-word;"><p style=3D"border-top:solid 1px #e3e9ed;font-size:1px;margin:0p=
+x auto;width:100%;"></p><!--[if mso | IE]><table align=3D"center" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-top:solid 1px #e3e9=
+ed;font-size:1px;margin:0px auto;width:580px;" role=3D"presentation" width=
+=3D"580px" ><tr><td style=3D"height:0;line-height:0;"> &nbsp;
+</td></tr></table><![endif]--></td></tr></tbody></table></td></tr></tbody><=
+/table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tb=
+ody></table></div><!--[if mso | IE]></td></tr></table><table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"pres=
+entation" style=3D"width:600px;" width=3D"600" bgcolor=3D"rgb(255, 255, 255=
+)" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exa=
+ctly;"><![endif]--><div style=3D"background:rgb(255, 255, 255);background-c=
+olor:rgb(255, 255, 255);margin:0px auto;max-width:600px;"><table align=3D"c=
+enter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"background:rgb(255, 255, 255);background-color:rgb(255, 255, 25=
+5);width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding=
+:0 10px 18px 10px;text-align:center;"><!--[if mso | IE]><table role=3D"pres=
+entation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D=
+"column-outlook" style=3D"vertical-align:top;width:580px;" ><![endif]--><di=
+v class=3D"mj-column-per-100 mj-outlook-group-fix column" style=3D"font-siz=
+e:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top=
+;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" width=3D"100%"><tbody><tr><td style=3D"vertical-align:top=
+;padding:0;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" width=3D"100%"><tbody><tr><td align=3D"left" style=3D"fon=
+t-size:0px;padding:0;word-break:break-word;"><div style=3D"font-family:'Nib=
+ Pro', Arial;font-size:24px;font-weight:600;line-height:32px;text-align:lef=
+t;color:#000000;">What else we're Snackin'</div></td></tr><tr><td align=3D"=
+left" style=3D"font-size:0px;padding:0;padding-top:12px;word-break:break-wo=
+rd;"><div style=3D"font-family:'Capsule Sans Text', Arial;font-size:15px;fo=
+nt-weight:400;letter-spacing:-0.1px;line-height:24px;text-align:left;color:=
+#000000;"><ul style=3D"padding-left: 18px;"><li style=3D"margin-bottom: 12p=
+x;"><p><strong><a href=3D"https://sg.robinhood.com/ls/click?upn=3D6fntGirSE=
+5selsQKrSSUHqKeH-2FmzTmoP04MXGd9pfJIqGN-2FPV-2ByUclTtSB1WeeLr2cgHezNU6q-2FS=
+vrCcQDvG7rTWctRi48bNFGvQzNxQHPKjbN-2FAa8buYRqATCvLKYqEZWjE30AxaAQrFtmLD0PuR=
+A-3D-3DKfWY_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2=
+FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RS=
+jhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0c=
+aTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp5=
+6QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXE0M2zx4v0A8Nfo=
+cEr8WlWY1rPRuC1tNqOwiMJvBPUu3WePN4wp6HuOji9LmjgwbzPHv7MZXwRiPDLHiqq7i9IARUF=
+4fpDbm7spDMdtVnkrDuhoDVOgbs2xfIeLxfIu9BeC9Mj7srA0cfiKxcLsxun0sDiMA2IjkvkBxh=
+ClrWaHj8xEtVuGn56mh32hHJDxUoydOBeM5pcCL4Q5h9QnUIp-2BokQDNBwxey1pPfur2KzXSZz=
+zzZAZlgOuOiSxOb-2FquT-2FqXnuuV8T3bg-2BuLyzNd3r2w-3D-3D" style=3D"color: rgb=
+(0, 200, 5); text-decoration: underline; font-weight: bold; text-decoration=
+-thickness: 2px; text-underline-offset: 1px;" target=3D"_blank" rel=3D"noop=
+ener">TikTalk</a>:</strong> <strong>TikTok</strong> CEO Shou Zi Chew is set=
+ to testify in front of US lawmakers tomorrow as officials debate banning t=
+he app. Yesterday Chew asked the platform&#39;s 150M US users to speak up i=
+n defense of the Tok.</p></li><li style=3D"margin-bottom: 12px;"><p><strong=
+><a href=3D"https://sg.robinhood.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHqK=
+eH-2FmzTmoP04MXGd9pfJJ4VjL8vV7hEgi54A57-2F9bkUJsd2I1O8d38v3KVqKTkN8rPCFOary=
+WbrgX1Id0aByc-3DFP2A_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0=
+ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460W=
+cvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBR=
+TOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzv=
+pCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXE9U0H=
+oCQa60VFzVHJ-2BlR9bgXkQT1qVtf0mhnGwgMF9IQVrCwRCoEK6K7NG7T8DeqAxAa3fpmNE9Ghb=
+ekB-2BVVWyc0lMctWdfD9ANz5we4CvaTdzzG28mK8jW4zbTApTbg3w4WUgSEDzNtDZ9zuCCVIjX=
+uHmuksq2Y092LTMKYoUipxX1KI9xgQWeBHupQWhAqkdh4nUNOnM4vraxjwZa9g9cVNuZp3oozTU=
+4rjKq8ymJgHMFqaH-2FPZtuq0-2Fr7yEVW2FChKVbH76QgHdLQa4oeIkA-3D-3D" style=3D"c=
+olor: rgb(0, 200, 5); text-decoration: underline; font-weight: bold; text-d=
+ecoration-thickness: 2px; text-underline-offset: 1px;" target=3D"_blank" re=
+l=3D"noopener">GamePop</a>:</strong> <strong><a href=3D"https://sg.robinhoo=
+d.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHk6R8tCrM-2FUICq73HMQolwUSv5hitawD=
+5nS4zgIEUQtDCL1O_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFO=
+wep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFl=
+JO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUT=
+DPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih=
+-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEUVZm4aR9=
+WO956XsMfdluN2JgGCxmoiAgQ2T-2B75fYCayxpyMDolDyUl8tD2w6H2gGelZMLBPpPA2i5hj17=
+I1Fjomp0FxfaxKFdHQj2QmNPjBP4D5c8yWpQ9LeicRdzRN-2FxOzRGZt1HyEh9iEbjFpfQZ8qVz=
+LORjRZ5xPUOtgHtyTiLVYmFf8fmtJw3t9RsCLGfePckjSzsBgc2Ip-2Br6Qj1SFFM5H-2B1oeTX=
+-2Fy2q0ECQYnQnA-2BTJYNITOGLdqSHeaAiE9p77ao0k7biBBR3AExJ9g-3D-3D" style=3D"c=
+olor: rgb(0, 200, 5); text-decoration: underline; font-weight: bold; text-d=
+ecoration-thickness: 2px; text-underline-offset: 1px;" target=3D"_blank" re=
+l=3D"noopener">GameStop</a></strong> reported a quarterly profit for the fi=
+rst time in two years. Though sales dipped, the brick-and-mortar chain cut =
+costs by laying off employees and homing in on =E2=80=9Coperational efficie=
+ncy.=E2=80=9D</p></li><li style=3D"margin-bottom: 12px;"><p><strong><a href=
+=3D"https://sg.robinhood.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHkYJFA3tUXq=
+LZNTmIOP1GJWqBnOb9FHf45f9-2FGQ0nFqyBu3-2B-2BhO5r0DgIZpTZlefWOq1viuqEKP1wp-2=
+B-2BfJFtzMdIZiUGdhqNRtowWQBZ1vA-2B-2FDKhXI16G7lLvaLj4uQbpQ-3D-3DcWTJ_Q-2Flq=
+u7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZm=
+a-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAc=
+GEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKH=
+uwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJ=
+OoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXER6z9zMH485f3NQncpnRYTptq5AoICyw=
+o2oY0l9lu6pvbS3QHbTWL150Prk8Qets6yRYZ3n33S3il-2F7uzGdu210zW8Xw10lsmkyeWgoVa=
+0sd1EH-2BGFDhncgCL1QPmDbsX3Bck-2BoJRqxKHgjgzX8PKT-2B6OLdc4nA4DekJUfl-2FKhHY=
+fqvr8s23dvU4GdG-2BDej99Wp0v6vGIJCJdOdpebiAadtkKYdYt5GBRjcb8gYVR00QUula1r2Y-=
+2FuFCaT1J9tA7MdxtWsBIFpbpBG-2BVAixpcWQ-3D-3D" style=3D"color: rgb(0, 200, 5=
+); text-decoration: underline; font-weight: bold; text-decoration-thickness=
+: 2px; text-underline-offset: 1px;" target=3D"_blank" rel=3D"noopener">Sear=
+chAI</a>:</strong> <strong><a href=3D"https://sg.robinhood.com/ls/click?upn=
+=3D6fntGirSE5selsQKrSSUHk6R8tCrM-2FUICq73HMQolwUoO1aXD6XpQAyPHH307kdcZWOS_Q=
+-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKV=
+SwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJ=
+FOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx=
+01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E=
+2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEyDgpOGYhEAH2zVUCtjmEcmrrxK=
+t6I4z-2FLuWlKaT3bI-2Bzps53sdAR7RLGqsAvVjnwIN509w-2Bz-2FmFaPbfhVoYqHNbdKcGle=
+XWlwtjOxHmlro9024vpUHibN9zyhFXf-2FVPrWexuAnx7gu2hMYxASHMp9qY-2BZfdRL-2FBmD0=
+O-2BSRUEKg2JxpUGoR2N0jkD2rltZ8LY7UJLQd1JY7JwFVPulnrJO5RxeJ-2B9ZR79AcmHo3To0=
+xoTN-2BPsWRH-2BlEG6ngEUxhenFSAMdmKjizvYa6PkOxBiRg-3D-3D" style=3D"color: rg=
+b(0, 200, 5); text-decoration: underline; font-weight: bold; text-decoratio=
+n-thickness: 2px; text-underline-offset: 1px;" target=3D"_blank" rel=3D"noo=
+pener">Google</a></strong> opened a waitlist for its ChatGPT rival Bard. La=
+st month <strong><a href=3D"https://sg.robinhood.com/ls/click?upn=3D6fntGir=
+SE5selsQKrSSUHk6R8tCrM-2FUICq73HMQolwWujtR8-2Bl7CCsOyN35v5IAQtqPW_Q-2Flqu7v=
+v4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2=
+BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEP=
+vM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI=
+-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoC=
+e846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEgUWiAXEe4rIobMxg3GPIokaYd0K-2Fucls=
+-2B5eIPwy1n2WpCyK-2FjHo9r5mxj7eMQAJc64QnClOC2S6IrMPSLiQwfzMjFd9Ci6K6Vuv9DId=
+Kr-2BS7NKKqXu2vWiMykKjHI6Hctot1qO9DMEaNEw-2FdT0illWaWuH1IIc21Dan3nycsDmza1C=
+tT2A7VWPOgWg7TZdkSLknO4a7OGckYGcrinKsoEj14tkMQfpTlya1wfGLbyHwCc2NLYXO6W81YQ=
+bvMpQCscROKzrCMP-2FTQbToROT8d-2Bg-3D-3D" style=3D"color: rgb(0, 200, 5); te=
+xt-decoration: underline; font-weight: bold; text-decoration-thickness: 2px=
+; text-underline-offset: 1px;" target=3D"_blank" rel=3D"noopener">Microsoft=
+</a></strong> incorporated ChatGPT into its Bing search engine in what=E2=
+=80=99s seen as a big threat to Google&#39;s search dominance.</p></li><li =
+style=3D"margin-bottom: 12px;"><p><strong><a href=3D"https://sg.robinhood.c=
+om/ls/click?upn=3D6fntGirSE5selsQKrSSUHkYJFA3tUXqLZNTmIOP1GJX0FBP-2FYluu3pr=
+82NQl5U3yMHI4szLUF6SvXWdmqNA1zDiCc3T82SvUMXufT2AJDKj3vDValHz6BZn0aGWdEQ9Buk=
+t0F-2BiPHWyjhKs8-2B1z-2F6g-3D-3DHXTy_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2=
+Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprD=
+FGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJ=
+HOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BD=
+xRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1=
+vghWa807nAXEqung0ZWTR2Q9pMiAJMe0QnSlBqFFxMDmxNErsYso8ymD9DqZ-2FLxmzheLXUJge=
+GXEDZ2oajdUFVicAlm9h4GcBZXkHV77-2BlvhDTZI-2FJ1mWMy6fckqv8BR73kNMgl-2F98y-2B=
+l4Ni-2BBJaZrokaReAcnxQ2Oc2qDxnfUebBtDrc4QTBQlZ-2F0MK2jM0GxuEcwsQvqNeEPeQXjP=
+OK3ltMcZzwpHe86CZpUjdMCy8QZJOtqlnzRAzlke4eVg2ssl-2FwvsIB0dFMlZDtVIYrmLLR0a-=
+2F0c50PA-3D-3D" style=3D"color: rgb(0, 200, 5); text-decoration: underline;=
+ font-weight: bold; text-decoration-thickness: 2px; text-underline-offset: =
+1px;" target=3D"_blank" rel=3D"noopener">Housed</a>:</strong> Existing-home=
+ sales jumped 14.5% last month as February year-over-year prices ticked dow=
+n for the first time in 11 years. Meanwhile, mortgage rates fell last week =
+ahead of spring (aka: peak home-buying szn).</p></li><li style=3D"margin-bo=
+ttom: 12px;"><p><strong><a href=3D"https://sg.robinhood.com/ls/click?upn=3D=
+6fntGirSE5selsQKrSSUHjI4oHY3u2iOKr7TfJqY8xZFQzQo9oFKCbcPNgr2EjPFLYCDKkBuaMJ=
+ibb1NWQmGT2cYMEawUoY1BgKsgTSLC7vSuQoF3zcUIM9syvyHsgS3OH9zyiGAB0HsiIccMT4pKv=
+stVTnW4d1qRuFH4qxvAs4-3D3yT-_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb=
+67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ys=
+BImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0I=
+mDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY=
+8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807=
+nAXEoq8tkeKZ1Fnv9668rl26lA9m88bni1DxJPdhPUguoM3oYL12bJfOq3nX1ZYIEgNgVJLpTmw=
+2ObvmQBEdAwDxCnzWFOzyz8yZKBCMuB5HYCjp6Iej6w2Tir8MwSWYBzYQfS5csfNiu9V1fM8k2Z=
+PrgnT-2BwBUNUqbaTv5u1eJ-2B3fNAChAofpAsgxcNbkRkjitEP0pMgSMzJCHdA4HpbaBEeOYOq=
+s6MWhyEfjodnjvWrbiNX31xi0DvX7qwiPaQJwCEZn-2Fbw0hOkQcdJB-2FeokO0qQ-3D-3D" st=
+yle=3D"color: rgb(0, 200, 5); text-decoration: underline; font-weight: bold=
+; text-decoration-thickness: 2px; text-underline-offset: 1px;" target=3D"_b=
+lank" rel=3D"noopener">Pindont</a>:</strong> <strong>Google</strong> suspen=
+ded Play Store downloads of Chinese shopping app <strong><a href=3D"https:/=
+/sg.robinhood.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHk6R8tCrM-2FUICq73HMQo=
+lwWzLdDdbLAC-2B6XAolSTIJlw35tJ_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2F=
+tb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7=
+ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl=
+0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2=
+FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa8=
+07nAXEDsv81ij61pKcIYF6y-2F9HAuK9ZJ-2BMuC-2Fx-2Bd0q1moDYqWwoGoBkqMY-2BEC0FNl=
+uWZaTCWpj5q3zJpoxj6h3419kGhH22vUC2QvLju69MQzqf886D1Irw5Fel6sy4auGQI-2BLzznI=
+dS4EOqutcAf-2B6GD0IDEUAZXuioBcpzGJ4xScnaXt6us2WnIE1uVDCng1m0-2F4qDu7l-2B1dq=
+eg5Gd5cMJyyX5gQpPKk6GADvoZ9lSW1cTPVDDnMbbYJwmJIRlEqYrBJFrBom8KQIrD4hhU-2Fpz=
+h-2BiA-3D-3D" style=3D"color: rgb(0, 200, 5); text-decoration: underline; f=
+ont-weight: bold; text-decoration-thickness: 2px; text-underline-offset: 1p=
+x;" target=3D"_blank" rel=3D"noopener">Pinduoduo</a></strong> after malware=
+ was spotted in some versions. Google didn&#39;t suspend Temu, the popular =
+US version of the app.</p></li></ul></div></td></tr><tr><td align=3D"left" =
+style=3D"font-size:0px;padding:0;word-break:break-word;"><div style=3D"font=
+-family:'Capsule Sans Text', Arial;font-size:15px;font-weight:400;letter-sp=
+acing:-0.1px;line-height:24px;text-align:left;color:#000000;"><p>=F0=9F=8D=
+=AA Thanks for Snacking with us! Want to share the Snacks? <strong>Invite y=
+our friends to sign up <a href=3D"https://sg.robinhood.com/ls/click?upn=3D6=
+fntGirSE5selsQKrSSUHvD1boXzg2LnBS3-2Fj-2FyVcTYD4x0wjlEXjxMas2Qsbybg8Ozg_Q-2=
+Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSw=
+hZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFO=
+sAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01=
+LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d=
+5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEKuSAQHnBjOtM-2F4VTegs2YgRxDj=
+jagRtPb01mLhxnvjbWoampszz7lNTC8-2FefNC3ekUFuv-2FujiUdXtbRc4wMyNLm-2Fo-2B23Q=
+gwsFleYMihtt14-2FDgguX-2BmBzNr3dNT9yKgrrBsKmgM78sXCS-2BnYS8xNfjDnK8XO16Slab=
+fjxMWNG2EpKaSOsIdC0RP-2B-2FQU87qfHQd5oe0KcBaFj8dRtXxf3mVGQ7bSJL6GJDtdV5NSG9=
+3Tz0sMVh9GgbAgYjJQnfHdt1WkjighHTWeK95CFMqAq5w-3D-3D" style=3D"color: rgb(0,=
+ 200, 5); text-decoration: underline; font-weight: bold; text-decoration-th=
+ickness: 2px; text-underline-offset: 1px;" target=3D"_blank" rel=3D"noopene=
+r">here</a></strong>.</p></div></td></tr><tr><td align=3D"center" class=3D"=
+light" style=3D"font-size:0px;padding:10px 25px;padding-top:24px;padding-ri=
+ght:0;padding-bottom:24px;padding-left:0;word-break:break-word;"><p style=
+=3D"border-top:solid 1px #e3e9ed;font-size:1px;margin:0px auto;width:100%;"=
+></p><!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" style=3D"border-top:solid 1px #e3e9ed;font-size:1px;ma=
+rgin:0px auto;width:580px;" role=3D"presentation" width=3D"580px" ><tr><td =
+style=3D"height:0;line-height:0;"> &nbsp;
+</td></tr></table><![endif]--></td></tr></tbody></table></td></tr></tbody><=
+/table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tb=
+ody></table></div><!--[if mso | IE]></td></tr></table><table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"pres=
+entation" style=3D"width:600px;" width=3D"600" bgcolor=3D"rgb(255, 255, 255=
+)" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exa=
+ctly;"><![endif]--><div style=3D"background:rgb(255, 255, 255);background-c=
+olor:rgb(255, 255, 255);margin:0px auto;max-width:600px;"><table align=3D"c=
+enter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"background:rgb(255, 255, 255);background-color:rgb(255, 255, 25=
+5);width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding=
+:0px 10px 18px 10px;text-align:center;"><!--[if mso | IE]><table role=3D"pr=
+esentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=
+=3D"column-outlook" style=3D"vertical-align:top;width:580px;" ><![endif]-->=
+<div class=3D"mj-column-per-100 mj-outlook-group-fix column" style=3D"font-=
+size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:=
+top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" width=3D"100%"><tbody><tr><td style=3D"vertical-align:t=
+op;padding:0;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" width=3D"100%"><tbody><tr><td align=3D"left" style=3D"fon=
+t-size:0px;padding:0;padding-bottom:18px;word-break:break-word;"><div style=
+=3D"font-family:'Nib Pro', Arial;font-size:24px;font-weight:600;line-height=
+:32px;text-align:left;color:#000000;">Snack Fact Of the Day</div></td></tr>=
+<tr><td align=3D"left" style=3D"font-size:0px;padding:0;padding-bottom:24px=
+;word-break:break-word;"><div style=3D"font-family:'Capsule Sans Text', Ari=
+al;font-size:24px;font-weight:500;letter-spacing:-0.33px;line-height:32px;t=
+ext-align:left;color:rgb(0, 200, 5);">While 5.9M Americans quit or lost a j=
+ob in January, 6.4M got hired</div></td></tr><tr><td align=3D"left" style=
+=3D"font-size:0px;padding:0;word-break:break-word;"><div style=3D"font-fami=
+ly:'Capsule Sans Text', Arial;font-size:15px;font-weight:400;letter-spacing=
+:-0.1px;line-height:24px;text-align:left;color:#000000;"><a href=3D"https:/=
+/sg.robinhood.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHucYdcgYqTlCM3pmMCRYW4=
+STlEQwtBMWcC44vO9S7mRv1Tb7Zy8l3TFByRX4MNI28w-3D-3D-Nvk_Q-2Flqu7vv4WEwX7O0hu=
+vLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-=
+2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4TH=
+MhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVt=
+cUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0AC=
+syYYf31m3mMnbM-2F1vghWa807nAXEEXNE5ReZ1RrwyetQ2ybyX5LebxqHwzkUxm-2Fwpn5nrxd=
+ZQSyxt2YMNfWOuakDjASYQfUkgoz1bZ9ys4z-2F-2Bf8oWjxIhIK0WiiAHHPR-2FGS0gwtt8rvI=
+K1slANPUsHsyvhoKikShWN-2BSThe5b1PB2syiyKUFpgk0saFFhM6Pil6wG8Q-2B08V5Hpfrp45=
+-2BLGY8UcbXxVsenZUue2C2Gv4X8SiijC4oALlD89vnmQuBglNvuBSY6huRwcMYJ9sXoBR1b-2F=
+lMVU2HFqFAzTB-2B-2FjFFop3W-2Bw-3D-3D" style=3D"color: rgb(0, 200, 5); text-=
+decoration: underline; font-weight: bold; text-decoration-thickness: 2px; t=
+ext-underline-offset: 1px;" target=3D"_blank" rel=3D"noopener">Read more</a=
+></div></td></tr><tr><td align=3D"center" class=3D"light" style=3D"font-siz=
+e:0px;padding:10px 25px;padding-top:24px;padding-right:0;padding-bottom:24p=
+x;padding-left:0;word-break:break-word;"><p style=3D"border-top:solid 1px #=
+e3e9ed;font-size:1px;margin:0px auto;width:100%;"></p><!--[if mso | IE]><ta=
+ble align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"border-top:solid 1px #e3e9ed;font-size:1px;margin:0px auto;width:580px;=
+" role=3D"presentation" width=3D"580px" ><tr><td style=3D"height:0;line-hei=
+ght:0;"> &nbsp;
+</td></tr></table><![endif]--></td></tr></tbody></table></td></tr></tbody><=
+/table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tb=
+ody></table></div><!--[if mso | IE]></td></tr></table><table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"pres=
+entation" style=3D"width:600px;" width=3D"600" bgcolor=3D"rgb(255, 255, 255=
+)" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exa=
+ctly;"><![endif]--><div style=3D"background:rgb(255, 255, 255);background-c=
+olor:rgb(255, 255, 255);margin:0px auto;max-width:600px;"><table align=3D"c=
+enter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"background:rgb(255, 255, 255);background-color:rgb(255, 255, 25=
+5);width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding=
+:0 10px;text-align:center;"><!--[if mso | IE]><table role=3D"presentation" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"column-ou=
+tlook" style=3D"vertical-align:top;width:580px;" ><![endif]--><div class=3D=
+"mj-column-per-100 mj-outlook-group-fix column" style=3D"font-size:0px;text=
+-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100=
+%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"present=
+ation" width=3D"100%"><tbody><tr><td style=3D"vertical-align:top;padding:0;=
+"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentat=
+ion" width=3D"100%"><tbody><tr><td align=3D"left" style=3D"font-size:0px;pa=
+dding:0;padding-bottom:12px;word-break:break-word;"><div style=3D"font-fami=
+ly:'Nib Pro', Arial;font-size:24px;font-weight:600;line-height:32px;text-al=
+ign:left;color:#000000;">Wednesday</div></td></tr><tr><td align=3D"left" st=
+yle=3D"font-size:0px;padding:0;word-break:break-word;"><div style=3D"font-f=
+amily:'Capsule Sans Text', Arial;font-size:15px;font-weight:400;letter-spac=
+ing:-0.1px;line-height:24px;text-align:left;color:#000000;"><ul style=3D"pa=
+dding-left: 18px;"><li style=3D"margin-bottom: 12px;"><p>Ramadan begins</p>=
+</li><li style=3D"margin-bottom: 12px;"><p>Earnings expected from Chewy and=
+ Petco</p></li></ul><p>Authors of this Snacks own bitcoin and ethereum and =
+shares: of Google, Disney, and Microsoft</p><p>ID: 2806251</p></div></td></=
+tr><tr><td align=3D"center" class=3D"light" style=3D"font-size:0px;padding:=
+10px 25px;padding-top:24px;padding-right:0;padding-bottom:24px;padding-left=
+:0;word-break:break-word;"><p style=3D"border-top:solid 1px #e3e9ed;font-si=
+ze:1px;margin:0px auto;width:100%;"></p><!--[if mso | IE]><table align=3D"c=
+enter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-top=
+:solid 1px #e3e9ed;font-size:1px;margin:0px auto;width:580px;" role=3D"pres=
+entation" width=3D"580px" ><tr><td style=3D"height:0;line-height:0;"> &nbsp=
+;
+</td></tr></table><![endif]--></td></tr></tbody></table></td></tr></tbody><=
+/table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tb=
+ody></table></div><!--[if mso | IE]></td></tr></table><table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"pres=
+entation" style=3D"width:600px;" width=3D"600" bgcolor=3D"rgb(255, 255, 255=
+)" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exa=
+ctly;"><![endif]--><div style=3D"background:rgb(255, 255, 255);background-c=
+olor:rgb(255, 255, 255);margin:0px auto;max-width:600px;"><table align=3D"c=
+enter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"background:rgb(255, 255, 255);background-color:rgb(255, 255, 25=
+5);width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding=
+:0 0 20px;text-align:center;"><!--[if mso | IE]><table role=3D"presentation=
+" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=
+=3D"width:600px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-g=
+roup-fix" style=3D"font-size:0;line-height:0;text-align:left;display:inline=
+-block;width:100%;direction:ltr;"><!--[if mso | IE]><table border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" ><tr><td style=3D"ve=
+rtical-align:top;width:300px;" ><![endif]--><div class=3D"mj-column-per-50 =
+mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;direction:ltr;=
+display:inline-block;vertical-align:top;width:50%;"><table border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbod=
+y><tr><td style=3D"vertical-align:top;padding:10px 0;"><table border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><t=
+body><tr><td align=3D"right" style=3D"font-size:0px;padding:10px 25px;word-=
+break:break-word;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+role=3D"presentation" style=3D"border-collapse:collapse;border-spacing:0px;=
+"><tbody><tr><td style=3D"width:40px;"><a href=3D"https://sg.robinhood.com/=
+ls/click?upn=3D6fntGirSE5selsQKrSSUHtUYfswbcLUS4PVSSGCh-2Bp5P7wG1vFeMd-2BEh=
+033k5qSD2YUEF5Uk5EUqZTl9EZy8BA-3D-3DjU1q_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZu=
+wg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2Bno=
+wprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmD=
+HwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf=
+-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM=
+-2F1vghWa807nAXEOPCws7pCya9viB0Mh5aR6J7uWjNOjqo7dGwY7iczaFT0HarI996VHrrFIx6=
+ISbasZv0wl7yZDrAJx4SwzKrqRJLoKCR5L3KLWtM0xMDPp3uSgdO7Eu7jCeYYCbPKERpa1Tg-2B=
+FCZF70Q2FrtQFELTUjDnbOL8yrA7RA2Um7r7vtvzkOF5MekpdPHGRnaecVZtwwh-2FHFsbYRg-2=
+FD1I7IhvreN9huCCYfaT-2Fl56ys-2FTq7a0w5Quq-2FpiT56NvqlujUlQPpaoIPWvq02vGye2k=
+FxwvCw-3D-3D" target=3D"_blank"><img height=3D"auto" src=3D"https://cdn.rob=
+inhood.com/app_assets/snacks/instagram_snacks.png" style=3D"border:0;displa=
+y:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:=
+13px;" width=3D"40"></a></td></tr></tbody></table></td></tr></tbody></table=
+></td></tr></tbody></table></div><!--[if mso | IE]></td><td style=3D"vertic=
+al-align:top;width:300px;" ><![endif]--><div class=3D"mj-column-per-50 mj-o=
+utlook-group-fix" style=3D"font-size:0px;text-align:left;direction:ltr;disp=
+lay:inline-block;vertical-align:top;width:50%;"><table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><t=
+r><td style=3D"vertical-align:top;padding:10px 0;"><table border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody=
+><tr><td align=3D"left" style=3D"font-size:0px;padding:10px 25px;word-break=
+:break-word;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"border-collapse:collapse;border-spacing:0px;"><t=
+body><tr><td style=3D"width:40px;"><a href=3D"https://sg.robinhood.com/ls/c=
+lick?upn=3D6fntGirSE5selsQKrSSUHiYZEQBGWTDcpGmlGq7RpCUbPxPi6AQ83ViPjDYJqI8C=
+when_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5=
+oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UO=
+PtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVm=
+jcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb=
+8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEUIXjYM5FbPwjwhNmWaWM=
+S2Tz9lN4o-2FcvH7XC1CQAEufcr3YxPKx8-2F4X-2Bfhz540vJmKAIMZHs7SRqf7p6gtNHK8-2F=
+Jd38KKAix4NqOS5RGQTuzechEgeFRKXzz8v7sYqKm3l9hzXp-2BXsJwHMxtl84UrWRK6RGtfRFB=
+EFYeTBQHsQoSoGaAVOA7s7cTibvhwgCbQJoqgl393-2FsreUyek9D9ycZBfBjQ2ouzEfIDPjXUR=
+Q7yRYSlkZLvdi2i7TshFt6XeTlb5eLCEcIfPt-2F-2BkCR-2BgQ-3D-3D" target=3D"_blank=
+"><img height=3D"auto" src=3D"https://cdn.robinhood.com/app_assets/snacks/t=
+witter_snacks.png" style=3D"border:0;display:block;outline:none;text-decora=
+tion:none;height:auto;width:100%;font-size:13px;" width=3D"40"></a></td></t=
+r></tbody></table></td></tr></tbody></table></td></tr></tbody></table></div=
+><!--[if mso | IE]></td></tr></table><![endif]--></div><!--[if mso | IE]></=
+td></tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso | I=
+E]></td></tr></table><table align=3D"center" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px;" =
+width=3D"600" bgcolor=3D"rgb(255, 255, 255)" ><tr><td style=3D"line-height:=
+0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><div style=3D"=
+background:rgb(255, 255, 255);background-color:rgb(255, 255, 255);margin:0p=
+x auto;max-width:600px;"><table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"background:rgb(255,=
+ 255, 255);background-color:rgb(255, 255, 255);width:100%;"><tbody><tr><td =
+style=3D"direction:ltr;font-size:0px;padding:0 10px;text-align:center;"><!-=
+-[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0"><tr><td class=3D"column-outlook" style=3D"vertical-align:=
+top;width:580px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-g=
+roup-fix column" style=3D"font-size:0px;text-align:left;direction:ltr;displ=
+ay:inline-block;vertical-align:top;width:100%;"><table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><t=
+r><td style=3D"vertical-align:top;padding:0;"><table border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr>=
+<td align=3D"left" style=3D"font-size:0px;padding:0;word-break:break-word;"=
+><div style=3D"font-family:'Capsule Sans Text', Arial;font-size:9px;font-we=
+ight:400;letter-spacing:-0.1px;line-height:20px;text-align:left;color:rgb(1=
+06, 114, 120);">Robinhood Snacks newsletters reflect the opinions of only t=
+he authors who are associated persons of Robinhood Financial LLC (Member <a=
+ href=3D"https://sg.robinhood.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHtLDZV=
+oyATNGm6OcXRelb2E-3DewWP_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0=
+uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK=
+460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhy=
+EQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZ=
+xrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXE=
+9-2BB8BPotrsun0MyyPCaRZg17lohrYkHja9uB7322ipwKZmyt-2BIxQ-2Fsqkvy3iQDXifsDf1=
+BTPtO6tWMWZbj-2BM2yMWhDWx4A8gXM70KyY0XLU-2BRdOqnqAEIr2qAPnZMMZ6iUg-2BHANlwR=
+7IVGubw-2FQQY1slwOQrfZghfzzXsgn20gasCaH-2BK-2FPMf56wH0D16DebTxBizt0R92I9AKq=
+RY3vJSMP7OFrXsM6D1b8t5WsQXLDp9N8IY4npoyawrZe13wga8OeJtOLwoEjA5V3bCvgAlg-3D-=
+3D" style=3D"color: rgb(0, 200, 5); text-decoration: none; font-weight: bol=
+d;" target=3D"_blank" rel=3D"noopener">SIPC</a>) and do not reflect the vie=
+ws of Robinhood Markets, Inc. or any of its subsidiaries or affiliates. The=
+y are for informational purposes only, and are not a recommendation of an i=
+nvestment strategy or to buy or sell any security, digital asset (cryptocur=
+rency, etc) in any account. They are also not research reports and are not =
+intended to serve as the basis for any investment decision. Any third-party=
+ information provided therein does not reflect the views of Robinhood Marke=
+ts, Inc., Robinhood Financial LLC, or any of their subsidiaries or affiliat=
+es. All investments involve risk including the loss of principal and past p=
+erformance does not guarantee future results.</div></td></tr><tr><td align=
+=3D"left" style=3D"font-size:0px;padding:15px 0 15px 0;word-break:break-wor=
+d;"><div style=3D"font-family:'Capsule Sans Text', Arial;font-size:9px;font=
+-weight:400;letter-spacing:-0.1px;line-height:20px;text-align:left;color:#0=
+00000;"><div class=3D"disclosureLinks"><a href=3D"https://sg.robinhood.com/=
+ls/click?upn=3D6fntGirSE5selsQKrSSUHhlVHSZUg2RjnmzAANAYlJXYYgyWQ1sztkfLzoo9=
+man-2BnTE7sfoTf0nk2D4ybnWwXf2jgt-2FACnIHHG00d-2BKtpMRhCjCHxFPaufw84R6gjVV7-=
+2FQsPOGP2Ltz5GiLb3Xsxlw-3D-3DX8U5_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra=
+-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGI=
+QD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB=
+1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRT=
+r-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vgh=
+Wa807nAXE8ttDA264WvfttZPD5npEqURfQIuBLB2gGWwLeM0o1CuOAmXJpyH9nHV6n5CJp47-2F=
+UQBrw5L6Mcyinv2IShc-2BTBZx48j6NfMPMRs7O-2B-2B85CCbXPpDnLzLckDNRU1gg4AYH8vbl=
+pjhnFZWhDGYzESsP9eb9OJxAMyyv4hTslbAb-2Fg3k4-2BltEUSCmeVirNZLfRb0I0XJodIHGPz=
+zzvbILON0HqXLM1c0O23aOaEDQDqnHnOCSgBZcJ7UkD3540Z9PhoL7tAQzt5kTVdGlRA2MMGyg-=
+3D-3D" style=3D"color: rgb(0, 200, 5); text-decoration: none; font-weight: =
+bold;" target=3D"_blank" rel=3D"noopener" class=3D"disclosureLinksFirst">Ro=
+binhood Terms and Conditions</a>&nbsp;=E2=80=A2&nbsp;<a href=3D"https://sg.=
+robinhood.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHvi8qmYLxQthX6AOydwFNg-2BA=
+ijB5tE3PNPUmMGx5cftYEj1f_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0=
+uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK=
+460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhy=
+EQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZ=
+xrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXE=
+-2FL6jQr3trBHM7zPwvDU8FcHUOfKpEiweqG6WxSqMs1mtaNOGssqUEfTeN7XSdTEKUmQLat2qK=
+UbdYkbg-2B3TtFp-2FiTO8P-2Bf7fipT9YfmZprla3bbGv7otaZiwYXaZBea83Kn3T8zhtK5IqY=
+GekIWZbK-2BSF5AsMgr-2FbceFXOPyc5GaohZ1dP-2Fys6UnmwJbBamX8T7MSK5MVurKiZmZO-2=
+BmDdrou-2BwhhHVCNwYrV16WpMn45nlH9RIudEg3m93uzxi8xqJoahZtpzgyayShTkww-2BSw-3=
+D-3D" style=3D"color: rgb(0, 200, 5); text-decoration: none; font-weight: b=
+old;" target=3D"_blank" rel=3D"noopener">Disclosure Library</a>&nbsp;=E2=80=
+=A2&nbsp;<a href=3D"https://sg.robinhood.com/ls/click?upn=3D6fntGirSE5selsQ=
+KrSSUHjMA59bDfCWW6qZNCvrM0fJJl1X47T2AcffKHm-2BaJqTTkwhJp8prao6fdKKrGgoaq4H-=
+2BMOsIPQPDJAab0FEPWsg-3DY3c8_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb=
+67U0uDM0ArFOwep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ys=
+BImK460WcvFlJO0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0I=
+mDhyEQBRTOUTDPk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY=
+8uFZxrzvpCih-2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807=
+nAXE8XJdr5EKZayerpCcO-2FlmYpgpe7jVGTv0-2FEIvI3QlEmhI4kJ9i1QSClrSvVH5WeSkCDY=
+ZXwKrdiDVIDmGISwI5oZS-2FPkh0Dxpev9evUcYv2XO-2FhvZLVxzufPkQomTrDUhwRTNle-2Ft=
+2GpElR08MXZJIml-2BP2ikaaXECW-2BOHSFA5U5MLDGfI7Q1UbUuilc4xeVLoesa1-2BD0hclpz=
+bmOGhezkAyDjN8h4MFdFQMM2WY6CyMz1A4OcfBX6QdX4-2BDdS-2Fp0haS5wzsjs-2FlHKznyOu=
+o-2BCA-3D-3D" style=3D"color: rgb(0, 200, 5); text-decoration: none; font-w=
+eight: bold;" target=3D"_blank" rel=3D"noopener">Our Editorial Principles</=
+a>&nbsp;=E2=80=A2&nbsp;<a href=3D"https://sg.robinhood.com/ls/click?upn=3D6=
+fntGirSE5selsQKrSSUHrnnz1tojdTgZ3cGFnj-2BSsf5X5bmjd-2FfpkevVBj-2BxbgnzybX_Q=
+-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9Kx5oEXPKV=
+SwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL6UOPtuxzJ=
+FOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3KVmjcflVx=
+01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIBBtb8IMB1E=
+2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEMvWzLykCU4m0MwMkuGdXOBkFvM=
+ewxkNImiN2nW0nn1y5RVH92uWtgOgh5iXbvhRreRudUrkwS9zB2M5ba68SHBeI-2B-2BFw09SPr=
+1CxIbJG17Jt7B3M8FmKcj4oAZNaANUimvyB46S9e7LE0tDJGfA7tBsrFW7g5m1zJ3EAQUWBH8BW=
+0P5qY2lqKVD0RNTkEtCL4bTwV9V6Rqi1clJNgAPBAzpyoUp6HVFFeHyyjcXx3laR7HDa2n-2FV2=
+ydWpyiASRJLSHhZe7vkH7xcOd1K67AF7Q-3D-3D" style=3D"color: rgb(0, 200, 5); te=
+xt-decoration: none; font-weight: bold;" target=3D"_blank" rel=3D"noopener"=
+>Contact Us</a>&nbsp;=E2=80=A2&nbsp;<a href=3D"https://sg.robinhood.com/ls/=
+click?upn=3D6fntGirSE5selsQKrSSUHmuCDw8d-2BYNK8JD6LTAMaGtNlTJ3USZfOb7qBQRpY=
+GKp_UoP_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOwep-2FOx9=
+Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJO0RSjhwL=
+6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTDPk0caTI3=
+KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-2Fp56QIB=
+Btb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEUvvlmjN-2B22G07xg=
+qBXiJrYH7QVS2V0Jzo4TpzydlE8-2FITu25OKiBnaTLpBObvM3Pw6V1q3rUDekcLr0creTN9nG4=
+6qY-2BNt5k9O6cnMfUm6BcY2QnQl8nELPKEAytJb1Rpi4kMqH8oGTsbGzbtsWIi4k-2FLi4icM2=
+YdUqtEpMBN1y-2FaflpADeJFOpZtIqDYG-2F3wOBizXrbdUCsob03Bhhv6kkPu-2BhlFlrLG6X9=
+rLVjxuYmQVACM1zTiFdOGMSEsQWpY-2BlOaFj9DF36dLWvNF36Ug-3D-3D" style=3D"color:=
+ rgb(0, 200, 5); text-decoration: none; font-weight: bold;" target=3D"_blan=
+k" rel=3D"noopener">FAQ</a></div><div style=3D"padding-top: 15px;"><a href=
+=3D"https://sg.robinhood.com/ls/click?upn=3D6fntGirSE5selsQKrSSUHvD1boXzg2L=
+nBS3-2Fj-2FyVcTazmp0hh8K8R8-2FBqRF49nrqBkO-2Fp9JP0UC5hgwxj-2BH3geueSaSSjT9-=
+2Baw9jbfwN847mVzUa4FaqDnYUMYovg6TP0QfbuviM-2FeqYg9-2BdlNdPUiK8xoR4y8RjD3z-2=
+B18w9jkk-3Dd-mc_Q-2Flqu7vv4WEwX7O0huvLnV7kPf-2ByZuwg-2Fra-2Ftb67U0uDM0ArFOw=
+ep-2FOx9Kx5oEXPKVSwhZma-2BakBtR046D-2Bt9khRbM-2BnowprDFGIQD7ysBImK460WcvFlJ=
+O0RSjhwL6UOPtuxzJFOsAcGEPvM-2FXzR4THMhA6Yi4i3-2FmDHwoJHOB1rl0ImDhyEQBRTOUTD=
+Pk0caTI3KVmjcflVx01LKHuwI-2FLwGcCZVtcUZD8LlKsicNqf-2BDxRTr-2FY8uFZxrzvpCih-=
+2Fp56QIBBtb8IMB1E2d5yJOoCe846IFvB0ACsyYYf31m3mMnbM-2F1vghWa807nAXEczc4hTNu4=
+hV8eJ-2FrYcQaVmKSc7N5GGFD1tWqB5QQ3TSfyrYqdG6WXBWoi3QayomkXYUdl2QpG1D4FuoCIb=
+Rs0EYmLrjsTl-2Bc0NOdD09rzF9X7eY0V-2B-2F-2BJb-2B8iDsV96WKzN1kx8TH9OIuk-2BO0c=
+jJ8Kr-2BbFor-2FZPDe5bsqXxHPy5qrQfJ3hz-2Fm0HWgE-2BAkCUlpt1DGDxMMM1-2BlSgQSja=
+ngS5d-2FVf-2FEZ6ChCDqXl7ykozYutzVgYuBpkfuNdinCob506BASfH31duGHf1KWalfwTA-3D=
+-3D" style=3D"color: rgb(0, 200, 5); text-decoration: none; font-weight: bo=
+ld;" target=3D"_blank" rel=3D"noopener">Manage Your Subscription Preference=
+s</a></div></div></td></tr></tbody></table></td></tr></tbody></table></div>=
+<!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody></table><=
+/div><!--[if mso | IE]></td></tr></table><![endif]--></div></body></html>
+--00f494a917f52eb66008aa56cade38ff53cb8e4943ea6c034a721b2375b3--

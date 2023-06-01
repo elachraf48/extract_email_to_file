@@ -1,0 +1,926 @@
+Received: from 127.0.0.1
+ by atlas-production.v2-mail-prod1-gq1.omega.yahoo.com pod-id atlas--production-gq1-7f77b4df7d-vgmcl.gq1.yahoo.com with HTTP; Tue, 7 Mar 2023 12:52:14 +0000
+Return-Path: <382-JZB-798.0.19519.0.0.15699.9.15648049-1@bounce.a16z.com>
+X-Originating-Ip: [199.15.213.53]
+Received-SPF: pass (domain of bounce.a16z.com designates 199.15.213.53 as permitted sender)
+Authentication-Results: atlas-production.v2-mail-prod1-gq1.omega.yahoo.com;
+ dkim=pass header.i=@a16z.com header.s=mkto;
+ dkim=pass header.i=@mktomail.com header.s=m1;
+ spf=pass smtp.mailfrom=bounce.a16z.com;
+ dmarc=pass(p=QUARANTINE,sp=REJECT) header.from=a16z.com;
+X-Apparently-To: achrafel73114@yahoo.com; Tue, 7 Mar 2023 12:52:15 +0000
+X-YMailAVSC: lNCRbfg3bBsNRGHoomP37bKwq7dyhkQr0iwoRo_Z7KTh.YJ
+ YLG0D01oBowJ6hcBg5PGRncZuU6gt65rURr6gghjzH4MQ0Apbg6eQe7X0em_
+ P4rckZiTLNza9RjeyTqBPetQHXT9PbbdGI7v9xBsih1W0f7Tsvla_d4Z7aDc
+ d2iU7Ko8pbH2BSmPtjs9DXnflDUReC4d.DQQGs24mIkigGkZl.k1h8mqqUFF
+ Bn.DxA2B9ln3NRVfyWPh7mg4CUUZvxjSlpeauL8t7wKtjibpKc1Z6Bksww4R
+ aAmXU5IxlwZTaDmFbUsxcQOCgV_OcqY5qMD0B3aleJBAXUQVtv.0ubEvAasg
+ nlvlEAsT6gMQaPXaXRTPIgnglpHUuH6L_0mWlGA1IVu3sDeV2Do45eAYOMgH
+ FN2LKEWg5t5fnsLVfVCweXfaqO8FulZsr54_5LL3KX93EPpQMUtsq5fmVi7N
+ UvO0w_mfZxu6i.uj1rHVVOwO0GLolPTcS.0sXpVJ.I5mrDVL9WjLfAxFqY_q
+ 9QlPj6sMW9TS4l_OrvMrEH0l8VSWFLe.GWi5NnRFBD4ImHJMJDDuqveAcV4X
+ 2j23LtLeYGSLsbR0UEXZEj_VLoJ8tGUx7JIib5mg2Rh6SM7gnYtTaA_qK057
+ KDi1EM31NNhL8KZCA3dUU0T6n8r3OKzUS4OB_GhzakFm8PPWrdR1sz773Ksz
+ pw6w3TlRVEzM16EpUdDFlTKkJQM_HFjj03UqWghV3BauePQrRcbZPhGGk3sB
+ weg94KuyEVZ2uY8SICs3Cx1r5Vy7ZYXYbKX05ZDcJw22iMlmTpkgc0y35Nod
+ 4QRTl.kEV_9DDiO1wwVgTj6J09aGLzVa_17YJt0UlL4p9zctohxhAzG.gYFS
+ NE85A7rJ_hN9IZNK3u2n7EKhz9r0VW4SyrVnnuZyuYhtcPBFTsnxZuXLRjmI
+ k5CC78NR0uUWjrjXPM3OFam7Ghy8.eqCp2K0mOB_7JbaCyZlkZs_XGHMcx03
+ favDD1.t.SjaBNFjrmly5lxD3JJDoF9HTm8PIn8elgDjhBUjrI8Oumx0rEOa
+ _lDvzh4WNozekLR267b2FsbQuB5q6SdGBZG6CKAr8rKVYvK4rYCUIm6cezY.
+ IRezgEGdJ8_geexc_BXcROPfGK6vJATyJIVu1afhGayAlq3C_Lscvs6NzDxv
+ 7hhECu3jKXoc7s2uk0QKPUcnTJ3vMYBFiTCWQiL2Cl88QBHslCtut0HvfRSz
+ 1uQ--
+X-YMailISG: _cl702sWLDs.l_W8XKOYjJ1QeMfa1iHEvGyqAXuomI4Sfl7c
+ k8CHBGsR81HQxL4_kOJ0Qi_A0a5s7x.rah_JjsIVOr4uU3icLUYAqU2UoTM2
+ 53D5.2udAv8hZgrFFSba0D89GaXg8eMjzOnNg53oFfFo2Xm5dUIZBcQZVyu7
+ eE9TBBmCcdJW6WvouOQy56uJoXuCA1WYrF.pOrkQ8BzgJID3H.Rl.bT7WL0m
+ XgZAfEfQ4qffluZabumaeQejpy4zYAhjsawFUZWzzGObTQVfT4MJgqjwLxVX
+ 49DJfsqlM5T1aBqfW8.b7atExaxet8K68tQUfoyWO0W70IyyRcIatYU5U1z3
+ siTGUZDRu79OB..PuiNDMIxIbqbao7WCVvVqVwhuFdGJwZjoGwYvyZ5z._0b
+ rKW_k1xL8mZ147qnPS.2qBsOBdAp2jZI8zpi4zixpjtNQzeqish_UV0q89vx
+ 8SmLg_7n5Pk97xFOh70I49Kb1sS2TK9cJNA0pE15JM1RJxlh6fny8e_q.BEY
+ g64VRW7R.GnXNB6KWB6OK2c9j_esSBP63g_9Wj7g4dIYXFncCvis6jUgbpq4
+ 3cEOHEd1U31jM57xu3rPhzh1fTTvmOp0RzEZZqUtyhDXusLNsPb9j_Br0uty
+ pBOGvJKqr2cSjdF5wvw2tSup4v6kBVjh_jUoInHkmSCnNmSSIXd.b3GvGFdF
+ w7K.oCu5ldcO9k6RxYY2zlRAyiBhLWg5twjuXgRwFwL4tJtBs0xWTSDg6tJi
+ NZWmJztk6KMBCzo7fagCtie_6wXbA0pbSHiQZ7DqHnjTWFDGskYgwv3ybfBE
+ DA85ZexVE5CqK3tKouIFbxFMYtJMcQ.vopt5oLUMzO0jfioKbb1ndnHL_LGg
+ JmyWQELwlvv56F5PR5II0uLVRIIcl8ap11YCrSz_8aD.KEYpzFW4ISIkar9F
+ dyCXhqDefYaqKaHkwBBtjCQAu_9pV02hwSbkKuve3RfxtxGNEswdFJsoOnHE
+ VzF11RtecpaCL8HSBaVu.WPTI6YaJbFBXq_ga3.kcWoqpZYrQD2.rnrPiFuz
+ uYWb2FJFWiN8IBINQQHyiUSwynDtHSxjseWn.WrkFMEVlq1Z5kr4HPo27gve
+ 5pFQPCmtATAFuOSg45lV9Ug9gvNUTIsDoNqj8h6B0NvPlq0LmUHO.VvcKAbF
+ N6W3fVofodKEIDkUBEqCusXpDkRzJnZGi3jrxyVfZqS5ZVihdTa4dzQlcwnW
+Received: from 199.15.213.53 (EHLO potomac1053.mktomail.com)
+ by 10.253.62.180 with SMTPs
+ (version=TLS1_2 cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256);
+ Tue, 07 Mar 2023 12:52:14 +0000
+X-MSFBL: poZkcqKbV/G5+dJw9NSWQLPa9YFSrpnCsH9kjfGQ694=|eyJnIjoiYmctYWItMDE
+	iLCJyIjoiYWNocmFmZWw3MzExNEB5YWhvby5jb20iLCJiIjoiZHZwLTE5OS0xNS0
+	yMTMtNTMiLCJ1IjoiMzgyLUpaQi03OTg6MDoxMzExNTo0MjI2NDowOjE1Njk5Ojk
+	6MTk1MTk6MTU2NDgwNDktMSJ9
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1678193534;
+	s=mkto; d=a16z.com; i=@a16z.com;
+	h=Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=z1T42C9YkgZ2xGZtNhax8fh0fvBheqH3vmKYiCsLvsE=;
+	b=JpzpPXJOtKCh1Q2H5MD9huQvgZ/UXghBoQcRNiDbaKyTOBGZwDOjWQb9hRpXQ42w
+	qQnQLG+ZGpSqieKHHb7gf82DqVSG8klLJ14vBs2IrNUbGGF2DyszUz+fE0EOWqXPE0r
+	QFqT6zLh/BzuyGV1TzT8VEa5y0uCAZhyk/FsWE7Y=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1678193534;
+	s=m1; d=mktomail.com; i=@mktomail.com;
+	h=Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=z1T42C9YkgZ2xGZtNhax8fh0fvBheqH3vmKYiCsLvsE=;
+	b=N3bM5lAmqa38TKxqH7O+2zDtotxanIhlpjvCnnBjaUTl9MAqwIPRazirzMvlpPfF
+	+xBp8XREI/1lpIbvXldCRToyP2EzDheRqEcMFrwu76vTah8YCVvQhoCl2iM6Iugaihq
+	ZwyyXOJ3yk2YiBrUC8rXXgNUqYHDEwdFuuGJxjlE=
+Date: Tue, 7 Mar 2023 06:52:14 -0600 (CST)
+From: a16z American Dynamism Team <ad-newsletter@a16z.com>
+Reply-To: ad-newsletter@a16z.com
+To: achrafel73114@yahoo.com
+Message-ID: <1691528236.55879512.1678193534455@abmktmail-trigger1f.marketo.org>
+Subject: Welcome to the American Dynamism Newsletter
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_55879511_551201905.1678193534454"
+X-Binding: bg-ab-01
+X-MarketoID: 382-JZB-798:0:13115:42264:0:15699:9:19519:15648049-1
+X-Mailfrom: 382-JZB-798.0.19519.0.0.15699.9.15648049-1@bounce.a16z.com
+X-MktArchive: false
+X-MSYS-API: {"options":{"open_tracking":false,"click_tracking":false}}
+X-MktMailDKIM: true
+Content-Length: 31430
+
+------=_Part_55879511_551201905.1678193534454
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+View Online <[[https://info.a16z.com/index.php/email/emailWebview?mkt_tok=
+=3DMzgyLUpaQi03OTgAAAGKWxnV8chEXkzOhXccijMmDTyM-ZHMw2a_9OfKlm_HLHZfE_XOJ3UT=
+uGeB7Eq_CwtkFlximQanHc1H-4gNO6SMOq2oz3wdeHiqyHFMiDf8X-4REA&md_id=3D15699&al=
+iId=3DjExSecPNKQIA3CUciIXlUMCE70CyGvTc1NwWYoefprxOpCUdA4iuXQ%3D%3D]]>
+Welcome to the American Dynamism Newsletter
+Welcome to the American Dynamism newsletter, a16z's update on the ideas, co=
+mpanies, and individuals building toward a more dynamic future.=20
+=20
+In each issue, the a16z team will deliver original and curated articles, po=
+dcasts, and videos that highlight the resurgence of American industry and i=
+nnovation, as well as insights into the critical problems =E2=80=94 from na=
+tional security and public safety to housing and education =E2=80=94 that e=
+ntrepreneurs are tackling.
+
+In advance of receiving the next issue, please enjoy a selection of previou=
+sly published articles and podcasts from the American Dynamism team:
+
+=09- Building American Dynamism <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKW=
+xnV8Qo63FX82fdXyKv37W-h4zcqLqqq4U2SvpdPD33GxO3EZ9rcDUpqi_NSGlzBaU-IuZI=3D> =
+By Katherine Boyle, a16z General Partner
+=09- Investing in Flock Safety <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWx=
+nV8fnTYCRxj28mExWf7vast5ocY1dsrKhBXfPD0dN01Brvsvog2Fx9J5qFserzxAwZrLw=3D> B=
+y David Ulevitch, a16z General Partner and David George, a16z General Partn=
+er
+=09- Innovating Mom-and-Pop Machine Shops for Aerospace and Defense <https:=
+//go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnV8biqE0DQN1GTGhJY7DKBXaET79maM1M8n6PV=
+5PK8MnBNwgeYI_4GW9wP-6n2WR2cmHA=3D>=C2=A0[podcast] With Katherine Boyle; Ch=
+ris Power, Hadrian founder and CEO; Packy McCormick, Not Boring founder; an=
+d Marc Andreessen, a16z cofounder
+
+Software Is eating the world
+
+MENLO PARK OFFICE
+2865 Sand Hill Road, Suite 101=20
+Menlo Park, CA 94025
+
+SAN FRANCISCO OFFICE
+180 Townsend Street=20
+San Francisco, CA 94107
+
+NEW YORK OFFICE
+11 Madison Avenue, 15th Floor=20
+New York, NY 10010
+
+=C2=A92022 Andreessen Horowitz. All rights reserved.
+Update email preferences <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnV8boh=
+n7bu4YF3bK9D5DLNb2e1zg6ip6f-xxIU_wZdg3isbTdKzOHmoLhv9C5eadDTFcI=3D>
+Unsubscribe from list <[[https://info.a16z.com/UnsubscribePage.html?mkt_uns=
+ubscribe=3D1&mkt_tok=3DMzgyLUpaQi03OTgAAAGKWxnV8chEXkzOhXccijMmDTyM-ZHMw2a_=
+9OfKlm_HLHZfE_XOJ3UTuGeB7Eq_CwtkFlximQanHc1H-4gNO6SMOq2oz3wdeHiqyHFMiDf8X-4=
+REA]]>
+
+------=_Part_55879511_551201905.1678193534454
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:sch=
+emas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office"=
+>
+<head>=20
+<!-- Marketo Variable Definitions -->                                   =20
+<!-- Background variables -->                                              =
+                                                                           =
+               =20
+<!-- Separator height variables -->                                        =
+                         =20
+<!-- Other Meta Tags -->=20
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8" />=
+=20
+<meta content=3D"telephone=3Dno" name=3D"format-detection" />=20
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0" />=20
+<style type=3D"text/css">
+=09=09@font-face {
+=09=09=09font-family: 'Proxima Nova';
+=09=09=09src: url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-=
+Regular.woff2') format('woff2'),
+=09=09=09url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-Regul=
+ar.woff') format('woff');
+=09=09=09font-weight: 400;
+=09=09=09font-style: normal;
+=09=09}
+=09=09@font-face {
+=09=09=09font-family: 'Proxima Nova';
+=09=09=09src: url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-=
+RegularIt--09-01-020.woff2') format('woff2'),
+=09=09=09url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-Regul=
+arIt--09-01-020.woff') format('woff');
+=09=09=09font-weight: 400;
+=09=09=09font-style: italic;
+=09=09}
+
+=09=09@font-face {
+=09=09=09font-family: 'Proxima Nova';
+=09=09=09src: url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-=
+Medium--09-01-020.woff2') format('woff2'),
+=09=09=09url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-Mediu=
+m--09-01-020.woff') format('woff');
+=09=09=09font-weight: 500;
+=09=09=09font-style: normal;
+=09=09}
+
+=09=09@font-face {
+=09=09=09font-family: 'Proxima Nova';
+=09=09=09src: url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-=
+Semibold--09-01-020.woff2') format('woff2'),
+=09=09=09url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-Semib=
+old--09-01-020.woff') format('woff');
+=09=09=09font-weight: 600;
+=09=09=09font-style: normal;
+=09=09}
+
+=09=09@font-face {
+=09=09=09font-family: 'Proxima Nova';
+=09=09=09src: url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-=
+Bold--09-01-020.woff2') format('woff2'),
+=09=09=09url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-Bold-=
+-09-01-020.woff') format('woff');
+=09=09=09font-weight: 700;
+=09=09=09font-style: normal;
+=09=09}
+=09=09@font-face {
+=09=09=09font-family: 'Proxima Nova';
+=09=09=09src: url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-=
+BoldIt--09-01-020.woff2') format('woff2'),
+=09=09=09url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-BoldI=
+t--09-01-020.woff') format('woff');
+=09=09=09font-weight: 700;
+=09=09=09font-style: italic;
+=09=09}
+=09=09a{
+=09=09=09outline:none;
+=09=09=09text-decoration:underline;
+=09=09=09-webkit-transition:all 0.2s ease;
+=09=09=09-moz-transition:all 0.2s ease;
+=09=09=09-ms-transition:all 0.2s ease;
+=09=09=09transition:all 0.2s ease;
+=09=09=09text-decoration: none;
+=09=09}
+=09=09a:hover,
+=09=09a:focus { opacity: 0.8; }
+=09=09a[x-apple-data-detectors]{color:inherit !important; text-decoration:n=
+one !important;}
+=09=09a img{border:none;}
+=09=09.long-word-td {
+=09=09=09word-break: break-all;
+=09=09=09overflow-wrap: break-word;
+=09=09=09line-break: anywhere;
+=09=09=09word-break:inherit !important;
+=09=09}
+=09=09.long-word a {
+=09=09=09line-break: anywhere;
+=09=09=09word-break: break-all;
+=09=09=09word-wrap: break-word;
+=09=09=09overflow-wrap: break-word;
+=09=09}
+=09=09.button {
+=09=09=09-webkit-transition:all 0.3s ease;
+=09=09=09-moz-transition:all 0.3s ease;
+=09=09=09-ms-transition:all 0.3s ease;
+=09=09=09transition:all 0.3s ease;
+=09=09=09word-break: break-all;
+=09=09}
+=09=09.button:hover { opacity: 0.8; }
+=09=09table td{mso-line-height-rule:exactly;}
+=09=09.ExternalClass, .ExternalClass a, .ExternalClass span, .ExternalClass=
+ b, .ExternalClass br, .ExternalClass p, .ExternalClass div{line-height:inh=
+erit;}
+=09=09.address,
+=09=09.date { color: #35353a !important; background: none !important; text-=
+decoration: none !important;}
+=09=09.address span,
+=09=09.address *,
+=09=09.date span,
+=09=09.date * { color: #35353a !important; text-decoration: none !important=
+; border:none !important; background: none !important;}
+=09=09img { max-width: 100%; height: auto; }
+=09=09ul,
+=09=09ol {
+=09=09=09padding-left: 23px;
+=09=09=09margin-top: 0;
+=09=09=09padding-top: 13px;
+=09=09=09padding-bottom: 0;
+=09=09}
+=09=09ul { list-style-type: disc; }
+=09=09ul li,
+=09=09ol li { margin-bottom: 6px; }
+
+=09=09p { padding-top: 0 !important; padding-bottom: 0 !important; margin-t=
+op: 0 !important; margin-bottom: 0 !important; }
+=09=09p + p { margin-top: 10px !important; }
+
+=09=09img + div { display:none !important; width:0 !important; height:0 !im=
+portant; padding:0 !important; font-size:0 !important; line-height:0 !impor=
+tant; }
+
+=09=09.hide-everywhere { display:none !important; width:0 !important; heigh=
+t:0 !important; padding:0 !important; font-size:0 !important; line-height:0=
+ !important; }
+
+=09=09/* Styling for screen size 639 and less */
+=09=09@media only screen and (max-width:639px) {
+=09=09=09.py-md-10 { padding-top: 10px !important; padding-bottom: 10px !im=
+portant; }
+=09=09=09.px-md-0 { padding-left: 0 !important; padding-right: 0 !important=
+; }
+=09=09=09.px-md-30 { padding-left: 30px !important; padding-right: 30px !im=
+portant; }
+=09=09=09.pl-md-30 { padding-left: 30px !important; }
+=09=09=09.pr-md-30 { padding-right: 30px !important; }
+=09=09}
+
+=09=09/* Styling for screen size 599 and less */
+=09=09@media only screen and (max-width:599px) {
+=09=09=09.flexible { width:100% !important; }
+=09=09=09.table-center { float:none !important; margin:0 auto !important; }
+=09=09=09.table-left { float:none !important; margin:0 auto 0 0 !important;=
+ }
+=09=09=09.hide { display:none !important; width:0 !important; height:0 !imp=
+ortant; padding:0 !important; font-size:0 !important; line-height:0 !import=
+ant; }
+=09=09=09.db { display:block !important; }
+=09=09=09.image-m { display:table-cell !important; }
+=09=09=09.image-m img { display:block !important; width:100% !important; he=
+ight:auto !important; font: 10px/13px Arial,Helvetica,Verdana,Helvetica,san=
+s-serif; }
+=09=09=09.img-flex img { width:100% !important; height:auto !important; }
+=09=09=09.img-flex { width:100% !important; height:auto !important; }
+=09=09=09.aligncenter { text-align:center !important; }
+=09=09=09.alignleft { text-align:left !important; }
+=09=09=09.table-holder { display:table !important; width:100% !important; }
+=09=09=09.tcap { display:table-caption !important; width:100% !important; }
+=09=09=09.thead { display:table-header-group !important; width:100% !import=
+ant; }
+=09=09=09.trow { display:table-row !important; width:100% !important; }
+=09=09=09.tfoot { display:table-footer-group !important; width:100% !import=
+ant; }
+=09=09=09.flex { display:block !important; width:100% !important; padding-l=
+eft: 0 !important; padding-right: 0 !important; border-left: none !importan=
+t; border-right: none !important; }
+=09=09=09/* Custom */
+=09=09=09.pl-0 { padding-left: 0 !important; }
+=09=09=09.pr-0 { padding-right: 0 !important; }
+=09=09=09.px-30 { padding-left: 30px !important; padding-right: 30px !impor=
+tant; }
+=09=09=09.pt-30 { padding-top: 30px !important; }
+=09=09=09.pb-20 { padding-bottom: 20px !important; }
+=09=09=09.h-10 { height: 10px !important; }
+=09=09=09.h-25 { height: 25px !important; }
+=09=09=09.h-30 { height: 30px !important; }
+=09=09=09.pt-15 { padding-top: 15px !important; }
+         =20
+         =09 .px-15 { padding-left: 15px !important; padding-right: 15px !i=
+mportant; }
+=09=09=09.pt-2 {padding-top: 2px !important;}
+            .pt-4 {padding-top: 4px !important;}
+=09=09=09.pb-5 {padding-bottom: 5px !important;}
+=09=09=09.pb-7 {padding-bottom: 7px !important;}
+=09=09=09.pb-12 {padding-bottom: 12px !important;}
+=09=09=09.pb-13 {padding-bottom: 13px !important;}
+=09=09=09.pb-15 {padding-bottom: 15px !important;}
+=09=09=09.fz-11 {font-size: 11px !important;}
+=09=09=09.fz-12 {font-size: 12px !important;}
+=09=09=09.fz-14 {font-size: 14px !important;}
+=09=09=09.px-9 {padding-left: 9px !important; padding-right: 9px !important=
+;}
+=09=09=09.lh-116 {line-height: 116% !important;}
+=09=09=09.w-148 {width: 148px !important;}
+=09=09=09.w-auto {width: auto !important;}
+=09=09}
+
+=09=09/* Styling for screen size 499 and less */
+=09=09@media only screen and (max-width:374px) {
+=09=09=09.aligncenter-xs { text-align:center !important; }
+=09=09=09.flex-xs { display:block !important; width:100% !important; paddin=
+g-left: 0 !important; padding-right: 0 !important; border-left: none !impor=
+tant; border-right: none !important; }
+=09=09}
+=09</style>=20
+<!--[if gte mso 9]><xml>
+=09=09<o:OfficeDocumentSettings>
+=09=09=09<o:AllowPNG/>
+=09=09=09<o:PixelsPerInch>96</o:PixelsPerInch>
+=09=09</o:OfficeDocumentSettings>
+=09</xml><![endif]-->=20
+<!--[if (gte mso 9)|(IE)]>
+=09=09<style type=3D"text/css">
+=09=09=09table {
+=09=09=09=09border-collapse: collapse;
+=09=09=09=09border-spacing: 0;=20
+=09=09=09=09mso-line-height-rule: exactly;=20
+=09=09=09=09mso-margin-bottom-alt: 0;=20
+=09=09=09=09mso-margin-top-alt: 0;=20
+=09=09=09=09mso-table-lspace: 0pt;
+=09=09=09=09mso-table-rspace: 0pt;
+=09=09=09}
+=09=09=09td {
+=09=09=09=09mso-table-lspace: 0pt !important;
+=09=09=09=09mso-table-rspace: 0pt !important;
+=09=09=09}
+=09=09=09p,
+=09=09=09h1,
+=09=09=09h2,
+=09=09=09h3,
+=09=09=09h4,
+=09=09=09h5,
+=09=09=09h6,
+=09=09=09ol,
+=09=09=09li,
+=09=09=09ul,
+=09=09=09td,
+=09=09=09th {
+=09=09=09=09font-family: Helvetica, Arial, sans-serif !important;
+=09=09=09}
+
+=09=09=09p {
+=09=09=09=09margin-bottom: 10px !important;
+=09=09=09}
+
+=09=09=09p:last-child {
+=09=09=09=09margin-bottom: 0 !important;
+=09=09=09}
+
+=09=09=09.ico-audio { padding-top: 0 !important; }
+=09=09</style>
+=09<![endif]-->=20
+</head>=20
+<body style=3D"margin:0; padding:0; -webkit-text-size-adjust:100%; -ms-text=
+-size-adjust:100%;" bgcolor=3D"#f0f0f0"><style type=3D"text/css">div#emailP=
+reHeader{ display: none !important; }</style><div id=3D"emailPreHeader" sty=
+le=3D"mso-hide:all; visibility:hidden; opacity:0; color:transparent; mso-li=
+ne-height-rule:exactly; line-height:0; font-size:0px; overflow:hidden; bord=
+er-width:0; display:none !important;">A new quarterly update on the ideas, =
+companies, and individuals promoting a more dynamic future.=20
+</div>=20
+<table style=3D"min-width:320px;" width=3D"100%" cellspacing=3D"0" cellpadd=
+ing=3D"0" bgcolor=3D"#f0f0f0">=20
+<tbody>
+<tr>=20
+<td style=3D"line-height:0;">
+<div style=3D"display:none; white-space:nowrap; font:15px/1px courier;">
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp=
+; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nb=
+sp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &=
+nbsp;
+</div></td>=20
+</tr>=20
+<tr>=20
+<td>=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>
+<tr>=20
+<td>=20
+<center>=20
+<div style=3D"max-width: 640px; margin: auto;">=20
+<!--[if mso]>
+=09=09=09=09=09=09=09=09=09<table role=3D"presentation" style=3D"width: 640=
+px;" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"center">
+=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09<td>
+=09=09=09=09=09=09=09=09=09=09=09<![endif]-->=20
+<table class=3D"flexible" style=3D"max-width: 640px; width: 100%; margin: 0=
+ auto;" cellpadding=3D"0" cellspacing=3D"0" align=3D"center">=20
+<tbody>
+<tr>=20
+<td>=20
+<!-- ||| Header ||| -->=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>
+<tr>=20
+<td class=3D"py-md-10" style=3D"padding: 20px 10px 7px;">=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>
+<tr>=20
+<td style=3D"font: 14px/120% Proxima Nova, Arial, Helvetica, sans-serif; co=
+lor: #97999b;" valign=3D"top">=20
+<div class=3D"mktoText" id=3D"preHeaderLeftContent"></div> </td>=20
+<td style=3D"width: 15px;" width=3D"15"></td>=20
+<td style=3D"font: 14px/120% Proxima Nova, Arial, Helvetica, sans-serif; co=
+lor: #97999b;" align=3D"right" valign=3D"top">=20
+<div class=3D"mktoText" id=3D"preHeaderRightContent">
+<a style=3D"text-decoration: none; color: #97999b;" href=3D"https://info.a1=
+6z.com/index.php/email/emailWebview?mkt_tok=3DMzgyLUpaQi03OTgAAAGKWxnV8chEX=
+kzOhXccijMmDTyM-ZHMw2a_9OfKlm_HLHZfE_XOJ3UTuGeB7Eq_CwtkFlximQanHc1H-4gNO6SM=
+Oq2oz3wdeHiqyHFMiDf8X-4REA&md_id=3D15699&aliId=3DjExSecPNKQIA3CUciIXlUMCE70=
+CyGvTc1NwWYoefprxOpCUdA4iuXQ%3D%3D" target=3D"_blank">View Online</a>
+</div> </td>=20
+</tr>=20
+</tbody>
+</table> </td>=20
+</tr>=20
+</tbody>
+</table>=20
+<!-- ||| Header end ||| --> </td>=20
+</tr>=20
+<tr>=20
+<td class=3D"mktoContainer" id=3D"mkto-container" style=3D"background-image=
+: url('https://info.a16z.com/rs/382-JZB-798/images/bg-wave01--newsletter-09=
+-29-020.png'); background-repeat: no-repeat; background-position: top left;=
+" bgcolor=3D"#ffffff">
+<table class=3D"mktoModule" id=3D"sep49" width=3D"100%" cellspacing=3D"0" c=
+ellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 55px;" height=3D"55"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"pageHeader" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"padding-left: 30px; padding-right: 30px;" valign=3D"middle">=
+=20
+<table class=3D"flexible" style=3D"margin-right: auto;" width=3D"100%" cell=
+spacing=3D"0" cellpadding=3D"0" align=3D"left">=20
+<tbody>=20
+<tr>=20
+<td class=3D"aligncenter" style=3D"padding: 0; text-align: center;" valign=
+=3D"middle" align=3D"center">=20
+<div class=3D"mktoImg" id=3D"headerLogo" mktolockimgsize=3D"false">=20
+<a style=3D"text-decoration: none;" href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnV8Z-oqpiVtee7OMmLUWHk4L_AVdQuM=
+HjvxHCCJSuUGq2Ak9Y8to5qdWMcTEna9a4tFho=3D" target=3D"_blank"
+><img style=3D"vertical-align: top; max-width: 100%; height: auto;" src=3D"=
+https://info.a16z.com/rs/382-JZB-798/images/a16z-American Dynamism-Logo-Sol=
+id.png" width=3D"370" border=3D"0" height=3D"73" /></a>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+<table class=3D"hide-everywhere flexible" style=3D"margin-left: auto;" widt=
+h=3D"30%" cellspacing=3D"0" cellpadding=3D"0" align=3D"right">=20
+<tbody>=20
+<tr class=3D"hide-everywhere">=20
+<td class=3D"aligncenter pt-15 hide-everywhere" style=3D"padding: 5px 0 0; =
+text-align: right; font: 14px/136% Proxima Nova, Arial, Helvetica, sans-ser=
+if; color: #97999b;" valign=3D"middle">=20
+<div class=3D"mktoText hide-everywhere" id=3D"headerRightContent"></div> </=
+td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"sep50" width=3D"100%" cellspacing=3D"0" c=
+ellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 40px;" height=3D"40"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"mainHeading" width=3D"100%" cellspacing=
+=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"padding-left: 30px; padding-right: 30px;">=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font: 700 32px/120% Proxima Nova, Arial, Helvetica, sans-serif=
+; color: #ed8b00;" align=3D"center">=20
+<div class=3D"mktoText" id=3D"headerMainHeading">
+<p><span style=3D"color: #0057b8; font-size: 26px;" mce-data-marked=3D"1">W=
+elcome to the American Dynamism Newsletter</span></p>
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"sep47" width=3D"100%" cellspacing=3D"0" c=
+ellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 20px;" height=3D"20"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"txtBlock02" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" bgcolor=3D"#ffffff">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font: 16px/128% Proxima Nova, Arial, Helvetica, sans-serif; co=
+lor: #4b4f54;">=20
+<div class=3D"mktoText" id=3D"txtBlock02Content">=20
+<p>Welcome to the American Dynamism newsletter,&nbsp;a16z's update on the i=
+deas, companies, and individuals building toward a more dynamic future. <br=
+ /> <br />In each issue, the a16z team will deliver original and curated ar=
+ticles, podcasts, and videos that highlight the resurgence of American indu=
+stry and innovation, as well as insights into the critical problems =E2=80=
+=94 from national security and public safety to housing and education =E2=
+=80=94 that entrepreneurs are tackling.</p>=20
+<p>In advance of receiving the next issue, please enjoy a selection of prev=
+iously published articles and podcasts from the American Dynamism team:<br =
+/></p>=20
+<ul>=20
+<li><strong><span style=3D"color: #00a3ad;"><a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnV8Qo63FX82fdXyKv37W-h4zcqLqqq4=
+U2SvpdPD33GxO3EZ9rcDUpqi_NSGlzBaU-IuZI=3D" target=3D"_blank" id=3D"" style=
+=3D"color: #00a3ad;"
+>Building American Dynamism</a></span></strong> By Katherine Boyle, a16z Ge=
+neral Partner</li>=20
+<li><strong><span style=3D"color: #00a3ad;"><a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnV8fnTYCRxj28mExWf7vast5ocY1dsr=
+KhBXfPD0dN01Brvsvog2Fx9J5qFserzxAwZrLw=3D" target=3D"_blank" style=3D"color=
+: #00a3ad;"
+>Investing in Flock Safety</a></span></strong> By David Ulevitch, a16z Gene=
+ral Partner and David George, a16z General Partner<br /></li>=20
+<li><span style=3D"color: #00a3ad;"><strong><a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnV8biqE0DQN1GTGhJY7DKBXaET79maM=
+1M8n6PV5PK8MnBNwgeYI_4GW9wP-6n2WR2cmHA=3D" target=3D"_blank" style=3D"color=
+: #00a3ad;"
+>Innovating Mom-and-Pop Machine Shops for Aerospace and Defense</a></strong=
+></span>&nbsp;[podcast] With Katherine Boyle; Chris Power, Hadrian founder =
+and CEO; Packy McCormick, Not Boring founder; and Marc Andreessen, a16z cof=
+ounder<br /></li>=20
+</ul>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"sep31" width=3D"100%" cellspacing=3D"0" c=
+ellpadding=3D"0" bgcolor=3D"#ffffff">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 40px;" height=3D"40"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"footerSep01" width=3D"100%" cellspacing=
+=3D"0" cellpadding=3D"0" bgcolor=3D"#4c4f53">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 32px;" height=3D"32"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"footerLogoBlock" width=3D"100%" cellspaci=
+ng=3D"0" cellpadding=3D"0" bgcolor=3D"#4b4f54">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 60px; padding-right: 60px;">=
+=20
+<table class=3D"table-center w-148" width=3D"100%" cellspacing=3D"0" cellpa=
+dding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td align=3D"center">=20
+<div class=3D"mktoImg" id=3D"footerLogoBlockLogo" mktolockimgsize=3D"false"=
+>=20
+<a style=3D"text-decoration: none;" href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnV8Z-oqpiVtee7OMmLUWHk4L_AVdQuM=
+HjvxHCCJSuUGq2Ak9Y8to5qdWMcTEna9a4tFho=3D" target=3D"_blank"
+><img style=3D"vertical-align: top; max-width: 100%; height: auto;" src=3D"=
+https://info.a16z.com/rs/382-JZB-798/images/a16z-logo-white-09-29-020.png" =
+width=3D"174" alt=3D"ANDREESSEN HOROWITZ" border=3D"0" /></a>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<tr>=20
+<td class=3D"fz-14 pb-7 pt-4" style=3D"font: 16px/143% Proxima Nova, Arial,=
+ Helvetica, sans-serif; color: #a0a3a9; padding-top: 6px; padding-bottom: 8=
+px;" valign=3D"top" align=3D"center">=20
+<div class=3D"mktoText" id=3D"footerLogoBlockSlogan">
+ Software Is eating the world=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"socialNetworkingItems" width=3D"100%" cel=
+lspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#4b4f54">=20
+<tbody>=20
+<tr>=20
+<td>=20
+<table style=3D"margin-left: auto; margin-right: auto;" cellspacing=3D"0" c=
+ellpadding=3D"0" align=3D"center">=20
+<tbody>=20
+<tr>=20
+<td valign=3D"middle">=20
+<div class=3D"mktoImg" id=3D"socialNetworkingItemsItem01" mktolockimgsize=
+=3D"false">=20
+<a style=3D"text-decoration: none;" href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnV8ZympR6p_3RMNcNa3Y8qnhm1Pj4G-=
+7cs1VUNAqgg3KnAViO8tdxD5zU9Fg4zee6tGVs=3D" target=3D"_blank"
+> <img style=3D"display: block; vertical-align: top; max-width: 100%; heigh=
+t: auto;" src=3D"https://info.a16z.com/rs/382-JZB-798/images/twitter-white-=
+ico@2x--newsletter-09-29-020.png" alt=3D"twitter icon" width=3D"12" border=
+=3D"0" /> </a>=20
+</div> </td>=20
+<td style=3D"width: 16px;" width=3D"16"></td>=20
+<td valign=3D"middle">=20
+<div class=3D"mktoImg" id=3D"socialNetworkingItemsItem02" mktolockimgsize=
+=3D"false">=20
+<a style=3D"text-decoration: none;" href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnV8S1yPTVydWpW8r-__JJI79B1fY_BM=
+BO1EZZrUjCuT8luoZHjJNUQegoGCc_AVS6zQ0c=3D" target=3D"_blank"
+> <img style=3D"display: block; vertical-align: top; max-width: 100%; heigh=
+t: auto;" src=3D"https://info.a16z.com/rs/382-JZB-798/images/linkedin-white=
+-ico@2x--newsletter-09-29-020.png" alt=3D"linkedin icon" width=3D"12" borde=
+r=3D"0" /> </a>=20
+</div> </td>=20
+<td style=3D"width: 16px;" width=3D"16"></td>=20
+<td valign=3D"middle">=20
+<div class=3D"mktoImg" id=3D"socialNetworkingItemsItem03" mktolockimgsize=
+=3D"false">=20
+<a style=3D"text-decoration: none;" href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnV8Tu1sFCTzwlwvR9K9wwbE_cH2wEYc=
+isjs0tdqNUnG4NWOPYjS6ZNV8Rx0L3MMaV4nnM=3D" target=3D"_blank"
+> <img style=3D"display: block; vertical-align: top; max-width: 100%; heigh=
+t: auto;" src=3D"https://info.a16z.com/rs/382-JZB-798/images/podcast-white-=
+ico@2x--newsletter-09-29-020.png" alt=3D"podcast icon" width=3D"12" border=
+=3D"0" /> </a>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"footerSep02" width=3D"100%" cellspacing=
+=3D"0" cellpadding=3D"0" bgcolor=3D"#4c4f53">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 37px;" height=3D"37"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"footerAddress" width=3D"100%" cellspacing=
+=3D"0" cellpadding=3D"0" bgcolor=3D"#4b4f54">=20
+<tbody>=20
+<tr>=20
+<td style=3D"padding: 0 33px; padding-top: 2px;">=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr align=3D"center">=20
+<td class=3D"flex pb-13" style=3D"padding: 0 5px" valign=3D"top">=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font:700 10px/116% Proxima Nova, Arial, Helvetica, sans-serif;=
+ color: #a0a3a9; text-transform: uppercase; padding-bottom: 2px;" align=3D"=
+center">=20
+<div class=3D"mktoText" id=3D"footerAddressTitle">
+ MENLO PARK OFFICE=20
+</div> </td>=20
+</tr>=20
+<tr>=20
+<td class=3D"lh-116" style=3D"font:12px/116% Proxima Nova, Arial, Helvetica=
+, sans-serif; color: #e5e6e5;" align=3D"center">=20
+<div class=3D"mktoText" id=3D"footerAddress01">
+ 2865 Sand Hill Road, Suite 101=20
+<br />Menlo Park, CA 94025=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+<td class=3D"flex pb-15" style=3D"padding: 0 5px" valign=3D"top">=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font:700 10px/116% Proxima Nova, Arial, Helvetica, sans-serif;=
+ color: #a0a3a9; text-transform: uppercase; padding-bottom: 2px;" align=3D"=
+center">=20
+<div class=3D"mktoText" id=3D"footerAddressTitle02">
+ SAN FRANCISCO OFFICE=20
+</div> </td>=20
+</tr>=20
+<tr>=20
+<td class=3D"lh-116" style=3D"font:11px/127% Proxima Nova, Arial, Helvetica=
+, sans-serif; color: #e5e6e5;" align=3D"center">=20
+<div class=3D"mktoText" id=3D"footerAddress02">
+ 180 Townsend Street=20
+<br />San Francisco, CA 94107=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+<td class=3D"flex pb-12" style=3D"padding: 0 5px" valign=3D"top">=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font:700 10px/116% Proxima Nova, Arial, Helvetica, sans-serif;=
+ color: #a0a3a9; text-transform: uppercase; padding-bottom: 2px;" align=3D"=
+center">=20
+<div class=3D"mktoText" id=3D"footerAddressTitle03">
+ NEW YORK OFFICE=20
+</div> </td>=20
+</tr>=20
+<tr>=20
+<td class=3D"lh-116" style=3D"font:11px/127% Proxima Nova, Arial, Helvetica=
+, sans-serif; color: #e5e6e5;" align=3D"center">=20
+<div class=3D"mktoText" id=3D"footerAddress03">
+ 11 Madison Avenue, 15th Floor=20
+<br />New York, NY 10010=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"footerSep03" width=3D"100%" cellspacing=
+=3D"0" cellpadding=3D"0" bgcolor=3D"#4c4f53">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 25px;" height=3D"25"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"footerUnsubscribeBlock" width=3D"100%" ce=
+llspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#4b4f54">=20
+<tbody>=20
+<tr>=20
+<td>=20
+<table style=3D"margin-left: auto; margin-right: auto;" cellspacing=3D"0" c=
+ellpadding=3D"0" align=3D"center">=20
+<tbody>=20
+<tr class=3D"table-holder" align=3D"center">=20
+<td class=3D"tfoot">=20
+<table class=3D"table-center w-auto" width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td class=3D"fz-11" style=3D"font: 9px/143% Proxima Nova, Arial, Helvetica,=
+ sans-serif; color: #e5e6e5;" valign=3D"top">=20
+<div class=3D"mktoText" id=3D"footerCopyrights">
+ =C2=A92022 Andreessen Horowitz. All rights reserved.=20
+</div> </td>=20
+<td class=3D"hide" style=3D"font: 9px/143% Proxima Nova, Arial, Helvetica, =
+sans-serif; color: #e5e6e5; padding: 0 6px;" valign=3D"top">=E2=80=A2</td>=
+=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+<td class=3D"thead">=20
+<table class=3D"table-center w-auto" width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td class=3D"fz-11 pb-5" style=3D"font: 9px/143% Proxima Nova, Arial, Helve=
+tica, sans-serif; color: #e5e6e5;" valign=3D"top">=20
+<div class=3D"mktoText" id=3D"footerUpdateEmailPref">=20
+<a style=3D"text-decoration: underline; color: #e5e6e5;" href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnV8bohn7bu4YF3bK9D5DLNb2e1zg6ip=
+6f-xxIU_wZdg3isbTdKzOHmoLhv9C5eadDTFcI=3D" target=3D"_blank"
+>Update email preferences</a>=20
+</div> </td>=20
+<td class=3D"fz-11 px-9" style=3D"font: 9px/143% Proxima Nova, Arial, Helve=
+tica, sans-serif; color: #e5e6e5; padding: 0 7px;" valign=3D"top">=E2=80=A2=
+</td>=20
+<td class=3D"fz-11 pb-5" style=3D"font: 9px/143% Proxima Nova, Arial, Helve=
+tica, sans-serif; color: #e5e6e5;" valign=3D"top">=20
+<div class=3D"mktoText" id=3D"footerUnsubscribe">=20
+<a style=3D"text-decoration: underline; color: #e5e6e5;" href=3D"https://in=
+fo.a16z.com/UnsubscribePage.html?mkt_unsubscribe=3D1&mkt_tok=3DMzgyLUpaQi03=
+OTgAAAGKWxnV8chEXkzOhXccijMmDTyM-ZHMw2a_9OfKlm_HLHZfE_XOJ3UTuGeB7Eq_CwtkFlx=
+imQanHc1H-4gNO6SMOq2oz3wdeHiqyHFMiDf8X-4REA" target=3D"_blank">Unsubscribe =
+from list</a>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"footerSep04" width=3D"100%" cellspacing=
+=3D"0" cellpadding=3D"0" bgcolor=3D"#4c4f53">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 35px;" height=3D"35"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table></td>=20
+</tr>=20
+</tbody>
+</table>=20
+<!--[if mso]>
+=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09<![endif]-->=20
+</div>=20
+</center> </td>=20
+</tr>=20
+</tbody>
+</table> </td>=20
+</tr>=20
+</tbody>
+</table> =20
+<a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGKWxnV8dRfZv8EGIPXzAUjgIGcIiKAjlaYv=
+982qzmXDVrnGaDFOvRE6Bnvy78RM_y9dtYq0WM=3D"
+></a>
+<img src=3D"https://go2.a16z.com/trk?t=3D1&mid=3DMzgyLUpaQi03OTg6MDoxMzExNT=
+o0MjI2NDowOjE1Njk5Ojk6MTk1MTk6MTU2NDgwNDktMTpudWxs" width=3D"1" height=3D"1=
+" style=3D"display:none !important;" alt=3D"" />
+</body>
+</html>
+------=_Part_55879511_551201905.1678193534454--

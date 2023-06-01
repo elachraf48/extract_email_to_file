@@ -1,0 +1,752 @@
+Received: from 127.0.0.1
+ by atlas-production.v2-mail-prod1-gq1.omega.yahoo.com pod-id atlas--production-gq1-5f79bdbfcb-xzvf6.gq1.yahoo.com with HTTP; Tue, 14 Mar 2023 16:06:07 +0000
+Return-Path: <bounces+achrafel73114=yahoo.com@p.revolve.com>
+X-Originating-Ip: [192.174.88.230]
+Received-SPF: pass (domain of p.revolve.com designates 192.174.88.230 as permitted sender)
+Authentication-Results: atlas-production.v2-mail-prod1-gq1.omega.yahoo.com;
+ dkim=pass header.i=@p.revolve.com header.s=scph0317;
+ spf=pass smtp.mailfrom=p.revolve.com;
+ dmarc=pass(p=REJECT,sp=NONE) header.from=p.revolve.com;
+X-Apparently-To: achrafel73114@yahoo.com; Tue, 14 Mar 2023 16:06:07 +0000
+X-YMailAVSC: VVNFWoA3bBuOpnBpipxxm1.ddvTfXdIw_mKHWfkFDwKEt9n
+ DCo8FoJhZ2cSkj9WPE2_jTC21._vu_CRnpGlmIv9LUM.kBft_w3K2m7WIChv
+ x5nLh2uU.WYsQU1wO7eRjVarBfdyh1ibZ27OgvvYTypeSe4D4IeOpvb1Zw__
+ 1YQLSf0fBgdbzUIFc1TREvvOgRri53EaymGj8flaBhmWjXeca7nNVl4cp0jy
+ 6YdeOfqGZkabVpmaclDLC8VHepJNQLdXa00B9ATvOBkOuzo329RSDlsyq6c7
+ _bJuRnOddFQQH7WAJN8aY652SH9Wv1mI2vigbDfvyYb8pEQdLWSn34V6P_1L
+ izRfmqpDFyjUV26v9ducZBA4Hzf2mRtv4JGQXNsDVSCi5BrumSJeyqHXsTP8
+ TEEgUEpXpec2l4gRuzqofrvCu9Q4xe1WQV_wcJe91oZasaKdVM8AXV_HmRG6
+ 7MxuX8540G28enBRs_MyXqtjhc9FPuPudcZYJCLXu6mWRbNV0_0ppJ82br9W
+ tvLfRan_Wk7C2BMg4ElQRFH8eHRO4RKz07eU0thcPMhOnmrgrGcg3fQca7.V
+ 1fBQb824mOsDPRU_4WABjJxNL4ngOo.oKWalLKwM55iCQIIXlKj72EEHOwsQ
+ ejqzC7kUkY5QsVj1H33S3QZWM5WzmDFP_BYRUrP55DIVkY6QEEL6yERlffV3
+ TvChlDkGCg6vyA6sne2Wf8z2ZG63qkm9_fKL0wubxJfk_Y1QhlnmnsnbMma4
+ 5FCV4NIJGooDp3ZQbHoyDIt6jf5CaoGWQRVSD260CJeVRyAor3LkcRaXo43f
+ egPxtq2iUWGFb6Lh8WYREEQ19sPFIvK0wRlwoWESX8frmP6GfupIk2WK3ld2
+ CpIVq4Of2nKEzbSBEY.gjozGBYbR_3GATtJcDbKoiF9_sEcTj9Q1Wf0qYSqH
+ vHGDvM5UQUPVBza1eyIb3az3PGdfIQC4wzzrJ74QSr0tTONDmhjxjFKS8Cw.
+ goN5_dFDV3Xz3umujB6CcT7Oq86XbQAmZssRgXEhihK5NBnLxxc0JAzSe6jS
+ KSoLs3QGWwdYlhNeOPbFsTRJoXUvJLtvuqIixBxzuXO17xtkveBV_FwovW2x
+ xmaxQShHCowZGtNIY7kWSQCX4ClQAED.SLvg81w9hBPukYzcZzhO1Bttm4nx
+ 5QLbItzx79out6UHe0u_SVppOKcwJBz6NQ7iP_FDaIeWoYcMNenzvzZolMoi
+ KQVOKfbj1MYqJo47R_GtDrVk-
+X-YMailISG: SNyh0OYWLDuTmSeD1qWLTfR6U.9xKp0WmCBGYDrO391PH23H
+ iHhFQQg5cDksXsPnXjd2IYUUMZpziJ2IJ5tItRs3opeDjKXFboufx.bR3U8u
+ blF5EUhbTZJBVx3sNa3DwM2XCxVmk.NG0PPJsLUUcs6oQB7fEBNw3DpnXW4H
+ R7hq5br_4CYGQeivhVhPU35M8l8.TOVPP2w0H8iT9XTKerv_Mfh91VcAYdQj
+ ig.2SMnEZnv5fblVpnkxq3sBOhtkdB1cpVM5JE9nKJ7zA8QTIp6GliS_sa5M
+ atHRWfUnfnFtPf073Y21Kw4IV16yvysq.hMPhKwqW1xwbp6pu.ZzdDYOx0Kf
+ 9JHUgutw6IgPVgyE6iH4FDhEX7vohXgwfHDqv3jJE.lIvlr3274FTOJSSRNk
+ TR1_s8l0_uNQsZ2qrvucquUnAa6nXcJWG9xeVqb5qJ6bjMbr2lFjf5CAxNba
+ mi_vEWAdJ6JgmKoljp3Pk7zCzBm_C5VLGoJ7_E0lbLJTPHVUZs3JqoHTLUL2
+ eLeUPB_h3uBM53epDerMrMqmv9i0Jg4Q_O_23U5h41c0bwbPb5W37iUU3vqe
+ tcPl3fDrF_NUZs_p_kXOyJdKUSnkEuq5I1GwvZD51sdiC5ozyp4QuxjJYqVp
+ FWxL1jX86Dlxbkwn4GwFXFwQQoPPVcpAraux7SbB6EmzXt75crLp8gCtvJtM
+ LXG.ESFkyLW23sA1XljkR57pA5sjOs5KzOYeqn5pHyBBCiFBlzOcq_LQED.M
+ kps.xky29XPLcFAM31goxHLscQ1M5aOYfNGV3bAhZoQMIJW6VM.sOz6aeBZE
+ KCpnzIpjwOH.hBWz4TpIqGEPpCZ4cgnb6RlcgNYcnYqlG6ZgdRaG2ytR8JNz
+ Kx1.Bhuc5dshUKdVxCvHIKZbfKZX4sM5zuemCHbz9ZEKAe7Jn36UaZXGs3xl
+ 2i8DU0wRmgXSV54.cIDXfOy33zVXqXj1nUVCw3LiNpY1zidb4qtPWL1D8tku
+ 1CXz94SMdRZ85MGNafFTtLBnT6zL4AhyS6a3tQiqWzOFq5ezmezZJUEnwW9C
+ oGhWZfPJXRb4dMs50m8jkhdK6rbnKwvm3DDhO2YbOL0vV7QDw38i_ZOLA63n
+ VjD2Ln76TeLJ3qREBTqsfxWFPmwmZP2xsVIiwwT1Tq2JsXeK6rnqR12eBF6g
+ lmrl.S5JagrB2qZIj_GJCBCcP34WeRjm7l6Nm2i.mCwldvYu.Y9azLgIglZO
+ OMisBu3_XcmPcYQxamNW6Znw0Q_lzyXE
+Received: from 192.174.88.230 (EHLO mta-174-88-230.revolve.com.sparkpostmail.com)
+ by 10.253.31.88 with SMTPs
+ (version=TLS1_2 cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256);
+ Tue, 14 Mar 2023 16:06:07 +0000
+X-MSFBL: XmrOnnUd5H2SOrK7uEUOwDmCXTjPib6Olv7eRY4GFwg=|eyJyIjoiYWNocmFmZWw
+	3MzExNEB5YWhvby5jb20iLCJ0ZW5hbnRfaWQiOiJjb3JkaWFsIiwiY3VzdG9tZXJ
+	faWQiOiIxIiwic3ViYWNjb3VudF9pZCI6Ijg2IiwibWVzc2FnZV9pZCI6IjY0MDg
+	2ZjliMTA2NGQ5OWNhNDhjIn0=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=p.revolve.com;
+	s=scph0317; t=1678809967; i=@p.revolve.com;
+	bh=m1/nK/8uoxvfegTDyE04pbLDZSyHWlpCq9txqFcJnIk=;
+	h=Content-Type:To:Message-ID:Date:Subject:From:List-Unsubscribe:
+	 From:To:Cc:Subject;
+	b=GjfEZgiZd5fhetCo1PQT047AG4xoOvVVYac1hEMt0L0Gih8icM8uyw+lysfbPuN/f
+	 a9uFTSuaEBJCPx9zxzuwDUYEukD6hjoqkDEU/fxAYn56ai2l06rPp+QR0N6xuG+uwx
+	 sY0xnRhcklvisJ5FmdCQdWVUr5d446fCSbVtUs20=
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+To: achrafel73114@yahoo.com
+Message-ID: <4A.C8.17355.F6B90146@gd.mta2vrest.cc.prd.sparkpost>
+Date: Tue, 14 Mar 2023 16:06:07 +0000
+MIME-Version: 1.0
+Subject: =?utf-8?b?WW91ciBCaXJ0aGRheSBTdXJwcmlzZSBBd2FpdHMhIPCfjoE=?=
+From: "REVOLVE" <revolve@p.revolve.com>
+X-Crdl-Mc: 248:5d9b9a073298689e92036ddf:rm202303141600:64073680758ffbffd30da349:1
+X-Feedback-ID: 248:5d9b9a073298689e92036ddf:64073680758ffbffd30da349:cordial
+Reply-To: sales@revolveclothing.com
+List-Unsubscribe: <mailto:unsubscribe@sp.crdl.io?subject=unsubscribe:NQ1Qqhau8W3-VHY_jGyAoN-tkPyIrTB6tNbZqxPCWz4~|eyAicmNwdF90byI6ICJhY2hyYWZlbDczMTE0QHlhaG9vLmNvbSIsICJ0ZW5hbnRfaWQiOiAiY29yZGlhbCIsICJjdXN0b21lcl9pZCI6ICIxIiwgInN1YmFjY291bnRfaWQiOiAiODYiLCAibWVzc2FnZV9pZCI6ICI2NDA4NmY5YjEwNjRkOTljYTQ4YyIgfQ~~>
+List-Id: <cordial.1.86.sparkpostmail.com>
+Content-Length: 51160
+
+<!DOCTYPE html><body style=3D"background-color: #fff; margin:0;padding:0;">=
+<img src=3D"https://e.p.revolve.com/o/p/248:5d9b9a073298689e92036ddf:rm2023=
+03141600:64073680758ffbffd30da349:1/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.ey=
+JpYXQiOjE2Nzg4MDk5Njd9.A2bpL2sDQ5pCmS32Og3TbZi3xV665VPbEgEA7EMCn0I" height=
+=3D1 width=3D1 />=0A<head>=0A    =0A=0A=0A<meta charset=3D"UTF-8">=0A<title=
+></title>=0A<meta name=3D"viewport" content=3D"width=3Ddevice-width, initia=
+l-scale=3D1.0">=0A<meta name=3D"x-apple-disable-message-reformatting">=0A=
+=0A<style type=3D"text/css">=0A=0A    @import url(http://fonts.googleapis.c=
+om/css=3Ffamily=3DMontserrat);=0A    =0A    [style*=3D"Montserrat"] {=0A   =
+ font-family: 'Montserrat', Arial, sans-serif !important;=0A    }=0A    =0A=
+    body, html {=0A        background-color: #ffffff;=0A    }=0A    =0A    =
+body {=0A        margin: 0; padding: 0;=0A        -webkit-text-size-adjust:=
+ none;=0A        -ms-text-size-adjust: none;=0A    }=0A    =0A    table td =
+{=0A        border-collapse: collapse;=0A    }=0A=0A    a, a:link, a:visite=
+d, a:active {=0A        color: #000000; /* or any other color*/=0A    }=0A =
+   .appleLinks {=0A        color: #949494 !important;=0A        text-decora=
+tion: none !important;=0A    }=0A    a.link, a.link:visited, a.link:active =
+{=0A        color: #717171;=0A        text-decoration: underline;=0A    }=
+=0A    a.link:hover {=0A        text-decoration: none;=0A        color: #00=
+0000;=0A    }=0A    a.link--bold {=0A      color: #000000 !important;=0A   =
+   font-weight: bold; =0A      text-decoration: none; =0A      border-botto=
+m: 2px solid #000000; =0A      text-transform: uppercase;=0A    }=0A     .b=
+tn {=0A        border: .16666667rem solid #000;=0A        background-color:=
+ #000;=0A        color: #fff;=0A        padding: .75rem .66666667rem .66666=
+667rem .83333333rem;=0A        font-size: 1em;=0A        line-height: 2;=0A=
+        display: inline-block;=0A        transition: all .25s ease-in-out;=
+=0A        letter-spacing: 2px;=0A        text-align: center;=0A        tex=
+t-decoration: none;=0A        text-transform: uppercase;=0A        white-sp=
+ace: normal;=0A        cursor: pointer;=0A        border-radius: 0;=0A    }=
+=0A    .btn--full {=0A        width: 100%;=0A    }=0A    .btn--loyalty {=0A=
+        letter-spacing: 1.4px;=0A        height: 60px;=0A        line-heigh=
+t: 60px;=0A        padding: 0;=0A        font-size: 14px;=0A        color: =
+#ffffff !important;=0A        box-sizing: border-box;=0A        border: non=
+e;=0A        font-weight: bold;=0A        font-family: Arial;=0A        bac=
+kground-color: #F9ADAD;=0A    }=0A    =0A    /* Media Query for desktop */=
+=0A    @media screen and (min-width: 481px) {=0A        .u-padding-r--md__d=
+esktop {=0A            padding-right: 8px;=0A        }=0A        .u-padding=
+-l--md__desktop {=0A            padding-left: 8px;=0A        }=0A    }=0A  =
+  /* Media Query for mobile */=0A    @media screen and (max-width: 480px) {=
+=0A        .mob-clear-spacing {=0A            margin:0 !important;=0A      =
+      padding:0 !important;=0A        }=0A        .responsive-width-three {=
+=0A          width: 50% !important;=0A        }=0A        .last-of-three {=
+=0A          display: block;=0A          margin: 0 auto !important;=0A     =
+   }    =0A        .mob-p {=0A            width:90%;=0A            margin-l=
+eft: auto;=0A            margin-right: auto;=0A        }=0A        =0A     =
+   .truncate-text {=0A            white-space: nowrap;=0A            overfl=
+ow: hidden;=0A            text-overflow: ellipsis;=0A        }=0A        .p=
+roduct-container {=0A          display: table-row;=0A        }=0A        .r=
+ev_logo {=0A            width: 197px !important;=0A        }=0A        .foo=
+ter_container {=0A            padding-top: 14px !important;=0A            p=
+adding-right: 14px !important;=0A            padding-bottom: 14px !importan=
+t;=0A            padding-left: 14px !important;=0A        }=0A        .foot=
+er_element {=0A            font-size: 10px !important;=0A            paddin=
+g: 8px 0 !important;=0A        }=0A        .footer_social {=0A            p=
+adding-top: 12px !important;=0A            padding-bottom: 6px !important;=
+=0A        }=0A        .content_area {=0A            padding-top: 0 !import=
+ant;=0A            padding-right: 0 !important;=0A            padding-botto=
+m: auto !important;=0A            padding-left: 0 !important;=0A        }=
+=0A        .content_top_wrap {=0A            padding-bottom: 0 !important;=
+=0A        }=0A        .appleLinks,=0A        .appleLinks a {=0A           =
+ color: #949494 !important;=0A            text-decoration: none !important;=
+=0A        }=0A        .social_facebook,=0A        .social_twitter,=0A     =
+   .social_pinterest,=0A        .social_instagram,=0A        .social_google=
+ {=0A            width: 35px !important;=0A        }=0A        .mob_text_ce=
+nter {=0A            text-align: center !important;=0A        }=0A         =
+=2Emob_text_right {=0A            text-align: right !important;=0A        }=
+=0A        .footer_link_list {=0A            width: 250px !important;=0A   =
+     }=0A        .footer_link_list td {=0A            width: inherit !impor=
+tant;=0A        }=0A        .mob_font_size_12 {=0A            font-size: 12=
+px !important;=0A        }=0A=0A        .footer_app_download_section {=0A  =
+          width: 280px !important;=0A        }=0A        .footer-manage-lin=
+e {=0A            padding-top: 12px;=0A        }=0A=0A=0A        /* Prefere=
+nces Banner */=0A        .preferences_banner__stick {=0A            width: =
+150px !important;=0A            height: 1px !important; =0A        }=0A    =
+    .preferences_banner__stick-container {=0A            padding-top: 16px =
+!important;=0A            padding-right: 0 !important;=0A            paddin=
+g-bottom: 12px !important;=0A            padding-left: 0 !important;=0A    =
+    }=0A        .preferences_banner__td-container {=0A            padding: =
+20px !important;=0A        }=0A        .preferences_banner__border {=0A    =
+        border-width: 3px !important;=0A        }=0A=0A        /* This resi=
+zes tables and images to be 100% wide with a proportionate width */=0A=0A  =
+      .show {=0A            display: block !important;=0A            max-he=
+ight: none !important;=0A            overflow: visible !important;=0A      =
+      line-height: normal !important;=0A        }=0A        .hide {=0A     =
+       display: none !important;=0A        }=0A        .showTable {=0A     =
+       display: block !important;=0A        }=0A=0A        .mob-font-10 {=
+=0A            font-size: 10px !important=0A        }=0A=0A        .respons=
+ive {=0A            width: 100% !important;=0A            height: auto !imp=
+ortant;=0A        }=0A=0A        .nomob {=0A            max-height: 0;=0A  =
+          font-size: 0;=0A            display: none !important;=0A         =
+   width: 0px !important;=0A            height: 0px !important;=0A        }=
+=0A=0A        .responsive_remove {=0A          display: none;=0A          d=
+isplay: none !important;=0A          height: 0;=0A          width: 0 !impor=
+tant;=0A          overflow: hidden !important;=0A        }=0A=0A        .mo=
+b_center {=0A          text-align: center !important;=0A        }=0A       =
+ .small-pad-top-collapse {=0A            padding-top: 0 !important;=0A     =
+   }=0A        .max320 {=0A            max-width: 320px !important;=0A     =
+   }=0A        /* Grid Modules */=0A        .small-1 {=0A            displa=
+y: block !important;=0A            width: 100% !important;=0A        }=0A  =
+      .small-2 {=0A            width: 50% !important;=0A            float: =
+left !important;=0A        }=0A        .small-3 {=0A            width: 33.3=
+33333% !important;=0A        }=0A        .small-4 {=0A            width: 25=
+% !important;=0A        }=0A        .small-5 {=0A            width: 20% !im=
+portant;=0A        }=0A        .small-1 a,=0A        .small-3 a {=0A       =
+     border-right: 0 !important;=0A            border-left: 0 !important;=
+=0A        }=0A        .small-no-border-right {=0A            border-right:=
+ 0 !important;=0A        }=0A        .small-no-border-left {=0A            =
+border-left: 0 !important;=0A        }=0A        .small-no-border {=0A     =
+       border-left: 0 !important;=0A            border-right: 0 !important;=
+=0A        }=0A    }=0A</style>=0A=0A</head>=0A<!-- BEGIN EMAIL TABLES -->=
+=0A<body style=3D"background-color: #fff; margin:0;padding:0;">=0A    <tabl=
+e width=3D"100%" margin=3D"0" padding=3D"0" bgcolor=3D"#ffffff" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">=0A        <tr>=0A            <td>=0A=
+          =0A=0A<!--rpcampaign: REVWELCOMEBIRTHDAYWELCOMEBIRTHDAYTRIG_REV--=
+>=0A=0A          <!--MonitorCampaignID:REVWELCOMEBIRTHDAYWELCOMEBIRTHDAYTRI=
+G_REV-->=0A=0A                <!-- BEGIN HEADER -->=0A                <tabl=
+e width=3D"750" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"c=
+enter" class=3D"responsive content_top_wrap" style=3D"margin: 0 auto;">=0A =
+                   <tr>=0A                        <td>=0A                  =
+          <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" class=3D"nomob" align=3D"center">=0A                                =
+<tr valign=3D"top">=0A                                    =0A              =
+                       <td valign=3D"top" style=3D"font-family: arial;font-=
+size: 10px;text-decoration:none;text-align:center;color:#717171;padding-top=
+:10px;">Give us the deets on your special day for a b-day treat from us!! |=
+ =0A                                     <a https: data-crdl-variant=3D"" s=
+tyle=3D"font-family: arial;font-size: 10px;color:#717171;" conversion=3D"tr=
+ue" target=3D"_blank" href=3D"https://e.p.revolve.com/c2/248:5d9b9a07329868=
+9e92036ddf:rm202303141600:64073680758ffbffd30da349:1/b3a5811e=3FjwtH=3DeyJ0=
+eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2Nzg4MDk5NjYsImNkIjoiLnA=
+ucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQxMDlhOD=
+hhYjA0ZWU5N2Y3MDM5NzQ4IiwibGlua1VybCI6Imh0dHBzOlwvXC93d3cucmV2b2x2ZS5jb21cL=
+3JcL015RW1haWxTZXR0aW5ncy5qc3A_dXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPXRyaWdn=
+ZXImdXRtX2NhbXBhaWduPVRSSUdfUkVWX1dFTENPTUVCSVJUSERBWV9XRUxDT01FQklSVEhEQVl=
+fMjAyMzAzMTQmdXRtX2NvbnRlbnQ9VFJJR19SRVZfV0VMQ09NRUJJUlRIREFZX1dFTENPTUVCSV=
+JUSERBWSZ1c2VySUQ9JmNJRD02NDA3MzY4MDc1OGZmYmZmZDMwZGEzNDkifQ&jwtS=3Dwk17oLL=
+MkZLLvphgrcncIHIvRKlcKXfX8eX7xC_u4kc">Update Your Email Preferences</a>=0A =
+                                    </td>=0A                               =
+                                      </tr>=0A                            <=
+/table>=0A                            <table width=3D"100%" border=3D"0" ce=
+llspacing=3D"0" cellpadding=3D"0" align=3D"center">=0A                     =
+           <tr valign=3D"top">=0A                                    <td va=
+lign=3D"top" align=3D"center" style=3D"padding-bottom:20px;padding-top:20px=
+">=0A                                        <a http: data-crdl-variant=3D"=
+" style=3D"font-family: arial;font-size: 11px;text-decoration:none;color:#7=
+17171;" conversion=3D"true" target=3D"_blank" href=3D"http://e.p.revolve.co=
+m/c2/248:5d9b9a073298689e92036ddf:rm202303141600:64073680758ffbffd30da349:1=
+/a000459f=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2=
+Nzg4MDk5NjYsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSI=
+sIm10bElEIjoiNjQxMDlhODhhYjA0ZWU5N2Y3MDM5NzQ5IiwibGlua1VybCI6Imh0dHA6XC9cL3=
+Jldm9sdmUuY29tP3V0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT10cmlnZ2VyJnV0bV9jYW1wY=
+Wlnbj1UUklHX1JFVl9XRUxDT01FQklSVEhEQVlfV0VMQ09NRUJJUlRIREFZXzIwMjMwMzE0JnV0=
+bV9jb250ZW50PVRSSUdfUkVWX1dFTENPTUVCSVJUSERBWV9XRUxDT01FQklSVEhEQVkmdXNlckl=
+EPSZjSUQ9NjQwNzM2ODA3NThmZmJmZmQzMGRhMzQ5In0&jwtS=3DJ1-lnxsC3xLYqOJN1EqpfT7=
+Og7Svgh_wwrq90XsQNS0">=0A                                            <img s=
+rc=3D"http://is4.revolveassets.com/images/4.0_email/logo2_lrg.png" class=3D=
+"rev_logo nomob" style=3D"display:block;border:0;margin:0 auto;" width=3D"2=
+62" border=3D"0">=0A                                            <img src=3D=
+"https://is4.revolveassets.com/images/up/2019/December/REVmobile_email_logo=
+=2Epng" class=3D"show" style=3D"display:none;border:0;margin:0 auto;width:1=
+00%;" border=3D"0">=0A                                        </a>=0A      =
+                              </td>=0A                                </tr>=
+=0A                            </table>=0A                            <tabl=
+e width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"=
+nomob" align=3D"center" style=3D"padding-top:5px;padding-bottom:15px">=0A  =
+                              <tr valign=3D"top">=0A                       =
+             <td valign=3D"top">=0A                                        =
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">=0A =
+                                           <tr>=0A                         =
+                       <td style=3D"width: 17px"></td>=0A                  =
+                              <td style=3D"width: 97px">=0A                =
+                                    <a http: data-crdl-variant=3D"" style=
+=3D"text-decoration:none;text-transform:uppercase;letter-spacing:.08em;colo=
+r:#000001;font: bold 14px Arial;white-space: nowrap;" conversion=3D"true" t=
+arget=3D"blank" href=3D"http://e.p.revolve.com/c2/248:5d9b9a073298689e92036=
+ddf:rm202303141600:64073680758ffbffd30da349:1/ef1534fd=3FjwtH=3DeyJ0eXAiOiJ=
+KV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2Nzg4MDk5NjYsImNkIjoiLnAucmV2b2=
+x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQxMDlhODhhYjA0Z=
+WU5N2Y3MDM5NzRhIiwibGlua1VybCI6Imh0dHA6XC9cL3d3dy5yZXZvbHZlLmNvbVwvbmV3XC9h=
+bGwtbmV3LWl0ZW1zXC9iclwvN2Y1OTQ2P3V0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT10cml=
+nZ2VyJnV0bV9jYW1wYWlnbj1UUklHX1JFVl9XRUxDT01FQklSVEhEQVlfV0VMQ09NRUJJUlRIRE=
+FZXzIwMjMwMzE0JnV0bV9jb250ZW50PVRSSUdfUkVWX1dFTENPTUVCSVJUSERBWV9XRUxDT01FQ=
+klSVEhEQVkmdXNlcklEPSZjSUQ9NjQwNzM2ODA3NThmZmJmZmQzMGRhMzQ5In0&jwtS=3DTV5DX=
+A3tmTDE93pAsVmP2Ep_7yG2-4FBCyhP892637Q">New</a>=0A                         =
+                       </td>=0A                                            =
+    <td style=3D"width: 134px;">=0A                                        =
+            <a http: data-crdl-variant=3D"" style=3D"text-decoration:none;t=
+ext-transform:uppercase;letter-spacing:.08em;color:#000001;font: bold 14px =
+Arial;white-space: nowrap;" conversion=3D"true" target=3D"blank" href=3D"ht=
+tp://e.p.revolve.com/c2/248:5d9b9a073298689e92036ddf:rm202303141600:6407368=
+0758ffbffd30da349:1/564f2ca2=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&=
+jwtP=3DeyJpYXQiOjE2Nzg4MDk5NjYsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAs=
+InRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQxMDlhODhhYjA0ZWU5N2Y3MDM5NzRiIiwibGlua1V=
+ybCI6Imh0dHA6XC9cL3d3dy5yZXZvbHZlLmNvbVwvZHJlc3Nlc1wvYnJcL2E4ZTk4MT91dG1fbW=
+VkaXVtPWVtYWlsJnV0bV9zb3VyY2U9dHJpZ2dlciZ1dG1fY2FtcGFpZ249VFJJR19SRVZfV0VMQ=
+09NRUJJUlRIREFZX1dFTENPTUVCSVJUSERBWV8yMDIzMDMxNCZ1dG1fY29udGVudD1UUklHX1JF=
+Vl9XRUxDT01FQklSVEhEQVlfV0VMQ09NRUJJUlRIREFZJnVzZXJJRD0mY0lEPTY0MDczNjgwNzU=
+4ZmZiZmZkMzBkYTM0OSJ9&jwtS=3D08jaMmgKu8M5KA2J_IuwmugzdIMPjJRXdaCbBPiPZNo">D=
+resses</a>=0A                                                </td>=0A      =
+                                          <td style=3D"width: 176px;">=0A  =
+                                                  <a http: data-crdl-varian=
+t=3D"" style=3D"text-decoration:none;text-transform:uppercase;letter-spacin=
+g:.08em;color:#000001;font: bold 14px Arial;white-space: nowrap;" conversio=
+n=3D"true" target=3D"blank" href=3D"http://e.p.revolve.com/c2/248:5d9b9a073=
+298689e92036ddf:rm202303141600:64073680758ffbffd30da349:1/16ab5804=3FjwtH=
+=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2Nzg4MDk5NjYsImNk=
+IjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQ=
+xMDlhODhhYjA0ZWU5N2Y3MDM5NzRjIiwibGlua1VybCI6Imh0dHA6XC9cL3d3dy5yZXZvbHZlLm=
+NvbVwvYmVzdFNlbGxlclwvYWxsLWJlc3Qtc2VsbGVyc1wvYnJcLzIwMjJkND91dG1fbWVkaXVtP=
+WVtYWlsJnV0bV9zb3VyY2U9dHJpZ2dlciZ1dG1fY2FtcGFpZ249VFJJR19SRVZfV0VMQ09NRUJJ=
+UlRIREFZX1dFTENPTUVCSVJUSERBWV8yMDIzMDMxNCZ1dG1fY29udGVudD1UUklHX1JFVl9XRUx=
+DT01FQklSVEhEQVlfV0VMQ09NRUJJUlRIREFZJnVzZXJJRD0mY0lEPTY0MDczNjgwNzU4ZmZiZm=
+ZkMzBkYTM0OSJ9&jwtS=3Dar2hqLd35oBcN6nJbr1YwM6Kxla5LeRCLnjPNcEPyug">Best Sel=
+lers</a>=0A                                                </td>=0A        =
+                                        <td style=3D"width: 102px;">=0A    =
+                                                <a http: data-crdl-variant=
+=3D"" style=3D"text-decoration:none;text-transform:uppercase;letter-spacing=
+:.08em;color:#000001;font: bold 14px Arial;white-space: nowrap;" conversion=
+=3D"true" target=3D"blank" href=3D"http://e.p.revolve.com/c2/248:5d9b9a0732=
+98689e92036ddf:rm202303141600:64073680758ffbffd30da349:1/12419c5b=3FjwtH=3D=
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2Nzg4MDk5NjYsImNkIjo=
+iLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQxMD=
+lhODhhYjA0ZWU5N2Y3MDM5NzRkIiwibGlua1VybCI6Imh0dHA6XC9cL3d3dy5yZXZvbHZlLmNvb=
+Vwvc2FsZVwvYWxsLXNhbGUtaXRlbXNcL2JyXC81NGNjN2I_dXRtX21lZGl1bT1lbWFpbCZ1dG1f=
+c291cmNlPXRyaWdnZXImdXRtX2NhbXBhaWduPVRSSUdfUkVWX1dFTENPTUVCSVJUSERBWV9XRUx=
+DT01FQklSVEhEQVlfMjAyMzAzMTQmdXRtX2NvbnRlbnQ9VFJJR19SRVZfV0VMQ09NRUJJUlRIRE=
+FZX1dFTENPTUVCSVJUSERBWSZ1c2VySUQ9JmNJRD02NDA3MzY4MDc1OGZmYmZmZDMwZGEzNDkif=
+Q&jwtS=3DOscf-Ev_8450gvKbaciWwft3J4NYcEHnRexTQ_42s34">Sale</a>=0A          =
+                                      </td>=0A                             =
+                   <td style=3D"width: 175px;">=0A                         =
+                           <a http: data-crdl-variant=3D"" style=3D"text-de=
+coration:none;text-transform:uppercase;letter-spacing:.08em;color:#000001;f=
+ont: bold 14px Arial;white-space: nowrap;" conversion=3D"true" target=3D"bl=
+ank" href=3D"http://e.p.revolve.com/c2/248:5d9b9a073298689e92036ddf:rm20230=
+3141600:64073680758ffbffd30da349:1/95cb42c9=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbG=
+ciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2Nzg4MDk5NjYsImNkIjoiLnAucmV2b2x2ZS5jb20iL=
+CJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQxMDlhODhhYjA0ZWU5N2Y3MDM5=
+NzRlIiwibGlua1VybCI6Imh0dHA6XC9cL3d3dy5yZXZvbHZlLmNvbVwvY29udGVudFwvbXlmYXZ=
+cL29uYm9hcmRpbmc_dXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPXRyaWdnZXImdXRtX2NhbX=
+BhaWduPVRSSUdfUkVWX1dFTENPTUVCSVJUSERBWV9XRUxDT01FQklSVEhEQVlfMjAyMzAzMTQmd=
+XRtX2NvbnRlbnQ9VFJJR19SRVZfV0VMQ09NRUJJUlRIREFZX1dFTENPTUVCSVJUSERBWSZ1c2Vy=
+SUQ9JmNJRD02NDA3MzY4MDc1OGZmYmZmZDMwZGEzNDkifQ&jwtS=3D-S8KFkCZeM40EkNxqI8ns=
+zJZPiOqQBBawtYqOb8uR08">My Favorites</a>=0A                                =
+                </td>=0A                                                <td=
+ style=3D"width: 49px;">=0A                                                =
+    <a https: data-crdl-variant=3D"" style=3D"text-decoration:none;text-tra=
+nsform:uppercase;letter-spacing:.08em;color:#000001;font: bold 14px Arial;w=
+hite-space: nowrap;" conversion=3D"true" target=3D"blank" href=3D"https://e=
+=2Ep.revolve.com/c2/248:5d9b9a073298689e92036ddf:rm202303141600:64073680758=
+ffbffd30da349:1/0f8cde1d=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=
+=3DeyJpYXQiOjE2Nzg4MDk5NjYsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRr=
+IjoicmV2b2x2ZSIsIm10bElEIjoiNjQxMDlhODhhYjA0ZWU5N2Y3MDM5NzRmIiwibGlua1VybCI=
+6Imh0dHBzOlwvXC93d3cucmV2b2x2ZS5jb21cL2NvbnRlbnRcL2xwXC9iZWF1dHlcLz9uYXZzcm=
+M9bWFpbiZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9dHJpZ2dlciZ1dG1fY2FtcGFpZ249V=
+FJJR19SRVZfV0VMQ09NRUJJUlRIREFZX1dFTENPTUVCSVJUSERBWV8yMDIzMDMxNCZ1dG1fY29u=
+dGVudD1UUklHX1JFVl9XRUxDT01FQklSVEhEQVlfV0VMQ09NRUJJUlRIREFZJnVzZXJJRD0mY0l=
+EPTY0MDczNjgwNzU4ZmZiZmZkMzBkYTM0OSJ9&jwtS=3Dyq3TDDrP9G40KqSxquHsPRzmS56o2s=
+TInQhI3xLmde4">Beauty</a>=0A                                               =
+ </td>=0A                                            </tr>=0A              =
+                          </table>=0A                                    </=
+td>=0A                                </tr>=0A                            <=
+/table>=0A                    <!-- END HEADER -->=0A                    <!-=
+-loyalty top banner start-->=0A=0A=0A =0A                  <!-- OLD VERSION=
+ BEFORE 5/27/2021 -->=0A=0A<!-- NEW VERSION FROM 5/27/2021 -->=0A=0A=0A=0A<=
+!-- if the user is in the supplement, use supplement data -->=0A=0A        =
+          =0A                  =0A =0A=0A                =0A               =
+               =0A                     =0A=0A<!--FWRD TOP BANNER AB TEST-->=
+=0A                     =0A<!-- BEGIN CONTENT -->=0A<custom type=3D"content=
+" name=3D"Content">=0A<div class=3D"email-content ui-sortable">=0A    <div =
+class=3D"module-container ui-sortable-handle" data-editable=3D"true">=0A   =
+     <div class=3D"module">=0A            <table width=3D"100%" border=3D"0=
+" cellspacing=3D"0" cellpadding=3D"0" align=3D"center" sett-table-pad-top=
+=3D"" sett-table-background-color=3D"">=0A                <tbody>=0A       =
+             <tr valign=3D"top">=0A                        <td valign=3D"to=
+p" style=3D"padding-top:0px;" class=3D"small-1" sett-col-pad-top=3D"">=0A  =
+                          <eg-edit type=3D"link-image"><a http: data-crdl-v=
+ariant=3D"" conversion=3D"true" style=3D"display:block;border-left:0px soli=
+d transparent;border-right:0px solid transparent" sett-col-pad-lr=3D"" href=
+=3D"http://e.p.revolve.com/c2/248:5d9b9a073298689e92036ddf:rm202303141600:6=
+4073680758ffbffd30da349:1/df785e5e=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI=
+1NiJ9&jwtP=3DeyJpYXQiOjE2Nzg4MDk5NjYsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6OD=
+Y0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQxMDlhODhhYjA0ZWU5N2Y3MDM5NzUwIiwib=
+Glua1VybCI6Imh0dHA6XC9cL3d3dy5yZXZvbHZlLmNvbVwvclwvZW1haWxcL3N1YnNjcmliZV9s=
+YW5kaW5nLmpzcD91dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9dHJpZ2dlciZ1dG1fY2FtcGF=
+pZ249VFJJR19SRVZfV0VMQ09NRUJJUlRIREFZX1dFTENPTUVCSVJUSERBWV8yMDIzMDMxNCZ1dG=
+1fY29udGVudD1UUklHX1JFVl9XRUxDT01FQklSVEhEQVlfV0VMQ09NRUJJUlRIREFZJnVzZXJJR=
+D0mY0lEPTY0MDczNjgwNzU4ZmZiZmZkMzBkYTM0OSJ9&jwtS=3DrzZavBBZ5PsBzw1f6OFQLyF3=
+W_no6hBAR5oU0MbjAKA"><img src=3D"https://is4.revolveassets.com/images/up/20=
+21/January/011121_sp_rwbdaymarketing_email_01.gif" width=3D"750" style=3D"d=
+isplay:block" class=3D"responsive" alt=3D"Give us your bday so we can send =
+a little treat your way"></a>=0A                            </eg-edit>=0A  =
+                      </td>=0A                    </tr>=0A                <=
+/tbody>=0A            </table>=0A        </div>=0A    </div>=0A=0A=0A  =0A=
+=0A=0A<!-- if the user is in the supplement, use supplement data -->=0A=0A =
+<!-- lapsed coupon code end-->=0A=0A  =0A   =0A   =0A   =0A   =0A   =0A  =
+=0A  =0A   =0A   =0A   =0A  =0A   =0A   =0A   =0A   =0A   =0A  =0A  =0A   =
+=0A   =0A =0A                   =0A                =0A                     =
+           =0A                =0A                  =0A<!-- timer starts-->=
+=0A          =0A=0A=0A=0A  <!--intl promo banner starts here-->=0A=0A <!--i=
+ntl promo banner ends here-->  =0A=0A =0A=0A   <br>=0A=0A<table width=3D"75=
+0" class=3D"responsive" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" al=
+ign=3D"center" sett-table-pad-top=3D"" sett-table-background-color=3D"">=0A=
+  <tbody>=0A    <tr valign=3D"top">=0A      <td valign=3D"top" style=3D"pad=
+ding-top:0px;" class=3D"small-1" sett-col-pad-top=3D"">=0A      <eg-edit ty=
+pe=3D"link-image"><a http: data-crdl-variant=3D"" conversion=3D"true" style=
+=3D"display:block;border-left:0px solid transparent;border-right:0px solid =
+transparent" sett-col-pad-lr=3D"" href=3D"http://e.p.revolve.com/c2/248:5d9=
+b9a073298689e92036ddf:rm202303141600:64073680758ffbffd30da349:1/d7c7a720=3F=
+jwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2Nzg4MDk5NjYs=
+ImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjo=
+iNjQxMDlhODhhYjA0ZWU5N2Y3MDM5NzUxIiwibGlua1VybCI6Imh0dHA6XC9cL3d3dy5yZXZvbH=
+ZlLmNvbVwvbmV3XC9hbGwtbmV3LWl0ZW1zXC9iclwvN2Y1OTQ2XC8_dXRtX21lZGl1bT1lbWFpb=
+CZ1dG1fc291cmNlPXRyaWdnZXImdXRtX2NhbXBhaWduPVRSSUdfUkVWX1dFTENPTUVCSVJUSERB=
+WV9XRUxDT01FQklSVEhEQVlfMjAyMzAzMTQmdXRtX2NvbnRlbnQ9VFJJR19SRVZfV0VMQ09NRUJ=
+JUlRIREFZX1dFTENPTUVCSVJUSERBWSZ1c2VySUQ9JmNJRD02NDA3MzY4MDc1OGZmYmZmZDMwZG=
+EzNDkifQ&jwtS=3DYI_WTsh5o8u3TS4-Rf3AL9QFgL-I7KhkuECrI1J6oWk"><img src=3D"ht=
+tps://is4.revolveassets.com/images/up/2018/December/freeshipping_revolve_in=
+tl.jpg" width=3D"750" style=3D"display:block;margin:0 auto;" class=3D"respo=
+nsive" alt=3D"We provide FREE 2-DAY SHIPPING &amp; RETURNS within the US + =
+FREE EXPRESS SHIPPING on International orders"></a></eg-edit>=0A      </td>=
+=0A    </tr>=0A  </tbody>=0A</table>=0A=0A=0A<br>=0A=0A<br>      =0A=0A=0A =
+</div></custom></td>=0A </tr>=0A </table>=0A <!-- END CONTENT -->=0A <!-- B=
+EGIN FOOTER -->=0A <!-- Mobile Content -->=0A <!--[if !mso 9]><!-->=0A <div=
+ class=3D"show" style=3D"font-size: 0; max-height: 0; overflow: hidden; dis=
+play: none;">=0A   <table width=3D"100%" border=3D"0" cellspacing=3D"0" cel=
+lpadding=3D"0" align=3D"center" style=3D"text-align:center;padding:0 0 0 0;=
+font-size:12px;">=0A     <tr valign=3D"top">=0A       <td style=3D"border-t=
+op:1px solid #F1F1F1;border-bottom:1px solid #F1F1F1;">=0A         <table w=
+idth=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"fon=
+t-size:14px;">=0A           <tr>=0A             <td>=0A               <a ht=
+tp: data-crdl-variant=3D"" style=3D"font-family: Arial, sans-serif;font-siz=
+e: 14px;text-transform: uppercase;text-decoration:none;padding:18px;display=
+:block;font-weight:bold;" conversion=3D"true" target=3D"_blank" href=3D"htt=
+p://e.p.revolve.com/c2/248:5d9b9a073298689e92036ddf:rm202303141600:64073680=
+758ffbffd30da349:1/ef1534fd=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&j=
+wtP=3DeyJpYXQiOjE2Nzg4MDk5NjYsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsI=
+nRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQxMDlhODhhYjA0ZWU5N2Y3MDM5NzRhIiwibGlua1Vy=
+bCI6Imh0dHA6XC9cL3d3dy5yZXZvbHZlLmNvbVwvbmV3XC9hbGwtbmV3LWl0ZW1zXC9iclwvN2Y=
+1OTQ2P3V0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT10cmlnZ2VyJnV0bV9jYW1wYWlnbj1UUk=
+lHX1JFVl9XRUxDT01FQklSVEhEQVlfV0VMQ09NRUJJUlRIREFZXzIwMjMwMzE0JnV0bV9jb250Z=
+W50PVRSSUdfUkVWX1dFTENPTUVCSVJUSERBWV9XRUxDT01FQklSVEhEQVkmdXNlcklEPSZjSUQ9=
+NjQwNzM2ODA3NThmZmJmZmQzMGRhMzQ5In0&jwtS=3DTV5DXA3tmTDE93pAsVmP2Ep_7yG2-4FB=
+CyhP892637Q">New</a>=0A             </td>=0A           </tr>=0A         </t=
+able>=0A       </td>=0A     </tr>=0A     <tr valign=3D"top">=0A       <td s=
+tyle=3D"border-bottom:1px solid #F1F1F1;">=0A         <table width=3D"100%"=
+ border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"font-size:14px;"=
+>=0A           <tr>=0A             <td>=0A               <a http: data-crdl=
+-variant=3D"" style=3D"font-family: Arial, sans-serif;font-size: 14px;text-=
+transform: uppercase;text-decoration:none;padding:18px;display:block;font-w=
+eight:bold;" conversion=3D"true" target=3D"_blank" href=3D"http://e.p.revol=
+ve.com/c2/248:5d9b9a073298689e92036ddf:rm202303141600:64073680758ffbffd30da=
+349:1/564f2ca2=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQ=
+iOjE2Nzg4MDk5NjYsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2=
+x2ZSIsIm10bElEIjoiNjQxMDlhODhhYjA0ZWU5N2Y3MDM5NzRiIiwibGlua1VybCI6Imh0dHA6X=
+C9cL3d3dy5yZXZvbHZlLmNvbVwvZHJlc3Nlc1wvYnJcL2E4ZTk4MT91dG1fbWVkaXVtPWVtYWls=
+JnV0bV9zb3VyY2U9dHJpZ2dlciZ1dG1fY2FtcGFpZ249VFJJR19SRVZfV0VMQ09NRUJJUlRIREF=
+ZX1dFTENPTUVCSVJUSERBWV8yMDIzMDMxNCZ1dG1fY29udGVudD1UUklHX1JFVl9XRUxDT01FQk=
+lSVEhEQVlfV0VMQ09NRUJJUlRIREFZJnVzZXJJRD0mY0lEPTY0MDczNjgwNzU4ZmZiZmZkMzBkY=
+TM0OSJ9&jwtS=3D08jaMmgKu8M5KA2J_IuwmugzdIMPjJRXdaCbBPiPZNo">Dresses</a>=0A =
+            </td>=0A           </tr>=0A         </table>=0A       </td>=0A =
+    </tr>=0A     <tr valign=3D"top">=0A       <td style=3D"border-bottom:1p=
+x solid #F1F1F1;">=0A         <table width=3D"100%" border=3D"0" cellspacin=
+g=3D"0" cellpadding=3D"0" style=3D"font-size:14px;">=0A           <tr>=0A  =
+           <td>=0A               <a http: data-crdl-variant=3D"" style=3D"f=
+ont-family: Arial, sans-serif;font-size: 14px;text-transform: uppercase;tex=
+t-decoration:none;padding:18px;display:block;font-weight:bold;" conversion=
+=3D"true" target=3D"_blank" href=3D"http://e.p.revolve.com/c2/248:5d9b9a073=
+298689e92036ddf:rm202303141600:64073680758ffbffd30da349:1/16ab5804=3FjwtH=
+=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2Nzg4MDk5NjYsImNk=
+IjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQ=
+xMDlhODhhYjA0ZWU5N2Y3MDM5NzRjIiwibGlua1VybCI6Imh0dHA6XC9cL3d3dy5yZXZvbHZlLm=
+NvbVwvYmVzdFNlbGxlclwvYWxsLWJlc3Qtc2VsbGVyc1wvYnJcLzIwMjJkND91dG1fbWVkaXVtP=
+WVtYWlsJnV0bV9zb3VyY2U9dHJpZ2dlciZ1dG1fY2FtcGFpZ249VFJJR19SRVZfV0VMQ09NRUJJ=
+UlRIREFZX1dFTENPTUVCSVJUSERBWV8yMDIzMDMxNCZ1dG1fY29udGVudD1UUklHX1JFVl9XRUx=
+DT01FQklSVEhEQVlfV0VMQ09NRUJJUlRIREFZJnVzZXJJRD0mY0lEPTY0MDczNjgwNzU4ZmZiZm=
+ZkMzBkYTM0OSJ9&jwtS=3Dar2hqLd35oBcN6nJbr1YwM6Kxla5LeRCLnjPNcEPyug">Best=0A =
+                Sellers</a>=0A             </td>=0A           </tr>=0A     =
+    </table>=0A       </td>=0A     </tr>=0A     <tr valign=3D"top">=0A     =
+  <td style=3D"border-bottom:1px solid #F1F1F1;">=0A         <table width=
+=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"font-si=
+ze:14px;">=0A           <tr>=0A             <td>=0A               <a http: =
+data-crdl-variant=3D"" style=3D"font-family: Arial, sans-serif;font-size: 1=
+4px;text-transform: uppercase;text-decoration:none;padding:18px;display:blo=
+ck;font-weight:bold;" conversion=3D"true" target=3D"_blank" href=3D"http://=
+e.p.revolve.com/c2/248:5d9b9a073298689e92036ddf:rm202303141600:64073680758f=
+fbffd30da349:1/12419c5b=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=
+=3DeyJpYXQiOjE2Nzg4MDk5NjYsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRr=
+IjoicmV2b2x2ZSIsIm10bElEIjoiNjQxMDlhODhhYjA0ZWU5N2Y3MDM5NzRkIiwibGlua1VybCI=
+6Imh0dHA6XC9cL3d3dy5yZXZvbHZlLmNvbVwvc2FsZVwvYWxsLXNhbGUtaXRlbXNcL2JyXC81NG=
+NjN2I_dXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPXRyaWdnZXImdXRtX2NhbXBhaWduPVRSS=
+UdfUkVWX1dFTENPTUVCSVJUSERBWV9XRUxDT01FQklSVEhEQVlfMjAyMzAzMTQmdXRtX2NvbnRl=
+bnQ9VFJJR19SRVZfV0VMQ09NRUJJUlRIREFZX1dFTENPTUVCSVJUSERBWSZ1c2VySUQ9JmNJRD0=
+2NDA3MzY4MDc1OGZmYmZmZDMwZGEzNDkifQ&jwtS=3DOscf-Ev_8450gvKbaciWwft3J4NYcEHn=
+RexTQ_42s34">Sale</a>=0A             </td>=0A           </tr>=0A         </=
+table>=0A       </td>=0A     </tr>=0A     <tr valign=3D"top">=0A       <td =
+style=3D"border-bottom:1px solid #F1F1F1;">=0A         <table width=3D"100%=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"font-size:14px;=
+">=0A           <tr>=0A             <td>=0A               <a https: data-cr=
+dl-variant=3D"" style=3D"font-family: Arial, sans-serif;font-size: 14px;tex=
+t-transform: uppercase;text-decoration:none;padding:18px;display:block;font=
+-weight:bold;" conversion=3D"true" target=3D"_blank" href=3D"https://e.p.re=
+volve.com/c2/248:5d9b9a073298689e92036ddf:rm202303141600:64073680758ffbffd3=
+0da349:1/7b46cafc=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJp=
+YXQiOjE2Nzg4MDk5NjYsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV=
+2b2x2ZSIsIm10bElEIjoiNjQxMDlhODhhYjA0ZWU5N2Y3MDM5NzRlIiwibGlua1VybCI6Imh0dH=
+BzOlwvXC93d3cucmV2b2x2ZS5jb21cL3JcL015RmF2b3JpdGUuanNwP29wZW49U2hhcmVGYXZzJ=
+nV0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT10cmlnZ2VyJnV0bV9jYW1wYWlnbj1UUklHX1JF=
+Vl9XRUxDT01FQklSVEhEQVlfV0VMQ09NRUJJUlRIREFZXzIwMjMwMzE0JnV0bV9jb250ZW50PVR=
+SSUdfUkVWX1dFTENPTUVCSVJUSERBWV9XRUxDT01FQklSVEhEQVkmdXNlcklEPSZjSUQ9NjQwNz=
+M2ODA3NThmZmJmZmQzMGRhMzQ5In0&jwtS=3DwDldqeNFw0oFWDcawhF-GaKqccOpxv-Qisuu-p=
+yNnlo">My=0A                 Favorites</a>=0A             </td>=0A         =
+  </tr>=0A         </table>=0A       </td>=0A     </tr>=0A     <tr valign=
+=3D"top">=0A       <td style=3D"border-bottom:1px solid #F1F1F1;">=0A      =
+   <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" s=
+tyle=3D"font-size:14px;">=0A           <tr>=0A             <td>=0A         =
+      <a https: data-crdl-variant=3D"" style=3D"font-family: Arial, sans-se=
+rif;font-size: 14px;text-transform: uppercase;text-decoration:none;padding:=
+18px;display:block;font-weight:bold;" conversion=3D"true" target=3D"_blank"=
+ href=3D"https://e.p.revolve.com/c2/248:5d9b9a073298689e92036ddf:rm20230314=
+1600:64073680758ffbffd30da349:1/0f8cde1d=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciO=
+iJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2Nzg4MDk5NjYsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJj=
+ZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQxMDlhODhhYjA0ZWU5N2Y3MDM5NzR=
+mIiwibGlua1VybCI6Imh0dHBzOlwvXC93d3cucmV2b2x2ZS5jb21cL2NvbnRlbnRcL2xwXC9iZW=
+F1dHlcLz9uYXZzcmM9bWFpbiZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9dHJpZ2dlciZ1d=
+G1fY2FtcGFpZ249VFJJR19SRVZfV0VMQ09NRUJJUlRIREFZX1dFTENPTUVCSVJUSERBWV8yMDIz=
+MDMxNCZ1dG1fY29udGVudD1UUklHX1JFVl9XRUxDT01FQklSVEhEQVlfV0VMQ09NRUJJUlRIREF=
+ZJnVzZXJJRD0mY0lEPTY0MDczNjgwNzU4ZmZiZmZkMzBkYTM0OSJ9&jwtS=3Dyq3TDDrP9G40Kq=
+SxquHsPRzmS56o2sTInQhI3xLmde4">Beauty</a>=0A             </td>=0A          =
+ </tr>=0A         </table>=0A       </td>=0A     </tr>=0A   </table>=0A </d=
+iv>=0A <!--<![endif]-->=0A <table width=3D"750" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" style=3D"padding:10px;margin: 0 auto;" class=3D"respo=
+nsive" align=3D"center">=0A   <tr>=0A     <td valign=3D"top">=0A       <tab=
+le width=3D"730" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"=
+margin: 0 auto;border: 5px solid black;" class=3D"responsive preferences_ba=
+nner__border" align=3D"center">=0A         <tr>=0A           <td style=3D"p=
+adding: 10px;" class=3D"preferences_banner__td-container">=0A             <=
+table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"margin: 0 auto;letter-spacing:.05em" class=3D"responsive" align=3D"cent=
+er">=0A               <tr>=0A                 <td valign=3D"middle" class=
+=3D"small-1" align=3D"center" width=3D"350">=0A                   <a https:=
+ data-crdl-variant=3D"" style=3D"font:16px Arial, sans-serif; text-decorati=
+on:none;color:#000001" class=3D"mob_font_size_12" target=3D"_blank" href=3D=
+"https://e.p.revolve.com/c2/248:5d9b9a073298689e92036ddf:rm202303141600:640=
+73680758ffbffd30da349:1/977e4f38=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1N=
+iJ9&jwtP=3DeyJpYXQiOjE2Nzg4MDk5NjYsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0=
+MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQxMDlhODhhYjA0ZWU5N2Y3MDM5NzUyIiwibGl=
+ua1VybCI6Imh0dHBzOlwvXC93d3cucmV2b2x2ZS5jb21cL3JcL015RW1haWxTZXR0aW5ncy5qc3=
+A_dXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPXRyaWdnZXImdXRtX2NhbXBhaWduPVRSSUdfU=
+kVWX1dFTENPTUVCSVJUSERBWV9XRUxDT01FQklSVEhEQVlfMjAyMzAzMTQmdXRtX2NvbnRlbnQ9=
+VFJJR19SRVZfV0VMQ09NRUJJUlRIREFZX1dFTENPTUVCSVJUSERBWSZ1c2VySUQ9JmNJRD02NDA=
+3MzY4MDc1OGZmYmZmZDMwZGEzNDkifQ&jwtS=3DEtOpa6QnGvOABKgz_T7EpuS2TabL3NhbPQa_=
+KRuBjDU">Tell us what you want!</a><br><a https: data-crdl-variant=3D"" sty=
+le=3D"font:bold 14px Arial, sans-serif;text-decoration:none;color:#000001" =
+class=3D"mob_font_size_12" target=3D"_blank" href=3D"https://e.p.revolve.co=
+m/c2/248:5d9b9a073298689e92036ddf:rm202303141600:64073680758ffbffd30da349:1=
+/977e4f38=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2=
+Nzg4MDk5NjYsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSI=
+sIm10bElEIjoiNjQxMDlhODhhYjA0ZWU5N2Y3MDM5NzUyIiwibGlua1VybCI6Imh0dHBzOlwvXC=
+93d3cucmV2b2x2ZS5jb21cL3JcL015RW1haWxTZXR0aW5ncy5qc3A_dXRtX21lZGl1bT1lbWFpb=
+CZ1dG1fc291cmNlPXRyaWdnZXImdXRtX2NhbXBhaWduPVRSSUdfUkVWX1dFTENPTUVCSVJUSERB=
+WV9XRUxDT01FQklSVEhEQVlfMjAyMzAzMTQmdXRtX2NvbnRlbnQ9VFJJR19SRVZfV0VMQ09NRUJ=
+JUlRIREFZX1dFTENPTUVCSVJUSERBWSZ1c2VySUQ9JmNJRD02NDA3MzY4MDc1OGZmYmZmZDMwZG=
+EzNDkifQ&jwtS=3DEtOpa6QnGvOABKgz_T7EpuS2TabL3NhbPQa_KRuBjDU">UPDATE YOUR PR=
+EFERENCES</a>=0A                 </td>=0A                 <td valign=3D"mid=
+dle" class=3D"small-1 preferences_banner__stick-container" align=3D"center"=
+>=0A                   <div style=3D"border-left:1px solid #000000; height:=
+ 57px;" class=3D"nomob"></div>=0A                   <div style=3D"width: 60=
+%;border-top: 1px solid #000000;margin:0 auto;display:none;" class=3D"show"=
+></div>=0A                   <!--<img src=3D"http://is4.revolveassets.com/i=
+mages/emailpics/rev_pixel.jpg" width=3D"1" height=3D"57" class=3D"preferenc=
+es_banner__stick" style=3D"display:block;">-->=0A                 </td>=0A =
+                <td valign=3D"middle" class=3D"small-1" align=3D"center" wi=
+dth=3D"350">=0A                   <a href=3D"mailto:emailteam@revolve.com=
+=3Fsubject=3DSuggestions%20regarding%20the%20content%20of%20this%20email=3F=
+&body=3D%5BINSERT%20YOUR%20COMMENTS%20HERE%5D%20For%20order%20related%20inq=
+uiries%20and%20unsubscribe%20requests,%20please%20email%20sales@revolve.com=
+=2E" data-crdl-notrack=3D"true" data-crdl-tags=3D"20230314, didyoulikethise=
+mail" data-crdl-key=3D"Didyoulikethisemail_CTA" conversion=3D"true" style=
+=3D"font:16px Arial, sans-serif; text-decoration:none;color:#000001" class=
+=3D"mob_font_size_12" target=3D"_blank">Have email content suggestions=3F</=
+a><br><a href=3D"mailto:emailteam@revolve.com=3Fsubject=3DSuggestions%20reg=
+arding%20the%20content%20of%20this%20email=3F&body=3D%5BINSERT%20YOUR%20COM=
+MENTS%20HERE%5D%20For%20order%20related%20inquiries%20and%20unsubscribe%20r=
+equests,%20please%20email%20sales@revolve.com." data-crdl-notrack=3D"true" =
+ddata-crdl-tags=3D"20230314, didyoulikethisemail" data-crdl-key=3D"Didyouli=
+kethisemail_CTA" conversion=3D"true" style=3D"font:bold 14px Arial, sans-se=
+rif;text-decoration:none;color:#000001" class=3D"mob_font_size_12" target=
+=3D"_blank">CLICK HERE TO LET US KNOW</a>=0A                 </td>=0A      =
+         </tr>=0A             </table>=0A           </td>=0A         </tr>=
+=0A       </table>=0A     </td>=0A   </tr>=0A </table>=0A=0A <table width=
+=3D"750" bgcolor=3D"#000001" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" style=3D"margin: 0 auto;background-color:#000001;padding-bottom:20px;pad=
+ding-top:20px;" class=3D"footer_container responsive" align=3D"center">=0A =
+  <tr>=0A     <td>=0A       <table width=3D"710" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" class=3D"responsive footer_element" align=3D"cente=
+r" style=3D"font-family: arial;font-size:10px;margin:0 auto;">=0A         <=
+tr valign=3D"top">=0A           <td valign=3D"top" class=3D"small-1" style=
+=3D"vertical-align:middle;color:#949494;text-align:center;padding: 0 0 16px=
+ 0">*Free Shipping offer only=0A             applies to US orders and inter=
+national orders over $100. Other restrictions may apply. <a http: data-crdl=
+-variant=3D"" target=3D"_blank" conversion=3D"true" style=3D"color:#949494;=
+" href=3D"http://e.p.revolve.com/c2/248:5d9b9a073298689e92036ddf:rm20230314=
+1600:64073680758ffbffd30da349:1/b47e0322=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciO=
+iJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2Nzg4MDk5NjYsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJj=
+ZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQxMDlhODhhYjA0ZWU5N2Y3MDM5NzU=
+zIiwibGlua1VybCI6Imh0dHA6XC9cL3d3dy5yZXZvbHZlLmNvbVwvc2hpcHBpbmdkZWxpdmVyeT=
+91dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9dHJpZ2dlciZ1dG1fY2FtcGFpZ249VFJJR19SR=
+VZfV0VMQ09NRUJJUlRIREFZX1dFTENPTUVCSVJUSERBWV8yMDIzMDMxNCZ1dG1fY29udGVudD1U=
+UklHX1JFVl9XRUxDT01FQklSVEhEQVlfV0VMQ09NRUJJUlRIREFZJnVzZXJJRD0mY0lEPTY0MDc=
+zNjgwNzU4ZmZiZmZkMzBkYTM0OSJ9&jwtS=3Dr78TN8kIw6-CT9MaJ5K_lGsOnRRJTvdqAqRCkX=
+ai9h0">More information</a>=0A           </td>=0A         </tr>=0A         =
+=0A<!--MENA social footer start-->}=0A=0A =0A         <tr valign=3D"top">=
+=0A           <td valign=3D"top" class=3D"small-1" style=3D"vertical-align:=
+middle;">=0A             <table border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" align=3D"center" class=3D"footer_social" width=3D"150" style=3D"font=
+-family: arial;font-size:10px;margin:0 auto;padding-top: 0px;padding-bottom=
+: 14px;">=0A  <tr valign=3D"top">=0A    <td valign=3D"top" style=3D"padding=
+-right:20px;vertical-align:middle;">=0A      <a data-crdl-variant=3D"" targ=
+et=3D"_blank" href=3D"https://e.p.revolve.com/c2/248:5d9b9a073298689e92036d=
+df:rm202303141600:64073680758ffbffd30da349:1/2f8e0479=3FjwtH=3DeyJ0eXAiOiJK=
+V1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2Nzg4MDk5NjYsImNkIjoiLnAucmV2b2x=
+2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQxMDlhODhhYjA0ZW=
+U5N2Y3MDM5NzU0IiwibGlua1VybCI6Imh0dHBzOlwvXC93d3cudGlrdG9rLmNvbVwvQHJldm9sd=
+mUifQ&jwtS=3D4l6L1Qmd0ePAApW3djjNQluNwx9dn8_mCqZSpRtCDBE"><img src=3D"https=
+://is4.revolveassets.com/images/up/2023/March/REVMobile_email_social_tiktok=
+=2Epng" data-crdl-tags=3D"social_instagram" data-crdl-key=3D"footer_Instagr=
+am" width=3D"30" style=3D"display:block;" class=3D"social_instagram">=0A   =
+   </a>=0A    </td>=0A    <td valign=3D"top" style=3D"padding-right:20px;ve=
+rtical-align:middle;">=0A      <a data-crdl-variant=3D"" target=3D"_blank" =
+href=3D"https://e.p.revolve.com/c2/248:5d9b9a073298689e92036ddf:rm202303141=
+600:64073680758ffbffd30da349:1/70c2e3f7=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOi=
+JIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2Nzg4MDk5NjYsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZ=
+SI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQxMDlhODhhYjA0ZWU5N2Y3MDM5NzU1=
+IiwibGlua1VybCI6Imh0dHBzOlwvXC93d3cueW91dHViZS5jb21cL1Jldm9sdmVDbG90aGluZyJ=
+9&jwtS=3DJXW1ZALYy6YCN12hnRDUFL7YEtMO_7l8kNDu3xKKDb4"><img src=3D"https://i=
+s4.revolveassets.com/images/up/2023/March/REVmobile_email_social_YT.png" da=
+ta-crdl-tags=3D"social_instagram" data-crdl-key=3D"footer_Instagram" width=
+=3D"30" style=3D"display:block;" class=3D"social_instagram">=0A      </a>=
+=0A    </td>    =0A    <td valign=3D"top" style=3D"padding-right:20px;verti=
+cal-align:middle;">=0A      <a data-crdl-variant=3D"" target=3D"_blank" hre=
+f=3D"http://e.p.revolve.com/c2/248:5d9b9a073298689e92036ddf:rm202303141600:=
+64073680758ffbffd30da349:1/4f1828c8=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUz=
+I1NiJ9&jwtP=3DeyJpYXQiOjE2Nzg4MDk5NjYsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6O=
+DY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQxMDlhODhhYjA0ZWU5N2Y3MDM5NzU2Iiwi=
+bGlua1VybCI6Imh0dHA6XC9cL2luc3RhZ3JhbS5jb21cL3Jldm9sdmVcLyJ9&jwtS=3DqNsvFWv=
+WPqlHASxW3m_Agw4tr8GAEydEL2yQPH2eD5Y"><img src=3D"https://is4.revolveassets=
+=2Ecom/images/up/2019/December/REVmobile_email_social_ig.png" data-crdl-tag=
+s=3D"social_instagram" data-crdl-key=3D"footer_Instagram" width=3D"30" styl=
+e=3D"display:block;" class=3D"social_instagram">=0A      </a>=0A    </td>=
+=0A    <td valign=3D"top" style=3D"padding-right:20px;vertical-align:middle=
+;">=0A      <a data-crdl-variant=3D"" conversion=3D"true" target=3D"_blank"=
+ href=3D"http://e.p.revolve.com/c2/248:5d9b9a073298689e92036ddf:rm202303141=
+600:64073680758ffbffd30da349:1/bf817a16=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOi=
+JIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2Nzg4MDk5NjYsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZ=
+SI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQxMDlhODhhYjA0ZWU5N2Y3MDM5NzU3=
+IiwibGlua1VybCI6Imh0dHA6XC9cL3d3dy5mYWNlYm9vay5jb21cL1JFVk9MVkUifQ&jwtS=3Di=
+pD66aTPOO_HUnsDubPL0NrirEZj7za9jSnjVrnNztE"><img src=3D"https://is4.revolve=
+assets.com/images/up/2019/December/REVmobile_email_social_fbook.png" width=
+=3D"30" style=3D"display:block;" class=3D"social_facebook">=0A      </a>=0A=
+    </td>=0A  </tr>=0A</table>           </td>=0A         </tr>=0A       </=
+table>=0A       <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" ali=
+gn=3D"center" class=3D"footer_element footer_app_download_section" width=3D=
+"322" style=3D"font-family: arial;font-size:10px;margin:0 auto;padding-bott=
+om:4px;">=0A         <tr valign=3D"top">=0A           <td valign=3D"top" al=
+ign=3D"right" style=3D"padding-right:10px;">=0A             <a data-crdl-va=
+riant=3D"" target=3D"_blank" href=3D"https://e.p.revolve.com/c2/248:5d9b9a0=
+73298689e92036ddf:rm202303141600:64073680758ffbffd30da349:1/53a4e192=3FjwtH=
+=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2Nzg4MDk5NjYsImNk=
+IjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQ=
+xMDlhODhhYjA0ZWU5N2Y3MDM5NzU4IiwibGlua1VybCI6Imh0dHBzOlwvXC9hcHAuYWRqdXN0Lm=
+NvbVwvY3ZsNmlqIn0&jwtS=3DAL0GpzHZsfX0rQyErN6U8-tVsYJL_-Z2CL0oNdHl4l0">=0A  =
+             <img src=3D"https://is4.revolveassets.com/images/emailpics/rev=
+_social_app_iphone_2.png" width=3D"97" style=3D"display:block;">=0A        =
+     </a>=0A           </td>=0A           <td valign=3D"top" class=3D"nomob=
+">=0A             <a data-crdl-variant=3D"" target=3D"_blank" href=3D"https=
+://e.p.revolve.com/c2/248:5d9b9a073298689e92036ddf:rm202303141600:640736807=
+58ffbffd30da349:1/86af0e50=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jw=
+tP=3DeyJpYXQiOjE2Nzg4MDk5NjYsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsIn=
+RrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQxMDlhODhhYjA0ZWU5N2Y3MDM5NzU5IiwibGlua1Vyb=
+CI6Imh0dHBzOlwvXC9hcHAuYWRqdXN0LmNvbVwvc3JsOGNnIn0&jwtS=3DRqL3_IzE9jafIwOgX=
+6cWeW54Ha17B57-ytF8m4wMux8">=0A               <img src=3D"https://is4.revol=
+veassets.com/images/emailpics/rev_social_app_ipad_2.png" width=3D"97" style=
+=3D"display:block;">=0A             </a>=0A           </td>=0A           <t=
+d valign=3D"top" align=3D"left" style=3D"padding-left:10px;">=0A           =
+  <a data-crdl-variant=3D"" target=3D"_blank" href=3D"https://e.p.revolve.c=
+om/c2/248:5d9b9a073298689e92036ddf:rm202303141600:64073680758ffbffd30da349:=
+1/bfa99e47=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE=
+2Nzg4MDk5NjcsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZS=
+IsIm10bElEIjoiNjQxMDlhODhhYjA0ZWU5N2Y3MDM5NzVhIiwibGlua1VybCI6Imh0dHBzOlwvX=
+C9hcHAuYWRqdXN0LmNvbVwvdnRlbTR2In0&jwtS=3DuUD07TPu4timYUeszSNeONYGGXuT7bkd1=
+QECDNvukaU">=0A               <img src=3D"https://is4.revolveassets.com/ima=
+ges/emailpics/rev_social_app_android_2.png" width=3D"97" style=3D"display:b=
+lock;">=0A             </a>=0A           </td>=0A         </tr>=0A       </=
+table>=0A       <table width=3D"710" border=3D"0" cellspacing=3D"0" cellpad=
+ding=3D"0" class=3D"responsive mob_text_center" align=3D"center" style=3D"f=
+ont-family: Arial;font-size:10px;color:#949494;margin:0 auto;">=0A         =
+<tr valign=3D"top" class=3D"footer_element">=0A           <td valign=3D"top=
+" style=3D"padding:10px 0 5px 0;color:#949494;font-family: Arial;font-size:=
+10px;text-align:center">You are=0A             subscribed as=0A=0A         =
+    <a href=3D"mailto:achrafel73114@yahoo.com" data-crdl-notrack=3D"true" s=
+tyle=3D"color:#949494;" data-crdl-tags=3D"youaresubscribedas" data-crdl-key=
+=3D"footer_contactChannels" conversion=3D"true" target=3D"_blank">achrafel7=
+3114@yahoo.com=0A             </a><span class=3D"nomob">=C2=A0=C2=A0=C2=A0<=
+/span><span class=3D"small-1 footer-manage-line">=0A=0A               <a ht=
+tps: data-crdl-variant=3D"" conversion=3D"true" style=3D"color:#949494;font=
+-family: Arial;font-size:10px;" target=3D"_blank" href=3D"https://e.p.revol=
+ve.com/c2/248:5d9b9a073298689e92036ddf:rm202303141600:64073680758ffbffd30da=
+349:1/3e988c0b=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQ=
+iOjE2Nzg4MDk5NjcsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2=
+x2ZSIsIm10bElEIjoiNjQxMDlhODhhYjA0ZWU5N2Y3MDM5NzViIiwibGlua1VybCI6Imh0dHBzO=
+lwvXC93d3cucmV2b2x2ZS5jb21cL3JcL015RW1haWxTZXR0aW5ncy5qc3A_dXRtX21lZGl1bT1l=
+bWFpbCZ1dG1fc291cmNlPXRyaWdnZXImdXRtX2NhbXBhaWduPVRSSUdfUkVWX1dFTENPTUVCSVJ=
+USERBWV9XRUxDT01FQklSVEhEQVlfMjAyMzAzMTQmdXRtX2NvbnRlbnQ9VFJJR19SRVZfV0VMQ0=
+9NRUJJUlRIREFZX1dFTENPTUVCSVJUSERBWSZ1c2VySUQ9JmNJRD02NDA3MzY4MDc1OGZmYmZmZ=
+DMwZGEzNDkifQ&jwtS=3DKmiNODZRIdChwB1B1PSz61zvQ-pa24LQkSXh65SoBT4">Manage yo=
+ur Email=0A                 Preferences</a>=C2=A0=C2=A0=C2=A0=0A=0A        =
+       <a http: data-crdl-variant=3D"" style=3D"color:#949494;font-family: =
+Arial;font-size:10px;" conversion=3D"true" target=3D"_blank" href=3D"http:/=
+/e.p.revolve.com/c2/248:5d9b9a073298689e92036ddf:rm202303141600:64073680758=
+ffbffd30da349:1/2edd5c22=3FjwtH=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=
+=3DeyJpYXQiOjE2Nzg4MDk5NjcsImNkIjoiLnAucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRr=
+IjoicmV2b2x2ZSIsIm10bElEIjoiNjQxMDlhODhhYjA0ZWU5N2Y3MDM5NzVjIiwibGlua1VybCI=
+6Imh0dHA6XC9cL3d3dy5yZXZvbHZlLmNvbVwvVW5zdWJzY3JpYmUuanNwP3V0bV9tZWRpdW09ZW=
+1haWwmdXRtX3NvdXJjZT10cmlnZ2VyJnV0bV9jYW1wYWlnbj1UUklHX1JFVl9XRUxDT01FQklSV=
+EhEQVlfV0VMQ09NRUJJUlRIREFZXzIwMjMwMzE0JnV0bV9jb250ZW50PVRSSUdfUkVWX1dFTENP=
+TUVCSVJUSERBWV9XRUxDT01FQklSVEhEQVkmdXNlcklEPSZjSUQ9NjQwNzM2ODA3NThmZmJmZmQ=
+zMGRhMzQ5In0&jwtS=3DzHNFPQr3fYJTgg-G09AaJAVBhjeAvhK6l785akfr6VA">Unsubscrib=
+e</a>=C2=A0=C2=A0=C2=A0=0A=0A               <a http: data-crdl-variant=3D""=
+ conversion=3D"true" style=3D"color:#949494;font-family: Arial;font-size:10=
+px;" target=3D"_blank" href=3D"http://e.p.revolve.com/c2/248:5d9b9a07329868=
+9e92036ddf:rm202303141600:64073680758ffbffd30da349:1/1ed41b54=3FjwtH=3DeyJ0=
+eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2Nzg4MDk5NjcsImNkIjoiLnA=
+ucmV2b2x2ZS5jb20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQxMDlhOD=
+hhYjA0ZWU5N2Y3MDM5NzVkIiwibGlua1VybCI6Imh0dHA6XC9cL3d3dy5yZXZvbHZlLmNvbVwvc=
+lwvaW5mb0NvbnRhY3RVcy5qc3A_dXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPXRyaWdnZXIm=
+dXRtX2NhbXBhaWduPVRSSUdfUkVWX1dFTENPTUVCSVJUSERBWV9XRUxDT01FQklSVEhEQVlfMjA=
+yMzAzMTQmdXRtX2NvbnRlbnQ9VFJJR19SRVZfV0VMQ09NRUJJUlRIREFZX1dFTENPTUVCSVJUSE=
+RBWSZ1c2VySUQ9JmNJRD02NDA3MzY4MDc1OGZmYmZmZDMwZGEzNDkifQ&jwtS=3DTOQTo1Pi8uV=
+FAI9A44QYvtmzlg1xJW2bdal4hUP-3Io">Contact Us</a>=C2=A0=C2=A0=C2=A0=0A      =
+           =0A               <a https: data-crdl-variant=3D"" conversion=3D=
+"true" style=3D"color:#949494;font-family: Arial;font-size:10px;" target=3D=
+"_blank" href=3D"https://e.p.revolve.com/c2/248:5d9b9a073298689e92036ddf:rm=
+202303141600:64073680758ffbffd30da349:1/21b8118e=3FjwtH=3DeyJ0eXAiOiJKV1QiL=
+CJhbGciOiJIUzI1NiJ9&jwtP=3DeyJpYXQiOjE2Nzg4MDk5NjcsImNkIjoiLnAucmV2b2x2ZS5j=
+b20iLCJjZSI6ODY0MDAsInRrIjoicmV2b2x2ZSIsIm10bElEIjoiNjQxMDlhODhhYjA0ZWU5N2Y=
+3MDM5NzVkIiwibGlua1VybCI6Imh0dHBzOlwvXC93d3cucmV2b2x2ZS5jb21cL3ByaXZhY3lwb2=
+xpY3k_dXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPXRyaWdnZXImdXRtX2NhbXBhaWduPVRSS=
+UdfUkVWX1dFTENPTUVCSVJUSERBWV9XRUxDT01FQklSVEhEQVlfMjAyMzAzMTQmdXRtX2NvbnRl=
+bnQ9VFJJR19SRVZfV0VMQ09NRUJJUlRIREFZX1dFTENPTUVCSVJUSERBWSZ1c2VySUQ9JmNJRD0=
+2NDA3MzY4MDc1OGZmYmZmZDMwZGEzNDkifQ&jwtS=3D1MEqMsXuoAWH-28WgbwrFmPWX_ifdWYm=
+RJ6xS_QkBBk">Privacy Policy</a>     =0A                 </span>=0A=0A      =
+     </td>=0A         </tr>=0A         <tr valign=3D"top">=0A           <td=
+ valign=3D"top" class=3D"footer_element" style=3D"padding:0px 0 5px 0;color=
+:#949494;font-family: Arial;font-size:10px;text-align:center">=C2=A9=0A    =
+         Eminent, Inc. All Rights Reserved<span class=3D"nomob">=C2=A0=C2=
+=A0 =E2=80=A2 =C2=A0=C2=A0</span><span class=3D"appleLinks small-1">12889 M=
+oore Street, Cerritos, CA 90703=C2=A0=C2=A0=C2=A0USA</span></td>=0A        =
+ </tr>=0A       </table>=0A     </td>=0A   </tr>=0A </table>=0A <!--https:/=
+/d.p.revolve.com/optout/index.php=3FmcID=3D248:5d9b9a073298689e92036ddf:rm2=
+02303141600:64073680758ffbffd30da349:1-->=0A <!-- END FOOTER -->=0A </td>=
+=0A </tr>=0A </table>=0A <!-- END EMAIL TABLES -->=0A <div style=3D"display=
+:none;">=0A   <custom name=3D"opencounter" type=3D"tracking"></custom>=0A <=
+/div>=0A =0D=0A<img border=3D"0" width=3D"1" height=3D"1" alt=3D"" src=3D"h=
+ttp://trcksp.cordial.io/q/SWUCGRW0SbetI4E1L4pu4w~~/AAAAAQA~/RgRl8yBvPlcHY29=
+yZGlhbEIKZAhvmxBk2ZykjFIXYWNocmFmZWw3MzExNEB5YWhvby5jb21YBAAAAFY~">=0D=0A</=
+body>=0A=0A </html>
+

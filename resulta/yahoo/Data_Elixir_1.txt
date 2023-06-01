@@ -1,0 +1,941 @@
+Received: from 127.0.0.1
+ by atlas-production.v2-mail-prod1-gq1.omega.yahoo.com pod-id atlas--production-gq1-7f77b4df7d-rfrch.gq1.yahoo.com with HTTP; Thu, 9 Mar 2023 12:53:49 +0000
+Return-Path: <DataElixir-wikuhr1jiidjdltky1t@bounce.dataelixir.com>
+X-Originating-Ip: [203.55.21.145]
+Received-SPF: pass (domain of bounce.dataelixir.com designates 203.55.21.145 as permitted sender)
+Authentication-Results: atlas-production.v2-mail-prod1-gq1.omega.yahoo.com;
+ dkim=pass header.i=@dataelixir.com header.s=cm;
+ dkim=pass header.i=@cmail2.com header.s=cs2013;
+ spf=pass smtp.mailfrom=bounce.dataelixir.com;
+ dmarc=pass(p=REJECT) header.from=dataelixir.com;
+X-Apparently-To: achrafel73114@yahoo.com; Thu, 9 Mar 2023 12:53:49 +0000
+X-YMailAVSC: hxsbqgI3bBtnUTIgMYqxwVg0tgkkDG9WrGr1.UaENDRJZdR
+ ac_I5jzWJwmkPNhMtC_s.u5euAPshVej3kj3MV7JZqa0O9yQZQ4I5MauYe_E
+ Tscvw3Z1HQCWCqHH_eoQ9bI8piPOB05t2fSQUKJ_cV4ScdzzS3gXdciMTQq9
+ yUMAngb_h1usjTTwbymvlfJmvzyZESwNboIiQnzCI1HyRgCRxHw5mxYKa9Bz
+ QmRLwddIa7_y3RnUaZvGxxyRrHWGbRQ_.4OTwYJ3HF9bQF95Y1opc1XUBJ7O
+ KOQGVNt869bXrdBF_Cr9HIi1XEOw9.Upee3P8RWPkR63_yZk3e44rMXBLnE_
+ 6uloGZ6.pdvY6GLm__Do8PY3IfAMF8DPP8Y1fMltYrxgIols2_KFboS_SQjw
+ idf3XxUWS6.gU528SNG8WqOMcfD93BEsYFa4Qi8.poabg5olpcPrHd8FmOIU
+ aY18EuhYn87JcUvHI4oWybVDrpX6HAmfvXfrpOXkU4OTiWgifhVlFWMOvMpz
+ x94aExeB8fmZ0AhH3h_CcC4gEu08En4X04LEEExWt43QUD0fcp.bFZ5ow.i2
+ j45ymy26rFhYODGUvP76sarJtHP5hJxOX7aVkZkKWHXCI8WSy1WK_QfxLrm8
+ liMn_GxYIRL8bREWc7QEg.bHWv_zSEZnSgRB_i6FNe5Pf4zEaLCPsntlb8k_
+ B.4mWuL1tJQnWF9goLg7MjbhwNCkniQX9WosD3Jl4qETamxZUNHsKSnbXysr
+ 0hTMGbSC_qJKoZeOYJcvnocW6ZWrp1NWbusWsoNn2GXe.6qgbJscHlc4azZv
+ UZCR6_N2ScIvRgTzl9oZcKFGTZMlxMclsFgdlH9EnjfxnRVUJQ6w4UPE8ELc
+ G96GTJ8ooXBTgDPKEPQqK66tDVu9LLMNQh90pW.w4RdP7f247Z1L16jEdw8u
+ P52Hf5SUhq4hrxqZB2_Ik8bkQvEOy8gQVC7D_xTVlUmd7kVxeEtojBzYGz.e
+ m3Mp1xU2BvdY6Kcr4cFu5rweBxB.H8wqIt1yEny3VW.Bw4LX0knCCEz7sSiv
+ .4kKbDBMO_MVnb0EyxjjblqCmQkpmC9B72..n1E8HVBfl8FIk3owvdFbq2oM
+ nkbIBOKEzXVsWUUKkgtcV2U9jeXcAXmwZiYxJ0ewyN6auYXjsSmdv0LEFgem
+ YNp1ZL67BD9_.GBYitaTsD1zNA586.UMf6RU-
+X-YMailISG: 4n7KvOoWLDs4iYoJDdznOnxpMqY_RcjLyIFbbaz2EUa34RlL
+ AtWHTmmzpuLs2fJWeYrpVZcrz3xtygdy34FJMqk9HtJqnqJHhGWKtmLdrjGj
+ Q4qhMfyP9GOQpk6QMvlGLr5sKb3yqjsbCU4u_a5ZANh8tuNasFtNFZRDHaPj
+ A0USVSZ5LlR_LFS4Ift51cm9kqUsEvhAycj3.9KAdtf2vAUB565LVjYZWVMQ
+ ih7ypl.K8yJT0XscKMOCZY97idf21G6fh.ElVh42VGmYvy2D.UmHLVvn_Z0S
+ y6TZpAa0cQqVSjLz.c_DtarS2SKl5aAC5l4diQdiAaDr17ET_XaMfLGUsBOu
+ MsL8KZlnT32kV6n.5sJInVN_8X9C7j64kKPIJGi3nXwRIR9qoztmXcaO1ueu
+ gbh33Y0tpeRdOL9H2RaBp._dLoSOJ.4bHGc_guqiFrUejOi8aW8XLuYElbdo
+ pRQg6KndBabCyE2VfWmu.MDQqT5Mrri8AjkAJPt7PQMn3T623KLcdCkj6jBp
+ 36iVYokHWC4qSWI7r23dZK47HX2B3atoLxYIXu49iR6eJJ28qvJE7SMsiEMd
+ xg6x8p3Qn78QjdWxk6M_AaPQ5nyhFYdOCWqcfp5gekRzUIqTz1N0rtXIoV1S
+ CT1ZPtjLxPx1XSvmQxBMIj_sB3_98RmcfcFtrXUs29_cKXKMYnNzkS9IxgKu
+ nC.WDtSRpw._mXgfHGArxJegq4ak9yco9LJvwHop2qLu5UbPHp2aNMlnqfH3
+ IX5x3Qe4KUmArLl_uCLoPUQGjecTkBZttcL4Pwxym8Sm_vsc0oF4fXSrgcyE
+ fyxeM7zb8vhIuxhcvcNq3NKUTZSzv_G6rdUQQq_UUQUGTGbkePp7zFF2iyjq
+ siM_OsQ4.pTjOwg_X1xwxVaNaDKSLplBFYPlQtMnU7E.QEh3hgl2PDf_ycCm
+ yL9KEuR_xyeKzOMO6eohtggdNQVv6CBhChPV7Xi6iAd8swcPsa1CdILENUKV
+ RAR4GCEYAcKyOmtqytK7wblCPuXERVwI4kiwVZtHL..HiJ6ZpZrecfUPpPbY
+ tnOCtcdVm3i0g6IUWBMpkVednb3iFKK774IGdD09lHjKbbpB8x6ywMsO7171
+ q1wh.xdcguQMpu2pW6.vbcvbniFm1dDWgtlIWShwPUIyPFWTnkL5xmW9Vy64
+ WP70Q6zoD97cJN8XQqRyg9JeqkKb543ChFPMkOp44EhfsQcWUdnm9vJpEqld
+ ksIT9NNtphzifY4PK9mpfv66ufYYxBn52S1AjC4-
+Received: from 203.55.21.145 (EHLO mx145.a.outbound.createsend.com)
+ by 10.253.31.117 with SMTP;
+ Thu, 09 Mar 2023 12:53:49 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=cm; d=dataelixir.com;
+ h=Subject:From:To:Date:MIME-Version:Content-Type:List-Unsubscribe:Message-ID;
+ i=lon@dataelixir.com;
+ bh=1ijIqmCRRh5Bb3E3PgQUc64JgCA2pbpgcdUTr5P7EjU=;
+ b=WH8EUMQVwHSgvEP3zplZWE6WId93yBcVGtBVDtW5busbwV7JsLSkrncAue9dBdaqDUzcN4sudUYb
+   lNoqm0zxWKvRTrpL8JIX2R1SRPibH3bcv7lma+fvxXHj6N/3dyfVFl+77myr/i9RmU0XIn24ujlU
+   zTHIMBvlh7J/LXVo6yU=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=cs2013; d=cmail2.com;
+ h=Subject:From:To:Date:MIME-Version:Content-Type:List-Unsubscribe:Message-ID;
+ bh=1ijIqmCRRh5Bb3E3PgQUc64JgCA2pbpgcdUTr5P7EjU=;
+ b=g2MkuyFRyEGjgQ7inu3+cqzctxmewGC+EBxA9L5Hf/6fD5g6plN5p6EStWBRmOVm0TigcMbWxRG6
+   YwKJsyRx1kcjBLUz2MDMBYNh2E4ov0cT876qGGl5VVXcZB2N608SSJcZMf5ah7pflGgQPAWCYcDv
+   PM1NZUI4hcgyXrbACUg=
+Subject: Please confirm your subscription
+From: "Data Elixir" <lon@dataelixir.com> 
+To: "achrafel73114@yahoo.com" <achrafel73114@yahoo.com>
+Date: Thu, 09 Mar 2023 23:53:48 +1100
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="_0bdf56f1-4637-498f-8520-b6401cc11d6b_"; charset=utf-8
+X-Mailer: Create Send
+X-Complaints-To: abuse@cmail19.com
+X-Feedback-ID: AR1-t-wikuhr:LI1-t-jrhudti:CL1-t-yhkrtu:createSEND
+List-Unsubscribe: <http://unsub.cmail19.com/t/t-u-wikuhr-jiidjdltky/>,
+ <mailto:unsubscribe-wikuhr2jiidjdltky2t-E8455D02@cmail19.com?subject=Unsubscribe>
+Message-ID: <cm.2353488453278.wikuhr.jiidjdltky.t@cmail19.com>
+Content-Length: 29453
+
+--_0bdf56f1-4637-498f-8520-b6401cc11d6b_
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+March 9, 2023
+
+Just a quick reminder to confirm your subscription to Data Elixir.
+
+If you didn't sign up for the Data Elixir newsletter or have changed your=
+ mind, you can just ignore this message and you won't hear from us again.=
+
+
+Click here to confirm your request and be added to the subscriber list [=
+https://dataelixir.com/subscription-confirmation/].
+
+Thanks!
+
+-Lon
+
+Data Elixir is a weekly newsletter that brings you top data science picks=
+ from around the web. Covers machine learning, data visualization, analyt=
+ics and strategy.
+
+Unsubscribe https://news.dataelixir.com/t/t-u-wikuhr-jiidjdltky-n=
+/
+
+--_0bdf56f1-4637-498f-8520-b6401cc11d6b_
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://w=
+ww.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><!--[if IE]><html xmlns=
+=3D"http://www.w3.org/1999/xhtml" class=3D"ie"><![endif]--><!--[if !IE]=
+><!--><html style=3D"margin: 0;padding: 0;" xmlns=3D"http://www.w3.org/19=
+99/xhtml"><!--<![endif]--><head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">
+    <title></title>
+    <!--[if !mso]><!--><meta http-equiv=3D"X-UA-Compatible" content=3D"I=
+E=3Dedge"><!--<![endif]-->
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width"><style type=3D=
+"text/css">
+@media only screen and (min-width: 620px){.wrapper{min-width:600px !impor=
+tant}.wrapper h1{}.wrapper h1{font-size:28px !important;line-height:36px =
+!important}.wrapper h2{}.wrapper h2{font-size:20px !important;line-height=
+:28px !important}.wrapper h3{}.column{}.wrapper .size-8{font-size:8px !im=
+portant;line-height:14px !important}.wrapper .size-9{font-size:9px !impor=
+tant;line-height:16px !important}.wrapper .size-10{font-size:10px !import=
+ant;line-height:18px !important}.wrapper .size-11{font-size:11px !importa=
+nt;line-height:19px !important}.wrapper .size-12{font-size:12px !importan=
+t;line-height:19px !important}.wrapper .size-13{font-size:13px !important=
+;line-height:21px !important}.wrapper .size-14{font-size:14px !important;=
+line-height:21px !important}.wrapper .size-15{font-size:15px !important;l=
+ine-height:23px !important}.wrapper .size-16{font-size:16px !important;li=
+ne-height:24px=20
+!important}.wrapper .size-17{font-size:17px !important;line-height:26px !=
+important}.wrapper .size-18{font-size:18px !important;line-height:26px !i=
+mportant}.wrapper .size-20{font-size:20px !important;line-height:28px !im=
+portant}.wrapper .size-22{font-size:22px !important;line-height:31px !imp=
+ortant}.wrapper .size-24{font-size:24px !important;line-height:32px !impo=
+rtant}.wrapper .size-26{font-size:26px !important;line-height:34px !impor=
+tant}.wrapper .size-28{font-size:28px !important;line-height:36px !import=
+ant}.wrapper .size-30{font-size:30px !important;line-height:38px !importa=
+nt}.wrapper .size-32{font-size:32px !important;line-height:40px !importan=
+t}.wrapper .size-34{font-size:34px !important;line-height:43px !important=
+}.wrapper .size-36{font-size:36px !important;line-height:43px !important}=
+=2Ewrapper .size-40{font-size:40px !important;line-height:47px !important}.=
+wrapper=20
+=2Esize-44{font-size:44px !important;line-height:50px !important}.wrapper .=
+size-48{font-size:48px !important;line-height:54px !important}.wrapper .s=
+ize-56{font-size:56px !important;line-height:60px !important}.wrapper .si=
+ze-64{font-size:64px !important;line-height:68px !important}.wrapper .siz=
+e-72{font-size:72px !important;line-height:76px !important}.wrapper .size=
+-80{font-size:80px !important;line-height:84px !important}.wrapper .size-=
+96{font-size:96px !important;line-height:100px !important}.wrapper .size-=
+112{font-size:112px !important;line-height:116px !important}.wrapper .siz=
+e-128{font-size:128px !important;line-height:132px !important}.wrapper .s=
+ize-144{font-size:144px !important;line-height:148px !important}}
+</style>
+    <meta name=3D"x-apple-disable-message-reformatting">
+    <style type=3D"text/css">
+=2Emain, .mso {
+  margin: 0;
+  padding: 0;
+}
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+* {
+  line-height: inherit;
+}
+[x-apple-data-detectors] {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+=2Ewrapper .footer__share-button a:hover,
+=2Ewrapper .footer__share-button a:focus {
+  color: #ffffff !important;
+}
+=2Ewrapper .footer__share-button a.icon-white:hover,
+=2Ewrapper .footer__share-button a.icon-white:focus {
+  color: #ffffff !important;
+}
+=2Ewrapper .footer__share-button a.icon-black:hover,
+=2Ewrapper .footer__share-button a.icon-black:focus {
+  color: #000000 !important;
+}
+=2Ebtn a:hover,
+=2Ebtn a:focus,
+=2Efooter__share-button a:hover,
+=2Efooter__share-button a:focus,
+=2Eemail-footer__links a:hover,
+=2Eemail-footer__links a:focus {
+  opacity: 0.8;
+}
+=2Epreheader,
+=2Eheader,
+=2Elayout,
+=2Ecolumn {
+  transition: width 0.25s ease-in-out, max-width 0.25s ease-in-out;
+}
+=2Epreheader td {
+  padding-bottom: 8px;
+}
+=2Elayout,
+div.header {
+  max-width: 400px !important;
+  -fallback-width: 95% !important;
+  width: calc(100% - 20px) !important;
+}
+div.preheader {
+  max-width: 360px !important;
+  -fallback-width: 90% !important;
+  width: calc(100% - 60px) !important;
+}
+=2Esnippet,
+=2Ewebversion {
+  Float: none !important;
+}
+=2Estack .column {
+  max-width: 400px !important;
+  width: 100% !important;
+}
+=2Efixed-width.has-border {
+  max-width: 402px !important;
+}
+=2Efixed-width.has-border .layout__inner {
+  box-sizing: border-box;
+}
+=2Esnippet,
+=2Ewebversion {
+  width: 50% !important;
+}
+=2Eie .btn {
+  width: 100%;
+}
+=2Eie .stack .column,
+=2Eie .stack .gutter {
+  display: table-cell;
+  float: none !important;
+}
+=2Eie div.preheader,
+=2Eie .email-footer {
+  max-width: 560px !important;
+  width: 560px !important;
+}
+=2Eie .snippet,
+=2Eie .webversion {
+  width: 280px !important;
+}
+=2Eie div.header,
+=2Eie .layout {
+  max-width: 600px !important;
+  width: 600px !important;
+}
+=2Eie .two-col .column {
+  max-width: 300px !important;
+  width: 300px !important;
+}
+=2Eie .three-col .column,
+=2Eie .narrow {
+  max-width: 200px !important;
+  width: 200px !important;
+}
+=2Eie .wide {
+  width: 400px !important;
+}
+=2Eie .stack.fixed-width.has-border,
+=2Eie .stack.has-gutter.has-border {
+  max-width: 602px !important;
+  width: 602px !important;
+}
+=2Eie .stack.two-col.has-gutter .column {
+  max-width: 290px !important;
+  width: 290px !important;
+}
+=2Eie .stack.three-col.has-gutter .column,
+=2Eie .stack.has-gutter .narrow {
+  max-width: 188px !important;
+  width: 188px !important;
+}
+=2Eie .stack.has-gutter .wide {
+  max-width: 394px !important;
+  width: 394px !important;
+}
+=2Eie .stack.two-col.has-gutter.has-border .column {
+  max-width: 292px !important;
+  width: 292px !important;
+}
+=2Eie .stack.three-col.has-gutter.has-border .column,
+=2Eie .stack.has-gutter.has-border .narrow {
+  max-width: 190px !important;
+  width: 190px !important;
+}
+=2Eie .stack.has-gutter.has-border .wide {
+  max-width: 396px !important;
+  width: 396px !important;
+}
+=2Eie .fixed-width .layout__inner {
+  border-left: 0 none white !important;
+  border-right: 0 none white !important;
+}
+=2Eie .layout__edges {
+  display: none;
+}
+=2Emso .layout__edges {
+  font-size: 0;
+}
+=2Elayout-fixed-width,
+=2Emso .layout-full-width {
+  background-color: #ffffff;
+}
+@media only screen and (min-width: 620px) {
+  .column,
+  .gutter {
+    display: table-cell;
+    Float: none !important;
+    vertical-align: top;
+  }
+  div.preheader,
+  .email-footer {
+    max-width: 560px !important;
+    width: 560px !important;
+  }
+  .snippet,
+  .webversion {
+    width: 280px !important;
+  }
+  div.header,
+  .layout,
+  .one-col .column {
+    max-width: 600px !important;
+    width: 600px !important;
+  }
+  .fixed-width.has-border,
+  .fixed-width.x_has-border,
+  .has-gutter.has-border,
+  .has-gutter.x_has-border {
+    max-width: 602px !important;
+    width: 602px !important;
+  }
+  .two-col .column {
+    max-width: 300px !important;
+    width: 300px !important;
+  }
+  .three-col .column,
+  .column.narrow,
+  .column.x_narrow {
+    max-width: 200px !important;
+    width: 200px !important;
+  }
+  .column.wide,
+  .column.x_wide {
+    width: 400px !important;
+  }
+  .two-col.has-gutter .column,
+  .two-col.x_has-gutter .column {
+    max-width: 290px !important;
+    width: 290px !important;
+  }
+  .three-col.has-gutter .column,
+  .three-col.x_has-gutter .column,
+  .has-gutter .narrow {
+    max-width: 188px !important;
+    width: 188px !important;
+  }
+  .has-gutter .wide {
+    max-width: 394px !important;
+    width: 394px !important;
+  }
+  .two-col.has-gutter.has-border .column,
+  .two-col.x_has-gutter.x_has-border .column {
+    max-width: 292px !important;
+    width: 292px !important;
+  }
+  .three-col.has-gutter.has-border .column,
+  .three-col.x_has-gutter.x_has-border .column,
+  .has-gutter.has-border .narrow,
+  .has-gutter.x_has-border .narrow {
+    max-width: 190px !important;
+    width: 190px !important;
+  }
+  .has-gutter.has-border .wide,
+  .has-gutter.x_has-border .wide {
+    max-width: 396px !important;
+    width: 396px !important;
+  }
+}
+@supports (display: flex) {
+  @media only screen and (min-width: 620px) {
+    .fixed-width.has-border .layout__inner {
+      display: flex !important;
+    }
+  }
+}
+/***
+* Mobile Styles
+*
+* 1. Overriding inline styles
+*/
+@media(max-width: 619px) {
+  .email-flexible-footer .left-aligned-footer .column,
+  .email-flexible-footer .center-aligned-footer,
+  .email-flexible-footer .right-aligned-footer .column {
+    max-width: 100% !important; /* [1] */
+    text-align: center !important; /* [1] */
+    width: 100% !important; /* [1] */
+  }
+  .flexible-footer-logo {
+    margin-left: 0px !important; /* [1] */
+    margin-right: 0px !important; /* [1] */
+  }
+  .email-flexible-footer .left-aligned-footer .flexible-footer__share-but=
+ton__container,
+  .email-flexible-footer .center-aligned-footer .flexible-footer__share-b=
+utton__container,
+  .email-flexible-footer .right-aligned-footer .flexible-footer__share-bu=
+tton__container {
+    display: inline-block;
+    margin-left: 5px !important; /* [1] */
+    margin-right: 5px !important; /* [1] */
+  }
+  .email-flexible-footer__additionalinfo--center {
+    text-align: center !important; /* [1] */
+  }
+ =20
+  .email-flexible-footer .left-aligned-footer table,
+  .email-flexible-footer .center-aligned-footer table,
+  .email-flexible-footer .right-aligned-footer table {
+    display: table !important; /* [1] */
+    width: 100% !important; /* [1] */
+  }
+  .email-flexible-footer .footer__share-button,
+  .email-flexible-footer .email-footer__additional-info {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen a=
+nd (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel=
+-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen an=
+d (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .fblike {
+    background-image: url(http://i7.cmail19.com/static/eb/master/13-the-b=
+lueprint-3/images/fblike@2x.png) !important;
+  }
+  .tweet {
+    background-image: url(http://i8.cmail19.com/static/eb/master/13-the-b=
+lueprint-3/images/tweet@2x.png) !important;
+  }
+  .linkedinshare {
+    background-image: url(http://i9.cmail19.com/static/eb/master/13-the-b=
+lueprint-3/images/lishare@2x.png) !important;
+  }
+  .forwardtoafriend {
+    background-image: url(http://i10.cmail19.com/static/eb/master/13-the-=
+blueprint-3/images/forward@2x.png) !important;
+  }
+}
+@media (max-width: 321px) {
+  .fixed-width.has-border .layout__inner {
+    border-width: 1px 0 !important;
+  }
+  .layout,
+  .stack .column {
+    min-width: 320px !important;
+    width: 320px !important;
+  }
+  .border {
+    display: none;
+  }
+  .has-gutter .border {
+    display: table-cell;
+  }
+}
+=2Emso div {
+  border: 0 none white !important;
+}
+=2Emso .w560 .divider {
+  Margin-left: 260px !important;
+  Margin-right: 260px !important;
+}
+=2Emso .w360 .divider {
+  Margin-left: 160px !important;
+  Margin-right: 160px !important;
+}
+=2Emso .w260 .divider {
+  Margin-left: 110px !important;
+  Margin-right: 110px !important;
+}
+=2Emso .w160 .divider {
+  Margin-left: 60px !important;
+  Margin-right: 60px !important;
+}
+=2Emso .w354 .divider {
+  Margin-left: 157px !important;
+  Margin-right: 157px !important;
+}
+=2Emso .w250 .divider {
+  Margin-left: 105px !important;
+  Margin-right: 105px !important;
+}
+=2Emso .w148 .divider {
+  Margin-left: 54px !important;
+  Margin-right: 54px !important;
+}
+=2Emso .size-8,
+=2Eie .size-8 {
+  font-size: 8px !important;
+  line-height: 14px !important;
+}
+=2Emso .size-9,
+=2Eie .size-9 {
+  font-size: 9px !important;
+  line-height: 16px !important;
+}
+=2Emso .size-10,
+=2Eie .size-10 {
+  font-size: 10px !important;
+  line-height: 18px !important;
+}
+=2Emso .size-11,
+=2Eie .size-11 {
+  font-size: 11px !important;
+  line-height: 19px !important;
+}
+=2Emso .size-12,
+=2Eie .size-12 {
+  font-size: 12px !important;
+  line-height: 19px !important;
+}
+=2Emso .size-13,
+=2Eie .size-13 {
+  font-size: 13px !important;
+  line-height: 21px !important;
+}
+=2Emso .size-14,
+=2Eie .size-14 {
+  font-size: 14px !important;
+  line-height: 21px !important;
+}
+=2Emso .size-15,
+=2Eie .size-15 {
+  font-size: 15px !important;
+  line-height: 23px !important;
+}
+=2Emso .size-16,
+=2Eie .size-16 {
+  font-size: 16px !important;
+  line-height: 24px !important;
+}
+=2Emso .size-17,
+=2Eie .size-17 {
+  font-size: 17px !important;
+  line-height: 26px !important;
+}
+=2Emso .size-18,
+=2Eie .size-18 {
+  font-size: 18px !important;
+  line-height: 26px !important;
+}
+=2Emso .size-20,
+=2Eie .size-20 {
+  font-size: 20px !important;
+  line-height: 28px !important;
+}
+=2Emso .size-22,
+=2Eie .size-22 {
+  font-size: 22px !important;
+  line-height: 31px !important;
+}
+=2Emso .size-24,
+=2Eie .size-24 {
+  font-size: 24px !important;
+  line-height: 32px !important;
+}
+=2Emso .size-26,
+=2Eie .size-26 {
+  font-size: 26px !important;
+  line-height: 34px !important;
+}
+=2Emso .size-28,
+=2Eie .size-28 {
+  font-size: 28px !important;
+  line-height: 36px !important;
+}
+=2Emso .size-30,
+=2Eie .size-30 {
+  font-size: 30px !important;
+  line-height: 38px !important;
+}
+=2Emso .size-32,
+=2Eie .size-32 {
+  font-size: 32px !important;
+  line-height: 40px !important;
+}
+=2Emso .size-34,
+=2Eie .size-34 {
+  font-size: 34px !important;
+  line-height: 43px !important;
+}
+=2Emso .size-36,
+=2Eie .size-36 {
+  font-size: 36px !important;
+  line-height: 43px !important;
+}
+=2Emso .size-40,
+=2Eie .size-40 {
+  font-size: 40px !important;
+  line-height: 47px !important;
+}
+=2Emso .size-44,
+=2Eie .size-44 {
+  font-size: 44px !important;
+  line-height: 50px !important;
+}
+=2Emso .size-48,
+=2Eie .size-48 {
+  font-size: 48px !important;
+  line-height: 54px !important;
+}
+=2Emso .size-56,
+=2Eie .size-56 {
+  font-size: 56px !important;
+  line-height: 60px !important;
+}
+=2Emso .size-64,
+=2Eie .size-64 {
+  font-size: 64px !important;
+  line-height: 68px !important;
+}
+=2Emso .size-72,
+=2Eie .size-72 {
+  font-size: 72px !important;
+  line-height: 76px !important;
+}
+=2Emso .size-80,
+=2Eie .size-80 {
+  font-size: 80px !important;
+  line-height: 84px !important;
+}
+=2Emso .size-96,
+=2Eie .size-96 {
+  font-size: 96px !important;
+  line-height: 100px !important;
+}
+=2Emso .size-112,
+=2Eie .size-112 {
+  font-size: 112px !important;
+  line-height: 116px !important;
+}
+=2Emso .size-128,
+=2Eie .size-128 {
+  font-size: 128px !important;
+  line-height: 132px !important;
+}
+=2Emso .size-144,
+=2Eie .size-144 {
+  font-size: 144px !important;
+  line-height: 148px !important;
+}
+/***
+* Online store block styles
+*
+* 1. maintaining right and left margins in outlook
+* 2. respecting line-height for tds in outlook
+*/
+=2Emso .cmctbl table td, .mso .cmctbl table th {
+  Margin-left: 20px !important;  /* [1] */
+  Margin-right: 20px !important; /* [1] */
+}
+=2Ecmctbl--inline table {
+  border-collapse: collapse;
+}
+=2Emso .cmctbl--inline table, .mso .cmctbl table {
+    mso-table-lspace: 0pt;
+    mso-table-rspace: 0pt;
+    mso-line-height-rule: exactly; /* [2] */
+}
+</style>
+   =20
+  <!--[if !mso]><!--><style type=3D"text/css">
+@import url(https://fonts.googleapis.com/css?family=3DRoboto:400,700,400i=
+talic,700italic);
+</style><link href=3D"https://fonts.googleapis.com/css?family=3DRoboto:40=
+0,700,400italic,700italic" rel=3D"stylesheet" type=3D"text/css"><!--<![e=
+ndif]--><style type=3D"text/css">
+=2Emain,.mso{background-color:#fff}.logo a:hover,.logo a:focus{color:#859bb=
+1 !important}.footer-logo a:hover,.footer-logo a:focus{color:#372d1b !imp=
+ortant}.mso .layout-has-border{border-top:1px solid #ccc;border-bottom:1p=
+x solid #ccc}.mso .layout-has-bottom-border{border-bottom:1px solid #ccc}=
+=2Emso .border,.ie .border{background-color:#ccc}.mso h1,.ie h1{}.mso h1,.i=
+e h1{font-size:28px !important;line-height:36px !important}.mso h2,.ie h2=
+{}.mso h2,.ie h2{font-size:20px !important;line-height:28px !important}.m=
+so h3,.ie h3{}.mso .layout__inner,.ie .layout__inner{}.mso .footer__share=
+-button p{}.mso .footer__share-button p{font-family:Roboto,Tahoma,sans-se=
+rif}
+</style></head>
+<!--[if mso]>
+  <body class=3D"mso">
+<![endif]-->
+<!--[if !mso]><!-->
+  <body class=3D"main half-padding" style=3D"margin: 0;padding: 0;-webkit=
+-text-size-adjust: 100%;">
+<!--<![endif]-->
+    <table class=3D"wrapper" style=3D"border-collapse: collapse;table-lay=
+out: fixed;min-width: 320px;width: 100%;background-color: #fff;" cellpadd=
+ing=3D"0" cellspacing=3D"0" role=3D"presentation"><tbody><tr><td>
+      <div role=3D"banner">
+        <div class=3D"preheader" style=3D"Margin: 0 auto;max-width: 560px=
+;min-width: 280px; width: 280px;width: calc(28000% - 167440px);">
+          <div style=3D"border-collapse: collapse;display: table;width: 1=
+00%;">
+          <!--[if (mso)|(IE)]><table align=3D"center" class=3D"preheader=
+" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation"><tr><td style=
+=3D"width: 280px" valign=3D"top"><![endif]-->
+            <div class=3D"snippet" style=3D"display: table-cell;Float: le=
+ft;font-size: 12px;line-height: 19px;max-width: 280px;min-width: 140px; w=
+idth: 140px;width: calc(14000% - 78120px);padding: 10px 0 5px 0;color: #8=
+08285;font-family: Roboto,Tahoma,sans-serif;">
+             =20
+            </div>
+          <!--[if (mso)|(IE)]></td><td style=3D"width: 280px" valign=3D"=
+top"><![endif]-->
+            <div class=3D"webversion" style=3D"display: table-cell;Float:=
+ left;font-size: 12px;line-height: 19px;max-width: 280px;min-width: 139px=
+; width: 139px;width: calc(14100% - 78680px);padding: 10px 0 5px 0;text-a=
+lign: right;color: #808285;font-family: Roboto,Tahoma,sans-serif;">
+             =20
+            </div>
+          <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+          </div>
+        </div>
+        <div class=3D"header" style=3D"Margin: 0 auto;max-width: 600px;mi=
+n-width: 320px; width: 320px;width: calc(28000% - 167400px);" id=3D"emb-e=
+mail-header-container">
+        <!--[if (mso)|(IE)]><table align=3D"center" class=3D"header" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation"><tr><td style=3D"w=
+idth: 600px"><![endif]-->
+          <div class=3D"logo emb-logo-margin-box" style=3D"font-size: 26p=
+x;line-height: 32px;Margin-top: 0px;Margin-bottom: 0px;color: #c3ced9;fon=
+t-family: Roboto,Tahoma,sans-serif;Margin-left: 20px;Margin-right: 20px;"=
+ align=3D"center">
+            <div class=3D"logo-center" align=3D"center" id=3D"emb-email-h=
+eader"><img style=3D"display: block;height: auto;width: 100%;border: 0;ma=
+x-width: 315px;" src=3D"http://i1.cmail19.com/ei/t/AD/20F/3DD/034024/temp=
+_import/csfinal/dataelixir-banner1.png" alt=3D"Data Elixir logo" width=3D=
+"315"></div>
+          </div>
+        <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+        </div>
+      </div>
+      <div>
+      <div class=3D"layout one-col fixed-width stack" style=3D"Margin: 0 =
+auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% -=
+ 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: br=
+eak-word;">
+        <div class=3D"layout__inner" style=3D"border-collapse: collapse;d=
+isplay: table;width: 100%;background-color: #ffffff;">
+        <!--[if (mso)|(IE)]><table align=3D"center" cellpadding=3D"0" ce=
+llspacing=3D"0" role=3D"presentation"><tr class=3D"layout-fixed-width" st=
+yle=3D"background-color: #ffffff;"><td style=3D"width: 600px" class=3D"w5=
+60"><![endif]-->
+          <div class=3D"column" style=3D"text-align: left;color: #808285;=
+font-size: 14px;line-height: 21px;font-family: Avenir,sans-serif;">
+       =20
+            <div style=3D"Margin-left: 20px;Margin-right: 20px;Margin-top=
+: 12px;">
+      <div style=3D"mso-line-height-rule: exactly;mso-text-raise: 11px;ve=
+rtical-align: middle;">
+        <p style=3D"Margin-top: 0;Margin-bottom: 20px;text-align: center;=
+">March 9, 2023&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</currentyear></curren=
+tday></currentmonthname></p>
+      </div>
+    </div>
+       =20
+            <div style=3D"Margin-left: 20px;Margin-right: 20px;Margin-bot=
+tom: 12px;">
+      <div style=3D"mso-line-height-rule: exactly;mso-text-raise: 11px;ve=
+rtical-align: middle;">
+        <p class=3D"size-17" style=3D"Margin-top: 0;Margin-bottom: 0;font=
+-size: 17px;line-height: 26px;" lang=3D"x-size-17">&nbsp;</p><p class=3D"=
+size-17" style=3D"Margin-top: 20px;Margin-bottom: 0;font-size: 17px;line-=
+height: 26px;" lang=3D"x-size-17">Just a quick reminder to confirm your s=
+ubscription to Data Elixir.</p><p class=3D"size-17" style=3D"Margin-top: =
+20px;Margin-bottom: 0;font-size: 17px;line-height: 26px;" lang=3D"x-size-=
+17">If you didn't sign up for the Data Elixir newsletter or have changed =
+your mind, you can just ignore this message and you won't hear from us ag=
+ain.&nbsp;</p><p class=3D"size-17" style=3D"Margin-top: 20px;Margin-botto=
+m: 0;font-size: 17px;line-height: 26px;" lang=3D"x-size-17"><a style=3D"t=
+ext-decoration: underline;transition: opacity 0.1s ease-in;color: #0177cc=
+;" href=3D"https://news.dataelixir.com/t/t-l-wikuhr-jiidjdltky-o/=
+">Click here to confirm your request=20
+and be added to the subscriber list</a>.</p><p class=3D"size-17" style=3D=
+"Margin-top: 20px;Margin-bottom: 0;font-size: 17px;line-height: 26px;" la=
+ng=3D"x-size-17">Thanks!</p><p class=3D"size-17" style=3D"Margin-top: 20p=
+x;Margin-bottom: 0;font-size: 17px;line-height: 26px;" lang=3D"x-size-17"=
+>-Lon</p><p class=3D"size-17" style=3D"Margin-top: 20px;Margin-bottom: 0;=
+font-size: 17px;line-height: 26px;" lang=3D"x-size-17">&nbsp;</p><p class=
+=3D"size-17" style=3D"Margin-top: 20px;Margin-bottom: 0;font-size: 17px;l=
+ine-height: 26px;" lang=3D"x-size-17">&nbsp;</p><p class=3D"size-17" styl=
+e=3D"Margin-top: 20px;Margin-bottom: 0;font-size: 17px;line-height: 26px;=
+" lang=3D"x-size-17">&nbsp;</p><p class=3D"size-17" style=3D"Margin-top: =
+20px;Margin-bottom: 0;font-size: 17px;line-height: 26px;" lang=3D"x-size-=
+17">&nbsp;</p><p class=3D"size-17" style=3D"Margin-top: 20px;Margin-botto=
+m: 0;font-size: 17px;line-height: 26px;"=20
+lang=3D"x-size-17">&nbsp;</p><p class=3D"size-17" style=3D"Margin-top: 20=
+px;Margin-bottom: 0;font-size: 17px;line-height: 26px;" lang=3D"x-size-17=
+">&nbsp;</p><p class=3D"size-17" style=3D"Margin-top: 20px;Margin-bottom:=
+ 0;font-size: 17px;line-height: 26px;" lang=3D"x-size-17">&nbsp;</p><p cl=
+ass=3D"size-17" style=3D"Margin-top: 20px;Margin-bottom: 0;font-size: 17p=
+x;line-height: 26px;" lang=3D"x-size-17">&nbsp;</p><p class=3D"size-17" s=
+tyle=3D"Margin-top: 20px;Margin-bottom: 0;font-size: 17px;line-height: 26=
+px;" lang=3D"x-size-17">&nbsp;</p>
+      </div>
+    </div>
+       =20
+          </div>
+        <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+        </div>
+      </div>
+ =20
+      <div style=3D"mso-line-height-rule: exactly;line-height: 20px;font-=
+size: 20px;">&nbsp;</div>
+ =20
+      </div>
+      <table style=3D"border-collapse: collapse;table-layout: fixed;" cel=
+lpadding=3D"0" cellspacing=3D"0" width=3D"100%"><tbody><tr><td style=3D"b=
+ackground-color: #f7f7f7; border: 1px solid #cccccc"><div role=3D"content=
+info"><div style=3D"line-height:40px;font-size:40px;" id=3D"footer-top-sp=
+acing">&nbsp;</div><div class=3D"layout email-flexible-footer email-foote=
+r" style=3D"Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320p=
+x;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: bre=
+ak-word;word-break: break-word;" id=3D"footer-content">
+      <div class=3D"layout__inner left-aligned-footer flexible-footer--ho=
+rizontal-padding" style=3D"border-collapse: collapse;display: table;width=
+: calc(100% - 40px);margin: 0 auto;">
+        <!--[if (mso)|(IE)]><table align=3D"center" cellpadding=3D"0" ce=
+llspacing=3D"0" role=3D"presentation"><tr class=3D"layout-email-footer"><=
+![endif]-->
+        <!--[if (mso)|(IE)]><td><table cellpadding=3D"0" cellspacing=3D"=
+0"><![endif]-->
+        <!--[if (mso)|(IE)]><td valign=3D"top"><![endif]-->
+          <div class=3D"column" style=3D"text-align: left;font-size: 12px=
+;line-height: 19px;color: #808285;font-family: Roboto,Tahoma,sans-serif;"=
+>
+      <div class=3D"footer-logo emb-logo-margin-box" style=3D"font-size: =
+26px;line-height: 32px;Margin-top: 0px;Margin-bottom: 0px;color: #7b663d;=
+font-family: Roboto,Tahoma,sans-serif;" align=3D"center">
+        <div style=3D"margin-right: 20px;" emb-flexible-footer-logo align=
+=3D"center"><img style=3D"border: 0;display: block;height: auto;width: 10=
+0%;max-width: 100px;" src=3D"http://i1.cmail19.com/ei/t/AD/20F/3DD/034024=
+/temp_import/csfinal/dataelixir-100x1001.png" alt=3D"" width=3D"100"></di=
+v>
+      </div>
+    </div>
+        <!--[if (mso)|(IE)]></td><![endif]-->
+        <!--[if (mso)|(IE)]><td valign=3D"top"><![endif]-->
+          <div class=3D"column" style=3D"text-align: left;font-size: 12px=
+;line-height: 19px;color: #808285;font-family: Roboto,Tahoma,sans-serif;d=
+isplay: none;">
+      <div style=3D"margin-left: 0;margin-right: 0;Margin-top: 10px;Margi=
+n-bottom: 10px;">
+        <div class=3D"footer__share-button">
+         =20
+         =20
+         =20
+         =20
+        </div>
+      </div>
+    </div>
+        <!--[if (mso)|(IE)]></td><![endif]-->
+        <!--[if (mso)|(IE)]><td valign=3D"top"><![endif]-->
+          <table style=3D"border-collapse: collapse;table-layout: fixed;d=
+isplay: inline-block;width: 440px;" cellpadding=3D"0" cellspacing=3D"0"><=
+tbody><tr><td><div class=3D"column js-footer-additional-info" style=3D"te=
+xt-align: left;font-size: 12px;line-height: 19px;color: #808285;font-fami=
+ly: Roboto,Tahoma,sans-serif;width: 440px;">
+      <div style=3D"margin-left: 0;margin-right: 0;Margin-top: 10px;Margi=
+n-bottom: 10px;">
+       =20
+        <div class=3D"email-footer__additional-info" style=3D"font-size: =
+12px;line-height: 19px;margin-bottom: 18px;margin-top: 0px;">
+          <div><p class=3D"email-flexible-footer__additionalinfo--center"=
+ style=3D"Margin-top: 0;Margin-bottom: 0;">Data Elixir is a weekly newsle=
+tter that brings you top data science picks from around the web. Covers m=
+achine learning, data visualization, analytics and strategy.</p></div>
+        </div>
+       =20
+        <div class=3D"email-footer__additional-info" style=3D"font-size: =
+12px;line-height: 19px;margin-bottom: 15px;">
+          <a style=3D"text-decoration: underline;transition: opacity 0.1s=
+ ease-in;color: #808285;" href=3D"https://news.dataelixir.com/t/t-u-wikuh=
+r-jiidjdltky-b/">Unsubscribe</a>
+        </div>
+        <!--[if mso]>&nbsp;<![endif]-->
+      </div>
+    </div></td></tr></tbody></table>
+        <!--[if (mso)|(IE)]></table></td><![endif]-->
+        <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+      </div>
+    </div><div style=3D"line-height:30px;font-size:30px;" id=3D"footer-bo=
+ttom-spacing">&nbsp;</div></div></td></tr></tbody></table>
+     =20
+    </td></tr></tbody></table>
+  <style type=3D"text/css">
+@media (max-width:619px){.email-flexible-footer .left-aligned-footer .col=
+umn,.email-flexible-footer .center-aligned-footer,.email-flexible-footer =
+=2Eright-aligned-footer .column{max-width:100% !important;text-align:center=
+ !important;width:100% !important}.flexible-footer-logo{margin-left:0px !=
+important;margin-right:0px !important}.email-flexible-footer .left-aligne=
+d-footer .flexible-footer__share-button__container,.email-flexible-footer=
+ .center-aligned-footer .flexible-footer__share-button__container,.email-=
+flexible-footer .right-aligned-footer .flexible-footer__share-button__con=
+tainer{display:inline-block;margin-left:5px !important;margin-right:5px !=
+important}.email-flexible-footer__additionalinfo--center{text-align:cente=
+r !important}.email-flexible-footer .left-aligned-footer table,.email-fle=
+xible-footer .center-aligned-footer table,.email-flexible-footer .right-a=
+ligned-footer=20
+table{display:table !important;width:100% !important}.email-flexible-foot=
+er .footer__share-button,.email-flexible-footer .email-footer__additional=
+-info{margin-left:20px;margin-right:20px}}
+</style><img style=3D"visibility: hidden !important; display: block !impo=
+rtant; height:1px !important; width:1px !important; border: 0 !important;=
+ margin: 0 !important; padding: 0 !important" src=3D"https://dataelixir.c=
+mail19.com/t/t-o-wikuhr-jiidjdltky/o.gif" width=3D"1" height=3D"1=
+" border=3D"0" alt=3D"">
+</body></html>=
+
+
+
+
+--_0bdf56f1-4637-498f-8520-b6401cc11d6b_--

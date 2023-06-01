@@ -1,0 +1,971 @@
+Received: from 127.0.0.1
+ by atlas-production.v2-mail-prod1-gq1.omega.yahoo.com pod-id atlas--production-gq1-7f77b4df7d-hk9fv.gq1.yahoo.com with HTTP; Thu, 9 Mar 2023 14:49:01 +0000
+Return-Path: <bounce-mc.us10_39427205.301187-c5f8cdfa4f@mail89.suw151.rsgsv.net>
+X-Originating-Ip: [198.2.175.89]
+Received-SPF: pass (domain of mail89.suw151.rsgsv.net designates 198.2.175.89 as permitted sender)
+Authentication-Results: atlas-production.v2-mail-prod1-gq1.omega.yahoo.com;
+ dkim=pass header.i=@fbl.mcsv.net header.s=k2;
+ dkim=pass header.i=@mailchimpapp.net header.s=k3;
+ spf=pass smtp.mailfrom=mail89.suw151.rsgsv.net;
+ dmarc=unknown header.from=boastusa.com;
+X-Apparently-To: achrafel73114@yahoo.com; Thu, 9 Mar 2023 14:49:02 +0000
+X-YMailAVSC: ZCiQUJo3bBviO92UeGbw2RGHsTnSByBsLrnvdO8AOQDejMR
+ cWF4rd.xTM63ncsEt7xULu3InUALwgtyfqKZlXVpae.EBQCv.i.rHxvH9afA
+ jB.zLuQiUuRoXe8B8s_LHJSweQ1_3nIUVDGwy3zYj4zGYlgqAbLvRk8o1s2B
+ x2ZZ2Y7KE11cM23bK_Mtnye4LNcHM8sJmggEttkkrAFRvI.DsdrELEsJbzQW
+ Ovfh2wiYiT10YjLIwtsj8aoBDjNgRF4fhdx756LXIlmHOiklxZbmYXeGq8rF
+ zKUEvKgH7ZMrjaN7.hHmR7UTBXXiVQUc26N6gkriDNGYckFEXBl7mPbKIL5Y
+ KORJTS3bghYjmB6PcdVb_4sNlvsuYia6yhpNAAY3UFvUxs6mioX8Z69.zhkk
+ 5nNrotvPj85DbFDPxr6Rgzb.szXORJkMuxs8KevTRMtsuYbRSTURoHFn0nYz
+ IiRxZ64kxs5WVaiRJrPoP9kTHDREdoygJj.Sn_sQP7k5cPrjL_9TGpk3mYX1
+ w9Hq29AnvHcYpNd0uQbWOpn8LaPV3FSiEhy0sROyYPiNyjzZMO2KDE.8_gPN
+ kiUZnffzWD7wOvRCZ30cSR_xQ4eTsB6I1V7flic4su3QLOG5B7.CuZFe0ogH
+ 3gtnXzmRmXmB8ApsPjtV4mmRzvB.3bXksdfZ3ztMTuVuMHhPPyTt8xa9XDQE
+ zL4N_qiMXU6Y2f.y_MT_UZwYLfd2KPn8WpTZN2Pjm_kQG4GJPqOzLoAJjcDj
+ XZINveFqXUmhm0U7cIXxg6o0j.oh4HZLjgq45vhA2nU3959MNsXMXclGUcWa
+ pK.UDxESsSUM1ByeNyjUnUbD12mcz693nH0fMj2rMrN6RhdwKPRzBlejeqvs
+ c3oZCGz0HQi7KrNBsFhE9iv8XrH6E4VQWVZh4Nj5lXqvhMetdKVTs98Br.H4
+ 4WKNoc3wvsDTcGDKdqu9mG3G1haLR5bH_2UKClO3VA8Nq6RpAjBekgjNQmqE
+ LMS3dVi8OaN88YWbxI2ECvBpdrTnMNOSsGEP1uDi4QcDAixFPEjjdiHt0iOQ
+ 77aVKm_1_stcAlSekkktGJA3ioOnNmLGH6Sg3b_6qu76a_b8FCpPw.PwiDGB
+ rwNxAto9uzhwJSLBCg1oqQkZ6v7Ov7ZWZq6PZo1hBdebyesORERJtySizkC6
+ hbiz.aWNlsWlIv9H5ZfJF2d8E8yNZVrKHKE6MU7GiB7msY8HPzWHCyJ10vp9
+ jrY40MDdyGlx35lpQdw4pn9opof2qcmqozA--
+X-YMailISG: EpEf3DgWLDvF2ws0HMd1y63y9QY83pyPeUq.IPOcd2f6LoDQ
+ L6Pb9bcFbGFwwkO44mjI0KhywLwnXz_cuGm5jtXvjlZOvxwAGX4bmAPOQhVw
+ R.6qFfHrbwCSpONE7O1VqM7hOhh7pSMeSmJA9XLag1_NYwEoFrkWD10LSKLn
+ 8aE2IUJxujHxo05PhWv.eNaNvCKmHC_pXIP79vwfC4O1Z44Lrz6yXaWi4vXX
+ xe2RVOLiNdPHIA4Dhgkp43NQ_kG4J3WHeyyC1SzJc_vwuClXE3uaGSk0jRHc
+ ItZ0PwS4jPN3uyFT.VXB0Ly4.fiTx3Ssyfla.9K9P5EiYQt7NBOxg4Aec1y3
+ _fnRZdhrT74nBFL4iL2boVDVitleq400tkPiV5Wc9SUPm74xfP6OMtZXI381
+ 2FhVyqoiKDJQN0ckRJlAa3lMIdSZ9YjdG0U0Kn7gJJo7Ts.hbU7b7J9ulvfT
+ vhjUSDgJ6LC5hjaMUFcBZrcJPrlX8ugXnWerBON92pf.yB9.68xVJ7JZEkHS
+ 5tKx5SpDs12OJGYWNtyUZOQzDfjmUsc8Ay.8oyKYCkgXbf1OrQs_.FJQuoQl
+ VU.WjrcMunCOTStAAypxAVVDShd5NrFuZNeNC1260f_eo6JGNvOClYahxPCT
+ kuInYuYFHBuo.T3VQoUBORg8accTEADb4mt.QKotGSxuub_7JQ_zX34CymQd
+ N6_4rb0nl565FL44kYLUWM8hBgp1BBURIE1pZK8YXE0SWa5hnBRoWTRarmJi
+ kXcVmBbgq_8hfeYh1TumS6_oKeXjUeNvW4S7sf_CmeB4NVyHGAao9rBHyxgO
+ UztEl2FoZw1SDaisPX0X5_lt.Fs9m0aLeHtFLKvao7.R9YtbrnwDQUpmdiMh
+ mz4fV1TqqHUYjjoWc_D44qUm_f3cwHVmZMzruAx1Pik2UTdOdGEuEcox0nPz
+ PUoyhmReKbypRcdX8aUfsf1c95kjFeY55tbVog5egDdAMSSW48ja3cwwRGC.
+ RC.t9Vp.ASNYHh1zTxn1s4dpaB7esoMKUqxEJfgTCccdFxP.fc9Pp_X5Ouqy
+ 8G5XPzdW6_fjWcIEdshRnYb869q1D6ZoB02vGdGfNkgot.faoE0.2qyVmuXz
+ SIEJdvJXrulhatbSGC1rR0V6t_zOeEXfXOl2e8MY3EU8rSMmJ3lQaPL6Xkw0
+ JgyA7gIbwUbxPYqPZOEqzspDlyoRt2jypivEYrpSfZElmO3Trrj8Cq2hKzvH
+ dzv10p3TKD56XUnQWrUkBnB7qbm9jmCqfPALJ6xLzRz7FvJ1fYFcw4Hq7eW2
+ Jos-
+Received: from 198.2.175.89 (EHLO mail89.suw151.rsgsv.net)
+ by 10.253.230.155 with SMTPs
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256);
+ Thu, 09 Mar 2023 14:49:01 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fbl.mcsv.net; s=k2;
+	t=1678373208; x=1678430808;
+	bh=PM2wi7k5TfHN4TB5mA9qGCp1ibT/R2tRVPin+DTSk7E=;
+	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
+	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
+	 MIME-Version:CC:Date:Subject:From;
+	b=lWEkjk9uD8Pd8hhrLOs2eTDYXh9sqMsJaDuGnNcRrxWUmPQa5SMPKJojljjt6lgfu
+	 VY15LuVDHywwSpLY/TY4XaSqSHeMdp5XxPy6zaKMwfEu+1MGqoF2k/1WdkM6hmRl5o
+	 0BWrX4Jjl02VQzPmhJK3XD/XnOffG2LHOaEQotGJDQewR/C4d+1oOBE6CmxvrLn0C5
+	 x66MsThxuUWCEJa0qYbHKo7g4BTO98RMECu3DlZRZhwPbxfsxk4RAQ0H4mgMxcvKmv
+	 EFBsZQn1VAbpHJhAKmWhYdPbjDdK8Vbkx7qHimj0y0cGKk9anzT9lboxNaEtPxh/g+
+	 pQ39FuTUH6orw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailchimpapp.net;
+	s=k3; t=1678373208; x=1678430808;
+	i=clubhouse=3Dboastusa.com@mailchimpapp.net;
+	bh=PM2wi7k5TfHN4TB5mA9qGCp1ibT/R2tRVPin+DTSk7E=;
+	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
+	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
+	 MIME-Version:CC:Date:Subject:From;
+	b=mI4bJ1DTVAssItf/bEqUG4PHFx6ZP3Ahays0ot0UVhCc3q0sVndog7OkQSDTlue7r
+	 aDegLXplhfJQYUhzPRmKR+pOTvzhgFtxykjisAU+LzGqx1gKw52onpYFqcBJ5I8SF7
+	 ImmFjUQslX0TCgcU2BpuGU7y5EPwgDsqpgkKvNoOKzfBUiJjQSyfBF1X4I/e51tXvA
+	 I2Qr4y41pA/OqpcTDpIRv5CB1xvBIoIH5Z9puoeA894ANdwq3rn0CMbyww2wUkjysn
+	 xRHuwDb9ul4ipIRamm51d99W52RifD4wsECSfySNLAhzNFDEom4eR06hLEn5hPmHLl
+	 8pDrJ2fIGQE5A==
+Received: from localhost (localhost [127.0.0.1])
+	by mail89.suw151.rsgsv.net (Mailchimp) with ESMTP id 4PXX7r08VGz6CjwkF
+	for <achrafel73114@yahoo.com>; Thu,  9 Mar 2023 14:46:48 +0000 (GMT)
+Subject: =?utf-8?Q?Get=20Fully=20Vested=C2=A0=F0=9F=8D=81?=
+From: =?utf-8?Q?BOAST?= <clubhouse@boastusa.com>
+Reply-To: =?utf-8?Q?BOAST?= <clubhouse@boastusa.com>
+To: =?utf-8?Q?=20?= <achrafel73114@yahoo.com>
+Date: Thu,  9 Mar 2023 14:46:38 +0000
+Message-ID: <9c28cb0c6acb6cbbc078e4c4b.c5f8cdfa4f.20230309144626.c2caf4d966.ed93caf2@mail89.suw151.rsgsv.net>
+X-Mailer: Mailchimp Mailer - **CIDc2caf4d966c5f8cdfa4f**
+X-Campaign: mailchimp9c28cb0c6acb6cbbc078e4c4b.c2caf4d966
+X-campaignid: mailchimp9c28cb0c6acb6cbbc078e4c4b.c2caf4d966
+X-Report-Abuse: Please report abuse for this campaign here: https://mailchimp.com/contact/abuse/?u=9c28cb0c6acb6cbbc078e4c4b&id=c2caf4d966&e=c5f8cdfa4f
+X-MC-User: 9c28cb0c6acb6cbbc078e4c4b
+Feedback-ID: 39427205:39427205.301187:us10:mc
+List-ID: 9c28cb0c6acb6cbbc078e4c4bmc list <9c28cb0c6acb6cbbc078e4c4b.61765.list-id.mcsv.net>
+X-Accounttype: pd
+List-Unsubscribe: <https://boastusa.us10.list-manage.com/unsubscribe?u=9c28cb0c6acb6cbbc078e4c4b&id=1af15dc3a2&e=c5f8cdfa4f&c=c2caf4d966>, <mailto:unsubscribe-mc.us10_9c28cb0c6acb6cbbc078e4c4b.c2caf4d966-c5f8cdfa4f@unsubscribe.mailchimpapp.net?subject=unsubscribe>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Content-Type: multipart/alternative; boundary="_----------=_MCPart_88352052"
+MIME-Version: 1.0
+Content-Length: 38897
+
+This is a multi-part message in MIME format
+
+--_----------=_MCPart_88352052
+Content-Type: text/plain; charset="utf-8"; format="fixed"
+Content-Transfer-Encoding: quoted-printable
+
+Shop our Lightweight and Midweight Vests
+Free Shipping on Orders $95+ View this email in your browser (https://mail=
+chi.mp/boastusa/vests-301187?e=3Dc5f8cdfa4f)
+https://boastusa.com?mc_cid=3Dc2caf4d966&mc_eid=3DUNIQID
+
+
+**
+invest in your spring wardrobe
+------------------------------------------------------------
+https://boastusa.com/collections/vests?mc_cid=3Dc2caf4d966&mc_eid=3DUNIQID
+Shop Now (https://boastusa.com/collections/vests?mc_cid=3Dc2caf4d966&mc_ei=
+d=3DUNIQID)
+https://boastusa.com/collections/tops?mc_cid=3Dc2caf4d966&mc_eid=3DUNIQID
+https://boastusa.com/collections/tops?mc_cid=3Dc2caf4d966&mc_eid=3DUNIQID
+
+
+**
+------------------------------------------------------------
+NAVY BLAZER (https://boastusa.com/collections/tops?mc_cid=3Dc2caf4d966&mc_=
+eid=3DUNIQID)
+BOAST RED (https://boastusa.com/collections/tops?mc_cid=3Dc2caf4d966&mc_ei=
+d=3DUNIQID)
+
+
+**
+------------------------------------------------------------
+vintage navy navy leaf (https://boastusa.com/collections/vests?mc_cid=3Dc2=
+caf4d966&mc_eid=3DUNIQID)
+storm grey navy leaf (https://boastusa.com/collections/vests?mc_cid=3Dc2ca=
+f4d966&mc_eid=3DUNIQID)
+
+
+**
+------------------------------------------------------------
+storm grey Boast (https://boastusa.com/collections/vests?mc_cid=3Dc2caf4d9=
+66&mc_eid=3DUNIQID)
+vintage navy boast (https://boastusa.com/collections/vests?mc_cid=3Dc2caf4=
+d966&mc_eid=3DUNIQID)
+https://boastusa.com/collections/tops?mc_cid=3Dc2caf4d966&mc_eid=3DUNIQID
+https://boastusa.com/collections/vests?mc_cid=3Dc2caf4d966&mc_eid=3DUNIQID
+Shop Now (https://boastusa.com/collections/vests?mc_cid=3Dc2caf4d966&mc_ei=
+d=3DUNIQID)
+
+Shop All (https://boastusa.com/collections/all?mc_cid=3Dc2caf4d966&mc_eid=
+=3DUNIQID) Journal (https://boastusa.com/blogs/journal?mc_cid=3Dc2caf4d966=
+&mc_eid=3DUNIQID) About (https://boastusa.com/pages/about?mc_cid=3Dc2caf4d=
+966&mc_eid=3DUNIQID) Instagram (https://www.instagram.com/boast/?mc_cid=3D=
+c2caf4d966&mc_eid=3DUNIQID) Facebook (https://www.facebook.com/BoastUSA/?m=
+c_cid=3Dc2caf4d966&mc_eid=3DUNIQID)
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+
+BOAST was founded in 1973 as the American answer to traditional European T=
+ennis brands. Inspired by the rebels and icons of the era=2C Boast celebra=
+tes the convergence of sport and culture. Our logo=2C a Japanese Maple Lea=
+f=2C embodies this ideal.
+
+=C2=A9 All Rights Reserved 2023
+ Because you enjoy the laid back comfortable lifestyle both on and off the=
+ court. We would like to thank you for joining our mailing list. ** Unsubs=
+cribe. (https://boastusa.us10.list-manage.com/unsubscribe?u=3D9c28cb0c6acb=
+6cbbc078e4c4b&id=3D1af15dc3a2&e=3Dc5f8cdfa4f&c=3Dc2caf4d966)
+
+Our mailing address is:
+BOAST
+49 Locust Avenue
+107
+New Canaan=2C CT 06840
+USA
+--_----------=_MCPart_88352052
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www=
+=2Ew3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv=3D"content-type" content=3D"text/html; charset=3DUTF-=
+8">
+    <!-- Facebook sharing information tags -->
+    <meta property=3D"og:title" content=3D"Get Fully Vested=C2=A0=F0=9F=8D=
+=81">
+    <title>Get Fully Vested=C2=A0=F0=9F=8D=81</title>
+
+  <style type=3D"text/css">
+=09=09#outlook a{
+=09=09=09padding:0;
+=09=09}
+=09=09body{
+=09=09=09width:100% !important;
+=09=09=09background-color:#ffffff;
+=09=09=09font-family:HelveticaNeue=2CHelvetica=2CArial=2Csans-serif;
+=09=09=09color:#000;
+=09=09}
+=09=09.ReadMsgBody{
+=09=09=09width:100%;
+=09=09}
+=09=09.ExternalClass{
+=09=09=09width:100%;
+=09=09}
+=09=09body{
+=09=09=09-webkit-text-size-adjust:none;
+=09=09}
+=09=09body{
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09}
+=09=09img{
+=09=09=09border:0;
+=09=09=09height:auto;
+=09=09=09line-height:100%;
+=09=09=09outline:none;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09table td{
+=09=09=09border-collapse:collapse;
+=09=09}
+=09=09#backgroundTable{
+=09=09=09height:100% !important;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09=09width:100% !important;
+=09=09}
+=09=09h1{
+=09=09=09font-family:"HelveticaNeue-CondensedBold"=2C"Helvetica Neue"=2CAr=
+ial Black=2Csans-serif;
+=09=09=09font-size:26px;
+=09=09=09line-height:28px;
+=09=09=09letter-spacing:.21px;
+=09=09=09color:#F60323;
+=09=09=09text-transform:uppercase;
+=09=09=09text-align:left;
+=09=09=09font-weight:700;
+=09=09=09padding:0;
+=09=09=09margin:0;
+=09=09}
+=09=09h2{
+=09=09=09font-family:"HelveticaNeue-CondensedBold"=2C"Helvetica Neue"=2CAr=
+ial Black=2Csans-serif;
+=09=09=09font-size:18px;
+=09=09=09line-height:26px;
+=09=09=09letter-spacing:.2px;
+=09=09=09color:#F60323;
+=09=09=09text-transform:uppercase;
+=09=09=09text-align:left;
+=09=09=09font-weight:700;
+=09=09=09padding:0;
+=09=09=09margin:0;
+=09=09}
+=09=09p{
+=09=09=09font-family:HelveticaNeue=2CHelvetica=2CArial=2Csans-serif;
+=09=09=09font-size:10px;
+=09=09=09line-height:12px;
+=09=09=09font-weight:400;
+=09=09=09text-align:left;
+=09=09}
+=09=09strong{
+=09=09=09font-family:"HelveticaNeue-CondensedBold"=2C"Helvetica Neue"=2CAr=
+ial Black=2Csans-serif;
+=09=09=09color:#F60323;
+=09=09=09letter-spacing:.2px;
+=09=09=09text-transform:uppercase;
+=09=09=09font-weight:700;
+=09=09}
+=09=09a{
+=09=09=09font-family:HelveticaNeue=2CHelvetica=2CArial=2Csans-serif;
+=09=09=09font-size:10px;
+=09=09=09line-height:12px;
+=09=09=09font-weight:400;
+=09=09=09text-align:left;
+=09=09}
+=09=09.button{
+=09=09=09font-family:"HelveticaNeue-CondensedBold"=2C"Helvetica Neue"=2CAr=
+ial Black=2Csans-serif;
+=09=09=09font-size:12px;
+=09=09=09line-height:14px;
+=09=09=09letter-spacing:1px;
+=09=09=09text-transform:uppercase;
+=09=09=09background-color:#F60323;
+=09=09=09color:#fff;
+=09=09=09text-decoration:none;
+=09=09=09font-weight:400;
+=09=09=09cursor:pointer;
+=09=09=09padding:8px 16px;
+=09=09=09display:block;
+=09=09=09margin:2em auto;
+=09=09=09width:250px;
+=09=09=09text-align:center;
+=09=09}
+=09=09.button.feature-module-button{
+=09=09=09width:188px;
+=09=09=09margin:2em 0;
+=09=09}
+=09=09.arrow-link{
+=09=09=09font-family:"HelveticaNeue-CondensedBold"=2C"Helvetica Neue"=2CAr=
+ial Black=2Csans-serif;
+=09=09=09font-size:12px;
+=09=09=09line-height:14px;
+=09=09=09letter-spacing:1px;
+=09=09=09text-transform:uppercase;
+=09=09=09color:#F60323;
+=09=09=09text-decoration:none;
+=09=09=09display:block;
+=09=09=09margin-top:36px;
+=09=09}
+=09=09body=2C#backgroundTable{
+=09=09=09background-color:#ffffff;
+=09=09}
+=09=09.preheaderContent div{
+=09=09=09color:#505050;
+=09=09=09font-family:HelveticaNeue=2CHelvetica=2CArial=2Csans-serif;
+=09=09=09font-size:10px;
+=09=09=09line-height:100%;
+=09=09=09text-align:left;
+=09=09}
+=09=09.headerContent{
+=09=09=09color:#000000;
+=09=09=09background-color:#ffffff;
+=09=09}
+=09=09#templateContainer=2C.bodyContent{
+=09=09=09background-color:#FFFFFF;
+=09=09}
+=09=09#templateFooter{
+=09=09=09background-color:#F60323;
+=09=09=09border-top:0;
+=09=09}
+=09=09.footerContent div{
+=09=09=09color:#ffffff;
+=09=09=09font-family:HelveticaNeue=2CHelvetica=2CArial=2Csans-serif;
+=09=09=09font-size:12px;
+=09=09=09line-height:15px;
+=09=09=09padding:20px 0 40px;
+=09=09}
+=09=09.footerContent div a:link=2C.footerContent div a:visited=2C.footerCo=
+ntent div a .yshortcuts{
+=09=09=09color:#ffffff;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09.footerContent img{
+=09=09=09display:inline;
+=09=09}
+=09=09#social{
+=09=09=09border:0;
+=09=09=09padding:48px 40px 0;
+=09=09=09text-align:center;
+=09=09}
+=09=09#utility{
+=09=09=09border:0;
+=09=09}
+=09=09#utility div{
+=09=09=09text-align:center;
+=09=09}
+=09=09#monkeyRewards img{
+=09=09=09max-width:190px;
+=09=09}
+=09=09.header{
+=09=09=09padding:20px 0;
+=09=09=09width:100%;
+=09=09=09margin:0 auto;
+=09=09=09text-align:center;
+=09=09=09z-index:99;
+=09=09}
+=09=09.header .header-logo{
+=09=09=09padding:0;
+=09=09=09margin:0 auto;
+=09=09=09text-align:center;
+=09=09}
+=09=09.intro-copy{
+=09=09=09text-align:center;
+=09=09=09padding:9px 20px 18px;
+=09=09}
+=09=09.body-copy{
+=09=09=09padding:24px 20px 100px;
+=09=09=09text-align:left;
+=09=09=09width:350px;
+=09=09=09margin:0 auto;
+=09=09}
+=09=09.body-copy p{
+=09=09=09margin-bottom:2em;
+=09=09}
+=09=09.body-copy.feature-module-body-copy{
+=09=09=09width:220px;
+=09=09=09padding:0 20px;
+=09=09=09margin:0;
+=09=09}
+=09=09.image-module{
+=09=09=09padding-bottom:52px;
+=09=09}
+=09=09.featured-products{
+=09=09=09padding:0 0 56px;
+=09=09}
+=09=09.featured-products-heading{
+=09=09=09font-family:"HelveticaNeue-CondensedBold"=2C"Helvetica Neue"=2CAr=
+ial Black=2Csans-serif;
+=09=09=09font-size:18px;
+=09=09=09text-transform:uppercase;
+=09=09=09color:#F60323;
+=09=09=09padding:0 20px;
+=09=09=09margin:0;
+=09=09}
+=09=09.featured-products-table{
+=09=09=09text-align:center;
+=09=09=09padding:20px;
+=09=09}
+=09=09.featured-products-table{
+=09=09=09text-align:center;
+=09=09=09padding:20px;
+=09=09}
+=09=09.product-title{
+=09=09=09display:block;
+=09=09=09width:100%;
+=09=09=09text-align:center;
+=09=09=09text-transform:uppercase;
+=09=09=09color:#000000;
+=09=09=09margin-bottom:2px;
+=09=09}
+=09=09.product-4col a{
+=09=09=09text-decoration:none;
+=09=09}
+=09=09.product-3col a{
+=09=09=09text-decoration:none;
+=09=09}
+=09=09.product-2col a{
+=09=09=09text-decoration:none;
+=09=09}
+=09=09.product-4col{
+=09=09=09width:130px;
+=09=09=09padding:0 5px;
+=09=09}
+=09=09.product-4col-image{
+=09=09=09width:130px;
+=09=09=09margin-bottom:10px;
+=09=09}
+=09=09.product-3col{
+=09=09=09width:180px;
+=09=09=09padding:0 5px;
+=09=09}
+=09=09.product-3col-image{
+=09=09=09width:180px;
+=09=09=09margin-bottom:10px;
+=09=09}
+=09=09.product-2col{
+=09=09=09width:270px;
+=09=09=09padding:0 5px;
+=09=09}
+=09=09.product-2col-image{
+=09=09=09width:270px;
+=09=09=09margin-bottom:10px;
+=09=09}
+=09=09.feature-module{
+=09=09=09padding:0 0 76px;
+=09=09}
+=09=09.footer-links-table{
+=09=09=09color:#f00;
+=09=09=09background-color:#F60323;
+=09=09}
+=09=09.footer-links{
+=09=09=09padding:20px;
+=09=09}
+=09=09.footer-link{
+=09=09=09font-family:"HelveticaNeue-CondensedBold"=2C"Helvetica Neue"=2CAr=
+ial Black=2Csans-serif;
+=09=09=09text-transform:uppercase;
+=09=09=09text-decoration:none;
+=09=09=09color:#ffffff;
+=09=09=09margin-right:20px;
+=09=09}
+=09=09.fine-print{
+=09=09=09padding:0 20px;
+=09=09=09font-size:10px;
+=09=09=09line-height:15px;
+=09=09}
+=09=09.mcnTextContentContainer{
+=09=09=09background-color:#F60323;
+=09=09=09font-size:10px;
+=09=09=09padding:16px;
+=09=09=09color:#ffffff;
+=09=09=09font-family:HelveticaNeue=2CHelvetica=2CArial=2Csans-serif;
+=09=09}
+=09=09.mcnTextContentContainer a{
+=09=09=09color:#ffffff;
+=09=09=09font-family:HelveticaNeue=2CHelvetica=2CArial=2Csans-serif;
+=09=09}
+</style></head>
+  <body leftmargin=3D"0" marginwidth=3D"0" topmargin=3D"0" marginheight=3D=
+"0" offset=3D"0" style=3D"background-color: #ffffff;font-family: Helvetica=
+Neue=2CHelvetica=2CArial=2Csans-serif;color: #000;-webkit-text-size-adjust=
+: none;margin: 0;padding: 0;width: 100% !important;">
+    <center>
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100=
+%" id=3D"backgroundTable" style=3D"height: 100%;margin: 0;padding: 0;backg=
+round-color: #ffffff;width: 100% !important;">
+        <tr>
+          <td align=3D"center" valign=3D"top" style=3D"border-collapse: co=
+llapse;">
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"600" id=3D"templateContainer" style=3D"background-color: #FFFFFF;">
+              <tr>
+                <td align=3D"center" valign=3D"top" style=3D"border-collap=
+se: collapse;">
+                  <table align=3D"left" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" width=3D"600" class=3D"mcnTextContentContainer" style=3D"ba=
+ckground-color: #F60323;font-size: 10px;padding: 16px;color: #ffffff;font-=
+family: HelveticaNeue=2CHelvetica=2CArial=2Csans-serif;">
+                    <tbody>
+                      <tr>
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"max-width: 390px;border-collapse: collapse;" width=3D"390">Shop our Li=
+ghtweight and Midweight Vests<br>
+Free Shipping on Orders $95+</td>
+                        <td valign=3D"top" class=3D"mcnTextContent" width=
+=3D"210" style=3D"padding-top: 0;padding-left: 18px;text-align: right;bord=
+er-collapse: collapse;">
+                          <a href=3D"https://mailchi.mp/boastusa/vests-301=
+187?e=3Dc5f8cdfa4f" target=3D"_blank" style=3D"font-family: HelveticaNeue=2C=
+Helvetica=2CArial=2Csans-serif;font-size: 10px;line-height: 12px;font-weig=
+ht: 400;text-align: left;color: #ffffff;">View this email in your browser<=
+/a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!-- // Begin Template Header \\ -->
+                  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ width=3D"600" id=3D"templateHeader">
+                    <tr>
+                      <td class=3D"headerContent" style=3D"border-collapse=
+: collapse;color: #000000;background-color: #ffffff;">
+                        <div class=3D"header" style=3D"padding: 20px 0;wid=
+th: 100%;margin: 0 auto;text-align: center;z-index: 99;">
+                          <div class=3D"header-logo" style=3D"padding: 0;m=
+argin: 0 auto;text-align: center;">
+                            <a href=3D"https://boastusa.us10.list-manage.c=
+om/track/click?u=3D9c28cb0c6acb6cbbc078e4c4b&id=3D480129537e&e=3Dc5f8cdfa4f" target=3D"_blank" style=3D"font-family: HelveticaNeue=2CHelvetica=2CAr=
+ial=2Csans-serif;font-size: 10px;line-height: 12px;font-weight: 400;text-a=
+lign: left;">
+                              <img src=3D"https://gallery.mailchimp.com/9c=
+28cb0c6acb6cbbc078e4c4b/images/6a666b8c-1eb4-4f9a-bcd8-7d261e8e558b.png" w=
+idth=3D"150" alt=3D"BOAST" style=3D"border: 0;height: auto;line-height: 10=
+0%;outline: none;text-decoration: none;"></a>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                    <!-- // End Template Header \\ -->
+                  </td>
+                </tr>
+                <tr>
+                  <td align=3D"center" valign=3D"top" style=3D"border-coll=
+apse: collapse;">
+                    <!-- // Begin Template Body \\ -->
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" width=3D"600" id=3D"templateBody">
+                      <tr>
+                        <td colspan=3D"1" valign=3D"top" class=3D"bodyCont=
+ent" style=3D"border-collapse: collapse;background-color: #FFFFFF;">
+                          <!-- // Begin Module: Standard Content \\ -->
+                          <table border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" width=3D"600">
+                            <tr>
+                              <td valign=3D"top" width=3D"600" style=3D"bo=
+rder-collapse: collapse;">
+                                <div class=3D"intro-copy" style=3D"text-al=
+ign: center;padding: 9px 20px 18px;">
+                                  <h1 style=3D"font-family: &quot;Helvetic=
+aNeue-CondensedBold&quot;=2C&quot;Helvetica Neue&quot;=2CArial Black=2Csan=
+s-serif;font-size: 26px;line-height: 28px;letter-spacing: .21px;color: #F6=
+0323;text-transform: uppercase;text-align: left;font-weight: 700;padding:=
+ 0;margin: 0;"><div style=3D"text-align: center;">invest in your spring wa=
+rdrobe</div>
+</h1>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr mc:repeatable=3D"repeat_1" mc:variant=3D"I=
+mage Module" mc:repeatindex=3D"0">
+                              <td valign=3D"top" width=3D"600" class=3D"im=
+age-module" style=3D"border-collapse: collapse;padding-bottom: 52px;">
+                                <div>
+                                  <div style=3D"text-align: center;"><a hr=
+ef=3D"https://boastusa.us10.list-manage.com/track/click?u=3D9c28cb0c6acb6c=
+bbc078e4c4b&id=3Dea0362b923&e=3Dc5f8cdfa4f" target=3D"_blank" style=3D"fo=
+nt-family: HelveticaNeue=2CHelvetica=2CArial=2Csans-serif;font-size: 10px;=
+line-height: 12px;font-weight: 400;text-align: left;"><img src=3D"https://=
+mcusercontent.com/9c28cb0c6acb6cbbc078e4c4b/images/faa2dd61-10bc-40cc-ce3b=
+-a4c661ee8705.jpg" alt=3D"" border=3D"0" style=3D"margin: 0;padding: 0;max=
+-width: 600px;width: 600px;border: 0;height: auto;line-height: 100%;outlin=
+e: none;text-decoration: none;" width=3D"600"></a></div>
+                                  <div class=3D"cta"><a class=3D"button" h=
+ref=3D"https://boastusa.us10.list-manage.com/track/click?u=3D9c28cb0c6acb6=
+cbbc078e4c4b&id=3D3c057f5723&e=3Dc5f8cdfa4f" target=3D"_blank" style=3D"f=
+ont-family: &quot;HelveticaNeue-CondensedBold&quot;=2C&quot;Helvetica Neue=
+&quot;=2CArial Black=2Csans-serif;font-size: 12px;line-height: 14px;font-w=
+eight: 400;text-align: center;letter-spacing: 1px;text-transform: uppercas=
+e;background-color: #F60323;color: #fff;text-decoration: none;cursor: poin=
+ter;padding: 8px 16px;display: block;margin: 2em auto;width: 250px;">Shop=
+ Now</a></div>
+                                </div>
+                              </td>
+                            </tr><tr mc:repeatable=3D"repeat_1" mc:variant=
+=3D"Image Module" mc:repeatindex=3D"1">
+                              <td valign=3D"top" width=3D"600" class=3D"im=
+age-module" style=3D"border-collapse: collapse;padding-bottom: 52px;">
+                                <div>
+                                  <a href=3D"https://boastusa.us10.list-ma=
+nage.com/track/click?u=3D9c28cb0c6acb6cbbc078e4c4b&id=3D0ebb37aa5a&e=3Dc5f8cdfa4f" target=3D"_blank" style=3D"font-family: HelveticaNeue=2CHelvetic=
+a=2CArial=2Csans-serif;font-size: 10px;line-height: 12px;font-weight: 400;=
+text-align: left;"><img src=3D"https://mcusercontent.com/9c28cb0c6acb6cbbc=
+078e4c4b/images/aa52a9f2-ebd9-6840-7e47-7abf32f215ac.jpg" alt=3D"" border=
+=3D"0" style=3D"margin: 0;padding: 0;max-width: 600px;width: 600px;border:=
+ 0;height: auto;line-height: 100%;outline: none;text-decoration: none;" wi=
+dth=3D"600"></a>
+                                  <div class=3D"cta"></div>
+                                </div>
+                              </td>
+                            </tr><tr mc:repeatable=3D"repeat_1" mc:variant=
+=3D"Image Module" mc:repeatindex=3D"2">
+                              <td valign=3D"top" width=3D"600" class=3D"im=
+age-module" style=3D"border-collapse: collapse;padding-bottom: 52px;">
+                                <div>
+                                  <a href=3D"https://boastusa.us10.list-ma=
+nage.com/track/click?u=3D9c28cb0c6acb6cbbc078e4c4b&id=3Dd1493abbc3&e=3Dc5f8cdfa4f" target=3D"_blank" style=3D"font-family: HelveticaNeue=2CHelvetic=
+a=2CArial=2Csans-serif;font-size: 10px;line-height: 12px;font-weight: 400;=
+text-align: left;"><img src=3D"https://mcusercontent.com/9c28cb0c6acb6cbbc=
+078e4c4b/images/dd3ee485-25bd-8a5f-fb17-a095250283e7.png" alt=3D"" border=
+=3D"0" style=3D"margin: 0;padding: 0;max-width: 600px;width: 600px;border:=
+ 0;height: auto;line-height: 100%;outline: none;text-decoration: none;" wi=
+dth=3D"600"></a>
+                                  <div class=3D"cta"></div>
+                                </div>
+                              </td>
+                            </tr><tr mc:repeatable=3D"repeat_1" mc:variant=
+=3D"Featured Products 2 col Module" mc:repeatindex=3D"3">
+                              <td valign=3D"top" width=3D"600" class=3D"fe=
+atured-products" style=3D"border-collapse: collapse;padding: 0 0 56px;">
+                                <h3 class=3D"featured-products-heading" st=
+yle=3D"font-family: &quot;HelveticaNeue-CondensedBold&quot;=2C&quot;Helvet=
+ica Neue&quot;=2CArial Black=2Csans-serif;font-size: 18px;text-transform:=
+ uppercase;color: #F60323;padding: 0 20px;margin: 0;"></h3>
+                                <table class=3D"featured-products-table" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"560" style=3D"height: 100px;te=
+xt-align: center;padding: 20px;">
+                                  <tbody>
+                                    <tr>
+                                      <td width=3D"280" valign=3D"middle"=
+ style=3D"border-collapse: collapse;">
+                                        <div class=3D"product-2col" style=
+=3D"width: 270px;padding: 0 5px;"><a href=3D"https://boastusa.us10.list-ma=
+nage.com/track/click?u=3D9c28cb0c6acb6cbbc078e4c4b&id=3Dec6881c0a9&e=3Dc5f8cdfa4f" style=3D"font-family: HelveticaNeue=2CHelvetica=2CArial=2Csans-s=
+erif;font-size: 10px;line-height: 12px;font-weight: 400;text-align: left;t=
+ext-decoration: none;"><img border=3D"0" class=3D"product-2col-image" data=
+-file-id=3D"626290" height=3D"320" src=3D"https://mcusercontent.com/9c28cb=
+0c6acb6cbbc078e4c4b/images/eab9bcde-f347-4066-4525-f68df1a3572c.jpg" style=
+=3D"border: 0px;width: 267px;height: 320px;margin: 0px;line-height: 100%;o=
+utline: none;text-decoration: none;margin-bottom: 10px;" width=3D"267"><sp=
+an class=3D"product-title" style=3D"display: block;width: 100%;text-align:=
+ center;text-transform: uppercase;color: #000000;margin-bottom: 2px;">NAVY=
+ BLAZER</span> </a></div>
+                                      </td>
+                                      <td width=3D"280" valign=3D"middle"=
+ style=3D"border-collapse: collapse;">
+                                        <div class=3D"product-2col" style=
+=3D"width: 270px;padding: 0 5px;"><a href=3D"https://boastusa.us10.list-ma=
+nage.com/track/click?u=3D9c28cb0c6acb6cbbc078e4c4b&id=3De001ba65e1&e=3Dc5f8cdfa4f" style=3D"font-family: HelveticaNeue=2CHelvetica=2CArial=2Csans-s=
+erif;font-size: 10px;line-height: 12px;font-weight: 400;text-align: left;t=
+ext-decoration: none;"><img border=3D"0" class=3D"product-2col-image" data=
+-file-id=3D"626294" height=3D"320" src=3D"https://mcusercontent.com/9c28cb=
+0c6acb6cbbc078e4c4b/images/4d93f5cb-ef9e-38bc-84ef-0633bf6773bf.jpg" style=
+=3D"border: 0px;width: 267px;height: 320px;margin: 0px;line-height: 100%;o=
+utline: none;text-decoration: none;margin-bottom: 10px;" width=3D"267"><sp=
+an class=3D"product-title" style=3D"display: block;width: 100%;text-align:=
+ center;text-transform: uppercase;color: #000000;margin-bottom: 2px;">BOAS=
+T RED</span> </a></div>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr><tr mc:repeatable=3D"repeat_1" mc:variant=
+=3D"Featured Products 2 col Module" mc:repeatindex=3D"4">
+                              <td valign=3D"top" width=3D"600" class=3D"fe=
+atured-products" style=3D"border-collapse: collapse;padding: 0 0 56px;">
+                                <h3 class=3D"featured-products-heading" st=
+yle=3D"font-family: &quot;HelveticaNeue-CondensedBold&quot;=2C&quot;Helvet=
+ica Neue&quot;=2CArial Black=2Csans-serif;font-size: 18px;text-transform:=
+ uppercase;color: #F60323;padding: 0 20px;margin: 0;"></h3>
+                                <table class=3D"featured-products-table" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"560" style=3D"height: 100px;te=
+xt-align: center;padding: 20px;">
+                                  <tbody>
+                                    <tr>
+                                      <td width=3D"280" valign=3D"middle"=
+ style=3D"border-collapse: collapse;">
+                                        <div class=3D"product-2col" style=
+=3D"width: 270px;padding: 0 5px;"><a href=3D"https://boastusa.us10.list-ma=
+nage.com/track/click?u=3D9c28cb0c6acb6cbbc078e4c4b&id=3D314517905c&e=3Dc5f8cdfa4f" style=3D"font-family: HelveticaNeue=2CHelvetica=2CArial=2Csans-s=
+erif;font-size: 10px;line-height: 12px;font-weight: 400;text-align: left;t=
+ext-decoration: none;"><img border=3D"0" class=3D"product-2col-image" data=
+-file-id=3D"627295" height=3D"320" src=3D"https://mcusercontent.com/9c28cb=
+0c6acb6cbbc078e4c4b/images/83c7d416-2cbb-72ff-1137-144555ed814a.png" style=
+=3D"border: 0px initial;width: 267px;height: 320px;margin: 0px;line-height=
+: 100%;outline: none;text-decoration: none;margin-bottom: 10px;" width=3D"=
+267"><span class=3D"product-title" style=3D"display: block;width: 100%;tex=
+t-align: center;text-transform: uppercase;color: #000000;margin-bottom: 2p=
+x;">vintage navy<br>
+navy leaf</span> </a></div>
+                                      </td>
+                                      <td width=3D"280" valign=3D"middle"=
+ style=3D"border-collapse: collapse;">
+                                        <div class=3D"product-2col" style=
+=3D"width: 270px;padding: 0 5px;"><a href=3D"https://boastusa.us10.list-ma=
+nage.com/track/click?u=3D9c28cb0c6acb6cbbc078e4c4b&id=3Dbb37916d15&e=3Dc5f8cdfa4f" style=3D"font-family: HelveticaNeue=2CHelvetica=2CArial=2Csans-s=
+erif;font-size: 10px;line-height: 12px;font-weight: 400;text-align: left;t=
+ext-decoration: none;"><img border=3D"0" class=3D"product-2col-image" data=
+-file-id=3D"627287" height=3D"320" src=3D"https://mcusercontent.com/9c28cb=
+0c6acb6cbbc078e4c4b/images/98d5816e-5633-832c-fef1-ba9dc8d86053.png" style=
+=3D"border: 0px initial;width: 267px;height: 320px;margin: 0px;line-height=
+: 100%;outline: none;text-decoration: none;margin-bottom: 10px;" width=3D"=
+267"><span class=3D"product-title" style=3D"display: block;width: 100%;tex=
+t-align: center;text-transform: uppercase;color: #000000;margin-bottom: 2p=
+x;">storm grey<br>
+navy leaf</span> </a></div>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr><tr mc:repeatable=3D"repeat_1" mc:variant=
+=3D"Image Module" mc:repeatindex=3D"5">
+                              <td valign=3D"top" width=3D"600" class=3D"im=
+age-module" style=3D"border-collapse: collapse;padding-bottom: 52px;">
+                                <div>
+                                  <img src=3D"https://mcusercontent.com/9c=
+28cb0c6acb6cbbc078e4c4b/images/881b2e8e-22c1-2124-515d-ed68f6cc2902.png" a=
+lt=3D"" border=3D"0" style=3D"margin: 0;padding: 0;max-width: 600px;width:=
+ 600px;border: 0;height: auto;line-height: 100%;outline: none;text-decorat=
+ion: none;" width=3D"600">
+                                  <div class=3D"cta"></div>
+                                </div>
+                              </td>
+                            </tr><tr mc:repeatable=3D"repeat_1" mc:variant=
+=3D"Featured Products 2 col Module" mc:repeatindex=3D"6">
+                              <td valign=3D"top" width=3D"600" class=3D"fe=
+atured-products" style=3D"border-collapse: collapse;padding: 0 0 56px;">
+                                <h3 class=3D"featured-products-heading" st=
+yle=3D"font-family: &quot;HelveticaNeue-CondensedBold&quot;=2C&quot;Helvet=
+ica Neue&quot;=2CArial Black=2Csans-serif;font-size: 18px;text-transform:=
+ uppercase;color: #F60323;padding: 0 20px;margin: 0;"></h3>
+                                <table class=3D"featured-products-table" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"560" style=3D"height: 100px;te=
+xt-align: center;padding: 20px;">
+                                  <tbody>
+                                    <tr>
+                                      <td width=3D"280" valign=3D"middle"=
+ style=3D"border-collapse: collapse;">
+                                        <div class=3D"product-2col" style=
+=3D"width: 270px;padding: 0 5px;"><a href=3D"https://boastusa.us10.list-ma=
+nage.com/track/click?u=3D9c28cb0c6acb6cbbc078e4c4b&id=3D6eab8879f4&e=3Dc5f8cdfa4f" style=3D"font-family: HelveticaNeue=2CHelvetica=2CArial=2Csans-s=
+erif;font-size: 10px;line-height: 12px;font-weight: 400;text-align: left;t=
+ext-decoration: none;"><img border=3D"0" class=3D"product-2col-image" data=
+-file-id=3D"627291" height=3D"320" src=3D"https://mcusercontent.com/9c28cb=
+0c6acb6cbbc078e4c4b/images/cb10053a-5b71-50fb-6e4c-1ec0fffde0d2.png" style=
+=3D"border: 0px initial;width: 267px;height: 320px;margin: 0px;line-height=
+: 100%;outline: none;text-decoration: none;margin-bottom: 10px;" width=3D"=
+267"><span class=3D"product-title" style=3D"display: block;width: 100%;tex=
+t-align: center;text-transform: uppercase;color: #000000;margin-bottom: 2p=
+x;">storm grey<br>
+Boast</span> </a></div>
+                                      </td>
+                                      <td width=3D"280" valign=3D"middle"=
+ style=3D"border-collapse: collapse;">
+                                        <div class=3D"product-2col" style=
+=3D"width: 270px;padding: 0 5px;"><a href=3D"https://boastusa.us10.list-ma=
+nage.com/track/click?u=3D9c28cb0c6acb6cbbc078e4c4b&id=3D690bd6d95c&e=3Dc5f8cdfa4f" style=3D"font-family: HelveticaNeue=2CHelvetica=2CArial=2Csans-s=
+erif;font-size: 10px;line-height: 12px;font-weight: 400;text-align: left;t=
+ext-decoration: none;"><img border=3D"0" class=3D"product-2col-image" data=
+-file-id=3D"627299" height=3D"320" src=3D"https://mcusercontent.com/9c28cb=
+0c6acb6cbbc078e4c4b/images/6a5f0676-d16c-6824-ce52-a2ff246d1b5a.png" style=
+=3D"border: 0px initial;width: 267px;height: 320px;margin: 0px;line-height=
+: 100%;outline: none;text-decoration: none;margin-bottom: 10px;" width=3D"=
+267"><span class=3D"product-title" style=3D"display: block;width: 100%;tex=
+t-align: center;text-transform: uppercase;color: #000000;margin-bottom: 2p=
+x;">vintage navy<br>
+boast</span> </a></div>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr><tr mc:repeatable=3D"repeat_1" mc:variant=
+=3D"Image Module" mc:repeatindex=3D"7">
+                              <td valign=3D"top" width=3D"600" class=3D"im=
+age-module" style=3D"border-collapse: collapse;padding-bottom: 52px;">
+                                <div>
+                                  <a href=3D"https://boastusa.us10.list-ma=
+nage.com/track/click?u=3D9c28cb0c6acb6cbbc078e4c4b&id=3D49a4a49308&e=3Dc5f8cdfa4f" target=3D"_blank" style=3D"font-family: HelveticaNeue=2CHelvetic=
+a=2CArial=2Csans-serif;font-size: 10px;line-height: 12px;font-weight: 400;=
+text-align: left;"><img src=3D"https://mcusercontent.com/9c28cb0c6acb6cbbc=
+078e4c4b/images/64c27f48-fe72-585b-7849-a37f5293b4b8.png" alt=3D"" border=
+=3D"0" style=3D"margin: 0;padding: 0;max-width: 600px;width: 600px;border:=
+ 0;height: auto;line-height: 100%;outline: none;text-decoration: none;" wi=
+dth=3D"600"></a>
+                                  <div class=3D"cta"></div>
+                                </div>
+                              </td>
+                            </tr><tr mc:repeatable=3D"repeat_1" mc:variant=
+=3D"Image Module" mc:repeatindex=3D"8">
+                              <td valign=3D"top" width=3D"600" class=3D"im=
+age-module" style=3D"border-collapse: collapse;padding-bottom: 52px;">
+                                <div>
+                                  <a href=3D"https://boastusa.us10.list-ma=
+nage.com/track/click?u=3D9c28cb0c6acb6cbbc078e4c4b&id=3Dcac87a3170&e=3Dc5f8cdfa4f" target=3D"_blank" style=3D"font-family: HelveticaNeue=2CHelvetic=
+a=2CArial=2Csans-serif;font-size: 10px;line-height: 12px;font-weight: 400;=
+text-align: left;"><img src=3D"https://mcusercontent.com/9c28cb0c6acb6cbbc=
+078e4c4b/images/329377ae-a2b2-e3a2-23af-454849621dee.jpg" alt=3D"" border=
+=3D"0" style=3D"margin: 0;padding: 0;max-width: 600px;width: 600px;border:=
+ 0;height: auto;line-height: 100%;outline: none;text-decoration: none;" wi=
+dth=3D"600"></a>
+                                  <div class=3D"cta"><a class=3D"button" h=
+ref=3D"https://boastusa.us10.list-manage.com/track/click?u=3D9c28cb0c6acb6=
+cbbc078e4c4b&id=3D9f20c5968b&e=3Dc5f8cdfa4f" target=3D"_blank" style=3D"f=
+ont-family: &quot;HelveticaNeue-CondensedBold&quot;=2C&quot;Helvetica Neue=
+&quot;=2CArial Black=2Csans-serif;font-size: 12px;line-height: 14px;font-w=
+eight: 400;text-align: center;letter-spacing: 1px;text-transform: uppercas=
+e;background-color: #F60323;color: #fff;text-decoration: none;cursor: poin=
+ter;padding: 8px 16px;display: block;margin: 2em auto;width: 250px;">Shop=
+ Now</a></div>
+                                </div>
+                              </td>
+                            </tr>
+
+
+
+
+
+                          </table>
+                          <!-- // End Module: Standard Content \\ -->
+                        </td>
+                      </tr>
+                    </table>
+                    <!-- // End Template Body \\ -->
+                  </td>
+                </tr>
+                <tr>
+                  <td align=3D"center" valign=3D"top" style=3D"border-coll=
+apse: collapse;">
+                    <!-- // Begin Template Footer \\ -->
+                    <table class=3D"footer-links-table" width=3D"600" styl=
+e=3D"color: #f00;background-color: #F60323;">
+                      <tbody>
+                        <tr>
+                          <td class=3D"footer-links" style=3D"border-colla=
+pse: collapse;padding: 20px;">
+                            <a href=3D"https://boastusa.us10.list-manage.c=
+om/track/click?u=3D9c28cb0c6acb6cbbc078e4c4b&id=3D9174b08f2b&e=3Dc5f8cdfa4f" target=3D"_blank" class=3D"footer-link" style=3D"font-family: &quot;He=
+lveticaNeue-CondensedBold&quot;=2C&quot;Helvetica Neue&quot;=2CArial Black=
+=2Csans-serif;font-size: 10px;line-height: 12px;font-weight: 400;text-alig=
+n: left;text-transform: uppercase;text-decoration: none;color: #ffffff;mar=
+gin-right: 20px;">Shop All</a>
+                            <a href=3D"https://boastusa.us10.list-manage.c=
+om/track/click?u=3D9c28cb0c6acb6cbbc078e4c4b&id=3Da6b2804488&e=3Dc5f8cdfa4f" target=3D"_blank" class=3D"footer-link" style=3D"font-family: &quot;He=
+lveticaNeue-CondensedBold&quot;=2C&quot;Helvetica Neue&quot;=2CArial Black=
+=2Csans-serif;font-size: 10px;line-height: 12px;font-weight: 400;text-alig=
+n: left;text-transform: uppercase;text-decoration: none;color: #ffffff;mar=
+gin-right: 20px;">Journal</a>
+                            <a href=3D"https://boastusa.us10.list-manage.c=
+om/track/click?u=3D9c28cb0c6acb6cbbc078e4c4b&id=3D51fbc20353&e=3Dc5f8cdfa4f" target=3D"_blank" class=3D"footer-link" style=3D"font-family: &quot;He=
+lveticaNeue-CondensedBold&quot;=2C&quot;Helvetica Neue&quot;=2CArial Black=
+=2Csans-serif;font-size: 10px;line-height: 12px;font-weight: 400;text-alig=
+n: left;text-transform: uppercase;text-decoration: none;color: #ffffff;mar=
+gin-right: 20px;">About</a>
+                            <a href=3D"https://boastusa.us10.list-manage.c=
+om/track/click?u=3D9c28cb0c6acb6cbbc078e4c4b&id=3D8a510f4712&e=3Dc5f8cdfa4f" target=3D"_blank" class=3D"footer-link" style=3D"font-family: &quot;He=
+lveticaNeue-CondensedBold&quot;=2C&quot;Helvetica Neue&quot;=2CArial Black=
+=2Csans-serif;font-size: 10px;line-height: 12px;font-weight: 400;text-alig=
+n: left;text-transform: uppercase;text-decoration: none;color: #ffffff;mar=
+gin-right: 20px;">Instagram</a>
+                            <a href=3D"https://boastusa.us10.list-manage.c=
+om/track/click?u=3D9c28cb0c6acb6cbbc078e4c4b&id=3Debedab11d6&e=3Dc5f8cdfa4f" target=3D"_blank" class=3D"footer-link" style=3D"font-family: &quot;He=
+lveticaNeue-CondensedBold&quot;=2C&quot;Helvetica Neue&quot;=2CArial Black=
+=2Csans-serif;font-size: 10px;line-height: 12px;font-weight: 400;text-alig=
+n: left;text-transform: uppercase;text-decoration: none;color: #ffffff;mar=
+gin-right: 20px;">Facebook</a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" width=3D"600" id=3D"templateFooter" style=3D"background-color: #F60323;b=
+order-top: 0;">
+                      <tr>
+                        <td valign=3D"top" class=3D"footerContent" style=
+=3D"border-collapse: collapse;">
+                          <!-- // Begin Module: Standard Footer \\ -->
+                          <table border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" width=3D"100%">
+                            <tr>
+                              <td valign=3D"middle" id=3D"utility" style=
+=3D"border-collapse: collapse;border: 0;">
+                                <div style=3D"color: #ffffff;font-family:=
+ HelveticaNeue=2CHelvetica=2CArial=2Csans-serif;font-size: 12px;line-heigh=
+t: 15px;padding: 20px 0 40px;text-align: center;"><p class=3D"fine-print"=
+ style=3D"font-family: HelveticaNeue=2CHelvetica=2CArial=2Csans-serif;font=
+-size: 10px;line-height: 15px;font-weight: 400;text-align: left;padding: 0=
+ 20px;">BOAST was founded in 1973 as the American answer to traditional Eu=
+ropean Tennis brands. Inspired by the rebels and icons of the era=2C Boast=
+ celebrates the convergence of sport and culture. Our logo=2C a Japanese M=
+aple Leaf=2C embodies this ideal.</p>
+
+<p class=3D"fine-print" style=3D"font-family: HelveticaNeue=2CHelvetica=2C=
+Arial=2Csans-serif;font-size: 10px;line-height: 15px;font-weight: 400;text=
+-align: left;padding: 0 20px;">&copy; All Rights Reserved 2023</p>
+
+<p class=3D"fine-print" style=3D"font-family: HelveticaNeue=2CHelvetica=2C=
+Arial=2Csans-serif;font-size: 10px;line-height: 15px;font-weight: 400;text=
+-align: left;padding: 0 20px;"><br>
+ Because you enjoy the laid back comfortable lifestyle both on and off the=
+ court. We would like to thank you for joining our mailing list. <a href=
+=3D"https://boastusa.us10.list-manage.com/unsubscribe?u=3D9c28cb0c6acb6cbb=
+c078e4c4b&id=3D1af15dc3a2&e=3Dc5f8cdfa4f&c=3Dc2caf4d966" style=3D"font-famil=
+y: HelveticaNeue=2CHelvetica=2CArial=2Csans-serif;font-size: 10px;line-hei=
+ght: 12px;font-weight: normal;text-align: left;color: #ffffff;text-decorat=
+ion: underline;">Unsubscribe.</a><br>
+<br>
+Our mailing address is:<br>
+BOAST
+49 Locust Avenue
+107
+New Canaan=2C CT 06840
+USA
+</p>
+</div>
+                                </td>
+                              </tr>
+                            </table>
+                            <!-- // End Module: Standard Footer \\ -->
+                          </td>
+                        </tr>
+                      </table>
+                      <!-- // End Template Footer \\ -->
+                    </td>
+                  </tr>
+                </table>
+                <br>
+              </td>
+            </tr>
+          </table>
+        </center>
+      <img src=3D"https://boastusa.us10.list-manage.com/track/open.php?u=
+=3D9c28cb0c6acb6cbbc078e4c4b&id=3Dc2caf4d966&e=3Dc5f8cdfa4f" height=3D"1"=
+ width=3D"1" alt=3D""></body>
+</html>
+--_----------=_MCPart_88352052--

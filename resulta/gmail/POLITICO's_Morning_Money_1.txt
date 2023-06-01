@@ -1,0 +1,388 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp833188ims;
+        Wed, 31 May 2023 05:07:03 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ4P3CVTzT2mQMPVhVQNiW470JXhuqZ/Vw7dQW4P+FwLg53pYPgNHsgmjflwe2B+EKKVQdMN
+X-Received: by 2002:a05:6808:1a1d:b0:398:12d4:c0c3 with SMTP id bk29-20020a0568081a1d00b0039812d4c0c3mr3360714oib.50.1685534822762;
+        Wed, 31 May 2023 05:07:02 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685534822; cv=none;
+        d=google.com; s=arc-20160816;
+        b=1HJ3Rh6RZDtFpsVvMxj6ABCo4ALBbPDNEMI34uIuLuG3uqVOBP0ahpdKQpqLGSK0L/
+         YD5ED3kvZjqA6uNgwk2hgUTrMfO7YB2S3qAhgHI6F8ToimeLfvwPBUyjU7q9lThJcK8P
+         DKiRg2w/Fy0t3q8yKtOK9AqzdKY7lRXPxiniHshm5Im/C3huiHE2HiC2RjF8igoOPxc1
+         TNof/F7bRl4ztib7GWMHIZev+Q6YUP3NQdErTcO4jx0OHfFWPWlUItkCejaOiZjlzr/T
+         F1sIqvfJTDNZMuKxz7Vtso0Sk2yEewmxYobFIo87OzWWsBW9A4eaGeG3J8/nQNJAmOeo
+         3GsQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:list-id:reply-to:mime-version
+         :list-unsubscribe-post:list-unsubscribe:date:subject:to:from
+         :dkim-signature;
+        bh=5aIg/al2gDNj3wN5nCLi54W8BIPCCAoaV/q2r7UdEeA=;
+        b=Yo3yaTn4an5boc0z8wI9NZlwM6xzd5Ajbfe3tS7HssfgbWUlNk3zEa8ZqNWsBIAWwv
+         aVEci+hvvW1x/m3YVyDKRTAI8QoqVhMu3C8d1HO+gO+rG/1/pqqH56sDyiRVo2QagZ+I
+         YzB44W3KzRwu7s6RiZBGN2dJIiW+r/SVRhgQDmkwedDTOeEygYgjjg/wypblqpkTaQL0
+         gjmkuELvNeTXgQQKgPoYgc8A0ppRfxbuUp2wc9hocBiA3ce28f+0K1PedFXY5DrmRBpG
+         0WKaVUA9gOwn3kfzHr5LBGuzUH2lqLsHOvspGBq68qNk2MuoLc8y3vmOim+BqFrPgyaU
+         wZEw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.politico.com header.s=200608 header.b=EvJBdLFr;
+       spf=pass (google.com: domain of bounce-630314_html-1405096349-9802392-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) smtp.mailfrom=bounce-630314_HTML-1405096349-9802392-1376319-0@bounce.politicoemail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.politico.com
+Return-Path: <bounce-630314_HTML-1405096349-9802392-1376319-0@bounce.politicoemail.com>
+Received: from mta.politicoemail.com (mta.politicoemail.com. [68.232.198.10])
+        by mx.google.com with ESMTPS id o62-20020acaf041000000b0039a2fcaef87si561364oih.115.2023.05.31.05.07.02
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 31 May 2023 05:07:02 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-630314_html-1405096349-9802392-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) client-ip=68.232.198.10;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.politico.com header.s=200608 header.b=EvJBdLFr;
+       spf=pass (google.com: domain of bounce-630314_html-1405096349-9802392-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) smtp.mailfrom=bounce-630314_HTML-1405096349-9802392-1376319-0@bounce.politicoemail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.politico.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=200608; d=email.politico.com;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Reply-To:List-ID:X-CSA-Complaints:Message-ID:Content-Type;
+ i=morningmoney@email.politico.com;
+ bh=5aIg/al2gDNj3wN5nCLi54W8BIPCCAoaV/q2r7UdEeA=;
+ b=EvJBdLFrngMkL5s8yZ5pEnWiFeF0c5fFSclsDgsfmexV0r+3PbWlVP75UAu4OiyPNs5jemU0j2dO
+   /3r5WfcaTiAkp4NG2GS4Wj0x1LmeOupuAYo6dtdvkvcz6iHRHx0fPzrpC33Za92TLdAoB5YRdvao
+   HzkD6DIHMkfFGP0siNo=
+Received: by mta.politicoemail.com id hess6c2fmd47 for <ouchendans62@gmail.com>; Wed, 31 May 2023 12:02:32 +0000 (envelope-from <bounce-630314_HTML-1405096349-9802392-1376319-0@bounce.politicoemail.com>)
+From: "POLITICO's Morning Money" <morningmoney@email.politico.com>
+To: <ouchendans62@gmail.com>
+Subject: =?UTF-8?B?V2FsbCBTdHJlZXTigJlzIG5leHQgZGVidC1saW1pdCBkcmFtYQ==?=
+Date: Wed, 31 May 2023 06:02:32 -0600
+List-Unsubscribe: <https://click.politicoemail.com/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiIxMzc2MzE5IiwicyI6IjE0MDUwOTYzNDkiLCJsaWQiOiI2MzAzMTQiLCJqIjoiOTgwMjM5MiIsImpiIjoiMCIsImQiOiI0MDEyOCJ9.05SDQPoGiAg0l3sm9DfQ2li-LRf_vkkuCcMJvATK410>, <mailto:leave-fcba1273756705791a4c342838-fdf61574756104747317747c-fe8e1d787566077477-fe9115737262077c7c-ffcf14@leave.politicoemail.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+Reply-To: "POLITICO, LLC" <reply-fe8e1d787566077477-630314_HTML-1405096349-1376319-0@politicoemail.com>
+List-ID: <1376319.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+X-SFMC-Stack: 4
+x-job: 1376319_9802392
+Message-ID: <0d00f36b-63f5-4661-853c-aaf21fe675e3@las1s04mta1076.xt.local>
+Feedback-ID: 1376319:9802392:68.232.198.10:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="Jqwp2oWHMbgk=_?:"
+
+This is a multi-part message in MIME format.
+
+--Jqwp2oWHMbgk=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Delivered daily by 8 a.m., Morning Money examines the latest news in finance politics and policy.  May 31, 2023 View in browser  
+By Zachary Warmbrodt
+
+Editor’s note: Morning Money is a free version of POLITICO Pro Financial Services morning newsletter, which is delivered to our subscribers each morning at 5:15 a.m. The POLITICO Pro platform combines the news you need with tools you can use to take action on the day’s biggest stories. Act on the news with POLITICO Pro.
+
+
+
+ Let’s assume that by this time next week Congress will have passed a debt-ceiling increase. Default won’t be a worry until 2025. Markets are already rejoicing.
+
+But it could still be a bumpy summer.
+
+The Treasury Department in the coming months will need to raise about $1 trillion in cash. The surge will come from a huge issuance of short-term debt.
+
+Finding a home for that debt could put stress on the plumbing of the financial system and on banks in particular.
+
+The reason for the potential turbulence, as our Victoria Guida lays out in a new story, is two-fold. It may encourage businesses to park money in U.S. debt rather than banks. It may also suck money out of the financial system by reducing the amount of reserves that lenders have access to at the Fed. It all could squeeze banks' ability to lend.
+
+The private-sector committee that advises Treasury on borrowing recently encouraged the department to keep tabs on potential market stress as it replenishes its cash balance.
+
+“Even if we assume that history repeats itself, and the debt limit is raised at the last minute, the current risks in the banking system will be amplified,” Morgan Stanley global chief economist Seth Carpenter, a former Treasury and Fed official, wrote in a note to clients.
+
+It’s Wednesday — What debt-limit angles are we missing? Let us know: Zach Warmbrodt, Sam Sutton.
+
+  
+GET READY FOR GLOBAL TECH DAY: Join POLITICO Live as we launch our first Global Tech Day alongside London Tech Week on Thursday, June 15. Register now for continuing updates and to be a part of this momentous and program-packed day! From the blockchain, to AI, and autonomous vehicles, technology is changing how power is exercised around the world, so who will write the rules? REGISTER HERE.
+     Driving the day
+Fed Gov. Michelle Bowman speaks at a “Fed Listens” event hosted by the Boston Fed at 8:50 a.m. … Treasury and Commerce officials testify at a Senate Banking hearing on China at 10 a.m. … White House economic adviser Heather Boushey speaks at a Peterson Institute-IMF conference at 1 p.m. … Fed Gov. Philip Jefferson talks about financial stability at the virtual International Conference on Policy Challenges for the Financial Sector at 1:30 p.m. … The Fed Beige Book will be released at 2 p.m. … The House will vote on the debt-limit deal in the evening
+
+ DEBT LIMIT FIGHT
+Debt deal heads to the floor — The House is scheduled to vote on the bipartisan debt-limit increase around 8:30 p.m., after the plan survived conservative resistance at a key committee Tuesday. The plan negotiated by Speaker Kevin McCarthy faces opposition from House Freedom Caucus members and reservations among a number of Democrats.
+
+Focus on the Senate — It’s unclear how quickly the upper chamber will act if the House is able to pass the bill tonight. There is probably sufficient bipartisan support to send it to President Joe Biden, but it would take unanimous agreement to expedite the process. Barring a deal on a speedier vote — something that might require additional votes on amendments that would likely fail but still let senators have their say — final passage could drag into June 6, according to NBC News.
+
+Sen. Mike Lee (R-Utah) has threatened to use “every procedural tool” to fight a bill that lacked major spending cuts.
+
+“There are a lot of things that they could still do to convince me to collapse time,” he said, according to our Burgess Everett and Daniella Diaz. “If they don’t do those things, then I might do that.”
+
+Treasury has said it will run out of cash to pay all its bills next Monday, but it could begin taking steps to issue new debt before Biden signs the legislation.
+
+"[W]e expect Treasury to start announcing and auctioning increased bill supply very shortly after any bill is passed by both the House & Senate,” Bank of America analysts said in a note last week. “Treasury does not need to wait for the President to sign the bill since the offering size increases and auctions can occur before settlement (the President would be required to sign a bill before the new bill supply can settle)."
+
+ On the Hill
+Powell, Yellen and Chopra but no crypto vote — Our Eleanor Mueller reports that Treasury Secretary Janet Yellen, Fed Chair Jerome Powell and CFPB Director Rohit Chopra are slated to testify at House Financial Services next month, according to a schedule circulated to aides Tuesday. The panel will also have a hearing on Treasury debt management, including its calculation of the debt-limit X-date.
+
+What’s missing from the committee’s agenda is a vote on crypto legislation that Chair Patrick McHenry wants to advance this summer.
+
+ Crypto
+CFTC official calls for new rules — Declan Harty reports that CFTC Commissioner Kristin Johnson wants the agency to consider new regulations for clearing firms that deal in cryptocurrency derivatives.
+
+“[W]e may be exposing the most vulnerable investors — investors entering our markets with hard-earned cash from a long day's work — to platforms with higher risk management exposures and lower customer protections,” she said.
+
+ Fly Around
+NLRB general counsel: Noncompetes violate the law — Reuters: “A U.S. labor board official on Tuesday said requiring workers to sign agreements not to join competing companies is usually illegal, the latest bid by government regulators to rein in the practice.”
+
+Goldman looks to trim more jobs — FT: “Goldman Sachs is weighing a fresh round of job cuts amid a prolonged decrease in dealmaking that has hit profits at the investment bank, according to people familiar with the matter.”
+
+JPMorgan ready to serve richest families — Bloomberg: “JPMorgan Chase & Co. has quietly built a global unit focused on catering to the ultra-wealthy and their investment firms as it looks to expand services to the world’s super-rich.”
+
+People moves — WSJ reports that Dina Powell McCormick is leaving Goldman Sachs for BDT & MSD Partners, the merchant bank led by Goldman alumni Byron Trott and Gregg Lemkau … Bill Doerrer has been named deputy chief of staff for the Office of the National Cyber Director at the White House. He currently is White House liaison at the Treasury Department … Raymond Pham has been named the new WH liaison at Treasury. He most recently was national coalitions finance director at the Democratic National Committee. (h/t Daniel Lippman)
+
+  
+DON’T MISS POLITICO’S HEALTH CARE SUMMIT: The Covid-19 pandemic helped spur innovation in health care, from the wide adoption of telemedicine, health apps and online pharmacies to mRNA vaccines. But what will the next health care innovations look like? Join POLITICO on Wednesday June 7 for our Health Care Summit to explore how tech and innovation are transforming care and the challenges ahead for access and delivery in the United States. REGISTER NOW.
+      
+Follow us on Twitter
+
+Mark McQuillian @mcqdc
+
+Ben White @morningmoneyben
+
+Victoria Guida @vtg2
+
+Katy O'Donnell @katyodonnell_
+
+Zachary Warmbrodt @Zachary
+
+Sam Sutton @samjsutton
+  
+Follow us
+  
+To change your alert settings, please log in at https://go.politicoemail.com/?qs=a4f4493be3218dabeb8c1483c726dd99ddb773fbd296df039ec6a4618e81ccd625439c3a6f5b79424e74cd8cf3223835ed6fc08d73ebe466  https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a238816dd9ea698987cbb1fcdfde8e2ac84c058aeb6a854b490467f3c8041e439be1e8933b75503c5ac9e1663f2dc4f36f
+
+This email was sent to ouchendans62@gmail.com by: POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+
+ Please click here and follow the steps to unsubscribe.
+  
+
+--Jqwp2oWHMbgk=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<html><body><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml><![endif]-->
+</head><!-- Everything above this line is "new" to the template. We'll have to experiment a bit to see if it causes troubles. --><!-- preview text --><div style="display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">    Delivered daily by 8 a.m., Morning Money examines the latest news in finance politics and policy. </div><table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" style="padding:5px 0 15px 0;margin:0;text-align:center" role="presentation">    <tbody>    <tr>        <td><!-- Note: This is left blank to aid in centering across email clients --></td>        
+<td align="center" width="540">            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:540px;table-layout:fixed;" role="presentation">                <tbody>                <!-- top date and utility link -->                <tr>    <td align="center">        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="padding-bottom:15px;" role="presentation">            <tbody>            <tr>                <td width="50%" style="text-align:left;font-size:11px;font-family:Helvetica,sans-serif;color:#B1B4BD;margin:0;">May 31, 2023</td>                
+<td width="50%" style="text-align:right;font-size:11px;font-family:Helvetica,sans-serif;color:#B1B4BD;margin:0;"><a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dab5896f301c3a4ce22d6770ee8f410df6b0b0ad107938ce5b9ea5a52773f43f105ff55af4e6d9c2bb9da34c9b6023d2edd" target="_blank" style="color:#007BC7;text-decoration:none;">View in browser</a
+></td>            </tr>            </tbody>        </table>    </td></tr>                <!-- divider line -->                <tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                <!-- logo and byline -->                <tr>    <td align="center" style="text-align:center;padding:0 20px 15px 20px;margin:0">                                    <img src="https://static.politico.com/58/27/1ce9310a4780a41787a8c8e062f4/politico-morning-money.jpg" title="POLITICO Morning Money logo" alt="POLITICO Morning Money" border="0" width="500" style="width:100%;max-width:500px;">                        </td></tr><tr>    
+<td align="center" style="padding:0 20px 10px 20px;">        <p style="text-align:center;font-family:Helvetica,sans-serif;font-size:11px;letter-spacing:2px;color:#B1B4BD;text-transform:uppercase;margin:0;">            By  <a
+ href="mailto:zwarmbrodt@politico.com" target="_blank" style="color:#000000;text-decoration:none;font-weight:bold;">Zachary Warmbrodt</a
+>        </p>    </td></tr>                <!-- sponsor logo -->                                    <!-- body -->                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>Editor&#8217;s note: </i
+></strong
+><i
+>Morning Money is a free version of POLITICO Pro Financial Services morning newsletter, which is delivered to our subscribers each morning at 5:15 a.m. The POLITICO Pro platform combines the news you need with tools you can use to take action on the day&#8217;s biggest stories. </i
+><a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dabaf110c3b01179f571b0b38ea19e8a505c8af432917b01b8197afd196f535b2be8cda90aaad7dd2de68b03ba47bd66472" target="_blank"><i
+>Act on the news with POLITICO Pro</i
+></a
+><i
+>.</i
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><br><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Let&#8217;s assume that by this time next week </strong
+>Congress will have passed a debt-ceiling increase. Default won&#8217;t be a worry until 2025. Markets are already rejoicing.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">But it could still be a bumpy summer.</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">The Treasury Department in the coming months </strong
+>will need to raise about $1 trillion in cash. The surge will come from a huge issuance of short-term debt.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Finding a home for that debt</strong
+> could put stress on the plumbing of the financial system and on banks in particular.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">The reason for the potential turbulence</strong
+>, <a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dabc9646648980aa34f046c02a3202fe710b26ded3372bc04f2e984916792b00219bbce87d96e01d158745ffe2a5a7f3728" target="_blank" data-debug-source-uuid="00000188-6e66-d5ba-a7fe-fefe38500001" data-debug-source-site="POLITICO Pro">as our Victoria Guida lays out in a new story</a
+>, is two-fold. It may encourage businesses to park money in U.S. debt rather than banks. It may also suck money out of the financial system by reducing the amount of reserves that lenders have access to at the Fed. It all could squeeze banks' ability to lend.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The private-sector committee that advises Treasury on borrowing <a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dab76f442cf6ff7536ba088fea5f1597d195376760b086a1fc16789217c1485507b7afda0dc16e2de6c4c310da1db695da1" target="_blank">recently encouraged the department</a
+> to keep tabs on potential market stress as it replenishes its cash balance.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;Even if we assume that history repeats itself, and the debt limit is raised at the last minute, the current risks in the banking system will be amplified,&#8221; Morgan Stanley global chief economist <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Seth Carpenter</strong
+>, a former Treasury and Fed official, wrote in a note to clients.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">It&#8217;s Wednesday </strong
+>&#8212; What debt-limit angles are we missing? Let us know: <a
+ href="mailto:zwarmbrodt@politico.com" target="_blank">Zach Warmbrodt</a
+>, <a
+ href="mailto:ssutton@politico.com" target="_blank">Sam Sutton</a
+>.<br></p></td>                    </tr>                                    <tr>                        </tr><tr>    <td height="10" style="height:10px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                    <p style="margin-top:0;margin-bottom:20px;line-height:24px;margin-bottom:20px;color:#000000;">                <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">GET READY FOR GLOBAL TECH DAY: </strong
+>Join POLITICO Live as we launch our first Global Tech Day alongside London Tech Week on Thursday, June 15. Register now for continuing updates and to be a part of this momentous and program-packed day! From the blockchain, to AI, and autonomous vehicles, technology is changing how power is exercised around the world, so who will write the rules? <a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dabc8307e7aca2da63e4ea22a52bdb6a1dadc27846de09cce3cd2d02fca49115995811e0e9f0ab7eee1454aefda9d402c66" target="_blank" style="text-decoration:underline;color:#007BC7;">REGISTER HERE</a
+>.            </p>            </td></tr><tr>    <td height="10" style="height:10px; font-size:0; border-bottom:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td height="15" style="height:15px; font-size:0;">&nbsp;</td></tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">Driving the day</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;">
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">Fed Gov. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Michelle Bowman</strong
+> speaks at a &#8220;Fed Listens&#8221; event hosted by the Boston Fed at 8:50 a.m. &#8230; Treasury and Commerce officials testify at a Senate Banking hearing on China at 10 a.m. &#8230; White House economic adviser <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Heather Boushey</strong
+> speaks at a Peterson Institute-IMF conference at 1 p.m. &#8230; Fed Gov. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Philip Jefferson</strong
+> talks about financial stability at the virtual International Conference on Policy Challenges for the Financial Sector at 1:30 p.m. &#8230; The Fed Beige Book will be released at 2 p.m. &#8230; The House will vote on the debt-limit deal in the evening<br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">DEBT LIMIT FIGHT</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dabd754c9c04ecd2b17a0f8d2fb9da991af90bcc7da1923af755e3de1a9c390467ad122f2b9587681978a028b3067e0ca62" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Debt deal heads to the floor</strong
+></a
+> &#8212; The House is scheduled to vote on the bipartisan debt-limit increase around 8:30 p.m., after the plan survived conservative resistance at a key committee Tuesday. The plan negotiated by Speaker <span><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Kevin McCarthy</strong
+></span> faces <a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dab32fd9fb959a06ac2e2f3931f45c5863709b6cb7bc66fb4866773e0f57cd77ec09462d39c6b20ccc3c3bd4eb4ba7a053a" target="_blank">opposition from House Freedom Caucus members</a
+> and <a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dab4390560e992672ab65ecbd90a17d22f724104743ffd5706e56eece1a2e9e60a204ccbcd8a7bb8bee327ea65c7dc1a041" target="_blank">reservations among a number of Democrats</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dab3863505599565fb5b34cd68cc76fa2f876457a11244a5b2d4d7fe4d56c908b0e37842ff7985f674f37588f009ffed939" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Focus on the Senate</strong
+></a
+> &#8212; It&#8217;s unclear how quickly the upper chamber will act if the House is able to pass the bill tonight. There is probably sufficient bipartisan support to send it to President <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Joe Biden</strong
+>, but it would take unanimous agreement to expedite the process. Barring a deal on a speedier vote &#8212; something that might require additional votes on amendments that would likely fail but still let senators have their say &#8212; final passage could drag into June 6, <a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dab7066c3e554b31a47724d1a09e31f4ff51517a950c15e0b3b8d40f3ee2245bfd86447a36ec1dc6b72bc412f2de77a261c" target="_blank">according to NBC News</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Sen. </strong
+><span><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Mike Lee</strong
+></span><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> (R-Utah) has threatened to use &#8220;every procedural tool&#8221; </strong
+>to fight a bill that lacked major spending cuts.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;There are a lot of things that they could still do to convince me to collapse time,&#8221; he said, according to our Burgess Everett and Daniella Diaz. &#8220;If they don&#8217;t do those things, then I might do that.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Treasury has said it will run out of cash</strong
+> to pay all its bills next Monday, but it could begin taking steps to issue new debt before Biden signs the legislation.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">"[W]e expect Treasury to start announcing and auctioning increased bill supply very shortly after any bill is passed by both the House &amp; Senate,&#8221; Bank of America analysts said in a note last week. &#8220;Treasury does not need to wait for the President to sign the bill since the offering size increases and auctions can occur before settlement (the President would be required to sign a bill before the new bill supply can settle)."<br></p></td>                    
+</tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">On the Hill</td>    </tr>    </tbody></table></td>                    </tr>                                    
+<tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dab53b498f80899710baa4f42d95f3fca9e8b17e8286fc73b83636fe1dc85924d57df419e070d823fc307472edb3ce4e5d1" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Powell, Yellen and Chopra but no crypto vote</strong
+></a
+> &#8212; Our Eleanor Mueller reports that Treasury Secretary <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Janet Yellen</strong
+>, Fed Chair <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Jerome Powell</strong
+> and CFPB Director <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Rohit Chopra</strong
+> are slated to testify at House Financial Services next month, according to a schedule circulated to aides Tuesday. The panel will also have a hearing on Treasury debt management, including its calculation of the debt-limit X-date.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">What&#8217;s missing from the committee&#8217;s agenda is a vote on crypto legislation that Chair <a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dab1960f77fb552e36a0f75187ded23baf9576cbb9d75976155ce95f97fe7b6274fb59780856aa63f53202bfb5e0aeb6ec2" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Patrick McHenry</strong
+></a
+> wants to advance this summer.<br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">Crypto</td>    </tr>    </tbody></table>
+</td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dab41b85ec776387e33c90296e03026375f60dd5c883a93475d1cd2a8e211f442dd44bcb83551578c5b2a2edc8848175f5a" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">CFTC official calls for new rules</strong
+></a
+> &#8212; Declan Harty reports that CFTC Commissioner Kristin Johnson wants the agency to consider new regulations for clearing firms that deal in cryptocurrency derivatives.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;[W]e may be exposing the most vulnerable investors &#8212; investors entering our markets with hard-earned cash from a long day's work &#8212; to platforms with higher risk management exposures and lower customer protections,&#8221; she said.<br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;">
+<!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">Fly Around</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;">
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;"><a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dabaa4746afe304cb774314a852c4e5665736053e1d163d4d493314a4be427f69c0ecd1b4a6891bb6a67f0e2ec48b56c871" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">NLRB general counsel: Noncompetes violate the law</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> &#8212; </strong
+>Reuters: &#8220;A U.S. labor board official on Tuesday said requiring workers to sign agreements not to join competing companies is usually illegal, the latest bid by government regulators to rein in the practice.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dabc879fb9dbe4d8b19ccf12585bc23fbaf86b42bc80a6fc72cae32cf093637f6e41668d2c4598c7455e379248549c7f54d" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Goldman looks to trim more jobs</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> &#8212; </strong
+>FT: &#8220;Goldman Sachs is weighing a fresh round of job cuts amid a prolonged decrease in dealmaking that has hit profits at the investment bank, according to people familiar with the matter.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dabbce0cf7ed8ffb6770dddcb6bd7e41c95e070e17eebe337fab7fdeefd2cae598ccb9deb6c3fa1a1308f07cd7dc428ed71" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JPMorgan ready to serve richest families</strong
+></a
+> &#8212; Bloomberg: &#8220;JPMorgan Chase &amp; Co. has quietly built a global unit focused on catering to the ultra-wealthy and their investment firms as it looks to expand services to the world&#8217;s super-rich.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">People moves </strong
+>&#8212; WSJ reports that <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Dina Powell McCormick</strong
+> <a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dabb6c387c43513b1f2af346a35ac9893dd96bfe72946a43515ea74d4631f91e69040f5a4661d563d771d092be181906ada" target="_blank">is leaving Goldman Sachs</a
+> for BDT &amp; MSD Partners, the merchant bank led by Goldman alumni <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Byron Trott </strong
+>and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Gregg Lemkau </strong
+>&#8230; <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Bill Doerrer</strong
+> has been named deputy chief of staff for the Office of the National Cyber Director at the White House. He currently is White House liaison at the Treasury Department &#8230; <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Raymond Pham</strong
+> has been named the new WH liaison at Treasury. He most recently was national coalitions finance director at the Democratic National Committee. (h/t Daniel Lippman)<br></p></td>                    </tr>                                    <tr>                        </tr><tr>    <td height="10" style="height:10px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                    <p style="margin-top:0;margin-bottom:20px;line-height:24px;margin-bottom:20px;color:#000000;">                <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DON&#8217;T MISS POLITICO&#8217;S HEALTH CARE SUMMIT</strong
+>: The Covid-19 pandemic helped spur innovation in health care, from the wide adoption of telemedicine, health apps and online pharmacies to mRNA vaccines. But what will the next health care innovations look like? Join POLITICO on Wednesday June 7 for our Health Care Summit to explore how tech and innovation are transforming care and the challenges ahead for access and delivery in the United States. <a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dab4b3f994d98a3bb2efe3cb6b306434e567476cb6245cd4582231dc196615185112994c08f734b69eed5c49a2aea140bde" style="text-decoration:underline;color:#007BC7;">REGISTER NOW</a
+>.            </p>            </td></tr><tr>    <td height="10" style="height:10px; font-size:0; border-bottom:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td height="15" style="height:15px; font-size:0;">&nbsp;</td></tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                <!-- End Ad Copy -->                <tr>                                    </tr>                <!-- Post Body Content -->                <tr>                                    </tr>                <tr>                    
+<td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>                </tr>                <!-- Twitter Handles -->                                    <tr>    <td style="color:#000000;padding:0px 20px 20px 20px;text-align:left;">        <p style="font-family:Helvetica,sans-serif;font-size:20px;color:#000000;margin-top:0;margin-bottom:15px;"><strong
+>Follow us on Twitter</strong
+></p>        <table cellpadding="0" cellspacing="0" border="0" role="presentation">            <tbody>            <tr>                <td width="52" valign="middle" style="text-align:left;padding-right:10px;"><img src="https://static.politico.com/hosted/icon-twitter-circle-blue%402x.png" title="" alt="" width="50" style="max-width:50px;"></td>                <td valign="middle" style="text-align:left;font-family:Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#000000;">                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Mark McQuillian <a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dabf8c2ec7e5de7d0d00026e2d1e770ad4037484498120c20afc9d08098ebf69fddb336cda39eefcd52e9c06587fe428ead" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@mcqdc</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Ben White <a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dabca5683e53b2a271b5b87e623e3b8845837b8eb0bf5df25c0f48f72bf8b063d5bd0f40aac0717d596097f60f63bdd47e8" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@morningmoneyben</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Victoria Guida <a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dabff5002d7defcdc5e7ec30f3851d977ae57a980029c22501c94af2ec5602872cbee54528ee3c66dad968a0cb801845e92" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@vtg2</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Katy O'Donnell <a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dab026f837eb04c8d6fcb96c2a442ac66de698f8361b6df64fd5f91538f729cf5fe4c8516a14a9633d884fe5f51a07ea208" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@katyodonnell_</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Zachary Warmbrodt <a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dab486a9fbb6638f19ff0e225f4b78ddc17e2a4a3a404051d93fcfcafe7d3ad9acc2f199bcea36c5177ec5811becad54551" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@Zachary</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Sam Sutton <a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dabc5a8a0fded7638e091a5ff02fb95dc2c81d84911578461345e570dda8a8705af1ab702230bde5e1c28c48f59412f2fc5" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@samjsutton</a
+></p>                                    </td>            </tr>            </tbody>        </table>    </td></tr><tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                                <!-- Family of Playbook -->                                <!-- Follow us -->                <tr>    <td style="color:#000000;padding:0px 20px 20px 20px;text-align:left;">        <p style="font-family:Helvetica,sans-serif;font-size:12px;color:#000000;margin-bottom:10px;line-height:14px;text-transform:uppercase;font-weight:bold;letter-spacing:2px;">Follow us</p>        
+<table cellpadding="0" cellspacing="0" border="0" role="presentation">            <tbody>            <tr>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dab3e8f8986ea6171ac1458c1e08cd4d87807476f8d9060c3313ab0aa05d0fe91ec12bd43e300c43950d993796d753093c2" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-facebook-gray%402x.png" title="Follow us on Facebook" alt="Follow us on Facebook" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dab7943e2df210b07c190652c117cd2c653abbc082b610c9135ebee7420eef3656b2c1e1c74edb5261df62dec9d827457a9" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-twitter-gray%402x.png" title="Follow us on Twitter" alt="Follow us on Twitter" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dab5f56b228ead00651641b8c85e0ecdf3c0264c1e591c404067a49101d22a545774d89252f35b94cf45d21a2bd414d0217" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-instagram-gray%402x.png" title="Follow us on Instagram" alt="Follow us on Instagram" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dabf3287e0f376a05599535392d8aaa9f03bce09d807c470afa704884fd39e691536f013a0fffbda2e5560c08868dff9e92" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-applePodcast-gray%402x.png" title="Listen on Apple Podcast" alt="Listen on Apple Podcast" width="24" border="0" style="max-width:24px;"></a
+></td>            </tr>            </tbody>        </table>    </td></tr><tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                </tbody>            </table>        </td>        <td><!-- Note: This is left blank to aid in centering across email clients --></td>    </tr>    </tbody></table><!-- Everything below this line is "new" to the template. We'll have to experiment a bit to see if it causes troubles. --><!-- howler#email.footers/core-newsletter.footer.html -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff"
+       style="padding:5px 0 15px 0;margin:0;text-align:center" role="presentation">
+    <tbody>
+    <tr>
+        <td><!-- Note: This is left blank to aid in centering across email clients --></td>
+        <td align="center" width="540">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:540px" role="presentation">
+                <tbody>
+                <tr>
+                    <td align="center" style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;">
+                        <p style="margin-bottom:15px;line-height:24px;">To change your alert settings, please log in at
+                            <a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dabeb8c1483c726dd99ddb773fbd296df039ec6a4618e81ccd625439c3a6f5b79424e74cd8cf3223835ed6fc08d73ebe466" target="_blank" style="color:#007BC7;text-decoration:none;">https://www.politico.com/_login?base=https%3A%2F%2Fwww.politico.com/settings</a
+>
+                            <!--Commenting out the following line because it causes an undesired line to be displayed on outlook (some versions) and we couldn't find the use case of it-->
+                            <!-- <span style="display:none;"><a
+ href="https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a238816dd9ea698987cbb1fcdfde8e2ac834c5a7a9b2caf055">https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a238816dd9ea698987cbb1fcdfde8e2ac834c5a7a9b2caf055</a
+></span> -->
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="padding-bottom:15px;"><img
+                            src="https://static.politico.com/hosted/icon-politico-logo.png"
+                            class="CToWUd"></td>
+                </tr>
+                <tr>
+                    <td align="center"><p
+                            style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:20px;">
+                        This email was sent to ouchendans62@gmail.com by: POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+                        <p style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:24px;">
+                            
+
+                            Please click <a
+ href="https://go.politicoemail.com/?qs=a4f4493be3218dab5691e0d1aebc45fed2f6c1115b8fa290cb1f96adbd11f265becb09cd151487b5f112e550afe1c0a272ddaaf551e1a346" target="_blank" style="color:#007BC7;text-decoration:none;">here</a
+> and follow the steps to unsubscribe.
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td><!-- Note: This is left blank to aid in centering across email clients --></td>
+    </tr>
+    </tbody>
+</table>
+<img src="https://click.politicoemail.com/open.aspx?ffcb10-fe8e1d787566077477-fde513797160037e70117873-fe9115737262077c7c-fece127375670579-fdf61574756104747317747c-ffcf14&d=40128&bmt=0" width="1" height="1" alt="">
+</body></html><p email-meta style="display: none;opacity:0;">source=GoggleDocument, article=00000188-712a-df52-a7cc-776e3baf0000</p>
+
+--Jqwp2oWHMbgk=_?:--
+

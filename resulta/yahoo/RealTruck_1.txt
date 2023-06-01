@@ -1,0 +1,826 @@
+Received: from 127.0.0.1
+ by atlas-production.v2-mail-prod1-gq1.omega.yahoo.com pod-id atlas--production-gq1-7f77b4df7d-fx5f7.gq1.yahoo.com with HTTP; Tue, 7 Mar 2023 13:12:36 +0000
+Return-Path: <msprvs1=19430IIShmbWQ=bounces-247938@spmailtechnol.com>
+X-Originating-Ip: [147.253.212.71]
+Received-SPF: pass (domain of spmailtechnol.com designates 147.253.212.71 as permitted sender)
+Authentication-Results: atlas-production.v2-mail-prod1-gq1.omega.yahoo.com;
+ dkim=pass header.i=@e.realtruck.com header.s=scph1218;
+ dkim=pass header.i=@spmailtechnol.com header.s=ssp0516;
+ spf=pass smtp.mailfrom=spmailtechnol.com;
+ dmarc=pass(p=QUARANTINE,sp=NONE) header.from=e.realtruck.com;
+X-Apparently-To: achrafel73114@yahoo.com; Tue, 7 Mar 2023 13:12:37 +0000
+X-YMailAVSC: 0qQ4D_w3bBt.DwwPA.KPt.3bG0n3JzDKXkCcHtzfwCVzK4.
+ ntnLtv1pIigZN7_TeA9tD8j3JL8fSAvbdIQPNPOUulfzyM4WwKv4weUiOxUq
+ Gez1.xd8uk9mBty174yPYgPLEWnxd6CmfkJRMJTUGCFgJ_Sx7lhSANNs7MhV
+ PE_9xjs15poBIonp.CMAtHGpM02_TTfYJxtSMOTnOB4R0bEQYnBbxARvoSxi
+ PXZO2WHeaDpbXLyAnGDYsrLDfth1ZK_IP9ND49MNvGLGVioqMhq8CYJaLJJn
+ GAn7QNju9DMZeW7hhFY5ql4ir_VLEJKB6kUmE.aZizw1PPZ8A7.2gNMCoO5C
+ G32F1O3sgx3ZLV60gURq5BMzpXKV2_QVkulwLFhq8C1CPLzL5dbMQQ_K1Gcz
+ eJj70ylPoAtYpJRqh6LsSMWZgBCJSbWnaarFuCUWsHVTjptGNsyVmNw9L3JZ
+ I3D0A0jTOq6ZptJjRLy8.UxbB4jMDzDB02KfK5L6v52xrD1NpjyiMyfCEZ8k
+ KDszZd4NbfjAO_OOP3Ca7CX18lrktzWc1GdFGv7NNO7R5xHNqbA9U10NGmxB
+ Y69AIIz452qi7bQV3dSKZVIiatnFeIWPUKrvmLjj7FaKY_l8JzoUkZx33lTb
+ cSMbEwPT.nFYQGhOXQALLNOfoH6fth1l22OubOH8xBVAq5aa_G1cXq1.y66h
+ SRIJbVxHVTK7c0j3.7mFRiS53k5P.NH1nUZ9U2yjJqOxJpvOSIX5elmjeibL
+ HeOmyYgbG.iFoXV1E.9.hVgTHVgdh5wP2Us3aVZnCyv0hqgjPLerLuHli4eJ
+ YE50Kk2hrZx7TOHq3mw1yFeEOwwWkgmj1hUcoOFvHg4gt_fcUnQ6xpITDUNP
+ uvxbdJCZiJ3LXJYhWq2qPZdMt6ZEldrMcEaiBx7D5Lk4JaZRhMcWwD9iYvTW
+ 54Rn1c20y1zJbL2DVEu3JoPmS6RHXgsXEgwKi0M2hjflpulF2T7yn8aiIPm3
+ m8YmTgeESf_AO_bM2cNPSjcSXR.uyOjyS0zLfyXCl6oA8SK0dJ.8rN6I7OeT
+ sU2kxpFfYWdCDNgUkdNcu4V4gjtYpztntwTlO_ctPyLbZ1m8R3zsdwtg98su
+ tQB3tTyPPMidIeE.LX.M5jsyt6XzrWMchMFPqkRL27DH7KGBup8wLOD_uteS
+ fP5TLPCScKWXp8vFOZbi40HbmgJZP93KDALVCYJbcyY7qJS0VClw-
+X-YMailISG: 2x2n90UWLDupGm4MTbR4ksLHzSjnZZx_i539yO9FrggcjLtg
+ gNBjOPwWDM83m1oBd64.B4IkwF4rPQVH1veqSerz0VaGcm.FrCO61gZ3aaiW
+ Ju83Jz9381iNJM6_l6WNLjBk0q0e_sFCp0f04Vm2Dw7uEY6Ob66virjDd4ao
+ iCDTNWik1XojYi4.KIuG6QSKzA5JeISqSdy_hVgeFKZdWmzHLBrXbWB_wr_5
+ Sb5J_CZuyj1Xh797OkUGFkvFtcf0sVi48Yvxsa5e1dbaPB_UJS0dF.0XwRuP
+ ZNqiJIh0BGncpTjHf__SB9NC9FvJ5.qsviYoUDhEL77.QRV3MdODyK2zI_2.
+ 5uJeTpDaTBGAEHRlXnni1DtDZAXWBGmMuvbm6tgbB_qTE3sOv46tsIsd0RM_
+ VT74f_.R8wmgwj9XvfMkBK4MmSyOK7tmVUbmEOsP7i1Imoixa0VGHYhOKbBT
+ XwgTe_52CaHg0FseEZ0jUbN3nsVsL4pniySh.yPqwsd9wQ0AdqbjWcX6oUPo
+ RnylcERbAbCk0BmhdwJQlMUv3sHOEfbNl5AP4Fj_XROe_zwuFF2pvXBHdJpH
+ 1hZWyeWL_tkIZs36FISbHLPPinPmpf891W2_XYZdLEl6jx21AfDbvX185xo3
+ EiPgMq3uylTf9RpJ_58aFya.yu71jcQqolaKksaae22WBf1rMS7YdSXOXnRs
+ FTA7Kk_GQ7auddtAXaQjXQJ3BOQWKhMoTQ2V0BrANVftkXLSqK9IRIAHWbUB
+ lwp11iY48mSWbL.y__Klsja.0s6pIOPH9m7wbmqZhnDgZSS9AJRix3of7Y4C
+ Hk2jfsRN70kWe8XFc5iPgkw289VKHNGPgRoyN2w1uG0KI70dS8MgU6SF_XcM
+ N2.CGkhOGa8UgNY0P5GdjpsEmytKXuHviwZl_wVj.GkeHl5QEGo5mba3_NOZ
+ 2sb4nsVpT_aFKmy57E0MUZmpniUZjVBCzyd9wyOHR9TjVWdWgJZ3uWi1E_Lq
+ 94d.bYev8MO1tyl3h21JXXca1OsqfQsljD9_vIOrnpSGG4Lw6IlE0HsnHgjG
+ MEvYWhARQ2hYywCmDgbqd5wGfnUqrtkL8I0w2G074NNkKVI44iqEcVHdk0dL
+ XYuH8BRW9TfRWH3moeYtX9LlCOxKliBB0QYMFQGVYFRAH8Z6.ev_MpRB09zC
+ kn9m_cKBW0B_G2tRVZVglJCldTdZwoyoRwZrjgVKECCyQE0DJ7c_qgYDyrWA
+ rqIu_Tp9yj6wdElOLLJnRB0Ug.KNlGaHxjK2nz4Co38fcTE6DFKv..iI781O
+ R6nc9g9mvVufixL.gVnEivPZGIxig_cxNDhiS2bxEV0ZHRfu
+Received: from 147.253.212.71 (EHLO mta-212-71.sparkpostmail.com)
+ by 10.253.62.155 with SMTPs
+ (version=TLS1_2 cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256);
+ Tue, 07 Mar 2023 13:12:36 +0000
+X-MSFBL: uXcmHnlKyy4Z5NvRiKGoCmM0h709JJlJk5isyCpwa94=|eyJzdWJhY2NvdW50X2l
+	kIjoiMCIsIm1lc3NhZ2VfaWQiOiI2NDAwNDQzODA3NjRmN2NlM2U5YyIsInRlbmF
+	udF9pZCI6InNwYyIsInIiOiJhY2hyYWZlbDczMTE0QHlhaG9vLmNvbSIsImN1c3R
+	vbWVyX2lkIjoiMjQ3OTM4In0=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=e.realtruck.com;
+	s=scph1218; t=1678194756; i=@e.realtruck.com;
+	bh=D3w6ERaxC3hNZQD7I8ht7gbGTMOQnx/Op8Eci4okLck=;
+	h=To:Message-ID:Date:Content-Type:Subject:From:List-Unsubscribe:
+	 From:To:Cc:Subject;
+	b=bVBIk9i25wjyhrQtP7Ocz4LEIIwJ4jtbvYcLpA1dBvNo/vBNANc5PkN4qw2j4VPlk
+	 gNwe0mQNy/3m8ngznL9o8K5+j/7dwKCV29054baBnQwlUE6RQBedzuaf29rSVP7hly
+	 YclE4L1+G6NBKANvMDLO7MSiFuKUa8Pp8Dz9sDdo=
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=spmailtechnol.com;
+	s=ssp0516; t=1678194756; i=@spmailtechnol.com;
+	bh=Be4dTjJfi3RAU/vQmyTrTHT6hK6PiTDqEZ1ff8lAn0U=;
+	h=To:Message-ID:Date:Content-Type:Subject:From:List-Unsubscribe:
+	 From:To:Cc:Subject;
+	b=wIoknqJr2qmrJlouyIjrm/dvzd8hb4egGxbs0LHMbFC5/pFR9RVe9ivaGgIcpRGC+
+	 XTLcLPvzFdQjxiyyP6suzCJQNUJ/8EzXS2dIkuq5xAbCuQACbU64GoB5P3+Y03rnks
+	 cM2qFPf7VA96xO8wKAOjTsAhjAIIMhhN0YGbwoC4=
+To: achrafel73114@yahoo.com
+Message-ID: <E3.C9.18793.44837046@hs.mta1vrest.cc.prd.sparkpost>
+Date: Tue, 07 Mar 2023 13:12:36 +0000
+Content-Type: multipart/alternative; boundary="_----tV32q41hln/4LexPXwXqUA===_83/C9-18793-44837046"
+MIME-Version: 1.0
+Reply-To: realtruck@e.realtruck.com
+Subject: Welcome to RealTruck!
+X-Campaign-ID: 4497278
+From: "RealTruck" <realtruck@e.realtruck.com>
+X-Message-ID: 6b42f5fc38b042259061d8f3b4fe89fa
+X-Feedback-ID: 6112993:4497278:15736:iterable
+Feedback-ID: 6112993:4497278:15736:iterable
+List-Unsubscribe: <mailto:unsubscribe@unsub.spmta.com?subject=unsubscribe:xk1ZOathNAzjgbdDSW2rWEVvJoQfaVcFRq5FDk3Ku_8~|eyAicmNwdF90byI6ICJhY2hyYWZlbDczMTE0QHlhaG9vLmNvbSIsICJ0ZW5hbnRfaWQiOiAic3BjIiwgImN1c3RvbWVyX2lkIjogIjI0NzkzOCIsICJtZXNzYWdlX2lkIjogIjY0MDA0NDM4MDc2NGY3Y2UzZTljIiwgInN1YmFjY291bnRfaWQiOiAiMCIgfQ~~>
+List-Id: <spc.247938.0.sparkpostmail.com>
+Content-Length: 55658
+
+--_----tV32q41hln/4LexPXwXqUA===_83/C9-18793-44837046
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="UTF-8"
+
+add realtruck@e.realtruck.com to your contacts / View online =0A<http://lin=
+ks.realtruck.com/e/evib=3F_t=3Dc08ceafcb1aa4503b82ebde1eed2962c&_m=3D6b42f5=
+fc38b042259061d8f3b4fe89fa&_e=3D9OxrDffd3lmMCrmj4YussZ_JQfCB7GoccFPGa-b7DFr=
+XaahRJ5DVYQ3NoFUX5ele>=0A=0A =0A<https://realtruck.com/=3Futm_source=3Donbo=
+arding&utm_medium=3Demail&utm_campaign=3DOB_welcome1a&utm_term=3Dheader-log=
+o>=0A=E2=98=B0 =C3=97 =0A=0AProducts =0A<https://realtruck.com/new-products=
+/=3Futm_source=3Donboarding&utm_medium=3Demail&utm_campaign=3DOB_welcome1a&=
+utm_term=3Dheadernav-products>=0ADeals =0A<https://realtruck.com/specials/=
+=3Futm_source=3Donboarding&utm_medium=3Demail&utm_campaign=3DOB_welcome1a&u=
+tm_term=3Dheadernav-specials>=0ABlog =0A<https://realtruck.com/blog/=3Futm_=
+source=3Donboarding&utm_medium=3Demail&utm_campaign=3DOB_welcome1a&utm_term=
+=3Dheadernav-blog>=0A=0A=0A =0A<https://realtruck.com/=3Futm_source=3Donboa=
+rding&utm_medium=3Demail&utm_campaign=3DOB_welcome1a&utm_term=3Dhero>=0A=0A=
+=0A=0A Thanks for joining! =0A We=E2=80=99ll help you turn your truck into =
+the perfect outdoor adventure companion =0Awith deals, new arrivals, giveaw=
+ays, and more. =0A=0A=0A SHOP NOW  =0A<https://realtruck.com/=3Futm_source=
+=3Donboarding&utm_medium=3Demail&utm_campaign=3DOB_welcome1a&utm_term=3Dbod=
+y-CTA>=0A=0A=0A =0A<https://realtruck.com/builds/=3Futm_source=3Donboarding=
+&utm_medium=3Demail&utm_campaign=3DOB_welcome1a&utm_term=3Dbuilds&utm_term=
+=3Dbuilds-hero>=0A=0A=0A=0A =0A<https://realtruck.com/builds/=3Futm_source=
+=3Donboarding&utm_medium=3Demail&utm_campaign=3DOB_welcome1a&utm_term=3Dbui=
+lds&utm_term=3Dbuilds-grid>=0A=0A REAL BUILDS =0AREAL PEOPLE =0A Find inspi=
+ration from other RealTruck People just like you, or upload and =0Ashare yo=
+ur build to inspire others! =0A=0A=0A VIEW BUILDS  =0A<https://realtruck.co=
+m/builds/=3Futm_source=3Donboarding&utm_medium=3Demail&utm_campaign=3DOB_we=
+lcome1a&utm_term=3Dbuilds&utm_term=3Dbuilds-cta>=0A=0A=0A=0ATOP CATEGORIES =
+=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A =0A<https://realtruck.com/=
+blog/truck-upgrades-on-a-1000-budget-the-essentials/=3Futm_source=3Donboard=
+ing&utm_medium=3Demail&utm_campaign=3DOB_welcome1a&utm_term=3Dblog-image1-l=
+eft-image>=0A =0A<https://realtruck.com/blog/truck-upgrades-on-a-1000-budge=
+t-the-essentials/=3Futm_source=3Donboarding&utm_medium=3Demail&utm_campaign=
+=3DOB_welcome1a&utm_term=3Dblog-image1-right-image>=0A=0A we know trucks =
+=0ALEARN FROM THE EXPERTS OF THE ROAD =0A From how-tos to product reviews, =
+we've got you covered. =0A=0A=0A READ MORE  =0A<https://realtruck.com/blog/=
+=3Futm_source=3Donboarding&utm_medium=3Demail&utm_campaign=3DOB_welcome1a&u=
+tm_term=3Dblog-post-cta>=0A=0A=0A=0A =0A<https://realtruck.com/=3Futm_sourc=
+e=3Donboarding&utm_medium=3Demail&utm_campaign=3DOB_welcome1a&utm_term=3Dco=
+ntact-us&utm_term=3Dcontact-us>=0A=0A We're RealTruck People. =0ALet's get =
+started. =0A No matter where you go, we've probably been in your shoes. And=
+ we can help =0Aguide you on your next adventure. After all, we're all abou=
+t sharing the road, =0Aand everything we know about navigating it. =0A=0A =
+=0A<https://realtruck.com/=3Futm_source=3Donboarding&utm_medium=3Demail&utm=
+_campaign=3DOB_welcome1a&utm_term=3Dcontact-us&utm_term=3Dchat-icon>=0ALive=
+ Chat=0AChat with an Expert  =0A<https://realtruck.com/=3Futm_source=3Donbo=
+arding&utm_medium=3Demail&utm_campaign=3DOB_welcome1a&utm_term=3Dcontact-us=
+&utm_term=3Dphone-icon>=0A833-774-0056=0ATalk with an Expert =0A=0A=0A =0A<=
+https://realtruck.com/=3Futm_source=3Donboarding&utm_medium=3Demail&utm_cam=
+paign=3DOB_welcome1a&utm_term=3Dfooterlogo>=0A=0A <https://www.facebook.com=
+/RealTruck>  <https://www.instagram.com/realtruck/>  =0A<https://www.youtub=
+e.com/channel/UCZbCV6NzYZTVgKCqwQ36Drg>  =0A<https://www.tiktok.com/@realtr=
+uck> =0A(866) 518-0593 <tel:866-518-0593> =0A=C2=A9 2023 RealTruck.com =0A<=
+https://realtruck.com/=3Futm_source=3Donboarding&utm_medium=3Demail&utm_cam=
+paign=3DOB_welcome1a&utm_term=3Dfooterlink>=0A All Rights Reserved | Unsubs=
+cribe =0A<http://links.realtruck.com/e/encryptedUnsubscribe=3F_r=3Dc08ceafc=
+b1aa4503b82ebde1eed2962c&_s=3D6b42f5fc38b042259061d8f3b4fe89fa&_t=3D9OxrDff=
+d3lmMCrmj4YussZ_JQfCB7GoccFPGa-b7DForUQH5ZAekYwsp0sQuurTe1tMtim-C52p1tN9THr=
+CoUbZmQYUQatdea_8l1Bln9NLGxoPtbmNMdJtBtADXyK-9>=0A |Terms of Use =0A<https:=
+//realtruck.com/terms-and-conditions/=3Futm_source=3Donboarding&utm_medium=
+=3Demail&utm_campaign=3DOB_welcome1a&utm_term=3Dtermsbottom>=0A |Privacy Po=
+licy =0A<https://realtruck.com/privacy-policy/=3Futm_source=3Donboarding&ut=
+m_medium=3Demail&utm_campaign=3DOB_welcome1a&utm_term=3Dprivacypolicybottom=
+>=0A=0ARealTruck.com | 4414 SW College Road, Suite 1410 | Ocala, FL 34474 |=
+ United =0AStates
+--_----tV32q41hln/4LexPXwXqUA===_83/C9-18793-44837046
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+
+<!DOCTYPE html> <html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn=
+:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:off=
+ice"> <head> <meta charset=3D"utf-8"> <meta name=3D"viewport" content=3D"wi=
+dth=3Ddevice-width, initial-scale=3D1"> <meta http-equiv=3D"X-UA-Compatible=
+" content=3D"IE=3Dedge"/> <meta name=3D"x-apple-disable-message-reformattin=
+g"> <style type=3D"text/css">@import url('https://fonts.googleapis.com/css=
+=3Ffamily=3DRoboto:200,400,700,900&display=3Dswap');@import url('https://fo=
+nts.googleapis.com/css2=3Ffamily=3DAlfa+Slab+One&display=3Dswap');body{font=
+-family:'Roboto',Arial,Helvetica,Verdana,sans-serif;margin:0;background:0;c=
+olor:#000;height:100%!important;margin:0!important;padding:0!important;widt=
+h:100%!important}body,table,td,a{-webkit-text-size-adjust:100%;-ms-text-siz=
+e-adjust:100%}table,td{mso-table-lspace:0;mso-table-rspace:0}img{-ms-interp=
+olation-mode:bicubic}img{border:0;height:auto;line-height:100%;outline:0;te=
+xt-decoration:none}table{border-collapse:collapse!important}a[x-apple-data-=
+detectors]{color:inherit!important;text-decoration:none!important;font-size=
+:inherit!important;font-family:inherit!important;font-weight:inherit!import=
+ant;line-height:inherit!important}.navlink:hover,.navlink:hover a{backgroun=
+d:#ffc50a!important;color:#4d4d4f!important}div[style*=3D"margin: 16px 0;"]=
+{margin:0!important}</style> <style type=3D"text/css">@media screen and (ma=
+x-width:649px){.wrapper{width:100%!important;max-width:100%!important}.resp=
+onsive-table{width:100%!important;clear:both!important}.half-width{width:47=
+%!important;max-width:47%!important}.forty{width:40%!important;max-width:40=
+%!important}.thirty{width:30%!important;max-width:30%!important}.twentyfive=
+{width:25%!important;max-width:25%!important}.twenty{width:20%!important;ma=
+x-width:20%!important}.ten{width:10%!important;max-width:10%!important}.mob=
+ile-hide{display:none!important}div>u+.body .hb{display:none!important}.mob=
+ile-display{display:block!important}.img-max{max-width:100%!important;width=
+:100%!important;height:auto!important;max-height:none!important}.logo{width=
+:100%!important;height:auto!important}.logo img,.logo div{display:block!imp=
+ortant;margin:0 auto 20px!important;max-width:90%!important}.padding{paddin=
+g:20px 0 0 0!important}.padding-both{padding:10px 0 10px 0!important}.no-pa=
+dding{padding:0!important}.padding-ninety{padding:0 20px 0 20px!important}.=
+padding-small{padding:0 5px 0 5px!important}.padding-top{padding-top:40px!i=
+mportant}.mobile-button-container{margin:20px auto 40px;width:100%!importan=
+t;max-width:300px!important}.mobile-button{padding:15px!important;font-size=
+:16px!important;display:block!important}.bigtext{font-size:50px!important}.=
+mediumtext{font-size:16px!important}.smalltext{font-size:12px!important}.ce=
+nterText{text-align:center!important}.radius{border-radius:0!important}.hal=
+f-width.wrapper{padding:0 0 20px 0}.heightFix{height:auto!important;min-hei=
+ght:30px!important}u+.body .lhgmf{font-size:25px!important;margin-top:-16px=
+!important;line-height:0!important}u+.body .headerText{padding:20px 0 0!imp=
+ortant}#hidden-checkbox:checked ~ #nav-container{display:block!important;ba=
+ckground:#eeb91a!important;padding:5px 0 0 0!important}#hidden-checkbox:che=
+cked ~ #nav-container tbody,#hidden-checkbox:checked ~ #nav-container tbody=
+ tr{width:100%!important;display:block!important}#hidden-checkbox:checked ~=
+ #nav-container .nav-button{display:block!important;width:95%!important;pad=
+ding:0 0 5px 0!important;margin:0 auto!important}#hidden-checkbox:checked ~=
+ #nav-container .nav-button .navlink{display:block!important;width:100%!imp=
+ortant;padding:15px 0 10px 0!important;background:#fcd668!important}#hidden=
+-checkbox:checked ~ #nav-container .nav-button .navlink a{background:#fcd66=
+8!important;color:#000!important;font-size:22px!important;font-weight:900!i=
+mportant}#hidden-checkbox:checked ~ label.x{display:block!important}#hidden=
+-checkbox:checked ~ label.hb{display:none!important}}</style> <!-- OUTLOOK =
+SPECIFIC STYLES --> <!--[if gte mso 9]><style type=3D"text/css">*,body,tabl=
+e,td{font-family:Arial,Helvetica,sans-serif!important}.mso-heightfix{paddin=
+g-top:20px!important}.mso-buttonfix{margin-left:20px}.mso-buttonfix .mobile=
+-button-container{width:170px!important}.responsive-table{padding:0 0 0 0!i=
+mportant}</style> <xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerI=
+nch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml><![endif]--> <!-- =
+EVEREST/VALIDITY CAMPAIGN ID TRACKER --> <!-- rpcampaign: THIECOM_4497278 -=
+-> </head> <body class=3D"body" style=3D"margin: 0 !important; padding: 0 !=
+important;">=0D=0A<div style=3D"color:transparent;visibility:hidden;opacity=
+:0;font-size:0px;border:0;max-height:1px;width:1px;margin:0px;padding:0px;b=
+order-width:0px!important;display:none!important;line-height:0px!important;=
+"><img border=3D"0" width=3D"1" height=3D"1" src=3D"http://track.realtruck.=
+com/q/LpwrQ98PYmlzsp1m_d3PUA~~/AAPIggA~/RgRl6b1EPVcDc3BjQgpkAEQ4B2T3zj6cUhd=
+hY2hyYWZlbDczMTE0QHlhaG9vLmNvbVgEAAAAAA~~" alt=3D""/></div>=0D=0A <!-- HEAD=
+ER --> <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%"> <tr> <td align=3D"center" style=3D"padding: 10px 0px=
+ 0px 0px;"> <table bgcolor=3D"2a2a2a" border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0" width=3D"700px" style=3D"max-width: 700px;" class=3D"wrapper"> =
+<tr> <td align=3D"center" valign=3D"top"> <div style=3D"font-size: 12px; co=
+lor: #999999;">add realtruck@e.realtruck.com to your contacts&nbsp;&nbsp;&n=
+bsp;/&nbsp;&nbsp;&nbsp;<a style=3D"color: #1c7ec6;" href=3D"http://links.re=
+altruck.com/e/evib=3F_t=3Dc08ceafcb1aa4503b82ebde1eed2962c&_m=3D6b42f5fc38b=
+042259061d8f3b4fe89fa&_e=3D9OxrDffd3lmMCrmj4YussZ_JQfCB7GoccFPGa-b7DFrXaahR=
+J5DVYQ3NoFUX5ele" target=3D"_blank">View online</a></div> <br/> <!-- EVERES=
+T / VALIDITY TRACKING PIXEL --> <img src=3D"https://pixel.app.returnpath.ne=
+t/pixel.gif=3Fr=3D93bccf3165d81daf1c374c3c3baf375bb4e2e6cf" width=3D"1" hei=
+ght=3D"1"/> <!--[if gte mso 9]><table align=3D"center" border=3D"0" cellspa=
+cing=3D"0" cellpadding=3D"0" width=3D"700"><tr><td align=3D"center" valign=
+=3D"top" width=3D"700"><![endif]--> <table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" width=3D"100%" style=3D"max-width: 700px;" class=3D"wrappe=
+r"> <tr> <td align=3D"center" valign=3D"top" class=3D"logo" style=3D"paddin=
+g: 0px 0px 0px 0px"> <a href=3D"http://links.realtruck.com/u/click=3F_t=3Dc=
+08ceafcb1aa4503b82ebde1eed2962c&_m=3D6b42f5fc38b042259061d8f3b4fe89fa&_e=3D=
+OLuFCwv0kiHt57GTednUzJULkUp9dqOUjaYQMry8s4gVX1H-Hy04JPfPxOfCEikpVuFZuEEpIsq=
+ImZ8mxklKGeKFPy_ajkDVNKVg8PmMPZ2vC-8UQKAJwaHrYKGIt5dUufpvHumQ9vy82T2rC6N0Q3=
+yUmVCFEqE86Wkh-z7Zz_S6MT1P_Xe5tULE2Ml2RW6gJNMdZmeZNEoaW_qqJaYlmqKp3sOYIzDqi=
+RtVhXSXFxroQVxRzH-7xAkxfwvLwDH2qtgFA-Q3pkkgCK6l4bFzbC8UsDD1YuSQu2UK3UTNpUxJ=
+a9FRvuPndUNQ7pbaYf-8" target=3D"_blank"> <img alt=3D"RealTruck.com" src=3D"=
+https://a.storyblok.com/f/148322/964x90/92ee904f96/were-realtruck-people-li=
+ght.png" alt=3D"We're RealTruck People" class=3D"img-max" width=3D"500" sty=
+le=3D"display: block; color: #ffffff; font-size: 16px;" border=3D"0"> </a> =
+</td> </tr> </table> </td> </tr> </table> <table bgcolor=3D"2a2a2a" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"700px" style=3D"max-wid=
+th: 700px;" class=3D"wrapper"> <tr> <td align=3D"center" valign=3D"top" cla=
+ss=3D"nav" style=3D"padding: 0px 10px 0px 10px; max-width: 680px; text-tran=
+sform: uppercase; font-weight: 700; border-bottom: 6px solid #ffc50a;"> <!-=
+-[if gte mso 9]><!--> <input id=3D"hidden-checkbox" type=3D"checkbox" style=
+=3D"display:none !important;"> <label for=3D"hidden-checkbox" class=3D"hb m=
+obile-display" style=3D"display: none; color: #eeb91a; font-size: 32px; pad=
+ding: 0px 20px 20px 20px;">&#9776;</label> <label for=3D"hidden-checkbox" c=
+lass=3D"x" style=3D"display: none; color: #eeb91a; font-size: 44px; padding=
+: 0px 20px 10px 20px;">&#215;</label> <!--<![endif]--> <table align=3D"cent=
+er" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mobile-hide=
+" id=3D"nav-container"> <tr> <td width=3D"33%" align=3D"center" class=3D"na=
+v-button" style=3D"padding: 15px 5px 10px 0px;"> <table align=3D"center" ce=
+llpadding=3D"0" cellspacing=3D"0" width=3D"100%"> <tr> <td align=3D"center"=
+ class=3D"navlink" bgcolor=3D"#666666" style=3D"padding: 15px 0px 10px 0px;=
+"> <a href=3D"http://links.realtruck.com/u/click=3F_t=3Dc08ceafcb1aa4503b82=
+ebde1eed2962c&_m=3D6b42f5fc38b042259061d8f3b4fe89fa&_e=3DOLuFCwv0kiHt57GTed=
+nUzIgKfOG9z-mkwCtc2wrmMzoQVQ62EUF7Jhs0wXc1_4qntOU2LyzrAyC9wpzISHmk5u871VzY7=
+42duJfSVlUv6OgiyEoNaau2Wzlsx4QRetD-3v5fjET_MrOvdM3Zk5fCbZU2rFBY28SAyI5uZwfg=
+HrLpJK6FOnSGxtUPjYIu7R4MGm50lkDw1zYiahjHlHfjzS-HOO1qS9NAdlOFhGjam763PDU8EaV=
+JcXAKeIni6-mwlX9qHvfLvb8mcfVH5YNLfOBisJvMYf3v9vd2zAfthmSZ2CETZGCNz30iBOz5tY=
+9dIGJhiPonLzkNeNJiLCesBQ%3D%3D" style=3D"text-decoration: none; color: #ded=
+bd9;" target=3D"_blank">Products</a> </td> </tr> </table> </td> <td width=
+=3D"33%" align=3D"center" class=3D"nav-button" style=3D"padding: 15px 5px 1=
+0px 5px;"> <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" widt=
+h=3D"100%"> <tr> <td align=3D"center" class=3D"navlink" bgcolor=3D"#666666"=
+ style=3D"padding: 15px 5px 10px 0px;"> <a href=3D"http://links.realtruck.c=
+om/u/click=3F_t=3Dc08ceafcb1aa4503b82ebde1eed2962c&_m=3D6b42f5fc38b04225906=
+1d8f3b4fe89fa&_e=3DOLuFCwv0kiHt57GTednUzO5ysisCby0E-lSpN1evbV5QPk4cVtzCWmDf=
+DYHR1bTPJu20oGWai0A8XaVxABS_oqfWyGupXZC3eOeoqjFWQgBmovNCKvxgBLXWYxZFvgogH27=
+BE2xGRRmsosuGpJ5CEFOSb2p41syYD2dfk0L69iG4EzQRaopcDA2uf0UJwG7PvYQ5sfb8HewdVm=
+opIT_C7c0DJ8lj_l5dz748KQ4TigtQzGvTJ22YsEpC2xmhIjZM9gDVlMY0fw79ZAFUvjhMpzs5Z=
+xeKFWO8wMF9r2g28eYJ925aM3GI5cI3BnIZKMKRWI6dQSWFBmBSvPw4TpLbQQ%3D%3D" style=
+=3D"text-decoration: none; color: #dedbd9;" target=3D"_blank">Deals</a> </t=
+d> </tr> </table> </td> <td width=3D"33%" align=3D"center" class=3D"nav-but=
+ton" style=3D"padding: 15px 0px 10px 5px;"> <table align=3D"center" cellpad=
+ding=3D"0" cellspacing=3D"0" width=3D"100%"> <tr> <td align=3D"center" clas=
+s=3D"navlink" bgcolor=3D"#666666" style=3D"padding: 15px 0px 10px 0px;"> <a=
+ href=3D"http://links.realtruck.com/u/click=3F_t=3Dc08ceafcb1aa4503b82ebde1=
+eed2962c&_m=3D6b42f5fc38b042259061d8f3b4fe89fa&_e=3DOLuFCwv0kiHt57GTednUzLB=
+R3JXzcFCtSMMzCpb7ss5_jQdaO2mGfZz0oKRoUmw-9CpI8aImVG9LZyyKFRyldmuwy-c9Qk0_Zu=
+XYD47muWfERN9zLLptTlY-SgbW2glie-p-PdvLvQh_JU4iWbYXyg95FGVBIZqETbnatvvfVwcr5=
+rMzAbc9-A5RlCDwizHvpO_0zqr_s2H4RW5o0BaV4ChXl-fOgk79KU2dz-GW6C0FQAKKm7ALd7Wd=
+1olXyIUBcYHgl8Zagdwt-rkuIm49_rd1GU3UmiYjrgGIKnRrrrHvnHqQ_b1UJqYBkvoIRD9GPKX=
+j9QvePIDNLZ3vcnrGzw%3D%3D" style=3D"text-decoration: none; color: #dedbd9;"=
+ target=3D"_blank">Blog</a> </td> </tr> </table> </td> </tr> </table> </td>=
+ </tr> </table> <!--[if gte mso 9]></td></tr></table><![endif]--> </td> </t=
+r> </table> <!-- END HEADER --> <!-- HERO IMAGE --> <table border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" width=3D"100%"> <tr> <td bgcolor=3D"#fffff=
+f" align=3D"center" style=3D"padding: 0px 0px 20px 0px;"> <!--[if gte mso 9=
+]><table align=3D"center" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" =
+width=3D"700"><tr><td align=3D"center" valign=3D"top" width=3D"700"><![endi=
+f]--> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%=
+" style=3D"max-width: 700px;" class=3D"responsive-table"> <tr> <td> <table =
+width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"> <tr> <td c=
+lass=3D"no-padding" align=3D"center"> <a href=3D"http://links.realtruck.com=
+/u/click=3F_t=3Dc08ceafcb1aa4503b82ebde1eed2962c&_m=3D6b42f5fc38b042259061d=
+8f3b4fe89fa&_e=3DOLuFCwv0kiHt57GTednUzJULkUp9dqOUjaYQMry8s4gVX1H-Hy04JPfPxO=
+fCEikpVuFZuEEpIsqImZ8mxklKGeKFPy_ajkDVNKVg8PmMPZ2vC-8UQKAJwaHrYKGIt5dUqBgpK=
+a0_amG4S1pWeptBkPk3VF-C3MAjY26B83Dod8A3r1Nuc06yCfTqzUFUO98tZL6BFzRVMYacy6dX=
+WV8oN0hV3pCrJifsQtokZGLq4SpysHgWzKgdDnRplmm1hoe43ac2kAQHEvbwzQ0ytdjEdGH0k_t=
+FxqTifnss90Lp7lJBgeU2C4gbM8kPnPIT71Pc" target=3D"_blank"><img src=3D"https:=
+//a.storyblok.com/f/148322/1152x864/8bd3e00d19/onboarding_msg_1_hero.jpg/m/=
+700x525" width=3D"700" border=3D"0" alt=3D"x" style=3D"display: block;" cla=
+ss=3D"img-max"></a> </td> </tr> </table> </td> </tr> </table> <!--[if gte m=
+so 9]></td></tr></table><![endif]--> </td> </tr> </table> <!-- END HERO IMA=
+GE --> <!-- FULL WIDTH BACKGROUND IMAGE CTA --> <table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" width=3D"100%"> <tr> <td bgcolor=3D"#ffffff" a=
+lign=3D"center" style=3D"padding: 0px 0px 0px 0px;"> <!--[if gte mso 9]><ta=
+ble align=3D"center" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=
+=3D"700"><tr><td align=3D"center" valign=3D"middle" width=3D"700"><![endif]=
+--> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" =
+style=3D"max-width: 700px;" class=3D"responsive-table"> <tr> <td valign=3D"=
+middle" height=3D"" width=3D"700" align=3D"center" valign=3D"middle" style=
+=3D"padding: 0px 0px 0px 0px; height: px; background-color: #282828; backgr=
+ound-image: url('https://a.storyblok.com/f/148322/700x700/0b3d9d6e5b/topogr=
+aphy-transparent.png'); background-repeat: no-repeat;" background=3D"https:=
+//a.storyblok.com/f/148322/700x700/0b3d9d6e5b/topography-transparent.png"> =
+<!--[if gte mso 9]><v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=
+=3D"true" stroke=3D"false" style=3D"width: 700px; height: px;"><v:fill colo=
+r=3D"#282828" type=3D"tile" src=3D"https://a.storyblok.com/f/148322/700x700=
+/0b3d9d6e5b/topography-transparent.png"/><v:textbox style=3D"mso-fit-shape-=
+to-text:true" inset=3D"0,0,0,0"><![endif]--> <table height=3D"" width=3D"10=
+0%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"> <tr> <td style=3D"pad=
+ding: 0px 0px 0px 0px;"> <table height=3D"200" width=3D"100%" border=3D"0" =
+cellspacing=3D"0" cellpadding=3D"0"> <tr> <td align=3D"center" style=3D"tex=
+t-transform: uppercase; font-family: 'Roboto', Arial, Helvetica, sans-serif=
+; font-weight: 900; padding: 40px 20px 0px 20px; font-size: 38px; color: #f=
+fc50a;" class=3D"no-padding bigtext"> Thanks for joining! </td> </tr> <tr> =
+<td align=3D"center" style=3D"text-transform: uppercase; font-family: 'Alfa=
+ Slab One', 'Roboto', Arial, Helvetica, sans-serif; padding: 0px 20px 20px =
+20px; font-size: 18px; color: #ffffff;" class=3D"mediumtext"> We=E2=80=99ll=
+ help you turn your truck into the perfect outdoor adventure companion with=
+ deals, new arrivals, giveaways, and more. </td> </tr> </table> </td> </tr>=
+ <tr> <td align=3D"center"> <!-- BULLETPROOF BUTTON --> <table width=3D"100=
+%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"> <tr> <td align=3D"cent=
+er" class=3D"no-padding" style=3D"padding: 0px 0px 40px 0px;"> <table borde=
+r=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"mobile-button-containe=
+r"> <tr> <td align=3D"center" bgcolor=3D"#ffc50a"> <a href=3D"http://links.=
+realtruck.com/u/click=3F_t=3Dc08ceafcb1aa4503b82ebde1eed2962c&_m=3D6b42f5fc=
+38b042259061d8f3b4fe89fa&_e=3DOLuFCwv0kiHt57GTednUzJULkUp9dqOUjaYQMry8s4gVX=
+1H-Hy04JPfPxOfCEikpVuFZuEEpIsqImZ8mxklKGeKFPy_ajkDVNKVg8PmMPZ2vC-8UQKAJwaHr=
+YKGIt5dUKBuXB12qkanlPi-SfQcyYFNEBBUxvUyvIkCPy_riHXxlD69nZfPidK6V5Zulh1ubQzA=
+mysVmGBrk7ww6CJSEjl-UwfVrGzUak1oE8xS9tG_A2BYbhuMMco7IcjxL7clHg_HY-DKVib7ks4=
+ZL3mZh9L6uqyqOXcJwHbu-Uwg5iV2EsxsWQRUleAnRlmf-i-NE" target=3D"_blank" style=
+=3D"font-size: 20px; color: #262416; text-decoration: none; font-family: 'A=
+lfa Slab One', 'Roboto', Arial, Helvetica, sans-serif; padding: 5px 30px; b=
+order: 1px solid #ffc50a; display: inline-block;" class=3D"mobile-button me=
+diumtext"> <!--[if gte mso 9]><i style=3D"letter-spacing: 15px; mso-font-wi=
+dth: -100%;">&nbsp;</i><![endif]--> SHOP NOW <!--[if mso]><i style=3D"lette=
+r-spacing: 15px; mso-font-width: -100%;">&nbsp;</i><![endif]--> </a> </td> =
+</tr> </table> </td> </tr> </table> <!-- END BULLETPROOF BUTTON --> </td> <=
+/tr> </table> <!--[if gte mso 9]></v:textbox></v:rect><![endif]--> </td> </=
+tr> </table> <!--[if gte mso 9]></td></tr></table><![endif]--> </td> </tr> =
+</table> <!-- END FULL WIDTH BACKGROUND IMAGE CTA --> <!-- TWO COLUMN BUILD=
+S --> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%=
+"> <tr> <td bgcolor=3D"#ffffff" align=3D"center" style=3D"padding: 20px 0px=
+ 0px 0px;"> <!--[if gte mso 9]><table align=3D"center" border=3D"0" cellspa=
+cing=3D"0" cellpadding=3D"0" width=3D"700"><tr><td align=3D"center" valign=
+=3D"top" width=3D"700"><![endif]--> <table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" width=3D"100%" style=3D"max-width: 700px;" class=3D"respon=
+sive-table"> <tr> <td> <table width=3D"100%" border=3D"0" cellspacing=3D"0"=
+ cellpadding=3D"0"> <tr> <td class=3D"no-padding" align=3D"center"> <a href=
+=3D"http://links.realtruck.com/u/click=3F_t=3Dc08ceafcb1aa4503b82ebde1eed29=
+62c&_m=3D6b42f5fc38b042259061d8f3b4fe89fa&_e=3DOLuFCwv0kiHt57GTednUzNO0Z0ny=
+TiFD2rbnj_ymUVPgV-Z5_btYq1YHBKCvGzDESGV5ytCZSmxHYn2nUTBu6guX0utqXPgH06EIRtq=
+t3IYW-7xwlqruiHJC-rMRSmHVUxEP9iSHO2g5JISNVsLeOxjBHSSJ_Ae_vMWjVg4TBo-dFwuVry=
+tq9CKRKcIDqkiB1g1XwiTAyZVD5y9-AhzUb4K6r80vbvuLfvhZssUZkNyh2x9vQDfD9veshLRPG=
+Qgme-_NnzHQZeIKzGgJCbwmkTHzKpKPDky7xr0vmEvnM8-e51qyQjLGse_BQ0tzN-GcJhjBeKUB=
+Dk1eyC9FcbL7fqKFd4HjCHRjpsdizE96jl8%3D" target=3D"_blank"><img src=3D"https=
+://a.storyblok.com/f/148322/700x209/390a6bc431/builds-700x209-3.jpg" width=
+=3D"700" border=3D"0" alt=3D"REAL BUILDS" style=3D"display: block;" class=
+=3D"img-max"></a> </td> </tr> </table> </td> </tr> </table> <!--[if gte mso=
+ 9]></td></tr></table><![endif]--> </td> </tr> </table> <table border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"> <tr> <td bgcolor=3D"#f=
+fffff" align=3D"center" style=3D"padding: 0px 0px 0px 0px;" class=3D"sectio=
+n-padding"> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"700" style=3D"padding: 0px 0px 0px 0px;" class=3D"responsive-table"> <t=
+r> <td align=3D"center" height=3D"100%" valign=3D"top" width=3D"100%"> <!--=
+[if gte mso 9]><table align=3D"center" border=3D"0" cellspacing=3D"0" cellp=
+adding=3D"0" width=3D"700"><tr><td align=3D"center" valign=3D"top" width=3D=
+"700"><![endif]--> <table align=3D"center" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" width=3D"100%" style=3D"max-width:700px;"> <tr> <td align=
+=3D"center" valign=3D"top" style=3D"font-size:0;"> <!--[if gte mso 9]><tabl=
+e align=3D"center" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=
+=3D"700"><tr><td align=3D"left" valign=3D"top" width=3D"350" style=3D"paddi=
+ng: 20px 0px 0px 0px;"><![endif]--> <div style=3D"display:inline-block; max=
+-width:350px; vertical-align:top; width:100%;" class=3D"wrapper"> <table al=
+ign=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"350"=
+ class=3D"wrapper"> <tr> <td valign=3D"top"> <a href=3D"http://links.realtr=
+uck.com/u/click=3F_t=3Dc08ceafcb1aa4503b82ebde1eed2962c&_m=3D6b42f5fc38b042=
+259061d8f3b4fe89fa&_e=3DOLuFCwv0kiHt57GTednUzNO0Z0nyTiFD2rbnj_ymUVPgV-Z5_bt=
+Yq1YHBKCvGzDESGV5ytCZSmxHYn2nUTBu6guX0utqXPgH06EIRtqt3IYW-7xwlqruiHJC-rMRSm=
+HVUxEP9iSHO2g5JISNVsLeOxjBHSSJ_Ae_vMWjVg4TBo8NnUgI1hf-n_irFtOcR9KKLQn1dTk0V=
+w5dOsBQAOkOFoYJuVU9GTP1ePrgwcIA47Q_MFT4WhljDyVN8KytDIHwCP1B8DmQAfLblGuSGX6h=
+Grt1TYIxQQsz8iprh92coW0i3rgw4UEk11QSPZJBQAdpe3vW7EArkpIOKUzgkV6_ZOz7MaoqxUJ=
+ybUk51m2yrDk%3D" target=3D"_blank"><img src=3D"https://a.storyblok.com/f/14=
+8322/400x300/7521e7f577/builds-email-evergreen-grid-400x300.jpg" alt=3D"REA=
+L BUILDS" width=3D"350" border=3D"0" style=3D"display: block; margin: 0 aut=
+o; max-height: 262px;" class=3D"img-max"></a> </td> </tr> </table> </div> <=
+!--[if gte mso 9]></td><td align=3D"right" valign=3D"top" width=3D"350" hei=
+ght=3D"262"><![endif]--> <div style=3D"display:inline-block; max-width:350p=
+x; vertical-align:top; width:100%;" class=3D"wrapper"> <table align=3D"righ=
+t" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D=
+"max-width: 350px; float: right;" class=3D"wrapper"> <tr> <td valign=3D"top=
+" height=3D"262" width=3D"350" style=3D"padding: 0px 0px 0px 0px; height: 2=
+62px;"> <!--[if gte mso 9]><table align=3D"center" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" width=3D"350"><tr><td align=3D"center" valign=3D"t=
+op" width=3D"350"><![endif]--> <table border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" width=3D"100%" height=3D"262"> <tr> <td align=3D"left" style=3D=
+"height: 35px; text-transform: uppercase; font-family: 'Alfa Slab One', 'Ro=
+boto', Arial, Helvetica, sans-serif; padding: 30px 0px 0px 20px; font-size:=
+ 35px; color: #3c3c3c;" class=3D"padding-ninety"> REAL BUILDS </td> </tr> <=
+tr> <td align=3D"left" style=3D"height: 35px; text-transform: uppercase; pa=
+dding: 0px 0px 0px 20px; font-size: 24px; font-weight: 700; color: #ffc50a;=
+"> <span style=3D"border-bottom: 1px solid #ffc50a; padding: 0px 0px 2px 0p=
+x;">REAL PEOPLE</span> </td> </tr> <tr> <td align=3D"left" style=3D"padding=
+: 0px 0px 10px 20px; font-weight: 200; font-size: 14px; color: #000000;"> F=
+ind inspiration from other RealTruck People just like you, or upload and sh=
+are your build to inspire others! </td> </tr> <tr> <td align=3D"left" style=
+=3D"padding: 0px 0px 0px 20px;" class=3D"no-padding"> <!-- BULLETPROOF BUTT=
+ON --> <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"=
+0" class=3D"mso-buttonfix"> <tr> <td align=3D"left" class=3D"no-padding" st=
+yle=3D"padding: 0px 0px 10px 0px;"> <table border=3D"0" cellspacing=3D"0" c=
+ellpadding=3D"0" bgcolor=3D"#ffc50a" class=3D"mobile-button-container"> <tr=
+> <td align=3D"center"> <a href=3D"http://links.realtruck.com/u/click=3F_t=
+=3Dc08ceafcb1aa4503b82ebde1eed2962c&_m=3D6b42f5fc38b042259061d8f3b4fe89fa&_=
+e=3DOLuFCwv0kiHt57GTednUzNO0Z0nyTiFD2rbnj_ymUVPgV-Z5_btYq1YHBKCvGzDESGV5ytC=
+ZSmxHYn2nUTBu6guX0utqXPgH06EIRtqt3IYW-7xwlqruiHJC-rMRSmHVUxEP9iSHO2g5JISNVs=
+LeOxjBHSSJ_Ae_vMWjVg4TBo8-9FgMVRnDDo_huZvh7UepGn5akljLXnqrLpu-5Rbpnq-iEGEzV=
+xF1kokk5-cvyM23C1hWyV9NsVrvPN2o2WyMLH7JVTtd-6Pdm3ZZbGh88Q7rrbRr0Nz-4470lwV6=
+tB-iUwVSURYw_blqZTNRfIK5WhnjRiSJIUP5ZjIDJwdTPA%3D%3D" target=3D"_blank" sty=
+le=3D" font-family: 'Alfa Slab One', 'Roboto', Arial, Helvetica, sans-serif=
+; font-size: 16px; color: #3c3c3c; text-decoration: none; padding: 3px 30px=
+; border: 1px solid #ffc50a; display: inline-block;" class=3D"mobile-button=
+"> <!--[if gte mso 9]><i style=3D"letter-spacing: 15px; mso-font-width: -10=
+0%;">&nbsp;</i><![endif]--> VIEW BUILDS <!--[if mso]><i style=3D"letter-spa=
+cing: 15px; mso-font-width: -100%;">&nbsp;</i><![endif]--> </a> </td> </tr>=
+ </table> </td> </tr> </table> <!-- END BULLETPROOF BUTTON --> </td> </tr> =
+</table> <!--[if gte mso 9]></td></tr></table><![endif]--> </td> </tr> </ta=
+ble> </div> <!--[if gte mso 9]></td></tr></table><![endif]--> </td> </tr> <=
+/table> <!--[if gte mso 9]></td></tr></table><![endif]--> </td> </tr> </tab=
+le> </td> </tr> </table> <!-- END TWO COLUMN BUILDS --> <!-- SEPERATOR TEXT=
+ --> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+> <tr> <td align=3D"center" style=3D"padding: 20px 15px 20px 15px;"> <!--[i=
+f gte mso 9]><table align=3D"center" border=3D"0" cellspacing=3D"0" cellpad=
+ding=3D"0" width=3D"700"><tr><td align=3D"center" valign=3D"top" width=3D"7=
+00"><![endif]--> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" style=3D"max-width: 700px;"> <tr> <td> <table width=3D"100%" b=
+order=3D"0" cellspacing=3D"0" cellpadding=3D"0"> <tr> <td valign=3D"top" ba=
+ckground=3D"https://a.storyblok.com/f/148322/700x50/84e791fa20/line-bg-yell=
+ow.png" width=3D"700" height=3D"50" style=3D"text-align: center; height: 50=
+px; background-repeat: no-repeat; background-position: center;"> <!--[if gt=
+e mso 9]><v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" st=
+roke=3D"false" style=3D"width: 700px; height: 50px;"><v:fill type=3D"tile" =
+src=3D"https://a.storyblok.com/f/148322/700x50/84e791fa20/line-bg-yellow.pn=
+g" color=3D"#ffffff"/><v:textbox style=3D"mso-fit-shape-to-text:true" inset=
+=3D"0,0,0,0"><![endif]--> <table align=3D"center" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0"> <tr> <td bgcolor=3D"#ffffff" height=3D"50" style=
+=3D"padding: 0px 20px 0px 20px; background: #ffffff; text-align: center; ba=
+ckground-repeat: no-repeat;"> <div style=3D"font-family: 'Alfa Slab One', '=
+Roboto', Arial, Helvetica, sans-serif; text-transform: uppercase; font-size=
+: 22px;">TOP CATEGORIES</div> </td> </tr> </table> <!--[if gte mso 9]></v:t=
+extbox></v:rect><![endif]--> </td> </tr> </table> </td> </tr> </table> <!--=
+[if gte mso 9]></td></tr></table><![endif]--> </td> </tr> </table> <!-- END=
+ SEPERATOR TEXT --> <!-- THREE COLUMN --> <table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%"> <tr> <td align=3D"center" style=3D=
+"padding: 0px 0px 0px 0px;"> <!--[if gte mso 9]><table align=3D"center" bor=
+der=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"700"><tr><td align=
+=3D"center" valign=3D"top" width=3D"700"><![endif]--> <table border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"max-width: 700px=
+;" class=3D"responsive-table"> <tr> <td align=3D"center" height=3D"100%" va=
+lign=3D"top" width=3D"100%"> <!--[if gte mso 9]><table align=3D"center" bor=
+der=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"700"><tr><td align=
+=3D"center" valign=3D"top" width=3D"700"><![endif]--> <table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D=
+"max-width:700px;"> <tr> <td align=3D"center" valign=3D"top" style=3D"font-=
+size:0;" class=3D"no-padding"> <!--[if gte mso 9]><table align=3D"center" b=
+order=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"700"><tr><td align=
+=3D"center" valign=3D"top" width=3D"216"><![endif]--> <div style=3D"display=
+:inline-block; max-width:33%; vertical-align:top; width:100%;" class=3D"wra=
+pper"> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100=
+%" style=3D"max-width:216px;" class=3D"wrapper"> <tr> <td align=3D"center" =
+valign=3D"top" class=3D"padding-ninety"> </td> </tr> </table> </div> <!--[i=
+f gte mso 9]></td><td width=3D"20" style=3D"font-size: 1px;">&nbsp;</td><td=
+ align=3D"center" valign=3D"top" width=3D"216"><![endif]--> <div style=3D"d=
+isplay:inline-block; max-width:33%; vertical-align:top; width:100%;" class=
+=3D"wrapper"> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"max-width:216px;" class=3D"wrapper"> <tr> <td align=3D"c=
+enter" valign=3D"top" class=3D"padding-ninety"> </td> </tr> </table> </div>=
+ <!--[if gte mso 9]></td><td width=3D"20" style=3D"font-size: 1px;">&nbsp;<=
+/td><td align=3D"center" valign=3D"top" width=3D"216"><![endif]--> <div sty=
+le=3D"display:inline-block; max-width:33%; vertical-align:top; width:100%;"=
+ class=3D"wrapper"> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ width=3D"100%" style=3D"max-width:216px;" class=3D"wrapper"> <tr> <td alig=
+n=3D"center" valign=3D"top" class=3D"padding-ninety"> </td> </tr> </table> =
+</div> <!--[if gte mso 9]></td></tr></table><![endif]--> </td> </tr> </tabl=
+e> <!--[if gte mso 9]></td></tr></table><![endif]--> </td> </tr> </table> <=
+!--[if gte mso 9]></td></tr></table><![endif]--> </td> </tr> </table> <!-- =
+END THREE COLUMN --> <!-- THREE COLUMN --> <table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%"> <tr> <td align=3D"center" style=3D=
+"padding: 0px 0px 0px 0px;"> <!--[if gte mso 9]><table align=3D"center" bor=
+der=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"700"><tr><td align=
+=3D"center" valign=3D"top" width=3D"700"><![endif]--> <table border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"max-width: 700px=
+;" class=3D"responsive-table"> <tr> <td align=3D"center" height=3D"100%" va=
+lign=3D"top" width=3D"100%"> <!--[if gte mso 9]><table align=3D"center" bor=
+der=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"700"><tr><td align=
+=3D"center" valign=3D"top" width=3D"700"><![endif]--> <table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D=
+"max-width:700px;"> <tr> <td align=3D"center" valign=3D"top" style=3D"font-=
+size:0;" class=3D"no-padding"> <!--[if gte mso 9]><table align=3D"center" b=
+order=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"700"><tr><td align=
+=3D"center" valign=3D"top" width=3D"216"><![endif]--> <div style=3D"display=
+:inline-block; max-width:33%; vertical-align:top; width:100%;" class=3D"wra=
+pper"> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100=
+%" style=3D"max-width:216px;" class=3D"wrapper"> <tr> <td align=3D"center" =
+valign=3D"top" class=3D"padding-ninety"> </td> </tr> </table> </div> <!--[i=
+f gte mso 9]></td><td width=3D"20" style=3D"font-size: 1px;">&nbsp;</td><td=
+ align=3D"center" valign=3D"top" width=3D"216"><![endif]--> <div style=3D"d=
+isplay:inline-block; max-width:33%; vertical-align:top; width:100%;" class=
+=3D"wrapper"> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"max-width:216px;" class=3D"wrapper"> <tr> <td align=3D"c=
+enter" valign=3D"top" class=3D"padding-ninety"> </td> </tr> </table> </div>=
+ <!--[if gte mso 9]></td><td width=3D"20" style=3D"font-size: 1px;">&nbsp;<=
+/td><td align=3D"center" valign=3D"top" width=3D"216"><![endif]--> <div sty=
+le=3D"display:inline-block; max-width:33%; vertical-align:top; width:100%;"=
+ class=3D"wrapper"> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ width=3D"100%" style=3D"max-width:216px;" class=3D"wrapper"> <tr> <td alig=
+n=3D"center" valign=3D"top" class=3D"padding-ninety"> </td> </tr> </table> =
+</div> <!--[if gte mso 9]></td></tr></table><![endif]--> </td> </tr> </tabl=
+e> <!--[if gte mso 9]></td></tr></table><![endif]--> </td> </tr> </table> <=
+!--[if gte mso 9]></td></tr></table><![endif]--> </td> </tr> </table> <!-- =
+END THREE COLUMN --> <!-- TWO COLUMN RIGHT DUAL HEROS --> <table border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"> <tr> <td bgcolor=3D"=
+#ffffff" align=3D"center" style=3D"padding: 0px 0px 20px 0px;" class=3D"sec=
+tion-padding"> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" widt=
+h=3D"700" style=3D"padding: 0px 0px 0px 0px;" class=3D"responsive-table"> <=
+tr> <td align=3D"center" height=3D"100%" valign=3D"top" width=3D"100%"> <!-=
+-[if gte mso 9]><table align=3D"center" border=3D"0" cellspacing=3D"0" cell=
+padding=3D"0" width=3D"700"><tr><td align=3D"center" valign=3D"top" width=
+=3D"700"><![endif]--> <table align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" width=3D"100%" style=3D"max-width:700px; background-col=
+or: #282828; background-image: url('https://a.storyblok.com/f/148322/700x70=
+0/0b3d9d6e5b/topography-transparent.png'); background-repeat: no-repeat;"> =
+<tr> <td valign=3D"top" height=3D"262" width=3D"700" align=3D"center" valig=
+n=3D"top" style=3D"font-size:0;" dir=3D"rtl" style=3D"padding: 0px 0px 0px =
+0px; height: 262px;"> <!--[if gte mso 9]><v:rect xmlns:v=3D"urn:schemas-mic=
+rosoft-com:vml" fill=3D"true" stroke=3D"false" style=3D"width: 700px; heigh=
+t: 262px;"><v:fill type=3D"tile" src=3D"https://a.storyblok.com/f/148322/70=
+0x700/0b3d9d6e5b/topography-transparent.png" color=3D"#282828"/><v:textbox =
+style=3D"mso-fit-shape-to-text:true" inset=3D"0,0,0,0"><table align=3D"cent=
+er" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"700"><tr><td =
+align=3D"left" valign=3D"top" width=3D"350" style=3D"padding: 20px 0px 0px =
+0px;"><![endif]--> <div style=3D"display:inline-block; max-width:350px; ver=
+tical-align:top; width:100%;" dir=3D"ltr" class=3D"wrapper"> <table valign=
+=3D"middle" align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ width=3D"350" height=3D"262" class=3D"wrapper"> <tr> <td valign=3D"middle"=
+ class=3D"half-width"> <a href=3D"http://links.realtruck.com/u/click=3F_t=
+=3Dc08ceafcb1aa4503b82ebde1eed2962c&_m=3D6b42f5fc38b042259061d8f3b4fe89fa&_=
+e=3DOLuFCwv0kiHt57GTednUzLBR3JXzcFCtSMMzCpb7ss5Xg7_f4f_jASbuYhujEdbPpPDkp_g=
+4i5kdeaAaONxNamDah1a1feYfZqzbI-y2l-WgD1UyUNUSCNhhkZ1FubiBH7fNtV0HYLe8hbsNg1=
+p3dQ4MCWgJOsvEWm919ZqdGXyrCHu88hFefjhc1mNkUr6Ns81rSnGZSb-jzOTHf583YsjUHN6N2=
+Wneqn2yX769YsPfdhHVGDEJlkbX4etU4k_ACIRYVdWQFvUNxuGEG27tm2zhqfrCEg-SWBTXpmyd=
+qn7boso0LGkb-LbI34tkDFAyfgkoeI7QmeWsH73CrfY0FZO_FCnEEwFJ-uoQY-PEbhw0zyzYNoY=
+08XDeCpZ3ex7ZFmeRnN_7DG4-_bg0kXZS3Q%3D%3D" target=3D"_blank"><img src=3D"ht=
+tps://a.storyblok.com/f/148322/1000x750/361b5836cc/onboarding_msg_1_post_1_=
+twocolumn_dual_hero.jpg/m/400x300" alt=3D"" width=3D"150" border=3D"0" styl=
+e=3D"display: block; color: #266e9c; font-size: 14px; margin: 0 auto; max-w=
+idth: 95% !important;" class=3D"img-max"></a> </td> <td valign=3D"middle" c=
+lass=3D"half-width"> <a href=3D"http://links.realtruck.com/u/click=3F_t=3Dc=
+08ceafcb1aa4503b82ebde1eed2962c&_m=3D6b42f5fc38b042259061d8f3b4fe89fa&_e=3D=
+OLuFCwv0kiHt57GTednUzLBR3JXzcFCtSMMzCpb7ss5Xg7_f4f_jASbuYhujEdbPpPDkp_g4i5k=
+deaAaONxNamDah1a1feYfZqzbI-y2l-WgD1UyUNUSCNhhkZ1FubiBH7fNtV0HYLe8hbsNg1p3dQ=
+4MCWgJOsvEWm919ZqdGXyrCHu88hFefjhc1mNkUr6Ns81rSnGZSb-jzOTHf583Yh_diUW4XkGiz=
+NyFHFsmoyyGsaii8f1308nd0sFCzAKj3djvSR5VPLTJ0XqlYJFoTV5rgXh5jdDbwOsI_iMkRf1H=
+O6uo1DL5fqFlYSkuycEsefQtDEhw0I9pltJfSBge19wvYido2tSbdpyPN4pUPQsWMuPf3hYlzDw=
+XF0Oerg4KJCod0G2gZAkzNhzvAk6__g%3D%3D" target=3D"_blank"><img src=3D"https:=
+//a.storyblok.com/f/148322/1000x750/06d7ef79a2/onboarding_msg_1_post_2_twoc=
+olumn_dual_hero.jpg/m/400x300" alt=3D"xx" width=3D"150" border=3D"0" style=
+=3D"display: block; color: #266e9c; font-size: 14px; margin: 0 auto; max-wi=
+dth: 95% !important;" class=3D"img-max"></a> </td> </tr> </table> </div> <!=
+--[if gte mso 9]></td><td align=3D"left" valign=3D"top" width=3D"350"><![en=
+dif]--> <div style=3D"display:inline-block; max-width:350px; vertical-align=
+:top; width:100%;" dir=3D"ltr" class=3D"wrapper"> <table align=3D"left" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"max-w=
+idth: 350px;" class=3D"wrapper"> <tr> <td valign=3D"top" height=3D"262" wid=
+th=3D"350" style=3D"padding: 0px 0px 0px 0px; height: 262px;" class=3D"wrap=
+per"> <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%=
+"> <tr> <td align=3D"left" style=3D"text-transform: uppercase; font-family:=
+ 'Alfa Slab One', 'Roboto', Arial, Helvetica, sans-serif; padding: 30px 0px=
+ 0px 20px; font-size: 22px; color: #ffffff;"> we know trucks </td> </tr> <t=
+r> <td align=3D"left" style=3D"text-transform: uppercase; padding: 0px 0px =
+10px 20px; font-size: 30px; font-weight: 900; color: #ffc50a;"> <span style=
+=3D"padding: 0px 0px 10px 0px;">LEARN FROM THE EXPERTS OF THE ROAD</span> <=
+/td> </tr> <tr> <td align=3D"left" style=3D"padding: 10px 0px 20px 20px; fo=
+nt-weight: 200; font-size: 14px; color: #ffffff;"> From how-tos to product =
+reviews, we&#x27;ve got you covered. </td> </tr> <tr> <td align=3D"left" st=
+yle=3D"padding: 0px 0px 0px 20px;" class=3D"no-padding"> <!-- BULLETPROOF B=
+UTTON --> <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0"> <tr> <td align=3D"left" class=3D"no-padding" style=3D"padding: 0px =
+0px 10px 0px;"> <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" bgc=
+olor=3D"#ffc50a" class=3D"mobile-button-container"> <tr> <td align=3D"cente=
+r"> <a href=3D"http://links.realtruck.com/u/click=3F_t=3Dc08ceafcb1aa4503b8=
+2ebde1eed2962c&_m=3D6b42f5fc38b042259061d8f3b4fe89fa&_e=3DOLuFCwv0kiHt57GTe=
+dnUzLBR3JXzcFCtSMMzCpb7ss5_jQdaO2mGfZz0oKRoUmw-9CpI8aImVG9LZyyKFRyldmuwy-c9=
+Qk0_ZuXYD47muWfERN9zLLptTlY-SgbW2gliVAqGeOx8FltN5ujcGL9hdw9L3kHGNl0SGci_-12=
+Yr-aWb0Fh9z6pxp9Pd-a9czrnxCvcZeB-t1UB1_Ce1ZXiRcJh_VMN8opsve0PCeumPLD-8SEkPF=
+zaGCcPy_uTWRZ0Gjf-xNMSkyCdKAOUBAr5B5cSn5m2Tb82EYEFDPzQ8fPuFoo7VyqeIkLp9pd1n=
+cPNPWoObuN_FvlEeElJaZAoEQ%3D%3D" target=3D"_blank" style=3D" font-family: '=
+Alfa Slab One', 'Roboto', Arial, Helvetica, sans-serif; font-size: 16px; co=
+lor: #000000; text-decoration: none; padding: 3px 30px; border: 1px solid #=
+ffc50a; display: inline-block;" class=3D"mobile-button"> <!--[if gte mso 9]=
+><i style=3D"letter-spacing: 15px; mso-font-width: -100%;">&nbsp;</i><![end=
+if]--> READ MORE <!--[if mso]><i style=3D"letter-spacing: 15px; mso-font-wi=
+dth: -100%;">&nbsp;</i><![endif]--> </a> </td> </tr> </table> </td> </tr> <=
+/table> <!-- END BULLETPROOF BUTTON --> </td> </tr> </table> <!--[if gte ms=
+o 9]></td></tr></table><![endif]--> </td> </tr> </table> </div> <!--[if gte=
+ mso 9]></v:textbox></v:rect></td></tr></table><![endif]--> </td> </tr> </t=
+able> <!--[if gte mso 9]></td></tr></table><![endif]--> </td> </tr> </table=
+> </td> </tr> </table> <!-- END TWO COLUMN RIGHT DUAL HEROS --> <!-- REALTR=
+UCK PEOPLE --> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" widt=
+h=3D"100%"> <tr> <td align=3D"center" style=3D"padding: 20px 0px 40px 0px;"=
+ class=3D"section-padding"> <table border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" width=3D"700" style=3D"padding: 0px 0px 0px 0px;" class=3D"respons=
+ive-table"> <tr> <td align=3D"center" height=3D"100%" valign=3D"top" width=
+=3D"100%"> <!--[if gte mso 9]><table align=3D"center" border=3D"0" cellspac=
+ing=3D"0" cellpadding=3D"0" width=3D"700"><tr><td align=3D"center" valign=
+=3D"top" width=3D"700"><![endif]--> <table align=3D"center" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"max-width:700px;"=
+> <tr> <td align=3D"center" valign=3D"top" style=3D"font-size:0;"> <!--[if =
+gte mso 9]><table align=3D"center" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"700"><tr><td align=3D"left" valign=3D"top" width=3D"350" =
+style=3D"padding: 0px 0px 0px 0px;"><![endif]--> <div style=3D"display:inli=
+ne-block; max-width:350px; vertical-align:top; width:100%;" class=3D"wrappe=
+r"> <table align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+width=3D"350" class=3D"wrapper"> <tr> <td valign=3D"top"> <a href=3D"http:/=
+/links.realtruck.com/u/click=3F_t=3Dc08ceafcb1aa4503b82ebde1eed2962c&_m=3D6=
+b42f5fc38b042259061d8f3b4fe89fa&_e=3DOLuFCwv0kiHt57GTednUzJULkUp9dqOUjaYQMr=
+y8s4gVX1H-Hy04JPfPxOfCEikpVuFZuEEpIsqImZ8mxklKGeKFPy_ajkDVNKVg8PmMPZ2vC-8UQ=
+KAJwaHrYKGIt5dUtkIgM9BLlNbCAfhmRScuLzuCcTGCNAZD6L42CbA3xDQsbanV239pNvMiHb4z=
+Qutq8FVQRXLMCst5xzqD3ZteuA7bqraJqXPaIkt-2XFL0N8H0Dzl3rFt71FxbJ6p5zkG34ehZ2G=
+2EB-KeXelTvzHSjLsx5IZpy1-vZvm0SUaASa2Of96hrYI1kd-LegYR-U0kbdyViAYL0jADWneW5=
+LnRQ%3D%3D" target=3D"_blank"><img src=3D"https://a.storyblok.com/f/148322/=
+633x476/b6248d8451/home-were-realtruck-people.jpeg/m/633x476" alt=3D"home-w=
+ere-realtruck-people" width=3D"350" border=3D"0" style=3D"display: block; m=
+argin: 0 auto; max-height: 262px;" class=3D"img-max"></a> </td> </tr> </tab=
+le> </div> <!--[if gte mso 9]></td><td align=3D"right" valign=3D"top" width=
+=3D"350" height=3D"262"><![endif]--> <div style=3D"display:inline-block; ma=
+x-width:350px; vertical-align:top; width:100%;" class=3D"wrapper"> <table a=
+lign=3D"right" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"10=
+0%" style=3D"max-width: 350px; float: right;" class=3D"wrapper"> <tr> <td v=
+align=3D"top" height=3D"262" width=3D"350" style=3D"padding: 0px 0px 0px 0p=
+x; height: 262px;"> <!--[if gte mso 9]><table align=3D"center" border=3D"0"=
+ cellspacing=3D"0" cellpadding=3D"0" width=3D"350"><tr><td align=3D"center"=
+ valign=3D"top" width=3D"350"><![endif]--> <table border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" width=3D"100%" height=3D"262"> <tr> <td align=3D"l=
+eft" style=3D"text-transform: uppercase; font-family: 'Alfa Slab One', 'Rob=
+oto', Arial, Helvetica, sans-serif; padding: 10px 0px 0px 20px; font-size: =
+22px; color: #000000;"> We're RealTruck People. </td> </tr> <tr> <td align=
+=3D"left" style=3D"padding: 0px 0px 10px 20px; font-size: 26px; font-weight=
+: 900; color: #000000;"> <span style=3D"padding: 0px 0px 2px 0px; font-size=
+: 18px;">Let's get started.</span> </td> </tr> <tr> <td align=3D"left" styl=
+e=3D"padding: 0px 0px 10px 20px; font-weight: 200; font-size: 14px; color: =
+#000000;"> No matter where you go, we've probably been in your shoes. And w=
+e can help guide you on your next adventure. After all, we're all about sha=
+ring the road, and everything we know about navigating it. </td> </tr> <tr>=
+ <td align=3D"center" style=3D"padding: 10px 0px 0px 20px;" class=3D"no-pad=
+ding"> <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%" style=3D"max-width: 350px;" class=3D"wrapper"> <tr> <=
+td align=3D"center" valign=3D"top" width=3D"175" style=3D"padding: 0px 0px =
+0px 0px; font-size: 14px;"> <a href=3D"http://links.realtruck.com/u/click=
+=3F_t=3Dc08ceafcb1aa4503b82ebde1eed2962c&_m=3D6b42f5fc38b042259061d8f3b4fe8=
+9fa&_e=3DOLuFCwv0kiHt57GTednUzJULkUp9dqOUjaYQMry8s4gVX1H-Hy04JPfPxOfCEikpVu=
+FZuEEpIsqImZ8mxklKGeKFPy_ajkDVNKVg8PmMPZ2vC-8UQKAJwaHrYKGIt5dUtkIgM9BLlNbCA=
+fhmRScuL5Pe0y91oOn56uRXVCZypVr_i756W8tk13WdMtt3eqmkJsdF_uAe17YycU80toyxXdpb=
+hDuIpQrBQFSKHBznt93thKj499sVx8LRggK7J_dMII-g4j9ZP_cjFJ1P3LI4jvBBf2iPlRjHBTD=
+ELYxUzf3VW2ke7MhjEK50PdlRn9D0CeYf_hYHtmCc1g3AWH-XHQ%3D%3D" target=3D"_blank=
+"><img src=3D"https://a.storyblok.com/f/148322/50x50/234835ca82/home-chat-i=
+con.png" alt=3D"chat" width=3D"35" border=3D"0" style=3D"display: block; ma=
+rgin: 0 auto;"></a> <b>Live Chat</b><br/>Chat with an Expert </td> <td alig=
+n=3D"center" valign=3D"top" width=3D"175" style=3D"padding: 0px 0px 0px 0px=
+; font-size: 14px;"> <a href=3D"http://links.realtruck.com/u/click=3F_t=3Dc=
+08ceafcb1aa4503b82ebde1eed2962c&_m=3D6b42f5fc38b042259061d8f3b4fe89fa&_e=3D=
+OLuFCwv0kiHt57GTednUzJULkUp9dqOUjaYQMry8s4gVX1H-Hy04JPfPxOfCEikpVuFZuEEpIsq=
+ImZ8mxklKGeKFPy_ajkDVNKVg8PmMPZ2vC-8UQKAJwaHrYKGIt5dUtkIgM9BLlNbCAfhmRScuL9=
+Zd6nRe6ZSog8hEt1uv-CpDKzS00_jrKkSORt53EdVWCOfgEZZVC4xanS6yyC9TINtBJhU_SzrQv=
+D_OWchjWe86yRsg8OeN8ypwLFSKq3bW7Xg4MbhA-Ll8SKDkGIi-N-iEESRMfLoCzTssGN6nJtEb=
+7jTnuQDtadPSPECRFSQ2rbkrfWdKbUQwoIAnFhQmFw%3D%3D" target=3D"_blank"><img sr=
+c=3D"https://a.storyblok.com/f/148322/50x50/02ea153c79/home-phone-icon.png"=
+ alt=3D"phone" width=3D"35" border=3D"0" style=3D"display: block; margin: 0=
+ auto;"></a> <b>833-774-0056</b><br/>Talk with an Expert </td> </tr> </tabl=
+e> </td> </tr> </table> <!--[if gte mso 9]></td></tr></table><![endif]--> <=
+/td> </tr> </table> </div> <!--[if gte mso 9]></td></tr></table><![endif]--=
+> </td> </tr> </table> <!--[if gte mso 9]></td></tr></table><![endif]--> </=
+td> </tr> </table> </td> </tr> </table> <!-- END REALTRUCK PEOPLE --> <!-- =
+FOOTER --> <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" width=3D"700" class=3D"responsive-table"> <tr> <td align=3D"center=
+" valign=3D"top" background=3D"https://a.storyblok.com/f/148322/1000x400/8a=
+64626ea9/footer-texture-1920x400-transparent.png" height=3D"400" width=3D"7=
+00" style=3D"padding: 0px 0px 0px 0px; border-bottom: 10px solid #ffc50a; h=
+eight: 400px; background-repeat: no-repeat;" class=3D"wrapper"> <!--[if gte=
+ mso 9]><v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" str=
+oke=3D"false" style=3D"width: 700px; height: 400px;"><v:fill type=3D"tile" =
+src=3D"https://a.storyblok.com/f/148322/1000x400/8a64626ea9/footer-texture-=
+1920x400-transparent.png" color=3D"#ffffff"/><v:textbox style=3D"mso-fit-sh=
+ape-to-text:true" inset=3D"0,0,0,0"><table align=3D"center" border=3D"0" ce=
+llspacing=3D"0" cellpadding=3D"0" width=3D"700px"><tr><td align=3D"center" =
+valign=3D"top" width=3D"700px"><![endif]--> <table width=3D"700" border=3D"=
+0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center" style=3D"max-width:=
+ 700px; margin: 0 auto;" class=3D"wrapper"> <tr> <td class=3D"padding" alig=
+n=3D"center" style=3D"padding: 20px 0px 65px 0px; font-size: 12px; line-hei=
+ght: 18px; color:#666666;"> <p style=3D"text-align: center;"><a href=3D"htt=
+p://links.realtruck.com/u/click=3F_t=3Dc08ceafcb1aa4503b82ebde1eed2962c&_m=
+=3D6b42f5fc38b042259061d8f3b4fe89fa&_e=3DOLuFCwv0kiHt57GTednUzJULkUp9dqOUja=
+YQMry8s4gVX1H-Hy04JPfPxOfCEikpVuFZuEEpIsqImZ8mxklKGeKFPy_ajkDVNKVg8PmMPZ2vC=
+-8UQKAJwaHrYKGIt5dUthNuVHCRIjXdut85_8Yf29BPZYerrWqSwXP_g17bK0ppHtA9JQudMlAF=
+KNscDU4ERIWe83ahtGpXItKVMLuGPM9puMf5GM24agBAIuetJuRpNXToGaqiDzuUHH0XMQc74Vo=
+0Q5YG9pQH0WS68llDv1NwaaOtHdOdphqdBLHjeeDfWBKYmx3hVIa5iQdIF0Wg" style=3D"tex=
+t-decoration: none; color: #767676;" target=3D"_blank"><img src=3D"https://=
+a.storyblok.com/f/148322/252x38/db45360814/realtruck-logo-dark-252x38.png" =
+alt=3D"RealTruck.com" width=3D"252" height=3D"38" border=3D"0" style=3D"dis=
+play: inline;" class=3D"center"></a></p> <br/> <a href=3D"http://links.real=
+truck.com/u/click=3F_t=3Dc08ceafcb1aa4503b82ebde1eed2962c&_m=3D6b42f5fc38b0=
+42259061d8f3b4fe89fa&_e=3DOLuFCwv0kiHt57GTednUzO_St4sZFQEtUUxIRJ1_E94bmH_P2=
+VqV_KxgMeYqOYfqS0TJocLHMPevSfDVhJMLS41RYwRrOJ7IEU4WpwqdNxZI6HxaYWy8gHmJTLkI=
+_qdWYpcJAX-r4yKXPZMI5qi0xjwPzkmjPxwC5JpHMWoEvJ2xp_PanSjNLx8QmN-BAnCEP52Vo5q=
+D4oK_muamxH-C3AwNizsyacepymCLP83NPjw%3D" border=3D"0" style=3D"text-decorat=
+ion: none;"><img class=3D"social" src=3D"https://a.storyblok.com/f/148322/3=
+0x30/3fedf0dd03/facebook.png" width=3D"25" height=3D"25" alt=3D"facebook" b=
+order=3D"0" style=3D"display: inline;" class=3D"center"></a>&nbsp;&nbsp; <a=
+ href=3D"http://links.realtruck.com/u/click=3F_t=3Dc08ceafcb1aa4503b82ebde1=
+eed2962c&_m=3D6b42f5fc38b042259061d8f3b4fe89fa&_e=3DOLuFCwv0kiHt57GTednUzB_=
+p_Mmt0QnOuJY27UjuaVDjo4HkedpDFs3CM67ff-56EzoFq0SoDMPHgHCvpdfNl0Y5CULwTRZaYl=
+8ft-kJVwKYwE3ye8tgW_QEqpGRsm-TALqjbW7gdnuln3gmX1_hm5BcY0u8s300BrJy_IQC_NZnq=
+7HE21zADW6a9mCeqPOGtp4ySfQtQmNUm_lkdPA2RHt__CLiGr2ZdNDCB4x4bJE%3D" border=
+=3D"0" style=3D"text-decoration: none;"><img class=3D"social" src=3D"https:=
+//a.storyblok.com/f/148322/30x30/51db589867/instagram.png" width=3D"25" hei=
+ght=3D"25" alt=3D"instagram" border=3D"0" style=3D"display: inline;" class=
+=3D"center"></a>&nbsp;&nbsp; <a href=3D"http://links.realtruck.com/u/click=
+=3F_t=3Dc08ceafcb1aa4503b82ebde1eed2962c&_m=3D6b42f5fc38b042259061d8f3b4fe8=
+9fa&_e=3DOLuFCwv0kiHt57GTednUzD5FU8vP9Zc2zRRTPU-VR-5JDHjr9H_MLYw2TND-C2ncq7=
+KiNAJwcClS7sDYTirWU9qP_j5DubEbQYu-x2bIsZsEHiXej4eOn4yZr7eUNC4iCpQPuSZZJAkUo=
+bQ4VBCz2vjj543Trjui3Mvt3nshxxK96f-WpEQEUUOTtBkZePR9w0djqqd7uiAD4R6tZ_Wz56zq=
+hCHa97KaIPS_94A5cCN8CPNglb1EgLzcskNv6Yo3" border=3D"0" style=3D"text-decora=
+tion: none;"><img class=3D"social" src=3D"https://a.storyblok.com/f/148322/=
+30x30/59e795e07c/youtube.png" width=3D"25" height=3D"25" alt=3D"youtube" bo=
+rder=3D"0" style=3D"display: inline;" class=3D"center"></a>&nbsp; <a href=
+=3D"http://links.realtruck.com/u/click=3F_t=3Dc08ceafcb1aa4503b82ebde1eed29=
+62c&_m=3D6b42f5fc38b042259061d8f3b4fe89fa&_e=3DOLuFCwv0kiHt57GTednUzA4c0ugn=
+clZEPsL-h8yfDfm4chhK9eckNoZqrixS9XJ1kpHuFa13Lh0HONwG25IJhkJ1VYonJo7XZY_XelJ=
+9vnGiqJn9FAXTWz5icS5vIvAuq6n15TvzCD5Gqa-W5mnSPLoJ5ahPyobjLUAaki23u0SYXrhwhx=
+JdiGTRgqlf4h2S2dMM4SLDBPXSWsWTo2J6-w%3D%3D" border=3D"0" style=3D"text-deco=
+ration: none;"><img class=3D"social" src=3D"https://a.storyblok.com/f/14832=
+2/30x30/facd44d845/tiktok.png" width=3D"25" height=3D"25" alt=3D"TikTok" bo=
+rder=3D"0" style=3D"display: inline;" class=3D"center"></a>&nbsp; <br/> <di=
+v style=3D"height: 35px; margin: 30px 0px 30px 0px;"> <a href=3D"tel:866-51=
+8-0593" alt=3D"866-518-0593" style=3D"text-decoration: none; color: #555555=
+; font-size: 26px; font-weight: bold;"><img border=3D"0" src=3D"https://a.s=
+toryblok.com/f/148322/21x35/f03a1e4d79/mobile-phone.png" alt=3D"Call Us" st=
+yle=3D"display: inline!important;"> &nbsp;<span style=3D"display: inline-bl=
+ock; height: 35px; vertical-align: top; padding: 3px 0px 0px 7px;">(866) 51=
+8-0593</span></a> </div> <p><b>&copy; 2023 <a href=3D"http://links.realtruc=
+k.com/u/click=3F_t=3Dc08ceafcb1aa4503b82ebde1eed2962c&_m=3D6b42f5fc38b04225=
+9061d8f3b4fe89fa&_e=3DOLuFCwv0kiHt57GTednUzJULkUp9dqOUjaYQMry8s4gVX1H-Hy04J=
+PfPxOfCEikpVuFZuEEpIsqImZ8mxklKGeKFPy_ajkDVNKVg8PmMPZ2vC-8UQKAJwaHrYKGIt5dU=
+thNuVHCRIjXdut85_8Yf2zCMc71Z6I6pJMDItIMVU1xZQnpWY2XQ1vxcbj_L_P3EL8x7DGKF-_s=
+DVNdKFM6xah-55Xug6wYK712fonDKzS1t9N74xEh8GOLQSSfkA-ljg77KOaRjZpxlnvFqgEy-EJ=
+u46HyYf3ATty09lAnOhHsGQrxAgH-PPmEWPCNWzO4u" style=3D"text-decoration: none;=
+ color: #767676;" target=3D"_blank">RealTruck.com</a></b><br/> All Rights R=
+eserved | <a href=3D"http://links.realtruck.com/e/encryptedUnsubscribe=3F_r=
+=3Dc08ceafcb1aa4503b82ebde1eed2962c&_s=3D6b42f5fc38b042259061d8f3b4fe89fa&_=
+t=3D9OxrDffd3lmMCrmj4YussZ_JQfCB7GoccFPGa-b7DForUQH5ZAekYwsp0sQuurTe1tMtim-=
+C52p1tN9THrCoUbZmQYUQatdea_8l1Bln9NLGxoPtbmNMdJtBtADXyK-9" style=3D"text-de=
+coration: none; color: #767676;" target=3D"_blank">Unsubscribe</a> | <a hre=
+f=3D"http://links.realtruck.com/u/click=3F_t=3Dc08ceafcb1aa4503b82ebde1eed2=
+962c&_m=3D6b42f5fc38b042259061d8f3b4fe89fa&_e=3DOLuFCwv0kiHt57GTednUzHzbMXG=
+oaquJo_psGyZhPaO7dcfIi6NIW6afxJogeHPqRbMqDtrNrz9pB0MO_6JlerrUOzPPAu-pvsWJVM=
+60vc7Gfczdzn2Os4y8v1_2vpiGZ7MWiwv8IDtT-7g91mmC5m6IwlDa9u_wkldoDAphUvU96FseB=
+P2AIpXn2ERWW3YxPRAGZxMvIFzuxtZR2-Y18ms-KSRJHfJU-SQWSFEWC9x2OFG7qvz7RFZiVXc1=
+spm1LYfcPFzLVwsQRFwnMEPPObobMgEdJ8YvksNOvcdDiapt9cAouDRNr_AvNna1s1wYKqwcGeA=
+k32M6rtyFYWQLfQ%3D%3D" style=3D"text-decoration: none; color: #767676;" tar=
+get=3D"_blank">Terms of Use</a> | <a href=3D"http://links.realtruck.com/u/c=
+lick=3F_t=3Dc08ceafcb1aa4503b82ebde1eed2962c&_m=3D6b42f5fc38b042259061d8f3b=
+4fe89fa&_e=3DOLuFCwv0kiHt57GTednUzILN5CDGTJc7JNyjg3Be5-4sHKB6HK50LWf8PPTNgY=
+vkbnB-P0JaWd_qzqMGezGY0KG8tFDKhubDpbDQxkwWbbWLeK7yJBf9CrCK4rZpNbKQRHU6XF7jx=
+bkz91xLAVSSrikiNvy8_KyiRGOkKdhmv0dTAxGpeOKHFMKXO6cwld8LBVWAnHBeQek3JziQGl-d=
+Ns1wlEVTHUzumCiUYR3d85ks9K1K-ZhL9oskAu82UCdDVrrlEnPUV-R6jsOjgY4gouQsjaQ4Epj=
+4wmhgXRb2ygErt2GTR_66jjLuouYt0I2WUjVVz8oPRmGfI327PwMIzPm1CH7VMccnqUJfqq5TfK=
+4%3D" style=3D"text-decoration: none; color: #767676;" target=3D"_blank">Pr=
+ivacy Policy</a></p> <p>RealTruck.com | 4414 SW College Road, Suite 1410 | =
+Ocala, FL 34474 | United States</p> </td> </tr> </table> <!--[if gte mso 9]=
+></v:textbox></v:rect></td></tr></table><![endif]--> </td> </tr> </table> <=
+!-- END FOOTER --> =0D=0A<img border=3D"0" width=3D"1" height=3D"1" alt=3D"=
+" src=3D"http://track.realtruck.com/q/5L0Auj99F1mLMz0_tCcI-g~~/AAPIggA~/RgR=
+l6b1EPlcDc3BjQgpkAEQ4B2T3zj6cUhdhY2hyYWZlbDczMTE0QHlhaG9vLmNvbVgEAAAAAA~~">=
+=0D=0A</body> </html><img src=3D"http://links.realtruck.com/e/eo=3F_t=3Dc08=
+ceafcb1aa4503b82ebde1eed2962c&amp;_m=3D6b42f5fc38b042259061d8f3b4fe89fa&amp=
+;_e=3D9OxrDffd3lmMCrmj4YussZ_JQfCB7GoccFPGa-b7DForUQH5ZAekYwsp0sQuurTe1tMti=
+m-C52p1tN9THrCoUbZmQYUQatdea_8l1Bln9NLFCuS8zR8SJzIXCf30k089hdjZG4L1icSMKsb9=
+07gXhQ%3D%3D" style=3D"border:0;width:1px;height:1px;border-width:0px!impor=
+tant;display:none!important;line-height:0!important;" width=3D"1" height=3D=
+"1"/>
+--_----tV32q41hln/4LexPXwXqUA===_83/C9-18793-44837046--
+

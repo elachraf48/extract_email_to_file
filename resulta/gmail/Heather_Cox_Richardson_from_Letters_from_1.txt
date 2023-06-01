@@ -1,0 +1,1911 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp710271ims;
+        Tue, 30 May 2023 20:04:53 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ5EmFBy2EugZLG4siS6B/+rST8yma5yapeaKWJxDZ27gmm+RMiKb74z6bQJRZJw+SwBmCLS
+X-Received: by 2002:a0d:e253:0:b0:561:e910:52f5 with SMTP id l80-20020a0de253000000b00561e91052f5mr4786945ywe.27.1685502292771;
+        Tue, 30 May 2023 20:04:52 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685502292; cv=none;
+        d=google.com; s=arc-20160816;
+        b=abosnRvXcxtRAVFZktOiWeajC965brtb4zDwqz6MyxoMQmmVfpMGheASBVydVe95Vl
+         t3OXGX1cjD8gWh67B31UTdLaU2B0VN3tIsB4TuS2DpSmXMb84G5fo7+mXpdzK2kDC/2t
+         o/PPT22oQdFnY8KuSQ3pO0aW2AdHLyMRJZZKc1L711tNhwM6LprTExFpokbwMgKB4m7j
+         avVk/T0Kv9+RMAtWvxoI1Mwz3VIAyfJ/qwYBV9iyAvVV8hvm88iYEedqJ32NTZRbMc4i
+         WLSb6RpTzNUj28zvgHQzzgoWSqVssxKS7FXhK/2Wsn2oa4VVlyz34KhdGHY8F5AyIQ77
+         4YNw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-post:list-id:list-unsubscribe-post:list-unsubscribe
+         :list-archive:list-url:list-owner:reply-to:in-reply-to:references
+         :sender:date:message-id:to:from:subject:mime-version:dkim-signature
+         :dkim-signature;
+        bh=Sw+F6HpQlkRbRfOYgEZe9DyU9lnzmWtSKww6/lVzmUw=;
+        b=cU126Oy6WsvwLH8u2m6zGEafQjEpGu03nZMhBvaBSm7BJpt5AgdG9RXkgv87hIsPi6
+         NNCemR9DcgZnutXSe4BUFTaOXvFVi9ae4loF1dNUbjsdLq1HbBWzCsGDhMbhII0RRXWD
+         PpWJ2zNlprdl7p4dU0i7mCmsIqL3OUGjQjEqkVxbwAYXIWElfpmoqBqRHiXAU0BDSKtR
+         XAbNHZAN3Xrl2je9xIWcxRCkIy4qmxU9qckenMsfzu8eAtKYwtfzuP5b56kpNqejHCYo
+         CHUbF0ubSicdhQ//NwPDy/7REj+dZt6Kz4qycJzK2iNiVzRYAhkh3EyZOAVrmcier4jJ
+         cyiQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mg2.substack.com header.s=mailo header.b=CsVRyZy6;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=JtTUi9CD;
+       spf=pass (google.com: domain of bounce+8573a2.4d1858-ouchendans62=gmail.com@mg2.substack.com designates 159.135.228.254 as permitted sender) smtp.mailfrom="bounce+8573a2.4d1858-ouchendans62=gmail.com@mg2.substack.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=substack.com
+Return-Path: <bounce+8573a2.4d1858-ouchendans62=gmail.com@mg2.substack.com>
+Received: from mg-228-254.static.mg2.substack.com (mg-228-254.static.mg2.substack.com. [159.135.228.254])
+        by mx.google.com with UTF8SMTPS id r125-20020a815d83000000b0055a416adeb8si13154013ywb.508.2023.05.30.20.04.52
+        for <ouchendans62@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 30 May 2023 20:04:52 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce+8573a2.4d1858-ouchendans62=gmail.com@mg2.substack.com designates 159.135.228.254 as permitted sender) client-ip=159.135.228.254;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mg2.substack.com header.s=mailo header.b=CsVRyZy6;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=JtTUi9CD;
+       spf=pass (google.com: domain of bounce+8573a2.4d1858-ouchendans62=gmail.com@mg2.substack.com designates 159.135.228.254 as permitted sender) smtp.mailfrom="bounce+8573a2.4d1858-ouchendans62=gmail.com@mg2.substack.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=substack.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg2.substack.com;
+ q=dns/txt; s=mailo; t=1685502291; x=1685509491; h=List-Post: List-Id:
+ List-Unsubscribe: List-Archive: List-Owner: Reply-To: In-Reply-To:
+ References: sender: sender: Date: Message-Id: To: To: From: From: Subject:
+ Subject: Content-Type: Mime-Version: X-Feedback-Id;
+ bh=Sw+F6HpQlkRbRfOYgEZe9DyU9lnzmWtSKww6/lVzmUw=;
+ b=CsVRyZy6g2oODai8YUottIFr1SIOwijNTi3/0nYwynNnP0BVzokkv5My9iZMM4dV0wkE8nvW+Qy6X8S0wnh+TISGZzSrUfdjrPEi95lXpn44EtWjzsNmJrn2P4Upz9UcMYYRxdVLM5prbC2uCVxldEHK/cPVICAbPGjB5rhb/1Q=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org;
+ q=dns/txt; s=mg; t=1685502291; x=1685509491; h=List-Post: List-Id:
+ List-Unsubscribe: List-Archive: List-Owner: Reply-To: In-Reply-To:
+ References: sender: sender: Date: Message-Id: To: To: From: From: Subject:
+ Subject: Content-Type: Mime-Version: X-Feedback-Id;
+ bh=Sw+F6HpQlkRbRfOYgEZe9DyU9lnzmWtSKww6/lVzmUw=;
+ b=JtTUi9CDeHljjPT7wLI0rp+U6nQxTj0KmcrloCRoFCaThmznVxdkcVwZtXwgMqNPf7I5gOiww82/X6kBluY5xla/Okqblvg3sEYUs6vCk5WeqAru8by1DVuu+yJnyaeKn7qeeOmMKcH9Zp4B4yavWImqO9hSYel5anavnRC28UM=
+X-Feedback-Id: postmaster@mg2.substack.com:post:5a78b6d5cd16820001f2a9d4:mailgun
+X-Mailgun-Sending-Ip: 159.135.228.254
+X-Mailgun-Sid: WyI3YzEzZCIsIm91Y2hlbmRhbnM2MkBnbWFpbC5jb20iLCI0ZDE4NTgiXQ==
+Received: from <unknown> (<unknown> []) by 7ddc0558ecf1 with HTTP id
+ 6476b95378cd538e172db411; Wed, 31 May 2023 03:04:46 GMT
+X-Mailgun-Batch-Id: 6476b94f0125d60b3d5708b8
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="39fd73265fd2691b51a84c8f7c45749604df050d1d1d1c98425edd25c64e"
+Subject: May 30, 2023
+From: Heather Cox Richardson from Letters from an American
+ <heathercoxrichardson@substack.com>
+To: ouchendans62@gmail.com
+X-Mailgun-Tag: post
+X-Mailgun-Track-Clicks: false
+Message-Id: <20230531025203.3.e74a56181b76b1d8@mg2.substack.com>
+Date: Wed, 31 May 2023 02:52:03 +0000
+sender: Heather Cox Richardson from Letters from an American
+ <heathercoxrichardson@substack.com>
+References: <post-124946882@substack.com>
+In-Reply-To: <post-124946882@substack.com>
+Reply-To: Heather Cox Richardson from Letters from an American
+ <reply+22e1mq&2gij7c&&af5696a33c2c643abc24c81f35f658bfae3d97a614c25e6b0ff4188a5b5c980d@mg1.substack.com>
+List-Owner: <mailto:heathercoxrichardson@substack.com>
+List-URL: <https://heathercoxrichardson.substack.com/>
+List-Archive: <https://heathercoxrichardson.substack.com/archive>
+List-Unsubscribe: <https://heathercoxrichardson.substack.com/action/disable_email/disable?token=eyJ1c2VyX2lkIjoxNDg2NzA5MDQsInBvc3RfaWQiOjEyNDk0Njg4MiwiaWF0IjoxNjg1NTAyMjg1LCJleHAiOjE2ODgwOTQyODUsImlzcyI6InB1Yi0yMDUzMyIsInN1YiI6ImRpc2FibGVfZW1haWwifQ.DF8-X5mxW8Y7-chLuKbm2jXGMQEpDp1eHLt8JfT-_dg&expires=365d>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Id: <heathercoxrichardson.substack.com>
+List-Post: <https://heathercoxrichardson.substack.com/p/may-30-2023>
+X-Mailgun-Variables: {"category": "post", "email_generated_at": "1685502285877", "is_freemail":
+ "true", "post_audience": "everyone", "post_id": "124946882", "post_type":
+ "newsletter", "pub_community_enabled": "true", "publication_id": "20533",
+ "subdomain": "heathercoxrichardson", "user_id": "148670904"}
+
+--39fd73265fd2691b51a84c8f7c45749604df050d1d1d1c98425edd25c64e
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+View this post on the web at https://heathercoxrichardson.substack.com/p/ma=
+y-30-2023
+
+=E2=80=9C[O]ne of the things that I hear some of you guys saying is, =E2=80=
+=98Why doesn=E2=80=99t Biden say what a good deal it is?=E2=80=99=E2=80=9D =
+President Joe Biden said to reporters yesterday afternoon before leaving th=
+e White House on the Marine One helicopter. =E2=80=9CWhy would Biden say wh=
+at a good deal it is before the vote? You think that=E2=80=99s going to hel=
+p me get it passed? No. That=E2=80=99s why you guys don=E2=80=99t bargain v=
+ery well.=E2=80=9D
+Biden=E2=80=99s unusually revealing comment about the budget negotiations w=
+as actually a statement about his presidency. Unlike his Republican opponen=
+ts, he has refused to try to win points by playing the media and instead ha=
+s worked behind the scenes to govern, sometimes staying out of negotiations=
+, sometimes being central to them.=C2=A0
+The result has been, as Daily Beast columnist David Rothkopf summarized tod=
+ay, historic. Biden has worked to replace 40 years of supply-side economics=
+ with policies to rebuild the nation=E2=80=99s economy and infrastructure b=
+y supporting ordinary Americans. The American Rescue Plan gave the United S=
+tates a faster economic recovery from the COVID pandemic than any other maj=
+or economy. The Bipartisan Infrastructure Law has already funded more than =
+32,000 projects in more than 4,500 communities in all 50 states, Washington=
+ D.C., and U.S. territories.=C2=A0
+The Inflation Reduction Act made the biggest investment in addressing clima=
+te change in our history, and according to University of Washington transpo=
+rtation analyst Jack Conness, it and the CHIPS and Science Act have already=
+ attracted over $220 billion in private investment, much of it going to Rep=
+ublican-dominated states: Tennessee, Nevada, North Carolina, and Oklahoma h=
+ave each attracted more than $4 billion; Ohio, more than $6 billion; Arizon=
+a, more than $7 billion; South Carolina, more than $9 billion; and Georgia,=
+ more than $13 billion.=C2=A0
+Victoria Guida in Politico yesterday reported that the reordering of the ec=
+onomy under Biden and the Democrats has reversed the widening income gap be=
+tween wage workers and upper-income professionals that has been growing for=
+ the past 40 years. The pay of those making an average of $12.50 an hour gr=
+ew by almost 6% from 2020 to 2022, even after inflation.=C2=A0
+Those gains are now at risk as pandemic measures end and the Fed raises int=
+erest rates to bring down inflation, although the wage increases are only a=
+ piece of the inflation puzzle: Talmon Joseph Smith and Joe Rennison of the=
+ New York Times today reported that companies raising their prices to =E2=
+=80=9Cprotect=E2=80=A6profits=E2=80=9D are =E2=80=9Cadding to inflation.=E2=
+=80=9D In other words, companies pushed prices beyond normal profit margins=
+ during the pandemic and the economic recovery, then maintained those highe=
+r profit margins with the Russian invasion of Ukraine, and continue to main=
+tain them now.
+The fight over the debt ceiling is both an example of the different approac=
+hes to negotiation on the part of Biden and Republicans like House speaker =
+Kevin McCarthy (R-CA), and part of the larger question about the direction =
+of the country.=C2=A0
+On January 13, 2023, Treasury Secretary Janet Yellen warned McCarthy that t=
+he Treasury was about to hit the borrowing limit established by Congress an=
+d that she would have to resort to extraordinary measures in order to meet =
+obligations until Congress raised the debt ceiling.=C2=A0
+On March 9, as part of the usual budget process, Biden produced a detailed =
+budget, which was a wish list of programs that would continue to build the =
+country from the bottom up. He told McCarthy he would meet with the speaker=
+ as soon as he produced his own budget, which McCarthy could not do because=
+ the far-right House Freedom Caucus (these days being abbreviated as HFC) w=
+anted extreme cuts to which other Republicans would never agree.
+On April 26 the House Republicans passed a bill that would require $4.8 tri=
+llion in cuts but was quite vague about how it would do so apart from getti=
+ng rid of much of the legislation the Democrats had just passed. HFC member=
+s said they would not raise the debt ceiling until the Senate passed their =
+bill. That is, they would drive the United States into default, crashing th=
+e U.S. and the global economy, until the president and the Democrats agreed=
+ to their policies. Even then, they would raise it only until next spring, =
+with the expectation that it would then become a key factor in the 2024 ele=
+ction.
+Biden insisted all along that he would not negotiate over the debt ceiling,=
+ which pays for money already appropriated under the normal process of Cong=
+ress and which Congress raised three times under former president Trump eve=
+n as he added $7.8 trillion to the national debt. Biden said he would happi=
+ly negotiate over the budget. McCarthy, meanwhile, was out in front of the =
+cameras and on social media insulting Biden and insisting that it was Biden=
+=E2=80=99s fault that talks took so long to get started.=C2=A0
+Late Saturday, the two sides announced an agreement =E2=80=9Cin principle=
+=E2=80=9D to raise the debt ceiling for two years=E2=80=94clearing the pres=
+idential election. As the Washington Post=E2=80=99s Catherine Rampell noted=
+, it protects current spending on Social Security, Medicare, and Medicaid; =
+keeps tax rates as they are; increases spending on defense and veterans=E2=
+=80=99 programs; leaves most other domestic spending the same; cuts a littl=
+e from the expanded funding of the Internal Revenue Service; and tweaks bot=
+h the permitting process for energy projects and the existing work requirem=
+ents in the food assistance program.
+As Rampell points out, =E2=80=9Cthis much-ballyhooed =E2=80=98deal=E2=80=99=
+ doesn=E2=80=99t seem terribly different from whatever budget agreement wou=
+ld have materialized anyway later this year, during the usual annual approp=
+riations process, under divided government. To President Biden=E2=80=99s cr=
+edit, the most objectionable ransoms that Republicans had been demanding ar=
+e all gone.=E2=80=9D
+Now the measure has to get through both parties, with congressmembers back =
+in Washington today after the holiday weekend. Freedom Caucus members are h=
+owling at the deal. Representative Chip Roy (R-TX) is threatening to bottle=
+ the measure up in the House Rules Committee, which decides what bills make=
+ it to the floor. The Freedom Caucus forced McCarthy to stack that committe=
+e with far-right extremists as part of his deal for the speakership (it has=
+ nine Republicans but only four Democrats on it). But Josh Marshall of Talk=
+ing Points Memo suggests that McCarthy=E2=80=99s alliance with Representati=
+ves Jim Jordan (R-OH) and Marjorie Taylor Greene (R-GA) might pay off here,=
+ since the two have thrown their weight behind the measure.
+Even if the measure does pass before the June 5 deadline when the Treasury =
+runs out of money, it has had an important effect. As Rampell noted, it has=
+ weakened the United States. It has enabled both China and Russia to portra=
+y the U.S. as unstable and an unreliable partner. As if to prove that criti=
+cism, Biden had to cancel a trip to Australia and Papua New Guinea, where h=
+e was strengthening the Indo-Pacific alliances designed to weaken Chinese d=
+ominance of the region. (And Russia continues to involve itself in U.S. pol=
+itics: today Tara Reade, the woman who in 2020 accused Biden of sexually as=
+saulting her, appeared on Russian television next to alleged spy Maria Buti=
+na to say she has fled to Russia out of fear for her life in the U.S.)=C2=
+=A0
+Writing in Foreign Policy, Howard W. French sees a more sweeping problem wi=
+th the debt ceiling fight: it =E2=80=9Chighlights America=E2=80=99s warped =
+priorities.=E2=80=9D =E2=80=9C[W]hen a rich and powerful country finds it e=
+asier to cut back on the way that it invests in its people, in education, i=
+n science, and in making sure that the weakest among them are not completel=
+y left behind than to curtail useless and profligate weapons spending,=E2=
+=80=9D he said, =E2=80=9Cthere are reasons to worry about the foundations o=
+f its power.=E2=80=9D
+=E2=80=94
+Notes:
+https://www.whitehouse.gov/briefing-room/speeches-remarks/2023/05/29/remark=
+s-by-president-biden-before-marine-one-departure-37/ [ https://substack.com=
+/redirect/4078ccd2-4d44-473c-bed2-a5272a9f479f?j=3DeyJ1IjoiMmdpajdjIn0.COwS=
+m6gYAvkxFU2LiOaMG6yU57qigAx5e5dQc8OneDg ]
+https://twitter.com/djrothkopf/status/1663546412334972932 [ https://substac=
+k.com/redirect/7a0a8919-d06d-4b94-bfd0-ea1f945e787e?j=3DeyJ1IjoiMmdpajdjIn0=
+=2ECOwSm6gYAvkxFU2LiOaMG6yU57qigAx5e5dQc8OneDg ]
+https://www.whitehouse.gov/briefing-room/statements-releases/2023/05/12/fac=
+t-sheet-biden-harris-administration-kicks-off-infrastructure-week-by-highli=
+ghting-tremendous-progress-rebuilding-americas-infrastructure-18-months-in/=
+ [ https://substack.com/redirect/abbe9af1-8a8c-493d-8494-affb2794ed20?j=3De=
+yJ1IjoiMmdpajdjIn0.COwSm6gYAvkxFU2LiOaMG6yU57qigAx5e5dQc8OneDg ]
+https://www.whitehouse.gov/build/ [ https://substack.com/redirect/9daf4bda-=
+c592-4a0f-854c-f741467929d4?j=3DeyJ1IjoiMmdpajdjIn0.COwSm6gYAvkxFU2LiOaMG6y=
+U57qigAx5e5dQc8OneDg ]
+https://www.whitehouse.gov/omb/briefing-room/2023/03/09/fact-sheet-the-pres=
+idents-budget-for-fiscal-year-2024/ [ https://substack.com/redirect/6e86926=
+9-40d1-4956-a0ec-a15dc93a779d?j=3DeyJ1IjoiMmdpajdjIn0.COwSm6gYAvkxFU2LiOaMG=
+6yU57qigAx5e5dQc8OneDg ]
+https://www.motherjones.com/politics/2023/04/house-republicans-debt-ceiling=
+-clean-energy-ira-irs-joe-biden/ [ https://substack.com/redirect/25315146-f=
+332-4fa9-959d-c240194c0eb2?j=3DeyJ1IjoiMmdpajdjIn0.COwSm6gYAvkxFU2LiOaMG6yU=
+57qigAx5e5dQc8OneDg ]
+https://www.jackconness.com/ira-chips-investments [ https://substack.com/re=
+direct/7e7d9bb9-bbb1-4f2e-85f8-0418f2010da4?j=3DeyJ1IjoiMmdpajdjIn0.COwSm6g=
+YAvkxFU2LiOaMG6yU57qigAx5e5dQc8OneDg ]
+https://www.politico.com/news/2023/05/29/low-income-wages-employment-000971=
+35 [ https://substack.com/redirect/79819272-fd1b-4b9f-bd67-a24309be76f5?j=
+=3DeyJ1IjoiMmdpajdjIn0.COwSm6gYAvkxFU2LiOaMG6yU57qigAx5e5dQc8OneDg ]
+https://www.nytimes.com/2023/05/30/business/economy/inflation-companies-pro=
+fits-higher-prices.html [ https://substack.com/redirect/4a29e561-abcf-4465-=
+addc-ec0cb9c67041?j=3DeyJ1IjoiMmdpajdjIn0.COwSm6gYAvkxFU2LiOaMG6yU57qigAx5e=
+5dQc8OneDg ]
+https://twitter.com/IsabellaMWeber/status/1630322499362897920 [ https://sub=
+stack.com/redirect/9755b87b-00b9-4826-8d6a-2b2a81abcf44?j=3DeyJ1IjoiMmdpajd=
+jIn0.COwSm6gYAvkxFU2LiOaMG6yU57qigAx5e5dQc8OneDg ]
+https://home.treasury.gov/news/press-releases/jy1188 [ https://substack.com=
+/redirect/f21aa6d0-67a2-4a49-8c11-71a58532aea6?j=3DeyJ1IjoiMmdpajdjIn0.COwS=
+m6gYAvkxFU2LiOaMG6yU57qigAx5e5dQc8OneDg ]
+https://home.treasury.gov/news/press-releases/jy1454 [ https://substack.com=
+/redirect/6ce48500-3de5-4d7f-80fd-552054e05533?j=3DeyJ1IjoiMmdpajdjIn0.COwS=
+m6gYAvkxFU2LiOaMG6yU57qigAx5e5dQc8OneDg ]
+https://rollcall.com/2023/04/26/house-passes-1-5-trillion-debt-limit-increa=
+se-spending-cuts/ [ https://substack.com/redirect/a4fcf080-a0d8-4057-a8b5-e=
+d3acbff6226?j=3DeyJ1IjoiMmdpajdjIn0.COwSm6gYAvkxFU2LiOaMG6yU57qigAx5e5dQc8O=
+neDg ]
+https://thehill.com/homenews/house/4024123-spending-and-debt-ceiling-plan-w=
+hats-next/ [ https://substack.com/redirect/cf4b3d49-ed44-4671-a259-bbc70e92=
+4a9d?j=3DeyJ1IjoiMmdpajdjIn0.COwSm6gYAvkxFU2LiOaMG6yU57qigAx5e5dQc8OneDg ]
+https://www.washingtonpost.com/opinions/2023/05/28/debt-limit-deal-budget-d=
+ifferences/ [ https://substack.com/redirect/68dd23fe-eb2f-4d1a-b1e7-72d2d46=
+30722?j=3DeyJ1IjoiMmdpajdjIn0.COwSm6gYAvkxFU2LiOaMG6yU57qigAx5e5dQc8OneDg ]
+https://www.politico.com/news/2023/05/30/debt-ceiling-deal-house-rules-comm=
+ittee-republicans-00099245 [ https://substack.com/redirect/265605f5-0b33-49=
+8a-a8ee-ea729383052f?j=3DeyJ1IjoiMmdpajdjIn0.COwSm6gYAvkxFU2LiOaMG6yU57qigA=
+x5e5dQc8OneDg ]
+https://talkingpointsmemo.com/edblog/freak-cavalcade-but-not-more [ https:/=
+/substack.com/redirect/bab43dd2-1def-4e43-a539-6f493a9a938d?j=3DeyJ1IjoiMmd=
+pajdjIn0.COwSm6gYAvkxFU2LiOaMG6yU57qigAx5e5dQc8OneDg ]
+=E2=80=8B=E2=80=8Bhttps://www.thedailybeast.com/joe-biden-accuser-tara-read=
+e-claims-she-defected-to-russia-after-sexual-assault-allegations [ https://=
+substack.com/redirect/ebffa319-11b2-48ac-8b70-67d42b6f784c?j=3DeyJ1IjoiMmdp=
+ajdjIn0.COwSm6gYAvkxFU2LiOaMG6yU57qigAx5e5dQc8OneDg ]
+https://foreignpolicy.com/2023/05/30/debt-ceiling-deal-details-food-stamps-=
+military-defense-spending/ [ https://substack.com/redirect/9697fff7-7d70-4e=
+0e-b1e8-cecfd72d9544?j=3DeyJ1IjoiMmdpajdjIn0.COwSm6gYAvkxFU2LiOaMG6yU57qigA=
+x5e5dQc8OneDg ]
+
+Unsubscribe https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9oZWF0aGVyY29=
+4cmljaGFyZHNvbi5zdWJzdGFjay5jb20vYWN0aW9uL2Rpc2FibGVfZW1haWw_dG9rZW49ZXlKMW=
+MyVnlYMmxrSWpveE5EZzJOekE1TURRc0luQnZjM1JmYVdRaU9qRXlORGswTmpnNE1pd2lhV0YwS=
+WpveE5qZzFOVEF5TWpnMUxDSmxlSEFpT2pFMk9EZ3dPVFF5T0RVc0ltbHpjeUk2SW5CMVlpMHlN=
+RFV6TXlJc0luTjFZaUk2SW1ScGMyRmliR1ZmWlcxaGFXd2lmUS5ERjgtWDVteFc4WTctY2hMdUt=
+ibTJqWEdNUUVwRHAxZUhMdDhKZlQtX2RnJmV4cGlyZXM9MzY1ZCIsInAiOjEyNDk0Njg4Miwicy=
+I6MjA1MzMsImYiOnRydWUsInUiOjE0ODY3MDkwNCwiaWF0IjoxNjg1NTAyMjg1LCJleHAiOjE2O=
+DgwOTQyODUsImlzcyI6InB1Yi0wIiwic3ViIjoibGluay1yZWRpcmVjdCJ9.fdrqiOj2oSlAili=
+X-eBa_jGZd2SsYQCGfPwpi5p0pLo?
+--39fd73265fd2691b51a84c8f7c45749604df050d1d1d1c98425edd25c64e
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><meta charset=3D"utf-8"><title>May 30, 2023</title><style>
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .typography .markup table.image-wrapper img,
+  .typography.editor .markup table.image-wrapper img,
+  .typography .markup table.kindle-wrapper img,
+  .typography.editor .markup table.kindle-wrapper img {
+    max-width: 550px;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .typography .markup div.youtube-inner div.youtube-screen,
+  .typography.editor .markup div.youtube-inner div.youtube-screen,
+  .typography .markup div.vimeo-inner div.youtube-screen,
+  .typography.editor .markup div.vimeo-inner div.youtube-screen {
+    display: none !important;
+  }
+}
+
+
+@media screen and (max-width: 370px) {
+  .typography .markup div.tiktok-wrap,
+  .typography.editor .markup div.tiktok-wrap {
+    width: calc(95vw - 32px);
+    height: calc((95vw - 32px - 2px) / 0.485714);
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .typography .markup div.embedded-publication-wrap .embedded-publication.s=
+how-subscribe,
+  .typography.editor .markup div.embedded-publication-wrap .embedded-public=
+ation.show-subscribe {
+    padding: 24px;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .typography .markup div.subscription-widget-wrap .subscription-widget.sho=
+w-subscribe,
+  .typography.editor .markup div.subscription-widget-wrap .subscription-wid=
+get.show-subscribe,
+  .typography .markup div.captioned-button-wrap .subscription-widget.show-s=
+ubscribe,
+  .typography.editor .markup div.captioned-button-wrap .subscription-widget=
+=2Eshow-subscribe {
+    padding: 24px;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .typography .markup div.subscription-widget-wrap .subscription-widget.sho=
+w-subscribe .subscription-widget-subscribe .button,
+  .typography.editor .markup div.subscription-widget-wrap .subscription-wid=
+get.show-subscribe .subscription-widget-subscribe .button,
+  .typography .markup div.captioned-button-wrap .subscription-widget.show-s=
+ubscribe .subscription-widget-subscribe .button,
+  .typography.editor .markup div.captioned-button-wrap .subscription-widget=
+=2Eshow-subscribe .subscription-widget-subscribe .button {
+    padding: 10px 12px;
+    min-width: 110px;
+  }
+}
+
+
+@media (max-width: 650px) {
+  .typography .markup .tweet,
+  .typography.editor .markup .tweet {
+    padding: 12px;
+  }
+}
+
+
+@media (max-width: 650px) {
+  .typography .markup .tweet .tweet-text,
+  .typography.editor .markup .tweet .tweet-text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+
+@media (max-width: 650px) {
+  .typography .markup .tweet .tweet-photos-container.two,
+  .typography.editor .markup .tweet .tweet-photos-container.two,
+  .typography .markup .tweet .tweet-photos-container.three,
+  .typography.editor .markup .tweet .tweet-photos-container.three,
+  .typography .markup .tweet .tweet-photos-container.four,
+  .typography.editor .markup .tweet .tweet-photos-container.four {
+    height: 200px;
+  }
+}
+
+
+@media (max-width: 650px) {
+  .typography .markup .tweet a.expanded-link .expanded-link-img,
+  .typography.editor .markup .tweet a.expanded-link .expanded-link-img {
+    max-height: 180px;
+  }
+}
+
+
+@media (max-width: 650px) {
+  .typography .markup .tweet a.expanded-link .expanded-link-description,
+  .typography.editor .markup .tweet a.expanded-link .expanded-link-descript=
+ion {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .typography .markup .apple-podcast-container,
+  .typography.editor .markup .apple-podcast-container {
+    width: unset;
+  }
+}
+
+
+@media (max-width: 420px) {
+  .typography .markup .install-substack-app-embed img.install-substack-app-=
+embed-img,
+  .typography.editor .markup .install-substack-app-embed img.install-substa=
+ck-app-embed-img {
+    margin: 0 auto 16px auto;
+  }
+}
+
+
+@media screen and (min-width: 420px) and (max-width: 600px) {
+  .typography .markup .install-substack-app-embed .install-substack-app-emb=
+ed-text,
+  .typography.editor .markup .install-substack-app-embed .install-substack-=
+app-embed-text {
+    max-width: calc(100% - 100px);
+    width: initial;
+  }
+}
+
+
+@media (max-width: 420px) {
+  .typography .markup .install-substack-app-embed .install-substack-app-emb=
+ed-text,
+  .typography.editor .markup .install-substack-app-embed .install-substack-=
+app-embed-text {
+    margin: 0 0 12px 0;
+    max-width: 100%;
+    width: auto;
+    text-align: center;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .typography .markup .install-substack-app-embed .install-substack-app-emb=
+ed-link,
+  .typography.editor .markup .install-substack-app-embed .install-substack-=
+app-embed-link {
+    margin-top: 16px;
+    width: 100%;
+  }
+}
+
+
+@media screen and (min-width: 481px) {
+  .share-button-container {
+    height: 38px;
+  }
+}
+
+
+@media screen and (min-width: 481px) {
+  .share-button-container a.comment {
+    height: 38px;
+    line-height: 38px;
+    padding-right: 10px;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .share-button-container .separator {
+    display: block;
+    margin: 0;
+    height: 8px;
+    border-left: none;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .share-button-container a.share.first img {
+    padding-left: 0;
+  }
+}
+
+
+@media screen and (min-width: 481px) {
+  .share-button-container a.mobile {
+    display: none !important;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .social-media-share-preview__description {
+    -webkit-line-clamp: 2;
+  }
+}
+
+
+@media screen and (max-width: 1000px) {
+  .congrats-box {
+    flex-direction: column;
+  }
+  .congrats-box .congrats-box-right {
+    margin-left: 38px;
+    margin-top: 16px;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  .congrats-box {
+    display: none;
+  }
+}
+
+
+@media screen and (min-width: 541px) {
+  .settings-add-pub-modal-wrapper .container .add-recommending-pub-modal-co=
+ntainer {
+    padding: 36px;
+    height: 680px;
+  }
+}
+
+
+@media screen and (min-width: 541px) {
+  .settings-add-pub-modal-wrapper .container .add-recommending-pub-modal-co=
+ntainer .footer {
+    position: absolute;
+    bottom: 36px;
+    margin: 0px;
+  }
+}
+
+
+@media screen and (max-width: 840px) {
+  .header-with-anchor-widget .header-anchor-widget,
+  .header-anchor-container .header-anchor-widget {
+    display: none;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .post {
+    padding: 32px 0 0 0;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .post .post-header .post-label {
+    margin-top: 8px;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .post .post-header .meta-author-wrap.alternative-meta .meta-right-column =
+=2Epost-meta {
+    margin-top: 6px;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .post .footer-facepile-container {
+    height: 64px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .post .post-footer.use-separators {
+    justify-content: center;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .post .post-footer.next-prev {
+    height: 64px;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .post-contributor-footer .post-contributor-bio-table {
+    display: block;
+  }
+  .post-contributor-footer .post-contributor-bio-table-row {
+    display: flex;
+    flex-direction: row;
+  }
+  .post-contributor-footer .post-contributor-bio-userhead-cell,
+  .post-contributor-footer .post-contributor-bio-body-cell {
+    display: block;
+  }
+  .post-contributor-footer .post-contributor-bio-body-cell {
+    flex-grow: 1;
+  }
+  .post-contributor-footer .post-contributor-bio-body-table {
+    display: block;
+  }
+  .post-contributor-footer .post-contributor-bio-body-table-row {
+    display: block;
+  }
+  .post-contributor-footer .post-contributor-bio-copy-cell,
+  .post-contributor-footer .post-contributor-bio-controls-cell {
+    display: block;
+  }
+  .post-contributor-footer .post-contributor-bio-copy-cell {
+    margin: 0 0 16px 0;
+  }
+  .post-contributor-footer .post-contributor-bio-controls-cell {
+    width: auto;
+  }
+  .post-contributor-footer .post-contributor-bio-controls {
+    margin: auto;
+  }
+  .post-contributor-footer .post-contributor-bio-controls .button.primary {
+    width: 100%;
+  }
+  .post-contributor-footer .post-contributor-bio-text {
+    font-size: 14px;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .post-silhouette {
+    padding: 16px 0;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .post-silhouette .post-silhouette-title {
+    margin-top: 10.44225025px;
+    height: 120px;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .post-silhouette .post-silhouette-meta {
+    width: 75%;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .post-silhouette .post-silhouette-meta.with-byline-image {
+    margin: 20px 0;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .use-theme-bg .post-meta.alternative-meta .post-meta-item,
+  .post-meta.alternative-meta .post-meta-item {
+    padding-right: 16px;
+  }
+}
+
+
+@media screen and (max-width: 370px) {
+  .use-theme-bg .post-meta.alternative-meta .post-meta-item,
+  .post-meta.alternative-meta .post-meta-item {
+    font-size: 14px;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .use-theme-bg .post-meta.alternative-meta .post-meta-item.guest-author-pu=
+blication,
+  .post-meta.alternative-meta .post-meta-item.guest-author-publication {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 370px) {
+  .post-meta .post-meta-item .post-meta-button {
+    height: 36px !important;
+  }
+  .post-meta .post-meta-item .post-meta-button .meta-button-label {
+    display: none;
+  }
+  .post-meta .post-meta-item .post-meta-button > svg {
+    margin-right: 0;
+  }
+}
+
+
+@media screen and (max-width: 370px) {
+  .post-meta .post-meta-item {
+    font-size: 12px;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .post-preview .post-preview-content .post-preview-meta {
+    margin-top: 12px 0;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .post-preview .post-preview-image {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .post-preview-silhouette .post-preview-silhouette-image {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .post .floating-subscribe-button {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  body .markup table.image-wrapper img,
+  body .markup table.kindle-wrapper img {
+    max-width: 550px;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  body .markup div.youtube-inner div.youtube-screen,
+  body .markup div.vimeo-inner div.youtube-screen {
+    display: none !important;
+  }
+}
+
+
+@media screen and (max-width: 370px) {
+  body .markup div.tiktok-wrap {
+    width: calc(95vw - 32px);
+    height: calc((95vw - 32px - 2px) / 0.485714);
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  body .markup div.embedded-publication-wrap .embedded-publication.show-sub=
+scribe {
+    padding: 24px;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  body .markup div.subscription-widget-wrap .subscription-widget.show-subsc=
+ribe,
+  body .markup div.captioned-button-wrap .subscription-widget.show-subscrib=
+e {
+    padding: 24px;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  body .markup div.subscription-widget-wrap .subscription-widget.show-subsc=
+ribe .subscription-widget-subscribe .button,
+  body .markup div.captioned-button-wrap .subscription-widget.show-subscrib=
+e .subscription-widget-subscribe .button {
+    padding: 10px 12px;
+    min-width: 110px;
+  }
+}
+
+
+@media (max-width: 650px) {
+  body .markup .tweet {
+    padding: 12px;
+  }
+}
+
+
+@media (max-width: 650px) {
+  body .markup .tweet .tweet-text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+
+@media (max-width: 650px) {
+  body .markup .tweet .tweet-photos-container.two,
+  body .markup .tweet .tweet-photos-container.three,
+  body .markup .tweet .tweet-photos-container.four {
+    height: 200px;
+  }
+}
+
+
+@media (max-width: 650px) {
+  body .markup .tweet a.expanded-link .expanded-link-img {
+    max-height: 180px;
+  }
+}
+
+
+@media (max-width: 650px) {
+  body .markup .tweet a.expanded-link .expanded-link-description {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  body .markup .apple-podcast-container {
+    width: unset;
+  }
+}
+
+
+@media (max-width: 420px) {
+  body .markup .install-substack-app-embed img.install-substack-app-embed-i=
+mg {
+    margin: 0 auto 16px auto;
+  }
+}
+
+
+@media screen and (min-width: 420px) and (max-width: 600px) {
+  body .markup .install-substack-app-embed .install-substack-app-embed-text=
+ {
+    max-width: calc(100% - 100px);
+    width: initial;
+  }
+}
+
+
+@media (max-width: 420px) {
+  body .markup .install-substack-app-embed .install-substack-app-embed-text=
+ {
+    margin: 0 0 12px 0;
+    max-width: 100%;
+    width: auto;
+    text-align: center;
+  }
+}
+
+
+@media (max-width: 600px) {
+  body .markup .install-substack-app-embed .install-substack-app-embed-link=
+ {
+    margin-top: 16px;
+    width: 100%;
+  }
+}
+
+
+@media screen and (min-width: 500px) {
+  body .header a.logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+  }
+}
+
+
+@media screen and (max-width: 420px) {
+  body .subscription-receipt table:first-of-type .subscription-amount .subs=
+cription-discount {
+    width: 72px !important;
+  }
+}
+
+
+@media screen and (min-width: 481px) {
+  body .share-button-container {
+    height: auto;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  body .share-button-container .separator {
+    display: block !important;
+    margin: 0 !important;
+    height: 8px !important;
+    border-left: none !important;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .digest .item .post-meta-item.audience {
+    display: none;
+  }
+}
+
+
+@media screen and (min-width: 500px) {
+  .digest-publication .logo img {
+    width: 42px;
+    height: 42px;
+    border-radius: 4px;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .comments-page .container .comment-list .collapsed-reply {
+    margin-left: 17px;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .comment > .comment-list {
+    padding-left: 25px;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .finish-magic-login-modal .modal-content .container {
+    padding: 24px 0;
+  }
+}
+
+
+@media (max-width: 650px) {
+  .reader2-text-b3 {
+    line-height: 24px;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .reader2-text-h4 {
+    line-height: 24px;
+  }
+}
+
+
+@media screen and (min-width: 541px) {
+  .user-profile-modal {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .subscribe-widget form.form .sideBySideWrap button.rightButton {
+    padding: 10px 12px;
+  }
+}
+
+
+@media screen and (min-width: 541px) {
+  .pub-icon:hover .logo-hover,
+  .feed-item-icon:hover .logo-hover {
+    display: block;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .post-ufi.single-full-width-button .post-ufi-button-wrapper {
+    width: 100%;
+    padding: 16px;
+  }
+  .post-ufi.single-full-width-button .post-ufi-button-wrapper:empty {
+    display: none;
+  }
+  .post-ufi.single-full-width-button .post-ufi-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .file-embed-wrapper {
+    padding: 0;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .file-embed-wrapper-editor {
+    padding: 0;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .file-embed-wrapper-editor:active {
+    padding: 0;
+  }
+}
+
+
+@media only screen and (max-width: 650px) {
+  .file-embed-button.wide,
+  .file-embed-error-button.wide {
+    display: none;
+  }
+}
+
+
+@media only screen and (min-width: 630px) {
+  .file-embed-button.narrow,
+  .file-embed-error-button.narrow {
+    display: none;
+  }
+}
+
+
+@media screen and (min-width: 541px) {
+  .audio-player-wrapper .audio-player {
+    min-width: 500px;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .audio-player-wrapper .audio-player .audio-player-progress {
+    border-left-width: 16px;
+    border-right-width: 16px;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .audio-player-wrapper .audio-player .audio-player-progress .audio-player-=
+progress-bar .audio-player-progress-bar-popup {
+    top: -54px;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .audio-player-wrapper-fancy .audio-player .audio-player-progress {
+    border-left-width: 16px;
+    border-right-width: 16px;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .audio-player-wrapper-fancy .audio-player .audio-player-progress .audio-p=
+layer-progress-bar .audio-player-progress-bar-popup {
+    top: -54px;
+  }
+}
+
+
+@media (min-width: 250px) {
+  .audio-player-wrapper-fancy .audio-player {
+    padding: 32px;
+  }
+  .audio-player-wrapper-fancy .audio-player .btn-group {
+    display: flex;
+  }
+  .audio-player-wrapper-fancy .audio-player .btn-group .button:last-of-type=
+ {
+    display: block;
+  }
+}
+
+
+@media (min-width: 300px) {
+  .audio-player-wrapper-fancy .audio-player .btn-group {
+    display: block;
+  }
+  .audio-player-wrapper-fancy .audio-player .btn-group .button:first-of-typ=
+e {
+    display: block;
+  }
+}
+
+
+@media (min-width: 350px) {
+  .audio-player-wrapper-fancy .audio-player .audio-player-substack-logo {
+    display: block;
+  }
+  .audio-player-wrapper-fancy .audio-player .audio-player-title {
+    margin-top: 16px;
+  }
+  .audio-player-wrapper-fancy .audio-player .audio-player-hero-image-contai=
+ner {
+    padding-top: 15%;
+    width: 15%;
+    display: block;
+  }
+  .audio-player-wrapper-fancy .audio-player .btn-group .button:first-of-typ=
+e {
+    display: block;
+  }
+  .audio-player-wrapper-fancy .audio-player .audio-player-substack-logo {
+    display: block;
+  }
+}
+
+
+@media (min-width: 350px) {
+  .audio-player-wrapper-fancy .audio-player .audio-player-hero-image-contai=
+ner {
+    padding-top: 25%;
+    width: 25%;
+    display: block;
+  }
+  .audio-player-wrapper-fancy .audio-player .btn-group {
+    display: flex;
+  }
+  .audio-player-wrapper-fancy .audio-player .btn-group .button:first-of-typ=
+e {
+    display: block;
+  }
+}
+
+
+@media (min-width: 400px) {
+  .audio-player-wrapper-fancy .audio-player .audio-player-hero-image-contai=
+ner {
+    padding-top: 40%;
+    width: 40%;
+  }
+}
+
+
+@media (max-width: 400px) {
+  .audio-player-wrapper-fancy .audio-player .btn-group {
+    margin-top: 12px;
+  }
+  .audio-player-wrapper-fancy .audio-player .btn-group .button {
+    font-size: 13px;
+    padding: 6px 12px;
+    height: auto;
+    margin-top: 10px;
+  }
+}
+
+
+@media (min-width: 600px) {
+  .audio-player-wrapper-fancy .audio-player .audio-player-hero-image-contai=
+ner {
+    padding-top: 55%;
+    width: 55%;
+  }
+}
+
+
+@media (max-width: 650px) {
+  .poll-editor-modal {
+    min-width: calc(100% - 20px);
+  }
+}
+
+
+@media (max-width: 750px) {
+  .poll-embed .poll-anchor-target .poll-anchor-copy-button {
+    left: 8px;
+    top: 45px;
+  }
+}
+
+
+@media screen and (min-width: 541px) {
+  .poll-embed .poll-wrapper.poll-web .poll-dialog .modal-table .modal-row .=
+modal-content > .container {
+    width: 552px;
+    padding: 26px 24px;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .poll-embed .poll-wrapper.poll-web .poll-dialog .modal-table .modal-row .=
+modal-content > .container {
+    padding: 40px 0;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .poll-embed .poll-wrapper.poll-web .poll-dialog .modal-row .modal-cell .m=
+odal-exit-btn {
+    margin-right: -20px;
+  }
+}
+</style></head><body class=3D"email-body" style=3D"font-kerning: auto;"><im=
+g src=3D"https://mailgun.substack.com/api/v1/email/open?token=3DeyJtIjoiPDI=
+wMjMwNTMxMDI1MjAzLjMuZTc0YTU2MTgxYjc2YjFkOEBtZzIuc3Vic3RhY2suY29tPiIsInUiOj=
+E0ODY3MDkwNCwiciI6Im91Y2hlbmRhbnM2MkBnbWFpbC5jb20iLCJkIjoibWcyLnN1YnN0YWNrL=
+mNvbSIsInAiOjEyNDk0Njg4MiwidCI6Im5ld3NsZXR0ZXIiLCJhIjoiZXZlcnlvbmUiLCJzIjoy=
+MDUzMywiYyI6InBvc3QiLCJmIjp0cnVlLCJwb3NpdGlvbiI6InRvcCIsImlhdCI6MTY4NTUwMjI=
+4NiwiZXhwIjoxNjg4MDk0Mjg2LCJpc3MiOiJwdWItMCIsInN1YiI6ImVvIn0.pFqwD7tG7OkcHq=
+a9u2WPBUrm_eKUTErdhYc6cT4d-bU" alt=3D"" width=3D"1" height=3D"1" border=3D"=
+0" style=3D"height:1px !important;width:1px !important;border-width:0 !impo=
+rtant;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !im=
+portant;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 =
+!important;padding-right:0 !important;padding-left:0 !important;"/><img src=
+=3D"https://eotrx.substackcdn.com/open?token=3DeyJtIjoiPDIwMjMwNTMxMDI1MjAz=
+LjMuZTc0YTU2MTgxYjc2YjFkOEBtZzIuc3Vic3RhY2suY29tPiIsInUiOjE0ODY3MDkwNCwiciI=
+6Im91Y2hlbmRhbnM2MkBnbWFpbC5jb20iLCJkIjoibWcyLnN1YnN0YWNrLmNvbSIsInAiOjEyND=
+k0Njg4MiwidCI6Im5ld3NsZXR0ZXIiLCJhIjoiZXZlcnlvbmUiLCJzIjoyMDUzMywiYyI6InBvc=
+3QiLCJmIjp0cnVlLCJwb3NpdGlvbiI6InRvcCIsImlhdCI6MTY4NTUwMjI4NiwiZXhwIjoxNjg4=
+MDk0Mjg2LCJpc3MiOiJwdWItMCIsInN1YiI6ImVvIn0.pFqwD7tG7OkcHqa9u2WPBUrm_eKUTEr=
+dhYc6cT4d-bU" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"heigh=
+t:1px !important;width:1px !important;border-width:0 !important;margin-top:=
+0 !important;margin-bottom:0 !important;margin-right:0 !important;margin-le=
+ft:0 !important;padding-top:0 !important;padding-bottom:0 !important;paddin=
+g-right:0 !important;padding-left:0 !important;"/><div style=3D"display:non=
+e;font-size:1px;color:#333333;line-height:1px;max-height:0px;max-width:0px;=
+opacity:0;overflow:hidden;" class=3D"preview">&#8220;[O]ne of the things th=
+at I hear some of you guys saying is, &#8216;Why doesn&#8217;t Biden say wh=
+at a good deal it is?&#8217;&#8221; President Joe Biden said to reporters y=
+esterday afternoon before leaving the White House on the Marine One helicop=
+ter. &#8220;Why would Biden say what a good deal it is before the vote? You=
+ think that&#8217;s going to help me get it passed? No. That&#8217;s why yo=
+u guys don&#8217;t bargain very well.&#8221; &#160;&#8204;&#160;&#8204;&#16=
+0;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&=
+#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#820=
+4;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#=
+8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160=
+;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#=
+160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204=
+;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8=
+204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;=
+&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#1=
+60;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;=
+&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#82=
+04;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&=
+#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#16=
+0;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&=
+#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#820=
+4;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#=
+8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160=
+;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#=
+160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204=
+;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8=
+204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;=
+&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#1=
+60;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;=
+&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#82=
+04;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&=
+#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#16=
+0;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&=
+#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#820=
+4;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#=
+8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160=
+;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#=
+160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204=
+;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8=
+204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;=
+&#8204;&#160;&#8204;</div><table role=3D"presentation" width=3D"100%" borde=
+r=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"email-body-container">=
+<tr><td></td><td width=3D"550" class=3D"content"></td><td></td></tr><tr><td=
+></td><td align=3D"left" width=3D"550" class=3D"content"><div style=3D"font=
+-size: 16px; line-height: 26px; margin: 0 auto; max-width: 550px; overflow-=
+wrap: break-word; width: 100%;"><table role=3D"presentation" width=3D"100%"=
+ border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr><td align=3D"right" s=
+tyle=3D"height: 20px;"><table role=3D"presentation" width=3D"auto" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr><td style=3D"vertical-align:=
+ middle;"><span class=3D"tw-font-body tw-text-ssm tw-text-substack-secondar=
+y" style=3D"color: #808080 !important; font-family: SF Pro Text, -apple-sys=
+tem, BlinkMacSystemFont, Inter, Segoe UI, Roboto, Helvetica, Arial, sans-se=
+rif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol !important; font-si=
+ze: 13px !important;"><a href=3D"https://open.substack.com/pub/heathercoxri=
+chardson/p/may-30-2023?utm_source=3Demail&redirect=3Dapp-store" class=3D"tw=
+-text-substack-secondary tw-underline" style=3D"-webkit-text-decoration-lin=
+e: underline !important; color: #808080 !important; text-decoration-line: u=
+nderline !important;">Open in app</a> or <a href=3D"https://substack.com/re=
+direct/2/eyJlIjoiaHR0cHM6Ly9oZWF0aGVyY294cmljaGFyZHNvbi5zdWJzdGFjay5jb20vcC=
+9tYXktMzAtMjAyMz90b2tlbj1leUoxYzJWeVgybGtJam94TkRnMk56QTVNRFFzSW5CdmMzUmZhV=
+1FpT2pFeU5EazBOamc0TWl3aWFXRjBJam94TmpnMU5UQXlNamcxTENKbGVIQWlPakUyT0Rnd09U=
+UXlPRFVzSW1semN5STZJbkIxWWkweU1EVXpNeUlzSW5OMVlpSTZJbkJ2YzNRdGNtVmhZM1JwYjI=
+0aWZRLjc1TXdZVzgtVjk1RktnTXduZVFudzNsazZlMHZuNm1uQnZLWUFVVG1TM1kiLCJwIjoxMj=
+Q5NDY4ODIsInMiOjIwNTMzLCJmIjp0cnVlLCJ1IjoxNDg2NzA5MDQsImlhdCI6MTY4NTUwMjI4N=
+SwiZXhwIjoxNjg4MDk0Mjg1LCJpc3MiOiJwdWItMCIsInN1YiI6ImxpbmstcmVkaXJlY3QifQ.-=
+hw6NXaKidIoWMUhwoLfzd_iHbbDRLFeCZx826wbnWQ?" class=3D"tw-text-substack-seco=
+ndary tw-underline" style=3D"-webkit-text-decoration-line: underline !impor=
+tant; color: #808080 !important; text-decoration-line: underline !important=
+;">online</a></span></td></tr></table></td></tr></table><div dir=3D"auto" c=
+lass=3D"post typography" style=3D"font-size: 16px; line-height: 26px; paddi=
+ng: 16px 0 0 0;"><div class=3D"post-header" style=3D"font-size: 16px; line-=
+height: 26px;"><h1 class=3D"post-title published" style=3D"-moz-appearance:=
+ optimizelegibility; -moz-osx-font-smoothing: antialiased; -webkit-appearan=
+ce: optimizelegibility; -webkit-font-smoothing: antialiased; appearance: op=
+timizelegibility; color: #404040; font-family: 'SF Compact Display', -apple=
+-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-ser=
+if, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 32=
+px; font-weight: bold; line-height: 36px; margin: 0;"><a href=3D"https://su=
+bstack.com/app-link/post?publication_id=3D20533&post_id=3D124946882&utm_sou=
+rce=3Dpost-email-title&isFreemail=3Dtrue&token=3DeyJ1c2VyX2lkIjoxNDg2NzA5MD=
+QsInBvc3RfaWQiOjEyNDk0Njg4MiwiaWF0IjoxNjg1NTAyMjg1LCJleHAiOjE2ODgwOTQyODUsI=
+mlzcyI6InB1Yi0yMDUzMyIsInN1YiI6InBvc3QtcmVhY3Rpb24ifQ.75MwYW8-V95FKgMwneQnw=
+3lk6e0vn6mnBvKYAUTmS3Y" style=3D"color: #404040; text-decoration: none;">Ma=
+y 30, 2023</a></h1><table role=3D"presentation" width=3D"100%" border=3D"0"=
+ cellspacing=3D"0" cellpadding=3D"0" class=3D"post-meta" style=3D"align-ite=
+ms: center; height: 20px; margin: 1em 0;"><tr><td><table role=3D"presentati=
+on" width=3D"auto" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr><td=
+><table role=3D"presentation" width=3D"auto" border=3D"0" cellspacing=3D"0"=
+ cellpadding=3D"0"><tr><td style=3D"vertical-align: middle;"><div class=3D"=
+pencraft frontend-pencraft-Box-module__reset--tAIEo frontend-pencraft-Text-=
+module__size-11--1-ofT frontend-pencraft-Text-module__line-height-20--1soeQ=
+ frontend-pencraft-Text-module__weight-medium--aTbx5 frontend-pencraft-Text=
+-module__font-meta--2i-cR frontend-pencraft-Text-module__color-primary--2I-=
+sF frontend-pencraft-Text-module__transform-uppercase--38jbr frontend-pencr=
+aft-Text-module__reset--20JLV frontend-pencraft-Text-module__meta--3RRSj cu=
+stom-css-email-post-author" style=3D"color: #404040; font-family: 'SF Compa=
+ct', -apple-system, -apple-system, -system-ui, BlinkMacSystemFont, 'Segoe U=
+I', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Em=
+oji', 'Segoe UI Symbol'; font-size: 11px; font-weight: 500; letter-spacing:=
+ .2px; line-height: 20px; margin: 0; text-decoration: unset; text-transform=
+: uppercase;"><a style=3D"color: #404040; font-family: 'SF Compact', -apple=
+-system, -apple-system, -system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,=
+ Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Sego=
+e UI Symbol'; font-size: 11px; font-weight: 500; letter-spacing: .2px; line=
+-height: 20px; margin: 0; text-decoration: none; text-transform: uppercase;=
+" href=3D"https://substack.com/redirect/5280289f-7a20-4f06-b3b0-5d1a95ea146=
+4?j=3DeyJ1IjoiMmdpajdjIn0.COwSm6gYAvkxFU2LiOaMG6yU57qigAx5e5dQc8OneDg" clas=
+s=3D"pencraft frontend-pencraft-Box-module__reset--tAIEo frontend-pencraft-=
+Text-module__size-11--1-ofT frontend-pencraft-Text-module__line-height-20--=
+1soeQ frontend-pencraft-Text-module__weight-medium--aTbx5 frontend-pencraft=
+-Text-module__font-meta--2i-cR frontend-pencraft-Text-module__color-primary=
+--2I-sF frontend-pencraft-Text-module__transform-uppercase--38jbr frontend-=
+pencraft-Text-module__reset--20JLV frontend-pencraft-Text-module__meta--3RR=
+Sj">Heather Cox Richardson</a></div></td></tr></table></td></tr><tr><td><ta=
+ble role=3D"presentation" width=3D"auto" border=3D"0" cellspacing=3D"0" cel=
+lpadding=3D"0"><tr><td style=3D"vertical-align: middle;"><div class=3D"penc=
+raft frontend-pencraft-Box-module__reset--tAIEo frontend-pencraft-Text-modu=
+le__size-11--1-ofT frontend-pencraft-Text-module__line-height-20--1soeQ fro=
+ntend-pencraft-Text-module__weight-medium--aTbx5 frontend-pencraft-Text-mod=
+ule__font-meta--2i-cR frontend-pencraft-Text-module__color-secondary--XjVGl=
+ frontend-pencraft-Text-module__transform-uppercase--38jbr frontend-pencraf=
+t-Text-module__reset--20JLV frontend-pencraft-Text-module__meta--3RRSj" sty=
+le=3D"color: #808080; font-family: 'SF Compact', -apple-system, -apple-syst=
+em, -system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, s=
+ans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-s=
+ize: 11px; font-weight: 500; letter-spacing: .2px; line-height: 20px; margi=
+n: 0; text-decoration: unset; text-transform: uppercase;"><time dateTime=3D=
+"2023-05-31T03:02:06.528Z">May 31</time></div></td></tr></table></td></tr><=
+/table></td></tr></table><table role=3D"presentation" width=3D"100%" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"email-ufi-2-top" style=
+=3D"border-bottom: 1px solid rgba(0, 0, 0, .13); border-top: 1px solid rgba=
+(0, 0, 0, .13); min-width: 100%;"><tr height=3D"16"><td height=3D"16" style=
+=3D"font-size: 0px; line-height: 0;">&#160;</td></tr><tr><td><table role=3D=
+"presentation" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0"><tr><td><table role=3D"presentation" width=3D"auto" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"0"><tr><td style=3D"vertical-align: middle;"><ta=
+ble role=3D"presentation" width=3D"38" border=3D"0" cellspacing=3D"0" cellp=
+adding=3D"0"><tr><td align=3D"center"><a href=3D"https://substack.com/app-l=
+ink/post?publication_id=3D20533&post_id=3D124946882&utm_source=3Dsubstack&i=
+sFreemail=3Dtrue&submitLike=3Dtrue&token=3DeyJ1c2VyX2lkIjoxNDg2NzA5MDQsInBv=
+c3RfaWQiOjEyNDk0Njg4MiwicmVhY3Rpb24iOiLinaQiLCJpYXQiOjE2ODU1MDIyODUsImV4cCI=
+6MTY4ODA5NDI4NSwiaXNzIjoicHViLTIwNTMzIiwic3ViIjoicmVhY3Rpb24ifQ.90YGHFcEtQR=
+1vvADNyAyFW2_tcziXMYdRMKDQWtT6s0&utm_medium=3Demail" style=3D"border: 1px s=
+olid rgba(0, 0, 0, .13); border-radius: 100000px; box-sizing: border-box; c=
+olor: #808080; display: inline-block; font-family: 'SF Pro Text', -apple-sy=
+stem, ui-sans-serif, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Ari=
+al, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; f=
+ont-size: 12px; font-weight: 500; line-height: 1; min-width: 38px; padding:=
+ 9px 0; text-decoration: none; text-transform: uppercase; width: 38px;" cla=
+ss=3D"email-icon-button"><img src=3D"https://substackcdn.com/image/fetch/w_=
+36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.co=
+m%2Ficon%2FLucideHeart%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523=
+808080%26strokeWidth%3D2" width=3D"18" height=3D"18" style=3D"border: none =
+!important; max-width: 18px; vertical-align: middle;" alt class=3D"icon"></=
+a></td></tr></table></td><td width=3D"8" style=3D"min-width: 8px"></td><td =
+style=3D"vertical-align: middle;"><table role=3D"presentation" width=3D"38"=
+ border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr><td align=3D"center">=
+<a href=3D"https://substack.com/app-link/post?publication_id=3D20533&post_i=
+d=3D124946882&utm_source=3Dsubstack&utm_medium=3Demail&isFreemail=3Dtrue&co=
+mments=3Dtrue&token=3DeyJ1c2VyX2lkIjoxNDg2NzA5MDQsInBvc3RfaWQiOjEyNDk0Njg4M=
+iwiaWF0IjoxNjg1NTAyMjg1LCJleHAiOjE2ODgwOTQyODUsImlzcyI6InB1Yi0yMDUzMyIsInN1=
+YiI6InBvc3QtcmVhY3Rpb24ifQ.75MwYW8-V95FKgMwneQnw3lk6e0vn6mnBvKYAUTmS3Y&utm_=
+source=3Dsubstack&utm_medium=3Demail" style=3D"border: 1px solid rgba(0, 0,=
+ 0, .13); border-radius: 100000px; box-sizing: border-box; color: #808080; =
+display: inline-block; font-family: 'SF Pro Text', -apple-system, ui-sans-s=
+erif, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,=
+ 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 12px;=
+ font-weight: 500; line-height: 1; min-width: 38px; padding: 9px 0; text-de=
+coration: none; text-transform: uppercase; width: 38px;" class=3D"email-ico=
+n-button"><img src=3D"https://substackcdn.com/image/fetch/w_36,c_scale,f_pn=
+g,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FLuci=
+deComments%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26str=
+okeWidth%3D2" width=3D"18" height=3D"18" style=3D"border: none !important; =
+max-width: 18px; vertical-align: middle;" alt class=3D"icon"></a></td></tr>=
+</table></td><td width=3D"8" style=3D"min-width: 8px"></td><td style=3D"ver=
+tical-align: middle;"><table role=3D"presentation" width=3D"38" border=3D"0=
+" cellspacing=3D"0" cellpadding=3D"0"><tr><td align=3D"center"><a href=3D"h=
+ttps://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9oZWF0aGVyY294cmljaGFyZHNv=
+bi5zdWJzdGFjay5jb20vcC9tYXktMzAtMjAyMz91dG1fc291cmNlPXN1YnN0YWNrJnV0bV9tZWR=
+pdW09ZW1haWwmYWN0aW9uPXJlc3RhY2stY29tbWVudCIsInAiOjEyNDk0Njg4MiwicyI6MjA1Mz=
+MsImYiOnRydWUsInUiOjE0ODY3MDkwNCwiaWF0IjoxNjg1NTAyMjg1LCJleHAiOjE2ODgwOTQyO=
+DUsImlzcyI6InB1Yi0wIiwic3ViIjoibGluay1yZWRpcmVjdCJ9.wAftyIgkWOe-wHv1731q1Iu=
+O8gbfl_tO8Fi93M5HUwM?&utm_source=3Dsubstack&utm_medium=3Demail" style=3D"bo=
+rder: 1px solid rgba(0, 0, 0, .13); border-radius: 100000px; box-sizing: bo=
+rder-box; color: #808080; display: inline-block; font-family: 'SF Pro Text'=
+, -apple-system, ui-sans-serif, BlinkMacSystemFont, 'Segoe UI', Roboto, Hel=
+vetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI=
+ Symbol'; font-size: 12px; font-weight: 500; line-height: 1; min-width: 38p=
+x; padding: 9px 0; text-decoration: none; text-transform: uppercase; width:=
+ 38px;" class=3D"email-icon-button"><img src=3D"https://substackcdn.com/ima=
+ge/fetch/w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2F=
+substack.com%2Ficon%2FNoteForwardIcon%3Fv%3D4%26height%3D36%26fill%3Dnone%2=
+6stroke%3D%2523808080%26strokeWidth%3D2" width=3D"18" height=3D"18" style=
+=3D"border: none !important; max-width: 18px; vertical-align: middle;" alt =
+class=3D"icon"></a></td></tr></table></td></tr></table></td><td align=3D"ri=
+ght"><table role=3D"presentation" width=3D"auto" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0"><tr><td style=3D"vertical-align: middle;"><table r=
+ole=3D"presentation" width=3D"auto" border=3D"0" cellspacing=3D"0" cellpadd=
+ing=3D"0"><tr><td align=3D"center"><a href=3D"https://substack.com/app-link=
+/post?publication_id=3D20533&post_id=3D124946882&utm_source=3Dsubstack&utm_=
+medium=3Demail&utm_content=3Dshare&action=3Dshare&triggerShare=3Dtrue&isFre=
+email=3Dtrue&token=3DeyJ1c2VyX2lkIjoxNDg2NzA5MDQsInBvc3RfaWQiOjEyNDk0Njg4Mi=
+wiaWF0IjoxNjg1NTAyMjg1LCJleHAiOjE2ODgwOTQyODUsImlzcyI6InB1Yi0yMDUzMyIsInN1Y=
+iI6InBvc3QtcmVhY3Rpb24ifQ.75MwYW8-V95FKgMwneQnw3lk6e0vn6mnBvKYAUTmS3Y" clas=
+s=3D"email-button-outline" style=3D"border: 1px solid rgba(0, 0, 0, .13); b=
+order-radius: 100000px; color: #808080; display: inline-block; font-family:=
+ 'SF Pro Text', -apple-system, ui-sans-serif, BlinkMacSystemFont, 'Segoe UI=
+', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emo=
+ji', 'Segoe UI Symbol'; font-size: 12px; font-weight: 500; line-height: 12p=
+x; padding: 9px 14px; text-decoration: none; text-transform: uppercase;"><d=
+iv class=3D"email-button-spacer" style=3D"display: inline-block; font-size:=
+ 16px; line-height: 26px; max-width: 0; min-height: 18px; vertical-align: m=
+iddle;"></div><span class=3D"email-button-text" style=3D"vertical-align: mi=
+ddle;">Share</span></a></td></tr></table></td></tr></table></td></tr></tabl=
+e></td></tr><tr height=3D"16"><td height=3D"16" style=3D"font-size: 0px; li=
+ne-height: 0;">&#160;</td></tr></table></div></div><div dir=3D"auto" class=
+=3D"post typography" style=3D"font-size: 16px; line-height: 26px; padding: =
+16px 0 0 0;"><div dir=3D"auto" class=3D"body markup" style=3D"font-size: 16=
+px; line-height: 26px; margin-bottom: 16px; text-align: initial; width: 100=
+%; word-break: break-word;"><p style=3D"color: #404040; font-size: 16px; li=
+ne-height: 26px; margin: 0 0 20px 0; margin-top: 0;">&#8220;[O]ne of the th=
+ings that I hear some of you guys saying is, &#8216;Why doesn&#8217;t Biden=
+ say what a good deal it is?&#8217;&#8221; President Joe Biden said to repo=
+rters yesterday afternoon before leaving the White House on the Marine One =
+helicopter. &#8220;Why would Biden say what a good deal it is before the vo=
+te? You think that&#8217;s going to help me get it passed? No. That&#8217;s=
+ why you guys don&#8217;t bargain very well.&#8221;</p><p style=3D"color: #=
+404040; font-size: 16px; line-height: 26px; margin: 0 0 20px 0;">Biden&#821=
+7;s unusually revealing comment about the budget negotiations was actually =
+a statement about his presidency. Unlike his Republican opponents, he has r=
+efused to try to win points by playing the media and instead has worked beh=
+ind the scenes to govern, sometimes staying out of negotiations, sometimes =
+being central to them.&#160;</p><p style=3D"color: #404040; font-size: 16px=
+; line-height: 26px; margin: 0 0 20px 0;"><span>The result has been, as </s=
+pan><em>Daily Beast</em><span> columnist David Rothkopf summarized today, h=
+istoric. Biden has worked to replace 40 years of supply-side economics with=
+ policies to rebuild the nation&#8217;s economy and infrastructure by suppo=
+rting ordinary Americans. The American Rescue Plan gave the United States a=
+ faster economic recovery from the COVID pandemic than any other major econ=
+omy. The Bipartisan Infrastructure Law has already funded more than 32,000 =
+projects in more than 4,500 communities in all 50 states, Washington D.C., =
+and U.S. territories.&#160;</span></p><p style=3D"color: #404040; font-size=
+: 16px; line-height: 26px; margin: 0 0 20px 0;">The Inflation Reduction Act=
+ made the biggest investment in addressing climate change in our history, a=
+nd according to University of Washington transportation analyst Jack Connes=
+s, it and the CHIPS and Science Act have already attracted over $220 billio=
+n in private investment, much of it going to Republican-dominated states: T=
+ennessee, Nevada, North Carolina, and Oklahoma have each attracted more tha=
+n $4 billion; Ohio, more than $6 billion; Arizona, more than $7 billion; So=
+uth Carolina, more than $9 billion; and Georgia, more than $13 billion.&#16=
+0;</p><p style=3D"color: #404040; font-size: 16px; line-height: 26px; margi=
+n: 0 0 20px 0;"><span>Victoria Guida in </span><em>Politico</em><span> yest=
+erday reported that the reordering of the economy under Biden and the Democ=
+rats has reversed the widening income gap between wage workers and upper-in=
+come professionals that has been growing for the past 40 years. The pay of =
+those making an average of $12.50 an hour grew by almost 6% from 2020 to 20=
+22, even after inflation.&#160;</span></p><p style=3D"color: #404040; font-=
+size: 16px; line-height: 26px; margin: 0 0 20px 0;"><span>Those gains are n=
+ow at risk as pandemic measures end and the Fed raises interest rates to br=
+ing down inflation, although the wage increases are only a piece of the inf=
+lation puzzle: Talmon Joseph Smith and Joe Rennison of the </span><em>New Y=
+ork Times</em><span> today reported that companies raising their prices to =
+&#8220;protect&#8230;profits&#8221; are &#8220;adding to inflation.&#8221; =
+In other words, companies pushed prices beyond normal profit margins during=
+ the pandemic and the economic recovery, then maintained those higher profi=
+t margins with the Russian invasion of Ukraine, and continue to maintain th=
+em now.</span></p><p style=3D"color: #404040; font-size: 16px; line-height:=
+ 26px; margin: 0 0 20px 0;">The fight over the debt ceiling is both an exam=
+ple of the different approaches to negotiation on the part of Biden and Rep=
+ublicans like House speaker Kevin McCarthy (R-CA), and part of the larger q=
+uestion about the direction of the country.&#160;</p><p style=3D"color: #40=
+4040; font-size: 16px; line-height: 26px; margin: 0 0 20px 0;">On January 1=
+3, 2023, Treasury Secretary Janet Yellen warned McCarthy that the Treasury =
+was about to hit the borrowing limit established by Congress and that she w=
+ould have to resort to extraordinary measures in order to meet obligations =
+until Congress raised the debt ceiling.&#160;</p><p style=3D"color: #404040=
+; font-size: 16px; line-height: 26px; margin: 0 0 20px 0;">On March 9, as p=
+art of the usual budget process, Biden produced a detailed budget, which wa=
+s a wish list of programs that would continue to build the country from the=
+ bottom up. He told McCarthy he would meet with the speaker as soon as he p=
+roduced his own budget, which McCarthy could not do because the far-right H=
+ouse Freedom Caucus (these days being abbreviated as HFC) wanted extreme cu=
+ts to which other Republicans would never agree.</p><p style=3D"color: #404=
+040; font-size: 16px; line-height: 26px; margin: 0 0 20px 0;">On April 26 t=
+he House Republicans passed a bill that would require $4.8 trillion in cuts=
+ but was quite vague about how it would do so apart from getting rid of muc=
+h of the legislation the Democrats had just passed. HFC members said they w=
+ould not raise the debt ceiling until the Senate passed their bill. That is=
+, they would drive the United States into default, crashing the U.S. and th=
+e global economy, until the president and the Democrats agreed to their pol=
+icies. Even then, they would raise it only until next spring, with the expe=
+ctation that it would then become a key factor in the 2024 election.</p><p =
+style=3D"color: #404040; font-size: 16px; line-height: 26px; margin: 0 0 20=
+px 0;">Biden insisted all along that he would not negotiate over the debt c=
+eiling, which pays for money already appropriated under the normal process =
+of Congress and which Congress raised three times under former president Tr=
+ump even as he added $7.8 trillion to the national debt. Biden said he woul=
+d happily negotiate over the budget. McCarthy, meanwhile, was out in front =
+of the cameras and on social media insulting Biden and insisting that it wa=
+s Biden&#8217;s fault that talks took so long to get started.&#160;</p><p s=
+tyle=3D"color: #404040; font-size: 16px; line-height: 26px; margin: 0 0 20p=
+x 0;"><span>Late Saturday, the two sides announced an agreement &#8220;in p=
+rinciple&#8221; to raise the debt ceiling for two years&#8212;clearing the =
+presidential election. As the </span><em>Washington Post&#8217;s</em><span>=
+ Catherine Rampell noted, it protects current spending on Social Security, =
+Medicare, and Medicaid; keeps tax rates as they are; increases spending on =
+defense and veterans&#8217; programs; leaves most other domestic spending t=
+he same; cuts a little from the expanded funding of the Internal Revenue Se=
+rvice; and tweaks both the permitting process for energy projects and the e=
+xisting work requirements in the food assistance program.</span></p><p styl=
+e=3D"color: #404040; font-size: 16px; line-height: 26px; margin: 0 0 20px 0=
+;">As Rampell points out, &#8220;this much-ballyhooed &#8216;deal&#8217; do=
+esn&#8217;t seem terribly different from whatever budget agreement would ha=
+ve materialized anyway later this year, during the usual annual appropriati=
+ons process, under divided government. To President Biden&#8217;s credit, t=
+he most objectionable ransoms that Republicans had been demanding are all g=
+one.&#8221;</p><p style=3D"color: #404040; font-size: 16px; line-height: 26=
+px; margin: 0 0 20px 0;"><span>Now the measure has to get through both part=
+ies, with congressmembers back in Washington today after the holiday weeken=
+d. Freedom Caucus members are howling at the deal. Representative Chip Roy =
+(R-TX) is threatening to bottle the measure up in the House Rules Committee=
+, which decides what bills make it to the floor. The Freedom Caucus forced =
+McCarthy to stack that committee with far-right extremists as part of his d=
+eal for the speakership (it has nine Republicans but only four Democrats on=
+ it). But Josh Marshall of </span><em>Talking Points Memo</em><span> sugges=
+ts that McCarthy&#8217;s alliance with Representatives Jim Jordan (R-OH) an=
+d Marjorie Taylor Greene (R-GA) might pay off here, since the two have thro=
+wn their weight behind the measure.</span></p><p style=3D"color: #404040; f=
+ont-size: 16px; line-height: 26px; margin: 0 0 20px 0;">Even if the measure=
+ does pass before the June 5 deadline when the Treasury runs out of money, =
+it has had an important effect. As Rampell noted, it has weakened the Unite=
+d States. It has enabled both China and Russia to portray the U.S. as unsta=
+ble and an unreliable partner. As if to prove that criticism, Biden had to =
+cancel a trip to Australia and Papua New Guinea, where he was strengthening=
+ the Indo-Pacific alliances designed to weaken Chinese dominance of the reg=
+ion. (And Russia continues to involve itself in U.S. politics: today Tara R=
+eade, the woman who in 2020 accused Biden of sexually assaulting her, appea=
+red on Russian television next to alleged spy Maria Butina to say she has f=
+led to Russia out of fear for her life in the U.S.)&#160;</p><p style=3D"co=
+lor: #404040; font-size: 16px; line-height: 26px; margin: 0 0 20px 0;"><spa=
+n>Writing in </span><em>Foreign Policy</em><span>, Howard W. French sees a =
+more sweeping problem with the debt ceiling fight: it &#8220;highlights Ame=
+rica&#8217;s warped priorities.&#8221; &#8220;[W]hen a rich and powerful co=
+untry finds it easier to cut back on the way that it invests in its people,=
+ in education, in science, and in making sure that the weakest among them a=
+re not completely left behind than to curtail useless and profligate weapon=
+s spending,&#8221; he said, &#8220;there are reasons to worry about the fou=
+ndations of its power.&#8221;</span></p><p style=3D"color: #404040; font-si=
+ze: 16px; line-height: 26px; margin: 0 0 20px 0;">&#8212;</p><p style=3D"co=
+lor: #404040; font-size: 16px; line-height: 26px; margin: 0 0 20px 0;">Note=
+s:</p><p style=3D"color: #404040; font-size: 16px; line-height: 26px; margi=
+n: 0 0 20px 0;"><a href=3D"https://substack.com/redirect/4078ccd2-4d44-473c=
+-bed2-a5272a9f479f?j=3DeyJ1IjoiMmdpajdjIn0.COwSm6gYAvkxFU2LiOaMG6yU57qigAx5=
+e5dQc8OneDg" rel style=3D"color: #404040; text-decoration: underline;">http=
+s://www.whitehouse.gov/briefing-room/speeches-remarks/2023/05/29/remarks-by=
+-president-biden-before-marine-one-departure-37/</a></p><p style=3D"color: =
+#404040; font-size: 16px; line-height: 26px; margin: 0 0 20px 0;"><a href=
+=3D"https://substack.com/redirect/7a0a8919-d06d-4b94-bfd0-ea1f945e787e?j=3D=
+eyJ1IjoiMmdpajdjIn0.COwSm6gYAvkxFU2LiOaMG6yU57qigAx5e5dQc8OneDg" rel style=
+=3D"color: #404040; text-decoration: underline;">https://twitter.com/djroth=
+kopf/status/1663546412334972932</a></p><p style=3D"color: #404040; font-siz=
+e: 16px; line-height: 26px; margin: 0 0 20px 0;"><a href=3D"https://substac=
+k.com/redirect/abbe9af1-8a8c-493d-8494-affb2794ed20?j=3DeyJ1IjoiMmdpajdjIn0=
+=2ECOwSm6gYAvkxFU2LiOaMG6yU57qigAx5e5d=
+Qc8OneDg" rel style=3D"color: #404040;=20=
+text-decoration: underline;">https://www.whitehouse.gov/briefing-room/state=
+ments-releases/2023/05/12/fact-sheet-biden-harris-administration-kicks-off-=
+infrastructure-week-by-highlighting-tremendous-progress-rebuilding-americas=
+-infrastructure-18-months-in/</a></p><p style=3D"color: #404040; font-size:=
+ 16px; line-height: 26px; margin: 0 0 20px 0;"><a href=3D"https://substack.=
+com/redirect/9daf4bda-c592-4a0f-854c-f741467929d4?j=3DeyJ1IjoiMmdpajdjIn0.C=
+OwSm6gYAvkxFU2LiOaMG6yU57qigAx5e5dQc8OneDg" rel style=3D"color: #404040; te=
+xt-decoration: underline;">https://www.whitehouse.gov/build/</a></p><p styl=
+e=3D"color: #404040; font-size: 16px; line-height: 26px; margin: 0 0 20px 0=
+;"><a href=3D"https://substack.com/redirect/6e869269-40d1-4956-a0ec-a15dc93=
+a779d?j=3DeyJ1IjoiMmdpajdjIn0.COwSm6gYAvkxFU2LiOaMG6yU57qigAx5e5dQc8OneDg" =
+rel style=3D"color: #404040; text-decoration: underline;">https://www.white=
+house.gov/omb/briefing-room/2023/03/09/fact-sheet-the-presidents-budget-for=
+-fiscal-year-2024/</a></p><p style=3D"color: #404040; font-size: 16px; line=
+-height: 26px; margin: 0 0 20px 0;"><a href=3D"https://substack.com/redirec=
+t/25315146-f332-4fa9-959d-c240194c0eb2?j=3DeyJ1IjoiMmdpajdjIn0.COwSm6gYAvkx=
+FU2LiOaMG6yU57qigAx5e5dQc8OneDg" rel style=3D"color: #404040; text-decorati=
+on: underline;">https://www.motherjones.com/politics/2023/04/house-republic=
+ans-debt-ceiling-clean-energy-ira-irs-joe-biden/</a></p><p style=3D"color: =
+#404040; font-size: 16px; line-height: 26px; margin: 0 0 20px 0;"><a href=
+=3D"https://substack.com/redirect/7e7d9bb9-bbb1-4f2e-85f8-0418f2010da4?j=3D=
+eyJ1IjoiMmdpajdjIn0.COwSm6gYAvkxFU2LiOaMG6yU57qigAx5e5dQc8OneDg" rel style=
+=3D"color: #404040; text-decoration: underline;">https://www.jackconness.co=
+m/ira-chips-investments</a></p><p style=3D"color: #404040; font-size: 16px;=
+ line-height: 26px; margin: 0 0 20px 0;"><a href=3D"https://substack.com/re=
+direct/79819272-fd1b-4b9f-bd67-a24309be76f5?j=3DeyJ1IjoiMmdpajdjIn0.COwSm6g=
+YAvkxFU2LiOaMG6yU57qigAx5e5dQc8OneDg" rel style=3D"color: #404040; text-dec=
+oration: underline;">https://www.politico.com/news/2023/05/29/low-income-wa=
+ges-employment-00097135</a></p><p style=3D"color: #404040; font-size: 16px;=
+ line-height: 26px; margin: 0 0 20px 0;"><a href=3D"https://substack.com/re=
+direct/4a29e561-abcf-4465-addc-ec0cb9c67041?j=3DeyJ1IjoiMmdpajdjIn0.COwSm6g=
+YAvkxFU2LiOaMG6yU57qigAx5e5dQc8OneDg" rel style=3D"color: #404040; text-dec=
+oration: underline;">https://www.nytimes.com/2023/05/30/business/economy/in=
+flation-companies-profits-higher-prices.html</a></p><p style=3D"color: #404=
+040; font-size: 16px; line-height: 26px; margin: 0 0 20px 0;"><a href=3D"ht=
+tps://substack.com/redirect/9755b87b-00b9-4826-8d6a-2b2a81abcf44?j=3DeyJ1Ij=
+oiMmdpajdjIn0.COwSm6gYAvkxFU2LiOaMG6yU57qigAx5e5dQc8OneDg" rel style=3D"col=
+or: #404040; text-decoration: underline;">https://twitter.com/IsabellaMWebe=
+r/status/1630322499362897920</a></p><p style=3D"color: #404040; font-size: =
+16px; line-height: 26px; margin: 0 0 20px 0;"><a href=3D"https://substack.c=
+om/redirect/f21aa6d0-67a2-4a49-8c11-71a58532aea6?j=3DeyJ1IjoiMmdpajdjIn0.CO=
+wSm6gYAvkxFU2LiOaMG6yU57qigAx5e5dQc8OneDg" rel style=3D"color: #404040; tex=
+t-decoration: underline;">https://home.treasury.gov/news/press-releases/jy1=
+188</a></p><p style=3D"color: #404040; font-size: 16px; line-height: 26px; =
+margin: 0 0 20px 0;"><a href=3D"https://substack.com/redirect/6ce48500-3de5=
+-4d7f-80fd-552054e05533?j=3DeyJ1IjoiMmdpajdjIn0.COwSm6gYAvkxFU2LiOaMG6yU57q=
+igAx5e5dQc8OneDg" rel style=3D"color: #404040; text-decoration: underline;"=
+>https://home.treasury.gov/news/press-releases/jy1454</a></p><p style=3D"co=
+lor: #404040; font-size: 16px; line-height: 26px; margin: 0 0 20px 0;"><a h=
+ref=3D"https://substack.com/redirect/a4fcf080-a0d8-4057-a8b5-ed3acbff6226?j=
+=3DeyJ1IjoiMmdpajdjIn0.COwSm6gYAvkxFU2LiOaMG6yU57qigAx5e5dQc8OneDg" rel sty=
+le=3D"color: #404040; text-decoration: underline;">https://rollcall.com/202=
+3/04/26/house-passes-1-5-trillion-debt-limit-increase-spending-cuts/</a></p=
+><p style=3D"color: #404040; font-size: 16px; line-height: 26px; margin: 0 =
+0 20px 0;"><a href=3D"https://substack.com/redirect/cf4b3d49-ed44-4671-a259=
+-bbc70e924a9d?j=3DeyJ1IjoiMmdpajdjIn0.COwSm6gYAvkxFU2LiOaMG6yU57qigAx5e5dQc=
+8OneDg" rel style=3D"color: #404040; text-decoration: underline;">https://t=
+hehill.com/homenews/house/4024123-spending-and-debt-ceiling-plan-whats-next=
+/</a></p><p style=3D"color: #404040; font-size: 16px; line-height: 26px; ma=
+rgin: 0 0 20px 0;"><a href=3D"https://substack.com/redirect/68dd23fe-eb2f-4=
+d1a-b1e7-72d2d4630722?j=3DeyJ1IjoiMmdpajdjIn0.COwSm6gYAvkxFU2LiOaMG6yU57qig=
+Ax5e5dQc8OneDg" rel style=3D"color: #404040; text-decoration: underline;">h=
+ttps://www.washingtonpost.com/opinions/2023/05/28/debt-limit-deal-budget-di=
+fferences/</a></p><p style=3D"color: #404040; font-size: 16px; line-height:=
+ 26px; margin: 0 0 20px 0;"><a href=3D"https://substack.com/redirect/265605=
+f5-0b33-498a-a8ee-ea729383052f?j=3DeyJ1IjoiMmdpajdjIn0.COwSm6gYAvkxFU2LiOaM=
+G6yU57qigAx5e5dQc8OneDg" rel style=3D"color: #404040; text-decoration: unde=
+rline;">https://www.politico.com/news/2023/05/30/debt-ceiling-deal-house-ru=
+les-committee-republicans-00099245</a></p><p style=3D"color: #404040; font-=
+size: 16px; line-height: 26px; margin: 0 0 20px 0;"><a href=3D"https://subs=
+tack.com/redirect/bab43dd2-1def-4e43-a539-6f493a9a938d?j=3DeyJ1IjoiMmdpajdj=
+In0.COwSm6gYAvkxFU2LiOaMG6yU57qigAx5e5dQc8OneDg" rel style=3D"color: #40404=
+0; text-decoration: underline;">https://talkingpointsmemo.com/edblog/freak-=
+cavalcade-but-not-more</a></p><p style=3D"color: #404040; font-size: 16px; =
+line-height: 26px; margin: 0 0 20px 0;"><span>&#8203;&#8203;</span><a href=
+=3D"https://substack.com/redirect/ebffa319-11b2-48ac-8b70-67d42b6f784c?j=3D=
+eyJ1IjoiMmdpajdjIn0.COwSm6gYAvkxFU2LiOaMG6yU57qigAx5e5dQc8OneDg" rel style=
+=3D"color: #404040; text-decoration: underline;">https://www.thedailybeast.=
+com/joe-biden-accuser-tara-reade-claims-she-defected-to-russia-after-sexual=
+-assault-allegations</a></p><p style=3D"color: #404040; font-size: 16px; li=
+ne-height: 26px; margin: 0 0 20px 0;"><a href=3D"https://substack.com/redir=
+ect/9697fff7-7d70-4e0e-b1e8-cecfd72d9544?j=3DeyJ1IjoiMmdpajdjIn0.COwSm6gYAv=
+kxFU2LiOaMG6yU57qigAx5e5dQc8OneDg" rel style=3D"color: #404040; text-decora=
+tion: underline;">https://foreignpolicy.com/2023/05/30/debt-ceiling-deal-de=
+tails-food-stamps-military-defense-spending/</a></p><p class=3D"button-wrap=
+per" data-attrs=3D"{&quot;url&quot;:&quot;https://substack.com/app-link/pos=
+t?publication_id=3D20533&post_id=3D124946882&utm_source=3Dsubstack&utm_medi=
+um=3Demail&utm_content=3Dshare&action=3Dshare&triggerShare=3Dtrue&isFreemai=
+l=3Dtrue&token=3DeyJ1c2VyX2lkIjoxNDg2NzA5MDQsInBvc3RfaWQiOjEyNDk0Njg4MiwiaW=
+F0IjoxNjg1NTAyMjg1LCJleHAiOjE2ODgwOTQyODUsImlzcyI6InB1Yi0yMDUzMyIsInN1YiI6I=
+nBvc3QtcmVhY3Rpb24ifQ.75MwYW8-V95FKgMwneQnw3lk6e0vn6mnBvKYAUTmS3Y&quot;,&qu=
+ot;text&quot;:&quot;Share&quot;,&quot;action&quot;:null,&quot;class&quot;:n=
+ull}" data-component-name=3D"ButtonCreateButton" style=3D"color: #404040; f=
+ont-size: 16px; line-height: 26px; margin: 0 0 20px 0; text-align: center;"=
+><a class=3D"button primary" href=3D"https://substack.com/app-link/post?pub=
+lication_id=3D20533&post_id=3D124946882&utm_source=3Dsubstack&utm_medium=3D=
+email&utm_content=3Dshare&action=3Dshare&triggerShare=3Dtrue&isFreemail=3Dt=
+rue&token=3DeyJ1c2VyX2lkIjoxNDg2NzA5MDQsInBvc3RfaWQiOjEyNDk0Njg4MiwiaWF0Ijo=
+xNjg1NTAyMjg1LCJleHAiOjE2ODgwOTQyODUsImlzcyI6InB1Yi0yMDUzMyIsInN1YiI6InBvc3=
+QtcmVhY3Rpb24ifQ.75MwYW8-V95FKgMwneQnw3lk6e0vn6mnBvKYAUTmS3Y" rel style=3D"=
+background-color: #8AE1A2; border: none; border-radius: 4px; box-sizing: bo=
+rder-box; color: #404040 !important; cursor: pointer; display: inline-block=
+; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helve=
+tica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI S=
+ymbol'; font-size: 14px; font-weight: 600; height: auto; line-height: 20px;=
+ margin: 0; opacity: 1; outline: none; padding: 12px 20px; text-align: cent=
+er; text-decoration: none !important; white-space: nowrap;"><span style=3D"=
+color: #404040; text-decoration: none;">Share</span></a></p><p style=3D"col=
+or: #404040; font-size: 16px; line-height: 26px; margin: 0 0 20px 0; margin=
+-bottom: 0;"></p></div></div><div class=3D"container-border" style=3D"borde=
+r-top: 1px solid #e0e0e0; box-sizing: border-box; font-size: 16px; line-hei=
+ght: 26px; margin: 32px 0 0; width: 100%;"></div><div class=3D"typography" =
+style=3D"font-size: 16px; line-height: 26px;"><div class=3D"postscript" sty=
+le=3D"font-size: 16px; line-height: 26px; margin: 32px 0;"><div dir=3D"auto=
+" class=3D"body markup" style=3D"font-size: 16px; line-height: 26px; margin=
+-bottom: 16px; text-align: initial; width: 100%; word-break: break-word;"><=
+p style=3D"color: #404040; font-size: 16px; line-height: 26px; margin: 0 0 =
+20px 0; margin-top: 0;"><em><span>You&#8217;re currently a free subscriber =
+to Letters from an American. If you need help receiving Letters, changing y=
+our email address, or unsubscribing, please visit </span><a href=3D"https:/=
+/substack.com/redirect/64b85dd5-566b-40e4-9e25-b72ea6d3df69?j=3DeyJ1IjoiMmd=
+pajdjIn0.COwSm6gYAvkxFU2LiOaMG6yU57qigAx5e5dQc8OneDg" rel style=3D"color: #=
+404040; text-decoration: underline;">our Support FAQ</a><span>. You can als=
+o </span><a href=3D"https://substack.com/redirect/5ed93ae9-6cc1-4ebe-82bf-b=
+a9f74aec910?j=3DeyJ1IjoiMmdpajdjIn0.COwSm6gYAvkxFU2LiOaMG6yU57qigAx5e5dQc8O=
+neDg" rel style=3D"color: #404040; text-decoration: underline;">submit a he=
+lp request</a><span> directly.</span></em></p><p style=3D"color: #404040; f=
+ont-size: 16px; line-height: 26px; margin: 0 0 20px 0;"><em>For the full ex=
+perience,&#160;upgrade your subscription.</em></p><div data-component-name=
+=3D"SubscribeWidget" class=3D"subscribe-widget is-signed-up" style=3D"direc=
+tion: ltr; font-size: 16px; line-height: 26px; margin: 0 0 1em; margin-bott=
+om: 0;"><p class=3D"button-wrapper" style=3D"color: #404040; font-size: 16p=
+x; line-height: 26px; margin: 0 0 20px 0; text-align: center;"><a href=3D"h=
+ttps://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9oZWF0aGVyY294cmljaGFyZHNv=
+bi5zdWJzdGFjay5jb20vc3Vic2NyaWJlP3Rva2VuPWV5SjFjMlZ5WDJsa0lqb3hORGcyTnpBNU1=
+EUXNJbWxoZENJNk1UWTROVFV3TWpJNE5Td2laWGh3SWpveE5qZzRNRGswTWpnMUxDSnBjM01pT2=
+lKd2RXSXRNakExTXpNaUxDSnpkV0lpT2lKamFHVmphMjkxZENKOS5jSkp0VUJuSnQ3MC1hWVBzN=
+FItLS1Gb21jaXotc183SkJhejRwRENSUGNZJnV0bV9zb3VyY2U9cG9zdCIsInAiOjEyNDk0Njg4=
+MiwicyI6MjA1MzMsImYiOnRydWUsInUiOjE0ODY3MDkwNCwiaWF0IjoxNjg1NTAyMjg1LCJleHA=
+iOjE2ODgwOTQyODUsImlzcyI6InB1Yi0wIiwic3ViIjoibGluay1yZWRpcmVjdCJ9.O1tewOULe=
+wm_Jkogsvn2GRcPn2i-gi-LImJSpkv9G_k?&utm_medium=3Demail&utm_source=3Dsubscri=
+be-widget&utm_content=3D124946882" class=3D"button subscribe-btn primary" s=
+tyle=3D"background-color: #8AE1A2; border: none; border-radius: 4px; box-si=
+zing: border-box; color: #404040 !important; cursor: pointer; display: inli=
+ne-block; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Robot=
+o, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Se=
+goe UI Symbol'; font-size: 14px; font-weight: 600; height: auto; line-heigh=
+t: 20px; margin: 0 auto; opacity: 1; outline: none; padding: 12px 20px; tex=
+t-align: center; text-decoration: none !important; white-space: nowrap;"><s=
+pan style=3D"color: #404040; text-decoration: none;">Upgrade to paid</span>=
+</a></p></div></div></div></div><table role=3D"presentation" width=3D"100%"=
+ border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"email-ufi-2-bott=
+om" style=3D"border-bottom: 1px solid rgba(0, 0, 0, .13); border-top: 1px s=
+olid rgba(0, 0, 0, .13); min-width: 100%;"><tr height=3D"16"><td height=3D"=
+16" style=3D"font-size: 0px; line-height: 0;">&#160;</td></tr><tr><td><tabl=
+e role=3D"presentation" width=3D"100%" border=3D"0" cellspacing=3D"0" cellp=
+adding=3D"0"><tr><td><table role=3D"presentation" width=3D"auto" border=3D"=
+0" cellspacing=3D"0" cellpadding=3D"0" style=3D"margin: 0 auto;"><tr><td st=
+yle=3D"vertical-align: middle;"><table role=3D"presentation" width=3D"auto"=
+ border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr><td align=3D"center">=
+<a href=3D"https://substack.com/app-link/post?publication_id=3D20533&post_i=
+d=3D124946882&utm_source=3Dsubstack&isFreemail=3Dtrue&submitLike=3Dtrue&tok=
+en=3DeyJ1c2VyX2lkIjoxNDg2NzA5MDQsInBvc3RfaWQiOjEyNDk0Njg4MiwicmVhY3Rpb24iOi=
+LinaQiLCJpYXQiOjE2ODU1MDIyODUsImV4cCI6MTY4ODA5NDI4NSwiaXNzIjoicHViLTIwNTMzI=
+iwic3ViIjoicmVhY3Rpb24ifQ.90YGHFcEtQR1vvADNyAyFW2_tcziXMYdRMKDQWtT6s0&utm_m=
+edium=3Demail" class=3D"email-button-outline" style=3D"border: 1px solid rg=
+ba(0, 0, 0, .13); border-radius: 100000px; color: #808080; display: inline-=
+block; font-family: 'SF Pro Text', -apple-system, ui-sans-serif, BlinkMacSy=
+stemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Em=
+oji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 12px; font-weight: 50=
+0; line-height: 12px; padding: 9px 14px; text-decoration: none; text-transf=
+orm: uppercase;"><img src=3D"https://substackcdn.com/image/fetch/w_36,c_sca=
+le,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon=
+%2FLucideHeart%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%2=
+6strokeWidth%3D2" width=3D"18" height=3D"18" style=3D"border: none !importa=
+nt; margin-right: 8px; max-width: 18px; min-height: 18px; min-width: 18px; =
+vertical-align: middle;" alt class=3D"icon"><span class=3D"email-button-tex=
+t" style=3D"vertical-align: middle;">Like</span></a></td></tr></table></td>=
+<td width=3D"8" style=3D"min-width: 8px"></td><td style=3D"vertical-align: =
+middle;"><table role=3D"presentation" width=3D"auto" border=3D"0" cellspaci=
+ng=3D"0" cellpadding=3D"0"><tr><td align=3D"center"><a href=3D"https://subs=
+tack.com/app-link/post?publication_id=3D20533&post_id=3D124946882&utm_sourc=
+e=3Dsubstack&utm_medium=3Demail&isFreemail=3Dtrue&comments=3Dtrue&token=3De=
+yJ1c2VyX2lkIjoxNDg2NzA5MDQsInBvc3RfaWQiOjEyNDk0Njg4MiwiaWF0IjoxNjg1NTAyMjg1=
+LCJleHAiOjE2ODgwOTQyODUsImlzcyI6InB1Yi0yMDUzMyIsInN1YiI6InBvc3QtcmVhY3Rpb24=
+ifQ.75MwYW8-V95FKgMwneQnw3lk6e0vn6mnBvKYAUTmS3Y&utm_source=3Dsubstack&utm_m=
+edium=3Demail" class=3D"email-button-outline" style=3D"border: 1px solid rg=
+ba(0, 0, 0, .13); border-radius: 100000px; color: #808080; display: inline-=
+block; font-family: 'SF Pro Text', -apple-system, ui-sans-serif, BlinkMacSy=
+stemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Em=
+oji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 12px; font-weight: 50=
+0; line-height: 12px; padding: 9px 14px; text-decoration: none; text-transf=
+orm: uppercase;"><img src=3D"https://substackcdn.com/image/fetch/w_36,c_sca=
+le,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon=
+%2FLucideComments%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%252380808=
+0%26strokeWidth%3D2" width=3D"18" height=3D"18" style=3D"border: none !impo=
+rtant; margin-right: 8px; max-width: 18px; min-height: 18px; min-width: 18p=
+x; vertical-align: middle;" alt class=3D"icon"><span class=3D"email-button-=
+text" style=3D"vertical-align: middle;">Comment</span></a></td></tr></table=
+></td><td width=3D"8" style=3D"min-width: 8px"></td><td style=3D"vertical-a=
+lign: middle;"><table role=3D"presentation" width=3D"auto" border=3D"0" cel=
+lspacing=3D"0" cellpadding=3D"0"><tr><td align=3D"center"><a href=3D"https:=
+//substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9oZWF0aGVyY294cmljaGFyZHNvbi5zd=
+WJzdGFjay5jb20vcC9tYXktMzAtMjAyMz91dG1fc291cmNlPXN1YnN0YWNrJnV0bV9tZWRpdW09=
+ZW1haWwmYWN0aW9uPXJlc3RhY2stY29tbWVudCIsInAiOjEyNDk0Njg4MiwicyI6MjA1MzMsImY=
+iOnRydWUsInUiOjE0ODY3MDkwNCwiaWF0IjoxNjg1NTAyMjg1LCJleHAiOjE2ODgwOTQyODUsIm=
+lzcyI6InB1Yi0wIiwic3ViIjoibGluay1yZWRpcmVjdCJ9.wAftyIgkWOe-wHv1731q1IuO8gbf=
+l_tO8Fi93M5HUwM?&utm_source=3Dsubstack&utm_medium=3Demail" class=3D"email-b=
+utton-outline" style=3D"border: 1px solid rgba(0, 0, 0, .13); border-radius=
+: 100000px; color: #808080; display: inline-block; font-family: 'SF Pro Tex=
+t', -apple-system, ui-sans-serif, BlinkMacSystemFont, 'Segoe UI', Roboto, H=
+elvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe =
+UI Symbol'; font-size: 12px; font-weight: 500; line-height: 12px; padding: =
+9px 14px; text-decoration: none; text-transform: uppercase;"><img src=3D"ht=
+tps://substackcdn.com/image/fetch/w_36,c_scale,f_png,q_auto:good,fl_progres=
+sive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FNoteForwardIcon%3Fv%3D4%26he=
+ight%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2" width=3D"=
+18" height=3D"18" style=3D"border: none !important; margin-right: 8px; max-=
+width: 18px; min-height: 18px; min-width: 18px; vertical-align: middle;" al=
+t class=3D"icon"><span class=3D"email-button-text" style=3D"vertical-align:=
+ middle;">Restack</span></a></td></tr></table></td></tr></table></td><td al=
+ign=3D"right"><table role=3D"presentation" width=3D"auto" border=3D"0" cell=
+spacing=3D"0" cellpadding=3D"0"><tr></tr></table></td></tr></table></td></t=
+r><tr height=3D"16"><td height=3D"16" style=3D"font-size: 0px; line-height:=
+ 0;">&#160;</td></tr></table><div class=3D"footer frontend-email-shared-typ=
+ed-module__footer--WmMp1" style=3D"color: #808080; font-size: 16px; line-he=
+ight: 26px; padding: 24px 0; text-align: center;"><div style=3D"font-size: =
+16px; line-height: 26px; padding-bottom: 24px;"><p class=3D"pencraft fronte=
+nd-pencraft-Box-module__reset--tAIEo frontend-pencraft-Text-module__size-12=
+--2onFT frontend-pencraft-Text-module__color-secondary--XjVGl frontend-penc=
+raft-Text-module__reset--20JLV small frontend-email-shared-typed-module__me=
+ta--AAyPr" style=3D"color: #808080; font-family: -apple-system, BlinkMacSys=
+temFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emo=
+ji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 12px; letter-spacing: =
+0; line-height: 16px; margin: 0; padding-bottom: 0; text-decoration: unset;=
+">&#169; 2023 <span>Heather Cox Richardson</span><br>548 Market Street PMB =
+72296, San Francisco, CA 94104 <br><a href=3D"https://substack.com/redirect=
+/2/eyJlIjoiaHR0cHM6Ly9oZWF0aGVyY294cmljaGFyZHNvbi5zdWJzdGFjay5jb20vYWN0aW9u=
+L2Rpc2FibGVfZW1haWw_dG9rZW49ZXlKMWMyVnlYMmxrSWpveE5EZzJOekE1TURRc0luQnZjM1J=
+mYVdRaU9qRXlORGswTmpnNE1pd2lhV0YwSWpveE5qZzFOVEF5TWpnMUxDSmxlSEFpT2pFMk9EZ3=
+dPVFF5T0RVc0ltbHpjeUk2SW5CMVlpMHlNRFV6TXlJc0luTjFZaUk2SW1ScGMyRmliR1ZmWlcxa=
+GFXd2lmUS5ERjgtWDVteFc4WTctY2hMdUtibTJqWEdNUUVwRHAxZUhMdDhKZlQtX2RnJmV4cGly=
+ZXM9MzY1ZCIsInAiOjEyNDk0Njg4MiwicyI6MjA1MzMsImYiOnRydWUsInUiOjE0ODY3MDkwNCw=
+iaWF0IjoxNjg1NTAyMjg1LCJleHAiOjE2ODgwOTQyODUsImlzcyI6InB1Yi0wIiwic3ViIjoibG=
+luay1yZWRpcmVjdCJ9.fdrqiOj2oSlAiliX-eBa_jGZd2SsYQCGfPwpi5p0pLo?" style=3D"c=
+olor: #808080; text-decoration: underline;"><span style=3D"color: #808080; =
+text-decoration: underline;">Unsubscribe</span></a></p></div><p class=3D"fr=
+ontend-email-shared-typed-module__footerSection--9vwqp small powered-by-sub=
+stack" style=3D"color: #808080; font-family: -apple-system, BlinkMacSystemF=
+ont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',=
+ 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 12px; line-height: 20px; m=
+argin: 0; margin-top: 0; padding: 0 24px; padding-bottom: 0;"><a href=3D"ht=
+tps://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9zdWJzdGFjay5jb20vc2lnbnVwP=
+3V0bV9zb3VyY2U9c3Vic3RhY2smdXRtX21lZGl1bT1lbWFpbCZ1dG1fY29udGVudD1mb290ZXIm=
+dXRtX2NhbXBhaWduPWF1dG9maWxsZWQtZm9vdGVyJmZyZWVTaWdudXBFbWFpbD1vdWNoZW5kYW5=
+zNjJAZ21haWwuY29tIiwicCI6MTI0OTQ2ODgyLCJzIjoyMDUzMywiZiI6dHJ1ZSwidSI6MTQ4Nj=
+cwOTA0LCJpYXQiOjE2ODU1MDIyODUsImV4cCI6MTY4ODA5NDI4NSwiaXNzIjoicHViLTAiLCJzd=
+WIiOiJsaW5rLXJlZGlyZWN0In0.bsSK5_XbvPxZw9dpKKmsYzb0oVzehAy1JfNQoquYF80?" st=
+yle=3D"color: #808080; display: inline-block; margin: 0 4px; text-decoratio=
+n: none;"><img src=3D"https://substackcdn.com/image/fetch/w_270,c_limit,f_a=
+uto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Fimg%2Fema=
+il%2Fpublish-button%402x.png" srcset=3D"https://substackcdn.com/image/fetch=
+/w_135,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubsta=
+ck.com%2Fimg%2Femail%2Fpublish-button.png, https://substackcdn.com/image/fe=
+tch/w_270,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsub=
+stack.com%2Fimg%2Femail%2Fpublish-button%402x.png 2x, https://substackcdn.c=
+om/image/fetch/w_405,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%=
+3A%2F%2Fsubstack.com%2Fimg%2Femail%2Fpublish-button%403x.png 3x" width=3D"1=
+35" alt=3D"Start writing" height=3D"40" style=3D"border: none !important; m=
+ax-width: 550px; vertical-align: middle;"></a></p></div></div></td><td></td=
+></tr></table><img src=3D"https://eotrx.substackcdn.com/open?token=3DeyJtIj=
+oiPDIwMjMwNTMxMDI1MjAzLjMuZTc0YTU2MTgxYjc2YjFkOEBtZzIuc3Vic3RhY2suY29tPiIsI=
+nUiOjE0ODY3MDkwNCwiciI6Im91Y2hlbmRhbnM2MkBnbWFpbC5jb20iLCJkIjoibWcyLnN1YnN0=
+YWNrLmNvbSIsInAiOjEyNDk0Njg4MiwidCI6Im5ld3NsZXR0ZXIiLCJhIjoiZXZlcnlvbmUiLCJ=
+zIjoyMDUzMywiYyI6InBvc3QiLCJmIjp0cnVlLCJwb3NpdGlvbiI6ImJvdHRvbSIsImlhdCI6MT=
+Y4NTUwMjI4NiwiZXhwIjoxNjg4MDk0Mjg2LCJpc3MiOiJwdWItMCIsInN1YiI6ImVvIn0.-Mvxc=
+k-XYJp-Vo43DgK98atbFatms9NlNmdyTjopjEk" alt=3D"" width=3D"1" height=3D"1" b=
+order=3D"0" style=3D"height:1px !important;width:1px !important;border-widt=
+h:0 !important;margin-top:0 !important;margin-bottom:0 !important;margin-ri=
+ght:0 !important;margin-left:0 !important;padding-top:0 !important;padding-=
+bottom:0 !important;padding-right:0 !important;padding-left:0 !important;"/=
+><img src=3D"https://mailgun.substack.com/api/v1/email/open?token=3DeyJtIjo=
+iPDIwMjMwNTMxMDI1MjAzLjMuZTc0YTU2MTgxYjc2YjFkOEBtZzIuc3Vic3RhY2suY29tPiIsIn=
+UiOjE0ODY3MDkwNCwiciI6Im91Y2hlbmRhbnM2MkBnbWFpbC5jb20iLCJkIjoibWcyLnN1YnN0Y=
+WNrLmNvbSIsInAiOjEyNDk0Njg4MiwidCI6Im5ld3NsZXR0ZXIiLCJhIjoiZXZlcnlvbmUiLCJz=
+IjoyMDUzMywiYyI6InBvc3QiLCJmIjp0cnVlLCJwb3NpdGlvbiI6ImJvdHRvbSIsImlhdCI6MTY=
+4NTUwMjI4NiwiZXhwIjoxNjg4MDk0Mjg2LCJpc3MiOiJwdWItMCIsInN1YiI6ImVvIn0.-Mvxck=
+-XYJp-Vo43DgK98atbFatms9NlNmdyTjopjEk" alt=3D"" width=3D"1" height=3D"1" bo=
+rder=3D"0" style=3D"height:1px !important;width:1px !important;border-width=
+:0 !important;margin-top:0 !important;margin-bottom:0 !important;margin-rig=
+ht:0 !important;margin-left:0 !important;padding-top:0 !important;padding-b=
+ottom:0 !important;padding-right:0 !important;padding-left:0 !important;"/>=
+<img width=3D"1px" height=3D"1px" alt=3D"" src=3D"https://email.mg2.substac=
+k.com/o/eJw80EluxCAQheHTNEsLisF4wVmsAqptFBtaDEl8-6gHZftK-vWpAnbaSr3co7TOolN=
+RWG0ZOWGs1hxgEYxOTMe6UaaKneKK_f9qtZ1ntjuOCFIEK0HDYqUW3pANMoYFgr8jsOSAg-RaCg=
+4auJzkRLNCbYQVfjZeRHtT_NxgasO3juFrCuVkqa33Si-A63UQezJXHDFRDuTom-pV8mdO0QlQi=
+zLWwnvp14Ncpp92UO9U2WP4NZTzHDn1a6WM_qD4CQ9_pIA9lfwMAddSsurKCDvliLkZuCm-PSUv=
+WRs-lhNTdjth36mG8ltT2LHGVjLr74eORvXlUtbMfOHqLwAA___MeXpX"></body></html>
+--39fd73265fd2691b51a84c8f7c45749604df050d1d1d1c98425edd25c64e--

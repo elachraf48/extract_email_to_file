@@ -1,0 +1,595 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp816815ims;
+        Wed, 31 May 2023 04:09:56 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ5kGnDyI9RjSSLbzQ4shpeaYwJSkaWhjwk4Td+m3BcCVO6Y4TWJbFldtTddQTYFOyIvw8Gr
+X-Received: by 2002:a05:6808:4047:b0:39a:26e4:f455 with SMTP id cz7-20020a056808404700b0039a26e4f455mr3720622oib.0.1685531396441;
+        Wed, 31 May 2023 04:09:56 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685531396; cv=none;
+        d=google.com; s=arc-20160816;
+        b=0zlHazwm/y905ueeEhqUT5nPDZlp+NHUaBLRFS3IXIwqsefqhyuNiyT4MGaE8WI0db
+         tB9gp1X/BGCLFwgXb7L/ronRV3NLav8jeGjWFVVZXG9WOW1Pe3WESfj/2A6k7+MI+rca
+         jInYuaVr5rOZRB7I5MF6tg4b75lSeclGfHFsn3xQ0jhccOkcbIamNXd5VUuk/mVnOADP
+         GBDdhzH376U90BGX4Na4zNB0EAVR47ru1iAZpeyDU89b8DtwfLlyRCErqabfnzk5MkpW
+         ekdRavMZjTmkFqeSFqUkItBLPBYpAIDbIK3D1MQw5COmstzAgWSRAPfhA0dShxcJ0FT3
+         QRwQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:list-id:reply-to:mime-version
+         :list-unsubscribe-post:list-unsubscribe:date:subject:to:from
+         :dkim-signature;
+        bh=PyHXmGWCc0jSlx+8TzKsMiSF/Z2IHBjgcmhnPMRgoAo=;
+        b=Uy4X+EvYAqNK9T/1FeY7GM/AAEjcGgaNf9nIYC8K7+Jhix+f0qOvkcowMbYdyp57VB
+         qSOdZ03TT3bBZszp0T5KFBBFyL9DJPiNQmdT1nO52KwTY5YcqBlQvZBhBez48vg2AMD/
+         aR9hGrkst54lPCwFysqGhFFohYimvPtvviLFS6Eq1081p3sPYuQHiiGTSnUt3xeDJXc2
+         ZBBn9bzyztw+O2E27bRgKWOBNoV8e/NZV9NgMaRTYYychZm4tPx06erb068soaHuGdau
+         0YbqF6jfPne/muTc4PsXetHwya3M+6FrWhzCm/qbLCjIk8Vf/0lqeZKCFUJtPUpFQfrR
+         3yFQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.politico.com header.s=200608 header.b="H/VuoEB7";
+       spf=pass (google.com: domain of bounce-630310_html-1405096349-9802362-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) smtp.mailfrom=bounce-630310_HTML-1405096349-9802362-1376319-0@bounce.politicoemail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.politico.com
+Return-Path: <bounce-630310_HTML-1405096349-9802362-1376319-0@bounce.politicoemail.com>
+Received: from mta.politicoemail.com (mta.politicoemail.com. [68.232.198.10])
+        by mx.google.com with ESMTPS id z10-20020aca670a000000b00398181ef0fcsi503088oix.103.2023.05.31.04.09.56
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 31 May 2023 04:09:56 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-630310_html-1405096349-9802362-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) client-ip=68.232.198.10;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.politico.com header.s=200608 header.b="H/VuoEB7";
+       spf=pass (google.com: domain of bounce-630310_html-1405096349-9802362-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) smtp.mailfrom=bounce-630310_HTML-1405096349-9802362-1376319-0@bounce.politicoemail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.politico.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=200608; d=email.politico.com;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Reply-To:List-ID:X-CSA-Complaints:Message-ID:Content-Type;
+ i=floridaplaybook@email.politico.com;
+ bh=PyHXmGWCc0jSlx+8TzKsMiSF/Z2IHBjgcmhnPMRgoAo=;
+ b=H/VuoEB7RmVo2y4+t72jGnQz9AJF7bu8yMYCbzshR0e1/nL4CrJFrQKTK/KXjSUZNN1McSsmx7vv
+   fynVy5Q+jDGA2kCXuc0SCY8EtCX/MkLUcs27eRtIlyx7p2aPOXVvhLEMT9ytdvsEuz7iAViVLQYS
+   FmE9tv6HZj5TaHBoLN8=
+Received: by mta.politicoemail.com id heslg82fmd4s for <ouchendans62@gmail.com>; Wed, 31 May 2023 11:07:28 +0000 (envelope-from <bounce-630310_HTML-1405096349-9802362-1376319-0@bounce.politicoemail.com>)
+From: "POLITICO Florida Playbook" <floridaplaybook@email.politico.com>
+To: <ouchendans62@gmail.com>
+Subject: Trump aims at DeSantis' Covid-19 moves
+Date: Wed, 31 May 2023 05:07:28 -0600
+List-Unsubscribe: <https://click.politicoemail.com/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiIxMzc2MzE5IiwicyI6IjE0MDUwOTYzNDkiLCJsaWQiOiI2MzAzMTAiLCJqIjoiOTgwMjM2MiIsImpiIjoiMCIsImQiOiI0MDEyOCJ9.qlNLj9IIBHhegw1XL67Ja9gXOMqCoPho1NQtvqhlgCs>, <mailto:leave-fcbe12737567057d1a4c342838-fdf61574756104747317747c-fe911d787566077b77-fe9115737262077c7c-ffcf14@leave.politicoemail.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+Reply-To: "POLITICO, LLC" <reply-fe911d787566077b77-630310_HTML-1405096349-1376319-0@politicoemail.com>
+List-ID: <1376319.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+X-SFMC-Stack: 4
+x-job: 1376319_9802362
+Message-ID: <ae00d813-a86b-46bd-b4ef-45e874dd059d@las1s04mta1076.xt.local>
+Feedback-ID: 1376319:9802362:68.232.198.10:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="b4ekzp9mNYeE=_?:"
+
+This is a multi-part message in MIME format.
+
+--b4ekzp9mNYeE=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Gary Fineout's must-read briefing on what's hot, crazy or shady about politics in the Sunshine State May 31, 2023 View in browser  
+By Gary Fineout
+
+Hello and welcome to Wednesday.
+
+A knockdown tug-of-war over Covid-19 and pandemic restrictions has reignited in the Republican primary for president, of all places.
+
+In the week since Gov. Ron DeSantis officially jumped into the race for president, the governor and his allies have clashed loudly and repeatedly, especially on social media, with former President Trump and his backers over a whole line of topics.
+
+But one of the biggest fights emerging so far is a push by the Trump campaign to bash DeSantis’ handling of the Covid-19 pandemic — moves that propelled DeSantis into conservative superstardom and that were pivotal in his nearly 20-point reelection win last November.
+
+On Tuesday, the Trump campaign put out a lengthy list of what it called "Ron DeSantis’ lying record on COVID." The campaign also stated that “President Trump saved millions of lives, opposed mandates, and embraced the Federalist system to allow States to make the decisions best for their people. Ron DeSantis continues to lie about his record, as he personally oversaw mass vaccinations and imposed radical lockdowns.”
+
+This list basically covered the first few months of the pandemic (when Trump was still president) and even included a photo of mask-wearing DeSantis greeting Trump.
+
+Trump himself unloaded on DeSantis as well on his Truth Social platform on Tuesday by going after the state’s Covid-19 death rate and saying “why do they say that DeSanctus did a good job? New York had fewer deaths! Also, he shut down the State, and even its beaches (unlike other Republican Governors).”
+
+The Trump’s campaign pugilism over Covid-19 comes while DeSantis himself hammers the administration of President Joe Biden for "medical authoritarianism" while also hitting the former president over top medical adviser Anthony Fauci, including telling a crowd in Iowa on Tuesday evening that he would have fired Fauci.
+
+While appearing on Ben Shapiro’s show late last week, DeSantis called some of the criticisms coming at him from Trump world as “very bizarre,” including the comparison to New York. Christina Pushaw, who works for the DeSantis team, said on Twitter that “the fact that he keeps doubling down on lockdowns leaves no doubt Trump would do it again if he had the chance.”
+
+It's clear that DeSantis did put in restrictions during the early days of the pandemic — and he would later aggressively promote the vaccine developed under the Trump administration.
+
+But DeSantis moved Florida away from Covid-19 restrictions early on and came under repeated fire, especially from Democrats, during 2020 and 2021, particularly during surges when the number of cases increased. He even vowed that he would never again impose similar types of restrictions in the future. The governor pushed the Florida Legislature to adopt laws barring vaccine mandates, vaccine passports and mask mandates.
+
+DeSantis’ road when it comes to the vaccine is a tad more complicated, as he was a vocal booster, especially in giving to the state’s senior citizen population. Months later he would pivot away from his support and his administration is now openly skeptical about whether the vaccines are helpful.
+
+From a tactical standpoint, Trump's team is going after a key part of DeSantis' brand. But it didn't work for the Democrats who challenged DeSantis in 2022, so it's a curious decision to echo that strategy.
+
+— WHERE'S RON? — Gov. Ron DeSantis will be campaigning for president in Sioux City, Council Bluffs, Pella and Cedar Rapids, Iowa
+
+Have a tip, story, suggestion, birthday, anniversary, new job, or any other nugget for Playbook? Get in touch: gfineout@politico.com
+
+  
+DON’T MISS POLITICO’S HEALTH CARE SUMMIT: The Covid-19 pandemic helped spur innovation in health care, from the wide adoption of telemedicine, health apps and online pharmacies to mRNA vaccines. But what will the next health care innovations look like? Join POLITICO on Wednesday June 7 for our Health Care Summit to explore how tech and innovation are transforming care and the challenges ahead for access and delivery in the United States. REGISTER NOW.
+     DESANTISLAND
+ON THE TRAIL — Ron DeSantis starts throwing some uppercuts at Trump, by POLITICO’s Natalie Allison: In his first appearance on the campaign trail as a declared candidate, Ron DeSantis told voters he was substance over “fluff,” results over superficiality and, above all else, not a loser like Donald Trump. The Florida governor didn’t actually mention his chief rival by name. But he didn’t have to. The contrasts were big and small, and mainly implicit. He talked about closing the border, spoke about how he would have fired Anthony Fauci during the Covid pandemic, and made note — in his speech’s crescendo — that no conservative wish could come true if their candidate doesn’t actually win.
+
+— “DeSantis kicks off presidential campaign in Iowa, calling for ‘revival of American greatness,’” by Associated Press’ Steve Peoples, Hannah Fingerhut and Thomas Beaumont
+
+— “Denouncing ‘elites’ in kickoff speech, DeSantis vows to ‘impose our will,’” by The New York Times’ Shane Goldmacher and Nicholas Nehamas
+
+
+
+
+Ron DeSantis and wife Casey DeSantis arrive for a campaign event on May 30, 2023 in Clive, Iowa. | Scott Olson/Getty Images
+
+‘A BRAZEN ATTEMPT’ — “Watchdog group accuses DeSantis, political committee of breaking campaign-finance law,” by Miami Herald’s Mary Ellen Klas: “A week into his official presidential campaign, Gov. Ron DeSantis and his political committee are being accused of violating federal election law for transferring $86 million from his state-based political committee to a federal super-PAC backing his candidacy. The nonpartisan Campaign Legal Center alleged in a 52-page complaint filed Tuesday with the Federal Elections Commission that the state-based Friends of Ron DeSantis committee transferred the money to the federally-registered Never Back Down, Inc., in violation of the federal campaign
+ contribution limit of $5,000.”
+
+MEANWHILE — “Florida elections officials quietly made it easier for Ron DeSantis to fund his 2024 bid,” by NBC News’ Matt Dixon: “Gov. Ron DeSantis’ administration has quietly changed state guidelines, essentially giving its blessing for a state-level political committee he previously ran to move millions of dollars to a super PAC helping his presidential campaign. For years, elections officials said such a transfer to federal super PACs would not be allowed. But in March — just months before DeSantis formally launched his bid for president — officials at the Florida [Department of State], the DeSantis administration entity that regulates state elections, changed its handbook to assert that
+ such moves are allowed.”
+
+‘HE KNOWS IT COULD BE A PROBLEM’— “Six-week abortion ban haunts DeSantis campaign,” by The Messenger’s Marc Caputo: “Those concerns, shared from the swanky Miami hotel to the ’50s-style Manchester diner, speak to deeper challenges with DeSantis’s campaign specifically and Republicans generally as their candidates grapple with the issue of abortion. It’s an issue of elevated importance for DeSantis as he appeals to social conservatives in the primary while knowing he needs to remain viable in a general election, where polling shows a six-week abortion ban isn’t popular in Florida or nationwide. … ‘Ron really believes this. He is pro-life. But he’s not stupid. He knows it could be a problem,’
+ one DeSantis confidant and fundraiser told The Messenger, speaking on condition of anonymity to relate private conversations with the governor.”
+
+MOUSE TRAP — “Ron DeSantis, Disney are headed into untested legal waters,” by The Wall Street Journal’s Arian Campo-Flores and Jacob Gershman: “The conflict raises complex questions about the scope of the First Amendment and constitutional protections of contracts, making it difficult to predict who will prevail, legal experts said. ‘It’s very easy to know that DeSantis is retaliating against Disney for its political views and political activity, but that doesn’t mean it’s easy to show it legally in a case,’ said Alexander Volokh, an Emory University law professor.”
+
+— “DeSantis to attend Iowa senator’s ‘Roast and Ride’ event,” by The Hill’s Julia Manchester
+
+— “Ron DeSantis plans 3-day fundraising swing through Texas next week,” by The Texas Tribune’s Patrick Svitek
+
+— “DeSantis, wading into debt-ceiling fight, puts pressure on Trump,” by The New York Times’ Jonathan Weisman
+
+ DATELINE D.C.
+FOR YOUR RADAR — “Florida GOP defections on debt deal means Democratic votes will be required for passage,” by Palm Beach Post’s Antonio Fins: “Florida's congressional Republicans splintered with their leadership Tuesday over a $4 trillion compromise deal to lift the country's debt ceiling and avoid an economically disastrous debt default as early as next week. The defections by at least a handful of Florida GOP members means that House Speaker Kevin McCarthy will need Democratic votes to gain approval for the measure, something that has long been expected and speculated. But it could also mean the speaker lacks enough GOP support to even bring the measure to a vote in the full House of
+ Representatives.”
+
+Counting them up — Among the no votes right now: Reps. Vern Buchanan, Kat Cammack, Byron Donalds, Matt Gaetz, Anna Paulina Luna, Cory Mills, Michael Waltz.
+
+ TRUMPLANDIA AND THE SWAMP
+AS THE PAGES TURN — “Mar-a-Lago prosecutors eye July episode with Trump surveillance cameras,” by The Washington Post’s Spencer S. Hsu, Josh Dawsey and Devlin Barrett: “A Mar-a-Lago employee who helped move boxes of documents last June has been questioned about his conduct weeks later related to a government demand for surveillance footage from Donald Trump’s property, according to a person familiar with the federal probe of the former president’s handling of classified material.”
+
+HMM — “Trump White House aides subpoenaed in firing of election security expert,” by The New York Times’ Maggie Haberman and Jonathan Swan: “The special counsel investigating former President Donald J. Trump’s efforts to cling to power after he lost the 2020 election has subpoenaed staff members from the Trump White House who may have been involved in firing the government cybersecurity official whose agency judged the election 'the most secure in American history,' according to two people briefed on the matter. The team led by the special counsel, Jack Smith, has been asking witnesses about the events surrounding the firing of Christopher Krebs, who was the Trump administration’s top
+ cybersecurity official during the 2020 election.”
+
+— “Trump vows to end birthright citizenship for children of unauthorized immigrants if he wins in 2024,” by CBS News’ Camilo Montoya-Galvez
+
+  
+GET READY FOR GLOBAL TECH DAY: Join POLITICO Live as we launch our first Global Tech Day alongside London Tech Week on Thursday, June 15. Register now for continuing updates and to be a part of this momentous and program-packed day! From the blockchain, to AI, and autonomous vehicles, technology is changing how power is exercised around the world, so who will write the rules? REGISTER HERE.
+     CAMPAIGN MODE
+LATEST ARGUMENT — “Florida’s redistricting plan sparks constitutional standoff,” by News Service of Florida’s Jim Saunders: “When Florida voters in 2010 passed a constitutional amendment setting rules for congressional redistricting, they barred drawing districts that would ‘diminish’ the ability of minorities to ‘elect representatives of their choice.’ Now, more than a decade later, Gov. Ron DeSantis' administration and the legislature are trying to fend off a lawsuit by arguing the U.S. Constitution trumps that part of the state amendment.”
+
+— “Jacksonville redistricting case comes to a close. Federal judge approves settlement,” by Florida Times-Union’s Hanna Holthaus
+
+ THE GUNSHINE STATE
+IT STARTS — “Florida deputy faces trial for alleged failure to confront Parkland school shooter,” by Associated Press’ Terry Spencer: “In a prosecution believed to be a national first, a former Florida sheriff’s deputy is about to be tried on charges he failed to confront the gunman who murdered 14 students and three staff members at a Parkland high school five years ago. Jury selection begins Wednesday in the trial of former Broward County Sheriff’s Deputy Scot Peterson, who remained outside a three-story classroom building at Marjory Stoneman Douglas High School during Nikolas Cruz’s six-minute attack on Feb. 14, 2018. Opening statements are scheduled for early June, and the trial could
+ last two months.”
+
+— “‘Someone can just pull a gun:’ Hollywood Broadwalk shooting spotlights dangers of gun violence,” by South Florida Sun-Sentinel’s Susannah Bryan, Shira Moolten and Angie DiMichele
+
+— “‘It’s time to go:’ Frantic 911 calls reveal chaos during Hollywood Beach mass shooting,” by Miami Herald’s Grethel Aguila
+
+ PENINSULA AND BEYOND
+WATCH THIS SPACE — “Florida’s new voucher law allows private schools to boost revenue,” by Tampa Bay Times’ Jeffrey S. Solochek: “So instead of paying $6,000 per child, families at the school who are St. Paul parish members will now be charged $10,000 per child. Nonmembers will be charged $12,000 per child, instead of $7,000. Discounts for multiple-student families will be eliminated. With $8,000 from the state covering most of that cost, families will owe far less than what they had been paying and the school will receive more. 'If we don’t take full advantage of this funding source, we will be leaving money on the table and it will revert back to the state,' [Monsignor Robert] Gibbons
+ said in the video, listing teacher pay raises and capital improvement projects among the areas the school would bolster with the added revenue.”
+
+— “Why Florida’s new immigration law is troubling businesses and workers alike,” by NPR’s Vanessa Romo
+
+— “HCA Florida workers will refuse voluntary overtime, citing safety concerns,” by Orlando Sentinel’s Caroline Catherman
+
+— “Small town, big turmoil: What’s going on in Kenneth City?” by Tampa Bay Times’ Jack Evans
+
+— “White man who pulled gun gets probation for MLK Day confrontation with teens,” by Associated Press
+
+— “Former Plantation Mayor Lynn Stoner arrested, accused of urging employee to favor developer,” by South Florida Sun-Sentinel’s Lisa J. Huriash
+
+ ODDS, ENDS AND FLORIDA MEN
+— “Sargassum, flesh-eating bacteria and plastic create ‘perfect storm,’ says Florida study,” by Pensacola News Journal’s Brandon Girod: “Florida beaches have become inundated by a massive seaweed bloom originating from the Great Atlantic Sargassum Belt since reports first made headlines in early March. Now researchers say the intricate relationship between the algae, called sargassum, plastic marine debris and vibrio bacteria create the perfect ‘pathogen’ storm and could impact marine life and public health.”
+
+— “Palm Beach art dealer sentenced to 2 years in prison for selling fake paintings,” Palm Beach Post’s Hannah Phillips: “A Palm Beach art dealer scoured online auctions for cheap replicas of famous artwork and resold them as originals under his own 'certified' stamp of authenticity. He faced up to a decade in prison for the scam, but was sentenced to two years instead. Investigators say Daniel Bouaziz sold counterfeit artwork purportedly made by artists Andy Warhol, Banksy and Jean-Michel Basquiat to 11 unsuspecting customers between 2020 and 2021. He fell into the crosshairs of a federal investigation after selling one to an undercover officer.
+
+BIRTHDAYS: Elizabeth Dos Santos of Rep. Mario Diaz-Balart’s office ... former state Sen. Charlie Dean … former state Sen. Daryl Jones
+  
+Follow us on Twitter
+
+Gary Fineout @fineout
+  
+Subscribe to the POLITICO Playbook family
+
+Playbook  |  Playbook PM  |  California Playbook  |  Florida Playbook  |  Illinois Playbook  |  Massachusetts Playbook  |  New Jersey Playbook  |  New York Playbook  |  Ottawa Playbook  |  Brussels Playbook  |  London Playbook
+
+View all our political and policy newsletters
+
+Follow us
+  
+To change your alert settings, please log in at https://go.politicoemail.com/?qs=73cef21bc0745f23fc7dea34fe1f21de90f6aaa73d4da8b7ea483a55537b1832792a3b39c9ffc3d690e3bab01e169d808e3a162728218247  https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a238816dd9ea6989870ab94195835f406ae1465e312641a04356861daac70d96c92133c7eb17e0de1307f79f83bf31abef
+
+This email was sent to ouchendans62@gmail.com by: POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+
+ Please click here and follow the steps to unsubscribe.
+  
+
+--b4ekzp9mNYeE=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<html><body><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml><![endif]-->
+</head><!-- Everything above this line is "new" to the template. We'll have to experiment a bit to see if it causes troubles. --><!-- preview text --><div style="display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">    Gary Fineout's must-read briefing on what's hot, crazy or shady about politics in the Sunshine State</div><table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" style="padding:5px 0 15px 0;margin:0;text-align:center" role="presentation">    <tbody>    <tr>        <td><!-- Note: This is left blank to aid in centering across email clients --></td>        
+<td align="center" width="540">            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:540px;table-layout:fixed;" role="presentation">                <tbody>                <!-- top date and utility link -->                <tr>    <td align="center">        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="padding-bottom:15px;" role="presentation">            <tbody>            <tr>                <td width="50%" style="text-align:left;font-size:11px;font-family:Helvetica,sans-serif;color:#B1B4BD;margin:0;">May 31, 2023</td>                
+<td width="50%" style="text-align:right;font-size:11px;font-family:Helvetica,sans-serif;color:#B1B4BD;margin:0;"><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f2378a0515c268a7264b4da147371f2e5bd10e762abbccc731490c9ee8b18e3f4058e000d6ab722fc035f11d19543243035" target="_blank" style="color:#007BC7;text-decoration:none;">View in browser</a
+></td>            </tr>            </tbody>        </table>    </td></tr>                <!-- divider line -->                <tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                <!-- logo and byline -->                <tr>    <td align="center" style="text-align:center;padding:0 20px 15px 20px;margin:0">                                    <img src="https://static.politico.com/c6/33/02171b4641aaa7636229d8b7a372/politico-fl-playbook.jpg" title="Florida Playbook logo" alt="Florida Playbook logo" border="0" width="500" style="width:100%;max-width:500px;">                        </td></tr><tr>    
+<td align="center" style="padding:0 20px 10px 20px;">        <p style="text-align:center;font-family:Helvetica,sans-serif;font-size:11px;letter-spacing:2px;color:#B1B4BD;text-transform:uppercase;margin:0;">            By  <a
+ href="mailto:gfineout@politico.com" target="_blank" style="color:#000000;text-decoration:none;font-weight:bold;">Gary Fineout</a
+>        </p>    </td></tr>                <!-- sponsor logo -->                                    <!-- body -->                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Hello and welcome to Wednesday.</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">A knockdown tug-of-war over Covid-19 and pandemic restrictions has reignited in the Republican primary for president, of all places.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">In the week since Gov. Ron DeSantis officially jumped into the race for president, the governor and his allies have clashed loudly and repeatedly, especially on social media, with former President Trump and his backers over a whole line of topics.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">But one of the biggest fights emerging so far is a push by the Trump campaign to bash DeSantis&#8217; handling of the Covid-19 pandemic &#8212; moves that propelled DeSantis into conservative superstardom and that were pivotal in his nearly 20-point reelection win last November.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">On Tuesday, the Trump campaign put out a lengthy list of what it called "Ron DeSantis&#8217; lying record on COVID." The campaign also stated that &#8220;President Trump saved millions of lives, opposed mandates, and embraced the Federalist system to allow States to make the decisions best for their people. Ron DeSantis continues to lie about his record, as he personally oversaw mass vaccinations and imposed radical lockdowns.&#8221;</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">This list basically covered the first few months of the pandemic (when Trump was still president) and even included a photo of mask-wearing DeSantis greeting Trump.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Trump himself unloaded on DeSantis as well on his Truth Social platform on Tuesday by going after the state&#8217;s Covid-19 death rate and saying &#8220;why do they say that DeSanctus did a good job? New York had fewer deaths! Also, he shut down the State, and even its beaches (unlike other Republican Governors).&#8221;</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">The Trump&#8217;s campaign pugilism over Covid-19 comes while DeSantis himself hammers the administration of President Joe Biden for "medical authoritarianism" while also hitting the former president over top medical adviser Anthony Fauci, including telling a crowd in Iowa on Tuesday evening that he would have fired Fauci.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">While appearing on Ben Shapiro&#8217;s show late last week, DeSantis called some of the criticisms coming at him from Trump world as &#8220;very bizarre,&#8221; including the comparison to New York. Christina Pushaw, who works for the DeSantis team, said on Twitter that &#8220;the fact that he keeps doubling down on lockdowns leaves no doubt Trump would do it again if he had the chance.&#8221;</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">It's clear that DeSantis did put in restrictions during the early days of the pandemic &#8212; and he would later aggressively promote the vaccine developed under the Trump administration. </p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">But DeSantis moved Florida away from Covid-19 restrictions early on and came under repeated fire, especially from Democrats, during 2020 and 2021, particularly during surges when the number of cases increased. He even vowed that he would never again impose similar types of restrictions in the future. The governor pushed the Florida Legislature to adopt laws barring vaccine mandates, vaccine passports and mask mandates.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">DeSantis&#8217; road when it comes to the vaccine is a tad more complicated, as he was a vocal booster, especially in giving to the state&#8217;s senior citizen population. Months later he would pivot away from his support and his administration is now openly skeptical about whether the vaccines are helpful.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">From a tactical standpoint, Trump's team is going after a key part of DeSantis' brand. But it didn't work for the Democrats who challenged DeSantis in 2022, so it's a curious decision to echo that strategy.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; WHERE'S RON? </strong
+>&#8212; Gov. Ron DeSantis will be campaigning for president in Sioux City, Council Bluffs, Pella and Cedar Rapids, Iowa</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><i
+>Have a tip, story, suggestion, birthday, anniversary, new job, or any other nugget for Playbook? Get in touch</i
+>: <a
+ href="mailto:gfineout@politico.com" target="_blank">gfineout@politico.com</a
+><br></p></td>                    </tr>                                    <tr>                        </tr><tr>    <td height="10" style="height:10px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                    <p style="margin-top:0;margin-bottom:20px;line-height:24px;margin-bottom:20px;color:#000000;">                <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DON&#8217;T MISS POLITICO&#8217;S HEALTH CARE SUMMIT</strong
+>: The Covid-19 pandemic helped spur innovation in health care, from the wide adoption of telemedicine, health apps and online pharmacies to mRNA vaccines. But what will the next health care innovations look like? Join POLITICO on Wednesday June 7 for our Health Care Summit to explore how tech and innovation are transforming care and the challenges ahead for access and delivery in the United States. <a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f233d549b3b55c83fd05c6f970154f4a52cfb1190adcf0218cb05651e41076e8843a99a45018c3ff772726b9a65ec3c553d" style="text-decoration:underline;color:#007BC7;">REGISTER NOW</a
+>.            </p>            </td></tr><tr>    <td height="10" style="height:10px; font-size:0; border-bottom:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td height="15" style="height:15px; font-size:0;">&nbsp;</td></tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;">    
+<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">        <tbody>        <tr>            <td width="32" valign="middle" style="vertical-align:top;font-size:0;text-align:right;padding-top:10px;"><img src="https://s3.amazonaws.com/origin-static.politico.com/hosted/icon-red-circle%402x.png" title="" alt="" width="12" style="max-width:12px;margin-top:1px;"></td>            <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:10px;margin:0;" valign="middle">DESANTISLAND
+</td>        </tr>        </tbody>    </table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">ON THE TRAIL &#8212; </strong
+><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f2366eb32bea64fe1efd822c9dc3e5e6e8e81b55577f79591aa1ea62f1a23e63f867c5bc1e2395e7fb978312c1d2198bd0e" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Ron DeSantis starts throwing some uppercuts at Trump</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">, by POLITICO&#8217;s Natalie Allison: </strong
+>In his first appearance on the campaign trail as a declared candidate, Ron DeSantis told voters he was substance over &#8220;fluff,&#8221; results over superficiality and, above all else, not a loser like Donald Trump. The Florida governor didn&#8217;t actually mention his chief rival by name. But he didn&#8217;t have to. The contrasts were big and small, and mainly implicit. He talked about closing the border, spoke about how he would have fired Anthony Fauci during the Covid pandemic, and made note &#8212; in his speech&#8217;s crescendo &#8212; that no conservative wish could come true if their candidate doesn&#8217;t actually win.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f23798a0aea48770920de01a0ef456120b70c7f87fc671b4afa3a0309a7ac2b3eff3632e4836b15412d8aa3031ccc878ea3" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DeSantis kicks off presidential campaign in Iowa, calling for &#8216;revival of American greatness</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8217;&#8221; by Associated Press&#8217; Steve Peoples, Hannah Fingerhut and Thomas Beaumont </strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f2388eea925d69434b9574787e44775234fe61b11801ba3a68358a5d505cf539356a1899104d7868757cbf5bfcbd7c37e94" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Denouncing &#8216;elites&#8217; in kickoff speech, DeSantis vows to &#8216;impose our will</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8217;&#8221; by The New York Times&#8217; Shane Goldmacher and Nicholas Nehamas</strong
+><br></p></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p align="center" style="margin:0 0 20px 0;"><img src="https://www.politico.com/dims4/default/223a719/2147483647/resize/1000x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2Ff9%2F3e%2Feb285f1246d88d1519aae57c26e4%2Fhttps-delivery-gettyimages.com%2Fdownloads%2F1494686744" title="Ron DeSantis Holds First Presidential Campaign Events Across Iowa" alt="Ron DeSantis and wife Casey DeSantis arrive for a campaign event in Clive, Iowa." width="500" style="width:100%;max-width:500px;"></p>
+<p style="font-family:Helvetica,sans-serif;font-size:12px;color:#6E7381;margin-bottom:24px;">Ron DeSantis and wife Casey DeSantis arrive for a campaign event on May 30, 2023 in Clive, Iowa.  |  Scott Olson/Getty Images</p></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8216;A BRAZEN ATTEMPT&#8217; &#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f2312a60f2c19c5b0be5eb36bcbf73c853670956de7fceb6820374dace85f5301b30062a5d578c4314b77c21054de6403a5" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Watchdog group accuses DeSantis, political committee of breaking campaign-finance law</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by Miami Herald&#8217;s Mary Ellen Klas</strong
+>: &#8220;A week into his official presidential campaign, Gov. Ron DeSantis and his political committee are being accused of violating federal election law for transferring $86 million from his state-based political committee to a federal super-PAC backing his candidacy. The nonpartisan Campaign Legal Center alleged in a 52-page complaint filed Tuesday with the Federal Elections Commission that the state-based Friends of Ron DeSantis committee transferred the money to the federally-registered Never Back Down, Inc., in violation of the federal campaign contribution limit of $5,000.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MEANWHILE &#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f2342150b8e8268184edd94b784e57230e896adad7d753e9d93fdf933585aca56f23ec5db153254ef32d54a26bb9e25c713" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Florida elections officials quietly made it easier for Ron DeSantis to fund his 2024 bid</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by NBC News&#8217; Matt Dixon: </strong
+>&#8220;Gov. Ron DeSantis&#8217; administration has quietly changed state guidelines, essentially giving its blessing for a state-level political committee he previously ran to move millions of dollars to a super PAC helping his presidential campaign. For years, elections officials said such a transfer to federal super PACs would not be allowed. But in March &#8212; just months before DeSantis formally launched his bid for president &#8212; officials at the Florida [Department of State], the DeSantis administration entity that regulates state elections, changed its handbook to assert that such moves are allowed.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8216;HE KNOWS IT COULD BE A PROBLEM&#8217;&#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f23b44104c7239bd0e890d81e0dfe37c7275d40054a764c2152ade06f97f36dcd47caed1ea217ce8762675ce88907527710" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Six-week abortion ban haunts DeSantis campaign</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by The Messenger&#8217;s Marc Caputo</strong
+>: &#8220;Those concerns, shared from the swanky Miami hotel to the &#8217;50s-style Manchester diner, speak to deeper challenges with DeSantis&#8217;s campaign specifically and Republicans generally as their candidates grapple with the issue of abortion. It&#8217;s an issue of elevated importance for DeSantis as he appeals to social conservatives in the primary while knowing he needs to remain viable in a general election, where polling shows a six-week abortion ban isn&#8217;t popular in Florida or nationwide. &#8230; &#8216;Ron really believes this. He is pro-life. But he&#8217;s not stupid. He knows it could be a problem,&#8217; one DeSantis confidant and fundraiser told The Messenger,
+ speaking on condition of anonymity to relate private conversations with the governor.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MOUSE TRAP</strong
+> <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f23ff1d1f977a76195a997d8773077b44ab310756b8bc7086c230d35129d8e22fa83ab1c7166068467a09778359a987aefb" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Ron DeSantis, Disney are headed into untested legal waters</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by The Wall Street Journal&#8217;s Arian Campo-Flores and Jacob Gershman:&nbsp;</strong
+>&#8220;The conflict raises complex questions about the scope of the First Amendment and constitutional protections of contracts, making it difficult to predict who will prevail, legal experts said. &#8216;It&#8217;s very easy to know that DeSantis is retaliating against Disney for its political views and political activity, but that doesn&#8217;t mean it&#8217;s easy to show it legally in a case,&#8217; said Alexander Volokh, an Emory University law professor.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f234cf2ec9fd115f70397a2b8a34457bf85c9a09d7cb973169eb0db1430eafb6f299932c250728facd8f73cdbf51c869a08" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DeSantis to attend Iowa senator&#8217;s &#8216;Roast and Ride&#8217; event</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by The Hill&#8217;s Julia Manchester</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f235e4da90aaf137bae6fc9a5ae71bb2ba01fc017ddac41c14c5e63e17f25394524d516f1d03b9db90b3dd6637b9865a4e6" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Ron DeSantis plans 3-day fundraising swing through Texas next week</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by The Texas Tribune&#8217;s Patrick Svitek</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f23c606beceacf7cebf692acf6f094428124aeb737c18375ee751210126352228c927e578d315c2c19be259fde12cc58e59" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DeSantis, wading into debt-ceiling fight, puts pressure on Trump</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by The New York Times&#8217; Jonathan Weisman</strong
+><br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;">    <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">        <tbody>        <tr>            <td width="32" valign="middle" style="vertical-align:top;font-size:0;text-align:right;padding-top:10px;"><img src="https://s3.amazonaws.com/origin-static.politico.com/hosted/icon-red-circle%402x.png" title="" alt="" width="12" style="max-width:12px;margin-top:1px;"></td>            
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:10px;margin:0;" valign="middle">DATELINE D.C.</td>        </tr>        </tbody>    </table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">FOR YOUR RADAR &#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f23705dd4a30746325cae7792ee9693e5b48b720e995a29ca5a4d2a6b15ca578e5e3a3f8a18907b371c18364b5357a013bd" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Florida GOP defections on debt deal means Democratic votes will be required for passage</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by Palm Beach Post&#8217;s Antonio Fins: </strong
+>&#8220;Florida's congressional Republicans splintered with their leadership Tuesday over a $4 trillion compromise deal to lift the country's debt ceiling and avoid an economically disastrous debt default as early as next week. The defections by at least a handful of Florida GOP members means that House Speaker Kevin McCarthy will need Democratic votes to gain approval for the measure, something that has long been expected and speculated. But it could also mean the speaker lacks enough GOP support to even bring the measure to a vote in the full House of Representatives.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Counting them up</strong
+> <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212;</strong
+> Among the no votes right now<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">: </strong
+>Reps. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Vern Buchanan, Kat Cammack, Byron Donalds, Matt Gaetz, Anna Paulina Luna, Cory Mills, Michael Waltz.</strong
+><br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;">    <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">        <tbody>        <tr>            <td width="32" valign="middle" style="vertical-align:top;font-size:0;text-align:right;padding-top:10px;"><img src="https://s3.amazonaws.com/origin-static.politico.com/hosted/icon-red-circle%402x.png" title="" alt="" width="12" style="max-width:12px;margin-top:1px;"></td>            
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:10px;margin:0;" valign="middle">TRUMPLANDIA AND THE SWAMP</td>        </tr>        </tbody>    </table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">AS THE PAGES TURN &#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f231a355200360a3287c5925789c01a4689b542df2d1bee456ef3ea2ca55f2e9f6d646bfcba53683572a5a19ecd2593936a" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Mar-a-Lago prosecutors eye July episode with Trump surveillance cameras</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by The Washington Post&#8217;s Spencer S. Hsu, Josh Dawsey and Devlin Barrett: </strong
+>&#8220;A Mar-a-Lago employee who helped move boxes of documents last June has been questioned about his conduct weeks later related to a government demand for surveillance footage from Donald Trump&#8217;s property, according to a person familiar with the federal probe of the former president&#8217;s handling of classified material.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">HMM</strong
+> <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f23e7b40050253c7251d6e8cb5c0ebd548116afec459aa09fb7737684788ca600bcd3a7b56a2650c80f67d3716482abe521" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Trump White House aides subpoenaed in firing of election security expert</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by The New York Times&#8217; Maggie Haberman and Jonathan Swan:&nbsp;</strong
+>&#8220;The special counsel investigating former President Donald J. Trump&#8217;s efforts to cling to power after he lost the 2020 election has subpoenaed staff members from the Trump White House who may have been involved in firing the government cybersecurity official whose agency judged the election 'the most secure in American history,' according to two people briefed on the matter. The team led by the special counsel, Jack Smith, has been asking witnesses about the events surrounding the firing of Christopher Krebs, who was the Trump administration&#8217;s top cybersecurity official during the 2020 election.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f23125dce07167e622f6def8f3dcefdf987ce59b60d63e5ccfe6a80dfd5cde9cc35e26220faadba0a3e386eda0aa7df93b9" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Trump vows to end birthright citizenship for children of unauthorized immigrants if he wins in 2024</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by CBS News&#8217; Camilo Montoya-Galvez</strong
+><br></p></td>                    </tr>                                    <tr>                        </tr><tr>    <td height="10" style="height:10px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                    <p style="margin-top:0;margin-bottom:20px;line-height:24px;margin-bottom:20px;color:#000000;">                <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">GET READY FOR GLOBAL TECH DAY: </strong
+>Join POLITICO Live as we launch our first Global Tech Day alongside London Tech Week on Thursday, June 15. Register now for continuing updates and to be a part of this momentous and program-packed day! From the blockchain, to AI, and autonomous vehicles, technology is changing how power is exercised around the world, so who will write the rules? <a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f23ce3798a956fc36aa132ec3e5a6c3050939495af7b144353bdb82fa9ea031211481ce4d46c2d8927c12bbdf41a7ca5a2f" target="_blank" style="text-decoration:underline;color:#007BC7;">REGISTER HERE</a
+>.            </p>            </td></tr><tr>    <td height="10" style="height:10px; font-size:0; border-bottom:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td height="15" style="height:15px; font-size:0;">&nbsp;</td></tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;">    
+<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">        <tbody>        <tr>            <td width="32" valign="middle" style="vertical-align:top;font-size:0;text-align:right;padding-top:10px;"><img src="https://s3.amazonaws.com/origin-static.politico.com/hosted/icon-red-circle%402x.png" title="" alt="" width="12" style="max-width:12px;margin-top:1px;"></td>            
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:10px;margin:0;" valign="middle">CAMPAIGN MODE</td>        </tr>        </tbody>    </table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">LATEST ARGUMENT &#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f23112fda763f745972cbf80b5bc709dd723cbed41685cf602da1bb9e20b04c6b5527ca10bcda4f9ee0a9edb34e7ce7821b" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Florida&#8217;s redistricting plan sparks constitutional standoff</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by News Service of Florida&#8217;s Jim Saunders: </strong
+>&#8220;When Florida voters in 2010 passed a constitutional amendment setting rules for congressional redistricting, they barred drawing districts that would &#8216;diminish&#8217; the ability of minorities to &#8216;elect representatives of their choice.&#8217; Now, more than a decade later, Gov. Ron DeSantis' administration and the legislature are trying to fend off a lawsuit by arguing the U.S. Constitution trumps that part of the state amendment.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f23e2ee5e2fc6940bd6ddbb18ae44f3426a875aeffdac2b636ad7ce903ce9790c2546607dbcef22abe21c35ea80b5912956" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Jacksonville redistricting case comes to a close. Federal judge approves settlement</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by Florida Times-Union&#8217;s Hanna Holthaus</strong
+><br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;">    <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">        <tbody>        <tr>            <td width="32" valign="middle" style="vertical-align:top;font-size:0;text-align:right;padding-top:10px;"><img src="https://s3.amazonaws.com/origin-static.politico.com/hosted/icon-red-circle%402x.png" title="" alt="" width="12" style="max-width:12px;margin-top:1px;"></td>            
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:10px;margin:0;" valign="middle">THE GUNSHINE STATE</td>        </tr>        </tbody>    </table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">IT STARTS</strong
+> <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f2388695e430cfa5eef69dbea947a5a1ecb16320e31da9bfd0d6aa0dc4e9d3cddb537a14c43dc9b2e5ffc8514b3ed6311f4" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Florida deputy faces trial for alleged failure to confront Parkland school shooter</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by Associated Press&#8217; Terry Spencer: </strong
+>&#8220;In a prosecution believed to be a national first, a former Florida sheriff&#8217;s deputy is about to be tried on charges he failed to confront the gunman who murdered 14 students and three staff members at a Parkland high school five years ago. Jury selection begins Wednesday in the trial of former Broward County Sheriff&#8217;s Deputy Scot Peterson, who remained outside a three-story classroom building at Marjory Stoneman Douglas High School during Nikolas Cruz&#8217;s six-minute attack on Feb. 14, 2018. Opening statements are scheduled for early June, and the trial could last two months.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;&#8216;</strong
+><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f238aee491ac29fe3a474562cf51fe24336f106ee9b73cd1af78533773a6cce261850345f1803ba774486becfe4b2c3965b" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Someone can just pull a gun:&#8217; Hollywood Broadwalk shooting spotlights dangers of gun violence</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by South Florida Sun-Sentinel&#8217;s Susannah Bryan, Shira Moolten and Angie DiMichele </strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;&#8216;</strong
+><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f23fa68aaef249df1d90617c32ce816ba606008a9977e0749ffed23a3bf1fca4e5d1b41f11c034ecf42f879ffc4077177f3" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">It&#8217;s time to go:&#8217; Frantic 911 calls reveal chaos during Hollywood Beach mass shooting</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by Miami Herald&#8217;s Grethel Aguila</strong
+><br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;">    <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">        <tbody>        <tr>            <td width="32" valign="middle" style="vertical-align:top;font-size:0;text-align:right;padding-top:10px;"><img src="https://s3.amazonaws.com/origin-static.politico.com/hosted/icon-red-circle%402x.png" title="" alt="" width="12" style="max-width:12px;margin-top:1px;"></td>            
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:10px;margin:0;" valign="middle">PENINSULA AND BEYOND</td>        </tr>        </tbody>    </table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">WATCH THIS SPACE &#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f23a67e6128df9cff440fecd81887f79cb920af43722af22edc9b91f8c73a79c7499d77f25f8c3bed168adf66529e0755e0" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Florida&#8217;s new voucher law allows private schools to boost revenue</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by Tampa Bay Times&#8217; Jeffrey S. Solochek: </strong
+>&#8220;So instead of paying $6,000 per child, families at the school who are St. Paul parish members will now be charged $10,000 per child. Nonmembers will be charged $12,000 per child, instead of $7,000. Discounts for multiple-student families will be eliminated. With $8,000 from the state covering most of that cost, families will owe far less than what they had been paying and the school will receive more. 'If we don&#8217;t take full advantage of this funding source, we will be leaving money on the table and it will revert back to the state,' [Monsignor Robert] Gibbons said in the video, listing teacher pay raises and capital improvement projects among the areas the school would bolster
+ with the added revenue.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f239070db978bc5ebc0058aca37a917220d8a86b8924b1639f5d7e76632262bb0175c19b5165e4d90f0f8d407aa1c16e5ac" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Why Florida&#8217;s new immigration law is troubling businesses and workers alike</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by NPR&#8217;s Vanessa Romo</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f23e8a07a89ec5c46a3d0a0ca938e61b94f7648940802b534b455310530082ec22a864259b5f2a12d125c13911baf5a7986" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">HCA Florida workers will refuse voluntary overtime, citing safety concerns</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by Orlando Sentinel&#8217;s Caroline Catherman</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f23c0def9b04b2074e26dfa042b22620c837f5286cdf7c53c1bec8085bb55cc087802c720b2aaf70317cd7b7bbe4b3e00bc" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Small town, big turmoil: What&#8217;s going on in Kenneth City</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">?&#8221; by Tampa Bay Times&#8217; Jack Evans</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f2311a8ba85d0776c047056d33dddaab59542a4d8a74d570a9081c9762ec4a70243f495a20cd51bf7711c7b09ff7031c380" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">White man who pulled gun gets probation for MLK Day confrontation with teens</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by Associated Press</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f2376ec1a32046980d3defd35f68fdd50b906677f98688d093f7d5c58445f0f4eaa534cdd55feecd9cfdddf80ddfe05e9da" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Former Plantation Mayor Lynn Stoner arrested, accused of urging employee to favor developer</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by South Florida Sun-Sentinel&#8217;s Lisa J. Huriash</strong
+><br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;">    <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">        <tbody>        <tr>            <td width="32" valign="middle" style="vertical-align:top;font-size:0;text-align:right;padding-top:10px;"><img src="https://s3.amazonaws.com/origin-static.politico.com/hosted/icon-red-circle%402x.png" title="" alt="" width="12" style="max-width:12px;margin-top:1px;"></td>            
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:10px;margin:0;" valign="middle">ODDS, ENDS AND FLORIDA MEN</td>        </tr>        </tbody>    </table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f2388d2dd16d8914854fea357b09574eeadbead5f5a3d465867d2fdaa9e44bd5300145c7719ee5109304fc0d15ba9769c10" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Sargassum, flesh-eating bacteria and plastic create &#8216;perfect storm,&#8217; says Florida study</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by Pensacola News Journal&#8217;s Brandon Girod: </strong
+>&#8220;Florida beaches have become inundated by a massive seaweed bloom originating from the Great Atlantic Sargassum Belt since reports first made headlines in early March. Now researchers say the intricate relationship between the algae, called sargassum, plastic marine debris and vibrio bacteria create the perfect &#8216;pathogen&#8217; storm and could impact marine life and public health.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f23b3d0d757e172d7fe6e63bd3fb55851258b6c0e49e4af68375f224cc696ac86ffce6f24b17075d6d4e14df7754e73d78e" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Palm Beach art dealer sentenced to 2 years in prison for selling fake paintings</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; Palm Beach Post&#8217;s Hannah Phillips: </strong
+>&#8220;A Palm Beach art dealer scoured online auctions for cheap replicas of famous artwork and resold them as originals under his own 'certified' stamp of authenticity. He faced up to a decade in prison for the scam, but was sentenced to two years instead. Investigators say Daniel Bouaziz sold counterfeit artwork purportedly made by artists Andy Warhol, Banksy and Jean-Michel Basquiat to 11 unsuspecting customers between 2020 and 2021. He fell into the crosshairs of a federal investigation after selling one to an undercover officer.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">BIRTHDAYS:</strong
+> <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Elizabeth Dos Santos</strong
+> of Rep. Mario Diaz-Balart&#8217;s office ... former state Sen. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Charlie Dean</strong
+> &#8230; former state Sen. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Daryl Jones</strong
+></p></td>                    </tr>                                <!-- End Ad Copy -->                <tr>                                    </tr>                <!-- Post Body Content -->                <tr>                                    </tr>                <tr>                    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>                </tr>                <!-- Twitter Handles -->                                    <tr>    <td style="color:#000000;padding:0px 20px 20px 20px;text-align:left;">        <p style="font-family:Helvetica,sans-serif;font-size:20px;color:#000000;margin-top:0;margin-bottom:15px;"><strong
+>Follow us on Twitter</strong
+></p>        <table cellpadding="0" cellspacing="0" border="0" role="presentation">            <tbody>            <tr>                <td width="52" valign="middle" style="text-align:left;padding-right:10px;"><img src="https://static.politico.com/hosted/icon-twitter-circle-blue%402x.png" title="" alt="" width="50" style="max-width:50px;"></td>                <td valign="middle" style="text-align:left;font-family:Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#000000;">                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Gary Fineout <a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f23655d110a9ce1d4a0be6658e4444bed1c1968cbd52cffcf42319d4c030a9e23600d08d4b72f2e4fce1cdc366456c4afaa" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@fineout</a
+></p>                                    </td>            </tr>            </tbody>        </table>    </td></tr><tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                                <!-- Family of Playbook -->                                    <tr>    <td style="color:#000000;padding:0px 20px 0px 20px;text-align:left;">            <p style="font-family:Helvetica,sans-serif;font-size:20px;color:#000000;margin-top:0;margin-bottom:15px;"><strong
+>Subscribe to the POLITICO Playbook family</strong
+></p>            <p style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:24px;">                                    <a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f23581693d0cc926a91caf76c34ef1572e349cdae48b28e6a520c651cc58ff921ee59b5ddce2c9089b53c769d746c2e72a9" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f23444768764a2edb9cd17fb1448687463887bc7997e574dc75af5ea10f3e6e269a605aa92069149746eeeaa75e59b0569a" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Playbook PM</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f23fa9ccbda82a44de6d5fa03f31eedb07d094813fc6537c64869238523c2a294cf7deac1e7bed37311f417bdd95d1be10d" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">California Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f23056abf452348338f09083d150bd177075f9326f8fa9163d830fa9024dc547b131acfd81908723f1b8aa9b19999786f26" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Florida Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f23aecaa9c116bf17b1ad3ace67887ab04b6a38dba76e8724bf5a46880bf2a7892ee19376817c7741283b2a3f40b71c9dcd" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Illinois Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f23496858a46c4b4ad67713ae9a5a4c53928960a44cdefde2d92e1c53f9a786ab963dbc23500c9491be0dcb23cd5b8c1841" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Massachusetts Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f230be686071a3cd8088b605d54d458d4c5e53c0f6e7f24ddf282e9cfe758291d8a5792d8cf6dc539e772570bee1f76da93" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">New Jersey Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f239e726c3fa6c4a1aff261d8df6d5df684bf002b8756634440e95e2d75259f25f1054e676dbca74dee53cb1b19da36df98" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">New York Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f23e41c3f9d25fc039377d29289815079ddb02b0e4e9fc655e84a9148c7fd9a9d4cb2eaaab46046b810e19428c3e4590f91" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Ottawa Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f2343e45d94fe5636d1ad4c1d296d9233452fc9901f0cc2717f06363560153839b788d1c3f149821e38d70b9eccb302416b" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Brussels Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f2343e45d94fe5636d1ad4c1d296d9233452fc9901f0cc2717f06363560153839b788d1c3f149821e38d70b9eccb302416b" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">London Playbook</a
+>                                                </p>            <p style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:24px;"><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f239dae81d0c7809faa23c9bb154b4e19fe368ab2d1a8f3cedae043ffed25b8af515bc4182b6339078560ceb56b87319d39" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">View all our political and policy newsletters</a
+></p>    </td></tr>                                <!-- Follow us -->                <tr>    <td style="color:#000000;padding:0px 20px 20px 20px;text-align:left;">        <p style="font-family:Helvetica,sans-serif;font-size:12px;color:#000000;margin-bottom:10px;line-height:14px;text-transform:uppercase;font-weight:bold;letter-spacing:2px;">Follow us</p>        <table cellpadding="0" cellspacing="0" border="0" role="presentation">            <tbody>            <tr>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f234090046dba8663f4e7ee084cfdb6efb3ce5296bc558cc54d72abe557985c246ceabe744816b12a6a23743de5117bf357" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-facebook-gray%402x.png" title="Follow us on Facebook" alt="Follow us on Facebook" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f2311dcb29731436af5e0e3903502906c872be724ddf7b593251bea08b4259ee80e6708cfe0ee266fdcf77c0260ce7b9fc1" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-twitter-gray%402x.png" title="Follow us on Twitter" alt="Follow us on Twitter" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f2374eb6265b5b7cd5eecf8c82baebfb85ba5861aca51077b2e4485a43613e8996325832f047de0198b50f1ed64728d6454" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-instagram-gray%402x.png" title="Follow us on Instagram" alt="Follow us on Instagram" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f2382ba1a956a51efb64b1c78ea62b6770c959737864129b001ea10d0dc1d875cbec7908b56fb555cf15779f1c286c04b8f" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-applePodcast-gray%402x.png" title="Listen on Apple Podcast" alt="Listen on Apple Podcast" width="24" border="0" style="max-width:24px;"></a
+></td>            </tr>            </tbody>        </table>    </td></tr><tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                </tbody>            </table>        </td>        <td><!-- Note: This is left blank to aid in centering across email clients --></td>    </tr>    </tbody></table><!-- Everything below this line is "new" to the template. We'll have to experiment a bit to see if it causes troubles. --><!-- howler#email.footers/core-newsletter.footer.html -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff"
+       style="padding:5px 0 15px 0;margin:0;text-align:center" role="presentation">
+    <tbody>
+    <tr>
+        <td><!-- Note: This is left blank to aid in centering across email clients --></td>
+        <td align="center" width="540">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:540px" role="presentation">
+                <tbody>
+                <tr>
+                    <td align="center" style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;">
+                        <p style="margin-bottom:15px;line-height:24px;">To change your alert settings, please log in at
+                            <a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f23fc7dea34fe1f21de90f6aaa73d4da8b7ea483a55537b1832792a3b39c9ffc3d690e3bab01e169d808e3a162728218247" target="_blank" style="color:#007BC7;text-decoration:none;">https://www.politico.com/_login?base=https%3A%2F%2Fwww.politico.com/settings</a
+>
+                            <!--Commenting out the following line because it causes an undesired line to be displayed on outlook (some versions) and we couldn't find the use case of it-->
+                            <!-- <span style="display:none;"><a
+ href="https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a238816dd9ea6989870ab94195835f406a0ba5bba30158f368">https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a238816dd9ea6989870ab94195835f406a0ba5bba30158f368</a
+></span> -->
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="padding-bottom:15px;"><img
+                            src="https://static.politico.com/hosted/icon-politico-logo.png"
+                            class="CToWUd"></td>
+                </tr>
+                <tr>
+                    <td align="center"><p
+                            style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:20px;">
+                        This email was sent to ouchendans62@gmail.com by: POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+                        <p style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:24px;">
+                            
+
+                            Please click <a
+ href="https://go.politicoemail.com/?qs=73cef21bc0745f2325f5be34fabaa0d257d52af270eae87e54b279d7e943d5822bf2c124593dfcf68779ba756e7eee06059e287a1e5f7258" target="_blank" style="color:#007BC7;text-decoration:none;">here</a
+> and follow the steps to unsubscribe.
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td><!-- Note: This is left blank to aid in centering across email clients --></td>
+    </tr>
+    </tbody>
+</table>
+<img src="https://click.politicoemail.com/open.aspx?ffcb10-fe911d787566077b77-fded13797160037e70147876-fe9115737262077c7c-fed212737567057d-fdf61574756104747317747c-ffcf14&d=40128&bmt=0" width="1" height="1" alt="">
+</body></html><p email-meta style="display: none;opacity:0;">source=GoggleDocument, article=00000188-6fa9-d5ba-a7fe-ffff0e060000</p>
+
+--b4ekzp9mNYeE=_?:--
+

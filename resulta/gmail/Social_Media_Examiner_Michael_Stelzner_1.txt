@@ -1,0 +1,662 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp876042ims;
+        Wed, 31 May 2023 07:00:08 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ7exQcxlw8KI0+cs4LkczSLFFqJUoF0Apef7s3rkFIaSQl0cidwVi6BvQ+gSXPzcW65s2Fa
+X-Received: by 2002:a17:907:7e8d:b0:961:be96:b0e7 with SMTP id qb13-20020a1709077e8d00b00961be96b0e7mr5322451ejc.48.1685541607593;
+        Wed, 31 May 2023 07:00:07 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685541607; cv=none;
+        d=google.com; s=arc-20160816;
+        b=DLNzuyby3b0XRCbI5mjjxD7QUzkkcWo05JHDZeINjPjrpZfPq9ypN/h40cqSfquO30
+         s6n1yKAX0aLggoqkYA4/4AwuIQw7eEOJzYMIcz8j7QlhoO+Ojdm/4i2NgM1XvkhfMr6n
+         sV6FimAr3nOsbx5EnmUMr/unqubE+9xMgzGN/6C6ZD677mLfYOESYeZliVEhUWVMJ1bn
+         DdLAvPM1XvfoH2j5q1SbluXY3vgYAmF6kIYfEzHTKNXzZZn636cI+CAOc1xUXr9DbpTA
+         dOLZiD7XU1TgX59/6F9igWHUGCfo3TPN2WuhYcGHdMrEH8c0BSMwb5Nf1vUBNtRmw39g
+         gOzw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:mime-version:from:date:dkim-signature
+         :dkim-signature;
+        bh=v8EfJ90+A1RyhSlYgdEwsmlkZk28IcgOsdF3P2SyfEg=;
+        b=hxEi9Uc7AhY0qmXdOtqBA/PWLOQtLkKSMX/0QTtEbDD0NAqHKrs2wsd0qKhWbRmN26
+         mtg2sv92inp7LMgSsNyNEdenoA1kWa8YooZy+MQ/GA+fGJriOocmnYUHdqw+Vi+YdBSq
+         KHWHuMtBX14ln44Ms2BJmtJakafp1ifE2m+ZqM8wXkVt7F/eOE7hyhQ7T+Wk3vWgrIFv
+         vLL8Rspuo0fz73SosqQJyLvU0B5F4BGFg15Sd2+NK25tACE6sg6bmZMVA+KMNCmxhNDn
+         5lMbWngASDxicCVfIf8YCfaa9I+PSB5FM7gj6O7gqJsShQmuSY0xhN+L231nDaEdZEXF
+         yWIQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@socialmediaexaminer.com header.s=dr1 header.b=ZZdW7pEw;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=pSHfl0+q;
+       spf=pass (google.com: domain of bounces+9195725-7ef3-ouchendans62=gmail.com@drip.socialmediaexaminer.com designates 149.72.151.76 as permitted sender) smtp.mailfrom="bounces+9195725-7ef3-ouchendans62=gmail.com@drip.socialmediaexaminer.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=socialmediaexaminer.com
+Return-Path: <bounces+9195725-7ef3-ouchendans62=gmail.com@drip.socialmediaexaminer.com>
+Received: from o34.m.socialmediaexaminer.com (o34.m.socialmediaexaminer.com. [149.72.151.76])
+        by mx.google.com with ESMTPS id oy3-20020a170907104300b0096f54871652si8251240ejb.915.2023.05.31.07.00.06
+        for <ouchendans62@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 31 May 2023 07:00:07 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+9195725-7ef3-ouchendans62=gmail.com@drip.socialmediaexaminer.com designates 149.72.151.76 as permitted sender) client-ip=149.72.151.76;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@socialmediaexaminer.com header.s=dr1 header.b=ZZdW7pEw;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=pSHfl0+q;
+       spf=pass (google.com: domain of bounces+9195725-7ef3-ouchendans62=gmail.com@drip.socialmediaexaminer.com designates 149.72.151.76 as permitted sender) smtp.mailfrom="bounces+9195725-7ef3-ouchendans62=gmail.com@drip.socialmediaexaminer.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=socialmediaexaminer.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=socialmediaexaminer.com;
+	h=content-type:from:mime-version:subject:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=dr1; bh=v8EfJ90+A1RyhSlYgdEwsmlkZk28IcgOsdF3P2SyfEg=;
+	b=ZZdW7pEwm7+ZzrLbx52FdzkKJ14bXPPH6ckkWO+yOJ7XkniCp2pjX11MB0sBQmekaS/p
+	7ezPp65xQufP3uMgaCm7HF8iwchTLGtYJT1oNbHcnyu7tpe1x4lmU0dV3vDcHhNbNF/+DN
+	wXH3qMBBOb+3RPAHmPAJUq+oOziFcfKSrLIc3PIFx3FXsCAWSsF00j8xnKGeP/hFYIw6Em
+	ndJDWhdz0rVxk7gU7jtCvRVl2EwyIgW8taGhW+p271XnrXSt2iXfMpldc5iceMeks3ipQX
+	YeSNR8h71JBbpf7BBJK3Dscb8YU02NGOowSldw+pQE+UwXIHgX6AUpK/Ltbe7/IQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=smtpapi; bh=v8EfJ90+A1RyhSlYgdEwsmlkZk28IcgOsdF3P2SyfEg=;
+	b=pSHfl0+qPDxGT+hhUI6f8PMTM8f+fTDc1BryeM+ywA+a25xLQyZiFEnQZKtJ6EWGsr8R
+	ZlMe0ISaMR60AXsXu20pDKsRXFNLinDYIv8W/MhpwVVueLyAsin2k44DeisJTE+UABTcY/
+	mVnWvY9ugrUfBOdDpubSZ6ZJ5PcFzhHz8=
+Received: by filterdrecv-54d8cb5576-dqrvf with SMTP id filterdrecv-54d8cb5576-dqrvf-1-64774ABB-33
+        2023-05-31 13:25:15.582309883 +0000 UTC m=+1777711.046461729
+Received: from OTE5NTcyNQ (unknown)
+	by geopod-ismtpd-35 (SG) with HTTP
+	id eXW8M_pTSE-GCqGYridVng
+	Wed, 31 May 2023 13:25:15.427 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=df2dba7fb7a367cd22d19793314f6385b062495a851188cc5b5a3ae38094
+Date: Wed, 31 May 2023 14:00:00 +0000 (UTC)
+From: "Social Media Examiner: Michael Stelzner"
+	<michael@socialmediaexaminer.com>
+Mime-Version: 1.0
+Message-ID: <eXW8M_pTSE-GCqGYridVng@geopod-ismtpd-35>
+Subject: LinkedIn sales =?UTF-8?B?dG9vbHPigKY=?=
+X-Drip-SendingAccount: 8668815
+X-Feedback-ID: 9195725:SG
+X-SG-EID: 
+ =?us-ascii?Q?Bbg3Ra9AwSdeZDMZBCW=2FkGS36Ho8RPda8qziTRJKpbKXTieSB6SYjtR49ff9HH?=
+ =?us-ascii?Q?N=2FHJg2m05vSQyBBU2WHF8RuA+GlBSBInOg7KDZj?=
+ =?us-ascii?Q?CqxfKDynQDohNh=2FLyjDn+7Q4qZ4edi0KtZO2dmC?=
+ =?us-ascii?Q?+LizYe=2FPnsWMUyeOmX7SbzaccKQQc8KmnWULcAo?=
+ =?us-ascii?Q?bpn2QIUB=2F9znCCtY6IVIUygbZ2VWG5aFCV9uOcd?=
+ =?us-ascii?Q?75NQyspem8btn+Q+4nzSXDmXHkOqxfu=2FExnMJ7q?=
+ =?us-ascii?Q?n34KODghEaYNpKbLLJf8EL6q8nvgnLCQRlT0JTf?=
+ =?us-ascii?Q?BgxOryINCD37dzCyhebB=2FlX1?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8raWjw0ZPf1VmjsCkspi=2FIueY507NIPg7Bbtt+Qog?=
+ =?us-ascii?Q?yZeIeRh+ezqRCghNRsUCZ5n533xbWhSC4VOaWwr?=
+ =?us-ascii?Q?Z45QmTsGDsQ9L+SXsvFZJs8r=2Fv8uoidephhYi9t?=
+ =?us-ascii?Q?e7PsLDLRwvIWdHBfCf2AwBfwMUM3OsoVMi84RNL?=
+ =?us-ascii?Q?hx8T72tWbIead6VyfzG4OHKl2JJz2qMfMYwHehO?=
+ =?us-ascii?Q?46+BLgYESCOudRoilONDP8NTDRxvKxAl2UnAi3r?=
+ =?us-ascii?Q?Mhdw7MlwLLAqi4AHpEwB=2FoZkUoIw0Kr=2Fezjnqoq?=
+ =?us-ascii?Q?dqG8z23=2FnFlAIHBExb7=2FTJDmCxNYxA7zCNsDaJf?=
+ =?us-ascii?Q?r7URhLR3nLvYj7Hj4eqWv47du93ERIhp4lRma8r?=
+ =?us-ascii?Q?yUrwA04+r2tVssMMLBVqooPG2B2PHmrajUhXYCG?=
+ =?us-ascii?Q?oJSTh7AqERuWk01yEoJSPd9M4MARnaDZOejEUc=2F?=
+ =?us-ascii?Q?+HeRCSlWI+VOivrekAb6aVhR53gLo5x96KKcQKB?=
+ =?us-ascii?Q?V4Jyy1=2FszJUuzzcDTpKLeSAvUX3VIO2GTwqtKC3?=
+ =?us-ascii?Q?xlrbebieYgXGDi9xmXwkM4VAR+LrC7=2F9fRYi2ph?=
+ =?us-ascii?Q?OHlixYeS0BER4PlwsQXFiJmzBC9XQ=3D=3D?=
+To: ouchendans62@gmail.com
+X-Entity-ID: 8vjR5rU3lVgUh1f2lD81HQ==
+
+--df2dba7fb7a367cd22d19793314f6385b062495a851188cc5b5a3ae38094
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+=F0=9F=93=B0 Wednesday is "News You Can Use" day, Expedita!
+
+This newsletter is brought to you by the Social Media Marketing
+Workshops=20
+( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc=
+3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNjg1NTM5NTE1LCJuYmYi=
+OjE2ODU1Mzk1MTUsImFjY291bnRfaWQiOiI4NjY4ODE1IiwiZGVsaXZlcnlfaWQiOiJrNzZpcmx=
+paXluc3NiMXdvaDVieSIsInVybCI6Imh0dHBzOi8vd3d3LnNvY2lhbG1lZGlhZXhhbWluZXIuY2=
+9tL3dvcmtzaG9wcy8_dXRtX3NvdXJjZT1lbWFpbCZ1dG1fbWVkaXVtPU5ld3NsZXR0ZXJJc3N1Z=
+S1hZCZ1dG1fY2FtcGFpZ249d29ya3Nob3BzMjMtTmV3c2xldHRlci1hZC1pbnRyby0wNTMxMjMt=
+d2VkJl9fcz1sN3hvbGRzZDNuZGltbDFvbGxyayJ9.sM3Tx05raY2P23V47JWawBgsnKfIjqPhXu=
+Scn2DJou8 )
+.
+
+In today=E2=80=99s edition, we bring you news from:
+
+* Instagram
+* LinkedIn
+* Meta
+* TikTok
+* Twitter
+* YouTube
+
+=F0=9F=94=A5 Here's a word from our sponsors:
+
+The 2023 State of Marketing Report: Uncover top-performing
+channels, effective strategies, and more=20
+( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc=
+3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNjg1NTM5NTE1LCJuYmYi=
+OjE2ODU1Mzk1MTUsImFjY291bnRfaWQiOiI4NjY4ODE1IiwiZGVsaXZlcnlfaWQiOiJrNzZpcmx=
+paXluc3NiMXdvaDVieSIsInVybCI6Imh0dHBzOi8vd3d3Lmh1YnNwb3QuY29tL3N0YXRlLW9mLW=
+1hcmtldGluZz91dG1fc291cmNlPWhzY20tV2lzdGlhLVNPTS0yMDIzLW90aGVyJl9fcz1sN3hvb=
+GRzZDNuZGltbDFvbGxyayJ9.WwvShhiwDJvP1pUeth_PuanUb6ASEyAUTeODFlxeJlo )
+ - from Wistia
+
+Become an Indispensable Marketer =F0=9F=8C=9F=20
+( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc=
+3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNjg1NTM5NTE1LCJuYmYi=
+OjE2ODU1Mzk1MTUsImFjY291bnRfaWQiOiI4NjY4ODE1IiwiZGVsaXZlcnlfaWQiOiJrNzZpcmx=
+paXluc3NiMXdvaDVieSIsInVybCI6Imh0dHBzOi8vd3d3LnNvY2lhbG1lZGlhZXhhbWluZXIuY2=
+9tL3dvcmtzaG9wcy8_dXRtX3NvdXJjZT1lbWFpbCZ1dG1fbWVkaXVtPU5ld3NsZXR0ZXJJc3N1Z=
+S1hZCZ1dG1fY2FtcGFpZ249d29ya3Nob3BzMjMtTmV3c2xldHRlci1hZC1ob3VzZS0wNTMxMjMt=
+d2VkJl9fcz1sN3hvbGRzZDNuZGltbDFvbGxyayJ9.8laEEpfpKEg4Zl_ysUwJKzFvl1dKfgLyi9=
+5KuYRbAWc )
+
+
+Attend our workshops and boost your campaign's value! =F0=9F=92=BC You=E2=
+=80=99ll be
+immersed in two weeks of in-depth online training with experts
+who'll teach you how to engage audiences and convert them into
+customers. =F0=9F=92=B0 Grab your All-Access ticket now.
+
+5 LinkedIn Sales Navigator Improvements
+
+LinkedIn has detailed five features to help Sales Navigator users
+sell more effectively and efficiently.
+
+The first feature is Account Hub, which prioritizes a seller's
+accounts based on growth potential, buyer intent, and risk
+alerts, and provides insights and tools to help the seller
+network and follow up with interested parties within those
+accounts. Product Category Intent for 770 categories across
+various industries, predominantly software, will be added to
+Account Hub on May 31.
+
+The second improvement is the addition of two interest
+signals: website visits, and the ability to see the identity of
+new LinkedIn connections to other Sales Navigator sellers and
+TeamLink users on a user's contract. These features have been
+added to the Buyer Intent functionality for advanced and advanced
+plus customers.
+
+In addition, users can now manually add accounts to their My CRM
+Accounts list on Sales Navigator if the accounts are not captured
+by the program's rules.
+
+To learn more and stay updated, read the full announcement=20
+( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc=
+3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNjg1NTM5NTE1LCJuYmYi=
+OjE2ODU1Mzk1MTUsImFjY291bnRfaWQiOiI4NjY4ODE1IiwiZGVsaXZlcnlfaWQiOiJrNzZpcmx=
+paXluc3NiMXdvaDVieSIsInVybCI6Imh0dHBzOi8vd3d3LmxpbmtlZGluLmNvbS9idXNpbmVzcy=
+9zYWxlcy9ibG9nL3Byb2R1Y3QtdXBkYXRlcy9zZWxsLXNtYXJ0ZXItd2l0aC10aGVzZS1uZXctc=
+2FsZXMtbmF2aWdhdG9yLWZlYXR1cmVzP19fcz1sN3hvbGRzZDNuZGltbDFvbGxyayJ9.QHPGTnP=
+lYjUdEwOo3S5yzOZC74ZErkuSvESR8P1h-B4 )
+.
+
+=F0=9F=A7=AD Here is more news you can use:
+
+* Instagram Ads=20
+( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc=
+3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNjg1NTM5NTE1LCJuYmYi=
+OjE2ODU1Mzk1MTUsImFjY291bnRfaWQiOiI4NjY4ODE1IiwiZGVsaXZlcnlfaWQiOiJrNzZpcmx=
+paXluc3NiMXdvaDVieSIsInVybCI6Imh0dHBzOi8vZGV2ZWxvcGVycy5mYWNlYm9vay5jb20vYm=
+xvZy9wb3N0LzIwMjMvMDUvMjQvaW5zdGFncmFtLXNlYXJjaC1yZXN1bHRzLWFkcy8_X19zPWw3e=
+G9sZHNkM25kaW1sMW9sbHJrIn0.SdQ4zIQiBE5m4Je83m0OWo3CNxjAFY2nxxu3ZuHmy6I )
+: Advertisers can now place ads in Instagram search results via
+the Instagram Marketing API.
+* Giphy=20
+( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc=
+3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNjg1NTM5NTE1LCJuYmYi=
+OjE2ODU1Mzk1MTUsImFjY291bnRfaWQiOiI4NjY4ODE1IiwiZGVsaXZlcnlfaWQiOiJrNzZpcmx=
+paXluc3NiMXdvaDVieSIsInVybCI6Imh0dHBzOi8vd3d3LnRoZWd1YXJkaWFuLmNvbS90ZWNobm=
+9sb2d5LzIwMjMvbWF5LzIzL2ZhY2Vib29rLW93bmVyLW1ldGEtc2VsbHMtZ2lwaHktc2h1dHRlc=
+nN0b2NrLWdpZi1zZWFyY2g_X19zPWw3eG9sZHNkM25kaW1sMW9sbHJrIn0.iLyJkTnRvprNjeE5=
+CiqX_3QxOV81459I64gVgoLnO9k )
+: Meta reached an agreement to sell the gif platform to
+Shutterstock.
+* TikTok User Data=20
+( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc=
+3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNjg1NTM5NTE1LCJuYmYi=
+OjE2ODU1Mzk1MTUsImFjY291bnRfaWQiOiI4NjY4ODE1IiwiZGVsaXZlcnlfaWQiOiJrNzZpcmx=
+paXluc3NiMXdvaDVieSIsInVybCI6Imh0dHBzOi8vdGltZS5jb20vNjI4MTk0Ni90aWt0b2stb3=
+JhY2xlLXNvdXJjZS1jb2RlLz9fX3M9bDd4b2xkc2QzbmRpbWwxb2xscmsifQ.j4CjGh9BX2vK6p=
+6ZnTMCZ1nQDeh7NdxtiMq9_X8aBQM ): Oracle,
+the American software company, has begun a review of TikTok=E2=80=99s
+source code and is now the default destination for U.S. user
+data.
+* Video on Twitter=20
+( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc=
+3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNjg1NTM5NTE1LCJuYmYi=
+OjE2ODU1Mzk1MTUsImFjY291bnRfaWQiOiI4NjY4ODE1IiwiZGVsaXZlcnlfaWQiOiJrNzZpcmx=
+paXluc3NiMXdvaDVieSIsInVybCI6Imh0dHBzOi8vd3d3LnNvY2lhbG1lZGlhdG9kYXkuY29tL2=
+5ld3MvdHdpdHRlci1waWN0dXJlLWluLXBpY3R1cmUtdmlkZW8tcGxheWJhY2stdGVzdHMtdmlkZ=
+W8tZG93bmxvYWQvNjUxMzk3Lz9fX3M9bDd4b2xkc2QzbmRpbWwxb2xscmsifQ.w31WQ1M62TxoV=
+f2FfQQenx7ng-QRaSYvbF0e9pPqUpA )
+: The platform rolled out PIP display and the ability to
+download video from a tweet.
+* YouTube Stories=20
+( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc=
+3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNjg1NTM5NTE1LCJuYmYi=
+OjE2ODU1Mzk1MTUsImFjY291bnRfaWQiOiI4NjY4ODE1IiwiZGVsaXZlcnlfaWQiOiJrNzZpcmx=
+paXluc3NiMXdvaDVieSIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5nb29nbGUuY29tL3lvdXR1Ym=
+UvdGhyZWFkLzIxNzY0MDc2MD9fX3M9bDd4b2xkc2QzbmRpbWwxb2xscmsifQ.vlP-TvhILIVOCv=
+c3nz2CLe6ohUZ-tE_atIqANX0nngg ): =E2=80=9CStarting
+on 6/26/2023 the option to create a new YouTube Story will no
+longer be available. Stories that are already live on that date
+will expire 7 days after they were originally shared.=E2=80=9D
+
+---------------------
+https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc3M=
+iOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNjg1NTM5NTE1LCJuYmYiOj=
+E2ODU1Mzk1MTUsImFjY291bnRfaWQiOiI4NjY4ODE1IiwiZGVsaXZlcnlfaWQiOiJrNzZpcmxpa=
+Xluc3NiMXdvaDVieSIsInVybCI6Imh0dHBzOi8vd3d3LmdldGRyaXAuY29tL3N1YnNjcmliZXJz=
+L2w3eG9sZHNkM25kaW1sMW9sbHJrL3N1YnNjcmlwdGlvbnM_ZD1rNzZpcmxpaXluc3NiMXdvaDV=
+ieSZleGNsdWRlX2NsaWNrPTEmaW50ZW50PXVuc3Vic2NyaWJlJl9fcz1sN3hvbGRzZDNuZGltbD=
+FvbGxyayJ9.pBBG3fe-q1S2B14KlRdd_j9LqQr35tVlyYmsrYVIvuo.  Move to Weekly Dig=
+est ( http://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLC=
+Jpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNjg1NTM5NTE1LCJuY=
+mYiOjE2ODU1Mzk1MTUsImFjY291bnRfaWQiOiI4NjY4ODE1IiwiZGVsaXZlcnlfaWQiOiJrNzZp=
+cmxpaXluc3NiMXdvaDVieSIsInVybCI6Imh0dHA6Ly9kcmlwLmxhL2MvZXlKaFkyTnZkVzUwWDJ=
+sa0lqb2lPRFkyT0RneE5TSXNJblJ5YVdkblpYSmZhV1FpT2lJek1EVXdNVE0zTlNJc0luVnliQ0=
+k2SW1oMGRIQTZMeTkzZDNjdWMyOWphV0ZzYldWa2FXRmxlR0Z0YVc1bGNpNWpiMjB2ZVc5MWNtV=
+XRiVzkyWldRdGRHOHRkMlZsYTJ4NUx5Sjk_X19zPWw3eG9sZHNkM25kaW1sMW9sbHJrIn0.pf6h=
+scpdeSbnAFXOJosO_UOFsqMSXYgDO_rcCYVywAc ).=20
+
+Social Media Examiner: 11160 Rancho Carmel Dr Ste 106, Box #1062, San Diego=
+, CA 92128
+
+--df2dba7fb7a367cd22d19793314f6385b062495a851188cc5b5a3ae38094
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" style=3D"font-family: 'calluna=
+-sans' ,'Arial', sans-serif;">
+<head>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width">
+ =20
+  <title>LinkedIn sales tools=E2=80=A6</title>
+<style>body {
+width: 100% !important; -webkit-text-size-adjust: none; -ms-text-size-adjus=
+t: none; margin: 0; padding: 0;
+}
+.ExternalClass {
+width: 100%;
+}
+.ExternalClass {
+line-height: 100%;
+}
+#backgroundTable {
+margin: 0; padding: 0; width: 600px !important; line-height: 100% !importan=
+t;
+}
+img {
+outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;
+}
+h1 a:active {
+color: #c94f31 !important;
+}
+h2 a:active {
+color: #c94f31 !important;
+}
+h3 a:active {
+color: #c94f31 !important;
+}
+h4 a:active {
+color: #c94f31 !important;
+}
+h5 a:active {
+color: #c94f31 !important;
+}
+h6 a:active {
+color: #c94f31 !important;
+}
+h1 a:visited {
+color: #c94f31 !important;
+}
+h2 a:visited {
+color: #c94f31 !important;
+}
+h3 a:visited {
+color: #c94f31 !important;
+}
+h4 a:visited {
+color: #c94f31 !important;
+}
+h5 a:visited {
+color: #c94f31 !important;
+}
+h6 a:visited {
+color: #c94f31 !important;
+}
+h1 a:hover {
+color: #ab4329 !important;
+}
+h2 a:hover {
+color: #ab4329 !important;
+}
+h3 a:hover {
+color: #ab4329 !important;
+}
+h4 a:hover {
+color: #ab4329 !important;
+}
+h5 a:hover {
+color: #ab4329 !important;
+}
+h6 a:hover {
+color: #ab4329 !important;
+}
+a:hover {
+color: #ab4329 !important;
+}
+body {
+font-family: 'calluna-sans','Arial', sans-serif;
+}
+img {
+max-width: 100%;
+}
+.cta-button:hover {
+background: #e4931b; color: #fff !important;
+}
+</style></head>
+<body style=3D"width: 100% !important; -webkit-text-size-adjust: none; -ms-=
+text-size-adjust: none; font-family: 'calluna-sans','Arial', sans-serif; ma=
+rgin: 0; padding: 0;">
+  <table id=3D"body-wrap" style=3D"border-collapse: collapse; mso-table-lsp=
+ace: 0pt; mso-table-rspace: 0pt; font-family: 'calluna-sans' ,'Arial', sans=
+-serif; width: 100%;">
+    <tr style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+      <td style=3D"border-collapse: collapse; font-family: 'calluna-sans' ,=
+'Arial', sans-serif;"></td>
+      <td class=3D"container" style=3D"border-collapse: collapse; font-fami=
+ly: 'calluna-sans' ,'Arial', sans-serif; display: block !important; max-wid=
+th: 600px !important; clear: both !important;">
+        <div class=3D"content" style=3D"font-family: 'calluna-sans' ,'Arial=
+', sans-serif; max-width: 600px; display: block; margin: 0 auto;">
+          <table style=3D"border-collapse: collapse; mso-table-lspace: 0pt;=
+ mso-table-rspace: 0pt; font-family: 'calluna-sans' ,'Arial', sans-serif; w=
+idth: 100%;">
+            <tr style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;"=
+>
+              <td style=3D"border-collapse: collapse; font-family: 'calluna=
+-sans' ,'Arial', sans-serif;">
+                <div id=3D"main-content" style=3D"font-family: 'calluna-san=
+s' , 'Arial', sans-serif; font-size: 16px; color: #31251c; line-height: 1.4=
+; padding: 10px;">
+                  <div style=3D"border-radius: 20px; font-size: 16px; line-=
+height: 140%; margin-bottom: 10px; font-family: 'calluna-sans' ,'Arial', sa=
+ns-serif; padding: 0px 15px; border: 1px solid #d3d3d3;">
+<p style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif; margin: 1em 0=
+;">=F0=9F=93=B0 Wednesday is "News You Can Use" day, Expedita!</p>
+
+<p style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif; margin: 1em 0=
+;">This newsletter is brought to you by the <a href=3D"https://t.dripemail2=
+.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc3MiOiJtb25vbGl0aCIsInN=
+1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNjg1NTM5NTE1LCJuYmYiOjE2ODU1Mzk1MTUsImFjY2=
+91bnRfaWQiOiI4NjY4ODE1IiwiZGVsaXZlcnlfaWQiOiJrNzZpcmxpaXluc3NiMXdvaDVieSIsI=
+nVybCI6Imh0dHBzOi8vd3d3LnNvY2lhbG1lZGlhZXhhbWluZXIuY29tL3dvcmtzaG9wcy8_dXRt=
+X3NvdXJjZT1lbWFpbCZ1dG1fbWVkaXVtPU5ld3NsZXR0ZXJJc3N1ZS1hZCZ1dG1fY2FtcGFpZ24=
+9d29ya3Nob3BzMjMtTmV3c2xldHRlci1hZC1pbnRyby0wNTMxMjMtd2VkJl9fcz1sN3hvbGRzZD=
+NuZGltbDFvbGxyayJ9.sM3Tx05raY2P23V47JWawBgsnKfIjqPhXuScn2DJou8" style=3D"co=
+lor: #c94f31; text-decoration: none; font-family: 'calluna-sans' ,'Arial', =
+sans-serif;"><b style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif; =
+font-weight: bold;">Social Media Marketing Workshops</b></a>.</p>
+
+<p style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif; margin: 1em 0=
+;"><b style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif; font-weigh=
+t: bold;">In today=E2=80=99s edition, we bring you news from:</b></p>
+
+<ul style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif; padding-left=
+: 20px !important;">
+	<li style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">Instagram<=
+/li>
+	<li style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">LinkedIn</=
+li>
+	<li style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">Meta</li>
+	<li style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">TikTok</li=
+>
+	<li style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">Twitter</l=
+i>
+	<li style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">YouTube</l=
+i>
+</ul>
+</div>
+
+<div style=3D"border-radius: 20px; font-size: 16px; line-height: 140%; back=
+ground-color: #eaf0f6; margin-bottom: 10px; font-family: 'calluna-sans' ,'A=
+rial', sans-serif; padding: 0px 15px; border: 1px solid #eaf0f6;">
+<p style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif; margin: 1em 0=
+;">=F0=9F=94=A5 Here's a word from our sponsors:</p>
+
+<p style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif; margin: 1em 0=
+;"><a href=3D"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZ=
+XRvdXIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNjg1NTM5=
+NTE1LCJuYmYiOjE2ODU1Mzk1MTUsImFjY291bnRfaWQiOiI4NjY4ODE1IiwiZGVsaXZlcnlfaWQ=
+iOiJrNzZpcmxpaXluc3NiMXdvaDVieSIsInVybCI6Imh0dHBzOi8vd3d3Lmh1YnNwb3QuY29tL3=
+N0YXRlLW9mLW1hcmtldGluZz91dG1fc291cmNlPWhzY20tV2lzdGlhLVNPTS0yMDIzLW90aGVyJ=
+l9fcz1sN3hvbGRzZDNuZGltbDFvbGxyayJ9.WwvShhiwDJvP1pUeth_PuanUb6ASEyAUTeODFlx=
+eJlo" style=3D"color: #c94f31; text-decoration: none; font-family: 'calluna=
+-sans' ,'Arial', sans-serif;"><b style=3D"font-family: 'calluna-sans' ,'Ari=
+al', sans-serif; font-weight: bold;">The 2023 State of Marketing Report: Un=
+cover top-performing channels, effective strategies, and more</b></a> - fro=
+m Wistia</p>
+
+<p style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif; margin: 1em 0=
+;"><a href=3D"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZ=
+XRvdXIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNjg1NTM5=
+NTE1LCJuYmYiOjE2ODU1Mzk1MTUsImFjY291bnRfaWQiOiI4NjY4ODE1IiwiZGVsaXZlcnlfaWQ=
+iOiJrNzZpcmxpaXluc3NiMXdvaDVieSIsInVybCI6Imh0dHBzOi8vd3d3LnNvY2lhbG1lZGlhZX=
+hhbWluZXIuY29tL3dvcmtzaG9wcy8_dXRtX3NvdXJjZT1lbWFpbCZ1dG1fbWVkaXVtPU5ld3NsZ=
+XR0ZXJJc3N1ZS1hZCZ1dG1fY2FtcGFpZ249d29ya3Nob3BzMjMtTmV3c2xldHRlci1hZC1ob3Vz=
+ZS0wNTMxMjMtd2VkJl9fcz1sN3hvbGRzZDNuZGltbDFvbGxyayJ9.8laEEpfpKEg4Zl_ysUwJKz=
+Fvl1dKfgLyi95KuYRbAWc" style=3D"color: #c94f31; text-decoration: none; font=
+-family: 'calluna-sans' ,'Arial', sans-serif;"><span style=3D"font-family: =
+'calluna-sans' ,'Arial', sans-serif;"><b style=3D"font-family: 'calluna-san=
+s' ,'Arial', sans-serif; font-weight: bold;">Become an Indispensable Market=
+er</b><b style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif; font-we=
+ight: bold;"> </b>=F0=9F=8C=9F</span></a><br style=3D"font-family: 'calluna=
+-sans' ,'Arial', sans-serif;">
+Attend our workshops and boost your campaign's value! =F0=9F=92=BC You=E2=
+=80=99ll be immersed in two weeks of in-depth online=C2=A0training with exp=
+erts who'll teach you how to engage audiences and convert them into custome=
+rs. =F0=9F=92=B0 Grab your All-Access ticket now.</p>
+</div>
+
+<div style=3D"border-radius: 20px; font-size: 16px; line-height: 140%; marg=
+in-bottom: 10px; font-family: 'calluna-sans' ,'Arial', sans-serif; padding:=
+ 0px 15px; border: 1px solid #d3d3d3;"><img src=3D"https://www.socialmediae=
+xaminer.com/wp-content/uploads/2022/10/NYCU-blue.jpeg" style=3D"border-radi=
+us: 10px; margin-top: 15px; outline: none; text-decoration: none; -ms-inter=
+polation-mode: bicubic; font-family: 'calluna-sans' ,'Arial', sans-serif; m=
+ax-width: 100%;" width=3D"600"><br style=3D"font-family: 'calluna-sans' ,'A=
+rial', sans-serif;">
+<b style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif; font-weight: =
+bold;">5 LinkedIn Sales Navigator Improvements</b>
+
+<p style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif; margin: 1em 0=
+;">LinkedIn has detailed five features to help Sales Navigator users sell m=
+ore effectively and efficiently.=C2=A0</p>
+
+<p style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif; margin: 1em 0=
+;">The first feature is Account Hub, which prioritizes a seller's accounts =
+based on growth potential, buyer intent, and risk alerts, and provides insi=
+ghts and tools to help the seller network and follow up with interested par=
+ties within those accounts. Product Category Intent for 770 categories acro=
+ss various industries, predominantly software, will be added to Account Hub=
+ on May 31.=C2=A0</p>
+
+<p style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif; margin: 1em 0=
+;">The second improvement is the addition of two interest signals:=C2=A0web=
+site visits, and the ability to see the identity of new LinkedIn connection=
+s to other Sales Navigator sellers and TeamLink users on a user's contract.=
+ These features have been added to the Buyer Intent functionality for advan=
+ced and advanced plus customers.=C2=A0</p>
+
+<p style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif; margin: 1em 0=
+;">In addition, users can now manually add accounts to their My CRM Account=
+s list on Sales Navigator if the accounts are not captured by the program's=
+=C2=A0rules.</p>
+
+<p style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif; margin: 1em 0=
+;">To learn more and stay updated, <a href=3D"https://t.dripemail2.com/c/ey=
+JhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRl=
+dG91cl9saW5rIiwiaWF0IjoxNjg1NTM5NTE1LCJuYmYiOjE2ODU1Mzk1MTUsImFjY291bnRfaWQ=
+iOiI4NjY4ODE1IiwiZGVsaXZlcnlfaWQiOiJrNzZpcmxpaXluc3NiMXdvaDVieSIsInVybCI6Im=
+h0dHBzOi8vd3d3LmxpbmtlZGluLmNvbS9idXNpbmVzcy9zYWxlcy9ibG9nL3Byb2R1Y3QtdXBkY=
+XRlcy9zZWxsLXNtYXJ0ZXItd2l0aC10aGVzZS1uZXctc2FsZXMtbmF2aWdhdG9yLWZlYXR1cmVz=
+P19fcz1sN3hvbGRzZDNuZGltbDFvbGxyayJ9.QHPGTnPlYjUdEwOo3S5yzOZC74ZErkuSvESR8P=
+1h-B4" style=3D"color: #c94f31; text-decoration: none; font-family: 'callun=
+a-sans' ,'Arial', sans-serif;">read the full announcement</a>.</p>
+</div>
+
+<div style=3D"border-radius: 20px; font-size: 16px; line-height: 140%; back=
+ground-color: #eaf0f6; margin-bottom: 10px; font-family: 'calluna-sans' ,'A=
+rial', sans-serif; padding: 0px 15px; border: 1px solid #eaf0f6;">
+<p style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif; margin: 1em 0=
+;">=F0=9F=A7=AD Here is more news you can use:</p>
+
+<ul style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif; padding-left=
+: 20px !important;">
+	<li style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;"><a href=3D=
+"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc3=
+MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNjg1NTM5NTE1LCJuYmYiO=
+jE2ODU1Mzk1MTUsImFjY291bnRfaWQiOiI4NjY4ODE1IiwiZGVsaXZlcnlfaWQiOiJrNzZpcmxp=
+aXluc3NiMXdvaDVieSIsInVybCI6Imh0dHBzOi8vZGV2ZWxvcGVycy5mYWNlYm9vay5jb20vYmx=
+vZy9wb3N0LzIwMjMvMDUvMjQvaW5zdGFncmFtLXNlYXJjaC1yZXN1bHRzLWFkcy8_X19zPWw3eG=
+9sZHNkM25kaW1sMW9sbHJrIn0.SdQ4zIQiBE5m4Je83m0OWo3CNxjAFY2nxxu3ZuHmy6I" styl=
+e=3D"color: #c94f31; text-decoration: none; font-family: 'calluna-sans' ,'A=
+rial', sans-serif;">Instagram Ads</a>: Advertisers can now place ads in Ins=
+tagram search results via the Instagram Marketing API.</li>
+	<li style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;"><a href=3D=
+"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc3=
+MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNjg1NTM5NTE1LCJuYmYiO=
+jE2ODU1Mzk1MTUsImFjY291bnRfaWQiOiI4NjY4ODE1IiwiZGVsaXZlcnlfaWQiOiJrNzZpcmxp=
+aXluc3NiMXdvaDVieSIsInVybCI6Imh0dHBzOi8vd3d3LnRoZWd1YXJkaWFuLmNvbS90ZWNobm9=
+sb2d5LzIwMjMvbWF5LzIzL2ZhY2Vib29rLW93bmVyLW1ldGEtc2VsbHMtZ2lwaHktc2h1dHRlcn=
+N0b2NrLWdpZi1zZWFyY2g_X19zPWw3eG9sZHNkM25kaW1sMW9sbHJrIn0.iLyJkTnRvprNjeE5C=
+iqX_3QxOV81459I64gVgoLnO9k" style=3D"color: #c94f31; text-decoration: none;=
+ font-family: 'calluna-sans' ,'Arial', sans-serif;">Giphy</a>: Meta reached=
+ an agreement to sell the gif platform to Shutterstock.</li>
+	<li style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;"><a href=3D=
+"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc3=
+MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNjg1NTM5NTE1LCJuYmYiO=
+jE2ODU1Mzk1MTUsImFjY291bnRfaWQiOiI4NjY4ODE1IiwiZGVsaXZlcnlfaWQiOiJrNzZpcmxp=
+aXluc3NiMXdvaDVieSIsInVybCI6Imh0dHBzOi8vdGltZS5jb20vNjI4MTk0Ni90aWt0b2stb3J=
+hY2xlLXNvdXJjZS1jb2RlLz9fX3M9bDd4b2xkc2QzbmRpbWwxb2xscmsifQ.j4CjGh9BX2vK6p6=
+ZnTMCZ1nQDeh7NdxtiMq9_X8aBQM" style=3D"color: #c94f31; text-decoration: non=
+e; font-family: 'calluna-sans' ,'Arial', sans-serif;">TikTok User Data</a>:=
+ Oracle, the American software company, has begun a review of TikTok=E2=80=
+=99s source code and is now the default destination for U.S. user data.</li=
+>
+	<li style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;"><a href=3D=
+"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc3=
+MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNjg1NTM5NTE1LCJuYmYiO=
+jE2ODU1Mzk1MTUsImFjY291bnRfaWQiOiI4NjY4ODE1IiwiZGVsaXZlcnlfaWQiOiJrNzZpcmxp=
+aXluc3NiMXdvaDVieSIsInVybCI6Imh0dHBzOi8vd3d3LnNvY2lhbG1lZGlhdG9kYXkuY29tL25=
+ld3MvdHdpdHRlci1waWN0dXJlLWluLXBpY3R1cmUtdmlkZW8tcGxheWJhY2stdGVzdHMtdmlkZW=
+8tZG93bmxvYWQvNjUxMzk3Lz9fX3M9bDd4b2xkc2QzbmRpbWwxb2xscmsifQ.w31WQ1M62TxoVf=
+2FfQQenx7ng-QRaSYvbF0e9pPqUpA" style=3D"color: #c94f31; text-decoration: no=
+ne; font-family: 'calluna-sans' ,'Arial', sans-serif;">Video on Twitter</a>=
+: The platform rolled out PIP display and the ability to download video fro=
+m a tweet.</li>
+	<li style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;"><a href=3D=
+"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc3=
+MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNjg1NTM5NTE1LCJuYmYiO=
+jE2ODU1Mzk1MTUsImFjY291bnRfaWQiOiI4NjY4ODE1IiwiZGVsaXZlcnlfaWQiOiJrNzZpcmxp=
+aXluc3NiMXdvaDVieSIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5nb29nbGUuY29tL3lvdXR1YmU=
+vdGhyZWFkLzIxNzY0MDc2MD9fX3M9bDd4b2xkc2QzbmRpbWwxb2xscmsifQ.vlP-TvhILIVOCvc=
+3nz2CLe6ohUZ-tE_atIqANX0nngg" style=3D"color: #c94f31; text-decoration: non=
+e; font-family: 'calluna-sans' ,'Arial', sans-serif;">YouTube Stories</a>: =
+=E2=80=9CStarting on 6/26/2023 the option to create a new YouTube Story wil=
+l no longer be available. Stories that are already live on that date will e=
+xpire 7 days after they were originally shared.=E2=80=9D</li>
+</ul>
+</div>
+
+               =20
+ <br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+                  Michael Stelzner, Founder and CEO<br style=3D"font-family=
+: 'calluna-sans' ,'Arial', sans-serif;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+P.S. Add <a href=3D"mailto:michael@socialmediaexaminer.com?__s=3Dl7xoldsd3n=
+diml1ollrk" style=3D"color: #c94f31; text-decoration: none; font-family: 'c=
+alluna-sans' ,'Arial', sans-serif;"><span style=3D"font-family: 'calluna-sa=
+ns' ,'Arial', sans-serif;">michael@socialmediaexaminer.com</span></a> into =
+your contacts list. Use Gmail? <a href=3D"https://t.dripemail2.com/c/eyJhbG=
+ciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91=
+cl9saW5rIiwiaWF0IjoxNjg1NTM5NTE1LCJuYmYiOjE2ODU1Mzk1MTUsImFjY291bnRfaWQiOiI=
+4NjY4ODE1IiwiZGVsaXZlcnlfaWQiOiJrNzZpcmxpaXluc3NiMXdvaDVieSIsInVybCI6Imh0dH=
+BzOi8vY29udGFjdHMuZ29vZ2xlLmNvbS8_X19zPWw3eG9sZHNkM25kaW1sMW9sbHJrIn0.udVGC=
+Iv5LQjvsy46vviUh2s4NT3BpKdJipqSETWSpiQ" style=3D"color: #c94f31; text-decor=
+ation: none; font-family: 'calluna-sans' ,'Arial', sans-serif;">Go here to =
+add us as a contact</a>.=C2=A0=C2=A0<br style=3D"font-family: 'calluna-sans=
+' ,'Arial', sans-serif;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+We publish updates with links for our new posts and content from partners. =
+Your information: Email: <a href=3D"mailto:ouchendans62@gmail.com?__s=3Dl7x=
+oldsd3ndiml1ollrk" style=3D"color: #c94f31; text-decoration: none; font-fam=
+ily: 'calluna-sans' ,'Arial', sans-serif;"><span style=3D"font-family: 'cal=
+luna-sans' ,'Arial', sans-serif;">ouchendans62@gmail.com</span></a> Opted i=
+n on: 2023-05-27 14:40:10 UTC.
+             =20
+                </div>
+
+               =20
+                  <div id=3D"footer" style=3D"font-family: 'calluna-sans' ,=
+ 'Arial', sans-serif; font-size: 13px; line-height: 1.4; color: #777; borde=
+r-top-width: 1px; border-top-color: #d0d0d0; border-top-style: solid; paddi=
+ng: 5px;">
+                    <a href=3D"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1N=
+iJ9.eyJhdWQiOiJkZXRvdXIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiw=
+iaWF0IjoxNjg1NTM5NTE1LCJuYmYiOjE2ODU1Mzk1MTUsImFjY291bnRfaWQiOiI4NjY4ODE1Ii=
+wiZGVsaXZlcnlfaWQiOiJrNzZpcmxpaXluc3NiMXdvaDVieSIsInVybCI6Imh0dHBzOi8vd3d3L=
+mdldGRyaXAuY29tL3N1YnNjcmliZXJzL2w3eG9sZHNkM25kaW1sMW9sbHJrL3N1YnNjcmlwdGlv=
+bnM_ZD1rNzZpcmxpaXluc3NiMXdvaDVieSZleGNsdWRlX2NsaWNrPTEmaW50ZW50PXVuc3Vic2N=
+yaWJlJl9fcz1sN3hvbGRzZDNuZGltbDFvbGxyayJ9.pBBG3fe-q1S2B14KlRdd_j9LqQr35tVly=
+YmsrYVIvuo" style=3D"color: #c94f31; text-decoration: none; font-family: 'c=
+alluna-sans' ,'Arial', sans-serif;">Stop all emails from Social Media Exami=
+ner or update email address</a>.  <a href=3D"http://t.dripemail2.com/c/eyJh=
+bGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG=
+91cl9saW5rIiwiaWF0IjoxNjg1NTM5NTE1LCJuYmYiOjE2ODU1Mzk1MTUsImFjY291bnRfaWQiO=
+iI4NjY4ODE1IiwiZGVsaXZlcnlfaWQiOiJrNzZpcmxpaXluc3NiMXdvaDVieSIsInVybCI6Imh0=
+dHA6Ly9kcmlwLmxhL2MvZXlKaFkyTnZkVzUwWDJsa0lqb2lPRFkyT0RneE5TSXNJblJ5YVdkblp=
+YSmZhV1FpT2lJek1EVXdNVE0zTlNJc0luVnliQ0k2SW1oMGRIQTZMeTkzZDNjdWMyOWphV0ZzYl=
+dWa2FXRmxlR0Z0YVc1bGNpNWpiMjB2ZVc5MWNtVXRiVzkyWldRdGRHOHRkMlZsYTJ4NUx5Sjk_Z=
+T1vdWNoZW5kYW5zNjIlNDBnbWFpbC5jb20mX19zPWw3eG9sZHNkM25kaW1sMW9sbHJrIn0.JgMj=
+E3mJK5fG1pTJvhOwJS4fjLqwVAC-Y1b3GMhxfqc" style=3D"color: #c94f31; text-deco=
+ration: none; font-family: 'calluna-sans' ,'Arial', sans-serif;">Move to We=
+ekly Digest</a>. <br style=3D"font-family: 'calluna-sans' ,'Arial', sans-se=
+rif;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+Social Media Examiner: 11160 Rancho Carmel Dr Ste 106, Box #1062, San Diego=
+, CA 92128
+id:2023-05-30-20:46:36:873t
+                  </div>
+               =20
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+  </table>
+<img src=3D"https://u9195725.ct.sendgrid.net/wf/open?upn=3D0-2FSlkfjewhujMc=
+ah5D-2FrTK7EeURWe0cipTZtuhw6-2BXYW4pX8EPWpR7ybT0BACuFegWfWk5pob-2FiCyCco5wl=
+SYvDk9u-2Bht1GGe4j6CZKyu4AfbA3H9iJQe9hu7OgjPUq2RHrkUOdeaOTzRbOz9tu6w9873x4A=
+DMigWWl2rP0XGERKQju-2F2l6gp023TuiC90T5AwQHMqmnWbwb1ZgMZDoV-2Bk8SD8uXYIDWSgd=
+EZ-2FW0jq-2FtKht403-2FfSBr8NdQQs3pFZ8K-2Bxk2-2FGgswuoRwp172aelM2Kkyi8JcVNty=
+jnRl1KoCdY6lM-2F9jnYoMELXl0xjzZqyZtAftq0jqzpzIbb9IBxg4kYdFIWjb8E33A3owFG8Eb=
+3dR1EH-2ByCMAeltrY2p6R737EOHI7U-2BMEJ5CkWl5aX-2FMbkMRqh3xAGK4jxhOuyCqt8x6C0=
+5jK0ls72o7iMrPYoTQMVI4-2FThNGj04n2QxbZo8cBWDQQIyKAVEHc54ogIcfV2x6vh4jdDKqcD=
+yPrnwTmT3zIuA3V-2FVqX5XdZvYW-2F0eiai6lgqf2Mn1R8DMW22zSJ45a7E-2FQ-2BW1J2iZVe=
+SK-2FmmPUNBoz9tUKYKvOGYuRiExbzzFUPoOyI-2BiDyknJQyLAzO-2BgwQueu6yDgHQh03vJyU=
+MHtnCO0cR0w5-2F9ktCTRuwOfl9fAx8IU01h5bWm3iagPYyzA2M-2FlR8rN-2BRrhELFczrRbzr=
+-2B0gSGYGLilfbsgelrJKFdoKpdoudwayThKQAxptjryVKeEkTh-2BaEGliYrS-2FKo4Ozx2cnQ=
+VfkKzSJMQ-3D-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"he=
+ight:1px !important;width:1px !important;border-width:0 !important;margin-t=
+op:0 !important;margin-bottom:0 !important;margin-right:0 !important;margin=
+-left:0 !important;padding-top:0 !important;padding-bottom:0 !important;pad=
+ding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+
+--df2dba7fb7a367cd22d19793314f6385b062495a851188cc5b5a3ae38094--

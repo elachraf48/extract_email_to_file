@@ -1,0 +1,541 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp860493ims;
+        Wed, 31 May 2023 06:19:35 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ6Na1rOi7o0wqZnq9vJYUKz2hrkrkD0S6R70lM9fpTrWipJgwBJphpEckDW9cpkNp8MbF3U
+X-Received: by 2002:a05:6870:a2cb:b0:199:fa90:a62 with SMTP id w11-20020a056870a2cb00b00199fa900a62mr8208585oak.8.1685539175043;
+        Wed, 31 May 2023 06:19:35 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685539175; cv=none;
+        d=google.com; s=arc-20160816;
+        b=wrGKixcQeZw4Pnp475MXlNBJ594hyx3fkhag+FxHDhfbycJUl5cguEdgXzf30MeVa/
+         +7PoOVerdDCGFanpKvXHMZMqEf9xwLEjkR1ZU3qg0cA/naiz6rRYYC2VTBsaNhcapsue
+         6h/ha1KsuKt4hOHoCLkl3mEFggo95Wio9NmQYHqpK2wNt9dRLGJAbeUUhn6JvLFzIYUO
+         1T9vw7sOLiSHTaRoWq6eEUJuiWcFFY/ItDlGgb+evMS4IrA/F+zO9TNZ3e32iVV9s6Jj
+         pFN2EgdajdbiRKRA6NRLDLFdn5d9ycvrioZPFgk4qBIEC1iiYo0yr52nglvyWwJ3tyOk
+         0jDQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:list-id:reply-to:mime-version
+         :list-unsubscribe-post:list-unsubscribe:date:subject:to:from
+         :dkim-signature;
+        bh=W+5JHjFgVcAhj30/6rt/df64MLBPKIkSeL+azFNYHjs=;
+        b=mywAr0djSflrUJAeEl1moKl2LWyw8gWLDE+68WbuR+CgZpGbiEx1SG3Yrueqw93oV9
+         l5Xq0/L1LXMqt5xsu6LvqDeAi8JminGFIl8BUay6oONqY296gfjF0fZ0XiHFYehswkyf
+         Z+k/QvuEZESgCof5mVWJGWUi/dKGkFdmnSpGVRLmFSbrSVBOET+Y69ichJyPZ4zI61GD
+         VOZCQea0W+haQwQkTXw0fIMIvXLbjOTi11IZiCrLST0QSVD1ffbk3OXsHQYOk+mofV2a
+         mlM9Ht4VTPdBtIOfllNaLSVgnm4PBaqVAeAL0ObBoIyr7RVlGyB1tMil0VDhf0M4w54l
+         gCzQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.politico.com header.s=200608 header.b=b1yF02we;
+       spf=pass (google.com: domain of bounce-641189_html-1405096349-9802485-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) smtp.mailfrom=bounce-641189_HTML-1405096349-9802485-1376319-0@bounce.politicoemail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.politico.com
+Return-Path: <bounce-641189_HTML-1405096349-9802485-1376319-0@bounce.politicoemail.com>
+Received: from mta.politicoemail.com (mta.politicoemail.com. [68.232.198.10])
+        by mx.google.com with ESMTPS id dw21-20020a056870771500b0019f718305a8si596881oab.271.2023.05.31.06.19.34
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 31 May 2023 06:19:35 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-641189_html-1405096349-9802485-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) client-ip=68.232.198.10;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.politico.com header.s=200608 header.b=b1yF02we;
+       spf=pass (google.com: domain of bounce-641189_html-1405096349-9802485-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) smtp.mailfrom=bounce-641189_HTML-1405096349-9802485-1376319-0@bounce.politicoemail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.politico.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=200608; d=email.politico.com;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Reply-To:List-ID:X-CSA-Complaints:Message-ID:Content-Type;
+ i=californiaplaybook@email.politico.com;
+ bh=W+5JHjFgVcAhj30/6rt/df64MLBPKIkSeL+azFNYHjs=;
+ b=b1yF02weweROzGsrspOcAnxY0pS4AVX+wv+XcTg9JM9nA12b0z/EjLDCCfZgmTGaeIQDzoaqVd8e
+   +wVTXssjltm2yUiPU9+9YZJJZSDQjMeHBt9p2Grg6SxKxWrX5NpvOrFax+wZjl+HEIN8lkiGX77U
+   BvDgrPLC3lmuJAB8rFs=
+Received: by mta.politicoemail.com id het4mc2fmd4e for <ouchendans62@gmail.com>; Wed, 31 May 2023 13:16:28 +0000 (envelope-from <bounce-641189_HTML-1405096349-9802485-1376319-0@bounce.politicoemail.com>)
+From: "POLITICO California Playbook" <californiaplaybook@email.politico.com>
+To: <ouchendans62@gmail.com>
+Subject: Labor on the line
+Date: Wed, 31 May 2023 07:16:27 -0600
+List-Unsubscribe: <https://click.politicoemail.com/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiIxMzc2MzE5IiwicyI6IjE0MDUwOTYzNDkiLCJsaWQiOiI2NDExODkiLCJqIjoiOTgwMjQ4NSIsImpiIjoiMCIsImQiOiI0MDEyOCJ9.ktEBVF21mZ9pBOv5OBZJxcsamBQ-hUakZRNPpgC4fyU>, <mailto:leave-fcae127474650c741a4c342838-fdf61574756104747317747c-fe8b1d787566007570-fe9115737262077c7c-ffcf14@leave.politicoemail.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+Reply-To: "POLITICO, LLC" <reply-fe8b1d787566007570-641189_HTML-1405096349-1376319-0@politicoemail.com>
+List-ID: <1376319.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+X-SFMC-Stack: 4
+x-job: 1376319_9802485
+Message-ID: <0e6196af-82f6-4d76-88d4-9c7c81c06586@las1s04mta1076.xt.local>
+Feedback-ID: 1376319:9802485:68.232.198.10:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="eaLwYzXb9ZDw=_?:"
+
+This is a multi-part message in MIME format.
+
+--eaLwYzXb9ZDw=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Presented by SEIU-UHW: Jeremy B. White and Lara Korte’s must-read briefing on politics and government in the Golden State May 31, 2023 View in browser  
+By Lara Korte, Jeremy B. White, Ramon Castanos and Matthew Brown
+
+Presented by SEIU-UHW
+
+THE BUZZ: There’s little that gets done in Sacramento without the blessing of California’s powerful unions. And with several key legislative deadlines fast approaching, it looks like organized labor could swing some substantial wins this year.
+
+Labor has always been a force in and out of the Capitol. Unions are frequently among the top donors to politicians and bring an army of dedicated door knockers and canvassers with them. They’re a powerful ally — or enemy — in the halls of the Legislature, where they’ve been known to block legislation, if they so wish.
+
+There’re only a few weeks left before lawmakers depart the capital city for summer recess, but there’s an even closer deadline Friday. That’s when the Legislature must pass bills out of their houses of origin. Several big-ticket labor items have already made it out (like Tina McKinnor’s staff unionization bill), but others are still awaiting passage.
+
+On the healthcare front, workers are close to getting a long-sought pay raise. As POLITICO’s Rachel Bluth reported, a bill backed by SEIU-United Healthcare Workers West to raise the minimum wage to $25 was trimmed to $21 starting in 2024, then the full $25 in 2025. It’s not ideal for the union, but it could be enough to tamp down fierce hospital opposition and get across the finish line.
+
+Then there’s the continued fast food fight. Assemblymember Chris Holden’s bill to require corporations to share legal responsibility with locally-owned franchisees has raised the ire of some deep-pocketed opponents, including McDonalds. But labor groups are resolved to put up a fight, especially after restaurant interests passed a referendum, stalling last year’s landmark Fast Food Council bill.
+
+The stakes are high for a bill by Sen. Scott Wiener that would extend the life of a landmark housing law that’s meant to speed up residential construction. Members from the California Conference of Carpenters this year have flooded hearing rooms to voice their support for the bill. But it’s up against heavy opposition from the powerful State Building and Construction Trades Council of California, which is pushing for a training requirement that some say is too hard to meet.
+
+Wiener made a slight compromise earlier this month by including that requirement under certain conditions, but the Building and Trades Council has yet to withdraw its opposition. President Andrew Meredith, in a statement, told POLITICO that the bill has “certainly improved” since it was introduced, the organization is still working on several issues with Wiener, but are “supportive of the general framework.”
+
+“We are hopeful that continued progress will yield a bill we can unilaterally support,” Meredith said.
+
+BUENOS DÍAS, good Wednesday morning. The construction complaints continue. Today, members of Save Our Capitol will gather on the west steps to advocate for preserving, well, the west steps. The group opposes the demolition of the annex and the addition of a visitors’ center to the front of the building.
+
+Got a tip or story idea for California Playbook? Hit us up at jwhite@politico.com and lkorte@politico.com or follow us on Twitter @JeremyBWhite and @Lara_Korte. 
+
+     
+A message from SEIU-UHW:
+
+The healthcare worker shortage has forced workers to work longer hours, under worse conditions. Many healthcare workers are paid barely enough to get by, driving many to leave the workforce. But there’s a better way: SB 525 would raise the minimum wage for healthcare workers to $25 an hour and ensure workers can afford to stay on the job. Tell lawmakers: Pass SB 525.
+    
+WHERE’S GAVIN? Nothing official announced.
+
+QUOTE OF THE DAY: “It is inescapable to me. It has to be done.” Rep. Dan Bishop (R-N.C.) on Tuesday threatening Speaker Kevin McCarthy with a vote of no confidence following his recent debt deal with President Joe Biden.
+
+SPOTTED at a celebration for Ben Smith’s book “Traffic” at the San Francisco home of Lt. Gov. Eleni Kounalakis and Markos Kounalakis co-hosted by Chris Lehane, Peter Ragone, Rachael Horwitz and Markos: Clint Reilly, Ace Smith, Schuyler Hudak Prionas, Donna Wills Colson, Anna Soellner, Ben Coffey Clark, Christopher Cadelago, Thomas Fuller, Vicki Liviakis, Reed Albergotti, Priya David Clemens, Alex Stamos and Joe Garofoli.
+
+WE’RE HIRING — POLITICO is embarking on an exciting expansion in the Golden State and looking for another journalist to join our growing team as a California Playbook author. More in the job description here.
+
+  
+PLAYBOOK TRIVIA NIGHT! Think you know a lot about politics? PROVE IT! Compete in California Playbook’s inaugural Trivia Night. Grab a drink, kick back, and put your knowledge on display! Join top political power players on Wednesday, June 21st at Fox & Goose Public House for a night of fun and competition that you won’t want to miss. REGISTER HERE.
+     TOP TALKERS
+— “In downtown L.A., Bass' plan to clear encampments faces crime, addiction and resistance,” by the Los Angeles Times’ David Zahniser: “In some locations, new arrivals have taken the place of those who accepted hotel rooms. In others, longtime encampment residents have made clear to outreach workers that they’re not going anywhere.”
+
+— “Elizabeth Holmes enters Texas prison to begin 11-year sentence for notorious blood-testing hoax,” by The Associated Press’ Lekan Oyekanmi and Michael Liedtke: “Holmes, 39, could be seen from outside the prison’s gates walking into the federal women’s prison camp located in Bryan, Texas, wearing jeans, a brown sweater and smiling as she spoke with two prison employees accompanying her.”
+
+— “Manson follower Leslie Van Houten should be paroled, California appeals court rules,” by The Associated Press’ Christopher Weber and Amy Taxin: “A California appeals court said Tuesday that Leslie Van Houten, who participated in two killings at the direction of cult leader Charles Manson in 1969, should be released from prison on parole.” 
+
+     
+A message from SEIU-UHW:
+
+
+     CAMPAIGN MODE
+HELLO MR. GOVERNOR — Florida Gov. Ron DeSantis is making an ATM stop in Coalinga later this month, per a fundraiser invitation that was sent to Republican donors this week. According to the invite, the June 19 event will be co-hosted by John Harris and Karen and Richard Spencer. Tickets are $3,300 per person but do include a photo op with the governor.
+
+LEE GRABS ANOTHER STATEWIDE — Secretary of State Shirley Weber endorsed Barbara Lee for Senate on Tuesday, praising her work on poverty and reproductive rights. Weber said in a statement Lee has “been a leader for justice for everyone.” Other statewide Lee-backers include Controller Malia Cohen, Treasurer Fiona Ma and Attorney General Rob Bonta, who also endorsed Rep. Katie Porter. 
+
+ CALIFORNIA AND THE CAPITOL CORRIDOR
+PRISON PARDONS — Gov. Gavin Newsom on Tuesday used an executive power to grant clemency to four members of the Armed Services with prior criminal convictions. The pardon grantees include Jamar Baines, who served in the Marines, Vietnam War veteran Andres De Leon, Army veteran Fabian Rebolledo and Ernest Sari, who served in the U.S. Army National Guard. Since taking office, Newsom has granted a total of 144 pardons, 123 commutations and 36 reprieves.
+
+— “State asked to stop diverting iconic Mono Lake's water to Los Angeles,” by CalMatters’ Alastair Bland: “While existing rules on Mono Lake diversions are designed to manage the basin’s ecosystem – broadly categorized as public trust resources – they don’t take into account the needs of the basin’s indigenous residents, namely the Kutzadika’a tribe.”
+
+— “California state prison closure threatens desert town,” by CalMatters’ Nigel Duara: “Gov. Gavin Newsom’s administration late last year announced their community would be one of the next hit by the unwinding of California’s sprawling prison system, a dismantling made possible by the steep decline in the state’s inmate population from some 160,000 people a dozen years ago to about 96,000 today.”
+
+— “Bitwise Industries furloughs its entire workforce. CEOs cite 'unexpected' financial duress,” by The Fresno Bee’s Tim Sheehan: Acute financial issues have forced Fresno-based Bitwise Industries to furlough its entire workforce of about 900 employees in Fresno, Merced, Bakersfield, Oakland and seven other cities across the country.”
+
+— “S.F. Mayor Breed wants to spend more on homelessness. One part of her plan is controversial,” by the San Francisco Chronicle’s Mallory Moench: “Breed is proposing a boost to homelessness funding by tapping into Proposition C, a business tax increase that voters approved in 2018 to generate between $250 million and $300 million a year for homelessness and behavioral health services.” 
+
+  
+DON’T MISS POLITICO’S HEALTH CARE SUMMIT: The Covid-19 pandemic helped spur innovation in health care, from the wide adoption of telemedicine, health apps and online pharmacies to mRNA vaccines. But what will the next health care innovations look like? Join POLITICO on Wednesday June 7 for our Health Care Summit to explore how tech and innovation are transforming care and the challenges ahead for access and delivery in the United States. REGISTER NOW.
+     MIXTAPE
+— “The freeway was born in L.A. But it might not always be free to drive on,” by the Los Angeles Times’ Rachel Uranga.  
+
+NEGOTIATING IN ‘BAA–D’ FAITH — “California overtime law threatens use of grazing goats to prevent wildfires,” by The Associated Press’ Terry Chea. 
+
+ BIRTHDAYS
+Former Rep. Duncan Hunter (R-Calif.) … Sarah Heck … Saul Levine
+
+(Was Tuesday): Dolores Sloan ... Brenda Walt
+
+     
+A message from SEIU-UHW:
+
+SB 525 would raise the minimum wage for healthcare workers to $25 an hour, ensuring that workers currently on the job can afford to stay in the industry, and helping to recruit new workers to the field. To combat the healthcare worker shortage, tell lawmakers to pass SB 525.
+    
+CALIFORNIA POLICY IS ALWAYS CHANGING: Know your next move. From Sacramento to Silicon Valley, POLITICO California Pro provides policy professionals with the in-depth reporting and tools they need to get ahead of policy trends and political developments shaping the Golden State. To learn more about the exclusive insight and analysis this subscriber-only service offers, click here.
+
+Want to make an impact? POLITICO California has a variety of solutions available for partners looking to reach and activate the most influential people in the Golden State. Have a petition you want signed? A cause you’re promoting? Seeking to increase brand awareness amongst this key audience? Share your message with our influential readers to foster engagement and drive action. Contact Jesse Shapiro to find out how: jshapiro@politico.com
+  
+Follow us on Twitter
+
+Jeremy B. White @JeremyBWhite
+
+Lara Korte @lara_korte
+
+POLITICO California @politicoca
+  
+Subscribe to the POLITICO Playbook family
+
+Playbook  |  Playbook PM  |  California Playbook  |  Florida Playbook  |  Illinois Playbook  |  Massachusetts Playbook  |  New Jersey Playbook  |  New York Playbook  |  Ottawa Playbook  |  Brussels Playbook  |  London Playbook
+
+View all our political and policy newsletters
+
+Follow us
+  
+To change your alert settings, please log in at https://go.politicoemail.com/?qs=019581f3d2fb1cad3c3e708ed9e106080a33504ae429fc5394162f95a64e149978c01564db6e35e0922007dc72d68c3fb2f6d654697fa96b  https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a2be7fd4205407a6882557a509699b33334a1a911387a80e99d1436a6394bbe75b6fe45884589710baa51d1d7358e266b4
+
+This email was sent to ouchendans62@gmail.com by: POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+
+ Please click here and follow the steps to unsubscribe.
+  
+
+--eaLwYzXb9ZDw=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<html><body><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml><![endif]-->
+</head><!-- Everything above this line is "new" to the template. We'll have to experiment a bit to see if it causes troubles. --><!-- preview text --><div style="display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">    Presented by SEIU-UHW: Jeremy B. White and Lara Korte&#8217;s must-read briefing on politics and government in the Golden State</div><table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" style="padding:5px 0 15px 0;margin:0;text-align:center" role="presentation">    <tbody>    <tr>        <td><!-- Note: This is left blank to aid in centering across email clients --></td>        
+<td align="center" width="540">            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:540px;table-layout:fixed;" role="presentation">                <tbody>                <!-- top date and utility link -->                <tr>    <td align="center">        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="padding-bottom:15px;" role="presentation">            <tbody>            <tr>                <td width="50%" style="text-align:left;font-size:11px;font-family:Helvetica,sans-serif;color:#B1B4BD;margin:0;">May 31, 2023</td>                
+<td width="50%" style="text-align:right;font-size:11px;font-family:Helvetica,sans-serif;color:#B1B4BD;margin:0;"><a
+ href="https://go.politicoemail.com/?qs=d479daf4d80ed8268e8bb6ce4dad75dd4f7f8c8348187d9acbda26962f3dc8b676000781c1d4a49eca395ad96a194810efd64b77b6b445e0" target="_blank" style="color:#007BC7;text-decoration:none;">View in browser</a
+></td>            </tr>            </tbody>        </table>    </td></tr>                <!-- divider line -->                <tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                <!-- logo and byline -->                <tr>    <td align="center" style="text-align:center;padding:0 20px 15px 20px;margin:0">                                    <img src="https://static.politico.com/4a/16/35d9ce8a4c11bbacef148560e4fd/politico-ca-playbook.jpg" title="POLITICO California Playbook logo" alt="POLITICO California Playbook" border="0" width="500" style="width:100%;max-width:500px;">                        </td></tr><tr>    
+<td align="center" style="padding:0 20px 10px 20px;">        <p style="text-align:center;font-family:Helvetica,sans-serif;font-size:11px;letter-spacing:2px;color:#B1B4BD;text-transform:uppercase;margin:0;">            By  <a
+ href="mailto:lkorte@politico.com" target="_blank" style="color:#000000;text-decoration:none;font-weight:bold;">Lara Korte</a
+>,  <a
+ href="mailto:jwhite@politico.com" target="_blank" style="color:#000000;text-decoration:none;font-weight:bold;">Jeremy B. White</a
+>,  <a
+ href="mailto:rcastanos@politico.com" target="_blank" style="color:#000000;text-decoration:none;font-weight:bold;">Ramon Castanos</a
+> and  <a
+ href="mailto:mbrown@politico.com" target="_blank" style="color:#000000;text-decoration:none;font-weight:bold;">Matthew Brown</a
+>        </p>    </td></tr>                <!-- sponsor logo -->                            <tr>            <td style="padding-bottom:15px;" align="center"><p style="font-family:Helvetica,sans-serif;font-size:12px;color:#6E7381;margin:0;padding-right:10px;">Presented by SEIU-UHW</p></td>        </tr>                    <!-- body -->                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">THE BUZZ:</strong
+> </span>There&#8217;s little that gets done in Sacramento without the blessing of California&#8217;s powerful unions. And with several key legislative deadlines fast approaching, it looks like organized labor could swing some substantial wins this year.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Labor has always been a force in and out of the Capitol.</strong
+> Unions are frequently among the top donors to politicians and bring an army of dedicated door knockers and canvassers with them. They&#8217;re a powerful ally &#8212; or enemy &#8212; in the halls of the Legislature, where they&#8217;ve been known to block legislation, if they so wish.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">There&#8217;re only a few weeks left before lawmakers depart the capital city for summer recess</strong
+>, but there&#8217;s an even closer deadline Friday. That&#8217;s when the Legislature must pass bills out of their houses of origin. Several big-ticket labor items have already made it out (like <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Tina McKinnor</strong
+>&#8217;s staff unionization bill), but others are still awaiting passage.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">On the healthcare front, workers are close to getting a long-sought pay raise. </strong
+>As POLITICO&#8217;s <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Rachel Bluth</strong
+> <a
+ href="https://go.politicoemail.com/?qs=d479daf4d80ed82619d02beb7581e13bebbb3f24f3ed74410d443c0d53e673e9668581324adb727aa78889f948cd779f6dc164ca9ee9b195" target="_blank"><u>reported</u></a
+>, a bill backed by SEIU-United Healthcare Workers West to raise the minimum wage to $25 was trimmed to $21 starting in 2024, then the full $25 in 2025. It&#8217;s not ideal for the union, but it could be enough to tamp down fierce hospital opposition and get across the finish line.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Then there&#8217;s the continued fast food fight.</strong
+> Assemblymember <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Chris Holden</strong
+>&#8217;s bill to require corporations to share legal responsibility with locally-owned franchisees has raised the ire of some deep-pocketed opponents, including McDonalds. But labor groups are resolved to put up a fight, especially after restaurant interests passed a referendum, stalling last year&#8217;s landmark Fast Food Council bill.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">The stakes are high for a bill by Sen. Scott Wiener </strong
+>that would extend the life of a landmark housing law that&#8217;s meant to speed up residential construction. Members from the California Conference of Carpenters this year have flooded hearing rooms to voice their support for the bill. But it&#8217;s up against heavy opposition from the powerful State Building and Construction Trades Council of California, which is pushing for a training requirement that some say is too hard to meet.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Wiener made a slight compromise earlier this month by including that requirement under certain conditions, but the Building and Trades Council has yet to withdraw its opposition. President <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Andrew Meredith</strong
+>, in a statement, told POLITICO that the bill has &#8220;certainly improved&#8221; since it was introduced, the organization is still working on several issues with Wiener, but are &#8220;supportive of the general framework.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;We are hopeful that continued progress will yield a bill we can unilaterally support,&#8221; Meredith said.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">BUENOS D&#205;AS, good Wednesday morning. </strong
+>The construction complaints continue. Today, members of Save Our Capitol will gather on the west steps to advocate for preserving, well, the west steps. The group opposes the demolition of the annex and the addition of a visitors&#8217; center to the front of the building.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Got a tip or story idea for California Playbook? Hit us up at jwhite@politico.com and lkorte@politico.com or follow us on Twitter </strong
+><a
+ href="https://go.politicoemail.com/?qs=d479daf4d80ed826c2364dd2c12dadda55df26c88570ddc50687fd2b9f7e0647e5f9c369f709cca5352b075ea74844240021bec14257e131" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>@JeremyBWhite</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> and </strong
+><a
+ href="https://go.politicoemail.com/?qs=d479daf4d80ed82649d77b99833cedd7b20fd84b7b987dc1f6c97d2893d16ca19e2c1221510693a5808381c849ced0b2ff9a6fa33eabc0f9" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>@Lara_Korte</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">.&nbsp;</strong
+><br></p></td>                    </tr>                                    <tr>                            </tr><tr>    <td height="15" style="height:15px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>    <tr>    <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                            <p style="font-family:Helvetica,sans-serif;font-size:12px;margin-top:0;margin-bottom:10px;color:#000000;">A message from SEIU-UHW:</p>                                                
+<p style="margin-top:0;margin-bottom:20px;line-height:24px;color:#000000;">The healthcare worker shortage has forced workers to work longer hours, under worse conditions. Many healthcare workers are paid barely enough to get by, driving many to leave the workforce. But there&#8217;s a better way: SB 525 would raise the minimum wage for healthcare workers to $25 an hour and ensure workers can afford to stay on the job. <a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cadf5161ba987c2de934ca12bb3f7d5d801b2c540d87977fb30d5541178f578449e02e1cfbe5aaffd79b1396968da57ecc0" target="_blank" style="text-decoration:underline;color:#007BC7;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Tell lawmakers: Pass SB 525.</strong
+></a
+></p>                                            </td></tr>    <tr>        <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">WHERE&#8217;S GAVIN? </strong
+>Nothing official announced.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">QUOTE OF THE DAY: </strong
+>&#8220;It is inescapable to me. It has to be done.&#8221; <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Rep. Dan Bishop (R-N.C.) on Tuesday threatening Speaker Kevin McCarthy </strong
+><a
+ href="https://go.politicoemail.com/?qs=d479daf4d80ed826180db057b753c5f70994393df496bb91e8bf353da7fde4a540dc58165c2c929b9548362b9b07472acb75ed4c6d0ca892" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>with a vote of no confidence</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> following his recent debt deal with President Joe Biden.</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">SPOTTED </strong
+>at a celebration for <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Ben Smith</strong
+>&#8217;s book &#8220;Traffic&#8221; at the San Francisco home of Lt. Gov. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Eleni Kounalakis</strong
+> and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Markos Kounalakis</strong
+> co-hosted by <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Chris Lehane, Peter Ragone, Rachael Horwitz </strong
+>and Markos: <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Clint Reilly, Ace Smith, Schuyler Hudak Prionas, Donna Wills Colson, Anna Soellner, Ben Coffey Clark, Christopher Cadelago, Thomas Fuller, Vicki Liviakis, Reed Albergotti, Priya David Clemens, Alex Stamos</strong
+> and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Joe Garofoli</strong
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">WE&#8217;RE HIRING &#8212;</strong
+></span> POLITICO is embarking on an exciting expansion in the Golden State and looking for another journalist to join our growing team as a California Playbook author. <a
+ href="https://go.politicoemail.com/?qs=d479daf4d80ed826ad8001a1a512392c821edba23ed75dfa1a6ae104e094e75da36e31102475c68dd1503af20854f3b29efe054225209bc9" target="_blank"><u>More in the job description here.</u></a
+><br></p></td>                    </tr>                                    <tr>                        </tr><tr>    <td height="10" style="height:10px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                    <p style="margin-top:0;margin-bottom:20px;line-height:24px;margin-bottom:20px;color:#000000;">                <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">PLAYBOOK TRIVIA NIGHT!&nbsp;</strong
+>Think you know a lot about politics?<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&nbsp;</strong
+>PROVE IT!<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&nbsp;</strong
+>Compete in<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&nbsp;</strong
+>California Playbook&#8217;s inaugural Trivia Night. Grab a drink, kick back, and put your knowledge on display! Join top political power players on <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Wednesday, June 21st</strong
+> at Fox &amp; Goose Public House for a night of fun and competition that you won&#8217;t want to miss. <a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cad9cc05bab8045e0a936ea94d41babbf4cf155cae60c431a0457c4f3555914d3627971c38407891febf8b2aa341bff7f43" style="text-decoration:underline;color:#007BC7;">REGISTER HERE.</a
+>            </p>            </td></tr><tr>    <td height="10" style="height:10px; font-size:0; border-bottom:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td height="15" style="height:15px; font-size:0;">&nbsp;</td></tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;">    
+<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">        <tbody>        <tr>            <td width="32" valign="middle" style="vertical-align:top;font-size:0;text-align:right;padding-top:10px;"><img src="https://s3.amazonaws.com/origin-static.politico.com/hosted/icon-red-circle%402x.png" title="" alt="" width="12" style="max-width:12px;margin-top:1px;"></td>            <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:10px;margin:0;" valign="middle">TOP TALKERS
+</td>        </tr>        </tbody>    </table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cad30ce9a7d00fa6c392a69f3adb1d18df0221226d448e007292bb2e59a06dc5b95da6792988071f21d1308564dcdda817c" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>In downtown L.A., Bass' plan to clear encampments faces crime, addiction and resistance</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by the Los Angeles Times&#8217; David Zahniser: </strong
+>&#8220;In some locations, new arrivals have taken the place of those who accepted hotel rooms. In others, longtime encampment residents have made clear to outreach workers that they&#8217;re not going anywhere.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cad1bc3f999f48b6daf1a234c5cef96db5d11f550ceb8477b5dcbf8df14c1aae087fb3998de2e61ab41f4f930c6ac43d184" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>Elizabeth Holmes enters Texas prison to begin 11-year sentence for notorious blood-testing hoax</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by The Associated Press&#8217; Lekan Oyekanmi and Michael Liedtke: </strong
+>&#8220;Holmes, 39, could be seen from outside the prison&#8217;s gates walking into the <a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cad1e4882554aecf401a5b14b3ebce6a239866684259259a1bd746704657a8d3f3ecd52588c2fc5677bdb29b21a1cfa4ebf" target="_blank">federal women&#8217;s prison camp located in Bryan, Texas</a
+>, wearing jeans, a brown sweater and smiling as she spoke with two prison employees accompanying her.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cad9aeaa3cf04728e0b8f2c467e8dfc595ef9f00ed46864f8d6a692e1050eacb5942fb4cdb90ab3c30d3e129d550a776e77" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>Manson follower Leslie Van Houten should be paroled, California appeals court rules</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by The Associated Press&#8217; Christopher Weber and Amy Taxin: </strong
+>&#8220;A California appeals court said Tuesday that <a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cadd9260132ece4a51715972664f38821ae86db6031e71c892b7492f8bb1fc8512d5815d1be514b80ca665cf67fd4e5afb1" target="_blank">Leslie Van Houten</a
+>, who participated in two killings at the direction of cult leader Charles Manson in 1969, should be released from prison on parole.&#8221; <br></p></td>                    </tr>                                    <tr>                            </tr><tr>    <td height="15" style="height:15px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>    <tr>    <td style="padding:0 20px 0 20px;text-align:center;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                            <p style="font-family:Helvetica,sans-serif;font-size:12px;margin-top:0;margin-bottom:10px;color:#000000;">A message from SEIU-UHW:</p>                                                        <p style="margin-top:0;margin-bottom:15px;line-height:15px;">                                            <a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cadffc13e7696784d408b0ef9fce8eb5a868a0566615a01ce0f8cf6edb1af652ed4c77957e0bf4448d02b61c95a7fd87698" target="_blank"><img src="https://www.politico.com/dims4/default/aaf64f6/2147483647/resize/600x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2Fc8%2F3a%2F6548823b4cec804b687d2915ff0c%2Fseiu-uhw23-03-300x250-1.jpg" title="Advertisement Image" alt="Advertisement Image" border="0" width="300" style="width:100%;max-width:300px;"></a
+>                                        <img src="https://ad.doubleclick.net/ddm/ad/N7384.146504POLITICO0/B30042510.368177856;sz=1x1;ord=[timestamp]" border="0" a>                </p>                                                                                    </td></tr>    <tr>        <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;">    <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">        <tbody>        <tr>            
+<td width="32" valign="middle" style="vertical-align:top;font-size:0;text-align:right;padding-top:10px;"><img src="https://s3.amazonaws.com/origin-static.politico.com/hosted/icon-red-circle%402x.png" title="" alt="" width="12" style="max-width:12px;margin-top:1px;"></td>            <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:10px;margin:0;" valign="middle">CAMPAIGN MODE</td>        </tr>        </tbody>    </table></td>                    </tr>                                    <tr>                        
+<td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">HELLO MR. GOVERNOR &#8212; </strong
+>Florida Gov.<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> Ron DeSanti</strong
+>s is making an ATM stop in Coalinga later this month, per a fundraiser invitation that was sent to Republican donors this week. According to the invite, the June 19 event will be co-hosted by <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">John Harris</strong
+> and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Karen</strong
+> and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Richard Spencer</strong
+>. Tickets are $3,300 per person but do include a photo op with the governor.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">LEE GRABS ANOTHER STATEWIDE &#8212; </strong
+>Secretary of State <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Shirley Weber </strong
+>endorsed <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Barbara Lee</strong
+> for Senate on Tuesday, praising her work on poverty and reproductive rights. Weber said in a statement Lee has &#8220;been a leader for justice for everyone.&#8221; Other statewide Lee-backers include Controller <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Malia Cohen, </strong
+>Treasurer <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Fiona Ma </strong
+>and Attorney General <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Rob Bonta</strong
+>, who also endorsed Rep. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Katie Porter.&nbsp;</strong
+><br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;">    <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">        <tbody>        <tr>            <td width="32" valign="middle" style="vertical-align:top;font-size:0;text-align:right;padding-top:10px;"><img src="https://s3.amazonaws.com/origin-static.politico.com/hosted/icon-red-circle%402x.png" title="" alt="" width="12" style="max-width:12px;margin-top:1px;"></td>            
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:10px;margin:0;" valign="middle">CALIFORNIA AND THE CAPITOL CORRIDOR</td>        </tr>        </tbody>    </table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">PRISON PARDONS &#8212; </strong
+>Gov. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Gavin Newsom </strong
+>on Tuesday used an executive power to grant clemency to four members of the Armed Services with prior criminal convictions. The pardon grantees include<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> Jamar Baines</strong
+>, who served in the Marines, Vietnam War veteran <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Andres De Leon</strong
+>, Army veteran<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> Fabian Rebolledo</strong
+> and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Ernest Sari, </strong
+>who served in the U.S. Army National Guard. Since taking office, Newsom has granted a total of 144 pardons, 123 commutations and 36 reprieves.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cad1dad712885f9cce006fc7c7b62ea731e391b8dfb443170840edd0c0815dfc7b32beff30b48d7376eb25177e90f13bb04" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>State asked to stop diverting iconic Mono Lake's water to Los Angeles</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by CalMatters&#8217; Alastair Bland: </strong
+>&#8220;While existing rules on Mono Lake diversions are designed to manage the basin&#8217;s ecosystem &#8211; broadly categorized as public trust resources &#8211; they don&#8217;t take into account the needs of the basin&#8217;s indigenous residents, namely the <a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cadee2b925b0eadac98faf47e4d5c3ccec495f0e94024ee67c9886b70d2771591311cf090f69464709d4bf9defb3ca9f1d5" target="_blank"><u>Kutzadika&#8217;a tribe</u></a
+>.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cad0055bd885dff19044ce73e73bf74ee2e5f302f5205d09b8178551a1f5470ff48b624e51303fe390629c184a6003606e1" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>California state prison closure threatens desert town</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by CalMatters&#8217; Nigel Duara: </strong
+>&#8220;Gov. Gavin Newsom&#8217;s administration late last year announced their community would be one of the next hit by the unwinding of California&#8217;s sprawling prison system, a dismantling made possible by the steep decline in the state&#8217;s inmate population from some 160,000 people a dozen years ago to about 96,000 today.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cad80af375e2db3fd0e5eb636c02f18072bc3870591dbfdcd65bbb5c3e94713eaaae0f7ee9a4c9a95c025347dc6f4a036a6" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>Bitwise Industries furloughs its entire workforce. CEOs cite 'unexpected' financial duress</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by The Fresno Bee&#8217;s Tim Sheehan: </strong
+>Acute financial issues have forced Fresno-based Bitwise Industries to furlough its entire workforce of about 900 employees in Fresno, Merced, Bakersfield, Oakland and seven other cities across the country.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cad69376ebfc35e4e8312cac4c2726d6b9c63bbea3bb80da5e7546dfe6546ae029927f0aac577a053cdd718d17e9bdecb12" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>S.F. Mayor Breed wants to spend more on homelessness. One part of her plan is controversial</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by the San Francisco Chronicle&#8217;s Mallory Moench: </strong
+>&#8220;Breed is proposing a boost to homelessness funding by tapping into Proposition C, a business tax increase that voters approved in 2018 to generate between $250 million and $300 million a year for homelessness and behavioral health services.&#8221; <br></p></td>                    </tr>                                    <tr>                        </tr><tr>    <td height="10" style="height:10px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                    
+<p style="margin-top:0;margin-bottom:20px;line-height:24px;margin-bottom:20px;color:#000000;">                <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DON&#8217;T MISS POLITICO&#8217;S HEALTH CARE SUMMIT</strong
+>: The Covid-19 pandemic helped spur innovation in health care, from the wide adoption of telemedicine, health apps and online pharmacies to mRNA vaccines. But what will the next health care innovations look like? Join POLITICO on Wednesday June 7 for our Health Care Summit to explore how tech and innovation are transforming care and the challenges ahead for access and delivery in the United States. <a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cadeb0adb1b29ab5bd231027e5d3a02648bb209f8e1f9bc2b813c66a2af792840af5c5d4c19bf4a6a987211669a5889788e" style="text-decoration:underline;color:#007BC7;">REGISTER NOW</a
+>.            </p>            </td></tr><tr>    <td height="10" style="height:10px; font-size:0; border-bottom:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td height="15" style="height:15px; font-size:0;">&nbsp;</td></tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;">    
+<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">        <tbody>        <tr>            <td width="32" valign="middle" style="vertical-align:top;font-size:0;text-align:right;padding-top:10px;"><img src="https://s3.amazonaws.com/origin-static.politico.com/hosted/icon-red-circle%402x.png" title="" alt="" width="12" style="max-width:12px;margin-top:1px;"></td>            <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:10px;margin:0;" valign="middle">MIXTAPE
+</td>        </tr>        </tbody>    </table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cad9dd65c1fa7588b7449b400bc4bda1e09185193ed65539b5f192fc5e73d4b52288ca610a567ba188f6b515a0e5f7fe2d1" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>The freeway was born in L.A. But it might not always be free to drive on</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by the Los Angeles Times&#8217; Rachel Uranga.&nbsp;&nbsp;</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">NEGOTIATING IN &#8216;BAA&#8211;D&#8217; FAITH &#8212; &#8220;</strong
+><a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cad520b1dd0f2f553888e5707032984430473e10add2f71811ff56ad333c8fb25d6ee3ee89cdf12b96757d82aebdf2e8056" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><u>California overtime law threatens use of grazing goats to prevent wildfires</u></strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">,&#8221; by The Associated Press&#8217; Terry Chea. </strong
+><br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;">    <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">        <tbody>        <tr>            <td width="32" valign="middle" style="vertical-align:top;font-size:0;text-align:right;padding-top:10px;"><img src="https://s3.amazonaws.com/origin-static.politico.com/hosted/icon-red-circle%402x.png" title="" alt="" width="12" style="max-width:12px;margin-top:1px;"></td>            
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:10px;margin:0;" valign="middle">BIRTHDAYS</td>        </tr>        </tbody>    </table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Former Rep.<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> Duncan Hunter </strong
+>(R-Calif.) &#8230;<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> Sarah Heck &#8230; Saul Levine</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">(Was Tuesday): <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Dolores Sloan ... Brenda Walt</strong
+><br></p></td>                    </tr>                                    <tr>                            </tr><tr>    <td height="15" style="height:15px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>    <tr>    <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                            <p style="font-family:Helvetica,sans-serif;font-size:12px;margin-top:0;margin-bottom:10px;color:#000000;">A message from SEIU-UHW:</p>                                                <p style="margin-top:0;margin-bottom:20px;line-height:24px;color:#000000;">SB 525 would raise the minimum wage for healthcare workers to $25 an hour, ensuring that workers currently on the job can afford to stay in the industry, and helping to recruit new workers to the field. To combat the healthcare worker shortage, <a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cadd53b52199fd6986c991f77e9ec5d5074f16af4cb4c260fdcfdf8d677e347801b19533c737751d70a13ef92729d901700" target="_blank" style="text-decoration:underline;color:#007BC7;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">tell lawmakers to pass SB 525.</strong
+></a
+></p>                                            </td></tr>    <tr>        <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><i
+>CALIFORNIA POLICY IS ALWAYS CHANGING: Know your next move. From Sacramento to Silicon Valley, POLITICO California Pro provides policy professionals with the in-depth reporting and tools they need to get ahead of policy trends and political developments shaping the Golden State. To learn more about the exclusive insight and analysis this subscriber-only service offers, </i
+><a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cad1fac40b070d34edeb7d6c860a6588aa8d5306b945af184a70e725b5e8d565e8ac2956ecc63e9d609e4bb100452b1ee8d" target="_blank"><i
+>click here</i
+></a
+><i
+>.</i
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><i
+>Want to make an impact? POLITICO California has a variety of solutions available for partners looking to reach and activate the most influential people in the Golden State. Have a petition you want signed? A cause you&#8217;re promoting? Seeking to increase brand awareness amongst this key audience? Share your message with our influential readers to foster engagement and drive action. Contact Jesse Shapiro to find out how: jshapiro@politico.com</i
+></p></td>                    </tr>                                <!-- End Ad Copy -->                <tr>                                    </tr>                <!-- Post Body Content -->                <tr>                                    </tr>                <tr>                    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>                </tr>                <!-- Twitter Handles -->                                    <tr>    <td style="color:#000000;padding:0px 20px 20px 20px;text-align:left;">        <p style="font-family:Helvetica,sans-serif;font-size:20px;color:#000000;margin-top:0;margin-bottom:15px;"><strong
+>Follow us on Twitter</strong
+></p>        <table cellpadding="0" cellspacing="0" border="0" role="presentation">            <tbody>            <tr>                <td width="52" valign="middle" style="text-align:left;padding-right:10px;"><img src="https://static.politico.com/hosted/icon-twitter-circle-blue%402x.png" title="" alt="" width="50" style="max-width:50px;"></td>                <td valign="middle" style="text-align:left;font-family:Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#000000;">                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Jeremy B. White <a
+ href="https://go.politicoemail.com/?qs=d479daf4d80ed826c2364dd2c12dadda55df26c88570ddc50687fd2b9f7e0647e5f9c369f709cca5352b075ea74844240021bec14257e131" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@JeremyBWhite</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Lara Korte <a
+ href="https://go.politicoemail.com/?qs=d479daf4d80ed82649d77b99833cedd7b20fd84b7b987dc1f6c97d2893d16ca19e2c1221510693a5808381c849ced0b2ff9a6fa33eabc0f9" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@lara_korte</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">POLITICO California <a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1caddf1a4c02b92a2b962847a0a8edee670a87df4b6ef68adca195974bd2aa2e09e8d8d50659bcd2f64698201103c29ef922" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@politicoca</a
+></p>                                    </td>            </tr>            </tbody>        </table>    </td></tr><tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                                <!-- Family of Playbook -->                                    <tr>    <td style="color:#000000;padding:0px 20px 0px 20px;text-align:left;">            <p style="font-family:Helvetica,sans-serif;font-size:20px;color:#000000;margin-top:0;margin-bottom:15px;"><strong
+>Subscribe to the POLITICO Playbook family</strong
+></p>            <p style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:24px;">                                    <a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cad5902c3a4d0f0696a8dfd3463f5f8e7ab9ac71b55f54d89e0962eaf43cadf9143f956d2dd821fe7b3d115164de2297e24" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cad63d522012e2590652c470b5bbabb656226b21db6206e7580b2ede429f87c1a5a47dc3ab1caf5acb914c1fb968ac8843f" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Playbook PM</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cad379bc21b14f445b5a0a857af317634f29c3f628ac485a4e452a8069abee9ff05b6e86fdac23678014f6e0046bdb11269" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">California Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cadf1f4311537752603ca3f193c4b45fe37f78d9529100bfde3303bbc2308213965529916fa914004e2ddce02a5ac67c416" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Florida Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cadc4b6281047e23ebc9da24c1bf87754df15476f42fdc61431a927b9922c39f7e13acfcf971bc14d2e80cc6bdc72633978" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Illinois Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cad5905a6efdf7eaedf5cb6e710dfedfec8f78beb5f2a05c5260253cebd7716e34f4e776c38100566cf442610a9f6c9d899" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Massachusetts Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cad7f2a9183369ccc128d00ddbbb7d9a4e3c920bf4f0fe9bb9c9e9c726a53b540d3d0f44e718d5be7d1cdd9d02358f1e2f0" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">New Jersey Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cad68dbdb17a9752c2c9ece38b56aabde1ca1a2ea7bd5d9410d75e13d38ba94c44e4a0bd391a3960bf5d881e060a329a8d7" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">New York Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cadd4a1756c422d85691cc65c5569c1bd0e986b30e31e607a4c9ccd2a7178d04716ffd5456671e9162a5449a04d0ac31fa5" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Ottawa Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cada86dd162b47969f87e9dc82ab5753227f4a44e5898ade7c2d586018765d4ef9a8d0d9f5de1eb83e12a507d95adcdf265" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Brussels Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cade9576b8f29199d63c4a1b90c0a3e2838dd1b598a3638aa24551323b2b5da85df9f0b5fcc2763f079a0372faf65d94d41" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">London Playbook</a
+>                                                </p>            <p style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:24px;"><a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cad08aa9cd3160a86f7365cc7dbee79687053b6d3c32e5a658e4a0fc4cab1bfe7233fc4d99cf05b4f261a03d6a7fd8946cd" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">View all our political and policy newsletters</a
+></p>    </td></tr>                                <!-- Follow us -->                <tr>    <td style="color:#000000;padding:0px 20px 20px 20px;text-align:left;">        <p style="font-family:Helvetica,sans-serif;font-size:12px;color:#000000;margin-bottom:10px;line-height:14px;text-transform:uppercase;font-weight:bold;letter-spacing:2px;">Follow us</p>        <table cellpadding="0" cellspacing="0" border="0" role="presentation">            <tbody>            <tr>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cadceba40c8c0bb372524f9cb9f9f81deb14f00638260ed7c7f19d44529ffc0e8c0b2c8c7b84a4957ff9d99c7ee94e196b4" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-facebook-gray%402x.png" title="Follow us on Facebook" alt="Follow us on Facebook" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cad9a00ad7968bc0d089e8ddfa73327337518a56b2251dd4083c92a055067b35b1b5e75e34f91dd34002e527b425a972162" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-twitter-gray%402x.png" title="Follow us on Twitter" alt="Follow us on Twitter" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cade53ba6e032db9fff391bd1d83518e627b51c88db20f0b831e6ecaae96647aae3fef40e6c813762d7091d0f4cf62a5fa1" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-instagram-gray%402x.png" title="Follow us on Instagram" alt="Follow us on Instagram" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cad1ec54b098bc3c55eedcf72fe0c88fc14b60c6e834c1c346828757fe6713bcaa0c2f8fe17678f17c3669c6dcebb0aaecb" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-applePodcast-gray%402x.png" title="Listen on Apple Podcast" alt="Listen on Apple Podcast" width="24" border="0" style="max-width:24px;"></a
+></td>            </tr>            </tbody>        </table>    </td></tr><tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                </tbody>            </table>        </td>        <td><!-- Note: This is left blank to aid in centering across email clients --></td>    </tr>    </tbody></table><!-- Everything below this line is "new" to the template. We'll have to experiment a bit to see if it causes troubles. --><!-- howler#email.footers/core-newsletter.footer.html -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff"
+       style="padding:5px 0 15px 0;margin:0;text-align:center" role="presentation">
+    <tbody>
+    <tr>
+        <td><!-- Note: This is left blank to aid in centering across email clients --></td>
+        <td align="center" width="540">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:540px" role="presentation">
+                <tbody>
+                <tr>
+                    <td align="center" style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;">
+                        <p style="margin-bottom:15px;line-height:24px;">To change your alert settings, please log in at
+                            <a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cad3c3e708ed9e106080a33504ae429fc5394162f95a64e149978c01564db6e35e0922007dc72d68c3fb2f6d654697fa96b" target="_blank" style="color:#007BC7;text-decoration:none;">https://www.politico.com/_login?base=https%3A%2F%2Fwww.politico.com/settings</a
+>
+                            <!--Commenting out the following line because it causes an undesired line to be displayed on outlook (some versions) and we couldn't find the use case of it-->
+                            <!-- <span style="display:none;"><a
+ href="https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a2be7fd4205407a6882557a509699b33335a6b2def5c0567d2">https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a2be7fd4205407a6882557a509699b33335a6b2def5c0567d2</a
+></span> -->
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="padding-bottom:15px;"><img
+                            src="https://static.politico.com/hosted/icon-politico-logo.png"
+                            class="CToWUd"></td>
+                </tr>
+                <tr>
+                    <td align="center"><p
+                            style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:20px;">
+                        This email was sent to ouchendans62@gmail.com by: POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+                        <p style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:24px;">
+                            
+
+                            Please click <a
+ href="https://go.politicoemail.com/?qs=019581f3d2fb1cad1de3d5e3d031d65f3a35041f3b8e8bc158fc2550df55551267b2d97daf3b58b075bb354ca0c75ea882091b654b620315" target="_blank" style="color:#007BC7;text-decoration:none;">here</a
+> and follow the steps to unsubscribe.
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td><!-- Note: This is left blank to aid in centering across email clients --></td>
+    </tr>
+    </tbody>
+</table>
+<img src="https://click.politicoemail.com/open.aspx?ffcb10-fe8b1d787566007570-fdf413797160037e70147374-fe9115737262077c7c-fec2127474650c74-fdf61574756104747317747c-ffcf14&d=40128&bmt=0" width="1" height="1" alt="">
+</body></html><p email-meta style="display: none;opacity:0;">source=GoggleDocument, article=00000188-71ca-df52-a7cc-77ce9e590000</p>
+
+--eaLwYzXb9ZDw=_?:--
+

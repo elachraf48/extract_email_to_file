@@ -1,3 +1,36 @@
+import importlib
+import subprocess
+
+# Dictionary of required modules and their corresponding package names
+required_modules = {
+    'imaplib': 'imapclient',
+    'email': 'email',
+    'os': 'os',
+    're': 'regex',
+    'email.header': 'email',
+    'email.parser': 'email',
+    'tkinter': 'tkinter',
+    'tkinter.ttk': 'tkinter',
+    'tkinter.simpledialog': 'tkinter',
+    'gspread': 'gspread',
+    'oauth2client.service_account': 'oauth2client',
+    'tkinter.messagebox': 'tkinter',
+    'json': 'json'
+}
+
+# Check if all required modules are installed and install missing ones
+missing_modules = []
+for module, package in required_modules.items():
+    try:
+        importlib.import_module(module)
+    except ImportError:
+        missing_modules.append(package)
+
+# Install missing modules using pip
+for package in missing_modules:
+    subprocess.check_call(['pip', 'install', package])
+
+# All required modules should be installed now, proceed with running your code
 import imaplib
 import email
 import os
@@ -5,12 +38,13 @@ import re
 from email.header import decode_header
 from email.parser import BytesParser
 import tkinter as tk
-from tkinter import  ttk
-import tkinter.simpledialog as sd  # Add this line for the simpledialog module
+from tkinter import ttk
+import tkinter.simpledialog as sd
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from tkinter import messagebox
 import json
+
 
 # Check if the data.json file exists
 if not os.path.exists("data.json"):

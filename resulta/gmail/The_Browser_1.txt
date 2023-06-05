@@ -1,0 +1,923 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp899079ims;
+        Wed, 31 May 2023 08:01:21 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ5EB5t2733e9Q8nu/bhFOV6GG05xrOGzCHiVraT1w5lrQUnKEHjWPSu+sSgJ+xqeTH85g8Q
+X-Received: by 2002:a05:6a00:194b:b0:646:c30d:e9c2 with SMTP id s11-20020a056a00194b00b00646c30de9c2mr5171033pfk.28.1685545281139;
+        Wed, 31 May 2023 08:01:21 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685545281; cv=none;
+        d=google.com; s=arc-20160816;
+        b=xfZ/t4oY1ct4M6INl69QCYkWaUc3aTLaFjxnTJrZybEIfmAhjqZpNdbyF+9Bji3HbB
+         NoSNFwuqDCCxGa3xB9gIPd6YaIfaL0BkIudSBuIhJrZtDVoRNEE/EIQ/oRBfoeLiGXDH
+         viRcrJrgpHrTVh4g+pWzZ9mVH5AJ9Ymxk6tW5zMWitIO4wcPDOH2/VYSR4tL4ef084K0
+         mtmtcr42MpF2VHYPVEpIuKEczl93zWHIO9TZlByKy9k7RpDl3Bu0f60q0zSUtSP7JITJ
+         tQ0VC28xHcA0KTjVP4ByE+6H1JfwRmPxxwmFvJPO+6UHqmfuGDfveBF5BApRd795RZr5
+         62Nw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=message-id:reply-to:to:from:subject:mime-version:date:sender
+         :list-unsubscribe:dkim-signature:dkim-signature;
+        bh=PkUqDuyqU2LQo1GXyFrG1egVj9AcTmmY0yXoxUeurvI=;
+        b=QpxvpQzncyHYv+aOnHiLP1Ne4uVwjufONUIfQBbo7/f32cdBiGUWHd0h0gM0EkPecp
+         ms2ksWzPaLXh5JxeruKGoCSxnNDakfVhxrF0GNvnNY4BrjJC2u9zJB2s7GJi2PZIThe0
+         zB6cDU0kR6rX/u9dm3AgXh8MFaBuCFn7ij1GYLovGhzuos7c5Iac+sEU/iCgcw1fPgZm
+         A4mxPeG4BZLHAfryuqrihJFvHXnVWjMArPp0lXIxj2+T571XhgkwIG1ew2tB4BWqszwO
+         86tvsMFLDwObSgcKT6T65t3HsxLa6bBiXv+ZZg3thSonill6DVrH4ckeOPOkgrf2qgcd
+         BohA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@ghost.thebrowser.com header.s=ghost header.b=yhXU+kcL;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=Q10LHO1P;
+       spf=neutral (google.com: 69.72.47.17 is neither permitted nor denied by best guess record for domain of bounce+fdf346.90529a-ouchendans62=gmail.com@ghost.thebrowser.com) smtp.mailfrom="bounce+fdf346.90529a-ouchendans62=gmail.com@ghost.thebrowser.com"
+Return-Path: <bounce+fdf346.90529a-ouchendans62=gmail.com@ghost.thebrowser.com>
+Received: from relay2.ghost.io (relay2.ghost.io. [69.72.47.17])
+        by mx.google.com with UTF8SMTPS id p17-20020aa79e91000000b0064398a54dc8si3668553pfq.376.2023.05.31.08.01.20
+        for <ouchendans62@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 31 May 2023 08:01:21 -0700 (PDT)
+Received-SPF: neutral (google.com: 69.72.47.17 is neither permitted nor denied by best guess record for domain of bounce+fdf346.90529a-ouchendans62=gmail.com@ghost.thebrowser.com) client-ip=69.72.47.17;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@ghost.thebrowser.com header.s=ghost header.b=yhXU+kcL;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=Q10LHO1P;
+       spf=neutral (google.com: 69.72.47.17 is neither permitted nor denied by best guess record for domain of bounce+fdf346.90529a-ouchendans62=gmail.com@ghost.thebrowser.com) smtp.mailfrom="bounce+fdf346.90529a-ouchendans62=gmail.com@ghost.thebrowser.com"
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=ghost.thebrowser.com;
+ q=dns/txt; s=ghost; t=1685545280; x=1685552480; h=Message-Id: Reply-To: To:
+ To: From: From: Subject: Subject: Content-Type: Mime-Version: Date: Sender:
+ Sender: List-Unsubscribe: X-Feedback-Id;
+ bh=PkUqDuyqU2LQo1GXyFrG1egVj9AcTmmY0yXoxUeurvI=;
+ b=yhXU+kcL5H1bVhlh4aPct1axw0NZ+r7WE096Za/84EsQ4Dsz91899r2kj7E0ABuGAfoOh5a4WjXoOzhZBqjKgt7TetwAtmD0ePb8sMcqWSrQ9J8cNDvoA1ngpjBTX0ubQM31o1g73v3Fvx0+FUZNXyEBjsEHQWOy52ThTAaFh2GioBZKt7yZ5ObHV5hIuA7j55DwmO4YqCm3OwZ5Kcuv4k98TaTmHzujkgnfdnrCy4RABC1z4ewhdEDEVZ1nSKGyj9Oc9Oy/KpBMiMM6KylnLYbsvLEwad+HHDUmcTtO/OMO3t3luCLZXYg6PNTL1+fR1UqVjhweWn2gWsn7aBSSfA==
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org;
+ q=dns/txt; s=mg; t=1685545280; x=1685552480; h=Message-Id: Reply-To: To: To:
+ From: From: Subject: Subject: Content-Type: Mime-Version: Date: Sender:
+ Sender: List-Unsubscribe: X-Feedback-Id;
+ bh=PkUqDuyqU2LQo1GXyFrG1egVj9AcTmmY0yXoxUeurvI=;
+ b=Q10LHO1PYVO8DPSkZIqkakMy1S175ZDHjh/gPnxy88TeRlgCOBbZabT7Opp2h3O8rTUnVVHEUXgMNf62UyFwturw3wF/Wr7zuZB/dGX/wZ3WM6DEtmv6FXNhle3TYnLtCATQaBIZdy6no66R6kyfzlcFTKIwgOtfuo2Zowwhnbs=
+X-Feedback-Id: postmaster@ghost.thebrowser.com:bulk-email-ghost-email-blog-724110:5e2a775ad5f34346dc960597:mailgun
+X-Mailgun-Sending-Ip: 69.72.47.17
+X-Mailgun-Sid: WyIxZmRhZSIsIm91Y2hlbmRhbnM2MkBnbWFpbC5jb20iLCI5MDUyOWEiXQ==
+List-Unsubscribe: <mailto:u+mq6tsmbvgi4wcjtfnvqws3bnnfsd2nrug43tmmjsgmzdgmjvme3tambqgeyweylbmizsm2b5mftgenrume4tiy3fmezgmmjsmy2dgnjrmfrtkzlbmntdimddhftcm2j5giydemzqguztcmjvgaytcmzogi4gcnzygntgkmzygeywgnjrmmstimdhnbxxg5boorugkytsn53xgzlsfzrw63jgoi6w65ldnbsw4zdbnzztmmrfgqygo3lbnfwc4y3pnuthiplcovwgwllfnvqws3bgoq6wo2dpon2c2zlnmfuwyjtuhvrgy33hfu3tenbrgeya@ghost.thebrowser.com>
+Received: from <unknown> (<unknown> []) by 7b06583ade29 with HTTP id
+ 6477613aca08ca3a03d7e2f3; Wed, 31 May 2023 15:01:13 GMT
+X-Mailgun-Batch-Id: 647761398a1a77eea4b5a40f
+Sender: editor=thebrowser.com@ghost.thebrowser.com
+Date: Wed, 31 May 2023 15:01:13 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="1aee15ad5bc357c543bded37ecd6ef9a2a0b1bcf381fcbe9c6ce65f4a71b"
+Subject: Illustrated Astrophysics
+From: The Browser <editor@thebrowser.com>
+To: ouchendans62@gmail.com
+X-Mailgun-Tag: bulk-email
+X-Mailgun-Tag: ghost-email
+X-Mailgun-Tag: blog-724110
+X-Mailgun-Track-Opens: true
+Reply-To: The Browser <editor@thebrowser.com>
+X-Mailgun-Variables: {"email-id": "647761232315a700011baab3"}
+Message-Id: <20230531150113.28a783fe3811c51c@ghost.thebrowser.com>
+
+--1aee15ad5bc357c543bded37ecd6ef9a2a0b1bcf381fcbe9c6ce65f4a71b
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+
+This newsletter is blowing metaphorical cigarette smoke your way.
+
+
+
+
+
+
+=C2=A0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Illustrated Astrophysics [https://thebrowser.com/r/1ecbc187?m=3D68eb8c4f-55=
+b5-492f-af91-f074ec4f71c6]
+
+
+
+
+
+
+
+
+
+By Sylvia Bishop =E2=80=A2 31 May 2023
+
+
+View in browser [https://thebrowser.com/r/32f14368?m=3D68eb8c4f-55b5-492f-a=
+f91-f074ec4f71c6]
+
+
+
+
+View in browser [https://thebrowser.com/r/3394f4ed?m=3D68eb8c4f-55b5-492f-a=
+f91-f074ec4f71c6]
+
+
+
+
+
+
+
+
+
+
+
+
+An Illustrated Guide To Mouth Gestures [https://thebrowser.com/r/2cac0d94?m=
+=3D68eb8c4f-55b5-492f-af91-f074ec4f71c6]
+
+Fran=C3=A7ois Caradec | MIT Press Reader | 29th May 2023
+
+Excerpt from Caradec's Dictionary of Gestures, focusing on the mouth. For i=
+nstance, "to thrust one=E2=80=99s thumb into the mouth, inflate the cheeks,=
+ and blow" in the Netherlands signifies indifference, and "to blow the smok=
+e from a cigarette in the direction of a person whom one desires" is, in th=
+e Middle East, an act of flirtation. The illustrations by Philippe Cousin a=
+re worth seeing (2,112 words [https://thebrowser.com/r/2395d182?m=3D68eb8c4=
+f-55b5-492f-af91-f074ec4f71c6])
+
+----------------------------------------
+
+Hey you - yes you - this newsletter is blowing metaphorical cigarette smoke=
+ your way. If you enjoyed flirting with today's top picks, why not try the =
+full Browser: five outstanding articles, plus a video and a podcast, every =
+day. Phwoar.
+
+
+
+Get The Full Browser Experience [https://thebrowser.com/r/3f2584a0?m=3D68eb=
+8c4f-55b5-492f-af91-f074ec4f71c6]
+
+
+
+----------------------------------------
+
+
+Astrophysics And Stale Beer [https://thebrowser.com/r/44f59341?m=3D68eb8c4f=
+-55b5-492f-af91-f074ec4f71c6]
+
+John Messick | Salon | 29th May 2023
+
+Life at the South Pole is weird. A platoon of seasonal support workers make=
+s the research station there run smoothly. People with romantic ideas about=
+ ice and isolation come to shovel snow in exchange for a bunk at the bottom=
+ of the world. "I met architects who had quit high-paying jobs to load carg=
+o, Scuba instructors hired to clean toilets, and a poet who drove a forklif=
+t" (3,802 words [https://thebrowser.com/r/bc84326a?m=3D68eb8c4f-55b5-492f-a=
+f91-f074ec4f71c6])
+
+----------------------------------------
+
+Caroline Crampton, Editor-In-Chief; Robert Cottrell, Founding Editor; Sylvi=
+a Bishop, Assistant Publisher; Jodi Ettenberg, Associate Editor; Uri Bram, =
+CEO & Publisher; Al Breach, Founding Director
+
+Editorial comments and letters to the editor: editor@thebrowser.com [https:=
+//thebrowser.com/r/a81faa01?m=3D68eb8c4f-55b5-492f-af91-f074ec4f71c6]=E2=80=
+=8C=E2=80=8C | Technical issues and support requests: support@thebrowser.co=
+m [https://thebrowser.com/r/8897ee23?m=3D68eb8c4f-55b5-492f-af91-f074ec4f71=
+c6]=E2=80=8C=E2=80=8C | Or write at any time to the publisher: uri@thebrows=
+er.com [https://thebrowser.com/r/3aa070ff?m=3D68eb8c4f-55b5-492f-af91-f074e=
+c4f71c6]
+
+Proudly published with Ghost, the fiercely independent website and newslett=
+er platform [https://thebrowser.com/r/81e8a781?m=3D68eb8c4f-55b5-492f-af91-=
+f074ec4f71c6]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Browser Ltd., 3rd Floor, 18 Henrietta Street, London, UK
+
+The Browser =C2=A9 2023 =E2=80=93 Unsubscribe [https://thebrowser.com/unsub=
+scribe/?uuid=3D68eb8c4f-55b5-492f-af91-f074ec4f71c6&newsletter=3D7efddb1d-b=
+da7-43c9-b75f-ec5c90b809cc]
+
+
+
+https://thebrowser.com/r/c3bb8eb1?m=3D68eb8c4f-55b5-492f-af91-f074ec4f71c6
+
+
+
+
+
+
+
+
+
+
+
+=C2=A0
+
+
+
+
+--1aee15ad5bc357c543bded37ecd6ef9a2a0b1bcf381fcbe9c6ce65f4a71b
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html>
+    <head>
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width">
+        <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DU=
+TF-8">
+        <!--[if mso]><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:=
+PixelsPerInch><o:AllowPNG/></o:OfficeDocumentSettings></xml><![endif]-->
+        <title>Illustrated Astrophysics</title>
+        <style>
+=2Epost-title-link {
+  color: #15212A;
+  display: block;
+  text-align: center;
+  margin-top: 50px;
+}
+=2Epost-title-link-left {
+  text-align: left;
+}
+=2Ecomment-link {
+  color: #738a94;
+  font-size: 13px;
+  letter-spacing: 0.1px;
+}
+=2Ecomment-link img {
+  width: 16px;
+  height: 16px;
+  margin-bottom: 1px;
+  vertical-align: middle;
+}
+=2Eview-online-link {
+  word-wrap: none;
+  white-space: nowrap;
+  color: #738a94;
+}
+=2Ekg-nft-link {
+  display: block;
+  text-decoration: none !important;
+  color: #15212A !important;
+  font-family: inherit !important;
+  font-size: 14px;
+  line-height: 1.3em;
+  padding-top: 4px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 4px;
+}
+=2Ekg-twitter-link {
+  display: block;
+  text-decoration: none !important;
+  color: #15212A !important;
+  font-family: inherit !important;
+  font-size: 15px;
+  padding: 8px;
+  line-height: 1.3em;
+}
+=2Ekg-audio-link {
+  color: #738a94 !important;
+}
+@media only screen and (max-width: 620px) {
+  table.body {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .hide-mobile {
+    display: none;
+  }
+
+  .mobile-only {
+    display: initial !important;
+  }
+
+  table.body p,
+table.body ul,
+table.body ol,
+table.body td,
+table.body span {
+    font-size: 16px !important;
+  }
+
+  table.body pre {
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+  }
+
+  table.body .content {
+    padding: 0 !important;
+  }
+
+  table.body .container {
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  table.body .main {
+    border-spacing: 10px 0 !important;
+    border-left-width: 0 !important;
+    border-radius: 0 !important;
+    border-right-width: 0 !important;
+  }
+
+  table.body .btn table {
+    width: 100% !important;
+  }
+
+  table.body .btn a {
+    width: 100% !important;
+  }
+
+  table.body .img-responsive {
+    height: auto !important;
+    max-width: 100% !important;
+    width: auto !important;
+  }
+
+  table.body .site-icon img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  table.body .site-url a {
+    font-size: 14px !important;
+    padding-bottom: 15px !important;
+  }
+
+  table.body .post-meta,
+table.body .post-meta-date {
+    white-space: normal !important;
+    font-size: 12px !important;
+    line-height: 1.5em;
+  }
+
+  table.body .post-meta,
+table.body .view-online {
+    width: 100% !important;
+  }
+
+  table.body .post-meta-left,
+table.body .post-meta-left.view-online {
+    width: 100% !important;
+    text-align: left !important;
+  }
+
+  table.body .post-meta.view-online-mobile {
+    display: table-row !important;
+  }
+
+  table.body .post-meta-left.view-online-mobile,
+table.body .post-meta-left.view-online-mobile .view-online {
+    text-align: left !important;
+  }
+
+  table.body .post-meta.view-online.desktop {
+    display: none !important;
+  }
+
+  table.body .view-online {
+    text-decoration: underline;
+  }
+
+  table.body .view-online-link,
+table.body .comment-link,
+table.body .footer,
+table.body .footer a {
+    font-size: 12px !important;
+  }
+
+  table.body .post-title a {
+    font-size: 32px !important;
+    line-height: 1.15em !important;
+  }
+
+  table.feedback-buttons {
+    display: none !important;
+  }
+
+  table.feedback-buttons-mobile {
+    display: table !important;
+    width: 100% !important;
+    max-width: 390px;
+  }
+
+  table.body .feedback-button-mobile-text {
+    font-size: 13px !important;
+  }
+
+  table.body .latest-posts-header {
+    font-size: 14px !important;
+  }
+
+  table.body .latest-post-img {
+    display: none !important;
+  }
+
+  table.body .latest-post-img-mobile {
+    display: inline-block !important;
+    width: 100%;
+  }
+
+  table.body .latest-post-title {
+    display: inline-block !important;
+    width: 100%;
+    padding-right: 0 !important;
+    padding-bottom: 8px !important;
+  }
+
+  table.body .latest-post h4,
+table.body .latest-post h4 span {
+    padding: 4px 0 !important;
+    font-size: 18px !important;
+  }
+
+  table.body .latest-post p,
+table.body .latest-post p span {
+    font-size: 13px !important;
+    line-height: 1.25em;
+  }
+
+  table.body .subscription-box h3 {
+    font-size: 14px !important;
+  }
+
+  table.body .subscription-box p,
+table.body .subscription-box p span {
+    font-size: 13px !important;
+  }
+
+  table.body .subscription-details,
+table.body .manage-subscription {
+    display: inline-block;
+    width: 100%;
+    text-align: left !important;
+    font-size: 13px !important;
+  }
+
+  table.body .subscription-details {
+    padding-bottom: 12px;
+  }
+
+  table.body .kg-bookmark-card {
+    width: 90vw;
+  }
+
+  table.body .kg-bookmark-thumbnail {
+    display: none !important;
+  }
+
+  table.body .kg-bookmark-metadata span {
+    font-size: 13px !important;
+  }
+
+  table.body .kg-embed-card {
+    max-width: 90vw !important;
+  }
+
+  table.body h1 {
+    font-size: 32px !important;
+    line-height: 1.3em !important;
+  }
+
+  table.body h2 {
+    font-size: 26px !important;
+    line-height: 1.22em !important;
+  }
+
+  table.body h3 {
+    font-size: 21px !important;
+    line-height: 1.25em !important;
+  }
+
+  table.body h4 {
+    font-size: 19px !important;
+    line-height: 1.3em !important;
+  }
+
+  table.body h5 {
+    font-size: 16px !important;
+    line-height: 1.4em !important;
+  }
+
+  table.body h6 {
+    font-size: 16px !important;
+    line-height: 1.4em !important;
+  }
+
+  table.body blockquote {
+    font-size: 17px;
+    line-height: 1.6em;
+    margin-bottom: 0;
+    padding-left: 15px;
+  }
+
+  table.body blockquote.kg-blockquote-alt {
+    border-left: 0 none !important;
+    margin: 0 0 2.5em 0 !important;
+    padding: 0 50px 0 50px !important;
+    font-size: 1.2em;
+  }
+
+  table.body blockquote + * {
+    margin-top: 1.5em !important;
+  }
+
+  table.body hr {
+    margin: 2em 0 !important;
+  }
+
+  table.body figcaption,
+table.body figcaption a {
+    font-size: 13px !important;
+  }
+}
+@media all {
+  .subscription-details p.hidden {
+    display: none !important;
+  }
+
+  .ExternalClass {
+    width: 100%;
+  }
+
+  .ExternalClass,
+=2EExternalClass p,
+=2EExternalClass span,
+=2EExternalClass font,
+=2EExternalClass td,
+=2EExternalClass div {
+    line-height: 100%;
+  }
+
+  .apple-link a {
+    color: inherit !important;
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+    text-decoration: none !important;
+  }
+
+  #MessageViewBody a {
+    color: inherit;
+    text-decoration: none;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
+
+  .btn-primary table td:hover {
+    background-color: #34495e !important;
+  }
+
+  .btn-primary a:hover {
+    background-color: #34495e !important;
+    border-color: #34495e !important;
+  }
+}
+</style>
+    </head>
+    <body style=3D"background-color: #fff; font-family: -apple-system, Blin=
+kMacSystemFont, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-serif, &=
+#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&=
+#39;; -webkit-font-smoothing: antialiased; font-size: 18px; line-height: 1.=
+4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adj=
+ust: 100%; color: #15212A;">
+        <span class=3D"preheader" style=3D"color: transparent; display: non=
+e; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; ms=
+o-hide: all; visibility: hidden; width: 0;">This newsletter is blowing meta=
+phorical cigarette smoke your way.</span>
+        <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" class=3D"body" width=3D"100%" style=3D"border-collapse: separate=
+; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; wid=
+th: 100%;" bgcolor=3D"#fff">
+            <!-- Outlook doesn't respect max-width so we need an extra cent=
+ered table -->
+            <!--[if mso]>
+            <tr>
+                <td>
+                    <center>
+                        <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"600">
+            <![endif]-->
+            <tr>
+                <td style=3D"font-family: -apple-system, BlinkMacSystemFont=
+, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-serif, &#39;Apple Colo=
+r Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;; font-siz=
+e: 18px; vertical-align: top; color: #15212A;" valign=3D"top">&#xA0;</td>
+                <td class=3D"container" style=3D"font-family: -apple-system=
+, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-se=
+rif, &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI S=
+ymbol&#39;; font-size: 18px; vertical-align: top; color: #15212A; display: =
+block; max-width: 600px; margin: 0 auto;" valign=3D"top">
+                    <div class=3D"content" style=3D"box-sizing: border-box;=
+ display: block; margin: 0 auto; max-width: 600px;">
+                        <!-- START CENTERED WHITE CONTAINER -->
+                        <table role=3D"presentation" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" class=3D"main" width=3D"100%" style=3D"border-co=
+llapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background:=
+ #ffffff; border-radius: 3px; border-spacing: 20px 0; width: 100%;">
+
+                            <!-- START MAIN CONTENT AREA -->
+                            <tr>
+                                <td class=3D"wrapper" style=3D"font-family:=
+ -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Helvetica, =
+Arial, sans-serif, &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &=
+#39;Segoe UI Symbol&#39;; font-size: 18px; vertical-align: top; color: #152=
+12A; box-sizing: border-box;" valign=3D"top">
+                                    <table role=3D"presentation" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-colla=
+pse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+
+
+                                            <tr>
+                                                <td class=3D"post-title" st=
+yle=3D"font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, =
+Roboto, Helvetica, Arial, sans-serif, &#39;Apple Color Emoji&#39;, &#39;Seg=
+oe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;; vertical-align: top; color: #1=
+5212A; padding-bottom: 16px; font-size: 42px; line-height: 1.1em; font-weig=
+ht: 700; text-align: center;" valign=3D"top" align=3D"center">
+                                                    <a href=3D"https://theb=
+rowser.com/r/1ecbc187?m=3D68eb8c4f-55b5-492f-af91-f074ec4f71c6" class=3D"po=
+st-title-link" style=3D"text-decoration: none; color: #15212A; display: blo=
+ck; text-align: center; margin-top: 50px; overflow-wrap: anywhere;" target=
+=3D"_blank">Illustrated Astrophysics</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style=3D"font-family: -=
+apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Helvetica, Ar=
+ial, sans-serif, &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#3=
+9;Segoe UI Symbol&#39;; font-size: 18px; vertical-align: top; color: #15212=
+A; width: 100%;" width=3D"100%" valign=3D"top">
+                                                    <table role=3D"presenta=
+tion" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=
+=3D"border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt=
+; width: 100%; padding-bottom: 48px;">
+                                                        <tr>
+                                                            <td height=3D"2=
+0" class=3D"post-meta post-meta-center" style=3D"font-family: -apple-system=
+, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-se=
+rif, &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI S=
+ymbol&#39;; vertical-align: top; color: #738a94; font-size: 13px; letter-sp=
+acing: 0.1px; text-align: center; padding: 0;" valign=3D"top" align=3D"cent=
+er">
+                                                                By Sylvia B=
+ishop &#x2022; <span class=3D"post-meta-date" style=3D"white-space: nowrap;=
+">31 May 2023 </span>
+                                                            </td>
+                                                            <td class=3D"po=
+st-meta post-meta-center view-online desktop" style=3D"font-family: -apple-=
+system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, s=
+ans-serif, &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Sego=
+e UI Symbol&#39;; vertical-align: top; color: #738a94; font-size: 13px; let=
+ter-spacing: 0.1px; text-align: center; display: none;" valign=3D"top" alig=
+n=3D"center">
+                                                                <a href=3D"=
+https://thebrowser.com/r/32f14368?m=3D68eb8c4f-55b5-492f-af91-f074ec4f71c6"=
+ class=3D"view-online-link" style=3D"text-decoration: none; word-wrap: none=
+; white-space: nowrap; color: #738a94; overflow-wrap: anywhere;" target=3D"=
+_blank">View in browser</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class=3D"post-m=
+eta post-meta-center view-online-mobile" style=3D"color: #738a94; font-size=
+: 13px; letter-spacing: 0.1px; text-align: center;" align=3D"center">
+                                                            <td height=3D"2=
+0" class=3D"view-online" style=3D"font-family: -apple-system, BlinkMacSyste=
+mFont, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-serif, &#39;Apple=
+ Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;; ver=
+tical-align: top; color: #738a94; font-size: 13px; letter-spacing: 0.1px; t=
+ext-align: center; text-decoration: underline;" valign=3D"top" align=3D"cen=
+ter">
+                                                                <a href=3D"=
+https://thebrowser.com/r/3394f4ed?m=3D68eb8c4f-55b5-492f-af91-f074ec4f71c6"=
+ class=3D"view-online-link" style=3D"word-wrap: none; white-space: nowrap; =
+color: #738a94; overflow-wrap: anywhere; text-decoration: underline;" targe=
+t=3D"_blank">View in browser</a>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+                                        <tr class=3D"post-content-row">
+                                            <td class=3D"post-content-sans-=
+serif" style=3D"font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe =
+UI&#39;, Roboto, Helvetica, Arial, sans-serif, &#39;Apple Color Emoji&#39;,=
+ &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;; vertical-align: top; =
+font-size: 17px; line-height: 1.5em; color: #15212A; padding-bottom: 20px; =
+border-bottom: 1px solid #e5eff5; max-width: 600px;" valign=3D"top">
+                                                <!-- POST CONTENT START -->
+                                                <h3 id=3D"an-illustrated-gu=
+ide-to-mouth-gestures" style=3D"margin-top: 0; font-family: -apple-system, =
+BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-seri=
+f, &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Sym=
+bol&#39;; line-height: 1.11em; font-weight: 700; text-rendering: optimizeLe=
+gibility; margin: 1.5em 0 0.5em 0; font-size: 26px;"><a href=3D"https://the=
+browser.com/r/2cac0d94?m=3D68eb8c4f-55b5-492f-af91-f074ec4f71c6" style=3D"o=
+verflow-wrap: anywhere; color: #ea7600; text-decoration: underline;" target=
+=3D"_blank">An Illustrated Guide To Mouth Gestures</a></h3><p style=3D"marg=
+in: 0 0 1.5em 0; line-height: 1.6em;">Fran&#xE7;ois Caradec | MIT Press Rea=
+der | 29th May 2023</p><p style=3D"margin: 0 0 1.5em 0; line-height: 1.6em;=
+">Excerpt from Caradec&#39;s <em>Dictionary of Gestures, </em>focusing on t=
+he mouth. For instance, &quot;to thrust one&#x2019;s thumb into the mouth, =
+inflate the cheeks, and blow&quot; in the Netherlands signifies indifferenc=
+e, and &quot;to blow the smoke from a cigarette in the direction of a perso=
+n whom one desires&quot; is, in the Middle East, an act of flirtation. The =
+illustrations by Philippe Cousin are worth seeing (<a href=3D"https://thebr=
+owser.com/r/2395d182?m=3D68eb8c4f-55b5-492f-af91-f074ec4f71c6" style=3D"ove=
+rflow-wrap: anywhere; color: #ea7600; text-decoration: underline;" target=
+=3D"_blank">2,112 words</a>)</p><hr style=3D"position: relative; display: b=
+lock; width: 100%; margin: 3em 0; padding: 0; height: 1px; border: 0; borde=
+r-top: 1px solid #e5eff5;"><div class=3D"kg-card kg-callout-card kg-callout=
+-card-yellow" style=3D"display: flex; margin: 0 0 1.5em 0; padding: 20px 28=
+px; border-radius: 3px; background: #FCF4E3;"><div class=3D"kg-callout-text=
+"><strong style=3D"font-weight: 700;">Hey you - yes you - this newsletter i=
+s blowing metaphorical cigarette smoke your way. </strong>If you enjoyed fl=
+irting with today&#39;s top picks, why not try the full Browser: five outst=
+anding articles, plus a video and a podcast, every day. Phwoar.</div></div>=
+<p style=3D"margin: 0 0 1.5em 0; line-height: 1.6em;"></p><div class=3D"btn=
+ btn-accent" style=3D"box-sizing: border-box; width: 100%; display: table;"=
+><table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center" s=
+tyle=3D"border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace:=
+ 0pt; width: auto;"><tr><td align=3D"center" style=3D"font-family: -apple-s=
+ystem, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sa=
+ns-serif, &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe=
+ UI Symbol&#39;; font-size: 18px; vertical-align: top; color: #15212A; bord=
+er-radius: 5px; text-align: center; background-color: #EA7600;" valign=3D"t=
+op" bgcolor=3D"#EA7600"><a href=3D"https://thebrowser.com/r/3f2584a0?m=3D68=
+eb8c4f-55b5-492f-af91-f074ec4f71c6" style=3D"overflow-wrap: anywhere; borde=
+r: solid 1px #3498db; border-radius: 5px; box-sizing: border-box; cursor: p=
+ointer; display: inline-block; font-size: 14px; font-weight: bold; margin: =
+0; padding: 12px 25px; text-decoration: none; background-color: #EA7600; bo=
+rder-color: #EA7600; color: #FFFFFF;" target=3D"_blank">Get The Full Browse=
+r Experience</a></td></tr></table></div><p style=3D"margin: 0 0 1.5em 0; li=
+ne-height: 1.6em;"></p><hr style=3D"position: relative; display: block; wid=
+th: 100%; margin: 3em 0; padding: 0; height: 1px; border: 0; border-top: 1p=
+x solid #e5eff5;"><h3 id=3D"astrophysics-and-stale-beer" style=3D"margin-to=
+p: 0; font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, R=
+oboto, Helvetica, Arial, sans-serif, &#39;Apple Color Emoji&#39;, &#39;Sego=
+e UI Emoji&#39;, &#39;Segoe UI Symbol&#39;; line-height: 1.11em; font-weigh=
+t: 700; text-rendering: optimizeLegibility; margin: 1.5em 0 0.5em 0; font-s=
+ize: 26px;"><a href=3D"https://thebrowser.com/r/44f59341?m=3D68eb8c4f-55b5-=
+492f-af91-f074ec4f71c6" style=3D"overflow-wrap: anywhere; color: #ea7600; t=
+ext-decoration: underline;" target=3D"_blank">Astrophysics And Stale Beer</=
+a></h3><p style=3D"margin: 0 0 1.5em 0; line-height: 1.6em;">John Messick |=
+ Salon | 29th May 2023</p><p style=3D"margin: 0 0 1.5em 0; line-height: 1.6=
+em;">Life at the South Pole is weird. A platoon of seasonal support workers=
+ makes the research station there run smoothly. People with romantic ideas =
+about ice and isolation come to shovel snow in exchange for a bunk at the b=
+ottom of the world. &quot;I met architects who had quit high-paying jobs to=
+ load cargo, Scuba instructors hired to clean toilets, and a poet who drove=
+ a forklift&quot; (<a href=3D"https://thebrowser.com/r/bc84326a?m=3D68eb8c4=
+f-55b5-492f-af91-f074ec4f71c6" style=3D"overflow-wrap: anywhere; color: #ea=
+7600; text-decoration: underline;" target=3D"_blank">3,802 words</a>)</p><h=
+r style=3D"position: relative; display: block; width: 100%; margin: 3em 0; =
+padding: 0; height: 1px; border: 0; border-top: 1px solid #e5eff5;"><p styl=
+e=3D"margin: 0 0 1.5em 0; line-height: 1.6em;"><strong style=3D"font-weight=
+: 700;"><strong style=3D"font-weight: 700;">Caroline Crampton</strong></str=
+ong>, Editor-In-Chief; <strong style=3D"font-weight: 700;"><strong style=3D=
+"font-weight: 700;">Robert Cottrell</strong></strong>, Founding Editor; <st=
+rong style=3D"font-weight: 700;">Sylvia Bishop</strong>, Assistant Publishe=
+r; <strong style=3D"font-weight: 700;"><strong style=3D"font-weight: 700;">=
+Jodi Ettenberg</strong></strong>, Associate Editor; <strong style=3D"font-w=
+eight: 700;"><strong style=3D"font-weight: 700;">Uri Bram</strong></strong>=
+, CEO &amp; Publisher; <strong style=3D"font-weight: 700;"><strong style=3D=
+"font-weight: 700;">Al Breach</strong></strong>, Founding Director</p><p st=
+yle=3D"margin: 0 0 1.5em 0; line-height: 1.6em;">Editorial comments and let=
+ters to the editor: <a href=3D"https://thebrowser.com/r/a81faa01?m=3D68eb8c=
+4f-55b5-492f-af91-f074ec4f71c6" style=3D"overflow-wrap: anywhere; color: #e=
+a7600; text-decoration: underline;" target=3D"_blank">editor@thebrowser.com=
+</a>&#x200C;&#x200C; | Technical issues and support requests: <a href=3D"ht=
+tps://thebrowser.com/r/8897ee23?m=3D68eb8c4f-55b5-492f-af91-f074ec4f71c6" s=
+tyle=3D"overflow-wrap: anywhere; color: #ea7600; text-decoration: underline=
+;" target=3D"_blank">support@thebrowser.com</a>&#x200C;&#x200C; | Or write =
+at any time to the publisher: <a href=3D"https://thebrowser.com/r/3aa070ff?=
+m=3D68eb8c4f-55b5-492f-af91-f074ec4f71c6" style=3D"overflow-wrap: anywhere;=
+ color: #ea7600; text-decoration: underline;" target=3D"_blank">uri@thebrow=
+ser.com</a></p><p style=3D"margin: 0 0 1.5em 0; line-height: 1.6em;"><stron=
+g style=3D"font-weight: 700;"><strong style=3D"font-weight: 700;"><strong s=
+tyle=3D"font-weight: 700;"><strong style=3D"font-weight: 700;"><strong styl=
+e=3D"font-weight: 700;"><strong style=3D"font-weight: 700;"><strong style=
+=3D"font-weight: 700;"><strong style=3D"font-weight: 700;"><em><a href=3D"h=
+ttps://thebrowser.com/r/81e8a781?m=3D68eb8c4f-55b5-492f-af91-f074ec4f71c6" =
+style=3D"overflow-wrap: anywhere; color: #ea7600; text-decoration: underlin=
+e;" target=3D"_blank">Proudly published with Ghost, the fiercely independen=
+t website and newsletter platform</a></em></strong></strong></strong></stro=
+ng></strong></strong></strong></strong></p>
+                                                <!-- POST CONTENT END -->
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+
+                            <!-- END MAIN CONTENT AREA -->
+
+
+
+
+                            <tr>
+                                <td class=3D"wrapper" align=3D"center" styl=
+e=3D"font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Ro=
+boto, Helvetica, Arial, sans-serif, &#39;Apple Color Emoji&#39;, &#39;Segoe=
+ UI Emoji&#39;, &#39;Segoe UI Symbol&#39;; font-size: 18px; vertical-align:=
+ top; color: #15212A; box-sizing: border-box;" valign=3D"top">
+                                    <table role=3D"presentation" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-colla=
+pse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; p=
+adding-top: 40px; padding-bottom: 30px;">
+                                            <tr><td class=3D"footer" style=
+=3D"font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Rob=
+oto, Helvetica, Arial, sans-serif, &#39;Apple Color Emoji&#39;, &#39;Segoe =
+UI Emoji&#39;, &#39;Segoe UI Symbol&#39;; vertical-align: top; color: #738a=
+94; margin-top: 20px; text-align: center; font-size: 13px; padding-bottom: =
+10px; padding-top: 10px; padding-left: 30px; padding-right: 30px; line-heig=
+ht: 1.5em;" valign=3D"top" align=3D"center">The Browser Ltd., 3rd Floor, 18=
+ Henrietta Street, London, UK</td></tr>
+                                        <tr>
+                                            <td class=3D"footer" style=3D"f=
+ont-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, =
+Helvetica, Arial, sans-serif, &#39;Apple Color Emoji&#39;, &#39;Segoe UI Em=
+oji&#39;, &#39;Segoe UI Symbol&#39;; vertical-align: top; color: #738a94; m=
+argin-top: 20px; text-align: center; font-size: 13px; padding-bottom: 10px;=
+ padding-top: 10px; padding-left: 30px; padding-right: 30px; line-height: 1=
+=2E5em;" valign=3D"top" align=3D"center">=
+The Browser &#xA9; 2023 &#x2013; <a=20=
+href=3D"https://thebrowser.com/unsubscribe/?uuid=3D68eb8c4f-55b5-492f-af91-=
+f074ec4f71c6&newsletter=3D7efddb1d-bda7-43c9-b75f-ec5c90b809cc" style=3D"ov=
+erflow-wrap: anywhere; color: #738a94; text-decoration: underline;" target=
+=3D"_blank">Unsubscribe</a></td>
+                                        </tr>
+
+                                            <tr>
+                                                <td class=3D"footer-powered=
+" style=3D"font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#3=
+9;, Roboto, Helvetica, Arial, sans-serif, &#39;Apple Color Emoji&#39;, &#39=
+;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;; font-size: 18px; vertical-=
+align: top; color: #15212A; text-align: center; padding-top: 70px; padding-=
+bottom: 40px;" valign=3D"top" align=3D"center"><a href=3D"https://thebrowse=
+r.com/r/c3bb8eb1?m=3D68eb8c4f-55b5-492f-af91-f074ec4f71c6" style=3D"color: =
+#ea7600; text-decoration: none; overflow-wrap: anywhere;" target=3D"_blank"=
+><img src=3D"https://static.ghost.org/v4.0.0/images/powered.png" border=3D"=
+0" width=3D"142" height=3D"30" class=3D"gh-powered" alt=3D"Powered by Ghost=
+" style=3D"border: none; -ms-interpolation-mode: bicubic; max-width: 100%; =
+width: 142px; height: 30px;"></a></td>
+                                            </tr>
+                                    </table>
+                                </td>
+                            </tr>
+
+                        </table>
+                        <!-- END CENTERED WHITE CONTAINER -->
+                    </div>
+                </td>
+                <td style=3D"font-family: -apple-system, BlinkMacSystemFont=
+, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-serif, &#39;Apple Colo=
+r Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;; font-siz=
+e: 18px; vertical-align: top; color: #15212A;" valign=3D"top">&#xA0;</td>
+            </tr>
+
+            <!--[if mso]>
+                            </table>
+                        </center>
+                    </td>
+                </tr>
+            <![endif]-->
+        </table>
+    <img width=3D"1px" height=3D"1px" alt=3D"" src=3D"http://click.ghost.th=
+ebrowser.com/o/eJw8zs2OgzAMBOCn2dxA_omT9OCHcYgpaGkjAdW-_goOPY5mRvqaPkDoYcEV=
+UxGJQgWCv2zdhrVpijknJCZGsQwAiNWsclg0lbnE2Sx6BpcmgMSNzJ2qNCMLqxIQgzCiACKPVCw=
+Xnp0L4iQ4_UR4Lv04x3Pxuve_w_dx6q-wa_9Mi7-bvY9E1-ri3NWp9bP9DrcvnHrfv6lu_Tlkio=
+jwHwAA__8GXD-g"></body>
+</html>
+
+--1aee15ad5bc357c543bded37ecd6ef9a2a0b1bcf381fcbe9c6ce65f4a71b--

@@ -1,0 +1,1677 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp940685ims;
+        Wed, 31 May 2023 09:35:55 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ7fL0hGdvYInvAfYZJWAXBLMJ2xilbjWw7adFllzPRQnOzWUiHkKQZm+cO9O4VxospUdetp
+X-Received: by 2002:a67:f55a:0:b0:437:e56f:69b9 with SMTP id z26-20020a67f55a000000b00437e56f69b9mr2492806vsn.15.1685550955571;
+        Wed, 31 May 2023 09:35:55 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685550955; cv=none;
+        d=google.com; s=arc-20160816;
+        b=bpAjl0gunXfNyHW6XTGo5VeLlMQKxLddmmr0GTxkV0j6bqdnOxx0FWSBL25sJ5cUbL
+         ka+D2XuhDaQSjuQnxVhEqT6KBbHRdEIPfebiVw6oFclu3xsb6n7zG8ENBLoJFwnJ2AWW
+         KoXj0MtlbnR3DmwMXFBE6nbEmlcTM8Q/NGdL9EisA6CvhgGIpt6tSLdBA7DhHmJLO5F4
+         ZzQC5dSjcGJv5zzbRqkO6ohKSyhzKkEdArLt+lfvSEpSAJMnSTnBtl/T54ovDc3BSabj
+         pwm/0Exc0RPGv2w3u4s6721ejy+c3yVoPeNGFUujh5Fr+L0hKlqoXOldLyugHKZD0XsU
+         mJzA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:mime-version:from:date:dkim-signature
+         :dkim-signature;
+        bh=gPW99OnAUG0yW3A7GSHO1iLlPlalJnVka6uqI3PW0TM=;
+        b=ui6FACOt/WwfRVS/dW+eA2rBFEC5QEYykeqVR9a2WhRgsoSLVBUF4CDaNWx2BJk2rZ
+         gjuzyNipzSw2NXV+sCfMlM2K1lSw5FKLBDclC5V2rhB7vjbPz1mMhS7DrL6rnpggQPrs
+         QYN4SKp0IGcYz5wCZGbQc2JZDzZtgKfw95Vrk8b/sUrOlU1CHWxf5tq0jvVjgYkBA19C
+         kGk9UArg4KBzYd347xEz4yg853w1JNOQGtGZjIVfCvJnMsML3aWU6QtFejjqgy8mfSmt
+         Gnr4VUgz6DNjnjzjKZtlG8UbfjM6sD1OUhwxGh5Dg3HQ5hHjj2FCcdb1sAPlf8EEfX1R
+         TsJQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@brief.me header.s=s1 header.b=BPp0PSFU;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=ccHfaHtE;
+       spf=pass (google.com: domain of bounces+1551938-96b0-ouchendans62=gmail.com@em4969.brief.me designates 159.183.113.148 as permitted sender) smtp.mailfrom="bounces+1551938-96b0-ouchendans62=gmail.com@em4969.brief.me";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=brief.me
+Return-Path: <bounces+1551938-96b0-ouchendans62=gmail.com@em4969.brief.me>
+Received: from o8.ptr7471.brief.science (o8.ptr7471.brief.science. [159.183.113.148])
+        by mx.google.com with ESMTPS id ou16-20020a05620a621000b0074e4a8f7187si2193604qkn.747.2023.05.31.09.35.54
+        for <ouchendans62@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 31 May 2023 09:35:55 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+1551938-96b0-ouchendans62=gmail.com@em4969.brief.me designates 159.183.113.148 as permitted sender) client-ip=159.183.113.148;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@brief.me header.s=s1 header.b=BPp0PSFU;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=ccHfaHtE;
+       spf=pass (google.com: domain of bounces+1551938-96b0-ouchendans62=gmail.com@em4969.brief.me designates 159.183.113.148 as permitted sender) smtp.mailfrom="bounces+1551938-96b0-ouchendans62=gmail.com@em4969.brief.me";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=brief.me
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=brief.me;
+	h=content-type:from:mime-version:subject:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=s1; bh=gPW99OnAUG0yW3A7GSHO1iLlPlalJnVka6uqI3PW0TM=;
+	b=BPp0PSFU+LHwrjSI/cyai8I7U2yBGm0E5MbSiAnx6zComl3eQaiwlwB2SIzYdd1KD+72
+	F484Vt9+dzh1GL8aqTb1oW+o0/kTTszQSf7loQ6Fw2JwbwEwfCrFuHmaRlWfy93qr8TOc+
+	ROHvUQvxJz9n+Vsbj5GG7zAdn2x9mE0LdzJtm2uzpWgUCMVqolsXvTXcEHRv9RDYvWeBCf
+	dAdx98VLH9cGvRurS91eKdJeciRMR0L2XXNHk1I1BsXPzFSTdMRKCReLRhbR16vgXWeTVF
+	uRJB9q8yIizypr6i7fc3TSOUNWpJI8MuVissFYrR87sWbhTkfuhG9JGbhEvpHNTg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=smtpapi; bh=gPW99OnAUG0yW3A7GSHO1iLlPlalJnVka6uqI3PW0TM=;
+	b=ccHfaHtEhbbe+2R81srR09fKGxoHiakpYhxZfUC9i/FlPqLBieJTq86R1Fj9dgFfvbQA
+	LSm52Zg57c/ZeYRx9L/W9o5BKg84oISDsvmS6q1qLqMEBXCVM1lr3IJudctpg1DYUXjrHW
+	fRPpoaA9qvqQhYRgQDckkWv+oDpqCG+jY=
+Received: by filterdrecv-6d55674f9c-pxlf8 with SMTP id filterdrecv-6d55674f9c-pxlf8-1-64777764-70
+        2023-05-31 16:35:48.379063938 +0000 UTC m=+1788970.523937136
+Received: from MTU1MTkzOA (unknown)
+	by geopod-ismtpd-5 (SG) with HTTP
+	id 1VS552urR6aHDna6yMROvg
+	Wed, 31 May 2023 16:35:48.191 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=9f41419acc78e479df3e56a21465401d3c6a2b22a471f78cca7ba4092a62
+Date: Wed, 31 May 2023 16:35:54 +0000 (UTC)
+From: "Brief.me" <hello@brief.me>
+Mime-Version: 1.0
+Message-ID: <1VS552urR6aHDna6yMROvg@geopod-ismtpd-5>
+Subject: Comment financer la transition
+ =?UTF-8?B?w6ljb2xvZ2lxdWXCoD8gfCBKZXV4IGTigJlhcmdlbnQ=?= et de hasard | Mont
+ Everest
+X-Feedback-ID: 1551938:SG
+X-SG-EID: 
+ =?us-ascii?Q?DiGdcEab8lyYqCiuWu07hMzDbddyNFjHB3LpSsyIkEQ+7xu1=2F5sSr+Ctz0Ks3Q?=
+ =?us-ascii?Q?7sf4XTqJmj0hLWUyB6RAEqEmyVPnGfTdWSAsfhs?=
+ =?us-ascii?Q?=2F1nFi2ZNN33ULVraDM9jdQqHNZGtSJlhnp2h4cA?=
+ =?us-ascii?Q?4tkUMoPxAdhap6HCxWIx0vVN2YhkFyeQLn90hyV?=
+ =?us-ascii?Q?rHTk1pBJuAczGIeBgYiwy6HtAztSMg0zrS7Wwzv?=
+ =?us-ascii?Q?J4JyxRBhQm3DsCnffMszs7M3m09qYZYwX2LsfS?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsbwBNVckzqbYdf3KWb8iLitjqmywOebNy1CPWNYJPxk?=
+ =?us-ascii?Q?MfubZzSafK8kZQ75gtz3cM5l2moi=2F96qPbJE+pK?=
+ =?us-ascii?Q?FCMONQxTzuDa=2FjSInqxvFrHQNoMCHYCvnL9Hac6?=
+ =?us-ascii?Q?=2FA8htFcH2Zu14vbIDETWkcbKABcsb2bA6+wXVlg?=
+ =?us-ascii?Q?RFXuGIvdIfHrUm9Luz4PlPouDJcv0wfRO2KXfrd?=
+ =?us-ascii?Q?H8leLEXkWE1UQEx4rXIKzFjY0PHCU8YicOmXTAm?=
+ =?us-ascii?Q?H7FeKAU0fJ49Y29OM3A7tqHgAoIXbmCsVISuH5t?=
+ =?us-ascii?Q?96s8BH2F97uP=2FY1YsvlVMzSe2FdCVkMGgNNcDt7?=
+ =?us-ascii?Q?KMmmWsBLcfffc7kh9gQOKNgYv2rwvDXbIQjrLKA?=
+ =?us-ascii?Q?7dIRGparPCjzJHM4x7XXlP5BpE5nyzqBtXTggxr?=
+ =?us-ascii?Q?UNWO8cMrJgFt6Trmfe+aTtTr3nED1bPG=2FWd1tHr?=
+ =?us-ascii?Q?qK+CPG=2Ff1Y=2FJb7o2Kyink9kd8tFJqewoe0jDTu7?=
+ =?us-ascii?Q?cGMEwqhInaG2yEq6RHMnvF1ui+GS3HFGMh9aT0K?=
+ =?us-ascii?Q?yBetXUszaqg0=2FMWr36w4D3DIc=3D?=
+To: ouchendans62@gmail.com
+X-Entity-ID: Mam0Mvv+PaRt1QuKzuih8w==
+
+--9f41419acc78e479df3e56a21465401d3c6a2b22a471f78cca7ba4092a62
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+Bruno Le Maire se dit contre un =C2=AB=C2=A0ISF vert=C2=A0=C2=BB.
+
+Dans B=E2=80=8Cr=E2=80=8Ci=E2=80=8Ce=E2=80=8Cf=E2=80=8C.=E2=80=8Cm=E2=80=8C=
+e aujourd=E2=80=99hui, les d=C3=A9bats autour du financement de la transiti=
+on =C3=A9cologique, les jeux d=E2=80=99argent et de hasard en France et la =
+douteuse conqu=C3=AAte chinoise du mont Everest.
+
+          =20
+
+brief.me| ( https://www.brief.me )
+
+ic=C3=B4ne 1 ( https://www.brief.me/login/NjU5MzI4:1q4Ona:e0QOkPOfUnRCRdKI-=
+FsP0IcmJSubWURlZuCa_q_kov8/?redirect=3Dhttps%3A%2F%2Fapp.brief.me%2Fedition=
+%2F2023-05-31-3295-comment-financer-la-transition-ecologique-jeux-dargent-e=
+t-de-hasard-mont-everest%2F&utm_source=3Demail&utm_campaign=3Decouter&utm_c=
+ontent=3Dquotidien_2023-05-31 ) =C3=89couter l=E2=80=99=C3=A9dition ( https=
+://www.brief.me/login/NjU5MzI4:1q4Ona:e0QOkPOfUnRCRdKI-FsP0IcmJSubWURlZuCa_=
+q_kov8/?redirect=3Dhttps%3A%2F%2Fapp.brief.me%2Fedition%2F2023-05-31-3295-c=
+omment-financer-la-transition-ecologique-jeux-dargent-et-de-hasard-mont-eve=
+rest%2F&utm_source=3Demail&utm_campaign=3Decouter&utm_content=3Dquotidien_2=
+023-05-31 )
+
+Mercredi 31 mai 2023
+
+Dans B=E2=80=8Cr=E2=80=8Ci=E2=80=8Ce=E2=80=8Cf=E2=80=8C.=E2=80=8Cm=E2=80=8C=
+e aujourd=E2=80=99hui, les d=C3=A9bats autour du financement de la transiti=
+on =C3=A9cologique, les jeux d=E2=80=99argent et de hasard en France et la =
+douteuse conqu=C3=AAte chinoise du mont Everest.
+
+Vous avez choisi notre sujet sur les industriels et les m=C3=A9dias ( https=
+://www.brief.me/voteBMWE/ ). Ce sera le th=C3=A8me principal de notre proch=
+aine =C3=A9dition de B=E2=80=8Cr=E2=80=8Ci=E2=80=8Ce=E2=80=8Cf=E2=80=8C.=E2=
+=80=8Cm=E2=80=8Ce Week-end, =C3=A0 retrouver samedi d=C3=A8s 9h dans votre =
+bo=C3=AEte mail et sur notre application mobile.
+
+        =20
+
+ON REMBOBINE
+
+COR=C3=89E DU NORD
+
+*L=E2=80=99agence de presse officielle nord-cor=C3=A9enne KCNA a rapport=C3=
+=A9 aujourd=E2=80=99hui qu=E2=80=99un lancement de satellite de reconnaissa=
+nce militaire avait =C3=A9chou=C3=A9* et que l=E2=80=99appareil s=E2=80=99=
+=C3=A9tait ab=C3=AEm=C3=A9 en mer Jaune [voir une carte] ( https://upload.w=
+ikimedia.org/wikipedia/commons/1/12/Bohai_map-fr.svg ). Ce lancement a prov=
+oqu=C3=A9 des alertes au Japon et en Cor=C3=A9e du Sud, o=C3=B9 les autorit=
+=C3=A9s redoutaient un essai de missile. Le r=C3=A9gime nord-cor=C3=A9en mu=
+ltiplie les tests balistiques depuis d=C3=A9but 2022.
+
+Lire notre panorama sur la Cor=C3=A9e du Nord. ( https://app.brief.me/panor=
+ama/coreedunord?access=3D76594ac2-db5a-45d2-9935-38c869e1faa2 )
+
+RETRAITES
+
+*Les d=C3=A9put=C3=A9s de la commission des Affaires sociales ont rejet=C3=
+=A9 aujourd=E2=80=99hui l=E2=80=99article d=E2=80=99une proposition de loi =
+visant =C3=A0 abroger le recul de l=E2=80=99=C3=A2ge de d=C3=A9part =C3=A0 =
+la retraite =C3=A0 64=C2=A0ans.* Ce texte a =C3=A9t=C3=A9 d=C3=A9pos=C3=A9 =
+par le groupe parlementaire Liot (centre), oppos=C3=A9 =C3=A0 la r=C3=A9for=
+me des retraites promulgu=C3=A9e en avril. Le rapporteur du texte, le d=C3=
+=A9put=C3=A9 Charles de Courson (Liot), a d=C3=A9clar=C3=A9 qu=E2=80=99il a=
+llait d=C3=A9poser un amendement pour r=C3=A9introduire cette disposition d=
+ans la proposition de loi avant son examen en s=C3=A9ance publique, pr=C3=
+=A9vu la semaine prochaine.
+
+Lire notre panorama sur la r=C3=A9forme des retraites. ( https://app.brief.=
+me/panorama/retraites?access=3D76594ac2-db5a-45d2-9935-38c869e1faa2 )
+
+INFLATION
+
+*L=E2=80=99inflation en France a ralenti =C3=A0 5,1=C2=A0% sur un an entre =
+mai 2022=C2=A0et mai 2023, soit 0,8=C2=A0point de moins que le taux enregis=
+tr=C3=A9 en avril* , selon une premi=C3=A8re estimation de l=E2=80=99Insee =
+publi=C3=A9e aujourd=E2=80=99hui. L=E2=80=99institut national de statistiqu=
+es attribue cette baisse =C2=AB=C2=A0au ralentissement sur un an des prix d=
+e l=E2=80=99=C3=A9nergie, de l=E2=80=99alimentation, des produits manufactu=
+r=C3=A9s et des services=C2=A0=C2=BB. L=E2=80=99Insee a aussi confirm=C3=A9=
+ une croissance du PIB (la production totale de biens et services) au premi=
+er trimestre de 0,2=C2=A0% par rapport au trimestre pr=C3=A9c=C3=A9dent.
+
+Lire le dossier de Brief.eco sur la lutte contre l=E2=80=99inflation. ( htt=
+ps://app.brief.eco/article/2022-09-28-1600-la-lutte-contre-linflation?acces=
+s=3D4401242a-ebfd-418e-9d56-7b0f6fccae56 )
+
+TABAGISME
+
+*=C2=AB=C2=A0La France compte toujours pr=C3=A8s de 12=C2=A0millions de fum=
+eurs quotidiens=C2=A0=C2=BB* , soit environ trois personnes de 18=C2=A0=C3=
+=A0 75=C2=A0ans sur 10, d=C3=A9plore Sant=C3=A9 publique France dans des es=
+timations publi=C3=A9es aujourd=E2=80=99hui. L=E2=80=99organisme public d=
+=C3=A9pendant du minist=C3=A8re de la Sant=C3=A9 estime qu=E2=80=99apr=C3=
+=A8s =C2=AB=C2=A0une baisse du tabagisme quotidien d=E2=80=99ampleur in=C3=
+=A9dite entre 2016=C2=A0et 2019=C2=A0=C2=BB, la consommation de tabac s=E2=
+=80=99est =C2=AB=C2=A0stabilis=C3=A9e depuis 2019=C2=A0=C2=BB. Sant=C3=A9 p=
+ublique France note aussi une =C2=AB=C2=A0tendance =C3=A0 la hausse=C2=A0=
+=C2=BB du vapotage.
+
+TOUT S=E2=80=99EXPLIQUE
+
+Bruno Le Maire souhaite utiliser l=E2=80=99=C3=A9pargne pour financer la tr=
+ansition =C3=A9cologique
+
+=E2=80=A2 Le ministre de l=E2=80=99=C3=89conomie se dit oppos=C3=A9 =C3=A0 =
+une solution consistant =C3=A0 imposer davantage les plus riches.
+
+=E2=80=A2 Un rapport remis la semaine derni=C3=A8re =C3=A0 la Premi=C3=A8re=
+ ministre pr=C3=A9conise de taxer les 10=C2=A0% des contribuables les plus =
+ais=C3=A9s.
+
+Qu=E2=80=99a propos=C3=A9 Bruno Le Maire pour le financement de la transiti=
+on =C3=A9cologique=C2=A0?
+
+Le ministre de l=E2=80=99=C3=89conomie, Bruno Le Maire, s=E2=80=99est d=C3=
+=A9clar=C3=A9 ce matin sur France Inter favorable =C3=A0 la mobilisation de=
+ l=E2=80=99=C3=A9pargne des Fran=C3=A7ais pour financer la transition =C3=
+=A9cologique. Il a propos=C3=A9 *d=E2=80=99utiliser les fonds plac=C3=A9s s=
+ur les livrets de d=C3=A9veloppement durable et solidaire et sur les contra=
+ts d=E2=80=99assurance-vie*. Il a d=C3=A9clar=C3=A9 qu=E2=80=99il y aurait =
+dans le projet de loi Industrie verte qu=E2=80=99il a pr=C3=A9sent=C3=A9 il=
+ y a deux semaines =C2=AB=C2=A0une obligation d=E2=80=99avoir des unit=C3=
+=A9s de compte qui iront vers le financement de la transition =C3=A9cologiq=
+ue=C2=A0=C2=BB. Il estime que ces mesures permettraient de d=C3=A9gager 5=
+=C2=A0milliards d=E2=80=99euros chaque ann=C3=A9e sur les =C2=AB=C2=A060=C2=
+=A0=C3=A0 70=C2=A0milliards d=E2=80=99euros de financement n=C3=A9cessaires=
+ chaque ann=C3=A9e=C2=A0=C2=BB. Ces 5=C2=A0milliards d=E2=80=99euros =C3=A9=
+quivalent, selon lui, =C3=A0 ce que permettrait de r=C3=A9colter un imp=C3=
+=B4t sur la fortune des 10=C2=A0% des contribuables les plus ais=C3=A9s. *I=
+l a d=C3=A9clar=C3=A9 pr=C3=A9f=C3=A9rer le choix de l=E2=80=99=C3=A9pargne=
+ =C3=A0 =C2=AB=C2=A0la facilit=C3=A9 de l=E2=80=99imp=C3=B4t qui exasp=C3=
+=A8re nos compatriotes=C2=A0=C2=BB.*
+
+Qu=E2=80=99est-ce que l=E2=80=99=C2=AB=C2=A0ISF vert=C2=A0=C2=BB=C2=A0?
+
+Bruno Le Maire s=E2=80=99est oppos=C3=A9 =C3=A0 la cr=C3=A9ation d=E2=80=99=
+un =C2=AB=C2=A0ISF vert=C2=A0=C2=BB pour financer la transition =C3=A9colog=
+ique. *Cette appellation d=C3=A9coule de l=E2=80=99imp=C3=B4t de solidarit=
+=C3=A9 sur la fortune (ISF), supprim=C3=A9 en 2018, qui taxait les patrimoi=
+nes les plus =C3=A9lev=C3=A9s.* La Convention citoyenne pour le climat, une=
+ assembl=C3=A9e de 150=C2=A0Fran=C3=A7ais tir=C3=A9s au sort, avait propos=
+=C3=A9 en juin 2020=C2=A0la cr=C3=A9ation d=E2=80=99un =C2=AB=C2=A0imp=C3=
+=B4t =C3=A9cologique sur la fortune=C2=A0=C2=BB pour financer des mesures d=
+e lutte contre le r=C3=A9chauffement climatique. Un rapport remis =C3=A0 la=
+ Premi=C3=A8re ministre la semaine derni=C3=A8re par deux =C3=A9conomistes,=
+ Jean Pisani-Ferry et Selma Mahfouz, propose *un =C2=AB=C2=A0pr=C3=A9l=C3=
+=A8vement exceptionnel=C2=A0=C2=BB et temporaire =C2=AB=C2=A0sur le patrimo=
+ine financier des m=C3=A9nages les plus ais=C3=A9s=C2=A0=C2=BB*. =C2=AB=C2=
+=A0Pourquoi ne pas demander un effort aux 10=C2=A0% les plus ais=C3=A9s et,=
+ en gros, leur dire=C2=A0: pourquoi est-ce que vous ne donneriez pas une fo=
+is pour toutes 5=C2=A0% de votre patrimoine pour le climat=C2=A0?=C2=A0=C2=
+=BB, a explicit=C3=A9 Jean Pisani-Ferry dans une interview =C3=A0 Franceinf=
+o hier. Selon lui, cette mesure r=C3=A9pondrait aussi =C3=A0 un souci d=E2=
+=80=99=C3=A9quit=C3=A9 entre les citoyens dans la r=C3=A9partition des effo=
+rts.
+
+Qu=E2=80=99est-ce que les =C2=AB=C2=A0d=C3=A9penses brunes=C2=A0=C2=BB=C2=
+=A0?
+
+Jean Pisani-Ferry et Selma Mahfouz estiment dans leur rapport que le premie=
+r moyen de financement de la transition =C3=A9cologique est le red=C3=A9plo=
+iement des d=C3=A9penses publiques =C2=AB=C2=A0brunes=C2=A0=C2=BB vers des =
+d=C3=A9penses =C2=AB=C2=A0vertes=C2=A0=C2=BB. *Les d=C3=A9penses =C2=AB=C2=
+=A0brunes=C2=A0=C2=BB sont des d=C3=A9penses d=C3=A9favorables =C3=A0 l=E2=
+=80=99environnement.* Le gouvernement classe ainsi les d=C3=A9penses d=C3=
+=A9favorables ou neutres dans six domaines=C2=A0: l=E2=80=99att=C3=A9nuatio=
+n du r=C3=A9chauffement climatique, l=E2=80=99adaptation au r=C3=A9chauffem=
+ent climatique, les ressources en eau, la gestion des d=C3=A9chets, les pol=
+lutions et la biodiversit=C3=A9. *Ces d=C3=A9penses =C2=AB=C2=A0brunes=C2=
+=A0=C2=BB sont pass=C3=A9es de 10,3=C2=A0milliards d=E2=80=99euros dans le =
+projet de loi de finances pour 2022=C2=A0=C3=A0 19,6=C2=A0milliards dans ce=
+lui pour 2023* , selon un rapport sur l=E2=80=99impact environnemental du b=
+udget de l=E2=80=99=C3=89tat =C3=A9labor=C3=A9 par les minist=C3=A8res de l=
+a Transition =C3=A9cologique et de l=E2=80=99=C3=89conomie. Cette forte aug=
+mentation =C2=AB=C2=A0s=E2=80=99explique par la mise en place des mesures e=
+xceptionnelles de protection des consommateurs=C2=A0=C2=BB pour faire face =
+=C3=A0 la hausse des tarifs de l=E2=80=99=C3=A9lectricit=C3=A9 et du gaz, e=
+xplique le rapport.
+
+Pour aller plus loin Le rapport de Jean Pisani-Ferry et Selma Mahfouz ( htt=
+ps://www.vie-publique.fr/rapport/289488-incidences-economiques-de-l-action-=
+pour-le-climat-rapport-pisani-ferry ). Un dossier de Brief.eco sur l=E2=80=
+=99ISF ( https://app.brief.eco/article/2019-01-23-754-lisf?access=3D4401242=
+a-ebfd-418e-9d56-7b0f6fccae56 ). Notre panorama sur la transition =C3=A9ner=
+g=C3=A9tique ( https://app.brief.me/panorama/transition-energetique?access=
+=3D76594ac2-db5a-45d2-9935-38c869e1faa2 ).
+
+facebook ( http://www.facebook.com/sharer/sharer.php?u=3Dhttps://app.brief.=
+me/article/2023-05-31-15497-bruno-le-maire-souhaite-utiliser-lepargne-des-f=
+rancais-pour-financer-la-transition-ecologique ) twitter ( http://twitter.c=
+om/share?url=3Dhttps://app.brief.me/article/2023-05-31-15497-bruno-le-maire=
+-souhaite-utiliser-lepargne-des-francais-pour-financer-la-transition-ecolog=
+ique&text=3DBruno%20Le%20Maire%20souhaite%20utiliser%20l%E2%80%99%C3%A9parg=
+ne%20pour%20financer%20la%20transition%20%C3%A9cologique&via=3Dbriefmenews =
+) whatsapp ( https://api.whatsapp.com/send?text=3Dhttps://app.brief.me/arti=
+cle/2023-05-31-15497-bruno-le-maire-souhaite-utiliser-lepargne-des-francais=
+-pour-financer-la-transition-ecologique ) mail ( ?subject=3DBruno%20Le%20Ma=
+ire%20souhaite%20utiliser%20l%E2%80%99%C3%A9pargne%20pour%20financer%20la%2=
+0transition%20%C3%A9cologique&body=3DJe%20pense%20que%20cet%20article%20pou=
+rrait%20t'int=C3=A9resser%20:%0ABruno%20Le%20Maire%20souhaite%20utiliser%20=
+l%E2%80%99%C3%A9pargne%20pour%20financer%20la%20transition%20%C3%A9cologiqu=
+e%0Ahttps://app.brief.me/article/2023-05-31-15497-bruno-le-maire-souhaite-u=
+tiliser-lepargne-des-francais-pour-financer-la-transition-ecologique )
+
+=C3=87A SE CHIFFRE
+
+Les jeux d=E2=80=99argent et de hasard en France
+
+Le march=C3=A9 des jeux d=E2=80=99argent et de hasard a connu une ann=C3=A9=
+e record en 2022, port=C3=A9 par les casinos et la FDJ.
+
+Le secteur des jeux d=E2=80=99argent et de hasard a connu en 2022=C2=A0une =
+ann=C3=A9e record avec un produit brut des jeux de 12,9=C2=A0milliards d=E2=
+=80=99euros, selon un rapport publi=C3=A9 la semaine derni=C3=A8re ( https:=
+//anj.fr/bilan-2022-une-annee-record-avec-des-disparites-importantes-selon-=
+les-segments-de-jeux ) par l=E2=80=99Autorit=C3=A9 nationale des jeux (ANJ)=
+, une autorit=C3=A9 administrative ind=C3=A9pendante. Le produit brut des j=
+eux correspond au montant total des mises desquelles sont d=C3=A9duites les=
+ sommes vers=C3=A9es aux joueurs vainqueurs. *Le produit brut des jeux est =
+en augmentation de 20=C2=A0% par rapport =C3=A0 2021* , une ann=C3=A9e d=C3=
+=A9j=C3=A0 marqu=C3=A9e par une =C2=AB=C2=A0une croissance de =E2=80=9Cratt=
+rapage=E2=80=9D=C2=A0=C2=BB apr=C3=A8s la crise sanitaire de 2020, selon l=
+=E2=80=99ANJ. La hausse de l=E2=80=99an dernier est en grande partie due au=
+x casinos, qui ont b=C3=A9n=C3=A9fici=C3=A9 d=E2=80=99une r=C3=A9ouverture =
+totale apr=C3=A8s deux ann=C3=A9es d=E2=80=99activit=C3=A9 r=C3=A9duite en =
+raison de la pand=C3=A9mie, et =C3=A0 la Fran=C3=A7aise des jeux (FDJ), pri=
+ncipale entreprise du secteur avec le Loto, l=E2=80=99EuroMillions ou encor=
+e le Keno. La hausse du produit brut des jeux ces derni=C3=A8res ann=C3=A9e=
+s a =C3=A9t=C3=A9 port=C3=A9e par le secteur des paris sportifs en ligne, q=
+ui s=E2=80=99est nettement d=C3=A9velopp=C3=A9. Cette dynamique a toutefois=
+ ralenti en 2022.
+
+facebook ( http://www.facebook.com/sharer/sharer.php?u=3Dhttps://app.brief.=
+me/article/2023-05-31-15498-les-jeux-dargent-et-de-hasard-en-france ) twitt=
+er ( http://twitter.com/share?url=3Dhttps://app.brief.me/article/2023-05-31=
+-15498-les-jeux-dargent-et-de-hasard-en-france&text=3DLes%20jeux%20d%E2%80%=
+99argent%20et%20de%20hasard%20en%20France&via=3Dbriefmenews ) whatsapp ( ht=
+tps://api.whatsapp.com/send?text=3Dhttps://app.brief.me/article/2023-05-31-=
+15498-les-jeux-dargent-et-de-hasard-en-france ) mail ( ?subject=3DLes%20jeu=
+x%20d%E2%80%99argent%20et%20de%20hasard%20en%20France&body=3DJe%20pense%20q=
+ue%20cet%20article%20pourrait%20t'int=C3=A9resser%20:%0ALes%20jeux%20d%E2%8=
+0%99argent%20et%20de%20hasard%20en%20France%0Ahttps://app.brief.me/article/=
+2023-05-31-15498-les-jeux-dargent-et-de-hasard-en-france )
+
+=C3=87A ALORS
+
+Premi=C3=A8re baisse des prix des logements anciens en huit ans
+
+Les prix des logements anciens (non neufs) en France (hors Mayotte) ont bai=
+ss=C3=A9 de 0,2=C2=A0% au premier trimestre par rapport au trimestre pr=C3=
+=A9c=C3=A9dent, a rapport=C3=A9 hier l=E2=80=99institut national de statist=
+iques Insee. *Il s=E2=80=99agit d=E2=80=99une premi=C3=A8re depuis 2015.* S=
+ur un an, les prix restent =C3=A0 la hausse, mais ont nettement d=C3=A9c=C3=
+=A9l=C3=A9r=C3=A9=C2=A0: ils =C3=A9taient en hausse de 2,7=C2=A0% au premie=
+r trimestre, contre 4,6=C2=A0% au trimestre pr=C3=A9c=C3=A9dent et 6,4=C2=
+=A0% au troisi=C3=A8me trimestre 2022. La baisse des prix des logements anc=
+iens au premier trimestre est particuli=C3=A8rement marqu=C3=A9e en =C3=8El=
+e-de-France. Cette baisse des prix intervient dans un contexte d=E2=80=99in=
+flation et de forte augmentation des taux d=E2=80=99int=C3=A9r=C3=AAt, qui =
+complique l=E2=80=99acc=C3=A8s =C3=A0 l=E2=80=99emprunt pour les m=C3=A9nag=
+es. Le nombre de pr=C3=AAts bancaires accord=C3=A9s pour l=E2=80=99ensemble=
+ des march=C3=A9s (neuf et ancien) diminue depuis f=C3=A9vrier 2022, selon =
+l=E2=80=99Observatoire Cr=C3=A9dit Logement / CSA, un observatoire priv=C3=
+=A9.
+
+Consulter les donn=C3=A9es de l=E2=80=99Insee. ( https://www.insee.fr/fr/st=
+atistiques/7624732 )
+
+facebook ( http://www.facebook.com/sharer/sharer.php?u=3Dhttps://app.brief.=
+me/article/2023-05-31-15499-premiere-baisses-des-prix-des-logements-anciens=
+-en-huit-ans ) twitter ( http://twitter.com/share?url=3Dhttps://app.brief.m=
+e/article/2023-05-31-15499-premiere-baisses-des-prix-des-logements-anciens-=
+en-huit-ans&text=3DPremi%C3%A8re%20baisse%20des%20prix%20des%20logements%20=
+anciens%20en%20huit%20ans&via=3Dbriefmenews ) whatsapp ( https://api.whatsa=
+pp.com/send?text=3Dhttps://app.brief.me/article/2023-05-31-15499-premiere-b=
+aisses-des-prix-des-logements-anciens-en-huit-ans ) mail ( ?subject=3DPremi=
+%C3%A8re%20baisse%20des%20prix%20des%20logements%20anciens%20en%20huit%20an=
+s&body=3DJe%20pense%20que%20cet%20article%20pourrait%20t'int=C3=A9resser%20=
+:%0APremi%C3%A8re%20baisse%20des%20prix%20des%20logements%20anciens%20en%20=
+huit%20ans%0Ahttps://app.brief.me/article/2023-05-31-15499-premiere-baisses=
+-des-prix-des-logements-anciens-en-huit-ans )
+
+=C3=87A VAUT UN CLIC
+
+La douteuse conqu=C3=AAte chinoise du mont Everest
+
+Il y a 70=C2=A0ans, une exp=C3=A9dition britannique aboutissait =C3=A0 la p=
+remi=C3=A8re ascension document=C3=A9e du mont Everest. M=C3=AAme conquis, =
+le plus haut pic terrestre demeurait un objet de convoitise pour la Chine e=
+t les =C3=89tats-Unis, engag=C3=A9s dans une course pour arriver avant l=E2=
+=80=99autre au sommet. La Chine d=C3=A9clare victoire le 25=C2=A0mai 1960. =
+Une vid=C3=A9o de France Culture ( https://www.youtube.com/watch?v=3DK6A3it=
+c8_rc ) explique toutefois =C3=A0 quel point cette exp=C3=A9dition glorifi=
+=C3=A9e par la propagande de l=E2=80=99=C3=A9poque est sujette =C3=A0 cauti=
+on.
+
+facebook ( http://www.facebook.com/sharer/sharer.php?u=3Dhttps://app.brief.=
+me/article/2023-05-31-15500-la-douteuse-conquete-chinoise-du-mont-everest )=
+ twitter ( http://twitter.com/share?url=3Dhttps://app.brief.me/article/2023=
+-05-31-15500-la-douteuse-conquete-chinoise-du-mont-everest&text=3DLa%20dout=
+euse%20conqu%C3%AAte%20chinoise%20du%20mont%20Everest&via=3Dbriefmenews ) w=
+hatsapp ( https://api.whatsapp.com/send?text=3Dhttps://app.brief.me/article=
+/2023-05-31-15500-la-douteuse-conquete-chinoise-du-mont-everest ) mail ( ?s=
+ubject=3DLa%20douteuse%20conqu%C3%AAte%20chinoise%20du%20mont%20Everest&bod=
+y=3DJe%20pense%20que%20cet%20article%20pourrait%20t'int=C3=A9resser%20:%0AL=
+a%20douteuse%20conqu%C3%AAte%20chinoise%20du%20mont%20Everest%0Ahttps://app=
+.brief.me/article/2023-05-31-15500-la-douteuse-conquete-chinoise-du-mont-ev=
+erest )
+
+Vous voil=C3=A0 =C2=AB=C2=A0brief=C3=A9s=C2=A0=C2=BB sur l=E2=80=99actualit=
+=C3=A9 du jour et quelques autres consid=C3=A9rations. On vous souhaite une=
+ bonne soir=C3=A9e =C3=A0 gravir tous les sommets.
+
+=E2=80=94 Mathilde Belin, Nicolas Filio, Laurent Mauriac et Aude Villiers-M=
+oriam=C3=A9
+
+   =20
+
+brief.me| ( https://www.brief.me/ )
+
+facebook ( https://www.facebook.com/briefmenews ) twitter ( https://twitter=
+.com/briefmenews/ ) twich ( https://www.twitch.tv/briefmenews ) mail ( hell=
+o@brief.me ) linkedin ( https://www.linkedin.com/company/brief-me/ )
+
+D=C3=A9couvrez nos autres m=C3=A9dias
+
+La science expliqu=C3=A9e ( https://www.brief.science )
+
+L=E2=80=99=C3=A9conomie expliqu=C3=A9e ( https://www.brief.eco )
+
+=C3=89ditions pr=C3=A9c=C3=A9dentes ( https://www.brief.me/login/NjU5MzI4:1=
+q4Ona:e0QOkPOfUnRCRdKI-FsP0IcmJSubWURlZuCa_q_kov8/?redirect=3Dhttps%3A%2F%2=
+Fapp.brief.me ) =E2=80=A2 Panoramas ( https://www.brief.me/login/NjU5MzI4:1=
+q4Ona:e0QOkPOfUnRCRdKI-FsP0IcmJSubWURlZuCa_q_kov8/?redirect=3Dhttps%3A%2F%2=
+Fapp.brief.me%2Fpanoramas )  Le projet Brief.me ( https://www.brief.me/en-b=
+ref/ ) =E2=80=A2 L=E2=80=99=C3=A9quipe ( https://www.brief.me/qui-sommes-no=
+us/ ) =E2=80=A2 Questions fr=C3=A9quentes ( https://www.brief.me/faq/ )=20
+
+T=C3=A9l=C3=A9chargez notre application mobile
+
+T=C3=A9l=C3=A9charger dans I'App Store ( https://apps.apple.com/us/app/brie=
+f-me-lactu-qui-compte/id1491061809 ) T=C3=A9l=C3=A9chargez sur Google play =
+( https://play.google.com/store/apps/details?id=3Dme.brief.app )
+
+Pour =C3=AAtre s=C3=BBr(e) de recevoir brief.me ( https://www.brief.me/ ) ,=
+ ajoutez =C2=AB hello@brief.me =C2=BB =C3=A0 votre carnet d=E2=80=99adresse=
+s. Vous =C3=AAtes inscrit(e) sur cette liste car vous avez demand=C3=A9 =C3=
+=A0 recevoir les informations de Brief.me.
+
+Se d=C3=A9sinscrire ( https://www.brief.me/login/NjU5MzI4:1q4Ona:e0QOkPOfUn=
+RCRdKI-FsP0IcmJSubWURlZuCa_q_kov8/?redirect=3D%2Fcompte%2Foptins%2F ) =E2=
+=80=A2 Contact ( hello@brief.me )
+--9f41419acc78e479df3e56a21465401d3c6a2b22a471f78cca7ba4092a62
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3Dhttp://www.w3.o=
+rg/1999/xhtml xmlns:o=3Durn:schemas-microsoft-com:office:office xmlns:v=3Du=
+rn:schemas-microsoft-com:vml><head><!--[if gte mso 9]><xml><o:OfficeDocumen=
+tSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocum=
+entSettings></xml><![endif]--><title>Brief.me</title><meta content=3D"text/=
+html; charset=3Dutf-8" http-equiv=3DContent-Type><meta content=3D"IE=3Dedge=
+" http-equiv=3DX-UA-Compatible><meta content=3D"width=3Ddevice-width, initi=
+al-scale=3D1.0" name=3Dviewport><style type=3Dtext/css>
+			a{outline:none; color:#424242; text-decoration:underline;}
+			a:hover, .h-n a:hover .txt{text-decoration:none!important;}
+			.h-u a{text-decoration:none;}
+			.h-u a:hover{text-decoration:underline!important;}
+			a[x-apple-data-detectors]{color:inherit!important; text-decoration:none!=
+important;}
+			a[href^=3D"tel"]:hover{text-decoration:none!important;}
+			.active-i a:hover,
+			.active-t:hover{opacity:0.8;}
+			.active-i a,
+			.active-t{transition:all 0.3s ease;}
+			a img{border:none;}
+			b, strong{font-weight:700;}
+			p{margin:0;}
+			th{padding:0;}
+			table td{mso-line-height-rule:exactly;}
+			.ns span, .ns a{color:inherit!important; text-decoration:none!important;=
+ border:none!important;}
+			.edition-color{color:#de4949!important}
+			.l-fff a{color:#fff;}
+			.l-F13841 a{color:#F13841;}
+			.l-447BCD a{color:#447BCD;}
+			.l-FF6801 a{color:#FF6801;}
+			.l-A8006F a{color:#A8006F;}
+			.l-19996A a{color:#19996A;}
+			.l-00989A a{color:#00989A;}
+			.l-6C52C7 a{color:#6C52C7;}
+			.l-61A1ED a{color:#61A1ED;}
+			.l-DE4949 a{color:#DE4949;}
+			.l-6676FC a{color:#6676FC;}
+			.b-6C52C7 b{color:#6C52C7;}
+			.pm-0 p{margin:0px !important;}
+			.cat2 {background-color:#fffffe !important;}
+			.cat3 {background-color:#fffffe !important;}
+			.cat3 {background-color:#fffffe !important;}
+			.cat5 {background-color:#fffffe !important;}
+			.cat6 {background-color:#fffffe !important;}
+			.cat7 {background-color:#eff6fd !important;}
+			.cat13 {background-color:#fffffe !important;}
+			.catx {background-color:#fffffe !important;}
+			.cat_intro_outro a{color:#de4949!important}
+            .cat1_list_cell p {margin: 0;padding:14px 0;mso-margin-top-alt:=
+14px;mso-margin-bottom-alt:14px;}
+            .cat1_list_cell span {color:#ff6801;}
+		</style><style data-premailer=3Dignore>
+			@media only screen and (min-width: 480px) {
+	            .mobile_only {
+	                display: none !important
+	            }
+
+	            .mj-column-per-100 {
+	                width: 100% !important
+	            }
+
+	            .mj-column-per-100 {
+	                width: 100% !important
+	            }
+
+	            .mj-column-per-19 {
+	                width: 19% !important
+	            }
+
+	            .mj-column-per-81 {
+	                width: 81% !important
+	            }
+
+	            .mj-column-per-40 {
+	                width: 40% !important
+	            }
+
+	            .mj-column-per-60 {
+	                width: 60% !important
+	            }
+	        }
+			@media only screen and (max-width:624px) {
+				.w-100p{width:100%!important;}
+				.tflex{display:block!important;width:100%!important;}
+				.t-c{float:none!important;margin:0 auto!important;}
+				.d-tc{display:table-cell!important;}
+				.d-b{display:block!important;}
+				.ta-c{text-align:center!important;}
+				.ta-l{text-align:left!important;}
+				.hm{display:none!important;width:0!important;height:0!important;padding=
+:0!important;font-size:0!important;line-height:0!important;}
+				.va-m{vertical-align:middle!important;}
+				.w-9{width:9px!important;}
+				.w-16{width:16px!important;}
+				.w-27{width:27px!important;}
+				.w-47{width:47px!important;}
+				.w-150{width:150px!important;}
+				.wi-141 img{width:141px!important;height:auto!important;}
+				.wi-188 img{width:188px!important;height:auto!important;}
+				.wi-100p img{width:100%!important;height:auto!important;}
+				.plr-2{padding-left:2px!important;padding-right:2px!important;}
+				.plr-8{padding-left:8px!important;padding-right:8px!important;}
+				.plr-15{padding-left:15px!important;padding-right:15px!important;}
+				.plr-16{padding-left:16px!important;padding-right:16px!important;}
+				.pl-15{padding-left:15px!important;}
+				.pr-10{padding-right:10px!important;}
+				.pr-13{padding-right:13px!important;}
+				.pt-0{padding-top:0!important;}
+				.pt-14{padding-top:14px!important;}
+				.pt-18{padding-top:18px!important;}
+				.pt-22{padding-top:22px!important;}
+				.pt-23{padding-top:23px!important;}
+				.pt-24{padding-top:24px!important;}
+				.pt-31{padding-top:31px!important;}
+				.pt-39{padding-top:39px!important;}
+				.pb-0{padding-bottom:0!important;}
+				.pb-4{padding-bottom:4px!important;}
+				.pb-12{padding-bottom:12px!important;}
+				.pb-13{padding-bottom:13px!important;}
+				.pb-16{padding-bottom:16px!important;}
+				.pb-17{padding-bottom:17px!important;}
+				.pb-22{padding-bottom:22px!important;}
+				.pb-23{padding-bottom:23px!important;}
+				.pb-24{padding-bottom:24px!important;}
+				.pb-26{padding-bottom:26px!important;}
+				.pb-29{padding-bottom:29px!important;}
+				.pb-32{padding-bottom:32px!important;}
+				.pb-38{padding-bottom:38px!important;}
+			}
+			@media only screen and (max-width:374px) {
+				.fs-13-374{font-size:13px !important;}
+				.fs-14-374{font-size:14px !important;}
+				.fs-15-374{font-size:15px !important;}
+				.fs-16-374{font-size:16px !important;}
+				.fs-18-374{font-size:18px !important;}
+				.fs-22-374{font-size:22px !important;}
+				.fs-24-374{font-size:24px !important;}
+				.fs-26-374{font-size:26px !important;}
+				.fs-30-374{font-size:30px !important;}
+				.lh-15-374{line-height:15px !important;}
+				.lh-22-374{line-height:22px !important;}
+				.lh-24-374{line-height:24px !important;}
+				.lh-26-374{line-height:26px !important;}
+				.lh-28-374{line-height:28px !important;}
+				.lh-30-374{line-height:30px !important;}
+				.lh-32-374{line-height:32px !important;}
+				.lh-40-374{line-height:40px !important;}
+				.lh-42-374{line-height:42px !important;}
+				.pr-0-374{padding-right:0 !important;}
+				.pb-2-374{padding-bottom:2px !important;}
+				.pb-14-374{padding-bottom:14px !important;}
+				.pb-20-374{padding-bottom:20px !important;}
+				.pb-24-374{padding-bottom:24px !important;}
+				.pb-36-374{padding-bottom:36px !important;}
+				.pt-16-374{padding-top:16px !important;}
+				.pt-18-374{padding-top:18px !important;}
+				.pt-24-374{padding-top:24px !important;}
+				.pt-30-374{padding-top:30px !important;}
+				.w-7-374{width:7px !important;}
+				.w-16-374{width:16px !important;}
+				.w-19-374{width:19px !important;}
+				.w-90-374{width:90px !important;}
+				.w-104-374{width:104px !important;}
+				.w-113-374{width:113px !important;}
+				.wi-100p-374 img{width:100%!important; height:auto!important;}
+				.wi-124-374 img{width:124px!important; height:auto!important;}
+				.wi-141-374 img{width:141px!important; height:auto!important;}
+				.wi-200-374 img{width:200px!important; height:auto!important;}
+				.tflex-374{display:block!important; width:100%!important;}
+			}
+			@media (prefers-dark-interface) {body{-apple-color-filter:none;}}
+		</style></head><body style=3D"background:#fff; margin:0; padding:0; -webk=
+it-text-size-adjust:100%; -ms-text-size-adjust:100%;"><span style=3D"displa=
+y: none !important;"><p>Bruno Le Maire se dit contre un =C2=AB=C2=A0ISF ver=
+t=C2=A0=C2=BB.</p> <p>Dans B=E2=80=8Cr=E2=80=8Ci=E2=80=8Ce=E2=80=8Cf=E2=80=
+=8C.=E2=80=8Cm=E2=80=8Ce aujourd=E2=80=99hui, les d=C3=A9bats autour du fin=
+ancement de la transition =C3=A9cologique, les jeux d=E2=80=99argent et de =
+hasard en France et la douteuse conqu=C3=AAte chinoise du mont Everest.</p>=
+</span>              <table border=3D0 cellpadding=3D0 cellspacing=3D0 clas=
+s=3Dw-100p style=3Dbackground:#f8f8f8;width:100%;padding:0;border-collapse:=
+collapse;border-spacing:0px;><tr><td><!--[if mso | IE]><table align=3D"cent=
+er" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" style=3D"wi=
+dth:608px;" width=3D"608"><tr><td style=3D"line-height:0px;font-size:0px;ms=
+o-line-height-rule:exactly;"><![endif]--><div style=3D"Margin:0px auto;max-=
+width:608px;"><table align=3Dcenter border=3D0 cellpadding=3D0 cellspacing=
+=3D0 class=3Dw-100p role=3Dpresentation style=3Dwidth:100%;><tbody><tr><td =
+class=3D"pt-31 pt-24-374 pb-12" style=3D"direction:ltr;font-size:0px;paddin=
+g:25px 24px 16px;text-align:left;vertical-align:top;"><!--[if mso | IE]><ta=
+ble role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0">=
+<tr><td style=3D"vertical-align:middle;width:560px;"><![endif]--><div class=
+=3D"mj-column-per-100 outlook-group-fix" style=3Dfont-size:13px;text-align:=
+left;direction:ltr;display:inline-block;vertical-align:middle;width:100%;><=
+table border=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p role=3Dpres=
+entation width=3D100%><tbody><tr><td class=3D"wi-188 wi-141-374" valign=3Dt=
+op><a clicktracking=3D"on" href=3Dhttps://url3003.brief.me/ss/c/AWD9AEydda1=
+BlzAIDIER2jf_izozKv5oxSwW-JeaNG0/3wn/W1GSPMZTSxCTC8HTh8CvdA/h0/piIlAuohPAyb=
+W1axa2VFGtkKmzFuymyf_LKL-nxnzQg style=3Dtext-decoration:none;><img alt=3Dbr=
+ief.me| src=3Dhttps://www.brief.me/static/editorial/img/newsletters/briefme=
+_quotidien/v2/logo-01.png style=3D"width:164px; font:30px/34px Arial, Helve=
+tica, sans-serif; color:#424242; vertical-align:top;" width=3D164></a></td>=
+<td class=3Dva-m valign=3Dtop><table align=3Dright cellpadding=3D0 cellspac=
+ing=3D0><tr><td class=3Dpt-0 style=3D"padding:16px 0 0;"><table cellpadding=
+=3D0 cellspacing=3D0 class=3Dw-100p width=3D100%><tr><td width=3D32><a clic=
+ktracking=3D"on" href=3D"https://url3003.brief.me/ss/c/AWD9AEydda1BlzAIDIER=
+2vTWGuwPvG6ULhhDmAzMbvm-FItgYpkS05Z6YhhxNRbL3CuSp71dg94xAFiKERyouQEE67N63zD=
+QXJqLUZQXbfhjSLNnJ18PwjNrsswkkHB6b8rpJsrB6q9FXUH1ajevC6k1sEGZqYMf2bpwWVgf6s=
+neOh7DzHtg8JoqeiHgWbbRi_bPstp0_GUjnP2D1-tb9PSkqaVHjiHvxIwEEImC-xxDOJGX_Hr7U=
+0nya-N7Qr7GDsAumDRkpr_i_pfRzSNWAyzKr2eFh2rk9NOEMjbXZoUr0ZnM7hdsaAFydXEOYoo5=
+apSut1bFWkE5jUG2joaNnGe-3D-298e3Kwl9tOKPp_mkLqq_AJPZkvHPxAFTXL52eo69HAMKqC0=
+16BqjNdIbwZCDIfJ6LsboqqwXYXUgkEs/3wn/W1GSPMZTSxCTC8HTh8CvdA/h1/gGzMZkbDk7_A=
+Vt-b6aPabw-yvwg4vh9lcfhQ5fBQ_3U" style=3Dtext-decoration:none;><img alt=3D"=
+ic=C3=B4ne 1" src=3Dhttps://www.brief.me/static/editorial/img/newsletters/b=
+riefme_quotidien/v2/ico-01.png style=3D"width:26px; display:block; vertical=
+-align:top;" width=3D26></a></td><td align=3Dright style=3D"font:bold 14px/=
+16px Arial, Helvetica, sans-serif; color:#424242; letter-spacing:-0.2px;"><=
+a clicktracking=3D"on" href=3D"https://url3003.brief.me/ss/c/AWD9AEydda1Blz=
+AIDIER2vTWGuwPvG6ULhhDmAzMbvm-FItgYpkS05Z6YhhxNRbL3CuSp71dg94xAFiKERyouQEE6=
+7N63zDQXJqLUZQXbfhjSLNnJ18PwjNrsswkkHB6b8rpJsrB6q9FXUH1ajevC6k1sEGZqYMf2bpw=
+WVgf6sneOh7DzHtg8JoqeiHgWbbRi_bPstp0_GUjnP2D1-tb9PSkqaVHjiHvxIwEEImC-xxDOJG=
+X_Hr7U0nya-N7Qr7GDsAumDRkpr_i_pfRzSNWAyzKr2eFh2rk9NOEMjbXZoUr0ZnM7hdsaAFydX=
+EOYoo5apSut1bFWkE5jUG2joaNnGe-3D-298e3Kwl9tOKPp_mkLqq_AJPZkvHPxAFTXL52eo69H=
+AMKqC016BqjNdIbwZCDIfJ6LsboqqwXYXUgkEs/3wn/W1GSPMZTSxCTC8HTh8CvdA/h2/8y1PG7=
+CiIxIeAS1sGNl9De8cLJbFsIDOgr5YsbfF97s" style=3D"color:#424242; text-decorat=
+ion:none;"><span class=3Dd-b>=C3=89couter</span> l=E2=80=99=C3=A9dition</a>=
+</td></tr></table></td></tr></table></td></tr></tbody></table></div><!--[if=
+ mso | IE]></td></tr></table><![endif]--></td></tr></tbody></table></div><!=
+--[if mso | IE]></td></tr></table><![endif]--></td></tr></table><table bord=
+er=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p style=3Dbackground:#f=
+8f8f8;width:100%;padding:0;border-collapse:collapse;border-spacing:0px;><tr=
+><td><!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" class=3D"" style=3D"width:608px;" width=3D"608"><tr><t=
+d style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![=
+endif]--><div style=3D"Margin:0px auto;max-width:608px;"><table align=3Dcen=
+ter border=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p role=3Dpresen=
+tation style=3Dwidth:100%;><tbody><tr><td class=3Dpb-23 style=3D"direction:=
+ltr;font-size:0px;padding:0 24px 23px;text-align:left;vertical-align:top;">=
+<!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0"><tr><td style=3D"vertical-align:middle;width:560px;"><=
+![endif]--><div class=3D"mj-column-per-100 outlook-group-fix" style=3Dfont-=
+size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align=
+:middle;width:100%;><table border=3D0 cellpadding=3D0 cellspacing=3D0 class=
+=3Dw-100p role=3Dpresentation width=3D100%><tbody><tr><td class=3Dpb-16 sty=
+le=3D"padding:0 0 24px; font:bold 14px/24px Arial, Helvetica, sans-serif; c=
+olor:#DE4949;"> Mercredi 31 mai 2023 </td></tr><tr><td class=3D"fs-18-374 l=
+h-28-374" style=3D"font:bold 20px/30px Arial, Helvetica, sans-serif; color:=
+#424242;"><p>Dans B=E2=80=8Cr=E2=80=8Ci=E2=80=8Ce=E2=80=8Cf=E2=80=8C.=E2=80=
+=8Cm=E2=80=8Ce aujourd=E2=80=99hui, les d=C3=A9bats autour du financement d=
+e la transition =C3=A9cologique, les jeux d=E2=80=99argent et de hasard en =
+France et la douteuse conqu=C3=AAte chinoise du mont Everest.</p></td></tr>=
+<tr><td class=3D"fs-16-374 lh-28-374 cat_intro_outro" style=3D"padding:24px=
+ 0 0; font:18px/30px Arial, Helvetica, sans-serif; color:#424242;"><p>Vous =
+avez <a href=3Dhttps://url3003.brief.me/ss/c/AWD9AEydda1BlzAIDIER2ibAoyLaFo=
+x6J4s46KiZ2-nMBMLwPyiJVDgd4UMKPt5k/3wn/W1GSPMZTSxCTC8HTh8CvdA/h3/-ST2_UQDjG=
+cDUvfkQJvTU-nUsV_ZR-F3G89pJ2n7wPw clicktracking=3D"on">choisi notre sujet s=
+ur les industriels et les m=C3=A9dias</a>. Ce sera le th=C3=A8me principal =
+de notre prochaine =C3=A9dition de B=E2=80=8Cr=E2=80=8Ci=E2=80=8Ce=E2=80=8C=
+f=E2=80=8C.=E2=80=8Cm=E2=80=8Ce Week-end, =C3=A0 retrouver samedi d=C3=A8s =
+9h dans votre bo=C3=AEte mail et sur notre application mobile.</p></td></tr=
+></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--></td=
+></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--=
+></td></tr></table>             <table border=3D0 cellpadding=3D0 cellspaci=
+ng=3D0 class=3Dw-100p style=3Dbackground:#f8f8f8;width:100%;padding:0;borde=
+r-collapse:collapse;border-spacing:0px;><tr><td class=3Dcat2_border_bottom =
+style=3D"border-bottom: 2px solid #DE4949"><!--[if mso | IE]><table align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" sty=
+le=3D"width:608px;" width=3D"608"><tr><td style=3D"line-height:0px;font-siz=
+e:0px;mso-line-height-rule:exactly;"><![endif]--><div style=3D"Margin:0px a=
+uto;max-width:608px;"><table align=3Dcenter border=3D0 cellpadding=3D0 cell=
+spacing=3D0 class=3Dw-100p role=3Dpresentation style=3Dwidth:100%;><tbody><=
+tr><td class=3Dpt-23 style=3D"direction:ltr;font-size:0px;padding:24px 24px=
+ 0;text-align:left;vertical-align:top;"><!--[if mso | IE]><table role=3D"pr=
+esentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td style=
+=3D"vertical-align:middle;width:560px;"><![endif]--><div class=3D"mj-column=
+-per-100 outlook-group-fix" style=3Dfont-size:13px;text-align:left;directio=
+n:ltr;display:inline-block;vertical-align:middle;width:100%;><table border=
+=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p role=3Dpresentation wid=
+th=3D100%><tbody><tr><td><table cellpadding=3D0 cellspacing=3D0><tr><td cla=
+ss=3D"l-fff cat2_background" style=3D"background-color: #DE4949; padding:3p=
+x 25px 1px; font:bold 16px/24px Arial, Helvetica, sans-serif; color:#fff; b=
+order-radius:27px 27px 0 0;"> ON REMBOBINE </td></tr></table></td></tr></tb=
+ody></table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr=
+></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--></td=
+></tr></table><table border=3D0 cellpadding=3D0 cellspacing=3D0 class=3D"ca=
+t2 w-100p" style=3D"background-color: #fffffe; width:100%;padding:0;border-=
+collapse:collapse;border-spacing:0px;"><tr><td><!--[if mso | IE]><table ali=
+gn=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" s=
+tyle=3D"width:608px;" width=3D"608"><tr><td style=3D"line-height:0px;font-s=
+ize:0px;mso-line-height-rule:exactly;"><![endif]--><div style=3D"Margin:0px=
+ auto;max-width:608px;"><table align=3Dcenter border=3D0 cellpadding=3D0 ce=
+llspacing=3D0 class=3Dw-100p role=3Dpresentation style=3Dwidth:100%;><tbody=
+><tr><td class=3Dpt-30-374 style=3D"direction:ltr;font-size:0px;padding:32p=
+x 24px;text-align:left;vertical-align:top;"><!--[if mso | IE]><table role=
+=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td =
+style=3D"vertical-align:middle;width:560px;"><![endif]--><div class=3D"mj-c=
+olumn-per-100 outlook-group-fix" style=3Dfont-size:13px;text-align:left;dir=
+ection:ltr;display:inline-block;vertical-align:middle;width:100%;><table bo=
+rder=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p role=3Dpresentation=
+ width=3D100%><tbody class=3Dcat2 style=3D"background-color: #fffffe"><tr><=
+td style=3D"padding:0 0 3px;"><table align=3Dleft cellpadding=3D0 cellspaci=
+ng=3D0><tr><td style=3D"padding:2px 4px 0 0; mso-padding-alt:2px 4px 0 0;">=
+<table cellpadding=3D0 cellspacing=3D0 width=3D100%><tr><td class=3D"fs-13-=
+374 lh-15-374 pb-2-374 cat2_title cat2_kicker" style=3D"color: #DE4949; bac=
+kground-color: #fddfe1; padding:3px 6px; font:bold 15px/16px Arial, Helveti=
+ca, sans-serif; border-radius:3px;"> COR=C3=89E DU NORD </td></tr></table><=
+/td></tr></table><div class=3D"fs-16-374 lh-26-374 pm-0" style=3D"font-fami=
+ly: Arial,Helvetica,sans-serif; font-size: 18px; line-height: 28px; color: =
+#424242; text-indent:7px;"><p><strong>L=E2=80=99agence de presse officielle=
+ nord-cor=C3=A9enne KCNA a rapport=C3=A9 aujourd=E2=80=99hui qu=E2=80=99un =
+lancement de satellite de reconnaissance militaire avait =C3=A9chou=C3=A9</=
+strong> et que l=E2=80=99appareil s=E2=80=99=C3=A9tait ab=C3=AEm=C3=A9 en m=
+er Jaune <a clicktracking=3D"on" href=3Dhttps://url3003.brief.me/ss/c/9ucBX=
+d831kNmSVAaUHBjUp2sGZYRFe0mK3ekGNOfw2QuAJ0iWD5EHo_ODYZok67iYQf7BkoMwnMKaBRH=
+KBeeJG5FF18Ec_7woE28x9x5_uU/3wn/W1GSPMZTSxCTC8HTh8CvdA/h4/-cEZNFGD87hsrHqFM=
+YKvvKpwDeKG2muBKRkmGKnHoL0 rel=3Dnoopener style=3D"color: #DE4949" target=
+=3D_blank>[voir une carte]</a>. Ce lancement a provoqu=C3=A9 des alertes au=
+ Japon et en Cor=C3=A9e du Sud, o=C3=B9 les autorit=C3=A9s redoutaient un e=
+ssai de missile. Le r=C3=A9gime nord-cor=C3=A9en multiplie les tests balist=
+iques depuis d=C3=A9but 2022.</p></div></td></tr><tr><td class=3D"fs-16-374=
+ lh-26-374 h-n" style=3D"padding:0 0 25px; font-family: Helvetica,Arial,san=
+s-serif; font-size: 18px; line-height: 28px; color: #424242;" valign=3Dtop>=
+<a clicktracking=3D"on" href=3D"https://url3003.brief.me/ss/c/pzEjhFizng49j=
+a4-MJl0GH3UTIhu52G4m-72ucbkjTYx0MKoKUWPMJEunkBYgT81uxC9LSWN4DXyNRmOWDa0aQOz=
+b7mprdkSbFINvFOBORW5sJk4dl-aVpJACJjaJvS0/3wn/W1GSPMZTSxCTC8HTh8CvdA/h5/zurS=
+lYBTx_nRNvqr_7nwDpE7rU3_oZHP7nILNSdwQeQ" style=3D"color: #DE4949; text-deco=
+ration:none; color:#424242;"><span style=3D"display:inline-block; vertical-=
+align:-2px;"><img alt=3D"picto cat2" src=3Dhttps://www.brief.me/static/edit=
+orial/img/newsletters/briefme_quotidien/v2/picto_link_cat2.png style=3D"wid=
+th:20px; display:block; vertical-align:top;" width=3D20></span>=E2=80=82<sp=
+an class=3Dtxt style=3Dtext-decoration:underline;>Lire notre panorama sur l=
+a Cor=C3=A9e du Nord.</span></a></td></tr><tr><td align=3Dcenter style=3D"p=
+adding:0 0 24px; line-height:1px; font-size:1px; mso-line-height-rule:at-le=
+ast;"><img alt=3D"separator cat2" src=3Dhttps://www.brief.me/static/editori=
+al/img/newsletters/briefme_quotidien/v2/separator_cat2.png style=3D"width:4=
+8px; vertical-align:top;" width=3D48></td></tr><tr><td style=3D"padding:0 0=
+ 3px;"><table align=3Dleft cellpadding=3D0 cellspacing=3D0><tr><td style=3D=
+"padding:2px 4px 0 0; mso-padding-alt:2px 4px 0 0;"><table cellpadding=3D0 =
+cellspacing=3D0 width=3D100%><tr><td class=3D"fs-13-374 lh-15-374 pb-2-374 =
+cat2_title cat2_kicker" style=3D"color: #DE4949; background-color: #fddfe1;=
+ padding:3px 6px; font:bold 15px/16px Arial, Helvetica, sans-serif; border-=
+radius:3px;"> RETRAITES </td></tr></table></td></tr></table><div class=3D"f=
+s-16-374 lh-26-374 pm-0" style=3D"font-family: Arial,Helvetica,sans-serif; =
+font-size: 18px; line-height: 28px; color: #424242; text-indent:7px;"><p><s=
+trong>Les d=C3=A9put=C3=A9s de la commission des Affaires sociales ont reje=
+t=C3=A9 aujourd=E2=80=99hui l=E2=80=99article d=E2=80=99une proposition de =
+loi visant =C3=A0 abroger le recul de l=E2=80=99=C3=A2ge de d=C3=A9part =C3=
+=A0 la retraite =C3=A0 64=C2=A0ans.</strong> Ce texte a =C3=A9t=C3=A9 d=C3=
+=A9pos=C3=A9 par le groupe parlementaire Liot (centre), oppos=C3=A9 =C3=A0 =
+la r=C3=A9forme des retraites promulgu=C3=A9e en avril. Le rapporteur du te=
+xte, le d=C3=A9put=C3=A9 Charles de Courson (Liot), a d=C3=A9clar=C3=A9 qu=
+=E2=80=99il allait d=C3=A9poser un amendement pour r=C3=A9introduire cette =
+disposition dans la proposition de loi avant son examen en s=C3=A9ance publ=
+ique, pr=C3=A9vu la semaine prochaine.</p></div></td></tr><tr><td class=3D"=
+fs-16-374 lh-26-374 h-n" style=3D"padding:0 0 25px; font-family: Helvetica,=
+Arial,sans-serif; font-size: 18px; line-height: 28px; color: #424242;" vali=
+gn=3Dtop><a clicktracking=3D"on" href=3D"https://url3003.brief.me/ss/c/pzEj=
+hFizng49ja4-MJl0GH3UTIhu52G4m-72ucbkjTamM58dvFPuQ3OHe399trIJTTB47Vxf2v-I_Mz=
+87P6EfwgeUn79qXuzpjlK29UrFi_dta32887jXr8X8ZyA_6Dg/3wn/W1GSPMZTSxCTC8HTh8Cvd=
+A/h6/jZLSuuPZuGf57n_nJrie1m_qi13dV7qGUDPSv99LTBI" style=3D"color: #DE4949; =
+text-decoration:none; color:#424242;"><span style=3D"display:inline-block; =
+vertical-align:-2px;"><img alt=3D"picto cat2" src=3Dhttps://www.brief.me/st=
+atic/editorial/img/newsletters/briefme_quotidien/v2/picto_link_cat2.png sty=
+le=3D"width:20px; display:block; vertical-align:top;" width=3D20></span>=E2=
+=80=82<span class=3Dtxt style=3Dtext-decoration:underline;>Lire notre panor=
+ama sur la r=C3=A9forme des retraites.</span></a></td></tr><tr><td align=3D=
+center style=3D"padding:0 0 24px; line-height:1px; font-size:1px; mso-line-=
+height-rule:at-least;"><img alt=3D"separator cat2" src=3Dhttps://www.brief.=
+me/static/editorial/img/newsletters/briefme_quotidien/v2/separator_cat2.png=
+ style=3D"width:48px; vertical-align:top;" width=3D48></td></tr><tr><td sty=
+le=3D"padding:0 0 3px;"><table align=3Dleft cellpadding=3D0 cellspacing=3D0=
+><tr><td style=3D"padding:2px 4px 0 0; mso-padding-alt:2px 4px 0 0;"><table=
+ cellpadding=3D0 cellspacing=3D0 width=3D100%><tr><td class=3D"fs-13-374 lh=
+-15-374 pb-2-374 cat2_title cat2_kicker" style=3D"color: #DE4949; backgroun=
+d-color: #fddfe1; padding:3px 6px; font:bold 15px/16px Arial, Helvetica, sa=
+ns-serif; border-radius:3px;"> INFLATION </td></tr></table></td></tr></tabl=
+e><div class=3D"fs-16-374 lh-26-374 pm-0" style=3D"font-family: Arial,Helve=
+tica,sans-serif; font-size: 18px; line-height: 28px; color: #424242; text-i=
+ndent:7px;"><p><strong>L=E2=80=99inflation en France a ralenti =C3=A0 5,1=
+=C2=A0% sur un an entre mai 2022=C2=A0et mai 2023, soit 0,8=C2=A0point de m=
+oins que le taux enregistr=C3=A9 en avril</strong>, selon une premi=C3=A8re=
+ estimation de l=E2=80=99Insee publi=C3=A9e aujourd=E2=80=99hui. L=E2=80=99=
+institut national de statistiques attribue cette baisse =C2=AB=C2=A0au rale=
+ntissement sur un an des prix de l=E2=80=99=C3=A9nergie, de l=E2=80=99alime=
+ntation, des produits manufactur=C3=A9s et des services=C2=A0=C2=BB. L=E2=
+=80=99Insee a aussi confirm=C3=A9 une croissance du PIB (la production tota=
+le de biens et services) au premier trimestre de 0,2=C2=A0% par rapport au =
+trimestre pr=C3=A9c=C3=A9dent.</p></div></td></tr><tr><td class=3D"fs-16-37=
+4 lh-26-374 h-n" style=3D"padding:0 0 25px; font-family: Helvetica,Arial,sa=
+ns-serif; font-size: 18px; line-height: 28px; color: #424242;" valign=3Dtop=
+><a clicktracking=3D"on" href=3D"https://url3003.brief.me/ss/c/pzEjhFizng49=
+ja4-MJl0GNLzesukVneZFzrV9Jy_Wsn1oVn9wZoTLWF4u427YmiGI2lnka3nOANPJUpGYTrfs5M=
+npznwXde2B2mVQcm5CbLT2Iic6mYngQ-4-Rw3f_oaAlqL-LYYZ4BDkS9wweOCdpNawRSkmkFW7o=
+27ic5K9xw/3wn/W1GSPMZTSxCTC8HTh8CvdA/h7/n1h7tszvDXoAxTspH603BEJ7-zGGMu9W5IT=
+Vq3c_AsE" style=3D"color: #DE4949; text-decoration:none; color:#424242;"><s=
+pan style=3D"display:inline-block; vertical-align:-2px;"><img alt=3D"picto =
+cat2" src=3Dhttps://www.brief.me/static/editorial/img/newsletters/briefme_q=
+uotidien/v2/picto_link_cat2.png style=3D"width:20px; display:block; vertica=
+l-align:top;" width=3D20></span>=E2=80=82<span class=3Dtxt style=3Dtext-dec=
+oration:underline;>Lire le dossier de Brief.eco sur la lutte contre l=E2=80=
+=99inflation.</span></a></td></tr><tr><td align=3Dcenter style=3D"padding:0=
+ 0 24px; line-height:1px; font-size:1px; mso-line-height-rule:at-least;"><i=
+mg alt=3D"separator cat2" src=3Dhttps://www.brief.me/static/editorial/img/n=
+ewsletters/briefme_quotidien/v2/separator_cat2.png style=3D"width:48px; ver=
+tical-align:top;" width=3D48></td></tr><tr><td style=3D"padding:0 0 24px;">=
+<table align=3Dleft cellpadding=3D0 cellspacing=3D0><tr><td style=3D"paddin=
+g:2px 4px 0 0; mso-padding-alt:2px 4px 0 0;"><table cellpadding=3D0 cellspa=
+cing=3D0 width=3D100%><tr><td class=3D"fs-13-374 lh-15-374 pb-2-374 cat2_ti=
+tle cat2_kicker" style=3D"color: #DE4949; background-color: #fddfe1; paddin=
+g:3px 6px; font:bold 15px/16px Arial, Helvetica, sans-serif; border-radius:=
+3px;"> TABAGISME </td></tr></table></td></tr></table><div class=3D"fs-16-37=
+4 lh-26-374 pm-0" style=3D"font-family: Arial,Helvetica,sans-serif; font-si=
+ze: 18px; line-height: 28px; color: #424242; text-indent:7px;"><p><strong>=
+=C2=AB=C2=A0La France compte toujours pr=C3=A8s de 12=C2=A0millions de fume=
+urs quotidiens=C2=A0=C2=BB</strong>, soit environ trois personnes de 18=C2=
+=A0=C3=A0 75=C2=A0ans sur 10, d=C3=A9plore Sant=C3=A9 publique France dans =
+des estimations publi=C3=A9es aujourd=E2=80=99hui. L=E2=80=99organisme publ=
+ic d=C3=A9pendant du minist=C3=A8re de la Sant=C3=A9 estime qu=E2=80=99apr=
+=C3=A8s =C2=AB=C2=A0une baisse du tabagisme quotidien d=E2=80=99ampleur in=
+=C3=A9dite entre 2016=C2=A0et 2019=C2=A0=C2=BB, la consommation de tabac s=
+=E2=80=99est =C2=AB=C2=A0stabilis=C3=A9e depuis 2019=C2=A0=C2=BB. Sant=C3=
+=A9 publique France note aussi une =C2=AB=C2=A0tendance =C3=A0 la hausse=C2=
+=A0=C2=BB du vapotage.</p></div></td></tr></tbody></table></div><!--[if mso=
+ | IE]></td></tr></table><![endif]--></td></tr></tbody></table></div><!--[i=
+f mso | IE]></td></tr></table><![endif]--></td></tr></table><table border=
+=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p style=3Dbackground:#f8f=
+8f8;width:100%;padding:0;border-collapse:collapse;border-spacing:0px;><tr><=
+td class=3Dcat1_border_bottom style=3D"border-bottom: 2px solid #ff6801"><!=
+--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" class=3D"" style=3D"width:608px;" width=3D"608"><tr><td style=
+=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-=
+-><div style=3D"Margin:0px auto;max-width:608px;"><table align=3Dcenter bor=
+der=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p role=3Dpresentation =
+style=3Dwidth:100%;><tbody><tr><td class=3Dpt-23 style=3D"direction:ltr;fon=
+t-size:0px;padding:31px 24px 0;text-align:left;vertical-align:top;"><!--[if=
+ mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0"><tr><td style=3D"vertical-align:middle;width:560px;"><![endif=
+]--><div class=3D"mj-column-per-100 outlook-group-fix" style=3Dfont-size:13=
+px;text-align:left;direction:ltr;display:inline-block;vertical-align:middle=
+;width:100%;><table border=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-10=
+0p role=3Dpresentation width=3D100%><tbody><tr><td><table cellpadding=3D0 c=
+ellspacing=3D0><tr><td class=3D"l-fff cat1_background" style=3D"background-=
+color: #ff6801; padding:3px 25px 1px; font:bold 16px/24px Arial, Helvetica,=
+ sans-serif; color:#fff; border-radius:27px 27px 0 0;"> TOUT S=E2=80=99EXPL=
+IQUE </td></tr></table></td></tr></tbody></table></div><!--[if mso | IE]></=
+td></tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso | I=
+E]></td></tr></table><![endif]--></td></tr></table><table border=3D0 cellpa=
+dding=3D0 cellspacing=3D0 class=3D"cat1 w-100p" style=3D"background-color: =
+#fff0e6; background-color: #fff; width:100%;padding:0;border-collapse:colla=
+pse;border-spacing:0px;"><tr><td><!--[if mso | IE]><table align=3D"center" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" style=3D"width:=
+608px;" width=3D"608"><tr><td style=3D"line-height:0px;font-size:0px;mso-li=
+ne-height-rule:exactly;"><![endif]--><div style=3D"Margin:0px auto;max-widt=
+h:608px;"><table align=3Dcenter border=3D0 cellpadding=3D0 cellspacing=3D0 =
+class=3Dw-100p role=3Dpresentation style=3Dwidth:100%;><tbody><tr><td style=
+=3D"direction:ltr;font-size:0px;padding:24px 16px 47px;text-align:left;vert=
+ical-align:top;"><!--[if mso | IE]><table role=3D"presentation" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0"><tr><td style=3D"vertical-align:middl=
+e;width:560px;"><![endif]--><div class=3D"mj-column-per-100 outlook-group-f=
+ix" style=3Dfont-size:13px;text-align:left;direction:ltr;display:inline-blo=
+ck;vertical-align:middle;width:100%;><table border=3D0 cellpadding=3D0 cell=
+spacing=3D0 class=3Dw-100p role=3Dpresentation width=3D100%><tbody><tr><td =
+class=3D"fs-30-374 lh-40-374 cat1_title" style=3D"color: #ff6801; padding:0=
+ 8px 24px; font:bold 32px/42px Arial, Helvetica, sans-serif;"> Bruno Le Mai=
+re souhaite utiliser l=E2=80=99=C3=A9pargne pour financer la transition =C3=
+=A9cologique </td></tr><tr><td style=3D"padding-bottom: 32px;"><table borde=
+r=3D0 cellpadding=3D0 cellspacing=3D0 class=3D"w-100p cat1" role=3Dpresenta=
+tion style=3D"background-color: #fff0e6; border-radius:8px; background-colo=
+r:#f9eadf;" width=3D100%><tr><td class=3D"cat1_list_cell plr-16 fs-16-374 l=
+h-26-374" style=3D"padding:10px 24px; color:#424242; font:18px/28px Arial, =
+Helvetica, sans-serif;"><p><span style=3D"font-size:24px; line-height:24px;=
+ vertical-align:middle;">=E2=80=A2</span> Le ministre de l=E2=80=99=C3=89co=
+nomie se dit oppos=C3=A9 =C3=A0 une solution consistant =C3=A0 imposer dava=
+ntage les plus riches. </p><p><span style=3D"font-size:24px; line-height:24=
+px; vertical-align:middle;">=E2=80=A2</span> Un rapport remis la semaine de=
+rni=C3=A8re =C3=A0 la Premi=C3=A8re ministre pr=C3=A9conise de taxer les 10=
+=C2=A0% des contribuables les plus ais=C3=A9s. </p></td></tr></table></td><=
+/tr><tr><td class=3D"fs-22-374 lh-30-374 cat1_title" style=3D"color: #ff680=
+1; padding:0 8px 17px; font:bold 24px/32px Arial, Helvetica, sans-serif;"> =
+Qu=E2=80=99a propos=C3=A9 Bruno Le Maire pour le financement de la transiti=
+on =C3=A9cologique=C2=A0? </td></tr><tr><td class=3D"pb-24-374 fs-16-374 lh=
+-26-374 pm-0" style=3D"padding:0 8px 23px; font:18px/28px Arial, Helvetica,=
+ sans-serif; color:#424242;"><p>Le ministre de l=E2=80=99=C3=89conomie, Bru=
+no Le Maire, s=E2=80=99est d=C3=A9clar=C3=A9 ce matin sur France Inter favo=
+rable =C3=A0 la mobilisation de l=E2=80=99=C3=A9pargne des Fran=C3=A7ais po=
+ur financer la transition =C3=A9cologique. Il a propos=C3=A9 <strong>d=E2=
+=80=99utiliser les fonds plac=C3=A9s sur les livrets de d=C3=A9veloppement =
+durable et solidaire et sur les contrats d=E2=80=99assurance-vie</strong>. =
+Il a d=C3=A9clar=C3=A9 qu=E2=80=99il y aurait dans le projet de loi Industr=
+ie verte qu=E2=80=99il a pr=C3=A9sent=C3=A9 il y a deux semaines =C2=AB=C2=
+=A0une obligation d=E2=80=99avoir des unit=C3=A9s de compte qui iront vers =
+le financement de la transition =C3=A9cologique=C2=A0=C2=BB. Il estime que =
+ces mesures permettraient de d=C3=A9gager 5=C2=A0milliards d=E2=80=99euros =
+chaque ann=C3=A9e sur les =C2=AB=C2=A060=C2=A0=C3=A0 70=C2=A0milliards d=E2=
+=80=99euros de financement n=C3=A9cessaires chaque ann=C3=A9e=C2=A0=C2=BB. =
+Ces 5=C2=A0milliards d=E2=80=99euros =C3=A9quivalent, selon lui, =C3=A0 ce =
+que permettrait de r=C3=A9colter un imp=C3=B4t sur la fortune des 10=C2=A0%=
+ des contribuables les plus ais=C3=A9s. <strong>Il a d=C3=A9clar=C3=A9 pr=
+=C3=A9f=C3=A9rer le choix de l=E2=80=99=C3=A9pargne =C3=A0 =C2=AB=C2=A0la f=
+acilit=C3=A9 de l=E2=80=99imp=C3=B4t qui exasp=C3=A8re nos compatriotes=C2=
+=A0=C2=BB.</strong></p></td></tr><tr><td class=3D"fs-22-374 lh-30-374 cat1_=
+title" style=3D"color: #ff6801; padding:0 8px 17px; font:bold 24px/32px Ari=
+al, Helvetica, sans-serif;"> Qu=E2=80=99est-ce que l=E2=80=99=C2=AB=C2=A0IS=
+F vert=C2=A0=C2=BB=C2=A0? </td></tr><tr><td class=3D"pb-24-374 fs-16-374 lh=
+-26-374 pm-0" style=3D"padding:0 8px 23px; font:18px/28px Arial, Helvetica,=
+ sans-serif; color:#424242;"><p>Bruno Le Maire s=E2=80=99est oppos=C3=A9 =
+=C3=A0 la cr=C3=A9ation d=E2=80=99un =C2=AB=C2=A0ISF vert=C2=A0=C2=BB pour =
+financer la transition =C3=A9cologique. <strong>Cette appellation d=C3=A9co=
+ule de l=E2=80=99imp=C3=B4t de solidarit=C3=A9 sur la fortune (ISF), suppri=
+m=C3=A9 en 2018, qui taxait les patrimoines les plus =C3=A9lev=C3=A9s.</str=
+ong> La Convention citoyenne pour le climat, une assembl=C3=A9e de 150=C2=
+=A0Fran=C3=A7ais tir=C3=A9s au sort, avait propos=C3=A9 en juin 2020=C2=A0l=
+a cr=C3=A9ation d=E2=80=99un =C2=AB=C2=A0imp=C3=B4t =C3=A9cologique sur la =
+fortune=C2=A0=C2=BB pour financer des mesures de lutte contre le r=C3=A9cha=
+uffement climatique. Un rapport remis =C3=A0 la Premi=C3=A8re ministre la s=
+emaine derni=C3=A8re par deux =C3=A9conomistes, Jean Pisani-Ferry et Selma =
+Mahfouz, propose <strong>un =C2=AB=C2=A0pr=C3=A9l=C3=A8vement exceptionnel=
+=C2=A0=C2=BB et temporaire =C2=AB=C2=A0sur le patrimoine financier des m=C3=
+=A9nages les plus ais=C3=A9s=C2=A0=C2=BB</strong>. =C2=AB=C2=A0Pourquoi ne =
+pas demander un effort aux 10=C2=A0% les plus ais=C3=A9s et, en gros, leur =
+dire=C2=A0: pourquoi est-ce que vous ne donneriez pas une fois pour toutes =
+5=C2=A0% de votre patrimoine pour le climat=C2=A0?=C2=A0=C2=BB, a explicit=
+=C3=A9 Jean Pisani-Ferry dans une interview =C3=A0 Franceinfo hier. Selon l=
+ui, cette mesure r=C3=A9pondrait aussi =C3=A0 un souci d=E2=80=99=C3=A9quit=
+=C3=A9 entre les citoyens dans la r=C3=A9partition des efforts.</p></td></t=
+r><tr><td class=3D"fs-22-374 lh-30-374 cat1_title" style=3D"color: #ff6801;=
+ padding:0 8px 17px; font:bold 24px/32px Arial, Helvetica, sans-serif;"> Qu=
+=E2=80=99est-ce que les =C2=AB=C2=A0d=C3=A9penses brunes=C2=A0=C2=BB=C2=A0?=
+ </td></tr><tr><td class=3D"pb-24-374 fs-16-374 lh-26-374 pm-0" style=3D"pa=
+dding:0 8px 23px; font:18px/28px Arial, Helvetica, sans-serif; color:#42424=
+2;"><p>Jean Pisani-Ferry et Selma Mahfouz estiment dans leur rapport que le=
+ premier moyen de financement de la transition =C3=A9cologique est le red=
+=C3=A9ploiement des d=C3=A9penses publiques =C2=AB=C2=A0brunes=C2=A0=C2=BB =
+vers des d=C3=A9penses =C2=AB=C2=A0vertes=C2=A0=C2=BB. <strong>Les d=C3=A9p=
+enses =C2=AB=C2=A0brunes=C2=A0=C2=BB sont des d=C3=A9penses d=C3=A9favorabl=
+es =C3=A0 l=E2=80=99environnement.</strong> Le gouvernement classe ainsi le=
+s d=C3=A9penses d=C3=A9favorables ou neutres dans six domaines=C2=A0: l=E2=
+=80=99att=C3=A9nuation du r=C3=A9chauffement climatique, l=E2=80=99adaptati=
+on au r=C3=A9chauffement climatique, les ressources en eau, la gestion des =
+d=C3=A9chets, les pollutions et la biodiversit=C3=A9. <strong>Ces d=C3=A9pe=
+nses =C2=AB=C2=A0brunes=C2=A0=C2=BB sont pass=C3=A9es de 10,3=C2=A0milliard=
+s d=E2=80=99euros dans le projet de loi de finances pour 2022=C2=A0=C3=A0 1=
+9,6=C2=A0milliards dans celui pour 2023</strong>, selon un rapport sur l=E2=
+=80=99impact environnemental du budget de l=E2=80=99=C3=89tat =C3=A9labor=
+=C3=A9 par les minist=C3=A8res de la Transition =C3=A9cologique et de l=E2=
+=80=99=C3=89conomie. Cette forte augmentation =C2=AB=C2=A0s=E2=80=99expliqu=
+e par la mise en place des mesures exceptionnelles de protection des consom=
+mateurs=C2=A0=C2=BB pour faire face =C3=A0 la hausse des tarifs de l=E2=80=
+=99=C3=A9lectricit=C3=A9 et du gaz, explique le rapport.</p></td></tr><tr><=
+td align=3Dcenter style=3D"padding:8px 8px 17px; line-height:1px; font-size=
+:1px; mso-line-height-rule:at-least;"><img alt=3D"separator cat1" src=3Dhtt=
+ps://www.brief.me/static/editorial/img/newsletters/briefme_quotidien/v2/sep=
+arator_cat1.png style=3D"width:48px; vertical-align:top;" width=3D48></td><=
+/tr><tr><td class=3D"pt-18-374 pb-38" style=3D"padding:15px 8px 38px;"><tab=
+le cellpadding=3D0 cellspacing=3D0 class=3Dw-100p width=3D100%><tr><td clas=
+s=3D"pb-24-374 fs-22-374 lh-30-374" style=3D"padding:0 0 25px; font:bold 24=
+px/32px Arial, Helvetica, sans-serif; color:#424242;"> Pour aller plus loin=
+ </td></tr><tr><td class=3D"fs-16-374 lh-26-374" style=3D"padding:0 0 24px;=
+ font-family: Helvetica,Arial,sans-serif; font-size: 18px; line-height: 28p=
+x; color: #424242;" valign=3Dtop><span style=3D"display:inline-block; verti=
+cal-align:-2px;"><img alt=3D"picto cat1" src=3Dhttps://www.brief.me/static/=
+editorial/img/newsletters/briefme_quotidien/v2/picto_link_cat1.png style=3D=
+"width:20px; display:block; vertical-align:top;" width=3D20></span>=E2=80=
+=82Le <a clicktracking=3D"on" href=3Dhttps://url3003.brief.me/ss/c/AWD9AEyd=
+da1BlzAIDIER2v8o50Afy-8iG544Iu2aDqGckSLwSsUkvR3xesNyfceje4ujIKOw8nUnVa0zn_0=
+7SNN3ZnhyUHSCM6JdTyj0k6vmbqwP3kI1BENvaL9weuISWygSWnskme6qKcVQstJj7h5p0QSKTb=
+6sVv6X3oQSfAA/3wn/W1GSPMZTSxCTC8HTh8CvdA/h8/iJQy5Vl5KS5eF1h_xROWq_QaN8caxrr=
+iQ-AuTpD04kI style=3D"color: #ff6801">rapport de Jean Pisani-Ferry et Selma=
+ Mahfouz</a>. </td></tr><tr><td class=3D"fs-16-374 lh-26-374" style=3D"padd=
+ing:0 0 24px; font-family: Helvetica,Arial,sans-serif; font-size: 18px; lin=
+e-height: 28px; color: #424242;" valign=3Dtop><span style=3D"display:inline=
+-block; vertical-align:-2px;"><img alt=3D"picto cat1" src=3Dhttps://www.bri=
+ef.me/static/editorial/img/newsletters/briefme_quotidien/v2/picto_link_cat1=
+.png style=3D"width:20px; display:block; vertical-align:top;" width=3D20></=
+span>=E2=80=82Un dossier de Brief.eco <a clicktracking=3D"on" href=3D"https=
+://url3003.brief.me/ss/c/pzEjhFizng49ja4-MJl0GNLzesukVneZFzrV9Jy_Wskbltk5Cg=
+Du0tBIhoAZQ4NNhf2qudStMOQ9Eld3j0aJdaFQnHhwu8jtseY7KtyZoXjiMK2pvzaabiHofGj5R=
+fh7HobUDYnFbZ1R_2qEv3XkgQ/3wn/W1GSPMZTSxCTC8HTh8CvdA/h9/_e_27IgVF0a6f5jESpG=
+gjF44UbdbWU7jl93d1Sh995k" style=3D"color: #ff6801">sur l=E2=80=99ISF</a>. <=
+/td></tr><tr><td class=3D"fs-16-374 lh-26-374" style=3D"font-family: Helvet=
+ica,Arial,sans-serif; font-size: 18px; line-height: 28px; color: #424242;" =
+valign=3Dtop><span style=3D"display:inline-block; vertical-align:-2px;"><im=
+g alt=3D"picto cat1" src=3Dhttps://www.brief.me/static/editorial/img/newsle=
+tters/briefme_quotidien/v2/picto_link_cat1.png style=3D"width:20px; display=
+:block; vertical-align:top;" width=3D20></span>=E2=80=82Notre panorama sur =
+<a clicktracking=3D"on" href=3D"https://url3003.brief.me/ss/c/pzEjhFizng49j=
+a4-MJl0GH3UTIhu52G4m-72ucbkjTZ-Rw5wbz3OeTEKQBBVH7sYf8shOBsDlpyk64W0h-3-bU_y=
+DHVvQWUrEr9FMwDcFGAA_nqi0QsWUDVBfevcJ6ljF504PMTU0CIYjkza5hysYQ/3wn/W1GSPMZT=
+SxCTC8HTh8CvdA/h10/df3gKODtGtyOwbVu6hE51Im3U6_Lf_oTFkNU6ei18MU" style=3D"co=
+lor: #ff6801">la transition =C3=A9nerg=C3=A9tique</a>. </td></tr></table></=
+td></tr><tr><td><table align=3Dcenter cellpadding=3D0 cellspacing=3D0><tr><=
+td align=3Dcenter class=3D"w-47 active-i" style=3D"line-height:1px; font-si=
+ze:1px; mso-line-height-rule:at-least;" width=3D58><a clicktracking=3D"on" =
+href=3D"https://url3003.brief.me/ss/c/uvWhLgfybEKOci_rkpCTKFzFjO-ySKfkYYOM1=
+X9ypiHa3duCib5hZiB4_TwVzTaCJrGrFzjsfbVsJ8bOWe0ZHAaCB-vMvBb3wsa39K4kIpUnntdy=
+7gCnR_ROU2JQbhNhMZxgop-gGGazY_UHK_R9WOBaYB_UwL6egssro2xjjqmsWnGu_UZmE-hQl8O=
+c3yhZwThIPeQvtXJS96GcfZDf_7hO11EXxN3NavYlh9kDpY1_i9R6oCRfoLRm7LtMYZyZ/3wn/W=
+1GSPMZTSxCTC8HTh8CvdA/h11/BbPKvxq1T3HyfE1BK9H801qwDop2e3QuAfw7x2pdkOI" styl=
+e=3D"color: #ff6801; text-decoration:none;"><img alt=3Dfacebook src=3Dhttps=
+://www.brief.me/static/editorial/img/newsletters/briefme_quotidien/v2/ico-f=
+acebook.png style=3D"width:11px; font:19px/28px Arial, Helvetica, sans-seri=
+f; color:#0954c0; vertical-align:bottom;" width=3D11></a></td><td align=3Dc=
+enter class=3D"w-47 active-i" style=3D"line-height:1px; font-size:1px; mso-=
+line-height-rule:at-least;" width=3D54><a clicktracking=3D"on" href=3D"http=
+s://url3003.brief.me/ss/c/ZBOlHrnWkOSco6Tx7wp6grHsYM0kGEArPClfcNaiHycF2peu9=
+aMUsmTBFnjiHZsqs_FfGxyivxVCwvgcvRLvhql8FbaaV8I2OlnbMDGGwlnOvTNbrYNiZWkZmh6J=
+wokXBv0Fuv_pnYxyd7XcQbcjsTGP-iLfSVGfXcOYEikouoAqUHP2IhbaXLVyuVQwpfOq4QuT8WE=
+NigPYLz7ecxn3NlkjItMGY39lbAcBEONLUeTOIuvcnOxQgxSkPg_YwBJDu6TJfPxqd0oa9K61F5=
+JKIUnT4cte_amhkDhsCUfQfW_5Wt6WEGRhqxqMvmxCRlUMzcu5qQsJPyUIidix7mGRp7QIR0oVI=
+WmJoNVpMLwSVm-3q9RzW2jZMPwNAw7RDO-eg5T7GgvioX8_WB8SY1nA8rkKRvuIqtQJjkTM709a=
+z6w/3wn/W1GSPMZTSxCTC8HTh8CvdA/h12/NYoROQlcN4GW3rZcCHvKZoy0cUlij7o5hFxzHrTd=
+wkU" style=3D"color: #ff6801; text-decoration:none;"><img alt=3Dtwitter src=
+=3Dhttps://www.brief.me/static/editorial/img/newsletters/briefme_quotidien/=
+v2/ico-twitter.png style=3D"width:18px; font:19px/28px Arial, Helvetica, sa=
+ns-serif; color:#0954c0; vertical-align:bottom;" width=3D18></a></td><td al=
+ign=3Dcenter class=3D"d-b w-47 active-i" style=3D"display:none; line-height=
+:0px; font-size:0px; mso-line-height-rule:at-least; mso-hide:all" valign=3D=
+bottom width=3D0><a clicktracking=3D"on" href=3D"https://url3003.brief.me/s=
+s/c/pzEjhFizng49ja4-MJl0GMmdKqgQze08ZpY3etJm1HEyBYKtPkpXVQVWvYsMIGJ0PqHBdQ-=
+LFYWtpoNMv8YdGAnKbwfLCDS8KZCAa4Wf9BhnA-3gpoNah4zLUtLZOw7RRxpZsA--0DkEAPFfuo=
+q3xcqGcZ0SSGgaJMpwQCR-7_XYl3ANuIVcLS9CdldoV_jahzSkHwM_80xhvzdp75nh_qW1RJCsV=
+E0IQeaUq5Q9schCJ-vHzTMIIXBC9h4uJb-r/3wn/W1GSPMZTSxCTC8HTh8CvdA/h13/7lUD0TuK=
+YTaAGKJ1lMlNa1CycP8zQI7DdWG3ybJ0ecU" style=3D"color: #ff6801; text-decorati=
+on:none;"><img alt=3Dwhatsapp src=3Dhttps://www.brief.me/static/editorial/i=
+mg/newsletters/briefme_quotidien/v2/ico-whatsapp.png style=3D"width:20px; f=
+ont:19px/28px Arial, Helvetica, sans-serif; color:#0954c0; vertical-align:b=
+ottom;" width=3D20></a></td><td align=3Dcenter class=3D"w-47 active-i" styl=
+e=3D"line-height:1px; font-size:1px; mso-line-height-rule:at-least;" width=
+=3D56><a clicktracking=3D"on" href=3D"mailto:?subject=3DBruno%20Le%20Maire%=
+20souhaite%20utiliser%20l%E2%80%99%C3%A9pargne%20pour%20financer%20la%20tra=
+nsition%20%C3%A9cologique&body=3DJe%20pense%20que%20cet%20article%20pourrai=
+t%20t'int=C3=A9resser%20:%0ABruno%20Le%20Maire%20souhaite%20utiliser%20l%E2=
+%80%99%C3%A9pargne%20pour%20financer%20la%20transition%20%C3%A9cologique%0A=
+https://app.brief.me/article/2023-05-31-15497-bruno-le-maire-souhaite-utili=
+ser-lepargne-des-francais-pour-financer-la-transition-ecologique" style=3D"=
+color: #ff6801; text-decoration:none;"><img alt=3Dmail src=3Dhttps://www.br=
+ief.me/static/editorial/img/newsletters/briefme_quotidien/v2/ico-mail.png s=
+tyle=3D"width:19px; font:19px/28px Arial, Helvetica, sans-serif; color:#095=
+4c0; vertical-align:bottom;" width=3D19></a></td></tr></table></td></tr></t=
+body></table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></t=
+r></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--></t=
+d></tr></table><table border=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-=
+100p style=3Dbackground:#f8f8f8;width:100%;padding:0;border-collapse:collap=
+se;border-spacing:0px;><tr><td class=3Dcat5_border_bottom style=3D"border-b=
+ottom: 2px solid #19996A"><!--[if mso | IE]><table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" style=3D"width:608px;=
+" width=3D"608"><tr><td style=3D"line-height:0px;font-size:0px;mso-line-hei=
+ght-rule:exactly;"><![endif]--><div style=3D"Margin:0px auto;max-width:608p=
+x;"><table align=3Dcenter border=3D0 cellpadding=3D0 cellspacing=3D0 class=
+=3Dw-100p role=3Dpresentation style=3Dwidth:100%;><tbody><tr><td class=3Dpt=
+-23 style=3D"direction:ltr;font-size:0px;padding:31px 24px 0;text-align:lef=
+t;vertical-align:top;"><!--[if mso | IE]><table role=3D"presentation" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td style=3D"vertical-align=
+:middle;width:560px;"><![endif]--><div class=3D"mj-column-per-100 outlook-g=
+roup-fix" style=3Dfont-size:13px;text-align:left;direction:ltr;display:inli=
+ne-block;vertical-align:middle;width:100%;><table border=3D0 cellpadding=3D=
+0 cellspacing=3D0 class=3Dw-100p role=3Dpresentation width=3D100%><tbody><t=
+r><td><table cellpadding=3D0 cellspacing=3D0><tr><td class=3D"l-fff cat5_ba=
+ckground" style=3D"background-color: #19996A; padding:3px 25px 1px; font:bo=
+ld 16px/24px Arial, Helvetica, sans-serif; color:#fff; border-radius:27px 2=
+7px 0 0;"> =C3=87A SE CHIFFRE </td></tr></table></td></tr></tbody></table><=
+/div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody></ta=
+ble></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></table=
+><table border=3D0 cellpadding=3D0 cellspacing=3D0 class=3D"cat5 w-100p" st=
+yle=3D"background-color: #fffffe; width:100%;padding:0;border-collapse:coll=
+apse;border-spacing:0px;"><tr><td><!--[if mso | IE]><table align=3D"center"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" style=3D"width=
+:608px;" width=3D"608"><tr><td style=3D"line-height:0px;font-size:0px;mso-l=
+ine-height-rule:exactly;"><![endif]--><div style=3D"Margin:0px auto;max-wid=
+th:608px;"><table align=3Dcenter border=3D0 cellpadding=3D0 cellspacing=3D0=
+ class=3Dw-100p role=3Dpresentation style=3Dwidth:100%;><tbody><tr><td styl=
+e=3D"direction:ltr;font-size:0px;padding:24px 16px 47px;text-align:left;ver=
+tical-align:top;"><!--[if mso | IE]><table role=3D"presentation" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0"><tr><td style=3D"vertical-align:midd=
+le;width:560px;"><![endif]--><div class=3D"mj-column-per-100 outlook-group-=
+fix" style=3Dfont-size:13px;text-align:left;direction:ltr;display:inline-bl=
+ock;vertical-align:middle;width:100%;><table border=3D0 cellpadding=3D0 cel=
+lspacing=3D0 class=3Dw-100p role=3Dpresentation width=3D100%><tbody class=
+=3Dcat5 style=3D"background-color: #fffffe"><tr><td class=3D"plr-8 fs-30-37=
+4 lh-42-374 cat5_title" style=3D"color: #19996A; padding:0 0 17px; font:bol=
+d 32px/42px Arial, Helvetica, sans-serif;"> Les jeux d=E2=80=99argent et de=
+ hasard en France </td></tr><tr><td class=3D"plr-8 pb-16 fs-16-374 lh-26-37=
+4 pm-0" style=3D"padding:0 0 24px; font:bold 18px/28px Arial, Helvetica, sa=
+ns-serif; color:#424242;"><p>Le march=C3=A9 des jeux d=E2=80=99argent et de=
+ hasard a connu une ann=C3=A9e record en 2022, port=C3=A9 par les casinos e=
+t la FDJ.</p></td></tr><tr><td align=3Dcenter style=3D"padding:0 0 24px;"><=
+table cellpadding=3D0 cellspacing=3D0 class=3Dw-100p width=3D100%><tr><td c=
+lass=3Dhm><img alt=3D"image Les jeux d=E2=80=99argent et de hasard en Franc=
+e" height=3Dauto hspace=3D0 src=3Dhttps://www.brief.me/editorial/news/img/1=
+5498/image/ style=3D"width:100% !important; max-width:560px; vertical-align=
+:top;" width=3D560></td><td class=3D"d-tc wi-100p" style=3D"display:none; f=
+ont-size:0; line-height:0; ms0-hide:all;"><img alt=3D"image Les jeux d=E2=
+=80=99argent et de hasard en France" src=3Dhttps://www.brief.me/editorial/n=
+ews/img/15498/image/ style=3Dvertical-align:top; width=3D0></td></tr></tabl=
+e></td></tr><tr class=3Dcat5 style=3D"background-color: #fffffe"><td class=
+=3D"plr-8 pb-20-374 fs-16-374 lh-26-374 pm-0 paragraphs" style=3D"padding:0=
+ 0 38px; font:18px/28px Arial, Helvetica, sans-serif; color:#424242;"><p st=
+yle=3D"padding-top: 16px">Le secteur des jeux d=E2=80=99argent et de hasard=
+ a connu en 2022=C2=A0une ann=C3=A9e record avec un produit brut des jeux d=
+e 12,9=C2=A0milliards d=E2=80=99euros, selon un <a clicktracking=3D"on" hre=
+f=3Dhttps://url3003.brief.me/ss/c/pzEjhFizng49ja4-MJl0GBqW_fi3QsHkaxulyFemS=
+k8HHOPvQDE1-y6FxPaan2pqVAWDoHL-Ed1JnA7ofcUQIJKf9UvXyWRoGhtN65DNcOdA6yL4jrFM=
+bvSNkhVUVL3z-pUnTnQ54WrmfhoU0G6lNw/3wn/W1GSPMZTSxCTC8HTh8CvdA/h14/BAF3jWCGk=
+Cy4yZNsiH7wPkT7Lugf8LUxHzO9hWPkLJc rel=3Dnoopener style=3D"color: #19996A" =
+target=3D_blank>rapport publi=C3=A9 la semaine derni=C3=A8re</a> par l=E2=
+=80=99Autorit=C3=A9 nationale des jeux (ANJ), une autorit=C3=A9 administrat=
+ive ind=C3=A9pendante. Le produit brut des jeux correspond au montant total=
+ des mises desquelles sont d=C3=A9duites les sommes vers=C3=A9es aux joueur=
+s vainqueurs. <strong>Le produit brut des jeux est en augmentation de 20=C2=
+=A0% par rapport =C3=A0 2021</strong>, une ann=C3=A9e d=C3=A9j=C3=A0 marqu=
+=C3=A9e par une =C2=AB=C2=A0une croissance de =E2=80=9Crattrapage=E2=80=9D=
+=C2=A0=C2=BB apr=C3=A8s la crise sanitaire de 2020, selon l=E2=80=99ANJ. La=
+ hausse de l=E2=80=99an dernier est en grande partie due aux casinos, qui o=
+nt b=C3=A9n=C3=A9fici=C3=A9 d=E2=80=99une r=C3=A9ouverture totale apr=C3=A8=
+s deux ann=C3=A9es d=E2=80=99activit=C3=A9 r=C3=A9duite en raison de la pan=
+d=C3=A9mie, et =C3=A0 la Fran=C3=A7aise des jeux (FDJ), principale entrepri=
+se du secteur avec le Loto, l=E2=80=99EuroMillions ou encore le Keno. La ha=
+usse du produit brut des jeux ces derni=C3=A8res ann=C3=A9es a =C3=A9t=C3=
+=A9 port=C3=A9e par le secteur des paris sportifs en ligne, qui s=E2=80=99e=
+st nettement d=C3=A9velopp=C3=A9. Cette dynamique a toutefois ralenti en 20=
+22.</p></td></tr><tr><td><table align=3Dcenter cellpadding=3D0 cellspacing=
+=3D0><tr><td align=3Dcenter class=3D"w-47 active-i" style=3D"line-height:1p=
+x; font-size:1px; mso-line-height-rule:at-least;" width=3D58><a clicktracki=
+ng=3D"on" href=3D"https://url3003.brief.me/ss/c/uvWhLgfybEKOci_rkpCTKFzFjO-=
+ySKfkYYOM1X9ypiHa3duCib5hZiB4_TwVzTaCJrGrFzjsfbVsJ8bOWe0ZHAaCB-vMvBb3wsa39K=
+4kIpWdPTVqLGBAHLDABCErt1eY6UGud36q76ijHfFz--tkcWEhQTA-RR4T2NT8zUfIlK-2Yq70J=
+KnDxRYy7zDaqXeV/3wn/W1GSPMZTSxCTC8HTh8CvdA/h15/87S8yoo7gnnGUqWz3e17h9l2qy9a=
+OCtX9LqF_wTppHE" style=3D"color: #19996A; text-decoration:none;"><img alt=
+=3Dfacebook src=3Dhttps://www.brief.me/static/editorial/img/newsletters/bri=
+efme_quotidien/v2/ico-facebook.png style=3D"width:11px; font:19px/28px Aria=
+l, Helvetica, sans-serif; color:#0954c0; vertical-align:bottom;" width=3D11=
+></a></td><td align=3Dcenter class=3D"w-47 active-i" style=3D"line-height:1=
+px; font-size:1px; mso-line-height-rule:at-least;" width=3D54><a clicktrack=
+ing=3D"on" href=3D"https://url3003.brief.me/ss/c/ZBOlHrnWkOSco6Tx7wp6grHsYM=
+0kGEArPClfcNaiHycF2peu9aMUsmTBFnjiHZsqs_FfGxyivxVCwvgcvRLvhql8FbaaV8I2OlnbM=
+DGGwllrMUTyYGNiC32mxyJEMJYFu3QCQkyUkwIl5ZfWGCb8zt85LwX6lzflkQwS3-apZn1m4sU_=
+k8CTyJwQ7JyNrYXJI2YfLKsM536KcTXULpOTXKd0VdgmHGUbSQgXT5e1X3IA83L5jeAwANZcR_z=
+GcLrG8-ZCMqYB3O5E_NE0ayxaZQ/3wn/W1GSPMZTSxCTC8HTh8CvdA/h16/kmsEybSAySn0YXrO=
+wPH67_3KIiHzqAk3xFWgUwdv6X0" style=3D"color: #19996A; text-decoration:none;=
+"><img alt=3Dtwitter src=3Dhttps://www.brief.me/static/editorial/img/newsle=
+tters/briefme_quotidien/v2/ico-twitter.png style=3D"width:18px; font:19px/2=
+8px Arial, Helvetica, sans-serif; color:#0954c0; vertical-align:bottom;" wi=
+dth=3D18></a></td><td align=3Dcenter class=3D"d-b w-47 active-i" style=3D"d=
+isplay:none; line-height:0px; font-size:0px; mso-line-height-rule:at-least;=
+ mso-hide:all" valign=3Dbottom width=3D0><a clicktracking=3D"on" href=3D"ht=
+tps://url3003.brief.me/ss/c/pzEjhFizng49ja4-MJl0GMmdKqgQze08ZpY3etJm1HEyBYK=
+tPkpXVQVWvYsMIGJ0PqHBdQ-LFYWtpoNMv8YdGAnKbwfLCDS8KZCAa4Wf9Bh1yH_UgjXhlH1IGL=
+QHX4Nkm9NCO4CA4q5y-lOnK3iVrHHBNXf80X8mBiP51YRUlVc/3wn/W1GSPMZTSxCTC8HTh8Cvd=
+A/h17/XARf7ljleitf92vjUtykNHDW9Hokpr8yjL9sWBGtHFw" style=3D"color: #19996A;=
+ text-decoration:none;"><img alt=3Dwhatsapp src=3Dhttps://www.brief.me/stat=
+ic/editorial/img/newsletters/briefme_quotidien/v2/ico-whatsapp.png style=3D=
+"width:20px; font:19px/28px Arial, Helvetica, sans-serif; color:#0954c0; ve=
+rtical-align:bottom;" width=3D20></a></td><td align=3Dcenter class=3D"w-47 =
+active-i" style=3D"line-height:1px; font-size:1px; mso-line-height-rule:at-=
+least;" width=3D56><a clicktracking=3D"on" href=3D"mailto:?subject=3DLes%20=
+jeux%20d%E2%80%99argent%20et%20de%20hasard%20en%20France&body=3DJe%20pense%=
+20que%20cet%20article%20pourrait%20t'int=C3=A9resser%20:%0ALes%20jeux%20d%E=
+2%80%99argent%20et%20de%20hasard%20en%20France%0Ahttps://app.brief.me/artic=
+le/2023-05-31-15498-les-jeux-dargent-et-de-hasard-en-france" style=3D"color=
+: #19996A; text-decoration:none;"><img alt=3Dmail src=3Dhttps://www.brief.m=
+e/static/editorial/img/newsletters/briefme_quotidien/v2/ico-mail.png style=
+=3D"width:19px; font:19px/28px Arial, Helvetica, sans-serif; color:#0954c0;=
+ vertical-align:bottom;" width=3D19></a></td></tr></table></td></tr></tbody=
+></table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></=
+tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></=
+tr></table><table border=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p=
+ style=3Dbackground:#f8f8f8;width:100%;padding:0;border-collapse:collapse;b=
+order-spacing:0px;><tr><td class=3Dcat6_border_bottom style=3D"border-botto=
+m: 2px solid #00989A"><!--[if mso | IE]><table align=3D"center" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" class=3D"" style=3D"width:608px;" wid=
+th=3D"608"><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-r=
+ule:exactly;"><![endif]--><div style=3D"Margin:0px auto;max-width:608px;"><=
+table align=3Dcenter border=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-1=
+00p role=3Dpresentation style=3Dwidth:100%;><tbody><tr><td class=3Dpt-23 st=
+yle=3D"direction:ltr;font-size:0px;padding:24px 24px 0;text-align:left;vert=
+ical-align:top;"><!--[if mso | IE]><table role=3D"presentation" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0"><tr><td style=3D"vertical-align:middl=
+e;width:560px;"><![endif]--><div class=3D"mj-column-per-100 outlook-group-f=
+ix" style=3Dfont-size:13px;text-align:left;direction:ltr;display:inline-blo=
+ck;vertical-align:middle;width:100%;><table border=3D0 cellpadding=3D0 cell=
+spacing=3D0 class=3Dw-100p role=3Dpresentation width=3D100%><tbody><tr><td>=
+<table cellpadding=3D0 cellspacing=3D0><tr><td class=3D"l-fff cat6_backgrou=
+nd" style=3D"background-color: #00989A; padding:3px 25px 1px; font:bold 16p=
+x/24px Arial, Helvetica, sans-serif; color:#fff; border-radius:27px 27px 0 =
+0;"> =C3=87A ALORS </td></tr></table></td></tr></tbody></table></div><!--[i=
+f mso | IE]></td></tr></table><![endif]--></td></tr></tbody></table></div><=
+!--[if mso | IE]></td></tr></table><![endif]--></td></tr></table><table bor=
+der=3D0 cellpadding=3D0 cellspacing=3D0 class=3D"cat6 w-100p" style=3D"back=
+ground-color: #fffffe; width:100%;padding:0;border-collapse:collapse;border=
+-spacing:0px;"><tr><td><!--[if mso | IE]><table align=3D"center" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" style=3D"width:608px;" wi=
+dth=3D"608"><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-=
+rule:exactly;"><![endif]--><div style=3D"Margin:0px auto;max-width:608px;">=
+<table align=3Dcenter border=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-=
+100p role=3Dpresentation style=3Dwidth:100%;><tbody><tr><td style=3D"direct=
+ion:ltr;font-size:0px;padding:22px 24px 47px;text-align:left;vertical-align=
+:top;"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0"><tr><td style=3D"vertical-align:middle;width:56=
+0px;"><![endif]--><div class=3D"mj-column-per-100 outlook-group-fix" style=
+=3Dfont-size:13px;text-align:left;direction:ltr;display:inline-block;vertic=
+al-align:middle;width:100%;><table border=3D0 cellpadding=3D0 cellspacing=
+=3D0 class=3Dw-100p role=3Dpresentation width=3D100%><tbody><tr><td class=
+=3D"fs-30-374 lh-40-374 cat6_title" style=3D"color: #00989A; padding:0; fon=
+t:bold 32px/42px Arial, Helvetica, sans-serif;"> Premi=C3=A8re baisse des p=
+rix des logements anciens en huit ans </td></tr><tr class=3Dcat6 style=3D"b=
+ackground-color: #fffffe"><td class=3D"pb-4 fs-16-374 lh-26-374 pm-0 paragr=
+aphs" style=3D"padding:0 0 12px; font:18px/28px Arial, Helvetica, sans-seri=
+f; color:#424242;"><p style=3D"padding-top: 16px">Les prix des logements an=
+ciens (non neufs) en France (hors Mayotte) ont baiss=C3=A9 de 0,2=C2=A0% au=
+ premier trimestre par rapport au trimestre pr=C3=A9c=C3=A9dent, a rapport=
+=C3=A9 hier l=E2=80=99institut national de statistiques Insee. <strong>Il s=
+=E2=80=99agit d=E2=80=99une premi=C3=A8re depuis 2015.</strong> Sur un an, =
+les prix restent =C3=A0 la hausse, mais ont nettement d=C3=A9c=C3=A9l=C3=A9=
+r=C3=A9=C2=A0: ils =C3=A9taient en hausse de 2,7=C2=A0% au premier trimestr=
+e, contre 4,6=C2=A0% au trimestre pr=C3=A9c=C3=A9dent et 6,4=C2=A0% au troi=
+si=C3=A8me trimestre 2022. La baisse des prix des logements anciens au prem=
+ier trimestre est particuli=C3=A8rement marqu=C3=A9e en =C3=8Ele-de-France.=
+ Cette baisse des prix intervient dans un contexte d=E2=80=99inflation et d=
+e forte augmentation des taux d=E2=80=99int=C3=A9r=C3=AAt, qui complique l=
+=E2=80=99acc=C3=A8s =C3=A0 l=E2=80=99emprunt pour les m=C3=A9nages. Le nomb=
+re de pr=C3=AAts bancaires accord=C3=A9s pour l=E2=80=99ensemble des march=
+=C3=A9s (neuf et ancien) diminue depuis f=C3=A9vrier 2022, selon l=E2=80=99=
+Observatoire Cr=C3=A9dit Logement / CSA, un observatoire priv=C3=A9.</p></t=
+d></tr><tr><td class=3D"fs-16-374 lh-26-374 h-n" style=3D"padding:0 0 38px;=
+ font-family: Helvetica,Arial,sans-serif; font-size: 18px; line-height: 28p=
+x; color: #424242;" valign=3Dtop><a clicktracking=3D"on" href=3Dhttps://url=
+3003.brief.me/ss/c/AWD9AEydda1BlzAIDIER2lhwdi4lkh2S4eHH5D38zDdCDGpDfBvnjej9=
+hhGbDl1hrjt6j0f89kzfNDfnjHAE3A/3wn/W1GSPMZTSxCTC8HTh8CvdA/h18/9w-6WPPx1fvSC=
+qqtO9UgSnOPbqPLMWwIJW0uAmD1pAM style=3D"color: #00989A; text-decoration:non=
+e; color:#424242;"><span style=3D"display:inline-block; vertical-align:-2px=
+;"><img alt=3D"picto cat6" src=3Dhttps://www.brief.me/static/editorial/img/=
+newsletters/briefme_quotidien/v2/picto_link_cat6.png style=3D"width:20px; d=
+isplay:block; vertical-align:top;" width=3D20></span>=E2=80=82<span class=
+=3Dtxt style=3Dtext-decoration:underline;>Consulter les donn=C3=A9es de l=
+=E2=80=99Insee.</span></a></td></tr><tr><td><table align=3Dcenter cellpaddi=
+ng=3D0 cellspacing=3D0><tr><td align=3Dcenter class=3D"w-47 active-i" style=
+=3D"line-height:1px; font-size:1px; mso-line-height-rule:at-least;" width=
+=3D58><a clicktracking=3D"on" href=3D"https://url3003.brief.me/ss/c/uvWhLgf=
+ybEKOci_rkpCTKFzFjO-ySKfkYYOM1X9ypiHa3duCib5hZiB4_TwVzTaCJrGrFzjsfbVsJ8bOWe=
+0ZHAaCB-vMvBb3wsa39K4kIpWq98dauerIfM9PU4IA_1tUNwM2mp6GlKIjga4ojeB0gmZxREVkR=
+g-o098oE67KS6slDrNNJoCC4tfgrQs1p2SkgVGuKievaYjWdgwHdjE5dg/3wn/W1GSPMZTSxCTC=
+8HTh8CvdA/h19/4XMHn_zPihcqLp_A8OWAZcoakldRPzqYT6FEEEotAXA" style=3D"color: =
+#00989A; text-decoration:none;"><img alt=3Dfacebook src=3Dhttps://www.brief=
+.me/static/editorial/img/newsletters/briefme_quotidien/v2/ico-facebook.png =
+style=3D"width:11px; font:19px/28px Arial, Helvetica, sans-serif; color:#09=
+54c0; vertical-align:bottom;" width=3D11></a></td><td align=3Dcenter class=
+=3D"w-47 active-i" style=3D"line-height:1px; font-size:1px; mso-line-height=
+-rule:at-least;" width=3D54><a clicktracking=3D"on" href=3D"https://url3003=
+.brief.me/ss/c/ZBOlHrnWkOSco6Tx7wp6grHsYM0kGEArPClfcNaiHycF2peu9aMUsmTBFnji=
+HZsqs_FfGxyivxVCwvgcvRLvhql8FbaaV8I2OlnbMDGGwlkNoeILfdtL0iFClHea_JNAFEn4BEw=
+XXr-t59_n7yt51Q3QhYPnVwxdK7RPh8YS_Y3NwkcCQKeKlE2Kc-E7CdazYvu1rrTyiKZC0hGsMk=
+qcbx4wdZKOE5tdXm3ijI32O3s3TvKxRXAPL9PqDzN2kZXWx7w1vRD45oSxsD4PNyQeWiMZlJhYD=
+gIZxjXY4t59lDIrnHc1UkbofbIgwXwI5cAT1ZaGynKeN8CTpZkgw9AKSQ/3wn/W1GSPMZTSxCTC=
+8HTh8CvdA/h20/fO6Yqwgu-Q69CSfbP1LJW8Ss1grGQb7eCXjDcosFhn0" style=3D"color: =
+#00989A; text-decoration:none;"><img alt=3Dtwitter src=3Dhttps://www.brief.=
+me/static/editorial/img/newsletters/briefme_quotidien/v2/ico-twitter.png st=
+yle=3D"width:18px; font:19px/28px Arial, Helvetica, sans-serif; color:#0954=
+c0; vertical-align:bottom;" width=3D18></a></td><td align=3Dcenter class=3D=
+"d-b w-47 active-i" style=3D"display:none; line-height:0px; font-size:0px; =
+mso-line-height-rule:at-least; mso-hide:all" valign=3Dbottom width=3D0><a c=
+licktracking=3D"on" href=3D"https://url3003.brief.me/ss/c/pzEjhFizng49ja4-M=
+Jl0GMmdKqgQze08ZpY3etJm1HEyBYKtPkpXVQVWvYsMIGJ0PqHBdQ-LFYWtpoNMv8YdGAnKbwfL=
+CDS8KZCAa4Wf9BjHZZk2BOlEAbAPfkMjrOgthEzAK7H06mPJY8HxCfGOq1_gJc54dI220FllzvO=
+ai-wh76YBjYyyRlO0OjkSVphsW_PrkSmO5I6w47mBIBLrNg/3wn/W1GSPMZTSxCTC8HTh8CvdA/=
+h21/ZD2jbC1XPacok4nmoahTejKdTPyZYQgy8K3Y7gUA5rI" style=3D"color: #00989A; t=
+ext-decoration:none;"><img alt=3Dwhatsapp src=3Dhttps://www.brief.me/static=
+/editorial/img/newsletters/briefme_quotidien/v2/ico-whatsapp.png style=3D"w=
+idth:20px; font:19px/28px Arial, Helvetica, sans-serif; color:#0954c0; vert=
+ical-align:bottom;" width=3D20></a></td><td align=3Dcenter class=3D"w-47 ac=
+tive-i" style=3D"line-height:1px; font-size:1px; mso-line-height-rule:at-le=
+ast;" width=3D56><a clicktracking=3D"on" href=3D"mailto:?subject=3DPremi%C3=
+%A8re%20baisse%20des%20prix%20des%20logements%20anciens%20en%20huit%20ans&b=
+ody=3DJe%20pense%20que%20cet%20article%20pourrait%20t'int=C3=A9resser%20:%0=
+APremi%C3%A8re%20baisse%20des%20prix%20des%20logements%20anciens%20en%20hui=
+t%20ans%0Ahttps://app.brief.me/article/2023-05-31-15499-premiere-baisses-de=
+s-prix-des-logements-anciens-en-huit-ans" style=3D"color: #00989A; text-dec=
+oration:none;"><img alt=3Dmail src=3Dhttps://www.brief.me/static/editorial/=
+img/newsletters/briefme_quotidien/v2/ico-mail.png style=3D"width:19px; font=
+:19px/28px Arial, Helvetica, sans-serif; color:#0954c0; vertical-align:bott=
+om;" width=3D19></a></td></tr></table></td></tr></tbody></table></div><!--[=
+if mso | IE]></td></tr></table><![endif]--></td></tr></tbody></table></div>=
+<!--[if mso | IE]></td></tr></table><![endif]--></td></tr></table><table bo=
+rder=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p style=3Dbackground:=
+#f8f8f8;width:100%;padding:0;border-collapse:collapse;border-spacing:0px;><=
+tr><td class=3Dcat13_border_bottom style=3D"border-bottom: 2px solid #6676F=
+C"><!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" class=3D"" style=3D"width:608px;" width=3D"608"><tr><td =
+style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![en=
+dif]--><div style=3D"Margin:0px auto;max-width:608px;"><table align=3Dcente=
+r border=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p role=3Dpresenta=
+tion style=3Dwidth:100%;><tbody><tr><td class=3Dpt-23 style=3D"direction:lt=
+r;font-size:0px;padding:24px 24px 0;text-align:left;vertical-align:top;"><!=
+--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0"><tr><td style=3D"vertical-align:middle;width:560px;"><![=
+endif]--><div class=3D"mj-column-per-100 outlook-group-fix" style=3Dfont-si=
+ze:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:m=
+iddle;width:100%;><table border=3D0 cellpadding=3D0 cellspacing=3D0 class=
+=3Dw-100p role=3Dpresentation width=3D100%><tbody><tr><td><table cellpaddin=
+g=3D0 cellspacing=3D0><tr><td class=3D"l-fff cat13_background" style=3D"bac=
+kground-color: #6676FC; padding:3px 25px 1px; font:bold 16px/24px Arial, He=
+lvetica, sans-serif; color:#fff; border-radius:27px 27px 0 0;"> =C3=87A VAU=
+T UN CLIC </td></tr></table></td></tr></tbody></table></div><!--[if mso | I=
+E]></td></tr></table><![endif]--></td></tr></tbody></table></div><!--[if ms=
+o | IE]></td></tr></table><![endif]--></td></tr></table><table border=3D0 c=
+ellpadding=3D0 cellspacing=3D0 class=3D"cat13 w-100p" style=3D"background-c=
+olor: #fffffe; width:100%;padding:0;border-collapse:collapse;border-spacing=
+:0px;"><tr><td><!--[if mso | IE]><table align=3D"center" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" class=3D"" style=3D"width:608px;" width=3D"6=
+08"><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exa=
+ctly;"><![endif]--><div style=3D"Margin:0px auto;max-width:608px;"><table a=
+lign=3Dcenter border=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p rol=
+e=3Dpresentation style=3Dwidth:100%;><tbody><tr><td style=3D"direction:ltr;=
+font-size:0px;padding:22px 24px 47px;text-align:left;vertical-align:top;"><=
+!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0"><tr><td style=3D"vertical-align:middle;width:560px;"><!=
+[endif]--><div class=3D"mj-column-per-100 outlook-group-fix" style=3Dfont-s=
+ize:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:=
+middle;width:100%;><table border=3D0 cellpadding=3D0 cellspacing=3D0 class=
+=3Dw-100p role=3Dpresentation width=3D100%><tbody><tr><td class=3D"fs-30-37=
+4 lh-40-374 cat13_title" style=3D"color: #6676FC; padding:0; font:bold 32px=
+/42px Arial, Helvetica, sans-serif;"> La douteuse conqu=C3=AAte chinoise du=
+ mont Everest </td></tr><tr class=3Dcat13 style=3D"background-color: #fffff=
+e"><td class=3D"fs-16-374 lh-26-374 pm-0 paragraphs" style=3D"padding:0 0 3=
+7px; font:18px/28px Arial, Helvetica, sans-serif; color:#424242;"><p style=
+=3D"padding-top: 16px">Il y a 70=C2=A0ans, une exp=C3=A9dition britannique =
+aboutissait =C3=A0 la premi=C3=A8re ascension document=C3=A9e du mont Evere=
+st. M=C3=AAme conquis, le plus haut pic terrestre demeurait un objet de con=
+voitise pour la Chine et les =C3=89tats-Unis, engag=C3=A9s dans une course =
+pour arriver avant l=E2=80=99autre au sommet. La Chine d=C3=A9clare victoir=
+e le 25=C2=A0mai 1960. Une <a clicktracking=3D"on" href=3D"https://url3003.=
+brief.me/ss/c/AWD9AEydda1BlzAIDIER2pVKxHpALNzMox6pTGHJrU9CZbwatKEqfEW4TkqbV=
+AbL5GwDf09isA7H7hdY3FsLzw/3wn/W1GSPMZTSxCTC8HTh8CvdA/h22/aMTTQTTRl1lMke8FIh=
+IBqA2Zu8PtA0oHwRb6CH10--A" rel=3Dnoopener style=3D"color: #6676FC" target=
+=3D_blank>vid=C3=A9o de France Culture</a> explique toutefois =C3=A0 quel p=
+oint cette exp=C3=A9dition glorifi=C3=A9e par la propagande de l=E2=80=99=
+=C3=A9poque est sujette =C3=A0 caution.</p></td></tr><tr><td><table align=
+=3Dcenter cellpadding=3D0 cellspacing=3D0><tr><td align=3Dcenter class=3D"w=
+-47 active-i" style=3D"line-height:1px; font-size:1px; mso-line-height-rule=
+:at-least;" width=3D58><a clicktracking=3D"on" href=3D"https://url3003.brie=
+f.me/ss/c/uvWhLgfybEKOci_rkpCTKFzFjO-ySKfkYYOM1X9ypiHa3duCib5hZiB4_TwVzTaCJ=
+rGrFzjsfbVsJ8bOWe0ZHAaCB-vMvBb3wsa39K4kIpWzvXHNXb7gQORaUX7Saw5OYaTmvfgFdUFl=
+bE4fyK0L3_YCZnQQ6VHIDLwTaOA_63x12vMLYp_upCGNZgU0I042/3wn/W1GSPMZTSxCTC8HTh8=
+CvdA/h23/RMn8SyW-gSgx2gYNufaRslBcFqi7m8dygEfUv3q-CSE" style=3D"color: #6676=
+FC; text-decoration:none;"><img alt=3Dfacebook src=3Dhttps://www.brief.me/s=
+tatic/editorial/img/newsletters/briefme_quotidien/v2/ico-facebook.png style=
+=3D"width:11px; font:19px/28px Arial, Helvetica, sans-serif; color:#0954c0;=
+ vertical-align:bottom;" width=3D11></a></td><td align=3Dcenter class=3D"w-=
+47 active-i" style=3D"line-height:1px; font-size:1px; mso-line-height-rule:=
+at-least;" width=3D54><a clicktracking=3D"on" href=3D"https://url3003.brief=
+.me/ss/c/ZBOlHrnWkOSco6Tx7wp6grHsYM0kGEArPClfcNaiHycF2peu9aMUsmTBFnjiHZsqs_=
+FfGxyivxVCwvgcvRLvhhCRgHF04meqBjPswuw9K2QczLDf6KgJz_-6P2JZt7TbISDh47H3HZP0K=
+M6kH7q3uifgFkhYaLrCcM_2ahG69wt3hiDzhgWPL8HnJ_s7pp5s8V2XdvlQ3m2rkx1tJtBYTZ7h=
+KK07pIMf2N82pycTIcRShQboH5RxMTnN5FHifSiMawqXaRRxZk64AcWkBV4kfbAasoAnURHCny2=
+RuIFAptY/3wn/W1GSPMZTSxCTC8HTh8CvdA/h24/HejKvHu2zOoDK4kT4goZH6pj8gRtDeJPwpA=
+E56YSLf4" style=3D"color: #6676FC; text-decoration:none;"><img alt=3Dtwitte=
+r src=3Dhttps://www.brief.me/static/editorial/img/newsletters/briefme_quoti=
+dien/v2/ico-twitter.png style=3D"width:18px; font:19px/28px Arial, Helvetic=
+a, sans-serif; color:#0954c0; vertical-align:bottom;" width=3D18></a></td><=
+td align=3Dcenter class=3D"d-b w-47 active-i" style=3D"display:none; line-h=
+eight:0px; font-size:0px; mso-line-height-rule:at-least; mso-hide:all" vali=
+gn=3Dbottom width=3D0><a clicktracking=3D"on" href=3D"https://url3003.brief=
+.me/ss/c/pzEjhFizng49ja4-MJl0GMmdKqgQze08ZpY3etJm1HEyBYKtPkpXVQVWvYsMIGJ0Pq=
+HBdQ-LFYWtpoNMv8YdGAnKbwfLCDS8KZCAa4Wf9BguQeEnvdDUGZoOTOLkh5jzu_ltvvI9OcH1b=
+CMuk91ztWwI20h34Wnh-sUfGOPy18dRkWMVzbdTEBxfTk4A6PwL/3wn/W1GSPMZTSxCTC8HTh8C=
+vdA/h25/tOMalewIUHbei191gl3ydRtLpbOpGYNr2La4ALbrUGA" style=3D"color: #6676F=
+C; text-decoration:none;"><img alt=3Dwhatsapp src=3Dhttps://www.brief.me/st=
+atic/editorial/img/newsletters/briefme_quotidien/v2/ico-whatsapp.png style=
+=3D"width:20px; font:19px/28px Arial, Helvetica, sans-serif; color:#0954c0;=
+ vertical-align:bottom;" width=3D20></a></td><td align=3Dcenter class=3D"w-=
+47 active-i" style=3D"line-height:1px; font-size:1px; mso-line-height-rule:=
+at-least;" width=3D56><a clicktracking=3D"on" href=3D"mailto:?subject=3DLa%=
+20douteuse%20conqu%C3%AAte%20chinoise%20du%20mont%20Everest&body=3DJe%20pen=
+se%20que%20cet%20article%20pourrait%20t'int=C3=A9resser%20:%0ALa%20douteuse=
+%20conqu%C3%AAte%20chinoise%20du%20mont%20Everest%0Ahttps://app.brief.me/ar=
+ticle/2023-05-31-15500-la-douteuse-conquete-chinoise-du-mont-everest" style=
+=3D"color: #6676FC; text-decoration:none;"><img alt=3Dmail src=3Dhttps://ww=
+w.brief.me/static/editorial/img/newsletters/briefme_quotidien/v2/ico-mail.p=
+ng style=3D"width:19px; font:19px/28px Arial, Helvetica, sans-serif; color:=
+#0954c0; vertical-align:bottom;" width=3D19></a></td></tr></table></td></tr=
+></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--></td=
+></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--=
+></td></tr></table><table border=3D0 cellpadding=3D0 cellspacing=3D0 class=
+=3Dw-100p style=3Dbackground:#f8f8f8;width:100%;padding:0;border-collapse:c=
+ollapse;border-spacing:0px;><tr><td><!--[if mso | IE]><table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" style=3D"wid=
+th:608px;" width=3D"608"><tr><td style=3D"line-height:0px;font-size:0px;mso=
+-line-height-rule:exactly;"><![endif]--><div style=3D"Margin:0px auto;max-w=
+idth:608px;"><table align=3Dcenter border=3D0 cellpadding=3D0 cellspacing=
+=3D0 class=3Dw-100p role=3Dpresentation style=3Dwidth:100%;><tbody><tr><td =
+class=3D"pt-24 pb-24-374" style=3D"direction:ltr;font-size:0px;padding:33px=
+ 24px 32px;text-align:left;vertical-align:top;"><!--[if mso | IE]><table ro=
+le=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><t=
+d style=3D"vertical-align:middle;width:560px;"><![endif]--><div class=3D"mj=
+-column-per-100 outlook-group-fix" style=3Dfont-size:13px;text-align:left;d=
+irection:ltr;display:inline-block;vertical-align:middle;width:100%;><table =
+border=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p role=3Dpresentati=
+on width=3D100%><tbody><tr><td class=3D"fs-16-374 lh-26-374 cat_intro_outro=
+" style=3D"font:18px/28px Arial, Helvetica, sans-serif; color:#424242;"><p>=
+Vous voil=C3=A0 =C2=AB=C2=A0brief=C3=A9s=C2=A0=C2=BB sur l=E2=80=99actualit=
+=C3=A9 du jour et quelques autres consid=C3=A9rations. On vous souhaite une=
+ bonne soir=C3=A9e =C3=A0 gravir tous les sommets.</p><br><p>=E2=80=94 Math=
+ilde Belin, Nicolas Filio, Laurent Mauriac et Aude Villiers-Moriam=C3=A9</p=
+></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![end=
+if]--></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><=
+![endif]--></td></tr></table>        <table border=3D0 cellpadding=3D0 cell=
+spacing=3D0 class=3Dw-100p style=3D"background:#fffffe; width:100%;padding:=
+0;border-collapse:collapse;border-spacing:0px;"><tr><td><!--[if mso | IE]><=
+table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cla=
+ss=3D"" style=3D"width:608px;" width=3D"608"><tr><td style=3D"line-height:0=
+px;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><div style=3D"M=
+argin:0px auto;max-width:608px;"><table align=3Dcenter border=3D0 cellpaddi=
+ng=3D0 cellspacing=3D0 class=3Dw-100p role=3Dpresentation style=3Dwidth:100=
+%;><tbody><tr><td class=3D"pb-22 pt-31" style=3D"direction:ltr;font-size:0p=
+x;padding:39px 24px 23px;text-align:left;vertical-align:top;"><!--[if mso |=
+ IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0"><tr><td style=3D"vertical-align:middle;width:560px;"><![endif]--><d=
+iv class=3D"mj-column-per-100 outlook-group-fix" style=3Dfont-size:13px;tex=
+t-align:left;direction:ltr;display:inline-block;vertical-align:middle;width=
+:100%;><table border=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p rol=
+e=3Dpresentation width=3D100%><tbody><tr><td align=3Dcenter class=3Dpb-24 s=
+tyle=3D"padding:0 0 16px;"><a clicktracking=3D"on" href=3Dhttps://url3003.b=
+rief.me/ss/c/AWD9AEydda1BlzAIDIER2ulyH6VMKDg4DIhkk_wTtPk/3wn/W1GSPMZTSxCTC8=
+HTh8CvdA/h26/2TSIYWf5a0KMCS_ZhdmQZQm8fL-hKO2qWjOeuN2sitY style=3Dtext-decor=
+ation:none;><img alt=3Dbrief.me| src=3Dhttps://www.brief.me/static/editoria=
+l/img/newsletters/briefme_quotidien/v2/logo-02.png style=3D"width:164px; fo=
+nt:30px/34px Arial, Helvetica, sans-serif; color:#424242; vertical-align:to=
+p;" width=3D164></a></td></tr><tr><td style=3D"padding:0 0 24px;"><table al=
+ign=3Dcenter cellpadding=3D0 cellspacing=3D0><tr><td class=3Dactive-i><a cl=
+icktracking=3D"on" href=3Dhttps://url3003.brief.me/ss/c/AWD9AEydda1BlzAIDIE=
+R2tpaddIrXUsfkKtnYBz0kOnwSbhsfJwT4BQxDq9Pwbg0/3wn/W1GSPMZTSxCTC8HTh8CvdA/h2=
+7/xJJZ7AuRgHxsaMrxCfrTDcHIDP0YsmKyiQpcZ6s0uoc style=3Dtext-decoration:none;=
+><img alt=3Dfacebook src=3Dhttps://www.brief.me/static/editorial/img/newsle=
+tters/briefme_quotidien/v2/ico-facebook-02.png style=3D"width:32px; font:10=
+px/32px Arial, Helvetica, sans-serif; color:#000; vertical-align:top;" widt=
+h=3D32></a></td><td class=3Dw-16-374 width=3D24></td><td class=3Dactive-i><=
+a clicktracking=3D"on" href=3Dhttps://url3003.brief.me/ss/c/nszGnMFdwCa6q_Y=
+2UUYMrZ6i7WWZ_hjAIvW2ql1Qt9TF977uX5nyOhPBdAXNbWAR/3wn/W1GSPMZTSxCTC8HTh8Cvd=
+A/h28/5Egcg2IFD1vYsdu_YaFlOTEs9POBBFsYQce1SFewpys style=3Dtext-decoration:n=
+one;><img alt=3Dtwitter src=3Dhttps://www.brief.me/static/editorial/img/new=
+sletters/briefme_quotidien/v2/ico-twitter-02.png style=3D"width:32px; font:=
+10px/32px Arial, Helvetica, sans-serif; color:#000; vertical-align:top;" wi=
+dth=3D32></a></td><td class=3Dw-16-374 width=3D24></td><td class=3Dactive-i=
+><a clicktracking=3D"on" href=3Dhttps://url3003.brief.me/ss/c/AWD9AEydda1Bl=
+zAIDIER2jPEIckYX4tpv8EhbOJ67xgyittQQFS-36wTs1gDLvu9/3wn/W1GSPMZTSxCTC8HTh8C=
+vdA/h29/yyWlegQGSwUAMJoIrY_PPMruA-JdGP-pr8-aUSaAntc style=3Dtext-decoration=
+:none;><img alt=3Dtwich src=3Dhttps://www.brief.me/static/editorial/img/new=
+sletters/briefme_quotidien/v2/ico-twich.png style=3D"width:32px; font:10px/=
+32px Arial, Helvetica, sans-serif; color:#000; vertical-align:top;" width=
+=3D32></a></td><td class=3Dw-16-374 width=3D24></td><td class=3Dactive-i><a=
+ clicktracking=3D"on" href=3Dmailto:hello@brief.me style=3Dtext-decoration:=
+none;><img alt=3Dmail src=3Dhttps://www.brief.me/static/editorial/img/newsl=
+etters/briefme_quotidien/v2/ico-mail-02.png style=3D"width:32px; font:10px/=
+32px Arial, Helvetica, sans-serif; color:#000; vertical-align:top;" width=
+=3D32></a></td><td class=3Dw-16-374 width=3D24></td><td class=3Dactive-i><a=
+ clicktracking=3D"on" href=3Dhttps://url3003.brief.me/ss/c/AWD9AEydda1BlzAI=
+DIER2hlufDkIEPdfh3Psb7x1h5Cjuf6QARtNZMF_LCYhQxeAEruiz-EQo6b7b5rrqaOMvA/3wn/=
+W1GSPMZTSxCTC8HTh8CvdA/h30/oXUajabUUeWlD3c1AvKu_fp05E1LR-PgizpZzI5QZ3k styl=
+e=3Dtext-decoration:none;><img alt=3Dlinkedin src=3Dhttps://www.brief.me/st=
+atic/editorial/img/newsletters/briefme_quotidien/v2/ico-linkedin.png style=
+=3D"width:32px; font:10px/32px Arial, Helvetica, sans-serif; color:#000; ve=
+rtical-align:top;" width=3D32></a></td></tr></table></td></tr><tr><td align=
+=3Dcenter class=3D"fs-16-374 lh-26-374" style=3D"padding:0 0 15px; font:bol=
+d 18px/32px Arial, Helvetica, sans-serif; color:#424242;"> D=C3=A9couvrez n=
+os autres m=C3=A9dias </td></tr><tr><td><table align=3Dcenter cellpadding=
+=3D0 cellspacing=3D0 class=3Dw-100p><tr><th align=3Dleft class=3D"w-150 tfl=
+ex-374" style=3D"border:1px solid #ddd; border-radius:10px; vertical-align:=
+top;" width=3D200><table cellpadding=3D0 cellspacing=3D0 width=3D100%><tr><=
+td><table align=3Dcenter cellpadding=3D0 cellspacing=3D0><tr><td class=3Dac=
+tive-t style=3D"mso-padding-alt:8px 9px 6px;"><a clicktracking=3D"on" href=
+=3Dhttps://url3003.brief.me/ss/c/AWD9AEydda1BlzAIDIER2lmg2DEbnz00Si_3r2Z31U=
+dVfFohImNdik0lcHPsFt6a/3wn/W1GSPMZTSxCTC8HTh8CvdA/h31/wvpAZSde51ms2qZlRjqFc=
+vEto8FKdRb3dDWx26ib9DI style=3D"color:#808080; text-decoration:none; displa=
+y:block; padding:8px 9px 6px; font:bold 12px/21px Arial, Helvetica, sans-se=
+rif;"><span style=3D"display:inline-block; vertical-align:1px;"><img alt=3D=
+brief.science| src=3Dhttps://www.brief.me/static/editorial/img/newsletters/=
+briefme_quotidien/v2/logo-03.png style=3D"width:132px; display:block; font:=
+bold 12px/21px Arial, Helvetica, sans-serif; color:#000; vertical-align:top=
+;" width=3D132></span><br> La science expliqu=C3=A9e </a></td></tr></table>=
+</td></tr></table></th><th class=3D"w-27 tflex-374" height=3D14 width=3D22>=
+</th><th align=3Dleft class=3D"w-150 tflex-374" style=3D"border:1px solid #=
+ddd; border-radius:10px; vertical-align:top;" width=3D200><table cellpaddin=
+g=3D0 cellspacing=3D0 width=3D100%><tr><td><table align=3Dcenter cellpaddin=
+g=3D0 cellspacing=3D0><tr><td class=3Dactive-t style=3D"mso-padding-alt:8px=
+ 9px 6px;"><a clicktracking=3D"on" href=3Dhttps://url3003.brief.me/ss/c/AWD=
+9AEydda1BlzAIDIER2pNrcFfAJcXY6_8TiTp-kb4/3wn/W1GSPMZTSxCTC8HTh8CvdA/h32/P74=
+KGjEA4jx_l6mgS1Uc5HP6z95NpHmpUgfU2-wFwmQ style=3D"color:#808080; text-decor=
+ation:none; display:block; padding:8px 9px 6px; font:bold 12px/16px Arial, =
+Helvetica, sans-serif;"><span style=3D"display:inline-block; vertical-align=
+:1px;"><img alt=3Dbrief.eco| src=3Dhttps://www.brief.me/static/editorial/im=
+g/newsletters/briefme_quotidien/v2/logo-04.png style=3D"width:105px; displa=
+y:block; font:bold 12px/21px Arial, Helvetica, sans-serif; color:#000; vert=
+ical-align:top;" width=3D105></span><br> L=E2=80=99=C3=A9conomie expliqu=C3=
+=A9e </a></td></tr></table></td></tr></table></th></tr></table></td></tr></=
+tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></=
+tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--></=
+td></tr></table><table border=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw=
+-100p style=3Dbackground:#fffffe;width:100%;padding:0;border-collapse:colla=
+pse;border-spacing:0px;><tr><td style=3D"border-top:4px solid #f2f2f2;"><!-=
+-[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" class=3D"" style=3D"width:616px;" width=3D"616"><tr><td style=
+=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-=
+-><div style=3D"Margin:0px auto;max-width:608px;"><table align=3Dcenter bor=
+der=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p role=3Dpresentation =
+style=3Dwidth:100%;><tbody><tr><td class=3Dpb-24 style=3D"direction:ltr;fon=
+t-size:0px;padding:24px 28px;text-align:left;vertical-align:top;"><!--[if m=
+so | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0"><tr><td style=3D"vertical-align:middle;width:568px;"><![endif]-=
+-><div class=3D"mj-column-per-100 outlook-group-fix" style=3Dfont-size:13px=
+;text-align:left;direction:ltr;display:inline-block;vertical-align:middle;w=
+idth:100%;><table border=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p=
+ role=3Dpresentation width=3D100%><tbody><tr><td class=3D"fs-16-374 lh-26-3=
+74 h-u" style=3D"font:bold 18px/32px Arial, Helvetica, sans-serif; color:#4=
+24242;"><a clicktracking=3D"on" href=3D"https://url3003.brief.me/ss/c/AWD9A=
+Eydda1BlzAIDIER2vTWGuwPvG6ULhhDmAzMbvm-FItgYpkS05Z6YhhxNRbL3CuSp71dg94xAFiK=
+ERyouQEE67N63zDQXJqLUZQXbfhjSLNnJ18PwjNrsswkkHB6b8rpJsrB6q9FXUH1ajevC6k1sEG=
+ZqYMf2bpwWVgf6smQmaXUD7xygdDJEx8Vr02j/3wn/W1GSPMZTSxCTC8HTh8CvdA/h33/GBIHEk=
+sT5i-clnjAe126jil1ZXkvw6kbNWsYjf2gpQk" style=3D"text-decoration:none; color=
+:#424242;">=C3=89ditions pr=C3=A9c=C3=A9dentes</a> =E2=80=A2 <a clicktracki=
+ng=3D"on" href=3D"https://url3003.brief.me/ss/c/AWD9AEydda1BlzAIDIER2vTWGuw=
+PvG6ULhhDmAzMbvm-FItgYpkS05Z6YhhxNRbL3CuSp71dg94xAFiKERyouQEE67N63zDQXJqLUZ=
+QXbfhjSLNnJ18PwjNrsswkkHB6b8rpJsrB6q9FXUH1ajevC6k1sEGZqYMf2bpwWVgf6sneDTopO=
+r-W1_k5KPjCu5iH/3wn/W1GSPMZTSxCTC8HTh8CvdA/h34/KrYJAX3dASP74Z4U496eMxFf2qO2=
+wwENIBeEgfNYkY4" style=3D"text-decoration:none; color:#424242;">Panoramas</=
+a></td></tr><tr><td class=3D"fs-16-374 lh-26-374 l-a0a0a0 h-u" style=3D"fon=
+t:bold 18px/32px Arial, Helvetica, sans-serif; color:#a0a0a0;">  <a clicktr=
+acking=3D"on" href=3Dhttps://url3003.brief.me/ss/c/AWD9AEydda1BlzAIDIER2oCy=
+LMJY8sQhqKAXBNEetypCbPhYSiwEKg5LcuICFZyE/3wn/W1GSPMZTSxCTC8HTh8CvdA/h35/_9t=
+Vy3qchtBXekyte2ttvpwBpv-HuPaLwZtBRyvCPXc style=3Dcolor:#a0a0a0;text-decorat=
+ion:none;>Le projet Brief.me</a> =E2=80=A2 <a clicktracking=3D"on" href=3Dh=
+ttps://url3003.brief.me/ss/c/AWD9AEydda1BlzAIDIER2pPbrUT7opHHjxxgQrQzatgnKs=
+_YI_qjsCcm458DIKP1/3wn/W1GSPMZTSxCTC8HTh8CvdA/h36/rRLr4JkmhPuEk3cwyeOgj89tc=
+aHlSbMUcwqIttawMoc style=3Dcolor:#a0a0a0;text-decoration:none;>L=E2=80=99=
+=C3=A9quipe</a> =E2=80=A2 <a clicktracking=3D"on" href=3Dhttps://url3003.br=
+ief.me/ss/c/AWD9AEydda1BlzAIDIER2t-lDILEIjYLTcatFfBiDex3HaaNCC04_s3AkEvVQ_p=
+l/3wn/W1GSPMZTSxCTC8HTh8CvdA/h37/W0Vkb3xWq1l-o1smnKZol5Tg8z3JrNDx36zXDp_86m=
+M style=3Dcolor:#a0a0a0;text-decoration:none;>Questions fr=C3=A9quentes</a>=
+  </td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![en=
+dif]--></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table>=
+<![endif]--></td></tr></table><table border=3D0 cellpadding=3D0 cellspacing=
+=3D0 class=3Dw-100p style=3Dbackground:#fffffe;width:100%;padding:0;border-=
+collapse:collapse;border-spacing:0px;><tr><td style=3D"border-top:4px solid=
+ #f2f2f2;"><!--[if mso | IE]><table align=3D"center" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" class=3D"" style=3D"width:608px;" width=3D"608">=
+<tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly=
+;"><![endif]--><div style=3D"Margin:0px auto;max-width:608px;"><table align=
+=3Dcenter border=3D0 cellpadding=3D0 cellspacing=3D0 class=3Dw-100p role=3D=
+presentation style=3Dwidth:100%;><tbody><tr><td class=3Dpb-23 style=3Ddirec=
+tion:ltr;font-size:0px;padding:24px;text-align:left;vertical-align:top;><!-=
+-[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0"><tr><td style=3D"vertical-align:middle;width:560px;"><![e=
+ndif]--><div class=3D"mj-column-per-100 outlook-group-fix" style=3Dfont-siz=
+e:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:mi=
+ddle;width:100%;><table border=3D0 cellpadding=3D0 cellspacing=3D0 class=3D=
+w-100p role=3Dpresentation width=3D100%><tbody><tr><td class=3D"fs-16-374 l=
+h-26-374" style=3D"padding:0 0 15px; font:bold 18px/32px Arial, Helvetica, =
+sans-serif; color:#424242;"> T=C3=A9l=C3=A9chargez notre application mobile=
+ </td></tr><tr><td><table cellpadding=3D0 cellspacing=3D0><tr><td class=3D"=
+wi-100p-374 active-i"><a clicktracking=3D"on" href=3Dhttps://url3003.brief.=
+me/ss/c/pzEjhFizng49ja4-MJl0GPyGeiEGqWDosRsX7P6N33KpFyZVyMFMoisKTEfG4l7ckfl=
+Y3_VW_hRiL2Bcr8qoyHDVXhImTs0nxDPVTEaA8_o/3wn/W1GSPMZTSxCTC8HTh8CvdA/h38/CSY=
+mwUaBhtYvYvWhrgjLScK3XIyik4Z_SDrvNMm7ADM style=3Dtext-decoration:none;><img=
+ alt=3D"T=C3=A9l=C3=A9charger dans I'App Store" src=3Dhttps://www.brief.me/=
+static/editorial/img/newsletters/briefme_quotidien/v2/btn-01.png style=3D"w=
+idth:152px; max-width:152px; font:14px/16px Arial, Helvetica, sans-serif; c=
+olor:#000; vertical-align:top;" width=3D152></a></td><td class=3Dw-7-374 wi=
+dth=3D25></td><td class=3D"wi-100p-374 active-i"><a clicktracking=3D"on" hr=
+ef=3D"https://url3003.brief.me/ss/c/2_YXmwRzAARDVHGCYnBEGdpPtUVvcWwGm3PQs2l=
+BBbl6NlZnkvF60k_tgiiZCuLJp9J-sngq4VhXup7PJroeZ17FqSuwXVrjLKhkprUm7Qg/3wn/W1=
+GSPMZTSxCTC8HTh8CvdA/h39/Nfz000h8BcjJp3thA4exyn1_NmxiIZsUAR9gm4F4m60" style=
+=3Dtext-decoration:none;><img alt=3D"T=C3=A9l=C3=A9chargez sur Google play"=
+ src=3Dhttps://www.brief.me/static/editorial/img/newsletters/briefme_quotid=
+ien/v2/btn-02.png style=3D"width:152px; max-width:152px; font:14px/16px Ari=
+al, Helvetica, sans-serif; color:#000; vertical-align:top;" width=3D152></a=
+></td></tr></table></td></tr></tbody></table></div><!--[if mso | IE]></td><=
+/tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]><=
+/td></tr></table><![endif]--></td></tr></table><table border=3D0 cellpaddin=
+g=3D0 cellspacing=3D0 class=3Dw-100p style=3Dbackground:#fffffe;width:100%;=
+padding:0;border-collapse:collapse;border-spacing:0px;><tr><td style=3D"bor=
+der-top:4px solid #f2f2f2;"><!--[if mso | IE]><table align=3D"center" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" style=3D"width:608px=
+;" width=3D"608"><tr><td style=3D"line-height:0px;font-size:0px;mso-line-he=
+ight-rule:exactly;"><![endif]--><div style=3D"Margin:0px auto;max-width:608=
+px;"><table align=3Dcenter border=3D0 cellpadding=3D0 cellspacing=3D0 class=
+=3Dw-100p role=3Dpresentation style=3Dwidth:100%;><tbody><tr><td class=3D"p=
+t-22 pt-25-374 pb-26" style=3Ddirection:ltr;font-size:0px;padding:24px;text=
+-align:left;vertical-align:top;><!--[if mso | IE]><table role=3D"presentati=
+on" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td style=3D"verti=
+cal-align:middle;width:560px;"><![endif]--><div class=3D"mj-column-per-100 =
+outlook-group-fix" style=3Dfont-size:13px;text-align:left;direction:ltr;dis=
+play:inline-block;vertical-align:middle;width:100%;><table border=3D0 cellp=
+adding=3D0 cellspacing=3D0 class=3Dw-100p role=3Dpresentation width=3D100%>=
+<tbody><tr><td class=3Dpb-0 style=3D"padding:0 0 15px; font:bold 16px/24px =
+Arial, Helvetica, sans-serif; color:#424242;"> Pour =C3=AAtre s=C3=BBr(e) d=
+e recevoir <a class=3Dedition-color clicktracking=3D"on" href=3Dhttps://url=
+3003.brief.me/ss/c/AWD9AEydda1BlzAIDIER2ulyH6VMKDg4DIhkk_wTtPk/3wn/W1GSPMZT=
+SxCTC8HTh8CvdA/h40/0VYVI-JU0GlXqZXcUDBU5eMWBSjgWtFs8S2vSUHQLew style=3Dtext=
+-decoration:none;>brief.me</a>, ajoutez =C2=AB=C2=A0<a class=3Dedition-colo=
+r clicktracking=3D"on" href=3Dmailto:hello@brief.me style=3Dtext-decoration=
+:none;>hello@brief.me</a>=C2=A0=C2=BB =C3=A0 votre carnet d=E2=80=99adresse=
+s. </td></tr><tr><td style=3D"font:16px/24px Arial, Helvetica, sans-serif; =
+color:#717171;"> Vous =C3=AAtes inscrit(e) sur cette liste car vous avez de=
+mand=C3=A9 =C3=A0 recevoir les informations de Brief.me.<br><br><a clicktra=
+cking=3D"on" href=3D"https://url3003.brief.me/ss/c/AWD9AEydda1BlzAIDIER2vTW=
+GuwPvG6ULhhDmAzMbvm-FItgYpkS05Z6YhhxNRbL3CuSp71dg94xAFiKERyouQEE67N63zDQXJq=
+LUZQXbfhjSLNnJ18PwjNrsswkkHB6TfqpUls9bFlKpG10zQyqv6N7UY6j4cDNmEjm5CXmIWY/3w=
+n/W1GSPMZTSxCTC8HTh8CvdA/h41/VxluulR8DAVIOfoS8Tue-Od1e6-FWykkWgTa6ZxJVEg" s=
+tyle=3D"text-decoration:underline; color:#717171;">Se d=C3=A9sinscrire</a> =
+=E2=80=A2 <a clicktracking=3D"on" href=3Dmailto:hello@brief.me style=3D"tex=
+t-decoration:underline; color:#717171;">Contact</a></td></tr></tbody></tabl=
+e></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody><=
+/table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></ta=
+ble><img src=3D"https://url3003.brief.me/ss/o/qs7XBWwj2hHs7vJwVKpOPA/3wn/W1=
+GSPMZTSxCTC8HTh8CvdA/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0"=
+ style=3D"height:1px !important;width:1px !important;border-width:0 !import=
+ant;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !impo=
+rtant;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !i=
+mportant;padding-right:0 !important;padding-left:0 !important;"/></body></h=
+tml>
+--9f41419acc78e479df3e56a21465401d3c6a2b22a471f78cca7ba4092a62--

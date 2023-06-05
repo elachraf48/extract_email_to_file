@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Extractor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Email Extractor</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <label for="emailProvider">Email Provider:</label>
+                <select id="emailProvider" class="form-control">
+                    <option value="Outlook">Outlook/Hotmail</option>
+                    <option value="Yahoo">Yahoo</option>
+                    <option value="Gmail">Gmail</option>
+                    <option value="AOL">AOL</option>
+                </select>
+                <button id="extractBtn" class="btn btn-primary mt-3">Extract Emails</button>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <div id="errorText" class="alert alert-danger" role="alert"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script>
+        // Wait for the document to load
+        $(document).ready(function() {
+            var emailPasswordDict = {};
+
+            function saveEmailPassword(provider, email, password) {
+                var emailData = { "email": email, "password": password };
+                emailPasswordDict[provider] = emailData;
+                // TODO: Save the email and password to Google Sheets
+
+                // Clear the email and password fields
+                $("#emailEntry").val("");
+                $("#passwordEntry").val("");
+            }
+
+            function validateEmail(email) {
+                var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return regex.test(email);
+            }
+
+            function showError(message) {
+                $("#errorText").text(message);
+            }
+
+            function extractEmails() {
+                var emailProvider = $("#emailProvider").val();
+                var selectedEmail = "";  // TODO: Get the selected email from the user
+
+                if (emailProvider === "Outlook" || emailProvider === "Hotmail") {
+                    var imapServer = "imap-mail.outlook.com";
+                    var provider = emailProvider.toLowerCase() + ".com";
+                    var folderName = emailProvider;
+                } else if (emailProvider === "Yahoo") {
+                    var imapServer = "imap.mail.yahoo.com";
+                    var provider = "yahoo.com";
+                    var folderName = "yahoo";
+                } else if (emailProvider === "Gmail") {
+                    var imapServer = "imap.gmail.com";
+                    var provider = "gmail.com";
+                    var folderName = "gmail";
+                } else if (emailProvider === "AOL") {
+                    var imapServer = "imap.aol.com";
+                    var provider = "aol.com";
+                    var folderName = "aol";
+                } else {
+                    showError("Invalid email provider. Please try again.");
+                    return;
+                }
+
+                // Create the folder if it doesn't exist
+                // TODO: Create the folder if necessary
+
+                var emailAddress = selectedEmail + "@" + provider;
+                var emailPassword = emailPasswordDict[provider];
+
+                if (!emailPassword) {
+                    showError("Please enter the password for your " + emailProvider + " account.");
+                    return;
+                }
+
+                var password = emailPassword.password;
+
+                // TODO: Connect to the IMAP server and extract the emails
+
+                // Clear the email and password fields
+                $("#emailEntry").val("");
+                $("#passwordEntry").val("");
+            }
+
+            // Handle the click event of the "Extract Emails" button
+            $("#extractBtn").click(function() {
+                extractEmails();
+            });
+        });
+    </script>
+</body>
+</html>

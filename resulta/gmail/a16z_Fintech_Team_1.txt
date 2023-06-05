@@ -1,0 +1,2436 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp903954ims;
+        Wed, 31 May 2023 08:11:34 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ7fbSdryOpbaMSMPuT2G8b96fqSkXhgq2otdEEQ53YKqXVzghrgyQ8coBBzeZW7gKU9hc5I
+X-Received: by 2002:a05:620a:871a:b0:75b:23a1:833d with SMTP id px26-20020a05620a871a00b0075b23a1833dmr6346194qkn.56.1685545893370;
+        Wed, 31 May 2023 08:11:33 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685545893; cv=none;
+        d=google.com; s=arc-20160816;
+        b=XN70ucZLXF7GGDUHXPN3XxWSB4kQNDyKzxV821ZduG457TClQuHZ+qaLts8HoLYMqD
+         V3kfBBMshoqfxAReLCUNY8Oao63mpVmzl5f9flwLFO9zejZx4LIG3H9vIp1luPN3lBLh
+         bwa9peclRbvNigMtes1Xw5RjxNzXNquDh+6UtQ4jH9uTgp4ncXrTxNL3SaLwxXwQ9Nby
+         EGbJvvxOsR3VcYpf9e07rleBcPxah2kg8SHzLYmeNQ7H7tTOrgWgiH2qSHqWxkIvpNwR
+         2FiihmsW+nbsFDXCJhYQfwK+ttfIfam5cORrMawsrvA4LFO1ZiDxRJl/vvRpKBpst5Ya
+         MmUA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:mime-version:subject:message-id:to:reply-to:from
+         :date:dkim-signature:dkim-signature;
+        bh=t67w+1dYILJVBlc7xGYrFEZGJiRCStv3S2KobQ893wM=;
+        b=Pm8pVEe4vrMh0Xqhovl9aWLUnnu9WNUUJahYX3kOuJSXiXzKGjf3MfBQVEbgxJsj9I
+         ejGDqJmEW/GZyTgNAxR9PSzU/NhHpFCwoLjO4st6agKV3cT+hbuo1I4ch8zTaJM4yhtO
+         3N+u2SYMqDDdOTl6Uz47OQsNMIWZtsMwE3Fwv4qZScWrtVw1Kv0PTzHvdau2QIb6CEpl
+         ng3eS9ANLd+ewTevmwMcFAHwBx5Q5aIF5afZ1WguqSXgpaWEQa11PEC0DEB0EnJBgKCS
+         MjbSRNqFehWiEQ61cuV7q4sUcjmivNndFlj71wsRRdmUf3rbQTWq0OyvEPXefPcivfPM
+         L9dQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@a16z.com header.s=mkto header.b=dxMRx6Hm;
+       dkim=pass header.i=@mktdns.com header.s=m1 header.b=cJpEttW9;
+       spf=pass (google.com: domain of 382-jzb-798.0.29450.0.0.18804.9.16883563@bounce.a16z.com designates 192.28.145.43 as permitted sender) smtp.mailfrom=382-JZB-798.0.29450.0.0.18804.9.16883563@bounce.a16z.com;
+       dmarc=pass (p=QUARANTINE sp=REJECT dis=NONE) header.from=a16z.com
+Return-Path: <382-JZB-798.0.29450.0.0.18804.9.16883563@bounce.a16z.com>
+Received: from bounce.a16z.com (bounce.a16z.com. [192.28.145.43])
+        by mx.google.com with ESMTPS id 8-20020a05620a070800b0075cce2d5099si5311880qkc.375.2023.05.31.08.11.33
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 31 May 2023 08:11:33 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 382-jzb-798.0.29450.0.0.18804.9.16883563@bounce.a16z.com designates 192.28.145.43 as permitted sender) client-ip=192.28.145.43;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@a16z.com header.s=mkto header.b=dxMRx6Hm;
+       dkim=pass header.i=@mktdns.com header.s=m1 header.b=cJpEttW9;
+       spf=pass (google.com: domain of 382-jzb-798.0.29450.0.0.18804.9.16883563@bounce.a16z.com designates 192.28.145.43 as permitted sender) smtp.mailfrom=382-JZB-798.0.29450.0.0.18804.9.16883563@bounce.a16z.com;
+       dmarc=pass (p=QUARANTINE sp=REJECT dis=NONE) header.from=a16z.com
+X-MSFBL: FqbDJrRM89oOKwqJSINQhB+7X/fGAZndk5nboU19FYw=|eyJyIjoib3VjaGVuZGF
+	uczYyQGdtYWlsLmNvbSIsImciOiJiZy1hYmQtOTg3IiwiYiI6ImR2cC0xOTItMjg
+	tMTQ1LTQzIiwidSI6IjM4Mi1KWkItNzk4OjA6MTc1NzY6NTI4NzM6OTI4OTI6MTg
+	4MDQ6OToyOTQ1MDoxNjg4MzU2MyJ9
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1685545889;
+	s=mkto; d=a16z.com; i=@a16z.com;
+	h=Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=t67w+1dYILJVBlc7xGYrFEZGJiRCStv3S2KobQ893wM=;
+	b=dxMRx6HmzwwZ4qYPtdj/cHSwqdYpA8Jojd46oNbAhkjVUGpe2+L3d5KlUDOEaURS
+	cioEIJmk3N5TdXrP4LRP0TWoqyvBEJTJbiW+O+5H4bQGZFf/gZIwkCxxCtnbGBLS3vn
+	nqzTBKwqkNGSrywAm2VrSD7UtuSwajSDsLCriX+o=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1685545889;
+	s=m1; d=mktdns.com; i=@mktdns.com;
+	h=Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=t67w+1dYILJVBlc7xGYrFEZGJiRCStv3S2KobQ893wM=;
+	b=cJpEttW9bIiAXPrDFUrjI7yyMO23qnSFUDd6l7FNMX8gSJYKHZXYeyl+XIZt4+79
+	SxVgiTmj1QLETv6krTZmt9Of/2l3tljLG3A0HZb+RoIJL2/y4YeNHv6Ic2eHyHs6se2
+	h52/Yps724wGeNovOrYgVnh5pfi92/sUSTaMKESQ=
+Date: Wed, 31 May 2023 10:11:29 -0500 (CDT)
+From: a16z Fintech Team <fintechnewsletter@a16z.com>
+Reply-To: fintechnewsletter@a16z.com
+To: ouchendans62@gmail.com
+Message-ID: <1971669197.268868585.1685545889800@abmktmail-batch1i.marketo.org>
+Subject: Generative AI is Coming for Insurance
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_268868581_790808545.1685545889799"
+X-Binding: bg-abd-987
+X-MarketoID: 382-JZB-798:0:17576:52873:92892:18804:9:29450:16883563
+X-Mailfrom: 382-JZB-798.0.29450.0.0.18804.9.16883563@bounce.a16z.com
+List-Unsubscribe: <mailto:L5ZGMZCIOFDTMSSMGZXGQS27KYYVE3K7LFIHS6DXINFG4TDUNBTG2SLJGJVTGN3VIZGHGPI=.29450.18804.9@unsub-ab.mktomail.com>
+X-MktArchive: false
+X-MSYS-API: {"options":{"open_tracking":false,"click_tracking":false}}
+X-MktMailDKIM: true
+
+------=_Part_268868581_790808545.1685545889799
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+View Online <[[https://info.a16z.com/index.php/email/emailWebview?mkt_tok=
+=3DMzgyLUpaQi03OTgAAAGMEVXf-Cqhefd_k2RqzkckOKekrCRFDdxYlHlnnH6DBPJmQKtcLPot=
+5IcYPdQFgspEB5BTqL7W8c81yjpgvw4DNk4HFxObvkp31g3bvEx4Bf6I4w&md_id=3D18804]]>
+Not a subscriber yet? Sign up here <https://go2.a16z.com/MzgyLUpaQi03OTgAAA=
+GMEVXf-GUvucijc9S45wjf-CLlOwuMraCK69VZFhZ3LYH9BPbrXVsCRot8vl8Dug-cGs3H9kc=
+=3D>.
+
+Generative AI is Coming for Insurance
+
+Because underwriting, selling, and servicing rely so heavily on humans proc=
+essing large quantities of written or verbal communication, existing tools =
+have struggled to properly automate these services and materially impact lo=
+ss ratios (losses on written premiums) and expense ratios (underwriting and=
+ servicing written premiums). Large language models (LLMs), with their abil=
+ity to proficiently collect and distill large amounts of data, could change=
+ this as they can augment or fully replace the process of a human combing t=
+hrough large amounts of data.
+
+While current machine learning technology allows for improved decisioning o=
+n simple products like auto and home insurance, more complex underwriting p=
+rocesses like commercial and life insurance remain challenging. This has le=
+ss to do with the process of decisioning relevant data and more to do with =
+collecting and synthesizing the relevant data. While traditional ML models =
+have helped dramatically improve more standardized underwriting processes l=
+ike home and auto, LLMs could potentially help with the more complex group =
+by gathering data to help underwriters make better decisions, especially in=
+ more intricate cases like large commercial policies where more context and=
+ follow-up questions are required. For example, most large commercial polic=
+ies cover dozens or more locations, and each location has specific nuances =
+(such as electrical panels, fire doors, sprinkler density/effectiveness, ma=
+nagement effectiveness, amount of combustible storage) that must be gathere=
+d from the applicant, understood by the underwriter, and evaluated against =
+underwriting guidelines. LLM-powered workflow software for underwriters cou=
+ld drive down underwriting time and cost while increasing accuracy.
+
+On the sales side, considered purchases, like life or disability insurance =
+and annuities, are primarily sold offline through human agents and brokers =
+because they're complicated products that buyers often have questions about=
+. (Consumers are quicker to buy mandatory insurance products, like home or =
+auto insurance, online.) LLMs trained on customer data or materials on what=
+ policies are appropriate for a certain customer situation could help answe=
+r complex questions for consumers about what policies they should buy and h=
+ow that policy might impact their unique needs.
+
+And finally, carriers and agencies employ large policy-servicing divisions =
+to help with changing policies, customer support, and claims, as well as =
+=E2=80=9Cinternal wholesaler=E2=80=9D teams to constantly monitor and servi=
+ce the production of affiliated agencies or brokerages. Think of these as v=
+ertical-specific call centers where a representative needs to distill what =
+a customer, agent, or broker actually needs during a conversational dialogu=
+e, and either respond with the answer or enter the appropriate information =
+into a system. Allowing LLMs to manage some of these conversations could dr=
+amatically improve efficiency and profitability.
+=E2=80=93 Joe Schmidt <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf94kWLBu=
+UdvX185ds3CdCnlSgEAQ4tEzBw6Kxv5vdeWv6RVr-qMXxcsvfnerLeLiAxwk=3D>, a16z fint=
+ech partner
+
+Opportunities & Risks with Third-Party Payment Links
+
+For the first time in more than a decade, Apple=E2=80=99s stronghold on app=
+ distribution and monetization may be threatened, as a U.S. appeals court c=
+onfirmed in April 2023 <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf9ybR4x=
+mG29hzL7shXMzCISAQPanhWNsRLlP3aa5eKKQ7I9H0q9lpaBtzkpKglCRGKbA=3D> that Appl=
+e can no longer prevent third-party payment links in the App Store. The cas=
+e dates back to 2020, when Epic Games=E2=80=94whose founder Tim Sweeney was=
+ a vocal opponent of Apple=E2=80=99s 30% revenue cut on all App Store purch=
+ases=E2=80=94attempted to bypass Apple=E2=80=99s payment system with their =
+game =E2=80=9CFortnite.=E2=80=9D Apple subsequently blocked =E2=80=9CFortni=
+te=E2=80=9D from the App Store.
+
+Why is this such an important development? As we wrote in our piece on paym=
+ents for high-risk industries <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVX=
+f908HOhz9DohqjzR7IdkxTCdd7jI05j51n1QWqKaB4XqGQAaBEuEiVUFiECc5IZcMZUc=3D>, i=
+f developers gain the ability to embed third-party payment links=20
+in their apps, they will be able to directly see who their customers are an=
+d what their spending behaviors are like (something currently obfuscated by=
+ Apple). This will in turn allow developers to build deeper relationships w=
+ith their customers, cross-selling them products and driving them to specia=
+lized offers and discounts=E2=80=94ultimately driving greater profits.
+
+Additionally, if these third-party payment links allow developers to bypass=
+ Apple=E2=80=99s 30% take rate, developers could potentially deliver more v=
+alue back to customers and drive greater loyalty. That said, it's unclear t=
+oday if Apple would budge on its take rate; in South Korea, for example, Ap=
+ple has been prohibited from banning third-party payment links, but accordi=
+ng to their own documentation, they still require developers to pay=20
+a commission fee of 26% <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-FoGY=
+lPGXueHWqDHldJppJyJGF8ATmqROJbOVC-fSQiiTw0XFSykzpDxdKRs-tHw_OM=3D>.
+
+However, there is one critical detail that most are overlooking here: namel=
+y, that Apple=E2=80=99s App Store acts as a merchant of record for its cust=
+omers; that is, it accepts payments on behalf of apps available on the stor=
+e. Merchant-of-record platforms are authorized and held liable for a given =
+merchant=E2=80=99s transactions. These can=C2=A0include processing payments=
+, managing all payment processor fees, dealing with financial institutions,=
+ managing refunds and chargebacks, providing billing-related customer suppo=
+rt, and ensuring businesses remain compliant with global tax regulations=E2=
+=80=94which can become very complex when a product is sold in different sta=
+tes and countries. The merchant of record=E2=80=99s name is what a customer=
+ sees on their bank statement, as it holds the processed amount for a short=
+ period of time before it's transferred to the business. Companies like Str=
+ipe, Adyen, and PayPal, for context, are not merchant-of-record platforms, =
+but rather payment service providers (PSPs). This means they do not fully a=
+bstract away global payment operations, nor do they take on the liability o=
+f actually remitting taxes even if they help calculate the amounts owed.
+
+We=E2=80=99re likely to see an explosion of new apps that sell across the w=
+orld, especially as the advent of generative AI drives down the cost of run=
+ning a minimal viable venture and both mobile phones and local digital paym=
+ent methods continue to penetrate new businesses. However, selling across t=
+he globe is becoming more complex given changing laws around the definition=
+ of where taxes are owed (i.e., the =E2=80=9Ctax nexus=E2=80=9D) for digita=
+l products. For example, the U.S. now considers any state in which a compan=
+y sells a product or service a tax nexus, even if they don=E2=80=99t have a=
+ physical presence in that state <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGM=
+EVXf-JQH9TX8u63KntPyFsgRmIjPzdH1Gq8dLxd9L5LArK9LuRXa_qyi1_6yINS3HQk9LS4=3D>=
+. Additionally, some countries have no minimum threshold for owing and payi=
+ng taxes (e.g., India). While new software products can help merchants calc=
+ulate the amount of taxes they owe in a given geography, they do not actual=
+ly help with the remittance of said payments=E2=80=94which can be a massive=
+ undertaking to set up in-house.
+
+If developers of these apps go in the direction of bypassing Apple=E2=80=99=
+s payment infrastructure to gain the benefits described above, they will ne=
+ed to think through the merchant-of-record trade-off: whether they want to =
+move in-house all of the functions and liabilities that are required to sel=
+l globally, or if they prefer to partner with a merchant-of-record platform=
+ that removes that=20
+complexity away from them.
+=E2=80=93 Sumeet Singh <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf96ET4W=
+jvoWjPJuzYsFGylan7v5HuYFxXOrY-FS80csIKXV8fK8rlPy3dDm8cQ2_6B6I=3D>, a16z fin=
+tech partner
+
+Visa+, Interoperability, and Creating Clearinghouses for New Payment Method=
+s
+
+Last month, Visa announced its Visa+ initiative <https://go2.a16z.com/MzgyL=
+UpaQi03OTgAAAGMEVXf-PNv6PoyxPTNwhHnAboRYcgiM9I5BtkESDTqjx7X0zGuQFaFB_ieejVc=
+95xA1cc6Qsg=3D> to connect peer-to-peer (P2P) payment platforms. Launching =
+later this year, Visa+ will allow users of different P2P payment services t=
+o pay each other directly after they create a personalized =E2=80=9Cpayname=
+,=E2=80=9D or handle, to connect their accounts. The service will also crea=
+te an interoperable path for third parties to connect to P2P customers thro=
+ugh a single platform (e.g., allowing a merchant or platform to make disbur=
+sements via the P2P platforms). Visa+ will launch with Venmo and PayPal (ev=
+en though, yes, PayPal owns Venmo, users can=E2=80=99t yet transfer money b=
+etween the two services in real time=E2=80=A6) and will add DailyPay, i2c, =
+TabaPay, and Western Union as partners in 2024.
+
+Visa needs to get a number of things right here, but if they succeed, there=
+=E2=80=99s an interesting opportunity for them to become the clearinghouse =
+for instant P2P payments, much as they are for card payments. More broadly,=
+ the introduction of Visa+ raises a question around the proliferation of pa=
+yment methods and whether we=E2=80=99ll see more centralized clearing or co=
+nsolidation.
+
+With Visa+, Visa simplifies how merchants can receive payments; instead of =
+having to integrate with three or four P2P providers, they can now (potenti=
+ally) just integrate with one. The same applies for employers, who would pr=
+efer to integrate with just one wallet provider, not five. Visa=E2=80=99s i=
+nvolvement and additional layer of authentication also provides participati=
+ng P2P platforms with some amount of fraud detection and security. It also =
+allows the company to strategically sit in the middle of all P2P transactio=
+ns. This scenario can also potentially extend to cross-border use cases; fo=
+r example, a user of a wallet that operates in the U.S. could send money to=
+ a Visa+ user in Kenya, even if the two wallets didn=E2=80=99t do cross-bor=
+der payments.
+
+For Visa+ to be successful, Visa needs to figure out how to convince consum=
+ers to create yet another payname and use the service. Part of this effort =
+will be up to marketing, but the company also needs to open up a new use ca=
+se for consumers, solve a common friction point, or both (e.g., if Visa+ ma=
+de it easier for gig workers to receive payment). Visa+ also needs to accou=
+nt for the absence of CashApp and Zelle, which are used by 30-40% of the U.=
+S. population <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf91Ql6Wym6buKhRG=
+vW5r3SNyeu_5XEMObbdvmt-pM9dL6u6K6l1k6ZwWJGuO8w97xf58=3D>, as well as major =
+wallet providers like Google Pay and Apple Pay, from the service. Without t=
+hese players, the benefit of participating in a meta layer is more limited.=
+ Visa, as it often does, can use marketing incentives to get these platform=
+s to work with Visa+=E2=80=94though these benefits may not supersede the pl=
+atforms=E2=80=99 desire to own their relationships with their customers (ve=
+rsus ceding it to a third party like Visa). This is especially true for EWS=
+, the company that owns Zelle and is itself co-owned by seven U.S. banks. S=
+eeing as Visa was also originally controlled by a consortium of banks, EWS =
+may not want to undergo a similar disruption.=20
+
+Payments products take time to adopt. ApplePay <https://go2.a16z.com/MzgyLU=
+paQi03OTgAAAGMEVXf-OXBz7gCJhCSAfc9x-uzBr0FXjQkhEI9DgzKZbP3UvF1TqgCXigMUxOb1=
+8fbkOZN_NU=3D>, NFC-based cards, and other successful examples all took mor=
+e than 10 years to gain widespread adoption. So, even if Visa can pull off =
+the execution of this, I wouldn't expect broad consumer adoption of Visa+ i=
+mmediately, but it's one to watch and see. Interoperability is also a theme=
+ that will emerge given the proliferation of consumer (and also B2B) paymen=
+t options at checkout across wallets, BNPL, pay by bank, and more.
+=E2=80=93 Seema Amble <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-LWIO57=
+kgTYthxeps6FbtMTXDqc39k_O36C3atOhHvl_Oh8zeZRpd2m-LcNqZQ_NEsA=3D>, a16z fint=
+ech partner
+
+Featured Tweetstorms
+a16z Partner Marc Andrusko <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-K=
+86EvlY6-d0QpwxeD_qkHI9tSpDDaR09k7BgVl-hr9mOgY4oVZ70LOLKbgVXtpUs5Q=3D> on Mo=
+dernFi=E2=80=99s takeaways from the FDIC=E2=80=99s overview of the deposit =
+insurance system and potential options for deposit insurance reform.
+
+Read more =C2=BB <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-FSkPmx-QtTB=
+yZAX5UwD5FutHqy-L8hARnDiVXQ8ey0SVac7fVWk0cnm4GUx3F-Pu-4=3D>
+
+a16z General Partner Alex Rampell <https://go2.a16z.com/MzgyLUpaQi03OTgAAAG=
+MEVXf-AGSEzSnZvB7vj1r2npBOnkn-naMFo095bmnCYwIwgXUhgNCxPGZMvFCC_5RaVe4X_I=3D=
+> on how a =E2=80=9Cconsumer-signup robotic process automation (RPA)=E2=80=
+=9D=E2=80=94which AI can do=E2=80=94is the missing link to changing how fri=
+ction/inertia preserves giant gross-profit pools in financial services.
+
+Read more =C2=BB <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-HzI_6QFWkWT=
+JbuLH-zt66aGvQhxC8L7JTguCojF2ggCJhPBqoPoonEk1cptbOixkmM=3D>
+
+More From the Fintech Team
+
+Using Generative AI to Unlock Probabilistic Products=20
+
+One remarkable thing about the invention of generative AI is that it=E2=80=
+=99s one of the first examples of a probabilistic computer that produces ou=
+tputs that are varied and non-deterministic. Some, who expect these systems=
+ to behave like traditional systems, have complained about hallucinations=
+=E2=80=94however, these complaints miss the point. A dispersion of outputs =
+(including hallucinations) is exactly what's so special here. In fact, they=
+ unlock a whole new category of product design: probabilistic products.
+Read more =C2=BB <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-Ct7rz_CYSuB=
+tk25Wt5LVXWrfyUNNcdQygR23wYbwDnvdvwQsbE6luobSb8UH5RxgDw=3D>
+Aligning Founder Superpowers with Product Cycles
+
+Watching the generative AI space shape up over the past several months has =
+reaffirmed my belief that, as product cycles mature, different types of bui=
+lders have leverage at different moments in the cycle. And, at this early s=
+tage in generative AI, technologists and product pickers <https://go2.a16z.=
+com/MzgyLUpaQi03OTgAAAGMEVXf95iYpApB5r4y628OwmXq8o-AgYSzEoRJwGVRmOtjuHHNKv0=
+LY7-sGvz_PAPnw_L77VM=3D> will likely have the biggest impact on which compa=
+nies emerge as winners.
+
+Read more =C2=BB <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-EAATtraLe1N=
+ig9k_Rwmx18xWDAvL1gWQ4jri_wyNXbiC07-PPdwJ6GboUCd4kJHe5E=3D>
+
+Bat Out of Hell: Identifying Your Durable Advantage in Fintech=20
+
+Noninflationary acquisition channels only address the most obvious challeng=
+e for most fintech companies=E2=80=94growth=E2=80=94but ignore a key factor=
+: differentiation. Differentiation is what ultimately distinguishes one pro=
+duct or service from another, and sustainable differentiation is differenti=
+ation combined with some sort of moat <https://go2.a16z.com/MzgyLUpaQi03OTg=
+AAAGMEVXf-C1AgzUlfUeEYon35WqXKe-kYekQ6a5HGGp9hbrSgvGioxQoNQ4pZHJsvtoGtC266g=
+A=3D>. Absent sustainable differentiation, even the most attractive channel=
+s (inefficient or budgeted) someday tap out, and Hell=E2=80=99s Flywheel <h=
+ttps://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-CFBE-nByXYxbH5d1FehPAe79cuHEje=
+taPe6i2ZG0EZa7MaK_d-45vyhs4eP8YFd3KA=3D> starts spinning anew.=20
+
+This post is a deep dive into the sustainable differentiation that results =
+in a compounding flywheel, with a focus on financial services companies tha=
+t sell commodity-like, nonphysical world products such as money, insurance,=
+ lending, or equity capital.=20
+
+Read more =C2=BB <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-JLO72wTU0Xp=
+brEsM7FgyUN7Lt8D7o7mQRJWiAFyXmnJmpz80tl-Jx7r5zBdWFnmbfw=3D>
+
+The Opportunity for Healthcare and Fintech
+
+U.S. healthcare: it=E2=80=99s currently a confusing, costly, and inefficien=
+t system for patients, providers, and payers alike. The builders above are =
+tackling this challenge from all angles: helping clinics get paid faster an=
+d more accurately, opening up access to mental health care through insuranc=
+e, providing patients with the price of their treatment up front, expanding=
+ virtual and value-based care, and much more. The key to revamping our brok=
+en healthcare system, according to them, is modernizing the financial layer=
+=E2=80=94what one founder calls =E2=80=9Cthe secret sauce.=E2=80=9D
+
+Read more =C2=BB <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-M6cORs_dhm_=
+c1aTWR3jl1xnDn6xCDIUVR3MiA0ib8xI83hLI2j-UZbMJUvurVsfxFk=3D>
+
+To hear directly from six founders trying to reinvent the healthcare system=
+ with the help of fintech, check out =E2=80=9CHow Fintech is Reshaping Our =
+$4T Healthcare Industry=E2=80=9D at the a16z podcast <https://go2.a16z.com/=
+MzgyLUpaQi03OTgAAAGMEVXf9_vpoyxR-p9xGS3U4eJelemMEozwI001XMwNsYMUyabzZzn9AeO=
+OpfVSxV88wYnU5fQ=3D>.
+
+Beyond Payments For High-Risk Industries
+
+Today, most merchants looking to sell a product or service online can quick=
+ly get their payment system live with the help of a modern checkout platfor=
+m. If the merchant works in a =E2=80=9Chigh-risk=E2=80=9D industry like gam=
+es, sports betting, telehealth, travel, or cannabis, however, it=E2=80=99s =
+more complex. Such industries lack viable out-of-the-box software products =
+that help with payment-adjacent issues such as identity management (for gam=
+es companies), payment reconciliation (for telehealth businesses), and logi=
+stics compliance (for alcohol and cannabis businesses). While there are a f=
+ew big payment-acceptance incumbents to specifically serve some of these in=
+dustries, there=E2=80=99s now an opportunity to couple payments with a vert=
+ical-specific software layer to offer better compliance, wallets, tools for=
+ identity management and fraud detection, reconciliation, and more.
+
+Read more =C2=BB <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf908HOhz9Dohq=
+jzR7IdkxTCdd7jI05j51n1QWqKaB4XqGQAaBEuEiVUFiECc5IZcMZUc=3D>
+
+The 16 Commandments of Raising Equity in a Challenging Market
+
+Between inflation, rising interest rates, geopolitical tensions, and growin=
+g recession concerns, 2022 was a year of reckoning for both public and priv=
+ate markets. Since the beginning of 2022, the tech-heavy Nasdaq Composite h=
+as declined 23% (versus the S&P 500=E2=80=99s 14% decline) and global ventu=
+re funding reached a thirteen-quarter low <https://go2.a16z.com/MzgyLUpaQi0=
+3OTgAAAGMEVXf-BfBI9otdwtTdXf7uGSeQe366n3EC3IlVIUyPGlpnzbW-v5_UFrIVJmH3yBQX7=
+04WVc=3D> in Q1 =E2=80=9923. Further dampening investor confidence, the fai=
+lure of several long-standing institutions serving the startup ecosystem, s=
+uch as Silicon Valley Bank, Signature Bank, and First Republic Bank, sent s=
+hockwaves through capital markets and the broader financial services indust=
+ry. Today=E2=80=99s market represents a radically different fundraising cli=
+mate=E2=80=94one not seen in nearly 15 years. Many founders find themselves=
+ in uncharted territory as concerns linger around the overall health of the=
+ fundraising environment, from venture capital to growth equity.
+
+Read more =C2=BB <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf966FQse1sF2j=
+NOByD8Tc4smd_jn-vbvChVjAxXBcsJZjz9XfXosGhMphrVgu5yOdB-o=3D>
+
+Have an idea for a new Fintech company?
+START HERE =C2=BB <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-CjWPdxVynl=
+_TROSm2VNVo-FmlTE6FwzzIzLCu6ZILtvCazITPOwxD6AvRNWz4o3odQ=3D>
+
+Disclosure
+You are receiving this newsletter since you opted in earlier; if you would =
+like to opt out of future newsletters, you can unsubscribe immediately.
+
+The views expressed here are those of the individual AH Capital Management,=
+ L.L.C. (=E2=80=9Ca16z=E2=80=9D) personnel quoted and are not the views of =
+a16z or its affiliates. Certain information contained in here has been obta=
+ined from third-party sources, including from portfolio companies of funds =
+managed by a16z. While taken from sources believed to be reliable, a16z has=
+ not independently verified such information and makes no representations a=
+bout the current or enduring accuracy of the information or its appropriate=
+ness for a given situation. In addition, this content may include third-par=
+ty advertisements; a16z has not reviewed such advertisements and does not e=
+ndorse any advertising content contained therein.
+
+This content is provided for informational purposes only, and should not be=
+ relied upon as legal, business, investment, or tax advice. You should cons=
+ult your own advisers as to those matters. References to any securities or =
+digital assets are for illustrative purposes only, and do not constitute an=
+ investment recommendation or offer to provide investment advisory services=
+. Furthermore, this content is not directed at nor intended for use by any =
+investors or prospective investors, and may not under any circumstances be =
+relied upon when making a decision to invest in any fund managed by a16z. (=
+An offering to invest in an a16z fund will be made only by the private plac=
+ement memorandum, subscription agreement, and other relevant documentation =
+of any such fund and should be read in their entirety.) Any investments or =
+portfolio companies mentioned, referred to, or described are not representa=
+tive of all investments in vehicles managed by a16z, and there can be no as=
+surance that the=20
+investments will be profitable or that other investments made in the future=
+ will have similar characteristics or results. A list of investments made b=
+y funds managed by Andreessen Horowitz (excluding investments for which the=
+ issuer has not provided permission for a16z to disclose publicly as well a=
+s unannounced investments in publicly traded digital assets) is available a=
+t https://a16z.com/investments/ <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGME=
+VXf-Otg93GpdFefqOI-fKULSHCT87eiMbLT0UuYeXGD58ZCQ0WV1xc2n2Gm1sD0NhmEDOc=3D>.
+
+Charts and graphs provided within are for informational purposes solely and=
+ should not be relied upon when making any investment decision. Past perfor=
+mance is not indicative of future results. The content speaks only as of th=
+e date indicated. Any projections, estimates, forecasts, targets, prospects=
+, and/or opinions expressed in these materials are subject to change withou=
+t notice and may differ or be contrary to opinions expressed by others. Ple=
+ase see https://a16z.com/disclosures <https://go2.a16z.com/MzgyLUpaQi03OTgA=
+AAGMEVXf-Iz-mCM4pC2g0nMi9682hhMpjbjnJhzrlUhUID3VheHp-z2OBD4DTD4SOHhlpenus64=
+=3D> for additional important information.
+
+Software Is eating the world
+
+MENLO PARK OFFICE
+2865 Sand Hill Road, Suite 101=20
+Menlo Park, CA 94025
+
+SAN FRANCISCO OFFICE
+180 Townsend Street=20
+San Francisco, CA 94107
+
+NEW YORK OFFICE
+11 Madison Avenue, 15th Floor=20
+New York, NY 10010
+
+=C2=A92023 Andreessen Horowitz. All rights reserved.
+Update email preferences <https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-HYV=
+6UElomDfqeSyknsvcVU2VrelaijK4YBJD4vyePSHqK72hgG1C8mGXJCSgnG36d8=3D>
+Unsubscribe from list <[[https://info.a16z.com/UnsubscribePage.html?mkt_uns=
+ubscribe=3D1&mkt_tok=3DMzgyLUpaQi03OTgAAAGMEVXf-Cqhefd_k2RqzkckOKekrCRFDdxY=
+lHlnnH6DBPJmQKtcLPot5IcYPdQFgspEB5BTqL7W8c81yjpgvw4DNk4HFxObvkp31g3bvEx4Bf6=
+I4w]]>
+
+------=_Part_268868581_790808545.1685545889799
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:sch=
+emas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office"=
+>
+<head>=20
+<!-- Marketo Variable Definitions -->                                   =20
+<!-- Background variables -->                                              =
+                                                                           =
+               =20
+<!-- Separator height variables -->                                        =
+                         =20
+<!-- Other Meta Tags -->=20
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8" />=
+=20
+<meta content=3D"telephone=3Dno" name=3D"format-detection" />=20
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0" />=20
+<style type=3D"text/css">
+=09=09@font-face {
+=09=09=09font-family: 'Proxima Nova';
+=09=09=09src: url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-=
+Regular.woff2') format('woff2'),
+=09=09=09url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-Regul=
+ar.woff') format('woff');
+=09=09=09font-weight: 400;
+=09=09=09font-style: normal;
+=09=09}
+=09=09@font-face {
+=09=09=09font-family: 'Proxima Nova';
+=09=09=09src: url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-=
+RegularIt--09-01-020.woff2') format('woff2'),
+=09=09=09url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-Regul=
+arIt--09-01-020.woff') format('woff');
+=09=09=09font-weight: 400;
+=09=09=09font-style: italic;
+=09=09}
+
+=09=09@font-face {
+=09=09=09font-family: 'Proxima Nova';
+=09=09=09src: url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-=
+Medium--09-01-020.woff2') format('woff2'),
+=09=09=09url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-Mediu=
+m--09-01-020.woff') format('woff');
+=09=09=09font-weight: 500;
+=09=09=09font-style: normal;
+=09=09}
+
+=09=09@font-face {
+=09=09=09font-family: 'Proxima Nova';
+=09=09=09src: url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-=
+Semibold--09-01-020.woff2') format('woff2'),
+=09=09=09url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-Semib=
+old--09-01-020.woff') format('woff');
+=09=09=09font-weight: 600;
+=09=09=09font-style: normal;
+=09=09}
+
+=09=09@font-face {
+=09=09=09font-family: 'Proxima Nova';
+=09=09=09src: url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-=
+Bold--09-01-020.woff2') format('woff2'),
+=09=09=09url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-Bold-=
+-09-01-020.woff') format('woff');
+=09=09=09font-weight: 700;
+=09=09=09font-style: normal;
+=09=09}
+=09=09@font-face {
+=09=09=09font-family: 'Proxima Nova';
+=09=09=09src: url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-=
+BoldIt--09-01-020.woff2') format('woff2'),
+=09=09=09url('https://info.a16z.com/rs/382-JZB-798/images/ProximaNova-BoldI=
+t--09-01-020.woff') format('woff');
+=09=09=09font-weight: 700;
+=09=09=09font-style: italic;
+=09=09}
+=09=09a{
+=09=09=09outline:none;
+=09=09=09text-decoration:underline;
+=09=09=09-webkit-transition:all 0.2s ease;
+=09=09=09-moz-transition:all 0.2s ease;
+=09=09=09-ms-transition:all 0.2s ease;
+=09=09=09transition:all 0.2s ease;
+=09=09=09text-decoration: none;
+=09=09}
+=09=09a:hover,
+=09=09a:focus { opacity: 0.8; }
+=09=09a[x-apple-data-detectors]{color:inherit !important; text-decoration:n=
+one !important;}
+=09=09a img{border:none;}
+=09=09.long-word-td {
+=09=09=09word-break: break-all;
+=09=09=09overflow-wrap: break-word;
+=09=09=09line-break: anywhere;
+=09=09=09word-break:inherit !important;
+=09=09}
+=09=09.long-word a {
+=09=09=09line-break: anywhere;
+=09=09=09word-break: break-all;
+=09=09=09word-wrap: break-word;
+=09=09=09overflow-wrap: break-word;
+=09=09}
+=09=09.button {
+=09=09=09-webkit-transition:all 0.3s ease;
+=09=09=09-moz-transition:all 0.3s ease;
+=09=09=09-ms-transition:all 0.3s ease;
+=09=09=09transition:all 0.3s ease;
+=09=09=09word-break: break-all;
+=09=09}
+=09=09.button:hover { opacity: 0.8; }
+=09=09table td{mso-line-height-rule:exactly;}
+=09=09.ExternalClass, .ExternalClass a, .ExternalClass span, .ExternalClass=
+ b, .ExternalClass br, .ExternalClass p, .ExternalClass div{line-height:inh=
+erit;}
+=09=09.address,
+=09=09.date { color: #35353a !important; background: none !important; text-=
+decoration: none !important;}
+=09=09.address span,
+=09=09.address *,
+=09=09.date span,
+=09=09.date * { color: #35353a !important; text-decoration: none !important=
+; border:none !important; background: none !important;}
+=09=09img { max-width: 100%; height: auto; }
+=09=09ul,
+=09=09ol {
+=09=09=09padding-left: 23px;
+=09=09=09margin-top: 0;
+=09=09=09padding-top: 13px;
+=09=09=09padding-bottom: 0;
+=09=09}
+=09=09ul { list-style-type: disc; }
+=09=09ul li,
+=09=09ol li { margin-bottom: 6px; }
+
+=09=09p { padding-top: 0 !important; padding-bottom: 0 !important; margin-t=
+op: 0 !important; margin-bottom: 0 !important; }
+=09=09p + p { margin-top: 10px !important; }
+
+=09=09img + div { display:none !important; width:0 !important; height:0 !im=
+portant; padding:0 !important; font-size:0 !important; line-height:0 !impor=
+tant; }
+
+=09=09.hide-everywhere { display:none !important; width:0 !important; heigh=
+t:0 !important; padding:0 !important; font-size:0 !important; line-height:0=
+ !important; }
+
+=09=09/* Styling for screen size 639 and less */
+=09=09@media only screen and (max-width:639px) {
+=09=09=09.py-md-10 { padding-top: 10px !important; padding-bottom: 10px !im=
+portant; }
+=09=09=09.px-md-0 { padding-left: 0 !important; padding-right: 0 !important=
+; }
+=09=09=09.px-md-30 { padding-left: 30px !important; padding-right: 30px !im=
+portant; }
+=09=09=09.pl-md-30 { padding-left: 30px !important; }
+=09=09=09.pr-md-30 { padding-right: 30px !important; }
+=09=09}
+
+=09=09/* Styling for screen size 599 and less */
+=09=09@media only screen and (max-width:599px) {
+=09=09=09.flexible { width:100% !important; }
+=09=09=09.table-center { float:none !important; margin:0 auto !important; }
+=09=09=09.table-left { float:none !important; margin:0 auto 0 0 !important;=
+ }
+=09=09=09.hide { display:none !important; width:0 !important; height:0 !imp=
+ortant; padding:0 !important; font-size:0 !important; line-height:0 !import=
+ant; }
+=09=09=09.db { display:block !important; }
+=09=09=09.image-m { display:table-cell !important; }
+=09=09=09.image-m img { display:block !important; width:100% !important; he=
+ight:auto !important; font: 10px/13px Arial,Helvetica,Verdana,Helvetica,san=
+s-serif; }
+=09=09=09.img-flex img { width:100% !important; height:auto !important; }
+=09=09=09.img-flex { width:100% !important; height:auto !important; }
+=09=09=09.aligncenter { text-align:center !important; }
+=09=09=09.alignleft { text-align:left !important; }
+=09=09=09.table-holder { display:table !important; width:100% !important; }
+=09=09=09.tcap { display:table-caption !important; width:100% !important; }
+=09=09=09.thead { display:table-header-group !important; width:100% !import=
+ant; }
+=09=09=09.trow { display:table-row !important; width:100% !important; }
+=09=09=09.tfoot { display:table-footer-group !important; width:100% !import=
+ant; }
+=09=09=09.flex { display:block !important; width:100% !important; padding-l=
+eft: 0 !important; padding-right: 0 !important; border-left: none !importan=
+t; border-right: none !important; }
+=09=09=09/* Custom */
+=09=09=09.pl-0 { padding-left: 0 !important; }
+=09=09=09.pr-0 { padding-right: 0 !important; }
+=09=09=09.px-30 { padding-left: 30px !important; padding-right: 30px !impor=
+tant; }
+=09=09=09.pt-30 { padding-top: 30px !important; }
+=09=09=09.pb-20 { padding-bottom: 20px !important; }
+=09=09=09.h-10 { height: 10px !important; }
+=09=09=09.h-25 { height: 25px !important; }
+=09=09=09.h-30 { height: 30px !important; }
+=09=09=09.pt-15 { padding-top: 15px !important; }
+         =20
+         =09 .px-15 { padding-left: 15px !important; padding-right: 15px !i=
+mportant; }
+=09=09=09.pt-2 {padding-top: 2px !important;}
+            .pt-4 {padding-top: 4px !important;}
+=09=09=09.pb-5 {padding-bottom: 5px !important;}
+=09=09=09.pb-7 {padding-bottom: 7px !important;}
+=09=09=09.pb-12 {padding-bottom: 12px !important;}
+=09=09=09.pb-13 {padding-bottom: 13px !important;}
+=09=09=09.pb-15 {padding-bottom: 15px !important;}
+=09=09=09.fz-11 {font-size: 11px !important;}
+=09=09=09.fz-12 {font-size: 12px !important;}
+=09=09=09.fz-14 {font-size: 14px !important;}
+=09=09=09.px-9 {padding-left: 9px !important; padding-right: 9px !important=
+;}
+=09=09=09.lh-116 {line-height: 116% !important;}
+=09=09=09.w-148 {width: 148px !important;}
+=09=09=09.w-auto {width: auto !important;}
+=09=09}
+
+=09=09/* Styling for screen size 499 and less */
+=09=09@media only screen and (max-width:374px) {
+=09=09=09.aligncenter-xs { text-align:center !important; }
+=09=09=09.flex-xs { display:block !important; width:100% !important; paddin=
+g-left: 0 !important; padding-right: 0 !important; border-left: none !impor=
+tant; border-right: none !important; }
+=09=09}
+=09</style>=20
+<!--[if gte mso 9]><xml>
+=09=09<o:OfficeDocumentSettings>
+=09=09=09<o:AllowPNG/>
+=09=09=09<o:PixelsPerInch>96</o:PixelsPerInch>
+=09=09</o:OfficeDocumentSettings>
+=09</xml><![endif]-->=20
+<!--[if (gte mso 9)|(IE)]>
+=09=09<style type=3D"text/css">
+=09=09=09table {
+=09=09=09=09border-collapse: collapse;
+=09=09=09=09border-spacing: 0;=20
+=09=09=09=09mso-line-height-rule: exactly;=20
+=09=09=09=09mso-margin-bottom-alt: 0;=20
+=09=09=09=09mso-margin-top-alt: 0;=20
+=09=09=09=09mso-table-lspace: 0pt;
+=09=09=09=09mso-table-rspace: 0pt;
+=09=09=09}
+=09=09=09td {
+=09=09=09=09mso-table-lspace: 0pt !important;
+=09=09=09=09mso-table-rspace: 0pt !important;
+=09=09=09}
+=09=09=09p,
+=09=09=09h1,
+=09=09=09h2,
+=09=09=09h3,
+=09=09=09h4,
+=09=09=09h5,
+=09=09=09h6,
+=09=09=09ol,
+=09=09=09li,
+=09=09=09ul,
+=09=09=09td,
+=09=09=09th {
+=09=09=09=09font-family: Helvetica, Arial, sans-serif !important;
+=09=09=09}
+
+=09=09=09p {
+=09=09=09=09margin-bottom: 10px !important;
+=09=09=09}
+
+=09=09=09p:last-child {
+=09=09=09=09margin-bottom: 0 !important;
+=09=09=09}
+
+=09=09=09.ico-audio { padding-top: 0 !important; }
+=09=09</style>
+=09<![endif]-->=20
+</head>=20
+<body style=3D"margin:0; padding:0; -webkit-text-size-adjust:100%; -ms-text=
+-size-adjust:100%;" bgcolor=3D"#f0f0f0"><style type=3D"text/css">div#emailP=
+reHeader{ display: none !important; }</style><div id=3D"emailPreHeader" sty=
+le=3D"mso-hide:all; visibility:hidden; opacity:0; color:transparent; mso-li=
+ne-height-rule:exactly; line-height:0; font-size:0px; overflow:hidden; bord=
+er-width:0; display:none !important;">Plus, Opportunities and Risks for Thi=
+rd-Party Payment Links, the Future of Visa+, and more</div>=20
+<table style=3D"min-width:320px;" width=3D"100%" cellspacing=3D"0" cellpadd=
+ing=3D"0" bgcolor=3D"#f0f0f0">=20
+<tbody>
+<tr>=20
+<td style=3D"line-height:0;">
+<div style=3D"display:none; white-space:nowrap; font:15px/1px courier;">
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp=
+; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nb=
+sp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &=
+nbsp;
+</div></td>=20
+</tr>=20
+<tr>=20
+<td>=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>
+<tr>=20
+<td>=20
+<center>=20
+<div style=3D"max-width: 640px; margin: auto;">=20
+<!--[if mso]>
+=09=09=09=09=09=09=09=09=09<table role=3D"presentation" style=3D"width: 640=
+px;" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"center">
+=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09<td>
+=09=09=09=09=09=09=09=09=09=09=09<![endif]-->=20
+<table class=3D"flexible" style=3D"max-width: 640px; width: 100%; margin: 0=
+ auto;" cellpadding=3D"0" cellspacing=3D"0" align=3D"center">=20
+<tbody>
+<tr>=20
+<td>=20
+<!-- ||| Header ||| -->=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>
+<tr>=20
+<td class=3D"py-md-10" style=3D"padding: 20px 10px 7px;">=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>
+<tr>=20
+<td style=3D"font: 14px/120% Proxima Nova, Arial, Helvetica, sans-serif; co=
+lor: #97999b;" valign=3D"top">=20
+<div class=3D"mktoText" id=3D"preHeaderLeftContent"></div> </td>=20
+<td style=3D"width: 15px;" width=3D"15"></td>=20
+<td style=3D"font: 14px/120% Proxima Nova, Arial, Helvetica, sans-serif; co=
+lor: #97999b;" align=3D"right" valign=3D"top">=20
+<div class=3D"mktoText" id=3D"preHeaderRightContent">
+<a style=3D"text-decoration: none; color: #97999b;" href=3D"https://info.a1=
+6z.com/index.php/email/emailWebview?mkt_tok=3DMzgyLUpaQi03OTgAAAGMEVXf-Cqhe=
+fd_k2RqzkckOKekrCRFDdxYlHlnnH6DBPJmQKtcLPot5IcYPdQFgspEB5BTqL7W8c81yjpgvw4D=
+Nk4HFxObvkp31g3bvEx4Bf6I4w&md_id=3D18804" target=3D"_blank">View Online</a>
+</div> </td>=20
+</tr>=20
+</tbody>
+</table> </td>=20
+</tr>=20
+</tbody>
+</table>=20
+<!-- ||| Header end ||| --> </td>=20
+</tr>=20
+<tr>=20
+<td class=3D"mktoContainer" id=3D"mkto-container" style=3D"background-image=
+: url('https://info.a16z.com/rs/382-JZB-798/images/bg-wave01--newsletter-09=
+-29-020.png'); background-repeat: no-repeat; background-position: top left;=
+" bgcolor=3D"#ffffff">
+<table class=3D"mktoModule" id=3D"sep49" width=3D"100%" cellspacing=3D"0" c=
+ellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 39px;" height=3D"39"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"pageHeader" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"padding-left: 30px; padding-right: 30px;" valign=3D"middle">=
+=20
+<table class=3D"flexible" style=3D"margin-right: auto;" width=3D"65%" cells=
+pacing=3D"0" cellpadding=3D"0" align=3D"left">=20
+<tbody>=20
+<tr>=20
+<td class=3D"aligncenter" style=3D"padding: 0; text-align: left;" valign=3D=
+"middle" align=3D"left">=20
+<div class=3D"mktoImg" id=3D"headerLogo" mktolockimgsize=3D"false">=20
+<a style=3D"text-decoration: none;" href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf96W2wdfBhpgAqIx4BU82FLFss2DZD=
+FMmD3Q5dZLBVng8xt-Sjgptt9uFIU__AKAGB5E=3D" target=3D"_blank"
+><img style=3D"vertical-align: top; max-width: 100%; height: auto;" src=3D"=
+https://info.a16z.com/rs/382-JZB-798/images/logo-new-black--01-26-021.png" =
+width=3D"190" alt=3D"ANDREESSEN HOROWITZ" border=3D"0" height=3D"45" /></a>=
+=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+<table class=3D"&nbsp; flexible" style=3D"margin-left: auto;" width=3D"30%"=
+ cellspacing=3D"0" cellpadding=3D"0" align=3D"right">=20
+<tbody>=20
+<tr class=3D"&nbsp;">=20
+<td class=3D"aligncenter pt-15 &nbsp;" style=3D"padding: 5px 0 0; text-alig=
+n: right; font: 14px/136% Proxima Nova, Arial, Helvetica, sans-serif; color=
+: #97999b;" valign=3D"middle">=20
+<div class=3D"mktoText &nbsp;" id=3D"headerRightContent">=20
+<p>Not a subscriber yet? <br class=3D"hide" />Sign up <u><a style=3D"color:=
+ #97999b;" href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-KQM0s2gMV5K6bEwTwsYD0V83NvC7=
+yz4NlNAcCX4R_LmSAxd_6L5_hNV9fEwLHlRXGc=3D" target=3D"_blank"
+>here</a></u>.</p>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"sep51" width=3D"100%" cellspacing=3D"0" c=
+ellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 30px;" height=3D"30"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"verticalLogo" width=3D"100%" cellspacing=
+=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"padding-left: 30px; padding-right: 30px;">=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td align=3D"center"> <img style=3D"vertical-align: top; max-width: 100%; h=
+eight: auto;" src=3D"https://info.a16z.com/rs/382-JZB-798/images/a16z-Finte=
+ch--01-26-021.png" alt=3D"a16z Fintech" border=3D"0" /> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"sep50" width=3D"100%" cellspacing=3D"0" c=
+ellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 35px;" height=3D"35"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"heading018b3f126c-77f9-4610-95b6-1bde4e06=
+d97e" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#ffffff=
+">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font: 700 24px/120% Proxima Nova, Arial, Helvetica, sans-serif=
+; color: #ed8b00;">=20
+<div class=3D"mktoText" id=3D"heading01Content318fe18a-ef68-463b-b898-0b188=
+9c85bd7">=20
+<p><span style=3D"color: #00a3ad;">Generative AI is Coming for Insurance</s=
+pan></p>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 15px;" height=3D"15"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"txtBlock027a83a98c-ef2a-436d-8d2e-d414732=
+cd8e5" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#fffff=
+f">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font: 16px/128% Proxima Nova, Arial, Helvetica, sans-serif; co=
+lor: #4b4f54;">=20
+<div class=3D"mktoText" id=3D"txtBlock02Content4f81bde9-f219-4227-8865-5daf=
+e900a884">=20
+<p>Because underwriting, selling, and servicing rely so heavily on humans p=
+rocessing large quantities of written or verbal communication, existing too=
+ls have struggled to properly automate these services and materially impact=
+ loss ratios (losses on written premiums) and expense ratios (underwriting =
+and servicing written premiums). Large language models (LLMs), with their a=
+bility to proficiently collect and distill large amounts of data, could cha=
+nge this as they can augment or fully replace the process of a human combin=
+g through large amounts of data.</p>=20
+<p>While current machine learning technology allows for improved decisionin=
+g on simple products like auto and home insurance, more complex underwritin=
+g processes like commercial and life insurance remain challenging. This has=
+ less to do with the process of decisioning relevant data and more to do wi=
+th collecting and synthesizing the relevant data. While traditional ML mode=
+ls have helped dramatically improve more standardized underwriting processe=
+s like home and auto, LLMs could potentially help with the more complex gro=
+up by gathering data to help underwriters make better decisions, especially=
+ in more intricate cases like large commercial policies where more context =
+and follow-up questions are required. For example, most large commercial po=
+licies cover dozens or more locations, and each location has specific nuanc=
+es (such as electrical panels, fire doors, sprinkler density/effectiveness,=
+ management effectiveness, amount of combustible storage) that must be gath=
+ered from the applicant, understood by the underwriter, and evaluated again=
+st underwriting guidelines. LLM-powered workflow software for underwriters =
+could drive down underwriting time and cost while increasing accuracy.</p>=
+=20
+<p>On the sales side, considered purchases, like life or disability insuran=
+ce and annuities, are primarily sold offline through human agents and broke=
+rs because they're complicated products that buyers often have questions ab=
+out. (Consumers are quicker to buy mandatory insurance products, like home =
+or auto insurance, online.) LLMs trained on customer data or materials on w=
+hat policies are appropriate for a certain customer situation could help an=
+swer complex questions for consumers about what policies they should buy an=
+d how that policy might impact their unique needs.</p>=20
+<p>And finally, carriers and agencies employ large policy-servicing divisio=
+ns to help with changing policies, customer support, and claims, as well as=
+ =E2=80=9Cinternal wholesaler=E2=80=9D teams to constantly monitor and serv=
+ice the production of affiliated agencies or brokerages. Think of these as =
+vertical-specific call centers where a representative needs to distill what=
+ a customer, agent, or broker actually needs during a conversational dialog=
+ue, and either respond with the answer or enter the appropriate information=
+ into a system. Allowing LLMs to manage some of these conversations could d=
+ramatically improve efficiency and profitability.</p>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"sep477e55072f-819a-4b07-92bd-812628c8c211=
+" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 17px;" height=3D"17"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"txtBlock02f08ab45b-df0f-4450-8221-8a6104c=
+47663" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#fffff=
+f">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font: 16px/128% Proxima Nova, Arial, Helvetica, sans-serif; co=
+lor: #4b4f54;">=20
+<div class=3D"mktoText" id=3D"txtBlock02Contentc80fc7ff-fb87-4cfc-b2c4-2d24=
+48f797af">=20
+<p><span style=3D"color: #97999b;">=E2=80=93 <span style=3D"color: #ed8b00;=
+"><a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-IPIGNnL4PynJ-tagzUfaoX__aI29=
+uAGGzzqJ787owZG6guqctD6ZtNjLmkMqmorHsc=3D" target=3D"_blank" id=3D"" style=
+=3D"color: #ed8b00;"
+>Joe Schmidt</a></span>, a16z fintech partner</span></p>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"sep51678429c3-43ef-4cd6-8e2b-d3f2f5f82ff0=
+" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 25px;" height=3D"25"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"imgBlock02bc6cc76b-fd3e-41c5-939e-0a0b1a5=
+82703" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#fffff=
+f">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td align=3D"center" bgcolor=3D"#cccccc">=20
+<div class=3D"mktoImg" id=3D"imgBlock02Img1c9a5255-4e63-4635-ba63-94085d176=
+554" mktolockimgsize=3D"false">=20
+<a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-EfSWSLiQ5h5ZL-kgo4APgu16jxj_=
+PucPQvM4I71h1sR9dRYux3teKRpP9hnChQ5eHY=3D" target=3D"_blank"
+><img src=3D"https://info.a16z.com/rs/382-JZB-798/images/May-Fintech-Newsle=
+tterBanner-AI.png" width=3D"641" height=3D"126" alt=3D"May-Fintech-Newslett=
+erBanner-AI.png" style=3D"vertical-align: top; max-width: 100%; width: 100%=
+; height: auto; display: block; margin-left: auto; margin-right: auto;" /><=
+/a>=20
+</div> </td>=20
+</tr>=20
+<tr>=20
+<td style=3D"font: 18px/128% Proxima Nova, Arial, Helvetica, sans-serif; pa=
+dding-top: 10px; padding-bottom: 16px; color: #97999b;" align=3D"center">=
+=20
+<div class=3D"mktoText" id=3D"imgBlock02ImgCaptionc5b8a70f-a58c-49ff-be98-c=
+e87591b6920"></div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"heading011404de87-79e7-4034-8975-1204bd3d=
+6cd3" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#ffffff=
+">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font: 700 24px/120% Proxima Nova, Arial, Helvetica, sans-serif=
+; color: #ed8b00;">=20
+<div class=3D"mktoText" id=3D"heading01Content7d4f5f98-3df7-4848-a6ed-45275=
+6642d41">=20
+<p><span style=3D"color: #00a3ad;">Opportunities &amp; Risks with Third-Par=
+ty Payment Links </span></p>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 15px;" height=3D"15"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"txtBlock02d1fb8347-7440-4bde-8ce9-3b59fa0=
+9b8e5" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#fffff=
+f">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font: 16px/128% Proxima Nova, Arial, Helvetica, sans-serif; co=
+lor: #4b4f54;">=20
+<div class=3D"mktoText" id=3D"txtBlock02Contentc7c69828-0878-4a99-9a95-3114=
+e904dd2c">=20
+<p>For the first time in more than a decade, Apple=E2=80=99s stronghold on =
+app distribution and monetization may be threatened, as a <span style=3D"co=
+lor: #ed8b00;"><a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf9ybR4xmG29hzL7shXMzCISAQPanhW=
+NsRLlP3aa5eKKQ7I9H0q9lpaBtzkpKglCRGKbA=3D" target=3D"_blank" id=3D"" style=
+=3D"color: #ed8b00;"
+>U.S. appeals court confirmed in April 2023</a></span> that Apple can no lo=
+nger prevent third-party payment links in the App Store. The case dates bac=
+k to 2020, when Epic Games=E2=80=94whose founder Tim Sweeney was a vocal op=
+ponent of Apple=E2=80=99s 30% revenue cut on all App Store purchases=E2=80=
+=94attempted to bypass Apple=E2=80=99s payment system with their game =E2=
+=80=9CFortnite.=E2=80=9D Apple subsequently blocked =E2=80=9C<span style=3D=
+"color: #4b4f54; font-family: 'Proxima Nova', Arial, Helvetica, sans-serif;=
+ font-size: 16px;=20
+font-style: normal; font-variant-ligatures: normal; font-variant-caps: norm=
+al; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start=
+; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; w=
+ord-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff=
+; text-decoration-thickness: initial; text-decoration-style: initial; text-=
+decoration-color:=20
+initial; display: inline !important; float: none;">Fortnite</span>=E2=80=9D=
+ from the App Store.</p>=20
+<p>Why is this such an important development? As we wrote in <span style=3D=
+"color: #ed8b00;"><a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-CoYyU8tasxxslmgQAP1F6mcrwSC8=
+XG_n2LQctciucW0E6WoOe1VbxFyP67QTcU2soA=3D" target=3D"_blank" style=3D"color=
+: #ed8b00;"
+>our piece on payments for high-risk industries</a></span>, if developers g=
+ain the ability to embed third-party payment links in their apps, they will=
+ be able to directly see who their customers are and what their spending be=
+haviors are like (something currently obfuscated by Apple). This will in tu=
+rn allow developers to build deeper relationships with their customers, cro=
+ss-selling them products and driving them to specialized offers and discoun=
+ts=E2=80=94ultimately driving greater profits.</p>=20
+<p>Additionally, if these third-party payment links allow developers to byp=
+ass Apple=E2=80=99s 30% take rate, developers could potentially deliver mor=
+e value back to customers and drive greater loyalty. That said, it's unclea=
+r today if Apple would budge on its take rate; in South Korea, for example,=
+ Apple has been prohibited from banning third-party payment links, but acco=
+rding to their own documentation, they still <span style=3D"color: #ed8b00;=
+"><a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-FoGYlPGXueHWqDHldJppJyJGF8AT=
+mqROJbOVC-fSQiiTw0XFSykzpDxdKRs-tHw_OM=3D" target=3D"_blank" id=3D"" style=
+=3D"color: #ed8b00;"
+>require developers to pay a commission fee of 26%</a></span>.</p>=20
+<p>However, there is one critical detail that most are overlooking here: na=
+mely, that Apple=E2=80=99s App Store acts as a merchant of record for its c=
+ustomers; that is, it accepts payments on behalf of apps available on the s=
+tore. Merchant-of-record platforms are authorized and held liable for a giv=
+en merchant=E2=80=99s transactions. These can&nbsp;include processing payme=
+nts, managing all payment processor fees, dealing with financial institutio=
+ns, managing refunds and chargebacks, providing billing-related customer su=
+pport, and ensuring businesses remain compliant with global tax regulations=
+<span style=3D"color: #4b4f54; font-family: 'Proxima Nova', Arial, Helvetic=
+a, sans-serif; font-size: 16px; font-style: normal;=20
+font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400=
+; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; =
+text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -w=
+ebkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-th=
+ickness: initial; text-decoration-style: initial; text-decoration-color: in=
+itial; display: inline=20
+!important; float: none;">=E2=80=94</span>which can become very complex whe=
+n a product is sold in different states and countries. The merchant of reco=
+rd=E2=80=99s name is what a customer sees on their bank statement, as it ho=
+lds the processed amount for a short period of time before it's transferred=
+ to the business. Companies like Stripe, Adyen, and PayPal, for context, ar=
+e not merchant-of-record platforms, but rather payment service providers (P=
+SPs). This means they do not fully abstract away global payment operations,=
+ nor do they take on the liability of actually remitting taxes even if they=
+ help calculate the amounts owed.</p>=20
+<p>We=E2=80=99re likely to see an explosion of new apps that sell across th=
+e world, especially as the advent of generative AI drives down the cost of =
+running a minimal viable venture and both mobile phones and local digital p=
+ayment methods continue to penetrate new businesses. However, selling acros=
+s the globe is becoming more complex given changing laws around the definit=
+ion of where taxes are owed (i.e., the =E2=80=9Ctax nexus=E2=80=9D) for dig=
+ital products. For example, the U.S. now considers any state in which a com=
+pany sells a product or service a tax nexus, <span style=3D"color: #ed8b00;=
+"><a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-JQH9TX8u63KntPyFsgRmIjPzdH1G=
+q8dLxd9L5LArK9LuRXa_qyi1_6yINS3HQk9LS4=3D" target=3D"_blank" id=3D"" style=
+=3D"color: #ed8b00;"
+>even if they don=E2=80=99t have a physical presence in that state</a></spa=
+n>. Additionally, some countries have no minimum threshold for owing and pa=
+ying taxes (e.g., India). While new software products can help merchants ca=
+lculate the amount of taxes they owe in a given geography, they do not actu=
+ally help with the remittance of said payments<span style=3D"color: #4b4f54=
+; font-family: 'Proxima Nova', Arial, Helvetica, sans-serif; font-size: 16p=
+x; font-style: normal; font-variant-ligatures: normal; font-variant-caps: n=
+ormal; font-weight: 400; letter-spacing: normal;=20
+orphans: 2; text-align: start; text-indent: 0px; text-transform: none; whit=
+e-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0=
+px; background-color: #ffffff; text-decoration-thickness: initial; text-dec=
+oration-style: initial; text-decoration-color: initial; display: inline !im=
+portant; float: none;">=E2=80=94</span>which can be a massive undertaking t=
+o set up in-house.</p>=20
+<p>If developers of these apps go in the direction of bypassing Apple=E2=80=
+=99s payment infrastructure to gain the benefits described above, they will=
+ need to think through the merchant-of-record trade-off: whether they want =
+to move in-house all of the functions and liabilities that are required to =
+sell globally, or if they prefer to partner with a merchant-of-record platf=
+orm that removes that complexity away from them.</p>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"sep02" width=3D"100%" cellspacing=3D"0" c=
+ellpadding=3D"0" bgcolor=3D"#ffffff">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 17px;" height=3D"17"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"txtBlock023dd49d28-1366-4632-ae45-d6e3b64=
+fdbf9" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#fffff=
+f">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font: 16px/128% Proxima Nova, Arial, Helvetica, sans-serif; co=
+lor: #4b4f54;">=20
+<div class=3D"mktoText" id=3D"txtBlock02Content856bd504-c986-4dd0-9ff9-d297=
+c7514f0b">=20
+<p><span style=3D"color: #97999b;">=E2=80=93 <span style=3D"color: #ed8b00;=
+"><a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf99A0hSetsduMiRnAj9cidZ63uptni=
+OKbLWVy7OVrKfV-dRjYmRriGtMC0MgAVHuxavs=3D" target=3D" _blank=3D" style=3D"c=
+olor: #ed8b00;"
+>Sumeet Singh</a></span>, a16z fintech partner</span></p>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"sep100626e776a-4b71-4016-a701-601f1e7a8ab=
+1" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 25px;" height=3D"25"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"sep0242e4f01d-b27a-4f8e-8e8d-491ec4bdad27=
+" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#ffffff">=
+=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 1px;" height=3D"1">&=
+nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"heading0180d15ead-9106-44ce-9976-38b90c15=
+41c2" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#ffffff=
+">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font: 700 24px/120% Proxima Nova, Arial, Helvetica, sans-serif=
+; color: #ed8b00;">=20
+<div class=3D"mktoText" id=3D"heading01Content4938614d-8c7b-4823-a7c5-0ec0c=
+dcc4e6f">=20
+<p><span style=3D"color: #00a3ad;">Visa+, Interoperability, and Creating Cl=
+earinghouses for New Payment Methods</span></p>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 15px;" height=3D"15"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"txtBlock02dc345187-0ef6-4812-8fd4-52a37fe=
+f2bd1" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#fffff=
+f">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font: 16px/128% Proxima Nova, Arial, Helvetica, sans-serif; co=
+lor: #4b4f54;">=20
+<div class=3D"mktoText" id=3D"txtBlock02Contentb0be43ed-91eb-4b60-b0c3-9ff6=
+70f53207">=20
+<p>Last month, Visa announced its <span style=3D"color: #ed8b00;"><a href=
+=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-PNv6PoyxPTNwhHnAboRYcgiM9I5B=
+tkESDTqjx7X0zGuQFaFB_ieejVc95xA1cc6Qsg=3D" target=3D"_blank" id=3D"" style=
+=3D"color: #ed8b00;"
+>Visa+ initiative</a></span> to connect peer-to-peer (P2P) payment platform=
+s. Launching later this year, Visa+ will allow users of different P2P payme=
+nt services to pay each other directly after they create a personalized =E2=
+=80=9Cpayname,=E2=80=9D or handle, to connect their accounts. The service w=
+ill also create an interoperable path for third parties to connect to P2P c=
+ustomers through a single platform (e.g., allowing a merchant or platform t=
+o make disbursements via the P2P platforms). Visa+ will launch with Venmo a=
+nd PayPal (even though, yes, PayPal owns Venmo, users can=E2=80=99t yet tra=
+nsfer money between the two services in real time=E2=80=A6) and will add Da=
+ilyPay, i2c, TabaPay, and Western Union as partners in 2024.</p>=20
+<p>Visa needs to get a number of things right here, but if they succeed, th=
+ere=E2=80=99s an interesting opportunity for them to become the clearinghou=
+se for instant P2P payments, much as they are for card payments. More broad=
+ly, the introduction of Visa+ raises a question around the proliferation of=
+ payment methods and whether we=E2=80=99ll see more centralized clearing or=
+ consolidation.</p>=20
+<p>With Visa+, Visa simplifies how merchants can receive payments; instead =
+of having to integrate with three or four P2P providers, they can now (pote=
+ntially) just integrate with one. The same applies for employers, who would=
+ prefer to integrate with just one wallet provider, not five. Visa=E2=80=99=
+s involvement and additional layer of authentication also provides particip=
+ating P2P platforms with some amount of fraud detection and security. It al=
+so allows the company to strategically sit in the middle of all P2P transac=
+tions. This scenario can also potentially extend to cross-border use cases;=
+ for example, a user of a wallet that operates in the U.S. could send money=
+ to a Visa+ user in Kenya, even if the two wallets didn=E2=80=99t do cross-=
+border payments.</p>=20
+<p>For Visa+ to be successful, Visa needs to figure out how to convince con=
+sumers to create yet another payname and use the service. Part of this effo=
+rt will be up to marketing, but the company also needs to open up a new use=
+ case for consumers, solve a common friction point, or both (e.g., if Visa+=
+ made it easier for gig workers to receive payment). Visa+ also needs to ac=
+count for the absence of CashApp and Zelle, which are used by <span style=
+=3D"color: #ed8b00;"><a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf91Ql6Wym6buKhRGvW5r3SNyeu_5XE=
+MObbdvmt-pM9dL6u6K6l1k6ZwWJGuO8w97xf58=3D" target=3D"_blank" id=3D"" style=
+=3D"color: #ed8b00;"
+>30-40% of the U.S. population</a></span>, as well as major wallet provider=
+s like Google Pay and Apple Pay, from the service. Without these players, t=
+he benefit of participating in a meta layer is more limited. Visa, as it of=
+ten does, can use marketing incentives to get these platforms to work with =
+Visa+=E2=80=94though these benefits may not supersede the platforms=E2=80=
+=99 desire to own their relationships with their customers (versus ceding i=
+t to a third party like Visa). This is especially true for EWS, the company=
+ that owns Zelle and is itself co-owned by seven U.S. banks. Seeing as Visa=
+ was also originally controlled by a consortium of banks, EWS may not want =
+to undergo a similar disruption.</p>=20
+<p>Payments products take time to adopt. <span style=3D"color: #ed8b00;"><a=
+ href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-OXBz7gCJhCSAfc9x-uzBr0FXjQkh=
+EI9DgzKZbP3UvF1TqgCXigMUxOb18fbkOZN_NU=3D" target=3D"_blank" id=3D"" style=
+=3D"color: #ed8b00;"
+>ApplePay</a></span>, NFC-based cards, and other successful examples all to=
+ok more than 10 years to gain widespread adoption. So, even if Visa can pul=
+l off the execution of this, I wouldn't expect broad consumer adoption of V=
+isa+ immediately, but it's one to watch and see. Interoperability is also a=
+ theme that will emerge given the proliferation of consumer (and also B2B) =
+payment options at checkout across wallets, BNPL, pay by bank, and more.</p=
+>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"sep04" width=3D"100%" cellspacing=3D"0" c=
+ellpadding=3D"0" bgcolor=3D"#ffffff">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 17px;" height=3D"17"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"txtBlock0276c2504b-2ba8-4258-b6b0-81059b6=
+accc1" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#fffff=
+f">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font: 16px/128% Proxima Nova, Arial, Helvetica, sans-serif; co=
+lor: #4b4f54;">=20
+<div class=3D"mktoText" id=3D"txtBlock02Content12438bf4-6342-460b-8297-d7cf=
+54dde616">=20
+<p><span style=3D"color: #97999b;">=E2=80=93 <a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-JTnTQ48327CbMhIm0KQC6rVRFVP5=
+og6g4wVQDzdj1Ikq_cH3KBYEiAxDw1b31b6HXg=3D" target=3D" _blank=3D" style=3D"c=
+olor: #ed8b00;"
+>Seema Amble</a>, a16z fintech partner</span></p>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"sep049f6830af-628c-4ced-9a0b-1375f4129860=
+" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#ffffff">=
+=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 25px;" height=3D"25"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"heading0174d4bdec-a3f9-46a7-a597-f27f4b91=
+fe0e" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#ffffff=
+">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font: 700 24px/120% Proxima Nova, Arial, Helvetica, sans-serif=
+; color: #ed8b00;">=20
+<div class=3D"mktoText" id=3D"heading01Content2b02c713-87ef-4f4f-81dc-d3b7c=
+67d51ce">=20
+<p><span style=3D"color: #00a3ad;">Featured Tweetstorms</span></p>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 15px;" height=3D"15"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"txtBlock0268a84d1c-6923-4414-a913-bc89835=
+16f49" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#fffff=
+f">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font: 16px/128% Proxima Nova, Arial, Helvetica, sans-serif; co=
+lor: #4b4f54;">=20
+<div class=3D"mktoText" id=3D"txtBlock02Content17a63bfa-840e-4938-a885-b68a=
+a957e81e">=20
+<p>a16z Partner <span style=3D"color: #ed8b00;"><a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf97cb5avRHygY6oKiKTFhb9WW6kTQb=
+mGTJKZbZFb63OCfChLccdOsJfYRuhUaJXEr_Fs=3D" target=3D"_blank" id=3D"" style=
+=3D"color: #ed8b00;"
+>Marc Andrusko</a></span> on ModernFi=E2=80=99s takeaways from the FDIC=E2=
+=80=99s overview of the deposit insurance system and potential options for =
+deposit insurance reform.</p>=20
+<p><strong><a style=3D"text-decoration: none; color: #ed8b00;" href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-FSkPmx-QtTByZAX5UwD5FutHqy-L=
+8hARnDiVXQ8ey0SVac7fVWk0cnm4GUx3F-Pu-4=3D" target=3D"_blank"
+>Read more =C2=BB</a></strong></p>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"sep47e02bce81-0e6e-4144-a254-df5cbf857de5=
+" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 22px;" height=3D"22"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"txtBlock0203536676-c28a-4721-ad6b-b55965f=
+3c15e" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#fffff=
+f">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font: 16px/128% Proxima Nova, Arial, Helvetica, sans-serif; co=
+lor: #4b4f54;">=20
+<div class=3D"mktoText" id=3D"txtBlock02Content9cb4cd9a-38b2-470b-b1ee-8531=
+0f994815">=20
+<p>a16z General Partner <span style=3D"color: #ed8b00;"><a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-E6LnLn4k3uKlU6aTVvnDG8KbTwpB=
+Nj9ZOHAb86Zkao4uFjNBLD9rR56PW23VAdqWGA=3D" target=3D"_blank" id=3D"" style=
+=3D"color: #ed8b00;"
+>Alex Rampell</a></span> on how a =E2=80=9Cconsumer-signup robotic process =
+automation (RPA)=E2=80=9D=E2=80=94which AI can do=E2=80=94is the missing li=
+nk to changing how friction/inertia preserves giant gross-profit pools in f=
+inancial services.</p>=20
+<p><strong><a style=3D"text-decoration: none; color: #ed8b00;" href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-HzI_6QFWkWTJbuLH-zt66aGvQhxC=
+8L7JTguCojF2ggCJhPBqoPoonEk1cptbOixkmM=3D" target=3D"_blank"
+>Read more =C2=BB</a></strong></p>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"sep3139c68ada-b3d5-413b-90d1-dedfc1a22464=
+" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#ffffff">=
+=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 25px;" height=3D"25"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"heading011557eaec-1d27-49b4-897e-c64e1f8f=
+9b82" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#ffffff=
+">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font: 700 24px/120% Proxima Nova, Arial, Helvetica, sans-serif=
+; color: #ed8b00;">=20
+<div class=3D"mktoText" id=3D"heading01Contentaca4a747-01f2-488e-80ad-e07ee=
+77c3a1e">=20
+<p><span style=3D"color: #00a3ad;">More From the Fintech Team</span></p>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 15px;" height=3D"15"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"txtBlock02a902dc15-149d-4a14-8ebf-1a8678c=
+a9291" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#fffff=
+f">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font: 16px/128% Proxima Nova, Arial, Helvetica, sans-serif; co=
+lor: #4b4f54;">=20
+<div class=3D"mktoText" id=3D"txtBlock02Contentbaec68d4-1564-4175-b44b-2bff=
+681f0f17">=20
+<p><strong>Using Generative AI to Unlock Probabilistic Products </strong></=
+p>=20
+<p>One remarkable thing about the invention of generative AI is that it=E2=
+=80=99s one of the first examples of a probabilistic computer that produces=
+ outputs that are varied and non-deterministic. Some, who expect these syst=
+ems to behave like traditional systems, have complained about hallucination=
+s=E2=80=94however, these complaints miss the point. A dispersion of outputs=
+ (including hallucinations) is exactly what's so special here. In fact, the=
+y unlock a whole new category of product design: probabilistic products.</p=
+>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"sep4714592b59-d9b4-4575-afe3-6238c421e6c1=
+" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 22px;" height=3D"22"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"imgBlock0227428081-8775-4d52-822a-fe84c97=
+993ad" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#fffff=
+f">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td align=3D"center" bgcolor=3D"#cccccc">=20
+<div class=3D"mktoImg" id=3D"imgBlock02Img0eb2f88b-9d08-493b-8b3b-5d7474ec1=
+9a8" mktolockimgsize=3D"false">=20
+<a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-Gaa8heU42AqI-RPBM1TUwsKYLyEH=
+DuE0AHDzgNDDwZMBD452jYUUo7GdSESzT2hDqM=3D" target=3D"_blank"
+><img src=3D"https://info.a16z.com/rs/382-JZB-798/images/AI-Tax-Assistant.p=
+ng" width=3D"2000" height=3D"1192" alt=3D"AI-Tax-Assistant.png" style=3D"ve=
+rtical-align: top; max-width: 100%; width: 100%; height: auto; display: blo=
+ck; margin-left: auto; margin-right: auto;" /></a>=20
+</div> </td>=20
+</tr>=20
+<tr>=20
+<td style=3D"font: 18px/128% Proxima Nova, Arial, Helvetica, sans-serif; pa=
+dding-top: 10px; padding-bottom: 16px; color: #97999b;" align=3D"center">=
+=20
+<div class=3D"mktoText" id=3D"imgBlock02ImgCaption6eb47734-c2fe-4dfb-9e62-9=
+76fd739aed1"></div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"txtBlock023154e56e-7535-4a5c-a322-a099939=
+696f3" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#fffff=
+f">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font: 16px/128% Proxima Nova, Arial, Helvetica, sans-serif; co=
+lor: #4b4f54;">=20
+<div class=3D"mktoText" id=3D"txtBlock02Content5258fb84-c2c3-49d9-8872-375a=
+e9221981">=20
+<p><strong><a style=3D"text-decoration: none; color: #ed8b00;" href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf91KnC3qOpd732OpZgMn1M5j7jWkum=
+EYjjakWFz2uY9Ijpnw3QL2DuwwpDX3DAgu-NxQ=3D" target=3D"_blank"
+>Read more =C2=BB</a></strong></p>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"sep477ff94177-7b76-4c3b-b681-2c3315535c7a=
+" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 22px;" height=3D"22"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"txtBlock02877bb6fd-7403-43a5-95c8-8f08211=
+34fbd" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#fffff=
+f">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font: 16px/128% Proxima Nova, Arial, Helvetica, sans-serif; co=
+lor: #4b4f54;">=20
+<div class=3D"mktoText" id=3D"txtBlock02Content6b92dea9-9264-4073-919d-1cb5=
+2c3d3fdb">=20
+<p><strong>Aligning Founder Superpowers with Product Cycles</strong></p>=20
+<p>Watching the generative AI space shape up over the past several months h=
+as reaffirmed my belief that, as product cycles mature, different types of =
+builders have leverage at different moments in the cycle. And, at this earl=
+y stage in generative AI, technologists and <span style=3D"color: #ed8b00;"=
+><a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-OR-hd0m--Ag1kVJlsGP5r2vdsgfW=
+wGT7B0xuPWdrmDrTBwNXcLpyNnxdZB2b0H0AvM=3D" target=3D"_blank" id=3D"" style=
+=3D"color: #ed8b00;"
+>product pickers</a></span> will likely have the biggest impact on which co=
+mpanies emerge as winners.</p>=20
+<p><strong><a style=3D"text-decoration: none; color: #ed8b00;" href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf9wfg1m9Ny8tLulRZ8m0ncAPrqRxWg=
+qhP5i7vw1w8ZxCzvlfYNVY7CnTepZyZlG0w364=3D" target=3D"_blank"
+>Read more =C2=BB</a></strong></p>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"sep47a6b4d0fd-2abb-4c27-aa05-3afab7b406a4=
+" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 22px;" height=3D"22"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"txtBlock029033df20-a65b-427e-8151-730db4c=
+9d2aa" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#fffff=
+f">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font: 16px/128% Proxima Nova, Arial, Helvetica, sans-serif; co=
+lor: #4b4f54;">=20
+<div class=3D"mktoText" id=3D"txtBlock02Contentfd69d6b7-d513-4317-9738-4d6a=
+e3ebaf82">=20
+<p><strong>Bat Out of Hell: Identifying Your Durable Advantage in Fintech</=
+strong></p>=20
+<p>Noninflationary acquisition channels only address the most obvious chall=
+enge for most fintech companies=E2=80=94growth=E2=80=94but ignore a key fac=
+tor: differentiation. Differentiation is what ultimately distinguishes one =
+product or service from another, and sustainable differentiation is differe=
+ntiation combined with some sort of <span style=3D"color: #ed8b00;"><a href=
+=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-C1AgzUlfUeEYon35WqXKe-kYekQ6=
+a5HGGp9hbrSgvGioxQoNQ4pZHJsvtoGtC266gA=3D" target=3D"_blank" id=3D"" style=
+=3D"color: #ed8b00;"
+>moat</a></span>. Absent sustainable differentiation, even the most attract=
+ive channels (inefficient or budgeted) someday tap out, and <span style=3D"=
+color: #ed8b00;"><a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-DMhR3mcCi2o1Krzx7rEtYSy1et6p=
+WGTzlSTJyjAZXJnFd-amouPJa4Mn9zw-E90uWg=3D" target=3D"_blank" id=3D"" style=
+=3D"color: #ed8b00;"
+>Hell=E2=80=99s Flywheel</a></span> starts spinning anew.</p>=20
+<p>This post is a deep dive into the sustainable differentiation that resul=
+ts in a compounding flywheel, with a focus on financial services companies =
+that sell commodity-like, nonphysical world products such as money, insuran=
+ce, lending, or equity capital.</p>=20
+<p><strong><a style=3D"text-decoration: none; color: #ed8b00;" href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf9xqw2J9NZXEDpHJodF5jbF4scEzXy=
+yIZdLp3Sb6NnusvAzySTsi3DfVPJ9JKEg8_GJc=3D" target=3D"_blank"
+>Read more =C2=BB</a></strong></p>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"sep47917cec54-1e23-49ac-803a-0864f06cd7d1=
+" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 22px;" height=3D"22"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"imgBlock028750bd83-3eee-4bb7-a59a-5433f4b=
+7bca3" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#fffff=
+f">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td align=3D"center" bgcolor=3D"#cccccc">=20
+<div class=3D"mktoImg" id=3D"imgBlock02Imgd068cd95-0839-4cbb-8984-4b1b26e3d=
+7cb" mktolockimgsize=3D"false">=20
+<img style=3D"vertical-align: top; max-width: 100%; width: 100%; height: au=
+to; display: block; margin-left: auto; margin-right: auto;" src=3D"https://=
+info.a16z.com/rs/382-JZB-798/images/Healthcare x Fintech Newsletter Founder=
+s.jpg" width=3D"540" border=3D"0" height=3D"404" />=20
+</div> </td>=20
+</tr>=20
+<tr>=20
+<td style=3D"font: 18px/128% Proxima Nova, Arial, Helvetica, sans-serif; pa=
+dding-top: 10px; padding-bottom: 16px; color: #97999b;" align=3D"center">=
+=20
+<div class=3D"mktoText" id=3D"imgBlock02ImgCaption8093b6da-4dee-486e-81cc-6=
+01bb2c1de94"></div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"txtBlock02a33a159f-adc3-4338-badb-81e689c=
+2a4bd" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#fffff=
+f">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font: 16px/128% Proxima Nova, Arial, Helvetica, sans-serif; co=
+lor: #4b4f54;">=20
+<div class=3D"mktoText" id=3D"txtBlock02Content0f938d7d-0b43-48ce-a738-3d5c=
+10cdb6b1">=20
+<p><strong>The Opportunity for Healthcare and Fintech</strong></p>=20
+<p>U.S. healthcare: it=E2=80=99s currently a confusing, costly, and ineffic=
+ient system for patients, providers, and payers alike. The builders above a=
+re tackling this challenge from all angles: helping clinics get paid faster=
+ and more accurately, opening up access to mental health care through insur=
+ance, providing patients with the price of their treatment up front, expand=
+ing virtual and value-based care, and much more. The key to revamping our b=
+roken healthcare system, according to them, is modernizing the financial la=
+yer=E2=80=94what one founder calls =E2=80=9Cthe secret sauce.=E2=80=9D</p>=
+=20
+<p><strong><a style=3D"text-decoration: none; color: #ed8b00;" href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-A_Y_p7DWkXdHIY6dMyYL2KHhA4gR=
+vy7n4_Qh8seUn0OWeeVnyHUXoB7RT1qaScJs1g=3D" target=3D"_blank"
+>Read more =C2=BB</a></strong></p>=20
+<p><em>To hear directly from six founders trying to reinvent the healthcare=
+ system with the help of fintech, check out =E2=80=9CHow Fintech is Reshapi=
+ng Our $4T Healthcare Industry=E2=80=9D at the <span style=3D"color: #ed8b0=
+0;"><a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-OEYh4sg5886ko5LKSOdxDp6TnNO_=
+M7dPEmyZRgCiGvffANhw6yqWNyQB5cCawAFPVU=3D" target=3D"_blank" id=3D"" style=
+=3D"color: #ed8b00;"
+>a16z podcast</a></span>.</em></p>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"sep478943dd15-912a-469a-806b-884df0840138=
+" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 22px;" height=3D"22"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"txtBlock02d5feebd7-997c-448c-b339-72c46f2=
+21a93" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#fffff=
+f">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font: 16px/128% Proxima Nova, Arial, Helvetica, sans-serif; co=
+lor: #4b4f54;">=20
+<div class=3D"mktoText" id=3D"txtBlock02Content2df6460e-ac17-49bb-9174-b822=
+57a565ea">=20
+<p><strong>Beyond Payments For High-Risk Industries</strong></p>=20
+<p>Today, most merchants looking to sell a product or service online can qu=
+ickly get their payment system live with the help of a modern checkout plat=
+form. If the merchant works in a =E2=80=9Chigh-risk=E2=80=9D industry like =
+games, sports betting, telehealth, travel, or cannabis, however, it=E2=80=
+=99s more complex. Such industries lack viable out-of-the-box software prod=
+ucts that help with payment-adjacent issues such as identity management (fo=
+r games companies), payment reconciliation (for telehealth businesses), and=
+ logistics compliance (for alcohol and cannabis businesses). While there ar=
+e a few big payment-acceptance incumbents to specifically serve some of the=
+se industries, there=E2=80=99s now an opportunity to couple payments with a=
+ vertical-specific software layer to offer better compliance, wallets, tool=
+s for identity management and fraud detection, reconciliation, and more.</p=
+>=20
+<p><strong><a style=3D"text-decoration: none; color: #ed8b00;" href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-CoYyU8tasxxslmgQAP1F6mcrwSC8=
+XG_n2LQctciucW0E6WoOe1VbxFyP67QTcU2soA=3D" target=3D"_blank"
+>Read more =C2=BB</a></strong></p>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"sep47305fc99e-665e-4b14-a4fa-b5df9d10e623=
+" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 22px;" height=3D"22"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"txtBlock023a3e6fcc-9ceb-4fbd-9cdb-ebae92a=
+93312" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#fffff=
+f">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font: 16px/128% Proxima Nova, Arial, Helvetica, sans-serif; co=
+lor: #4b4f54;">=20
+<div class=3D"mktoText" id=3D"txtBlock02Content74ebd830-645c-40f5-acfa-9eba=
+48fb0b68">=20
+<p><strong>The 16 Commandments of Raising Equity in a Challenging Market</s=
+trong></p>=20
+<p>Between inflation, rising interest rates, geopolitical tensions, and gro=
+wing recession concerns, 2022 was a year of reckoning for both public and p=
+rivate markets. Since the beginning of 2022, the tech-heavy Nasdaq Composit=
+e has declined 23% (versus the S&amp;P 500=E2=80=99s 14% decline) and globa=
+l venture funding reached <span style=3D"color: #ed8b00;"><a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-BfBI9otdwtTdXf7uGSeQe366n3EC=
+3IlVIUyPGlpnzbW-v5_UFrIVJmH3yBQX704WVc=3D" target=3D"_blank" id=3D"" style=
+=3D"color: #ed8b00;"
+>a thirteen-quarter low</a></span> in Q1 =E2=80=9923. Further dampening inv=
+estor confidence, the failure of several long-standing institutions serving=
+ the startup ecosystem, such as Silicon Valley Bank, Signature Bank, and Fi=
+rst Republic Bank, sent shockwaves through capital markets and the broader =
+financial services industry. Today=E2=80=99s market represents a radically =
+different fundraising climate=E2=80=94one not seen in nearly 15 years. Many=
+ founders find themselves in uncharted territory as concerns linger around =
+the overall health of the fundraising environment, from venture capital to =
+growth equity.</p>=20
+<p><strong><a style=3D"text-decoration: none; color: #ed8b00;" href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-P1yviok-6HI7PCHtCxKdjv2pYRSm=
+f0Bkv147xPWz0jybIwGw9iSeOA1aD6JaVDeMes=3D" target=3D"_blank"
+>Read more =C2=BB</a></strong></p>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"sep47f24ce3b3-cf1b-4ce8-9e24-e5a7d2f41903=
+" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 30px;" height=3D"30"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"heading02c01fc52d-c8d1-4b28-afd6-591eba70=
+5d35" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#00A3AB=
+">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font: 700 24px/120% Proxima Nova, Arial, Helvetica, sans-serif=
+; color: #ed8b00;">=20
+<div class=3D"mktoText" id=3D"heading02Content1e99b2ee-0a84-4394-84ea-f78f5=
+0e23d2c">=20
+<p style=3D"line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span =
+style=3D"color: #ffffff; font-family: 'Proxima Nova', Arial, Helvetica, san=
+s-serif; font-size: 28px; font-style: normal; font-variant-ligatures: norma=
+l; font-variant-caps: normal; font-weight: bold; letter-spacing: normal; or=
+phans: 2; text-align: start; text-indent: 0px; text-transform: none; white-=
+space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px=
+; text-decoration-thickness: initial; text-decoration-style: initial; text-=
+decoration-color: initial; float: none; display: inline !important;"><br />=
+<span style=3D"font-size: 32px;">Have an idea for a new Fintech company?</s=
+pan></span><br /></p>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 15px;" height=3D"15"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"heading02d16b9ba8-0585-4d43-a117-52fa7694=
+3737" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#00A3AB=
+">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font: 700 24px/120% Proxima Nova, Arial, Helvetica, sans-serif=
+; color: #ed8b00;">=20
+<div class=3D"mktoText" id=3D"heading02Content9a510ebc-2699-4d0e-b595-34cb2=
+90dab31">=20
+<p style=3D"line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; text-al=
+ign: right;"><span style=3D"color: #ffffff; font-family: 'Proxima Nova', Ar=
+ial, Helvetica, sans-serif; font-size: 18px; font-style: normal; font-varia=
+nt-ligatures: normal; font-variant-caps: normal; font-weight: bold; letter-=
+spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-tran=
+sform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-tex=
+t-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-st=
+yle: initial; text-decoration-color: initial; float: none; display: inline =
+!important;"><a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf9_ySaoaW0m2FpNtwfmK3Eh0U0g20m=
+mDUgOy02qMuDgolQemXlShkgsPh7vljzkBWrHg=3D" target=3D"_blank" id=3D"" style=
+=3D"color: #ffffff;"
+>START HERE =C2=BB</a></span></p>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 15px;" height=3D"15"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"sep32" width=3D"100%" cellspacing=3D"0" c=
+ellpadding=3D"0" bgcolor=3D"#f6f7f7">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 32px;" height=3D"32"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"heading09" width=3D"100%" cellspacing=3D"=
+0" cellpadding=3D"0" bgcolor=3D"#f6f7f7">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font: 600 18px/122% Proxima Nova, Arial, Helvetica, sans-serif=
+; color: #97999b;">=20
+<div class=3D"mktoText" id=3D"heading09Content">
+ Disclosure=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 16px;" height=3D"16"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"txtBlock15" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" bgcolor=3D"#f6f7f7">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 50px; padding-right: 50px;">=
+=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font: 14px/157% Proxima Nova, Arial, Helvetica, sans-serif; co=
+lor: #97999b;" valign=3D"top">=20
+<div class=3D"mktoText" id=3D"txtBlock15Content">=20
+<p>You are receiving this newsletter since you opted in earlier; if you wou=
+ld like to opt out of future newsletters, you can unsubscribe immediately.<=
+br /></p>=20
+<p>The views expressed here are those of the individual AH Capital Manageme=
+nt, L.L.C. (=E2=80=9Ca16z=E2=80=9D) personnel quoted and are not the views =
+of a16z or its affiliates. Certain information contained in here has been o=
+btained from third-party sources, including from portfolio companies of fun=
+ds managed by a16z. While taken from sources believed to be reliable, a16z =
+has not independently verified such information and makes no representation=
+s about the current or enduring accuracy of the information or its appropri=
+ateness for a given situation. In addition, this content may include third-=
+party advertisements; a16z has not reviewed such advertisements and does no=
+t endorse any advertising content contained therein.</p>=20
+<p>This content is provided for informational purposes only, and should not=
+ be relied upon as legal, business, investment, or tax advice. You should c=
+onsult your own advisers as to those matters. References to any securities =
+or digital assets are for illustrative purposes only, and do not constitute=
+ an investment recommendation or offer to provide investment advisory servi=
+ces. Furthermore, this content is not directed at nor intended for use by a=
+ny investors or prospective investors, and may not under any circumstances =
+be relied upon when making a decision to invest in any fund managed by a16z=
+. (An offering to invest in an a16z fund will be made only by the private p=
+lacement memorandum, subscription agreement, and other relevant documentati=
+on of any such fund and should be read in their entirety.) Any investments =
+or portfolio companies mentioned, referred to, or described are not represe=
+ntative of all investments in vehicles managed by a16z, and there can be no=
+ assurance that the investments will be profitable or that other investment=
+s made in the future will have similar characteristics or results. A list o=
+f investments made by funds managed by Andreessen Horowitz (excluding inves=
+tments for which the issuer has not provided permission for a16z to disclos=
+e publicly as well as unannounced investments in publicly traded digital as=
+sets) is available at <span style=3D"color: #ed8b00;"><a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf96ZrM6L3AGst_hnyb_4UNhe5sT2O2=
+SUR_YcVHe2iN_mFH_-em-3p9707dmXJMVG9ipI=3D" target=3D"_blank" id=3D"" style=
+=3D"color: #ed8b00;"
+>https://a16z.com/investments/</a></span>.</p>=20
+<p>Charts and graphs provided within are for informational purposes solely =
+and should not be relied upon when making any investment decision. Past per=
+formance is not indicative of future results. The content speaks only as of=
+ the date indicated. Any projections, estimates, forecasts, targets, prospe=
+cts, and/or opinions expressed in these materials are subject to change wit=
+hout notice and may differ or be contrary to opinions expressed by others. =
+Please see <span style=3D"color: #ed8b00;"><a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-CVWeeWSVca_2U1B6odYWlqtcVBEM=
+HcgQoI_3DZ_k64Pk-4XbiQ96GzVFb8Q9OWIjTw=3D" target=3D"_blank" id=3D"" style=
+=3D"color: #ed8b00;"
+>https://a16z.com/disclosures</a></span> for additional important informati=
+on.</p>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"sep33" width=3D"100%" cellspacing=3D"0" c=
+ellpadding=3D"0" bgcolor=3D"#f6f7f7">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 34px;" height=3D"34"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"footerSep01" width=3D"100%" cellspacing=
+=3D"0" cellpadding=3D"0" bgcolor=3D"#4c4f53">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 32px;" height=3D"32"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"footerLogoBlock" width=3D"100%" cellspaci=
+ng=3D"0" cellpadding=3D"0" bgcolor=3D"#4c4f53">=20
+<tbody>=20
+<tr>=20
+<td class=3D"px-md-30" style=3D"padding-left: 60px; padding-right: 60px;">=
+=20
+<table class=3D"table-center w-148" width=3D"100%" cellspacing=3D"0" cellpa=
+dding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td align=3D"center">=20
+<div class=3D"mktoImg" id=3D"footerLogoBlockLogo" mktolockimgsize=3D"false"=
+>=20
+<a style=3D"text-decoration: none;" href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-BqTQKv1-Zz1zCB0VBMQrAjPbPVep=
+MzBQmLRoerWqIuoM3VX1dv6dScyWBXVcd2nqOc=3D" target=3D"_blank"
+><img style=3D"vertical-align: top; max-width: 100%; height: auto;" src=3D"=
+https://info.a16z.com/rs/382-JZB-798/images/a16z-logo-white-09-29-020.png" =
+width=3D"174" alt=3D"ANDREESSEN HOROWITZ" border=3D"0" /></a>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<tr>=20
+<td class=3D"fz-14 pb-7 pt-4" style=3D"font: 16px/143% Proxima Nova, Arial,=
+ Helvetica, sans-serif; color: #a0a3a9; padding-top: 6px; padding-bottom: 8=
+px;" valign=3D"top" align=3D"center">=20
+<div class=3D"mktoText" id=3D"footerLogoBlockSlogan">
+ Software Is eating the world=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"socialNetworkingItems" width=3D"100%" cel=
+lspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#4c4f53">=20
+<tbody>=20
+<tr>=20
+<td>=20
+<table style=3D"margin-left: auto; margin-right: auto;" cellspacing=3D"0" c=
+ellpadding=3D"0" align=3D"center">=20
+<tbody>=20
+<tr>=20
+<td valign=3D"middle">=20
+<div class=3D"mktoImg" id=3D"socialNetworkingItemsItem01" mktolockimgsize=
+=3D"false">=20
+<a style=3D"text-decoration: none;" href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-OE6ZoEsaji1-LPnJ0ua-ZvT5yo4P=
+ytnZZbvKHjxgpL9iHS6STD1Xp6G7FS6NAwsH6Y=3D" target=3D"_blank"
+> <img style=3D"display: block; vertical-align: top; max-width: 100%; heigh=
+t: auto;" src=3D"https://info.a16z.com/rs/382-JZB-798/images/twitter-white-=
+ico@2x--newsletter-09-29-020.png" alt=3D"twitter icon" width=3D"12" border=
+=3D"0" /> </a>=20
+</div> </td>=20
+<td style=3D"width: 16px;" width=3D"16"></td>=20
+<td valign=3D"middle">=20
+<div class=3D"mktoImg" id=3D"socialNetworkingItemsItem02" mktolockimgsize=
+=3D"false">=20
+<a style=3D"text-decoration: none;" href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-IIRYpsHQmJv8vQQqLLzP_Y4yFopO=
+J2ugQo2Jz88i13mfHBrIcOr7mJhiHX-4fgcXi0=3D" target=3D"_blank"
+> <img style=3D"display: block; vertical-align: top; max-width: 100%; heigh=
+t: auto;" src=3D"https://info.a16z.com/rs/382-JZB-798/images/linkedin-white=
+-ico@2x--newsletter-09-29-020.png" alt=3D"linkedin icon" width=3D"12" borde=
+r=3D"0" /> </a>=20
+</div> </td>=20
+<td style=3D"width: 16px;" width=3D"16"></td>=20
+<td valign=3D"middle">=20
+<div class=3D"mktoImg" id=3D"socialNetworkingItemsItem03" mktolockimgsize=
+=3D"false">=20
+<a style=3D"text-decoration: none;" href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf9-2lke6S7UTlvMnCWmIsWwY4H5E9I=
+F_C2Ja2H2I9pC9Q6UkgC6xHf2wvSqsYT-fSLyA=3D" target=3D"_blank"
+> <img style=3D"display: block; vertical-align: top; max-width: 100%; heigh=
+t: auto;" src=3D"https://info.a16z.com/rs/382-JZB-798/images/podcast-white-=
+ico@2x--newsletter-09-29-020.png" alt=3D"podcast icon" width=3D"12" border=
+=3D"0" /> </a>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"footerSep02" width=3D"100%" cellspacing=
+=3D"0" cellpadding=3D"0" bgcolor=3D"#4c4f53">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 37px;" height=3D"37"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"footerAddress" width=3D"100%" cellspacing=
+=3D"0" cellpadding=3D"0" bgcolor=3D"#4c4f53">=20
+<tbody>=20
+<tr>=20
+<td style=3D"padding: 0 33px; padding-top: 2px;">=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr align=3D"center">=20
+<td class=3D"flex pb-13" style=3D"padding: 0 5px" valign=3D"top">=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font:700 10px/116% Proxima Nova, Arial, Helvetica, sans-serif;=
+ color: #a0a3a9; text-transform: uppercase; padding-bottom: 2px;" align=3D"=
+center">=20
+<div class=3D"mktoText" id=3D"footerAddressTitle">
+ MENLO PARK OFFICE=20
+</div> </td>=20
+</tr>=20
+<tr>=20
+<td class=3D"lh-116" style=3D"font:12px/116% Proxima Nova, Arial, Helvetica=
+, sans-serif; color: #e5e6e5;" align=3D"center">=20
+<div class=3D"mktoText" id=3D"footerAddress01">
+ 2865 Sand Hill Road, Suite 101=20
+<br />Menlo Park, CA 94025=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+<td class=3D"flex pb-15" style=3D"padding: 0 5px" valign=3D"top">=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font:700 10px/116% Proxima Nova, Arial, Helvetica, sans-serif;=
+ color: #a0a3a9; text-transform: uppercase; padding-bottom: 2px;" align=3D"=
+center">=20
+<div class=3D"mktoText" id=3D"footerAddressTitle02">
+ SAN FRANCISCO OFFICE=20
+</div> </td>=20
+</tr>=20
+<tr>=20
+<td class=3D"lh-116" style=3D"font:11px/127% Proxima Nova, Arial, Helvetica=
+, sans-serif; color: #e5e6e5;" align=3D"center">=20
+<div class=3D"mktoText" id=3D"footerAddress02">
+ 180 Townsend Street=20
+<br />San Francisco, CA 94107=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+<td class=3D"flex pb-12" style=3D"padding: 0 5px" valign=3D"top">=20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font:700 10px/116% Proxima Nova, Arial, Helvetica, sans-serif;=
+ color: #a0a3a9; text-transform: uppercase; padding-bottom: 2px;" align=3D"=
+center">=20
+<div class=3D"mktoText" id=3D"footerAddressTitle03">
+ NEW YORK OFFICE=20
+</div> </td>=20
+</tr>=20
+<tr>=20
+<td class=3D"lh-116" style=3D"font:11px/127% Proxima Nova, Arial, Helvetica=
+, sans-serif; color: #e5e6e5;" align=3D"center">=20
+<div class=3D"mktoText" id=3D"footerAddress03">
+ 11 Madison Avenue, 15th Floor=20
+<br />New York, NY 10010=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"footerSep03" width=3D"100%" cellspacing=
+=3D"0" cellpadding=3D"0" bgcolor=3D"#4c4f53">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 25px;" height=3D"25"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"footerUnsubscribeBlock" width=3D"100%" ce=
+llspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#4c4f53">=20
+<tbody>=20
+<tr>=20
+<td>=20
+<table style=3D"margin-left: auto; margin-right: auto;" cellspacing=3D"0" c=
+ellpadding=3D"0" align=3D"center">=20
+<tbody>=20
+<tr class=3D"table-holder" align=3D"center">=20
+<td class=3D"tfoot">=20
+<table class=3D"table-center w-auto" width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td class=3D"fz-11" style=3D"font: 9px/143% Proxima Nova, Arial, Helvetica,=
+ sans-serif; color: #e5e6e5;" valign=3D"top">=20
+<div class=3D"mktoText" id=3D"footerCopyrights">=20
+<p>=C2=A92023 Andreessen Horowitz. All rights reserved.</p>=20
+</div> </td>=20
+<td class=3D"hide" style=3D"font: 9px/143% Proxima Nova, Arial, Helvetica, =
+sans-serif; color: #e5e6e5; padding: 0 6px;" valign=3D"top">=E2=80=A2</td>=
+=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+<td class=3D"thead">=20
+<table class=3D"table-center w-auto" width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0">=20
+<tbody>=20
+<tr>=20
+<td class=3D"fz-11 pb-5" style=3D"font: 9px/143% Proxima Nova, Arial, Helve=
+tica, sans-serif; color: #e5e6e5;" valign=3D"top">=20
+<div class=3D"mktoText" id=3D"footerUpdateEmailPref">=20
+<a style=3D"text-decoration: underline; color: #e5e6e5;" href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-HYV6UElomDfqeSyknsvcVU2Vrela=
+ijK4YBJD4vyePSHqK72hgG1C8mGXJCSgnG36d8=3D" target=3D"_blank"
+>Update email preferences</a>=20
+</div> </td>=20
+<td class=3D"fz-11 px-9" style=3D"font: 9px/143% Proxima Nova, Arial, Helve=
+tica, sans-serif; color: #e5e6e5; padding: 0 7px;" valign=3D"top">=E2=80=A2=
+</td>=20
+<td class=3D"fz-11 pb-5" style=3D"font: 9px/143% Proxima Nova, Arial, Helve=
+tica, sans-serif; color: #e5e6e5;" valign=3D"top">=20
+<div class=3D"mktoText" id=3D"footerUnsubscribe">=20
+<a style=3D"text-decoration: underline; color: #e5e6e5;" href=3D"https://in=
+fo.a16z.com/UnsubscribePage.html?mkt_unsubscribe=3D1&mkt_tok=3DMzgyLUpaQi03=
+OTgAAAGMEVXf-Cqhefd_k2RqzkckOKekrCRFDdxYlHlnnH6DBPJmQKtcLPot5IcYPdQFgspEB5B=
+TqL7W8c81yjpgvw4DNk4HFxObvkp31g3bvEx4Bf6I4w" target=3D"_blank">Unsubscribe =
+from list</a>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"footerSep04" width=3D"100%" cellspacing=
+=3D"0" cellpadding=3D"0" bgcolor=3D"#4c4f53">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size: 1px; line-height: 1px; height: 35px;" height=3D"35"=
+>&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table></td>=20
+</tr>=20
+</tbody>
+</table>=20
+<!--[if mso]>
+=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09<![endif]-->=20
+</div>=20
+</center> </td>=20
+</tr>=20
+</tbody>
+</table> </td>=20
+</tr>=20
+</tbody>
+</table> =20
+<a href=3D
+"https://go2.a16z.com/MzgyLUpaQi03OTgAAAGMEVXf-H-CVbMBk3dJksjpRRTJSFDWlbkEG=
+y483egztKutKc_8xov6uJHB_alWoP_ZTGyWA4k=3D"
+></a>
+<img src=3D"https://go2.a16z.com/trk?t=3D1&mid=3DMzgyLUpaQi03OTg6MDoxNzU3Nj=
+o1Mjg3Mzo5Mjg5MjoxODgwNDo5OjI5NDUwOjE2ODgzNTYzOm91Y2hlbmRhbnM2MkBnbWFpbC5jb=
+20%3D" width=3D"1" height=3D"1" style=3D"display:none !important;" alt=3D""=
+ />
+</body>
+</html>
+------=_Part_268868581_790808545.1685545889799--

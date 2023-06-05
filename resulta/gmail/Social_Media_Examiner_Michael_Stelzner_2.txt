@@ -1,0 +1,359 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp948742ims;
+        Wed, 31 May 2023 10:00:02 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ6pIw7DhWBbq/Qk2zJuLIESbhBQBkwMwfcJ4EfHL27S2+jgySCKLX9P3hFNEceFx909coRD
+X-Received: by 2002:a25:c5c5:0:b0:bac:7294:4fae with SMTP id v188-20020a25c5c5000000b00bac72944faemr6412343ybe.4.1685552402439;
+        Wed, 31 May 2023 10:00:02 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685552402; cv=none;
+        d=google.com; s=arc-20160816;
+        b=n1SoPKN4felJOb/cCaORpyLK6+Yhrj+khzD3v92VuMEJNXXawpLb6yGMMDTr211cE+
+         VcHEZyBFf5kx+q6KBasNey/OJ2+jjaUDNSoqqJ4/u8ECBUqTpzCDnKcwpLR0w+drx41A
+         VOb+N5aOAgdewf5KCViSth+56ZkSaMVzoX2Oe4rwxVrOnD3WhgeDQugX9yFw+poaem/b
+         xYIsbQ4ckXqlzf7fEkXiR5LlMpDOQXNHDHfb4fIS6JQdnXC245X6qKAIgJDHL6KUlWXD
+         mh55NJS5eGKL+1Ku80BENXpqBbwaLqUoGoecYqepUdaZ4S/TwT/BeZjsO7uhwJVLTgZ3
+         lXNA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:mime-version:from:date:dkim-signature
+         :dkim-signature;
+        bh=5W4t6XDZ1rjsv3Yy7OqUOMmvpG3vi8bhPfgx4t4qVTg=;
+        b=y47wt2kl6rMQxyq4YyD4jfR/enMdG8ozmTzHft4BNj6ZZYVZ2ahSBshttcguxf2xNm
+         zxeQLQMv0gXRQQh9ltdcgHzDHUGOBtN04Rw74oF2BUhAGKY0YzFWzLaU+wjNDl1fCdZl
+         3qcgUW2NbQLuaiDLhW5H13FrAtNCyP3geZU0Wowcs8Ax9YYAfM7LJG+F47nZyIHhN/nG
+         KmfP8rOjOpM65u/pEAyhp7RPn2AkqLbHs/RmXfiHOi8LBhDpnXtcjSkxNSpgSJ4ckWiP
+         xllPh9+peu1JWqXRPtD+6uAEcKDK5WInUlsnMtaqK4vwCzJG3eSf7V5np3aW922RFZAH
+         2d7g==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@socialmediaexaminer.com header.s=dr1 header.b=EOjinJw7;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=iaeLdA+1;
+       spf=pass (google.com: domain of bounces+9195725-7ef3-ouchendans62=gmail.com@drip.socialmediaexaminer.com designates 149.72.134.118 as permitted sender) smtp.mailfrom="bounces+9195725-7ef3-ouchendans62=gmail.com@drip.socialmediaexaminer.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=socialmediaexaminer.com
+Return-Path: <bounces+9195725-7ef3-ouchendans62=gmail.com@drip.socialmediaexaminer.com>
+Received: from o35.m.socialmediaexaminer.com (o35.m.socialmediaexaminer.com. [149.72.134.118])
+        by mx.google.com with ESMTPS id f129-20020a256a87000000b00bac46d0d82fsi15002801ybc.180.2023.05.31.10.00.01
+        for <ouchendans62@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 31 May 2023 10:00:02 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+9195725-7ef3-ouchendans62=gmail.com@drip.socialmediaexaminer.com designates 149.72.134.118 as permitted sender) client-ip=149.72.134.118;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@socialmediaexaminer.com header.s=dr1 header.b=EOjinJw7;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=iaeLdA+1;
+       spf=pass (google.com: domain of bounces+9195725-7ef3-ouchendans62=gmail.com@drip.socialmediaexaminer.com designates 149.72.134.118 as permitted sender) smtp.mailfrom="bounces+9195725-7ef3-ouchendans62=gmail.com@drip.socialmediaexaminer.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=socialmediaexaminer.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=socialmediaexaminer.com;
+	h=content-type:from:mime-version:subject:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=dr1; bh=5W4t6XDZ1rjsv3Yy7OqUOMmvpG3vi8bhPfgx4t4qVTg=;
+	b=EOjinJw73omUXQAZ14Glq5qvrUMAX/VbXsXVcwCh6Puvpd+eleVypS2DOSbwLI2y9RUm
+	jT/qkm4MQeInGHYVhXMzD6LwS7zf52U0QKTyFhvlKVBj+oXZgbgmKxoIKc6eZcRgUtrWJp
+	hv3tc4Wg6+XD5fItqhA+BsxvsiGwVl1HHSqP6yMkVQqnM30KZLluqbxq2bBBim7E/YTeZp
+	3vnAuiTgEDkRvhG2uF5bPMmcZkgFypUKUniIJSHEKPpT5IYNG4LSshH0+X5Z9wZw41gkpp
+	VFlk4wu9Vm4IMEwnWFREuRDM0Nc7Ik/awjlaClVjZa9RRRub904xd/RSGKq/KoaQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=smtpapi; bh=5W4t6XDZ1rjsv3Yy7OqUOMmvpG3vi8bhPfgx4t4qVTg=;
+	b=iaeLdA+1/uIAsM2XuS0ygvkQwx6PeP5hOLQdq3iBIreU6SnnQaqkgCQmpORnAVXMNBYn
+	w2ha9+HbNhQ8xM6CMrVi3QqzKu7Q5jGPc0L14bAJp4Wwapu1CAJiKQssDKhqxPbfrkRw86
+	FmjfaTK728RoHqmtpJurInhppIcuooQN0=
+Received: by filterdrecv-666fc9b6d6-pfxff with SMTP id filterdrecv-666fc9b6d6-pfxff-1-64776199-12B
+        2023-05-31 15:02:49.368329349 +0000 UTC m=+1783610.885133328
+Received: from OTE5NTcyNQ (unknown)
+	by geopod-ismtpd-31 (SG) with HTTP
+	id rV0XDtYUROiP7cYhgiosTw
+	Wed, 31 May 2023 15:02:49.313 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=af327c8a16b8a60d0be2bb705bb23d8c8e61ec18fc832a9dc840968b1452
+Date: Wed, 31 May 2023 17:00:00 +0000 (UTC)
+From: "Social Media Examiner: Michael Stelzner"
+	<michael@socialmediaexaminer.com>
+Mime-Version: 1.0
+Message-ID: <rV0XDtYUROiP7cYhgiosTw@geopod-ismtpd-31>
+Subject: Are you a visual learner, Expedita?
+X-Drip-SendingAccount: 8668815
+X-Feedback-ID: 9195725:SG
+X-SG-EID: 
+ =?us-ascii?Q?Bbg3Ra9AwSdeZDMZBCW=2FkGS36Ho8RPda8qziTRJKpbKXTieSB6SYjtR49ff9HH?=
+ =?us-ascii?Q?N=2FHJg2m05vSQyBBU2WHF8RuA+GlBSBInOg7KDZj?=
+ =?us-ascii?Q?CqxfKDynQDohNh=2FLyjDn+7Q4qZ4SXDiMKVK45gt?=
+ =?us-ascii?Q?uit8m2rAvEY8E0aMr1LrdEGQR=2Fb8fFMMHOhH=2FLN?=
+ =?us-ascii?Q?gQ2yOt0T790+3jN7x6i4D+BniRZD7rjTiBWXMmQ?=
+ =?us-ascii?Q?1veqc95BKhP9PqqsgwmN8OGhSw2UpwUf6RjWH9J?=
+ =?us-ascii?Q?N1lj8lj5uItN98GwTR6ngrp8GUIorqw4oGtbXLG?=
+ =?us-ascii?Q?GdntV=2FFVNtgpzM9utj8bRSP8?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8raWjw0ZPf1VmjsCkspi=2FIueY507NIPg7Bbtt+Qog?=
+ =?us-ascii?Q?yZeIeRh+ezqRCghNRsUCZ5n9O43Pydp1dY0Okws?=
+ =?us-ascii?Q?HW+9okJ3R+rKe89NfrqQETxR3TQuC5msyEg65Qf?=
+ =?us-ascii?Q?LBRdNaanXt2fKlV0FNJmUNH+BUjSjNNz9LgQ6Yj?=
+ =?us-ascii?Q?K4TM6usfPkD3Sn3ULdJugNnlopxNUmyX5Ur=2FaOd?=
+ =?us-ascii?Q?p423=2F2crWD9qr7suodx4rA63zTFyZSoGqw5g9Li?=
+ =?us-ascii?Q?2=2Fa0J1mvzy+6a0q6dm40=2FpO2=2FZQ+TEQ9acFDJ7y?=
+ =?us-ascii?Q?IX99gG+YUXEw8k7i1UjDYM+FuhXkbCHToL+P7Ai?=
+ =?us-ascii?Q?ViehYIozqI1XblHR4sXmQLFxFFXz=2FY5g7Fug3Fu?=
+ =?us-ascii?Q?zCz6m+h=2FLA1IUNYSeNuV+PsJeDWiubhAOt69oe8?=
+ =?us-ascii?Q?Y1w3d8c3xbM3oAn++px0blcRZhLXKIpz+9GHR6S?=
+ =?us-ascii?Q?ffPmg0uJmXv71ofye+eMnAp=2FDXd=2FiyYau0NRT4s?=
+ =?us-ascii?Q?dg00cxhlJpjWTVDetJ40ZXHbO=2F9NvmE4Q3ODSdL?=
+ =?us-ascii?Q?4U0xF6tEnVAepGVh+BdYNIoNWG5us4iLbEoF3v8?=
+ =?us-ascii?Q?6iRQTfp4aZcaquXtOprfweJOshp2JCcOO55mIWY?=
+ =?us-ascii?Q?W=2Fn1h8R=2FCpnd8yLX3roII=2FzeUVQ6kpXpDK=2FwzBg?=
+ =?us-ascii?Q?dHkKPxUx1RApmyA=3D=3D?=
+To: ouchendans62@gmail.com
+X-Entity-ID: 8vjR5rU3lVgUh1f2lD81HQ==
+
+--af327c8a16b8a60d0be2bb705bb23d8c8e61ec18fc832a9dc840968b1452
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+Sometimes you need to see things in action, Expedita.
+
+Each week we publish original marketing tutorial videos and
+discuss the latest news on the Social Media Examiner YouTube
+Channel.
+
+You'll love the in-depth, step-by-step guides and candid live
+interviews with leading industry experts.
+
+Subscribe to the YouTube channel=20
+( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc=
+3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNjg1NTQ1MzY5LCJuYmYi=
+OjE2ODU1NDUzNjksImFjY291bnRfaWQiOiI4NjY4ODE1IiwiZGVsaXZlcnlfaWQiOiJvNWxzbm8=
+zMzNuMXUwb3p1Z2VvdSIsInVybCI6Imh0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3NvY2lhbG1lZG=
+lhZXhhbWluZXI_c3ViX2NvbmZpcm1hdGlvbj0xJl9fcz1sN3hvbGRzZDNuZGltbDFvbGxyayJ9.=
+b-vUpnm0wWtB7rOvNGEIYlB48xd3zPYzdLSW12-Szus )
+
+Whether you=E2=80=99re looking for the next hot tip for managing Facebook
+ads or a deep-dive look at creating videos that convert on any
+platform, you=E2=80=99re in the right place.
+
+Now, the question is, what to watch first?
+
+Happy binging.
+
+Michael Stelzner, founder of Social Media Examiner
+
+---------------------
+Stop all emails from Social Media Examiner or update email
+address ( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvd=
+XIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNjg1NTQ1MzY5=
+LCJuYmYiOjE2ODU1NDUzNjksImFjY291bnRfaWQiOiI4NjY4ODE1IiwiZGVsaXZlcnlfaWQiOiJ=
+vNWxzbm8zMzNuMXUwb3p1Z2VvdSIsInVybCI6Imh0dHBzOi8vd3d3LmdldGRyaXAuY29tL3N1Yn=
+NjcmliZXJzL2w3eG9sZHNkM25kaW1sMW9sbHJrL3N1YnNjcmlwdGlvbnM_ZD1vNWxzbm8zMzNuM=
+XUwb3p1Z2VvdSZleGNsdWRlX2NsaWNrPTEmaW50ZW50PXVuc3Vic2NyaWJlJl9fcz1sN3hvbGRz=
+ZDNuZGltbDFvbGxyayJ9.RoemXzFaNi-MeFeuNwyNcv0pEGS_4NYRA7IR9x36XiE )
+
+Social Media Examiner: 13025 Danielson Street, Poway, Ca 92064
+
+--af327c8a16b8a60d0be2bb705bb23d8c8e61ec18fc832a9dc840968b1452
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" style=3D"font-family: 'calluna=
+-sans' ,'Arial', sans-serif;">
+<head>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width">
+ =20
+  <title>Are you a visual learner, Expedita?</title>
+<style>body {
+width: 100% !important; -webkit-text-size-adjust: none; -ms-text-size-adjus=
+t: none; margin: 0; padding: 0;
+}
+.ExternalClass {
+width: 100%;
+}
+.ExternalClass {
+line-height: 100%;
+}
+#backgroundTable {
+margin: 0; padding: 0; width: 600px !important; line-height: 100% !importan=
+t;
+}
+img {
+outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;
+}
+h1 a:active {
+color: #c94f31 !important;
+}
+h2 a:active {
+color: #c94f31 !important;
+}
+h3 a:active {
+color: #c94f31 !important;
+}
+h4 a:active {
+color: #c94f31 !important;
+}
+h5 a:active {
+color: #c94f31 !important;
+}
+h6 a:active {
+color: #c94f31 !important;
+}
+h1 a:visited {
+color: #c94f31 !important;
+}
+h2 a:visited {
+color: #c94f31 !important;
+}
+h3 a:visited {
+color: #c94f31 !important;
+}
+h4 a:visited {
+color: #c94f31 !important;
+}
+h5 a:visited {
+color: #c94f31 !important;
+}
+h6 a:visited {
+color: #c94f31 !important;
+}
+h1 a:hover {
+color: #ab4329 !important;
+}
+h2 a:hover {
+color: #ab4329 !important;
+}
+h3 a:hover {
+color: #ab4329 !important;
+}
+h4 a:hover {
+color: #ab4329 !important;
+}
+h5 a:hover {
+color: #ab4329 !important;
+}
+h6 a:hover {
+color: #ab4329 !important;
+}
+a:hover {
+color: #ab4329 !important;
+}
+body {
+font-family: 'calluna-sans','Arial', sans-serif;
+}
+img {
+max-width: 100%;
+}
+.cta-button:hover {
+background: #e4931b; color: #fff !important;
+}
+</style></head>
+<body style=3D"width: 100% !important; -webkit-text-size-adjust: none; -ms-=
+text-size-adjust: none; font-family: 'calluna-sans','Arial', sans-serif; ma=
+rgin: 0; padding: 0;">
+  <table id=3D"body-wrap" style=3D"border-collapse: collapse; mso-table-lsp=
+ace: 0pt; mso-table-rspace: 0pt; font-family: 'calluna-sans' ,'Arial', sans=
+-serif; width: 100%;">
+    <tr style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+      <td style=3D"border-collapse: collapse; font-family: 'calluna-sans' ,=
+'Arial', sans-serif;"></td>
+      <td class=3D"container" style=3D"border-collapse: collapse; font-fami=
+ly: 'calluna-sans' ,'Arial', sans-serif; display: block !important; max-wid=
+th: 600px !important; clear: both !important;">
+        <div class=3D"content" style=3D"font-family: 'calluna-sans' ,'Arial=
+', sans-serif; max-width: 600px; display: block; margin: 0 auto;">
+          <table style=3D"border-collapse: collapse; mso-table-lspace: 0pt;=
+ mso-table-rspace: 0pt; font-family: 'calluna-sans' ,'Arial', sans-serif; w=
+idth: 100%;">
+            <tr style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;"=
+>
+              <td style=3D"border-collapse: collapse; font-family: 'calluna=
+-sans' ,'Arial', sans-serif;">
+                <div id=3D"main-content" style=3D"font-family: 'calluna-san=
+s' , 'Arial', sans-serif; font-size: 16px; color: #31251c; line-height: 1.4=
+; padding: 10px;">
+                  Sometimes you need to see things in action, Expedita.<br =
+style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+Each week we publish original marketing tutorial videos and discuss the lat=
+est news on the <strong style=3D"font-family: 'calluna-sans' ,'Arial', sans=
+-serif; font-weight: bold;">Social Media Examiner YouTube Channel</strong>.=
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+You'll love the in-depth, step-by-step guides and candid live interviews wi=
+th leading industry experts.<br style=3D"font-family: 'calluna-sans' ,'Aria=
+l', sans-serif;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+<a class=3D"cta-button" href=3D"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1=
+NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIi=
+wiaWF0IjoxNjg1NTQ1MzY5LCJuYmYiOjE2ODU1NDUzNjksImFjY291bnRfaWQiOiI4NjY4ODE1I=
+iwiZGVsaXZlcnlfaWQiOiJvNWxzbm8zMzNuMXUwb3p1Z2VvdSIsInVybCI6Imh0dHBzOi8vd3d3=
+LnlvdXR1YmUuY29tL3NvY2lhbG1lZGlhZXhhbWluZXI_c3ViX2NvbmZpcm1hdGlvbj0xJl9fcz1=
+sN3hvbGRzZDNuZGltbDFvbGxyayJ9.b-vUpnm0wWtB7rOvNGEIYlB48xd3zPYzdLSW12-Szus" =
+style=3D"color: #fff !important; text-decoration: none !important; font-fam=
+ily: 'calluna-sans' ,'Arial', sans-serif; display: inline-block; background=
+-color: #F2AB27; border-radius: 3px; text-shadow: 0px 0px 2px #e4931b; curs=
+or: pointer; transition: .3s background ease; font-weight: bold; font-size:=
+ 1em; margin: 12px 0; padding: 12px 18px; border-color: #f2ab27 #f2ab27 #e4=
+931b; border-style: solid; border-width: 1px;"><span style=3D"font-family: =
+'calluna-sans' ,'Arial', sans-serif;">Subscribe to the YouTube channel</spa=
+n></a><br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+Whether you=E2=80=99re looking for the next hot tip for managing Facebook a=
+ds or a deep-dive look at creating videos that convert on any platform, you=
+=E2=80=99re in the right place.<br style=3D"font-family: 'calluna-sans' ,'A=
+rial', sans-serif;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+Now, the question is, what to watch first?<br style=3D"font-family: 'callun=
+a-sans' ,'Arial', sans-serif;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+Happy binging.<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif=
+;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+Michael Stelzner, founder of Social Media Examiner<br style=3D"font-family:=
+ 'calluna-sans' ,'Arial', sans-serif;">
+=C2=A0
+                </div>
+
+               =20
+                  <div id=3D"footer" style=3D"font-family: 'calluna-sans' ,=
+ 'Arial', sans-serif; font-size: 13px; line-height: 1.4; color: #777; borde=
+r-top-width: 1px; border-top-color: #d0d0d0; border-top-style: solid; paddi=
+ng: 5px;">
+                    <a href=3D"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1N=
+iJ9.eyJhdWQiOiJkZXRvdXIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiw=
+iaWF0IjoxNjg1NTQ1MzY5LCJuYmYiOjE2ODU1NDUzNjksImFjY291bnRfaWQiOiI4NjY4ODE1Ii=
+wiZGVsaXZlcnlfaWQiOiJvNWxzbm8zMzNuMXUwb3p1Z2VvdSIsInVybCI6Imh0dHBzOi8vd3d3L=
+mdldGRyaXAuY29tL3N1YnNjcmliZXJzL2w3eG9sZHNkM25kaW1sMW9sbHJrL3N1YnNjcmlwdGlv=
+bnM_ZD1vNWxzbm8zMzNuMXUwb3p1Z2VvdSZleGNsdWRlX2NsaWNrPTEmaW50ZW50PXVuc3Vic2N=
+yaWJlJl9fcz1sN3hvbGRzZDNuZGltbDFvbGxyayJ9.RoemXzFaNi-MeFeuNwyNcv0pEGS_4NYRA=
+7IR9x36XiE" style=3D"color: #c94f31; text-decoration: none; font-family: 'c=
+alluna-sans' ,'Arial', sans-serif;">Stop all emails from Social Media Exami=
+ner or update email address</a><br style=3D"font-family: 'calluna-sans' ,'A=
+rial', sans-serif;">
+<br style=3D"font-family: 'calluna-sans' ,'Arial', sans-serif;">
+Social Media Examiner: 13025 Danielson Street, Poway, Ca 92064
+                  </div>
+               =20
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+  </table>
+<img src=3D"https://u9195725.ct.sendgrid.net/wf/open?upn=3D0-2FSlkfjewhujMc=
+ah5D-2FrTK7EeURWe0cipTZtuhw6-2BXYW4pX8EPWpR7ybT0BACuFegWfWk5pob-2FiCyCco5wl=
+SYvDk9u-2Bht1GGe4j6CZKyu4DdZhDDfD9u7OuGORLJ16-2BK-2F2sNn1-2BlaWusYs03-2FGqA=
+So4X7gHIi8ypsrTqFfARxUN-2BratD2Bpw7EZiqhrIpRHfHK7ASS9joZfaqpZDOtvi62BGfLjOf=
+iLa8JHGRS-2FRZy3yYG0HC4iGs8vEpATClndgsx8IRg3mBPpcQwnfvbAKi6-2BJPFVeuTHNn8yN=
+drFqMf-2BFXCrUf8CHzwiHgADVe9d44lJinfLBqJLiXSzVjqVE58Eraai6bDE-2BHO7u3gyc-2F=
+O9mQewhaL5y3Ezg-2BHnHtdXWlAPdBU7xdic7lCinCSYuO2zpMxlKhUy-2BzDIcd2kl-2BOTKLC=
+O2gJItetGKJTBQs-2BxZiz1oFqODOIGovPSivHSPk4dqnoiwoswFkQ95BBDUOigvoS7wILEY40F=
+77GWRiL4Gm5Og6VP5oGWanKTS1wZby3C83HSXmPF58ORnLv7cmgxLpXqF9uMTi-2FEaBOgf33SC=
+cP32RV5LvasqjnO3c1PO08wOTMLQRsA2UoAZ3ewDXSLIBGn0FrzZo-2B8qbXm0S3br53Fum3JtT=
+2OnOWpxsyrNhOY-2FsbNQwNLYtz2JjAD6dgzowGqNwV3CFq7RzP9wtnPzr6zta3KQHfatFTtISD=
+zcD31H8Ceyy6rTeJ-2BTlGKu8Z5sBwgEqAVt76kS9zW009Zk675UFeEQZwpGvE4vUNkf-2FxYBa=
+XYFGh1jWCP8Ec-2FObN7ua1IW9wP5V6oG5xjiIqVlNn8nJSKCh91QU95KDdmbZA-3D-3D" alt=
+=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !important;=
+width:1px !important;border-width:0 !important;margin-top:0 !important;marg=
+in-bottom:0 !important;margin-right:0 !important;margin-left:0 !important;p=
+adding-top:0 !important;padding-bottom:0 !important;padding-right:0 !import=
+ant;padding-left:0 !important;"/></body>
+</html>
+
+--af327c8a16b8a60d0be2bb705bb23d8c8e61ec18fc832a9dc840968b1452--

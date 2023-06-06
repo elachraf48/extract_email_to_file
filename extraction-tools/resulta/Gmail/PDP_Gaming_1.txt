@@ -1,0 +1,1538 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp970572ims;
+        Wed, 31 May 2023 11:00:52 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ49ioIAFbHiHN+AlVwllX+xYRp0WncNhfav0Gg93QrhNIB6aO206rxGd80NvkwXGFOrlUJK
+X-Received: by 2002:ad4:5aed:0:b0:626:29d4:9a27 with SMTP id c13-20020ad45aed000000b0062629d49a27mr7873862qvh.53.1685556052503;
+        Wed, 31 May 2023 11:00:52 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685556052; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ADb6YOXDkJKpHuuzmaqXwpXK7GcdMJ96cBO/ifalEtHNzm2HxN+olCtre6mWPySrLO
+         QetjcJzLKdBHhlHZiRiVi6iOEZW4qUBZZuronv/bFm0s7uYJpzPXCqej+kXKi9UrR7LK
+         IutMH2z4R0fSjjfXCgtvcWGHT+9ladidleIUImauvDPeHoo/J+DS7N9LBbDb6XjHiG79
+         CIAOsPDKwxnZq+BeU3LAOTwcE+ZhZAM8MF9KbO4HHoD9U4VuqYD6Ml1yhaWmFANxv3YW
+         nBgOPU+dOmdr4MjNoB+7Hb6+QDX14sqYYdsO4CLy3lcW9W/RZXU+54NT7JU2dbLvI5Sz
+         7iEw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:list-unsubscribe:subject:message-id:mime-version:from:date
+         :dkim-signature:dkim-signature;
+        bh=Zmvu46ljnNQSrj6mu9rn2r4K000qjXVMl3wtMQfCteo=;
+        b=rVAaXfJX6XEAh3xL/aiXMcCDKhvYigYEjq3OI3PHE1zPsHp8IVCj/rVCcR6ZnUqxNn
+         fdOZqkIfnxAO8EGdZa7U0SncfadIT1dhl85Nzj1BUYe9rX4Y36Zev8ei9GshxwK4rWx/
+         1Y7DdJ2P+CYpT5grvishNPhTWlwMy6gi9kxK/eGRy8iAdyhgh2//5otrXnJPpRKamT/u
+         g7+Y4gWwgZWIIDCYJ99W5DJAqDd3iXhxjUMNiqBlswDriButITtLgEl7buc44G6oPZsH
+         AhzFqmvWvv6SqLCasnxhCV348g9J+koeFn4rka/k2q5vg1o+FZXbSLN0iE7agZ1pzQh4
+         9q2w==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@pdp.com header.s=kl header.b=zaQGJRug;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=sMLxD6qp;
+       spf=pass (google.com: domain of bounces+23808560-33e5-ouchendans62=gmail.com@send.pdp.com designates 167.89.72.20 as permitted sender) smtp.mailfrom="bounces+23808560-33e5-ouchendans62=gmail.com@send.pdp.com"
+Return-Path: <bounces+23808560-33e5-ouchendans62=gmail.com@send.pdp.com>
+Received: from o1284.shared.klaviyomail.com (o1284.shared.klaviyomail.com. [167.89.72.20])
+        by mx.google.com with ESMTPS id 15-20020a0562140d0f00b0060f7b695034si8243469qvh.426.2023.05.31.11.00.52
+        for <ouchendans62@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 31 May 2023 11:00:52 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+23808560-33e5-ouchendans62=gmail.com@send.pdp.com designates 167.89.72.20 as permitted sender) client-ip=167.89.72.20;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@pdp.com header.s=kl header.b=zaQGJRug;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=sMLxD6qp;
+       spf=pass (google.com: domain of bounces+23808560-33e5-ouchendans62=gmail.com@send.pdp.com designates 167.89.72.20 as permitted sender) smtp.mailfrom="bounces+23808560-33e5-ouchendans62=gmail.com@send.pdp.com"
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=pdp.com;
+	h=content-type:from:mime-version:subject:list-unsubscribe:x-feedback-id:
+	to:cc:content-type:from:subject:to;
+	s=kl; bh=Zmvu46ljnNQSrj6mu9rn2r4K000qjXVMl3wtMQfCteo=;
+	b=zaQGJRugw4Vf39xTfKfx62Xx3aW34M3z3/CIrMtQBgvTiaG4Ivtsv0RcmkB0O9AzjyM+
+	tXjLvHDNY1pi8iEXD/Vu0AyRCkg7/V+WKJlbPBxdFsD+HTek4qwR1GCG6q8zhYGI+JOpAk
+	WMtlusP+4Ymil33x5yv67hV/t5NA27pv6euozvCR+oIXkdaOW0zg5V+UJyXa4Dic93AkpO
+	EInrjtx8/e3rYrQtlu1hE9hUQJXPbYWZgFdbubxDY+OLe9u6IoOGJJ4tU/46UWRFdlXEc2
+	mK50XX3YtrmSJD8JGHCj8ACpcy1g8HfrdZYHMcVdt/pf1LJTGTYpVoPpvPIeC5Zg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:list-unsubscribe:x-feedback-id:
+	to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=Zmvu46ljnNQSrj6mu9rn2r4K000qjXVMl3wtMQfCteo=;
+	b=sMLxD6qpKBTYoDVeUKZbfPepst29IXtgW6tx/wnNAMSE6ZdsTsVc85jD/knbzD0kJ5uF
+	piuLjbvmoQHiSljEjDeOjuB+sZi4rmbk5obWxr4UFX+kSCVe5lcD94AeZOcZKUvL/SdIYN
+	kMff0ZMjnhkpXenldGiAJds1pUq6Hxk6c=
+Received: by filterdrecv-6d55674f9c-dljpr with SMTP id filterdrecv-6d55674f9c-dljpr-1-64778B54-A3
+        2023-05-31 18:00:52.158063011 +0000 UTC m=+1794067.483661647
+Received: from MjM4MDg1NjA (unknown)
+	by geopod-ismtpd-27 (SG) with HTTP
+	id l618_AzHRFmR3ojl_ekc5Q
+	Wed, 31 May 2023 18:00:52.120 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=21fa6ca87ebeb8c5d0be3cfafed2bc95a7f7395879b2c4d45538224ba64f
+Date: Wed, 31 May 2023 18:00:52 +0000 (UTC)
+From: PDP Gaming <globalsupport@pdp.com>
+Mime-Version: 1.0
+Message-ID: <l618_AzHRFmR3ojl_ekc5Q@geopod-ismtpd-27>
+Subject: =?UTF-8?B?8J+UpQ==?= Check out our hottest designs
+ =?UTF-8?B?8J+UpQ==?=
+X-Kmail-Ops: 01H1F46ZPWTR474H195MSHYF73
+X-Kmail-Message: SzyRBY
+X-Kmail-Account: TusUSb
+X-Kmail-Relay: [2233829.krelaymail.com]:587
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Chttps=3A=2F=2Fmanage=2Ekmail-lists=2Ecom=2Fsubscriptions=2Funsubscribe=3Fa=3DTu?=
+ =?us-ascii?Q?sUSb&c=3D01H1F46ZPWTR474H195MSHYF73&k=3D4c0?=
+ =?us-ascii?Q?ecd06c93a708bb6479fade802127f&g=3DUueHVV&?=
+ =?us-ascii?Q?m=3DSzyRBY&r=3D5SjvGSv=3E?=
+X-Kmail-Flow: QTDuN2
+X-Feedback-ID: 23808560:SG
+X-SG-EID: 
+ =?us-ascii?Q?fK6wuJ03sTF7E9=2FbowHpn80Y0SL62yZutEzO6buAEACJfq4vraEkOk6fXRrJNR?=
+ =?us-ascii?Q?rWiDptI4jYGi0534FJ5pwdty1MlaeTqvk1SvLbs?=
+ =?us-ascii?Q?EUHfiYnE5gFNPQRKWAgye2xuJ2STqNTJCkJnVHE?=
+ =?us-ascii?Q?uras=2FIci+=2F8PissF3DsmcJLurUCVH2HgBVC0muG?=
+ =?us-ascii?Q?Bd07WrhwxlYm78JxQuszx003I=2FNVvitdXoVxCFO?=
+ =?us-ascii?Q?V5vbrLUJQPI64BaGNHMoeSwYymOfnE9hDbw+5G?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb3WdckyvbC2eFaxvdDHn8D1nndBBW0fUClUlZF2fTQ?=
+ =?us-ascii?Q?6KrySh2hcOzkRRvjfNf2yA2+J6Opkf9vVv2TZs7?=
+ =?us-ascii?Q?LpnQFf14aHvmrgagdQUGBmk5UWyOkeyiXEjEav2?=
+ =?us-ascii?Q?khcx2=2FxINaK4CfxFb8XlIoLe=2FiRujOHKvsL=2FMk1?=
+ =?us-ascii?Q?OCxk0fVDqrPI=2F?=
+To: ouchendans62@gmail.com
+X-Entity-ID: O75lnVwKEdAqjLiKTra+6w==
+
+--21fa6ca87ebeb8c5d0be3cfafed2bc95a7f7395879b2c4d45538224ba64f
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+[PDP Gaming Logo](https://www.pdp.com/)
+
+SHOP OUR
+BEST SELLERS
+
+=E2=80=8A
+
+[SHOP NOW](https://www.pdp.com/platform)
+
+=E2=80=8A
+
+BEST SELLERS
+
+Check out what other gamers have been buying to level up their game! Shop t=
+hese fan favorites and more on pdp.com.
+
+[Image of Afterglow Wired Controller](https://www.pdp.com/catalog/product/v=
+iew/id/563)
+
+[Afterglow Wired Controller](https://www.pdp.com/catalog/product/view/id/56=
+3)
+
+$39.99
+
+[Image of LVL40 Wired Stereo Gaming Headset: Neon Pop](https://www.pdp.com/=
+catalog/product/view/id/508)
+
+[LVL40 Wired Stereo Gaming Headset: Neon Pop](https://www.pdp.com/catalog/p=
+roduct/view/id/508)
+
+$24.99
+
+[Image of Rock Candy Wired Controller: Timmy & Tommy Breezy Blue](https://w=
+ww.pdp.com/catalog/product/view/id/812)
+
+[Rock Candy Wired Controller: Timmy & Tommy Breezy Blue](https://www.pdp.co=
+m/catalog/product/view/id/812)
+
+$19.99
+
+[Image of PDP Gaming Ultra Slim Charge System](https://www.pdp.com/catalog/=
+product/view/id/471)
+
+[PDP Gaming Ultra Slim Charge System](https://www.pdp.com/catalog/product/v=
+iew/id/471)
+
+$24.99
+
+[Image of PDP Gaming Media Remote](https://www.pdp.com/catalog/product/view=
+/id/567)
+
+[PDP Gaming Media Remote](https://www.pdp.com/catalog/product/view/id/567)
+
+$22.99
+
+[Image of PDP Gaming Rechargeable Battery Pack](https://www.pdp.com/catalog=
+/product/view/id/571)
+
+[PDP Gaming Rechargeable Battery Pack](https://www.pdp.com/catalog/product/=
+view/id/571)
+
+$14.99
+
+[Facebook](www.facebook.com/PDPGaming)
+[Twitter](twitter.com/PDPgaming)
+[Instagram](www.instagram.com/pdpgaming)
+[YouTube](www.youtube.com/c/PDPGamingLLC)
+
+[Web Version](https://manage.kmail-lists.com/subscriptions/web-view?a=3DTus=
+USb&c=3D01H1F46ZPWTR474H195MSHYF73&k=3D4c0ecd06c93a708bb6479fade802127f&g=
+=3DUueHVV&m=3DSzyRBY&r=3D5SjvGSv)
+No longer want to receive emails?
+[Unsubscribe](https://manage.kmail-lists.com/subscriptions/unsubscribe?a=3D=
+TusUSb&c=3D01H1F46ZPWTR474H195MSHYF73&k=3D4c0ecd06c93a708bb6479fade802127f&=
+g=3DUueHVV&m=3DSzyRBY&r=3D5SjvGSv)
+
+Performance Designed Products | 9179 Aero Drive San Diego, California 92123
+--21fa6ca87ebeb8c5d0be3cfafed2bc95a7f7395879b2c4d45538224ba64f
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html><html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:o=3D"urn:=
+schemas-microsoft-com:office:office" xmlns:v=3D"urn:schemas-microsoft-com:v=
+ml"><head>
+<title>
+</title>
+<!--[if !mso]><!-->
+<meta content=3D"IE=3Dedge" http-equiv=3D"X-UA-Compatible">
+<!--<![endif]-->
+<meta content=3D"text/html; charset=3Dutf-8" http-equiv=3D"Content-Type">
+<meta content=3D"width=3Ddevice-width, initial-scale=3D1" name=3D"viewport"=
+>
+<!--[if mso]>
+        <noscript>
+        <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG/>
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+        </xml>
+        </noscript>
+        <![endif]-->
+<!--[if lte mso 11]>
+        <style type=3D"text/css" data-inliner=3D"ignore">
+          .mj-outlook-group-fix { width:100% !important; }
+        </style>
+        <![endif]-->
+<!--[if !mso]><!--><!--<![endif]-->
+<style>a:link {color:#000;font-weight:normal;text-decoration:underline;font=
+-style:normal}
+a:visited {color:#000;font-weight:normal;text-decoration:underline;font-sty=
+le:normal}
+a:active {color:#000;font-weight:normal;text-decoration:underline;font-styl=
+e:normal}
+a:hover {color:#000;font-weight:normal;text-decoration:underline;font-style=
+:normal}</style><style>@import url(https://static-forms.klaviyo.com/fonts/a=
+pi/v1/TusUSb/custom_fonts.css);
+@import url("https://fonts.googleapis.com/css2?family=3DLato&amp;display=3D=
+swap");
+#outlook a {
+    padding: 0
+    }
+body {
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%
+    }
+table, td {
+    border-collapse: collapse;
+    mso-table-lspace: 0;
+    mso-table-rspace: 0
+    }
+img {
+    border: 0;
+    height: auto;
+    line-height: 100%;
+    outline: none;
+    text-decoration: none;
+    -ms-interpolation-mode: bicubic
+    }
+p {
+    display: block;
+    margin: 13px 0
+    }
+@media only screen and (min-width: 480px) {
+    .mj-column-per-100 {
+        width: 100% !important;
+        max-width: 100%
+        }
+    }
+.moz-text-html .mj-column-per-100 {
+    width: 100% !important;
+    max-width: 100%
+    }
+@media only screen and (max-width: 480px) {
+    div.kl-row.colstack div.kl-column {
+        display: block !important;
+        width: 100% !important
+        }
+    }
+@media only screen and (max-width: 480px) {
+    .component-wrapper .mob-no-spc {
+        padding-left: 0 !important;
+        padding-right: 0 !important
+        }
+    }
+@media only screen and (max-width: 480px) {
+    td.kl-img-base-auto-width {
+        width: 100% !important
+        }
+    }
+@media only screen and (max-width: 480px) {
+    .kl-text {
+        padding-right: 18px !important;
+        padding-left: 18px !important
+        }
+    }
+.kl-text-table-layout > table {
+    table-layout: auto
+    }
+.kl-text-table-layout > table > tbody > tr > td > table {
+    table-layout: auto
+    }
+@media only screen and (max-width: 480px) {
+    .kl-product-cell-stack {
+        display: block !important;
+        width: 100% !important
+        }
+    }
+@media screen and (max-width: 480px) {
+    .kl-sl-stk {
+        display: block !important;
+        width: 100% !important;
+        padding: 0 0 9px !important;
+        text-align: center !important
+        }
+    .kl-sl-stk.lbls {
+        padding: 0 !important
+        }
+    .kl-sl-stk.spcblk {
+        display: none !important
+        }
+    }
+img {
+    border: 0;
+    height: auto;
+    line-height: 100%;
+    outline: none;
+    text-decoration: none;
+    max-width: 100%
+    }
+.root-container {
+    background-repeat: no-repeat !important;
+    background-size: auto !important;
+    background-position: center top !important
+    }
+.root-container-spacing {
+    padding-top: 50px !important;
+    padding-bottom: 20px !important;
+    font-size: 0 !important
+    }
+.content-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important
+    }
+.content-padding.first {
+    padding-top: 0 !important
+    }
+.content-padding.last {
+    padding-bottom: 0 !important
+    }
+@media only screen and (max-width: 480px) {
+    td.mobile-only {
+        display: table-cell !important
+        }
+    div.mobile-only {
+        display: block !important
+        }
+    table.mobile-only {
+        display: table !important
+        }
+    .desktop-only {
+        display: none !important
+        }
+    }
+@media only screen and (max-width: 480px) {
+    .table-mobile-only {
+        display: table-cell !important;
+        max-height: none !important
+        }
+    .table-mobile-only.block {
+        display: block !important
+        }
+    .table-mobile-only.inline-block {
+        display: inline-block !important
+        }
+    .table-desktop-only {
+        max-height: 0 !important;
+        display: none !important;
+        mso-hide: all !important;
+        overflow: hidden !important
+        }
+    }
+p {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 1em
+    }
+@media only screen and (max-width: 480px) {
+    .kl-text > div, .kl-table-subblock div, .kl-split-subblock > div {
+        font-size: 14px !important;
+        line-height: 1.3 !important
+        }
+    }
+h1 {
+    color: #222427;
+    font-family: "Helvetica Neue", Arial;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.1;
+    letter-spacing: 0;
+    margin: 0;
+    margin-bottom: 20px;
+    text-align: left
+    }
+@media only screen and (max-width: 480px) {
+    h1 {
+        font-size: 40px !important;
+        line-height: 1.1 !important
+        }
+    }
+h2 {
+    color: #222427;
+    font-family: "Helvetica Neue", Arial;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 1.1;
+    letter-spacing: 0;
+    margin: 0;
+    margin-bottom: 16px;
+    text-align: left
+    }
+@media only screen and (max-width: 480px) {
+    h2 {
+        font-size: 32px !important;
+        line-height: 1.1 !important
+        }
+    }
+h3 {
+    color: #222427;
+    font-family: "Helvetica Neue", Arial;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 1.1;
+    letter-spacing: 0;
+    margin: 0;
+    margin-bottom: 12px;
+    text-align: left
+    }
+@media only screen and (max-width: 480px) {
+    h3 {
+        font-size: 24px !important;
+        line-height: 1.1 !important
+        }
+    }
+h4 {
+    color: #222427;
+    font-family: "Helvetica Neue", Arial;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0;
+    margin: 0;
+    margin-bottom: 9px;
+    text-align: left
+    }
+@media only screen and (max-width: 480px) {
+    h4 {
+        font-size: 18px !important;
+        line-height: 1.1 !important
+        }
+    }
+@media only screen and (max-width: 480px) {
+    .root-container {
+        width: 100% !important
+        }
+    .root-container-spacing {
+        padding: 10px !important
+        }
+    .content-padding {
+        padding-left: 0 !important;
+        padding-right: 0 !important
+        }
+    .content-padding.first {
+        padding-top: 0 !important
+        }
+    .content-padding.last {
+        padding-bottom: 0 !important
+        }
+    .component-wrapper {
+        padding-left: 0 !important;
+        padding-right: 0 !important
+        }
+    }</style></head>
+<body style=3D"word-spacing:normal;background-color:#FFFFFF;">
+<div style=3D"display:none;font-size:1px;color:#ffffff;line-height:1px;max-=
+height:0px;max-width:0px;opacity:0;overflow:hidden;">
+      Find out what other gamers loved with these best sellers =F0=9F=8E=A7=
+=F0=9F=8E=AE=CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=
+=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C=
+ &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &n=
+bsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp=
+; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =
+=CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=
+=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F=
+ =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =
+=E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=
+=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=
+=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C=
+ &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &n=
+bsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp=
+; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =
+=CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=
+=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F=
+ =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =
+=E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=
+=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=
+=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C=
+ &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &n=
+bsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp=
+; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =
+=CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=
+=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F=
+ =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =
+=E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=
+=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=
+=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C=
+ &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &n=
+bsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp=
+; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =
+=CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=
+=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F=
+ =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =
+=E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=
+=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=
+=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C=
+ &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &n=
+bsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp=
+; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =
+=CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=
+=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F=
+ =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =
+=E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=80=8C &nbsp; =CD=8F =E2=
+=80=8C &nbsp;=20
+    </div>
+<div class=3D"root-container" id=3D"bodyTable" style=3D"background-color:#F=
+FFFFF;">
+<div class=3D"root-container-spacing">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"kl-section" role=3D"presentation" style=3D"width:100%;">
+<tbody>
+<tr>
+<td>
+<!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" class=3D"kl-section-outlook" style=3D"width:600px;" width=
+=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-ru=
+le:exactly;"><![endif]-->
+<div style=3D"margin:0px auto;max-width:600px;">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"width:100%;">
+<tbody>
+<tr>
+<td style=3D"direction:ltr;font-size:0px;padding:0px;text-align:center;">
+<!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0"><table align=3D"center" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" class=3D"" style=3D"width:600px;" width=3D"600" bgcolor=
+=3D"#ffffff" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-heigh=
+t-rule:exactly;"><![endif]-->
+<div style=3D"background:#ffffff url(https://d3k81ch9hvuctc.cloudfront.net/=
+company/TusUSb/images/b5137cfb-afe5-4be9-b6c6-5140144bf7de.png) center cent=
+er / cover no-repeat;background-position:center center;background-repeat:no=
+-repeat;background-size:cover;margin:0px auto;border-radius:0px 0px 0px 0px=
+;max-width:600px;">
+<div style=3D"line-height:0;font-size:0;">
+<table align=3D"center" background=3D"https://d3k81ch9hvuctc.cloudfront.net=
+/company/TusUSb/images/b5137cfb-afe5-4be9-b6c6-5140144bf7de.png" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"backg=
+round:#ffffff url(https://d3k81ch9hvuctc.cloudfront.net/company/TusUSb/imag=
+es/b5137cfb-afe5-4be9-b6c6-5140144bf7de.png) center center / cover no-repea=
+t;background-position:center center;background-repeat:no-repeat;background-=
+size:cover;width:100%;border-radius:0px 0px 0px 0px;">
+<tbody>
+<tr>
+<td style=3D"direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;=
+padding-left:0px;padding-right:0px;padding-top:0px;text-align:center;">
+<!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0"><![endif]-->
+<div class=3D"content-padding first">
+<!--[if true]><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"600" style=3D"width:600px;direction:ltr"><tr><![endif]-->
+<div class=3D"kl-row colstack" style=3D"display:table;table-layout:fixed;wi=
+dth:100%;">
+<!--[if true]><td style=3D"vertical-align:middle;width:600px;"><![endif]-->
+<div class=3D"kl-column" style=3D"display:table-cell;vertical-align:middle;=
+width:100%;">
+<div class=3D"mj-column-per-100 mj-outlook-group-fix component-wrapper" sty=
+le=3D"font-size:0px;text-align:left;direction:ltr;vertical-align:top;width:=
+100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"table-layout:fixed;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"" style=3D"vertical-align:top;padding-top:0px;padding-right:0p=
+x;padding-bottom:0px;padding-left:0px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"center" class=3D"kl-image kl-image-690889" style=3D"font-size:=
+0px;word-break:break-word;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-col=
+lapse:collapse;border-spacing:0px;">
+<tbody>
+<tr>
+<td class=3D"" style=3D"width:66px;border:0;padding:15px 0px 15px 0px;" val=
+ign=3D"top">
+<a style=3D"color:#000; font-style:normal; font-weight:normal; text-decorat=
+ion:underline" href=3D"https://trk.klclick1.com/ls/click?upn=3D-2Bq7qiokDJ0=
+kM4ENpMA0hJop98nAinW6omLkIFUaDHJRof-2BbetMHW3DNwgftRh9VwnmhAb-2Fdj3gxKYXgCX=
+dP6sBI8qTTQZd8AO-2B29s6snRAqiVhZPtWTtQHHWNjeiMRD1iTmvFQHXaELyMOKY7RJl0IEXMX=
+fQZsHO13Z3k0EfiI8-3DuXQ2_ihalNH9AD8jKjDhJJh9HnJdsemcHmziHuLMVq6nXnLf4SgPEYN=
+8OeORjeZhjnWfztFZn38euSx0RxxR1U-2FjhS32UFr2LJpIrb-2BnU2mClgiL-2F3TIhgXbP7CO=
+jzkUFvprVg-2FLVUKpb8WHrLnomditzYx0fTxLgA64J8k8z8M97i9xVamlW9y6bAyZxnKEgnCbt=
+Nc4fOrdBx-2FidXn8zLJtAy5qYyeTCGntIWPy6eWcDjSM561tBdIwzzw8TKoZ2ixeYr5ctc9SfJ=
+zTY9XKrzARm-2FkD0cnhBI6ldySkY1AWq3fkC1q3OhkJat10sfK-2BfeB9UpSG-2FUO4XtZ2lEd=
+PF2ESLTOGa40SwK7ZGHunstuzANdxXsKxwB3fEALM3VTdhkg6X">
+<img alt=3D"PDP Gaming Logo" src=3D"https://d3k81ch9hvuctc.cloudfront.net/c=
+ompany/TusUSb/images/53b8f6bf-87dd-4dc5-ae0a-af5aeec9a1fd.png" style=3D"dis=
+play:block;outline:none;text-decoration:none;height:auto;width:100%;font-si=
+ze:13px;" title=3D"PDP Gaming Logo" width=3D"66">
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=3D"mj-column-per-100 mj-outlook-group-fix component-wrapper" sty=
+le=3D"font-size:0px;text-align:left;direction:ltr;vertical-align:top;width:=
+100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"table-layout:fixed;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"" style=3D"vertical-align:top;padding-top:9px;padding-right:18=
+px;padding-bottom:9px;padding-left:18px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"left" class=3D"kl-text" style=3D"font-size:0px;padding:0px;pad=
+ding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;word-bre=
+ak:break-word;">
+<div style=3D"font-family:'Helvetica Neue',Arial;font-size:14px;font-style:=
+normal;font-weight:400;letter-spacing:0px;line-height:1.3;text-align:left;c=
+olor:#222427;">
+<p style=3D"padding-bottom:0; font-family:&quot;Exo 2&quot;, &quot;DM Sans&=
+quot;, Lato, sans-serif; letter-spacing:1px; font-size:32px; text-align:cen=
+ter"><strong><span style=3D"color: #ffffff;">SHOP OUR<br>BEST SELLERS</span=
+></strong></p></div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=3D"mj-column-per-100 mj-outlook-group-fix component-wrapper" sty=
+le=3D"font-size:0px;text-align:left;direction:ltr;vertical-align:top;width:=
+100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"table-layout:fixed;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"" style=3D"vertical-align:top;padding-top:0px;padding-right:0p=
+x;padding-bottom:0px;padding-left:0px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"" width=3D"100%">
+<tbody>
+<tr>
+<td style=3D"font-size:0px;word-break:break-word;">
+<div style=3D"height:420px;line-height:420px;">=E2=80=8A</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=3D"mj-column-per-100 mj-outlook-group-fix component-wrapper" sty=
+le=3D"font-size:0px;text-align:left;direction:ltr;vertical-align:top;width:=
+100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"table-layout:fixed;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"" style=3D"vertical-align:top;padding-top:9px;padding-right:18=
+px;padding-bottom:9px;padding-left:18px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"left" class=3D"kl-text" style=3D"font-size:0px;padding:0px;pad=
+ding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;word-bre=
+ak:break-word;">
+<div style=3D"font-family:'Helvetica Neue',Arial;font-size:14px;font-style:=
+normal;font-weight:400;letter-spacing:0px;line-height:1.3;text-align:left;c=
+olor:#222427;"><div style=3D"text-align: center;"><strong><a style=3D"color=
+:#000; font-style:normal; font-weight:900; text-decoration:none; background=
+-color:#07e3b6; border-radius:5px; display:inline-block; font-family:&quot;=
+Exo 2&quot;, &quot;DM Sans&quot;, Lato, sans-serif; letter-spacing:1px; fon=
+t-size:18px; line-height:40px; text-align:center; width:150px; -webkit-text=
+-size-adjust:none" href=3D"https://trk.klclick1.com/ls/click?upn=3D-2Bq7qio=
+kDJ0kM4ENpMA0hJm3eSxlbtf7f-2FYOuE7Fs1iVKugZTBXqpLk9UGCziweRfilDxxN-2FR38Aqc=
+P-2BiOSTvTF6k2iKZ-2F4z0ppZ0-2BnIP-2B4EedNmnRsFLTGpiykGewZpR237Hgmqunbe1WhZv=
+oWBi1Zbiw-2Fh4BlQxcw-2F3u9-2FHqixnltNswzViLcrG8ssXmFPhqZhh_ihalNH9AD8jKjDhJ=
+Jh9HnJdsemcHmziHuLMVq6nXnLf4SgPEYN8OeORjeZhjnWfztFZn38euSx0RxxR1U-2FjhS32UF=
+r2LJpIrb-2BnU2mClgiL-2F3TIhgXbP7COjzkUFvprVg-2FLVUKpb8WHrLnomditzYx0fTxLgA6=
+4J8k8z8M97i9xVamlW9y6bAyZxnKEgnCbtNc4fOrdBx-2FidXn8zLJtAyzQEg40ZnNM9HM70aVE=
+If-2FsNVThW8aPpSdyLDlq36mpYXi0ocAyOkhwgKUgk4F-2FcuNho9UPR9KK6oi6tKBJr4xnbq3=
+ooxPXdXLuFbf7dqIF2eUx-2FD83ouN9Ewcuw9AS2CURjLIlSi9qbHPnt1xKcDEvIS7xW9W5ny7L=
+U6JlKOXkp">SHOP NOW</a></strong></div></div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!--[if true]></td><![endif]-->
+</div>
+<!--[if true]></tr></table><![endif]-->
+</div>
+<!--[if mso | IE]></table><![endif]-->
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!--[if mso | IE]></td></tr></table></table><![endif]-->
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]-->
+</td>
+</tr>
+</tbody>
+</table>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"kl-section" role=3D"presentation" style=3D"width:100%;">
+<tbody>
+<tr>
+<td>
+<!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" class=3D"kl-section-outlook" style=3D"width:600px;" width=
+=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-ru=
+le:exactly;"><![endif]-->
+<div style=3D"margin:0px auto;max-width:600px;">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"width:100%;">
+<tbody>
+<tr>
+<td style=3D"direction:ltr;font-size:0px;padding:0px;text-align:center;">
+<!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0"><table align=3D"center" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" class=3D"" style=3D"width:600px;" width=3D"600" bgcolor=
+=3D"#ffffff" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-heigh=
+t-rule:exactly;"><![endif]-->
+<div style=3D"background:#ffffff;background-color:#ffffff;margin:0px auto;b=
+order-radius:0px 0px 0px 0px;max-width:600px;">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background:#ffffff;background-color:#ffffff;wi=
+dth:100%;border-radius:0px 0px 0px 0px;">
+<tbody>
+<tr>
+<td style=3D"direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;=
+padding-left:0px;padding-right:0px;padding-top:0px;text-align:center;">
+<!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0"><![endif]-->
+<div class=3D"content-padding">
+<!--[if true]><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"600" style=3D"width:600px;direction:ltr"><tr><![endif]-->
+<div class=3D"kl-row colstack" style=3D"display:table;table-layout:fixed;wi=
+dth:100%;">
+<!--[if true]><td style=3D"vertical-align:top;width:600px;"><![endif]-->
+<div class=3D"kl-column" style=3D"display:table-cell;vertical-align:top;wid=
+th:100%;">
+<div class=3D"mj-column-per-100 mj-outlook-group-fix component-wrapper" sty=
+le=3D"font-size:0px;text-align:left;direction:ltr;vertical-align:top;width:=
+100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"table-layout:fixed;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"" style=3D"vertical-align:top;padding-top:0px;padding-right:0p=
+x;padding-bottom:0px;padding-left:0px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"" width=3D"100%">
+<tbody>
+<tr>
+<td style=3D"font-size:0px;word-break:break-word;">
+<div style=3D"height:20px;line-height:20px;">=E2=80=8A</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=3D"mj-column-per-100 mj-outlook-group-fix component-wrapper" sty=
+le=3D"font-size:0px;text-align:left;direction:ltr;vertical-align:top;width:=
+100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"table-layout:fixed;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"" style=3D"vertical-align:top;padding-top:9px;padding-right:40=
+px;padding-bottom:9px;padding-left:40px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"left" class=3D"kl-text" style=3D"font-size:0px;padding:0px;pad=
+ding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;word-bre=
+ak:break-word;">
+<div style=3D"font-family:'Helvetica Neue',Arial;font-size:14px;font-style:=
+normal;font-weight:400;letter-spacing:0px;line-height:1.3;text-align:left;c=
+olor:#222427;"><div>
+<p style=3D"font-family: 'Exo 2', 'DM Sans', Lato, sans-serif; letter-spaci=
+ng: 1px; font-size: 26px; text-align: center;"><span style=3D"color: #00000=
+0;"><strong>BEST SELLERS</strong></span></p>
+<p style=3D"padding-bottom:0; font-family:&quot;Exo 2&quot;, &quot;DM Sans&=
+quot;, Lato, sans-serif; letter-spacing:1px; font-size:18px; text-align:cen=
+ter"><span style=3D"color: #000000;">Check out what other gamers have been =
+buying to level up their game! Shop these fan favorites and more on pdp.com=
+.</span></p>
+</div></div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=3D"mj-column-per-100 mj-outlook-group-fix component-wrapper" sty=
+le=3D"font-size:0px;text-align:left;direction:ltr;vertical-align:top;width:=
+100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"table-layout:fixed;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"" style=3D"vertical-align:top;padding-top:9px;padding-right:18=
+px;padding-bottom:9px;padding-left:18px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"left" style=3D"font-size:0px;padding:0px;word-break:break-word=
+;">
+<div style=3D"font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13=
+px;line-height:1;text-align:left;color:#000000;"><!--[if true]><table class=
+=3D"kl-product" role=3D"presentation" width=3D"100%" style=3D"all:unset;opa=
+city:0;"><tr><![endif]-->
+<!--[if false]></td></tr></table><![endif]-->
+<div class=3D"kl-product" style=3D"display:table;width:100%;">
+<!--[if true]><td width=3D"50%"><![endif]-->
+<!--[if !true]><!--><div class=3D"" style=3D"display:table-cell;vertical-al=
+ign:middle;font-size:0;width:50%;"><!--<![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" width=3D"100%">
+<tbody>
+<tr>
+<td style=3D"font-size:0px;padding:10px 10px 10px 10px;word-break:break-wor=
+d;" vertical-align=3D"top">
+<table align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" clas=
+s=3D"kl-product-subblock" style=3D"table-layout:fixed;" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"center">
+<a style=3D"color:#000; font-style:normal; font-weight:normal; text-decorat=
+ion:underline" href=3D"https://trk.klclick1.com/ls/click?upn=3D-2Bq7qiokDJ0=
+kM4ENpMA0hJi3LXCv66lf6ZP52KEK-2FhXGV-2Fejohjicn3LVVY1yyhFNvpeq85UF5-2FgwQpD=
+WiQtA-2BnrQrrf0qiq4yFw3SI7NKaLnzvlVV8i2wIEg92rRIAFd1PRylrwIUKNIwKnqDKtl-2BU=
+B1lfTWGnfKWsfxPpTk-2F-2FIFpYYVmasLxhNQwQe6CWKtqxtHVDQSMmob9Zg0f39JUA-3D-3D1=
+mKU_ihalNH9AD8jKjDhJJh9HnJdsemcHmziHuLMVq6nXnLf4SgPEYN8OeORjeZhjnWfztFZn38e=
+uSx0RxxR1U-2FjhS32UFr2LJpIrb-2BnU2mClgiL-2F3TIhgXbP7COjzkUFvprVg-2FLVUKpb8W=
+HrLnomditzYx0fTxLgA64J8k8z8M97i9xVamlW9y6bAyZxnKEgnCbtNc4fOrdBx-2FidXn8zLJt=
+Ay4oM4BJNMszDJDTxIhue4ydEhiRee3hOqc96RgBXbSpELXDIHvUJJL5HABYEmGPHobfmYs3Hfu=
+Td6ERnatiNc4gIn-2Btnm4Tubf6XMy1jFHbpiFoJUOHf3WF5ugUB-2BL9VX-2FP0gnti2I1ZQQG=
+8rBJNFYc-2FkvZn6Ibf0mx6S0vMP9cl">
+<img alt=3D"Image of Afterglow Wired Controller" src=3D"https://www.pdp.com=
+/media/catalog/product/0/4/049-005-na-v1.png" style=3D"display:block;max-wi=
+dth:100%;width:auto;max-height:125px;" width=3D"176">
+</a>
+</td>
+</tr>
+<tr><td align=3D"center"><table align=3D"center"><tbody><tr><td align=3D"ce=
+nter" style=3D"color:#201010;font-family:Lucida Sans Unicode,Lucida Sans,Ge=
+neva,Verdana,sans-serif;font-weight:normal;font-style:normal;text-decoratio=
+n:underline;text-align:center;font-size:14px;letter-spacing:0px;padding-top=
+:5px;padding-bottom:0px;line-height:1.3;"><a style=3D"color:#201010; font-s=
+tyle:normal; font-weight:normal; text-decoration:underline; font-family:Luc=
+ida Sans Unicode, Lucida Sans, Geneva, Verdana, sans-serif; text-align:cent=
+er; font-size:14px; letter-spacing:0; padding-top:5px; padding-bottom:0; li=
+ne-height:1.3" href=3D"https://trk.klclick1.com/ls/click?upn=3D-2Bq7qiokDJ0=
+kM4ENpMA0hJi3LXCv66lf6ZP52KEK-2FhXGV-2Fejohjicn3LVVY1yyhFNvpeq85UF5-2FgwQpD=
+WiQtA-2BnrQrrf0qiq4yFw3SI7NKaLnzvlVV8i2wIEg92rRIAFd1PRylrwIUKNIwKnqDKtl-2BU=
+B1lfTWGnfKWsfxPpTk-2F-2FIFpYYVmasLxhNQwQe6CWKtqxtHVDQSMmob9Zg0f39JUA-3D-3Dt=
+CyP_ihalNH9AD8jKjDhJJh9HnJdsemcHmziHuLMVq6nXnLf4SgPEYN8OeORjeZhjnWfztFZn38e=
+uSx0RxxR1U-2FjhS32UFr2LJpIrb-2BnU2mClgiL-2F3TIhgXbP7COjzkUFvprVg-2FLVUKpb8W=
+HrLnomditzYx0fTxLgA64J8k8z8M97i9xVamlW9y6bAyZxnKEgnCbtNc4fOrdBx-2FidXn8zLJt=
+Ay2Tj-2F-2BaHMWwbvUIWxKHnXVZ-2FF0c-2FaEYrv2w7Ol6nAcDXSrUbo6PCqRkQ6x0-2FJ-2B=
+AlzFYpdQ6dSqylvEXmvBruLKVrNfOS1WqFWd5pMRN4iCS99ByrztaTWO2DysVNsE-2FdejrcmuG=
+uCCtGEo6W6gYdwrUKwNrPNXutwEGyjCSObbW9">Afterglow Wired Controller</a></td><=
+/tr></tbody></table></td></tr>
+<tr><td align=3D"center"><table align=3D"center"><tbody><tr><td align=3D"ce=
+nter" style=3D"color:#000;font-family:'Helvetica Neue',Arial;font-size:14px=
+;font-weight:400;font-style:normal;text-align:center;letter-spacing:0px;pad=
+ding-top:5px;padding-bottom:0px;line-height:1.3;">$39.99</td></tr></tbody><=
+/table></td></tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if !true]><!--></div><!--<![endif]-->
+<!--[if true]></td><![endif]-->
+<!--[if true]><td width=3D"50%"><![endif]-->
+<!--[if !true]><!--><div class=3D"" style=3D"display:table-cell;vertical-al=
+ign:middle;font-size:0;width:50%;"><!--<![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" width=3D"100%">
+<tbody>
+<tr>
+<td style=3D"font-size:0px;padding:10px 10px 10px 10px;word-break:break-wor=
+d;" vertical-align=3D"top">
+<table align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" clas=
+s=3D"kl-product-subblock" style=3D"table-layout:fixed;" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"center">
+<a style=3D"color:#000; font-style:normal; font-weight:normal; text-decorat=
+ion:underline" href=3D"https://trk.klclick1.com/ls/click?upn=3D-2Bq7qiokDJ0=
+kM4ENpMA0hJi3LXCv66lf6ZP52KEK-2FhXGV-2Fejohjicn3LVVY1yyhFN3rCL-2Bt3BKAE2beV=
+pXENKAOF2JMGtOXWQTPNPNj8Q9QBxtFBqwTQ3WZJMgtrtnqePVnKVaJ8e2mHdp3I-2Fbqp4AwL-=
+2BMBIrEf4SLnzNe5XD7FJv-2FP3YogDx-2BsGobyF2HKvP-2BmLFRv3xM68oHTmWZ2SVZA-3D-3=
+DlG59_ihalNH9AD8jKjDhJJh9HnJdsemcHmziHuLMVq6nXnLf4SgPEYN8OeORjeZhjnWfztFZn3=
+8euSx0RxxR1U-2FjhS32UFr2LJpIrb-2BnU2mClgiL-2F3TIhgXbP7COjzkUFvprVg-2FLVUKpb=
+8WHrLnomditzYx0fTxLgA64J8k8z8M97i9xVamlW9y6bAyZxnKEgnCbtNc4fOrdBx-2FidXn8zL=
+JtAy-2FbUWT35APCl3nCMPO-2B2B1oW1hjLjibk3MYaWm8GmQwXB0PySKhjppy0XSRhAV6MtZ1P=
+BhLZWwZlu5eMLhyino5PyqzsFNBFduzAN0T90S8HAxSfQW5DAqlxYKHTcpdEi0l1mJ1JKBUMP-2=
+FSwTT24EWynKA196h5sLup5BYb95Kmh">
+<img alt=3D"Image of LVL40 Wired Stereo Gaming Headset: Neon Pop" src=3D"ht=
+tps://www.pdp.com/media/catalog/product/1/_/1_5_19.png" style=3D"display:bl=
+ock;max-width:100%;width:auto;max-height:125px;" width=3D"176">
+</a>
+</td>
+</tr>
+<tr><td align=3D"center"><table align=3D"center"><tbody><tr><td align=3D"ce=
+nter" style=3D"color:#201010;font-family:Lucida Sans Unicode,Lucida Sans,Ge=
+neva,Verdana,sans-serif;font-weight:normal;font-style:normal;text-decoratio=
+n:underline;text-align:center;font-size:14px;letter-spacing:0px;padding-top=
+:5px;padding-bottom:0px;line-height:1.3;"><a style=3D"color:#201010; font-s=
+tyle:normal; font-weight:normal; text-decoration:underline; font-family:Luc=
+ida Sans Unicode, Lucida Sans, Geneva, Verdana, sans-serif; text-align:cent=
+er; font-size:14px; letter-spacing:0; padding-top:5px; padding-bottom:0; li=
+ne-height:1.3" href=3D"https://trk.klclick1.com/ls/click?upn=3D-2Bq7qiokDJ0=
+kM4ENpMA0hJi3LXCv66lf6ZP52KEK-2FhXGV-2Fejohjicn3LVVY1yyhFN3rCL-2Bt3BKAE2beV=
+pXENKAOF2JMGtOXWQTPNPNj8Q9QBxtFBqwTQ3WZJMgtrtnqePVnKVaJ8e2mHdp3I-2Fbqp4AwL-=
+2BMBIrEf4SLnzNe5XD7FJv-2FP3YogDx-2BsGobyF2HKvP-2BmLFRv3xM68oHTmWZ2SVZA-3D-3=
+DAbOA_ihalNH9AD8jKjDhJJh9HnJdsemcHmziHuLMVq6nXnLf4SgPEYN8OeORjeZhjnWfztFZn3=
+8euSx0RxxR1U-2FjhS32UFr2LJpIrb-2BnU2mClgiL-2F3TIhgXbP7COjzkUFvprVg-2FLVUKpb=
+8WHrLnomditzYx0fTxLgA64J8k8z8M97i9xVamlW9y6bAyZxnKEgnCbtNc4fOrdBx-2FidXn8zL=
+JtAy-2FbpsY5-2FI93tzHNJHsTfbRwGGqIVIlrAxY14RbylGDhujryvw0P0RxMe9rBHp3pKy7wX=
+tQwNpvTOTRTBNVvuiaxbKJTqcCxfyMebyDv4V-2FUXSogkFvzK3YfKyEfvrpUsCjLZAVKYz-2FC=
+1MrjnFf-2Fj16NPUDgaqbg6KUlv57lpAXIq">LVL40 Wired Stereo Gaming Headset: Neo=
+n Pop</a></td></tr></tbody></table></td></tr>
+<tr><td align=3D"center"><table align=3D"center"><tbody><tr><td align=3D"ce=
+nter" style=3D"color:#000;font-family:'Helvetica Neue',Arial;font-size:14px=
+;font-weight:400;font-style:normal;text-align:center;letter-spacing:0px;pad=
+ding-top:5px;padding-bottom:0px;line-height:1.3;">$24.99</td></tr></tbody><=
+/table></td></tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if !true]><!--></div><!--<![endif]-->
+<!--[if true]></td><![endif]-->
+</div>
+<!--[if true]></tr></table><![endif]-->
+<!--[if true]><table class=3D"kl-product" role=3D"presentation" width=3D"10=
+0%" style=3D"all:unset;opacity:0;"><tr><![endif]-->
+<!--[if false]></td></tr></table><![endif]-->
+<div class=3D"kl-product" style=3D"display:table;width:100%;">
+<!--[if true]><td width=3D"50%"><![endif]-->
+<!--[if !true]><!--><div class=3D"" style=3D"display:table-cell;vertical-al=
+ign:middle;font-size:0;width:50%;"><!--<![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" width=3D"100%">
+<tbody>
+<tr>
+<td style=3D"font-size:0px;padding:10px 10px 10px 10px;word-break:break-wor=
+d;" vertical-align=3D"top">
+<table align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" clas=
+s=3D"kl-product-subblock" style=3D"table-layout:fixed;" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"center">
+<a style=3D"color:#000; font-style:normal; font-weight:normal; text-decorat=
+ion:underline" href=3D"https://trk.klclick1.com/ls/click?upn=3D-2Bq7qiokDJ0=
+kM4ENpMA0hJi3LXCv66lf6ZP52KEK-2FhXGV-2Fejohjicn3LVVY1yyhFNrz8ZTjS4IHSM6Jzr9=
+Y9q1ovm07WxqaD71jI-2BftG4uSXztKTtkJ4nPnvzXcsPHsIBtbYaz-2BQUdFF9WHpKEdWOPcQD=
+bhZL5RC-2BwN0lrugIvt3iQRoCe5H0rocCZFH-2FGU5GZy0A8MJJr7OI7rHPPEvbrQ-3D-3Dxko=
+c_ihalNH9AD8jKjDhJJh9HnJdsemcHmziHuLMVq6nXnLf4SgPEYN8OeORjeZhjnWfztFZn38euS=
+x0RxxR1U-2FjhS32UFr2LJpIrb-2BnU2mClgiL-2F3TIhgXbP7COjzkUFvprVg-2FLVUKpb8WHr=
+LnomditzYx0fTxLgA64J8k8z8M97i9xVamlW9y6bAyZxnKEgnCbtNc4fOrdBx-2FidXn8zLJtAy=
+2XAbz-2B2U-2BsKR-2FTV-2Fv0aWu9qbJUAvB-2BmkinCSaBnIWtmxQrp-2FzChLZl5pn3oQiAk=
+hvWjpB4u4GUKDGlXu-2FKak97GpRQW9gH2RRRMe55nKaowNgx-2BoWXnCUpvtD0AH2wNtOJ-2Bc=
+5oqlRYQERiPu7F0aiTHnnTRtENXMHPcArbUlBDu">
+<img alt=3D"Image of Rock Candy Wired Controller: Timmy &amp; Tommy Breezy =
+Blue" src=3D"https://www.pdp.com/media/catalog/product/5/0/500-181-ttr_02.p=
+ng" style=3D"display:block;max-width:100%;width:auto;max-height:125px;" wid=
+th=3D"176">
+</a>
+</td>
+</tr>
+<tr><td align=3D"center"><table align=3D"center"><tbody><tr><td align=3D"ce=
+nter" style=3D"color:#201010;font-family:Lucida Sans Unicode,Lucida Sans,Ge=
+neva,Verdana,sans-serif;font-weight:normal;font-style:normal;text-decoratio=
+n:underline;text-align:center;font-size:14px;letter-spacing:0px;padding-top=
+:5px;padding-bottom:0px;line-height:1.3;"><a style=3D"color:#201010; font-s=
+tyle:normal; font-weight:normal; text-decoration:underline; font-family:Luc=
+ida Sans Unicode, Lucida Sans, Geneva, Verdana, sans-serif; text-align:cent=
+er; font-size:14px; letter-spacing:0; padding-top:5px; padding-bottom:0; li=
+ne-height:1.3" href=3D"https://trk.klclick1.com/ls/click?upn=3D-2Bq7qiokDJ0=
+kM4ENpMA0hJi3LXCv66lf6ZP52KEK-2FhXGV-2Fejohjicn3LVVY1yyhFNrz8ZTjS4IHSM6Jzr9=
+Y9q1ovm07WxqaD71jI-2BftG4uSXztKTtkJ4nPnvzXcsPHsIBtbYaz-2BQUdFF9WHpKEdWOPcQD=
+bhZL5RC-2BwN0lrugIvt3iQRoCe5H0rocCZFH-2FGU5GZy0A8MJJr7OI7rHPPEvbrQ-3D-3D-nk=
+e_ihalNH9AD8jKjDhJJh9HnJdsemcHmziHuLMVq6nXnLf4SgPEYN8OeORjeZhjnWfztFZn38euS=
+x0RxxR1U-2FjhS32UFr2LJpIrb-2BnU2mClgiL-2F3TIhgXbP7COjzkUFvprVg-2FLVUKpb8WHr=
+LnomditzYx0fTxLgA64J8k8z8M97i9xVamlW9y6bAyZxnKEgnCbtNc4fOrdBx-2FidXn8zLJtAy=
+2pEOnqAkfp2xW8-2B9qHSP8uMAXBWrjgNtf9i-2BM3-2BMVjZ3wELp5q6EcEJrncn4VEZcUHp2i=
+CornzjB3F-2BAcBjdVcYxfqhnT0LC-2BZid3Is-2FxME3Y90V6LEWruDPLE7-2F2A4-2FfyyaNa=
+w4xZL6LvAsB09IUUVNYd6cF6mRScwiUXH6NM0">Rock Candy Wired Controller: Timmy &=
+amp; Tommy Breezy Blue</a></td></tr></tbody></table></td></tr>
+<tr><td align=3D"center"><table align=3D"center"><tbody><tr><td align=3D"ce=
+nter" style=3D"color:#000;font-family:'Helvetica Neue',Arial;font-size:14px=
+;font-weight:400;font-style:normal;text-align:center;letter-spacing:0px;pad=
+ding-top:5px;padding-bottom:0px;line-height:1.3;">$19.99</td></tr></tbody><=
+/table></td></tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if !true]><!--></div><!--<![endif]-->
+<!--[if true]></td><![endif]-->
+<!--[if true]><td width=3D"50%"><![endif]-->
+<!--[if !true]><!--><div class=3D"" style=3D"display:table-cell;vertical-al=
+ign:middle;font-size:0;width:50%;"><!--<![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" width=3D"100%">
+<tbody>
+<tr>
+<td style=3D"font-size:0px;padding:10px 10px 10px 10px;word-break:break-wor=
+d;" vertical-align=3D"top">
+<table align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" clas=
+s=3D"kl-product-subblock" style=3D"table-layout:fixed;" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"center">
+<a style=3D"color:#000; font-style:normal; font-weight:normal; text-decorat=
+ion:underline" href=3D"https://trk.klclick1.com/ls/click?upn=3D-2Bq7qiokDJ0=
+kM4ENpMA0hJi3LXCv66lf6ZP52KEK-2FhXGV-2Fejohjicn3LVVY1yyhFNXW-2Bz5EbjwjHPLXQ=
+pd0jAzVAvgIb7nzAG-2ByMZaEi-2F-2BZ7FeR7gQ79Xam2IR33NYMDdx0DwplCw8F182QBYn07i=
+IQHQD-2FALHK6Fn7xiapjVMrjA-2F2lJbaz4W-2FTaArJK4UDEIF905UfwN-2Bc706VXoed8Wg-=
+3D-3DAwI-_ihalNH9AD8jKjDhJJh9HnJdsemcHmziHuLMVq6nXnLf4SgPEYN8OeORjeZhjnWfzt=
+FZn38euSx0RxxR1U-2FjhS32UFr2LJpIrb-2BnU2mClgiL-2F3TIhgXbP7COjzkUFvprVg-2FLV=
+UKpb8WHrLnomditzYx0fTxLgA64J8k8z8M97i9xVamlW9y6bAyZxnKEgnCbtNc4fOrdBx-2FidX=
+n8zLJtAy8jHkGR7gRGtxGDaOBuiGG5n9WjvszI7XHh3-2F2uZd6jsR9jQr9T4mFJqH-2FBRa23f=
+J8Nug5U5PKHDQW7gp1NNXBMclgrO5CJpzsKCW4HaM7bEKaBSFkmHDWF7W7A-2FtfwdZzNPn6BzW=
+HOdUIAqObXHnYnas-2B4qpvdVSBTrhc9-2BqDsD">
+<img alt=3D"Image of PDP Gaming Ultra Slim Charge System" src=3D"https://ww=
+w.pdp.com/media/catalog/product/0/5/051-100_ps4_ultra_slim_charging_system_=
+fv-charging_1.png" style=3D"display:block;max-width:100%;width:auto;max-hei=
+ght:125px;" width=3D"176">
+</a>
+</td>
+</tr>
+<tr><td align=3D"center"><table align=3D"center"><tbody><tr><td align=3D"ce=
+nter" style=3D"color:#201010;font-family:Lucida Sans Unicode,Lucida Sans,Ge=
+neva,Verdana,sans-serif;font-weight:normal;font-style:normal;text-decoratio=
+n:underline;text-align:center;font-size:14px;letter-spacing:0px;padding-top=
+:5px;padding-bottom:0px;line-height:1.3;"><a style=3D"color:#201010; font-s=
+tyle:normal; font-weight:normal; text-decoration:underline; font-family:Luc=
+ida Sans Unicode, Lucida Sans, Geneva, Verdana, sans-serif; text-align:cent=
+er; font-size:14px; letter-spacing:0; padding-top:5px; padding-bottom:0; li=
+ne-height:1.3" href=3D"https://trk.klclick1.com/ls/click?upn=3D-2Bq7qiokDJ0=
+kM4ENpMA0hJi3LXCv66lf6ZP52KEK-2FhXGV-2Fejohjicn3LVVY1yyhFNXW-2Bz5EbjwjHPLXQ=
+pd0jAzVAvgIb7nzAG-2ByMZaEi-2F-2BZ7FeR7gQ79Xam2IR33NYMDdx0DwplCw8F182QBYn07i=
+IQHQD-2FALHK6Fn7xiapjVMrjA-2F2lJbaz4W-2FTaArJK4UDEIF905UfwN-2Bc706VXoed8Wg-=
+3D-3DW0pS_ihalNH9AD8jKjDhJJh9HnJdsemcHmziHuLMVq6nXnLf4SgPEYN8OeORjeZhjnWfzt=
+FZn38euSx0RxxR1U-2FjhS32UFr2LJpIrb-2BnU2mClgiL-2F3TIhgXbP7COjzkUFvprVg-2FLV=
+UKpb8WHrLnomditzYx0fTxLgA64J8k8z8M97i9xVamlW9y6bAyZxnKEgnCbtNc4fOrdBx-2FidX=
+n8zLJtAy-2Fys29tvnQ2Gr2V9YttYAh5xIFiucf4XMss1aSqmNjybX-2Bdom3-2BNLFGfRY8f7M=
+8IRkrNuysUwsN-2F5gqCFxUlySoyfq7-2FhFhrkpHqAh9G6TLLqQ9obLf4zBkIdxxWM2BVbJODM=
+iUGBVzI9cOBEKVWxJZkqIKLFpQ2e6CCeRTWh0zZ">PDP Gaming Ultra Slim Charge Syste=
+m</a></td></tr></tbody></table></td></tr>
+<tr><td align=3D"center"><table align=3D"center"><tbody><tr><td align=3D"ce=
+nter" style=3D"color:#000;font-family:'Helvetica Neue',Arial;font-size:14px=
+;font-weight:400;font-style:normal;text-align:center;letter-spacing:0px;pad=
+ding-top:5px;padding-bottom:0px;line-height:1.3;">$24.99</td></tr></tbody><=
+/table></td></tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if !true]><!--></div><!--<![endif]-->
+<!--[if true]></td><![endif]-->
+</div>
+<!--[if true]></tr></table><![endif]-->
+<!--[if true]><table class=3D"kl-product" role=3D"presentation" width=3D"10=
+0%" style=3D"all:unset;opacity:0;"><tr><![endif]-->
+<!--[if false]></td></tr></table><![endif]-->
+<div class=3D"kl-product" style=3D"display:table;width:100%;">
+<!--[if true]><td width=3D"50%"><![endif]-->
+<!--[if !true]><!--><div class=3D"" style=3D"display:table-cell;vertical-al=
+ign:middle;font-size:0;width:50%;"><!--<![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" width=3D"100%">
+<tbody>
+<tr>
+<td style=3D"font-size:0px;padding:10px 10px 10px 10px;word-break:break-wor=
+d;" vertical-align=3D"top">
+<table align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" clas=
+s=3D"kl-product-subblock" style=3D"table-layout:fixed;" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"center">
+<a style=3D"color:#000; font-style:normal; font-weight:normal; text-decorat=
+ion:underline" href=3D"https://trk.klclick1.com/ls/click?upn=3D-2Bq7qiokDJ0=
+kM4ENpMA0hJi3LXCv66lf6ZP52KEK-2FhXGV-2Fejohjicn3LVVY1yyhFN1n12y5wPccjHAdxj8=
+9zRRwKWIzRbeyonRNX5b7csmm1beO9DBoa9ikOOdf8-2Bvth6tvgSz-2FLUREWiABuCbc2ZKqjW=
+w2tClhW3vVBm55W3l7GOp3kTkoztMP-2BHMwoh5dEoXCnTSVF9GhuebtLwY3a9ng-3D-3DIY1C_=
+ihalNH9AD8jKjDhJJh9HnJdsemcHmziHuLMVq6nXnLf4SgPEYN8OeORjeZhjnWfztFZn38euSx0=
+RxxR1U-2FjhS32UFr2LJpIrb-2BnU2mClgiL-2F3TIhgXbP7COjzkUFvprVg-2FLVUKpb8WHrLn=
+omditzYx0fTxLgA64J8k8z8M97i9xVamlW9y6bAyZxnKEgnCbtNc4fOrdBx-2FidXn8zLJtAy3g=
+Fu8Es0BQfbp9wSDC2zGDneWERgK-2BVCpnSaCJyKLHlbapRhmwHa1XXwncXv5LoAblkMeqUE6-2=
+BAehAvTc0ufpPNOTith6zLrjEzEi6Yspc3g744tyjcwWCYRVcS2CTEFkU9McCBZ2h0JpSpFP6u-=
+2BjMf6j9tQrYedtfCivV5YwKr27wTdyWftGlRo7o3I4NLDA-3D-3D">
+<img alt=3D"Image of PDP Gaming Media Remote" src=3D"https://www.pdp.com/me=
+dia/catalog/product/a/_/a_6.png" style=3D"display:block;max-width:100%;widt=
+h:auto;max-height:125px;" width=3D"176">
+</a>
+</td>
+</tr>
+<tr><td align=3D"center"><table align=3D"center"><tbody><tr><td align=3D"ce=
+nter" style=3D"color:#201010;font-family:Lucida Sans Unicode,Lucida Sans,Ge=
+neva,Verdana,sans-serif;font-weight:normal;font-style:normal;text-decoratio=
+n:underline;text-align:center;font-size:14px;letter-spacing:0px;padding-top=
+:5px;padding-bottom:0px;line-height:1.3;"><a style=3D"color:#201010; font-s=
+tyle:normal; font-weight:normal; text-decoration:underline; font-family:Luc=
+ida Sans Unicode, Lucida Sans, Geneva, Verdana, sans-serif; text-align:cent=
+er; font-size:14px; letter-spacing:0; padding-top:5px; padding-bottom:0; li=
+ne-height:1.3" href=3D"https://trk.klclick1.com/ls/click?upn=3D-2Bq7qiokDJ0=
+kM4ENpMA0hJi3LXCv66lf6ZP52KEK-2FhXGV-2Fejohjicn3LVVY1yyhFN1n12y5wPccjHAdxj8=
+9zRRwKWIzRbeyonRNX5b7csmm1beO9DBoa9ikOOdf8-2Bvth6tvgSz-2FLUREWiABuCbc2ZKqjW=
+w2tClhW3vVBm55W3l7GOp3kTkoztMP-2BHMwoh5dEoXCnTSVF9GhuebtLwY3a9ng-3D-3DZUfM_=
+ihalNH9AD8jKjDhJJh9HnJdsemcHmziHuLMVq6nXnLf4SgPEYN8OeORjeZhjnWfztFZn38euSx0=
+RxxR1U-2FjhS32UFr2LJpIrb-2BnU2mClgiL-2F3TIhgXbP7COjzkUFvprVg-2FLVUKpb8WHrLn=
+omditzYx0fTxLgA64J8k8z8M97i9xVamlW9y6bAyZxnKEgnCbtNc4fOrdBx-2FidXn8zLJtAy0N=
+aAuaH0fvYHBJBAYmxSh4jRMFn-2FDAW4DSB4YPOWfxYfCFm7tmm6C-2F2u7RyjtbqQEuAuACBPE=
+csWztGfvMzM0wjkB6fw0vuplkgcvkBH8Xg1yvCaOiJAcnaW7PDqjAnLLHt46a-2FVHxhYcf5VLu=
+Rq-2BrtBTNM8gfhMMhbALq6UsOcNeIHlyYlWdbP7fxesoIhbg-3D-3D">PDP Gaming Media R=
+emote</a></td></tr></tbody></table></td></tr>
+<tr><td align=3D"center"><table align=3D"center"><tbody><tr><td align=3D"ce=
+nter" style=3D"color:#000;font-family:'Helvetica Neue',Arial;font-size:14px=
+;font-weight:400;font-style:normal;text-align:center;letter-spacing:0px;pad=
+ding-top:5px;padding-bottom:0px;line-height:1.3;">$22.99</td></tr></tbody><=
+/table></td></tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if !true]><!--></div><!--<![endif]-->
+<!--[if true]></td><![endif]-->
+<!--[if true]><td width=3D"50%"><![endif]-->
+<!--[if !true]><!--><div class=3D"" style=3D"display:table-cell;vertical-al=
+ign:middle;font-size:0;width:50%;"><!--<![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" width=3D"100%">
+<tbody>
+<tr>
+<td style=3D"font-size:0px;padding:10px 10px 10px 10px;word-break:break-wor=
+d;" vertical-align=3D"top">
+<table align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" clas=
+s=3D"kl-product-subblock" style=3D"table-layout:fixed;" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"center">
+<a style=3D"color:#000; font-style:normal; font-weight:normal; text-decorat=
+ion:underline" href=3D"https://trk.klclick1.com/ls/click?upn=3D-2Bq7qiokDJ0=
+kM4ENpMA0hJi3LXCv66lf6ZP52KEK-2FhXGV-2Fejohjicn3LVVY1yyhFNdWdgy5-2FTqE8KUUO=
+tzl4ccgUfLGAqqkR-2F-2BS63qixwTsWYgRw8Hs3SpXI2PjOlNQJEIAexs11oc0Fx1-2BzqNGKP=
+6HUmVkULXFQt7IA-2By3P2hXYm-2F-2BsDvrh-2FcZ4g5ftuCc1jqYiWEGDI6a9bQnId1zd-2FE=
+w-3D-3DN_1A_ihalNH9AD8jKjDhJJh9HnJdsemcHmziHuLMVq6nXnLf4SgPEYN8OeORjeZhjnWf=
+ztFZn38euSx0RxxR1U-2FjhS32UFr2LJpIrb-2BnU2mClgiL-2F3TIhgXbP7COjzkUFvprVg-2F=
+LVUKpb8WHrLnomditzYx0fTxLgA64J8k8z8M97i9xVamlW9y6bAyZxnKEgnCbtNc4fOrdBx-2Fi=
+dXn8zLJtAy-2F6MDFQHBhw8QN0qKwVBvkBDk4Cw0gKp18OXKKHeuuAIcqlioibPRghRWGfI7Qk1=
+HYVigJ3gSUeq8fiHaLT-2BRFO9tdbN3kIdqngrLkQCTQIps1EkkLX-2FFLDr6-2FJz7qJiVi-2B=
+jT2JaKfWfkb6gGE7R32q4ttW969cBr7O3t5OzuQS-2FPkQ0c6hi7gc9nrWzWBEU4w-3D-3D">
+<img alt=3D"Image of PDP Gaming Rechargeable Battery Pack" src=3D"https://w=
+ww.pdp.com/media/catalog/product/5/_/5_6_2.png" style=3D"display:block;max-=
+width:100%;width:auto;max-height:125px;" width=3D"176">
+</a>
+</td>
+</tr>
+<tr><td align=3D"center"><table align=3D"center"><tbody><tr><td align=3D"ce=
+nter" style=3D"color:#201010;font-family:Lucida Sans Unicode,Lucida Sans,Ge=
+neva,Verdana,sans-serif;font-weight:normal;font-style:normal;text-decoratio=
+n:underline;text-align:center;font-size:14px;letter-spacing:0px;padding-top=
+:5px;padding-bottom:0px;line-height:1.3;"><a style=3D"color:#201010; font-s=
+tyle:normal; font-weight:normal; text-decoration:underline; font-family:Luc=
+ida Sans Unicode, Lucida Sans, Geneva, Verdana, sans-serif; text-align:cent=
+er; font-size:14px; letter-spacing:0; padding-top:5px; padding-bottom:0; li=
+ne-height:1.3" href=3D"https://trk.klclick1.com/ls/click?upn=3D-2Bq7qiokDJ0=
+kM4ENpMA0hJi3LXCv66lf6ZP52KEK-2FhXGV-2Fejohjicn3LVVY1yyhFNdWdgy5-2FTqE8KUUO=
+tzl4ccgUfLGAqqkR-2F-2BS63qixwTsWYgRw8Hs3SpXI2PjOlNQJEIAexs11oc0Fx1-2BzqNGKP=
+6HUmVkULXFQt7IA-2By3P2hXYm-2F-2BsDvrh-2FcZ4g5ftuCc1jqYiWEGDI6a9bQnId1zd-2FE=
+w-3D-3DmZhJ_ihalNH9AD8jKjDhJJh9HnJdsemcHmziHuLMVq6nXnLf4SgPEYN8OeORjeZhjnWf=
+ztFZn38euSx0RxxR1U-2FjhS32UFr2LJpIrb-2BnU2mClgiL-2F3TIhgXbP7COjzkUFvprVg-2F=
+LVUKpb8WHrLnomditzYx0fTxLgA64J8k8z8M97i9xVamlW9y6bAyZxnKEgnCbtNc4fOrdBx-2Fi=
+dXn8zLJtAy1xvL2MsxcRJysinb2ubZKFk8iTBqwgmJenuqPP3UfS02WViiqFxq3lGFrKfMEyvfZ=
+j9Krn-2FOjpM9WSzSuKXcJQtpbXir3JLMWCy8N0W-2BFWK8Ik7QupdRb3pWnalBcMKxK-2B3X-2=
+Bm4gGPxb-2FP20YNmLtA4Y-2FZiCasZ-2BSCC9H-2BvSfI7MSysM2YhUNAE8kCe1S4S6w-3D-3D=
+">PDP Gaming Rechargeable Battery Pack</a></td></tr></tbody></table></td></=
+tr>
+<tr><td align=3D"center"><table align=3D"center"><tbody><tr><td align=3D"ce=
+nter" style=3D"color:#000;font-family:'Helvetica Neue',Arial;font-size:14px=
+;font-weight:400;font-style:normal;text-align:center;letter-spacing:0px;pad=
+ding-top:5px;padding-bottom:0px;line-height:1.3;">$14.99</td></tr></tbody><=
+/table></td></tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if !true]><!--></div><!--<![endif]-->
+<!--[if true]></td><![endif]-->
+</div>
+<!--[if true]></tr></table><![endif]--></div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=3D"mj-column-per-100 mj-outlook-group-fix component-wrapper" sty=
+le=3D"font-size:0px;text-align:left;direction:ltr;vertical-align:top;width:=
+100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"table-layout:fixed;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"" style=3D"vertical-align:top;padding-top:0px;padding-right:0p=
+x;padding-bottom:0px;padding-left:0px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"center" class=3D"kl-image kl-image-690890" style=3D"font-size:=
+0px;word-break:break-word;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-col=
+lapse:collapse;border-spacing:0px;">
+<tbody>
+<tr>
+<td class=3D"kl-img-base-auto-width" style=3D"width:600px;border:0;padding:=
+0px 0px 0px 0px;" valign=3D"top">
+<img src=3D"https://d3k81ch9hvuctc.cloudfront.net/company/TusUSb/images/731=
+6af27-37e2-482e-8860-315fd9786950.png" style=3D"display:block;outline:none;=
+text-decoration:none;height:auto;width:100%;font-size:13px;" width=3D"600">
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!--[if true]></td><![endif]-->
+</div>
+<!--[if true]></tr></table><![endif]-->
+</div>
+<!--[if mso | IE]></table><![endif]-->
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table></table><![endif]-->
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]-->
+</td>
+</tr>
+</tbody>
+</table>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"kl-section" role=3D"presentation" style=3D"width:100%;">
+<tbody>
+<tr>
+<td>
+<!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" class=3D"kl-section-outlook" style=3D"width:600px;" width=
+=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-ru=
+le:exactly;"><![endif]-->
+<div style=3D"margin:0px auto;max-width:600px;">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"width:100%;">
+<tbody>
+<tr>
+<td style=3D"direction:ltr;font-size:0px;padding:0px;text-align:center;">
+<!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0"><table align=3D"center" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" class=3D"" style=3D"width:600px;" width=3D"600" bgcolor=
+=3D"#FFFFFF" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-heigh=
+t-rule:exactly;"><![endif]-->
+<div style=3D"background:#FFFFFF;background-color:#FFFFFF;margin:0px auto;b=
+order-radius:0px 0px 0px 0px;max-width:600px;">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background:#FFFFFF;background-color:#FFFFFF;wi=
+dth:100%;border-radius:0px 0px 0px 0px;">
+<tbody>
+<tr>
+<td style=3D"direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;=
+padding-left:0px;padding-right:0px;padding-top:0px;text-align:center;">
+<!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0"><![endif]-->
+<div class=3D"content-padding last">
+<!--[if true]><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"600" style=3D"width:600px;direction:ltr"><tr><![endif]-->
+<div class=3D"kl-row colstack" style=3D"display:table;table-layout:fixed;wi=
+dth:100%;">
+<!--[if true]><td style=3D"vertical-align:top;width:600px;"><![endif]-->
+<div class=3D"kl-column" style=3D"display:table-cell;vertical-align:top;wid=
+th:100%;">
+<div class=3D"mj-column-per-100 mj-outlook-group-fix component-wrapper" sty=
+le=3D"font-size:0px;text-align:left;direction:ltr;vertical-align:top;width:=
+100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"table-layout:fixed;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"" style=3D"vertical-align:top;padding-top:9px;padding-right:9p=
+x;padding-bottom:9px;padding-left:9px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"" width=3D"100%">
+<tbody>
+<tr>
+<td>
+<div style=3D"width:100%;text-align:center">
+<!--[if true]><table style=3D"all:unset;opacity:0;" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" ><tr><![endif]-->
+<!--[if !true]><!--><div class=3D"" style=3D"display:inline-block;padding-r=
+ight:10px;"><!--<![endif]-->
+<!--[if true]><td style=3D"padding-right:10px;"><![endif]-->
+<div style=3D"text-align: center;">
+<a href=3D"www.facebook.com/PDPGaming" style=3D"color:#000; font-style:norm=
+al; font-weight:normal; text-decoration:underline" target=3D"_blank">
+<img alt=3D"Facebook" src=3D"https://d3k81ch9hvuctc.cloudfront.net/assets/e=
+mail/buttons/subtle/facebook_96.png" style=3D"width:48px;" width=3D"48">
+</a>
+</div>
+<!--[if true]></td><![endif]-->
+<!--[if !true]><!--></div><!--<![endif]-->
+<!--[if !true]><!--><div class=3D"" style=3D"display:inline-block;padding-r=
+ight:10px;"><!--<![endif]-->
+<!--[if true]><td style=3D"padding-right:10px;"><![endif]-->
+<div style=3D"text-align: center;">
+<a href=3D"twitter.com/PDPgaming" style=3D"color:#000; font-style:normal; f=
+ont-weight:normal; text-decoration:underline" target=3D"_blank">
+<img alt=3D"Twitter" src=3D"https://d3k81ch9hvuctc.cloudfront.net/assets/em=
+ail/buttons/subtle/twitter_96.png" style=3D"width:48px;" width=3D"48">
+</a>
+</div>
+<!--[if true]></td><![endif]-->
+<!--[if !true]><!--></div><!--<![endif]-->
+<!--[if !true]><!--><div class=3D"" style=3D"display:inline-block;padding-r=
+ight:10px;"><!--<![endif]-->
+<!--[if true]><td style=3D"padding-right:10px;"><![endif]-->
+<div style=3D"text-align: center;">
+<a href=3D"www.instagram.com/pdpgaming" style=3D"color:#000; font-style:nor=
+mal; font-weight:normal; text-decoration:underline" target=3D"_blank">
+<img alt=3D"Instagram" src=3D"https://d3k81ch9hvuctc.cloudfront.net/assets/=
+email/buttons/subtle/instagram_96.png" style=3D"width:48px;" width=3D"48">
+</a>
+</div>
+<!--[if true]></td><![endif]-->
+<!--[if !true]><!--></div><!--<![endif]-->
+<!--[if !true]><!--><div class=3D"" style=3D"display:inline-block;"><!--<![=
+endif]-->
+<!--[if true]><td style=3D""><![endif]-->
+<div style=3D"text-align: center;">
+<a href=3D"www.youtube.com/c/PDPGamingLLC" style=3D"color:#000; font-style:=
+normal; font-weight:normal; text-decoration:underline" target=3D"_blank">
+<img alt=3D"YouTube" src=3D"https://d3k81ch9hvuctc.cloudfront.net/assets/em=
+ail/buttons/subtle/youtube_96.png" style=3D"width:48px;" width=3D"48">
+</a>
+</div>
+<!--[if true]></td><![endif]-->
+<!--[if !true]><!--></div><!--<![endif]-->
+<!--[if true]></tr></table><![endif]-->
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=3D"mj-column-per-100 mj-outlook-group-fix component-wrapper" sty=
+le=3D"font-size:0px;text-align:left;direction:ltr;vertical-align:top;width:=
+100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"table-layout:fixed;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"" style=3D"vertical-align:top;padding-top:0px;padding-right:18=
+px;padding-bottom:0px;padding-left:18px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"left" class=3D"kl-text" style=3D"font-size:0px;padding:0px;pad=
+ding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;word-bre=
+ak:break-word;">
+<div style=3D"font-family:'Helvetica Neue',Arial;font-size:14px;font-style:=
+normal;font-weight:400;letter-spacing:0px;line-height:1.3;text-align:left;c=
+olor:#222427;"><p style=3D"padding-bottom:0; text-align:center"><span style=
+=3D"font-size: 11px; color: #000000;"><span style=3D"font-family: 'Lucida S=
+ans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;"><a href=3D"https=
+://trk.klclick1.com/ls/click?upn=3D-2Bq7qiokDJ0kM4ENpMA0hJhV53ITEb5MNZRSTyB=
+dmbrGIQgEIf-2FQX6RIyzBREbwEPqYMxB-2Fu1lweV1vG9ypVlcKmgQ-2BASHTrqD62EjRFxSXX=
+8nNM4CR5hyjNu79-2B-2F9EWYWNFGMUHxONPPm4UAzoNY-2FuI3suqzgqlkY9KjzzqGDv18NijS=
+O9jmR0J9h2SJuDm1hdUQWSkSyWhQHolNXNMH4ekYrKST1M2I4RQfyKEUmBk-3Dey9p_ihalNH9A=
+D8jKjDhJJh9HnJdsemcHmziHuLMVq6nXnLf4SgPEYN8OeORjeZhjnWfztFZn38euSx0RxxR1U-2=
+FjhS32UFr2LJpIrb-2BnU2mClgiL-2F3TIhgXbP7COjzkUFvprVg-2FLVUKpb8WHrLnomditzYx=
+0fTxLgA64J8k8z8M97i9xVamlW9y6bAyZxnKEgnCbtNc4fOrdBx-2FidXn8zLJtAy1cjYwSgy1h=
+YVke-2FgphfqyWrhuf3NB9JZMReTzt-2BoZa-2F8KgsKnlpZur3W9aSiuWJl0cV5lISRjb-2BDy=
+T8GP30qUOdc7qKa4nruGnFvrqOjok4M9GnJQi6wWGjetvZt8swpvU-2F6Lw-2BEa9Aiffqgdkre=
+bgGweM3gO5hhZ7Uj-2Fih0Qdq-2BmKiucvNxhNGiytfvkxKig-3D-3D" style=3D"color:#00=
+0; font-style:normal; font-weight:normal; text-decoration:underline; font-s=
+ize:11px; font-family:&quot;Lucida Sans Unicode&quot;, &quot;Lucida Sans&qu=
+ot;, Geneva, Verdana, sans-serif">Web Version</a><br>No longer want to rece=
+ive emails?<br><a href=3D"https://trk.klclick1.com/ls/click?upn=3D-2Bq7qiok=
+DJ0kM4ENpMA0hJhV53ITEb5MNZRSTyBdmbrGIQgEIf-2FQX6RIyzBREbwEPKVFThLBerVH9G0iW=
+C2MZZFS0pu-2B9ZTIEjo1ZgEnrieCtuvaGyo7plIZZzDaUIp8HQC9IhGVEdMh4fZl5QhOfK2ISW=
+lWwzW9twXmLpN3gOG5tkUcG606T8mu0a-2BSRw077TFmCOHVKsdMRwAvTXc8k6kK5asx7TbStmo=
+f-2Fl-2B8tINI-3DfAli_ihalNH9AD8jKjDhJJh9HnJdsemcHmziHuLMVq6nXnLf4SgPEYN8OeO=
+RjeZhjnWfztFZn38euSx0RxxR1U-2FjhS32UFr2LJpIrb-2BnU2mClgiL-2F3TIhgXbP7COjzkU=
+FvprVg-2FLVUKpb8WHrLnomditzYx0fTxLgA64J8k8z8M97i9xVamlW9y6bAyZxnKEgnCbtNc4f=
+OrdBx-2FidXn8zLJtAy1nt3Hv-2BcdDRvRzJOxqFaoRiTpDuWmMSPKI9FT5UrBsmI23LanLsDRo=
+Sm3b0nEYbn6PBkuuR-2F1Dk4IdqJ-2FF13tUCgUSQdDQ4vmbEgDMLD61iJHjP6171y2mDT2GB8H=
+Pb8uT6GS4VGkhiYDzSbKa1s2T2rkLTFeFqTfHJBc5KW8yJdrN7EuZRZ-2BCB55s2xu6rKQ-3D-3=
+D" style=3D"color:#000; font-style:normal; font-weight:normal; text-decorat=
+ion:underline; font-size:11px; font-family:&quot;Lucida Sans Unicode&quot;,=
+ &quot;Lucida Sans&quot;, Geneva, Verdana, sans-serif">Unsubscribe</a><br><=
+br>Performance Designed Products | 9179 Aero Drive San Diego, California 92=
+123</span> </span></p></div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!--[if true]></td><![endif]-->
+</div>
+<!--[if true]></tr></table><![endif]-->
+</div>
+<!--[if mso | IE]></table><![endif]-->
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table></table><![endif]-->
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]-->
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<img src=3D"https://trk.klclick1.com/wf/open?upn=3D0-2FSlkfjewhujMcah5D-2Fr=
+TK7EeURWe0cipTZtuhw6-2BXZ2PvNSLoCCZYvGrLSzp6q8NO4StUwVuoSr3UpQhjbIu3QTd2xQa=
+uv4KCI2oFvynWe1qYalYtjUX7WLQbx2qjDu1gppaQ6fiO8-2BxiyS8p2D7l-2B2eC417hmGOfuq=
+YN5kX4PJA1QBj-2BEMs1t9Fl9huh4IrldJtFHUPlJ4NUs3L9ovPoMcAxi0GyscGtxMJa0uRd6wS=
+QLTMfvl4qgNJBMWqnPMrRIYEre5XURBtR6jrpXZ73h2y7mGI7pAzh9Xr1OEXgD8Gl1hyEy9d0dh=
+x1keLAZW-2BmDrhhCyUvR2jrb-2FMpYd3GKcdYzSPe8p7PAo5lth6r1Fph25MrIKXFxti1Jkw3m=
+9zj20Ko61Ae0tqn8qwHwybA-3D-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"=
+0" style=3D"height:1px !important;width:1px !important;border-width:0 !impo=
+rtant;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !im=
+portant;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 =
+!important;padding-right:0 !important;padding-left:0 !important;"/></body><=
+/html>
+--21fa6ca87ebeb8c5d0be3cfafed2bc95a7f7395879b2c4d45538224ba64f--

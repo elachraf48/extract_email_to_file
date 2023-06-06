@@ -1,0 +1,744 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp967703ims;
+        Wed, 31 May 2023 10:52:06 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ66FlRcB7TBl06O5JyyNs7LinsbvCxm4BczbCJUOh+aM6AFBRr7IL+zWpcvc/k9hJ6xGiTj
+X-Received: by 2002:a05:6870:a483:b0:180:5c1f:5446 with SMTP id j3-20020a056870a48300b001805c1f5446mr3215096oal.50.1685555525861;
+        Wed, 31 May 2023 10:52:05 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685555525; cv=none;
+        d=google.com; s=arc-20160816;
+        b=YVbANZjmVneFr1NmG9UVTWBiPS9KuZ7LQUWNbgpd7zMga5uPZYnIDEXQs1S92t53L7
+         1Fe7ir23QvM0i4fs1BJC3akWEY+23+/hyqj6xltzl3rN+eZODAGtSLTO9bk0TPE66E24
+         24jwDeS8Nlgjnhz1WuD2B8N8Kc0+lxJRxpHPodr3dBWiUtBTQhtSvq30YAfEPefMhkry
+         6hxlyViesxiQ8XxrUN5B/mJv/gASgnxDOBunLXOyVyP8ojV4RXshpOq1j1jLhf4LD2Uf
+         JtGEOj+S3MJKBV0biYet2NFNZXFgy5TxnR3d9JnvLa6b+FBSPAefNsMrFeH9y9iAqP9f
+         fDtA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:list-id:reply-to:mime-version
+         :list-unsubscribe-post:list-unsubscribe:date:subject:to:from
+         :dkim-signature;
+        bh=rwKqKXNag6qyYJjqmdDbIEhLusev2hITBbGAPylYDhs=;
+        b=tnCMYu3KrfPISHIJBqotaxsrwsHKj+ZHS1RjqA/hBlIjxUvbi0Zoajj9RPUjOccIlB
+         NSpbqjKkuqpAdKEKXiVIRBdQBsQpRojuZpl3VUS2iWxmVNBHFXVqUqhIpV9hAFik8tT3
+         CvhR9MUEdZpkgXfOl9Gk7J7ju+f9wLo7tdv0g4ec7dWNInnSHtdvST4hpjw18+b74uuV
+         I3slnJwN/lTabA6ylz7oHyKdA7wAXpni4Q3bihY7zmTuMlkpTvd0FPYSNIGIf4uZMLxw
+         p6zF45PGBZX33FYU6vBwaqvG9nC1Am6NXj4PoXlUKS3qqWXvlDdnSvHtDQQrYEY8tz+L
+         Q1xA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.politico.com header.s=200608 header.b=H6cg2tnL;
+       spf=pass (google.com: domain of bounce-964328_html-1405096349-9802725-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) smtp.mailfrom=bounce-964328_HTML-1405096349-9802725-1376319-0@bounce.politicoemail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.politico.com
+Return-Path: <bounce-964328_HTML-1405096349-9802725-1376319-0@bounce.politicoemail.com>
+Received: from mta.politicoemail.com (mta.politicoemail.com. [68.232.198.10])
+        by mx.google.com with ESMTPS id t1-20020a056870180100b001a0dc8f7cbdsi658651oaf.147.2023.05.31.10.52.05
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 31 May 2023 10:52:05 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-964328_html-1405096349-9802725-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) client-ip=68.232.198.10;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.politico.com header.s=200608 header.b=H6cg2tnL;
+       spf=pass (google.com: domain of bounce-964328_html-1405096349-9802725-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) smtp.mailfrom=bounce-964328_HTML-1405096349-9802725-1376319-0@bounce.politicoemail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.politico.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=200608; d=email.politico.com;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Reply-To:List-ID:X-CSA-Complaints:Message-ID:Content-Type;
+ i=politicoplaybook@email.politico.com;
+ bh=rwKqKXNag6qyYJjqmdDbIEhLusev2hITBbGAPylYDhs=;
+ b=H6cg2tnL86I/uWl9v81pzlmFubny0KKqP9KF8aL7BSifsn6rdhlfeV/OgdNPdJ5Z/iu5n6npkdgE
+   fwQyqdzbr9k/KybHtgMEU3OF63l9eABYdMfCLqXk+8/FmFLjzG4O4pv3uBTt/rRRoLchGealS86C
+   3NKkVZmNL7tv6nJdYR0=
+Received: by mta.politicoemail.com id heu4ka2fmd49 for <ouchendans62@gmail.com>; Wed, 31 May 2023 17:47:46 +0000 (envelope-from <bounce-964328_HTML-1405096349-9802725-1376319-0@bounce.politicoemail.com>)
+From: "POLITICO Playbook PM" <politicoplaybook@email.politico.com>
+To: <ouchendans62@gmail.com>
+Subject: Final approach for the debt ceiling deal
+Date: Wed, 31 May 2023 11:47:46 -0600
+List-Unsubscribe: <https://click.politicoemail.com/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiIxMzc2MzE5IiwicyI6IjE0MDUwOTYzNDkiLCJsaWQiOiI5NjQzMjgiLCJqIjoiOTgwMjcyNSIsImpiIjoiMCIsImQiOiI0MDEyNyJ9.0t9wW_PHXybWRjWL-izS852htPaLBEnatbSSsmDaQeY>, <mailto:leave-fcab1d76716706751a4c342838-fdf61574756104747317747c-fe8e1d787566037f70-fe9115737262077c7c-ffcf14@leave.politicoemail.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+Reply-To: "POLITICO, LLC" <reply-fe8e1d787566037f70-964328_HTML-1405096349-1376319-0@politicoemail.com>
+List-ID: <1376319.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+X-SFMC-Stack: 4
+x-job: 1376319_9802725
+Message-ID: <78052e85-1b6d-465d-b7a2-3a06f3cb985b@las1s04mta953.xt.local>
+Feedback-ID: 1376319:9802725:68.232.198.10:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="ZokNfUet7mY1=_?:"
+
+This is a multi-part message in MIME format.
+
+--ZokNfUet7mY1=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Presented by Altria: POLITICO's must-read briefing on what's driving the afternoon in Washington. May 31, 2023 View in browser  
+By Bethany Irvine and Garrett Ross
+
+Presented by
+
+
+
+Despite some serious back and forth with the House Freedom Caucus and threats to his speakership, Speaker Kevin McCarthy said he's feeling "good” about today’s vote. | Francis Chung/POLITICO
+
+THE TRUTH IS OUT THERE — “NASA talks UFOs with public ahead of final report on unidentified flying objects,” by AP’s Marcia Dunn: “NASA held its first public meeting on UFOs Wednesday a year after launching a study into … mysterious sightings in the sky that NASA calls UAPs, or unidentified aerial phenomena.” Watch the livestream
+
+DEBT LIMIT VIBE CHECK — As lawmakers work against the June 5 deadline for a potential federal default, the House is hurtling toward a decisive evening vote on the deal negotiated by President JOE BIDEN and Speaker KEVIN McCARTHY that would raise the limit till 2025 in return for modest spending cuts and a smattering of policy adjustments.
+
+Despite back-and-forth from members of both parties and a series of snafus related to controversial work-requirement provisions, congressional leaders showed few signs they were concerned about its passage as they worked to shore up support for the deal.
+
+The leaders speak … In a closed-door meeting with White House officials this morning, House Minority Leader HAKEEM JEFFRIES confirmed that he and other Democratic leaders support the deal. Still, Minority Whip KATHERINE CLARK noted that when it comes to the “rule” — the procedural vote setting up final floor consideration of the bill — Republicans alone “should be responsible,” AP’s Seung Min Kim reports. (Note that “should” is not the same as “must.”)
+
+Rep. PATRICK McHENRY (R-N.C.) told reporters that it’s “the hope” that Republicans can carry the rule without Democratic help. Majority Whip TOM EMMER, meanwhile, told our Jordain Carney, “Republicans are the ones who are running this place, and Republicans will pass the bills, and that’s what we are doing.”
+
+As for the final vote, it’s clear Democratic votes will be needed, but just how many remains in question. Jeffries yesterday claimed Republicans had pledged to put up 150 votes, about two-thirds of their conference. Asked about that claim today, McCarthy laughed, telling NBC’s Garrett Haake, “I don’t count the votes. Talk to Emmer.”
+
+McCarthy did express confidence, however, that the crucial “majority of the majority” threshold would be met. And after some serious back-and-forth with members of the House Freedom Caucus over the future of his speakership, McCarthy told CNN’s Haley Talbot he is feeling “good” about today’s vote and that he’s “not at all” worried about losing his gavel.
+
+In the Senate … If the bill passes the House as expected today, Senate Majority Leader CHUCK SCHUMER warned his colleagues that they should move quickly to pass the deal: “Any needless delay, any last minute brinkmanship, will be an unacceptable risk towards a federal default,” he said in a morning floor speech, adding that there is no margin for error.
+
+Meanwhile, Senate Minority Leader MITCH McCONNELL told reporters that he’d be “proud to support [the deal] without delay,” once it reaches the floor.
+
+No. 2 leader JOHN THUNE (R-S.D.) held out hope for a quick departure, telling NBC’s Frank Thorp he thinks a deal “could happen fairly quickly” if members come to agreement over possible amendment votes — none of which would be expected to succeed. Leaders will “get a better sense of where members are today,” he added.
+
+More debt ceiling reads …
+
+“Will this be the last debt ceiling standoff? Biden teases the possibility,” by WaPo’s Jeff Stein “The Quirky Conservative Who Saved the Economy and McCarthy,” by N.Y. Mag’s Ben Jacobs “14th Amendment Questions Linger Despite Debt Limit Deal,” by NYT’s Alan Rappeport
+THEY’RE RUNNING — The Republican presidential field is set to balloon in the immediate future as two more entrants prepare to drop into the race to wrest control of the GOP mantle from DONALD TRUMP.
+
+Former VP MIKE PENCE is planning to roll out his presidential campaign “within the coming two weeks,” The Messenger’s Tom LoBianco reports. “The Georgia Republican Party may have tipped Pence’s hand Wednesday in an email explaining he could no longer deliver the keynote address at a June 9th event. Pence would make “an announcement regarding his future plans” at a televised town hall, the email said. The Georgia GOP did not specify which town hall, but Pence is scheduled to headline a CNN town hall in Des Moines, Iowa on June 7, his 64th birthday.” Former New Jersey Gov. CHRIS CHRISTIE plans to announce his candidacy for the 2024 Republican presidential nomination next Tuesday in New
+ Hampshire, Axios’ Mike Allen scoops: “Christie is expected to make the announcement at a town hall at Saint Anselm College at 6:30 p.m. ET on Tuesday. … Christie reportedly sees himself as the only serious Republican candidate willing to take on [DONALD] TRUMP and as someone who can appeal to enough independents to beat President Joe Biden in the general election.”
+PARTY IN THE USA — “Trump’s latest policy pitch: A massive birthday party for the nation,” by Meridith McGraw: “The biggest part of Trump’s yearlong party plans is a massive fair — like a modern world’s fair — showcasing each state. Trump suggests the event “could be” held at the Iowa state fairgrounds, a conspicuous suggestion that seems designed to appeal to voters in the first caucus state.”
+
+Good Wednesday afternoon. Thanks for reading Playbook. Drop me us line: birvine@politico.com and gross@politico.com
+
+     
+A message from Altria:
+
+The future of Tobacco Harm Reduction. More than 70% of U.S. adults 21+ surveyed support Tobacco Harm Reduction as the right path forward for tobacco regulation. And two out of three believe the FDA should focus its efforts on Tobacco Harm Reduction. See the poll results here.
+    
+HEADS UP — Yesterday, TARA READE, who during the 2020 campaign accused Biden of sexual assault, appeared in Moscow where she was requesting Russia citizenship from President VLADIMIR PUTIN. Biden at the time of Reade’s claim outright denied the allegations, and no evidence was ever found.
+
+Asked for comment on Reade’s request, White House spokesperson ANDREW BATES said: “I won’t attempt to speak for an aspiring Russian citizen, the convicted Russian spy who’s sponsoring her, or the foreign government with which she has chosen to align.”
+
+Flashback, May 5, 2020: “‘Manipulative, deceitful, user’: Tara Reade left a trail of aggrieved acquaintances,” by Natasha Korecki
+
+JUDICIARY SQUARE
+
+JUSTICE VS. JUSTICE — The DOJ announced this morning it has filed a civil action suit against JAY JUSTICE, son of West Virginia Gov. JIM JUSTICE, and the 13 coal mining companies he owns, seeking to collect around $7.6 million in unpaid fees and penalties. In a statement issued this morning, U.S. Attorney CHRISTOPHER KAVANAUGH noted that “over a five-year period defendants engaged in over 130 violations of federal law,” related to surface mining operations and “were ordered over 50 times to cease mining activities until their violations were abated.”
+
+The suit comes just as the West Virginia governor, who’s faced previous legal woes related to his family’s coal business, launches a Senate bid against Sen. JOE MANCHIN (D-W.Va.).
+
+In reaction, Republicans have been quick to use the case as an example of the Biden administration’s use of federal authority to attack the GOP. This morning, an NRSC spokesperson accused the Biden administration’s “rogue” Justice Department of “weaponizing the federal government to attack the family of a Republican Senate candidate,” and Sen. TED CRUZ (R-Texas) tweeted that the suit is “Utterly brazen.” More from Kyle Cheney 
+
+MORE POLITICS
+
+GARDEN STATE UPDATE — Democrats are putting their support behind progressive leader SUE ALTMAN in hopes of taking back New Jersey’s recently redrawn seventh congressional district, NYT’s Tracey Tully reports: “With a year and a half before the election, it is likely that additional Democratic challengers to Mr. Kean will emerge. But Ms. Altman’s early entry and name recognition gives her a clear edge in a race … It is by some measures a counterintuitive choice. The candidate will be running from the left in a district where registered Republicans now outnumber Democrats by 16,000 voters.”
+
+DEPT. OF WHERE ARE THEY NOW — “Here’s What Chesa Boudin, San Francisco’s Ex-District Attorney, Is Doing Next,” by The San Francisco Standard’s Heather Grossmann: “Nearly a year after San Francisco voters ousted then-District Attorney CHESA BOUDIN from office, the progressive former prosecutor is starting a new job as the founding executive director of U.C. Berkeley Law’s new Criminal Law & Justice Center.”
+
+CONGRESS
+
+TERRIS STRIKES AGAIN — “Tuberville’s top military adviser bows out,” by Lee Hudson, Lara Seligman and Alexander Ward: “Sen. TOMMY TUBERVILLE’S (R-Ala.) national security adviser told POLITICO that he has resigned over a Washington Post story suggesting he was instrumental in orchestrating the senator’s controversial blockade of hundreds of senior military nominations. A profile by the Washington Post on Friday depicted MORGAN MURPHY as taking credit for Tuberville’s hold, which has roiled the Department of Defense.”
+
+SPEAKING OF COACH TUBS — “Congress threatens to block Space Command headquarters funding as abortion politics affects location decision,” by NBC’s Courtney Kube: “Republican and Democratic members of Congress from Alabama submitted a draft House bill late last week that would block funding for the continued growth of U.S. Space Command's temporary headquarters in Colorado, according to documents reviewed by NBC News.
+
+“Two congressional officials said the bill would prohibit the command from spending money on constructing, leasing or modernizing facilities until the secretary of the Air Force formally selects and publicly announces the location of its permanent headquarters, which the Trump administration said would be in Huntsville, Alabama.”
+
+IT’S OFFICIAL — Rep. CHRIS STEWART (R-Utah) formally announced his resignation from Congress today in a statement. “My wife’s health concerns have made it necessary that I retire from Congress after an orderly transition can be ensured,” he wrote.
+
+  
+DON’T MISS POLITICO’S HEALTH CARE SUMMIT: The Covid-19 pandemic helped spur innovation in health care, from the wide adoption of telemedicine, health apps and online pharmacies to mRNA vaccines. But what will the next health care innovations look like? Join POLITICO on Wednesday June 7 for our Health Care Summit to explore how tech and innovation are transforming care and the challenges ahead for access and delivery in the United States. REGISTER NOW.
+    
+THE ECONOMY 
+
+NOT WORTH YELLEN ABOUT — “Why Yellen Doesn’t Lose Sleep Over U.S. Borrowing That Alarms Most Americans,” by Bloomberg’s Christopher Condon: “The former Fed chair, regarded by many as the country’s most experienced economic policymaker, shows little concern when reflecting on government spending. … Instead of looking at the pile of outstanding bonds as a share of the economy’s output, she prefers the ratio of interest payments — crucially, after adjustment for inflation — to GDP.”
+
+BEYOND THE BELTWAY 
+
+ABORTION FALLOUT — “Oklahoma high court strikes down 2 abortion bans; procedure remains illegal in most cases,” by AP’s Sean Murphy: “In a 6-3 ruling, the high court said the two bans are unconstitutional because they require a ‘medical emergency’ before a doctor can perform an abortion. The court said this language conflicts with a previous ruling it issued in March. That ruling found the Oklahoma Constitution provides an ‘inherent right of a pregnant woman to terminate a pregnancy when necessary to preserve her life.’”
+
+DISASTER ZONES — “Climate Shocks Are Making Parts of America Uninsurable. It Just Got Worse,” by NYT’s Christopher Flavelle, Jill Cowan and Ivan Penn
+
+AFTERNOON READ — “The Next Wave of Mass Environmental Litigation Bubbles Up From Coastal Florida,” by WSJ’s Kris Maher and Dan Frosch
+
+AMERICA AND THE WORLD 
+
+WHISKEY TANGO FOXTROT — “Suspected Chinese spies, disguised as tourists, tried to infiltrate Alaskan military bases,” by USA Today’s Tom Vanden Brook in Anchorage, Alaska
+
+DANCE OF THE SUPERPOWERS — “U.S. Manufacturers Seek China Alternatives as Tensions Rise,” by WSJ’s John Keilman
+
+DISAPPEARING ACT — “How a High-Value Russian Wanted by the U.S. Escaped From Italy,” by WSJ’s Eric Sylvers and Margherita Stancati: “ARTEM USS, son of a powerful Russian politician close to President VLADIMIR PUTIN, was able to escape back to Moscow after Italy granted him house arrest, despite U.S. warnings that he would flee … The affair has created friction between the U.S. and Italy … It has also robbed the U.S. of a potentially valuable asset in prisoner exchanges for Americans held in Russia”
+
+FOR YOUR RADAR — “Qatar prime minister, Taliban chief hold secret Afghan talks,” by Reuters’ Jonathan Landay
+
+     
+A message from Altria:
+
+
+
+Altria is leading the way in transitioning millions of adult smokers from cigarettes to a smoke-free future.
+    
+PLAYBOOKERS
+
+OUT AND ABOUT — SPOTTED at a DSCC Bourbon and Cigars event hosted by Emergent Strategies yesterday evening: Sens. Gary Peters (D-Mich.), Alex Padilla (D-Calif.), Maggie Hassan (D-N.H.), Joe Manchin (D-W.Va.), Jon Tester (D-Mont.), Mark Kelly (D-Ariz.), Peter Welch (D-Vt.) and Bob Menendez (D-N.J.), Scott Eckart, Hadley Sosnoff, Michael Claunch, Meghan O’Hara, Caitlyn Stephenson, David Montes, Wes Kungel, Dylan Laslovich, Jason Tuber, Priya Dayananda, Brett Hewitt, Kim Zimmerman, Eric Kamerath, Taymur Ahmed, Sean Doocey, Michael Bassett, Noel Perez, Omar Vargas, Nida Zaman, Ernie Jolly, Jonathan Jagoda and Katie Dapper.
+
+IN MEMORIAM — “Claudia Rosett, who reported from Tiananmen Square, dies at 67,” by WaPo’s Harrison Smith: “Across a four-decade career in journalism, Ms. Rosett reported on foreign affairs and human rights issues, wrote guest essays for publications including the New York Times, Forbes and the New York Sun, and was a frequent guest on radio and television networks such as Fox News, where she accused the Biden administration last month of failing to offer an adequate response to the Russia-China partnership and recent clashes in Sudan.”
+
+MEDIA MOVES — Scott Detrow has been named the weekend host of NPR’s “All Things Considered” and co-host of the daily news podcast “Consider This.” The announcement … Brooke Brower is now executive producer of ABC’s “This Week with George Stephanopoulos.” He previously was managing editor for CNN Politics. Kendall Heath has been promoted to executive producer of politics at ABC, after serving as interim executive producer of “This Week.” … Lisa Ling is joining CBS as a contributor. She previously was executive producer of CNN’s “This Is Life with Lisa Ling.”
+
+TRANSITIONS — Natalie Boyse is now global program manager at ORF America, the U.S. affiliate of India’s Observer Research Foundation, after wrapping up an M.A. at SAIS. She served at DOD and HHS in the Trump administration and is a Marco Rubio, Mitt Romney and Poolhouse alum. … Rebecca Brocato and Christian Marrone are now senior advisers at WestExec Advisors. Brocato previously was chief of staff of the Development Finance Corporation. Marrone previously was senior VP for government affairs for Lockheed Martin. … Rebecca Mears is now director of democracy at the Center for American Progress. She most recently was a political law associate at Elias Law Group. …
+
+… Andrew Reilly is now comms director at the National Beer Wholesalers Association. He previously was comms manager at the International Foodservice Distributors Association. … Kaitlynn Ward is now director of government affairs for America's Poison Centers. She previously was director of federal affairs for the National Council of State Boards of Nursing. … Claudia Hernandez is now the senior comms manager at the Immigration Hub. She previously was comms manager at the Center for Law And Social Policy.
+
+WEDDING — Rebecca Galfano, deputy comms director for Rep. Mark Green (R-Tenn.), and Tyler Peters, engineer for Volkswagen Group of America, got married in Savannah, Ga., on May 20. The couple have been together 7 years after meeting through friends. Pic
+
+Did someone forward this email to you? Sign up here.
+
+Send Playbookers tips to playbook@politico.com or text us at 202-556-3307. Playbook couldn’t happen without our editor Mike DeBonis, deputy editor Zack Stanton and producer Setota Hailemariam and Bethany Irvine.
+
+  
+GET READY FOR GLOBAL TECH DAY: Join POLITICO Live as we launch our first Global Tech Day alongside London Tech Week on Thursday, June 15. Register now for continuing updates and to be a part of this momentous and program-packed day! From the blockchain, to AI, and autonomous vehicles, technology is changing how power is exercised around the world, so who will write the rules? REGISTER HERE.
+      
+Follow us on Twitter
+
+Rachael Bade @rachaelmbade
+
+Eugene Daniels @EugeneDaniels2
+
+Ryan Lizza @RyanLizza
+
+Eli Okun @eliokun
+
+Garrett Ross @garrett_ross
+  
+Subscribe to the POLITICO Playbook family
+
+Playbook  |  Playbook PM  |  California Playbook  |  Florida Playbook  |  Illinois Playbook  |  Massachusetts Playbook  |  New Jersey Playbook  |  New York Playbook  |  Ottawa Playbook  |  Brussels Playbook  |  London Playbook
+
+View all our politics and policy newsletters
+
+Follow us
+  
+To change your alert settings, please log in at https://go.politicoemail.com/?qs=f19fa8cbe1c88bba25795c84a3d7233835361a4db87c9baa4d3e8cb5ef9f59d70baae96eb47727950cbfcc30367910490ad3f29d51c19812  https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a2adccb1683b1639df1b3abf8482b8cb97445bcc6eddf2603992b519bd73a3a7570f753c0084a9e9dd4b0ed8050c210921
+
+This email was sent to ouchendans62@gmail.com by: POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+
+ Please click here and follow the steps to unsubscribe.
+  
+
+--ZokNfUet7mY1=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<html><body><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml><![endif]-->
+</head><!-- Everything above this line is "new" to the template. We'll have to experiment a bit to see if it causes troubles. --><!-- preview text --><div style="display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">    Presented by Altria: POLITICO's must-read briefing on what's driving the afternoon in Washington.</div><table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" style="padding:5px 0 15px 0;margin:0;text-align:center" role="presentation">    <tbody>    <tr>        <td><!-- Note: This is left blank to aid in centering across email clients --></td>        
+<td align="center" width="540">            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:540px;table-layout:fixed;" role="presentation">                <tbody>                <!-- top date and utility link -->                <tr>    <td align="center">        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="padding-bottom:15px;" role="presentation">            <tbody>            <tr>                <td width="50%" style="text-align:left;font-size:11px;font-family:Helvetica,sans-serif;color:#B1B4BD;margin:0;">May 31, 2023</td>                
+<td width="50%" style="text-align:right;font-size:11px;font-family:Helvetica,sans-serif;color:#B1B4BD;margin:0;"><a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba318d4de09c7a2fa301cd0f15e6755984214c48f6a5933aa8561de6b3df37a975bec6f8a87508606069f1e98f6bd6fd1b" target="_blank" style="color:#007BC7;text-decoration:none;">View in browser</a
+></td>            </tr>            </tbody>        </table>    </td></tr>                <!-- divider line -->                <tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                <!-- logo and byline -->                <tr>    <td align="center" style="text-align:center;padding:0 20px 15px 20px;margin:0">                                    <img src="https://static.politico.com/f2/b8/4dbe80f64bb3bf4ee026a8635574/politico-playbook-pm.jpg" title="POLITICO-PLAYBOOK_PM.jpg" alt="Playbook PM" border="0" width="500" style="width:100%;max-width:500px;">                        </td></tr><tr>    
+<td align="center" style="padding:0 20px 10px 20px;">        <p style="text-align:center;font-family:Helvetica,sans-serif;font-size:11px;letter-spacing:2px;color:#B1B4BD;text-transform:uppercase;margin:0;">            By  <a
+ href="mailto:" target="_blank" style="color:#000000;text-decoration:none;font-weight:bold;">Bethany Irvine</a
+> and  <a
+ href="mailto:gross@politico.com" target="_blank" style="color:#000000;text-decoration:none;font-weight:bold;">Garrett Ross</a
+>        </p>    </td></tr>                <!-- sponsor logo -->                    <tr>        <td style="padding-bottom:15px; min-width:100%; width:100%;">            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#FFFFFF; min-width:100%;" role="presentation">                <tbody>                                        <tr>                        <td align="center" style="min-width:100%; width: 100%;">                            <table cellspacing="0" cellpadding="0" border="0">                                <tbody><tr>                                    <td width="50%" valign="middle" style="text-align:right;padding-right:6px;">
+<p style="font-family:Helvetica,sans-serif;font-size:12px;color:#6E7381;margin:0;">Presented by</p></td>                                    <td width="50%" valign="middle" style="text-align:left;">                                        <div style="width:100%;max-width:90px;">                                                                                            
+<img width="90" src="https://www.politico.com/dims4/default/9799104/2147483647/resize/180x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2F2d%2Ff6%2Ff79536764a91b455e9546019e867%2Faltria-politico-playbook-pm-logo-2.png" alt="Altria" border="0" style="width:90px;max-width:100%;">                                                                                    </div>                                    </td>                                </tr>                            </tbody></table>                        </td>                    </tr>                                    </tbody>            </table>        </td>    </tr>                
+<!-- body -->                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p align="center" style="margin:0 0 20px 0;">
+<img src="https://www.politico.com/dims4/default/04851a7/2147483647/resize/1000x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2Fb5%2F0a%2F8103759841058902c7845f8bd68e%2Fkevin-41696.jpg" title="20230531-KevinMccarthy-AP" alt="House Speaker Kevin McCarthy (R-Calif.) emerges from his office." width="500" style="width:100%;max-width:500px;"></p><p style="font-family:Helvetica,sans-serif;font-size:12px;color:#6E7381;margin-bottom:24px;">Despite some serious back and forth with the House Freedom Caucus and threats to his speakership, Speaker Kevin McCarthy said he's feeling "good&#8221; about today&#8217;s vote.  |  Francis Chung/POLITICO </p></td>                    
+</tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">THE TRUTH IS OUT THERE &#8212; </strong
+><a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbac3a30f0708f8db9c83b0499a07f4eb75d2f4debca4612476ae610b8d2e35b387b37e76864b2952ca736ff951ef617d08" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;NASA talks UFOs with public ahead of final report on unidentified flying objects,&#8221;</strong
+></a
+> by AP&#8217;s Marcia Dunn: &#8220;NASA held its first public meeting on UFOs Wednesday a year after launching a study into &#8230; mysterious sightings in the sky that NASA calls UAPs, or unidentified aerial phenomena.&#8221; <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbab0d98b98cdfdda2699567f56185420d6d17ee3046abd26472f71f9d7b07b79eb91b1056f594d80595e7a06c13ea8dcce" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>Watch the livestream</i
+></strong
+></a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DEBT LIMIT VIBE CHECK &#8212;</strong
+> As lawmakers work against the June 5 deadline for a potential federal default, the House is hurtling toward a decisive evening vote on the deal negotiated by President <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JOE BIDEN</strong
+> and Speaker <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">KEVIN McCARTHY</strong
+> that would raise the limit till 2025 in return for modest spending cuts and a smattering of policy adjustments.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Despite back-and-forth from members</strong
+> of both parties and a series of snafus related to controversial work-requirement provisions, congressional leaders showed few signs they were concerned about its passage as they worked to shore up support for the deal.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>The leaders speak </i
+>&#8230; </strong
+>In a closed-door meeting with White House officials this morning, House Minority Leader <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">HAKEEM JEFFRIES</strong
+> confirmed that he and other Democratic leaders support the deal. Still, Minority Whip <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">KATHERINE CLARK</strong
+> noted that when it comes to the &#8220;rule&#8221; &#8212; the procedural vote setting up final floor consideration of the bill &#8212; Republicans alone &#8220;should be responsible,&#8221; <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba885701d723879620fbf8950abf87b13ac939831abb22497a345026094b4625b3bb4e732f3379ac47d1ed69ca72e525ad" target="_blank">AP&#8217;s Seung Min Kim reports</a
+>. (Note that &#8220;should&#8221; is not the same as &#8220;must.&#8221;)</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Rep. PATRICK McHENRY (R-N.C.) </strong
+><a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbaba5362cb78fd74e6739d5a60db3a03624f875d8e2b9893077667ba5c7709995f7f7ced48f3fbc7e0a513ce3cb0085c92" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">told reporters</strong
+></a
+> that it&#8217;s &#8220;the hope&#8221; that Republicans can carry the rule without Democratic help. Majority Whip <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">TOM EMMER</strong
+>, meanwhile, <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba91dd068ffe5c2c57ba59e425d421f12e1a58f643d7b1ea0c86f6b290829c6312021aaac68b7eb50cfbe06c85606c7acb" target="_blank">told our Jordain Carney</a
+>, &#8220;Republicans are the ones who are running this place, and Republicans will pass the bills, and that&#8217;s what we are doing.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">As for the final vote,</strong
+> it&#8217;s clear Democratic votes will be needed, but just how many remains in question. Jeffries yesterday claimed Republicans had pledged to put up 150 votes, about two-thirds of their conference. Asked about that claim today, McCarthy laughed, <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbaf84f7fc7601841b29799149872eed6b7319f9d9af17972944f6576e640d010625db63ffa2e8f3f00cacea2908c710756" target="_blank">telling NBC&#8217;s Garrett Haake</a
+>, &#8220;I don&#8217;t count the votes. Talk to Emmer.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">McCarthy did express confidence, however,</strong
+> that the crucial &#8220;majority of the majority&#8221; threshold would be met. And after some <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbaa28b673476104c38925783dd0494861f6bc1db0c597a026162888926010f77bba07a1ecc39fe0679f8b11f09ef907569" target="_blank">serious back-and-forth</a
+> with members of the House Freedom Caucus over the future of his speakership, McCarthy told <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba641273be950f88604d35fdc5107746c11f25fa5cd9137b255cd334aed55498b80b60f0df8b42a11e0dc97c5ee92e19c6" target="_blank">CNN&#8217;s Haley Talbot</a
+> he is feeling &#8220;good&#8221; about today&#8217;s vote and that he&#8217;s &#8220;not at all&#8221; worried about losing his gavel.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>In the Senate &#8230; </i
+></strong
+>If the bill passes the House as expected today, Senate Majority Leader <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">CHUCK SCHUMER </strong
+>warned his colleagues that they should move quickly to pass the deal: &#8220;Any needless delay, any last minute brinkmanship, will be an unacceptable risk towards a federal default,&#8221; he said in a morning floor speech, adding that there is no margin for error.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Meanwhile, Senate Minority Leader MITCH McCONNELL </strong
+>told reporters that he&#8217;d be &#8220;proud to support [the deal] without delay,&#8221; once it reaches the floor.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">No. 2 leader JOHN THUNE (R-S.D.) held out hope</strong
+> for a quick departure, <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbaf7fbbc28f2c8b8df469a0e2d60e93bed7da067ec5509d44b4fdaea2a020668021679329114bd2cb858e51cb531c94501" target="_blank">telling NBC&#8217;s Frank Thorp</a
+> he thinks a deal &#8220;could happen fairly quickly&#8221; if members come to agreement over possible amendment votes &#8212; none of which would be expected to succeed. Leaders will &#8220;get a better sense of where members are today,&#8221; he added.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>More debt ceiling reads &#8230;</i
+></strong
+><br></p><ul> <li style="margin-bottom:12px;"><a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba1f73dcc2bfd6a5d4485f310cdccd8b9d8b059e25237e06be958f09ce8fdf3a5e86c273e2c842127ce3cf9ff0eddf0928"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;Will this be the last debt ceiling standoff? Biden teases the possibility,&#8221;</strong
+></a
+> by WaPo&#8217;s Jeff Stein</li> <li style="margin-bottom:12px;"><a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbac9c756d806fb9d9eaad9d74c92f56ca0167610dc4cb2c0c2c861d8ac1646cfdec7599f3456c31208905ba85d19a12e66"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;The Quirky Conservative Who Saved the Economy and McCarthy,&#8221;</strong
+></a
+> by N.Y. Mag&#8217;s Ben Jacobs</li> <li style="margin-bottom:24px;"><a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbaef9fc41354e0da7f51e6f418123c7531b057d184b9e882811cd5e2258afab7a1d514a3c043dfdd9f35e92497392f37c9"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;14th Amendment Questions Linger Despite Debt Limit Deal,&#8221;</strong
+></a
+> by NYT&#8217;s Alan Rappeport</li></ul><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">THEY&#8217;RE RUNNING &#8212; </strong
+>The Republican presidential field is set to balloon in the immediate future as two more entrants prepare to drop into the race to wrest control of the GOP mantle from <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DONALD TRUMP</strong
+>.<br></p><ul> <li style="margin-bottom:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Former VP MIKE PENCE is planning to roll out</strong
+> his presidential campaign &#8220;within the coming two weeks,&#8221; <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbacba1b7d7f47dff1f9bf63a795c1f2ea44df4faddde6c669ad4224adb7cfd538b6618c279ab848aa4b0ccab3fb13a1a96">The Messenger&#8217;s Tom LoBianco reports</a
+>. &#8220;The Georgia Republican Party may have tipped Pence&#8217;s hand Wednesday in an email explaining he could no longer deliver the keynote address at a June 9th event. Pence would make &#8220;an announcement regarding his future plans&#8221; at a televised town hall, the email said. The Georgia GOP did not specify which town hall, but Pence is scheduled to headline a CNN town hall in Des Moines, Iowa on June 7, his 64th birthday.&#8221;</li></ul><ul> <li style="margin-bottom:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Former New Jersey Gov. CHRIS CHRISTIE</strong
+> plans to announce his candidacy for the 2024 Republican presidential nomination next Tuesday in New Hampshire, <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbaab5f54cde98a931a2620dd8eee43ab20070dd70c0b14948ad46c04e4d632e42cb1bbe2a7df5438d63458ec33767bc2ce">Axios&#8217; Mike Allen scoops</a
+>: &#8220;Christie is expected to make the announcement at a town hall at Saint Anselm College at 6:30 p.m. ET on Tuesday. &#8230; Christie reportedly sees himself as the only serious Republican candidate willing to take on<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> [DONALD] TRUMP</strong
+> and as someone who can appeal to enough independents to beat President Joe Biden in the general election.&#8221;</li></ul><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">PARTY IN THE USA &#8212; </strong
+><a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba0219b32c040bddbb8eeff85269bd19e56a710cd9dd4f5716e81fcaa145adfefdb76e78337698a6b29b61cae6365c31fd" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;Trump&#8217;s latest policy pitch: A massive birthday party for the nation,&#8221;</strong
+></a
+> by Meridith McGraw: &#8220;The biggest part of Trump&#8217;s yearlong party plans is a massive fair &#8212; like a modern world&#8217;s fair &#8212; showcasing each state. Trump suggests the event &#8220;could be&#8221; held at the Iowa state fairgrounds, a conspicuous suggestion that seems designed to appeal to voters in the first caucus state.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Good Wednesday afternoon.</strong
+> Thanks for reading Playbook. Drop me us line: <a
+ href="mailto:birvine@politico.com" target="_blank">birvine@politico.com</a
+> and <a
+ href="mailto:gross@politico.com" target="_blank">gross@politico.com</a
+><br></p></td>                    </tr>                                    <tr>                            </tr><tr>    <td height="15" style="height:15px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>    <tr>    <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#ffffff;">                                            <p style="font-family:Helvetica,sans-serif;font-size:12px;margin-top:0;margin-bottom:10px;color:#000000;">A message from Altria:</p>                                                <p style="margin-top:0;margin-bottom:20px;line-height:24px;color:#000000;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">The future of Tobacco Harm Reduction.</strong
+> More than 70% of U.S. adults 21+ surveyed support Tobacco Harm Reduction as the right path forward for tobacco regulation. And two out of three believe the FDA should focus its efforts on Tobacco Harm Reduction. See the poll results <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbaf3b6bf5ba8d5fa5711f000f9065d772fd65309efea56930231d78fa62448083836efd0750ccc6a4c587150e55ad555e2" target="_blank" style="text-decoration:underline;color:#007bc7;">here.</a
+></p>                                            </td></tr>    <tr>        <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">HEADS UP &#8212;</strong
+> Yesterday, <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">TARA READE</strong
+>, who during the 2020 campaign accused Biden of sexual assault, <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba33551a95347127b7243c28a387632558de744ddfa854ecac40bd7385e3b7fa00b5d9ac1833758a724e7866d12b86cad0" target="_blank">appeared in Moscow where she was requesting</a
+> Russia citizenship from President <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">VLADIMIR PUTIN</strong
+>. Biden at the time of Reade&#8217;s claim outright denied the allegations, and no evidence was ever found.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Asked for comment on Reade&#8217;s request,</strong
+> White House spokesperson <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">ANDREW BATES</strong
+> said: &#8220;I won&#8217;t attempt to speak for an aspiring Russian citizen, the convicted Russian spy who&#8217;s sponsoring her, or the foreign government with which she has chosen to align.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>Flashback, May 5, 2020:</i
+> </strong
+><a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbab1cfef1270652b0380468176d55e0a4bde6af4871789c259bc5f69bc6833663528194aa505b41e110b92c19d3dff46cd" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;&#8216;Manipulative, deceitful, user&#8217;: Tara Reade left a trail of aggrieved acquaintances,&#8221;</strong
+></a
+> by Natasha Korecki</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JUDICIARY SQUARE</strong
+></span></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JUSTICE VS. JUSTICE &#8212;</strong
+> The DOJ announced this morning it has filed a <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba664fe1ed8fac5ca6ff29f318ad82267beec21d4074efac7df92159c44dc4cbac216e4abb4578c34fde09445cbdeb8e1c" target="_blank">civil action suit</a
+> against <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JAY JUSTICE</strong
+>, son of West Virginia Gov. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JIM JUSTICE</strong
+>, and the 13 coal mining companies he owns, seeking to collect around $7.6 million in unpaid fees and penalties. In a <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba6bceb2f1d9058e2466116261394501cf53f1fdbe26c7f2906c8d26c3123b6c2a67702b1b869cb711efa5f4e9aa9b2fa7" target="_blank">statement issued this morning</a
+>, U.S. Attorney <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">CHRISTOPHER KAVANAUGH</strong
+> noted that &#8220;over a five-year period defendants engaged in over 130 violations of federal law,&#8221; related to surface mining operations and &#8220;were ordered over 50 times to cease mining activities until their violations were abated.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">The suit comes just as the West Virginia governor</strong
+>, who&#8217;s <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba8b851438ee5bc702abd7a86510d3c188f253372ee1581cf8b99af494cd389e7f22f1708055dc982307511f0b971b3058" target="_blank">faced previous legal woes</a
+> related to his family&#8217;s coal business, launches a Senate bid against Sen. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JOE MANCHIN</strong
+> (D-W.Va.).</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">In reaction, Republicans have been quick</strong
+> to use the case as an example of the Biden administration&#8217;s use of federal authority to attack the GOP. This morning, an NRSC <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba53144af70687d9daf4ac291259de9a16bdc94bdce111cef5ee4e281fb0a5c942db7b8aa4954c3e509dec5a323f94e039" target="_blank">spokesperson accused</a
+> the Biden administration&#8217;s &#8220;rogue&#8221; Justice Department of &#8220;weaponizing the federal government to attack the family of a Republican Senate candidate,&#8221; and Sen.<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> TED CRUZ</strong
+> (R-Texas) <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbac956797bf0ca30276d65c94951a5710b15a61421cd2404f26b36998dd520a300b160356194329fb6de2c650193fb64f6" target="_blank">tweeted that the suit</a
+> is &#8220;Utterly brazen.&#8221; <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba70c58f2cef8955f24553f860f5ec049bbabf663862e7bb9db95718dd8414094378f32615449fa55a9c65ab779ca2adc6" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>More from Kyle Cheney&nbsp;</i
+></strong
+></a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MORE POLITICS</strong
+></span></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">GARDEN STATE UPDATE &#8212; </strong
+>Democrats are putting their support behind progressive leader <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">SUE ALTMAN </strong
+>in hopes of taking back New Jersey&#8217;s recently redrawn seventh congressional district, <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba676c6fee4ac524135ee4577998ae5b4cfb2dfa4874ff010bd77ec9daa052c728ef15535cb399ca198d3d76222c39a7dc" target="_blank">NYT&#8217;s Tracey Tully reports</a
+>: &#8220;With a year and a half before the election, it is likely that additional Democratic challengers to Mr. Kean will emerge. But Ms. Altman&#8217;s early entry and name recognition gives her a clear edge in a race &#8230; It is by some measures a counterintuitive choice. The candidate will be running from the left in a district where registered Republicans now outnumber Democrats by 16,000 voters.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DEPT. OF WHERE ARE THEY NOW &#8212; </strong
+><a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba730b76108006741ef865d03046eb3692f79d6ae701ed59ec84de32668843ce43156ac57b9c164d9df6658ad470ac9f18" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;Here&#8217;s What Chesa Boudin, San Francisco&#8217;s Ex-District Attorney, Is Doing Next,&#8221;</strong
+></a
+> by The San Francisco Standard&#8217;s Heather Grossmann: &#8220;Nearly a year after San Francisco voters ousted then-District Attorney <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">CHESA BOUDIN</strong
+> from office, the progressive former prosecutor is starting a new job as the founding executive director of U.C. Berkeley Law&#8217;s new Criminal Law &amp; Justice Center.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">CONGRESS</strong
+></span></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">TERRIS STRIKES AGAIN &#8212; </strong
+><a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba0dbd0b68f3c9f775efff9aa46d6248b7fd7a4d199f452e81edda1582526f722f20b3967ae220218842a3e01d67db0ca4" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;Tuberville&#8217;s top military adviser bows out,&#8221;</strong
+></a
+> by Lee Hudson, Lara Seligman and Alexander Ward: &#8220;Sen. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">TOMMY TUBERVILLE&#8217;S</strong
+> (R-Ala.) national security adviser told POLITICO that he has resigned over a <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbab4dc95b31ee2429a5c9fa4bf85aed9f348d1692f8ab4063f7296031199958043167d151067b81ffd78bd242138406006" target="_blank">Washington Post story</a
+> suggesting he was instrumental in orchestrating the senator&#8217;s controversial blockade of hundreds of senior military nominations. A profile by the Washington Post on Friday depicted <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MORGAN MURPHY</strong
+> as taking credit for Tuberville&#8217;s hold, which has roiled the Department of Defense.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">SPEAKING OF COACH TUBS &#8212; </strong
+><a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba7b1deea59239c0080ba5c77358fa92b63e0bd859840430d1917225ca0f6bbf1981be9245ca374d090471ec0908c37e6b" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;Congress threatens to block Space Command headquarters funding as abortion politics affects location decision,&#8221;</strong
+></a
+> by NBC&#8217;s Courtney Kube: &#8220;Republican and Democratic members of Congress from Alabama submitted a draft House bill late last week that would block funding for the continued growth of U.S. Space Command's temporary headquarters in Colorado, according to documents reviewed by NBC News.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;Two congressional officials said the bill would prohibit</strong
+> the command from spending money on constructing, leasing or modernizing facilities until the secretary of the Air Force formally selects and publicly announces the location of its permanent headquarters, which the Trump administration said would be in Huntsville, Alabama.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">IT&#8217;S OFFICIAL &#8212; </strong
+>Rep. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">CHRIS STEWART</strong
+> (R-Utah) <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba2fe906a2a5e7504f9da194190de0f40a4266d6770d0a8b3b961ab9a97176a567ec8e6385e8104b70fbd5bff57b545feb" target="_blank">formally announced</a
+> his resignation from Congress today in a statement. &#8220;My wife&#8217;s health concerns have made it necessary that I retire from Congress after an orderly transition can be ensured,&#8221; he wrote.<br></p></td>                    </tr>                                    <tr>                        </tr><tr>    <td height="10" style="height:10px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                    
+<p style="margin-top:0;margin-bottom:20px;line-height:24px;margin-bottom:20px;color:#000000;">                <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DON&#8217;T MISS POLITICO&#8217;S HEALTH CARE SUMMIT</strong
+>: The Covid-19 pandemic helped spur innovation in health care, from the wide adoption of telemedicine, health apps and online pharmacies to mRNA vaccines. But what will the next health care innovations look like? Join POLITICO on Wednesday June 7 for our Health Care Summit to explore how tech and innovation are transforming care and the challenges ahead for access and delivery in the United States. <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbada3e5d3dc9b8037dc89ee0a8d4506b503c03bd101ef036f5964955fc16e6d55cca782609cd87f722f4730b7746f1b3f5" style="text-decoration:underline;color:#007BC7;">REGISTER NOW</a
+>.            </p>            </td></tr><tr>    <td height="10" style="height:10px; font-size:0; border-bottom:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td height="15" style="height:15px; font-size:0;">&nbsp;</td></tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">THE ECONOMY&nbsp;</strong
+></span></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">NOT WORTH YELLEN ABOUT &#8212; </strong
+><a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbaee0bc3063cbb3ee7f8ad22211c6305a016c8560a315b8d1eb693901c0c8a4e43e332ea06c5de42ee5239b1910e761b09" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;Why Yellen Doesn&#8217;t Lose Sleep Over U.S. Borrowing That Alarms Most Americans,&#8221;</strong
+></a
+> by Bloomberg&#8217;s Christopher Condon: &#8220;The former Fed chair, regarded by many as the country&#8217;s most experienced economic policymaker, shows little concern when reflecting on government spending. &#8230; Instead of looking at the pile of outstanding bonds as a share of the economy&#8217;s output, she prefers the ratio of interest payments &#8212; crucially, after adjustment for inflation &#8212; to GDP.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">BEYOND THE BELTWAY&nbsp;</strong
+></span></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">ABORTION FALLOUT &#8212; </strong
+><a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba148609e41f330f45856829bc6eb6d41142f2c05514fb56f9a01668c44ca08f064c4fa19932446d3d7357541d5d1edfcd" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;Oklahoma high court strikes down 2 abortion bans; procedure remains illegal in most cases,&#8221;</strong
+></a
+> by AP&#8217;s Sean Murphy: &#8220;In a 6-3 ruling, the high court said the two bans are unconstitutional because they require a &#8216;medical emergency&#8217; before a doctor can perform an abortion. The court said this language conflicts with a previous ruling it issued in March. That ruling found the Oklahoma Constitution provides an &#8216;inherent right of a pregnant woman to terminate a pregnancy when necessary to preserve her life.&#8217;&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DISASTER ZONES &#8212; </strong
+><a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbaf115fa44d7f71f837167695dd00bb0243528218720b68d3796b666ce2084baeae0f15c1baf8db646f433e292b97f4af7" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;Climate Shocks Are Making Parts of America Uninsurable. It Just Got Worse,&#8221;</strong
+></a
+> by NYT&#8217;s Christopher Flavelle, Jill Cowan and Ivan Penn</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">AFTERNOON READ &#8212; </strong
+><a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbafe9d1dc48935f0e4fe06cdac2228381f827f74d5ae175f131c7c452c312a298e11e81d56640090b13732d108bf1db029" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;The Next Wave of Mass Environmental Litigation Bubbles Up From Coastal Florida,&#8221;</strong
+></a
+> by WSJ&#8217;s Kris Maher and Dan Frosch</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">AMERICA AND THE WORLD&nbsp;</strong
+></span></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">WHISKEY TANGO FOXTROT &#8212; </strong
+><a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba309362337bab18e1065f3685511912f71302578f37579cb5a210cd80385ef0774065337fb28e831f62b2f6e53cd5f964" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;Suspected Chinese spies, disguised as tourists, tried to infiltrate Alaskan military bases,&#8221;</strong
+></a
+> by USA Today&#8217;s Tom Vanden Brook in Anchorage, Alaska</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DANCE OF THE SUPERPOWERS &#8212; </strong
+><a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba3b03d113bc149932819a5cc5077f4486a42b2ee165c3dd5d957c2c4096a2aba1dcdc2cc6e2bfbd8b9f48336a15aac22d" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;U.S. Manufacturers Seek China Alternatives as Tensions Rise,&#8221;</strong
+></a
+> by WSJ&#8217;s John Keilman</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DISAPPEARING ACT &#8212; </strong
+><a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbafdbb691e20351419a8ac0313254fccc25b263e425200a2c6b0317178488b19f025af3bb0819f7e93c7b9fafe08883376" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;How a High-Value Russian Wanted by the U.S. Escaped From Italy,&#8221;</strong
+></a
+> by WSJ&#8217;s Eric Sylvers and Margherita Stancati: &#8220;<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">ARTEM USS</strong
+>, son of a powerful Russian politician close to President <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">VLADIMIR PUTIN</strong
+>, was able to escape back to Moscow after Italy granted him house arrest, despite U.S. warnings that he would flee &#8230; The affair has created friction between the U.S. and Italy &#8230; It has also robbed the U.S. of a potentially valuable asset in prisoner exchanges for Americans held in Russia&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">FOR YOUR RADAR &#8212; </strong
+><a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbaa2b151ed4662d5b7fe0a00a8dd62968768d3dedad964701c75365bd80c1b25f80de02bffcd6e405ccc6cdbbe4d609def" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;Qatar prime minister, Taliban chief hold secret Afghan talks,&#8221;</strong
+></a
+> by Reuters&#8217; Jonathan Landay<br></p></td>                    </tr>                                    <tr>                            </tr><tr>    <td height="15" style="height:15px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>    <tr>    <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                            <p style="font-family:Helvetica,sans-serif;font-size:12px;margin-top:0;margin-bottom:10px;color:#000000;">A message from Altria:</p>                                                        <p style="margin-top:0;margin-bottom:15px;line-height:15px;">                                            <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbabdc19c2eb7997b2e5551d6902808fa72db9f73266d6515305eb617a92d73eaedd69a630302bb08ce6499ff8525879ca0" target="_blank"><img src="https://www.politico.com/dims4/default/3f74237/2147483647/resize/1000x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2F7b%2F54%2F04d0bcd645eca6a5411221072226%2Fpolitico-playbook-mbs-500x500.jpeg" title="Advertisement Image" alt="Advertisement Image" border="0" width="500" style="width:100%;max-width:500px;"></a
+>                                        <img src="https://ad.doubleclick.net/ddm/ad/N7384.146504POLITICO0/B30029754.368047614;sz=1x1;ord=[timestamp]" border="0" a>                </p>                                        <p style="margin-top:0;margin-bottom:20px;line-height:24px;color:#000000;">Altria is leading the way in transitioning millions of adult smokers from cigarettes to a smoke-free future.</p>                                                                </td></tr>    <tr>        <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">PLAYBOOKERS</strong
+></span></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">OUT AND ABOUT &#8212; SPOTTED</strong
+> at a DSCC Bourbon and Cigars event hosted by Emergent Strategies yesterday evening: Sens. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Gary Peters</strong
+> (D-Mich.), <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Alex Padilla</strong
+> (D-Calif.), <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Maggie Hassan</strong
+> (D-N.H.), <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Joe Manchin</strong
+> (D-W.Va.), <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Jon Tester</strong
+> (D-Mont.), <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Mark Kelly</strong
+> (D-Ariz.), <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Peter Welch</strong
+> (D-Vt.) and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Bob Menendez</strong
+> (D-N.J.), <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Scott Eckart, Hadley Sosnoff, Michael Claunch, Meghan O&#8217;Hara, Caitlyn Stephenson, David Montes, Wes Kungel, Dylan Laslovich, Jason Tuber, Priya Dayananda, Brett Hewitt, Kim Zimmerman, Eric Kamerath, Taymur Ahmed, Sean Doocey, Michael Bassett, Noel Perez, Omar Vargas, Nida Zaman, Ernie Jolly, Jonathan Jagoda</strong
+> and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Katie Dapper.</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">IN MEMORIAM &#8212; </strong
+><a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbaa4a55a1ed3ed10e7c83305be5efe52bd2f8b0becf6bfe6d0360b0be14147434c81684d4edbf588b07cef62ede2ab4409" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8220;Claudia Rosett, who reported from Tiananmen Square, dies at 67,&#8221;</strong
+></a
+> by WaPo&#8217;s Harrison Smith: &#8220;Across a four-decade career in journalism, Ms. Rosett reported on foreign affairs and human rights issues, wrote guest essays for publications including the New York Times, Forbes and the New York Sun, and was a frequent guest on radio and television networks such as Fox News, where she accused the Biden administration last month of failing to offer an adequate response to the Russia-China partnership and recent clashes in Sudan.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MEDIA MOVES &#8212; Scott Detrow</strong
+> has been named the weekend host of NPR&#8217;s &#8220;All Things Considered&#8221; and co-host of the daily news podcast &#8220;Consider This.&#8221; <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbaf38c6e829d1cb744f105ea1867c8450c271b18af5e3b05fe0f5e598e750a7f0e46a3d13d32aa02594343be194ce8b671" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>The announcement</i
+></strong
+></a
+> &#8230;<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> Brooke Brower</strong
+> is now executive producer of ABC&#8217;s &#8220;This Week with George Stephanopoulos.&#8221; He previously was managing editor for CNN Politics. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Kendall Heath</strong
+> has been promoted to executive producer of politics at ABC, after serving as interim executive producer of &#8220;This Week.&#8221; &#8230;<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> Lisa Ling</strong
+> is joining CBS as a contributor. She previously was executive producer of CNN&#8217;s &#8220;This Is Life with Lisa Ling.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">TRANSITIONS &#8212; Natalie Boyse</strong
+> is now global program manager at ORF America, the U.S. affiliate of India&#8217;s Observer Research Foundation, after wrapping up an M.A. at SAIS. She served at DOD and HHS in the Trump administration and is a Marco Rubio, Mitt Romney and Poolhouse alum. &#8230; <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Rebecca Brocato</strong
+> and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Christian Marrone</strong
+> are now senior advisers at WestExec Advisors. Brocato previously was chief of staff of the Development Finance Corporation. Marrone previously was senior VP for government affairs for Lockheed Martin. &#8230; <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Rebecca Mears</strong
+> is now director of democracy at the Center for American Progress. She most recently was a political law associate at Elias Law Group. &#8230;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8230; Andrew Reilly</strong
+> is now comms director at the National Beer Wholesalers Association. He previously was comms manager at the International Foodservice Distributors Association. &#8230; <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Kaitlynn Ward </strong
+>is now director of government affairs for America's Poison Centers. She previously was director of federal affairs for the National Council of State Boards of Nursing. &#8230; <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Claudia Hernandez </strong
+>is now the senior comms manager at the Immigration Hub. She previously was comms manager at the Center for Law And Social Policy.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">WEDDING &#8212;</strong
+> <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Rebecca Galfano</strong
+>, deputy comms director for Rep. Mark Green (R-Tenn.), and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Tyler Peters</strong
+>, engineer for Volkswagen Group of America, got married in Savannah, Ga., on May 20. The couple have been together 7 years after meeting through friends. <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbabafdd5b9dba8848d334f1bdf0e6f8b12262895444a8732f6c1b384d67fc8e6fbc71b9c103250f1599619f46741066e96" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>Pic</i
+></strong
+></a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><i
+>Did someone forward this email to you? </i
+><a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbad61e2938d977ad4d801d29e1925c104e3df54f7139f32cf217fa2a6c4b063f061da7e9efa8d07d31f073a45e6a2f426e" target="_blank"><i
+>Sign up here.</i
+></a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><i
+>Send Playbookers tips to </i
+><a
+ href="mailto:playbook@politico.com" target="_blank"><i
+>playbook@politico.com</i
+></a
+><i
+> or text us at </i
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>202-556-3307.</i
+></strong
+><i
+> Playbook couldn&#8217;t happen without our editor </i
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>Mike DeBonis,</i
+></strong
+><i
+> deputy editor </i
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>Zack Stanton</i
+></strong
+><i
+> and producer </i
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>Setota Hailemariam </i
+></strong
+><i
+>and </i
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"><i
+>Bethany Irvine.</i
+></strong
+><br></p></td>                    </tr>                                    <tr>                        </tr><tr>    <td height="10" style="height:10px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                    <p style="margin-top:0;margin-bottom:20px;line-height:24px;margin-bottom:20px;color:#000000;">                <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">GET READY FOR GLOBAL TECH DAY: </strong
+>Join POLITICO Live as we launch our first Global Tech Day alongside London Tech Week on Thursday, June 15. Register now for continuing updates and to be a part of this momentous and program-packed day! From the blockchain, to AI, and autonomous vehicles, technology is changing how power is exercised around the world, so who will write the rules? <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba08084dbecd5e32f7b90e88c8d2152a6901a92d154a71eecc6556193a3f85351d342d34d099069749fafc156edb0c91a7" target="_blank" style="text-decoration:underline;color:#007BC7;">REGISTER HERE</a
+>.            </p>            </td></tr><tr>    <td height="10" style="height:10px; font-size:0; border-bottom:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td height="15" style="height:15px; font-size:0;">&nbsp;</td></tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                <!-- End Ad Copy -->                <tr>                                    </tr>                <!-- Post Body Content -->                <tr>                                    </tr>                <tr>                    
+<td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>                </tr>                <!-- Twitter Handles -->                                    <tr>    <td style="color:#000000;padding:0px 20px 20px 20px;text-align:left;">        <p style="font-family:Helvetica,sans-serif;font-size:20px;color:#000000;margin-top:0;margin-bottom:15px;"><strong
+>Follow us on Twitter</strong
+></p>        <table cellpadding="0" cellspacing="0" border="0" role="presentation">            <tbody>            <tr>                <td width="52" valign="middle" style="text-align:left;padding-right:10px;"><img src="https://static.politico.com/hosted/icon-twitter-circle-blue%402x.png" title="" alt="" width="50" style="max-width:50px;"></td>                <td valign="middle" style="text-align:left;font-family:Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#000000;">                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Rachael Bade <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba4e8a42ef9f78911949065d485487db10157e919d12f641172c0575dd4f32407abb57943b40dbbdeef0a7cabf5ad450bc" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@rachaelmbade</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Eugene Daniels <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba27cd4bb4e90d076f069a60bf78471c1ecfa84ba47d91aafb4639c94b45e5a5dacda02a8c85ebfd939b0da34c1f380d85" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@EugeneDaniels2</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Ryan Lizza <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbaff04d80748f48d4c59f26371fef7828a99c1fa27eb54e0eaf43e1196b3e85fc18779940f15c1b91cf6bf581e38c1e9dd" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@RyanLizza</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Eli Okun <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbaf7948647af65d0a7142912da6879988fdf77d1842f8f7541c04ff51840db1a4c19f1c2dda868a4466cc11a9328312336" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@eliokun</a
+></p>                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Garrett Ross <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbaecd51f3532bd797b0d5a94e5dffabfeaa1ede5ff263238809fd8cf0f2520c84d913018baea9c19522e32968f8ba789d3" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@garrett_ross</a
+></p>                                    </td>            </tr>            </tbody>        </table>    </td></tr><tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                                <!-- Family of Playbook -->                                    <tr>    <td style="color:#000000;padding:0px 20px 0px 20px;text-align:left;">            <p style="font-family:Helvetica,sans-serif;font-size:20px;color:#000000;margin-top:0;margin-bottom:15px;"><strong
+>Subscribe to the POLITICO Playbook family</strong
+></p>            <p style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:24px;">                                    <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbad61e2938d977ad4d801d29e1925c104e3df54f7139f32cf217fa2a6c4b063f061da7e9efa8d07d31f073a45e6a2f426e" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba10820c1d58f0cbbf2f265e6b3a03e0b1b8b8e055b6ceb7958f37f36b782848cbf3599edf00aecb321b15fa5554464e9d" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Playbook PM</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba64838575d010b6d5f32840cd386f31fb4682796b77b36275d2b337b87dc34c0c810568031dbb1ba29e6d7a59cbb43847" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">California Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbaab36a5cc16ea900435f334a9e2b6f21c698cffa989a3662b889e3485c0a0cd888ef6c361f0406c413281d6007a303c41" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Florida Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba0cfc0744c2dbdd18b60f7337eb40f2bd7d54903e9efd4166e0f8632d3513e65ecf33f68de7552db3b07665d6d807115f" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Illinois Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba8effaede77df73b6ca2235215e9b5ce2d1fe77edec5fe99fc220444fad7ee4e87abf6ff8ec6a74b549bab00dec2b5351" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Massachusetts Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba2848745ae121ee9ffd85c8c6f275518a35161739bee84a37cc7b08da1a71f3c05231afd13978fd09507547be5b403225" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">New Jersey Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba83f376290e8d4634560e7c34c03191aefa7e5ac3808b5dca90555a2be9e8db2dc5d50be9c0317e8c6bb84f1b9f24adc6" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">New York Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba30643f2058fbaf803e9c62d6ad3f63ce80e850fa2d04904c603b9c018dfa86dfcb0532a9b4396c5998514e10957203bf" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Ottawa Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbacf63a1574da9fdb655112f71af759d432999e87d2ed8c8a2ca6ae5f4b1af5c527e9f6c3ba76b36e5490598edf54777d8" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">Brussels Playbook</a
+>                    &nbsp;|&nbsp;                                    <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbacf63a1574da9fdb655112f71af759d432999e87d2ed8c8a2ca6ae5f4b1af5c527e9f6c3ba76b36e5490598edf54777d8" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">London Playbook</a
+>                                                </p>            <p style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:24px;"><a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba3184f774c226b77e5345de2f2d0693c9c49c8c26d12560bbb22a6db7ea578d1771d9a5fed5caf46f6cb5ab57bae46bfc" style="color:#000000;text-decoration:none;font-weight:bold;" target="_blank">View all our politics and policy newsletters</a
+></p>    </td></tr>                                <!-- Follow us -->                <tr>    <td style="color:#000000;padding:0px 20px 20px 20px;text-align:left;">        <p style="font-family:Helvetica,sans-serif;font-size:12px;color:#000000;margin-bottom:10px;line-height:14px;text-transform:uppercase;font-weight:bold;letter-spacing:2px;">Follow us</p>        <table cellpadding="0" cellspacing="0" border="0" role="presentation">            <tbody>            <tr>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba06ffb809c2cc38e489f7d176cd6f79ec2a79dcd798c82d001360c4db3529e1868edb36bacb1a8979ea828aa7b4cf7d3b" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-facebook-gray%402x.png" title="Follow us on Facebook" alt="Follow us on Facebook" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba3282ba82685d2921668fd88fc9603b7ba068b43aa04072708e235c170dc6de9513db74833b2e5ad39886840e067b537b" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-twitter-gray%402x.png" title="Follow us on Twitter" alt="Follow us on Twitter" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbaf4baa43b9957c6a180c1a071550d45191ac01edd76272a535a62cfdc7530b13d29e8fa7c4609264426e32ef49aea032f" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-instagram-gray%402x.png" title="Follow us on Instagram" alt="Follow us on Instagram" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bbace34c1f9d952ba212e628adc48afa56cd0ca17dc64547871c040ea848c53f7fd11a2a469d34948523c1c93e82b807dae" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-applePodcast-gray%402x.png" title="Listen on Apple Podcast" alt="Listen on Apple Podcast" width="24" border="0" style="max-width:24px;"></a
+></td>            </tr>            </tbody>        </table>    </td></tr><tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                </tbody>            </table>        </td>        <td><!-- Note: This is left blank to aid in centering across email clients --></td>    </tr>    </tbody></table><!-- Everything below this line is "new" to the template. We'll have to experiment a bit to see if it causes troubles. --><!-- howler#email.footers/core-newsletter.footer.html -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff"
+       style="padding:5px 0 15px 0;margin:0;text-align:center" role="presentation">
+    <tbody>
+    <tr>
+        <td><!-- Note: This is left blank to aid in centering across email clients --></td>
+        <td align="center" width="540">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:540px" role="presentation">
+                <tbody>
+                <tr>
+                    <td align="center" style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;">
+                        <p style="margin-bottom:15px;line-height:24px;">To change your alert settings, please log in at
+                            <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba25795c84a3d7233835361a4db87c9baa4d3e8cb5ef9f59d70baae96eb47727950cbfcc30367910490ad3f29d51c19812" target="_blank" style="color:#007BC7;text-decoration:none;">https://www.politico.com/_login?base=https%3A%2F%2Fwww.politico.com/settings</a
+>
+                            <!--Commenting out the following line because it causes an undesired line to be displayed on outlook (some versions) and we couldn't find the use case of it-->
+                            <!-- <span style="display:none;"><a
+ href="https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a2adccb1683b1639df1b3abf8482b8cb9700f6aa6d14cf4403">https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a2adccb1683b1639df1b3abf8482b8cb9700f6aa6d14cf4403</a
+></span> -->
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="padding-bottom:15px;"><img
+                            src="https://static.politico.com/hosted/icon-politico-logo.png"
+                            class="CToWUd"></td>
+                </tr>
+                <tr>
+                    <td align="center"><p
+                            style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:20px;">
+                        This email was sent to ouchendans62@gmail.com by: POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+                        <p style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:24px;">
+                            
+
+                            Please click <a
+ href="https://go.politicoemail.com/?qs=f19fa8cbe1c88bba8d50fd0e0719ed0e841ae93a6bd7f07c05287608872efd6388361bc27ca1fd9d79b5367fa9aba9d7a56fc941faecd81c" target="_blank" style="color:#007BC7;text-decoration:none;">here</a
+> and follow the steps to unsubscribe.
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td><!-- Note: This is left blank to aid in centering across email clients --></td>
+    </tr>
+    </tbody>
+</table>
+<img src="https://click.politicoemail.com/open.aspx?ffcb10-fe8e1d787566037f70-fde813797160037e711d7370-fe9115737262077c7c-febf1d7671670675-fdf61574756104747317747c-ffcf14&d=40127&bmt=0" width="1" height="1" alt="">
+</body></html><p email-meta style="display: none;opacity:0;">source=GoggleDocument, article=00000188-72c6-d953-ab8a-fafe89b70000</p>
+
+--ZokNfUet7mY1=_?:--
+

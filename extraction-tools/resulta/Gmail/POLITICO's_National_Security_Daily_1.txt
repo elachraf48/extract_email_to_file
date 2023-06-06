@@ -1,0 +1,761 @@
+Delivered-To: ouchendans62@gmail.com
+Received: by 2002:ac0:fa0b:0:b0:2da:d504:b4a4 with SMTP id g11csp1012531ims;
+        Wed, 31 May 2023 13:08:15 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ6l1UMIBAwB0pI5S4xArqXZAq8PZXKPVhoY1MuTCBzMWZYp9FSKPU7lzhX+gBfXUSpjFrUr
+X-Received: by 2002:a05:6808:1190:b0:398:5b13:e481 with SMTP id j16-20020a056808119000b003985b13e481mr5564066oil.7.1685563695394;
+        Wed, 31 May 2023 13:08:15 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685563695; cv=none;
+        d=google.com; s=arc-20160816;
+        b=0zbSzTc0gxC/qgZFi6O2VaTrp+1b4gnJdFyk7xjXsKdMT459qVUU7iNvtaAnfujjik
+         DysQs0paT0AH2iIIsRxvFDUxALh2TTfooYHRdhG709/KqWBVlfRpAVG0mudHgeCeV8dx
+         ak8BTnRk3XSx6kL9rhy3HRnHpp5YS7g6L70mtoF7Z8GlC7MOLsh89hcCrDWOksZQunr5
+         Kc2BaVLiTydyOXg46O2BkrpXDOwl0BbLceCxjiWfqys8K7KquSyUzt2fHprf2wDxPg1J
+         74jXi4PL78zsP+PWfWOEM8mzRCRFM0XZ+IQefqBQjDmy7UXcq9t88XY79DR8ZLwFLUlt
+         cifQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:list-id:reply-to:mime-version
+         :list-unsubscribe-post:list-unsubscribe:date:subject:to:from
+         :dkim-signature;
+        bh=VsleDjgR9UUCaZzEZOfcJGKG5OzcUNknsrSk7eXe/jk=;
+        b=ZFS5EKSS5l0O6Mo1BMzOJqHH6vm3fQd0wxGi9/1KtGspJQWSJYqPilgRoiMYSOMiYe
+         08UuURQsa6pKTdY8ANDbHZfbW61r0K5jK2ycoXqGTuqVo5riQOvM3blm3QVdJqSA92pB
+         OIUSYoiAQ8k+zcJtlTjr4aJpKWyzEGo/ghQKjOBeWu028b5GXbN48FLZ9xWUDbH0p1RC
+         JK69FdkaBcjlkqCHI8F27fNQCdz6wiJKibUjhiAUfo/E4NIy2NSP9x2T5+eYrtP3fq04
+         LScvoeMMJ4Fx3jVpKvJ/pR1A2Y/dOTASVTLP987KopCSCEe2zcmPVE5dYPGbZfyPbUEy
+         RX2Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.politico.com header.s=200608 header.b=phycUgay;
+       spf=pass (google.com: domain of bounce-630306_html-1405096349-9802862-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) smtp.mailfrom=bounce-630306_HTML-1405096349-9802862-1376319-0@bounce.politicoemail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.politico.com
+Return-Path: <bounce-630306_HTML-1405096349-9802862-1376319-0@bounce.politicoemail.com>
+Received: from mta.politicoemail.com (mta.politicoemail.com. [68.232.198.10])
+        by mx.google.com with ESMTPS id z63-20020aca3342000000b0037fa62edcc6si967383oiz.109.2023.05.31.13.08.14
+        for <ouchendans62@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 31 May 2023 13:08:15 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-630306_html-1405096349-9802862-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) client-ip=68.232.198.10;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.politico.com header.s=200608 header.b=phycUgay;
+       spf=pass (google.com: domain of bounce-630306_html-1405096349-9802862-1376319-0@bounce.politicoemail.com designates 68.232.198.10 as permitted sender) smtp.mailfrom=bounce-630306_HTML-1405096349-9802862-1376319-0@bounce.politicoemail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.politico.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=200608; d=email.politico.com;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Reply-To:List-ID:X-CSA-Complaints:Message-ID:Content-Type;
+ i=nationalsecuritydaily@email.politico.com;
+ bh=VsleDjgR9UUCaZzEZOfcJGKG5OzcUNknsrSk7eXe/jk=;
+ b=phycUgayLi4buVKNBK4wVuC9kuUFHhMOnM3rbdrpsxkMzCk682H8Na4E3fMtqO6OuKxavr/U3EvU
+   L184Vi2BJtQElwpRXrH2CihagB3c7nkmP9dPjEZJST9+Fr07WEHspl0H262XXZYFjIKezb8395R8
+   v6vwY43j+5f1Hr4kZFE=
+Received: by mta.politicoemail.com id heukiu2fmd4b for <ouchendans62@gmail.com>; Wed, 31 May 2023 20:02:45 +0000 (envelope-from <bounce-630306_HTML-1405096349-9802862-1376319-0@bounce.politicoemail.com>)
+From: "POLITICO's National Security Daily" <nationalsecuritydaily@email.politico.com>
+To: <ouchendans62@gmail.com>
+Subject: The China hawks briefing DeSantis
+Date: Wed, 31 May 2023 14:02:45 -0600
+List-Unsubscribe: <https://click.politicoemail.com/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiIxMzc2MzE5IiwicyI6IjE0MDUwOTYzNDkiLCJsaWQiOiI2MzAzMDYiLCJqIjoiOTgwMjg2MiIsImpiIjoiMCIsImQiOiI0MDEyOCJ9.ZpQ2pX-Y_Gymhmob6WQ0XE1Pi1xAbOr4BHR2DkrdrBw>, <mailto:leave-fcb912737567047b1a4c342838-fdf61574756104747317747c-fe8c1d7875660c7b77-fe9115737262077c7c-ffcf14@leave.politicoemail.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+Reply-To: "POLITICO, LLC" <reply-fe8c1d7875660c7b77-630306_HTML-1405096349-1376319-0@politicoemail.com>
+List-ID: <1376319.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+X-SFMC-Stack: 4
+x-job: 1376319_9802862
+Message-ID: <2e376d1a-ed6c-43a0-affd-14d27f37758e@las1s04mta1096.xt.local>
+Feedback-ID: 1376319:9802862:68.232.198.10:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="c8W185fkLzUG=_?:"
+
+This is a multi-part message in MIME format.
+
+--c8W185fkLzUG=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+From the SitRoom to the E-Ring, the inside scoop on defense, national security and foreign policy. May 31, 2023 View in browser  
+By Alexander Ward and Ari Hawkins
+
+
+
+Florida Gov. Ron DeSantis and members of his advisory team are holding formal and informal conversations on issues like the Washington-Beijing relationship and the war in Ukraine. | Charlie Neibergall/AP Photo
+
+With help from Lara Seligman and Daniel Lippman
+
+Subscribe here | Email Alex
+
+Florida Gov. RON DeSANTIS is getting briefed by a bevy of national security experts, many of whom promote a hard line on China.
+
+The Republican and members of his advisory team are holding formal and informal conversations on issues like the Washington-Beijing relationship and the war in Ukraine, two people familiar with the events told NatSec Daily.
+
+Among the briefers we could confirm: GORDON CHANG, ELBRIDGE COLBY, HARRY KAZIANIS and BRANDON WEICHERT. Three of them didn’t respond to requests for comment. Weichert declined to comment but didn’t deny when asked if he was briefing the DeSantis campaign. A spokesperson for DeSantis’ campaign didn’t respond to multiple inquiries.
+
+We don’t know to what extent any of these four are shaping foreign policy positions for Team DeSantis, but the briefings indicate DeSantis and his confidantes are at least weighing their ideas. So we decided to look at their takes on the world.
+
+The Gatestone Institute’s Chang has twice predicted the collapse of the Chinese Communist Party. During a Fox Business appearance Tuesday, he criticized the Pentagon for requesting a meeting between Defense Secretary LLOYD AUSTIN and his Chinese counterpart — who is under U.S. sanctions — later this week. “We showed that we’re not serious about the measures we impose, and that contributes to a further breakdown in deterrence,” he told MARIA BARTIROMO. Chang supports increasing tariffs on China over Beijing’s theft of American intellectual property.
+
+The Marathon Initiative’s Colby has gained notoriety for pushing the United States to marshal its resources toward countering China, even if that means downsizing America’s support for Ukraine’s fight against Russia. “You look at the military they’re building; it is obviously designed to take on not just Taiwan, but the United States, Japan,” he told British magazine UnHerd last week, adding that China is also “developing a global military…that looks like the American military.”
+
+Kazianis, CEO of the Rogue States Project who has declared his support for DeSantis, is an advocate for calming tensions with North Korea before they spiral out of control. He told USA Today on Tuesday, ahead of a military satellite launch by Pyongyang, that a crisis with North Korea was “getting ready to explode again upon the world stage.”
+
+“Pyongyang, thanks to decades of investments that total billions of dollars, is no military paper tiger but can raise tensions far beyond anything we saw” in previous years, he continued. “And that could put us on the brink of a nuclear showdown.”
+
+Weichert, a senior editor for the 19FortyFive national security website and former congressional aide, wrote recently that “American military might would be required to deter a potential Chinese invasion of its democratic neighbor,” adding that China is looking at “taking the Indo-Pacific for itself.”
+
+“Ron DeSantis understands this threat, though. He recognizes Taiwan’s strategic importance to the United States as an unsinkable aircraft carrier for American power in the Indo-Pacific,” per Weichert.
+
+ The Inbox
+INFILTRATION: U.S. officials say Chinese spies dressed as tourists tried to get into military facilities in Alaska, USA Today’s TOM VANDEN BROOK reports.
+
+“In one incident, a vehicle with Chinese citizens blew past a security checkpoint at Fort Wainwright in Fairbanks, several soldiers told USA TODAY. The vehicle was eventually stopped, and a search found a drone inside the vehicle. The occupants claimed they were tourists who had gotten lost,” Vanden Brook wrote.
+
+While some incidents seem to be innocent, others do appear to be genuine infiltration attempts.
+
+Alaska is home to three large military bases — Joint Base Elmendorf-Richardson in Anchorage, and Fort Wainwright and Eielson Air Force Base near Fairbanks — and other smaller facilities.
+
+MORE DRONES HIT RUSSIA: Two Russian oil refineries were struck by drones Wednesday, per the Wall Street Journal’s MATTHEW LUXMOORE, another sign that a “shaping operation” is underway ahead of Ukraine’s expected counteroffensive.
+
+Kyiv, however, has denied any involvement in the attacks. It remains possible that the strikes are operated independently of the Ukrainian government.
+
+Russia, meanwhile, is bolstering its defenses in the south and east ahead of the Ukrainian campaign. It’s also sending drones and launching missiles at Ukrainian cities to deplete Kyiv’s air defenses and terrify the citizenry.
+
+In a Tuesday night video, Ukrainian President VOLODYMYR ZELENSKYY said he has been seeking extra air-defense support from allies.
+
+FAILURE TO LAUNCH: North Korea’s attempt to put a military reconnaissance satellite into orbit failed Wednesday, though Pyongyang vowed to try again very soon.
+
+“The new satellite vehicle rocket, Chollima-1, crashed into the West Sea as it lost propulsion due to an abnormal startup of the engine on the 2nd stage after the 1st stage was separated during normal flight,” reported the state-run Korean Central News Agency.
+
+The report indicated that Pyongyang used a “new-type” of satellite launch vehicle with a “new-type engine system,” North Korean nuclear program expert JEFFREY LEWIS pointed out on Twitter.
+
+If your instinct is to go “lol North Korea,” NPR’s GEOFF BRUMFIEL has a quick reality check. “Just last month they successfully tested a road-mobile solid fueled icbm, making them only the 3rd nation with that capability,” he tweeted. “I know it’s fun to dunk on them like it’s 2013 but…”
+
+END OF AUSSIE MILITARY TIES?: In March 2021, the United States quietly warned that it may have to sever ties with Australia’s special forces over alleged war crimes in Afghanistan, Australia’s defense chief told lawmakers Wednesday.
+
+Gen. ANGUS CAMPBELL said that the U.S. defense attaché in Canberra passed him a letter which said that, following a 2020 report showing 25 current and former troops unlawfully killed 39 people, the U.S. would have to suspend relations due to the “Leahy law.”
+
+Per the Guardian’s DANIEL HURST, citing Campbell’s testimony in front of the Australian Senate, there are currently no disruptions to the U.S.-Australian special forces relationship.
+
+A senior Australian official told NatSec Daily that the issue is “well and truly” over. “And, of course, the whole point of Leahy is to force governments to reflect on the possible actions of their troops. Given we had initiated the entire inquiry, that job was already done.”
+
+NEW UKRAINE PACKAGE: The administration announced a $300 million package for Ukraine Wednesday featuring munitions for the Patriot missile defense system, artillery rounds and more than 30 million rounds of small arms ammo.
+
+The U.S. has now committed nearly $38 billion in weapons since Russia launched its invasion in February 2022.
+
+HARRIS TO SPEAK ON ISRAEL: Vice President KAMALA HARRIS will speak at the celebration of Israel’s 75th anniversary on June 6, the country’s embassy in Washington, D.C. announced Wednesday.
+
+IT’S WEDNESDAY: Thanks for tuning in to NatSec Daily. This space is reserved for the top U.S. and foreign officials, the lawmakers, the lobbyists, the experts and the people like you who care about how the natsec sausage gets made. Aim your tips and comments at award@politico.com and mberg@politico.com, and follow us on Twitter at @alexbward and @mattberg33.
+
+While you’re at it, follow the rest of POLITICO’s national security team: @nahaltoosi, @PhelimKine, @laraseligman, @connorobrienNH, @paulmcleary, @leehudson, @magmill95, @johnnysaks130, @ErinBanco, @reporterjoe and @_AriHawkins.
+
+   
+A message from Lockheed Martin:
+
+Using Artificial Intelligence to help firefighters better detect, predict and fight wildfires.
+
+
+ Lockheed Martin is collaborating with commercial companies to integrate our technologies and expertise with their capabilities to help first responders detect, predict and fight wildfires. Learn more.
+     2024
+CHRISTIE’S IN: Former New Jersey Gov. CHRIS CHRISTIE will officially enter the presidential race next week, per Axios’ MIKE ALLEN.
+
+He’s called former President DONALD TRUMP a “puppet” of Russian leader VLADIMIR PUTIN and trashed DeSantis as a weak negotiator.
+
+“That’s not the guy I want sitting across from President Xi and negotiating our next agreement with China, or sitting across from Putin and trying to resolve what’s happening in Ukraine, if you can’t see around a corner that BOB IGER created for you,” he told the New York Times in April, referencing the Disney CEO.
+
+Christie in the 2016 cycle was a supporter of the Patriot Act, increased military spending and maintaining traditional alliances.
+
+Read: ‘I’m not a paid assassin’: Inside Chris Christie’s 2024 decision by RACHAEL BADE
+
+HALEY’S FOREIGN FUNDRAISERS: Republican 2024 hopeful NIKKI HALEY has raised tens of thousands of dollars in political donations from foreign lobbyists, according to disclosure reports, per ABC’s SOO RIN KIM. 
+
+OSWALDO PALOMO, the managing director of a U.S. consulting firm, and DAVID HORTON WILKINS, a former U.S. ambassador to Canada, are registered as foreign agents, and both donated $6,600 to Haley’s joint fundraising committee, which raises funds for her leadership PAC and her presidential campaign.
+
+The report comes as the former American ambassador to the U.N., pushes for a ban of foreign lobbying, saying that embassies, not private consultants, should represent foreign interests in Washington.
+
+“All these lobbyists that get paid from foreign entities to lobby Congress — outlaw all foreign lobbying whatsoever," Haley said at a town hall in Iowa last month, per ABC. She also took to Twitter in April, writing “ban all foreign lobbying.”
+
+YOU’RE FIRED: Republican presidential candidate VIVEK RAMASWAMY fired a firm consulting for his campaign after it was revealed by POLITICO that simultaneously worked for Saudi-backed LIV Golf League.
+
+The firm, Gitcho Goodwin, registered retroactively on May 25 as foreign agents for the league. After our own CAITLIN OPRYSKO and HAILEY FUCHS reported on that, the Ramaswamy campaign first downplayed the organization’s work with them before saying the ties had been severed.
+
+“We became aware of this … when you (the press) made us aware,” spokesperson TRICIA McLAUGHLIN said in a text.
+
+  
+GET READY FOR GLOBAL TECH DAY: Join POLITICO Live as we launch our first Global Tech Day alongside London Tech Week on Thursday, June 15. Register now for continuing updates and to be a part of this momentous and program-packed day! From the blockchain, to AI, and autonomous vehicles, technology is changing how power is exercised around the world, so who will write the rules? REGISTER HERE.
+     Keystrokes
+NO AI FOR ‘CRITICAL’ WORK: The European Commission created recommended guidelines to help staffers “assess the risks and limitations” of using generative Artificial Intelligence tools like ChatGPT and Bard, our own GIAN VOLPICELLI and JACOPO BARIGAZZI report.
+
+The four-page paper, obtained by POLITICO and dated May 24, establishes five main rules Commission staffers are recommended to follow when using such tools.
+
+The rules include: not disclosing information not in the public domain when using these applications; being aware that the AI’s responses might be inaccurate or biased; considering whether the AI might be violating intellectual property rights; never copying AI-generated output into official documents; and avoiding the use of AI tools when working on “critical and time-sensitive processes.”
+
+G7 nations earlier this month called for the development of technical standards to ensure artificial intelligence remains “trustworthy” amid mounting concerns over issues like copyright, and the threat of disinformation, per Reuters.
+
+CHINA’S CHIPS IN EUROPE: Dutch Foreign Minister WOPKE HOEKSTRA said he is concerned about Chinese cyberattacks in an interview with our own JAKOB HANKE VELA, per Brussels Playbook.
+
+“Domestic interference, but also … cyberattacks stemming from Chinese soil, is something about which we are increasingly worried,” Hoekstra said. His concerns echo reports from the Dutch intelligence services, which label countries with “cyberattack programs” including China as posing a “massive threat,” per our own PIETER HAECK, Barigazzi and NICOLAS CAMUT.
+
+Earlier this year, the Netherlands took center stage in the growing tech battle between the U.S. and China. In March, The Hague struck a deal with the U.S. and Japan to restrict exports of chips technology to China, in an effort to shut down the supply of cutting-edge semiconductors to Beijing.
+
+ The Complex
+NEW COMMANDANT: The White House nominated Gen. ERIC SMITH as the new commandant of the Marine Corps, per a Senate notice, our own DAVID BROWN reports. The Washington Post was first to report that smith was expected to get the nod.
+
+Smith is currently the Marine Corps’ No. 2 officer, and would replace Gen. DAVID BERGER if confirmed by the Senate. The nomination has yet to be announced by the service, but his package was received by the Senate on Tuesday, according to the chamber’s website. 
+
+  
+DON’T MISS POLITICO’S HEALTH CARE SUMMIT: The Covid-19 pandemic helped spur innovation in health care, from the wide adoption of telemedicine, health apps and online pharmacies to mRNA vaccines. But what will the next health care innovations look like? Join POLITICO on Wednesday June 7 for our Health Care Summit to explore how tech and innovation are transforming care and the challenges ahead for access and delivery in the United States. REGISTER NOW.
+     On the Hill
+HAWKS QUESTION DEBT DEAL: Republicans have spent months hammering Biden’s Pentagon budget as insufficient. Now they’re faced with a dilemma: support a debt limit deal that locks in Biden’s budget or try to sink the pact just days before a default, our own CONNOR O’BRIEN and JOE GOULD report.
+
+A handful of GOP defense hawks plan to oppose the debt deal between Biden and Speaker KEVIN McCARTHY rather than endorse the administration’s $886 billion military budget that they’ve panned as too low. Even more defense-minded lawmakers are gritting their teeth and backing the deal, buoyed by the possibility of padding the defense budget with emergency funding or reopening the pact later.
+
+“It’s not as much as I would do,” said Rep. DON BACON (R-Neb.). “But yet we are cutting non-defense and we got a lot of other concessions. So I’m going to take an overall good deal.”
+
+“I think for us to demand more would probably stop the whole deal,” he said.
+
+COUNTERING CHINA’S ABUSE IN XINJIANG: Sens. MARCO RUBIO (R-Fla.) and JEFF MERKLEY (D-Ore.) introduced legislation Wednesday to punish the Chinese government over their treatment of Uyghur Muslims. Beijing has detained more than one million Uyghurs against their will since 2017 in what human rights groups consider “re-education camps.”
+
+The Uyghur Genocide Accountability and Sanctions Act would expand sanctions and travel restrictions on Chinese officials involved in human rights abuses, and would permit the U.S. State Department and the U.S. Agency for International Development to provide support to victims.
+
+The bill marks the latest effort from Congress to punish Beijing for its repression of Uyghurs in China’s Xinjiang region, including the Uyghur Human Rights Policy Act in 2020, and the Uyghur Forced Labor Prevention Act, signed into law in 2021, to prevent the flow of goods made with forced labor into Washington.
+
+SPEAK NOW: Sens. JEANNE SHAHEEN (D-N.H.) and THOM TILLIS (R-N.C.) sent a letter to leadership in the House and Senate urging them to invite NATO Secretary General JENS STOLTENBERG to address a joint session of Congress.
+
+It’s been “more than a year since Putin’s unprovoked further invasion of Ukraine,” Shaheen, who co-chairs the Senate NATO Observer Group with Tillis wrote on Twitter. She said that is why she is calling on leadership to invite Stoltenberg to discuss how “strong bipartisan support for NATO is critical for the advancement of U.S. national security interests.”
+
+The letter is also signed by Reps. LINDA SANCHEZ (D-Calif.), MICHAEL TURNER (R-Ohio) and GERALD CONNOLLY (D-Va.), who serve as members of the NATO Parliamentary Assembly in the House.
+
+     
+
+     Broadsides
+TALKS FALL APART: Sudan’s army suspended its participation in talks with the paramilitary Rapid Support Forces Wednesday, as both factions accused each other of violating a humanitarian truce, report MORGAN WINSOR, EMMA OGAO and AYAT Al-TAWY from ABC.
+
+The development comes after the warring parties signed a ceasefire agreement on May 21, which paved the way for the delivery of humanitarian and other critical assistance amid the clashes, which first broke out in April. The U.S. and Saudi Arabia have been mediating the talks.
+
+A spokesperson for the Sudanese armed forces told the AP that the suspension of talks were a result of the Rapid Support Forces’ “repeated violations” of a humanitarian agreement, which included their occupation of civilian infrastructure like hospitals, in Sudan’s capital.
+
+The RSF, in response, issued a statement that said it “unconditionally backs the Saudi-U.S. initiative” and added that “recent SAF violations have not deterred us from honoring our commitments.”
+
+ Transitions
+— MORGAN MURPHY resigned as Sen. TOMMY TUBERVILLE’s (R-Ala.) national security adviser, Alex, LEE HUDSON and LARA SELIGMAN scoop. The move follows a Washington Post profile that suggested Murphy was the mastermind behind the lawmaker’s block of military promotions over the Pentagon’s new abortion rule.
+
+— NATALIE BOYSE has started as global program manager at ORF America, the U.S. affiliate of India’s Observer Research Foundation, after wrapping up an M.A. at SAIS. She served at DOD and HHS in the Trump administration and has also previously worked on presidential campaigns for MARCO RUBIO and MITT ROMNEY.
+
+— DINA POWELL MCCORMICK has been named vice chair and president of client services at BDT & MSD Partners, where one of her responsibilities will be expanding the merchant bank’s relationships with sovereign-wealth funds. She currently is global head of sustainability and inclusive growth and global head of the sovereign business at Goldman Sachs and is a Trump and Bush administration alum.
+
+— REBECCA BROCATO and CHRISTIAN MARRONE have joined WestExec Advisors as senior advisers. Brocato was the chief of staff at the Development Finance Corporation after serving as the NSC’s senior director for legislative affairs, and Marrone most recently was SVP for government affairs for Lockheed Martin and is a DHS and DOD alum.
+
+— JONATHAN MURPHY started in a new position leading military helicopter and military aircraft communications for Airbus U.S. Space & Defense. He was previously a senior manager, PR and public affairs at Raytheon Technologies, and worked as deputy press secretary for former Republican Virginia Sen. JOHN WARNER.
+
+ What to Read
+— BILAL SAAB, War on the Rocks: A defense pact will not upgrade U.S.-Saudi security relations
+
+–– HOLLY DAGRES, The New York Times: A rapper’s detention shows Iran’s crackdown Is failing
+
+— DAVID GRAHAM, The Atlantic: JACK TEIXEIRA should have been stopped again and again
+
+ Tomorrow Today
+—​​ Senate Appropriations Committee, 9:30 a.m.: A Review of the President’s Fiscal Year 2024 Budget Request for the National Guard and Reserve
+
+—​​ Middle East Institute, 10 a.m.: How Will Presidential Election Results Affect Turkey’s Regional Outlook?
+
+—​​ Carnegie Endowment for International Peace, 10 a.m.: What’s Next for Yemen?
+
+—​​ Washington Institute for Near East Policy, 12 p.m.: What to Do With Families of Islamic State Foreign Fighters
+
+— House Oversight and Accountability Committee, 1 p.m.: Advances in AI: Views from Silicon Valley
+
+—​​ Inter-American Dialogue, the Organization of American States, and the Development Bank of Latin America, 2 p.m.: 26th Annual CAF Conference
+
+— Jewish Institute for National Security of America, 2 p.m.: Sudan in Conflict and the Implications for the U.S. Footprint in Africa
+
+— Center for Strategic and International Studies, 2 p.m.: The Biden Administration’s Cyber Plans for Critical Infrastructure: Focus on Pipelines, Rails, Aviation
+
+Thanks to our editor, Heidi Vogt, who never listens to our advice.
+
+We also thank our producer, Gregory Svirnovskiy, who is the go-to person for candid thoughts.
+
+CORRECTION: A previous edition of NatSec Daily misstated the timing of the Know Your App bill announcement. The lawmakers unveiled the legislation Tuesday morning.
+
+   
+A message from Lockheed Martin:
+
+Using Artificial Intelligence to help firefighters better detect, predict and fight wildfires.
+
+
+ Lockheed Martin is collaborating with commercial companies to integrate our technologies and expertise with their capabilities to help first responders detect, predict and fight wildfires. Learn more.
+      
+Follow us on Twitter
+
+Alex Ward @alexbward
+  
+Follow us
+  
+To change your alert settings, please log in at https://go.politicoemail.com/?qs=b2d089e4e2536d5729949a8c906b0d7810e4709578df8999d674a367433eb07af0db277f697410ca8e5ce3434d9471428e88506d122f97e8  https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a2a49d9b77d85777fad4867e9485e4ab9891f2e66cb2fe90d5f4550979d9e32440dd0f42eadd5202d81711f82659b83c4e
+
+This email was sent to ouchendans62@gmail.com by: POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+
+ Please click here and follow the steps to unsubscribe.
+  
+
+--c8W185fkLzUG=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<html><body><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml><![endif]-->
+</head><!-- Everything above this line is "new" to the template. We'll have to experiment a bit to see if it causes troubles. --><!-- preview text --><div style="display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">    From the SitRoom to the E-Ring, the inside scoop on defense, national security and foreign policy.</div><table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" style="padding:5px 0 15px 0;margin:0;text-align:center" role="presentation">    <tbody>    <tr>        <td><!-- Note: This is left blank to aid in centering across email clients --></td>        
+<td align="center" width="540">            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:540px;table-layout:fixed;" role="presentation">                <tbody>                <!-- top date and utility link -->                <tr>    <td align="center">        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="padding-bottom:15px;" role="presentation">            <tbody>            <tr>                <td width="50%" style="text-align:left;font-size:11px;font-family:Helvetica,sans-serif;color:#B1B4BD;margin:0;">May 31, 2023</td>                
+<td width="50%" style="text-align:right;font-size:11px;font-family:Helvetica,sans-serif;color:#B1B4BD;margin:0;"><a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74cda71f7571e7e3d046efb9338227db119f6ce73a47e2abb74ac0036e4c5a85809366df7907617b197175e359abe7ca921" target="_blank" style="color:#007BC7;text-decoration:none;">View in browser</a
+></td>            </tr>            </tbody>        </table>    </td></tr>                <!-- divider line -->                <tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                <!-- logo and byline -->                <tr>    <td align="center" style="text-align:center;padding:0 20px 15px 20px;margin:0">                                    
+<img src="https://static.politico.com/5c/a9/ff12b2404c499fd27eb4ac52988b/politico-national-security-daily.jpg" title="2021_NewsletterLogo_Free_NationalSecurityDaily" alt="POLITICO's National Security Daily newsletter logo" border="0" width="500" style="width:100%;max-width:500px;">                        </td></tr><tr>    <td align="center" style="padding:0 20px 10px 20px;">        <p style="text-align:center;font-family:Helvetica,sans-serif;font-size:11px;letter-spacing:2px;color:#B1B4BD;text-transform:uppercase;margin:0;">            By  <a
+ href="mailto:award@politico.com" target="_blank" style="color:#000000;text-decoration:none;font-weight:bold;">Alexander Ward</a
+> and  <a
+ href="mailto:ahawkins@politico.com" target="_blank" style="color:#000000;text-decoration:none;font-weight:bold;">Ari Hawkins</a
+>        </p>    </td></tr>                <!-- sponsor logo -->                                    <!-- body -->                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p align="center" style="margin:0 0 20px 0;">
+<img src="https://www.politico.com/dims4/default/453b3f7/2147483647/resize/1000x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2F6a%2F9b%2F372886ef419ba600ae91cf1ca9f2%2Felection-2024-desantis-79651.jpg" title="2023-05-31 DeSantisTalks-AP" alt="Republican presidential candidate Florida Gov. Ron DeSantis talks with his wife Casey." width="500" style="width:100%;max-width:500px;"></p><p style="font-family:Helvetica,sans-serif;font-size:12px;color:#6E7381;margin-bottom:24px;">Florida Gov. Ron DeSantis and members of his advisory team are holding formal and informal conversations on issues like the Washington-Beijing relationship and the war in Ukraine.  |  Charlie Neibergall/AP Photo</p>
+</td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><i
+>With help from Lara Seligman and Daniel Lippman</i
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c44c68e8439e02568257d521f68b1c05bcf6318cb1086385b28b2381f580dc1690ba7cb505b9846512c454acdefe439bf" target="_blank">Subscribe here</a
+> | <a
+ href="mailto:award@politico.com" target="_blank">Email Alex</a
+> </p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Florida Gov. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">RON DeSANTIS</strong
+> is getting briefed by a bevy of national security experts, many of whom promote a hard line on China.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The Republican and members of his advisory team are holding formal and informal conversations on issues like the Washington-Beijing relationship and the war in Ukraine, two people familiar with the events told NatSec Daily.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Among the briefers we could confirm: <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">GORDON CHANG, ELBRIDGE COLBY</strong
+>, <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">HARRY KAZIANIS </strong
+>and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">BRANDON WEICHERT</strong
+>. Three of them didn&#8217;t respond to requests for comment. Weichert declined to comment but didn&#8217;t deny when asked if he was briefing the DeSantis campaign. A spokesperson for DeSantis&#8217; campaign didn&#8217;t respond to multiple inquiries.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">We don&#8217;t know to what extent any of these four are shaping foreign policy positions for Team DeSantis, but the briefings indicate DeSantis and his confidantes are at least weighing their ideas. So we decided to look at their takes on the world.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The Gatestone Institute&#8217;s Chang has <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c17f7b78ad1daf99fa7a3203c3c121fc8fe6da5803037f1e69dff6f75efab3f9e9241d1724862bbd9d62293067ebfdba5" target="_blank">twice predicted the collapse of the Chinese Communist Party</a
+>. During a <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74cfe97f9455b3649a463f7686f930bed793f27561125617e171f2cd9a6d01478a20be4d66e4c8ca5e4e1ceb2eab9f7555a" target="_blank">Fox Business appearance</a
+> Tuesday, he criticized the Pentagon for requesting a meeting between Defense Secretary <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">LLOYD AUSTIN</strong
+> and his Chinese counterpart &#8212; who is under U.S. sanctions &#8212; later this week. &#8220;We showed that we&#8217;re not serious about the measures we impose, and that contributes to a further breakdown in deterrence,&#8221; he told <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MARIA BARTIROMO</strong
+>. Chang supports increasing tariffs on China over Beijing&#8217;s theft of American intellectual property.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The Marathon Initiative&#8217;s <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74cf34dab1f4b09913d0ce86cfac9241f78caddabceee6ae3a9dd10db3999c5b631bb4a9b22278c13552452d91f0099cb1a" target="_blank">Colby has gained notoriety</a
+> for pushing the United States to marshal its resources toward countering China, even if that means downsizing America&#8217;s support for Ukraine&#8217;s fight against Russia. &#8220;You look at the military they&#8217;re building; it is obviously designed to take on not just Taiwan, but the United States, Japan,&#8221; he <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c494fb684d4fdde9fd0cfc0367df4ed4de9332a2e941d9791d3d88aa2323c0655ff391a54e44c83c994bd412cee707a59" target="_blank">told British magazine UnHerd last week</a
+>, adding that China is also &#8220;developing a global military&#8230;that looks like the American military.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Kazianis, CEO of the Rogue States Project who has declared his <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c2e844652381c2b176b553cb346e9b7edbb22fc9ca5a26f03c13a054b34de874813fe728a2a0afefbd95bae142c716bcd" target="_blank">support for DeSantis,</a
+> is an advocate for calming tensions with North Korea before they spiral out of control. He told USA Today on Tuesday, ahead of a military satellite launch by Pyongyang, that a crisis with North Korea was &#8220;getting ready to explode again upon the world stage.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;Pyongyang, thanks to decades of investments that total billions of dollars, is no military paper tiger but can raise tensions far beyond anything we saw&#8221; in previous years, he continued. &#8220;And that could put us on the brink of a nuclear showdown.&#8221;</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">Weichert, a senior editor for the 19FortyFive national security website and former congressional aide, <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c6002ea16ef4880b989ea47497de3b72521d4c341396d21620bcf9a0ecd0728734a1eb1be3519b7290cb2c467ba6fdd09" target="_blank">wrote recently</a
+> that &#8220;American military might would be required to deter a potential Chinese invasion of its democratic neighbor,&#8221; adding that China is looking at &#8220;taking the Indo-Pacific for itself.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;Ron DeSantis understands this threat, though. He recognizes Taiwan&#8217;s strategic importance to the United States as an unsinkable aircraft carrier for American power in the Indo-Pacific,&#8221; per Weichert.<br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;">
+<!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">The Inbox</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;">
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">INFILTRATION:</strong
+></span> U.S. officials say Chinese spies dressed as tourists tried to get into military facilities in Alaska, <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74cc983b1719df7941d53760b1759ad0219e9dae429c24e7916c4ee05d473e13bad0e20476d47c2604ee97f9dbd11ac5f04" target="_blank">USA Today&#8217;s <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">TOM VANDEN BROOK</strong
+> reports</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;In one incident, a vehicle with Chinese citizens blew past a security checkpoint at Fort Wainwright in Fairbanks, several soldiers told USA TODAY. The vehicle was eventually stopped, and a search found a drone inside the vehicle. The occupants claimed they were tourists who had gotten lost,&#8221; Vanden Brook wrote.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">While some incidents seem to be innocent, others do appear to be genuine infiltration attempts.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">Alaska is home to three large military bases &#8212; Joint Base Elmendorf-Richardson in Anchorage, and Fort Wainwright and Eielson Air Force Base near Fairbanks &#8212; and other smaller facilities.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MORE DRONES HIT RUSSIA:</strong
+></span> Two Russian oil refineries were struck by drones Wednesday, per <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c20fb1b20fc76a020740d2f99577caaefa3e29bc769ffb915d5421f10467518fcea4e191456a5baebff719cddfda4ab51" target="_blank">the Wall Street Journal&#8217;s <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MATTHEW LUXMOORE</strong
+></a
+>, another sign that a &#8220;shaping operation&#8221; is underway ahead of Ukraine&#8217;s expected counteroffensive.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Kyiv, however, has denied any involvement in the attacks. It remains possible that the strikes are operated independently of the Ukrainian government.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Russia, meanwhile, is bolstering its defenses in the south and east ahead of the Ukrainian campaign. It&#8217;s also sending drones and launching missiles at Ukrainian cities to deplete Kyiv&#8217;s air defenses and terrify the citizenry.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">In a Tuesday night video, Ukrainian President <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">VOLODYMYR ZELENSKYY</strong
+> said he has been seeking extra air-defense support from allies.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">FAILURE TO LAUNCH:</strong
+></span> North Korea&#8217;s attempt to put a military reconnaissance satellite into orbit failed Wednesday, though Pyongyang vowed to try again very soon.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;The new satellite vehicle rocket, Chollima-1, crashed into the West Sea as it lost propulsion due to an abnormal startup of the engine on the 2nd stage after the 1st stage was separated during normal flight,&#8221; reported the state-run Korean Central News Agency.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The report indicated that Pyongyang used a &#8220;new-type&#8221; of satellite launch vehicle with a &#8220;new-type engine system,&#8221; <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c157f9d71722055755aec24f880e6be79dc8433d492a61239f476304be42fd82c7c300c081cb9c178b388ec55c6d330b6" target="_blank">North Korean nuclear program expert <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JEFFREY LEWIS</strong
+> pointed out on Twitter</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">If your instinct is to go &#8220;lol North Korea,&#8221; NPR&#8217;s <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">GEOFF BRUMFIEL</strong
+> has a quick reality check. &#8220;Just last month they successfully tested a road-mobile solid fueled icbm, making them only the 3rd nation with that capability,&#8221; <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c473973e67c5f85eb7e78db9f4398fae0f74c6304b5415718e580ab48da5cadeee97c6f3e7b337c4c90e3c74d6da984fd" target="_blank">he tweeted</a
+>. &#8220;I know it&#8217;s fun to dunk on them like it&#8217;s 2013 but&#8230;&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">END OF AUSSIE MILITARY TIES?:</strong
+></span> In March 2021, the United States quietly warned that it may have to sever ties with Australia&#8217;s special forces over alleged war crimes in Afghanistan, <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c5ee5296b039ab7b6380b815acbb03c600c71611e53354e2ae82492ee77118c46fddee60559b0779f157c7b60bf91429c" target="_blank">Australia&#8217;s defense chief told lawmakers Wednesday</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Gen. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">ANGUS CAMPBELL</strong
+> said that the U.S. defense attach&#233; in Canberra passed him a letter which said that, following a 2020 report showing 25 current and former troops unlawfully killed 39 people, the U.S. would have to suspend relations due to the &#8220;<a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c20740a0b7aec1aed8cc459659aa4a976d6fe64ceec364d1f1cee1e387974a6e09636a3182dc49ab30fd0e0d49a8ea375" target="_blank">Leahy law.</a
+>&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Per the Guardian&#8217;s <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DANIEL HURST</strong
+>, citing Campbell&#8217;s testimony in front of the Australian Senate, there are currently no disruptions to the U.S.-Australian special forces relationship.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">A senior Australian official told NatSec Daily that the issue is &#8220;well and truly&#8221; over. &#8220;And, of course, the whole point of Leahy is to force governments to reflect on the possible actions of their troops. Given we had initiated the entire inquiry, that job was already done.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">NEW UKRAINE PACKAGE:</strong
+></span> The administration announced a $300 million package for Ukraine Wednesday featuring munitions for the Patriot missile defense system, artillery rounds and more than 30 million rounds of small arms ammo.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The U.S. has now committed nearly $38 billion in weapons since Russia launched its invasion in February 2022.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">HARRIS TO SPEAK ON ISRAEL:</strong
+></span> Vice President <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">KAMALA HARRIS</strong
+> will speak at the celebration of Israel&#8217;s 75th anniversary on June 6, the country&#8217;s embassy in Washington, D.C. announced Wednesday.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">IT&#8217;S WEDNESDAY:</strong
+></span> Thanks for tuning in to NatSec Daily. This space is reserved for the top U.S. and foreign officials, the lawmakers, the lobbyists, the experts and the people like you who care about how the natsec sausage gets made. Aim your tips and comments at <a
+ href="mailto:award@politico.com" target="_blank">award@politico.com</a
+> and <a
+ href="mailto:mberg@politico.com" target="_blank">mberg@politico.com</a
+>, and follow us on Twitter at <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74ccc8e6448b2509a98c0c139e401a62c51596e75cb032948e42a7437e1fb0562a0e0675873bcba3e52ef726925e834513e" target="_blank">@alexbward</a
+> and <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c8a07e7e84c9f1bcfde7b2d5471213cc24698103c839ecfab211778e69cbd0026d3c1717dae6e8daed12efc6580f54397" target="_blank">@mattberg33</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">While you&#8217;re at it, follow the rest of POLITICO&#8217;s national security team: <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74cab5a7420ec18c3daa29da1e8d79bf9593a17ee915b1b2ccae7270ec482d7e285e218225382be78cc9219f455c1288f55" target="_blank">@nahaltoosi</a
+>, <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c9e5ffb414adc4bd79ee618ce8a39f9f0d1125c575abb016c60258ab13ef7af48ea17e04a45d08c1a8569b1a1a0739660" target="_blank">@PhelimKine</a
+>, <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c1994820a674b08b425b6b8c3226ad5a4afb7e137922f94e64e77fae190048e4963c95cd6ba79374969fb9692a87b116b" target="_blank">@laraseligman</a
+>, <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c470ac3d3ae967d3b6c790fc839f8d9cd2554c80a26c7ddc0f9cfa558b577664c23705baa31407f413e3ece951c20c62a" target="_blank">@connorobrienNH</a
+>, <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c324224f4fe771eb9d259afbcc87498abaeba4ea38c9bb462e5bb6678c42fec639c9603a1996b9a72de846b5d8bbf8a8d" target="_blank">@paulmcleary</a
+>, <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c083268d564c40225c007e70bb2cc278893cc2a5b4e1fee05bfa822dbc96974a33708f3d545210d7cba3d96af5f2ce1b1" target="_blank">@leehudson</a
+>, <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74cf5ca9e787389b547ccb6032bb14a21ae57c44e0dff5889df74ed527b2d8d166c826daed4de2dc097d5d88177980b19ea" target="_blank">@magmill95</a
+>, <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74ceba6a0ccef1428d19fc7ff0e748efbb638a787515d6cd3e6260922533345fcafd90da748dac7a8da78398e14f81345f5" target="_blank">@johnnysaks130</a
+>, <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c348b9c7c0164bd3c671486c5781aac2984969ad69dd07a6cf62b3f88bdfb876942ad88b0140951ec0f02b9d2bb0a994b" target="_blank">@ErinBanco</a
+>, <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74ca35d35ac624d9b69a9ddfdd8d439af89dd8b1cb175e8de16e2ad1935c4881d1d7180a491ad64832ee8aeed350731689e" target="_blank">@reporterjoe</a
+> and <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74cdf3840e34b529b5616214c7b9536e480213d3489cae3e8818c307c82e342205dcc22658919551606c8848dfa89974826" target="_blank">@_AriHawkins</a
+>.<br></p></td>                    </tr>                                    <tr>                            </tr><tr>    <td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#ffffff;background-color:#003f69;">                                            <p style="font-family:Helvetica,sans-serif;font-size:12px;margin-top:0;margin-bottom:10px;color:#ffffff;">A message from Lockheed Martin:</p>                                                <p style="margin-top:0;margin-bottom:20px;line-height:24px;color:#ffffff;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Using Artificial Intelligence to help firefighters better detect, predict and fight wildfires.</strong
+><br><br>Lockheed Martin is collaborating with commercial companies to integrate our technologies and expertise with their capabilities to help first responders detect, predict and fight wildfires. <a
+ href="https://go.politicoemail.com/?qs=b2d089e4e2536d57dbe6c973c13e2b827f33e1d954575871852d0b8349593871cdd15e88c123a3650e07b4b8ec3522790af59d333da71fc1" target="_blank" style="text-decoration:underline;color:#ffffff;">Learn more.</a
+></p>                                            </td></tr>    <tr>        <td height="20" style="height:20px; font-size:0; border-top:1px solid #FFFFFF;">&nbsp;</td>    </tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">2024</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">CHRISTIE&#8217;S IN:</strong
+></span> Former New Jersey Gov. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">CHRIS CHRISTIE</strong
+> will officially enter the presidential race next week, per <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c5c9cb32a0bc910ad5a4d5d49e03cf612b519d52e91a1082443d6605ed2a6a379650e50ee770a215c7b04c77e2580e512" target="_blank">Axios&#8217; <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MIKE ALLEN</strong
+></a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">He&#8217;s called former President <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74cbab659dd2947a44430bb8342c489857cde2f2806491f5560c047f30a64417c456bb3315439cb7d690ddd86f879200d9e" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DONALD TRUMP</strong
+> a &#8220;puppet&#8221; of Russian leader <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">VLADIMIR PUTIN</strong
+></a
+> and trashed DeSantis as a weak negotiator.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;That&#8217;s not the guy I want sitting across from President Xi and negotiating our next agreement with China, or sitting across from Putin and trying to resolve what&#8217;s happening in Ukraine, if you can&#8217;t see around a corner that <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">BOB IGER</strong
+> created for you,&#8221; he <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c82bc8af044132ffef745574b5545db19ad08cb10158dfb0abfea03a448204ff93d75d84b6237f0c43804e12e2474d3e1" target="_blank">told the New York Times in April</a
+>, referencing the Disney CEO.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c61ef7c3b649b41b27b85aa75ac0cd3dd4fdbd54c1574260527f1ca9c4a15f7c65ce681394a3689747c766d9e500b6b52" target="_blank">Christie in the 2016 cycle was a supporter</a
+> of the Patriot Act, increased military spending and maintaining traditional alliances.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Read: <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c15eaa50a7b78fea349548bd912b840686729ccf1aad3566eaf9bf207968841b3fbd5abdaef8a4451330c1430e0592e4c" target="_blank">&#8216;I&#8217;m not a paid assassin&#8217;: Inside Chris Christie&#8217;s 2024 decision</a
+> by <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">RACHAEL BADE</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">HALEY&#8217;S FOREIGN FUNDRAISERS:</strong
+></span> Republican 2024 hopeful <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">NIKKI HALEY </strong
+>has raised tens of thousands of dollars in political donations from foreign lobbyists, according to disclosure reports, <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c9a07a9993878ede02cadbb491f5b09e99baef0f608310743e40b223bde3907ac022031be4b3aaa465069640863c58b11" target="_blank">per ABC&#8217;s <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">SOO RIN KIM</strong
+></a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">.&nbsp;</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">OSWALDO PALOMO, </strong
+>the managing director of a U.S. consulting firm, and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DAVID HORTON WILKINS, </strong
+>a former U.S. ambassador to Canada, are registered as foreign agents, and both donated $6,600 to Haley&#8217;s joint fundraising committee, which raises funds for her leadership PAC and her presidential campaign.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The report comes as the former American ambassador to the U.N., pushes for a ban of foreign lobbying, saying that embassies, not private consultants, should represent foreign interests in Washington.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;All these lobbyists that get paid from foreign entities to lobby Congress &#8212; outlaw all foreign lobbying whatsoever," Haley said at a town hall in Iowa last month, per ABC. She also took to Twitter in April, writing <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c8528d50f5f93a864f38a6fc5982551fb210600076d123aff6728619bcccd6cdc4427a3c78d112efe02846ba6705b2abb" target="_blank">&#8220;ban all foreign lobbying.&#8221;</a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">YOU&#8217;RE FIRED:</strong
+></span> Republican presidential candidate <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">VIVEK RAMASWAMY</strong
+> fired a firm consulting for his campaign after <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c2f223d12688efbe25b8e0d3c9d8eabd2e88c91fc0506f2510a5f3a42b458e1c985877ed5f4edc0da75c7396f007a8c7b" target="_blank">it was revealed by POLITICO that simultaneously worked for Saudi-backed LIV Golf League</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The firm, Gitcho Goodwin, registered retroactively on May 25 as foreign agents for the league. After our own <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">CAITLIN OPRYSKO</strong
+> and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">HAILEY FUCHS</strong
+> reported on that, the Ramaswamy campaign first downplayed the organization&#8217;s work with them before saying the ties had been severed.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;We became aware of this &#8230; when you (the press) made us aware,&#8221; spokesperson <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">TRICIA McLAUGHLIN</strong
+> said in a text.<br></p></td>                    </tr>                                    <tr>                        </tr><tr>    <td height="10" style="height:10px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                    <p style="margin-top:0;margin-bottom:20px;line-height:24px;margin-bottom:20px;color:#000000;">                <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">GET READY FOR GLOBAL TECH DAY: </strong
+>Join POLITICO Live as we launch our first Global Tech Day alongside London Tech Week on Thursday, June 15. Register now for continuing updates and to be a part of this momentous and program-packed day! From the blockchain, to AI, and autonomous vehicles, technology is changing how power is exercised around the world, so who will write the rules? <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74cc000f7e3cc4c3221cabc72a17dbe276316065ce7cfbc08077034b01215ee1b765a6e3fb4d5dc578bb6df16619163e790" target="_blank" style="text-decoration:underline;color:#007BC7;">REGISTER HERE</a
+>.            </p>            </td></tr><tr>    <td height="10" style="height:10px; font-size:0; border-bottom:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td height="15" style="height:15px; font-size:0;">&nbsp;</td></tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">Keystrokes</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;">
+<span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">NO AI FOR &#8216;CRITICAL&#8217; WORK:</strong
+></span> The European Commission created recommended guidelines to help staffers &#8220;assess the risks and limitations&#8221; of using generative Artificial Intelligence tools like ChatGPT and Bard, <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74cf6255a05e909ce908878e4656aa0828902a43b34d57f0e2391e7a6f15207f812904efb65260da2f2452e9eea25522b62" target="_blank">our own<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> GIAN VOLPICELLI </strong
+>and<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> JACOPO BARIGAZZI </strong
+>report</a
+><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">.</strong
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The four-page paper, obtained by POLITICO and dated May 24, establishes five main rules Commission staffers are recommended to follow when using such tools.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The rules include: not disclosing information not in the public domain when using these applications; being aware that the AI&#8217;s responses might be inaccurate or biased; considering whether the AI might be violating intellectual property rights; never copying AI-generated output into official documents; and avoiding the use of AI tools when working on &#8220;critical and time-sensitive processes.&#8221;
+</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">G7 nations earlier this month called for the development of technical standards to ensure artificial intelligence remains &#8220;trustworthy&#8221; amid mounting concerns over issues like copyright, and the threat of disinformation, <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74caa48f2fdf08e4aca86ac0c609ba399987e0e577550f25e37146734ff6b6c623df1b0c6629572e124adfc97725d749afb" target="_blank">per Reuters</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">CHINA&#8217;S CHIPS IN EUROPE:</strong
+></span> Dutch Foreign Minister <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">WOPKE HOEKSTRA</strong
+> said he is concerned about Chinese cyberattacks in an interview with our own <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JAKOB HANKE VELA</strong
+>, <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c38f306f8af6620353d923376d9f4fd8e45a748271c57c4be778253d62a176d18e063fcc184e14451cf0062bf1181124d" target="_blank">per Brussels Playbook</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;Domestic interference, but also &#8230; cyberattacks stemming from Chinese soil, is something about which we are increasingly worried,&#8221; Hoekstra said. His concerns echo reports from the Dutch intelligence services, which label countries with &#8220;cyberattack programs&#8221; including China as posing a &#8220;massive threat,&#8221; <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c6b74be279cd9e14a4ad0373d3500a6c95dc1c15a4508e4df0b59c122bb999212803b05e267b99840e1d15a0260ebbff0" target="_blank">per our own <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">PIETER HAECK</strong
+>, Barigazzi and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">NICOLAS CAMUT</strong
+></a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Earlier this year, the Netherlands took center stage in the growing tech battle between the U.S. and China. In March, The Hague struck a deal with the U.S. and Japan to restrict exports of chips technology to China, in an effort to shut down the supply of cutting-edge semiconductors to Beijing.<br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">The Complex</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;">
+<span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">NEW COMMANDANT:</strong
+></span> The White House nominated Gen.<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> ERIC SMITH</strong
+> as the new commandant of the Marine Corps, per a Senate notice, <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c8dfe8388c88b20729f9a0de618d9b67d6d39d0c5ec85690f3e11db5b8bd23011894d0bf1f9b981cc9e113bf1c4918546" target="_blank">our own <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DAVID BROWN </strong
+>reports</a
+>. The <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c3121b614a0f85e5c01adb4ab5a4517180dc7773baab7ef28c51a09975ce654f877525ffcecc4f716ab32f0f735a75585" target="_blank">Washington Post was first to report that smith was expected to get the nod</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">Smith is currently the Marine Corps&#8217; No. 2 officer, and would replace Gen. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DAVID BERGER</strong
+> if confirmed by the Senate. The nomination has yet to be announced by the service, but his package was received by the Senate on Tuesday, <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74cfa80a1029e48fc7fa48fc26bb3a40ed4a4028ea80d2e7c8326cc473a6d7f56350bd01a6ab555125f7685ca8dd59a3ffd" target="_blank">according to the chamber&#8217;s website</a
+>. <br></p></td>                    </tr>                                    <tr>                        </tr><tr>    <td height="10" style="height:10px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                    <p style="margin-top:0;margin-bottom:20px;line-height:24px;margin-bottom:20px;color:#000000;">                <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DON&#8217;T MISS POLITICO&#8217;S HEALTH CARE SUMMIT</strong
+>: The Covid-19 pandemic helped spur innovation in health care, from the wide adoption of telemedicine, health apps and online pharmacies to mRNA vaccines. But what will the next health care innovations look like? Join POLITICO on Wednesday June 7 for our Health Care Summit to explore how tech and innovation are transforming care and the challenges ahead for access and delivery in the United States. <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c0e153995ef2348b8d290747c7c9ba0975be74a285121a832e20d40f37c572b48d6aea573268462e9051ce26e7c67d22b" style="text-decoration:underline;color:#007BC7;">REGISTER NOW</a
+>.            </p>            </td></tr><tr>    <td height="10" style="height:10px; font-size:0; border-bottom:1px solid #E5E7EB;">&nbsp;</td></tr><tr>    <td height="15" style="height:15px; font-size:0;">&nbsp;</td></tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">On the Hill</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;">
+<span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">HAWKS QUESTION DEBT DEAL:</strong
+></span> Republicans have spent months hammering Biden&#8217;s Pentagon budget as insufficient. Now they&#8217;re faced with a dilemma: support a debt limit deal that locks in Biden&#8217;s budget or try to sink the pact just days before a default, <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74cf12e355dc44bcf37f1eba2efb4440039241ae07409a38af69a16e2647518ad85dd8d8047958d6db642c1674702adfd9c" target="_blank">our own <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">CONNOR O&#8217;BRIEN</strong
+> and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JOE GOULD </strong
+>report</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">A handful of GOP defense hawks plan to oppose the debt deal between Biden and Speaker <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">KEVIN McCARTHY</strong
+> rather than endorse the administration&#8217;s $886 billion military budget that they&#8217;ve panned as too low. Even more defense-minded lawmakers are gritting their teeth and backing the deal, buoyed by the possibility of padding the defense budget with emergency funding or reopening the pact later.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;It&#8217;s not as much as I would do,&#8221; said Rep. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">DON BACON</strong
+> (R-Neb.). &#8220;But yet we are cutting non-defense and we got a lot of other concessions. So I&#8217;m going to take an overall good deal.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">&#8220;I think for us to demand more would probably stop the whole deal,&#8221; he said.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">COUNTERING CHINA&#8217;S ABUSE IN XINJIANG:</strong
+></span> Sens.<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> MARCO RUBIO </strong
+>(R-Fla.) and<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> JEFF MERKLEY</strong
+> (D-Ore.) <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c3b691bcb298c3c6c15007144633041ff4cbfefd05583e3024ca8b5dcb5db402111579ce64d6db0a5b94fa2b1f2cfa356" target="_blank">introduced legislation Wednesday to punish the Chinese government</a
+> over their treatment of Uyghur Muslims. Beijing has detained more than one million Uyghurs against their will since 2017 in what human rights groups consider <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74cd240d0d70a5d4319643f23ea6c0e5c466661bff353cec768b721cd3d473523b1acbd41b71d39cb15716c7331de946f43" target="_blank">&#8220;re-education camps.&#8221;</a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74ce2b8106b3246f52f99b02b1f14b2e67b87e27d13e7231b46fe52f65b8f825af5b523601f5f2267b20d9cd4298b99e592" target="_blank">Uyghur Genocide Accountability and Sanctions Act</a
+> would expand sanctions and travel restrictions on Chinese officials involved in human rights abuses, and would permit the U.S. State Department and the U.S. Agency for International Development to provide support to victims.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The bill marks the latest effort from Congress to punish Beijing for its repression of Uyghurs in China&#8217;s Xinjiang region, including the <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c224a52598d3ff582592d8f81a69bdcd36a9f7ce0a0804954fa017402f4e73c42c5193a2739987d415d680c54920c9b12" target="_blank">Uyghur Human Rights Policy Act</a
+> in 2020, and the <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74ceaa68573bfc116cdd5177d3e5c84c40f5bd5e1ccf154cd4fdb68afda02120bee619305507d0063f10c01ac67c1d25ebf" target="_blank">Uyghur Forced Labor Prevention Act</a
+>, signed into law in 2021, to prevent the flow of goods made with forced labor into Washington.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">SPEAK NOW:</strong
+></span> Sens.<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> JEANNE SHAHEEN </strong
+>(D-N.H.) and<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> THOM TILLIS </strong
+>(R-N.C.) <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c66b1937c5f58ae9daf87992f45085e63db7be109620c5083fb48feb5a71f2df55090f828bf5810818943e2c79b60fe21" target="_blank">sent a letter to leadership in the House and Senate</a
+> urging them to invite NATO Secretary General <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JENS STOLTENBERG</strong
+> to address a joint session of Congress.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">It&#8217;s been &#8220;more than a year since Putin&#8217;s unprovoked further invasion of Ukraine,&#8221; Shaheen, who co-chairs the Senate NATO Observer Group with Tillis <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74cac15afa35bbf86ef730ccd5452aadcecd6211b89161f80fe7e5cebb1288626bd41a98b4ccb285a0b376ddb29f20e19fc" target="_blank">wrote on Twitter</a
+>. She said that is why she is <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74ce727b41ed39e86e7d62a42731b1cc9779151cabb359e195bb6521c15bb359cb55e5c4226b1a79e25d0ce84c9fbb59223" target="_blank">calling on leadership to invite Stoltenberg</a
+> to discuss how &#8220;strong bipartisan support for NATO is critical for the advancement of U.S. national security interests.&#8221;</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The letter is also signed by Reps. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">LINDA SANCHEZ</strong
+> (D-Calif.), <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MICHAEL TURNER </strong
+>(R-Ohio) and<strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;"> GERALD CONNOLLY </strong
+>(D-Va.), who serve as members of the NATO Parliamentary Assembly in the House.<br></p></td>                    </tr>                                    <tr>                            </tr><tr>    <td height="15" style="height:15px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>    <tr>    <td style="padding:0 20px 0 20px;text-align:center;font-family:Georgia,serif;font-size:16px;color:#000000;background-color:#FFFFFF;">                                                                        <p style="margin-top:0;margin-bottom:15px;line-height:15px;">                                            <a
+ href="https://go.politicoemail.com/?qs=b2d089e4e2536d571da987b1d3fb9707a604c6ce7fbb74b510a24ca0b112a420f37c28df2ea30d21fc2e867d36b12cbe3bc73c012dace72d" target="_blank"><img src="https://www.politico.com/dims4/default/204873e/2147483647/resize/600x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2F9e%2F12%2F2f360a7440e99556fc49da274f44%2Ffiaas-digital-ad-300x250.png" title="Advertisement Image" alt="Advertisement Image" border="0" width="300" style="width:100%;max-width:300px;"></a
+>                                        <img src="https://ad.doubleclick.net/ddm/ad/N7384.146504POLITICO0/B29927968.367742728;sz=1x1;ord=[timestamp]" border="0" a>                </p>                                                                                    </td></tr>    <tr>        <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td>    </tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">Broadsides</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><span style="color:#b70000;font-weight:bold;font-family:sans-serif;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">TALKS FALL APART:</strong
+></span> Sudan&#8217;s army suspended its participation in talks with the paramilitary Rapid Support Forces Wednesday, as both factions accused each other of violating a humanitarian truce, <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c272e51e67753c19dd55585cfcef061b89ec8ae03284fdcc8be8e394e37d4141de2e098a464ba0de38708a189fcc9ca1a" target="_blank">report <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MORGAN WINSOR</strong
+>, <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">EMMA OGAO and AYAT Al-TAWY</strong
+> from ABC</a
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The development comes after the warring parties signed a ceasefire agreement on May 21, which paved the way for the delivery of humanitarian and other critical assistance amid the clashes, which first broke out in April. The U.S. and Saudi Arabia have been mediating the talks.</p>
+<p style="margin-top:0;margin-bottom:24px;line-height:24px;">A spokesperson for the Sudanese armed forces told the AP that the suspension of talks were a result of the Rapid Support Forces&#8217; &#8220;repeated violations&#8221; of a humanitarian agreement, which included their occupation of civilian infrastructure like hospitals, in Sudan&#8217;s capital.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;">The RSF, in response, <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c7b0da5114547feb5cf36bc27df51e47528b43617c39f6addb0e5a851fb9f577bba8b4579eecb03527e0db0a80b63c3c4" target="_blank">issued a statement that said it &#8220;unconditionally backs the Saudi-U.S. initiative&#8221;</a
+> and added that &#8220;recent SAF violations have not deterred us from honoring our commitments.&#8221;<br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        
+<td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">Transitions</td>    </tr>    </tbody></table></td>                    </tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; MORGAN MURPHY</strong
+> resigned as Sen. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">TOMMY TUBERVILLE</strong
+>&#8217;s (R-Ala.) national security adviser, <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c6e010402d993d38b1c6881fd990db089dd5b5f41126d3bb94b1ab4763d2cc79f8e0a344a2d94480589a0702fab7a5d71" target="_blank">Alex, <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">LEE HUDSON</strong
+> and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">LARA SELIGMAN </strong
+>scoop</a
+>. The move follows a Washington Post profile that suggested Murphy was the mastermind behind the lawmaker&#8217;s block of military promotions over the Pentagon&#8217;s new abortion rule.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; NATALIE BOYSE</strong
+> has started as global program manager at ORF America, the U.S. affiliate of India&#8217;s Observer Research Foundation, after wrapping up an M.A. at SAIS. She served at DOD and HHS in the Trump administration and has also previously worked on presidential campaigns for <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MARCO RUBIO</strong
+> and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">MITT ROMNEY</strong
+>.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; DINA POWELL MCCORMICK </strong
+><a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74cbfcef18abc74ad953babccdd2db0c0e5ccc54ea25a7f1020a2870b7aad175685143f4270f324524ad522ca95cc645156" target="_blank">has been named</a
+> vice chair and president of client services at BDT &amp; MSD Partners, where one of her responsibilities will be expanding the merchant bank&#8217;s relationships with sovereign-wealth funds. She currently is global head of sustainability and inclusive growth and global head of the sovereign business at Goldman Sachs and is a Trump and Bush administration alum.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; REBECCA BROCATO</strong
+> and <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">CHRISTIAN MARRONE</strong
+> have joined WestExec Advisors as senior advisers. Brocato was the chief of staff at the Development Finance Corporation after serving as the NSC&#8217;s senior director for legislative affairs, and Marrone most recently was SVP for government affairs for Lockheed Martin and is a DHS and DOD alum.</p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; JONATHAN MURPHY </strong
+>started in a new position leading military helicopter and military aircraft communications for Airbus U.S. Space &amp; Defense. He was previously a senior manager, PR and public affairs at Raytheon Technologies, and worked as deputy press secretary for former Republican Virginia Sen. <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JOHN WARNER</strong
+>.<br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">What to Read</td>    </tr>    </tbody></table></td>                    
+</tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212;</strong
+> <strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">BILAL SAAB, War on the Rocks: </strong
+><a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c9b325fccaaf7c95a0a76f7b2cbebf6c16ee7b7acc6db55c27928fdc20dd22cdadaea962143682f00f23ba3959df90d3b" target="_blank">A defense pact will not upgrade U.S.-Saudi security relations</a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8211;&#8211; HOLLY DAGRES, The New York Times:</strong
+> <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c0681c5412ffd40694ab7891e5aab05dd04e0e75a73f656e1401f3d3d33890d0e43b8a81f75412fd29f72e68e08e01d60" target="_blank">A rapper&#8217;s detention shows Iran&#8217;s crackdown Is failing</a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; DAVID GRAHAM, The Atlantic:</strong
+> <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c970c67d6c6ec167a7f865f82ecc286e703525fafd22b8facdd6a417cde6c60ed4df823e35152bf3b1fbd2cd8b4d71909" target="_blank"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">JACK TEIXEIRA</strong
+> should have been stopped again and again</a
+><br></p></td>                    </tr>                                    <tr>                        <td style="padding-bottom:10px; min-width:100%; width:100%;"><!-- Inline styling used, as its an email content --><table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#121522; min-width:100%;">    <tbody>    <tr>        <td style="text-align:left;font-family:Helvetica,sans-serif;font-size:12px;color:#FFFFFF;text-transform:uppercase;font-weight:bold;letter-spacing:2px;padding-top:10px;padding-bottom:10px;padding-left:20px;margin:0;" valign="middle">Tomorrow Today</td>    </tr>    </tbody></table></td>                    
+</tr>                                    <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212;&#8203;&#8203; Senate Appropriations Committee, 9:30 a.m.: </strong
+><a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c5ee6a863756233d6948f4ec3aee738c619d88f9f139d10623fba0ce5a8df3be479e1fd9b64b64e925425301c02d530f8" target="_blank">A Review of the President&#8217;s Fiscal Year 2024 Budget Request for the National Guard and Reserve</a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212;&#8203;&#8203; Middle East Institute, 10 a.m.: </strong
+><a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c7cd66faa2e6f23a5754ead27b51067857799df4275bb1b6c46b497238004e8247c15fad3f71bdd92f34969ee9d5ffbe4" target="_blank">How Will Presidential Election Results Affect Turkey&#8217;s Regional Outlook?</a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212;&#8203;&#8203; Carnegie Endowment for International Peace, 10 a.m.: </strong
+><a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c76bc69675ca7c12d3d22936380d7aa1af62b7f4a495d704cc980e8e29271177276f1b45de9c197910d9fe1c1cd5867ae" target="_blank">What&#8217;s Next for Yemen?</a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212;&#8203;&#8203; Washington Institute for Near East Policy, 12 p.m.:</strong
+> <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74cfe9dc15306167c797c5fa80317ff211c489fd2cb89001434073f6e62b273ad47f1ebd9d08e3be1a41df4a6b3bdb27ac6" target="_blank">What to Do With Families of Islamic State Foreign Fighters</a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; House Oversight and Accountability Committee, 1 p.m.:</strong
+> <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c7e273fa58f53deb9e93625f2f05967b04f90ddb9eaccc3ffbbd01fc87ee89f6b37bc26a58e8aec1d9b4b2b2677a88882" target="_blank">Advances in AI: Views from Silicon Valley</a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212;&#8203;&#8203; Inter-American Dialogue, the Organization of American States, and the Development Bank of Latin America, 2 p.m.:</strong
+> <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74c8a4f5026a52f84c5649364a7f1d28c7e30724e9c00695c1111f6ef2e8cacc7015e6b8de9fc63334677f6ef6a3776635a" target="_blank">26th Annual CAF Conference</a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; Jewish Institute for National Security of America, 2 p.m.: </strong
+><a
+ href="https://go.politicoemail.com/?qs=b2d089e4e2536d5782c41d2446c085f40f5efe124872c6e30299a859a5cd8793276ec0f677fc8072375e9b97f2f4925c76af28f880cc6719" target="_blank">Sudan in Conflict and the Implications for the U.S. Footprint in Africa</a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">&#8212; Center for Strategic and International Studies, 2 p.m.: </strong
+><a
+ href="https://go.politicoemail.com/?qs=b2d089e4e2536d57bc76da09b39046c804481b9c41ac51aefd6b5b7005de35507c64d60dea61079d338254220b1ad0cbd9d75495baefa4eb" target="_blank">The Biden Administration&#8217;s Cyber Plans for Critical Infrastructure: Focus on Pipelines, Rails, Aviation</a
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><i
+>Thanks to our editor, Heidi Vogt, who never listens to our advice.</i
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><i
+>We also thank our producer, Gregory Svirnovskiy, who is the go-to person for candid thoughts.</i
+></p><p style="margin-top:0;margin-bottom:24px;line-height:24px;"><i
+>CORRECTION: A previous edition of NatSec Daily misstated the timing of the Know Your App bill announcement. The lawmakers unveiled the legislation Tuesday morning.</i
+><br></p></td>                    </tr>                                    <tr>                            </tr><tr>    <td style="padding:20px 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#ffffff;background-color:#003f69;">                                            <p style="font-family:Helvetica,sans-serif;font-size:12px;margin-top:0;margin-bottom:10px;color:#ffffff;">A message from Lockheed Martin:</p>                                                <p style="margin-top:0;margin-bottom:20px;line-height:24px;color:#ffffff;"><strong
+ style="font-family:Helvetica,sans-serif;font-weight:bold;">Using Artificial Intelligence to help firefighters better detect, predict and fight wildfires.</strong
+><br><br>Lockheed Martin is collaborating with commercial companies to integrate our technologies and expertise with their capabilities to help first responders detect, predict and fight wildfires. <a
+ href="https://go.politicoemail.com/?qs=b2d089e4e2536d57cfef0df543b38dd7630f8fbb7bd9afbe728df7539b5bbdc7b8864d6e09d27ac31290f643a98b19e122aa6b3e1b7e804d" target="_blank" style="text-decoration:underline;color:#ffffff;">Learn more.</a
+></p>                                            </td></tr>    <tr>        <td height="20" style="height:20px; font-size:0; border-top:1px solid #FFFFFF;">&nbsp;</td>    </tr>                                                        <tr>                        <td style="padding:0 20px 0 20px;text-align:left;font-family:Georgia,serif;font-size:16px;color:#000000;"></td>                    </tr>                                <!-- End Ad Copy -->                <tr>                                    </tr>                <!-- Post Body Content -->                <tr>                                    </tr>                <tr>                    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;
+</td>                </tr>                <!-- Twitter Handles -->                                    <tr>    <td style="color:#000000;padding:0px 20px 20px 20px;text-align:left;">        <p style="font-family:Helvetica,sans-serif;font-size:20px;color:#000000;margin-top:0;margin-bottom:15px;"><strong
+>Follow us on Twitter</strong
+></p>        <table cellpadding="0" cellspacing="0" border="0" role="presentation">            <tbody>            <tr>                <td width="52" valign="middle" style="text-align:left;padding-right:10px;"><img src="https://static.politico.com/hosted/icon-twitter-circle-blue%402x.png" title="" alt="" width="50" style="max-width:50px;"></td>                <td valign="middle" style="text-align:left;font-family:Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#000000;">                                            <p style="margin-top:0;margin-bottom:5px;line-height:14px;">Alex Ward <a
+ href="https://go.politicoemail.com/?qs=29b6a8062419f74ccc8e6448b2509a98c0c139e401a62c51596e75cb032948e42a7437e1fb0562a0e0675873bcba3e52ef726925e834513e" style="color:#007BC7;text-decoration:none;font-weight:bold;" target="_blank">@alexbward</a
+></p>                                    </td>            </tr>            </tbody>        </table>    </td></tr><tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                                <!-- Family of Playbook -->                                <!-- Follow us -->                <tr>    <td style="color:#000000;padding:0px 20px 20px 20px;text-align:left;">        <p style="font-family:Helvetica,sans-serif;font-size:12px;color:#000000;margin-bottom:10px;line-height:14px;text-transform:uppercase;font-weight:bold;letter-spacing:2px;">Follow us</p>        
+<table cellpadding="0" cellspacing="0" border="0" role="presentation">            <tbody>            <tr>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=b2d089e4e2536d57d304bb30e686b19c3bf3077d25116ef20399342bdcf50827ce7d81dfe4790a22b6a8888550f47dfb7ca52458a1ec6588" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-facebook-gray%402x.png" title="Follow us on Facebook" alt="Follow us on Facebook" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=b2d089e4e2536d5701ee66de426192d6123706ae7564ccb818ba1a21434137604135120663783416a270b34f2a27fd10b9932409331620d5" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-twitter-gray%402x.png" title="Follow us on Twitter" alt="Follow us on Twitter" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=b2d089e4e2536d5788c2ec71af2c86926d728e0d4f880b34c1cd6d0ba588514a609e8cded08f1cc93046521e1999b4475ba46b263e4381fc" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-instagram-gray%402x.png" title="Follow us on Instagram" alt="Follow us on Instagram" width="24" border="0" style="max-width:24px;"></a
+></td>                <td width="40" style="text-align:left;"><a
+ href="https://go.politicoemail.com/?qs=b2d089e4e2536d57d3f023fffd422e92151c04527cd83eae21901d4847d0f807de120bc6fb319ff1fd2d4ee31a426bdcb862a8f61bda68d9" target="_blank"><img src="https://static.politico.com/hosted/icon-follow-applePodcast-gray%402x.png" title="Listen on Apple Podcast" alt="Listen on Apple Podcast" width="24" border="0" style="max-width:24px;"></a
+></td>            </tr>            </tbody>        </table>    </td></tr><tr>    <td height="20" style="height:20px; font-size:0; border-top:1px solid #E5E7EB;">&nbsp;</td></tr>                </tbody>            </table>        </td>        <td><!-- Note: This is left blank to aid in centering across email clients --></td>    </tr>    </tbody></table><!-- Everything below this line is "new" to the template. We'll have to experiment a bit to see if it causes troubles. --><!-- howler#email.footers/core-newsletter.footer.html -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff"
+       style="padding:5px 0 15px 0;margin:0;text-align:center" role="presentation">
+    <tbody>
+    <tr>
+        <td><!-- Note: This is left blank to aid in centering across email clients --></td>
+        <td align="center" width="540">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:540px" role="presentation">
+                <tbody>
+                <tr>
+                    <td align="center" style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;">
+                        <p style="margin-bottom:15px;line-height:24px;">To change your alert settings, please log in at
+                            <a
+ href="https://go.politicoemail.com/?qs=b2d089e4e2536d5729949a8c906b0d7810e4709578df8999d674a367433eb07af0db277f697410ca8e5ce3434d9471428e88506d122f97e8" target="_blank" style="color:#007BC7;text-decoration:none;">https://www.politico.com/_login?base=https%3A%2F%2Fwww.politico.com/settings</a
+>
+                            <!--Commenting out the following line because it causes an undesired line to be displayed on outlook (some versions) and we couldn't find the use case of it-->
+                            <!-- <span style="display:none;"><a
+ href="https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a2a49d9b77d85777fad4867e9485e4ab98f3be1c75795bd51a">https://click.politicoemail.com/profile_center.aspx?qs=9c775bb5bc5419bcb2e8309a5c29d12d93e82fe774a453a2a49d9b77d85777fad4867e9485e4ab98f3be1c75795bd51a</a
+></span> -->
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="padding-bottom:15px;"><img
+                            src="https://static.politico.com/hosted/icon-politico-logo.png"
+                            class="CToWUd"></td>
+                </tr>
+                <tr>
+                    <td align="center"><p
+                            style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:20px;">
+                        This email was sent to ouchendans62@gmail.com by: POLITICO, LLC 1000 Wilson Blvd. Arlington, VA, 22209, USA
+                        <p style="font-family:Helvetica,sans-serif;font-size:14px;color:#000000;margin-bottom:15px;line-height:24px;">
+                            
+
+                            Please click <a
+ href="https://go.politicoemail.com/?qs=b2d089e4e2536d57c12df7d82772e7bb28c72e1c909d55faec0de8283bc273e02a589eb92a05e8da3be7ca3f55ecd8e41d0585fa4dd71410" target="_blank" style="color:#007BC7;text-decoration:none;">here</a
+> and follow the steps to unsubscribe.
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td><!-- Note: This is left blank to aid in centering across email clients --></td>
+    </tr>
+    </tbody>
+</table>
+<img src="https://click.politicoemail.com/open.aspx?ffcb10-fe8c1d7875660c7b77-fdea13797160037e70127273-fe9115737262077c7c-fecd12737567047b-fdf61574756104747317747c-ffcf14&d=40128&bmt=0" width="1" height="1" alt="">
+</body></html><p email-meta style="display: none;opacity:0;">source=GoggleDocument, article=00000188-71c1-d799-a3e8-7be3b4f80000</p>
+
+--c8W185fkLzUG=_?:--
+

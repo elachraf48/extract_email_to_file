@@ -1,14 +1,16 @@
 import os
 import re
-from PyQt6.QtWidgets import QApplication, QMainWindow, QLabel, QVBoxLayout, QWidget, QPushButton, QFileDialog, QMessageBox, QProgressBar
+from PyQt6.QtWidgets import QApplication, QMainWindow, QLabel, QVBoxLayout, QWidget, QPushButton, QFileDialog, QMessageBox, QProgressBar, QComboBox
 
 class ReturnPathExtractorWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
         self.folder_path = ""
-        self.output_file = "Return_Path.txt"
-        self.return_path_pattern = r'Return-Path:\s*(.+)'
+        self.output_file = ""
+        self.email_provider = ""
+        self.extract_button = None
+        self.return_path_pattern = ""
 
         self.setWindowTitle("Return-Path Extractor")
 
@@ -16,8 +18,13 @@ class ReturnPathExtractorWindow(QMainWindow):
         self.folder_button = QPushButton("Browse")
         self.folder_button.clicked.connect(self.select_folder)
 
-        self.extract_button = QPushButton("Extract Return-Paths")
-        self.extract_button.clicked.connect(self.extract_return_paths)
+        self.email_provider_combo = QComboBox()
+        self.email_provider_combo.addItems(["Return-Path", "Received-SPF", "From", "Message-ID", "Subject"])
+        self.email_provider_combo.currentIndexChanged.connect(self.update_email_provider)
+
+        self.extract_button = QPushButton("Extract")
+        self.extract_button.clicked.connect(self.extract_data)
+        self.extract_button.setEnabled(False)
 
         self.progress_label = QLabel("Progress:")
         self.progress_bar = QProgressBar()
@@ -25,6 +32,7 @@ class ReturnPathExtractorWindow(QMainWindow):
         layout = QVBoxLayout()
         layout.addWidget(self.folder_label)
         layout.addWidget(self.folder_button)
+        layout.addWidget(self.email_provider_combo)
         layout.addWidget(self.extract_button)
         layout.addWidget(self.progress_label)
         layout.addWidget(self.progress_bar)
@@ -40,10 +48,24 @@ class ReturnPathExtractorWindow(QMainWindow):
         folder_path = folder_dialog.getExistingDirectoryUrl(self, "Select Folder")
         if folder_path:
             self.folder_path = folder_path.toLocalFile()
+            self.update_extract_button_state()
 
-    def extract_return_paths(self):
+    def update_email_provider(self, index):
+        self.email_provider = self.email_provider_combo.currentText()
+        self.update_extract_button_state()
+
+    def update_extract_button_state(self):
+        if self.folder_path and self.email_provider:
+            self.extract_button.setEnabled(True)
+        else:
+            self.extract_button.setEnabled(False)
+
+    def extract_data(self):
         if self.folder_path:
-            return_paths = []
+            self.output_file = self.email_provider + ".txt"
+            self.return_path_pattern = r'^' + self.email_provider + r':\s*(.+)'
+
+            extracted_data = []
             total_files = 0
             processed_files = 0
 
@@ -55,27 +77,28 @@ class ReturnPathExtractorWindow(QMainWindow):
                 if filename.endswith('.txt'):
                     file_path = os.path.join(self.folder_path, filename)
                     with open(file_path, 'r', encoding='utf-8') as file:
-                        content = file.read()
-                        matches = re.findall(self.return_path_pattern, content, re.IGNORECASE)
-                        return_paths.extend(matches)
-                    
+                        lines = file.readlines()
+                        for line in lines:
+                            match = re.match(self.return_path_pattern, line, re.IGNORECASE)
+                            if match:
+                                extracted_data.append(match.group(1))
+
                     processed_files += 1
                     self.update_progress(processed_files, total_files)
 
-            return_paths = list(set(return_paths))
-            return_paths = [return_path.replace("<", "").replace(">", "") for return_path in return_paths]
+            extracted_data = list(set(extracted_data))
 
             if not os.path.exists(self.output_file):
                 open(self.output_file, 'w').close()
 
             with open(self.output_file, 'w', encoding='utf-8') as output:
-                for return_path in return_paths:
-                    output.write(return_path + '\n')
+                for data in extracted_data:
+                    output.write(data + '\n')
 
-            print(f'Return paths extracted and saved to {self.output_file}.')
+            print(f'Data extracted and saved to {self.output_file}.')
 
             # Display a notification when the task finishes
-            self.show_notification("Return-Path Extraction", "Task finished successfully!")
+            self.show_notification("Data Extraction", "Task finished successfully!")
 
     def update_progress(self, value, maximum):
         self.progress_bar.setMaximum(maximum)

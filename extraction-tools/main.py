@@ -10,6 +10,7 @@ from PyQt6.QtWidgets import QApplication, QMainWindow, QDialog, QLabel, QLineEdi
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from email.policy import default
+from  PyQt6.QtGui import QIcon
 
 class AddEmailPasswordDialog(QDialog):
     def __init__(self, parent=None):
@@ -258,7 +259,7 @@ class EmailExtractor(QtWidgets.QMainWindow):
             email_address = email_password_dict[provider]["email"]
             password = email_password_dict[provider]["password"]
         else:
-            add_email_password()
+            AddEmailPasswordDialog()
 
         # Fetch emails for the selected email account
         try:
@@ -353,9 +354,9 @@ class EmailExtractor(QtWidgets.QMainWindow):
 
 
 
-
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     main_window = EmailExtractor()
+    main_window.setWindowIcon(QIcon("./code.ico"))
     main_window.show()
     sys.exit(app.exec())

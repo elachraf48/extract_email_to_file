@@ -87,13 +87,16 @@ class DeleteWindow(QtWidgets.QDialog):
     def setup_ui(self):
         selected_email_label = QtWidgets.QLabel("Selected Email:")
         self.selected_email_combo = QtWidgets.QComboBox()
-        delete_button = QtWidgets.QPushButton("Delete")
+        delete_button = QtWidgets.QPushButton("Delete account")
         delete_button.clicked.connect(self.confirm_delete)
+        deleteENV_button = QtWidgets.QPushButton("Delete ALL Emial Envoi And Drafts")
+        deleteENV_button.clicked.connect(self.deletenv)
 
         layout = QtWidgets.QGridLayout()
         layout.addWidget(selected_email_label, 0, 0)
         layout.addWidget(self.selected_email_combo, 0, 1)
         layout.addWidget(delete_button, 1, 0, 1, 2)
+        layout.addWidget(deleteENV_button, 2, 0, 1, 2)
 
         self.setLayout(layout)
 
@@ -127,6 +130,77 @@ class DeleteWindow(QtWidgets.QDialog):
                 self.close()
         else:
             QtWidgets.QMessageBox.warning(self, "No Email Selected", "Please select an email to delete.")
+   
+    
+
+
+    
+
+    def deletenv(self):
+        selected_email = self.selected_email_combo.currentText()
+        email_provider = selected_email.split('@')[1].lower()
+
+        # Connect to the IMAP server based on the email provider
+        if email_provider in ["outlook.com", "hotmail.com"]:
+            imap_server = "imap-mail.outlook.com"
+            mailbox = "Sent"
+        elif email_provider == "yahoo.com":
+            imap_server = "imap.mail.yahoo.com"
+            mailbox = "Sent"
+        elif email_provider == "gmail.com":
+            imap_server = "imap.gmail.com"
+            mailbox = "Sent Mail"  # Use "Sent Mail" instead of "[Gmail]/Sent Mail"
+        elif email_provider == "aol.com":
+            imap_server = "imap.aol.com"
+            mailbox = "Sent"
+        else:
+            QtWidgets.QMessageBox.information(self, "Invalid", f"Invalid email provider.")
+            return
+
+        # Connect to the IMAP server using SSL
+        imap = imaplib.IMAP4_SSL(imap_server)
+
+        with open("data.json", "r") as file:
+            data = json.load(file)
+
+        PASSWORD = None
+
+        for item in data:
+            if item["email"] == selected_email:
+                PASSWORD = item["password"]
+                break
+
+        if PASSWORD is None:
+            QtWidgets.QMessageBox.information(self, "Password", f"Password not found for the selected email.")
+            return
+
+        # Login to your email account
+        imap.login(selected_email, PASSWORD)
+
+        # Print the selected mailbox for debugging purposes
+        print(f"Selected Mailbox: {mailbox}")
+
+        # Select the appropriate mailbox
+        typ, response = imap.select(mailbox)
+        print(f"SELECT Response: {typ} {response}")
+
+        # Search for all sent emails
+        status, response = imap.search(None, 'ALL')
+        email_ids = response[0].split()
+
+        # Delete each sent email
+        for email_id in email_ids:
+            imap.store(email_id, '+FLAGS', '\\Deleted')
+
+        # Permanently delete the marked sent emails
+        imap.expunge()
+
+        # Close the connection
+        imap.close()
+        imap.logout()
+
+        print("All sent emails have been deleted.")
+        QtWidgets.QMessageBox.information(self, "Email Deleted", f"All sent emails '{selected_email}' have been deleted.")
 
 
 class EmailExtractor(QtWidgets.QMainWindow):
